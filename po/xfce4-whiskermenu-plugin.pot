@@ -1,0 +1,107 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: whiskermenu 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-15 20:23+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/applications_page.cpp:298
+msgid "All"
+msgstr ""
+
+#: src/configuration_dialog.cpp:52
+msgid "Whisker Menu"
+msgstr ""
+
+#: src/configuration_dialog.cpp:66
+msgid "Appearance"
+msgstr ""
+
+#: src/configuration_dialog.cpp:71
+msgid "Show applications by _name"
+msgstr ""
+
+#: src/configuration_dialog.cpp:77
+msgid "Show application _descriptions"
+msgstr ""
+
+#: src/configuration_dialog.cpp:86
+msgid "_Icon:"
+msgstr ""
+
+#: src/configuration_dialog.cpp:118
+msgid "Select An Icon"
+msgstr ""
+
+#: src/launcher.cpp:263
+#, c-format
+msgid "Failed to execute command \"%s\"."
+msgstr ""
+
+#: src/menu.cpp:88
+msgid "All Settings"
+msgstr ""
+
+#: src/menu.cpp:91
+msgid "Lock Screen"
+msgstr ""
+
+#: src/menu.cpp:94
+msgid "Log Out"
+msgstr ""
+
+#: src/menu.cpp:108
+msgid "Favorites"
+msgstr ""
+
+#: src/menu.cpp:114
+msgid "Recently Used"
+msgstr ""
+
+#: src/menu.cpp:636
+msgid "Failed to open settings manager."
+msgstr ""
+
+#: src/menu.cpp:650
+msgid "Failed to lock screen."
+msgstr ""
+
+#: src/menu.cpp:664
+msgid "Failed to log out."
+msgstr ""
+
+#: src/page.cpp:170
+msgid "Add to Favorites"
+msgstr ""
+
+#: src/page.cpp:176
+msgid "Remove From Favorites"
+msgstr ""
+
+#: src/page.cpp:181
+msgid "Add to Desktop"
+msgstr ""
+
+#: src/page.cpp:185
+msgid "Add to Panel"
+msgstr ""
+
+#: src/page.cpp:265
+msgid "Unable to add launcher to desktop."
+msgstr ""
+
+#: src/page.cpp:303 src/page.cpp:312
+msgid "Unable to add launcher to panel."
+msgstr ""
