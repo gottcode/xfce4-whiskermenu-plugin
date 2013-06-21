@@ -78,7 +78,12 @@ Menu::Menu(XfceRc* settings) :
 	gtk_container_add(GTK_CONTAINER(m_window), frame);
 
 	// Create the username label
-	gchar* username = g_markup_printf_escaped("<b><big>%s</big></b>", g_get_real_name());
+	const gchar* name = g_get_real_name();
+	if (g_strcmp0(name, "Unknown") == 0)
+	{
+		name = g_get_user_name();
+	}
+	gchar* username = g_markup_printf_escaped("<b><big>%s</big></b>", name);
 	m_username = GTK_LABEL(gtk_label_new(nullptr));
 	gtk_label_set_markup(m_username, username);
 	gtk_misc_set_alignment(GTK_MISC(m_username), 0.0f, 0.5f);
