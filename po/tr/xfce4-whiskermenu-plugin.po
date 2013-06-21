@@ -1,0 +1,109 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# reis33 <bahadiroglu33@gmail.com>, 2013
+# yfdogan <yfdogan@gmail.com>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: Whisker Menu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-15 20:23+0000\n"
+"PO-Revision-Date: 2013-06-21 20:53+0000\n"
+"Last-Translator: yfdogan <yfdogan@gmail.com>\n"
+"Language-Team: Turkish (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/tr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: src/applications_page.cpp:298
+msgid "All"
+msgstr "Hepsi"
+
+#: src/configuration_dialog.cpp:52
+msgid "Whisker Menu"
+msgstr "Gözde Menü"
+
+#: src/configuration_dialog.cpp:66
+msgid "Appearance"
+msgstr "Görünüm"
+
+#: src/configuration_dialog.cpp:71
+msgid "Show applications by _name"
+msgstr "Uygulamaları İsme Göre Göster"
+
+#: src/configuration_dialog.cpp:77
+msgid "Show application _descriptions"
+msgstr "Uygulama Açıklamalarını Göster"
+
+#: src/configuration_dialog.cpp:86
+msgid "_Icon:"
+msgstr "_Simge"
+
+#: src/configuration_dialog.cpp:118
+msgid "Select An Icon"
+msgstr "Bir Simge Seçin"
+
+#: src/launcher.cpp:263
+#, c-format
+msgid "Failed to execute command \"%s\"."
+msgstr "\"%s\" Komutunu Yürütme Hatası"
+
+#: src/menu.cpp:88
+msgid "All Settings"
+msgstr "Bğtğn Ayarlar"
+
+#: src/menu.cpp:91
+msgid "Lock Screen"
+msgstr "Ekranı Kilitle"
+
+#: src/menu.cpp:94
+msgid "Log Out"
+msgstr "Çıkış"
+
+#: src/menu.cpp:108
+msgid "Favorites"
+msgstr "Gözdeler"
+
+#: src/menu.cpp:114
+msgid "Recently Used"
+msgstr "Son Kullanılanlar"
+
+#: src/menu.cpp:636
+msgid "Failed to open settings manager."
+msgstr "Ayarlar Yöneticisini Açma Hatası"
+
+#: src/menu.cpp:650
+msgid "Failed to lock screen."
+msgstr "Ekran Kilitleme Hatası"
+
+#: src/menu.cpp:664
+msgid "Failed to log out."
+msgstr "Çıkış Hatası"
+
+#: src/page.cpp:170
+msgid "Add to Favorites"
+msgstr "Gözdelere Ekle"
+
+#: src/page.cpp:176
+msgid "Remove From Favorites"
+msgstr "Gözdelerden Kaldır"
+
+#: src/page.cpp:181
+msgid "Add to Desktop"
+msgstr "Masaüstüne Ekle"
+
+#: src/page.cpp:185
+msgid "Add to Panel"
+msgstr "Panele Ekle"
+
+#: src/page.cpp:265
+msgid "Unable to add launcher to desktop."
+msgstr "Çalıştırıcı Masaüstüne Eklenemedi"
+
+#: src/page.cpp:303 src/page.cpp:312
+msgid "Unable to add launcher to panel."
+msgstr "Çalıştırıcı Panele Eklenemedi"
