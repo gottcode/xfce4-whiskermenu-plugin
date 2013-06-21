@@ -1,0 +1,108 @@
+# Hebrew translation of whiskermenu.
+# Copyright (C) 2013 Graeme Gott
+# This file is distributed under the same license as the whiskermenu package.
+# Isratine Citizen <genghiskhan@gmx.ca>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: whiskermenu 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-15 20:23+0000\n"
+"PO-Revision-Date: 2013-06-21 12:49+0200\n"
+"Last-Translator: Isratine Citizen <genghiskhan@gmx.ca>\n"
+"Language-Team: Rahut <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"Language: he\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/applications_page.cpp:298
+msgid "All"
+msgstr "כולם"
+
+#: src/configuration_dialog.cpp:52
+msgid "Whisker Menu"
+msgstr ""
+
+#: src/configuration_dialog.cpp:66
+msgid "Appearance"
+msgstr "הופעה"
+
+#: src/configuration_dialog.cpp:71
+msgid "Show applications by _name"
+msgstr "הצג יישומים לפי _שם"
+
+#: src/configuration_dialog.cpp:77
+msgid "Show application _descriptions"
+msgstr "הצג _תיאורי יישום"
+
+#: src/configuration_dialog.cpp:86
+msgid "_Icon:"
+msgstr "_צלמית:"
+
+#: src/configuration_dialog.cpp:118
+msgid "Select An Icon"
+msgstr "בחר צלמית"
+
+#: src/launcher.cpp:263
+#, c-format
+msgid "Failed to execute command \"%s\"."
+msgstr "נכשל להוציא לפועל פקודה \"%s\"."
+
+#: src/menu.cpp:88
+msgid "All Settings"
+msgstr "כל ההגדרות"
+
+#: src/menu.cpp:91
+msgid "Lock Screen"
+msgstr "נעל מרקע"
+
+#: src/menu.cpp:94
+msgid "Log Out"
+msgstr "התנתק"
+
+#: src/menu.cpp:108
+msgid "Favorites"
+msgstr "מועדפים"
+
+#: src/menu.cpp:114
+msgid "Recently Used"
+msgstr "בשימוש לאחרונה"
+
+#: src/menu.cpp:636
+msgid "Failed to open settings manager."
+msgstr "נכשל לפתוח מנהל הגדרות."
+
+#: src/menu.cpp:650
+msgid "Failed to lock screen."
+msgstr "נכשל לנעול מרקע."
+
+#: src/menu.cpp:664
+msgid "Failed to log out."
+msgstr "נכשל להתנתק."
+
+#: src/page.cpp:170
+msgid "Add to Favorites"
+msgstr "הוסף אל תוך מועדפים"
+
+#: src/page.cpp:176
+msgid "Remove From Favorites"
+msgstr "הסר מתוך מועדפים"
+
+#: src/page.cpp:181
+msgid "Add to Desktop"
+msgstr "הוסף אל תוך שולחן עבודה"
+
+#: src/page.cpp:185
+msgid "Add to Panel"
+msgstr "הוסף אל לוח"
+
+#: src/page.cpp:265
+msgid "Unable to add launcher to desktop."
+msgstr "אין אפשרות להוסיף משגר אל תוך שולחן עבודה."
+
+#: src/page.cpp:303 src/page.cpp:312
+msgid "Unable to add launcher to panel."
+msgstr "אין אפשרות להוסיף משגר אל תוך לוח."
