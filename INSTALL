@@ -1,0 +1,62 @@
+Basic Installation
+==================
+
+CMake is designed for the build process to be done in a separate
+directory. The simplest way to compile this plugin is:
+
+  1. `cd' to the directory containing the source code.
+
+  2. `mkdir build && cd build' to create a location for building.
+
+  3. `cmake -DCMAKE_INSTALL_PREFIX=/usr ..' to configure the sources.
+     There are more options you can pass to cmake, see below for details.
+
+  4. `make' to compile the plugin. This will also rerun cmake for you if
+     any CMakeLists.txt files have changed.
+
+  5. `make install' to install the plugin. This has to be done with root
+     privileges if installing to system directories, but the rest of the
+     build should be done with regular user privileges.
+
+You can instead install the plugin into a temporary directory:
+
+  6. `make install DESTDIR=/tmp' to install the plugin into /tmp but
+     with paths referencing $CMAKE_INSTALL_PREFIX.
+
+Debug Builds
+============
+
+You should create different directories for each type of build:
+
+  1. `mkdir debug && cd debug' to create a location for building.
+
+  2. `cmake -DCMAKE_BUILD_TYPE=Debugfull ..' to configure the sources.
+
+  3. `make' to compile the plugin.
+
+More CMake Options
+==================
+
+-DCMAKE_BUILD_TYPE=<type>
+    Choose the type of build. Possible values are:
+      'Release' 'RelWithDebInfo' 'Debug' 'Debugfull' 'Profile'
+
+-DCMAKE_INSTALL_PREFIX=<path>
+    Choose the base location where the plugin is installed
+    (defaults to /usr/local).
+
+-DINSTALL_LIB_DIR=<path>
+    Choose where libraries are installed
+    (defaults to $CMAKE_INSTALL_PREFIX/lib).
+
+-DDATA_INSTALL_DIR=<path>
+    Choose where the data files are installed
+    (defaults to $CMAKE_INSTALL_PREFIX/share).
+
+-DICON_INSTALL_DIR=<path>
+    Choose where the icons are installed
+    (defaults to $DATA_INSTALL_DIR/icons).
+
+-DLOCALE_INSTALL_DIR=<path>
+    Choose where the localization files are installed
+    (defaults to $DATA_INSTALL_DIR/locale).
