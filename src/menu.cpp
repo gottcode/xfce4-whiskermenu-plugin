@@ -483,7 +483,11 @@ gboolean Menu::on_key_press_event(GtkWidget* widget, GdkEventKey* event)
 	if ((event->keyval == GDK_KEY_Up) || (event->keyval == GDK_KEY_Down))
 	{
 		GtkWidget* widget = nullptr;
-		if (gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(m_favorites_button)))
+		if (gtk_widget_get_visible(m_search_results->get_widget()))
+		{
+			widget = m_search_results->get_view()->get_widget();
+		}
+		else if (gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(m_favorites_button)))
 		{
 			widget = m_favorites->get_view()->get_widget();
 		}
