@@ -2,6 +2,7 @@
 Type=X-XFCE-PanelPlugin
 Encoding=UTF-8
 Name=Whisker Menu
+Name[he]=תפריט שפם
 Comment=Show a menu to easily access installed applications
 Comment[he]=תפריט לגישה קלה ליישומים מותקנים
 Icon=xfce4-whiskermenu

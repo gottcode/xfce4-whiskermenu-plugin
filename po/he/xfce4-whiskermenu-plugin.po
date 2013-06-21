@@ -24,7 +24,7 @@ msgstr "כולם"
 
 #: src/configuration_dialog.cpp:52
 msgid "Whisker Menu"
-msgstr ""
+msgstr "תפריט שפם"
 
 #: src/configuration_dialog.cpp:66
 msgid "Appearance"
