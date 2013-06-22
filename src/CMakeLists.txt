@@ -36,7 +36,7 @@ link_directories(
 
 add_definitions(
     -DGETTEXT_PACKAGE="whiskermenu"
-    -DLOCALEDIR="${CMAKE_INSTALL_PREFIX}/${LOCALE_INSTALL_DIR}"
+    -DLOCALEDIR="${CMAKE_INSTALL_FULL_LOCALEDIR}"
     -DGSEAL_ENABLE=1
     -DGDK_DISABLE_SINGLE_INCLUDES=1
     -DGDK_PIXBUF_DISABLE_SINGLE_INCLUDES=1
@@ -82,5 +82,5 @@ target_link_libraries(whiskermenu
     ${libxfce4util_LIBRARIES}
     ${GTK2_LIBRARIES})
 
-install(TARGETS whiskermenu LIBRARY DESTINATION ${LIB_INSTALL_DIR}/xfce4/panel/plugins)
-install(FILES ../whiskermenu.desktop DESTINATION ${DATA_INSTALL_DIR}/xfce4/panel/plugins)
+install(TARGETS whiskermenu LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/xfce4/panel/plugins)
+install(FILES ../whiskermenu.desktop DESTINATION ${CMAKE_INSTALL_DATADIR}/xfce4/panel/plugins)

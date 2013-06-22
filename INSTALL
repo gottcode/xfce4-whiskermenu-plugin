@@ -45,22 +45,18 @@ More CMake Options
     Choose the base location where the plugin is installed
     (defaults to /usr/local).
 
--DBIN_INSTALL_DIR=<path>
+-DCMAKE_INSTALL_BINDIR=<path>
     Choose where binaries are installed
     (defaults to $CMAKE_INSTALL_PREFIX/bin).
 
--DLIB_INSTALL_DIR=<path>
+-DCMAKE_INSTALL_LIBDIR=<path>
     Choose where libraries are installed
     (defaults to $CMAKE_INSTALL_PREFIX/lib).
 
--DDATA_INSTALL_DIR=<path>
+-DCMAKE_INSTALL_DATADIR=<path>
     Choose where the data files are installed
     (defaults to $CMAKE_INSTALL_PREFIX/share).
 
--DICON_INSTALL_DIR=<path>
-    Choose where the icons are installed
-    (defaults to $DATA_INSTALL_DIR/icons).
-
--DLOCALE_INSTALL_DIR=<path>
+-DCMAKE_INSTALL_LOCALEDIR=<path>
     Choose where the localization files are installed
-    (defaults to $DATA_INSTALL_DIR/locale).
+    (defaults to $CMAKE_INSTALL_DATADIR/locale).
