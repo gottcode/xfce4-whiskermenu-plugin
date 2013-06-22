@@ -3,6 +3,14 @@ cmake_policy(VERSION 2.8)
 
 project(whiskermenu)
 
+if(NOT DEFINED BIN_INSTALL_DIR)
+    if (DEFINED CMAKE_INSTALL_BINDIR)
+        set(BIN_INSTALL_DIR ${CMAKE_INSTALL_BINDIR})
+    else()
+        set(BIN_INSTALL_DIR bin)
+    endif()
+endif()
+
 if(NOT DEFINED LIB_INSTALL_DIR)
     if (DEFINED CMAKE_INSTALL_LIBDIR)
         set(LIB_INSTALL_DIR ${CMAKE_INSTALL_LIBDIR})
@@ -34,3 +42,7 @@ endif()
 add_subdirectory(src)
 add_subdirectory(po)
 add_subdirectory(icons)
+
+configure_file(${PROJECT_SOURCE_DIR}/xfce4-popup-whiskermenu.in
+    ${PROJECT_BINARY_DIR}/xfce4-popup-whiskermenu ESCAPE_QUOTES @ONLY)
+install(PROGRAMS ${PROJECT_BINARY_DIR}/xfce4-popup-whiskermenu DESTINATION ${BIN_INSTALL_DIR})

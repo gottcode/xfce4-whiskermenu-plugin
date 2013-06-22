@@ -45,7 +45,11 @@ More CMake Options
     Choose the base location where the plugin is installed
     (defaults to /usr/local).
 
--DINSTALL_LIB_DIR=<path>
+-DBIN_INSTALL_DIR=<path>
+    Choose where binaries are installed
+    (defaults to $CMAKE_INSTALL_PREFIX/bin).
+
+-DLIB_INSTALL_DIR=<path>
     Choose where libraries are installed
     (defaults to $CMAKE_INSTALL_PREFIX/lib).
 

@@ -82,6 +82,7 @@ PanelPlugin::PanelPlugin(XfcePanelPlugin* plugin) :
 	// Connect plugin signals to functions
 	g_signal_connect(plugin, "free-data", G_CALLBACK(whiskermenu_free), this);
 	g_signal_connect_slot(plugin, "configure-plugin", &PanelPlugin::configure, this);
+	g_signal_connect_slot(plugin, "remote-event", &PanelPlugin::remote_event, this);
 	g_signal_connect_slot(plugin, "save", &PanelPlugin::save, this);
 	g_signal_connect_slot(plugin, "size-changed", &PanelPlugin::size_changed, this);
 	xfce_panel_plugin_menu_show_configure(plugin);
@@ -169,6 +170,21 @@ void PanelPlugin::menu_shown()
 void PanelPlugin::configure()
 {
 	new ConfigurationDialog(this);
+}
+
+//-----------------------------------------------------------------------------
+
+gboolean PanelPlugin::remote_event(XfcePanelPlugin*, gchar* name, GValue*)
+{
+	if (strcmp(name, "popup") || gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(m_button)))
+	{
+		return false;
+	}
+
+	m_menu->show(m_button, xfce_panel_plugin_get_orientation(m_plugin) == GTK_ORIENTATION_HORIZONTAL);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_button), true);
+
+	return true;
 }
 
 //-----------------------------------------------------------------------------

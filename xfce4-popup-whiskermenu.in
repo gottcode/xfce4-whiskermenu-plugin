@@ -1,0 +1,3 @@
+#!/bin/sh
+
+@CMAKE_INSTALL_PREFIX@/@BIN_INSTALL_DIR@/xfce4-panel --plugin-event=whiskermenu:popup

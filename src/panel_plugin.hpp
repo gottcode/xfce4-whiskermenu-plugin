@@ -55,6 +55,7 @@ private:
 	void menu_hidden();
 	void menu_shown();
 	void configure();
+	gboolean remote_event(XfcePanelPlugin* plugin, gchar* name, GValue* value);
 	void save();
 	gboolean size_changed(XfcePanelPlugin*, gint size);
 
