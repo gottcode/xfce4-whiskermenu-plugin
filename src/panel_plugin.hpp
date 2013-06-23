@@ -53,11 +53,11 @@ public:
 private:
 	gboolean button_clicked(GtkWidget*, GdkEventButton* event);
 	void menu_hidden();
-	void menu_shown();
 	void configure();
 	gboolean remote_event(XfcePanelPlugin* plugin, gchar* name, GValue* value);
 	void save();
 	gboolean size_changed(XfcePanelPlugin*, gint size);
+	void popup_menu();
 
 private:
 	XfcePanelPlugin* m_plugin;

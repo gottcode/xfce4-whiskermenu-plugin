@@ -63,7 +63,6 @@ PanelPlugin::PanelPlugin(XfcePanelPlugin* plugin) :
 	{
 		m_menu = new Menu(nullptr);
 	}
-	g_signal_connect_slot(m_menu->get_widget(), "map", &PanelPlugin::menu_shown, this);
 	g_signal_connect_slot(m_menu->get_widget(), "unmap", &PanelPlugin::menu_hidden, this);
 
 	// Create toggle button
@@ -143,8 +142,7 @@ gboolean PanelPlugin::button_clicked(GtkWidget*, GdkEventButton* event)
 	}
 	else
 	{
-		m_menu->show(m_button, xfce_panel_plugin_get_orientation(m_plugin) == GTK_ORIENTATION_HORIZONTAL);
-		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_button), true);
+		popup_menu();
 	}
 
 	return true;
@@ -156,13 +154,6 @@ void PanelPlugin::menu_hidden()
 {
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_button), false);
 	xfce_panel_plugin_block_autohide(m_plugin, false);
-}
-
-//-----------------------------------------------------------------------------
-
-void PanelPlugin::menu_shown()
-{
-	xfce_panel_plugin_block_autohide(m_plugin, true);
 }
 
 //-----------------------------------------------------------------------------
@@ -181,8 +172,7 @@ gboolean PanelPlugin::remote_event(XfcePanelPlugin*, gchar* name, GValue*)
 		return false;
 	}
 
-	m_menu->show(m_button, xfce_panel_plugin_get_orientation(m_plugin) == GTK_ORIENTATION_HORIZONTAL);
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_button), true);
+	popup_menu();
 
 	return true;
 }
@@ -213,6 +203,15 @@ gboolean PanelPlugin::size_changed(XfcePanelPlugin*, gint size)
 {
 	gtk_widget_set_size_request(GTK_WIDGET(m_plugin), size, size);
 	return true;
+}
+
+//-----------------------------------------------------------------------------
+
+void PanelPlugin::popup_menu()
+{
+	xfce_panel_plugin_block_autohide(m_plugin, true);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_button), true);
+	m_menu->show(m_button, xfce_panel_plugin_get_orientation(m_plugin) == GTK_ORIENTATION_HORIZONTAL);
 }
 
 //-----------------------------------------------------------------------------

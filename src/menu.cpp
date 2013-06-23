@@ -26,6 +26,8 @@
 #include "section_button.hpp"
 #include "slot.hpp"
 
+#include <ctime>
+
 extern "C"
 {
 #include <exo/exo.h>
@@ -220,10 +222,27 @@ void Menu::show(GtkWidget* parent, bool horizontal)
 	// Reset mouse cursor by forcing favorites to hide
 	gtk_widget_show(m_favorites->get_widget());
 
-	// Fetch parent geometry
-	GdkWindow* window = gtk_widget_get_window(parent);
+	// Wait up to half a second for auto-hidden panels to be shown
+	clock_t end = clock() + (CLOCKS_PER_SEC / 2);
+	GtkWindow* parent_window = GTK_WINDOW(gtk_widget_get_toplevel(parent));
 	int parent_x = 0, parent_y = 0;
-	gdk_window_get_origin(window, &parent_x, &parent_y);
+	gtk_window_get_position(parent_window, &parent_x, &parent_y);
+	while ((parent_x == -9999) && (parent_y == -9999) && (clock() < end))
+	{
+		while (gtk_events_pending())
+		{
+			gtk_main_iteration();
+		}
+		gtk_window_get_position(parent_window, &parent_x, &parent_y);
+	}
+
+	// Fetch parent geometry
+	if (!gtk_widget_get_realized(parent))
+	{
+		gtk_widget_realize(parent);
+	}
+	GdkWindow* window = gtk_widget_get_window(parent);
+	gdk_window_get_position(window, &parent_x, &parent_y);
 	int parent_w = gdk_window_get_width(window);
 	int parent_h = gdk_window_get_height(window);
 
