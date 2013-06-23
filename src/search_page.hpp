@@ -18,6 +18,7 @@
 #define WHISKERMENU_SEARCH_PAGE_HPP
 
 #include "filter_page.hpp"
+#include "slot.hpp"
 
 #include <string>
 
@@ -37,9 +38,11 @@ public:
 	void unset_menu_items();
 
 private:
+	SLOT_3(void, SearchPage, clear_search, GtkEntry*, GtkEntryIconPosition, GdkEvent*);
+	SLOT_2(gboolean, SearchPage, search_entry_key_press, GtkWidget*, GdkEventKey*);
+
+private:
 	bool on_filter(GtkTreeModel* model, GtkTreeIter* iter);
-	void clear_search(GtkEntry* entry, GtkEntryIconPosition icon_pos, GdkEvent*);
-	gboolean search_entry_key_press(GtkWidget* widget, GdkEventKey* event);
 
 private:
 	std::string m_filter_string;

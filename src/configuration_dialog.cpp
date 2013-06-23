@@ -18,7 +18,6 @@
 
 #include "launcher.hpp"
 #include "panel_plugin.hpp"
-#include "slot.hpp"
 
 extern "C"
 {
@@ -52,7 +51,7 @@ ConfigurationDialog::ConfigurationDialog(PanelPlugin* plugin) :
 	m_window = xfce_titled_dialog_new_with_buttons(_("Whisker Menu"), window, GTK_DIALOG_NO_SEPARATOR, GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE, nullptr);
 	gtk_window_set_icon_name(GTK_WINDOW(m_window), GTK_STOCK_PROPERTIES);
 	gtk_window_set_position(GTK_WINDOW(m_window), GTK_WIN_POS_CENTER);
-	g_signal_connect_slot(m_window, "response", &ConfigurationDialog::response, this);
+	g_signal_connect(m_window, "response", SLOT_CALLBACK(ConfigurationDialog::response), this);
 	g_signal_connect_swapped(m_window, "destroy", G_CALLBACK(whiskermenu_config_dialog_delete), this);
 
 	// Fetch contents box
@@ -71,13 +70,13 @@ ConfigurationDialog::ConfigurationDialog(PanelPlugin* plugin) :
 	m_show_names = gtk_check_button_new_with_mnemonic(_("Show applications by _name"));
 	gtk_box_pack_start(appearance_vbox, m_show_names, true, true, 0);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_names), Launcher::get_show_name());
-	g_signal_connect_slot(m_show_names, "toggled", &ConfigurationDialog::toggle_show_name, this);
+	g_signal_connect(m_show_names, "toggled", SLOT_CALLBACK(ConfigurationDialog::toggle_show_name), this);
 
 	// Add option to hide descriptions
 	m_show_descriptions = gtk_check_button_new_with_mnemonic(_("Show application _descriptions"));
 	gtk_box_pack_start(appearance_vbox, m_show_descriptions, true, true, 0);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_descriptions), Launcher::get_show_description());
-	g_signal_connect_slot(m_show_descriptions, "toggled", &ConfigurationDialog::toggle_show_description, this);
+	g_signal_connect(m_show_descriptions, "toggled", SLOT_CALLBACK(ConfigurationDialog::toggle_show_description), this);
 
 	// Add icon selector
 	GtkBox* hbox = GTK_BOX(gtk_hbox_new(false, 2));
@@ -91,7 +90,7 @@ ConfigurationDialog::ConfigurationDialog(PanelPlugin* plugin) :
 	m_icon_button = gtk_button_new();
 	gtk_box_pack_start(hbox, m_icon_button, false, false, 0);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_icon_button);
-	g_signal_connect_slot(m_icon_button, "clicked", &ConfigurationDialog::choose_icon, this);
+	g_signal_connect_swapped(m_icon_button, "clicked", SLOT_CALLBACK(ConfigurationDialog::choose_icon), this);
 
 	m_icon = xfce_panel_image_new_from_source(m_plugin->get_button_icon_name().c_str());
 	xfce_panel_image_set_size(XFCE_PANEL_IMAGE(m_icon), 48);

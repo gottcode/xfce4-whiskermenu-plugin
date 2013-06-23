@@ -17,6 +17,8 @@
 #ifndef WHISKERMENU_PANEL_PLUGIN_HPP
 #define WHISKERMENU_PANEL_PLUGIN_HPP
 
+#include "slot.hpp"
+
 #include <string>
 
 extern "C"
@@ -51,12 +53,12 @@ public:
 	void set_configure_enabled(bool enabled);
 
 private:
-	gboolean button_clicked(GtkWidget*, GdkEventButton* event);
-	void menu_hidden();
-	void menu_shown();
-	void configure();
-	void save();
-	gboolean size_changed(XfcePanelPlugin*, gint size);
+	SLOT_2(gboolean, PanelPlugin, button_clicked, GtkWidget*, GdkEventButton*);
+	SLOT_0(void, PanelPlugin, menu_hidden);
+	SLOT_0(void, PanelPlugin, menu_shown);
+	SLOT_0(void, PanelPlugin, configure);
+	SLOT_0(void, PanelPlugin, save);
+	SLOT_2(gboolean, PanelPlugin, size_changed, XfcePanelPlugin*, gint);
 
 private:
 	XfcePanelPlugin* m_plugin;

@@ -22,7 +22,6 @@
 #include "launcher_view.hpp"
 #include "menu.hpp"
 #include "recent_page.hpp"
-#include "slot.hpp"
 
 extern "C"
 {
@@ -39,9 +38,9 @@ Page::Page(Menu* menu) :
 {
 	// Create view
 	m_view = new LauncherView;
-	g_signal_connect_slot(m_view->get_widget(), "button-press-event", &Page::view_button_press_event, this);
-	g_signal_connect_slot(m_view->get_widget(), "popup-menu", &Page::view_popup_menu_event, this);
-	g_signal_connect_slot(m_view->get_widget(), "row-activated", &Page::launcher_activated, this);
+	g_signal_connect(m_view->get_widget(), "button-press-event", SLOT_CALLBACK(Page::view_button_press_event), this);
+	g_signal_connect(m_view->get_widget(), "popup-menu", SLOT_CALLBACK(Page::view_popup_menu_event), this);
+	g_signal_connect(m_view->get_widget(), "row-activated", SLOT_CALLBACK(Page::launcher_activated), this);
 	g_signal_connect_swapped(m_view->get_widget(), "start-interactive-search", G_CALLBACK(gtk_widget_grab_focus), m_menu->get_search_entry());
 
 	// Add scrolling to view
@@ -49,7 +48,7 @@ Page::Page(Menu* menu) :
 	gtk_scrolled_window_set_policy(GTK_SCROLLED_WINDOW(m_widget), GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
 	gtk_scrolled_window_set_shadow_type(GTK_SCROLLED_WINDOW(m_widget), GTK_SHADOW_ETCHED_IN);
 	gtk_container_add(GTK_CONTAINER(m_widget), m_view->get_widget());
-	g_signal_connect_slot(m_widget, "unmap", &Page::on_unmap, this);
+	g_signal_connect_swapped(m_widget, "unmap", SLOT_CALLBACK(Page::on_unmap), this);
 	g_object_ref_sink(m_widget);
 }
 
@@ -160,7 +159,7 @@ void Page::create_context_menu(GtkTreeIter* iter, GdkEventButton* event)
 
 	// Create context menu
 	GtkWidget* menu = gtk_menu_new();
-	g_signal_connect_slot(menu, "selection-done", &Page::destroy_context_menu, this);
+	g_signal_connect(menu, "selection-done", SLOT_CALLBACK(Page::destroy_context_menu), this);
 
 	// Add menu items
 	GtkWidget* menuitem = nullptr;
@@ -168,22 +167,22 @@ void Page::create_context_menu(GtkTreeIter* iter, GdkEventButton* event)
 	if (!m_menu->get_favorites()->contains(get_selected_launcher()))
 	{
 		menuitem = gtk_menu_item_new_with_label(_("Add to Favorites"));
-		g_signal_connect_slot(menuitem, "activate", &Page::add_selected_to_favorites, this);
+		g_signal_connect_swapped(menuitem, "activate", SLOT_CALLBACK(Page::add_selected_to_favorites), this);
 		gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 	}
 	else
 	{
 		menuitem = gtk_menu_item_new_with_label(_("Remove From Favorites"));
-		g_signal_connect_slot(menuitem, "activate", &Page::remove_selected_from_favorites, this);
+		g_signal_connect_swapped(menuitem, "activate", SLOT_CALLBACK(Page::remove_selected_from_favorites), this);
 		gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 	}
 
 	menuitem = gtk_menu_item_new_with_label(_("Add to Desktop"));
-	g_signal_connect_slot(menuitem, "activate", &Page::add_selected_to_desktop, this);
+	g_signal_connect_swapped(menuitem, "activate", SLOT_CALLBACK(Page::add_selected_to_desktop), this);
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
 	menuitem = gtk_menu_item_new_with_label(_("Add to Panel"));
-	g_signal_connect_slot(menuitem, "activate", &Page::add_selected_to_panel, this);
+	g_signal_connect_swapped(menuitem, "activate", SLOT_CALLBACK(Page::add_selected_to_panel), this);
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
 	gtk_widget_show_all(menu);

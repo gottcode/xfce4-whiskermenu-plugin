@@ -22,77 +22,36 @@ extern "C"
 #include <glib-object.h>
 }
 
-namespace WhiskerMenu
-{
+#define SLOT_CALLBACK(klassmember) G_CALLBACK(klassmember ## _slot)
 
-// Member functions without parameters
-template <typename T, typename R>
-struct Slot0
-{
-	T* instance;
-	R (T::*member)();
-};
+#define SLOT_0(R, klass, member) \
+	static R member ## _slot(klass* obj) \
+		{ return obj->member(); } \
+	R member()
 
-template <typename T, typename R>
-R invoke_slot0(Slot0<T,R>* slot)
-{
-	return (slot->instance->*slot->member)();
-}
+#define SLOT_1(R, klass, member, T1) \
+	static R member ## _slot(T1 arg1, klass* obj) \
+		{ return obj->member(arg1); } \
+	R member(T1)
 
-template <typename T, typename R>
-void delete_slot0(Slot0<T,R>* slot)
-{
-	delete slot;
-	slot = nullptr;
-}
+#define SLOT_2(R, klass, member, T1, T2) \
+	static R member ## _slot(T1 arg1, T2 arg2, klass* obj) \
+		{ return obj->member(arg1, arg2); } \
+	R member(T1, T2)
 
-template<typename T, typename R>
-gulong g_signal_connect_slot(gpointer signal_obj, const gchar* detailed_signal, R (T::*member)(), T* instance)
-{
-	return g_signal_connect_closure(signal_obj, detailed_signal,
-		g_cclosure_new_swap
-		(
-			(GCallback)&invoke_slot0<T,R>,
-			new Slot0<T,R>{instance, member},
-			(GClosureNotify)&delete_slot0<T,R>
-		),
-		false);
-}
+#define SLOT_3(R, klass, member, T1, T2, T3) \
+	static R member ## _slot(T1 arg1, T2 arg2, T3 arg3, klass* obj) \
+		{ return obj->member(arg1, arg2, arg3); } \
+	R member(T1, T2, T3)
 
-// Member functions with parameters
-template <typename T, typename R, typename... Args>
-struct SlotArgs
-{
-	T* instance;
-	R (T::*member)(Args...);
-};
+#define SLOT_4(R, klass, member, T1, T2, T3, T4) \
+	static R member ## _slot(T1 arg1, T2 arg2, T3 arg3, T4 arg4, klass* obj) \
+		{ return obj->member(arg1, arg2, arg3, arg4); } \
+	R member(T1, T2, T3, T4)
 
-template <typename T, typename R, typename... Args>
-R invoke_slot_args(Args... args, SlotArgs<T,R,Args...>* slot)
-{
-	return (slot->instance->*slot->member)(args...);
-}
-
-template <typename T, typename R, typename... Args>
-void delete_slot_args(SlotArgs<T,R,Args...>* slot)
-{
-	delete slot;
-	slot = nullptr;
-}
-
-template<typename T, typename R, typename... Args>
-gulong g_signal_connect_slot(gpointer signal_obj, const gchar* detailed_signal, R (T::*member)(Args...), T* instance)
-{
-	return g_signal_connect_closure(signal_obj, detailed_signal,
-		g_cclosure_new
-		(
-			(GCallback)&invoke_slot_args<T,R,Args...>,
-			new SlotArgs<T,R,Args...>{instance, member},
-			(GClosureNotify)&delete_slot_args<T,R,Args...>
-		),
-		false);
-}
-
-}
+#define SLOT_5(R, klass, member, T1, T2, T3, T4, T5) \
+	static R member ## _slot(T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, klass* obj) \
+		{ return obj->member(arg1, arg2, arg3, arg4, arg5); } \
+	R member(T1, T2, T3, T4, T5)
 
 #endif // WHISKERMENU_SLOT_HPP

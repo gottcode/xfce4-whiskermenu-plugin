@@ -20,7 +20,6 @@
 #include "configuration_dialog.hpp"
 #include "launcher.hpp"
 #include "menu.hpp"
-#include "slot.hpp"
 
 using namespace WhiskerMenu;
 
@@ -63,8 +62,8 @@ PanelPlugin::PanelPlugin(XfcePanelPlugin* plugin) :
 	{
 		m_menu = new Menu(nullptr);
 	}
-	g_signal_connect_slot(m_menu->get_widget(), "map", &PanelPlugin::menu_shown, this);
-	g_signal_connect_slot(m_menu->get_widget(), "unmap", &PanelPlugin::menu_hidden, this);
+	g_signal_connect_swapped(m_menu->get_widget(), "map", SLOT_CALLBACK(PanelPlugin::menu_shown), this);
+	g_signal_connect_swapped(m_menu->get_widget(), "unmap", SLOT_CALLBACK(PanelPlugin::menu_hidden), this);
 
 	// Create toggle button
 	m_button = xfce_create_panel_toggle_button();
@@ -73,7 +72,7 @@ PanelPlugin::PanelPlugin(XfcePanelPlugin* plugin) :
 	xfce_panel_image_set_size(m_button_icon, -1);
 	gtk_container_add(GTK_CONTAINER(m_button), GTK_WIDGET(m_button_icon));
 	gtk_widget_show_all(m_button);
-	g_signal_connect_slot(m_button, "button-press-event", &PanelPlugin::button_clicked, this);
+	g_signal_connect(m_button, "button-press-event", SLOT_CALLBACK(PanelPlugin::button_clicked), this);
 
 	// Add plugin to panel
 	gtk_container_add(GTK_CONTAINER(plugin), m_button);
@@ -81,9 +80,9 @@ PanelPlugin::PanelPlugin(XfcePanelPlugin* plugin) :
 
 	// Connect plugin signals to functions
 	g_signal_connect(plugin, "free-data", G_CALLBACK(whiskermenu_free), this);
-	g_signal_connect_slot(plugin, "configure-plugin", &PanelPlugin::configure, this);
-	g_signal_connect_slot(plugin, "save", &PanelPlugin::save, this);
-	g_signal_connect_slot(plugin, "size-changed", &PanelPlugin::size_changed, this);
+	g_signal_connect_swapped(plugin, "configure-plugin", SLOT_CALLBACK(PanelPlugin::configure), this);
+	g_signal_connect_swapped(plugin, "save", SLOT_CALLBACK(PanelPlugin::save), this);
+	g_signal_connect(plugin, "size-changed", SLOT_CALLBACK(PanelPlugin::size_changed), this);
 	xfce_panel_plugin_menu_show_configure(plugin);
 }
 

@@ -17,6 +17,8 @@
 #ifndef WHISKERMENU_MENU_HPP
 #define WHISKERMENU_MENU_HPP
 
+#include "slot.hpp"
+
 #include <string>
 #include <unordered_map>
 #include <vector>
@@ -76,20 +78,20 @@ public:
 	void unset_items();
 
 private:
-	gboolean on_enter_notify_event(GtkWidget*, GdkEventCrossing* event);
-	gboolean on_leave_notify_event(GtkWidget*, GdkEventCrossing* event);
-	gboolean on_button_press_event(GtkWidget*, GdkEventButton* event);
-	gboolean on_key_press_event(GtkWidget* widget, GdkEventKey* event);
-	gboolean on_map_event(GtkWidget* widget, GdkEventAny* event);
-	gboolean on_configure_event(GtkWidget* widget, GdkEventConfigure* event);
-	void favorites_toggled();
-	void recent_toggled();
-	void category_toggled();
-	void show_favorites();
-	void search();
-	void launch_settings_manager();
-	void lock_screen();
-	void log_out();
+	SLOT_2(gboolean, Menu, on_enter_notify_event, GtkWidget*, GdkEventCrossing*);
+	SLOT_2(gboolean, Menu, on_leave_notify_event, GtkWidget*, GdkEventCrossing*);
+	SLOT_2(gboolean, Menu, on_button_press_event, GtkWidget*, GdkEventButton*);
+	SLOT_2(gboolean, Menu, on_key_press_event, GtkWidget*, GdkEventKey*);
+	SLOT_2(gboolean, Menu, on_map_event, GtkWidget*, GdkEventAny*);
+	SLOT_2(gboolean, Menu, on_configure_event, GtkWidget*, GdkEventConfigure*);
+	SLOT_0(void, Menu, favorites_toggled);
+	SLOT_0(void, Menu, recent_toggled);
+	SLOT_0(void, Menu, category_toggled);
+	SLOT_0(void, Menu, show_favorites);
+	SLOT_0(void, Menu, search);
+	SLOT_0(void, Menu, launch_settings_manager);
+	SLOT_0(void, Menu, lock_screen);
+	SLOT_0(void, Menu, log_out);
 
 private:
 	GtkWindow* m_window;
