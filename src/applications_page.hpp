@@ -18,6 +18,7 @@
 #define WHISKERMENU_APPLICATIONS_PAGE_HPP
 
 #include "filter_page.hpp"
+#include "slot.hpp"
 
 #include <string>
 #include <unordered_map>
@@ -61,10 +62,12 @@ public:
 	ApplicationsPage(Menu* menu);
 	~ApplicationsPage();
 
-	void reload_applications();
+	SLOT_0(void, ApplicationsPage, reload_applications);
 
 private:
-	void apply_filter(GtkToggleButton* togglebutton);
+	SLOT_1(void, ApplicationsPage, apply_filter, GtkToggleButton*);
+
+private:
 	bool on_filter(GtkTreeModel* model, GtkTreeIter* iter);
 	void clear_applications();
 	void load_menu(GarconMenu* menu);

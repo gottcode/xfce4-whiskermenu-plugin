@@ -18,6 +18,7 @@
 #define WHISKERMENU_LIST_PAGE_HPP
 
 #include "page.hpp"
+#include "slot.hpp"
 
 #include <string>
 #include <unordered_map>
@@ -53,9 +54,9 @@ public:
 	void unset_menu_items();
 
 private:
-	void on_row_changed(GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter);
-	void on_row_inserted(GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter);
-	void on_row_deleted(GtkTreeModel* model, GtkTreePath* path);
+	SLOT_3(void, ListPage, on_row_changed, GtkTreeModel*, GtkTreePath*, GtkTreeIter*);
+	SLOT_3(void, ListPage, on_row_inserted, GtkTreeModel*, GtkTreePath*, GtkTreeIter*);
+	SLOT_2(void, ListPage, on_row_deleted, GtkTreeModel*, GtkTreePath*);
 
 private:
 	const gchar* m_key;

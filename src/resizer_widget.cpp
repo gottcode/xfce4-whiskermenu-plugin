@@ -16,8 +16,6 @@
 
 #include "resizer_widget.hpp"
 
-#include "slot.hpp"
-
 using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
@@ -33,10 +31,10 @@ ResizerWidget::ResizerWidget(GtkWindow* window) :
 	gtk_widget_add_events(m_drawing, GDK_BUTTON_PRESS_MASK | GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK);
 	gtk_container_add(GTK_CONTAINER(m_alignment), m_drawing);
 
-	g_signal_connect_slot(m_drawing, "button-press-event", &ResizerWidget::on_button_press_event, this);
-	g_signal_connect_slot(m_drawing, "enter-notify-event", &ResizerWidget::on_enter_notify_event, this);
-	g_signal_connect_slot(m_drawing, "leave-notify-event", &ResizerWidget::on_leave_notify_event, this);
-	g_signal_connect_slot(m_drawing, "expose-event", &ResizerWidget::on_expose_event, this);
+	g_signal_connect(m_drawing, "button-press-event", SLOT_CALLBACK(ResizerWidget::on_button_press_event), this);
+	g_signal_connect(m_drawing, "enter-notify-event", SLOT_CALLBACK(ResizerWidget::on_enter_notify_event), this);
+	g_signal_connect(m_drawing, "leave-notify-event", SLOT_CALLBACK(ResizerWidget::on_leave_notify_event), this);
+	g_signal_connect(m_drawing, "expose-event", SLOT_CALLBACK(ResizerWidget::on_expose_event), this);
 
 	set_corner(TopRight);
 }

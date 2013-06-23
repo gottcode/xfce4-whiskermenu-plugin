@@ -20,7 +20,6 @@
 #include "launcher_model.hpp"
 #include "launcher_view.hpp"
 #include "menu.hpp"
-#include "slot.hpp"
 
 extern "C"
 {
@@ -37,8 +36,8 @@ SearchPage::SearchPage(Menu* menu) :
 {
 	get_view()->set_selection_mode(GTK_SELECTION_BROWSE);
 
-	g_signal_connect_slot(menu->get_search_entry(), "icon-release", &SearchPage::clear_search, this);
-	g_signal_connect_slot(menu->get_search_entry(), "key-press-event", &SearchPage::search_entry_key_press, this);
+	g_signal_connect(menu->get_search_entry(), "icon-release", SLOT_CALLBACK(SearchPage::clear_search), this);
+	g_signal_connect(menu->get_search_entry(), "key-press-event", SLOT_CALLBACK(SearchPage::search_entry_key_press), this);
 }
 
 //-----------------------------------------------------------------------------

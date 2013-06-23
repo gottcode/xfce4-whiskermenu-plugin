@@ -21,7 +21,6 @@
 #include "launcher_view.hpp"
 #include "menu.hpp"
 #include "section_button.hpp"
-#include "slot.hpp"
 
 #include <algorithm>
 #include <map>
@@ -126,7 +125,7 @@ void ApplicationsPage::reload_applications()
 	g_object_ref(m_garcon_menu);
 	if (garcon_menu_load(m_garcon_menu, nullptr, nullptr))
 	{
-		g_signal_connect_slot(m_garcon_menu, "reload-required", &ApplicationsPage::reload_applications, this);
+		g_signal_connect_swapped(m_garcon_menu, "reload-required", SLOT_CALLBACK(ApplicationsPage::reload_applications), this);
 		load_menu(m_garcon_menu);
 	}
 
@@ -257,7 +256,7 @@ void ApplicationsPage::load_menu(GarconMenu* menu)
 	}
 
 	// Listen for menu changes
-	g_signal_connect_slot(menu, "directory-changed", &ApplicationsPage::reload_applications, this);
+	g_signal_connect_swapped(menu, "directory-changed", SLOT_CALLBACK(ApplicationsPage::reload_applications), this);
 }
 
 //-----------------------------------------------------------------------------
@@ -285,7 +284,7 @@ void ApplicationsPage::load_menu_item(const gchar* desktop_id, GarconMenuItem* m
 	}
 
 	// Listen for menu changes
-	g_signal_connect_slot(menu_item, "changed", &ApplicationsPage::reload_applications, page);
+	g_signal_connect_swapped(menu_item, "changed", SLOT_CALLBACK(ApplicationsPage::reload_applications), page);
 }
 
 //-----------------------------------------------------------------------------
@@ -296,7 +295,7 @@ void ApplicationsPage::reload_categories()
 
 	// Add button for all applications
 	GtkRadioButton* all_button = new_section_button("applications-other", _("All"));
-	g_signal_connect_slot(all_button, "toggled", &ApplicationsPage::apply_filter, this);
+	g_signal_connect(all_button, "toggled", SLOT_CALLBACK(ApplicationsPage::apply_filter), this);
 	m_category_buttons.emplace(all_button, nullptr);
 	category_buttons.push_back(all_button);
 
@@ -313,7 +312,7 @@ void ApplicationsPage::reload_categories()
 	for (const auto& i : sorted_categories)
 	{
 		GtkRadioButton* category_button = new_section_button(i.second->get_icon(), i.second->get_text());
-		g_signal_connect_slot(category_button, "toggled", &ApplicationsPage::apply_filter, this);
+		g_signal_connect(category_button, "toggled", SLOT_CALLBACK(ApplicationsPage::apply_filter), this);
 		m_category_buttons.emplace(category_button, i.second);
 		category_buttons.push_back(category_button);
 	}

@@ -17,6 +17,8 @@
 #ifndef WHISKERMENU_RESIZER_WIDGET_HPP
 #define WHISKERMENU_RESIZER_WIDGET_HPP
 
+#include "slot.hpp"
+
 #include <vector>
 
 extern "C"
@@ -48,10 +50,10 @@ public:
 	void set_corner(Corner corner);
 
 private:
-	gboolean on_button_press_event(GtkWidget* widget, GdkEventButton* event);
-	gboolean on_enter_notify_event(GtkWidget* widget, GdkEventCrossing* event);
-	gboolean on_leave_notify_event(GtkWidget* widget, GdkEventCrossing* event);
-	gboolean on_expose_event(GtkWidget* widget, GdkEventExpose* event);
+	SLOT_2(gboolean, ResizerWidget, on_button_press_event, GtkWidget*, GdkEventButton*);
+	SLOT_2(gboolean, ResizerWidget, on_enter_notify_event, GtkWidget*, GdkEventCrossing*);
+	SLOT_2(gboolean, ResizerWidget, on_leave_notify_event, GtkWidget*, GdkEventCrossing*);
+	SLOT_2(gboolean, ResizerWidget, on_expose_event, GtkWidget*, GdkEventExpose*);
 
 private:
 	GtkWindow* m_window;

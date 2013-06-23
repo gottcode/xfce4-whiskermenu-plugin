@@ -17,6 +17,8 @@
 #ifndef WHISKERMENU_PAGE_HPP
 #define WHISKERMENU_PAGE_HPP
 
+#include "slot.hpp"
+
 extern "C"
 {
 #include <gtk/gtk.h>
@@ -53,19 +55,20 @@ protected:
 	}
 
 private:
-	Launcher* get_selected_launcher() const;
+	SLOT_3(void, Page, launcher_activated, GtkTreeView*, GtkTreePath*, GtkTreeViewColumn*);
+	SLOT_2(gboolean, Page, view_button_press_event, GtkWidget*, GdkEventButton*);
+	SLOT_1(gboolean, Page, view_popup_menu_event, GtkWidget*);
+	SLOT_0(void, Page, on_unmap);
+	SLOT_1(void, Page, destroy_context_menu, GtkMenuShell*);
+	SLOT_0(void, Page, add_selected_to_desktop);
+	SLOT_0(void, Page, add_selected_to_panel);
+	SLOT_0(void, Page, add_selected_to_favorites);
+	SLOT_0(void, Page, remove_selected_from_favorites);
 
-	void launcher_activated(GtkTreeView* view, GtkTreePath* path, GtkTreeViewColumn*);
-	gboolean view_button_press_event(GtkWidget* view, GdkEventButton* event);
-	gboolean view_popup_menu_event(GtkWidget* view);
-	void on_unmap();
+private:
+	Launcher* get_selected_launcher() const;
 	void create_context_menu(GtkTreeIter* iter, GdkEventButton* event);
-	void destroy_context_menu(GtkMenuShell* menu);
 	static void position_context_menu(GtkMenu*, gint* x, gint* y, gboolean* push_in, Page* page);
-	void add_selected_to_desktop();
-	void add_selected_to_panel();
-	void add_selected_to_favorites();
-	void remove_selected_from_favorites();
 
 private:
 	Menu* m_menu;

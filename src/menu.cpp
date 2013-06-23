@@ -24,7 +24,6 @@
 #include "resizer_widget.hpp"
 #include "search_page.hpp"
 #include "section_button.hpp"
-#include "slot.hpp"
 
 #include <ctime>
 
@@ -67,12 +66,12 @@ Menu::Menu(XfceRc* settings) :
 	gtk_window_set_skip_pager_hint(m_window, true);
 	gtk_window_stick(m_window);
 	gtk_widget_add_events(GTK_WIDGET(m_window), GDK_BUTTON_PRESS_MASK | GDK_LEAVE_NOTIFY_MASK | GDK_POINTER_MOTION_MASK | GDK_STRUCTURE_MASK);
-	g_signal_connect_slot(m_window, "enter-notify-event", &Menu::on_enter_notify_event, this);
-	g_signal_connect_slot(m_window, "leave-notify-event", &Menu::on_leave_notify_event, this);
-	g_signal_connect_slot(m_window, "button-press-event", &Menu::on_button_press_event, this);
-	g_signal_connect_slot(m_window, "key-press-event", &Menu::on_key_press_event, this);
-	g_signal_connect_slot(m_window, "map-event", &Menu::on_map_event, this);
-	g_signal_connect_slot(m_window, "configure-event", &Menu::on_configure_event, this);
+	g_signal_connect(m_window, "enter-notify-event", SLOT_CALLBACK(Menu::on_enter_notify_event), this);
+	g_signal_connect(m_window, "leave-notify-event", SLOT_CALLBACK(Menu::on_leave_notify_event), this);
+	g_signal_connect(m_window, "button-press-event", SLOT_CALLBACK(Menu::on_button_press_event), this);
+	g_signal_connect(m_window, "key-press-event", SLOT_CALLBACK(Menu::on_key_press_event), this);
+	g_signal_connect(m_window, "map-event", SLOT_CALLBACK(Menu::on_map_event), this);
+	g_signal_connect(m_window, "configure-event", SLOT_CALLBACK(Menu::on_configure_event), this);
 
 	// Create the border of the window
 	GtkWidget* frame = gtk_frame_new(nullptr);
@@ -93,13 +92,13 @@ Menu::Menu(XfceRc* settings) :
 
 	// Create action buttons
 	m_settings_button = new_action_button("preferences-desktop", _("All Settings"));
-	g_signal_connect_slot(m_settings_button, "clicked", &Menu::launch_settings_manager, this);
+	g_signal_connect_swapped(m_settings_button, "clicked", SLOT_CALLBACK(Menu::launch_settings_manager), this);
 
 	m_lock_screen_button = new_action_button("system-lock-screen", _("Lock Screen"));
-	g_signal_connect_slot(m_lock_screen_button, "clicked", &Menu::lock_screen, this);
+	g_signal_connect_swapped(m_lock_screen_button, "clicked", SLOT_CALLBACK(Menu::lock_screen), this);
 
 	m_log_out_button = new_action_button("system-log-out", _("Log Out"));
-	g_signal_connect_slot(m_log_out_button, "clicked", &Menu::log_out, this);
+	g_signal_connect_swapped(m_log_out_button, "clicked", SLOT_CALLBACK(Menu::log_out), this);
 
 	m_resizer = new ResizerWidget(m_window);
 
@@ -107,20 +106,20 @@ Menu::Menu(XfceRc* settings) :
 	m_search_entry = GTK_ENTRY(gtk_entry_new());
 	gtk_entry_set_icon_from_stock(m_search_entry, GTK_ENTRY_ICON_SECONDARY, GTK_STOCK_FIND);
 	gtk_entry_set_icon_activatable(m_search_entry, GTK_ENTRY_ICON_SECONDARY, false);
-	g_signal_connect_slot(m_search_entry, "changed", &Menu::search, this);
+	g_signal_connect_swapped(m_search_entry, "changed", SLOT_CALLBACK(Menu::search), this);
 
 	// Create favorites
 	m_favorites = new FavoritesPage(settings, this);
 
 	m_favorites_button = new_section_button("user-bookmarks", _("Favorites"));
-	g_signal_connect_slot(m_favorites_button, "toggled", &Menu::favorites_toggled, this);
+	g_signal_connect_swapped(m_favorites_button, "toggled", SLOT_CALLBACK(Menu::favorites_toggled), this);
 
 	// Create recent
 	m_recent = new RecentPage(settings, this);
 
 	m_recent_button = new_section_button("document-open-recent", _("Recently Used"));
 	gtk_radio_button_set_group(m_recent_button, gtk_radio_button_get_group(m_favorites_button));
-	g_signal_connect_slot(m_recent_button, "toggled", &Menu::recent_toggled, this);
+	g_signal_connect_swapped(m_recent_button, "toggled", SLOT_CALLBACK(Menu::recent_toggled), this);
 
 	// Create applications
 	m_applications = new ApplicationsPage(this);
@@ -409,7 +408,7 @@ void Menu::set_categories(std::vector<GtkRadioButton*> categories)
 	{
 		gtk_radio_button_set_group(i, gtk_radio_button_get_group(m_recent_button));
 		gtk_box_pack_start(m_sidebar_box, GTK_WIDGET(i), false, false, 0);
-		g_signal_connect_slot(i, "toggled", &Menu::category_toggled, this);
+		g_signal_connect_swapped(i, "toggled", SLOT_CALLBACK(Menu::category_toggled), this);
 	}
 	gtk_widget_show_all(GTK_WIDGET(m_sidebar_box));
 
@@ -426,7 +425,7 @@ void Menu::set_items(std::unordered_map<std::string, Launcher*> items)
 
 	// Handle switching to favorites are added
 	GtkTreeModel* favorites_model = m_favorites->get_view()->get_model();
-	g_signal_connect_slot(favorites_model, "row-inserted", &Menu::show_favorites, this);
+	g_signal_connect_swapped(favorites_model, "row-inserted", SLOT_CALLBACK(Menu::show_favorites), this);
 }
 
 //-----------------------------------------------------------------------------

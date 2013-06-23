@@ -19,7 +19,6 @@
 #include "launcher.hpp"
 #include "launcher_model.hpp"
 #include "launcher_view.hpp"
-#include "slot.hpp"
 
 #include <algorithm>
 
@@ -117,9 +116,9 @@ void ListPage::set_menu_items(std::unordered_map<std::string, Launcher*> items)
 
 	// Replace treeview contents
 	get_view()->set_model(model.get_model());
-	g_signal_connect_slot(get_view()->get_model(), "row-changed", &ListPage::on_row_changed, this);
-	g_signal_connect_slot(get_view()->get_model(), "row-inserted", &ListPage::on_row_inserted, this);
-	g_signal_connect_slot(get_view()->get_model(), "row-deleted", &ListPage::on_row_deleted, this);
+	g_signal_connect(get_view()->get_model(), "row-changed", SLOT_CALLBACK(ListPage::on_row_changed), this);
+	g_signal_connect(get_view()->get_model(), "row-inserted", SLOT_CALLBACK(ListPage::on_row_inserted), this);
+	g_signal_connect(get_view()->get_model(), "row-deleted", SLOT_CALLBACK(ListPage::on_row_deleted), this);
 }
 
 //-----------------------------------------------------------------------------

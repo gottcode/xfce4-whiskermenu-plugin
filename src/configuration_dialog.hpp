@@ -17,6 +17,8 @@
 #ifndef WHISKERMENU_CONFIGURATION_DIALOG_HPP
 #define WHISKERMENU_CONFIGURATION_DIALOG_HPP
 
+#include "slot.hpp"
+
 extern "C"
 {
 #include <gtk/gtk.h>
@@ -34,10 +36,10 @@ public:
 	~ConfigurationDialog();
 
 private:
-	void choose_icon();
-	void toggle_show_name(GtkToggleButton*);
-	void toggle_show_description(GtkToggleButton*);
-	void response(GtkDialog* dialog, gint response_id);
+	SLOT_0(void, ConfigurationDialog, choose_icon);
+	SLOT_1(void, ConfigurationDialog, toggle_show_name, GtkToggleButton*);
+	SLOT_1(void, ConfigurationDialog, toggle_show_description, GtkToggleButton*);
+	SLOT_2(void, ConfigurationDialog, response, GtkDialog*, gint);
 
 private:
 	PanelPlugin* m_plugin;
