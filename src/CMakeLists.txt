@@ -82,7 +82,7 @@ target_link_libraries(whiskermenu
     ${libxfce4util_LIBRARIES}
     ${GTK2_LIBRARIES})
 
-string(TOLOWER ${CMAKE_BUILD_TYPE} CMAKE_BUILD_TYPE_TOLOWER)
+string(TOLOWER "${CMAKE_BUILD_TYPE}" CMAKE_BUILD_TYPE_TOLOWER)
 if(CMAKE_BUILD_TYPE_TOLOWER MATCHES release)
     add_custom_command(TARGET whiskermenu POST_BUILD COMMAND ${CMAKE_STRIP} $<TARGET_FILE:whiskermenu>)
 endif()
