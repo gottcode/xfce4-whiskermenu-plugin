@@ -163,11 +163,11 @@ void ListPage::on_row_inserted(GtkTreeModel* model, GtkTreePath* path, GtkTreeIt
 
 	if (pos >= m_desktop_ids.size())
 	{
-		m_desktop_ids.emplace_back(std::move(desktop_id));
+		m_desktop_ids.push_back(std::move(desktop_id));
 	}
 	else if (m_desktop_ids.at(pos) != desktop_id)
 	{
-		m_desktop_ids.emplace(m_desktop_ids.begin() + pos, std::move(desktop_id));
+		m_desktop_ids.insert(m_desktop_ids.begin() + pos, std::move(desktop_id));
 	}
 }
 
