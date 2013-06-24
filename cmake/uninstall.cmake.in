@@ -1,3 +1,5 @@
+cmake_minimum_required(VERSION 2.8)
+
 message("Uninstall the project...")
 
 if(NOT EXISTS "@CMAKE_CURRENT_BINARY_DIR@/install_manifest.txt")
