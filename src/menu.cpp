@@ -241,7 +241,7 @@ void Menu::show(GtkWidget* parent, bool horizontal)
 		gtk_widget_realize(parent);
 	}
 	GdkWindow* window = gtk_widget_get_window(parent);
-	gdk_window_get_position(window, &parent_x, &parent_y);
+	gdk_window_get_origin(window, &parent_x, &parent_y);
 	int parent_w = gdk_window_get_width(window);
 	int parent_h = gdk_window_get_height(window);
 
