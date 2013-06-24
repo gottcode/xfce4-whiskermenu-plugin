@@ -60,10 +60,6 @@ More CMake Options
     Choose where the data files are installed
     (defaults to $CMAKE_INSTALL_PREFIX/share).
 
--DICON_INSTALL_DIR=<path>
-    Choose where the icons are installed
-    (defaults to $DATA_INSTALL_DIR/icons).
-
 -DLOCALE_INSTALL_DIR=<path>
     Choose where the localization files are installed
     (defaults to $DATA_INSTALL_DIR/locale).

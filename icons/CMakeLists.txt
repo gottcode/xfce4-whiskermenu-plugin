@@ -1,3 +1,5 @@
+set(ICON_INSTALL_DIR ${DATA_INSTALL_DIR}/icons)
+
 install(FILES hi16-app-whiskermenu.png
         DESTINATION ${ICON_INSTALL_DIR}/hicolor/16x16/apps
         RENAME xfce4-whiskermenu.png)
