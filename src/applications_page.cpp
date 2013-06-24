@@ -274,7 +274,7 @@ void ApplicationsPage::load_menu_item(const gchar* desktop_id, GarconMenuItem* m
 	auto iter = page->m_items.find(key);
 	if (iter == page->m_items.end())
 	{
-		iter = page->m_items.emplace(std::move(key), new Launcher(menu_item)).first;
+		iter = page->m_items.insert(std::make_pair(std::move(key), new Launcher(menu_item))).first;
 	}
 
 	// Add menu item to current category
@@ -296,7 +296,7 @@ void ApplicationsPage::reload_categories()
 	// Add button for all applications
 	GtkRadioButton* all_button = new_section_button("applications-other", _("All"));
 	g_signal_connect(all_button, "toggled", SLOT_CALLBACK(ApplicationsPage::apply_filter), this);
-	m_category_buttons.emplace(all_button, nullptr);
+	m_category_buttons[all_button] = nullptr;
 	category_buttons.push_back(all_button);
 
 	// Create sorted list of categories
@@ -313,7 +313,7 @@ void ApplicationsPage::reload_categories()
 	{
 		GtkRadioButton* category_button = new_section_button(i.second->get_icon(), i.second->get_text());
 		g_signal_connect(category_button, "toggled", SLOT_CALLBACK(ApplicationsPage::apply_filter), this);
-		m_category_buttons.emplace(category_button, i.second);
+		m_category_buttons[category_button] = i.second;
 		category_buttons.push_back(category_button);
 	}
 
