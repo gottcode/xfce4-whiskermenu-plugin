@@ -1,6 +1,6 @@
-# Hebrew translation of whiskermenu.
+# Hebrew translation of xfce4-whiskermenu-plugin.
 # Copyright (C) 2013 Graeme Gott
-# This file is distributed under the same license as the whiskermenu package.
+# This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # Isratine Citizen <genghiskhan@gmx.ca>, 2013.
