@@ -1,0 +1,108 @@
+# Italian translation of xfce4-whiskermenu-plugin.
+# Copyright (C) 2013 Graeme Gott
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# Bernardo Miguel Savone <bmsavone@gmail.com>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: Whisker Menu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-15 20:23+0000\n"
+"PO-Revision-Date: 2013-06-25 19:01+0000\n"
+"Last-Translator: Bernardo Miguel Savone <bmsavone@gmail.com>\n"
+"Language-Team: Italian (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/it/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: it\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/applications_page.cpp:298
+msgid "All"
+msgstr "Tutto"
+
+#: src/configuration_dialog.cpp:52
+msgid "Whisker Menu"
+msgstr "Menu Whisker"
+
+#: src/configuration_dialog.cpp:66
+msgid "Appearance"
+msgstr "Aspetto"
+
+#: src/configuration_dialog.cpp:71
+msgid "Show applications by _name"
+msgstr "Mostra le applicazioni per _nome"
+
+#: src/configuration_dialog.cpp:77
+msgid "Show application _descriptions"
+msgstr "mostra una _descrizione delle applicazioni"
+
+#: src/configuration_dialog.cpp:86
+msgid "_Icon:"
+msgstr "_Icona:"
+
+#: src/configuration_dialog.cpp:118
+msgid "Select An Icon"
+msgstr "Selezionare un'icona"
+
+#: src/launcher.cpp:263
+#, c-format
+msgid "Failed to execute command \"%s\"."
+msgstr "Impossibile eseguire il comando \"%s\"."
+
+#: src/menu.cpp:88
+msgid "All Settings"
+msgstr "Tutte le impostazioni"
+
+#: src/menu.cpp:91
+msgid "Lock Screen"
+msgstr "Blocca schermo"
+
+#: src/menu.cpp:94
+msgid "Log Out"
+msgstr "Esci"
+
+#: src/menu.cpp:108
+msgid "Favorites"
+msgstr "Preferiti"
+
+#: src/menu.cpp:114
+msgid "Recently Used"
+msgstr "Usati di recente"
+
+#: src/menu.cpp:636
+msgid "Failed to open settings manager."
+msgstr "Impossibile aprire il Gestore delle impostazioni."
+
+#: src/menu.cpp:650
+msgid "Failed to lock screen."
+msgstr "Impossibile bloccare lo schermo."
+
+#: src/menu.cpp:664
+msgid "Failed to log out."
+msgstr "Disconnessione non riuscita."
+
+#: src/page.cpp:170
+msgid "Add to Favorites"
+msgstr "Aggiungi ai Preferiti"
+
+#: src/page.cpp:176
+msgid "Remove From Favorites"
+msgstr "Rimuovi dai Preferiti"
+
+#: src/page.cpp:181
+msgid "Add to Desktop"
+msgstr "Aggiungi al Desktop"
+
+#: src/page.cpp:185
+msgid "Add to Panel"
+msgstr "Aggiungi al Pannello"
+
+#: src/page.cpp:265
+msgid "Unable to add launcher to desktop."
+msgstr "Impossibile aggiungere lanciatore al desktop."
+
+#: src/page.cpp:303 src/page.cpp:312
+msgid "Unable to add launcher to panel."
+msgstr "Impossibile aggiungere lanciatore al pannello."

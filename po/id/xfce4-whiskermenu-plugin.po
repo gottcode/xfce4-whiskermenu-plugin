@@ -1,0 +1,108 @@
+# Indonesian translation of xfce4-whiskermenu-plugin.
+# Copyright (C) 2013 Graeme Gott
+# This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
+#
+# Translators:
+# Mohamad Hasan Al Banna <se7entime@gmail.com>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: Whisker Menu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-15 20:23+0000\n"
+"PO-Revision-Date: 2013-06-25 14:47+0000\n"
+"Last-Translator: Mohamad Hasan Al Banna <se7entime@gmail.com>\n"
+"Language-Team: Indonesian (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/id/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: id\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/applications_page.cpp:298
+msgid "All"
+msgstr "Semua"
+
+#: src/configuration_dialog.cpp:52
+msgid "Whisker Menu"
+msgstr "Menu Whisker"
+
+#: src/configuration_dialog.cpp:66
+msgid "Appearance"
+msgstr "Penampilan"
+
+#: src/configuration_dialog.cpp:71
+msgid "Show applications by _name"
+msgstr "Tampilkan aplikasi berdasarkan _nama"
+
+#: src/configuration_dialog.cpp:77
+msgid "Show application _descriptions"
+msgstr "Tampilkan _deskripsi aplikasi"
+
+#: src/configuration_dialog.cpp:86
+msgid "_Icon:"
+msgstr "_Ikon:"
+
+#: src/configuration_dialog.cpp:118
+msgid "Select An Icon"
+msgstr "Pilih Ikon"
+
+#: src/launcher.cpp:263
+#, c-format
+msgid "Failed to execute command \"%s\"."
+msgstr "Gagak mengeksekusi perintah \"%s\"."
+
+#: src/menu.cpp:88
+msgid "All Settings"
+msgstr "Semua Pengaturan"
+
+#: src/menu.cpp:91
+msgid "Lock Screen"
+msgstr "Kunci Layar"
+
+#: src/menu.cpp:94
+msgid "Log Out"
+msgstr "Keluar"
+
+#: src/menu.cpp:108
+msgid "Favorites"
+msgstr "Favorit"
+
+#: src/menu.cpp:114
+msgid "Recently Used"
+msgstr "Terakhir diGunakan"
+
+#: src/menu.cpp:636
+msgid "Failed to open settings manager."
+msgstr "Gagal membuka menejer pengaturan."
+
+#: src/menu.cpp:650
+msgid "Failed to lock screen."
+msgstr "Gagal mengunci layar."
+
+#: src/menu.cpp:664
+msgid "Failed to log out."
+msgstr "Gagal keluar."
+
+#: src/page.cpp:170
+msgid "Add to Favorites"
+msgstr "Tambahkan ke Favorit"
+
+#: src/page.cpp:176
+msgid "Remove From Favorites"
+msgstr "Hapus Dari Favorit"
+
+#: src/page.cpp:181
+msgid "Add to Desktop"
+msgstr "Tambahkan ke Desktop"
+
+#: src/page.cpp:185
+msgid "Add to Panel"
+msgstr "Tambahkan ke Panel"
+
+#: src/page.cpp:265
+msgid "Unable to add launcher to desktop."
+msgstr "Gagal menambahkan peluncur ke desktop."
+
+#: src/page.cpp:303 src/page.cpp:312
+msgid "Unable to add launcher to panel."
+msgstr "Gagal menambahkan peluncur ke panel."
