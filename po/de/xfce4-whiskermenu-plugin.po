@@ -1,0 +1,108 @@
+# German translation of xfce4-whiskermenu-plugin.
+# Copyright (C) 2013 Graeme Gott
+# This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
+#
+# Translators:
+# manjarolinux <philm@manjaro.org>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: Whisker Menu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-15 20:23+0000\n"
+"PO-Revision-Date: 2013-06-25 04:34+0000\n"
+"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"Language-Team: German (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/de/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/applications_page.cpp:298
+msgid "All"
+msgstr "Alle"
+
+#: src/configuration_dialog.cpp:52
+msgid "Whisker Menu"
+msgstr "Whisker Menü"
+
+#: src/configuration_dialog.cpp:66
+msgid "Appearance"
+msgstr "Erscheinungsbild"
+
+#: src/configuration_dialog.cpp:71
+msgid "Show applications by _name"
+msgstr "Zeige Programme bei _Namen"
+
+#: src/configuration_dialog.cpp:77
+msgid "Show application _descriptions"
+msgstr "Zeige Programm _Beschreibungen"
+
+#: src/configuration_dialog.cpp:86
+msgid "_Icon:"
+msgstr "_Symbol:"
+
+#: src/configuration_dialog.cpp:118
+msgid "Select An Icon"
+msgstr "Wähle ein Symbol"
+
+#: src/launcher.cpp:263
+#, c-format
+msgid "Failed to execute command \"%s\"."
+msgstr "Konnte Kommando \"%s\" nicht ausführen."
+
+#: src/menu.cpp:88
+msgid "All Settings"
+msgstr "Alle Einstellungen"
+
+#: src/menu.cpp:91
+msgid "Lock Screen"
+msgstr "Bildschirm sperren"
+
+#: src/menu.cpp:94
+msgid "Log Out"
+msgstr "Abmelden"
+
+#: src/menu.cpp:108
+msgid "Favorites"
+msgstr "Favoriten"
+
+#: src/menu.cpp:114
+msgid "Recently Used"
+msgstr "Zuletzt genutzt"
+
+#: src/menu.cpp:636
+msgid "Failed to open settings manager."
+msgstr "Konnte Einstellungs-Manager nicht starten."
+
+#: src/menu.cpp:650
+msgid "Failed to lock screen."
+msgstr "Konnte Bildschirm nicht sperren."
+
+#: src/menu.cpp:664
+msgid "Failed to log out."
+msgstr "Konnte nicht abmelden."
+
+#: src/page.cpp:170
+msgid "Add to Favorites"
+msgstr "Zu Favoriten hinzufügen"
+
+#: src/page.cpp:176
+msgid "Remove From Favorites"
+msgstr "Von Favoriten entfernen"
+
+#: src/page.cpp:181
+msgid "Add to Desktop"
+msgstr "Zum Desktop hinzufügen"
+
+#: src/page.cpp:185
+msgid "Add to Panel"
+msgstr "Zum Panel hinzufügen"
+
+#: src/page.cpp:265
+msgid "Unable to add launcher to desktop."
+msgstr "Konnte Launcher nicht zum Desktop hinzufügen."
+
+#: src/page.cpp:303 src/page.cpp:312
+msgid "Unable to add launcher to panel."
+msgstr "Konnte Launcher nicht zum Panel hinzufügen."
