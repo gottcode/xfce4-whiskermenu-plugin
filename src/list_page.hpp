@@ -20,8 +20,8 @@
 #include "page.hpp"
 #include "slot.hpp"
 
+#include <map>
 #include <string>
-#include <unordered_map>
 #include <vector>
 
 extern "C"
@@ -50,7 +50,7 @@ public:
 	virtual void add(Launcher* launcher)=0;
 	void remove(Launcher* launcher);
 	void save(XfceRc* settings);
-	void set_menu_items(std::unordered_map<std::string, Launcher*> items);
+	void set_menu_items(std::map<std::string, Launcher*> items);
 	void unset_menu_items();
 
 private:

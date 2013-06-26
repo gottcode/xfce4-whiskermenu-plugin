@@ -19,8 +19,8 @@
 
 #include "slot.hpp"
 
+#include <map>
 #include <string>
-#include <unordered_map>
 #include <vector>
 
 extern "C"
@@ -74,7 +74,7 @@ public:
 	void show(GtkWidget* parent, bool horizontal);
 	void save(XfceRc* settings);
 	void set_categories(std::vector<GtkRadioButton*> categories);
-	void set_items(std::unordered_map<std::string, Launcher*> items);
+	void set_items(std::map<std::string, Launcher*> items);
 	void unset_items();
 
 private:

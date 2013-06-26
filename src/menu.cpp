@@ -417,7 +417,7 @@ void Menu::set_categories(std::vector<GtkRadioButton*> categories)
 
 //-----------------------------------------------------------------------------
 
-void Menu::set_items(std::unordered_map<std::string, Launcher*> items)
+void Menu::set_items(std::map<std::string, Launcher*> items)
 {
 	m_search_results->set_menu_items(m_applications->get_model());
 	m_favorites->set_menu_items(items);

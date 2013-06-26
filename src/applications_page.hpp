@@ -20,8 +20,8 @@
 #include "filter_page.hpp"
 #include "slot.hpp"
 
+#include <map>
 #include <string>
-#include <unordered_map>
 #include <vector>
 
 extern "C"
@@ -77,9 +77,9 @@ private:
 private:
 	GarconMenu* m_garcon_menu;
 	Category* m_current_category;
-	std::unordered_map<GtkRadioButton*, Category*> m_category_buttons;
-	std::unordered_map<Category*, std::vector<Launcher*>> m_categories;
-	std::unordered_map<std::string, Launcher*> m_items;
+	std::map<GtkRadioButton*, Category*> m_category_buttons;
+	std::map<Category*, std::vector<Launcher*> > m_categories;
+	std::map<std::string, Launcher*> m_items;
 };
 
 }

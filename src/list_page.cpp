@@ -94,7 +94,7 @@ void ListPage::save(XfceRc* settings)
 
 //-----------------------------------------------------------------------------
 
-void ListPage::set_menu_items(std::unordered_map<std::string, Launcher*> items)
+void ListPage::set_menu_items(std::map<std::string, Launcher*> items)
 {
 	// Create new model for treeview
 	LauncherModel model;
