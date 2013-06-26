@@ -90,7 +90,26 @@ Launcher::Launcher(GarconMenuItem* item) :
 		if (!g_path_is_absolute(icon))
 		{
 			gchar* pos = g_strrstr(icon, ".");
-			m_icon = !pos ? g_strdup(icon) : g_strndup(icon, pos - icon);
+			if (!pos)
+			{
+				m_icon = g_strdup(icon);
+			}
+			else
+			{
+				gchar* suffix = g_utf8_casefold(pos, -1);
+				if ((strcmp(suffix, ".png") == 0)
+						|| (strcmp(suffix, ".xpm") == 0)
+						|| (strcmp(suffix, ".svg") == 0)
+						|| (strcmp(suffix, ".svgz") == 0))
+				{
+					m_icon = g_strndup(icon, pos - icon);
+				}
+				else
+				{
+					m_icon = g_strdup(icon);
+				}
+				g_free(suffix);
+			}
 		}
 		else
 		{
