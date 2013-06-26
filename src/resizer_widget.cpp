@@ -22,7 +22,8 @@ using namespace WhiskerMenu;
 
 ResizerWidget::ResizerWidget(GtkWindow* window) :
 	m_window(window),
-	m_cursor(NULL)
+	m_cursor(NULL),
+	m_shape(3)
 {
 	m_alignment = GTK_ALIGNMENT(gtk_alignment_new(1,0,0,0));
 
@@ -53,31 +54,36 @@ ResizerWidget::~ResizerWidget()
 
 void ResizerWidget::set_corner(Corner corner)
 {
+	static const GdkPoint bottomleft[] = { {10,10}, {0,10}, {0,0} };
+	static const GdkPoint topleft[] = { {10,0}, {0,10}, {0,0} };
+	static const GdkPoint bottomright[] = { {10,10}, {0,10}, {10,0} };
+	static const GdkPoint topright[] = { {10,0}, {10,10}, {0,0} };
+
 	GdkCursorType type;
 	switch (corner)
 	{
 	case BottomLeft:
 		gtk_alignment_set(m_alignment, 0,1,0,0);
-		m_shape = { {10,10}, {0,10}, {0,0} };
+		m_shape.assign(bottomleft, bottomleft + 3);
 		m_edge = GDK_WINDOW_EDGE_SOUTH_WEST;
 		type = GDK_BOTTOM_LEFT_CORNER;
 		break;
 	case TopLeft:
 		gtk_alignment_set(m_alignment, 0,0,0,0);
-		m_shape = { {10,0}, {0,10}, {0,0} };
+		m_shape.assign(topleft, topleft + 3);
 		m_edge = GDK_WINDOW_EDGE_NORTH_WEST;
 		type = GDK_TOP_LEFT_CORNER;
 		break;
 	case BottomRight:
 		gtk_alignment_set(m_alignment, 1,1,0,0);
-		m_shape = { {10,10}, {0,10}, {10,0} };
+		m_shape.assign(bottomright, bottomright + 3);
 		m_edge = GDK_WINDOW_EDGE_SOUTH_EAST;
 		type = GDK_BOTTOM_RIGHT_CORNER;
 		break;
 	case TopRight:
 	default:
 		gtk_alignment_set(m_alignment, 1,0,0,0);
-		m_shape = { {10,0}, {10,10}, {0,0} };
+		m_shape.assign(topright, topright + 3);
 		m_edge = GDK_WINDOW_EDGE_NORTH_EAST;
 		type = GDK_TOP_RIGHT_CORNER;
 		break;

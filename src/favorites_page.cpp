@@ -26,12 +26,19 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
+static const std::string default_favorites[4] =
+{
+	"exo-terminal-emulator.desktop",
+	"exo-file-manager.desktop",
+	"exo-mail-reader.desktop",
+	"exo-web-browser.desktop"
+};
+
+//-----------------------------------------------------------------------------
+
 FavoritesPage::FavoritesPage(XfceRc* settings, Menu* menu) :
 	ListPage(settings, "favorites",
-		{"exo-terminal-emulator.desktop",
-		"exo-file-manager.desktop",
-		"exo-mail-reader.desktop",
-		"exo-web-browser.desktop"},
+	std::vector<std::string>(&default_favorites[0], &default_favorites[3]),
 	menu)
 {
 	get_view()->set_reorderable(true);

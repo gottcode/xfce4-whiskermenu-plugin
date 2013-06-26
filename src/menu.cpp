@@ -54,10 +54,14 @@ static GtkButton* new_action_button(const gchar* icon, const gchar* text)
 
 Menu::Menu(XfceRc* settings) :
 	m_window(NULL),
-	m_geometry{0,0,400,500},
 	m_layout_left(true),
 	m_layout_bottom(true)
 {
+	m_geometry.x = 0;
+	m_geometry.y = 0;
+	m_geometry.width = 400;
+	m_geometry.height = 500;
+
 	// Create the window
 	m_window = GTK_WINDOW(gtk_window_new(GTK_WINDOW_TOPLEVEL));
 	gtk_window_set_modal(m_window, true);
