@@ -38,7 +38,7 @@ static const std::string default_favorites[4] =
 
 FavoritesPage::FavoritesPage(XfceRc* settings, Menu* menu) :
 	ListPage(settings, "favorites",
-	std::vector<std::string>(&default_favorites[0], &default_favorites[3]),
+	std::vector<std::string>(default_favorites, default_favorites + 4),
 	menu)
 {
 	get_view()->set_reorderable(true);
