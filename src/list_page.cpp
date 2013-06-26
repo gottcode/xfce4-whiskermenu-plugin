@@ -64,7 +64,7 @@ ListPage::~ListPage()
 bool ListPage::contains(Launcher* launcher) const
 {
 	std::string desktop_id = garcon_menu_item_get_desktop_id(launcher->get_item());
-	return std::find(m_desktop_ids.cbegin(), m_desktop_ids.cend(), desktop_id) != m_desktop_ids.cend();
+	return std::find(m_desktop_ids.begin(), m_desktop_ids.end(), desktop_id) != m_desktop_ids.end();
 }
 
 //-----------------------------------------------------------------------------

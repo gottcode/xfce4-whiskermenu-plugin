@@ -110,7 +110,7 @@ bool ApplicationsPage::on_filter(GtkTreeModel* model, GtkTreeIter* iter)
 	gtk_tree_model_get(model, iter, LauncherModel::COLUMN_LAUNCHER, &launcher, -1);
 
 	auto category = m_categories[m_current_category];
-	return std::find(category.cbegin(), category.cend(), launcher) != category.cend();
+	return std::find(category.begin(), category.end(), launcher) != category.end();
 }
 
 //-----------------------------------------------------------------------------
