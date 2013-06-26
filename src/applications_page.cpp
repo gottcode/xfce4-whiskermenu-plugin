@@ -75,7 +75,7 @@ ApplicationsPage::~ApplicationsPage()
 void ApplicationsPage::apply_filter(GtkToggleButton* togglebutton)
 {
 	// Find category matching button
-	auto i = m_category_buttons.find(GTK_RADIO_BUTTON(togglebutton));
+	std::map<GtkRadioButton*, Category*>::const_iterator i = m_category_buttons.find(GTK_RADIO_BUTTON(togglebutton));
 	if (i == m_category_buttons.end())
 	{
 		return;
@@ -109,7 +109,7 @@ bool ApplicationsPage::on_filter(GtkTreeModel* model, GtkTreeIter* iter)
 	Launcher* launcher = NULL;
 	gtk_tree_model_get(model, iter, LauncherModel::COLUMN_LAUNCHER, &launcher, -1);
 
-	auto category = m_categories[m_current_category];
+	const std::vector<Launcher*>& category = m_categories[m_current_category];
 	return std::find(category.begin(), category.end(), launcher) != category.end();
 }
 
@@ -131,18 +131,18 @@ void ApplicationsPage::reload_applications()
 
 	// Create sorted list of menu items
 	std::map<std::string, Launcher*> sorted_items;
-	for (const auto& i : m_items)
+	for (std::map<std::string, Launcher*>::const_iterator i = m_items.begin(), end = m_items.end(); i != end; ++i)
 	{
-		gchar* collation_key = g_utf8_collate_key(i.second->get_text(), -1);
-		sorted_items[collation_key] = i.second;
+		gchar* collation_key = g_utf8_collate_key(i->second->get_text(), -1);
+		sorted_items[collation_key] = i->second;
 		g_free(collation_key);
 	}
 
 	// Add all items to model
 	LauncherModel model;
-	for (const auto& i : sorted_items)
+	for (std::map<std::string, Launcher*>::const_iterator i = sorted_items.begin(), end = sorted_items.end(); i != end; ++i)
 	{
-		model.append_item(i.second);
+		model.append_item(i->second);
 	}
 
 	// Create filter model and pass ownership to view, do not delete!
@@ -160,18 +160,18 @@ void ApplicationsPage::reload_applications()
 void ApplicationsPage::clear_applications()
 {
 	// Free categories
-	for (auto& i : m_category_buttons)
+	for (std::map<GtkRadioButton*, Category*>::iterator i = m_category_buttons.begin(), end = m_category_buttons.end(); i != end; ++i)
 	{
-		if (GTK_IS_WIDGET(i.first))
+		if (GTK_IS_WIDGET(i->first))
 		{
-			gtk_widget_destroy(GTK_WIDGET(i.first));
+			gtk_widget_destroy(GTK_WIDGET(i->first));
 		}
 	}
 	m_category_buttons.clear();
 
-	for (auto& i : m_categories)
+	for (std::map<Category*, std::vector<Launcher*> >::iterator i = m_categories.begin(), end = m_categories.end(); i != end; ++i)
 	{
-		delete i.first;
+		delete i->first;
 	}
 	m_categories.clear();
 
@@ -179,9 +179,9 @@ void ApplicationsPage::clear_applications()
 	get_menu()->unset_items();
 	unset_model();
 
-	for (auto& i : m_items)
+	for (std::map<std::string, Launcher*>::iterator i = m_items.begin(), end = m_items.end(); i != end; ++i)
 	{
-		delete i.second;
+		delete i->second;
 	}
 	m_items.clear();
 
@@ -241,7 +241,7 @@ void ApplicationsPage::load_menu(GarconMenu* menu)
 	if (first_level)
 	{
 		// Free unused categories
-		auto i = m_categories.find(m_current_category);
+		std::map<Category*, std::vector<Launcher*> >::iterator i = m_categories.find(m_current_category);
 		if (i == m_categories.end())
 		{
 			delete m_current_category;
@@ -271,7 +271,7 @@ void ApplicationsPage::load_menu_item(const gchar* desktop_id, GarconMenuItem* m
 
 	// Add to map
 	std::string key(desktop_id);
-	auto iter = page->m_items.find(key);
+	std::map<std::string, Launcher*>::iterator iter = page->m_items.find(key);
 	if (iter == page->m_items.end())
 	{
 		iter = page->m_items.insert(std::make_pair(key, new Launcher(menu_item))).first;
@@ -301,19 +301,19 @@ void ApplicationsPage::reload_categories()
 
 	// Create sorted list of categories
 	std::map<std::string, Category*> sorted_categories;
-	for (const auto& i : m_categories)
+	for (std::map<Category*, std::vector<Launcher*> >::const_iterator i = m_categories.begin(), end = m_categories.end(); i != end; ++i)
 	{
-		gchar* collation_key = g_utf8_collate_key(i.first->get_text(), -1);
-		sorted_categories[collation_key] = i.first;
+		gchar* collation_key = g_utf8_collate_key(i->first->get_text(), -1);
+		sorted_categories[collation_key] = i->first;
 		g_free(collation_key);
 	}
 
 	// Add buttons for sorted categories
-	for (const auto& i : sorted_categories)
+	for (std::map<std::string, Category*>::const_iterator i = sorted_categories.begin(), end = sorted_categories.end(); i != end; ++i)
 	{
-		GtkRadioButton* category_button = new_section_button(i.second->get_icon(), i.second->get_text());
+		GtkRadioButton* category_button = new_section_button(i->second->get_icon(), i->second->get_text());
 		g_signal_connect(category_button, "toggled", SLOT_CALLBACK(ApplicationsPage::apply_filter), this);
-		m_category_buttons[category_button] = i.second;
+		m_category_buttons[category_button] = i->second;
 		category_buttons.push_back(category_button);
 	}
 

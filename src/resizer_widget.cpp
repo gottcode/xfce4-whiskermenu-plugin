@@ -138,9 +138,9 @@ gboolean ResizerWidget::on_expose_event(GtkWidget* widget, GdkEventExpose*)
 	cairo_set_source_rgb(cr, color.red / 65535.0, color.green / 65535.0, color.blue / 65535.0);
 
 	cairo_move_to(cr, m_shape.back().x, m_shape.back().y);
-	for (const GdkPoint& point : m_shape)
+	for (std::vector<GdkPoint>::const_iterator point = m_shape.begin(), end = m_shape.end(); point != end; ++point)
 	{
-		cairo_line_to(cr, point.x, point.y);
+		cairo_line_to(cr, point->x, point->y);
 	}
 	cairo_fill(cr);
 

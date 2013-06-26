@@ -81,13 +81,13 @@ void ListPage::save(XfceRc* settings)
 {
 	// Save list
 	std::string desktop_ids;
-	for (const auto& desktop_id : m_desktop_ids)
+	for (std::vector<std::string>::const_iterator i = m_desktop_ids.begin(), end = m_desktop_ids.end(); i != end; ++i)
 	{
 		if (!desktop_ids.empty())
 		{
 			desktop_ids += ",";
 		}
-		desktop_ids += desktop_id;
+		desktop_ids += *i;
 	}
 	xfce_rc_write_entry(settings, m_key, desktop_ids.c_str());
 }
@@ -100,9 +100,9 @@ void ListPage::set_menu_items(const std::map<std::string, Launcher*>& items)
 	LauncherModel model;
 
 	// Fetch menu items or remove them from list if missing
-	for (auto i = m_desktop_ids.begin(); i != m_desktop_ids.end(); ++i)
+	for (std::vector<std::string>::iterator i = m_desktop_ids.begin(); i != m_desktop_ids.end(); ++i)
 	{
-		auto item = items.find(*i);
+		std::map<std::string, Launcher*>::const_iterator item = items.find(*i);
 		if (item != items.end())
 		{
 			model.append_item(item->second);

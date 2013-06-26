@@ -408,11 +408,11 @@ void Menu::save(XfceRc* settings)
 
 void Menu::set_categories(const std::vector<GtkRadioButton*>& categories)
 {
-	for (const auto& i : categories)
+	for (std::vector<GtkRadioButton*>::const_iterator i = categories.begin(), end = categories.end(); i != end; ++i)
 	{
-		gtk_radio_button_set_group(i, gtk_radio_button_get_group(m_recent_button));
-		gtk_box_pack_start(m_sidebar_box, GTK_WIDGET(i), false, false, 0);
-		g_signal_connect_swapped(i, "toggled", SLOT_CALLBACK(Menu::category_toggled), this);
+		gtk_radio_button_set_group(*i, gtk_radio_button_get_group(m_recent_button));
+		gtk_box_pack_start(m_sidebar_box, GTK_WIDGET(*i), false, false, 0);
+		g_signal_connect_swapped(*i, "toggled", SLOT_CALLBACK(Menu::category_toggled), this);
 	}
 	gtk_widget_show_all(GTK_WIDGET(m_sidebar_box));
 
