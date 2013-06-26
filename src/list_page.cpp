@@ -45,7 +45,7 @@ static std::vector<std::string> read_list(XfceRc* rc, const gchar* key, std::vec
 
 //-----------------------------------------------------------------------------
 
-ListPage::ListPage(XfceRc* rc, const gchar* key, std::vector<std::string> default_desktop_ids, Menu* menu) :
+ListPage::ListPage(XfceRc* rc, const gchar* key, const std::vector<std::string>& default_desktop_ids, Menu* menu) :
 	Page(menu),
 	m_key(key),
 	m_desktop_ids(read_list(rc, key, default_desktop_ids))
@@ -94,7 +94,7 @@ void ListPage::save(XfceRc* settings)
 
 //-----------------------------------------------------------------------------
 
-void ListPage::set_menu_items(std::map<std::string, Launcher*> items)
+void ListPage::set_menu_items(const std::map<std::string, Launcher*>& items)
 {
 	// Create new model for treeview
 	LauncherModel model;
@@ -163,11 +163,11 @@ void ListPage::on_row_inserted(GtkTreeModel* model, GtkTreePath* path, GtkTreeIt
 
 	if (pos >= m_desktop_ids.size())
 	{
-		m_desktop_ids.push_back(std::move(desktop_id));
+		m_desktop_ids.push_back(desktop_id);
 	}
 	else if (m_desktop_ids.at(pos) != desktop_id)
 	{
-		m_desktop_ids.insert(m_desktop_ids.begin() + pos, std::move(desktop_id));
+		m_desktop_ids.insert(m_desktop_ids.begin() + pos, desktop_id);
 	}
 }
 

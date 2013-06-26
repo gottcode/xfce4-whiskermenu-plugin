@@ -274,7 +274,7 @@ void ApplicationsPage::load_menu_item(const gchar* desktop_id, GarconMenuItem* m
 	auto iter = page->m_items.find(key);
 	if (iter == page->m_items.end())
 	{
-		iter = page->m_items.insert(std::make_pair(std::move(key), new Launcher(menu_item))).first;
+		iter = page->m_items.insert(std::make_pair(key, new Launcher(menu_item))).first;
 	}
 
 	// Add menu item to current category

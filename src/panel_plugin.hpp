@@ -49,7 +49,7 @@ public:
 	}
 
 	void reload();
-	void set_button_icon_name(std::string icon);
+	void set_button_icon_name(const std::string& icon);
 	void set_configure_enabled(bool enabled);
 
 private:

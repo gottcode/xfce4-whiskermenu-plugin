@@ -65,7 +65,6 @@ public:
 
 private:
 	LauncherModel(const LauncherModel &model)=delete;
-	LauncherModel(LauncherModel &&model)=delete;
 	LauncherModel & operator=(const LauncherModel &model)=delete;
 
 private:

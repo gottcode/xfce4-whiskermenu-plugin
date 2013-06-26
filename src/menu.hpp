@@ -73,8 +73,8 @@ public:
 	void hide();
 	void show(GtkWidget* parent, bool horizontal);
 	void save(XfceRc* settings);
-	void set_categories(std::vector<GtkRadioButton*> categories);
-	void set_items(std::map<std::string, Launcher*> items);
+	void set_categories(const std::vector<GtkRadioButton*>& categories);
+	void set_items(const std::map<std::string, Launcher*>& items);
 	void unset_items();
 
 private:

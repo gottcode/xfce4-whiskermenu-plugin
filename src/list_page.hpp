@@ -38,7 +38,7 @@ class LauncherView;
 class ListPage : public Page
 {
 public:
-	ListPage(XfceRc* settings, const gchar* key, std::vector<std::string> default_desktop_ids, Menu* menu);
+	ListPage(XfceRc* settings, const gchar* key, const std::vector<std::string>& default_desktop_ids, Menu* menu);
 	~ListPage();
 
 	bool contains(Launcher* launcher) const;
@@ -50,7 +50,7 @@ public:
 	virtual void add(Launcher* launcher)=0;
 	void remove(Launcher* launcher);
 	void save(XfceRc* settings);
-	void set_menu_items(std::map<std::string, Launcher*> items);
+	void set_menu_items(const std::map<std::string, Launcher*>& items);
 	void unset_menu_items();
 
 private:

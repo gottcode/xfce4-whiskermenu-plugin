@@ -402,7 +402,7 @@ void Menu::save(XfceRc* settings)
 
 //-----------------------------------------------------------------------------
 
-void Menu::set_categories(std::vector<GtkRadioButton*> categories)
+void Menu::set_categories(const std::vector<GtkRadioButton*>& categories)
 {
 	for (const auto& i : categories)
 	{
@@ -417,7 +417,7 @@ void Menu::set_categories(std::vector<GtkRadioButton*> categories)
 
 //-----------------------------------------------------------------------------
 
-void Menu::set_items(std::map<std::string, Launcher*> items)
+void Menu::set_items(const std::map<std::string, Launcher*>& items)
 {
 	m_search_results->set_menu_items(m_applications->get_model());
 	m_favorites->set_menu_items(items);

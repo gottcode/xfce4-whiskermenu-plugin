@@ -59,7 +59,6 @@ public:
 	static void set_show_description(bool show);
 
 private:
-	Launcher(Launcher&& launcher)=delete;
 	Launcher(const Launcher& launcher)=delete;
 	Launcher& operator=(const Launcher& launcher)=delete;
 

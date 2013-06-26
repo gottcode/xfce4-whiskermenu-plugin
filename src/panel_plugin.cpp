@@ -106,7 +106,7 @@ void PanelPlugin::reload()
 
 //-----------------------------------------------------------------------------
 
-void PanelPlugin::set_button_icon_name(std::string icon)
+void PanelPlugin::set_button_icon_name(const std::string& icon)
 {
 	m_button_icon_name = icon;
 	xfce_panel_image_set_from_source(m_button_icon, icon.c_str());
