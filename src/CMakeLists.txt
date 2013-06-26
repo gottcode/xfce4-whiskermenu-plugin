@@ -35,7 +35,7 @@ link_directories(
     ${libxfce4util_LIBRARY_DIRS})
 
 add_definitions(
-    -DGETTEXT_PACKAGE="whiskermenu"
+    -DGETTEXT_PACKAGE="xfce4-whiskermenu-plugin"
     -DLOCALEDIR="${CMAKE_INSTALL_PREFIX}/${LOCALE_INSTALL_DIR}"
     -DGSEAL_ENABLE=1
     -DGDK_DISABLE_SINGLE_INCLUDES=1
