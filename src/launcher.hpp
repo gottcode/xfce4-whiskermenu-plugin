@@ -59,8 +59,8 @@ public:
 	static void set_show_description(bool show);
 
 private:
-	Launcher(const Launcher& launcher)=delete;
-	Launcher& operator=(const Launcher& launcher)=delete;
+	Launcher(const Launcher& launcher);
+	Launcher& operator=(const Launcher& launcher);
 
 private:
 	GarconMenuItem* m_item;

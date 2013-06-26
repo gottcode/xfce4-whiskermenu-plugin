@@ -64,8 +64,8 @@ public:
 	};
 
 private:
-	LauncherModel(const LauncherModel &model)=delete;
-	LauncherModel & operator=(const LauncherModel &model)=delete;
+	LauncherModel(const LauncherModel& model);
+	LauncherModel& operator=(const LauncherModel& model);
 
 private:
 	GtkListStore* m_model;
