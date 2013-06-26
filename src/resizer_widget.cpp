@@ -22,7 +22,7 @@ using namespace WhiskerMenu;
 
 ResizerWidget::ResizerWidget(GtkWindow* window) :
 	m_window(window),
-	m_cursor(nullptr)
+	m_cursor(NULL)
 {
 	m_alignment = GTK_ALIGNMENT(gtk_alignment_new(1,0,0,0));
 
@@ -117,7 +117,7 @@ gboolean ResizerWidget::on_enter_notify_event(GtkWidget* widget, GdkEventCrossin
 gboolean ResizerWidget::on_leave_notify_event(GtkWidget* widget, GdkEventCrossing*)
 {
 	GdkWindow* window = gtk_widget_get_window(widget);
-	gdk_window_set_cursor(window, nullptr);
+	gdk_window_set_cursor(window, NULL);
 	return false;
 }
 

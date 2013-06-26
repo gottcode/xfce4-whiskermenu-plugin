@@ -57,7 +57,7 @@ LauncherModel::~LauncherModel()
 void LauncherModel::insert_item(Launcher* launcher, int position)
 {
 	gtk_list_store_insert_with_values(
-			m_model, nullptr, position,
+			m_model, NULL, position,
 			COLUMN_ICON, launcher->get_icon(),
 			COLUMN_TEXT, launcher->get_text(),
 			COLUMN_LAUNCHER, launcher,
@@ -70,7 +70,7 @@ void LauncherModel::remove_item(Launcher* launcher)
 {
 	GtkTreeModel* model = GTK_TREE_MODEL(m_model);
 	GtkTreeIter iter;
-	Launcher* test_launcher = nullptr;
+	Launcher* test_launcher = NULL;
 
 	bool valid = gtk_tree_model_get_iter_first(model, &iter);
 	while (valid)
@@ -101,14 +101,14 @@ void LauncherModel::remove_first_item()
 void LauncherModel::remove_last_item()
 {
 	GtkTreeModel* model = GTK_TREE_MODEL(m_model);
-	gint size = gtk_tree_model_iter_n_children(model, nullptr);
+	gint size = gtk_tree_model_iter_n_children(model, NULL);
 	if (!size)
 	{
 		return;
 	}
 
 	GtkTreeIter iter;
-	if (gtk_tree_model_iter_nth_child(model, &iter, nullptr, size - 1))
+	if (gtk_tree_model_iter_nth_child(model, &iter, NULL, size - 1))
 	{
 		gtk_list_store_remove(m_model, &iter);
 	}

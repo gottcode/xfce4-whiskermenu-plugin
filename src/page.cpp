@@ -34,7 +34,7 @@ using namespace WhiskerMenu;
 
 Page::Page(Menu* menu) :
 	m_menu(menu),
-	m_selected_path(nullptr)
+	m_selected_path(NULL)
 {
 	// Create view
 	m_view = new LauncherView;
@@ -44,7 +44,7 @@ Page::Page(Menu* menu) :
 	g_signal_connect_swapped(m_view->get_widget(), "start-interactive-search", G_CALLBACK(gtk_widget_grab_focus), m_menu->get_search_entry());
 
 	// Add scrolling to view
-	m_widget = gtk_scrolled_window_new(nullptr, nullptr);
+	m_widget = gtk_scrolled_window_new(NULL, NULL);
 	gtk_scrolled_window_set_policy(GTK_SCROLLED_WINDOW(m_widget), GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
 	gtk_scrolled_window_set_shadow_type(GTK_SCROLLED_WINDOW(m_widget), GTK_SHADOW_ETCHED_IN);
 	gtk_container_add(GTK_CONTAINER(m_widget), m_view->get_widget());
@@ -69,7 +69,7 @@ Page::~Page()
 
 Launcher* Page::get_selected_launcher() const
 {
-	Launcher* launcher = nullptr;
+	Launcher* launcher = NULL;
 	if (m_selected_path)
 	{
 		GtkTreeModel* model = m_view->get_model();
@@ -89,7 +89,7 @@ void Page::launcher_activated(GtkTreeView* view, GtkTreePath* path, GtkTreeViewC
 	gtk_tree_model_get_iter(model, &iter, path);
 
 	// Find launcher
-	Launcher* launcher = nullptr;
+	Launcher* launcher = NULL;
 	gtk_tree_model_get(model, &iter, LauncherModel::COLUMN_LAUNCHER, &launcher, -1);
 
 	// Add to recent
@@ -108,7 +108,7 @@ gboolean Page::view_button_press_event(GtkWidget* view, GdkEventButton* event)
 {
 	GtkTreeSelection* selection = gtk_tree_view_get_selection(GTK_TREE_VIEW(view));
 	GtkTreeIter iter;
-	if (gtk_tree_selection_get_selected(selection, nullptr, &iter)
+	if (gtk_tree_selection_get_selected(selection, NULL, &iter)
 			&& (event->type == GDK_BUTTON_PRESS)
 			&& (event->button == 3))
 	{
@@ -125,9 +125,9 @@ gboolean Page::view_popup_menu_event(GtkWidget* view)
 {
 	GtkTreeSelection* selection = gtk_tree_view_get_selection(GTK_TREE_VIEW(view));
 	GtkTreeIter iter;
-	if (gtk_tree_selection_get_selected(selection, nullptr, &iter))
+	if (gtk_tree_selection_get_selected(selection, NULL, &iter))
 	{
-		create_context_menu(&iter, nullptr);
+		create_context_menu(&iter, NULL);
 		return true;
 	}
 
@@ -162,7 +162,7 @@ void Page::create_context_menu(GtkTreeIter* iter, GdkEventButton* event)
 	g_signal_connect(menu, "selection-done", SLOT_CALLBACK(Page::destroy_context_menu), this);
 
 	// Add menu items
-	GtkWidget* menuitem = nullptr;
+	GtkWidget* menuitem = NULL;
 
 	if (!m_menu->get_favorites()->contains(get_selected_launcher()))
 	{
@@ -190,7 +190,7 @@ void Page::create_context_menu(GtkTreeIter* iter, GdkEventButton* event)
 	// Show context menu
 	int button = 0;
 	int event_time;
-	GtkMenuPositionFunc position_func = nullptr;
+	GtkMenuPositionFunc position_func = NULL;
 	if (event)
 	{
 		button = event->button;
@@ -202,8 +202,8 @@ void Page::create_context_menu(GtkTreeIter* iter, GdkEventButton* event)
 		event_time = gtk_get_current_event_time ();
 	}
 
-	gtk_menu_attach_to_widget(GTK_MENU(menu), m_view->get_widget(), nullptr);
-	gtk_menu_popup(GTK_MENU(menu), nullptr, nullptr, position_func, this, button, event_time);
+	gtk_menu_attach_to_widget(GTK_MENU(menu), m_view->get_widget(), NULL);
+	gtk_menu_popup(GTK_MENU(menu), NULL, NULL, position_func, this, button, event_time);
 }
 
 //-----------------------------------------------------------------------------
@@ -213,7 +213,7 @@ void Page::destroy_context_menu(GtkMenuShell* menu)
 	if (m_selected_path)
 	{
 		gtk_tree_path_free(m_selected_path);
-		m_selected_path = nullptr;
+		m_selected_path = NULL;
 	}
 	gtk_tree_view_set_hover_selection(GTK_TREE_VIEW(m_view->get_widget()), true);
 
@@ -258,10 +258,10 @@ void Page::add_selected_to_desktop()
 	g_free(basename);
 
 	// Copy launcher to desktop folder
-	GError* error = nullptr;
-	if (!g_file_copy(source_file, destination_file, G_FILE_COPY_NONE, nullptr, nullptr, nullptr, &error))
+	GError* error = NULL;
+	if (!g_file_copy(source_file, destination_file, G_FILE_COPY_NONE, NULL, NULL, NULL, &error))
 	{
-		xfce_dialog_show_error(nullptr, error, _("Unable to add launcher to desktop."));
+		xfce_dialog_show_error(NULL, error, _("Unable to add launcher to desktop."));
 		g_error_free(error);
 	}
 
@@ -275,20 +275,20 @@ void Page::add_selected_to_desktop()
 void Page::add_selected_to_panel()
 {
 	// Connect to Xfce panel through D-Bus
-	GError* error = nullptr;
+	GError* error = NULL;
 	GDBusProxy* proxy = g_dbus_proxy_new_for_bus_sync(G_BUS_TYPE_SESSION,
 			G_DBUS_PROXY_FLAGS_NONE,
-			nullptr,
+			NULL,
 			"org.xfce.Panel",
 			"/org/xfce/Panel",
 			"org.xfce.Panel",
-			nullptr,
+			NULL,
 			&error);
 	if (proxy)
 	{
 		// Fetch launcher desktop ID
 		Launcher* launcher = get_selected_launcher();
-		const gchar* parameters[] = { garcon_menu_item_get_desktop_id(launcher->get_item()), nullptr };
+		const gchar* parameters[] = { garcon_menu_item_get_desktop_id(launcher->get_item()), NULL };
 
 		// Tell panel to add item
 		if (!g_dbus_proxy_call_sync(proxy,
@@ -296,10 +296,10 @@ void Page::add_selected_to_panel()
 				g_variant_new("(s^as)", "launcher", parameters),
 				G_DBUS_CALL_FLAGS_NONE,
 				-1,
-				nullptr,
+				NULL,
 				&error))
 		{
-			xfce_dialog_show_error(nullptr, error, _("Unable to add launcher to panel."));
+			xfce_dialog_show_error(NULL, error, _("Unable to add launcher to panel."));
 			g_error_free(error);
 		}
 
@@ -308,7 +308,7 @@ void Page::add_selected_to_panel()
 	}
 	else
 	{
-		xfce_dialog_show_error(nullptr, error, _("Unable to add launcher to panel."));
+		xfce_dialog_show_error(NULL, error, _("Unable to add launcher to panel."));
 		g_error_free(error);
 	}
 }

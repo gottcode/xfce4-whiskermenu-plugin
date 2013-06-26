@@ -35,7 +35,7 @@ static std::vector<std::string> read_list(XfceRc* rc, const gchar* key, std::vec
 
 	std::vector<std::string> list;
 	gchar** values = xfce_rc_read_list_entry(rc, key, ",");
-	for (size_t i = 0; values[i] != nullptr; ++i)
+	for (size_t i = 0; values[i] != NULL; ++i)
 	{
 		list.push_back(values[i]);
 	}

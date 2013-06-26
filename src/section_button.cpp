@@ -20,7 +20,7 @@
 
 GtkRadioButton* WhiskerMenu::new_section_button(const gchar* icon, const gchar* text)
 {
-	GtkWidget* button = gtk_radio_button_new(nullptr);
+	GtkWidget* button = gtk_radio_button_new(NULL);
 	gtk_toggle_button_set_mode(GTK_TOGGLE_BUTTON(button), false);
 	gtk_button_set_relief(GTK_BUTTON(button), GTK_RELIEF_NONE);
 	gtk_button_set_focus_on_click(GTK_BUTTON(button), false);

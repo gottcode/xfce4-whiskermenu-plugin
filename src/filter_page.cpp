@@ -24,7 +24,7 @@ using namespace WhiskerMenu;
 
 FilterPage::FilterPage(Menu* menu) :
 	Page(menu),
-	m_filter_model(nullptr)
+	m_filter_model(NULL)
 {
 }
 
@@ -39,7 +39,7 @@ FilterPage::~FilterPage()
 
 GtkTreeModel* FilterPage::get_model() const
 {
-	return m_filter_model ? gtk_tree_model_filter_get_model(m_filter_model) : nullptr;
+	return m_filter_model ? gtk_tree_model_filter_get_model(m_filter_model) : NULL;
 }
 
 //-----------------------------------------------------------------------------
@@ -65,8 +65,8 @@ void FilterPage::set_model(GtkTreeModel* model)
 {
 	unset_model();
 
-	m_filter_model = GTK_TREE_MODEL_FILTER(gtk_tree_model_filter_new(model, nullptr));
-	gtk_tree_model_filter_set_visible_func(m_filter_model, (GtkTreeModelFilterVisibleFunc)&FilterPage::filter_visible, this, nullptr);
+	m_filter_model = GTK_TREE_MODEL_FILTER(gtk_tree_model_filter_new(model, NULL));
+	gtk_tree_model_filter_set_visible_func(m_filter_model, (GtkTreeModelFilterVisibleFunc)&FilterPage::filter_visible, this, NULL);
 	get_view()->set_model(GTK_TREE_MODEL(m_filter_model));
 }
 
@@ -79,7 +79,7 @@ void FilterPage::unset_model()
 	if (m_filter_model)
 	{
 		g_object_unref(m_filter_model);
-		m_filter_model = nullptr;
+		m_filter_model = NULL;
 	}
 }
 

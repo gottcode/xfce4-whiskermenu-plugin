@@ -32,7 +32,7 @@ using namespace WhiskerMenu;
 
 SearchPage::SearchPage(Menu* menu) :
 	FilterPage(menu),
-	m_filter_matching_path(nullptr)
+	m_filter_matching_path(NULL)
 {
 	get_view()->set_selection_mode(GTK_SELECTION_BROWSE);
 
@@ -74,7 +74,7 @@ void SearchPage::set_filter(const gchar* filter)
 		// Scroll to and select first result that begins with search string
 		GtkTreePath* path = convert_child_path_to_path(m_filter_matching_path);
 		gtk_tree_path_free(m_filter_matching_path);
-		m_filter_matching_path = nullptr;
+		m_filter_matching_path = NULL;
 
 		get_view()->select_path(path);
 		get_view()->scroll_to_path(path);
@@ -122,7 +122,7 @@ bool SearchPage::on_filter(GtkTreeModel* model, GtkTreeIter* iter)
 	}
 
 	// Check if launcher search string contains text
-	Launcher* launcher = nullptr;
+	Launcher* launcher = NULL;
 	gtk_tree_model_get(model, iter, LauncherModel::COLUMN_LAUNCHER, &launcher, -1);
 	gchar* result = g_strstr_len(launcher->get_search_text(), -1, m_filter_string.c_str());
 
@@ -132,7 +132,7 @@ bool SearchPage::on_filter(GtkTreeModel* model, GtkTreeIter* iter)
 		m_filter_matching_path = gtk_tree_model_get_path(model, iter);
 	}
 
-	return result != nullptr;
+	return result != NULL;
 }
 
 //-----------------------------------------------------------------------------
@@ -153,7 +153,7 @@ gboolean SearchPage::search_entry_key_press(GtkWidget* widget, GdkEventKey* even
 	{
 		GtkEntry* entry = GTK_ENTRY(widget);
 		const gchar* text = gtk_entry_get_text(entry);
-		if ((text != nullptr) && (*text != '\0'))
+		if ((text != NULL) && (*text != '\0'))
 		{
 			gtk_entry_set_text(entry, "");
 			return true;

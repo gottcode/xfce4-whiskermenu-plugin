@@ -30,7 +30,7 @@ using namespace WhiskerMenu;
 //-----------------------------------------------------------------------------
 
 LauncherView::LauncherView() :
-	m_model(nullptr)
+	m_model(NULL)
 {
 	// Create the view
 	m_view = GTK_TREE_VIEW(exo_tree_view_new());
@@ -48,12 +48,12 @@ LauncherView::LauncherView() :
 	int width = 0, height = 0;
 	gtk_icon_size_lookup(GTK_ICON_SIZE_DND, &width, &height);
 	GtkCellRenderer* icon_renderer = exo_cell_renderer_icon_new();
-	g_object_set(icon_renderer, "size", std::max(width, height), nullptr);
+	g_object_set(icon_renderer, "size", std::max(width, height), NULL);
 	gtk_tree_view_column_pack_start(column, icon_renderer, false);
 	gtk_tree_view_column_add_attribute(column, icon_renderer, "icon", LauncherModel::COLUMN_ICON);
 
 	GtkCellRenderer* text_renderer = gtk_cell_renderer_text_new();
-	g_object_set(text_renderer, "ellipsize", PANGO_ELLIPSIZE_END, nullptr);
+	g_object_set(text_renderer, "ellipsize", PANGO_ELLIPSIZE_END, NULL);
 	gtk_tree_view_column_pack_start(column, text_renderer, true);
 	gtk_tree_view_column_add_attribute(column, text_renderer, "markup", LauncherModel::COLUMN_TEXT);
 
@@ -73,7 +73,7 @@ LauncherView::LauncherView() :
 
 LauncherView::~LauncherView()
 {
-	m_model = nullptr;
+	m_model = NULL;
 
 	g_object_unref(m_view);
 }
@@ -82,10 +82,10 @@ LauncherView::~LauncherView()
 
 GtkTreePath* LauncherView::get_selected_path() const
 {
-	GtkTreePath* path = nullptr;
+	GtkTreePath* path = NULL;
 	GtkTreeSelection* selection = gtk_tree_view_get_selection(m_view);
 	GtkTreeIter iter;
-	if (gtk_tree_selection_get_selected(selection, nullptr, &iter))
+	if (gtk_tree_selection_get_selected(selection, NULL, &iter))
 	{
 		path = gtk_tree_model_get_path(m_model, &iter);
 	}
@@ -104,7 +104,7 @@ void LauncherView::activate_path(GtkTreePath* path)
 
 void LauncherView::scroll_to_path(GtkTreePath* path)
 {
-	gtk_tree_view_scroll_to_cell(m_view, path, nullptr, true, 0.5f, 0.5f);
+	gtk_tree_view_scroll_to_cell(m_view, path, NULL, true, 0.5f, 0.5f);
 }
 
 //-----------------------------------------------------------------------------
@@ -150,8 +150,8 @@ void LauncherView::set_model(GtkTreeModel* model)
 
 void LauncherView::unset_model()
 {
-	m_model = nullptr;
-	gtk_tree_view_set_model(m_view, nullptr);
+	m_model = NULL;
+	gtk_tree_view_set_model(m_view, NULL);
 }
 
 //-----------------------------------------------------------------------------

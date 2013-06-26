@@ -78,8 +78,8 @@ static void replace_with_quoted_string(std::string& command, size_t& index, gcha
 
 Launcher::Launcher(GarconMenuItem* item) :
 	m_item(item),
-	m_icon(nullptr),
-	m_text(nullptr)
+	m_icon(NULL),
+	m_text(NULL)
 {
 	garcon_menu_item_ref(m_item);
 
@@ -264,12 +264,12 @@ void Launcher::run(GdkScreen* screen) const
 	// Parse and spawn command
 	gchar** argv;
 	gboolean result = false;
-	GError* error = nullptr;
-	if (g_shell_parse_argv(command.c_str(), nullptr, &argv, &error))
+	GError* error = NULL;
+	if (g_shell_parse_argv(command.c_str(), NULL, &argv, &error))
 	{
 		result = xfce_spawn_on_screen(screen,
 				garcon_menu_item_get_path(m_item),
-				argv, nullptr, G_SPAWN_SEARCH_PATH,
+				argv, NULL, G_SPAWN_SEARCH_PATH,
 				garcon_menu_item_supports_startup_notification(m_item),
 				gtk_get_current_event_time(),
 				garcon_menu_item_get_icon_name(m_item),
@@ -279,7 +279,7 @@ void Launcher::run(GdkScreen* screen) const
 
 	if (G_UNLIKELY(!result))
 	{
-		xfce_dialog_show_error(nullptr, error, _("Failed to execute command \"%s\"."), string);
+		xfce_dialog_show_error(NULL, error, _("Failed to execute command \"%s\"."), string);
 		g_error_free(error);
 	}
 }

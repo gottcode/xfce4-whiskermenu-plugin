@@ -33,7 +33,7 @@ using namespace WhiskerMenu;
 static void whiskermenu_config_dialog_delete(ConfigurationDialog* dialog)
 {
 	delete dialog;
-	dialog = nullptr;
+	dialog = NULL;
 }
 
 //-----------------------------------------------------------------------------
@@ -42,13 +42,13 @@ ConfigurationDialog::ConfigurationDialog(PanelPlugin* plugin) :
 	m_plugin(plugin)
 {
 	// Create dialog window
-	GtkWindow* window = nullptr;
+	GtkWindow* window = NULL;
 	GtkWidget* toplevel = gtk_widget_get_toplevel(m_plugin->get_button());
 	if (gtk_widget_is_toplevel(toplevel))
 	{
 		window = GTK_WINDOW(toplevel);
 	}
-	m_window = xfce_titled_dialog_new_with_buttons(_("Whisker Menu"), window, GTK_DIALOG_NO_SEPARATOR, GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE, nullptr);
+	m_window = xfce_titled_dialog_new_with_buttons(_("Whisker Menu"), window, GTK_DIALOG_NO_SEPARATOR, GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE, NULL);
 	gtk_window_set_icon_name(GTK_WINDOW(m_window), GTK_STOCK_PROPERTIES);
 	gtk_window_set_position(GTK_WINDOW(m_window), GTK_WIN_POS_CENTER);
 	g_signal_connect(m_window, "response", SLOT_CALLBACK(ConfigurationDialog::response), this);
@@ -117,7 +117,7 @@ void ConfigurationDialog::choose_icon()
 			GTK_WINDOW(m_window),
 			GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
 			GTK_STOCK_OK, GTK_RESPONSE_ACCEPT,
-			nullptr);
+			NULL);
 
 	gtk_dialog_set_default_response(GTK_DIALOG(chooser), GTK_RESPONSE_ACCEPT);
 	gtk_dialog_set_alternative_button_order(GTK_DIALOG(chooser),

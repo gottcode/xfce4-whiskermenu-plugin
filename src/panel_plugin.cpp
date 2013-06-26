@@ -34,7 +34,7 @@ extern "C" void whiskermenu_construct(XfcePanelPlugin* plugin)
 static void whiskermenu_free(XfcePanelPlugin*, PanelPlugin* whiskermenu)
 {
 	delete whiskermenu;
-	whiskermenu = nullptr;
+	whiskermenu = NULL;
 }
 
 //-----------------------------------------------------------------------------
@@ -42,7 +42,7 @@ static void whiskermenu_free(XfcePanelPlugin*, PanelPlugin* whiskermenu)
 PanelPlugin::PanelPlugin(XfcePanelPlugin* plugin) :
 	m_plugin(plugin),
 	m_button_icon_name("xfce4-whiskermenu"),
-	m_menu(nullptr)
+	m_menu(NULL)
 {
 	// Load settings
 	gchar* file = xfce_panel_plugin_lookup_rc_file(m_plugin);
@@ -60,7 +60,7 @@ PanelPlugin::PanelPlugin(XfcePanelPlugin* plugin) :
 	}
 	else
 	{
-		m_menu = new Menu(nullptr);
+		m_menu = new Menu(NULL);
 	}
 	g_signal_connect_swapped(m_menu->get_widget(), "unmap", SLOT_CALLBACK(PanelPlugin::menu_hidden), this);
 
@@ -91,7 +91,7 @@ PanelPlugin::PanelPlugin(XfcePanelPlugin* plugin) :
 PanelPlugin::~PanelPlugin()
 {
 	delete m_menu;
-	m_menu = nullptr;
+	m_menu = NULL;
 
 	gtk_widget_destroy(m_button);
 }

@@ -47,8 +47,8 @@ ApplicationsPage::Category::Category(GarconMenuDirectory* directory)
 
 ApplicationsPage::ApplicationsPage(Menu* menu) :
 	FilterPage(menu),
-	m_garcon_menu(nullptr),
-	m_current_category(nullptr)
+	m_garcon_menu(NULL),
+	m_current_category(NULL)
 {
 	// Set desktop environment for applications
 	const gchar* desktop = g_getenv("XDG_CURRENT_DESKTOP");
@@ -58,7 +58,7 @@ ApplicationsPage::ApplicationsPage(Menu* menu) :
 	}
 	else if (*desktop == '\0')
 	{
-		desktop = nullptr;
+		desktop = NULL;
 	}
 	garcon_set_environment(desktop);
 }
@@ -84,7 +84,7 @@ void ApplicationsPage::apply_filter(GtkToggleButton* togglebutton)
 	// Apply filter
 	m_current_category = i->second;
 	refilter();
-	m_current_category = nullptr;
+	m_current_category = NULL;
 
 	// Scroll to top
 	GtkTreeIter iter;
@@ -106,7 +106,7 @@ bool ApplicationsPage::on_filter(GtkTreeModel* model, GtkTreeIter* iter)
 		return true;
 	}
 
-	Launcher* launcher = nullptr;
+	Launcher* launcher = NULL;
 	gtk_tree_model_get(model, iter, LauncherModel::COLUMN_LAUNCHER, &launcher, -1);
 
 	auto category = m_categories[m_current_category];
@@ -123,7 +123,7 @@ void ApplicationsPage::reload_applications()
 	// Populate map of menu data
 	m_garcon_menu = garcon_menu_new_applications();
 	g_object_ref(m_garcon_menu);
-	if (garcon_menu_load(m_garcon_menu, nullptr, nullptr))
+	if (garcon_menu_load(m_garcon_menu, NULL, NULL))
 	{
 		g_signal_connect_swapped(m_garcon_menu, "reload-required", SLOT_CALLBACK(ApplicationsPage::reload_applications), this);
 		load_menu(m_garcon_menu);
@@ -189,7 +189,7 @@ void ApplicationsPage::clear_applications()
 	if (m_garcon_menu)
 	{
 		g_object_unref(m_garcon_menu);
-		m_garcon_menu = nullptr;
+		m_garcon_menu = NULL;
 	}
 
 	// Clear menu item cache
@@ -224,7 +224,7 @@ void ApplicationsPage::load_menu(GarconMenu* menu)
 
 	// Add submenus
 	GList* menus = garcon_menu_get_menus(menu);
-	for (GList* li = menus; li != nullptr; li = li->next)
+	for (GList* li = menus; li != NULL; li = li->next)
 	{
 		load_menu(GARCON_MENU(li->data));
 	}
@@ -252,7 +252,7 @@ void ApplicationsPage::load_menu(GarconMenu* menu)
 			m_categories.erase(i);
 			delete m_current_category;
 		}
-		m_current_category = nullptr;
+		m_current_category = NULL;
 	}
 
 	// Listen for menu changes
@@ -296,7 +296,7 @@ void ApplicationsPage::reload_categories()
 	// Add button for all applications
 	GtkRadioButton* all_button = new_section_button("applications-other", _("All"));
 	g_signal_connect(all_button, "toggled", SLOT_CALLBACK(ApplicationsPage::apply_filter), this);
-	m_category_buttons[all_button] = nullptr;
+	m_category_buttons[all_button] = NULL;
 	category_buttons.push_back(all_button);
 
 	// Create sorted list of categories

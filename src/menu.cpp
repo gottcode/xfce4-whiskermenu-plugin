@@ -53,7 +53,7 @@ static GtkButton* new_action_button(const gchar* icon, const gchar* text)
 //-----------------------------------------------------------------------------
 
 Menu::Menu(XfceRc* settings) :
-	m_window(nullptr),
+	m_window(NULL),
 	m_geometry{0,0,400,500},
 	m_layout_left(true),
 	m_layout_bottom(true)
@@ -74,7 +74,7 @@ Menu::Menu(XfceRc* settings) :
 	g_signal_connect(m_window, "configure-event", SLOT_CALLBACK(Menu::on_configure_event), this);
 
 	// Create the border of the window
-	GtkWidget* frame = gtk_frame_new(nullptr);
+	GtkWidget* frame = gtk_frame_new(NULL);
 	gtk_frame_set_shadow_type(GTK_FRAME(frame), GTK_SHADOW_OUT);
 	gtk_container_add(GTK_CONTAINER(m_window), frame);
 
@@ -85,7 +85,7 @@ Menu::Menu(XfceRc* settings) :
 		name = g_get_user_name();
 	}
 	gchar* username = g_markup_printf_escaped("<b><big>%s</big></b>", name);
-	m_username = GTK_LABEL(gtk_label_new(nullptr));
+	m_username = GTK_LABEL(gtk_label_new(NULL));
 	gtk_label_set_markup(m_username, username);
 	gtk_misc_set_alignment(GTK_MISC(m_username), 0.0f, 0.5f);
 	g_free(username);
@@ -473,7 +473,7 @@ gboolean Menu::on_leave_notify_event(GtkWidget*, GdkEventCrossing* event)
 					GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK |
 					GDK_POINTER_MOTION_MASK
 				),
-				nullptr, nullptr, event->time);
+				NULL, NULL, event->time);
 	}
 
 	return false;
@@ -505,7 +505,7 @@ gboolean Menu::on_key_press_event(GtkWidget* widget, GdkEventKey* event)
 	// Make up and down keys always scroll current list of applications
 	if ((event->keyval == GDK_KEY_Up) || (event->keyval == GDK_KEY_Down))
 	{
-		GtkWidget* widget = nullptr;
+		GtkWidget* widget = NULL;
 		if (gtk_widget_get_visible(m_search_results->get_widget()))
 		{
 			widget = m_search_results->get_view()->get_widget();
@@ -553,7 +553,7 @@ gboolean Menu::on_map_event(GtkWidget*, GdkEventAny*)
 				GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK |
 				GDK_POINTER_MOTION_MASK
 			),
-			nullptr, nullptr, gtk_get_current_event_time());
+			NULL, NULL, gtk_get_current_event_time());
 
 	// Focus search entry
 	gtk_widget_grab_focus(GTK_WIDGET(m_search_entry));
@@ -617,7 +617,7 @@ void Menu::show_favorites()
 void Menu::search()
 {
 	// Fetch search string
-	gchar* filter_string = nullptr;
+	gchar* filter_string = NULL;
 	const gchar* text = gtk_entry_get_text(m_search_entry);
 	if (!exo_str_is_empty(text))
 	{
@@ -627,7 +627,7 @@ void Menu::search()
 	}
 
 	// Update search entry icon
-	bool visible = filter_string != nullptr;
+	bool visible = filter_string != NULL;
 	gtk_entry_set_icon_from_stock(m_search_entry, GTK_ENTRY_ICON_SECONDARY, !visible ? GTK_STOCK_FIND : GTK_STOCK_CLEAR);
 	gtk_entry_set_icon_activatable(m_search_entry, GTK_ENTRY_ICON_SECONDARY, visible);
 
@@ -647,7 +647,7 @@ void Menu::search()
 	}
 
 	// Apply filter
-	m_search_results->set_filter((visible && (g_utf8_strlen(filter_string, -1) > 2)) ? filter_string : nullptr);
+	m_search_results->set_filter((visible && (g_utf8_strlen(filter_string, -1) > 2)) ? filter_string : NULL);
 	g_free(filter_string);
 }
 
@@ -657,10 +657,10 @@ void Menu::launch_settings_manager()
 {
 	hide();
 
-	GError* error = nullptr;
+	GError* error = NULL;
 	if (g_spawn_command_line_async("xfce4-settings-manager", &error) == false)
 	{
-		xfce_dialog_show_error(nullptr, error, _("Failed to open settings manager."));
+		xfce_dialog_show_error(NULL, error, _("Failed to open settings manager."));
 		g_error_free(error);
 	}
 }
@@ -671,10 +671,10 @@ void Menu::lock_screen()
 {
 	hide();
 
-	GError* error = nullptr;
+	GError* error = NULL;
 	if (g_spawn_command_line_async("xflock4", &error) == false)
 	{
-		xfce_dialog_show_error(nullptr, error, _("Failed to lock screen."));
+		xfce_dialog_show_error(NULL, error, _("Failed to lock screen."));
 		g_error_free(error);
 	}
 }
@@ -685,10 +685,10 @@ void Menu::log_out()
 {
 	hide();
 
-	GError* error = nullptr;
+	GError* error = NULL;
 	if (g_spawn_command_line_async("xfce4-session-logout", &error) == false)
 	{
-		xfce_dialog_show_error(nullptr, error, _("Failed to log out."));
+		xfce_dialog_show_error(NULL, error, _("Failed to log out."));
 		g_error_free(error);
 	}
 }
