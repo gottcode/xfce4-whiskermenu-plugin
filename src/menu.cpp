@@ -168,7 +168,7 @@ Menu::Menu(XfceRc* settings) :
 	gtk_box_pack_start(m_sidebar_box, gtk_hseparator_new(), false, true, 0);
 
 	// Populate app menu
-	m_applications->reload_applications();
+	m_applications->load_applications();
 
 	// Show widgets
 	gtk_widget_show_all(GTK_WIDGET(m_vbox));
@@ -222,6 +222,9 @@ void Menu::hide()
 
 void Menu::show(GtkWidget* parent, bool horizontal)
 {
+	// Make sure applications list is current; does nothing unless list has changed
+	m_applications->load_applications();
+
 	// Reset mouse cursor by forcing favorites to hide
 	gtk_widget_show(m_favorites->get_widget());
 

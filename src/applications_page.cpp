@@ -48,7 +48,8 @@ ApplicationsPage::Category::Category(GarconMenuDirectory* directory)
 ApplicationsPage::ApplicationsPage(Menu* menu) :
 	FilterPage(menu),
 	m_garcon_menu(NULL),
-	m_current_category(NULL)
+	m_current_category(NULL),
+	m_loaded(false)
 {
 	// Set desktop environment for applications
 	const gchar* desktop = g_getenv("XDG_CURRENT_DESKTOP");
@@ -115,8 +116,13 @@ bool ApplicationsPage::on_filter(GtkTreeModel* model, GtkTreeIter* iter)
 
 //-----------------------------------------------------------------------------
 
-void ApplicationsPage::reload_applications()
+void ApplicationsPage::load_applications()
 {
+	if (m_loaded)
+	{
+		return;
+	}
+
 	// Remove previous menu data
 	clear_applications();
 
@@ -125,7 +131,7 @@ void ApplicationsPage::reload_applications()
 	g_object_ref(m_garcon_menu);
 	if (garcon_menu_load(m_garcon_menu, NULL, NULL))
 	{
-		g_signal_connect_swapped(m_garcon_menu, "reload-required", SLOT_CALLBACK(ApplicationsPage::reload_applications), this);
+		g_signal_connect_swapped(m_garcon_menu, "reload-required", SLOT_CALLBACK(ApplicationsPage::invalidate_applications), this);
 		load_menu(m_garcon_menu);
 	}
 
@@ -149,10 +155,19 @@ void ApplicationsPage::reload_applications()
 	set_model(model.get_model());
 
 	// Update filters
-	reload_categories();
+	load_categories();
 
 	// Update menu items of other panels
 	get_menu()->set_items(m_items);
+
+	m_loaded = true;
+}
+
+//-----------------------------------------------------------------------------
+
+void ApplicationsPage::invalidate_applications()
+{
+	m_loaded = false;
 }
 
 //-----------------------------------------------------------------------------
@@ -256,7 +271,7 @@ void ApplicationsPage::load_menu(GarconMenu* menu)
 	}
 
 	// Listen for menu changes
-	g_signal_connect_swapped(menu, "directory-changed", SLOT_CALLBACK(ApplicationsPage::reload_applications), this);
+	g_signal_connect_swapped(menu, "directory-changed", SLOT_CALLBACK(ApplicationsPage::invalidate_applications), this);
 }
 
 //-----------------------------------------------------------------------------
@@ -284,12 +299,12 @@ void ApplicationsPage::load_menu_item(const gchar* desktop_id, GarconMenuItem* m
 	}
 
 	// Listen for menu changes
-	g_signal_connect_swapped(menu_item, "changed", SLOT_CALLBACK(ApplicationsPage::reload_applications), page);
+	g_signal_connect_swapped(menu_item, "changed", SLOT_CALLBACK(ApplicationsPage::invalidate_applications), page);
 }
 
 //-----------------------------------------------------------------------------
 
-void ApplicationsPage::reload_categories()
+void ApplicationsPage::load_categories()
 {
 	std::vector<GtkRadioButton*> category_buttons;
 

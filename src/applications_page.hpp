@@ -62,7 +62,10 @@ public:
 	ApplicationsPage(Menu* menu);
 	~ApplicationsPage();
 
-	SLOT_0(void, ApplicationsPage, reload_applications);
+	void load_applications();
+
+public:
+	SLOT_0(void, ApplicationsPage, invalidate_applications);
 
 private:
 	SLOT_1(void, ApplicationsPage, apply_filter, GtkToggleButton*);
@@ -72,7 +75,7 @@ private:
 	void clear_applications();
 	void load_menu(GarconMenu* menu);
 	static void load_menu_item(const gchar* desktop_id, GarconMenuItem* menu_item, ApplicationsPage* page);
-	void reload_categories();
+	void load_categories();
 
 private:
 	GarconMenu* m_garcon_menu;
@@ -80,6 +83,7 @@ private:
 	std::map<GtkRadioButton*, Category*> m_category_buttons;
 	std::map<Category*, std::vector<Launcher*> > m_categories;
 	std::map<std::string, Launcher*> m_items;
+	bool m_loaded;
 };
 
 }

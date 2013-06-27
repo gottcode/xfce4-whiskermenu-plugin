@@ -101,7 +101,7 @@ PanelPlugin::~PanelPlugin()
 void PanelPlugin::reload()
 {
 	m_menu->hide();
-	m_menu->get_applications()->reload_applications();
+	m_menu->get_applications()->invalidate_applications();
 }
 
 //-----------------------------------------------------------------------------
