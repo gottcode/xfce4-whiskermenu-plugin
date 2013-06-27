@@ -6,9 +6,9 @@
 # Isratine Citizen <genghiskhan@gmx.ca>, 2013.
 msgid ""
 msgstr ""
-"Project-Id-Version: whiskermenu 1.0.0\n"
+"Project-Id-Version: xfce4-whiskermenu-plugin 1.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-15 20:23+0000\n"
+"POT-Creation-Date: 2013-06-27 22:23+0000\n"
 "PO-Revision-Date: 2013-06-22 12:12+0000\n"
 "Last-Translator: Isratine Citizen <genghiskhan@gmx.ca>\n"
 "Language-Team: Rahut <LL@li.org>\n"
@@ -19,91 +19,91 @@ msgstr ""
 "Language: he\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/applications_page.cpp:298
+#: src/applications_page.cpp:312
 msgid "All"
 msgstr "כולם"
 
-#: src/configuration_dialog.cpp:52
+#: src/configuration_dialog.cpp:51
 msgid "Whisker Menu"
 msgstr "תפריט זיף"
 
-#: src/configuration_dialog.cpp:66
+#: src/configuration_dialog.cpp:65
 msgid "Appearance"
 msgstr "הופעה"
 
-#: src/configuration_dialog.cpp:71
+#: src/configuration_dialog.cpp:70
 msgid "Show applications by _name"
 msgstr "הצג יישומים לפי _שם"
 
-#: src/configuration_dialog.cpp:77
+#: src/configuration_dialog.cpp:76
 msgid "Show application _descriptions"
 msgstr "הצג _תיאורי יישום"
 
-#: src/configuration_dialog.cpp:86
+#: src/configuration_dialog.cpp:85
 msgid "_Icon:"
 msgstr "_צלמית:"
 
-#: src/configuration_dialog.cpp:118
+#: src/configuration_dialog.cpp:116
 msgid "Select An Icon"
 msgstr "בחר צלמית"
 
-#: src/launcher.cpp:263
+#: src/launcher.cpp:282
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "נכשל להוציא לפועל פקודה \"%s\"."
 
-#: src/menu.cpp:88
+#: src/menu.cpp:92
 msgid "All Settings"
 msgstr "כל ההגדרות"
 
-#: src/menu.cpp:91
+#: src/menu.cpp:95
 msgid "Lock Screen"
 msgstr "נעל מרקע"
 
-#: src/menu.cpp:94
+#: src/menu.cpp:98
 msgid "Log Out"
 msgstr "התנתק"
 
-#: src/menu.cpp:108
+#: src/menu.cpp:112
 msgid "Favorites"
 msgstr "מועדפים"
 
-#: src/menu.cpp:114
+#: src/menu.cpp:118
 msgid "Recently Used"
 msgstr "בשימוש לאחרונה"
 
-#: src/menu.cpp:636
+#: src/menu.cpp:647
 msgid "Failed to open settings manager."
 msgstr "נכשל לפתוח מנהל הגדרות."
 
-#: src/menu.cpp:650
+#: src/menu.cpp:661
 msgid "Failed to lock screen."
 msgstr "נכשל לנעול מרקע."
 
-#: src/menu.cpp:664
+#: src/menu.cpp:675
 msgid "Failed to log out."
 msgstr "נכשל להתנתק."
 
-#: src/page.cpp:170
+#: src/page.cpp:169
 msgid "Add to Favorites"
 msgstr "הוסף אל תוך מועדפים"
 
-#: src/page.cpp:176
+#: src/page.cpp:175
 msgid "Remove From Favorites"
 msgstr "הסר מתוך מועדפים"
 
-#: src/page.cpp:181
+#: src/page.cpp:180
 msgid "Add to Desktop"
 msgstr "הוסף אל תוך שולחן עבודה"
 
-#: src/page.cpp:185
+#: src/page.cpp:184
 msgid "Add to Panel"
 msgstr "הוסף אל לוח"
 
-#: src/page.cpp:265
+#: src/page.cpp:264
 msgid "Unable to add launcher to desktop."
 msgstr "אין אפשרות להוסיף משגר אל תוך שולחן עבודה."
 
-#: src/page.cpp:303 src/page.cpp:312
+#: src/page.cpp:302 src/page.cpp:311
 msgid "Unable to add launcher to panel."
 msgstr "אין אפשרות להוסיף משגר אל תוך לוח."
