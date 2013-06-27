@@ -1,0 +1,12 @@
+1.0.1
+=====
+- Fix excessive menu reloading when apps are installed.
+- Fix plugin not respecting panel row height.
+- Fix handling of non-standard icon extensions.
+- Fix compile and load errors with Ubuntu 12.04.
+- Fix not showing login name when real name is unknown.
+- Fix arrow keys not changing selection in search results.
+- Always strip release builds.
+- Add uninstall target.
+- Add README and installation instructions.
+- Translation updates: German, Hebrew, Indonesian, Italian, Romanian, Spanish, Turkish.
