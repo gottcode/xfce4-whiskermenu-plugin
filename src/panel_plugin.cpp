@@ -69,7 +69,6 @@ PanelPlugin::PanelPlugin(XfcePanelPlugin* plugin) :
 	m_button = xfce_create_panel_toggle_button();
 	gtk_button_set_relief(GTK_BUTTON(m_button), GTK_RELIEF_NONE);
 	m_button_icon = XFCE_PANEL_IMAGE(xfce_panel_image_new_from_source(m_button_icon_name.c_str()));
-	xfce_panel_image_set_size(m_button_icon, -1);
 	gtk_container_add(GTK_CONTAINER(m_button), GTK_WIDGET(m_button_icon));
 	gtk_widget_show_all(m_button);
 	g_signal_connect(m_button, "button-press-event", SLOT_CALLBACK(PanelPlugin::button_clicked), this);
@@ -81,6 +80,7 @@ PanelPlugin::PanelPlugin(XfcePanelPlugin* plugin) :
 	// Connect plugin signals to functions
 	g_signal_connect(plugin, "free-data", G_CALLBACK(whiskermenu_free), this);
 	g_signal_connect_swapped(plugin, "configure-plugin", SLOT_CALLBACK(PanelPlugin::configure), this);
+	g_signal_connect(plugin, "orientation-changed", SLOT_CALLBACK(PanelPlugin::orientation_changed), this);
 	g_signal_connect_swapped(plugin, "save", SLOT_CALLBACK(PanelPlugin::save), this);
 	g_signal_connect(plugin, "size-changed", SLOT_CALLBACK(PanelPlugin::size_changed), this);
 	xfce_panel_plugin_menu_show_configure(plugin);
@@ -172,6 +172,13 @@ void PanelPlugin::configure()
 
 //-----------------------------------------------------------------------------
 
+void PanelPlugin::orientation_changed(XfcePanelPlugin*, GtkOrientation)
+{
+	size_changed(m_plugin, xfce_panel_plugin_get_size(m_plugin));
+}
+
+//-----------------------------------------------------------------------------
+
 void PanelPlugin::save()
 {
 	gchar* file = xfce_panel_plugin_save_location(m_plugin, true);
@@ -194,7 +201,21 @@ void PanelPlugin::save()
 
 gboolean PanelPlugin::size_changed(XfcePanelPlugin*, gint size)
 {
-	gtk_widget_set_size_request(GTK_WIDGET(m_plugin), size, size);
+#if (LIBXFCE4PANEL_CHECK_VERSION(4,10,0))
+	gint row_size = size / xfce_panel_plugin_get_nrows(m_plugin);
+#else
+	gint row_size = size;
+#endif
+
+	xfce_panel_image_set_size(m_button_icon, -1);
+	if (xfce_panel_plugin_get_orientation(m_plugin) == GTK_ORIENTATION_HORIZONTAL)
+	{
+		gtk_widget_set_size_request(GTK_WIDGET(m_plugin), row_size, size);
+	}
+	else
+	{
+		gtk_widget_set_size_request(GTK_WIDGET(m_plugin), size, row_size);
+	}
 	return true;
 }
 
