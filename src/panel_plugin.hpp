@@ -56,6 +56,7 @@ private:
 	SLOT_2(gboolean, PanelPlugin, button_clicked, GtkWidget*, GdkEventButton*);
 	SLOT_0(void, PanelPlugin, menu_hidden);
 	SLOT_0(void, PanelPlugin, configure);
+	SLOT_2(void, PanelPlugin, orientation_changed, XfcePanelPlugin*, GtkOrientation);
 	SLOT_3(gboolean, PanelPlugin, remote_event, XfcePanelPlugin*, gchar*, GValue*);
 	SLOT_0(void, PanelPlugin, save);
 	SLOT_2(gboolean, PanelPlugin, size_changed, XfcePanelPlugin*, gint);
