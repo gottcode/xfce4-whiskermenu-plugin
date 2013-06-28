@@ -90,6 +90,8 @@ PanelPlugin::PanelPlugin(XfcePanelPlugin* plugin) :
 
 PanelPlugin::~PanelPlugin()
 {
+	save();
+
 	delete m_menu;
 	m_menu = nullptr;
 
