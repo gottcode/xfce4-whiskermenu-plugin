@@ -425,6 +425,13 @@ void Menu::unset_items()
 
 gboolean Menu::on_enter_notify_event(GtkWidget*, GdkEventCrossing* event)
 {
+	if ( (event->detail == GDK_NOTIFY_INFERIOR)
+			|| (event->mode == GDK_CROSSING_GRAB)
+			|| (event->mode == GDK_CROSSING_GTK_GRAB) )
+	{
+		return false;
+	}
+
 	// Don't grab cursor over menu
 	if ((event->x_root >= m_geometry.x) && (event->x_root < (m_geometry.x + m_geometry.width))
 			&& (event->y_root >= m_geometry.y) && (event->y_root < (m_geometry.y + m_geometry.height)))
@@ -442,7 +449,8 @@ gboolean Menu::on_enter_notify_event(GtkWidget*, GdkEventCrossing* event)
 
 gboolean Menu::on_leave_notify_event(GtkWidget*, GdkEventCrossing* event)
 {
-	if (gdk_pointer_is_grabbed())
+	if ( (event->detail == GDK_NOTIFY_INFERIOR)
+			|| (event->mode != GDK_CROSSING_NORMAL) )
 	{
 		return false;
 	}
@@ -551,6 +559,8 @@ gboolean Menu::on_configure_event(GtkWidget*, GdkEventConfigure* event)
 {
 	if (event->width && event->height)
 	{
+		m_geometry.x = event->x;
+		m_geometry.y = event->y;
 		m_geometry.width = event->width;
 		m_geometry.height = event->height;
 	}
