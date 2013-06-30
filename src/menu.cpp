@@ -520,24 +520,27 @@ gboolean Menu::on_key_press_event(GtkWidget* widget, GdkEventKey* event)
 	// Make up and down keys always scroll current list of applications
 	if ((event->keyval == GDK_KEY_Up) || (event->keyval == GDK_KEY_Down))
 	{
-		GtkWidget* widget = NULL;
+		GtkWidget* view = NULL;
 		if (gtk_widget_get_visible(m_search_results->get_widget()))
 		{
-			widget = m_search_results->get_view()->get_widget();
+			view = m_search_results->get_view()->get_widget();
 		}
 		else if (gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(m_favorites_button)))
 		{
-			widget = m_favorites->get_view()->get_widget();
+			view = m_favorites->get_view()->get_widget();
 		}
 		else if (gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(m_recent_button)))
 		{
-			widget = m_recent->get_view()->get_widget();
+			view = m_recent->get_view()->get_widget();
 		}
 		else
 		{
-			widget = m_applications->get_view()->get_widget();
+			view = m_applications->get_view()->get_widget();
 		}
-		gtk_widget_grab_focus(widget);
+		if (!gtk_widget_has_focus(view))
+		{
+			gtk_widget_grab_focus(view);
+		}
 		return false;
 	}
 
