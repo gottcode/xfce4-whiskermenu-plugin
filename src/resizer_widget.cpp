@@ -107,6 +107,7 @@ gboolean ResizerWidget::on_button_press_event(GtkWidget*, GdkEventButton* event)
 
 gboolean ResizerWidget::on_enter_notify_event(GtkWidget* widget, GdkEventCrossing*)
 {
+	gtk_widget_set_state(widget, GTK_STATE_PRELIGHT);
 	GdkWindow* window = gtk_widget_get_window(widget);
 	gdk_window_set_cursor(window, m_cursor);
 	return false;
@@ -116,6 +117,7 @@ gboolean ResizerWidget::on_enter_notify_event(GtkWidget* widget, GdkEventCrossin
 
 gboolean ResizerWidget::on_leave_notify_event(GtkWidget* widget, GdkEventCrossing*)
 {
+	gtk_widget_set_state(widget, GTK_STATE_NORMAL);
 	GdkWindow* window = gtk_widget_get_window(widget);
 	gdk_window_set_cursor(window, nullptr);
 	return false;
@@ -128,7 +130,7 @@ gboolean ResizerWidget::on_expose_event(GtkWidget* widget, GdkEventExpose*)
 	cairo_t* cr = gdk_cairo_create(gtk_widget_get_window(widget));
 
 	GtkStyle* style = gtk_widget_get_style(widget);
-	const GdkColor& color = style->text[GTK_STATE_NORMAL];
+	const GdkColor& color = style->text_aa[gtk_widget_get_state(widget)];
 	cairo_set_source_rgb(cr, color.red / 65535.0, color.green / 65535.0, color.blue / 65535.0);
 
 	cairo_move_to(cr, m_shape.back().x, m_shape.back().y);
