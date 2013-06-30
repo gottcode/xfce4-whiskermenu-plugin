@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-27 22:23+0000\n"
+"POT-Creation-Date: 2013-06-30 10:28+0000\n"
 "PO-Revision-Date: 2013-06-25 14:47+0000\n"
 "Last-Translator: Mohamad Hasan Al Banna <se7entime@gmail.com>\n"
 "Language-Team: Indonesian (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/id/)\n"
@@ -71,15 +71,15 @@ msgstr "Favorit"
 msgid "Recently Used"
 msgstr "Terakhir diGunakan"
 
-#: src/menu.cpp:647
+#: src/menu.cpp:657
 msgid "Failed to open settings manager."
 msgstr "Gagal membuka menejer pengaturan."
 
-#: src/menu.cpp:661
+#: src/menu.cpp:671
 msgid "Failed to lock screen."
 msgstr "Gagal mengunci layar."
 
-#: src/menu.cpp:675
+#: src/menu.cpp:685
 msgid "Failed to log out."
 msgstr "Gagal keluar."
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-27 22:23+0000\n"
+"POT-Creation-Date: 2013-06-30 10:28+0000\n"
 "PO-Revision-Date: 2013-06-28 07:01+0000\n"
 "Last-Translator: reis33 <bahadiroglu33@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/tr/)\n"
@@ -72,15 +72,15 @@ msgstr "Gözdeler"
 msgid "Recently Used"
 msgstr "Son Kullanılanlar"
 
-#: src/menu.cpp:647
+#: src/menu.cpp:657
 msgid "Failed to open settings manager."
 msgstr "Ayarlar Yöneticisini Açma Hatası"
 
-#: src/menu.cpp:661
+#: src/menu.cpp:671
 msgid "Failed to lock screen."
 msgstr "Ekran Kilitleme Hatası"
 
-#: src/menu.cpp:675
+#: src/menu.cpp:685
 msgid "Failed to log out."
 msgstr "Çıkış Hatası"
 
