@@ -1,0 +1,108 @@
+# Greek translation of xfce4-whiskermenu-plugin.
+# Copyright (C) 2013 Graeme Gott
+# This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
+#
+# Translators:
+# angel_solomos <angelsolomos@gmail.com>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: Whisker Menu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-15 20:23+0000\n"
+"PO-Revision-Date: 2013-06-29 15:54+0000\n"
+"Last-Translator: angel_solomos <angelsolomos@gmail.com>\n"
+"Language-Team: Greek (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/el/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: el\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/applications_page.cpp:298
+msgid "All"
+msgstr "Όλα"
+
+#: src/configuration_dialog.cpp:52
+msgid "Whisker Menu"
+msgstr "Μενού Whisker"
+
+#: src/configuration_dialog.cpp:66
+msgid "Appearance"
+msgstr "Εμφάνιση"
+
+#: src/configuration_dialog.cpp:71
+msgid "Show applications by _name"
+msgstr "Προβολή εφαρμογών κατά όνομα"
+
+#: src/configuration_dialog.cpp:77
+msgid "Show application _descriptions"
+msgstr "Εμφάνιση περιγραφής εφαρμογών"
+
+#: src/configuration_dialog.cpp:86
+msgid "_Icon:"
+msgstr "Εικονίδιο:"
+
+#: src/configuration_dialog.cpp:118
+msgid "Select An Icon"
+msgstr "Επιλογή εικονιδίου"
+
+#: src/launcher.cpp:263
+#, c-format
+msgid "Failed to execute command \"%s\"."
+msgstr "Αποτυχία εκτέλεσης εντολής \"%s\"."
+
+#: src/menu.cpp:88
+msgid "All Settings"
+msgstr "Όλες οι επιλογές"
+
+#: src/menu.cpp:91
+msgid "Lock Screen"
+msgstr "Κλείδωμα οθόνης"
+
+#: src/menu.cpp:94
+msgid "Log Out"
+msgstr "Αποσύνδεση"
+
+#: src/menu.cpp:108
+msgid "Favorites"
+msgstr "Αγαπημένα"
+
+#: src/menu.cpp:114
+msgid "Recently Used"
+msgstr "Χρησημοποιήθηκαν πρόσφατα"
+
+#: src/menu.cpp:636
+msgid "Failed to open settings manager."
+msgstr "Αποτυχία εκκίνησης του διαχειριστή ρυθμίσεων"
+
+#: src/menu.cpp:650
+msgid "Failed to lock screen."
+msgstr "Αποτυχία κλειδώματος οθόνης."
+
+#: src/menu.cpp:664
+msgid "Failed to log out."
+msgstr "Αποτυχία αποσύνδεσης."
+
+#: src/page.cpp:170
+msgid "Add to Favorites"
+msgstr "Προσθήκη στα Αγαπημένα"
+
+#: src/page.cpp:176
+msgid "Remove From Favorites"
+msgstr "Αφαίρεση από τα Αγαπημένα"
+
+#: src/page.cpp:181
+msgid "Add to Desktop"
+msgstr "Προσθήκη στην επιφάνει εργασίας"
+
+#: src/page.cpp:185
+msgid "Add to Panel"
+msgstr "Προσθήκη στο ταμπλό"
+
+#: src/page.cpp:265
+msgid "Unable to add launcher to desktop."
+msgstr "Απέτυχε η προσθήκη εκκινητή στην επιφάνεια εργασίας."
+
+#: src/page.cpp:303 src/page.cpp:312
+msgid "Unable to add launcher to panel."
+msgstr "Απέτυχε η προσθήκη εκκινητή στο ταμπλό."
