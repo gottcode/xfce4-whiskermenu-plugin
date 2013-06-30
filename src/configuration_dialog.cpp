@@ -18,6 +18,7 @@
 
 #include "launcher.hpp"
 #include "panel_plugin.hpp"
+#include "section_button.hpp"
 
 extern "C"
 {
@@ -96,6 +97,18 @@ ConfigurationDialog::ConfigurationDialog(PanelPlugin* plugin) :
 	xfce_panel_image_set_size(XFCE_PANEL_IMAGE(m_icon), 48);
 	gtk_container_add(GTK_CONTAINER(m_icon_button), m_icon);
 
+	// Create behavior section
+	GtkBox* behavior_vbox = GTK_BOX(gtk_vbox_new(false, 8));
+	GtkWidget* behavior_frame = xfce_gtk_frame_box_new_with_content(_("Behavior"), GTK_WIDGET(behavior_vbox));
+	gtk_box_pack_start(contents_vbox, behavior_frame, false, false, 0);
+	gtk_container_set_border_width(GTK_CONTAINER(behavior_frame), 6);
+
+	// Add option to use generic names
+	m_hover_switch_category = gtk_check_button_new_with_mnemonic(_("Switch categories by _hovering"));
+	gtk_box_pack_start(behavior_vbox, m_hover_switch_category, true, true, 0);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_hover_switch_category), section_button_get_hover_activate());
+	g_signal_connect(m_hover_switch_category, "toggled", SLOT_CALLBACK(ConfigurationDialog::toggle_hover_switch_category), this);
+
 	// Show GTK window
 	gtk_widget_show_all(m_window);
 
@@ -134,6 +147,13 @@ void ConfigurationDialog::choose_icon()
 	}
 
 	gtk_widget_destroy(chooser);
+}
+
+//-----------------------------------------------------------------------------
+
+void ConfigurationDialog::toggle_hover_switch_category(GtkToggleButton* button)
+{
+	section_button_set_hover_activate(gtk_toggle_button_get_active(button));
 }
 
 //-----------------------------------------------------------------------------

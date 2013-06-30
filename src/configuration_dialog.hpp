@@ -37,6 +37,7 @@ public:
 
 private:
 	SLOT_0(void, ConfigurationDialog, choose_icon);
+	SLOT_1(void, ConfigurationDialog, toggle_hover_switch_category, GtkToggleButton*);
 	SLOT_1(void, ConfigurationDialog, toggle_show_name, GtkToggleButton*);
 	SLOT_1(void, ConfigurationDialog, toggle_show_description, GtkToggleButton*);
 	SLOT_2(void, ConfigurationDialog, response, GtkDialog*, gint);
@@ -49,6 +50,7 @@ private:
 	GtkWidget* m_icon_button;
 	GtkWidget* m_show_names;
 	GtkWidget* m_show_descriptions;
+	GtkWidget* m_hover_switch_category;
 };
 
 }

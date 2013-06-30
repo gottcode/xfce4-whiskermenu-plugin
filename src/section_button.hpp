@@ -26,6 +26,8 @@ namespace WhiskerMenu
 {
 
 GtkRadioButton* new_section_button(const gchar* icon, const gchar* text);
+bool section_button_get_hover_activate();
+void section_button_set_hover_activate(bool hover_activate);
 
 }
 
