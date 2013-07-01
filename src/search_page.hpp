@@ -21,6 +21,7 @@
 #include "slot.hpp"
 
 #include <string>
+#include <vector>
 
 namespace WhiskerMenu
 {
@@ -50,6 +51,7 @@ private:
 private:
 	std::string m_filter_string;
 	GtkTreeModelSort* m_sort_model;
+	std::vector<Launcher*> m_launchers;
 };
 
 }

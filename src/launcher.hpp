@@ -50,9 +50,11 @@ public:
 		return m_item;
 	}
 
+	unsigned int get_search_results(const std::string& filter_string) const;
+
 	void run(GdkScreen* screen) const;
 
-	unsigned int search(const std::string& filter_string);
+	void search(const std::string& filter_string);
 
 	static bool get_show_name();
 	static bool get_show_description();

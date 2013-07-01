@@ -160,6 +160,14 @@ Launcher::~Launcher()
 
 //-----------------------------------------------------------------------------
 
+unsigned int Launcher::get_search_results(const std::string& filter_string) const
+{
+	std::map<std::string, unsigned int>::const_iterator i = m_searches.find(filter_string);
+	return (i != m_searches.end()) ? i->second : UINT_MAX;
+}
+
+//-----------------------------------------------------------------------------
+
 void Launcher::run(GdkScreen* screen) const
 {
 	const gchar* string = garcon_menu_item_get_command(m_item);
@@ -243,13 +251,13 @@ void Launcher::run(GdkScreen* screen) const
 
 //-----------------------------------------------------------------------------
 
-unsigned int Launcher::search(const std::string& filter_string)
+void Launcher::search(const std::string& filter_string)
 {
 	// Check if search has been done before
 	std::map<std::string, unsigned int>::const_iterator i = m_searches.find(filter_string);
 	if (i != m_searches.end())
 	{
-		return i->second;
+		return;
 	}
 
 	// Check if search will fail because a shorter version has failed before
@@ -322,7 +330,6 @@ unsigned int Launcher::search(const std::string& filter_string)
 	}
 
 	m_searches.insert(std::make_pair(filter_string, index));
-	return index;
 }
 
 //-----------------------------------------------------------------------------

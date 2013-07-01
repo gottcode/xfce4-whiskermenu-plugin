@@ -66,6 +66,12 @@ void SearchPage::set_filter(const gchar* filter)
 		return;
 	}
 
+	// Create search results
+	for (std::vector<Launcher*>::iterator i = m_launchers.begin(), end = m_launchers.end(); i != end; ++i)
+	{
+		(*i)->search(m_filter_string);
+	}
+
 	// Apply filter
 	GtkTreeModel* filter_model = gtk_tree_model_sort_get_model(m_sort_model);
 	get_view()->unset_model();
@@ -93,6 +99,17 @@ void SearchPage::set_filter(const gchar* filter)
 
 void SearchPage::set_menu_items(GtkTreeModel* model)
 {
+	// loop over every single item in model
+	GtkTreeIter iter;
+	bool valid = gtk_tree_model_get_iter_first(model, &iter);
+	while (valid)
+	{
+		Launcher* launcher = NULL;
+		gtk_tree_model_get(model, &iter, LauncherModel::COLUMN_LAUNCHER, &launcher, -1);
+		m_launchers.push_back(launcher);
+		valid = gtk_tree_model_iter_next(model, &iter);
+	}
+
 	unset_search_model();
 	set_model(model);
 	set_search_model(get_view()->get_model());
@@ -102,6 +119,7 @@ void SearchPage::set_menu_items(GtkTreeModel* model)
 
 void SearchPage::unset_menu_items()
 {
+	m_launchers.clear();
 	unset_search_model();
 	unset_model();
 }
@@ -118,7 +136,7 @@ bool SearchPage::on_filter(GtkTreeModel* model, GtkTreeIter* iter)
 	// Check if launcher search string contains text
 	Launcher* launcher = NULL;
 	gtk_tree_model_get(model, iter, LauncherModel::COLUMN_LAUNCHER, &launcher, -1);
-	unsigned int index = launcher->search(m_filter_string);
+	unsigned int index = launcher->get_search_results(m_filter_string);
 
 	return index != UINT_MAX;
 }
@@ -133,7 +151,7 @@ gint SearchPage::on_sort(GtkTreeModel* model, GtkTreeIter* a, GtkTreeIter* b, Se
 	Launcher* launcher_b = NULL;
 	gtk_tree_model_get(model, b, LauncherModel::COLUMN_LAUNCHER, &launcher_b, -1);
 
-	return launcher_a->search(page->m_filter_string) - launcher_b->search(page->m_filter_string);
+	return launcher_a->get_search_results(page->m_filter_string) - launcher_b->get_search_results(page->m_filter_string);
 }
 
 //-----------------------------------------------------------------------------
