@@ -1,3 +1,11 @@
+1.0.2
+=====
+- Fix position being reset when scrolling with directional keys.
+- Fix issues with detecting when to grab pointer.
+- Fix not always saving configuration changes.
+- Draw resize triangle in lighter color.
+- Translation updates: Arabic, Catalan, Greek, Turkish, Vietnamese.
+
 1.0.1
 =====
 - Fix excessive menu reloading when apps are installed.
