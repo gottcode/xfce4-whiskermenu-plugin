@@ -6,7 +6,7 @@
 # Karim Oulad Chalha <herr.linux88@gmail.com>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-whiskermenu-plugin 1.0.1\n"
+"Project-Id-Version: xfce4-whiskermenu-plugin 1.0.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-01 00:05+0000\n"
 "PO-Revision-Date: 2013-06-30 16:49+0000\n"
