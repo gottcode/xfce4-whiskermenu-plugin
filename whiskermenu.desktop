@@ -2,6 +2,8 @@
 Type=X-XFCE-PanelPlugin
 Encoding=UTF-8
 Name=Whisker Menu
+Name[ar]=قائمة Whisker
+Name[ca]=Menu Whisker
 Name[de]=Whisker Menü
 Name[el]=Μενού Whisker
 Name[es]=Whisker Menu
@@ -12,6 +14,8 @@ Name[ro]=Meniu Whisker
 Name[tr]=Gözde Menü
 Name[vi]=Menu Tách Biệt
 Comment=Show a menu to easily access installed applications
+Comment[ar]=عرض القائمة لوصول إلى التطبيقات المثبتة بكل سهولة
+Comment[ca]=Mostra un menú per accedir facilment a les aplicacions instal·lades
 Comment[de]=Zeige ein Menü um installierte Programme einfach zugänglich zu machen
 Comment[el]=Εμφάνιση ενός μενού για την γρήγορη πρόσβαση στις εγκατεστημένες εφαρμογές.
 Comment[es]=Muestra un menú para acceder fácilmente a las aplicaciones instaladas

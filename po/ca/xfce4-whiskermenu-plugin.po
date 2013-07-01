@@ -1,108 +1,108 @@
-# Spanish translation of xfce4-whiskermenu-plugin.
+# Catalan translation of xfce4-whiskermenu-plugin.
 # Copyright (C) 2013 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# intialonso <intialonso@gmail.com>, 2013
+# oriolfa <oriolfa@ono.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-01 00:05+0000\n"
-"PO-Revision-Date: 2013-06-24 22:10+0000\n"
-"Last-Translator: intialonso <intialonso@gmail.com>\n"
-"Language-Team: Spanish (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/es/)\n"
+"PO-Revision-Date: 2013-06-30 08:26+0000\n"
+"Last-Translator: oriolfa <oriolfa@ono.com>\n"
+"Language-Team: Catalan (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es\n"
+"Language: ca\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/applications_page.cpp:312
 msgid "All"
-msgstr "Todo"
+msgstr "Tot"
 
 #: src/configuration_dialog.cpp:51
 msgid "Whisker Menu"
-msgstr "Whisker Menu"
+msgstr "Menu Whisker"
 
 #: src/configuration_dialog.cpp:65
 msgid "Appearance"
-msgstr "Apariencia"
+msgstr "Aparença"
 
 #: src/configuration_dialog.cpp:70
 msgid "Show applications by _name"
-msgstr "Mostrar aplicaciones por nombre"
+msgstr "Mostra aplicacions pe _nom"
 
 #: src/configuration_dialog.cpp:76
 msgid "Show application _descriptions"
-msgstr "Mostrar aplicaciones por descripción"
+msgstr "Mostra _descripcions de l'aplicació"
 
 #: src/configuration_dialog.cpp:85
 msgid "_Icon:"
-msgstr "_Icono:"
+msgstr "_Icona:"
 
 #: src/configuration_dialog.cpp:116
 msgid "Select An Icon"
-msgstr "Seleccione un ícono"
+msgstr "Sel·lecciona una icona"
 
 #: src/launcher.cpp:282
 #, c-format
 msgid "Failed to execute command \"%s\"."
-msgstr "Falló la ejecución del comando \"%s\"."
+msgstr "Error a l'executar la commanda \"%s\"."
 
 #: src/menu.cpp:92
 msgid "All Settings"
-msgstr "Todas las configuraciones"
+msgstr "Tota la configuració"
 
 #: src/menu.cpp:95
 msgid "Lock Screen"
-msgstr "Bloquear Pantalla"
+msgstr "Bloca la pantalla"
 
 #: src/menu.cpp:98
 msgid "Log Out"
-msgstr "Cerrar Sesión"
+msgstr "Tanca la sessió"
 
 #: src/menu.cpp:112
 msgid "Favorites"
-msgstr "Favoritos"
+msgstr "Favorits"
 
 #: src/menu.cpp:118
 msgid "Recently Used"
-msgstr "Usados Recientemente"
+msgstr "Recents"
 
 #: src/menu.cpp:660
 msgid "Failed to open settings manager."
-msgstr "Falló la ejecución del administrador de configuración."
+msgstr "Error obrint el gestor de la configuració."
 
 #: src/menu.cpp:674
 msgid "Failed to lock screen."
-msgstr "Falló bloquear la pantalla."
+msgstr "Error al blocar la pantalla."
 
 #: src/menu.cpp:688
 msgid "Failed to log out."
-msgstr "Falló el cierre de sesión."
+msgstr "Error al tancar la sessió."
 
 #: src/page.cpp:169
 msgid "Add to Favorites"
-msgstr "Añadir a Favoritos"
+msgstr "Afegir a Favorits"
 
 #: src/page.cpp:175
 msgid "Remove From Favorites"
-msgstr "Eliminar de Favoritos"
+msgstr "Suprimir de favorits"
 
 #: src/page.cpp:180
 msgid "Add to Desktop"
-msgstr "Añadir al Escritorio"
+msgstr "Afegir a l'Escriptori"
 
 #: src/page.cpp:184
 msgid "Add to Panel"
-msgstr "Añadir al Panel"
+msgstr "Afegir al Panell"
 
 #: src/page.cpp:264
 msgid "Unable to add launcher to desktop."
-msgstr "No se pudo añadir el lanzador al Escritorio"
+msgstr "No s'ha pogut afegir l'accés directe a l'escriptori."
 
 #: src/page.cpp:302 src/page.cpp:311
 msgid "Unable to add launcher to panel."
-msgstr "No se pudo añadir el lanzador al panel."
+msgstr "No s'ha pogut afegir l'accés directa al panell."

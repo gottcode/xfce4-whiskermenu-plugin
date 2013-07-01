@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-30 10:28+0000\n"
+"POT-Creation-Date: 2013-07-01 00:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,15 +70,15 @@ msgstr ""
 msgid "Recently Used"
 msgstr ""
 
-#: src/menu.cpp:657
+#: src/menu.cpp:660
 msgid "Failed to open settings manager."
 msgstr ""
 
-#: src/menu.cpp:671
+#: src/menu.cpp:674
 msgid "Failed to lock screen."
 msgstr ""
 
-#: src/menu.cpp:685
+#: src/menu.cpp:688
 msgid "Failed to log out."
 msgstr ""
 

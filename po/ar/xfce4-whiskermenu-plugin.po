@@ -1,108 +1,108 @@
-# Spanish translation of xfce4-whiskermenu-plugin.
+# Arabic translation of xfce4-whiskermenu-plugin.
 # Copyright (C) 2013 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# intialonso <intialonso@gmail.com>, 2013
+# Karim Oulad Chalha <herr.linux88@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-01 00:05+0000\n"
-"PO-Revision-Date: 2013-06-24 22:10+0000\n"
-"Last-Translator: intialonso <intialonso@gmail.com>\n"
-"Language-Team: Spanish (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/es/)\n"
+"PO-Revision-Date: 2013-06-30 16:49+0000\n"
+"Last-Translator: Karim Oulad Chalha <herr.linux88@gmail.com>\n"
+"Language-Team: Arabic (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #: src/applications_page.cpp:312
 msgid "All"
-msgstr "Todo"
+msgstr "كل"
 
 #: src/configuration_dialog.cpp:51
 msgid "Whisker Menu"
-msgstr "Whisker Menu"
+msgstr "قائمة Whisker"
 
 #: src/configuration_dialog.cpp:65
 msgid "Appearance"
-msgstr "Apariencia"
+msgstr "مظهر"
 
 #: src/configuration_dialog.cpp:70
 msgid "Show applications by _name"
-msgstr "Mostrar aplicaciones por nombre"
+msgstr "عرض التطبيقات حسب _الإسم"
 
 #: src/configuration_dialog.cpp:76
 msgid "Show application _descriptions"
-msgstr "Mostrar aplicaciones por descripción"
+msgstr "عرض _وصف التطبيقات"
 
 #: src/configuration_dialog.cpp:85
 msgid "_Icon:"
-msgstr "_Icono:"
+msgstr "_أيقونة:"
 
 #: src/configuration_dialog.cpp:116
 msgid "Select An Icon"
-msgstr "Seleccione un ícono"
+msgstr "إختر أيقونة"
 
 #: src/launcher.cpp:282
 #, c-format
 msgid "Failed to execute command \"%s\"."
-msgstr "Falló la ejecución del comando \"%s\"."
+msgstr "فشل تنفيذ الأمر \"%s\"."
 
 #: src/menu.cpp:92
 msgid "All Settings"
-msgstr "Todas las configuraciones"
+msgstr "كل الإعدادات"
 
 #: src/menu.cpp:95
 msgid "Lock Screen"
-msgstr "Bloquear Pantalla"
+msgstr "قفل الشاشة"
 
 #: src/menu.cpp:98
 msgid "Log Out"
-msgstr "Cerrar Sesión"
+msgstr "تسجيل الخروج"
 
 #: src/menu.cpp:112
 msgid "Favorites"
-msgstr "Favoritos"
+msgstr "مفضلات"
 
 #: src/menu.cpp:118
 msgid "Recently Used"
-msgstr "Usados Recientemente"
+msgstr "مستعملة حديثا"
 
 #: src/menu.cpp:660
 msgid "Failed to open settings manager."
-msgstr "Falló la ejecución del administrador de configuración."
+msgstr "فشل فتح مدير الإعدادات."
 
 #: src/menu.cpp:674
 msgid "Failed to lock screen."
-msgstr "Falló bloquear la pantalla."
+msgstr "فشل إغلاق الشاشة."
 
 #: src/menu.cpp:688
 msgid "Failed to log out."
-msgstr "Falló el cierre de sesión."
+msgstr "فشل تسجيل الخروج."
 
 #: src/page.cpp:169
 msgid "Add to Favorites"
-msgstr "Añadir a Favoritos"
+msgstr "أضف إلى المفضلات"
 
 #: src/page.cpp:175
 msgid "Remove From Favorites"
-msgstr "Eliminar de Favoritos"
+msgstr "حذف من المفضلات"
 
 #: src/page.cpp:180
 msgid "Add to Desktop"
-msgstr "Añadir al Escritorio"
+msgstr "أضف إلى سطح المكتب"
 
 #: src/page.cpp:184
 msgid "Add to Panel"
-msgstr "Añadir al Panel"
+msgstr "أضف إلى الشريط"
 
 #: src/page.cpp:264
 msgid "Unable to add launcher to desktop."
-msgstr "No se pudo añadir el lanzador al Escritorio"
+msgstr "عاجز عن إضافة المطلقة إلى سطح المكتب."
 
 #: src/page.cpp:302 src/page.cpp:311
 msgid "Unable to add launcher to panel."
-msgstr "No se pudo añadir el lanzador al panel."
+msgstr "عاجز عن إضافة المطلقة إلى الشريط."
