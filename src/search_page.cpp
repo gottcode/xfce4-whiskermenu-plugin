@@ -31,7 +31,8 @@ using namespace WhiskerMenu;
 //-----------------------------------------------------------------------------
 
 SearchPage::SearchPage(Menu* menu) :
-	FilterPage(menu)
+	FilterPage(menu),
+	m_sort_model(NULL)
 {
 	get_view()->set_selection_mode(GTK_SELECTION_BROWSE);
 
@@ -66,7 +67,13 @@ void SearchPage::set_filter(const gchar* filter)
 	}
 
 	// Apply filter
+	GtkTreeModel* filter_model = gtk_tree_model_sort_get_model(m_sort_model);
+	get_view()->unset_model();
+	unset_search_model();
+
 	refilter();
+
+	set_search_model(filter_model);
 
 	// Find first result
 	GtkTreeIter iter;
@@ -86,13 +93,16 @@ void SearchPage::set_filter(const gchar* filter)
 
 void SearchPage::set_menu_items(GtkTreeModel* model)
 {
+	unset_search_model();
 	set_model(model);
+	set_search_model(get_view()->get_model());
 }
 
 //-----------------------------------------------------------------------------
 
 void SearchPage::unset_menu_items()
 {
+	unset_search_model();
 	unset_model();
 }
 
@@ -111,6 +121,39 @@ bool SearchPage::on_filter(GtkTreeModel* model, GtkTreeIter* iter)
 	unsigned int index = launcher->search(m_filter_string);
 
 	return index != UINT_MAX;
+}
+
+//-----------------------------------------------------------------------------
+
+gint SearchPage::on_sort(GtkTreeModel* model, GtkTreeIter* a, GtkTreeIter* b, SearchPage* page)
+{
+	Launcher* launcher_a = NULL;
+	gtk_tree_model_get(model, a, LauncherModel::COLUMN_LAUNCHER, &launcher_a, -1);
+
+	Launcher* launcher_b = NULL;
+	gtk_tree_model_get(model, b, LauncherModel::COLUMN_LAUNCHER, &launcher_b, -1);
+
+	return launcher_a->search(page->m_filter_string) - launcher_b->search(page->m_filter_string);
+}
+
+//-----------------------------------------------------------------------------
+
+void SearchPage::set_search_model(GtkTreeModel* child_model)
+{
+	m_sort_model = GTK_TREE_MODEL_SORT(gtk_tree_model_sort_new_with_model(child_model));
+	gtk_tree_sortable_set_default_sort_func(GTK_TREE_SORTABLE(m_sort_model), (GtkTreeIterCompareFunc)&SearchPage::on_sort, this, NULL);
+	get_view()->set_model(GTK_TREE_MODEL(m_sort_model));
+}
+
+//-----------------------------------------------------------------------------
+
+void SearchPage::unset_search_model()
+{
+	if (m_sort_model)
+	{
+		g_object_unref(m_sort_model);
+		m_sort_model = NULL;
+	}
 }
 
 //-----------------------------------------------------------------------------

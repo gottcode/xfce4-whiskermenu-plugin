@@ -43,9 +43,13 @@ private:
 
 private:
 	bool on_filter(GtkTreeModel* model, GtkTreeIter* iter);
+	static gint on_sort(GtkTreeModel* model, GtkTreeIter* a, GtkTreeIter* b, SearchPage* page);
+	void set_search_model(GtkTreeModel* child_model);
+	void unset_search_model();
 
 private:
 	std::string m_filter_string;
+	GtkTreeModelSort* m_sort_model;
 };
 
 }
