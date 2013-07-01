@@ -16,6 +16,8 @@
 
 #include "launcher.hpp"
 
+#include <vector>
+
 extern "C"
 {
 #include <exo/exo.h>
@@ -243,17 +245,80 @@ void Launcher::run(GdkScreen* screen) const
 
 unsigned int Launcher::search(const std::string& filter_string)
 {
+	// Check if search has been done before
 	std::map<std::string, unsigned int>::const_iterator i = m_searches.find(filter_string);
 	if (i != m_searches.end())
 	{
 		return i->second;
 	}
 
+	// Check if search will fail because a shorter version has failed before
+
+	// Perform search
 	unsigned int index = UINT_MAX;
-	gchar* result = g_strstr_len(get_search_text(), -1, filter_string.c_str());
-	if (result != NULL)
+	std::vector<unsigned int> spaces;
+
+	const gchar* filter_string_c = filter_string.c_str();
+	const gchar* filter_string_ind = filter_string_c;
+	size_t filter_len = filter_string.length();
+
+	const gchar* search_text = get_search_text();
+	size_t len = strlen(search_text);
+	for (const gchar* pos = search_text; *pos; pos = g_utf8_next_char(pos))
 	{
-		index = result - get_search_text();
+		gunichar c = g_utf8_get_char(pos);
+		len -= (pos - search_text);
+		if ((len >= filter_len) && (memcmp(pos, filter_string_c, filter_len) == 0))
+		{
+			index = pos - search_text;
+			break;
+		}
+		else if (c == g_utf8_get_char(filter_string_ind))
+		{
+			filter_string_ind = g_utf8_next_char(filter_string_ind);
+		}
+		else if (g_unichar_isspace(c))
+		{
+			spaces.push_back(pos - search_text);
+		}
+		else if ((c == '\n') && (*filter_string_ind != 0))
+		{
+			filter_string_ind = filter_string_c;
+		}
+	}
+
+	// Check if search text starts with filter string
+	if (index == 0)
+	{
+		// Do nothing
+	}
+	// Check if search text contains filter string
+	else if (index != UINT_MAX)
+	{
+		// Check if a word in search text starts with filter string
+		unsigned int space_index = 0;
+		for (std::vector<unsigned int>::const_reverse_iterator i = spaces.rbegin(), end = spaces.rend(); i != end; ++i)
+		{
+			if (*i < index)
+			{
+				space_index = *i;
+				break;
+			}
+		}
+		unsigned int delta = index - space_index;
+		if (delta == 1)
+		{
+			index += 0x10000000;
+		}
+		else
+		{
+			index += 0x20000000 + delta;
+		}
+	}
+	// Check if search text contains characters of string
+	else if (*filter_string_ind == 0)
+	{
+		index = UINT_MAX - 1;
 	}
 
 	m_searches.insert(std::make_pair(filter_string, index));
