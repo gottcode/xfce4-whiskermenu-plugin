@@ -46,7 +46,6 @@ private:
 
 private:
 	std::string m_filter_string;
-	GtkTreePath* m_filter_matching_path;
 };
 
 }

@@ -31,8 +31,7 @@ using namespace WhiskerMenu;
 //-----------------------------------------------------------------------------
 
 SearchPage::SearchPage(Menu* menu) :
-	FilterPage(menu),
-	m_filter_matching_path(NULL)
+	FilterPage(menu)
 {
 	get_view()->set_selection_mode(GTK_SELECTION_BROWSE);
 
@@ -69,33 +68,18 @@ void SearchPage::set_filter(const gchar* filter)
 	// Apply filter
 	refilter();
 
-	if (m_filter_matching_path)
-	{
-		// Scroll to and select first result that begins with search string
-		GtkTreePath* path = convert_child_path_to_path(m_filter_matching_path);
-		gtk_tree_path_free(m_filter_matching_path);
-		m_filter_matching_path = NULL;
+	// Find first result
+	GtkTreeIter iter;
+	GtkTreePath* path = gtk_tree_path_new_first();
+	bool found = gtk_tree_model_get_iter(get_view()->get_model(), &iter, path);
 
+	// Scroll to and select first result
+	if (found)
+	{
 		get_view()->select_path(path);
 		get_view()->scroll_to_path(path);
-		gtk_tree_path_free(path);
 	}
-	else
-	{
-		// Find first result
-		GtkTreeIter iter;
-		GtkTreePath* path = gtk_tree_path_new_first();
-		bool found = gtk_tree_model_get_iter(get_view()->get_model(), &iter, path);
-
-		// Scroll to and select first result
-		if (found)
-		{
-			get_view()->select_path(path);
-			get_view()->scroll_to_path(path);
-		}
-
-		gtk_tree_path_free(path);
-	}
+	gtk_tree_path_free(path);
 }
 
 //-----------------------------------------------------------------------------
@@ -125,12 +109,6 @@ bool SearchPage::on_filter(GtkTreeModel* model, GtkTreeIter* iter)
 	Launcher* launcher = NULL;
 	gtk_tree_model_get(model, iter, LauncherModel::COLUMN_LAUNCHER, &launcher, -1);
 	unsigned int index = launcher->search(m_filter_string);
-
-	// Check if launcher search string starts with text
-	if (!m_filter_matching_path && (index == 0))
-	{
-		m_filter_matching_path = gtk_tree_model_get_path(model, iter);
-	}
 
 	return index != UINT_MAX;
 }
