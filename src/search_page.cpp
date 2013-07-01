@@ -124,15 +124,15 @@ bool SearchPage::on_filter(GtkTreeModel* model, GtkTreeIter* iter)
 	// Check if launcher search string contains text
 	Launcher* launcher = NULL;
 	gtk_tree_model_get(model, iter, LauncherModel::COLUMN_LAUNCHER, &launcher, -1);
-	gchar* result = g_strstr_len(launcher->get_search_text(), -1, m_filter_string.c_str());
+	unsigned int index = launcher->search(m_filter_string);
 
 	// Check if launcher search string starts with text
-	if (!m_filter_matching_path && (result == launcher->get_search_text()))
+	if (!m_filter_matching_path && (index == 0))
 	{
 		m_filter_matching_path = gtk_tree_model_get_path(model, iter);
 	}
 
-	return result != NULL;
+	return index != UINT_MAX;
 }
 
 //-----------------------------------------------------------------------------

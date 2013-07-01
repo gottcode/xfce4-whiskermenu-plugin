@@ -17,6 +17,7 @@
 #ifndef WHISKERMENU_LAUNCHER_HPP
 #define WHISKERMENU_LAUNCHER_HPP
 
+#include <map>
 #include <string>
 
 extern "C"
@@ -44,14 +45,14 @@ public:
 		return m_text;
 	}
 
-	const gchar* get_search_text();
-
 	GarconMenuItem* get_item() const
 	{
 		return m_item;
 	}
 
 	void run(GdkScreen* screen) const;
+
+	unsigned int search(const std::string& filter_string);
 
 	static bool get_show_name();
 	static bool get_show_description();
@@ -62,11 +63,14 @@ private:
 	Launcher(const Launcher& launcher);
 	Launcher& operator=(const Launcher& launcher);
 
+	const gchar* get_search_text();
+
 private:
 	GarconMenuItem* m_item;
 	gchar* m_icon;
 	gchar* m_text;
 	std::string m_search_text;
+	std::map<std::string, unsigned int> m_searches;
 };
 
 }

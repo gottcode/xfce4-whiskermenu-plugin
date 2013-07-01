@@ -158,51 +158,6 @@ Launcher::~Launcher()
 
 //-----------------------------------------------------------------------------
 
-const gchar* Launcher::get_search_text()
-{
-	if (!m_search_text.empty())
-	{
-		return m_search_text.c_str();
-	}
-
-	// Combine name, comment, and generic name into single casefolded string
-	const gchar* name = garcon_menu_item_get_name(m_item);
-	if (name)
-	{
-		gchar* normalized = g_utf8_normalize(name, -1, G_NORMALIZE_DEFAULT);
-		gchar* utf8 = g_utf8_casefold(normalized, -1);
-		m_search_text += utf8;
-		g_free(utf8);
-		g_free(normalized);
-		m_search_text += '\n';
-	}
-
-	const gchar* generic_name = garcon_menu_item_get_generic_name(m_item);
-	if (generic_name)
-	{
-		gchar* normalized = g_utf8_normalize(generic_name, -1, G_NORMALIZE_DEFAULT);
-		gchar* utf8 = g_utf8_casefold(normalized, -1);
-		m_search_text += utf8;
-		g_free(utf8);
-		g_free(normalized);
-		m_search_text += '\n';
-	}
-
-	const gchar* comment = garcon_menu_item_get_comment(m_item);
-	if (comment)
-	{
-		gchar* normalized = g_utf8_normalize(comment, -1, G_NORMALIZE_DEFAULT);
-		gchar* utf8 = g_utf8_casefold(normalized, -1);
-		m_search_text += utf8;
-		g_free(utf8);
-		g_free(normalized);
-	}
-
-	return m_search_text.c_str();
-}
-
-//-----------------------------------------------------------------------------
-
 void Launcher::run(GdkScreen* screen) const
 {
 	const gchar* string = garcon_menu_item_get_command(m_item);
@@ -286,6 +241,27 @@ void Launcher::run(GdkScreen* screen) const
 
 //-----------------------------------------------------------------------------
 
+unsigned int Launcher::search(const std::string& filter_string)
+{
+	std::map<std::string, unsigned int>::const_iterator i = m_searches.find(filter_string);
+	if (i != m_searches.end())
+	{
+		return i->second;
+	}
+
+	unsigned int index = UINT_MAX;
+	gchar* result = g_strstr_len(get_search_text(), -1, filter_string.c_str());
+	if (result != NULL)
+	{
+		index = result - get_search_text();
+	}
+
+	m_searches.insert(std::make_pair(filter_string, index));
+	return index;
+}
+
+//-----------------------------------------------------------------------------
+
 bool Launcher::get_show_name()
 {
 	return f_show_name;
@@ -310,6 +286,51 @@ void Launcher::set_show_name(bool show)
 void Launcher::set_show_description(bool show)
 {
 	f_show_description = show;
+}
+
+//-----------------------------------------------------------------------------
+
+const gchar* Launcher::get_search_text()
+{
+	if (!m_search_text.empty())
+	{
+		return m_search_text.c_str();
+	}
+
+	// Combine name, comment, and generic name into single casefolded string
+	const gchar* name = garcon_menu_item_get_name(m_item);
+	if (name)
+	{
+		gchar* normalized = g_utf8_normalize(name, -1, G_NORMALIZE_DEFAULT);
+		gchar* utf8 = g_utf8_casefold(normalized, -1);
+		m_search_text += utf8;
+		g_free(utf8);
+		g_free(normalized);
+		m_search_text += '\n';
+	}
+
+	const gchar* generic_name = garcon_menu_item_get_generic_name(m_item);
+	if (generic_name)
+	{
+		gchar* normalized = g_utf8_normalize(generic_name, -1, G_NORMALIZE_DEFAULT);
+		gchar* utf8 = g_utf8_casefold(normalized, -1);
+		m_search_text += utf8;
+		g_free(utf8);
+		g_free(normalized);
+		m_search_text += '\n';
+	}
+
+	const gchar* comment = garcon_menu_item_get_comment(m_item);
+	if (comment)
+	{
+		gchar* normalized = g_utf8_normalize(comment, -1, G_NORMALIZE_DEFAULT);
+		gchar* utf8 = g_utf8_casefold(normalized, -1);
+		m_search_text += utf8;
+		g_free(utf8);
+		g_free(normalized);
+	}
+
+	return m_search_text.c_str();
 }
 
 //-----------------------------------------------------------------------------
