@@ -667,7 +667,7 @@ void Menu::search()
 	}
 
 	// Apply filter
-	m_search_results->set_filter((visible && (g_utf8_strlen(filter_string, -1) > 2)) ? filter_string : NULL);
+	m_search_results->set_filter(visible ? filter_string : NULL);
 	g_free(filter_string);
 }
 
