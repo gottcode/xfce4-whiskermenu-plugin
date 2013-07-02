@@ -129,7 +129,7 @@ bool SearchPage::on_filter(GtkTreeModel* model, GtkTreeIter* iter)
 	// Check if launcher search string contains text
 	Launcher* launcher = NULL;
 	gtk_tree_model_get(model, iter, LauncherModel::COLUMN_LAUNCHER, &launcher, -1);
-	return launcher->get_search_results(m_query) != UINT_MAX;
+	return launcher->search(m_query) != UINT_MAX;
 }
 
 //-----------------------------------------------------------------------------
@@ -142,7 +142,7 @@ gint SearchPage::on_sort(GtkTreeModel* model, GtkTreeIter* a, GtkTreeIter* b, Se
 	Launcher* launcher_b = NULL;
 	gtk_tree_model_get(model, b, LauncherModel::COLUMN_LAUNCHER, &launcher_b, -1);
 
-	return launcher_a->get_search_results(page->m_query) - launcher_b->get_search_results(page->m_query);
+	return launcher_a->search(page->m_query) - launcher_b->search(page->m_query);
 }
 
 //-----------------------------------------------------------------------------
