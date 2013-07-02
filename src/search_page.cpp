@@ -52,24 +52,17 @@ SearchPage::~SearchPage()
 void SearchPage::set_filter(const gchar* filter)
 {
 	// Store filter string
-	std::string old_filter_string = m_filter_string;
-	if (filter)
-	{
-		m_filter_string = filter;
-	}
-	else
-	{
-		m_filter_string.clear();
-	}
-	if (m_filter_string == old_filter_string)
+	std::string query(filter ? filter : "");
+	if (m_query.query() == query)
 	{
 		return;
 	}
+	m_query.set(query);
 
 	// Create search results
 	for (std::vector<Launcher*>::iterator i = m_launchers.begin(), end = m_launchers.end(); i != end; ++i)
 	{
-		(*i)->search(m_filter_string);
+		(*i)->search(m_query);
 	}
 
 	// Apply filter
@@ -128,7 +121,7 @@ void SearchPage::unset_menu_items()
 
 bool SearchPage::on_filter(GtkTreeModel* model, GtkTreeIter* iter)
 {
-	if (m_filter_string.empty())
+	if (m_query.empty())
 	{
 		return false;
 	}
@@ -136,9 +129,7 @@ bool SearchPage::on_filter(GtkTreeModel* model, GtkTreeIter* iter)
 	// Check if launcher search string contains text
 	Launcher* launcher = NULL;
 	gtk_tree_model_get(model, iter, LauncherModel::COLUMN_LAUNCHER, &launcher, -1);
-	unsigned int index = launcher->get_search_results(m_filter_string);
-
-	return index != UINT_MAX;
+	return launcher->get_search_results(m_query) != UINT_MAX;
 }
 
 //-----------------------------------------------------------------------------
@@ -151,7 +142,7 @@ gint SearchPage::on_sort(GtkTreeModel* model, GtkTreeIter* a, GtkTreeIter* b, Se
 	Launcher* launcher_b = NULL;
 	gtk_tree_model_get(model, b, LauncherModel::COLUMN_LAUNCHER, &launcher_b, -1);
 
-	return launcher_a->get_search_results(page->m_filter_string) - launcher_b->get_search_results(page->m_filter_string);
+	return launcher_a->get_search_results(page->m_query) - launcher_b->get_search_results(page->m_query);
 }
 
 //-----------------------------------------------------------------------------

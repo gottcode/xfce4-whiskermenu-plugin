@@ -68,6 +68,7 @@ add_library(whiskermenu SHARED
     menu.cpp
     page.cpp
     panel_plugin.cpp
+    query.cpp
     recent_page.cpp
     register_plugin.c
     resizer_widget.cpp

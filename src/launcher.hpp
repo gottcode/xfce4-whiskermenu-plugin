@@ -29,6 +29,8 @@ extern "C"
 namespace WhiskerMenu
 {
 
+class Query;
+
 class Launcher
 {
 public:
@@ -50,11 +52,11 @@ public:
 		return m_item;
 	}
 
-	unsigned int get_search_results(const std::string& filter_string) const;
+	unsigned int get_search_results(const Query& query) const;
 
 	void run(GdkScreen* screen) const;
 
-	void search(const std::string& filter_string);
+	void search(const Query& query);
 
 	static bool get_show_name();
 	static bool get_show_description();
@@ -65,13 +67,12 @@ private:
 	Launcher(const Launcher& launcher);
 	Launcher& operator=(const Launcher& launcher);
 
-	const gchar* get_search_text();
-
 private:
 	GarconMenuItem* m_item;
 	gchar* m_icon;
 	gchar* m_text;
-	std::string m_search_text;
+	std::string m_search_name;
+	std::string m_search_comment;
 	std::map<std::string, unsigned int> m_searches;
 };
 

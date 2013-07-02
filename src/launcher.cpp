@@ -16,7 +16,7 @@
 
 #include "launcher.hpp"
 
-#include <vector>
+#include "query.hpp"
 
 extern "C"
 {
@@ -142,11 +142,25 @@ Launcher::Launcher(GarconMenuItem* item) :
 			details = generic_name;
 		}
 		m_text = g_markup_printf_escaped("<b>%s</b>\n%s", display_name, details);
+
+		// Create search text
+		gchar* normalized = g_utf8_normalize(details, -1, G_NORMALIZE_DEFAULT);
+		gchar* utf8 = g_utf8_casefold(normalized, -1);
+		m_search_comment = utf8;
+		g_free(utf8);
+		g_free(normalized);
 	}
 	else
 	{
 		m_text = g_markup_printf_escaped("%s", display_name);
 	}
+
+	// Create search text
+	gchar* normalized = g_utf8_normalize(display_name, -1, G_NORMALIZE_DEFAULT);
+	gchar* utf8 = g_utf8_casefold(normalized, -1);
+	m_search_name = utf8;
+	g_free(utf8);
+	g_free(normalized);
 }
 
 //-----------------------------------------------------------------------------
@@ -160,9 +174,9 @@ Launcher::~Launcher()
 
 //-----------------------------------------------------------------------------
 
-unsigned int Launcher::get_search_results(const std::string& filter_string) const
+unsigned int Launcher::get_search_results(const Query &query) const
 {
-	std::map<std::string, unsigned int>::const_iterator i = m_searches.find(filter_string);
+	std::map<std::string, unsigned int>::const_iterator i = m_searches.find(query.query());
 	return (i != m_searches.end()) ? i->second : UINT_MAX;
 }
 
@@ -251,85 +265,34 @@ void Launcher::run(GdkScreen* screen) const
 
 //-----------------------------------------------------------------------------
 
-void Launcher::search(const std::string& filter_string)
+void Launcher::search(const Query& query)
 {
-	// Check if search has been done before
-	std::map<std::string, unsigned int>::const_iterator i = m_searches.find(filter_string);
-	if (i != m_searches.end())
+	if (query.empty())
 	{
 		return;
 	}
 
-	// Check if search will fail because a shorter version has failed before
-
-	// Perform search
-	unsigned int index = UINT_MAX;
-	std::vector<unsigned int> spaces;
-
-	const gchar* filter_string_c = filter_string.c_str();
-	const gchar* filter_string_ind = filter_string_c;
-	size_t filter_len = filter_string.length();
-
-	const gchar* search_text = get_search_text();
-	size_t len = strlen(search_text);
-	for (const gchar* pos = search_text; *pos; pos = g_utf8_next_char(pos))
+	// Check if search has been done or if a shorter version has failed before
+	for (std::map<std::string, unsigned int>::const_iterator i = m_searches.begin(), end = m_searches.end(); i != end; ++i)
 	{
-		gunichar c = g_utf8_get_char(pos);
-		len -= (pos - search_text);
-		if ((len >= filter_len) && (memcmp(pos, filter_string_c, filter_len) == 0))
+		if ( ((i->second == UINT_MAX) && (query.query().find(i->first) == 0))
+				|| (i->first == query.query()) )
 		{
-			index = pos - search_text;
-			break;
-		}
-		else if (c == g_utf8_get_char(filter_string_ind))
-		{
-			filter_string_ind = g_utf8_next_char(filter_string_ind);
-		}
-		else if (g_unichar_isspace(c))
-		{
-			spaces.push_back(pos - search_text);
-		}
-		else if ((c == '\n') && (*filter_string_ind != 0))
-		{
-			filter_string_ind = filter_string_c;
+			return;
 		}
 	}
 
-	// Check if search text starts with filter string
-	if (index == 0)
+	unsigned int match = query.match(m_search_name);
+	if ((match == UINT_MAX) && f_show_description)
 	{
-		// Do nothing
-	}
-	// Check if search text contains filter string
-	else if (index != UINT_MAX)
-	{
-		// Check if a word in search text starts with filter string
-		unsigned int space_index = 0;
-		for (std::vector<unsigned int>::const_reverse_iterator i = spaces.rbegin(), end = spaces.rend(); i != end; ++i)
+		match = query.match(m_search_comment);
+		if (match != UINT_MAX)
 		{
-			if (*i < index)
-			{
-				space_index = *i;
-				break;
-			}
-		}
-		unsigned int delta = index - space_index;
-		if (delta == 1)
-		{
-			index += 0x10000000;
-		}
-		else
-		{
-			index += 0x20000000 + delta;
+			// Sort matches in comments after matches in names
+			match += 10;
 		}
 	}
-	// Check if search text contains characters of string
-	else if (*filter_string_ind == 0)
-	{
-		index = UINT_MAX - 1;
-	}
-
-	m_searches.insert(std::make_pair(filter_string, index));
+	m_searches.insert(std::make_pair(query.query(), match));
 }
 
 //-----------------------------------------------------------------------------
@@ -358,51 +321,6 @@ void Launcher::set_show_name(bool show)
 void Launcher::set_show_description(bool show)
 {
 	f_show_description = show;
-}
-
-//-----------------------------------------------------------------------------
-
-const gchar* Launcher::get_search_text()
-{
-	if (!m_search_text.empty())
-	{
-		return m_search_text.c_str();
-	}
-
-	// Combine name, comment, and generic name into single casefolded string
-	const gchar* name = garcon_menu_item_get_name(m_item);
-	if (name)
-	{
-		gchar* normalized = g_utf8_normalize(name, -1, G_NORMALIZE_DEFAULT);
-		gchar* utf8 = g_utf8_casefold(normalized, -1);
-		m_search_text += utf8;
-		g_free(utf8);
-		g_free(normalized);
-		m_search_text += '\n';
-	}
-
-	const gchar* generic_name = garcon_menu_item_get_generic_name(m_item);
-	if (generic_name)
-	{
-		gchar* normalized = g_utf8_normalize(generic_name, -1, G_NORMALIZE_DEFAULT);
-		gchar* utf8 = g_utf8_casefold(normalized, -1);
-		m_search_text += utf8;
-		g_free(utf8);
-		g_free(normalized);
-		m_search_text += '\n';
-	}
-
-	const gchar* comment = garcon_menu_item_get_comment(m_item);
-	if (comment)
-	{
-		gchar* normalized = g_utf8_normalize(comment, -1, G_NORMALIZE_DEFAULT);
-		gchar* utf8 = g_utf8_casefold(normalized, -1);
-		m_search_text += utf8;
-		g_free(utf8);
-		g_free(normalized);
-	}
-
-	return m_search_text.c_str();
 }
 
 //-----------------------------------------------------------------------------

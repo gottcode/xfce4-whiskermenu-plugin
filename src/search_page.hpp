@@ -18,6 +18,7 @@
 #define WHISKERMENU_SEARCH_PAGE_HPP
 
 #include "filter_page.hpp"
+#include "query.hpp"
 #include "slot.hpp"
 
 #include <string>
@@ -49,7 +50,7 @@ private:
 	void unset_search_model();
 
 private:
-	std::string m_filter_string;
+	Query m_query;
 	GtkTreeModelSort* m_sort_model;
 	std::vector<Launcher*> m_launchers;
 };
