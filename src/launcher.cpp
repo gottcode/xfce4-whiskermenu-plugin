@@ -139,11 +139,15 @@ Launcher::Launcher(GarconMenuItem* item) :
 		{
 			details = generic_name;
 		}
-		m_text = g_markup_printf_escaped("<b>%s</b>\n%s", display_name, details);
+		m_text = g_markup_printf_escaped(
+				(gtk_widget_get_default_direction() != GTK_TEXT_DIR_RTL) ? "<b>%s</b>\n%s" : "\342\200\217<b>%s</b>\n\342\200\217%s",
+				display_name, details);
 	}
 	else
 	{
-		m_text = g_markup_printf_escaped("%s", display_name);
+		m_text = g_markup_printf_escaped(
+				(gtk_widget_get_default_direction() != GTK_TEXT_DIR_RTL) ? "%s" : "\342\200\217%s",
+				display_name);
 	}
 }
 
