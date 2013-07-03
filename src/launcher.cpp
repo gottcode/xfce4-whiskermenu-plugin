@@ -174,6 +174,14 @@ Launcher::~Launcher()
 
 //-----------------------------------------------------------------------------
 
+unsigned int Launcher::get_search_results(const Query &query) const
+{
+	std::map<std::string, unsigned int>::const_iterator i = m_searches.find(query.query());
+	return (i != m_searches.end()) ? i->second : UINT_MAX;
+}
+
+//-----------------------------------------------------------------------------
+
 void Launcher::run(GdkScreen* screen) const
 {
 	const gchar* string = garcon_menu_item_get_command(m_item);
@@ -257,23 +265,20 @@ void Launcher::run(GdkScreen* screen) const
 
 //-----------------------------------------------------------------------------
 
-unsigned int Launcher::search(const Query& query)
+void Launcher::search(const Query& query)
 {
 	if (query.empty())
 	{
-		return UINT_MAX;
+		return;
 	}
 
 	// Check if search has been done or if a shorter version has failed before
 	for (std::map<std::string, unsigned int>::const_iterator i = m_searches.begin(), end = m_searches.end(); i != end; ++i)
 	{
-		if (i->first == query.query())
+		if ( ((i->second == UINT_MAX) && (query.query().find(i->first) == 0))
+				|| (i->first == query.query()) )
 		{
-			return i->second;
-		}
-		else if ((i->second == UINT_MAX) && (query.query().find(i->first) == 0))
-		{
-			return UINT_MAX;
+			return;
 		}
 	}
 
@@ -288,7 +293,6 @@ unsigned int Launcher::search(const Query& query)
 		}
 	}
 	m_searches.insert(std::make_pair(query.query(), match));
-	return match;
 }
 
 //-----------------------------------------------------------------------------

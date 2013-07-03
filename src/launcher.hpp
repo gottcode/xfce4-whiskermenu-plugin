@@ -52,9 +52,11 @@ public:
 		return m_item;
 	}
 
+	unsigned int get_search_results(const Query& query) const;
+
 	void run(GdkScreen* screen) const;
 
-	unsigned int search(const Query& query);
+	void search(const Query& query);
 
 	static bool get_show_name();
 	static bool get_show_description();
