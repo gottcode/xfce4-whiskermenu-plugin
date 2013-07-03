@@ -115,12 +115,6 @@ unsigned int Query::match(const std::string& haystack) const
 		}
 	}
 
-	// Check if haystack contains query
-	if (pos != std::string::npos)
-	{
-		return 5;
-	}
-
 	// Check if haystack contains query as characters
 	bool characters_start_words = true;
 	bool start_word = true;
@@ -143,13 +137,19 @@ unsigned int Query::match(const std::string& haystack) const
 			start_word = false;
 		}
 	}
+	unsigned int result = UINT_MAX;
 	if (*query_string == 0)
 	{
-		return characters_start_words ? 6 : 7;
+		result = characters_start_words ? 5 : 7;
 	}
 
-	// Failed to find any matches
-	return UINT_MAX;
+	// Check if haystack contains query
+	if ((result > 5) && (pos != std::string::npos))
+	{
+		result = 6;
+	}
+
+	return result;
 }
 
 //-----------------------------------------------------------------------------
