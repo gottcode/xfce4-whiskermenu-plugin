@@ -17,6 +17,8 @@
 #ifndef WHISKERMENU_LAUNCHER_HPP
 #define WHISKERMENU_LAUNCHER_HPP
 
+#include "query.hpp"
+
 #include <map>
 #include <string>
 
@@ -28,8 +30,6 @@ extern "C"
 
 namespace WhiskerMenu
 {
-
-class Query;
 
 class Launcher
 {
@@ -52,7 +52,11 @@ public:
 		return m_item;
 	}
 
-	unsigned int get_search_results(const Query& query) const;
+	unsigned int get_search_results(const Query& query) const
+	{
+		std::map<std::string, unsigned int>::const_iterator i = m_searches.find(query.query());
+		return (i != m_searches.end()) ? i->second : UINT_MAX;
+	}
 
 	void run(GdkScreen* screen) const;
 
