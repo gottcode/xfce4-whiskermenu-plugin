@@ -32,7 +32,7 @@ namespace WhiskerMenu
 class ResizerWidget
 {
 public:
-	ResizerWidget(GtkWindow* window);
+	explicit ResizerWidget(GtkWindow* window);
 	~ResizerWidget();
 
 	GtkWidget* get_widget() const

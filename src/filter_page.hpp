@@ -25,7 +25,7 @@ namespace WhiskerMenu
 class FilterPage : public Page
 {
 public:
-	FilterPage(Menu* menu);
+	explicit FilterPage(Menu* menu);
 	~FilterPage();
 
 	GtkTreeModel* get_model() const;

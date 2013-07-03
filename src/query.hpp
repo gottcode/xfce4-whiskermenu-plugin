@@ -26,7 +26,8 @@ namespace WhiskerMenu
 class Query
 {
 public:
-	Query(const std::string& query = std::string());
+	Query();
+	explicit Query(const std::string& query);
 	~Query();
 
 	bool empty() const

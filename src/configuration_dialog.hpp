@@ -32,7 +32,7 @@ class PanelPlugin;
 class ConfigurationDialog
 {
 public:
-	ConfigurationDialog(PanelPlugin* plugin);
+	explicit ConfigurationDialog(PanelPlugin* plugin);
 	~ConfigurationDialog();
 
 private:

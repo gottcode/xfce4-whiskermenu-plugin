@@ -34,7 +34,7 @@ class Query;
 class Launcher
 {
 public:
-	Launcher(GarconMenuItem* item);
+	explicit Launcher(GarconMenuItem* item);
 	~Launcher();
 
 	const gchar* get_icon() const

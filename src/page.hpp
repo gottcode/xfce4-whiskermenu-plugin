@@ -35,7 +35,7 @@ class Menu;
 class Page
 {
 public:
-	Page(Menu* menu);
+	explicit Page(Menu* menu);
 	virtual ~Page();
 
 	GtkWidget* get_widget() const

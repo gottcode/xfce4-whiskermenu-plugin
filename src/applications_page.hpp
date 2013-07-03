@@ -41,7 +41,7 @@ class ApplicationsPage : public FilterPage
 	class Category
 	{
 	public:
-		Category(GarconMenuDirectory* directory);
+		explicit Category(GarconMenuDirectory* directory);
 
 		const gchar* get_icon() const
 		{
@@ -59,7 +59,7 @@ class ApplicationsPage : public FilterPage
 	};
 
 public:
-	ApplicationsPage(Menu* menu);
+	explicit ApplicationsPage(Menu* menu);
 	~ApplicationsPage();
 
 	void load_applications();

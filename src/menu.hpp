@@ -42,7 +42,7 @@ class SearchPage;
 class Menu
 {
 public:
-	Menu(XfceRc* settings);
+	explicit Menu(XfceRc* settings);
 	~Menu();
 
 	GtkWidget* get_widget() const

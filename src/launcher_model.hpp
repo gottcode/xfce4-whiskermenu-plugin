@@ -31,7 +31,7 @@ class LauncherModel
 {
 public:
 	LauncherModel();
-	LauncherModel(GtkListStore* model);
+	explicit LauncherModel(GtkListStore* model);
 	~LauncherModel();
 
 	GtkTreeModel* get_model() const

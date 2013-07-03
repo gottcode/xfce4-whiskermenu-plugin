@@ -35,7 +35,7 @@ class Menu;
 class PanelPlugin
 {
 public:
-	PanelPlugin(XfcePanelPlugin* plugin);
+	explicit PanelPlugin(XfcePanelPlugin* plugin);
 	~PanelPlugin();
 
 	GtkWidget* get_button() const

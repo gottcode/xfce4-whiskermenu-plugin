@@ -37,6 +37,12 @@ static inline bool is_start_word(const std::string& string, std::string::size_ty
 
 //-----------------------------------------------------------------------------
 
+Query::Query()
+{
+}
+
+//-----------------------------------------------------------------------------
+
 Query::Query(const std::string& query)
 {
 	set(query);
