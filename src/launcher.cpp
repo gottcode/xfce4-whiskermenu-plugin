@@ -131,6 +131,7 @@ Launcher::Launcher(GarconMenuItem* item) :
 	}
 
 	// Create display text
+	const gchar* direction = (gtk_widget_get_default_direction() != GTK_TEXT_DIR_RTL) ? "\342\200\216" : "\342\200\217";
 	const gchar* display_name = (f_show_name || exo_str_is_empty(generic_name)) ? name : generic_name;
 	if (f_show_description)
 	{
@@ -139,15 +140,11 @@ Launcher::Launcher(GarconMenuItem* item) :
 		{
 			details = generic_name;
 		}
-		m_text = g_markup_printf_escaped(
-				(gtk_widget_get_default_direction() != GTK_TEXT_DIR_RTL) ? "<b>%s</b>\n%s" : "\342\200\217<b>%s</b>\n\342\200\217%s",
-				display_name, details);
+		m_text = g_markup_printf_escaped("%s<b>%s</b>\n%s%s", direction, display_name, direction, details);
 	}
 	else
 	{
-		m_text = g_markup_printf_escaped(
-				(gtk_widget_get_default_direction() != GTK_TEXT_DIR_RTL) ? "%s" : "\342\200\217%s",
-				display_name);
+		m_text = g_markup_printf_escaped("%s%s", direction, display_name);
 	}
 }
 
