@@ -228,30 +228,39 @@ void Menu::show(GtkWidget* parent, bool horizontal)
 	// Reset mouse cursor by forcing favorites to hide
 	gtk_widget_show(m_favorites->get_widget());
 
-	// Wait up to half a second for auto-hidden panels to be shown
-	clock_t end = clock() + (CLOCKS_PER_SEC / 2);
-	GtkWindow* parent_window = GTK_WINDOW(gtk_widget_get_toplevel(parent));
-	int parent_x = 0, parent_y = 0;
-	gtk_window_get_position(parent_window, &parent_x, &parent_y);
-	while ((parent_x == -9999) && (parent_y == -9999) && (clock() < end))
+	GdkScreen* screen = NULL;
+	int parent_x = 0, parent_y = 0, parent_w = 0, parent_h = 0;
+	if (parent != NULL)
 	{
-		while (gtk_events_pending())
-		{
-			gtk_main_iteration();
-		}
+		// Wait up to half a second for auto-hidden panels to be shown
+		clock_t end = clock() + (CLOCKS_PER_SEC / 2);
+		GtkWindow* parent_window = GTK_WINDOW(gtk_widget_get_toplevel(parent));
 		gtk_window_get_position(parent_window, &parent_x, &parent_y);
-	}
+		while ((parent_x == -9999) && (parent_y == -9999) && (clock() < end))
+		{
+			while (gtk_events_pending())
+			{
+				gtk_main_iteration();
+			}
+			gtk_window_get_position(parent_window, &parent_x, &parent_y);
+		}
 
-	// Fetch parent geometry
-	if (!gtk_widget_get_realized(parent))
-	{
-		gtk_widget_realize(parent);
+		// Fetch parent geometry
+		if (!gtk_widget_get_realized(parent))
+		{
+			gtk_widget_realize(parent);
+		}
+		GdkWindow* window = gtk_widget_get_window(parent);
+		gdk_window_get_origin(window, &parent_x, &parent_y);
+		screen = gdk_window_get_screen(window);
+		parent_w = gdk_window_get_width(window);
+		parent_h = gdk_window_get_height(window);
 	}
-	GdkWindow* window = gtk_widget_get_window(parent);
-	GdkScreen* screen = gdk_window_get_screen(window);
-	gdk_window_get_origin(window, &parent_x, &parent_y);
-	int parent_w = gdk_window_get_width(window);
-	int parent_h = gdk_window_get_height(window);
+	else
+	{
+		GdkDisplay* display = gdk_display_get_default();
+		gdk_display_get_pointer(display, &screen, &parent_x, &parent_y, NULL);
+	}
 
 	// Fetch screen geomtry
 	GdkRectangle monitor;

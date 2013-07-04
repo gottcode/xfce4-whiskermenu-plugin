@@ -62,7 +62,7 @@ private:
 	SLOT_2(gboolean, PanelPlugin, size_changed, XfcePanelPlugin*, gint);
 
 private:
-	void popup_menu();
+	void popup_menu(bool at_cursor);
 
 private:
 	XfcePanelPlugin* m_plugin;

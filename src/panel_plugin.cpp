@@ -145,7 +145,7 @@ gboolean PanelPlugin::button_clicked(GtkWidget*, GdkEventButton* event)
 	}
 	else
 	{
-		popup_menu();
+		popup_menu(false);
 	}
 
 	return true;
@@ -175,14 +175,14 @@ void PanelPlugin::orientation_changed(XfcePanelPlugin*, GtkOrientation)
 
 //-----------------------------------------------------------------------------
 
-gboolean PanelPlugin::remote_event(XfcePanelPlugin*, gchar* name, GValue*)
+gboolean PanelPlugin::remote_event(XfcePanelPlugin*, gchar* name, GValue* value)
 {
 	if (strcmp(name, "popup") || gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(m_button)))
 	{
 		return false;
 	}
 
-	popup_menu();
+	popup_menu(value && G_VALUE_HOLDS_BOOLEAN(value) && g_value_get_boolean(value));
 
 	return true;
 }
@@ -232,11 +232,18 @@ gboolean PanelPlugin::size_changed(XfcePanelPlugin*, gint size)
 
 //-----------------------------------------------------------------------------
 
-void PanelPlugin::popup_menu()
+void PanelPlugin::popup_menu(bool at_cursor)
 {
-	xfce_panel_plugin_block_autohide(m_plugin, true);
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_button), true);
-	m_menu->show(m_button, xfce_panel_plugin_get_orientation(m_plugin) == GTK_ORIENTATION_HORIZONTAL);
+	if (!at_cursor)
+	{
+		xfce_panel_plugin_block_autohide(m_plugin, true);
+		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_button), true);
+		m_menu->show(m_button, xfce_panel_plugin_get_orientation(m_plugin) == GTK_ORIENTATION_HORIZONTAL);
+	}
+	else
+	{
+		m_menu->show(NULL, true);
+	}
 }
 
 //-----------------------------------------------------------------------------
