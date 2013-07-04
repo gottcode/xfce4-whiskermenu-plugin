@@ -248,17 +248,18 @@ void Menu::show(GtkWidget* parent, bool horizontal)
 		gtk_widget_realize(parent);
 	}
 	GdkWindow* window = gtk_widget_get_window(parent);
+	GdkScreen* screen = gdk_window_get_screen(window);
 	gdk_window_get_origin(window, &parent_x, &parent_y);
 	int parent_w = gdk_window_get_width(window);
 	int parent_h = gdk_window_get_height(window);
 
 	// Fetch screen geomtry
-	GdkScreen* screen = gtk_widget_get_screen(GTK_WIDGET(m_window));
-	int root_w = gdk_screen_get_width(GDK_SCREEN(screen));
-	int root_h = gdk_screen_get_height(GDK_SCREEN(screen));
+	GdkRectangle monitor;
+	int monitor_num = gdk_screen_get_monitor_at_point(screen, parent_x, parent_y);
+	gdk_screen_get_monitor_geometry(screen, monitor_num, &monitor);
 
 	// Find window position
-	bool layout_left = ((2 * parent_x) + parent_w) < root_w;
+	bool layout_left = ((2 * (parent_x - monitor.x)) + parent_w) < monitor.width;
 	if (horizontal)
 	{
 		m_geometry.x = layout_left ? parent_x : (parent_x + parent_w - m_geometry.width);
@@ -268,7 +269,7 @@ void Menu::show(GtkWidget* parent, bool horizontal)
 		m_geometry.x = layout_left ? (parent_x + parent_w) : (parent_x - m_geometry.width);
 	}
 
-	bool layout_bottom = ((2 * parent_y) + parent_h) > root_h;
+	bool layout_bottom = ((2 * (parent_y - monitor.y)) + (parent_h / 2)) > monitor.height;
 	if (horizontal)
 	{
 		m_geometry.y = layout_bottom ? (parent_y - m_geometry.height) : (parent_y + parent_h);
@@ -279,10 +280,6 @@ void Menu::show(GtkWidget* parent, bool horizontal)
 	}
 
 	// Prevent window from leaving screen
-	GdkRectangle monitor;
-	int monitor_num = gdk_screen_get_monitor_at_window(screen, window);
-	gdk_screen_get_monitor_geometry(screen, monitor_num, &monitor);
-
 	int monitor_r = monitor.x + monitor.width;
 	if (m_geometry.x < monitor.x)
 	{
