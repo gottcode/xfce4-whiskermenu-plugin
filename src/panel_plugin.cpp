@@ -157,13 +157,18 @@ void PanelPlugin::menu_hidden()
 {
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_button), false);
 	xfce_panel_plugin_block_autohide(m_plugin, false);
+	if (m_menu->get_modified())
+	{
+		save();
+	}
 }
 
 //-----------------------------------------------------------------------------
 
 void PanelPlugin::configure()
 {
-	new ConfigurationDialog(this);
+	ConfigurationDialog* dialog = new ConfigurationDialog(this);
+	g_signal_connect_swapped(dialog->get_widget(), "destroy", SLOT_CALLBACK(PanelPlugin::save), this);
 }
 
 //-----------------------------------------------------------------------------

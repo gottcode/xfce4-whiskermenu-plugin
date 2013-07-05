@@ -55,7 +55,8 @@ static GtkButton* new_action_button(const gchar* icon, const gchar* text)
 Menu::Menu(XfceRc* settings) :
 	m_window(NULL),
 	m_layout_left(true),
-	m_layout_bottom(true)
+	m_layout_bottom(true),
+	m_modified(false)
 {
 	m_geometry.x = 0;
 	m_geometry.y = 0;
@@ -410,6 +411,7 @@ void Menu::save(XfceRc* settings)
 		m_recent->save(settings);
 		xfce_rc_write_int_entry(settings, "menu-width", m_geometry.width);
 		xfce_rc_write_int_entry(settings, "menu-height", m_geometry.height);
+		m_modified = false;
 	}
 }
 
@@ -439,6 +441,13 @@ void Menu::set_items(const std::map<std::string, Launcher*>& items)
 	// Handle switching to favorites are added
 	GtkTreeModel* favorites_model = m_favorites->get_view()->get_model();
 	g_signal_connect_swapped(favorites_model, "row-inserted", SLOT_CALLBACK(Menu::show_favorites), this);
+}
+
+//-----------------------------------------------------------------------------
+
+void Menu::set_modified()
+{
+	m_modified = true;
 }
 
 //-----------------------------------------------------------------------------

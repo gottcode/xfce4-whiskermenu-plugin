@@ -70,11 +70,17 @@ public:
 		return m_recent;
 	}
 
+	bool get_modified() const
+	{
+		return m_modified;
+	}
+
 	void hide();
 	void show(GtkWidget* parent, bool horizontal);
 	void save(XfceRc* settings);
 	void set_categories(const std::vector<GtkRadioButton*>& categories);
 	void set_items(const std::map<std::string, Launcher*>& items);
+	void set_modified();
 	void unset_items();
 
 private:
@@ -121,6 +127,7 @@ private:
 	GdkRectangle m_geometry;
 	bool m_layout_left;
 	bool m_layout_bottom;
+	bool m_modified;
 };
 
 }
