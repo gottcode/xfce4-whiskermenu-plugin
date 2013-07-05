@@ -1,3 +1,11 @@
+1.0.3
+=====
+- Fix changes to favorites not always saved.
+- Fix crash when categories have empty icons or names.
+- Fix menu position in mulithead.
+- Fix RTL alignment of menu items.
+- Translation updates: French, Malay, Polish, Russian, Swedish.
+
 1.0.2
 =====
 - Fix position being reset when scrolling with directional keys.
