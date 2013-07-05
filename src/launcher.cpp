@@ -142,7 +142,7 @@ Launcher::Launcher(GarconMenuItem* item) :
 		}
 		m_text = g_markup_printf_escaped("%s<b>%s</b>\n%s%s", direction, display_name, direction, details);
 
-		// Create search text
+		// Create search text for comment
 		gchar* normalized = g_utf8_normalize(details, -1, G_NORMALIZE_DEFAULT);
 		gchar* utf8 = g_utf8_casefold(normalized, -1);
 		m_search_comment = utf8;
@@ -154,12 +154,23 @@ Launcher::Launcher(GarconMenuItem* item) :
 		m_text = g_markup_printf_escaped("%s%s", direction, display_name);
 	}
 
-	// Create search text
+	// Create search text for display name
 	gchar* normalized = g_utf8_normalize(display_name, -1, G_NORMALIZE_DEFAULT);
 	gchar* utf8 = g_utf8_casefold(normalized, -1);
 	m_search_name = utf8;
 	g_free(utf8);
 	g_free(normalized);
+
+	// Create search text for command
+	const gchar* command = garcon_menu_item_get_command(m_item);
+	if (!exo_str_is_empty(command))
+	{
+		normalized = g_utf8_normalize(command, -1, G_NORMALIZE_DEFAULT);
+		utf8 = g_utf8_casefold(normalized, -1);
+		m_search_command = utf8;
+		g_free(utf8);
+		g_free(normalized);
+	}
 }
 
 //-----------------------------------------------------------------------------
@@ -274,6 +285,10 @@ void Launcher::search(const Query& query)
 	}
 
 	unsigned int match = query.match(m_search_name);
+	if (match == UINT_MAX)
+	{
+		match = query.match(m_search_command);
+	}
 	if ((match == UINT_MAX) && f_show_description)
 	{
 		match = query.match(m_search_comment);

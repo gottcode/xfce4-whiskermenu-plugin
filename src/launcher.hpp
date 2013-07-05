@@ -77,6 +77,7 @@ private:
 	gchar* m_text;
 	std::string m_search_name;
 	std::string m_search_comment;
+	std::string m_search_command;
 	std::map<std::string, unsigned int> m_searches;
 };
 
