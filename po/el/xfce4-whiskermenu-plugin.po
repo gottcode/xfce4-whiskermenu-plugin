@@ -6,9 +6,9 @@
 # angel_solomos <angelsolomos@gmail.com>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-whiskermenu-plugin 1.0.2\n"
+"Project-Id-Version: xfce4-whiskermenu-plugin 1.0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-01 00:05+0000\n"
+"POT-Creation-Date: 2013-07-05 19:19+0000\n"
 "PO-Revision-Date: 2013-06-29 15:54+0000\n"
 "Last-Translator: angel_solomos <angelsolomos@gmail.com>\n"
 "Language-Team: Greek (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/el/)\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/applications_page.cpp:312
+#: src/applications_page.cpp:320
 msgid "All"
 msgstr "Όλα"
 
@@ -46,40 +46,40 @@ msgstr "Εικονίδιο:"
 msgid "Select An Icon"
 msgstr "Επιλογή εικονιδίου"
 
-#: src/launcher.cpp:282
+#: src/launcher.cpp:283
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "Αποτυχία εκτέλεσης εντολής \"%s\"."
 
-#: src/menu.cpp:92
+#: src/menu.cpp:93
 msgid "All Settings"
 msgstr "Όλες οι επιλογές"
 
-#: src/menu.cpp:95
+#: src/menu.cpp:96
 msgid "Lock Screen"
 msgstr "Κλείδωμα οθόνης"
 
-#: src/menu.cpp:98
+#: src/menu.cpp:99
 msgid "Log Out"
 msgstr "Αποσύνδεση"
 
-#: src/menu.cpp:112
+#: src/menu.cpp:113
 msgid "Favorites"
 msgstr "Αγαπημένα"
 
-#: src/menu.cpp:118
+#: src/menu.cpp:119
 msgid "Recently Used"
 msgstr "Χρησημοποιήθηκαν πρόσφατα"
 
-#: src/menu.cpp:660
+#: src/menu.cpp:666
 msgid "Failed to open settings manager."
 msgstr "Αποτυχία εκκίνησης του διαχειριστή ρυθμίσεων"
 
-#: src/menu.cpp:674
+#: src/menu.cpp:680
 msgid "Failed to lock screen."
 msgstr "Αποτυχία κλειδώματος οθόνης."
 
-#: src/menu.cpp:688
+#: src/menu.cpp:694
 msgid "Failed to log out."
 msgstr "Αποτυχία αποσύνδεσης."
 

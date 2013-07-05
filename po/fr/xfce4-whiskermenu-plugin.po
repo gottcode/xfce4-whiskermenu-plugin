@@ -6,9 +6,9 @@
 # Draky <draky@draky.net>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-whiskermenu-plugin 1.0.2\n"
+"Project-Id-Version: xfce4-whiskermenu-plugin 1.0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-01 00:05+0000\n"
+"POT-Creation-Date: 2013-07-05 19:19+0000\n"
 "PO-Revision-Date: 2013-07-01 23:13+0000\n"
 "Last-Translator: Draky <draky@draky.net>\n"
 "Language-Team: French (France) (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/fr_FR/)\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: src/applications_page.cpp:312
+#: src/applications_page.cpp:320
 msgid "All"
 msgstr "Tout"
 
@@ -46,40 +46,40 @@ msgstr "_Icône :"
 msgid "Select An Icon"
 msgstr "Sélectionnez une icône"
 
-#: src/launcher.cpp:282
+#: src/launcher.cpp:283
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "Échec lors de l'exécution de la commande \"%s\"."
 
-#: src/menu.cpp:92
+#: src/menu.cpp:93
 msgid "All Settings"
 msgstr "Tous les paramètres"
 
-#: src/menu.cpp:95
+#: src/menu.cpp:96
 msgid "Lock Screen"
 msgstr "Écran de verrouillage"
 
-#: src/menu.cpp:98
+#: src/menu.cpp:99
 msgid "Log Out"
 msgstr "Déconnexion"
 
-#: src/menu.cpp:112
+#: src/menu.cpp:113
 msgid "Favorites"
 msgstr "Favoris"
 
-#: src/menu.cpp:118
+#: src/menu.cpp:119
 msgid "Recently Used"
 msgstr "Récemment utilisés"
 
-#: src/menu.cpp:660
+#: src/menu.cpp:666
 msgid "Failed to open settings manager."
 msgstr "Échec lors du lancement du gestionnaire de paramètres"
 
-#: src/menu.cpp:674
+#: src/menu.cpp:680
 msgid "Failed to lock screen."
 msgstr "Échec lors du verrouillage de l'écran."
 
-#: src/menu.cpp:688
+#: src/menu.cpp:694
 msgid "Failed to log out."
 msgstr "Échec lors de la déconnexion."
 

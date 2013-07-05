@@ -6,9 +6,9 @@
 # Karim Oulad Chalha <herr.linux88@gmail.com>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-whiskermenu-plugin 1.0.2\n"
+"Project-Id-Version: xfce4-whiskermenu-plugin 1.0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-01 00:05+0000\n"
+"POT-Creation-Date: 2013-07-05 19:19+0000\n"
 "PO-Revision-Date: 2013-06-30 16:49+0000\n"
 "Last-Translator: Karim Oulad Chalha <herr.linux88@gmail.com>\n"
 "Language-Team: Arabic (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/ar/)\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Language: ar\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: src/applications_page.cpp:312
+#: src/applications_page.cpp:320
 msgid "All"
 msgstr "كل"
 
@@ -46,40 +46,40 @@ msgstr "_أيقونة:"
 msgid "Select An Icon"
 msgstr "إختر أيقونة"
 
-#: src/launcher.cpp:282
+#: src/launcher.cpp:283
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "فشل تنفيذ الأمر \"%s\"."
 
-#: src/menu.cpp:92
+#: src/menu.cpp:93
 msgid "All Settings"
 msgstr "كل الإعدادات"
 
-#: src/menu.cpp:95
+#: src/menu.cpp:96
 msgid "Lock Screen"
 msgstr "قفل الشاشة"
 
-#: src/menu.cpp:98
+#: src/menu.cpp:99
 msgid "Log Out"
 msgstr "تسجيل الخروج"
 
-#: src/menu.cpp:112
+#: src/menu.cpp:113
 msgid "Favorites"
 msgstr "مفضلات"
 
-#: src/menu.cpp:118
+#: src/menu.cpp:119
 msgid "Recently Used"
 msgstr "مستعملة حديثا"
 
-#: src/menu.cpp:660
+#: src/menu.cpp:666
 msgid "Failed to open settings manager."
 msgstr "فشل فتح مدير الإعدادات."
 
-#: src/menu.cpp:674
+#: src/menu.cpp:680
 msgid "Failed to lock screen."
 msgstr "فشل إغلاق الشاشة."
 
-#: src/menu.cpp:688
+#: src/menu.cpp:694
 msgid "Failed to log out."
 msgstr "فشل تسجيل الخروج."
 
