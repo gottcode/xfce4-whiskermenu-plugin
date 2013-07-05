@@ -1,0 +1,108 @@
+# Russian translation of xfce4-whiskermenu-plugin.
+# Copyright (C) 2013 Graeme Gott
+# This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
+#
+# Translators:
+# shlyapugin <shlyapugin@gmail.com>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: Whisker Menu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-15 20:23+0000\n"
+"PO-Revision-Date: 2013-07-05 11:39+0000\n"
+"Last-Translator: shlyapugin <shlyapugin@gmail.com>\n"
+"Language-Team: Russian (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/ru/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: src/applications_page.cpp:298
+msgid "All"
+msgstr "Все"
+
+#: src/configuration_dialog.cpp:52
+msgid "Whisker Menu"
+msgstr "Меню Whisker"
+
+#: src/configuration_dialog.cpp:66
+msgid "Appearance"
+msgstr "Внешний вид"
+
+#: src/configuration_dialog.cpp:71
+msgid "Show applications by _name"
+msgstr "Показывать приложения по _имени"
+
+#: src/configuration_dialog.cpp:77
+msgid "Show application _descriptions"
+msgstr "Показывать _описание приложений"
+
+#: src/configuration_dialog.cpp:86
+msgid "_Icon:"
+msgstr "_Значок:"
+
+#: src/configuration_dialog.cpp:118
+msgid "Select An Icon"
+msgstr "Выбрать значок"
+
+#: src/launcher.cpp:263
+#, c-format
+msgid "Failed to execute command \"%s\"."
+msgstr "Ошибка выполнения команды \"%s\"."
+
+#: src/menu.cpp:88
+msgid "All Settings"
+msgstr "Все настройки"
+
+#: src/menu.cpp:91
+msgid "Lock Screen"
+msgstr "Блокировка экрана"
+
+#: src/menu.cpp:94
+msgid "Log Out"
+msgstr "Выйти"
+
+#: src/menu.cpp:108
+msgid "Favorites"
+msgstr "Избранное"
+
+#: src/menu.cpp:114
+msgid "Recently Used"
+msgstr "Недавние"
+
+#: src/menu.cpp:636
+msgid "Failed to open settings manager."
+msgstr "Не удалось открыть менеджер настроек."
+
+#: src/menu.cpp:650
+msgid "Failed to lock screen."
+msgstr "Не удалось заблокировать экран."
+
+#: src/menu.cpp:664
+msgid "Failed to log out."
+msgstr "Не удалось выйти."
+
+#: src/page.cpp:170
+msgid "Add to Favorites"
+msgstr "Добавить в \"Избранное\"."
+
+#: src/page.cpp:176
+msgid "Remove From Favorites"
+msgstr "Удалить из \"Избранного\"."
+
+#: src/page.cpp:181
+msgid "Add to Desktop"
+msgstr "Добавить на рабочий стол."
+
+#: src/page.cpp:185
+msgid "Add to Panel"
+msgstr "Добавить на панель."
+
+#: src/page.cpp:265
+msgid "Unable to add launcher to desktop."
+msgstr "Нельзя добавить на рабочий стол."
+
+#: src/page.cpp:303 src/page.cpp:312
+msgid "Unable to add launcher to panel."
+msgstr "Нельзя добавить на панель."
