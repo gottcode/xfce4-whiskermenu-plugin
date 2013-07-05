@@ -67,7 +67,7 @@ void SearchPage::set_filter(const gchar* filter)
 
 	// Apply filter
 	GtkTreeModel* filter_model = gtk_tree_model_sort_get_model(m_sort_model);
-	get_view()->unset_model();
+	get_view()->set_model(filter_model);
 	unset_search_model();
 
 	refilter();
