@@ -37,10 +37,18 @@ using namespace WhiskerMenu;
 ApplicationsPage::Category::Category(GarconMenuDirectory* directory)
 {
 	// Fetch icon
-	m_icon = garcon_menu_directory_get_icon_name(directory);
+	const gchar* icon = garcon_menu_directory_get_icon_name(directory);
+	if (G_LIKELY(icon))
+	{
+		m_icon.assign(icon);
+	}
 
 	// Fetch text
-	m_text = garcon_menu_directory_get_name(directory);
+	const gchar* text = garcon_menu_directory_get_name(directory);
+	if (G_LIKELY(text))
+	{
+		m_text.assign(text);
+	}
 }
 
 //-----------------------------------------------------------------------------
