@@ -35,6 +35,11 @@ public:
 	ConfigurationDialog(PanelPlugin* plugin);
 	~ConfigurationDialog();
 
+	GtkWidget* get_widget() const
+	{
+		return m_window;
+	}
+
 private:
 	SLOT_0(void, ConfigurationDialog, choose_icon);
 	SLOT_1(void, ConfigurationDialog, toggle_show_name, GtkToggleButton*);

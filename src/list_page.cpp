@@ -19,6 +19,7 @@
 #include "launcher.hpp"
 #include "launcher_model.hpp"
 #include "launcher_view.hpp"
+#include "menu.hpp"
 
 #include <algorithm>
 
@@ -144,6 +145,7 @@ void ListPage::on_row_changed(GtkTreeModel* model, GtkTreePath* path, GtkTreeIte
 	if (launcher)
 	{
 		m_desktop_ids[pos] = garcon_menu_item_get_desktop_id(launcher->get_item());
+		get_menu()->set_modified(); // Handle favorites being rearranged
 	}
 }
 

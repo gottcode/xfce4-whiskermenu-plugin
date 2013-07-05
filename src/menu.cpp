@@ -54,7 +54,8 @@ Menu::Menu(XfceRc* settings) :
 	m_window(nullptr),
 	m_geometry{0,0,400,500},
 	m_layout_left(true),
-	m_layout_bottom(true)
+	m_layout_bottom(true),
+	m_modified(false)
 {
 	// Create the window
 	m_window = GTK_WINDOW(gtk_window_new(GTK_WINDOW_TOPLEVEL));
@@ -378,6 +379,7 @@ void Menu::save(XfceRc* settings)
 		m_recent->save(settings);
 		xfce_rc_write_int_entry(settings, "menu-width", m_geometry.width);
 		xfce_rc_write_int_entry(settings, "menu-height", m_geometry.height);
+		m_modified = false;
 	}
 }
 
@@ -407,6 +409,13 @@ void Menu::set_items(std::unordered_map<std::string, Launcher*> items)
 	// Handle switching to favorites are added
 	GtkTreeModel* favorites_model = m_favorites->get_view()->get_model();
 	g_signal_connect_swapped(favorites_model, "row-inserted", SLOT_CALLBACK(Menu::show_favorites), this);
+}
+
+//-----------------------------------------------------------------------------
+
+void Menu::set_modified()
+{
+	m_modified = true;
 }
 
 //-----------------------------------------------------------------------------

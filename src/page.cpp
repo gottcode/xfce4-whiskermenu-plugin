@@ -319,6 +319,7 @@ void Page::add_selected_to_favorites()
 {
 	Launcher* launcher = get_selected_launcher();
 	m_menu->get_favorites()->add(launcher);
+	m_menu->set_modified();
 }
 
 //-----------------------------------------------------------------------------
@@ -327,6 +328,7 @@ void Page::remove_selected_from_favorites()
 {
 	Launcher* launcher = get_selected_launcher();
 	m_menu->get_favorites()->remove(launcher);
+	m_menu->set_modified();
 }
 
 //-----------------------------------------------------------------------------
