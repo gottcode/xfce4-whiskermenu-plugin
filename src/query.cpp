@@ -118,14 +118,19 @@ unsigned int Query::match(const std::string& haystack) const
 	// Check if haystack contains query as characters
 	bool characters_start_words = true;
 	bool start_word = true;
+	bool started = false;
 	const gchar* query_string = m_query.c_str();
 	for (const gchar* pos = haystack.c_str(); *pos; pos = g_utf8_next_char(pos))
 	{
 		gunichar c = g_utf8_get_char(pos);
 		if (c == g_utf8_get_char(query_string))
 		{
-			characters_start_words &= start_word;
-			query_string = g_utf8_next_char(query_string);
+			if (start_word || started)
+			{
+				characters_start_words &= start_word;
+				query_string = g_utf8_next_char(query_string);
+				started = true;
+			}
 			start_word = false;
 		}
 		else if (g_unichar_isspace(c))
