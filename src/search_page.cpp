@@ -59,20 +59,22 @@ void SearchPage::set_filter(const gchar* filter)
 	}
 	m_query.set(query);
 
+	// Remove previous search results
+	g_object_freeze_notify(G_OBJECT(get_view()->get_widget()));
+	get_view()->unset_model();
+	gtk_tree_model_sort_reset_default_sort_func(m_sort_model);
+
 	// Create search results
 	for (std::vector<Launcher*>::iterator i = m_launchers.begin(), end = m_launchers.end(); i != end; ++i)
 	{
 		(*i)->search(m_query);
 	}
-
-	// Apply filter
-	GtkTreeModel* filter_model = gtk_tree_model_sort_get_model(m_sort_model);
-	get_view()->set_model(filter_model);
-	unset_search_model();
-
 	refilter();
 
-	set_search_model(filter_model);
+	// Show search results
+	gtk_tree_sortable_set_default_sort_func(GTK_TREE_SORTABLE(m_sort_model), (GtkTreeIterCompareFunc)&SearchPage::on_sort, this, NULL);
+	get_view()->set_model(GTK_TREE_MODEL(m_sort_model));
+	g_object_thaw_notify(G_OBJECT(get_view()->get_widget()));
 
 	// Find first result
 	GtkTreeIter iter;
@@ -105,7 +107,9 @@ void SearchPage::set_menu_items(GtkTreeModel* model)
 
 	unset_search_model();
 	set_model(model);
-	set_search_model(get_view()->get_model());
+	m_sort_model = GTK_TREE_MODEL_SORT(gtk_tree_model_sort_new_with_model(get_view()->get_model()));
+	gtk_tree_sortable_set_default_sort_func(GTK_TREE_SORTABLE(m_sort_model), (GtkTreeIterCompareFunc)&SearchPage::on_sort, this, NULL);
+	get_view()->unset_model();
 }
 
 //-----------------------------------------------------------------------------
@@ -147,15 +151,6 @@ gint SearchPage::on_sort(GtkTreeModel* model, GtkTreeIter* a, GtkTreeIter* b, Se
 
 //-----------------------------------------------------------------------------
 
-void SearchPage::set_search_model(GtkTreeModel* child_model)
-{
-	m_sort_model = GTK_TREE_MODEL_SORT(gtk_tree_model_sort_new_with_model(child_model));
-	gtk_tree_sortable_set_default_sort_func(GTK_TREE_SORTABLE(m_sort_model), (GtkTreeIterCompareFunc)&SearchPage::on_sort, this, NULL);
-	get_view()->set_model(GTK_TREE_MODEL(m_sort_model));
-}
-
-//-----------------------------------------------------------------------------
-
 void SearchPage::unset_search_model()
 {
 	if (m_sort_model)
@@ -163,6 +158,7 @@ void SearchPage::unset_search_model()
 		g_object_unref(m_sort_model);
 		m_sort_model = NULL;
 	}
+	get_view()->unset_model();
 }
 
 //-----------------------------------------------------------------------------
