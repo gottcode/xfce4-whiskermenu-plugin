@@ -1,0 +1,108 @@
+# Kazakh translation for xfce4-whiskermenu-plugin
+# Copyright (C) 2013 The xfce4-whiskermenu-plugin authors.
+# This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: whiskermenu 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-15 20:23+0000\n"
+"PO-Revision-Date: 2013-07-08 15:14+0600\n"
+"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
+"Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
+"Language: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: src/applications_page.cpp:298
+msgid "All"
+msgstr "Барлығы"
+
+#: src/configuration_dialog.cpp:52
+msgid "Whisker Menu"
+msgstr "Whisker мәзірі"
+
+#: src/configuration_dialog.cpp:66
+msgid "Appearance"
+msgstr "Сыртқы түрі"
+
+#: src/configuration_dialog.cpp:71
+msgid "Show applications by _name"
+msgstr "Қолданбаларды а_ты бойынша көрсету"
+
+#: src/configuration_dialog.cpp:77
+msgid "Show application _descriptions"
+msgstr "Қолданбалар с_ипаттамаларын көрсету"
+
+#: src/configuration_dialog.cpp:86
+msgid "_Icon:"
+msgstr "_Таңбаша:"
+
+#: src/configuration_dialog.cpp:118
+msgid "Select An Icon"
+msgstr "Таңбашаны таңдаңыз"
+
+#: src/launcher.cpp:263
+#, c-format
+msgid "Failed to execute command \"%s\"."
+msgstr "\"%s\" командасын орындау сәтсіз аяқталды."
+
+#: src/menu.cpp:88
+msgid "All Settings"
+msgstr "Барлық баптаулар"
+
+#: src/menu.cpp:91
+msgid "Lock Screen"
+msgstr "Экранды бұғаттау"
+
+#: src/menu.cpp:94
+msgid "Log Out"
+msgstr "Шығу"
+
+#: src/menu.cpp:108
+msgid "Favorites"
+msgstr "Таңдамалы"
+
+#: src/menu.cpp:114
+msgid "Recently Used"
+msgstr "Соңғы қолданылған"
+
+#: src/menu.cpp:636
+msgid "Failed to open settings manager."
+msgstr "Баптаулар басқарушысын ашу сәтсіз аяқталды."
+
+#: src/menu.cpp:650
+msgid "Failed to lock screen."
+msgstr "Экранды бұғаттау сәтсіз аяқталды."
+
+#: src/menu.cpp:664
+msgid "Failed to log out."
+msgstr "Жүйеден шығу сәтсіз аяқталды."
+
+#: src/page.cpp:170
+msgid "Add to Favorites"
+msgstr "Таңдамалыларға қосу"
+
+#: src/page.cpp:176
+msgid "Remove From Favorites"
+msgstr "Таңдамалылардан өшіру"
+
+#: src/page.cpp:181
+msgid "Add to Desktop"
+msgstr "Жұмыс үстеліне қосу"
+
+#: src/page.cpp:185
+msgid "Add to Panel"
+msgstr "Панельге қосу"
+
+#: src/page.cpp:265
+msgid "Unable to add launcher to desktop."
+msgstr "Жөнелткішті жұмыс үстеліне қосу мүмкін емес."
+
+#: src/page.cpp:303 src/page.cpp:312
+msgid "Unable to add launcher to panel."
+msgstr "Жөнелткішті панельге қосу мүмкін емес."
