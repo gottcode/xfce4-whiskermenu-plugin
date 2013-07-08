@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-15 20:23+0000\n"
-"PO-Revision-Date: 2013-07-05 11:39+0000\n"
+"PO-Revision-Date: 2013-07-06 04:32+0000\n"
 "Last-Translator: shlyapugin <shlyapugin@gmail.com>\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/ru/)\n"
 "MIME-Version: 1.0\n"
@@ -32,7 +32,7 @@ msgstr "Внешний вид"
 
 #: src/configuration_dialog.cpp:71
 msgid "Show applications by _name"
-msgstr "Показывать приложения по _имени"
+msgstr "Называть приложения по _имени"
 
 #: src/configuration_dialog.cpp:77
 msgid "Show application _descriptions"
@@ -53,7 +53,7 @@ msgstr "Ошибка выполнения команды \"%s\"."
 
 #: src/menu.cpp:88
 msgid "All Settings"
-msgstr "Все настройки"
+msgstr "Настройки"
 
 #: src/menu.cpp:91
 msgid "Lock Screen"
@@ -73,7 +73,7 @@ msgstr "Недавние"
 
 #: src/menu.cpp:636
 msgid "Failed to open settings manager."
-msgstr "Не удалось открыть менеджер настроек."
+msgstr "Не удалось открыть диспетчер настроек."
 
 #: src/menu.cpp:650
 msgid "Failed to lock screen."
@@ -85,19 +85,19 @@ msgstr "Не удалось выйти."
 
 #: src/page.cpp:170
 msgid "Add to Favorites"
-msgstr "Добавить в \"Избранное\"."
+msgstr "Добавить в \"Избранное\""
 
 #: src/page.cpp:176
 msgid "Remove From Favorites"
-msgstr "Удалить из \"Избранного\"."
+msgstr "Удалить из \"Избранного\""
 
 #: src/page.cpp:181
 msgid "Add to Desktop"
-msgstr "Добавить на рабочий стол."
+msgstr "Добавить на рабочий стол"
 
 #: src/page.cpp:185
 msgid "Add to Panel"
-msgstr "Добавить на панель."
+msgstr "Добавить на панель"
 
 #: src/page.cpp:265
 msgid "Unable to add launcher to desktop."
