@@ -79,11 +79,31 @@ ConfigurationDialog::ConfigurationDialog(PanelPlugin* plugin) :
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_descriptions), Launcher::get_show_description());
 	g_signal_connect(m_show_descriptions, "toggled", SLOT_CALLBACK(ConfigurationDialog::toggle_show_description), this);
 
-	// Add icon selector
-	GtkBox* hbox = GTK_BOX(gtk_hbox_new(false, 2));
+	// Add title selector
+	m_show_title = gtk_check_button_new_with_mnemonic(_("_Show button title"));
+	gtk_box_pack_start(appearance_vbox, m_show_title, true, true, 0);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_title), m_plugin->get_button_title_visible());
+	g_signal_connect(m_show_title, "toggled", SLOT_CALLBACK(ConfigurationDialog::toggle_show_title), this);
+
+	GtkBox* hbox = GTK_BOX(gtk_hbox_new(false, 12));
 	gtk_box_pack_start(appearance_vbox, GTK_WIDGET(hbox), false, false, 0);
 
-	GtkWidget* label = gtk_label_new_with_mnemonic(_("_Icon:"));
+	GtkWidget* label = gtk_label_new_with_mnemonic(_("Button _title:"));
+	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+	gtk_box_pack_start(hbox, label, false, false, 0);
+	gtk_size_group_add_widget(label_size_group, label);
+
+	m_title = gtk_entry_new();
+	gtk_entry_set_text(GTK_ENTRY(m_title), m_plugin->get_button_title().c_str());
+	gtk_box_pack_start(hbox, m_title, false, false, 0);
+	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_title);
+	g_signal_connect(m_title, "changed", SLOT_CALLBACK(ConfigurationDialog::title_changed), this);
+
+	// Add icon selector
+	hbox = GTK_BOX(gtk_hbox_new(false, 12));
+	gtk_box_pack_start(appearance_vbox, GTK_WIDGET(hbox), false, false, 0);
+
+	label = gtk_label_new_with_mnemonic(_("_Icon:"));
 	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
 	gtk_box_pack_start(hbox, label, false, false, 0);
 	gtk_size_group_add_widget(label_size_group, label);
@@ -151,6 +171,13 @@ void ConfigurationDialog::choose_icon()
 
 //-----------------------------------------------------------------------------
 
+void ConfigurationDialog::title_changed(GtkEditable*)
+{
+	m_plugin->set_button_title(gtk_entry_get_text(GTK_ENTRY(m_title)));
+}
+
+//-----------------------------------------------------------------------------
+
 void ConfigurationDialog::toggle_hover_switch_category(GtkToggleButton* button)
 {
 	section_button_set_hover_activate(gtk_toggle_button_get_active(button));
@@ -170,6 +197,13 @@ void ConfigurationDialog::toggle_show_description(GtkToggleButton*)
 {
 	Launcher::set_show_description(gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(m_show_descriptions)));
 	m_plugin->reload();
+}
+
+//-----------------------------------------------------------------------------
+
+void ConfigurationDialog::toggle_show_title(GtkToggleButton*)
+{
+	m_plugin->set_button_title_visible(gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(m_show_title)));
 }
 
 //-----------------------------------------------------------------------------

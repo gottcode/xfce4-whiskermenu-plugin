@@ -42,6 +42,8 @@ static void whiskermenu_free(XfcePanelPlugin*, PanelPlugin* whiskermenu)
 
 PanelPlugin::PanelPlugin(XfcePanelPlugin* plugin) :
 	m_plugin(plugin),
+	m_button_title(_("Applications Menu")),
+	m_button_title_visible(false),
 	m_button_icon_name("xfce4-whiskermenu"),
 	m_menu(NULL)
 {
@@ -52,6 +54,8 @@ PanelPlugin::PanelPlugin(XfcePanelPlugin* plugin) :
 		XfceRc* settings = xfce_rc_simple_open(file, true);
 		g_free(file);
 
+		m_button_title = xfce_rc_read_entry(settings, "button-title", m_button_title.c_str());
+		m_button_title_visible = xfce_rc_read_bool_entry(settings, "show-button-title", m_button_title_visible);
 		m_button_icon_name = xfce_rc_read_entry(settings, "button-icon", m_button_icon_name.c_str());
 		Launcher::set_show_name(xfce_rc_read_bool_entry(settings, "launcher-show-name", true));
 		Launcher::set_show_description(xfce_rc_read_bool_entry(settings, "launcher-show-description", true));
@@ -69,10 +73,23 @@ PanelPlugin::PanelPlugin(XfcePanelPlugin* plugin) :
 	// Create toggle button
 	m_button = xfce_create_panel_toggle_button();
 	gtk_button_set_relief(GTK_BUTTON(m_button), GTK_RELIEF_NONE);
-	m_button_icon = XFCE_PANEL_IMAGE(xfce_panel_image_new_from_source(m_button_icon_name.c_str()));
-	gtk_container_add(GTK_CONTAINER(m_button), GTK_WIDGET(m_button_icon));
-	gtk_widget_show_all(m_button);
 	g_signal_connect(m_button, "button-press-event", SLOT_CALLBACK(PanelPlugin::button_clicked), this);
+	gtk_widget_show(m_button);
+
+	m_button_box = GTK_BOX(gtk_hbox_new(false, 1));
+	gtk_container_add(GTK_CONTAINER(m_button), GTK_WIDGET(m_button_box));
+	gtk_widget_show(GTK_WIDGET(m_button_box));
+
+	m_button_icon = XFCE_PANEL_IMAGE(xfce_panel_image_new_from_source(m_button_icon_name.c_str()));
+	gtk_box_pack_start(m_button_box, GTK_WIDGET(m_button_icon), false, false, 0);
+	gtk_widget_show(GTK_WIDGET(m_button_icon));
+
+	m_button_label = GTK_LABEL(gtk_label_new(m_button_title.c_str()));
+	gtk_box_pack_start(m_button_box, GTK_WIDGET(m_button_label), false, false, 0);
+	if (m_button_title_visible)
+	{
+		gtk_widget_show(GTK_WIDGET(m_button_label));
+	}
 
 	// Add plugin to panel
 	gtk_container_add(GTK_CONTAINER(plugin), m_button);
@@ -81,7 +98,11 @@ PanelPlugin::PanelPlugin(XfcePanelPlugin* plugin) :
 	// Connect plugin signals to functions
 	g_signal_connect(plugin, "free-data", G_CALLBACK(whiskermenu_free), this);
 	g_signal_connect_swapped(plugin, "configure-plugin", SLOT_CALLBACK(PanelPlugin::configure), this);
-	g_signal_connect(plugin, "orientation-changed", SLOT_CALLBACK(PanelPlugin::orientation_changed), this);
+#if (LIBXFCE4PANEL_CHECK_VERSION(4,10,0))
+	g_signal_connect(plugin, "mode-changed", G_CALLBACK(PanelPlugin::mode_changed_slot), this);
+#else
+	g_signal_connect(plugin, "orientation-changed", G_CALLBACK(PanelPlugin::orientation_changed_slot), this);
+#endif
 	g_signal_connect(plugin, "remote-event", SLOT_CALLBACK(PanelPlugin::remote_event), this);
 	g_signal_connect_swapped(plugin, "save", SLOT_CALLBACK(PanelPlugin::save), this);
 	g_signal_connect(plugin, "size-changed", SLOT_CALLBACK(PanelPlugin::size_changed), this);
@@ -106,6 +127,29 @@ void PanelPlugin::reload()
 {
 	m_menu->hide();
 	m_menu->get_applications()->invalidate_applications();
+}
+
+//-----------------------------------------------------------------------------
+
+void PanelPlugin::set_button_title(const std::string& title)
+{
+	m_button_title = title;
+	gtk_label_set_label(m_button_label, m_button_title.c_str());
+}
+
+//-----------------------------------------------------------------------------
+
+void PanelPlugin::set_button_title_visible(bool visible)
+{
+	m_button_title_visible = visible;
+	if (m_button_title_visible)
+	{
+		gtk_widget_show(GTK_WIDGET(m_button_label));
+	}
+	else
+	{
+		gtk_widget_hide(GTK_WIDGET(m_button_label));
+	}
 }
 
 //-----------------------------------------------------------------------------
@@ -173,8 +217,10 @@ void PanelPlugin::configure()
 
 //-----------------------------------------------------------------------------
 
-void PanelPlugin::orientation_changed(XfcePanelPlugin*, GtkOrientation)
+void PanelPlugin::orientation_changed(bool vertical)
 {
+	gtk_label_set_angle(m_button_label, vertical ? 270: 0);
+
 	size_changed(m_plugin, xfce_panel_plugin_get_size(m_plugin));
 }
 
@@ -204,6 +250,8 @@ void PanelPlugin::save()
 	XfceRc* settings = xfce_rc_simple_open(file, false);
 	g_free(file);
 
+	xfce_rc_write_entry(settings, "button-title", m_button_title.c_str());
+	xfce_rc_write_bool_entry(settings, "show-button-title", m_button_title_visible);
 	xfce_rc_write_entry(settings, "button-icon", m_button_icon_name.c_str());
 	xfce_rc_write_bool_entry(settings, "launcher-show-name", Launcher::get_show_name());
 	xfce_rc_write_bool_entry(settings, "launcher-show-description", Launcher::get_show_description());
@@ -223,15 +271,20 @@ gboolean PanelPlugin::size_changed(XfcePanelPlugin*, gint size)
 	gint row_size = size;
 #endif
 
+	GtkOrientation orientation = xfce_panel_plugin_get_orientation(m_plugin);
+
 	xfce_panel_image_set_size(m_button_icon, -1);
-	if (xfce_panel_plugin_get_orientation(m_plugin) == GTK_ORIENTATION_HORIZONTAL)
+	if (orientation == GTK_ORIENTATION_HORIZONTAL)
 	{
-		gtk_widget_set_size_request(GTK_WIDGET(m_plugin), row_size, size);
+		gtk_widget_set_size_request(GTK_WIDGET(m_button_icon), row_size, size);
 	}
 	else
 	{
-		gtk_widget_set_size_request(GTK_WIDGET(m_plugin), size, row_size);
+		gtk_widget_set_size_request(GTK_WIDGET(m_button_icon), size, row_size);
 	}
+
+	gtk_orientable_set_orientation(GTK_ORIENTABLE(m_button_box), orientation);
+
 	return true;
 }
 
