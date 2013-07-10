@@ -173,7 +173,8 @@ void ConfigurationDialog::choose_icon()
 
 void ConfigurationDialog::title_changed(GtkEditable*)
 {
-	m_plugin->set_button_title(gtk_entry_get_text(GTK_ENTRY(m_title)));
+	const gchar* text = gtk_entry_get_text(GTK_ENTRY(m_title));
+	m_plugin->set_button_title(text ? text : "");
 }
 
 //-----------------------------------------------------------------------------
