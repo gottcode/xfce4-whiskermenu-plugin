@@ -42,23 +42,23 @@ public:
 
 private:
 	SLOT_0(void, ConfigurationDialog, choose_icon);
+	SLOT_1(void, ConfigurationDialog, style_changed, GtkComboBox*);
 	SLOT_1(void, ConfigurationDialog, title_changed, GtkEditable*);
 	SLOT_1(void, ConfigurationDialog, toggle_hover_switch_category, GtkToggleButton*);
 	SLOT_1(void, ConfigurationDialog, toggle_show_name, GtkToggleButton*);
 	SLOT_1(void, ConfigurationDialog, toggle_show_description, GtkToggleButton*);
-	SLOT_1(void, ConfigurationDialog, toggle_show_title, GtkToggleButton*);
 	SLOT_2(void, ConfigurationDialog, response, GtkDialog*, gint);
 
 private:
 	PanelPlugin* m_plugin;
 
 	GtkWidget* m_window;
+	GtkWidget* m_button_style;
 	GtkWidget* m_title;
 	GtkWidget* m_icon;
 	GtkWidget* m_icon_button;
 	GtkWidget* m_show_names;
 	GtkWidget* m_show_descriptions;
-	GtkWidget* m_show_title;
 	GtkWidget* m_hover_switch_category;
 };
 

@@ -43,15 +43,24 @@ public:
 		return m_button;
 	}
 
+	enum ButtonStyle
+	{
+		ShowIcon = 0x1,
+		ShowText = 0x2,
+		ShowIconAndText = ShowIcon | ShowText
+	};
+
+	ButtonStyle get_button_style() const
+	{
+		return ButtonStyle(m_button_icon_visible | (m_button_title_visible << 1));
+	}
+
 	std::string get_button_title() const
 	{
 		return m_button_title;
 	}
 
-	bool get_button_title_visible() const
-	{
-		return m_button_title_visible;
-	}
+	static std::string get_button_title_default();
 
 	std::string get_button_icon_name() const
 	{
@@ -59,8 +68,8 @@ public:
 	}
 
 	void reload();
+	void set_button_style(ButtonStyle style);
 	void set_button_title(const std::string& title);
-	void set_button_title_visible(bool visible);
 	void set_button_icon_name(const std::string& icon);
 	void set_configure_enabled(bool enabled);
 
@@ -91,14 +100,17 @@ private:
 
 private:
 	XfcePanelPlugin* m_plugin;
+	Menu* m_menu;
+
+	std::string m_button_title;
+	std::string m_button_icon_name;
+	bool m_button_title_visible;
+	bool m_button_icon_visible;
+
 	GtkWidget* m_button;
 	GtkBox* m_button_box;
-	std::string m_button_title;
-	bool m_button_title_visible;
 	GtkLabel* m_button_label;
-	std::string m_button_icon_name;
 	XfcePanelImage* m_button_icon;
-	Menu* m_menu;
 };
 
 }

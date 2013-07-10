@@ -42,10 +42,11 @@ static void whiskermenu_free(XfcePanelPlugin*, PanelPlugin* whiskermenu)
 
 PanelPlugin::PanelPlugin(XfcePanelPlugin* plugin) :
 	m_plugin(plugin),
-	m_button_title(_("Applications Menu")),
-	m_button_title_visible(false),
+	m_menu(NULL),
+	m_button_title(get_button_title_default()),
 	m_button_icon_name("xfce4-whiskermenu"),
-	m_menu(NULL)
+	m_button_title_visible(false),
+	m_button_icon_visible(true)
 {
 	// Load settings
 	gchar* file = xfce_panel_plugin_lookup_rc_file(m_plugin);
@@ -55,8 +56,9 @@ PanelPlugin::PanelPlugin(XfcePanelPlugin* plugin) :
 		g_free(file);
 
 		m_button_title = xfce_rc_read_entry(settings, "button-title", m_button_title.c_str());
-		m_button_title_visible = xfce_rc_read_bool_entry(settings, "show-button-title", m_button_title_visible);
 		m_button_icon_name = xfce_rc_read_entry(settings, "button-icon", m_button_icon_name.c_str());
+		m_button_title_visible = xfce_rc_read_bool_entry(settings, "show-button-title", m_button_title_visible);
+		m_button_icon_visible = xfce_rc_read_bool_entry(settings, "show-button-icon", m_button_icon_visible);
 		Launcher::set_show_name(xfce_rc_read_bool_entry(settings, "launcher-show-name", true));
 		Launcher::set_show_description(xfce_rc_read_bool_entry(settings, "launcher-show-description", true));
 		section_button_set_hover_activate(xfce_rc_read_bool_entry(settings, "hover-switch-category", false));
@@ -70,6 +72,19 @@ PanelPlugin::PanelPlugin(XfcePanelPlugin* plugin) :
 	}
 	g_signal_connect_swapped(m_menu->get_widget(), "unmap", SLOT_CALLBACK(PanelPlugin::menu_hidden), this);
 
+	// Prevent empty panel button
+	if (!m_button_icon_visible)
+	{
+		if (!m_button_title_visible)
+		{
+			m_button_icon_visible = true;
+		}
+		else if (m_button_title.empty())
+		{
+			m_button_title = get_button_title_default();
+		}
+	}
+
 	// Create toggle button
 	m_button = xfce_create_panel_toggle_button();
 	gtk_button_set_relief(GTK_BUTTON(m_button), GTK_RELIEF_NONE);
@@ -82,7 +97,10 @@ PanelPlugin::PanelPlugin(XfcePanelPlugin* plugin) :
 
 	m_button_icon = XFCE_PANEL_IMAGE(xfce_panel_image_new_from_source(m_button_icon_name.c_str()));
 	gtk_box_pack_start(m_button_box, GTK_WIDGET(m_button_icon), false, false, 0);
-	gtk_widget_show(GTK_WIDGET(m_button_icon));
+	if (m_button_icon_visible)
+	{
+		gtk_widget_show(GTK_WIDGET(m_button_icon));
+	}
 
 	m_button_label = GTK_LABEL(gtk_label_new(m_button_title.c_str()));
 	gtk_box_pack_start(m_button_box, GTK_WIDGET(m_button_label), false, false, 0);
@@ -123,6 +141,13 @@ PanelPlugin::~PanelPlugin()
 
 //-----------------------------------------------------------------------------
 
+std::string PanelPlugin::get_button_title_default()
+{
+	return _("Applications Menu");
+}
+
+//-----------------------------------------------------------------------------
+
 void PanelPlugin::reload()
 {
 	m_menu->hide();
@@ -131,18 +156,19 @@ void PanelPlugin::reload()
 
 //-----------------------------------------------------------------------------
 
-void PanelPlugin::set_button_title(const std::string& title)
+void PanelPlugin::set_button_style(ButtonStyle style)
 {
-	m_button_title = title;
-	gtk_label_set_label(m_button_label, m_button_title.c_str());
-	size_changed(m_plugin, xfce_panel_plugin_get_size(m_plugin));
-}
+	m_button_icon_visible = style & ShowIcon;
+	if (m_button_icon_visible)
+	{
+		gtk_widget_show(GTK_WIDGET(m_button_icon));
+	}
+	else
+	{
+		gtk_widget_hide(GTK_WIDGET(m_button_icon));
+	}
 
-//-----------------------------------------------------------------------------
-
-void PanelPlugin::set_button_title_visible(bool visible)
-{
-	m_button_title_visible = visible;
+	m_button_title_visible = style & ShowText;
 	if (m_button_title_visible)
 	{
 		gtk_widget_show(GTK_WIDGET(m_button_label));
@@ -151,6 +177,16 @@ void PanelPlugin::set_button_title_visible(bool visible)
 	{
 		gtk_widget_hide(GTK_WIDGET(m_button_label));
 	}
+
+	size_changed(m_plugin, xfce_panel_plugin_get_size(m_plugin));
+}
+
+//-----------------------------------------------------------------------------
+
+void PanelPlugin::set_button_title(const std::string& title)
+{
+	m_button_title = title;
+	gtk_label_set_label(m_button_label, m_button_title.c_str());
 	size_changed(m_plugin, xfce_panel_plugin_get_size(m_plugin));
 }
 
@@ -254,8 +290,9 @@ void PanelPlugin::save()
 	g_free(file);
 
 	xfce_rc_write_entry(settings, "button-title", m_button_title.c_str());
-	xfce_rc_write_bool_entry(settings, "show-button-title", m_button_title_visible);
 	xfce_rc_write_entry(settings, "button-icon", m_button_icon_name.c_str());
+	xfce_rc_write_bool_entry(settings, "show-button-title", m_button_title_visible);
+	xfce_rc_write_bool_entry(settings, "show-button-icon", m_button_icon_visible);
 	xfce_rc_write_bool_entry(settings, "launcher-show-name", Launcher::get_show_name());
 	xfce_rc_write_bool_entry(settings, "launcher-show-description", Launcher::get_show_description());
 	xfce_rc_write_bool_entry(settings, "hover-switch-category", section_button_get_hover_activate());

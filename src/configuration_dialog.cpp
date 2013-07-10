@@ -79,29 +79,48 @@ ConfigurationDialog::ConfigurationDialog(PanelPlugin* plugin) :
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_descriptions), Launcher::get_show_description());
 	g_signal_connect(m_show_descriptions, "toggled", SLOT_CALLBACK(ConfigurationDialog::toggle_show_description), this);
 
-	// Add title selector
-	m_show_title = gtk_check_button_new_with_mnemonic(_("_Show button title"));
-	gtk_box_pack_start(appearance_vbox, m_show_title, true, true, 0);
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_title), m_plugin->get_button_title_visible());
-	g_signal_connect(m_show_title, "toggled", SLOT_CALLBACK(ConfigurationDialog::toggle_show_title), this);
+	// Create panel button section
+	GtkBox* panel_vbox = GTK_BOX(gtk_vbox_new(false, 8));
+	GtkWidget* panel_frame = xfce_gtk_frame_box_new_with_content(_("Panel Button"), GTK_WIDGET(panel_vbox));
+	gtk_box_pack_start(contents_vbox, panel_frame, false, false, 0);
+	gtk_container_set_border_width(GTK_CONTAINER(panel_frame), 6);
 
+	// Add button style selector
 	GtkBox* hbox = GTK_BOX(gtk_hbox_new(false, 12));
-	gtk_box_pack_start(appearance_vbox, GTK_WIDGET(hbox), false, false, 0);
+	gtk_box_pack_start(panel_vbox, GTK_WIDGET(hbox), false, false, 0);
 
-	GtkWidget* label = gtk_label_new_with_mnemonic(_("Button _title:"));
+	GtkWidget* label = gtk_label_new_with_mnemonic(_("Di_splay:"));
+	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+	gtk_box_pack_start(hbox, label, false, false, 0);
+	gtk_size_group_add_widget(label_size_group, label);
+
+	m_button_style = gtk_combo_box_text_new();
+	gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_button_style), _("Icon"));
+	gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_button_style), _("Title"));
+	gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_button_style), _("Icon and title"));
+	gtk_combo_box_set_active(GTK_COMBO_BOX(m_button_style), static_cast<int>(m_plugin->get_button_style()) - 1);
+	gtk_box_pack_start(hbox, m_button_style, false, false, 0);
+	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_button_style);
+	g_signal_connect(m_button_style, "changed", SLOT_CALLBACK(ConfigurationDialog::style_changed), this);
+
+	// Add title selector
+	hbox = GTK_BOX(gtk_hbox_new(false, 12));
+	gtk_box_pack_start(panel_vbox, GTK_WIDGET(hbox), false, false, 0);
+
+	label = gtk_label_new_with_mnemonic(_("_Title:"));
 	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
 	gtk_box_pack_start(hbox, label, false, false, 0);
 	gtk_size_group_add_widget(label_size_group, label);
 
 	m_title = gtk_entry_new();
 	gtk_entry_set_text(GTK_ENTRY(m_title), m_plugin->get_button_title().c_str());
-	gtk_box_pack_start(hbox, m_title, false, false, 0);
+	gtk_box_pack_start(hbox, m_title, true, true, 0);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_title);
 	g_signal_connect(m_title, "changed", SLOT_CALLBACK(ConfigurationDialog::title_changed), this);
 
 	// Add icon selector
 	hbox = GTK_BOX(gtk_hbox_new(false, 12));
-	gtk_box_pack_start(appearance_vbox, GTK_WIDGET(hbox), false, false, 0);
+	gtk_box_pack_start(panel_vbox, GTK_WIDGET(hbox), false, false, 0);
 
 	label = gtk_label_new_with_mnemonic(_("_Icon:"));
 	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
@@ -171,6 +190,13 @@ void ConfigurationDialog::choose_icon()
 
 //-----------------------------------------------------------------------------
 
+void ConfigurationDialog::style_changed(GtkComboBox* combo)
+{
+	m_plugin->set_button_style(PanelPlugin::ButtonStyle(gtk_combo_box_get_active(combo) + 1));
+}
+
+//-----------------------------------------------------------------------------
+
 void ConfigurationDialog::title_changed(GtkEditable*)
 {
 	const gchar* text = gtk_entry_get_text(GTK_ENTRY(m_title));
@@ -202,15 +228,13 @@ void ConfigurationDialog::toggle_show_description(GtkToggleButton*)
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::toggle_show_title(GtkToggleButton*)
-{
-	m_plugin->set_button_title_visible(gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(m_show_title)));
-}
-
-//-----------------------------------------------------------------------------
-
 void ConfigurationDialog::response(GtkDialog*, gint response_id)
 {
+	if ((m_plugin->get_button_style() == PanelPlugin::ShowText) && m_plugin->get_button_title().empty())
+	{
+		m_plugin->set_button_title(PanelPlugin::get_button_title_default());
+	}
+
 	if (response_id == GTK_RESPONSE_CLOSE)
 	{
 		gtk_widget_destroy(m_window);
