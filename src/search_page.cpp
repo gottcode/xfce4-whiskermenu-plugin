@@ -101,7 +101,10 @@ void SearchPage::set_menu_items(GtkTreeModel* model)
 	{
 		Launcher* launcher = NULL;
 		gtk_tree_model_get(model, &iter, LauncherModel::COLUMN_LAUNCHER, &launcher, -1);
-		m_launchers.push_back(launcher);
+		if (launcher)
+		{
+			m_launchers.push_back(launcher);
+		}
 		valid = gtk_tree_model_iter_next(model, &iter);
 	}
 
@@ -133,7 +136,7 @@ bool SearchPage::on_filter(GtkTreeModel* model, GtkTreeIter* iter)
 	// Check if launcher search string contains text
 	Launcher* launcher = NULL;
 	gtk_tree_model_get(model, iter, LauncherModel::COLUMN_LAUNCHER, &launcher, -1);
-	return launcher->get_search_results(m_query) != UINT_MAX;
+	return launcher && (launcher->get_search_results(m_query) != UINT_MAX);
 }
 
 //-----------------------------------------------------------------------------
@@ -142,9 +145,11 @@ gint SearchPage::on_sort(GtkTreeModel* model, GtkTreeIter* a, GtkTreeIter* b, Se
 {
 	Launcher* launcher_a = NULL;
 	gtk_tree_model_get(model, a, LauncherModel::COLUMN_LAUNCHER, &launcher_a, -1);
+	g_assert(launcher_a != NULL);
 
 	Launcher* launcher_b = NULL;
 	gtk_tree_model_get(model, b, LauncherModel::COLUMN_LAUNCHER, &launcher_b, -1);
+	g_assert(launcher_b != NULL);
 
 	return launcher_a->get_search_results(page->m_query) - launcher_b->get_search_results(page->m_query);
 }

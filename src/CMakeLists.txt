@@ -86,6 +86,7 @@ target_link_libraries(whiskermenu
 
 string(TOLOWER "${CMAKE_BUILD_TYPE}" CMAKE_BUILD_TYPE_TOLOWER)
 if(CMAKE_BUILD_TYPE_TOLOWER MATCHES release)
+    add_definitions(-DG_DISABLE_ASSERT=1)
     add_custom_command(TARGET whiskermenu POST_BUILD COMMAND ${CMAKE_STRIP} $<TARGET_FILE:whiskermenu>)
 endif()
 

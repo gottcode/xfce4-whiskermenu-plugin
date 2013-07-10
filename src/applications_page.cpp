@@ -124,6 +124,10 @@ bool ApplicationsPage::on_filter(GtkTreeModel* model, GtkTreeIter* iter)
 
 	Launcher* launcher = NULL;
 	gtk_tree_model_get(model, iter, LauncherModel::COLUMN_LAUNCHER, &launcher, -1);
+	if (!launcher)
+	{
+		return false;
+	}
 
 	const std::vector<Launcher*>& category = m_categories[m_current_category];
 	return std::find(category.begin(), category.end(), launcher) != category.end();

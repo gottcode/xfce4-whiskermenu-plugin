@@ -48,6 +48,11 @@ FavoritesPage::FavoritesPage(XfceRc* settings, Menu* menu) :
 
 void FavoritesPage::add(Launcher* launcher)
 {
+	if (!launcher)
+	{
+		return;
+	}
+
 	// Remove item if already in list
 	remove(launcher);
 

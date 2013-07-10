@@ -91,6 +91,10 @@ void Page::launcher_activated(GtkTreeView* view, GtkTreePath* path, GtkTreeViewC
 	// Find launcher
 	Launcher* launcher = NULL;
 	gtk_tree_model_get(model, &iter, LauncherModel::COLUMN_LAUNCHER, &launcher, -1);
+	if (!launcher)
+	{
+		return;
+	}
 
 	// Add to recent
 	m_menu->get_recent()->add(launcher);
@@ -154,8 +158,12 @@ void Page::on_unmap()
 
 void Page::create_context_menu(GtkTreeIter* iter, GdkEventButton* event)
 {
-	gtk_tree_view_set_hover_selection(GTK_TREE_VIEW(m_view->get_widget()), false);
 	m_selected_path = gtk_tree_model_get_path(m_view->get_model(), iter);
+	Launcher* launcher = get_selected_launcher();
+	if (!launcher)
+	{
+		return;
+	}
 
 	// Create context menu
 	GtkWidget* menu = gtk_menu_new();
@@ -164,7 +172,7 @@ void Page::create_context_menu(GtkTreeIter* iter, GdkEventButton* event)
 	// Add menu items
 	GtkWidget* menuitem = NULL;
 
-	if (!m_menu->get_favorites()->contains(get_selected_launcher()))
+	if (!m_menu->get_favorites()->contains(launcher))
 	{
 		menuitem = gtk_menu_item_new_with_label(_("Add to Favorites"));
 		g_signal_connect_swapped(menuitem, "activate", SLOT_CALLBACK(Page::add_selected_to_favorites), this);
@@ -202,6 +210,7 @@ void Page::create_context_menu(GtkTreeIter* iter, GdkEventButton* event)
 		event_time = gtk_get_current_event_time ();
 	}
 
+	gtk_tree_view_set_hover_selection(GTK_TREE_VIEW(m_view->get_widget()), false);
 	gtk_menu_attach_to_widget(GTK_MENU(menu), m_view->get_widget(), NULL);
 	gtk_menu_popup(GTK_MENU(menu), NULL, NULL, position_func, this, button, event_time);
 }
@@ -250,6 +259,7 @@ void Page::add_selected_to_desktop()
 
 	// Fetch launcher source
 	Launcher* launcher = get_selected_launcher();
+	g_assert(launcher != NULL);
 	GFile* source_file = garcon_menu_item_get_file(launcher->get_item());
 
 	// Fetch launcher destination
@@ -288,6 +298,7 @@ void Page::add_selected_to_panel()
 	{
 		// Fetch launcher desktop ID
 		Launcher* launcher = get_selected_launcher();
+		g_assert(launcher != NULL);
 		const gchar* parameters[] = { garcon_menu_item_get_desktop_id(launcher->get_item()), NULL };
 
 		// Tell panel to add item
@@ -318,6 +329,7 @@ void Page::add_selected_to_panel()
 void Page::add_selected_to_favorites()
 {
 	Launcher* launcher = get_selected_launcher();
+	g_assert(launcher != NULL);
 	m_menu->get_favorites()->add(launcher);
 	m_menu->set_modified();
 }
@@ -327,6 +339,7 @@ void Page::add_selected_to_favorites()
 void Page::remove_selected_from_favorites()
 {
 	Launcher* launcher = get_selected_launcher();
+	g_assert(launcher != NULL);
 	m_menu->get_favorites()->remove(launcher);
 	m_menu->set_modified();
 }

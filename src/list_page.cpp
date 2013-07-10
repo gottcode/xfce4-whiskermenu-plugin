@@ -64,6 +64,11 @@ ListPage::~ListPage()
 
 bool ListPage::contains(Launcher* launcher) const
 {
+	if (!launcher)
+	{
+		return false;
+	}
+
 	std::string desktop_id = garcon_menu_item_get_desktop_id(launcher->get_item());
 	return std::find(m_desktop_ids.begin(), m_desktop_ids.end(), desktop_id) != m_desktop_ids.end();
 }
@@ -103,6 +108,11 @@ void ListPage::set_menu_items(const std::map<std::string, Launcher*>& items)
 	// Fetch menu items or remove them from list if missing
 	for (std::vector<std::string>::iterator i = m_desktop_ids.begin(); i != m_desktop_ids.end(); ++i)
 	{
+		if (i->empty())
+		{
+			continue;
+		}
+
 		std::map<std::string, Launcher*>::const_iterator item = items.find(*i);
 		if (item != items.end())
 		{

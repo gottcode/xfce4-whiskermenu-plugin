@@ -18,7 +18,6 @@
 
 #include "applications_page.hpp"
 #include "favorites_page.hpp"
-#include "launcher_model.hpp"
 #include "launcher_view.hpp"
 #include "recent_page.hpp"
 #include "resizer_widget.hpp"

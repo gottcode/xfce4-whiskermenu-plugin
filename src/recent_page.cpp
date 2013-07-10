@@ -40,6 +40,11 @@ RecentPage::RecentPage(XfceRc* settings, Menu* menu) :
 
 void RecentPage::add(Launcher* launcher)
 {
+	if (!launcher)
+	{
+		return;
+	}
+
 	// Remove item if already in list
 	remove(launcher);
 
