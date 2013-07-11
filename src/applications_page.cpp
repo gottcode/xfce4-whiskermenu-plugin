@@ -84,8 +84,15 @@ ApplicationsPage::~ApplicationsPage()
 void ApplicationsPage::apply_filter(GtkToggleButton* togglebutton)
 {
 	// Find category matching button
-	std::map<GtkRadioButton*, Category*>::const_iterator i = m_category_buttons.find(GTK_RADIO_BUTTON(togglebutton));
-	if (i == m_category_buttons.end())
+	std::map<SectionButton*, Category*>::const_iterator i, end = m_category_buttons.end();
+	for (i = m_category_buttons.begin(); i != end; ++i)
+	{
+		if (GTK_TOGGLE_BUTTON(i->first->get_button()) == togglebutton)
+		{
+			break;
+		}
+	}
+	if (i == end)
 	{
 		return;
 	}
@@ -183,12 +190,9 @@ void ApplicationsPage::invalidate_applications()
 void ApplicationsPage::clear_applications()
 {
 	// Free categories
-	for (std::map<GtkRadioButton*, Category*>::iterator i = m_category_buttons.begin(), end = m_category_buttons.end(); i != end; ++i)
+	for (std::map<SectionButton*, Category*>::iterator i = m_category_buttons.begin(), end = m_category_buttons.end(); i != end; ++i)
 	{
-		if (GTK_IS_WIDGET(i->first))
-		{
-			gtk_widget_destroy(GTK_WIDGET(i->first));
-		}
+		delete i->first;
 	}
 	m_category_buttons.clear();
 
@@ -314,11 +318,11 @@ void ApplicationsPage::load_menu_item(const gchar* desktop_id, GarconMenuItem* m
 
 void ApplicationsPage::load_categories()
 {
-	std::vector<GtkRadioButton*> category_buttons;
+	std::vector<SectionButton*> category_buttons;
 
 	// Add button for all applications
-	GtkRadioButton* all_button = new_section_button("applications-other", _("All"));
-	g_signal_connect(all_button, "toggled", SLOT_CALLBACK(ApplicationsPage::apply_filter), this);
+	SectionButton* all_button = new SectionButton("applications-other", _("All"));
+	g_signal_connect(all_button->get_button(), "toggled", SLOT_CALLBACK(ApplicationsPage::apply_filter), this);
 	m_category_buttons[all_button] = NULL;
 	category_buttons.push_back(all_button);
 
@@ -334,8 +338,8 @@ void ApplicationsPage::load_categories()
 	// Add buttons for sorted categories
 	for (std::map<std::string, Category*>::const_iterator i = sorted_categories.begin(), end = sorted_categories.end(); i != end; ++i)
 	{
-		GtkRadioButton* category_button = new_section_button(i->second->get_icon(), i->second->get_text());
-		g_signal_connect(category_button, "toggled", SLOT_CALLBACK(ApplicationsPage::apply_filter), this);
+		SectionButton* category_button = new SectionButton(i->second->get_icon(), i->second->get_text());
+		g_signal_connect(category_button->get_button(), "toggled", SLOT_CALLBACK(ApplicationsPage::apply_filter), this);
 		m_category_buttons[category_button] = i->second;
 		category_buttons.push_back(category_button);
 	}

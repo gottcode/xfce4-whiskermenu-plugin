@@ -38,6 +38,7 @@ class Launcher;
 class ResizerWidget;
 class RecentPage;
 class SearchPage;
+class SectionButton;
 
 class Menu
 {
@@ -78,7 +79,7 @@ public:
 	void hide();
 	void show(GtkWidget* parent, bool horizontal);
 	void save(XfceRc* settings);
-	void set_categories(const std::vector<GtkRadioButton*>& categories);
+	void set_categories(const std::vector<SectionButton*>& categories);
 	void set_items(const std::map<std::string, Launcher*>& items);
 	void set_modified();
 	void unset_items();
@@ -121,8 +122,8 @@ private:
 	RecentPage* m_recent;
 	ApplicationsPage* m_applications;
 
-	GtkRadioButton* m_favorites_button;
-	GtkRadioButton* m_recent_button;
+	SectionButton* m_favorites_button;
+	SectionButton* m_recent_button;
 
 	GdkRectangle m_geometry;
 	bool m_layout_left;

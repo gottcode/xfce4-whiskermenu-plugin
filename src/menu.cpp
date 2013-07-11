@@ -116,15 +116,15 @@ Menu::Menu(XfceRc* settings) :
 	// Create favorites
 	m_favorites = new FavoritesPage(settings, this);
 
-	m_favorites_button = new_section_button("user-bookmarks", _("Favorites"));
-	g_signal_connect_swapped(m_favorites_button, "toggled", SLOT_CALLBACK(Menu::favorites_toggled), this);
+	m_favorites_button = new SectionButton("user-bookmarks", _("Favorites"));
+	g_signal_connect_swapped(m_favorites_button->get_button(), "toggled", SLOT_CALLBACK(Menu::favorites_toggled), this);
 
 	// Create recent
 	m_recent = new RecentPage(settings, this);
 
-	m_recent_button = new_section_button("document-open-recent", _("Recently Used"));
-	gtk_radio_button_set_group(m_recent_button, gtk_radio_button_get_group(m_favorites_button));
-	g_signal_connect_swapped(m_recent_button, "toggled", SLOT_CALLBACK(Menu::recent_toggled), this);
+	m_recent_button = new SectionButton("document-open-recent", _("Recently Used"));
+	m_recent_button->set_group(m_favorites_button->get_group());
+	g_signal_connect_swapped(m_recent_button->get_button(), "toggled", SLOT_CALLBACK(Menu::recent_toggled), this);
 
 	// Create applications
 	m_applications = new ApplicationsPage(this);
@@ -164,8 +164,8 @@ Menu::Menu(XfceRc* settings) :
 	// Create box for packing sidebar
 	m_sidebar_box = GTK_BOX(gtk_vbox_new(false, 0));
 	gtk_box_pack_start(m_contents_box, GTK_WIDGET(m_sidebar_box), false, false, 0);
-	gtk_box_pack_start(m_sidebar_box, GTK_WIDGET(m_favorites_button), false, false, 0);
-	gtk_box_pack_start(m_sidebar_box, GTK_WIDGET(m_recent_button), false, false, 0);
+	gtk_box_pack_start(m_sidebar_box, GTK_WIDGET(m_favorites_button->get_button()), false, false, 0);
+	gtk_box_pack_start(m_sidebar_box, GTK_WIDGET(m_recent_button->get_button()), false, false, 0);
 	gtk_box_pack_start(m_sidebar_box, gtk_hseparator_new(), false, true, 0);
 
 	// Populate app menu
@@ -176,7 +176,7 @@ Menu::Menu(XfceRc* settings) :
 	gtk_widget_hide(m_recent->get_widget());
 	gtk_widget_hide(m_applications->get_widget());
 	gtk_widget_hide(m_search_results->get_widget());
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_favorites_button), true);
+	m_favorites_button->set_active(true);
 	gtk_widget_show(frame);
 
 	// Resize to last known size
@@ -417,13 +417,13 @@ void Menu::save(XfceRc* settings)
 
 //-----------------------------------------------------------------------------
 
-void Menu::set_categories(const std::vector<GtkRadioButton*>& categories)
+void Menu::set_categories(const std::vector<SectionButton*>& categories)
 {
-	for (std::vector<GtkRadioButton*>::const_iterator i = categories.begin(), end = categories.end(); i != end; ++i)
+	for (std::vector<SectionButton*>::const_iterator i = categories.begin(), end = categories.end(); i != end; ++i)
 	{
-		gtk_radio_button_set_group(*i, gtk_radio_button_get_group(m_recent_button));
-		gtk_box_pack_start(m_sidebar_box, GTK_WIDGET(*i), false, false, 0);
-		g_signal_connect_swapped(*i, "toggled", SLOT_CALLBACK(Menu::category_toggled), this);
+		(*i)->set_group(m_recent_button->get_group());
+		gtk_box_pack_start(m_sidebar_box, GTK_WIDGET((*i)->get_button()), false, false, 0);
+		g_signal_connect_swapped((*i)->get_button(), "toggled", SLOT_CALLBACK(Menu::category_toggled), this);
 	}
 	gtk_widget_show_all(GTK_WIDGET(m_sidebar_box));
 
@@ -540,11 +540,11 @@ gboolean Menu::on_key_press_event(GtkWidget* widget, GdkEventKey* event)
 		{
 			view = m_search_results->get_view()->get_widget();
 		}
-		else if (gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(m_favorites_button)))
+		else if (m_favorites_button->get_active())
 		{
 			view = m_favorites->get_view()->get_widget();
 		}
-		else if (gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(m_recent_button)))
+		else if (m_recent_button->get_active())
 		{
 			view = m_recent->get_view()->get_widget();
 		}
@@ -640,7 +640,7 @@ void Menu::category_toggled()
 void Menu::show_favorites()
 {
 	// Switch to favorites panel
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_favorites_button), true);
+	m_favorites_button->set_active(true);
 
 	// Clear search entry
 	gtk_entry_set_text(m_search_entry, "");

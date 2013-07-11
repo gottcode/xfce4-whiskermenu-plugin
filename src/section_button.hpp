@@ -25,9 +25,43 @@ extern "C"
 namespace WhiskerMenu
 {
 
-GtkRadioButton* new_section_button(const gchar* icon, const gchar* text);
-bool section_button_get_hover_activate();
-void section_button_set_hover_activate(bool hover_activate);
+class SectionButton
+{
+public:
+	SectionButton(const gchar* icon, const gchar* text);
+	~SectionButton();
+
+	GtkRadioButton* get_button() const
+	{
+		return m_button;
+	}
+
+	bool get_active() const
+	{
+		return gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(m_button));
+	}
+
+	void set_active(bool active)
+	{
+		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_button), active);
+	}
+
+	GSList* get_group() const
+	{
+		return gtk_radio_button_get_group(m_button);
+	}
+
+	void set_group(GSList* group)
+	{
+		gtk_radio_button_set_group(m_button, group);
+	}
+
+	static bool get_hover_activate();
+	static void set_hover_activate(bool hover_activate);
+
+private:
+	GtkRadioButton* m_button;
+};
 
 }
 

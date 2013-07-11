@@ -61,7 +61,7 @@ PanelPlugin::PanelPlugin(XfcePanelPlugin* plugin) :
 		m_button_icon_visible = xfce_rc_read_bool_entry(settings, "show-button-icon", m_button_icon_visible);
 		Launcher::set_show_name(xfce_rc_read_bool_entry(settings, "launcher-show-name", true));
 		Launcher::set_show_description(xfce_rc_read_bool_entry(settings, "launcher-show-description", true));
-		section_button_set_hover_activate(xfce_rc_read_bool_entry(settings, "hover-switch-category", false));
+		SectionButton::set_hover_activate(xfce_rc_read_bool_entry(settings, "hover-switch-category", false));
 		m_menu = new Menu(settings);
 
 		xfce_rc_close(settings);
@@ -302,7 +302,7 @@ void PanelPlugin::save()
 	xfce_rc_write_bool_entry(settings, "show-button-icon", m_button_icon_visible);
 	xfce_rc_write_bool_entry(settings, "launcher-show-name", Launcher::get_show_name());
 	xfce_rc_write_bool_entry(settings, "launcher-show-description", Launcher::get_show_description());
-	xfce_rc_write_bool_entry(settings, "hover-switch-category", section_button_get_hover_activate());
+	xfce_rc_write_bool_entry(settings, "hover-switch-category", SectionButton::get_hover_activate());
 	m_menu->save(settings);
 
 	xfce_rc_close(settings);

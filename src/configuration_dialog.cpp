@@ -145,7 +145,7 @@ ConfigurationDialog::ConfigurationDialog(PanelPlugin* plugin) :
 	// Add option to use generic names
 	m_hover_switch_category = gtk_check_button_new_with_mnemonic(_("Switch categories by _hovering"));
 	gtk_box_pack_start(behavior_vbox, m_hover_switch_category, true, true, 0);
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_hover_switch_category), section_button_get_hover_activate());
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_hover_switch_category), SectionButton::get_hover_activate());
 	g_signal_connect(m_hover_switch_category, "toggled", SLOT_CALLBACK(ConfigurationDialog::toggle_hover_switch_category), this);
 
 	// Show GTK window
@@ -207,7 +207,7 @@ void ConfigurationDialog::title_changed(GtkEditable*)
 
 void ConfigurationDialog::toggle_hover_switch_category(GtkToggleButton* button)
 {
-	section_button_set_hover_activate(gtk_toggle_button_get_active(button));
+	SectionButton::set_hover_activate(gtk_toggle_button_get_active(button));
 }
 
 //-----------------------------------------------------------------------------
