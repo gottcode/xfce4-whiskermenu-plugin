@@ -25,6 +25,8 @@ extern "C"
 namespace WhiskerMenu
 {
 
+class IconSize;
+
 class LauncherView
 {
 public:
@@ -55,9 +57,19 @@ public:
 	void set_model(GtkTreeModel* model);
 	void unset_model();
 
+	void reload_icon_size();
+
+	static int get_icon_size();
+	static void set_icon_size(const int size);
+
+private:
+	void create_column();
+
 private:
 	GtkTreeModel* m_model;
 	GtkTreeView* m_view;
+	GtkTreeViewColumn* m_column;
+	GtkCellRenderer* m_icon_renderer;
 };
 
 }

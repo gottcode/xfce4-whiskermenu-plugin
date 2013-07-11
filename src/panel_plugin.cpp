@@ -18,7 +18,9 @@
 
 #include "applications_page.hpp"
 #include "configuration_dialog.hpp"
+#include "icon_size.hpp"
 #include "launcher.hpp"
+#include "launcher_view.hpp"
 #include "menu.hpp"
 #include "section_button.hpp"
 
@@ -59,9 +61,11 @@ PanelPlugin::PanelPlugin(XfcePanelPlugin* plugin) :
 		m_button_icon_name = xfce_rc_read_entry(settings, "button-icon", m_button_icon_name.c_str());
 		m_button_title_visible = xfce_rc_read_bool_entry(settings, "show-button-title", m_button_title_visible);
 		m_button_icon_visible = xfce_rc_read_bool_entry(settings, "show-button-icon", m_button_icon_visible);
-		Launcher::set_show_name(xfce_rc_read_bool_entry(settings, "launcher-show-name", true));
-		Launcher::set_show_description(xfce_rc_read_bool_entry(settings, "launcher-show-description", true));
-		SectionButton::set_hover_activate(xfce_rc_read_bool_entry(settings, "hover-switch-category", false));
+		Launcher::set_show_name(xfce_rc_read_bool_entry(settings, "launcher-show-name", Launcher::get_show_name()));
+		Launcher::set_show_description(xfce_rc_read_bool_entry(settings, "launcher-show-description", Launcher::get_show_description()));
+		SectionButton::set_hover_activate(xfce_rc_read_bool_entry(settings, "hover-switch-category", SectionButton::get_hover_activate()));
+		SectionButton::set_icon_size(xfce_rc_read_int_entry(settings, "category-icon-size", SectionButton::get_icon_size()));
+		LauncherView::set_icon_size(xfce_rc_read_int_entry(settings, "item-icon-size", LauncherView::get_icon_size()));
 		m_menu = new Menu(settings);
 
 		xfce_rc_close(settings);
@@ -303,6 +307,8 @@ void PanelPlugin::save()
 	xfce_rc_write_bool_entry(settings, "launcher-show-name", Launcher::get_show_name());
 	xfce_rc_write_bool_entry(settings, "launcher-show-description", Launcher::get_show_description());
 	xfce_rc_write_bool_entry(settings, "hover-switch-category", SectionButton::get_hover_activate());
+	xfce_rc_write_int_entry(settings, "category-icon-size", SectionButton::get_icon_size());
+	xfce_rc_write_int_entry(settings, "item-icon-size", LauncherView::get_icon_size());
 	m_menu->save(settings);
 
 	xfce_rc_close(settings);

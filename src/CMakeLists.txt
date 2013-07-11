@@ -61,6 +61,7 @@ add_library(whiskermenu SHARED
     configuration_dialog.cpp
     favorites_page.cpp
     filter_page.cpp
+    icon_size.cpp
     launcher.cpp
     launcher_model.cpp
     launcher_view.cpp

@@ -223,6 +223,15 @@ void Menu::hide()
 
 void Menu::show(GtkWidget* parent, bool horizontal)
 {
+	// Make sure icon sizes are correct
+	m_favorites_button->reload_icon_size();
+	m_recent_button->reload_icon_size();
+
+	m_search_results->get_view()->reload_icon_size();
+	m_favorites->get_view()->reload_icon_size();
+	m_recent->get_view()->reload_icon_size();
+	m_applications->get_view()->reload_icon_size();
+
 	// Make sure applications list is current; does nothing unless list has changed
 	m_applications->load_applications();
 

@@ -16,6 +16,7 @@
 
 #include "launcher_view.hpp"
 
+#include "icon_size.hpp"
 #include "launcher_model.hpp"
 
 #include <algorithm>
@@ -29,6 +30,10 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
+static IconSize f_icon_size(IconSize::Small);
+
+//-----------------------------------------------------------------------------
+
 LauncherView::LauncherView() :
 	m_model(NULL)
 {
@@ -39,25 +44,7 @@ LauncherView::LauncherView() :
 	gtk_tree_view_set_rules_hint(m_view, false);
 	gtk_tree_view_set_hover_selection(m_view, true);
 	gtk_tree_view_set_enable_search(m_view, false);
-
-	// Add a column for the icon and text
-	GtkTreeViewColumn* column = gtk_tree_view_column_new();
-	gtk_tree_view_column_set_expand(column, true);
-	gtk_tree_view_column_set_visible(column, true);
-
-	int width = 0, height = 0;
-	gtk_icon_size_lookup(GTK_ICON_SIZE_DND, &width, &height);
-	GtkCellRenderer* icon_renderer = exo_cell_renderer_icon_new();
-	g_object_set(icon_renderer, "size", std::max(width, height), NULL);
-	gtk_tree_view_column_pack_start(column, icon_renderer, false);
-	gtk_tree_view_column_add_attribute(column, icon_renderer, "icon", LauncherModel::COLUMN_ICON);
-
-	GtkCellRenderer* text_renderer = gtk_cell_renderer_text_new();
-	g_object_set(text_renderer, "ellipsize", PANGO_ELLIPSIZE_END, NULL);
-	gtk_tree_view_column_pack_start(column, text_renderer, true);
-	gtk_tree_view_column_add_attribute(column, text_renderer, "markup", LauncherModel::COLUMN_TEXT);
-
-	gtk_tree_view_append_column(m_view, column);
+	create_column();
 
 	// Use single clicks to activate items
 	exo_tree_view_set_single_click(EXO_TREE_VIEW(m_view), true);
@@ -152,6 +139,55 @@ void LauncherView::unset_model()
 {
 	m_model = NULL;
 	gtk_tree_view_set_model(m_view, NULL);
+}
+
+//-----------------------------------------------------------------------------
+
+void LauncherView::reload_icon_size()
+{
+	// Force exo to reload SVG icons
+	int size = 0;
+	g_object_get(m_icon_renderer, "size", &size, NULL);
+	if (size != f_icon_size)
+	{
+		gtk_tree_view_remove_column(m_view, m_column);
+		create_column();
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+int LauncherView::get_icon_size()
+{
+	return f_icon_size;
+}
+
+//-----------------------------------------------------------------------------
+
+void LauncherView::set_icon_size(const int size)
+{
+	f_icon_size = size;
+}
+
+//-----------------------------------------------------------------------------
+
+void LauncherView::create_column()
+{
+	m_column = gtk_tree_view_column_new();
+	gtk_tree_view_column_set_expand(m_column, true);
+	gtk_tree_view_column_set_visible(m_column, true);
+
+	m_icon_renderer = exo_cell_renderer_icon_new();
+	g_object_set(m_icon_renderer, "size", f_icon_size.get_size(), NULL);
+	gtk_tree_view_column_pack_start(m_column, m_icon_renderer, false);
+	gtk_tree_view_column_add_attribute(m_column, m_icon_renderer, "icon", LauncherModel::COLUMN_ICON);
+
+	GtkCellRenderer* text_renderer = gtk_cell_renderer_text_new();
+	g_object_set(text_renderer, "ellipsize", PANGO_ELLIPSIZE_END, NULL);
+	gtk_tree_view_column_pack_start(m_column, text_renderer, true);
+	gtk_tree_view_column_add_attribute(m_column, text_renderer, "markup", LauncherModel::COLUMN_TEXT);
+
+	gtk_tree_view_append_column(m_view, m_column);
 }
 
 //-----------------------------------------------------------------------------

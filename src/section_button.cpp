@@ -16,11 +16,14 @@
 
 #include "section_button.hpp"
 
+#include "icon_size.hpp"
+
 using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
 static bool f_hover_activate = false;
+static WhiskerMenu::IconSize f_icon_size(WhiskerMenu::IconSize::Smaller);
 
 static gboolean hover_timeout(GtkToggleButton* button)
 {
@@ -53,8 +56,9 @@ SectionButton::SectionButton(const gchar* icon, const gchar* text)
 	GtkBox* box = GTK_BOX(gtk_hbox_new(false, 4));
 	gtk_container_add(GTK_CONTAINER(m_button), GTK_WIDGET(box));
 
-	GtkWidget* image = gtk_image_new_from_icon_name(icon, GTK_ICON_SIZE_LARGE_TOOLBAR);
-	gtk_box_pack_start(box, image, false, false, 0);
+	m_icon = XFCE_PANEL_IMAGE(xfce_panel_image_new_from_source(icon));
+	reload_icon_size();
+	gtk_box_pack_start(box, GTK_WIDGET(m_icon), false, false, 0);
 
 	GtkWidget* label = gtk_label_new(text);
 	gtk_box_pack_start(box, label, false, true, 0);
@@ -69,6 +73,13 @@ SectionButton::~SectionButton()
 
 //-----------------------------------------------------------------------------
 
+void SectionButton::reload_icon_size()
+{
+	xfce_panel_image_set_size(m_icon, f_icon_size.get_size());
+}
+
+//-----------------------------------------------------------------------------
+
 bool SectionButton::get_hover_activate()
 {
 	return f_hover_activate;
@@ -79,6 +90,20 @@ bool SectionButton::get_hover_activate()
 void SectionButton::set_hover_activate(bool hover_activate)
 {
 	f_hover_activate = hover_activate;
+}
+
+//-----------------------------------------------------------------------------
+
+int SectionButton::get_icon_size()
+{
+	return f_icon_size;
+}
+
+//-----------------------------------------------------------------------------
+
+void SectionButton::set_icon_size(const int size)
+{
+	f_icon_size = size;
 }
 
 //-----------------------------------------------------------------------------

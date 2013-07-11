@@ -16,7 +16,9 @@
 
 #include "configuration_dialog.hpp"
 
+#include "icon_size.hpp"
 #include "launcher.hpp"
+#include "launcher_view.hpp"
 #include "panel_plugin.hpp"
 #include "section_button.hpp"
 
@@ -79,6 +81,45 @@ ConfigurationDialog::ConfigurationDialog(PanelPlugin* plugin) :
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_descriptions), Launcher::get_show_description());
 	g_signal_connect(m_show_descriptions, "toggled", SLOT_CALLBACK(ConfigurationDialog::toggle_show_description), this);
 
+	// Add item icon size selector
+	GtkBox* hbox = GTK_BOX(gtk_hbox_new(false, 12));
+	gtk_box_pack_start(appearance_vbox, GTK_WIDGET(hbox), false, false, 0);
+
+	GtkWidget* label = gtk_label_new_with_mnemonic(_("Ite_m icon size:"));
+	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+	gtk_box_pack_start(hbox, label, false, false, 0);
+	gtk_size_group_add_widget(label_size_group, label);
+
+	m_item_icon_size = gtk_combo_box_text_new();
+	std::vector<std::string> icon_sizes = IconSize::get_strings();
+	for (std::vector<std::string>::const_iterator i = icon_sizes.begin(), end = icon_sizes.end(); i != end; ++i)
+	{
+		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_item_icon_size), i->c_str());
+	}
+	gtk_combo_box_set_active(GTK_COMBO_BOX(m_item_icon_size), LauncherView::get_icon_size());
+	gtk_box_pack_start(hbox, m_item_icon_size, false, false, 0);
+	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_item_icon_size);
+	g_signal_connect(m_item_icon_size, "changed", SLOT_CALLBACK(ConfigurationDialog::item_icon_size_changed), this);
+
+	// Add category icon size selector
+	hbox = GTK_BOX(gtk_hbox_new(false, 12));
+	gtk_box_pack_start(appearance_vbox, GTK_WIDGET(hbox), false, false, 0);
+
+	label = gtk_label_new_with_mnemonic(_("Categ_ory icon size:"));
+	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+	gtk_box_pack_start(hbox, label, false, false, 0);
+	gtk_size_group_add_widget(label_size_group, label);
+
+	m_category_icon_size = gtk_combo_box_text_new();
+	for (std::vector<std::string>::const_iterator i = icon_sizes.begin(), end = icon_sizes.end(); i != end; ++i)
+	{
+		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_category_icon_size), i->c_str());
+	}
+	gtk_combo_box_set_active(GTK_COMBO_BOX(m_category_icon_size), SectionButton::get_icon_size());
+	gtk_box_pack_start(hbox, m_category_icon_size, false, false, 0);
+	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_category_icon_size);
+	g_signal_connect(m_category_icon_size, "changed", SLOT_CALLBACK(ConfigurationDialog::category_icon_size_changed), this);
+
 	// Create panel button section
 	GtkBox* panel_vbox = GTK_BOX(gtk_vbox_new(false, 8));
 	GtkWidget* panel_frame = xfce_gtk_frame_box_new_with_content(_("Panel Button"), GTK_WIDGET(panel_vbox));
@@ -86,10 +127,10 @@ ConfigurationDialog::ConfigurationDialog(PanelPlugin* plugin) :
 	gtk_container_set_border_width(GTK_CONTAINER(panel_frame), 6);
 
 	// Add button style selector
-	GtkBox* hbox = GTK_BOX(gtk_hbox_new(false, 12));
+	hbox = GTK_BOX(gtk_hbox_new(false, 12));
 	gtk_box_pack_start(panel_vbox, GTK_WIDGET(hbox), false, false, 0);
 
-	GtkWidget* label = gtk_label_new_with_mnemonic(_("Di_splay:"));
+	label = gtk_label_new_with_mnemonic(_("Di_splay:"));
 	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
 	gtk_box_pack_start(hbox, label, false, false, 0);
 	gtk_size_group_add_widget(label_size_group, label);
@@ -186,6 +227,22 @@ void ConfigurationDialog::choose_icon()
 	}
 
 	gtk_widget_destroy(chooser);
+}
+
+//-----------------------------------------------------------------------------
+
+void ConfigurationDialog::category_icon_size_changed(GtkComboBox* combo)
+{
+	SectionButton::set_icon_size(gtk_combo_box_get_active(combo));
+	m_plugin->reload();
+}
+
+//-----------------------------------------------------------------------------
+
+void ConfigurationDialog::item_icon_size_changed(GtkComboBox* combo)
+{
+	LauncherView::set_icon_size(gtk_combo_box_get_active(combo));
+	m_plugin->reload();
 }
 
 //-----------------------------------------------------------------------------

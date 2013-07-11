@@ -42,6 +42,8 @@ public:
 
 private:
 	SLOT_0(void, ConfigurationDialog, choose_icon);
+	SLOT_1(void, ConfigurationDialog, category_icon_size_changed, GtkComboBox*);
+	SLOT_1(void, ConfigurationDialog, item_icon_size_changed, GtkComboBox*);
 	SLOT_1(void, ConfigurationDialog, style_changed, GtkComboBox*);
 	SLOT_1(void, ConfigurationDialog, title_changed, GtkEditable*);
 	SLOT_1(void, ConfigurationDialog, toggle_hover_switch_category, GtkToggleButton*);
@@ -57,6 +59,8 @@ private:
 	GtkWidget* m_title;
 	GtkWidget* m_icon;
 	GtkWidget* m_icon_button;
+	GtkWidget* m_category_icon_size;
+	GtkWidget* m_item_icon_size;
 	GtkWidget* m_show_names;
 	GtkWidget* m_show_descriptions;
 	GtkWidget* m_hover_switch_category;

@@ -20,6 +20,7 @@
 extern "C"
 {
 #include <gtk/gtk.h>
+#include <libxfce4panel/libxfce4panel.h>
 }
 
 namespace WhiskerMenu
@@ -56,11 +57,16 @@ public:
 		gtk_radio_button_set_group(m_button, group);
 	}
 
+	void reload_icon_size();
+
 	static bool get_hover_activate();
 	static void set_hover_activate(bool hover_activate);
+	static int get_icon_size();
+	static void set_icon_size(const int size);
 
 private:
 	GtkRadioButton* m_button;
+	XfcePanelImage* m_icon;
 };
 
 }
