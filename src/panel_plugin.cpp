@@ -267,12 +267,19 @@ void PanelPlugin::orientation_changed(bool vertical)
 
 gboolean PanelPlugin::remote_event(XfcePanelPlugin*, gchar* name, GValue* value)
 {
-	if (strcmp(name, "popup") || gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(m_button)))
+	if (strcmp(name, "popup"))
 	{
 		return false;
 	}
 
-	popup_menu(value && G_VALUE_HOLDS_BOOLEAN(value) && g_value_get_boolean(value));
+	if (gtk_widget_get_visible(m_menu->get_widget()))
+	{
+		m_menu->hide();
+	}
+	else
+	{
+		popup_menu(value && G_VALUE_HOLDS_BOOLEAN(value) && g_value_get_boolean(value));
+	}
 
 	return true;
 }
