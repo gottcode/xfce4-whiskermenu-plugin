@@ -1,0 +1,108 @@
+# Slovak translation of xfce4-whiskermenu-plugin.
+# Copyright (C) 2013 Graeme Gott
+# This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
+#
+# Translators:
+# Slavko <linux@slavino.sk>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: Whisker Menu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-15 20:23+0000\n"
+"PO-Revision-Date: 2013-07-10 19:44+0000\n"
+"Last-Translator: Slavko <linux@slavino.sk>\n"
+"Language-Team: Slovak (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/sk/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sk\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: src/applications_page.cpp:298
+msgid "All"
+msgstr "Všetko"
+
+#: src/configuration_dialog.cpp:52
+msgid "Whisker Menu"
+msgstr "Whisker Menu"
+
+#: src/configuration_dialog.cpp:66
+msgid "Appearance"
+msgstr "Vzhľad"
+
+#: src/configuration_dialog.cpp:71
+msgid "Show applications by _name"
+msgstr "Zobraziť aplikácie podľa _mena"
+
+#: src/configuration_dialog.cpp:77
+msgid "Show application _descriptions"
+msgstr "Zobraziť _popis aplikácie"
+
+#: src/configuration_dialog.cpp:86
+msgid "_Icon:"
+msgstr "_Ikona:"
+
+#: src/configuration_dialog.cpp:118
+msgid "Select An Icon"
+msgstr "Vyberte ikonu"
+
+#: src/launcher.cpp:263
+#, c-format
+msgid "Failed to execute command \"%s\"."
+msgstr "Zlyhalo vykonanie príkazu „%s”."
+
+#: src/menu.cpp:88
+msgid "All Settings"
+msgstr "Všetky nastavenia"
+
+#: src/menu.cpp:91
+msgid "Lock Screen"
+msgstr "Zamknúť obrazovku"
+
+#: src/menu.cpp:94
+msgid "Log Out"
+msgstr "Odhlásiť"
+
+#: src/menu.cpp:108
+msgid "Favorites"
+msgstr "Obľúbené"
+
+#: src/menu.cpp:114
+msgid "Recently Used"
+msgstr "Nedávne"
+
+#: src/menu.cpp:636
+msgid "Failed to open settings manager."
+msgstr "Zlyhalo otvorenie správcu nastavení."
+
+#: src/menu.cpp:650
+msgid "Failed to lock screen."
+msgstr "Zlyhalo zamknutie obrazovky."
+
+#: src/menu.cpp:664
+msgid "Failed to log out."
+msgstr "Zlyhalo odhlásenie."
+
+#: src/page.cpp:170
+msgid "Add to Favorites"
+msgstr "Pridať k obľúbeným"
+
+#: src/page.cpp:176
+msgid "Remove From Favorites"
+msgstr "Odstrániť z obľúbených"
+
+#: src/page.cpp:181
+msgid "Add to Desktop"
+msgstr "Pridať na plochu"
+
+#: src/page.cpp:185
+msgid "Add to Panel"
+msgstr "Pridať do panela"
+
+#: src/page.cpp:265
+msgid "Unable to add launcher to desktop."
+msgstr "Nemožno pridať spúšťač na plochu"
+
+#: src/page.cpp:303 src/page.cpp:312
+msgid "Unable to add launcher to panel."
+msgstr "Nemožno pridať spúšťač do panela"
