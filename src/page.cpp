@@ -170,7 +170,12 @@ void Page::create_context_menu(GtkTreeIter* iter, GdkEventButton* event)
 	g_signal_connect(menu, "selection-done", SLOT_CALLBACK(Page::destroy_context_menu), this);
 
 	// Add menu items
-	GtkWidget* menuitem = NULL;
+	GtkWidget* menuitem = gtk_menu_item_new_with_label(launcher->get_display_name());
+	gtk_widget_set_sensitive(menuitem, false);
+	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+
+	menuitem = gtk_separator_menu_item_new();
+	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
 	if (!m_menu->get_favorites()->contains(launcher))
 	{

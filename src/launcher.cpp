@@ -132,7 +132,7 @@ Launcher::Launcher(GarconMenuItem* item) :
 
 	// Create display text
 	const gchar* direction = (gtk_widget_get_default_direction() != GTK_TEXT_DIR_RTL) ? "\342\200\216" : "\342\200\217";
-	const gchar* display_name = (f_show_name || exo_str_is_empty(generic_name)) ? name : generic_name;
+	m_display_name = (f_show_name || exo_str_is_empty(generic_name)) ? name : generic_name;
 	if (f_show_description)
 	{
 		const gchar* details = garcon_menu_item_get_comment(m_item);
@@ -140,7 +140,7 @@ Launcher::Launcher(GarconMenuItem* item) :
 		{
 			details = generic_name;
 		}
-		m_text = g_markup_printf_escaped("%s<b>%s</b>\n%s%s", direction, display_name, direction, details);
+		m_text = g_markup_printf_escaped("%s<b>%s</b>\n%s%s", direction, m_display_name, direction, details);
 
 		// Create search text for comment
 		gchar* normalized = g_utf8_normalize(details, -1, G_NORMALIZE_DEFAULT);
@@ -151,11 +151,11 @@ Launcher::Launcher(GarconMenuItem* item) :
 	}
 	else
 	{
-		m_text = g_markup_printf_escaped("%s%s", direction, display_name);
+		m_text = g_markup_printf_escaped("%s%s", direction, m_display_name);
 	}
 
 	// Create search text for display name
-	gchar* normalized = g_utf8_normalize(display_name, -1, G_NORMALIZE_DEFAULT);
+	gchar* normalized = g_utf8_normalize(m_display_name, -1, G_NORMALIZE_DEFAULT);
 	gchar* utf8 = g_utf8_casefold(normalized, -1);
 	m_search_name = utf8;
 	g_free(utf8);

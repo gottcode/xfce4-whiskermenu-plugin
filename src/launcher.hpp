@@ -37,6 +37,11 @@ public:
 	explicit Launcher(GarconMenuItem* item);
 	~Launcher();
 
+	const gchar* get_display_name() const
+	{
+		return m_display_name;
+	}
+
 	const gchar* get_icon() const
 	{
 		return m_icon;
@@ -78,6 +83,7 @@ private:
 
 private:
 	GarconMenuItem* m_item;
+	const gchar* m_display_name;
 	gchar* m_icon;
 	gchar* m_text;
 	std::string m_search_name;
