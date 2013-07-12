@@ -89,6 +89,7 @@ private:
 	SLOT_2(gboolean, Menu, on_leave_notify_event, GtkWidget*, GdkEventCrossing*);
 	SLOT_2(gboolean, Menu, on_button_press_event, GtkWidget*, GdkEventButton*);
 	SLOT_2(gboolean, Menu, on_key_press_event, GtkWidget*, GdkEventKey*);
+	SLOT_2(gboolean, Menu, on_key_press_event_after, GtkWidget*, GdkEventKey*);
 	SLOT_2(gboolean, Menu, on_map_event, GtkWidget*, GdkEventAny*);
 	SLOT_2(gboolean, Menu, on_configure_event, GtkWidget*, GdkEventConfigure*);
 	SLOT_0(void, Menu, favorites_toggled);

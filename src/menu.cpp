@@ -75,6 +75,7 @@ Menu::Menu(XfceRc* settings) :
 	g_signal_connect(m_window, "leave-notify-event", SLOT_CALLBACK(Menu::on_leave_notify_event), this);
 	g_signal_connect(m_window, "button-press-event", SLOT_CALLBACK(Menu::on_button_press_event), this);
 	g_signal_connect(m_window, "key-press-event", SLOT_CALLBACK(Menu::on_key_press_event), this);
+	g_signal_connect_after(m_window, "key-press-event", SLOT_CALLBACK(Menu::on_key_press_event_after), this);
 	g_signal_connect(m_window, "map-event", SLOT_CALLBACK(Menu::on_map_event), this);
 	g_signal_connect(m_window, "configure-event", SLOT_CALLBACK(Menu::on_configure_event), this);
 
@@ -571,24 +572,27 @@ gboolean Menu::on_key_press_event(GtkWidget* widget, GdkEventKey* event)
 		{
 			view = m_applications->get_view()->get_widget();
 		}
-		if (!gtk_widget_has_focus(view))
+
+		if ((widget != view) && (gtk_window_get_focus(m_window) != view))
 		{
 			gtk_widget_grab_focus(view);
 		}
-		return false;
 	}
 
-	// Pass other key presses to search entry
+	return false;
+}
+
+//-----------------------------------------------------------------------------
+
+gboolean Menu::on_key_press_event_after(GtkWidget* widget, GdkEventKey* event)
+{
+	// Pass unhandled key presses to search entry
 	GtkWidget* search_entry = GTK_WIDGET(m_search_entry);
-	if (!gtk_widget_has_focus(search_entry) && (search_entry != widget)
-			&& (event->keyval != GDK_Shift_L) && (event->keyval != GDK_Shift_R)
-			&& (event->keyval != GDK_Control_L) && (event->keyval != GDK_Control_R)
-			&& !(event->state & GDK_SHIFT_MASK) && !(event->state & GDK_CONTROL_MASK)
-			&& (event->keyval != GDK_Tab) && (event->keyval != GDK_Return)
-			&& (event->keyval != GDK_Page_Up) && (event->keyval != GDK_Page_Down)
-			&& (event->keyval != GDK_KEY_Menu))
+	if ((widget != search_entry) && (gtk_window_get_focus(m_window) != search_entry))
 	{
 		gtk_widget_grab_focus(search_entry);
+		gtk_window_propagate_key_event(m_window, event);
+		return true;
 	}
 	return false;
 }
