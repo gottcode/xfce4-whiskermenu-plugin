@@ -81,6 +81,14 @@ ApplicationsPage::~ApplicationsPage()
 
 //-----------------------------------------------------------------------------
 
+Launcher* ApplicationsPage::get_application(const std::string& desktop_id) const
+{
+	std::map<std::string, Launcher*>::const_iterator i = m_items.find(desktop_id);
+	return (i != m_items.end()) ? i->second : NULL;
+}
+
+//-----------------------------------------------------------------------------
+
 void ApplicationsPage::apply_filter(GtkToggleButton* togglebutton)
 {
 	// Find category matching button
@@ -177,7 +185,7 @@ void ApplicationsPage::load_applications()
 	load_categories();
 
 	// Update menu items of other panels
-	get_menu()->set_items(m_items);
+	get_menu()->set_items();
 
 	m_loaded = true;
 }

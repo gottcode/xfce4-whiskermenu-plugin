@@ -16,6 +16,7 @@
 
 #include "list_page.hpp"
 
+#include "applications_page.hpp"
 #include "launcher.hpp"
 #include "launcher_model.hpp"
 #include "launcher_view.hpp"
@@ -100,7 +101,7 @@ void ListPage::save(XfceRc* settings)
 
 //-----------------------------------------------------------------------------
 
-void ListPage::set_menu_items(const std::map<std::string, Launcher*>& items)
+void ListPage::set_menu_items()
 {
 	// Create new model for treeview
 	LauncherModel model;
@@ -113,10 +114,10 @@ void ListPage::set_menu_items(const std::map<std::string, Launcher*>& items)
 			continue;
 		}
 
-		std::map<std::string, Launcher*>::const_iterator item = items.find(*i);
-		if (item != items.end())
+		Launcher* launcher = get_menu()->get_applications()->get_application(*i);
+		if (launcher)
 		{
-			model.append_item(item->second);
+			model.append_item(launcher);
 		}
 		else
 		{

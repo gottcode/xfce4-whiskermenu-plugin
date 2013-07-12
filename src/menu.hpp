@@ -80,7 +80,7 @@ public:
 	void show(GtkWidget* parent, bool horizontal);
 	void save(XfceRc* settings);
 	void set_categories(const std::vector<SectionButton*>& categories);
-	void set_items(const std::map<std::string, Launcher*>& items);
+	void set_items();
 	void set_modified();
 	void unset_items();
 

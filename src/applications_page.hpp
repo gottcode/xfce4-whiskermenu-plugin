@@ -63,6 +63,8 @@ public:
 	explicit ApplicationsPage(Menu* menu);
 	~ApplicationsPage();
 
+	Launcher* get_application(const std::string& desktop_id) const;
+
 	void load_applications();
 
 public:

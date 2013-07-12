@@ -451,11 +451,11 @@ void Menu::set_categories(const std::vector<SectionButton*>& categories)
 
 //-----------------------------------------------------------------------------
 
-void Menu::set_items(const std::map<std::string, Launcher*>& items)
+void Menu::set_items()
 {
 	m_search_results->set_menu_items(m_applications->get_model());
-	m_favorites->set_menu_items(items);
-	m_recent->set_menu_items(items);
+	m_favorites->set_menu_items();
+	m_recent->set_menu_items();
 
 	// Handle switching to favorites are added
 	GtkTreeModel* favorites_model = m_favorites->get_view()->get_model();

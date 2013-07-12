@@ -50,7 +50,7 @@ public:
 	virtual void add(Launcher* launcher)=0;
 	void remove(Launcher* launcher);
 	void save(XfceRc* settings);
-	void set_menu_items(const std::map<std::string, Launcher*>& items);
+	void set_menu_items();
 	void unset_menu_items();
 
 private:
