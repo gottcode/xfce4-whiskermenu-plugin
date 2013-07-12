@@ -122,6 +122,7 @@ private:
 	RecentPage* m_recent;
 	ApplicationsPage* m_applications;
 
+	GtkScrolledWindow* m_sidebar;
 	SectionButton* m_favorites_button;
 	SectionButton* m_recent_button;
 

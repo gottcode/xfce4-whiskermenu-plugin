@@ -163,10 +163,20 @@ Menu::Menu(XfceRc* settings) :
 
 	// Create box for packing sidebar
 	m_sidebar_box = GTK_BOX(gtk_vbox_new(false, 0));
-	gtk_box_pack_start(m_contents_box, GTK_WIDGET(m_sidebar_box), false, false, 0);
 	gtk_box_pack_start(m_sidebar_box, GTK_WIDGET(m_favorites_button->get_button()), false, false, 0);
 	gtk_box_pack_start(m_sidebar_box, GTK_WIDGET(m_recent_button->get_button()), false, false, 0);
 	gtk_box_pack_start(m_sidebar_box, gtk_hseparator_new(), false, true, 0);
+
+	m_sidebar = GTK_SCROLLED_WINDOW(gtk_scrolled_window_new(NULL, NULL));
+	gtk_box_pack_start(m_contents_box, GTK_WIDGET(m_sidebar), false, false, 0);
+	gtk_scrolled_window_set_shadow_type(m_sidebar, GTK_SHADOW_NONE);
+	gtk_scrolled_window_set_policy(m_sidebar, GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
+
+	GtkWidget* viewport = gtk_viewport_new(gtk_scrolled_window_get_hadjustment(m_sidebar),
+		gtk_scrolled_window_get_vadjustment(m_sidebar));
+	gtk_viewport_set_shadow_type(GTK_VIEWPORT(viewport), GTK_SHADOW_NONE);
+	gtk_container_add(GTK_CONTAINER(m_sidebar), viewport);
+	gtk_container_add(GTK_CONTAINER(viewport), GTK_WIDGET(m_sidebar_box));
 
 	// Populate app menu
 	m_applications->load_applications();
@@ -371,7 +381,7 @@ void Menu::show(GtkWidget* parent, bool horizontal)
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 4);
 
 			gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_panels_box), 1);
-			gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_sidebar_box), 2);
+			gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_sidebar), 2);
 		}
 		else
 		{
@@ -384,7 +394,7 @@ void Menu::show(GtkWidget* parent, bool horizontal)
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 0);
 
 			gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_panels_box), 2);
-			gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_sidebar_box), 1);
+			gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_sidebar), 1);
 		}
 	}
 
@@ -575,6 +585,7 @@ gboolean Menu::on_key_press_event(GtkWidget* widget, GdkEventKey* event)
 			&& (event->keyval != GDK_Control_L) && (event->keyval != GDK_Control_R)
 			&& !(event->state & GDK_SHIFT_MASK) && !(event->state & GDK_CONTROL_MASK)
 			&& (event->keyval != GDK_Tab) && (event->keyval != GDK_Return)
+			&& (event->keyval != GDK_Page_Up) && (event->keyval != GDK_Page_Down)
 			&& (event->keyval != GDK_KEY_Menu))
 	{
 		gtk_widget_grab_focus(search_entry);
@@ -678,7 +689,7 @@ void Menu::search()
 	if (visible)
 	{
 		// Show search results
-		gtk_widget_hide(GTK_WIDGET(m_sidebar_box));
+		gtk_widget_hide(GTK_WIDGET(m_sidebar));
 		gtk_widget_hide(GTK_WIDGET(m_panels_box));
 		gtk_widget_show(m_search_results->get_widget());
 	}
@@ -687,7 +698,7 @@ void Menu::search()
 		// Show active panel
 		gtk_widget_hide(m_search_results->get_widget());
 		gtk_widget_show(GTK_WIDGET(m_panels_box));
-		gtk_widget_show(GTK_WIDGET(m_sidebar_box));
+		gtk_widget_show(GTK_WIDGET(m_sidebar));
 	}
 
 	// Apply filter
