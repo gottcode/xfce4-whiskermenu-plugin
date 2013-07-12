@@ -143,6 +143,14 @@ void ListPage::unset_menu_items()
 
 //-----------------------------------------------------------------------------
 
+void ListPage::set_desktop_ids(const std::vector<std::string>& desktop_ids)
+{
+	m_desktop_ids = desktop_ids;
+	set_menu_items();
+}
+
+//-----------------------------------------------------------------------------
+
 void ListPage::on_row_changed(GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter)
 {
 	size_t pos = gtk_tree_path_get_indices(path)[0];

@@ -19,6 +19,8 @@
 
 #include "list_page.hpp"
 
+#include "slot.hpp"
+
 namespace WhiskerMenu
 {
 
@@ -30,6 +32,14 @@ public:
 	FavoritesPage(XfceRc* settings, Menu* menu);
 
 	void add(Launcher* launcher);
+
+private:
+	void extend_context_menu(GtkWidget* menu);
+	void sort(std::map<std::string, Launcher*>& items) const;
+
+private:
+	SLOT_1(void, FavoritesPage, sort_ascending, GtkMenuItem*);
+	SLOT_1(void, FavoritesPage, sort_descending, GtkMenuItem*);
 };
 
 }

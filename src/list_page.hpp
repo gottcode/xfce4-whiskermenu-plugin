@@ -53,6 +53,14 @@ public:
 	void set_menu_items();
 	void unset_menu_items();
 
+protected:
+	const std::vector<std::string>& get_desktop_ids() const
+	{
+		return m_desktop_ids;
+	}
+
+	void set_desktop_ids(const std::vector<std::string>& desktop_ids);
+
 private:
 	SLOT_3(void, ListPage, on_row_changed, GtkTreeModel*, GtkTreePath*, GtkTreeIter*);
 	SLOT_3(void, ListPage, on_row_inserted, GtkTreeModel*, GtkTreePath*, GtkTreeIter*);

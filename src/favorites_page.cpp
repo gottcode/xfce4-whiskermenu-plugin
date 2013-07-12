@@ -16,9 +16,11 @@
 
 #include "favorites_page.hpp"
 
+#include "applications_page.hpp"
 #include "launcher.hpp"
 #include "launcher_model.hpp"
 #include "launcher_view.hpp"
+#include "menu.hpp"
 
 #include <algorithm>
 
@@ -59,6 +61,68 @@ void FavoritesPage::add(Launcher* launcher)
 	// Add to list of items
 	LauncherModel model(GTK_LIST_STORE(get_view()->get_model()));
 	model.append_item(launcher);
+}
+
+//-----------------------------------------------------------------------------
+
+void FavoritesPage::extend_context_menu(GtkWidget* menu)
+{
+	GtkWidget* menuitem = gtk_separator_menu_item_new();
+	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+
+	menuitem = gtk_menu_item_new_with_label(_("Sort Alphabetically A-Z"));
+	g_signal_connect(menuitem, "activate", SLOT_CALLBACK(FavoritesPage::sort_ascending), this);
+	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+
+	menuitem = gtk_menu_item_new_with_label(_("Sort Alphabetically Z-A"));
+	g_signal_connect(menuitem, "activate", SLOT_CALLBACK(FavoritesPage::sort_descending), this);
+	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+}
+
+//-----------------------------------------------------------------------------
+
+void FavoritesPage::sort(std::map<std::string, Launcher*>& items) const
+{
+	const std::vector<std::string>& desktop_ids = get_desktop_ids();
+	for (std::vector<std::string>::const_iterator i = desktop_ids.begin(), end = desktop_ids.end(); i != end; ++i)
+	{
+		Launcher* launcher = get_menu()->get_applications()->get_application(*i);
+		if (!launcher)
+		{
+			continue;
+		}
+		gchar* collation_key = g_utf8_collate_key(launcher->get_text(), -1);
+		items[collation_key] = launcher;
+		g_free(collation_key);
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void FavoritesPage::sort_ascending(GtkMenuItem*)
+{
+	std::vector<std::string> desktop_ids;
+	std::map<std::string, Launcher*> items;
+	sort(items);
+	for (std::map<std::string, Launcher*>::const_iterator i = items.begin(), end = items.end(); i != end; ++i)
+	{
+		desktop_ids.push_back(i->second->get_desktop_id());
+	}
+	set_desktop_ids(desktop_ids);
+}
+
+//-----------------------------------------------------------------------------
+
+void FavoritesPage::sort_descending(GtkMenuItem*)
+{
+	std::vector<std::string> desktop_ids;
+	std::map<std::string, Launcher*> items;
+	sort(items);
+	for (std::map<std::string, Launcher*>::const_reverse_iterator i = items.rbegin(), end = items.rend(); i != end; ++i)
+	{
+		desktop_ids.push_back(i->second->get_desktop_id());
+	}
+	set_desktop_ids(desktop_ids);
 }
 
 //-----------------------------------------------------------------------------
