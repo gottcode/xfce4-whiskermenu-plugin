@@ -70,7 +70,7 @@ bool ListPage::contains(Launcher* launcher) const
 		return false;
 	}
 
-	std::string desktop_id = garcon_menu_item_get_desktop_id(launcher->get_item());
+	std::string desktop_id(launcher->get_desktop_id());
 	return std::find(m_desktop_ids.begin(), m_desktop_ids.end(), desktop_id) != m_desktop_ids.end();
 }
 
@@ -155,7 +155,7 @@ void ListPage::on_row_changed(GtkTreeModel* model, GtkTreePath* path, GtkTreeIte
 	gtk_tree_model_get(model, iter, LauncherModel::COLUMN_LAUNCHER, &launcher, -1);
 	if (launcher)
 	{
-		m_desktop_ids[pos] = garcon_menu_item_get_desktop_id(launcher->get_item());
+		m_desktop_ids[pos] = launcher->get_desktop_id();
 		get_menu()->set_modified(); // Handle favorites being rearranged
 	}
 }
@@ -171,7 +171,7 @@ void ListPage::on_row_inserted(GtkTreeModel* model, GtkTreePath* path, GtkTreeIt
 	gtk_tree_model_get(model, iter, LauncherModel::COLUMN_LAUNCHER, &launcher, -1);
 	if (launcher)
 	{
-		desktop_id = garcon_menu_item_get_desktop_id(launcher->get_item());
+		desktop_id = launcher->get_desktop_id();
 	}
 
 	if (pos >= m_desktop_ids.size())

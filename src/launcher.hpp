@@ -47,9 +47,14 @@ public:
 		return m_text;
 	}
 
-	GarconMenuItem* get_item() const
+	const gchar* get_desktop_id() const
 	{
-		return m_item;
+		return garcon_menu_item_get_desktop_id(m_item);
+	}
+
+	GFile* get_file() const
+	{
+		return garcon_menu_item_get_file(m_item);
 	}
 
 	unsigned int get_search_results(const Query& query) const

@@ -268,7 +268,7 @@ void Page::add_selected_to_desktop()
 	// Fetch launcher source
 	Launcher* launcher = get_selected_launcher();
 	g_assert(launcher != NULL);
-	GFile* source_file = garcon_menu_item_get_file(launcher->get_item());
+	GFile* source_file = launcher->get_file();
 
 	// Fetch launcher destination
 	char* basename = g_file_get_basename(source_file);
@@ -307,7 +307,7 @@ void Page::add_selected_to_panel()
 		// Fetch launcher desktop ID
 		Launcher* launcher = get_selected_launcher();
 		g_assert(launcher != NULL);
-		const gchar* parameters[] = { garcon_menu_item_get_desktop_id(launcher->get_item()), NULL };
+		const gchar* parameters[] = { launcher->get_desktop_id(), NULL };
 
 		// Tell panel to add item
 		if (!g_dbus_proxy_call_sync(proxy,
