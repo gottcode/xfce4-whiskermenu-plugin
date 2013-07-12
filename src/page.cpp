@@ -193,6 +193,8 @@ void Page::create_context_menu(GtkTreeIter* iter, GdkEventButton* event)
 	g_signal_connect_swapped(menuitem, "activate", SLOT_CALLBACK(Page::add_selected_to_panel), this);
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
+	extend_context_menu(menu);
+
 	gtk_widget_show_all(menu);
 
 	// Show context menu
@@ -227,6 +229,12 @@ void Page::destroy_context_menu(GtkMenuShell* menu)
 	gtk_tree_view_set_hover_selection(GTK_TREE_VIEW(m_view->get_widget()), true);
 
 	gtk_widget_destroy(GTK_WIDGET(menu));
+}
+
+//-----------------------------------------------------------------------------
+
+void Page::extend_context_menu(GtkWidget*)
+{
 }
 
 //-----------------------------------------------------------------------------

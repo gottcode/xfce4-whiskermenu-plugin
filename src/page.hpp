@@ -68,6 +68,7 @@ private:
 private:
 	Launcher* get_selected_launcher() const;
 	void create_context_menu(GtkTreeIter* iter, GdkEventButton* event);
+	virtual void extend_context_menu(GtkWidget* menu);
 	static void position_context_menu(GtkMenu*, gint* x, gint* y, gboolean* push_in, Page* page);
 
 private:
