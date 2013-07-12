@@ -19,6 +19,8 @@
 
 #include "list_page.hpp"
 
+#include "slot.hpp"
+
 namespace WhiskerMenu
 {
 
@@ -31,6 +33,12 @@ public:
 	RecentPage(XfceRc* settings, Menu* menu);
 
 	void add(Launcher* launcher);
+
+private:
+	void extend_context_menu(GtkWidget* menu);
+
+private:
+	SLOT_1(void, RecentPage, clear_menu, GtkMenuItem*);
 
 private:
 	size_t m_max_items;

@@ -19,6 +19,7 @@
 #include "launcher.hpp"
 #include "launcher_model.hpp"
 #include "launcher_view.hpp"
+#include "menu.hpp"
 
 using namespace WhiskerMenu;
 
@@ -57,6 +58,30 @@ void RecentPage::add(Launcher* launcher)
 	{
 		model.remove_last_item();
 	}
+}
+
+//-----------------------------------------------------------------------------
+
+void RecentPage::extend_context_menu(GtkWidget* menu)
+{
+	GtkWidget* menuitem = gtk_separator_menu_item_new();
+	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+
+	menuitem = gtk_menu_item_new_with_label(_("Clear Recently Used"));
+	g_signal_connect(menuitem, "activate", SLOT_CALLBACK(RecentPage::clear_menu), this);
+	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+}
+
+//-----------------------------------------------------------------------------
+
+void RecentPage::clear_menu(GtkMenuItem*)
+{
+	LauncherModel model(GTK_LIST_STORE(get_view()->get_model()));
+	for (size_t i = 0, count = size(); i < count; ++i)
+	{
+		model.remove_first_item();
+	}
+	get_menu()->set_modified();
 }
 
 //-----------------------------------------------------------------------------
