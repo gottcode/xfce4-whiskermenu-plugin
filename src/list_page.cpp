@@ -128,9 +128,9 @@ void ListPage::set_menu_items()
 
 	// Replace treeview contents
 	get_view()->set_model(model.get_model());
-	g_signal_connect(get_view()->get_model(), "row-changed", SLOT_CALLBACK(ListPage::on_row_changed), this);
-	g_signal_connect(get_view()->get_model(), "row-inserted", SLOT_CALLBACK(ListPage::on_row_inserted), this);
-	g_signal_connect(get_view()->get_model(), "row-deleted", SLOT_CALLBACK(ListPage::on_row_deleted), this);
+	g_signal_connect(get_view()->get_model(), "row-changed", G_CALLBACK(ListPage::on_row_changed_slot), this);
+	g_signal_connect(get_view()->get_model(), "row-inserted", G_CALLBACK(ListPage::on_row_inserted_slot), this);
+	g_signal_connect(get_view()->get_model(), "row-deleted", G_CALLBACK(ListPage::on_row_deleted_slot), this);
 }
 
 //-----------------------------------------------------------------------------
@@ -194,7 +194,7 @@ void ListPage::on_row_inserted(GtkTreeModel* model, GtkTreePath* path, GtkTreeIt
 
 //-----------------------------------------------------------------------------
 
-void ListPage::on_row_deleted(GtkTreeModel*, GtkTreePath* path)
+void ListPage::on_row_deleted(GtkTreePath* path)
 {
 	size_t pos = gtk_tree_path_get_indices(path)[0];
 	if (pos < m_desktop_ids.size())

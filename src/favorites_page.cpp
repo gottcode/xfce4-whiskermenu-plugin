@@ -73,13 +73,13 @@ void FavoritesPage::extend_context_menu(GtkWidget* menu)
 	menuitem = gtk_image_menu_item_new_with_label(_("Sort Alphabetically A-Z"));
 	GtkWidget* image = gtk_image_new_from_stock(GTK_STOCK_SORT_ASCENDING, GTK_ICON_SIZE_MENU);
 	gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM(menuitem), image);
-	g_signal_connect(menuitem, "activate", SLOT_CALLBACK(FavoritesPage::sort_ascending), this);
+	g_signal_connect(menuitem, "activate", G_CALLBACK(FavoritesPage::sort_ascending_slot), this);
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
 	menuitem = gtk_image_menu_item_new_with_label(_("Sort Alphabetically Z-A"));
 	image = gtk_image_new_from_stock(GTK_STOCK_SORT_DESCENDING, GTK_ICON_SIZE_MENU);
 	gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM(menuitem), image);
-	g_signal_connect(menuitem, "activate", SLOT_CALLBACK(FavoritesPage::sort_descending), this);
+	g_signal_connect(menuitem, "activate", G_CALLBACK(FavoritesPage::sort_descending_slot), this);
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 }
 
@@ -103,7 +103,7 @@ void FavoritesPage::sort(std::map<std::string, Launcher*>& items) const
 
 //-----------------------------------------------------------------------------
 
-void FavoritesPage::sort_ascending(GtkMenuItem*)
+void FavoritesPage::sort_ascending()
 {
 	std::vector<std::string> desktop_ids;
 	std::map<std::string, Launcher*> items;
@@ -117,7 +117,7 @@ void FavoritesPage::sort_ascending(GtkMenuItem*)
 
 //-----------------------------------------------------------------------------
 
-void FavoritesPage::sort_descending(GtkMenuItem*)
+void FavoritesPage::sort_descending()
 {
 	std::vector<std::string> desktop_ids;
 	std::map<std::string, Launcher*> items;

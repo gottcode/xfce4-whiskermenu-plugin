@@ -18,7 +18,6 @@
 #define WHISKERMENU_APPLICATIONS_PAGE_HPP
 
 #include "filter_page.hpp"
-#include "slot.hpp"
 
 #include <map>
 #include <string>
@@ -65,15 +64,11 @@ public:
 
 	Launcher* get_application(const std::string& desktop_id) const;
 
+	void invalidate_applications();
 	void load_applications();
 
-public:
-	SLOT_0(void, ApplicationsPage, invalidate_applications);
-
 private:
-	SLOT_1(void, ApplicationsPage, apply_filter, GtkToggleButton*);
-
-private:
+	void apply_filter(GtkToggleButton* togglebutton);
 	bool on_filter(GtkTreeModel* model, GtkTreeIter* iter);
 	void clear_applications();
 	void load_menu(GarconMenu* menu);
@@ -87,6 +82,18 @@ private:
 	std::map<Category*, std::vector<Launcher*> > m_categories;
 	std::map<std::string, Launcher*> m_items;
 	bool m_loaded;
+
+
+private:
+	static void invalidate_applications_slot(ApplicationsPage* obj)
+	{
+		obj->invalidate_applications();
+	}
+
+	static void apply_filter_slot(GtkToggleButton* togglebutton, ApplicationsPage* obj)
+	{
+		obj->apply_filter(togglebutton);
+	}
 };
 
 }

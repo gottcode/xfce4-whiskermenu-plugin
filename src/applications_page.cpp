@@ -143,6 +143,13 @@ bool ApplicationsPage::on_filter(GtkTreeModel* model, GtkTreeIter* iter)
 
 //-----------------------------------------------------------------------------
 
+void ApplicationsPage::invalidate_applications()
+{
+	m_loaded = false;
+}
+
+//-----------------------------------------------------------------------------
+
 void ApplicationsPage::load_applications()
 {
 	if (m_loaded)
@@ -158,7 +165,7 @@ void ApplicationsPage::load_applications()
 	g_object_ref(m_garcon_menu);
 	if (garcon_menu_load(m_garcon_menu, NULL, NULL))
 	{
-		g_signal_connect_swapped(m_garcon_menu, "reload-required", SLOT_CALLBACK(ApplicationsPage::invalidate_applications), this);
+		g_signal_connect_swapped(m_garcon_menu, "reload-required", G_CALLBACK(ApplicationsPage::invalidate_applications_slot), this);
 		load_menu(m_garcon_menu);
 	}
 
@@ -188,13 +195,6 @@ void ApplicationsPage::load_applications()
 	get_menu()->set_items();
 
 	m_loaded = true;
-}
-
-//-----------------------------------------------------------------------------
-
-void ApplicationsPage::invalidate_applications()
-{
-	m_loaded = false;
 }
 
 //-----------------------------------------------------------------------------
@@ -295,7 +295,7 @@ void ApplicationsPage::load_menu(GarconMenu* menu)
 	}
 
 	// Listen for menu changes
-	g_signal_connect_swapped(menu, "directory-changed", SLOT_CALLBACK(ApplicationsPage::invalidate_applications), this);
+	g_signal_connect_swapped(menu, "directory-changed", G_CALLBACK(ApplicationsPage::invalidate_applications_slot), this);
 }
 
 //-----------------------------------------------------------------------------
@@ -323,7 +323,7 @@ void ApplicationsPage::load_menu_item(const gchar* desktop_id, GarconMenuItem* m
 	}
 
 	// Listen for menu changes
-	g_signal_connect_swapped(menu_item, "changed", SLOT_CALLBACK(ApplicationsPage::invalidate_applications), page);
+	g_signal_connect_swapped(menu_item, "changed", G_CALLBACK(ApplicationsPage::invalidate_applications_slot), page);
 }
 
 //-----------------------------------------------------------------------------
@@ -334,7 +334,7 @@ void ApplicationsPage::load_categories()
 
 	// Add button for all applications
 	SectionButton* all_button = new SectionButton("applications-other", _("All"));
-	g_signal_connect(all_button->get_button(), "toggled", SLOT_CALLBACK(ApplicationsPage::apply_filter), this);
+	g_signal_connect(all_button->get_button(), "toggled", G_CALLBACK(ApplicationsPage::apply_filter_slot), this);
 	m_category_buttons[all_button] = NULL;
 	category_buttons.push_back(all_button);
 
@@ -351,7 +351,7 @@ void ApplicationsPage::load_categories()
 	for (std::map<std::string, Category*>::const_iterator i = sorted_categories.begin(), end = sorted_categories.end(); i != end; ++i)
 	{
 		SectionButton* category_button = new SectionButton(i->second->get_icon(), i->second->get_text());
-		g_signal_connect(category_button->get_button(), "toggled", SLOT_CALLBACK(ApplicationsPage::apply_filter), this);
+		g_signal_connect(category_button->get_button(), "toggled", G_CALLBACK(ApplicationsPage::apply_filter_slot), this);
 		m_category_buttons[category_button] = i->second;
 		category_buttons.push_back(category_button);
 	}

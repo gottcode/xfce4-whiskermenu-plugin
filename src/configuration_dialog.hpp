@@ -17,8 +17,6 @@
 #ifndef WHISKERMENU_CONFIGURATION_DIALOG_HPP
 #define WHISKERMENU_CONFIGURATION_DIALOG_HPP
 
-#include "slot.hpp"
-
 extern "C"
 {
 #include <gtk/gtk.h>
@@ -41,15 +39,15 @@ public:
 	}
 
 private:
-	SLOT_0(void, ConfigurationDialog, choose_icon);
-	SLOT_1(void, ConfigurationDialog, category_icon_size_changed, GtkComboBox*);
-	SLOT_1(void, ConfigurationDialog, item_icon_size_changed, GtkComboBox*);
-	SLOT_1(void, ConfigurationDialog, style_changed, GtkComboBox*);
-	SLOT_1(void, ConfigurationDialog, title_changed, GtkEditable*);
-	SLOT_1(void, ConfigurationDialog, toggle_hover_switch_category, GtkToggleButton*);
-	SLOT_1(void, ConfigurationDialog, toggle_show_name, GtkToggleButton*);
-	SLOT_1(void, ConfigurationDialog, toggle_show_description, GtkToggleButton*);
-	SLOT_2(void, ConfigurationDialog, response, GtkDialog*, gint);
+	void choose_icon();
+	void category_icon_size_changed(GtkComboBox* combo);
+	void item_icon_size_changed(GtkComboBox* combo);
+	void style_changed(GtkComboBox* combo);
+	void title_changed();
+	void toggle_hover_switch_category(GtkToggleButton* button);
+	void toggle_show_name(GtkToggleButton* button);
+	void toggle_show_description(GtkToggleButton* button);
+	void response(int response_id);
 
 private:
 	PanelPlugin* m_plugin;
@@ -64,6 +62,53 @@ private:
 	GtkWidget* m_show_names;
 	GtkWidget* m_show_descriptions;
 	GtkWidget* m_hover_switch_category;
+
+
+private:
+	static void choose_icon_slot(GtkButton*, ConfigurationDialog* obj)
+	{
+		obj->choose_icon();
+	}
+
+	static void category_icon_size_changed_slot(GtkComboBox* combo, ConfigurationDialog* obj)
+	{
+		obj->category_icon_size_changed(combo);
+	}
+
+	static void item_icon_size_changed_slot(GtkComboBox* combo, ConfigurationDialog* obj)
+	{
+		obj->item_icon_size_changed(combo);
+	}
+
+	static void style_changed_slot(GtkComboBox* combo, ConfigurationDialog* obj)
+	{
+		obj->style_changed(combo);
+	}
+
+	static void title_changed_slot(GtkEditable*, ConfigurationDialog* obj)
+	{
+		obj->title_changed();
+	}
+
+	static void toggle_hover_switch_category_slot(GtkToggleButton* button, ConfigurationDialog* obj)
+	{
+		obj->toggle_hover_switch_category(button);
+	}
+
+	static void toggle_show_name_slot(GtkToggleButton* button, ConfigurationDialog* obj)
+	{
+		obj->toggle_show_name(button);
+	}
+
+	static void toggle_show_description_slot(GtkToggleButton* button, ConfigurationDialog* obj)
+	{
+		obj->toggle_show_description(button);
+	}
+
+	static void response_slot(GtkDialog*, gint response_id, ConfigurationDialog* obj)
+	{
+		obj->response(response_id);
+	}
 };
 
 }

@@ -17,8 +17,6 @@
 #ifndef WHISKERMENU_RESIZER_WIDGET_HPP
 #define WHISKERMENU_RESIZER_WIDGET_HPP
 
-#include "slot.hpp"
-
 #include <vector>
 
 extern "C"
@@ -50,10 +48,10 @@ public:
 	void set_corner(Corner corner);
 
 private:
-	SLOT_2(gboolean, ResizerWidget, on_button_press_event, GtkWidget*, GdkEventButton*);
-	SLOT_2(gboolean, ResizerWidget, on_enter_notify_event, GtkWidget*, GdkEventCrossing*);
-	SLOT_2(gboolean, ResizerWidget, on_leave_notify_event, GtkWidget*, GdkEventCrossing*);
-	SLOT_2(gboolean, ResizerWidget, on_expose_event, GtkWidget*, GdkEventExpose*);
+	bool on_button_press_event(GdkEventButton* event);
+	bool on_enter_notify_event(GtkWidget* widget);
+	bool on_leave_notify_event(GtkWidget* widget);
+	bool on_expose_event(GtkWidget* widget);
 
 private:
 	GtkWindow* m_window;
@@ -62,6 +60,28 @@ private:
 	GdkCursor* m_cursor;
 	GdkWindowEdge m_edge;
 	std::vector<GdkPoint> m_shape;
+
+
+private:
+	static gboolean on_button_press_event_slot(GtkWidget*, GdkEventButton* event, ResizerWidget* obj)
+	{
+		return obj->on_button_press_event(event);
+	}
+
+	static gboolean on_enter_notify_event_slot(GtkWidget* widget, GdkEventCrossing*, ResizerWidget* obj)
+	{
+		return obj->on_enter_notify_event(widget);
+	}
+
+	static gboolean on_leave_notify_event_slot(GtkWidget* widget, GdkEventCrossing*, ResizerWidget* obj)
+	{
+		return obj->on_leave_notify_event(widget);
+	}
+
+	static gboolean on_expose_event_slot(GtkWidget* widget, GdkEventExpose*, ResizerWidget* obj)
+	{
+		return obj->on_expose_event(widget);
+	}
 };
 
 }

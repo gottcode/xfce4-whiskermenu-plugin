@@ -19,7 +19,6 @@
 
 #include "filter_page.hpp"
 #include "query.hpp"
-#include "slot.hpp"
 
 #include <string>
 #include <vector>
@@ -40,10 +39,8 @@ public:
 	void unset_menu_items();
 
 private:
-	SLOT_3(void, SearchPage, clear_search, GtkEntry*, GtkEntryIconPosition, GdkEvent*);
-	SLOT_2(gboolean, SearchPage, search_entry_key_press, GtkWidget*, GdkEventKey*);
-
-private:
+	void clear_search(GtkEntry* entry, GtkEntryIconPosition icon_pos);
+	bool search_entry_key_press(GtkWidget* widget, GdkEventKey* event);
 	bool on_filter(GtkTreeModel* model, GtkTreeIter* iter);
 	static gint on_sort(GtkTreeModel* model, GtkTreeIter* a, GtkTreeIter* b, SearchPage* page);
 	void unset_search_model();
@@ -52,6 +49,18 @@ private:
 	Query m_query;
 	GtkTreeModelSort* m_sort_model;
 	std::vector<Launcher*> m_launchers;
+
+
+private:
+	static void clear_search_slot(GtkEntry* entry, GtkEntryIconPosition icon_pos, GdkEvent*, SearchPage* obj)
+	{
+		obj->clear_search(entry, icon_pos);
+	}
+
+	static gboolean search_entry_key_press_slot(GtkWidget* widget, GdkEventKey* event, SearchPage* obj)
+	{
+		return obj->search_entry_key_press(widget, event);
+	}
 };
 
 }

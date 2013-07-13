@@ -17,8 +17,6 @@
 #ifndef WHISKERMENU_MENU_HPP
 #define WHISKERMENU_MENU_HPP
 
-#include "slot.hpp"
-
 #include <map>
 #include <string>
 #include <vector>
@@ -85,21 +83,21 @@ public:
 	void unset_items();
 
 private:
-	SLOT_2(gboolean, Menu, on_enter_notify_event, GtkWidget*, GdkEventCrossing*);
-	SLOT_2(gboolean, Menu, on_leave_notify_event, GtkWidget*, GdkEventCrossing*);
-	SLOT_2(gboolean, Menu, on_button_press_event, GtkWidget*, GdkEventButton*);
-	SLOT_2(gboolean, Menu, on_key_press_event, GtkWidget*, GdkEventKey*);
-	SLOT_2(gboolean, Menu, on_key_press_event_after, GtkWidget*, GdkEventKey*);
-	SLOT_2(gboolean, Menu, on_map_event, GtkWidget*, GdkEventAny*);
-	SLOT_2(gboolean, Menu, on_configure_event, GtkWidget*, GdkEventConfigure*);
-	SLOT_0(void, Menu, favorites_toggled);
-	SLOT_0(void, Menu, recent_toggled);
-	SLOT_0(void, Menu, category_toggled);
-	SLOT_0(void, Menu, show_favorites);
-	SLOT_0(void, Menu, search);
-	SLOT_0(void, Menu, launch_settings_manager);
-	SLOT_0(void, Menu, lock_screen);
-	SLOT_0(void, Menu, log_out);
+	bool on_enter_notify_event(GdkEventCrossing* event);
+	bool on_leave_notify_event(GdkEventCrossing* event);
+	bool on_button_press_event(GdkEventButton* event);
+	bool on_key_press_event(GtkWidget* widget, GdkEventKey* event);
+	bool on_key_press_event_after(GtkWidget* widget, GdkEventKey* event);
+	bool on_map_event();
+	bool on_configure_event(GdkEventConfigure* event);
+	void favorites_toggled();
+	void recent_toggled();
+	void category_toggled();
+	void show_favorites();
+	void search();
+	void launch_settings_manager();
+	void lock_screen();
+	void log_out();
 
 private:
 	GtkWindow* m_window;
@@ -131,6 +129,83 @@ private:
 	bool m_layout_left;
 	bool m_layout_bottom;
 	bool m_modified;
+
+
+private:
+	static gboolean on_enter_notify_event_slot(GtkWidget*, GdkEventCrossing* event, Menu* obj)
+	{
+		return obj->on_enter_notify_event(event);
+	}
+
+	static gboolean on_leave_notify_event_slot(GtkWidget*, GdkEventCrossing* event, Menu* obj)
+	{
+		return obj->on_leave_notify_event(event);
+	}
+
+	static gboolean on_button_press_event_slot(GtkWidget*, GdkEventButton* event, Menu* obj)
+	{
+		return obj->on_button_press_event(event);
+	}
+
+	static gboolean on_key_press_event_slot(GtkWidget* widget, GdkEventKey* event, Menu* obj)
+	{
+		return obj->on_key_press_event(widget, event);
+	}
+
+	static gboolean on_key_press_event_after_slot(GtkWidget* widget, GdkEventKey* event, Menu* obj)
+	{
+		return obj->on_key_press_event_after(widget, event);
+	}
+
+	static gboolean on_map_event_slot(GtkWidget*, GdkEventAny*, Menu* obj)
+	{
+		return obj->on_map_event();
+	}
+
+	static gboolean on_configure_event_slot(GtkWidget*, GdkEventConfigure* event, Menu* obj)
+	{
+		return obj->on_configure_event(event);
+	}
+
+	static void favorites_toggled_slot(GtkToggleButton*, Menu* obj)
+	{
+		obj->favorites_toggled();
+	}
+
+	static void recent_toggled_slot(GtkToggleButton*, Menu* obj)
+	{
+		obj->recent_toggled();
+	}
+
+	static void category_toggled_slot(GtkToggleButton*, Menu* obj)
+	{
+		obj->category_toggled();
+	}
+
+	static void show_favorites_slot(GtkTreeModel*, GtkTreePath*, GtkTreeIter*, Menu* obj)
+	{
+		obj->show_favorites();
+	}
+
+	static void search_slot(GtkEditable*, Menu* obj)
+	{
+		obj->search();
+	}
+
+	static void launch_settings_manager_slot(GtkButton*, Menu* obj)
+	{
+		obj->launch_settings_manager();
+	}
+
+	static void lock_screen_slot(GtkButton*, Menu* obj)
+	{
+		obj->lock_screen();
+	}
+
+	static void log_out_slot(GtkButton*, Menu* obj)
+	{
+		obj->log_out();
+	}
 };
 
 }

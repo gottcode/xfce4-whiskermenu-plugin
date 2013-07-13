@@ -19,8 +19,6 @@
 
 #include "list_page.hpp"
 
-#include "slot.hpp"
-
 namespace WhiskerMenu
 {
 
@@ -36,10 +34,20 @@ public:
 private:
 	void extend_context_menu(GtkWidget* menu);
 	void sort(std::map<std::string, Launcher*>& items) const;
+	void sort_ascending();
+	void sort_descending();
+
 
 private:
-	SLOT_1(void, FavoritesPage, sort_ascending, GtkMenuItem*);
-	SLOT_1(void, FavoritesPage, sort_descending, GtkMenuItem*);
+	static void sort_ascending_slot(GtkMenuItem*, FavoritesPage* obj)
+	{
+		obj->sort_ascending();
+	}
+
+	static void sort_descending_slot(GtkMenuItem*, FavoritesPage* obj)
+	{
+		obj->sort_descending();
+	}
 };
 
 }

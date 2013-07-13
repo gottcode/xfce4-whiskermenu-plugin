@@ -36,8 +36,8 @@ SearchPage::SearchPage(Menu* menu) :
 {
 	get_view()->set_selection_mode(GTK_SELECTION_BROWSE);
 
-	g_signal_connect(menu->get_search_entry(), "icon-release", SLOT_CALLBACK(SearchPage::clear_search), this);
-	g_signal_connect(menu->get_search_entry(), "key-press-event", SLOT_CALLBACK(SearchPage::search_entry_key_press), this);
+	g_signal_connect(menu->get_search_entry(), "icon-release", G_CALLBACK(SearchPage::clear_search_slot), this);
+	g_signal_connect(menu->get_search_entry(), "key-press-event", G_CALLBACK(SearchPage::search_entry_key_press_slot), this);
 }
 
 //-----------------------------------------------------------------------------
@@ -168,17 +168,17 @@ void SearchPage::unset_search_model()
 
 //-----------------------------------------------------------------------------
 
-void SearchPage::clear_search(GtkEntry* entry, GtkEntryIconPosition icon_pos, GdkEvent*)
+void SearchPage::clear_search(GtkEntry* entry, GtkEntryIconPosition icon_pos)
 {
 	if (icon_pos == GTK_ENTRY_ICON_SECONDARY)
 	{
-		gtk_entry_set_text(GTK_ENTRY(entry), "");
+		gtk_entry_set_text(entry, "");
 	}
 }
 
 //-----------------------------------------------------------------------------
 
-gboolean SearchPage::search_entry_key_press(GtkWidget* widget, GdkEventKey* event)
+bool SearchPage::search_entry_key_press(GtkWidget* widget, GdkEventKey* event)
 {
 	if (event->keyval == GDK_Escape)
 	{

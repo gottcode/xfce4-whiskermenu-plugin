@@ -19,8 +19,6 @@
 
 #include "list_page.hpp"
 
-#include "slot.hpp"
-
 namespace WhiskerMenu
 {
 
@@ -36,12 +34,17 @@ public:
 
 private:
 	void extend_context_menu(GtkWidget* menu);
-
-private:
-	SLOT_1(void, RecentPage, clear_menu, GtkMenuItem*);
+	void clear_menu();
 
 private:
 	size_t m_max_items;
+
+
+private:
+	static void clear_menu_slot(GtkMenuItem*, RecentPage* obj)
+	{
+		obj->clear_menu();
+	}
 };
 
 }

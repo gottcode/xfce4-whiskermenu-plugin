@@ -17,8 +17,6 @@
 #ifndef WHISKERMENU_PANEL_PLUGIN_HPP
 #define WHISKERMENU_PANEL_PLUGIN_HPP
 
-#include "slot.hpp"
-
 #include <string>
 
 extern "C"
@@ -74,27 +72,12 @@ public:
 	void set_configure_enabled(bool enabled);
 
 private:
-	SLOT_2(gboolean, PanelPlugin, button_clicked, GtkWidget*, GdkEventButton*);
-	SLOT_0(void, PanelPlugin, menu_hidden);
-	SLOT_0(void, PanelPlugin, configure);
-	SLOT_3(gboolean, PanelPlugin, remote_event, XfcePanelPlugin*, gchar*, GValue*);
-	SLOT_0(void, PanelPlugin, save);
-	SLOT_2(gboolean, PanelPlugin, size_changed, XfcePanelPlugin*, gint);
-
-private:
-#if (LIBXFCE4PANEL_CHECK_VERSION(4,10,0))
-	static void mode_changed_slot(XfcePanelPlugin*, XfcePanelPluginMode mode, PanelPlugin* obj)
-	{
-		obj->orientation_changed(mode == XFCE_PANEL_PLUGIN_MODE_VERTICAL);
-	}
-#else
-	static void orientation_changed_slot(XfcePanelPlugin*, GtkOrientation orientation, PanelPlugin* obj)
-	{
-		obj->orientation_changed(orientation == GTK_ORIENTATION_VERTICAL);
-	}
-#endif
-
-private:
+	bool button_clicked(GdkEventButton* event);
+	void menu_hidden();
+	void configure();
+	bool remote_event(gchar* name, GValue* value);
+	void save();
+	bool size_changed(int size);
 	void orientation_changed(bool vertical);
 	void popup_menu(bool at_cursor);
 
@@ -111,6 +94,50 @@ private:
 	GtkBox* m_button_box;
 	GtkLabel* m_button_label;
 	XfcePanelImage* m_button_icon;
+
+
+private:
+	static gboolean button_clicked_slot(GtkWidget*, GdkEventButton* event, PanelPlugin* obj)
+	{
+		return obj->button_clicked(event);
+	}
+
+	static void menu_hidden_slot(GtkWidget*, PanelPlugin* obj)
+	{
+		obj->menu_hidden();
+	}
+
+	static void configure_slot(XfcePanelPlugin*, PanelPlugin* obj)
+	{
+		obj->configure();
+	}
+
+	static gboolean remote_event_slot(XfcePanelPlugin*, gchar* name, GValue* value, PanelPlugin* obj)
+	{
+		return obj->remote_event(name, value);
+	}
+
+	static void save_slot(PanelPlugin* obj)
+	{
+		obj->save();
+	}
+
+	static gboolean size_changed_slot(XfcePanelPlugin*, gint size, PanelPlugin* obj)
+	{
+		return obj->size_changed(size);
+	}
+
+#if (LIBXFCE4PANEL_CHECK_VERSION(4,10,0))
+	static void mode_changed_slot(XfcePanelPlugin*, XfcePanelPluginMode mode, PanelPlugin* obj)
+	{
+		obj->orientation_changed(mode == XFCE_PANEL_PLUGIN_MODE_VERTICAL);
+	}
+#else
+	static void orientation_changed_slot(XfcePanelPlugin*, GtkOrientation orientation, PanelPlugin* obj)
+	{
+		obj->orientation_changed(orientation == GTK_ORIENTATION_VERTICAL);
+	}
+#endif
 };
 
 }

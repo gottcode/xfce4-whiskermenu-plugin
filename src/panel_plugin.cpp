@@ -74,7 +74,7 @@ PanelPlugin::PanelPlugin(XfcePanelPlugin* plugin) :
 	{
 		m_menu = new Menu(NULL);
 	}
-	g_signal_connect_swapped(m_menu->get_widget(), "unmap", SLOT_CALLBACK(PanelPlugin::menu_hidden), this);
+	g_signal_connect(m_menu->get_widget(), "unmap", G_CALLBACK(PanelPlugin::menu_hidden_slot), this);
 
 	// Prevent empty panel button
 	if (!m_button_icon_visible)
@@ -92,7 +92,7 @@ PanelPlugin::PanelPlugin(XfcePanelPlugin* plugin) :
 	// Create toggle button
 	m_button = xfce_create_panel_toggle_button();
 	gtk_button_set_relief(GTK_BUTTON(m_button), GTK_RELIEF_NONE);
-	g_signal_connect(m_button, "button-press-event", SLOT_CALLBACK(PanelPlugin::button_clicked), this);
+	g_signal_connect(m_button, "button-press-event", G_CALLBACK(PanelPlugin::button_clicked_slot), this);
 	gtk_widget_show(m_button);
 
 	m_button_box = GTK_BOX(gtk_hbox_new(false, 1));
@@ -119,15 +119,15 @@ PanelPlugin::PanelPlugin(XfcePanelPlugin* plugin) :
 
 	// Connect plugin signals to functions
 	g_signal_connect(plugin, "free-data", G_CALLBACK(whiskermenu_free), this);
-	g_signal_connect_swapped(plugin, "configure-plugin", SLOT_CALLBACK(PanelPlugin::configure), this);
+	g_signal_connect(plugin, "configure-plugin", G_CALLBACK(PanelPlugin::configure_slot), this);
 #if (LIBXFCE4PANEL_CHECK_VERSION(4,10,0))
 	g_signal_connect(plugin, "mode-changed", G_CALLBACK(PanelPlugin::mode_changed_slot), this);
 #else
 	g_signal_connect(plugin, "orientation-changed", G_CALLBACK(PanelPlugin::orientation_changed_slot), this);
 #endif
-	g_signal_connect(plugin, "remote-event", SLOT_CALLBACK(PanelPlugin::remote_event), this);
-	g_signal_connect_swapped(plugin, "save", SLOT_CALLBACK(PanelPlugin::save), this);
-	g_signal_connect(plugin, "size-changed", SLOT_CALLBACK(PanelPlugin::size_changed), this);
+	g_signal_connect(plugin, "remote-event", G_CALLBACK(PanelPlugin::remote_event_slot), this);
+	g_signal_connect_swapped(plugin, "save", G_CALLBACK(PanelPlugin::save_slot), this);
+	g_signal_connect(plugin, "size-changed", G_CALLBACK(PanelPlugin::size_changed_slot), this);
 	xfce_panel_plugin_menu_show_configure(plugin);
 }
 
@@ -182,7 +182,7 @@ void PanelPlugin::set_button_style(ButtonStyle style)
 		gtk_widget_hide(GTK_WIDGET(m_button_label));
 	}
 
-	size_changed(m_plugin, xfce_panel_plugin_get_size(m_plugin));
+	size_changed(xfce_panel_plugin_get_size(m_plugin));
 }
 
 //-----------------------------------------------------------------------------
@@ -191,7 +191,7 @@ void PanelPlugin::set_button_title(const std::string& title)
 {
 	m_button_title = title;
 	gtk_label_set_label(m_button_label, m_button_title.c_str());
-	size_changed(m_plugin, xfce_panel_plugin_get_size(m_plugin));
+	size_changed(xfce_panel_plugin_get_size(m_plugin));
 }
 
 //-----------------------------------------------------------------------------
@@ -200,7 +200,7 @@ void PanelPlugin::set_button_icon_name(const std::string& icon)
 {
 	m_button_icon_name = icon;
 	xfce_panel_image_set_from_source(m_button_icon, icon.c_str());
-	size_changed(m_plugin, xfce_panel_plugin_get_size(m_plugin));
+	size_changed(xfce_panel_plugin_get_size(m_plugin));
 }
 
 //-----------------------------------------------------------------------------
@@ -219,7 +219,7 @@ void PanelPlugin::set_configure_enabled(bool enabled)
 
 //-----------------------------------------------------------------------------
 
-gboolean PanelPlugin::button_clicked(GtkWidget*, GdkEventButton* event)
+bool PanelPlugin::button_clicked(GdkEventButton* event)
 {
 	if (event->button != 1 || event->state & GDK_CONTROL_MASK)
 	{
@@ -255,7 +255,7 @@ void PanelPlugin::menu_hidden()
 void PanelPlugin::configure()
 {
 	ConfigurationDialog* dialog = new ConfigurationDialog(this);
-	g_signal_connect_swapped(dialog->get_widget(), "destroy", SLOT_CALLBACK(PanelPlugin::save), this);
+	g_signal_connect_swapped(dialog->get_widget(), "destroy", G_CALLBACK(PanelPlugin::save_slot), this);
 }
 
 //-----------------------------------------------------------------------------
@@ -264,12 +264,12 @@ void PanelPlugin::orientation_changed(bool vertical)
 {
 	gtk_label_set_angle(m_button_label, vertical ? 270: 0);
 
-	size_changed(m_plugin, xfce_panel_plugin_get_size(m_plugin));
+	size_changed(xfce_panel_plugin_get_size(m_plugin));
 }
 
 //-----------------------------------------------------------------------------
 
-gboolean PanelPlugin::remote_event(XfcePanelPlugin*, gchar* name, GValue* value)
+bool PanelPlugin::remote_event(gchar* name, GValue* value)
 {
 	if (strcmp(name, "popup"))
 	{
@@ -316,7 +316,7 @@ void PanelPlugin::save()
 
 //-----------------------------------------------------------------------------
 
-gboolean PanelPlugin::size_changed(XfcePanelPlugin*, gint size)
+bool PanelPlugin::size_changed(int size)
 {
 #if (LIBXFCE4PANEL_CHECK_VERSION(4,10,0))
 	gint row_size = size / xfce_panel_plugin_get_nrows(m_plugin);

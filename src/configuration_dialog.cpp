@@ -54,7 +54,7 @@ ConfigurationDialog::ConfigurationDialog(PanelPlugin* plugin) :
 	m_window = xfce_titled_dialog_new_with_buttons(_("Whisker Menu"), window, GTK_DIALOG_NO_SEPARATOR, GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE, NULL);
 	gtk_window_set_icon_name(GTK_WINDOW(m_window), GTK_STOCK_PROPERTIES);
 	gtk_window_set_position(GTK_WINDOW(m_window), GTK_WIN_POS_CENTER);
-	g_signal_connect(m_window, "response", SLOT_CALLBACK(ConfigurationDialog::response), this);
+	g_signal_connect(m_window, "response", G_CALLBACK(ConfigurationDialog::response_slot), this);
 	g_signal_connect_swapped(m_window, "destroy", G_CALLBACK(whiskermenu_config_dialog_delete), this);
 
 	// Fetch contents box
@@ -73,13 +73,13 @@ ConfigurationDialog::ConfigurationDialog(PanelPlugin* plugin) :
 	m_show_names = gtk_check_button_new_with_mnemonic(_("Show applications by _name"));
 	gtk_box_pack_start(appearance_vbox, m_show_names, true, true, 0);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_names), Launcher::get_show_name());
-	g_signal_connect(m_show_names, "toggled", SLOT_CALLBACK(ConfigurationDialog::toggle_show_name), this);
+	g_signal_connect(m_show_names, "toggled", G_CALLBACK(ConfigurationDialog::toggle_show_name_slot), this);
 
 	// Add option to hide descriptions
 	m_show_descriptions = gtk_check_button_new_with_mnemonic(_("Show application _descriptions"));
 	gtk_box_pack_start(appearance_vbox, m_show_descriptions, true, true, 0);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_descriptions), Launcher::get_show_description());
-	g_signal_connect(m_show_descriptions, "toggled", SLOT_CALLBACK(ConfigurationDialog::toggle_show_description), this);
+	g_signal_connect(m_show_descriptions, "toggled", G_CALLBACK(ConfigurationDialog::toggle_show_description_slot), this);
 
 	// Add item icon size selector
 	GtkBox* hbox = GTK_BOX(gtk_hbox_new(false, 12));
@@ -99,7 +99,7 @@ ConfigurationDialog::ConfigurationDialog(PanelPlugin* plugin) :
 	gtk_combo_box_set_active(GTK_COMBO_BOX(m_item_icon_size), LauncherView::get_icon_size());
 	gtk_box_pack_start(hbox, m_item_icon_size, false, false, 0);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_item_icon_size);
-	g_signal_connect(m_item_icon_size, "changed", SLOT_CALLBACK(ConfigurationDialog::item_icon_size_changed), this);
+	g_signal_connect(m_item_icon_size, "changed", G_CALLBACK(ConfigurationDialog::item_icon_size_changed_slot), this);
 
 	// Add category icon size selector
 	hbox = GTK_BOX(gtk_hbox_new(false, 12));
@@ -118,7 +118,7 @@ ConfigurationDialog::ConfigurationDialog(PanelPlugin* plugin) :
 	gtk_combo_box_set_active(GTK_COMBO_BOX(m_category_icon_size), SectionButton::get_icon_size());
 	gtk_box_pack_start(hbox, m_category_icon_size, false, false, 0);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_category_icon_size);
-	g_signal_connect(m_category_icon_size, "changed", SLOT_CALLBACK(ConfigurationDialog::category_icon_size_changed), this);
+	g_signal_connect(m_category_icon_size, "changed", G_CALLBACK(ConfigurationDialog::category_icon_size_changed_slot), this);
 
 	// Create panel button section
 	GtkBox* panel_vbox = GTK_BOX(gtk_vbox_new(false, 8));
@@ -142,7 +142,7 @@ ConfigurationDialog::ConfigurationDialog(PanelPlugin* plugin) :
 	gtk_combo_box_set_active(GTK_COMBO_BOX(m_button_style), static_cast<int>(m_plugin->get_button_style()) - 1);
 	gtk_box_pack_start(hbox, m_button_style, false, false, 0);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_button_style);
-	g_signal_connect(m_button_style, "changed", SLOT_CALLBACK(ConfigurationDialog::style_changed), this);
+	g_signal_connect(m_button_style, "changed", G_CALLBACK(ConfigurationDialog::style_changed_slot), this);
 
 	// Add title selector
 	hbox = GTK_BOX(gtk_hbox_new(false, 12));
@@ -157,7 +157,7 @@ ConfigurationDialog::ConfigurationDialog(PanelPlugin* plugin) :
 	gtk_entry_set_text(GTK_ENTRY(m_title), m_plugin->get_button_title().c_str());
 	gtk_box_pack_start(hbox, m_title, true, true, 0);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_title);
-	g_signal_connect(m_title, "changed", SLOT_CALLBACK(ConfigurationDialog::title_changed), this);
+	g_signal_connect(m_title, "changed", G_CALLBACK(ConfigurationDialog::title_changed_slot), this);
 
 	// Add icon selector
 	hbox = GTK_BOX(gtk_hbox_new(false, 12));
@@ -171,7 +171,7 @@ ConfigurationDialog::ConfigurationDialog(PanelPlugin* plugin) :
 	m_icon_button = gtk_button_new();
 	gtk_box_pack_start(hbox, m_icon_button, false, false, 0);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_icon_button);
-	g_signal_connect_swapped(m_icon_button, "clicked", SLOT_CALLBACK(ConfigurationDialog::choose_icon), this);
+	g_signal_connect(m_icon_button, "clicked", G_CALLBACK(ConfigurationDialog::choose_icon_slot), this);
 
 	m_icon = xfce_panel_image_new_from_source(m_plugin->get_button_icon_name().c_str());
 	xfce_panel_image_set_size(XFCE_PANEL_IMAGE(m_icon), 48);
@@ -187,7 +187,7 @@ ConfigurationDialog::ConfigurationDialog(PanelPlugin* plugin) :
 	m_hover_switch_category = gtk_check_button_new_with_mnemonic(_("Switch categories by _hovering"));
 	gtk_box_pack_start(behavior_vbox, m_hover_switch_category, true, true, 0);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_hover_switch_category), SectionButton::get_hover_activate());
-	g_signal_connect(m_hover_switch_category, "toggled", SLOT_CALLBACK(ConfigurationDialog::toggle_hover_switch_category), this);
+	g_signal_connect(m_hover_switch_category, "toggled", G_CALLBACK(ConfigurationDialog::toggle_hover_switch_category_slot), this);
 
 	// Show GTK window
 	gtk_widget_show_all(m_window);
@@ -254,7 +254,7 @@ void ConfigurationDialog::style_changed(GtkComboBox* combo)
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::title_changed(GtkEditable*)
+void ConfigurationDialog::title_changed()
 {
 	const gchar* text = gtk_entry_get_text(GTK_ENTRY(m_title));
 	m_plugin->set_button_title(text ? text : "");
@@ -269,23 +269,23 @@ void ConfigurationDialog::toggle_hover_switch_category(GtkToggleButton* button)
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::toggle_show_name(GtkToggleButton*)
+void ConfigurationDialog::toggle_show_name(GtkToggleButton* button)
 {
-	Launcher::set_show_name(gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(m_show_names)));
+	Launcher::set_show_name(gtk_toggle_button_get_active(button));
 	m_plugin->reload();
 }
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::toggle_show_description(GtkToggleButton*)
+void ConfigurationDialog::toggle_show_description(GtkToggleButton* button)
 {
-	Launcher::set_show_description(gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(m_show_descriptions)));
+	Launcher::set_show_description(gtk_toggle_button_get_active(button));
 	m_plugin->reload();
 }
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::response(GtkDialog*, gint response_id)
+void ConfigurationDialog::response(int response_id)
 {
 	if ((m_plugin->get_button_style() == PanelPlugin::ShowText) && m_plugin->get_button_title().empty())
 	{

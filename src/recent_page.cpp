@@ -70,13 +70,13 @@ void RecentPage::extend_context_menu(GtkWidget* menu)
 	menuitem = gtk_image_menu_item_new_with_label(_("Clear Recently Used"));
 	GtkWidget* image = gtk_image_new_from_stock(GTK_STOCK_CLEAR, GTK_ICON_SIZE_MENU);
 	gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM(menuitem), image);
-	g_signal_connect(menuitem, "activate", SLOT_CALLBACK(RecentPage::clear_menu), this);
+	g_signal_connect(menuitem, "activate", G_CALLBACK(RecentPage::clear_menu_slot), this);
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 }
 
 //-----------------------------------------------------------------------------
 
-void RecentPage::clear_menu(GtkMenuItem*)
+void RecentPage::clear_menu()
 {
 	LauncherModel model(GTK_LIST_STORE(get_view()->get_model()));
 	for (size_t i = 0, count = size(); i < count; ++i)
