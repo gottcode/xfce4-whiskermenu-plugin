@@ -1,6 +1,6 @@
 # Italian translation of xfce4-whiskermenu-plugin.
 # Copyright (C) 2013 Graeme Gott
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # Bernardo Miguel Savone <bmsavone@gmail.com>, 2013
@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-15 20:23+0000\n"
-"PO-Revision-Date: 2013-06-25 19:01+0000\n"
+"POT-Creation-Date: 2013-07-13 00:11+0000\n"
+"PO-Revision-Date: 2013-07-13 00:49+0000\n"
 "Last-Translator: Bernardo Miguel Savone <bmsavone@gmail.com>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -18,91 +18,175 @@ msgstr ""
 "Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/applications_page.cpp:298
+#: src/applications_page.cpp:336
 msgid "All"
 msgstr "Tutto"
 
-#: src/configuration_dialog.cpp:52
+#: src/configuration_dialog.cpp:54
 msgid "Whisker Menu"
 msgstr "Menu Whisker"
 
-#: src/configuration_dialog.cpp:66
+#: src/configuration_dialog.cpp:68
 msgid "Appearance"
 msgstr "Aspetto"
 
-#: src/configuration_dialog.cpp:71
+#: src/configuration_dialog.cpp:73
 msgid "Show applications by _name"
 msgstr "Mostra le applicazioni per _nome"
 
-#: src/configuration_dialog.cpp:77
+#: src/configuration_dialog.cpp:79
 msgid "Show application _descriptions"
 msgstr "mostra una _descrizione delle applicazioni"
 
-#: src/configuration_dialog.cpp:86
+#: src/configuration_dialog.cpp:88
+msgid "Ite_m icon size:"
+msgstr "Dimensione icona Ite_m:"
+
+#: src/configuration_dialog.cpp:108
+msgid "Categ_ory icon size:"
+msgstr "Dimensione icona Categ_oria:"
+
+#: src/configuration_dialog.cpp:125
+msgid "Panel Button"
+msgstr "Pulsante del pannello"
+
+#: src/configuration_dialog.cpp:133
+msgid "Di_splay:"
+msgstr "Di_splay:"
+
+#: src/configuration_dialog.cpp:139
+msgid "Icon"
+msgstr "Icona"
+
+#: src/configuration_dialog.cpp:140
+msgid "Title"
+msgstr "Titolo"
+
+#: src/configuration_dialog.cpp:141
+msgid "Icon and title"
+msgstr "Icona e titolo"
+
+#: src/configuration_dialog.cpp:151
+msgid "_Title:"
+msgstr "_Titolo:"
+
+#: src/configuration_dialog.cpp:166
 msgid "_Icon:"
 msgstr "_Icona:"
 
-#: src/configuration_dialog.cpp:118
+#: src/configuration_dialog.cpp:182
+msgid "Behavior"
+msgstr "Comportamento"
+
+#: src/configuration_dialog.cpp:187
+msgid "Switch categories by _hovering"
+msgstr "Cambia categorie al _passaggio del mouse"
+
+#: src/configuration_dialog.cpp:209
 msgid "Select An Icon"
 msgstr "Selezionare un'icona"
+
+#: src/favorites_page.cpp:73
+msgid "Sort Alphabetically A-Z"
+msgstr "Ordina alfabeticamente A-Z"
+
+#: src/favorites_page.cpp:79
+msgid "Sort Alphabetically Z-A"
+msgstr "Ordina alfabeticamente Z-A"
+
+#: src/icon_size.cpp:50
+msgid "Very Small"
+msgstr "Molto piccolo"
+
+#: src/icon_size.cpp:51
+msgid "Smaller"
+msgstr "Più piccolo"
+
+#: src/icon_size.cpp:52
+msgid "Small"
+msgstr "Piccolo"
+
+#: src/icon_size.cpp:53
+msgid "Normal"
+msgstr "Normale"
+
+#: src/icon_size.cpp:54
+msgid "Large"
+msgstr "Grande"
+
+#: src/icon_size.cpp:55
+msgid "Larger"
+msgstr "Più grande"
+
+#: src/icon_size.cpp:56
+msgid "Very Large"
+msgstr "Molto grande"
 
 #: src/launcher.cpp:263
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "Impossibile eseguire il comando \"%s\"."
 
-#: src/menu.cpp:88
+#: src/menu.cpp:99
 msgid "All Settings"
 msgstr "Tutte le impostazioni"
 
-#: src/menu.cpp:91
+#: src/menu.cpp:102
 msgid "Lock Screen"
 msgstr "Blocca schermo"
 
-#: src/menu.cpp:94
+#: src/menu.cpp:105
 msgid "Log Out"
 msgstr "Esci"
 
-#: src/menu.cpp:108
+#: src/menu.cpp:119
 msgid "Favorites"
 msgstr "Preferiti"
 
-#: src/menu.cpp:114
+#: src/menu.cpp:125
 msgid "Recently Used"
 msgstr "Usati di recente"
 
-#: src/menu.cpp:636
+#: src/menu.cpp:721
 msgid "Failed to open settings manager."
 msgstr "Impossibile aprire il Gestore delle impostazioni."
 
-#: src/menu.cpp:650
+#: src/menu.cpp:735
 msgid "Failed to lock screen."
 msgstr "Impossibile bloccare lo schermo."
 
-#: src/menu.cpp:664
+#: src/menu.cpp:749
 msgid "Failed to log out."
 msgstr "Disconnessione non riuscita."
 
-#: src/page.cpp:170
+#: src/page.cpp:182
 msgid "Add to Favorites"
 msgstr "Aggiungi ai Preferiti"
 
-#: src/page.cpp:176
+#: src/page.cpp:190
 msgid "Remove From Favorites"
 msgstr "Rimuovi dai Preferiti"
 
-#: src/page.cpp:181
+#: src/page.cpp:197
 msgid "Add to Desktop"
 msgstr "Aggiungi al Desktop"
 
-#: src/page.cpp:185
+#: src/page.cpp:201
 msgid "Add to Panel"
 msgstr "Aggiungi al Pannello"
 
-#: src/page.cpp:265
+#: src/page.cpp:291
 msgid "Unable to add launcher to desktop."
 msgstr "Impossibile aggiungere lanciatore al desktop."
 
-#: src/page.cpp:303 src/page.cpp:312
+#: src/page.cpp:330 src/page.cpp:339
 msgid "Unable to add launcher to panel."
 msgstr "Impossibile aggiungere lanciatore al pannello."
+
+#: src/panel_plugin.cpp:150
+msgid "Applications Menu"
+msgstr "Menu Applicazioni"
+
+#: src/recent_page.cpp:70
+msgid "Clear Recently Used"
+msgstr "Cancella Usati di recente"

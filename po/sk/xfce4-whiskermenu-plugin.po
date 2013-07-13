@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-15 20:23+0000\n"
-"PO-Revision-Date: 2013-07-10 19:44+0000\n"
+"POT-Creation-Date: 2013-07-13 00:11+0000\n"
+"PO-Revision-Date: 2013-07-13 06:37+0000\n"
 "Last-Translator: Slavko <linux@slavino.sk>\n"
 "Language-Team: Slovak (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/sk/)\n"
 "MIME-Version: 1.0\n"
@@ -18,91 +18,175 @@ msgstr ""
 "Language: sk\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: src/applications_page.cpp:298
+#: src/applications_page.cpp:336
 msgid "All"
-msgstr "Všetko"
+msgstr "Všetky"
 
-#: src/configuration_dialog.cpp:52
+#: src/configuration_dialog.cpp:54
 msgid "Whisker Menu"
 msgstr "Whisker Menu"
 
-#: src/configuration_dialog.cpp:66
+#: src/configuration_dialog.cpp:68
 msgid "Appearance"
 msgstr "Vzhľad"
 
-#: src/configuration_dialog.cpp:71
+#: src/configuration_dialog.cpp:73
 msgid "Show applications by _name"
 msgstr "Zobraziť aplikácie podľa _mena"
 
-#: src/configuration_dialog.cpp:77
+#: src/configuration_dialog.cpp:79
 msgid "Show application _descriptions"
 msgstr "Zobraziť _popis aplikácie"
 
-#: src/configuration_dialog.cpp:86
+#: src/configuration_dialog.cpp:88
+msgid "Ite_m icon size:"
+msgstr "Veľkosť ikony _položky"
+
+#: src/configuration_dialog.cpp:108
+msgid "Categ_ory icon size:"
+msgstr "Veľkosť ikony _kategorie"
+
+#: src/configuration_dialog.cpp:125
+msgid "Panel Button"
+msgstr "Tlačidlo panela"
+
+#: src/configuration_dialog.cpp:133
+msgid "Di_splay:"
+msgstr "_Zobraziť:"
+
+#: src/configuration_dialog.cpp:139
+msgid "Icon"
+msgstr "Ikona"
+
+#: src/configuration_dialog.cpp:140
+msgid "Title"
+msgstr "Názov"
+
+#: src/configuration_dialog.cpp:141
+msgid "Icon and title"
+msgstr "Ikona a názov"
+
+#: src/configuration_dialog.cpp:151
+msgid "_Title:"
+msgstr "_Názov:"
+
+#: src/configuration_dialog.cpp:166
 msgid "_Icon:"
 msgstr "_Ikona:"
 
-#: src/configuration_dialog.cpp:118
+#: src/configuration_dialog.cpp:182
+msgid "Behavior"
+msgstr "Správanie"
+
+#: src/configuration_dialog.cpp:187
+msgid "Switch categories by _hovering"
+msgstr "Nasledovať kategóriu po_d myšou"
+
+#: src/configuration_dialog.cpp:209
 msgid "Select An Icon"
 msgstr "Vyberte ikonu"
+
+#: src/favorites_page.cpp:73
+msgid "Sort Alphabetically A-Z"
+msgstr "Zoradiť abecedne A-Z"
+
+#: src/favorites_page.cpp:79
+msgid "Sort Alphabetically Z-A"
+msgstr "Zoradiť abecedne Z-A"
+
+#: src/icon_size.cpp:50
+msgid "Very Small"
+msgstr "Celkom malé"
+
+#: src/icon_size.cpp:51
+msgid "Smaller"
+msgstr "Menšie"
+
+#: src/icon_size.cpp:52
+msgid "Small"
+msgstr "Malé"
+
+#: src/icon_size.cpp:53
+msgid "Normal"
+msgstr "Normálne"
+
+#: src/icon_size.cpp:54
+msgid "Large"
+msgstr "Veľké"
+
+#: src/icon_size.cpp:55
+msgid "Larger"
+msgstr "Väčšie"
+
+#: src/icon_size.cpp:56
+msgid "Very Large"
+msgstr "Celkom veľké"
 
 #: src/launcher.cpp:263
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "Zlyhalo vykonanie príkazu „%s”."
 
-#: src/menu.cpp:88
+#: src/menu.cpp:99
 msgid "All Settings"
 msgstr "Všetky nastavenia"
 
-#: src/menu.cpp:91
+#: src/menu.cpp:102
 msgid "Lock Screen"
 msgstr "Zamknúť obrazovku"
 
-#: src/menu.cpp:94
+#: src/menu.cpp:105
 msgid "Log Out"
 msgstr "Odhlásiť"
 
-#: src/menu.cpp:108
+#: src/menu.cpp:119
 msgid "Favorites"
 msgstr "Obľúbené"
 
-#: src/menu.cpp:114
+#: src/menu.cpp:125
 msgid "Recently Used"
 msgstr "Nedávne"
 
-#: src/menu.cpp:636
+#: src/menu.cpp:721
 msgid "Failed to open settings manager."
 msgstr "Zlyhalo otvorenie správcu nastavení."
 
-#: src/menu.cpp:650
+#: src/menu.cpp:735
 msgid "Failed to lock screen."
 msgstr "Zlyhalo zamknutie obrazovky."
 
-#: src/menu.cpp:664
+#: src/menu.cpp:749
 msgid "Failed to log out."
 msgstr "Zlyhalo odhlásenie."
 
-#: src/page.cpp:170
+#: src/page.cpp:182
 msgid "Add to Favorites"
 msgstr "Pridať k obľúbeným"
 
-#: src/page.cpp:176
+#: src/page.cpp:190
 msgid "Remove From Favorites"
 msgstr "Odstrániť z obľúbených"
 
-#: src/page.cpp:181
+#: src/page.cpp:197
 msgid "Add to Desktop"
 msgstr "Pridať na plochu"
 
-#: src/page.cpp:185
+#: src/page.cpp:201
 msgid "Add to Panel"
 msgstr "Pridať do panela"
 
-#: src/page.cpp:265
+#: src/page.cpp:291
 msgid "Unable to add launcher to desktop."
 msgstr "Nemožno pridať spúšťač na plochu"
 
-#: src/page.cpp:303 src/page.cpp:312
+#: src/page.cpp:330 src/page.cpp:339
 msgid "Unable to add launcher to panel."
 msgstr "Nemožno pridať spúšťač do panela"
+
+#: src/panel_plugin.cpp:150
+msgid "Applications Menu"
+msgstr "Menu aplikácií"
+
+#: src/recent_page.cpp:70
+msgid "Clear Recently Used"
+msgstr "Vymazať nedávne"
