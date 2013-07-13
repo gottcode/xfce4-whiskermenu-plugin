@@ -1,0 +1,192 @@
+# Dutch translation of xfce4-whiskermenu-plugin.
+# Copyright (C) 2013 Graeme Gott
+# This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
+#
+# Translators:
+# Pjotr123 <pjotrvertaalt@gmail.com>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: Whisker Menu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-13 00:11+0000\n"
+"PO-Revision-Date: 2013-07-13 17:04+0000\n"
+"Last-Translator: Pjotr123 <pjotrvertaalt@gmail.com>\n"
+"Language-Team: Dutch (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/nl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/applications_page.cpp:336
+msgid "All"
+msgstr "Alle"
+
+#: src/configuration_dialog.cpp:54
+msgid "Whisker Menu"
+msgstr "Whiskermenu"
+
+#: src/configuration_dialog.cpp:68
+msgid "Appearance"
+msgstr "Uiterlijk"
+
+#: src/configuration_dialog.cpp:73
+msgid "Show applications by _name"
+msgstr "Toon toepassingen op _naam"
+
+#: src/configuration_dialog.cpp:79
+msgid "Show application _descriptions"
+msgstr "Toon _beschrijvingen van toepassingen"
+
+#: src/configuration_dialog.cpp:88
+msgid "Ite_m icon size:"
+msgstr "Pictogramgrootte van element:"
+
+#: src/configuration_dialog.cpp:108
+msgid "Categ_ory icon size:"
+msgstr "Pictogramgrootte van categorie:"
+
+#: src/configuration_dialog.cpp:125
+msgid "Panel Button"
+msgstr "Werkbalkknop"
+
+#: src/configuration_dialog.cpp:133
+msgid "Di_splay:"
+msgstr "Tonen:"
+
+#: src/configuration_dialog.cpp:139
+msgid "Icon"
+msgstr "Pictogram"
+
+#: src/configuration_dialog.cpp:140
+msgid "Title"
+msgstr "Titel"
+
+#: src/configuration_dialog.cpp:141
+msgid "Icon and title"
+msgstr "Pictogram en titel"
+
+#: src/configuration_dialog.cpp:151
+msgid "_Title:"
+msgstr "_Titel:"
+
+#: src/configuration_dialog.cpp:166
+msgid "_Icon:"
+msgstr "_Pictogram:"
+
+#: src/configuration_dialog.cpp:182
+msgid "Behavior"
+msgstr "Gedrag"
+
+#: src/configuration_dialog.cpp:187
+msgid "Switch categories by _hovering"
+msgstr "Verwissel van categorie door muispijl erop te laten rusten"
+
+#: src/configuration_dialog.cpp:209
+msgid "Select An Icon"
+msgstr "Kies een pictogram"
+
+#: src/favorites_page.cpp:73
+msgid "Sort Alphabetically A-Z"
+msgstr "Sorteer alfabetisch van A-Z"
+
+#: src/favorites_page.cpp:79
+msgid "Sort Alphabetically Z-A"
+msgstr "Sorteer alfabetisch van Z-A"
+
+#: src/icon_size.cpp:50
+msgid "Very Small"
+msgstr "Heel klein"
+
+#: src/icon_size.cpp:51
+msgid "Smaller"
+msgstr "Kleiner"
+
+#: src/icon_size.cpp:52
+msgid "Small"
+msgstr "Klein"
+
+#: src/icon_size.cpp:53
+msgid "Normal"
+msgstr "Normaal"
+
+#: src/icon_size.cpp:54
+msgid "Large"
+msgstr "Groot"
+
+#: src/icon_size.cpp:55
+msgid "Larger"
+msgstr "Groter"
+
+#: src/icon_size.cpp:56
+msgid "Very Large"
+msgstr "Heel groot"
+
+#: src/launcher.cpp:263
+#, c-format
+msgid "Failed to execute command \"%s\"."
+msgstr "Kon opdracht '%s' niet uitvoeren"
+
+#: src/menu.cpp:99
+msgid "All Settings"
+msgstr "Alle instellingen"
+
+#: src/menu.cpp:102
+msgid "Lock Screen"
+msgstr "Scherm vergrendelen"
+
+#: src/menu.cpp:105
+msgid "Log Out"
+msgstr "Afmelden"
+
+#: src/menu.cpp:119
+msgid "Favorites"
+msgstr "Favorieten"
+
+#: src/menu.cpp:125
+msgid "Recently Used"
+msgstr "Onlangs gebruikt"
+
+#: src/menu.cpp:721
+msgid "Failed to open settings manager."
+msgstr "Kon instellingenbeheerder niet openen."
+
+#: src/menu.cpp:735
+msgid "Failed to lock screen."
+msgstr "Kon scherm niet vergrendelen."
+
+#: src/menu.cpp:749
+msgid "Failed to log out."
+msgstr "Kon niet afmelden."
+
+#: src/page.cpp:182
+msgid "Add to Favorites"
+msgstr "Voeg toe aan favorieten"
+
+#: src/page.cpp:190
+msgid "Remove From Favorites"
+msgstr "Verwijder uit favorieten"
+
+#: src/page.cpp:197
+msgid "Add to Desktop"
+msgstr "Voeg toe aan bureaublad"
+
+#: src/page.cpp:201
+msgid "Add to Panel"
+msgstr "Voeg toe aan werkbalk"
+
+#: src/page.cpp:291
+msgid "Unable to add launcher to desktop."
+msgstr "Kon starter niet toevoegen aan bureaublad."
+
+#: src/page.cpp:330 src/page.cpp:339
+msgid "Unable to add launcher to panel."
+msgstr "Kon starter niet toevoegen aan werkbalk."
+
+#: src/panel_plugin.cpp:150
+msgid "Applications Menu"
+msgstr "Toepassingenmenu"
+
+#: src/recent_page.cpp:70
+msgid "Clear Recently Used"
+msgstr "Verwijder onlangs gebruikt"
