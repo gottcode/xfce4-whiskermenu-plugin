@@ -27,30 +27,26 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-static std::vector<std::string> read_list(XfceRc* rc, const gchar* key, std::vector<std::string> default_list)
+ListPage::ListPage(XfceRc* rc, const gchar* key, std::vector<std::string> default_desktop_ids, Menu* menu) :
+	Page(menu),
+	m_key(key)
 {
 	if (!rc || !xfce_rc_has_entry(rc, key))
 	{
-		return default_list;
+		m_desktop_ids = default_desktop_ids;
+		return;
 	}
 
-	std::vector<std::string> list;
 	gchar** values = xfce_rc_read_list_entry(rc, key, ",");
 	for (size_t i = 0; values[i] != nullptr; ++i)
 	{
-		list.push_back(values[i]);
+		std::string desktop_id(values[i]);
+		if (std::find(m_desktop_ids.begin(), m_desktop_ids.end(), desktop_id) == m_desktop_ids.end())
+		{
+			m_desktop_ids.push_back(desktop_id);
+		}
 	}
 	g_strfreev(values);
-	return list;
-}
-
-//-----------------------------------------------------------------------------
-
-ListPage::ListPage(XfceRc* rc, const gchar* key, std::vector<std::string> default_desktop_ids, Menu* menu) :
-	Page(menu),
-	m_key(key),
-	m_desktop_ids(read_list(rc, key, default_desktop_ids))
-{
 }
 
 //-----------------------------------------------------------------------------
