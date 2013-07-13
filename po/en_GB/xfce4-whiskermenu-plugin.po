@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: whiskermenu 1.0.0\n"
+"Project-Id-Version: xfce4-whiskermenu-plugin 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-15 20:23+0000\n"
-"PO-Revision-Date: 2013-06-15 20:23+0000\n"
+"POT-Creation-Date: 2013-07-13 00:11+0000\n"
+"PO-Revision-Date: 2013-07-13 00:11+0000\n"
 "Last-Translator: Graeme Gott <graeme@gottcode.org>\n"
 "Language-Team: \n"
 "Language: \n"
@@ -17,91 +17,175 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/applications_page.cpp:298
+#: src/applications_page.cpp:336
 msgid "All"
 msgstr "All"
 
-#: src/configuration_dialog.cpp:52
+#: src/configuration_dialog.cpp:54
 msgid "Whisker Menu"
 msgstr "Whisker Menu"
 
-#: src/configuration_dialog.cpp:66
+#: src/configuration_dialog.cpp:68
 msgid "Appearance"
 msgstr "Appearance"
 
-#: src/configuration_dialog.cpp:71
+#: src/configuration_dialog.cpp:73
 msgid "Show applications by _name"
 msgstr "Show applications by _name"
 
-#: src/configuration_dialog.cpp:77
+#: src/configuration_dialog.cpp:79
 msgid "Show application _descriptions"
 msgstr "Show application _descriptions"
 
-#: src/configuration_dialog.cpp:86
+#: src/configuration_dialog.cpp:88
+msgid "Ite_m icon size:"
+msgstr "Ite_m icon size:"
+
+#: src/configuration_dialog.cpp:108
+msgid "Categ_ory icon size:"
+msgstr "Categ_ory icon size:"
+
+#: src/configuration_dialog.cpp:125
+msgid "Panel Button"
+msgstr "Panel Button"
+
+#: src/configuration_dialog.cpp:133
+msgid "Di_splay:"
+msgstr "Di_splay:"
+
+#: src/configuration_dialog.cpp:139
+msgid "Icon"
+msgstr "Icon"
+
+#: src/configuration_dialog.cpp:140
+msgid "Title"
+msgstr "Title"
+
+#: src/configuration_dialog.cpp:141
+msgid "Icon and title"
+msgstr "Icon and title"
+
+#: src/configuration_dialog.cpp:151
+msgid "_Title:"
+msgstr "_Title:"
+
+#: src/configuration_dialog.cpp:166
 msgid "_Icon:"
 msgstr "_Icon:"
 
-#: src/configuration_dialog.cpp:118
+#: src/configuration_dialog.cpp:182
+msgid "Behavior"
+msgstr "Behaviour"
+
+#: src/configuration_dialog.cpp:187
+msgid "Switch categories by _hovering"
+msgstr "Switch categories by _hovering"
+
+#: src/configuration_dialog.cpp:209
 msgid "Select An Icon"
 msgstr "Select An Icon"
+
+#: src/favorites_page.cpp:73
+msgid "Sort Alphabetically A-Z"
+msgstr "Sort Alphabetically A-Z"
+
+#: src/favorites_page.cpp:79
+msgid "Sort Alphabetically Z-A"
+msgstr "Sort Alphabetically Z-A"
+
+#: src/icon_size.cpp:50
+msgid "Very Small"
+msgstr "Very Small"
+
+#: src/icon_size.cpp:51
+msgid "Smaller"
+msgstr "Smaller"
+
+#: src/icon_size.cpp:52
+msgid "Small"
+msgstr "Small"
+
+#: src/icon_size.cpp:53
+msgid "Normal"
+msgstr "Normal"
+
+#: src/icon_size.cpp:54
+msgid "Large"
+msgstr "Large"
+
+#: src/icon_size.cpp:55
+msgid "Larger"
+msgstr "Larger"
+
+#: src/icon_size.cpp:56
+msgid "Very Large"
+msgstr "Very Large"
 
 #: src/launcher.cpp:263
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "Failed to execute command \"%s\"."
 
-#: src/menu.cpp:88
+#: src/menu.cpp:99
 msgid "All Settings"
 msgstr "All Settings"
 
-#: src/menu.cpp:91
+#: src/menu.cpp:102
 msgid "Lock Screen"
 msgstr "Lock Screen"
 
-#: src/menu.cpp:94
+#: src/menu.cpp:105
 msgid "Log Out"
 msgstr "Log Out"
 
-#: src/menu.cpp:108
+#: src/menu.cpp:119
 msgid "Favorites"
 msgstr "Favourites"
 
-#: src/menu.cpp:114
+#: src/menu.cpp:125
 msgid "Recently Used"
 msgstr "Recently Used"
 
-#: src/menu.cpp:636
+#: src/menu.cpp:721
 msgid "Failed to open settings manager."
 msgstr "Failed to open settings manager."
 
-#: src/menu.cpp:650
+#: src/menu.cpp:735
 msgid "Failed to lock screen."
 msgstr "Failed to lock screen."
 
-#: src/menu.cpp:664
+#: src/menu.cpp:749
 msgid "Failed to log out."
 msgstr "Failed to log out."
 
-#: src/page.cpp:170
+#: src/page.cpp:182
 msgid "Add to Favorites"
 msgstr "Add to Favourites"
 
-#: src/page.cpp:176
+#: src/page.cpp:190
 msgid "Remove From Favorites"
 msgstr "Remove From Favourites"
 
-#: src/page.cpp:181
+#: src/page.cpp:197
 msgid "Add to Desktop"
 msgstr "Add to Desktop"
 
-#: src/page.cpp:185
+#: src/page.cpp:201
 msgid "Add to Panel"
 msgstr "Add to Panel"
 
-#: src/page.cpp:265
+#: src/page.cpp:291
 msgid "Unable to add launcher to desktop."
 msgstr "Unable to add launcher to desktop."
 
-#: src/page.cpp:303 src/page.cpp:312
+#: src/page.cpp:330 src/page.cpp:339
 msgid "Unable to add launcher to panel."
 msgstr "Unable to add launcher to panel."
+
+#: src/panel_plugin.cpp:150
+msgid "Applications Menu"
+msgstr "Applications Menu"
+
+#: src/recent_page.cpp:70
+msgid "Clear Recently Used"
+msgstr "Clear Recently Used"
