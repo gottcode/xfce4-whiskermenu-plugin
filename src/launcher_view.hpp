@@ -17,6 +17,8 @@
 #ifndef WHISKERMENU_LAUNCHER_VIEW_HPP
 #define WHISKERMENU_LAUNCHER_VIEW_HPP
 
+#include "slot.hpp"
+
 extern "C"
 {
 #include <gtk/gtk.h>
@@ -54,6 +56,10 @@ public:
 
 	void set_model(GtkTreeModel* model);
 	void unset_model();
+
+private:
+	SLOT_2(gboolean, LauncherView, on_key_press_event, GtkWidget*, GdkEventKey*);
+	SLOT_2(gboolean, LauncherView, on_key_release_event, GtkWidget*, GdkEventKey*);
 
 private:
 	GtkTreeModel* m_model;

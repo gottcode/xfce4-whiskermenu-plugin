@@ -23,6 +23,7 @@
 extern "C"
 {
 #include <exo/exo.h>
+#include <gdk/gdkkeysyms.h>
 }
 
 using namespace WhiskerMenu;
@@ -39,6 +40,8 @@ LauncherView::LauncherView() :
 	gtk_tree_view_set_rules_hint(m_view, false);
 	gtk_tree_view_set_hover_selection(m_view, true);
 	gtk_tree_view_set_enable_search(m_view, false);
+	g_signal_connect(m_view, "key-press-event", SLOT_CALLBACK(LauncherView::on_key_press_event), this);
+	g_signal_connect(m_view, "key-release-event", SLOT_CALLBACK(LauncherView::on_key_release_event), this);
 
 	// Add a column for the icon and text
 	GtkTreeViewColumn* column = gtk_tree_view_column_new();
@@ -152,6 +155,28 @@ void LauncherView::unset_model()
 {
 	m_model = nullptr;
 	gtk_tree_view_set_model(m_view, nullptr);
+}
+
+//-----------------------------------------------------------------------------
+
+gboolean LauncherView::on_key_press_event(GtkWidget*, GdkEventKey* event)
+{
+	if ((event->keyval == GDK_KEY_Up) || (event->keyval == GDK_KEY_Down))
+	{
+		gtk_tree_view_set_hover_selection(m_view, false);
+	}
+	return false;
+}
+
+//-----------------------------------------------------------------------------
+
+gboolean LauncherView::on_key_release_event(GtkWidget*, GdkEventKey* event)
+{
+	if ((event->keyval == GDK_KEY_Up) || (event->keyval == GDK_KEY_Down))
+	{
+		gtk_tree_view_set_hover_selection(m_view, true);
+	}
+	return false;
 }
 
 //-----------------------------------------------------------------------------
