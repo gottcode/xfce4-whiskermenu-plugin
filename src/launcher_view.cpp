@@ -24,6 +24,7 @@
 extern "C"
 {
 #include <exo/exo.h>
+#include <gdk/gdkkeysyms.h>
 }
 
 using namespace WhiskerMenu;
@@ -45,6 +46,8 @@ LauncherView::LauncherView() :
 	gtk_tree_view_set_hover_selection(m_view, true);
 	gtk_tree_view_set_enable_search(m_view, false);
 	create_column();
+	g_signal_connect(m_view, "key-press-event", G_CALLBACK(LauncherView::on_key_press_event_slot), this);
+	g_signal_connect(m_view, "key-release-event", G_CALLBACK(LauncherView::on_key_release_event_slot), this);
 
 	// Use single clicks to activate items
 	exo_tree_view_set_single_click(EXO_TREE_VIEW(m_view), true);
@@ -188,6 +191,28 @@ void LauncherView::create_column()
 	gtk_tree_view_column_add_attribute(m_column, text_renderer, "markup", LauncherModel::COLUMN_TEXT);
 
 	gtk_tree_view_append_column(m_view, m_column);
+}
+
+//-----------------------------------------------------------------------------
+
+bool LauncherView::on_key_press_event(GdkEventKey* event)
+{
+	if ((event->keyval == GDK_KEY_Up) || (event->keyval == GDK_KEY_Down))
+	{
+		gtk_tree_view_set_hover_selection(m_view, false);
+	}
+	return false;
+}
+
+//-----------------------------------------------------------------------------
+
+bool LauncherView::on_key_release_event(GdkEventKey* event)
+{
+	if ((event->keyval == GDK_KEY_Up) || (event->keyval == GDK_KEY_Down))
+	{
+		gtk_tree_view_set_hover_selection(m_view, true);
+	}
+	return false;
 }
 
 //-----------------------------------------------------------------------------
