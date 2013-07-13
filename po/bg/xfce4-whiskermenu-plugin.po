@@ -1,0 +1,192 @@
+# Bulgarian translation of xfce4-whiskermenu-plugin.
+# Copyright (C) 2013 Graeme Gott
+# This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
+#
+# Translators:
+# cybercop <cybercop_montana@abv.bg>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: Whisker Menu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-13 00:11+0000\n"
+"PO-Revision-Date: 2013-07-13 09:53+0000\n"
+"Last-Translator: cybercop <cybercop_montana@abv.bg>\n"
+"Language-Team: Bulgarian (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/bg/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: bg\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/applications_page.cpp:336
+msgid "All"
+msgstr "Всички"
+
+#: src/configuration_dialog.cpp:54
+msgid "Whisker Menu"
+msgstr "Whisker Меню"
+
+#: src/configuration_dialog.cpp:68
+msgid "Appearance"
+msgstr "Външен вид"
+
+#: src/configuration_dialog.cpp:73
+msgid "Show applications by _name"
+msgstr "Показване на програмите по имена"
+
+#: src/configuration_dialog.cpp:79
+msgid "Show application _descriptions"
+msgstr "Показване на програмите по описание"
+
+#: src/configuration_dialog.cpp:88
+msgid "Ite_m icon size:"
+msgstr "Размер на иконите на елементите:"
+
+#: src/configuration_dialog.cpp:108
+msgid "Categ_ory icon size:"
+msgstr "Размер на иконите на категориите:"
+
+#: src/configuration_dialog.cpp:125
+msgid "Panel Button"
+msgstr "Бутон в панела"
+
+#: src/configuration_dialog.cpp:133
+msgid "Di_splay:"
+msgstr "Покажи:"
+
+#: src/configuration_dialog.cpp:139
+msgid "Icon"
+msgstr "Икона"
+
+#: src/configuration_dialog.cpp:140
+msgid "Title"
+msgstr "Заглавие"
+
+#: src/configuration_dialog.cpp:141
+msgid "Icon and title"
+msgstr "Икона и заглавие"
+
+#: src/configuration_dialog.cpp:151
+msgid "_Title:"
+msgstr "Заглавие:"
+
+#: src/configuration_dialog.cpp:166
+msgid "_Icon:"
+msgstr "Икона:"
+
+#: src/configuration_dialog.cpp:182
+msgid "Behavior"
+msgstr "Поведение"
+
+#: src/configuration_dialog.cpp:187
+msgid "Switch categories by _hovering"
+msgstr "Смяна на категориите при посочване"
+
+#: src/configuration_dialog.cpp:209
+msgid "Select An Icon"
+msgstr "Избор на икона"
+
+#: src/favorites_page.cpp:73
+msgid "Sort Alphabetically A-Z"
+msgstr "Сортиране по азбучен ред от А-Я"
+
+#: src/favorites_page.cpp:79
+msgid "Sort Alphabetically Z-A"
+msgstr "Сортиране по азбучен ред от Я-А"
+
+#: src/icon_size.cpp:50
+msgid "Very Small"
+msgstr "Много малка"
+
+#: src/icon_size.cpp:51
+msgid "Smaller"
+msgstr "По- малка"
+
+#: src/icon_size.cpp:52
+msgid "Small"
+msgstr "Малка"
+
+#: src/icon_size.cpp:53
+msgid "Normal"
+msgstr "Нормална"
+
+#: src/icon_size.cpp:54
+msgid "Large"
+msgstr "Голяма"
+
+#: src/icon_size.cpp:55
+msgid "Larger"
+msgstr "По- голяма"
+
+#: src/icon_size.cpp:56
+msgid "Very Large"
+msgstr "Много голяма"
+
+#: src/launcher.cpp:263
+#, c-format
+msgid "Failed to execute command \"%s\"."
+msgstr "Неуспешно изпълнение на команда \"%s\"."
+
+#: src/menu.cpp:99
+msgid "All Settings"
+msgstr "Всички настройки"
+
+#: src/menu.cpp:102
+msgid "Lock Screen"
+msgstr "Заключване на екрана"
+
+#: src/menu.cpp:105
+msgid "Log Out"
+msgstr "Изход"
+
+#: src/menu.cpp:119
+msgid "Favorites"
+msgstr "Любими"
+
+#: src/menu.cpp:125
+msgid "Recently Used"
+msgstr "Последно използвани"
+
+#: src/menu.cpp:721
+msgid "Failed to open settings manager."
+msgstr "Неуспешно отваряне на мениджъра на настройките."
+
+#: src/menu.cpp:735
+msgid "Failed to lock screen."
+msgstr "Неуспешно заключване на екрана."
+
+#: src/menu.cpp:749
+msgid "Failed to log out."
+msgstr "Неуспешно излизане."
+
+#: src/page.cpp:182
+msgid "Add to Favorites"
+msgstr "Добавяне към Любими"
+
+#: src/page.cpp:190
+msgid "Remove From Favorites"
+msgstr "Премахване от Любими"
+
+#: src/page.cpp:197
+msgid "Add to Desktop"
+msgstr "Добавяне към Работният плот"
+
+#: src/page.cpp:201
+msgid "Add to Panel"
+msgstr "Добавяне в панела"
+
+#: src/page.cpp:291
+msgid "Unable to add launcher to desktop."
+msgstr "Неуспешно добавяне на стартер върху работният плот."
+
+#: src/page.cpp:330 src/page.cpp:339
+msgid "Unable to add launcher to panel."
+msgstr "Неуспешно добавяне на стартер в панела."
+
+#: src/panel_plugin.cpp:150
+msgid "Applications Menu"
+msgstr "Меню на програмите"
+
+#: src/recent_page.cpp:70
+msgid "Clear Recently Used"
+msgstr "Изчисти последно използваните"

@@ -1,6 +1,7 @@
 find_package(Gettext REQUIRED)
 
 add_subdirectory(ar)
+add_subdirectory(bg)
 add_subdirectory(ca)
 add_subdirectory(de)
 add_subdirectory(el)
