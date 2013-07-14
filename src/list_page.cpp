@@ -142,7 +142,10 @@ void ListPage::unset_menu_items()
 void ListPage::set_desktop_ids(const std::vector<std::string>& desktop_ids)
 {
 	m_desktop_ids = desktop_ids;
-	set_menu_items();
+	if (get_view()->get_model())
+	{
+		set_menu_items();
+	}
 }
 
 //-----------------------------------------------------------------------------

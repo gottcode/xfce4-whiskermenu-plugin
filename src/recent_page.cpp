@@ -30,10 +30,11 @@ RecentPage::RecentPage(XfceRc* settings, Menu* menu) :
 	m_max_items(10)
 {
 	// Prevent going over max
-	LauncherModel model(GTK_LIST_STORE(get_view()->get_model()));
-	while (size() > m_max_items)
+	if (size() > m_max_items)
 	{
-		model.remove_last_item();
+		std::vector<std::string> desktop_ids = get_desktop_ids();
+		desktop_ids.erase(desktop_ids.begin() + m_max_items, desktop_ids.end());
+		set_desktop_ids(desktop_ids);
 	}
 }
 
