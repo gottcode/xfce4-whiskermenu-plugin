@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-15 20:23+0000\n"
-"PO-Revision-Date: 2013-06-25 04:34+0000\n"
+"POT-Creation-Date: 2013-07-13 00:11+0000\n"
+"PO-Revision-Date: 2013-07-14 21:49+0000\n"
 "Last-Translator: manjarolinux <philm@manjaro.org>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -18,91 +18,175 @@ msgstr ""
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/applications_page.cpp:298
+#: src/applications_page.cpp:336
 msgid "All"
 msgstr "Alle"
 
-#: src/configuration_dialog.cpp:52
+#: src/configuration_dialog.cpp:54
 msgid "Whisker Menu"
 msgstr "Whisker Menü"
 
-#: src/configuration_dialog.cpp:66
+#: src/configuration_dialog.cpp:68
 msgid "Appearance"
 msgstr "Erscheinungsbild"
 
-#: src/configuration_dialog.cpp:71
+#: src/configuration_dialog.cpp:73
 msgid "Show applications by _name"
 msgstr "Zeige Programme bei _Namen"
 
-#: src/configuration_dialog.cpp:77
+#: src/configuration_dialog.cpp:79
 msgid "Show application _descriptions"
 msgstr "Zeige Programm _Beschreibungen"
 
-#: src/configuration_dialog.cpp:86
+#: src/configuration_dialog.cpp:88
+msgid "Ite_m icon size:"
+msgstr "Sy_mbolgröße:"
+
+#: src/configuration_dialog.cpp:108
+msgid "Categ_ory icon size:"
+msgstr "Kateg_orie Symbolgröße"
+
+#: src/configuration_dialog.cpp:125
+msgid "Panel Button"
+msgstr "Panel Knopf"
+
+#: src/configuration_dialog.cpp:133
+msgid "Di_splay:"
+msgstr "Di_splay:"
+
+#: src/configuration_dialog.cpp:139
+msgid "Icon"
+msgstr "Symbol"
+
+#: src/configuration_dialog.cpp:140
+msgid "Title"
+msgstr "Titel"
+
+#: src/configuration_dialog.cpp:141
+msgid "Icon and title"
+msgstr "Symbol und Titel"
+
+#: src/configuration_dialog.cpp:151
+msgid "_Title:"
+msgstr "_Titel:"
+
+#: src/configuration_dialog.cpp:166
 msgid "_Icon:"
 msgstr "_Symbol:"
 
-#: src/configuration_dialog.cpp:118
+#: src/configuration_dialog.cpp:182
+msgid "Behavior"
+msgstr "Verhalten"
+
+#: src/configuration_dialog.cpp:187
+msgid "Switch categories by _hovering"
+msgstr "Wechsel Kategorien mit sc_hweben"
+
+#: src/configuration_dialog.cpp:209
 msgid "Select An Icon"
 msgstr "Wähle ein Symbol"
+
+#: src/favorites_page.cpp:73
+msgid "Sort Alphabetically A-Z"
+msgstr "Sortiere alphabetisch A-Z"
+
+#: src/favorites_page.cpp:79
+msgid "Sort Alphabetically Z-A"
+msgstr "Sortiere alphabetisch Z-A"
+
+#: src/icon_size.cpp:50
+msgid "Very Small"
+msgstr "Sehr klein"
+
+#: src/icon_size.cpp:51
+msgid "Smaller"
+msgstr "Kleiner"
+
+#: src/icon_size.cpp:52
+msgid "Small"
+msgstr "Klein"
+
+#: src/icon_size.cpp:53
+msgid "Normal"
+msgstr "Normal"
+
+#: src/icon_size.cpp:54
+msgid "Large"
+msgstr "Groß"
+
+#: src/icon_size.cpp:55
+msgid "Larger"
+msgstr "Größer"
+
+#: src/icon_size.cpp:56
+msgid "Very Large"
+msgstr "Sehr groß"
 
 #: src/launcher.cpp:263
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "Konnte Kommando \"%s\" nicht ausführen."
 
-#: src/menu.cpp:88
+#: src/menu.cpp:99
 msgid "All Settings"
 msgstr "Alle Einstellungen"
 
-#: src/menu.cpp:91
+#: src/menu.cpp:102
 msgid "Lock Screen"
 msgstr "Bildschirm sperren"
 
-#: src/menu.cpp:94
+#: src/menu.cpp:105
 msgid "Log Out"
 msgstr "Abmelden"
 
-#: src/menu.cpp:108
+#: src/menu.cpp:119
 msgid "Favorites"
 msgstr "Favoriten"
 
-#: src/menu.cpp:114
+#: src/menu.cpp:125
 msgid "Recently Used"
 msgstr "Zuletzt genutzt"
 
-#: src/menu.cpp:636
+#: src/menu.cpp:721
 msgid "Failed to open settings manager."
 msgstr "Konnte Einstellungs-Manager nicht starten."
 
-#: src/menu.cpp:650
+#: src/menu.cpp:735
 msgid "Failed to lock screen."
 msgstr "Konnte Bildschirm nicht sperren."
 
-#: src/menu.cpp:664
+#: src/menu.cpp:749
 msgid "Failed to log out."
 msgstr "Konnte nicht abmelden."
 
-#: src/page.cpp:170
+#: src/page.cpp:182
 msgid "Add to Favorites"
 msgstr "Zu Favoriten hinzufügen"
 
-#: src/page.cpp:176
+#: src/page.cpp:190
 msgid "Remove From Favorites"
 msgstr "Von Favoriten entfernen"
 
-#: src/page.cpp:181
+#: src/page.cpp:197
 msgid "Add to Desktop"
 msgstr "Zum Desktop hinzufügen"
 
-#: src/page.cpp:185
+#: src/page.cpp:201
 msgid "Add to Panel"
 msgstr "Zum Panel hinzufügen"
 
-#: src/page.cpp:265
+#: src/page.cpp:291
 msgid "Unable to add launcher to desktop."
 msgstr "Konnte Launcher nicht zum Desktop hinzufügen."
 
-#: src/page.cpp:303 src/page.cpp:312
+#: src/page.cpp:330 src/page.cpp:339
 msgid "Unable to add launcher to panel."
 msgstr "Konnte Launcher nicht zum Panel hinzufügen."
+
+#: src/panel_plugin.cpp:150
+msgid "Applications Menu"
+msgstr "Programm Menü"
+
+#: src/recent_page.cpp:70
+msgid "Clear Recently Used"
+msgstr "Lösche zuletzt benutzt"
