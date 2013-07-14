@@ -45,6 +45,7 @@ LauncherView::LauncherView() :
 	gtk_tree_view_set_rules_hint(m_view, false);
 	gtk_tree_view_set_hover_selection(m_view, true);
 	gtk_tree_view_set_enable_search(m_view, false);
+	gtk_tree_view_set_fixed_height_mode(m_view, true);
 	create_column();
 	g_signal_connect(m_view, "key-press-event", G_CALLBACK(LauncherView::on_key_press_event_slot), this);
 	g_signal_connect(m_view, "key-release-event", G_CALLBACK(LauncherView::on_key_release_event_slot), this);
@@ -189,6 +190,8 @@ void LauncherView::create_column()
 	g_object_set(text_renderer, "ellipsize", PANGO_ELLIPSIZE_END, NULL);
 	gtk_tree_view_column_pack_start(m_column, text_renderer, true);
 	gtk_tree_view_column_add_attribute(m_column, text_renderer, "markup", LauncherModel::COLUMN_TEXT);
+
+	gtk_tree_view_column_set_sizing(m_column, GTK_TREE_VIEW_COLUMN_FIXED);
 
 	gtk_tree_view_append_column(m_view, m_column);
 }
