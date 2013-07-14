@@ -273,6 +273,11 @@ int Launcher::search(const Query& query) const
 	if (match == INT_MAX)
 	{
 		match = query.match(m_search_command);
+		if (match != INT_MAX)
+		{
+			// Sort matches in executables after matches in names
+			match += 10;
+		}
 	}
 	if ((match == INT_MAX) && f_show_description)
 	{
@@ -280,7 +285,7 @@ int Launcher::search(const Query& query) const
 		if (match != INT_MAX)
 		{
 			// Sort matches in comments after matches in names
-			match += 10;
+			match += 20;
 		}
 	}
 	return match;
