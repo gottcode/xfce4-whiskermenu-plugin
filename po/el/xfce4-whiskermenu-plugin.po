@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-15 20:23+0000\n"
-"PO-Revision-Date: 2013-06-29 15:54+0000\n"
+"POT-Creation-Date: 2013-07-13 00:11+0000\n"
+"PO-Revision-Date: 2013-07-14 11:47+0000\n"
 "Last-Translator: angel_solomos <angelsolomos@gmail.com>\n"
 "Language-Team: Greek (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/el/)\n"
 "MIME-Version: 1.0\n"
@@ -18,91 +18,175 @@ msgstr ""
 "Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/applications_page.cpp:298
+#: src/applications_page.cpp:336
 msgid "All"
 msgstr "Όλα"
 
-#: src/configuration_dialog.cpp:52
+#: src/configuration_dialog.cpp:54
 msgid "Whisker Menu"
 msgstr "Μενού Whisker"
 
-#: src/configuration_dialog.cpp:66
+#: src/configuration_dialog.cpp:68
 msgid "Appearance"
 msgstr "Εμφάνιση"
 
-#: src/configuration_dialog.cpp:71
+#: src/configuration_dialog.cpp:73
 msgid "Show applications by _name"
 msgstr "Προβολή εφαρμογών κατά όνομα"
 
-#: src/configuration_dialog.cpp:77
+#: src/configuration_dialog.cpp:79
 msgid "Show application _descriptions"
 msgstr "Εμφάνιση περιγραφής εφαρμογών"
 
-#: src/configuration_dialog.cpp:86
+#: src/configuration_dialog.cpp:88
+msgid "Ite_m icon size:"
+msgstr "Μέγεθος εικονιδίων αντικειμένων:"
+
+#: src/configuration_dialog.cpp:108
+msgid "Categ_ory icon size:"
+msgstr "Μέγεθος εικονιδίων κατηγοριών:"
+
+#: src/configuration_dialog.cpp:125
+msgid "Panel Button"
+msgstr "Κουμπί ταμπλό"
+
+#: src/configuration_dialog.cpp:133
+msgid "Di_splay:"
+msgstr "Εμφάνιση:"
+
+#: src/configuration_dialog.cpp:139
+msgid "Icon"
+msgstr "Εικονίδιο"
+
+#: src/configuration_dialog.cpp:140
+msgid "Title"
+msgstr "Τίτλος"
+
+#: src/configuration_dialog.cpp:141
+msgid "Icon and title"
+msgstr "Εικονίδιο και τίτλος"
+
+#: src/configuration_dialog.cpp:151
+msgid "_Title:"
+msgstr "Τίτλος:"
+
+#: src/configuration_dialog.cpp:166
 msgid "_Icon:"
 msgstr "Εικονίδιο:"
 
-#: src/configuration_dialog.cpp:118
+#: src/configuration_dialog.cpp:182
+msgid "Behavior"
+msgstr "Συμπεριφορά"
+
+#: src/configuration_dialog.cpp:187
+msgid "Switch categories by _hovering"
+msgstr "Αλλαγή κατηγοριών στο πέρασμα του ποντικιού"
+
+#: src/configuration_dialog.cpp:209
 msgid "Select An Icon"
 msgstr "Επιλογή εικονιδίου"
+
+#: src/favorites_page.cpp:73
+msgid "Sort Alphabetically A-Z"
+msgstr "Αλφαβητική ταξινόμηση Α-Ζ"
+
+#: src/favorites_page.cpp:79
+msgid "Sort Alphabetically Z-A"
+msgstr "Αλφαβητική ταξινόμηση Ζ-Α"
+
+#: src/icon_size.cpp:50
+msgid "Very Small"
+msgstr "Πολύ μικρά"
+
+#: src/icon_size.cpp:51
+msgid "Smaller"
+msgstr "Μικρότερα"
+
+#: src/icon_size.cpp:52
+msgid "Small"
+msgstr "Μικρά"
+
+#: src/icon_size.cpp:53
+msgid "Normal"
+msgstr "Κανονικά"
+
+#: src/icon_size.cpp:54
+msgid "Large"
+msgstr "Μεγάλα"
+
+#: src/icon_size.cpp:55
+msgid "Larger"
+msgstr "Μεγαλύτερα"
+
+#: src/icon_size.cpp:56
+msgid "Very Large"
+msgstr "Πολύ μεγάλα"
 
 #: src/launcher.cpp:263
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "Αποτυχία εκτέλεσης εντολής \"%s\"."
 
-#: src/menu.cpp:88
+#: src/menu.cpp:99
 msgid "All Settings"
 msgstr "Όλες οι επιλογές"
 
-#: src/menu.cpp:91
+#: src/menu.cpp:102
 msgid "Lock Screen"
 msgstr "Κλείδωμα οθόνης"
 
-#: src/menu.cpp:94
+#: src/menu.cpp:105
 msgid "Log Out"
 msgstr "Αποσύνδεση"
 
-#: src/menu.cpp:108
+#: src/menu.cpp:119
 msgid "Favorites"
 msgstr "Αγαπημένα"
 
-#: src/menu.cpp:114
+#: src/menu.cpp:125
 msgid "Recently Used"
 msgstr "Χρησημοποιήθηκαν πρόσφατα"
 
-#: src/menu.cpp:636
+#: src/menu.cpp:721
 msgid "Failed to open settings manager."
 msgstr "Αποτυχία εκκίνησης του διαχειριστή ρυθμίσεων"
 
-#: src/menu.cpp:650
+#: src/menu.cpp:735
 msgid "Failed to lock screen."
 msgstr "Αποτυχία κλειδώματος οθόνης."
 
-#: src/menu.cpp:664
+#: src/menu.cpp:749
 msgid "Failed to log out."
 msgstr "Αποτυχία αποσύνδεσης."
 
-#: src/page.cpp:170
+#: src/page.cpp:182
 msgid "Add to Favorites"
 msgstr "Προσθήκη στα Αγαπημένα"
 
-#: src/page.cpp:176
+#: src/page.cpp:190
 msgid "Remove From Favorites"
 msgstr "Αφαίρεση από τα Αγαπημένα"
 
-#: src/page.cpp:181
+#: src/page.cpp:197
 msgid "Add to Desktop"
 msgstr "Προσθήκη στην επιφάνει εργασίας"
 
-#: src/page.cpp:185
+#: src/page.cpp:201
 msgid "Add to Panel"
 msgstr "Προσθήκη στο ταμπλό"
 
-#: src/page.cpp:265
+#: src/page.cpp:291
 msgid "Unable to add launcher to desktop."
 msgstr "Απέτυχε η προσθήκη εκκινητή στην επιφάνεια εργασίας."
 
-#: src/page.cpp:303 src/page.cpp:312
+#: src/page.cpp:330 src/page.cpp:339
 msgid "Unable to add launcher to panel."
 msgstr "Απέτυχε η προσθήκη εκκινητή στο ταμπλό."
+
+#: src/panel_plugin.cpp:150
+msgid "Applications Menu"
+msgstr "Μενού εφαρμογών"
+
+#: src/recent_page.cpp:70
+msgid "Clear Recently Used"
+msgstr "Καθαρισμός πρόσφατα χρησιμοποιημένων"
