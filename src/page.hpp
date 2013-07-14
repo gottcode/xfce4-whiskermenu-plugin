@@ -46,6 +46,8 @@ public:
 		return m_view;
 	}
 
+	void reset_selection();
+
 protected:
 	Menu* get_menu() const
 	{
@@ -88,11 +90,6 @@ private:
 	static gboolean view_popup_menu_event_slot(GtkWidget* view, Page* obj)
 	{
 		return obj->view_popup_menu_event(view);
-	}
-
-	static void on_unmap_slot(GtkWidget*, Page* obj)
-	{
-		obj->on_unmap();
 	}
 
 	static void destroy_context_menu_slot(GtkMenuShell* menu, Page* obj)

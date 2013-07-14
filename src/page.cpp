@@ -48,7 +48,6 @@ Page::Page(Menu* menu) :
 	gtk_scrolled_window_set_policy(GTK_SCROLLED_WINDOW(m_widget), GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
 	gtk_scrolled_window_set_shadow_type(GTK_SCROLLED_WINDOW(m_widget), GTK_SHADOW_ETCHED_IN);
 	gtk_container_add(GTK_CONTAINER(m_widget), m_view->get_widget());
-	g_signal_connect(m_widget, "unmap", G_CALLBACK(Page::on_unmap_slot), this);
 	g_object_ref_sink(m_widget);
 }
 
@@ -63,6 +62,23 @@ Page::~Page()
 
 	delete m_view;
 	g_object_unref(m_widget);
+}
+
+//-----------------------------------------------------------------------------
+
+void Page::reset_selection()
+{
+	// Clear selection and scroll to top
+	GtkTreeModel* model = m_view->get_model();
+	GtkTreeIter iter;
+	if (gtk_tree_model_get_iter_first(model, &iter))
+	{
+		GtkTreePath* path = gtk_tree_model_get_path(model, &iter);
+		get_view()->scroll_to_path(path);
+		get_view()->select_path(path);
+		get_view()->unselect_all();
+		gtk_tree_path_free(path);
+	}
 }
 
 //-----------------------------------------------------------------------------
@@ -136,22 +152,6 @@ bool Page::view_popup_menu_event(GtkWidget* view)
 	}
 
 	return false;
-}
-
-//-----------------------------------------------------------------------------
-
-void Page::on_unmap()
-{
-	// Clear selection and scroll to top
-	GtkTreeModel* model = m_view->get_model();
-	GtkTreeIter iter;
-	if (gtk_tree_model_get_iter_first(model, &iter))
-	{
-		GtkTreePath* path = gtk_tree_model_get_path(model, &iter);
-		get_view()->scroll_to_path(path);
-		get_view()->unselect_all();
-		gtk_tree_path_free(path);
-	}
 }
 
 //-----------------------------------------------------------------------------

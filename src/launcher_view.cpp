@@ -102,8 +102,7 @@ void LauncherView::scroll_to_path(GtkTreePath* path)
 
 void LauncherView::select_path(GtkTreePath* path)
 {
-	GtkTreeSelection* selection = gtk_tree_view_get_selection(m_view);
-	gtk_tree_selection_select_path(selection, path);
+	gtk_tree_view_set_cursor(m_view, path, NULL, false);
 }
 
 //-----------------------------------------------------------------------------

@@ -600,6 +600,8 @@ bool Menu::on_key_press_event_after(GtkWidget* widget, GdkEventKey* event)
 
 bool Menu::on_map_event()
 {
+	m_favorites->reset_selection();
+
 	gtk_window_set_keep_above(m_window, true);
 
 	// Track mouse clicks outside of menu
@@ -635,27 +637,33 @@ bool Menu::on_configure_event(GdkEventConfigure* event)
 
 void Menu::favorites_toggled()
 {
+	m_favorites->reset_selection();
 	gtk_widget_hide(m_recent->get_widget());
 	gtk_widget_hide(m_applications->get_widget());
 	gtk_widget_show_all(m_favorites->get_widget());
+	gtk_widget_grab_focus(GTK_WIDGET(m_search_entry));
 }
 
 //-----------------------------------------------------------------------------
 
 void Menu::recent_toggled()
 {
+	m_recent->reset_selection();
 	gtk_widget_hide(m_favorites->get_widget());
 	gtk_widget_hide(m_applications->get_widget());
 	gtk_widget_show_all(m_recent->get_widget());
+	gtk_widget_grab_focus(GTK_WIDGET(m_search_entry));
 }
 
 //-----------------------------------------------------------------------------
 
 void Menu::category_toggled()
 {
+	m_applications->reset_selection();
 	gtk_widget_hide(m_favorites->get_widget());
 	gtk_widget_hide(m_recent->get_widget());
 	gtk_widget_show_all(m_applications->get_widget());
+	gtk_widget_grab_focus(GTK_WIDGET(m_search_entry));
 }
 
 //-----------------------------------------------------------------------------
