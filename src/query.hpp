@@ -35,7 +35,7 @@ public:
 		return m_query.empty();
 	}
 
-	unsigned int match(const std::string& haystack) const;
+	int match(const std::string& haystack) const;
 
 	std::string query() const
 	{

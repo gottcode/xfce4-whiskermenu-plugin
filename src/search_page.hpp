@@ -20,6 +20,7 @@
 #include "filter_page.hpp"
 #include "query.hpp"
 
+#include <map>
 #include <string>
 #include <vector>
 
@@ -49,6 +50,8 @@ private:
 	Query m_query;
 	GtkTreeModelSort* m_sort_model;
 	std::vector<Launcher*> m_launchers;
+	std::map<std::string, std::map<Launcher*, int> > m_results;
+	const std::map<Launcher*, int>* m_current_results;
 
 
 private:

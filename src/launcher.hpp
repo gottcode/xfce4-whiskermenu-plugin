@@ -19,7 +19,6 @@
 
 #include "query.hpp"
 
-#include <map>
 #include <string>
 
 extern "C"
@@ -62,15 +61,9 @@ public:
 		return garcon_menu_item_get_file(m_item);
 	}
 
-	unsigned int get_search_results(const Query& query) const
-	{
-		std::map<std::string, unsigned int>::const_iterator i = m_searches.find(query.query());
-		return (i != m_searches.end()) ? i->second : UINT_MAX;
-	}
-
 	void run(GdkScreen* screen) const;
 
-	void search(const Query& query);
+	int search(const Query& query) const;
 
 	static bool get_show_name();
 	static bool get_show_description();
@@ -89,7 +82,6 @@ private:
 	std::string m_search_name;
 	std::string m_search_comment;
 	std::string m_search_command;
-	std::map<std::string, unsigned int> m_searches;
 };
 
 }

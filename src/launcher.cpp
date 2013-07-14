@@ -267,38 +267,23 @@ void Launcher::run(GdkScreen* screen) const
 
 //-----------------------------------------------------------------------------
 
-void Launcher::search(const Query& query)
+int Launcher::search(const Query& query) const
 {
-	if (query.empty())
-	{
-		return;
-	}
-
-	// Check if search has been done or if a shorter version has failed before
-	for (std::map<std::string, unsigned int>::const_iterator i = m_searches.begin(), end = m_searches.end(); i != end; ++i)
-	{
-		if ( ((i->second == UINT_MAX) && (query.query().find(i->first) == 0))
-				|| (i->first == query.query()) )
-		{
-			return;
-		}
-	}
-
-	unsigned int match = query.match(m_search_name);
-	if (match == UINT_MAX)
+	int match = query.match(m_search_name);
+	if (match == INT_MAX)
 	{
 		match = query.match(m_search_command);
 	}
-	if ((match == UINT_MAX) && f_show_description)
+	if ((match == INT_MAX) && f_show_description)
 	{
 		match = query.match(m_search_comment);
-		if (match != UINT_MAX)
+		if (match != INT_MAX)
 		{
 			// Sort matches in comments after matches in names
 			match += 10;
 		}
 	}
-	m_searches.insert(std::make_pair(query.query(), match));
+	return match;
 }
 
 //-----------------------------------------------------------------------------

@@ -57,12 +57,12 @@ Query::~Query()
 
 //-----------------------------------------------------------------------------
 
-unsigned int Query::match(const std::string& haystack) const
+int Query::match(const std::string& haystack) const
 {
 	// Make sure haystack is longer than query
 	if (m_query.empty() || (m_query.length() > haystack.length()))
 	{
-		return UINT_MAX;
+		return INT_MAX;
 	}
 
 	// Check if haystack begins with or is query
@@ -142,7 +142,7 @@ unsigned int Query::match(const std::string& haystack) const
 			start_word = false;
 		}
 	}
-	unsigned int result = UINT_MAX;
+	int result = INT_MAX;
 	if (*query_string == 0)
 	{
 		result = characters_start_words ? 5 : 7;
