@@ -69,7 +69,7 @@ Menu::Menu(XfceRc* settings) :
 	gtk_window_set_skip_taskbar_hint(m_window, true);
 	gtk_window_set_skip_pager_hint(m_window, true);
 	gtk_window_stick(m_window);
-	gtk_widget_add_events(GTK_WIDGET(m_window), GDK_BUTTON_PRESS_MASK | GDK_LEAVE_NOTIFY_MASK | GDK_POINTER_MOTION_MASK | GDK_STRUCTURE_MASK);
+	gtk_widget_add_events(GTK_WIDGET(m_window), GDK_BUTTON_PRESS_MASK | GDK_LEAVE_NOTIFY_MASK | GDK_STRUCTURE_MASK);
 	g_signal_connect(m_window, "enter-notify-event", G_CALLBACK(Menu::on_enter_notify_event_slot), this);
 	g_signal_connect(m_window, "leave-notify-event", G_CALLBACK(Menu::on_leave_notify_event_slot), this);
 	g_signal_connect(m_window, "focus-in-event", G_CALLBACK(on_focus_in_event_slot), this);
@@ -520,8 +520,7 @@ bool Menu::on_leave_notify_event(GdkEventCrossing* event)
 		gdk_pointer_grab(gtk_widget_get_window(GTK_WIDGET(m_window)), true,
 				GdkEventMask(
 					GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK |
-					GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK |
-					GDK_POINTER_MOTION_MASK
+					GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK
 				),
 				NULL, NULL, event->time);
 	}
@@ -536,8 +535,7 @@ bool Menu::on_focus_in_event()
 	gdk_pointer_grab(gtk_widget_get_window(GTK_WIDGET(m_window)), true,
 			GdkEventMask(
 				GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK |
-				GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK |
-				GDK_POINTER_MOTION_MASK
+				GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK
 			),
 			NULL, NULL, gtk_get_current_event_time());
 	return false;
@@ -624,8 +622,7 @@ bool Menu::on_map_event()
 	gdk_pointer_grab(gtk_widget_get_window(GTK_WIDGET(m_window)), true,
 			GdkEventMask(
 				GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK |
-				GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK |
-				GDK_POINTER_MOTION_MASK
+				GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK
 			),
 			NULL, NULL, gtk_get_current_event_time());
 
