@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-13 00:11+0000\n"
-"PO-Revision-Date: 2013-07-13 04:28+0000\n"
+"PO-Revision-Date: 2013-07-15 12:12+0000\n"
 "Last-Translator: GenghisKhan <genghiskhan@gmx.ca>\n"
 "Language-Team: Hebrew (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/he/)\n"
 "MIME-Version: 1.0\n"
@@ -173,7 +173,7 @@ msgstr "הוסף אל תוך שולחן עבודה"
 
 #: src/page.cpp:201
 msgid "Add to Panel"
-msgstr "הוסף אל לוח"
+msgstr "הוסף אל תוך לוח"
 
 #: src/page.cpp:291
 msgid "Unable to add launcher to desktop."
@@ -189,4 +189,4 @@ msgstr "תפריט יישומים"
 
 #: src/recent_page.cpp:70
 msgid "Clear Recently Used"
-msgstr "טהר בשימוש לאחרונה"
+msgstr "טהר תפריט בשימוש לאחרונה"

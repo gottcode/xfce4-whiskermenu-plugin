@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-15 20:23+0000\n"
-"PO-Revision-Date: 2013-07-10 17:16+0000\n"
+"POT-Creation-Date: 2013-07-13 00:11+0000\n"
+"PO-Revision-Date: 2013-07-15 12:17+0000\n"
 "Last-Translator: viking60 <thomasbjornvold@gmail.com>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/nb/)\n"
 "MIME-Version: 1.0\n"
@@ -18,91 +18,175 @@ msgstr ""
 "Language: nb\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/applications_page.cpp:298
+#: src/applications_page.cpp:336
 msgid "All"
 msgstr "Alle"
 
-#: src/configuration_dialog.cpp:52
+#: src/configuration_dialog.cpp:54
 msgid "Whisker Menu"
 msgstr "Whisker-meny"
 
-#: src/configuration_dialog.cpp:66
+#: src/configuration_dialog.cpp:68
 msgid "Appearance"
 msgstr "Utseende"
 
-#: src/configuration_dialog.cpp:71
+#: src/configuration_dialog.cpp:73
 msgid "Show applications by _name"
 msgstr "Vis etter applikasjonsnavn"
 
-#: src/configuration_dialog.cpp:77
+#: src/configuration_dialog.cpp:79
 msgid "Show application _descriptions"
 msgstr "Vis applikasjonsbeskrivelser"
 
-#: src/configuration_dialog.cpp:86
+#: src/configuration_dialog.cpp:88
+msgid "Ite_m icon size:"
+msgstr "lte_m ikonstørrelse:"
+
+#: src/configuration_dialog.cpp:108
+msgid "Categ_ory icon size:"
+msgstr "Categ_ory ikonstørrelse:"
+
+#: src/configuration_dialog.cpp:125
+msgid "Panel Button"
+msgstr "Paneltast"
+
+#: src/configuration_dialog.cpp:133
+msgid "Di_splay:"
+msgstr "Sk_jerm:"
+
+#: src/configuration_dialog.cpp:139
+msgid "Icon"
+msgstr "Ikon"
+
+#: src/configuration_dialog.cpp:140
+msgid "Title"
+msgstr "Tittel"
+
+#: src/configuration_dialog.cpp:141
+msgid "Icon and title"
+msgstr "Ikon og tittel"
+
+#: src/configuration_dialog.cpp:151
+msgid "_Title:"
+msgstr "_Tittel"
+
+#: src/configuration_dialog.cpp:166
 msgid "_Icon:"
 msgstr "_Ikon:"
 
-#: src/configuration_dialog.cpp:118
+#: src/configuration_dialog.cpp:182
+msgid "Behavior"
+msgstr "Oppførsel"
+
+#: src/configuration_dialog.cpp:187
+msgid "Switch categories by _hovering"
+msgstr "Endre kategorier ved_mus over"
+
+#: src/configuration_dialog.cpp:209
 msgid "Select An Icon"
 msgstr "Velg et ikon"
+
+#: src/favorites_page.cpp:73
+msgid "Sort Alphabetically A-Z"
+msgstr "Sorter alfabetisk A-Ø"
+
+#: src/favorites_page.cpp:79
+msgid "Sort Alphabetically Z-A"
+msgstr "Sorter alfabetisk Ø-A"
+
+#: src/icon_size.cpp:50
+msgid "Very Small"
+msgstr "Veldig liten"
+
+#: src/icon_size.cpp:51
+msgid "Smaller"
+msgstr "Mindre"
+
+#: src/icon_size.cpp:52
+msgid "Small"
+msgstr "Liten"
+
+#: src/icon_size.cpp:53
+msgid "Normal"
+msgstr "Normal"
+
+#: src/icon_size.cpp:54
+msgid "Large"
+msgstr "Stor"
+
+#: src/icon_size.cpp:55
+msgid "Larger"
+msgstr "Større"
+
+#: src/icon_size.cpp:56
+msgid "Very Large"
+msgstr "Veldig stor"
 
 #: src/launcher.cpp:263
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "Kunne ikke kjøre kommandoen \"%s\"."
 
-#: src/menu.cpp:88
+#: src/menu.cpp:99
 msgid "All Settings"
 msgstr "Alle innstillinger"
 
-#: src/menu.cpp:91
+#: src/menu.cpp:102
 msgid "Lock Screen"
 msgstr "Lås skjermen"
 
-#: src/menu.cpp:94
+#: src/menu.cpp:105
 msgid "Log Out"
 msgstr "Logg ut"
 
-#: src/menu.cpp:108
+#: src/menu.cpp:119
 msgid "Favorites"
 msgstr "Favoritter"
 
-#: src/menu.cpp:114
+#: src/menu.cpp:125
 msgid "Recently Used"
 msgstr "Siste brukte"
 
-#: src/menu.cpp:636
+#: src/menu.cpp:721
 msgid "Failed to open settings manager."
 msgstr "Kunne ikke åpne innstillinger"
 
-#: src/menu.cpp:650
+#: src/menu.cpp:735
 msgid "Failed to lock screen."
 msgstr "Kunne ikke låse skjermen"
 
-#: src/menu.cpp:664
+#: src/menu.cpp:749
 msgid "Failed to log out."
 msgstr "Kunne ikke logge ut"
 
-#: src/page.cpp:170
+#: src/page.cpp:182
 msgid "Add to Favorites"
 msgstr "Legg til i favoritter"
 
-#: src/page.cpp:176
+#: src/page.cpp:190
 msgid "Remove From Favorites"
 msgstr "Fjern fra favoritter"
 
-#: src/page.cpp:181
+#: src/page.cpp:197
 msgid "Add to Desktop"
 msgstr "Legg til på skrivebordet"
 
-#: src/page.cpp:185
+#: src/page.cpp:201
 msgid "Add to Panel"
 msgstr "Legg til på panel"
 
-#: src/page.cpp:265
+#: src/page.cpp:291
 msgid "Unable to add launcher to desktop."
 msgstr "Kunne ikke legge oppstarter til skrivebordet"
 
-#: src/page.cpp:303 src/page.cpp:312
+#: src/page.cpp:330 src/page.cpp:339
 msgid "Unable to add launcher to panel."
 msgstr "Kunne ikke legge oppstarter til panelet"
+
+#: src/panel_plugin.cpp:150
+msgid "Applications Menu"
+msgstr "Applikasjonsmeny"
+
+#: src/recent_page.cpp:70
+msgid "Clear Recently Used"
+msgstr "Fjern sist brukte"
