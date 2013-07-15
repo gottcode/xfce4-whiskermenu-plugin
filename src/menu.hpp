@@ -85,6 +85,7 @@ public:
 private:
 	bool on_enter_notify_event(GdkEventCrossing* event);
 	bool on_leave_notify_event(GdkEventCrossing* event);
+	bool on_focus_in_event();
 	bool on_button_press_event(GdkEventButton* event);
 	bool on_key_press_event(GtkWidget* widget, GdkEventKey* event);
 	bool on_key_press_event_after(GtkWidget* widget, GdkEventKey* event);
@@ -140,6 +141,11 @@ private:
 	static gboolean on_leave_notify_event_slot(GtkWidget*, GdkEventCrossing* event, Menu* obj)
 	{
 		return obj->on_leave_notify_event(event);
+	}
+
+	static gboolean on_focus_in_event_slot(GtkWidget*, GdkEventFocus*, Menu* obj)
+	{
+		return obj->on_focus_in_event();
 	}
 
 	static gboolean on_button_press_event_slot(GtkWidget*, GdkEventButton* event, Menu* obj)
