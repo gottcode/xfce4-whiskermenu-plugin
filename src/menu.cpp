@@ -533,7 +533,8 @@ bool Menu::on_leave_notify_event(GdkEventCrossing* event)
 bool Menu::on_button_press_event(GdkEventButton* event)
 {
 	// Hide menu if user clicks outside
-	if ((event->x < 0) || (event->x > m_geometry.width) || (event->y < 0) || (event->y > m_geometry.height))
+	if ((event->x_root <= m_geometry.x) || (event->x_root >= m_geometry.x + m_geometry.width)
+			|| (event->y_root <= m_geometry.y) || (event->y_root >= m_geometry.y + m_geometry.height))
 	{
 		hide();
 	}
