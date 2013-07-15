@@ -164,6 +164,8 @@ void SearchPage::set_menu_items(GtkTreeModel* model)
 void SearchPage::unset_menu_items()
 {
 	m_launchers.clear();
+	m_results.clear();
+	m_current_results = NULL;
 	unset_search_model();
 	unset_model();
 }
