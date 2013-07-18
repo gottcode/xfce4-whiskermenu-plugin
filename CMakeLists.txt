@@ -7,6 +7,7 @@ project(whiskermenu)
 
 # options
 option(ENABLE_WERROR "Enable -Werror flag for development" OFF)
+option(ENABLE_AS_NEEDED "Enable -Wl,--as-needed for the linker" ON)
 
 include(GNUInstallDirs)
 
