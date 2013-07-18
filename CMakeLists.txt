@@ -5,6 +5,9 @@ endif()
 
 project(whiskermenu)
 
+# options
+option(ENABLE_WERROR "Enable -Werror flag for development" OFF)
+
 include(GNUInstallDirs)
 
 add_subdirectory(src)

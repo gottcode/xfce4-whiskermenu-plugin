@@ -1,4 +1,7 @@
-set(WHISKERMENU_FLAGS "-Wall -Wextra -Werror")
+set(WHISKERMENU_FLAGS "-Wall -Wextra")
+if(ENABLE_WERROR)
+	set(WHISKERMENU_FLAGS "${WHISKERMENU_FLAGS} -Werror")
+endif()
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${WHISKERMENU_FLAGS}")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fvisibility=hidden ${WHISKERMENU_FLAGS}")
 set(CMAKE_SHARED_LINKER_FLAGS "-Wl,--as-needed")
