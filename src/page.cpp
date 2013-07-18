@@ -75,7 +75,7 @@ void Page::reset_selection()
 	{
 		GtkTreePath* path = gtk_tree_model_get_path(model, &iter);
 		get_view()->scroll_to_path(path);
-		get_view()->select_path(path);
+		get_view()->set_cursor(path);
 		get_view()->unselect_all();
 		gtk_tree_path_free(path);
 	}

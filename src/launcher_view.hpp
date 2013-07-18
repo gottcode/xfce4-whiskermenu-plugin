@@ -43,6 +43,7 @@ public:
 
 	void scroll_to_path(GtkTreePath* path);
 	void select_path(GtkTreePath* path);
+	void set_cursor(GtkTreePath* path);
 
 	void set_reorderable(bool reorderable);
 	void set_selection_mode(GtkSelectionMode mode);
