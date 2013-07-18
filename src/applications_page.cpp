@@ -91,6 +91,12 @@ Launcher* ApplicationsPage::get_application(const std::string& desktop_id) const
 
 void ApplicationsPage::apply_filter(GtkToggleButton* togglebutton)
 {
+	// Only apply filter for active button
+	if (gtk_toggle_button_get_active(togglebutton) == false)
+	{
+		return;
+	}
+
 	// Find category matching button
 	std::map<SectionButton*, Category*>::const_iterator i, end = m_category_buttons.end();
 	for (i = m_category_buttons.begin(); i != end; ++i)
