@@ -1,0 +1,192 @@
+# Danish translation of xfce4-whiskermenu-plugin.
+# Copyright (C) 2013 Graeme Gott
+# This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
+#
+# Translators:
+# Jens E. Jensen <jens.e.jensen@gmail.com>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: Whisker Menu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-13 00:11+0000\n"
+"PO-Revision-Date: 2013-07-19 09:41+0000\n"
+"Last-Translator: Jens E. Jensen <jens.e.jensen@gmail.com>\n"
+"Language-Team: Danish (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/da/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: da\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/applications_page.cpp:336
+msgid "All"
+msgstr "Alt"
+
+#: src/configuration_dialog.cpp:54
+msgid "Whisker Menu"
+msgstr "Whisker Menu"
+
+#: src/configuration_dialog.cpp:68
+msgid "Appearance"
+msgstr "Udseende"
+
+#: src/configuration_dialog.cpp:73
+msgid "Show applications by _name"
+msgstr "Vis applikationer efter _navn"
+
+#: src/configuration_dialog.cpp:79
+msgid "Show application _descriptions"
+msgstr "Vis applikationers _beskrivelser"
+
+#: src/configuration_dialog.cpp:88
+msgid "Ite_m icon size:"
+msgstr "Valg_mulighed ikonstørrelse"
+
+#: src/configuration_dialog.cpp:108
+msgid "Categ_ory icon size:"
+msgstr "Kateg_ori ikonstørrelse"
+
+#: src/configuration_dialog.cpp:125
+msgid "Panel Button"
+msgstr "Panelknap"
+
+#: src/configuration_dialog.cpp:133
+msgid "Di_splay:"
+msgstr "_skærm"
+
+#: src/configuration_dialog.cpp:139
+msgid "Icon"
+msgstr "Ikon"
+
+#: src/configuration_dialog.cpp:140
+msgid "Title"
+msgstr "Titel"
+
+#: src/configuration_dialog.cpp:141
+msgid "Icon and title"
+msgstr "Ikon og titel"
+
+#: src/configuration_dialog.cpp:151
+msgid "_Title:"
+msgstr "_Titel:"
+
+#: src/configuration_dialog.cpp:166
+msgid "_Icon:"
+msgstr "_Ikon:"
+
+#: src/configuration_dialog.cpp:182
+msgid "Behavior"
+msgstr "Opførsel"
+
+#: src/configuration_dialog.cpp:187
+msgid "Switch categories by _hovering"
+msgstr "Skift kategori ved at flytte musemarkør"
+
+#: src/configuration_dialog.cpp:209
+msgid "Select An Icon"
+msgstr "Vælg et ikon"
+
+#: src/favorites_page.cpp:73
+msgid "Sort Alphabetically A-Z"
+msgstr "Sorter alfabetisk A-Å"
+
+#: src/favorites_page.cpp:79
+msgid "Sort Alphabetically Z-A"
+msgstr "Sort alfabetisk Å-A"
+
+#: src/icon_size.cpp:50
+msgid "Very Small"
+msgstr "Meget lille"
+
+#: src/icon_size.cpp:51
+msgid "Smaller"
+msgstr "Mindre"
+
+#: src/icon_size.cpp:52
+msgid "Small"
+msgstr "Lille"
+
+#: src/icon_size.cpp:53
+msgid "Normal"
+msgstr "Normal"
+
+#: src/icon_size.cpp:54
+msgid "Large"
+msgstr "Stor"
+
+#: src/icon_size.cpp:55
+msgid "Larger"
+msgstr "Større"
+
+#: src/icon_size.cpp:56
+msgid "Very Large"
+msgstr "Meget stor"
+
+#: src/launcher.cpp:263
+#, c-format
+msgid "Failed to execute command \"%s\"."
+msgstr "Kunne ikke udføre kommandoen \"%s\"."
+
+#: src/menu.cpp:99
+msgid "All Settings"
+msgstr "Alle indstillinger"
+
+#: src/menu.cpp:102
+msgid "Lock Screen"
+msgstr "Lås skærm"
+
+#: src/menu.cpp:105
+msgid "Log Out"
+msgstr "Log ud"
+
+#: src/menu.cpp:119
+msgid "Favorites"
+msgstr "Favoritter"
+
+#: src/menu.cpp:125
+msgid "Recently Used"
+msgstr "Senest anvendt"
+
+#: src/menu.cpp:721
+msgid "Failed to open settings manager."
+msgstr "Kunne ikke åbne indstillings-håndtering"
+
+#: src/menu.cpp:735
+msgid "Failed to lock screen."
+msgstr "Kunne ikke låse skærmen"
+
+#: src/menu.cpp:749
+msgid "Failed to log out."
+msgstr "Kunne ikke logge ud"
+
+#: src/page.cpp:182
+msgid "Add to Favorites"
+msgstr "Tilføj til favoritter"
+
+#: src/page.cpp:190
+msgid "Remove From Favorites"
+msgstr "Fjern fra favoritter"
+
+#: src/page.cpp:197
+msgid "Add to Desktop"
+msgstr "Tilføj til skrivebord"
+
+#: src/page.cpp:201
+msgid "Add to Panel"
+msgstr "Tilføj til panel"
+
+#: src/page.cpp:291
+msgid "Unable to add launcher to desktop."
+msgstr "Kunne ikke tilføje opstartsikon til skrivebordet."
+
+#: src/page.cpp:330 src/page.cpp:339
+msgid "Unable to add launcher to panel."
+msgstr "Kunne ikke tilføje opstartsikon til panelet"
+
+#: src/panel_plugin.cpp:150
+msgid "Applications Menu"
+msgstr "Applikationsmenu"
+
+#: src/recent_page.cpp:70
+msgid "Clear Recently Used"
+msgstr "Nulstil senest anvendte"
