@@ -115,16 +115,6 @@ void ApplicationsPage::apply_filter(GtkToggleButton* togglebutton)
 	m_current_category = i->second;
 	refilter();
 	m_current_category = NULL;
-
-	// Scroll to top
-	GtkTreeIter iter;
-	GtkTreePath* path = gtk_tree_path_new_first();
-	if (gtk_tree_model_get_iter(get_view()->get_model(), &iter, path))
-	{
-		get_view()->scroll_to_path(path);
-		get_view()->unselect_all();
-	}
-	gtk_tree_path_free(path);
 }
 
 //-----------------------------------------------------------------------------
