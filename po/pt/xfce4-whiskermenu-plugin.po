@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-18 16:12-0300\n"
-"PO-Revision-Date: 2013-07-18 15:57+0300\n"
+"PO-Revision-Date: 2013-07-18 21:25+0300\n"
 "Last-Translator: fabioluciano <fabio@naoimporta.com>\n"
 "Language-Team: Portuguese <http://wiki.ubuntu-br.org/TimeDeTraducao>\n"
 "Language: pt\n"
@@ -23,7 +23,7 @@ msgstr "Tudo"
 
 #: src/configuration_dialog.cpp:54
 msgid "Whisker Menu"
-msgstr "Whisker Menu"
+msgstr "Menu Whisker"
 
 #: src/configuration_dialog.cpp:68
 msgid "Appearance"
