@@ -31,6 +31,7 @@ extern "C"
 namespace WhiskerMenu
 {
 
+class Category;
 class Launcher;
 class LauncherView;
 class Menu;
@@ -38,25 +39,6 @@ class SectionButton;
 
 class ApplicationsPage : public FilterPage
 {
-	class Category
-	{
-	public:
-		explicit Category(GarconMenuDirectory* directory);
-
-		const gchar* get_icon() const
-		{
-			return m_icon.c_str();
-		}
-
-		const gchar* get_text() const
-		{
-			return m_text.c_str();
-		}
-
-	private:
-		std::string m_icon;
-		std::string m_text;
-	};
 
 public:
 	explicit ApplicationsPage(Menu* menu);
@@ -78,8 +60,7 @@ private:
 private:
 	GarconMenu* m_garcon_menu;
 	Category* m_current_category;
-	std::map<SectionButton*, Category*> m_category_buttons;
-	std::map<Category*, std::vector<Launcher*> > m_categories;
+	std::vector<Category*> m_categories;
 	std::map<std::string, Launcher*> m_items;
 	bool m_loaded;
 

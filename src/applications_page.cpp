@@ -16,14 +16,12 @@
 
 #include "applications_page.hpp"
 
+#include "category.hpp"
 #include "launcher.hpp"
 #include "launcher_model.hpp"
 #include "launcher_view.hpp"
 #include "menu.hpp"
 #include "section_button.hpp"
-
-#include <algorithm>
-#include <map>
 
 extern "C"
 {
@@ -31,25 +29,6 @@ extern "C"
 }
 
 using namespace WhiskerMenu;
-
-//-----------------------------------------------------------------------------
-
-ApplicationsPage::Category::Category(GarconMenuDirectory* directory)
-{
-	// Fetch icon
-	const gchar* icon = garcon_menu_directory_get_icon_name(directory);
-	if (G_LIKELY(icon))
-	{
-		m_icon.assign(icon);
-	}
-
-	// Fetch text
-	const gchar* text = garcon_menu_directory_get_name(directory);
-	if (G_LIKELY(text))
-	{
-		m_text.assign(text);
-	}
-}
 
 //-----------------------------------------------------------------------------
 
@@ -98,21 +77,17 @@ void ApplicationsPage::apply_filter(GtkToggleButton* togglebutton)
 	}
 
 	// Find category matching button
-	std::map<SectionButton*, Category*>::const_iterator i, end = m_category_buttons.end();
-	for (i = m_category_buttons.begin(); i != end; ++i)
+	m_current_category = NULL;
+	for (std::vector<Category*>::const_iterator i = m_categories.begin(), end = m_categories.end(); i != end; ++i)
 	{
-		if (GTK_TOGGLE_BUTTON(i->first->get_button()) == togglebutton)
+		if (GTK_TOGGLE_BUTTON((*i)->get_button()->get_button()) == togglebutton)
 		{
+			m_current_category = *i;
 			break;
 		}
 	}
-	if (i == end)
-	{
-		return;
-	}
 
 	// Apply filter
-	m_current_category = i->second;
 	refilter();
 	m_current_category = NULL;
 }
@@ -133,8 +108,7 @@ bool ApplicationsPage::on_filter(GtkTreeModel* model, GtkTreeIter* iter)
 		return false;
 	}
 
-	const std::vector<Launcher*>& category = m_categories[m_current_category];
-	return std::find(category.begin(), category.end(), launcher) != category.end();
+	return m_current_category->contains(launcher);
 }
 
 //-----------------------------------------------------------------------------
@@ -198,15 +172,9 @@ void ApplicationsPage::load_applications()
 void ApplicationsPage::clear_applications()
 {
 	// Free categories
-	for (std::map<SectionButton*, Category*>::iterator i = m_category_buttons.begin(), end = m_category_buttons.end(); i != end; ++i)
+	for (std::vector<Category*>::iterator i = m_categories.begin(), end = m_categories.end(); i != end; ++i)
 	{
-		delete i->first;
-	}
-	m_category_buttons.clear();
-
-	for (std::map<Category*, std::vector<Launcher*> >::iterator i = m_categories.begin(), end = m_categories.end(); i != end; ++i)
-	{
-		delete i->first;
+		delete *i;
 	}
 	m_categories.clear();
 
@@ -251,6 +219,7 @@ void ApplicationsPage::load_menu(GarconMenu* menu)
 	if (first_level)
 	{
 		m_current_category = new Category(directory);
+		m_categories.push_back(m_current_category);
 	}
 	if (directory)
 	{
@@ -276,15 +245,9 @@ void ApplicationsPage::load_menu(GarconMenu* menu)
 	if (first_level)
 	{
 		// Free unused categories
-		std::map<Category*, std::vector<Launcher*> >::iterator i = m_categories.find(m_current_category);
-		if (i == m_categories.end())
+		if (m_current_category->empty())
 		{
-			delete m_current_category;
-		}
-		// Do not track empty categories
-		else if (i->second.empty())
-		{
-			m_categories.erase(i);
+			m_categories.erase(std::find(m_categories.begin(), m_categories.end(), m_current_category));
 			delete m_current_category;
 		}
 		m_current_category = NULL;
@@ -315,7 +278,7 @@ void ApplicationsPage::load_menu_item(const gchar* desktop_id, GarconMenuItem* m
 	// Add menu item to current category
 	if (page->m_current_category)
 	{
-		page->m_categories[page->m_current_category].push_back(iter->second);
+		page->m_current_category->push_back(iter->second);
 	}
 
 	// Listen for menu changes
@@ -331,24 +294,13 @@ void ApplicationsPage::load_categories()
 	// Add button for all applications
 	SectionButton* all_button = new SectionButton("applications-other", _("All"));
 	g_signal_connect(all_button->get_button(), "toggled", G_CALLBACK(ApplicationsPage::apply_filter_slot), this);
-	m_category_buttons[all_button] = NULL;
 	category_buttons.push_back(all_button);
 
-	// Create sorted list of categories
-	std::map<std::string, Category*> sorted_categories;
-	for (std::map<Category*, std::vector<Launcher*> >::const_iterator i = m_categories.begin(), end = m_categories.end(); i != end; ++i)
+	// Add buttons for categories
+	for (std::vector<Category*>::const_iterator i = m_categories.begin(), end = m_categories.end(); i != end; ++i)
 	{
-		gchar* collation_key = g_utf8_collate_key(i->first->get_text(), -1);
-		sorted_categories[collation_key] = i->first;
-		g_free(collation_key);
-	}
-
-	// Add buttons for sorted categories
-	for (std::map<std::string, Category*>::const_iterator i = sorted_categories.begin(), end = sorted_categories.end(); i != end; ++i)
-	{
-		SectionButton* category_button = new SectionButton(i->second->get_icon(), i->second->get_text());
+		SectionButton* category_button = (*i)->get_button();
 		g_signal_connect(category_button->get_button(), "toggled", G_CALLBACK(ApplicationsPage::apply_filter_slot), this);
-		m_category_buttons[category_button] = i->second;
 		category_buttons.push_back(category_button);
 	}
 

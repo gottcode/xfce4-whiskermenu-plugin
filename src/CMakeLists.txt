@@ -63,6 +63,7 @@ endif()
 
 add_library(whiskermenu SHARED
     applications_page.cpp
+    category.cpp
     configuration_dialog.cpp
     favorites_page.cpp
     filter_page.cpp
