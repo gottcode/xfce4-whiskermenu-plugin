@@ -60,6 +60,7 @@ private:
 private:
 	GarconMenu* m_garcon_menu;
 	Category* m_current_category;
+	SectionButton* m_all_button;
 	std::vector<Category*> m_categories;
 	std::map<std::string, Launcher*> m_items;
 	bool m_loaded;

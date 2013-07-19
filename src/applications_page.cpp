@@ -36,6 +36,7 @@ ApplicationsPage::ApplicationsPage(Menu* menu) :
 	FilterPage(menu),
 	m_garcon_menu(NULL),
 	m_current_category(NULL),
+	m_all_button(NULL),
 	m_loaded(false)
 {
 	// Set desktop environment for applications
@@ -172,6 +173,9 @@ void ApplicationsPage::load_applications()
 void ApplicationsPage::clear_applications()
 {
 	// Free categories
+	delete m_all_button;
+	m_all_button = NULL;
+
 	for (std::vector<Category*>::iterator i = m_categories.begin(), end = m_categories.end(); i != end; ++i)
 	{
 		delete *i;
@@ -292,9 +296,9 @@ void ApplicationsPage::load_categories()
 	std::vector<SectionButton*> category_buttons;
 
 	// Add button for all applications
-	SectionButton* all_button = new SectionButton("applications-other", _("All"));
-	g_signal_connect(all_button->get_button(), "toggled", G_CALLBACK(ApplicationsPage::apply_filter_slot), this);
-	category_buttons.push_back(all_button);
+	m_all_button = new SectionButton("applications-other", _("All"));
+	g_signal_connect(m_all_button->get_button(), "toggled", G_CALLBACK(ApplicationsPage::apply_filter_slot), this);
+	category_buttons.push_back(m_all_button);
 
 	// Add buttons for categories
 	for (std::vector<Category*>::const_iterator i = m_categories.begin(), end = m_categories.end(); i != end; ++i)
