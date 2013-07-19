@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2013 Graeme Gott
-# This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-13 00:11+0000\n"
+"POT-Creation-Date: 2013-07-18 21:30-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/applications_page.cpp:336
+#: src/applications_page.cpp:342
 msgid "All"
 msgstr ""
 
@@ -126,35 +126,35 @@ msgstr ""
 msgid "Failed to execute command \"%s\"."
 msgstr ""
 
-#: src/menu.cpp:99
+#: src/menu.cpp:100
 msgid "All Settings"
 msgstr ""
 
-#: src/menu.cpp:102
+#: src/menu.cpp:103
 msgid "Lock Screen"
 msgstr ""
 
-#: src/menu.cpp:105
+#: src/menu.cpp:106
 msgid "Log Out"
 msgstr ""
 
-#: src/menu.cpp:119
+#: src/menu.cpp:120
 msgid "Favorites"
 msgstr ""
 
-#: src/menu.cpp:125
+#: src/menu.cpp:126
 msgid "Recently Used"
 msgstr ""
 
-#: src/menu.cpp:721
+#: src/menu.cpp:742
 msgid "Failed to open settings manager."
 msgstr ""
 
-#: src/menu.cpp:735
+#: src/menu.cpp:756
 msgid "Failed to lock screen."
 msgstr ""
 
-#: src/menu.cpp:749
+#: src/menu.cpp:770
 msgid "Failed to log out."
 msgstr ""
 
@@ -186,6 +186,6 @@ msgstr ""
 msgid "Applications Menu"
 msgstr ""
 
-#: src/recent_page.cpp:70
+#: src/recent_page.cpp:71
 msgid "Clear Recently Used"
 msgstr ""

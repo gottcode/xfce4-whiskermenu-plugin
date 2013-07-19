@@ -8,17 +8,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-13 00:11+0000\n"
+"POT-Creation-Date: 2013-07-18 16:12-0300\n"
 "PO-Revision-Date: 2013-07-14 09:22+0000\n"
 "Last-Translator: Ayceman <alexandru.ianu@gmail.com>\n"
-"Language-Team: Romanian (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/ro/)\n"
+"Language-Team: Romanian (http://www.transifex.com/projects/p/xfce4-"
+"whiskermenu-plugin/language/ro/)\n"
+"Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ro\n"
-"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
+"2:1));\n"
 
-#: src/applications_page.cpp:336
+#: src/applications_page.cpp:342
 msgid "All"
 msgstr "Toate"
 
@@ -127,35 +129,35 @@ msgstr "Foarte mare"
 msgid "Failed to execute command \"%s\"."
 msgstr "A eșuat executarea comenzii \"%s\""
 
-#: src/menu.cpp:99
+#: src/menu.cpp:100
 msgid "All Settings"
 msgstr "Toate setările"
 
-#: src/menu.cpp:102
+#: src/menu.cpp:103
 msgid "Lock Screen"
 msgstr "Blochează ecranul"
 
-#: src/menu.cpp:105
+#: src/menu.cpp:106
 msgid "Log Out"
 msgstr "Închide sesiunea"
 
-#: src/menu.cpp:119
+#: src/menu.cpp:120
 msgid "Favorites"
 msgstr "Favorite"
 
-#: src/menu.cpp:125
+#: src/menu.cpp:126
 msgid "Recently Used"
 msgstr "Folosite recent"
 
-#: src/menu.cpp:721
+#: src/menu.cpp:742
 msgid "Failed to open settings manager."
 msgstr "A eșuat deschiderea gestionarului de setări."
 
-#: src/menu.cpp:735
+#: src/menu.cpp:756
 msgid "Failed to lock screen."
 msgstr "A eșuat blocarea ecranului."
 
-#: src/menu.cpp:749
+#: src/menu.cpp:770
 msgid "Failed to log out."
 msgstr "A eșuat închiderea sesiunii."
 
@@ -187,6 +189,6 @@ msgstr "Nu s-a putut adăuga lansator la panou."
 msgid "Applications Menu"
 msgstr "Meniul de aplicații"
 
-#: src/recent_page.cpp:70
+#: src/recent_page.cpp:71
 msgid "Clear Recently Used"
 msgstr "Șterge recent folositele"

@@ -8,17 +8,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-13 00:11+0000\n"
+"POT-Creation-Date: 2013-07-18 16:12-0300\n"
 "PO-Revision-Date: 2013-07-13 00:49+0000\n"
 "Last-Translator: Bernardo Miguel Savone <bmsavone@gmail.com>\n"
-"Language-Team: Italian (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/it/)\n"
+"Language-Team: Italian (http://www.transifex.com/projects/p/xfce4-"
+"whiskermenu-plugin/language/it/)\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/applications_page.cpp:336
+#: src/applications_page.cpp:342
 msgid "All"
 msgstr "Tutto"
 
@@ -127,35 +128,35 @@ msgstr "Molto grande"
 msgid "Failed to execute command \"%s\"."
 msgstr "Impossibile eseguire il comando \"%s\"."
 
-#: src/menu.cpp:99
+#: src/menu.cpp:100
 msgid "All Settings"
 msgstr "Tutte le impostazioni"
 
-#: src/menu.cpp:102
+#: src/menu.cpp:103
 msgid "Lock Screen"
 msgstr "Blocca schermo"
 
-#: src/menu.cpp:105
+#: src/menu.cpp:106
 msgid "Log Out"
 msgstr "Esci"
 
-#: src/menu.cpp:119
+#: src/menu.cpp:120
 msgid "Favorites"
 msgstr "Preferiti"
 
-#: src/menu.cpp:125
+#: src/menu.cpp:126
 msgid "Recently Used"
 msgstr "Usati di recente"
 
-#: src/menu.cpp:721
+#: src/menu.cpp:742
 msgid "Failed to open settings manager."
 msgstr "Impossibile aprire il Gestore delle impostazioni."
 
-#: src/menu.cpp:735
+#: src/menu.cpp:756
 msgid "Failed to lock screen."
 msgstr "Impossibile bloccare lo schermo."
 
-#: src/menu.cpp:749
+#: src/menu.cpp:770
 msgid "Failed to log out."
 msgstr "Disconnessione non riuscita."
 
@@ -187,6 +188,6 @@ msgstr "Impossibile aggiungere lanciatore al pannello."
 msgid "Applications Menu"
 msgstr "Menu Applicazioni"
 
-#: src/recent_page.cpp:70
+#: src/recent_page.cpp:71
 msgid "Clear Recently Used"
 msgstr "Cancella Usati di recente"
