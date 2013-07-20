@@ -141,17 +141,17 @@ void ApplicationsPage::load_applications()
 	}
 
 	// Create sorted list of menu items
-	std::map<std::string, Launcher*> sorted_items;
+	std::multimap<std::string, Launcher*> sorted_items;
 	for (std::map<std::string, Launcher*>::const_iterator i = m_items.begin(), end = m_items.end(); i != end; ++i)
 	{
 		gchar* collation_key = g_utf8_collate_key(i->second->get_text(), -1);
-		sorted_items[collation_key] = i->second;
+		sorted_items.insert(std::make_pair(collation_key, i->second));
 		g_free(collation_key);
 	}
 
 	// Add all items to model
 	LauncherModel model;
-	for (std::map<std::string, Launcher*>::const_iterator i = sorted_items.begin(), end = sorted_items.end(); i != end; ++i)
+	for (std::multimap<std::string, Launcher*>::const_iterator i = sorted_items.begin(), end = sorted_items.end(); i != end; ++i)
 	{
 		model.append_item(i->second);
 	}
