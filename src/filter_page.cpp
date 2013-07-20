@@ -39,7 +39,7 @@ FilterPage::~FilterPage()
 
 GtkTreeModel* FilterPage::get_model() const
 {
-	return m_filter_model ? gtk_tree_model_filter_get_model(m_filter_model) : NULL;
+	return GTK_TREE_MODEL(m_filter_model);
 }
 
 //-----------------------------------------------------------------------------

@@ -54,7 +54,7 @@ private:
 	bool on_filter(GtkTreeModel* model, GtkTreeIter* iter);
 	void clear_applications();
 	void load_menu(GarconMenu* menu);
-	static void load_menu_item(const gchar* desktop_id, GarconMenuItem* menu_item, ApplicationsPage* page);
+	void load_menu_item(GarconMenuItem* menu_item);
 	void load_categories();
 
 private:

@@ -16,13 +16,15 @@
 
 #include "category.hpp"
 
+#include "launcher_model.hpp"
 #include "section_button.hpp"
 
 using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-Category::Category(GarconMenuDirectory* directory)
+Category::Category(GarconMenuDirectory* directory) :
+	m_model(NULL)
 {
 	// Fetch icon
 	const gchar* icon = garcon_menu_directory_get_icon_name(directory);
@@ -46,7 +48,38 @@ Category::Category(GarconMenuDirectory* directory)
 
 Category::~Category()
 {
+	unset_model();
+
 	delete m_button;
+}
+
+//-----------------------------------------------------------------------------
+
+GtkTreeModel* Category::get_model()
+{
+	if (!m_model)
+	{
+		LauncherModel model;
+		for (std::vector<Launcher*>::const_iterator i = m_items.begin(), end = m_items.end(); i != end; ++i)
+		{
+			model.append_item(*i);
+		}
+		m_model = model.get_model();
+		g_object_ref(m_model);
+	}
+
+	return m_model;
+}
+
+//-----------------------------------------------------------------------------
+
+void Category::unset_model()
+{
+	if (m_model)
+	{
+		g_object_unref(m_model);
+		m_model = NULL;
+	}
 }
 
 //-----------------------------------------------------------------------------

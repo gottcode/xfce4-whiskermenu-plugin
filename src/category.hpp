@@ -23,6 +23,7 @@
 extern "C"
 {
 #include <garcon/garcon.h>
+#include <gtk/gtk.h>
 }
 
 namespace WhiskerMenu
@@ -36,6 +37,8 @@ class Category
 public:
 	explicit Category(GarconMenuDirectory* directory);
 	~Category();
+
+	GtkTreeModel* get_model();
 
 	SectionButton* get_button() const
 	{
@@ -55,11 +58,16 @@ public:
 	void push_back(Launcher* launcher)
 	{
 		m_items.push_back(launcher);
+		unset_model();
 	}
+
+private:
+	void unset_model();
 
 private:
 	std::vector<Launcher*> m_items;
 	SectionButton* m_button;
+	GtkTreeModel* m_model;
 };
 
 }

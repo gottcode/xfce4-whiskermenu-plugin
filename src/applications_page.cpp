@@ -89,7 +89,15 @@ void ApplicationsPage::apply_filter(GtkToggleButton* togglebutton)
 	}
 
 	// Apply filter
-	refilter();
+	if (m_current_category)
+	{
+		get_view()->set_model(m_current_category->get_model());
+	}
+	else
+	{
+		get_view()->set_model(get_model());
+		refilter();
+	}
 	m_current_category = NULL;
 }
 
@@ -239,11 +247,12 @@ void ApplicationsPage::load_menu(GarconMenu* menu)
 	g_list_free(menus);
 
 	// Add items
-	GarconMenuItemPool* pool = garcon_menu_get_item_pool(menu);
-	if (G_LIKELY(pool))
+	GList* items = garcon_menu_get_items(menu);
+	for (GList* li = items; li != NULL; li = li->next)
 	{
-		garcon_menu_item_pool_foreach(pool, (GHFunc)&ApplicationsPage::load_menu_item, this);
+		load_menu_item(GARCON_MENU_ITEM(li->data));
 	}
+	g_list_free(items);
 
 	// Only track single level of categories
 	if (first_level)
@@ -263,7 +272,7 @@ void ApplicationsPage::load_menu(GarconMenu* menu)
 
 //-----------------------------------------------------------------------------
 
-void ApplicationsPage::load_menu_item(const gchar* desktop_id, GarconMenuItem* menu_item, ApplicationsPage* page)
+void ApplicationsPage::load_menu_item(GarconMenuItem* menu_item)
 {
 	// Skip hidden items
 	if (!garcon_menu_element_get_visible(GARCON_MENU_ELEMENT(menu_item)))
@@ -272,21 +281,21 @@ void ApplicationsPage::load_menu_item(const gchar* desktop_id, GarconMenuItem* m
 	}
 
 	// Add to map
-	std::string key(desktop_id);
-	std::map<std::string, Launcher*>::iterator iter = page->m_items.find(key);
-	if (iter == page->m_items.end())
+	std::string desktop_id(garcon_menu_item_get_desktop_id(menu_item));
+	std::map<std::string, Launcher*>::iterator iter = m_items.find(desktop_id);
+	if (iter == m_items.end())
 	{
-		iter = page->m_items.insert(std::make_pair(key, new Launcher(menu_item))).first;
+		iter = m_items.insert(std::make_pair(desktop_id, new Launcher(menu_item))).first;
 	}
 
 	// Add menu item to current category
-	if (page->m_current_category)
+	if (m_current_category)
 	{
-		page->m_current_category->push_back(iter->second);
+		m_current_category->push_back(iter->second);
 	}
 
 	// Listen for menu changes
-	g_signal_connect_swapped(menu_item, "changed", G_CALLBACK(ApplicationsPage::invalidate_applications_slot), page);
+	g_signal_connect_swapped(menu_item, "changed", G_CALLBACK(ApplicationsPage::invalidate_applications_slot), this);
 }
 
 //-----------------------------------------------------------------------------
