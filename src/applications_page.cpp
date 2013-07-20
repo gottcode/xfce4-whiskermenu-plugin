@@ -23,6 +23,8 @@
 #include "menu.hpp"
 #include "section_button.hpp"
 
+#include <algorithm>
+
 extern "C"
 {
 #include <libxfce4util/libxfce4util.h>
@@ -33,10 +35,11 @@ using namespace WhiskerMenu;
 //-----------------------------------------------------------------------------
 
 ApplicationsPage::ApplicationsPage(Menu* menu) :
-	FilterPage(menu),
+	Page(menu),
 	m_garcon_menu(NULL),
 	m_current_category(NULL),
 	m_all_button(NULL),
+	m_model(NULL),
 	m_loaded(false)
 {
 	// Set desktop environment for applications
@@ -78,46 +81,25 @@ void ApplicationsPage::apply_filter(GtkToggleButton* togglebutton)
 	}
 
 	// Find category matching button
-	m_current_category = NULL;
+	Category* category = NULL;
 	for (std::vector<Category*>::const_iterator i = m_categories.begin(), end = m_categories.end(); i != end; ++i)
 	{
 		if (GTK_TOGGLE_BUTTON((*i)->get_button()->get_button()) == togglebutton)
 		{
-			m_current_category = *i;
+			category = *i;
 			break;
 		}
 	}
 
 	// Apply filter
-	if (m_current_category)
+	if (category)
 	{
-		get_view()->set_model(m_current_category->get_model());
+		get_view()->set_model(category->get_model());
 	}
 	else
 	{
-		get_view()->set_model(get_model());
-		refilter();
+		get_view()->set_model(m_model);
 	}
-	m_current_category = NULL;
-}
-
-//-----------------------------------------------------------------------------
-
-bool ApplicationsPage::on_filter(GtkTreeModel* model, GtkTreeIter* iter)
-{
-	if (!m_current_category)
-	{
-		return true;
-	}
-
-	Launcher* launcher = NULL;
-	gtk_tree_model_get(model, iter, LauncherModel::COLUMN_LAUNCHER, &launcher, -1);
-	if (!launcher)
-	{
-		return false;
-	}
-
-	return m_current_category->contains(launcher);
 }
 
 //-----------------------------------------------------------------------------
@@ -163,9 +145,9 @@ void ApplicationsPage::load_applications()
 	{
 		model.append_item(i->second);
 	}
-
-	// Create filter model and pass ownership to view, do not delete!
-	set_model(model.get_model());
+	m_model = model.get_model();
+	g_object_ref(m_model);
+	get_view()->set_model(m_model);
 
 	// Update filters
 	load_categories();
@@ -319,6 +301,17 @@ void ApplicationsPage::load_categories()
 
 	// Add category buttons to window
 	get_menu()->set_categories(category_buttons);
+}
+
+//-----------------------------------------------------------------------------
+
+void ApplicationsPage::unset_model()
+{
+	if (m_model)
+	{
+		g_object_unref(m_model);
+		m_model = NULL;
+	}
 }
 
 //-----------------------------------------------------------------------------

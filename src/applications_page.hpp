@@ -17,7 +17,7 @@
 #ifndef WHISKERMENU_APPLICATIONS_PAGE_HPP
 #define WHISKERMENU_APPLICATIONS_PAGE_HPP
 
-#include "filter_page.hpp"
+#include "page.hpp"
 
 #include <map>
 #include <string>
@@ -37,7 +37,7 @@ class LauncherView;
 class Menu;
 class SectionButton;
 
-class ApplicationsPage : public FilterPage
+class ApplicationsPage : public Page
 {
 
 public:
@@ -45,6 +45,11 @@ public:
 	~ApplicationsPage();
 
 	Launcher* get_application(const std::string& desktop_id) const;
+
+	GtkTreeModel* get_model() const
+	{
+		return m_model;
+	}
 
 	void invalidate_applications();
 	void load_applications();
@@ -56,6 +61,7 @@ private:
 	void load_menu(GarconMenu* menu);
 	void load_menu_item(GarconMenuItem* menu_item);
 	void load_categories();
+	void unset_model();
 
 private:
 	GarconMenu* m_garcon_menu;
@@ -63,6 +69,7 @@ private:
 	SectionButton* m_all_button;
 	std::vector<Category*> m_categories;
 	std::map<std::string, Launcher*> m_items;
+	GtkTreeModel* m_model;
 	bool m_loaded;
 
 

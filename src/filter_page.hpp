@@ -28,8 +28,6 @@ public:
 	explicit FilterPage(Menu* menu);
 	~FilterPage();
 
-	GtkTreeModel* get_model() const;
-
 protected:
 	GtkTreePath* convert_child_path_to_path(GtkTreePath* path) const;
 	virtual bool on_filter(GtkTreeModel* model, GtkTreeIter* iter)=0;

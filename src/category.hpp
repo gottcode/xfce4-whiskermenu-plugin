@@ -17,7 +17,6 @@
 #ifndef WHISKERMENU_CATEGORY_HPP
 #define WHISKERMENU_CATEGORY_HPP
 
-#include <algorithm>
 #include <vector>
 
 extern "C"
@@ -43,11 +42,6 @@ public:
 	SectionButton* get_button() const
 	{
 		return m_button;
-	}
-
-	bool contains(Launcher* launcher) const
-	{
-		return std::find(m_items.begin(), m_items.end(), launcher) != m_items.end();
 	}
 
 	bool empty() const

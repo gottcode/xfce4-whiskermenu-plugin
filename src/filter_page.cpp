@@ -37,13 +37,6 @@ FilterPage::~FilterPage()
 
 //-----------------------------------------------------------------------------
 
-GtkTreeModel* FilterPage::get_model() const
-{
-	return GTK_TREE_MODEL(m_filter_model);
-}
-
-//-----------------------------------------------------------------------------
-
 void FilterPage::refilter()
 {
 	if (m_filter_model)
