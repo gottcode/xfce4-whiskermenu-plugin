@@ -6,9 +6,9 @@
 # abuyop <abuyop@gmail.com>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: Whisker Menu\n"
+"Project-Id-Version: xfce4-whiskermenu-plugin 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-15 20:23+0000\n"
+"POT-Creation-Date: 2013-07-24 22:13+0000\n"
 "PO-Revision-Date: 2013-07-04 11:44+0000\n"
 "Last-Translator: abuyop <abuyop@gmail.com>\n"
 "Language-Team: Malay (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/ms/)\n"
@@ -18,91 +18,175 @@ msgstr ""
 "Language: ms\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: src/applications_page.cpp:298
+#: src/applications_page.cpp:299
 msgid "All"
 msgstr "Semua"
 
-#: src/configuration_dialog.cpp:52
+#: src/configuration_dialog.cpp:54
 msgid "Whisker Menu"
 msgstr "Menu Whisker"
 
-#: src/configuration_dialog.cpp:66
+#: src/configuration_dialog.cpp:68
 msgid "Appearance"
 msgstr "Penampilan"
 
-#: src/configuration_dialog.cpp:71
+#: src/configuration_dialog.cpp:73
 msgid "Show applications by _name"
 msgstr "Tunjuk aplikasi mengikut _nama"
 
-#: src/configuration_dialog.cpp:77
+#: src/configuration_dialog.cpp:79
 msgid "Show application _descriptions"
 msgstr "Tunjuk _keterangan aplikasi"
 
-#: src/configuration_dialog.cpp:86
+#: src/configuration_dialog.cpp:88
+msgid "Ite_m icon size:"
+msgstr ""
+
+#: src/configuration_dialog.cpp:108
+msgid "Categ_ory icon size:"
+msgstr ""
+
+#: src/configuration_dialog.cpp:125
+msgid "Panel Button"
+msgstr ""
+
+#: src/configuration_dialog.cpp:133
+msgid "Di_splay:"
+msgstr ""
+
+#: src/configuration_dialog.cpp:139
+msgid "Icon"
+msgstr ""
+
+#: src/configuration_dialog.cpp:140
+msgid "Title"
+msgstr ""
+
+#: src/configuration_dialog.cpp:141
+msgid "Icon and title"
+msgstr ""
+
+#: src/configuration_dialog.cpp:151
+msgid "_Title:"
+msgstr ""
+
+#: src/configuration_dialog.cpp:166
 msgid "_Icon:"
 msgstr "_Ikon:"
 
-#: src/configuration_dialog.cpp:118
+#: src/configuration_dialog.cpp:182
+msgid "Behavior"
+msgstr ""
+
+#: src/configuration_dialog.cpp:187
+msgid "Switch categories by _hovering"
+msgstr ""
+
+#: src/configuration_dialog.cpp:209
 msgid "Select An Icon"
 msgstr "Pilih Satu Ikon"
+
+#: src/favorites_page.cpp:73
+msgid "Sort Alphabetically A-Z"
+msgstr ""
+
+#: src/favorites_page.cpp:79
+msgid "Sort Alphabetically Z-A"
+msgstr ""
+
+#: src/icon_size.cpp:50
+msgid "Very Small"
+msgstr ""
+
+#: src/icon_size.cpp:51
+msgid "Smaller"
+msgstr ""
+
+#: src/icon_size.cpp:52
+msgid "Small"
+msgstr ""
+
+#: src/icon_size.cpp:53
+msgid "Normal"
+msgstr ""
+
+#: src/icon_size.cpp:54
+msgid "Large"
+msgstr ""
+
+#: src/icon_size.cpp:55
+msgid "Larger"
+msgstr ""
+
+#: src/icon_size.cpp:56
+msgid "Very Large"
+msgstr ""
 
 #: src/launcher.cpp:263
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "Gagal lakukan perintah \"%s\"."
 
-#: src/menu.cpp:88
+#: src/menu.cpp:100
 msgid "All Settings"
 msgstr "Semua Tetapan"
 
-#: src/menu.cpp:91
+#: src/menu.cpp:103
 msgid "Lock Screen"
 msgstr "Kunci Skrin"
 
-#: src/menu.cpp:94
+#: src/menu.cpp:106
 msgid "Log Out"
 msgstr "Daftar Keluar"
 
-#: src/menu.cpp:108
+#: src/menu.cpp:120
 msgid "Favorites"
 msgstr "Kegemaran"
 
-#: src/menu.cpp:114
+#: src/menu.cpp:126
 msgid "Recently Used"
 msgstr "Diguna Baru-baru Ini"
 
-#: src/menu.cpp:636
+#: src/menu.cpp:742
 msgid "Failed to open settings manager."
 msgstr "Gagal membuka pengurus tetapan."
 
-#: src/menu.cpp:650
+#: src/menu.cpp:756
 msgid "Failed to lock screen."
 msgstr "Gagal mengunci skrin."
 
-#: src/menu.cpp:664
+#: src/menu.cpp:770
 msgid "Failed to log out."
 msgstr "Gagal mendaftar keluar."
 
-#: src/page.cpp:170
+#: src/page.cpp:182
 msgid "Add to Favorites"
 msgstr "Tambah ke Kegemaran"
 
-#: src/page.cpp:176
+#: src/page.cpp:190
 msgid "Remove From Favorites"
 msgstr "Buang Dari Kegemaran"
 
-#: src/page.cpp:181
+#: src/page.cpp:197
 msgid "Add to Desktop"
 msgstr "Tambah ke Desktop"
 
-#: src/page.cpp:185
+#: src/page.cpp:201
 msgid "Add to Panel"
 msgstr "Tambah ke Panel"
 
-#: src/page.cpp:265
+#: src/page.cpp:291
 msgid "Unable to add launcher to desktop."
 msgstr "Tidak boleh tambah pelancar ke desktop."
 
-#: src/page.cpp:303 src/page.cpp:312
+#: src/page.cpp:330 src/page.cpp:339
 msgid "Unable to add launcher to panel."
 msgstr "Tidak boleh tambah pelancar ke panel."
+
+#: src/panel_plugin.cpp:150
+msgid "Applications Menu"
+msgstr ""
+
+#: src/recent_page.cpp:71
+msgid "Clear Recently Used"
+msgstr ""

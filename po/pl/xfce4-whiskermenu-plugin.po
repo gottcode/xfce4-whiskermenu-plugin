@@ -7,9 +7,9 @@
 # OSWorld <michal.olber@osworld.pl>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: Whisker Menu\n"
+"Project-Id-Version: xfce4-whiskermenu-plugin 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-13 00:11+0000\n"
+"POT-Creation-Date: 2013-07-24 22:13+0000\n"
 "PO-Revision-Date: 2013-07-16 10:54+0000\n"
 "Last-Translator: OSWorld <michal.olber@osworld.pl>\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/pl/)\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Language: pl\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: src/applications_page.cpp:336
+#: src/applications_page.cpp:299
 msgid "All"
 msgstr "Wszystkie"
 
@@ -128,35 +128,35 @@ msgstr "Największa"
 msgid "Failed to execute command \"%s\"."
 msgstr "Nie można uruchomić polecenia \"%s\"."
 
-#: src/menu.cpp:99
+#: src/menu.cpp:100
 msgid "All Settings"
 msgstr "Wszystkie ustawienia"
 
-#: src/menu.cpp:102
+#: src/menu.cpp:103
 msgid "Lock Screen"
 msgstr "Zablokuj ekran"
 
-#: src/menu.cpp:105
+#: src/menu.cpp:106
 msgid "Log Out"
 msgstr "Wyloguj"
 
-#: src/menu.cpp:119
+#: src/menu.cpp:120
 msgid "Favorites"
 msgstr "Ulubione"
 
-#: src/menu.cpp:125
+#: src/menu.cpp:126
 msgid "Recently Used"
 msgstr "Ostatnio używane"
 
-#: src/menu.cpp:721
+#: src/menu.cpp:742
 msgid "Failed to open settings manager."
 msgstr "Niepowodzenie uruchomienia menedżera ustawień"
 
-#: src/menu.cpp:735
+#: src/menu.cpp:756
 msgid "Failed to lock screen."
 msgstr "Niepowodzenie zablokowania ekranu"
 
-#: src/menu.cpp:749
+#: src/menu.cpp:770
 msgid "Failed to log out."
 msgstr "Niepowodzenie wylogowania"
 
@@ -188,6 +188,6 @@ msgstr "Nie można dodać aktywatora do panelu"
 msgid "Applications Menu"
 msgstr "Menu aplikacji"
 
-#: src/recent_page.cpp:70
+#: src/recent_page.cpp:71
 msgid "Clear Recently Used"
 msgstr "Wyczyść ostatnio używane"

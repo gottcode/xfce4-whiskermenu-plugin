@@ -1,3 +1,26 @@
+1.1.0
+=====
+- Fix hang at launch when there are too many recent items.
+- Fix focus selection not properly reset when switching categories.
+- Fix menu not hiding when configuration dialog is clicked.
+- Fix context menu disabling detection of clicks outside menu.
+- Fix filter applied when button is deselected.
+- Fix not showing items with duplicate text.
+- Add external command to popup menu.
+- Add option to show label with or instead of icon.
+- Add option to switch categories by hovering.
+- Add choosing icon sizes of launchers and categories.
+- Add scrolling to sidebar.
+- Add menu action to clear recently used.
+- Add menu actions to sort favorites alphabetically.
+- Add icons to context menu.
+- New search algorithm.
+- Refactor category code.
+- Show launcher name in context menu.
+- Build system improvements.
+- Reduce C++ version.
+- Translation updates: Brazilian Portuguese, Bulgarian, Danish, Dutch, German, Greek, Hebrew, Kazakh, Hungarian, Indonesian, Italian, Norwegian Bokmål, Polish, Portuguese, Romanian, Slovak, Swedish, Turkish, Vietnamese.
+
 1.0.3
 =====
 - Fix changes to favorites not always saved.

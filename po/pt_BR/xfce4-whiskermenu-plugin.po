@@ -6,9 +6,9 @@
 # fabioluciano <fabio@naoimporta.com>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: Whisker Menu\n"
+"Project-Id-Version: xfce4-whiskermenu-plugin 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-13 00:11+0000\n"
+"POT-Creation-Date: 2013-07-24 22:13+0000\n"
 "PO-Revision-Date: 2013-07-18 21:25+0300\n"
 "Last-Translator: fabioluciano <fabio@naoimporta.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/pt_BR/)\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: src/applications_page.cpp:336
+#: src/applications_page.cpp:299
 msgid "All"
 msgstr "Tudo"
 
@@ -127,35 +127,35 @@ msgstr "Enorme"
 msgid "Failed to execute command \"%s\"."
 msgstr "Falhou ao executar o comando \"%s\"."
 
-#: src/menu.cpp:99
+#: src/menu.cpp:100
 msgid "All Settings"
 msgstr "Todas as configurações"
 
-#: src/menu.cpp:102
+#: src/menu.cpp:103
 msgid "Lock Screen"
 msgstr "Travar a tela"
 
-#: src/menu.cpp:105
+#: src/menu.cpp:106
 msgid "Log Out"
 msgstr "Sair"
 
-#: src/menu.cpp:119
+#: src/menu.cpp:120
 msgid "Favorites"
 msgstr "Favoritos"
 
-#: src/menu.cpp:125
+#: src/menu.cpp:126
 msgid "Recently Used"
 msgstr "Usados Recentemente"
 
-#: src/menu.cpp:721
+#: src/menu.cpp:742
 msgid "Failed to open settings manager."
 msgstr "Falhou ao abrir o gerenciador de configurações"
 
-#: src/menu.cpp:735
+#: src/menu.cpp:756
 msgid "Failed to lock screen."
 msgstr "Falhou ao travar a tela"
 
-#: src/menu.cpp:749
+#: src/menu.cpp:770
 msgid "Failed to log out."
 msgstr "Falhou ao sair"
 
@@ -187,6 +187,6 @@ msgstr "Impossível adicionar o lançador ao painel"
 msgid "Applications Menu"
 msgstr "Menu de aplicativos"
 
-#: src/recent_page.cpp:70
+#: src/recent_page.cpp:71
 msgid "Clear Recently Used"
 msgstr "Limpar os usados recentemente"

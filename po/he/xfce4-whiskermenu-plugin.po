@@ -6,9 +6,9 @@
 # GenghisKhan <genghiskhan@gmx.ca>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: Whisker Menu\n"
+"Project-Id-Version: xfce4-whiskermenu-plugin 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-13 00:11+0000\n"
+"POT-Creation-Date: 2013-07-24 22:13+0000\n"
 "PO-Revision-Date: 2013-07-15 12:12+0000\n"
 "Last-Translator: GenghisKhan <genghiskhan@gmx.ca>\n"
 "Language-Team: Hebrew (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/he/)\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Language: he\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/applications_page.cpp:336
+#: src/applications_page.cpp:299
 msgid "All"
 msgstr "כולם"
 
@@ -127,35 +127,35 @@ msgstr "גדול מאוד"
 msgid "Failed to execute command \"%s\"."
 msgstr "נכשל להוציא לפועל פקודה \"%s\"."
 
-#: src/menu.cpp:99
+#: src/menu.cpp:100
 msgid "All Settings"
 msgstr "כל ההגדרות"
 
-#: src/menu.cpp:102
+#: src/menu.cpp:103
 msgid "Lock Screen"
 msgstr "נעל מרקע"
 
-#: src/menu.cpp:105
+#: src/menu.cpp:106
 msgid "Log Out"
 msgstr "התנתק"
 
-#: src/menu.cpp:119
+#: src/menu.cpp:120
 msgid "Favorites"
 msgstr "מועדפים"
 
-#: src/menu.cpp:125
+#: src/menu.cpp:126
 msgid "Recently Used"
 msgstr "בשימוש לאחרונה"
 
-#: src/menu.cpp:721
+#: src/menu.cpp:742
 msgid "Failed to open settings manager."
 msgstr "נכשל לפתוח מנהל הגדרות."
 
-#: src/menu.cpp:735
+#: src/menu.cpp:756
 msgid "Failed to lock screen."
 msgstr "נכשל לנעול מרקע."
 
-#: src/menu.cpp:749
+#: src/menu.cpp:770
 msgid "Failed to log out."
 msgstr "נכשל להתנתק."
 
@@ -187,6 +187,6 @@ msgstr "אין אפשרות להוסיף משגר אל תוך לוח."
 msgid "Applications Menu"
 msgstr "תפריט יישומים"
 
-#: src/recent_page.cpp:70
+#: src/recent_page.cpp:71
 msgid "Clear Recently Used"
 msgstr "טהר תפריט בשימוש לאחרונה"
