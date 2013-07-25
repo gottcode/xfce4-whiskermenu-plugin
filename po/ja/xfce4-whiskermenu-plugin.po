@@ -1,0 +1,192 @@
+# Japanese translation of xfce4-whiskermenu-plugin.
+# Copyright (C) 2013 Graeme Gott
+# This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
+#
+# Translators:
+# Masato HASHIMOTO <cabezon.hashimoto@gmail.com>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: Whisker Menu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-24 22:13+0000\n"
+"PO-Revision-Date: 2013-07-25 15:14+0000\n"
+"Last-Translator: Masato HASHIMOTO <cabezon.hashimoto@gmail.com>\n"
+"Language-Team: Japanese (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/ja/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/applications_page.cpp:299
+msgid "All"
+msgstr "すべて"
+
+#: src/configuration_dialog.cpp:54
+msgid "Whisker Menu"
+msgstr "Whisker Menu"
+
+#: src/configuration_dialog.cpp:68
+msgid "Appearance"
+msgstr "外観"
+
+#: src/configuration_dialog.cpp:73
+msgid "Show applications by _name"
+msgstr "アプリケーションを名前で表示する(_N)"
+
+#: src/configuration_dialog.cpp:79
+msgid "Show application _descriptions"
+msgstr "アプリケーションの説明を表示する(_D)"
+
+#: src/configuration_dialog.cpp:88
+msgid "Ite_m icon size:"
+msgstr "アイテムのアイコンサイズ(_M):"
+
+#: src/configuration_dialog.cpp:108
+msgid "Categ_ory icon size:"
+msgstr "カテゴリのアイコンサイズ(_O):"
+
+#: src/configuration_dialog.cpp:125
+msgid "Panel Button"
+msgstr "パネルボタン"
+
+#: src/configuration_dialog.cpp:133
+msgid "Di_splay:"
+msgstr "表示(_S):"
+
+#: src/configuration_dialog.cpp:139
+msgid "Icon"
+msgstr "アイコン"
+
+#: src/configuration_dialog.cpp:140
+msgid "Title"
+msgstr "タイトル"
+
+#: src/configuration_dialog.cpp:141
+msgid "Icon and title"
+msgstr "アイコンとタイトル"
+
+#: src/configuration_dialog.cpp:151
+msgid "_Title:"
+msgstr "タイトル(_T):"
+
+#: src/configuration_dialog.cpp:166
+msgid "_Icon:"
+msgstr "アイコン(_I):"
+
+#: src/configuration_dialog.cpp:182
+msgid "Behavior"
+msgstr "振る舞い"
+
+#: src/configuration_dialog.cpp:187
+msgid "Switch categories by _hovering"
+msgstr "ホバーでカテゴリを切り替える(_H)"
+
+#: src/configuration_dialog.cpp:209
+msgid "Select An Icon"
+msgstr "アイコンの選択"
+
+#: src/favorites_page.cpp:73
+msgid "Sort Alphabetically A-Z"
+msgstr "アルファベット順 (A-Z) で並び替え"
+
+#: src/favorites_page.cpp:79
+msgid "Sort Alphabetically Z-A"
+msgstr "アルファベットの逆順 (Z-A) で並び替え"
+
+#: src/icon_size.cpp:50
+msgid "Very Small"
+msgstr "とても小さい"
+
+#: src/icon_size.cpp:51
+msgid "Smaller"
+msgstr "小さい"
+
+#: src/icon_size.cpp:52
+msgid "Small"
+msgstr "少し小さい"
+
+#: src/icon_size.cpp:53
+msgid "Normal"
+msgstr "普通"
+
+#: src/icon_size.cpp:54
+msgid "Large"
+msgstr "少し大きい"
+
+#: src/icon_size.cpp:55
+msgid "Larger"
+msgstr "大きい"
+
+#: src/icon_size.cpp:56
+msgid "Very Large"
+msgstr "とても大きい"
+
+#: src/launcher.cpp:263
+#, c-format
+msgid "Failed to execute command \"%s\"."
+msgstr "コマンド \"%s\" の実行に失敗しました。"
+
+#: src/menu.cpp:100
+msgid "All Settings"
+msgstr "すべての設定"
+
+#: src/menu.cpp:103
+msgid "Lock Screen"
+msgstr "スクリーンをロック"
+
+#: src/menu.cpp:106
+msgid "Log Out"
+msgstr "ログアウト"
+
+#: src/menu.cpp:120
+msgid "Favorites"
+msgstr "お気に入り"
+
+#: src/menu.cpp:126
+msgid "Recently Used"
+msgstr "最近使ったもの"
+
+#: src/menu.cpp:742
+msgid "Failed to open settings manager."
+msgstr "設定マネージャーを開くことに失敗しました。"
+
+#: src/menu.cpp:756
+msgid "Failed to lock screen."
+msgstr "スクリーンのロックに失敗しました。"
+
+#: src/menu.cpp:770
+msgid "Failed to log out."
+msgstr "ログアウトに失敗しました。"
+
+#: src/page.cpp:182
+msgid "Add to Favorites"
+msgstr "お気に入りに追加"
+
+#: src/page.cpp:190
+msgid "Remove From Favorites"
+msgstr "お気に入りから削除"
+
+#: src/page.cpp:197
+msgid "Add to Desktop"
+msgstr "デスクトップに追加"
+
+#: src/page.cpp:201
+msgid "Add to Panel"
+msgstr "パネルに追加"
+
+#: src/page.cpp:291
+msgid "Unable to add launcher to desktop."
+msgstr "デスクトップにランチャーを追加できません。"
+
+#: src/page.cpp:330 src/page.cpp:339
+msgid "Unable to add launcher to panel."
+msgstr "パネルにランチャーを追加できません。"
+
+#: src/panel_plugin.cpp:150
+msgid "Applications Menu"
+msgstr "アプリケーションメニュー"
+
+#: src/recent_page.cpp:71
+msgid "Clear Recently Used"
+msgstr "最近使ったものをクリア"
