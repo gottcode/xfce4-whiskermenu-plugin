@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
+# asvl <alyoshin.s@gmail.com>, 2013
 # shlyapugin <shlyapugin@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-24 22:13+0000\n"
-"PO-Revision-Date: 2013-07-06 04:32+0000\n"
+"PO-Revision-Date: 2013-07-25 16:00+0000\n"
 "Last-Translator: shlyapugin <shlyapugin@gmail.com>\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/ru/)\n"
 "MIME-Version: 1.0\n"
@@ -40,35 +41,35 @@ msgstr "Показывать _описание приложений"
 
 #: src/configuration_dialog.cpp:88
 msgid "Ite_m icon size:"
-msgstr ""
+msgstr "Размер значка элемента:"
 
 #: src/configuration_dialog.cpp:108
 msgid "Categ_ory icon size:"
-msgstr ""
+msgstr "Размер значка категории:"
 
 #: src/configuration_dialog.cpp:125
 msgid "Panel Button"
-msgstr ""
+msgstr "Кнопка"
 
 #: src/configuration_dialog.cpp:133
 msgid "Di_splay:"
-msgstr ""
+msgstr "Показывать:"
 
 #: src/configuration_dialog.cpp:139
 msgid "Icon"
-msgstr ""
+msgstr "Значок"
 
 #: src/configuration_dialog.cpp:140
 msgid "Title"
-msgstr ""
+msgstr "Заголовок"
 
 #: src/configuration_dialog.cpp:141
 msgid "Icon and title"
-msgstr ""
+msgstr "Значок и заголовок"
 
 #: src/configuration_dialog.cpp:151
 msgid "_Title:"
-msgstr ""
+msgstr "_Заголовок:"
 
 #: src/configuration_dialog.cpp:166
 msgid "_Icon:"
@@ -76,11 +77,11 @@ msgstr "_Значок:"
 
 #: src/configuration_dialog.cpp:182
 msgid "Behavior"
-msgstr ""
+msgstr "Поведение"
 
 #: src/configuration_dialog.cpp:187
 msgid "Switch categories by _hovering"
-msgstr ""
+msgstr "Переключать категории по наведению мыши"
 
 #: src/configuration_dialog.cpp:209
 msgid "Select An Icon"
@@ -88,39 +89,39 @@ msgstr "Выбрать значок"
 
 #: src/favorites_page.cpp:73
 msgid "Sort Alphabetically A-Z"
-msgstr ""
+msgstr "Сортировать по алфавиту от А до Я"
 
 #: src/favorites_page.cpp:79
 msgid "Sort Alphabetically Z-A"
-msgstr ""
+msgstr "Сортировать по алфавиту от Я до А"
 
 #: src/icon_size.cpp:50
 msgid "Very Small"
-msgstr ""
+msgstr "Крошечный"
 
 #: src/icon_size.cpp:51
 msgid "Smaller"
-msgstr ""
+msgstr "Очень маленький"
 
 #: src/icon_size.cpp:52
 msgid "Small"
-msgstr ""
+msgstr "Маленький"
 
 #: src/icon_size.cpp:53
 msgid "Normal"
-msgstr ""
+msgstr "Нормальный"
 
 #: src/icon_size.cpp:54
 msgid "Large"
-msgstr ""
+msgstr "Крупный"
 
 #: src/icon_size.cpp:55
 msgid "Larger"
-msgstr ""
+msgstr "Большой"
 
 #: src/icon_size.cpp:56
 msgid "Very Large"
-msgstr ""
+msgstr "Очень большой"
 
 #: src/launcher.cpp:263
 #, c-format
@@ -185,8 +186,8 @@ msgstr "Нельзя добавить на панель."
 
 #: src/panel_plugin.cpp:150
 msgid "Applications Menu"
-msgstr ""
+msgstr "Меню приложений"
 
 #: src/recent_page.cpp:71
 msgid "Clear Recently Used"
-msgstr ""
+msgstr "Очистить недавние"
