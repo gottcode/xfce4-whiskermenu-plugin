@@ -5,13 +5,14 @@
 # Translators:
 # fabioluciano <fabio@naoimporta.com>, 2013
 # intialonso <intialonso@gmail.com>, 2013
+# Pablo Lezaeta <prflr88@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-24 22:13+0000\n"
-"PO-Revision-Date: 2013-06-24 22:10+0000\n"
-"Last-Translator: fabioluciano <fabio@naoimporta.com>\n"
+"PO-Revision-Date: 2013-07-27 23:45+0000\n"
+"Last-Translator: Pablo Lezaeta <prflr88@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -41,35 +42,35 @@ msgstr "Mostrar aplicaciones descripción"
 
 #: src/configuration_dialog.cpp:88
 msgid "Ite_m icon size:"
-msgstr ""
+msgstr "Tamaño del ícono de los obj_eto:"
 
 #: src/configuration_dialog.cpp:108
 msgid "Categ_ory icon size:"
-msgstr ""
+msgstr "Tamaño del ícono de las categ_orías:"
 
 #: src/configuration_dialog.cpp:125
 msgid "Panel Button"
-msgstr ""
+msgstr "Botón del panel"
 
 #: src/configuration_dialog.cpp:133
 msgid "Di_splay:"
-msgstr ""
+msgstr "Mue_stra:"
 
 #: src/configuration_dialog.cpp:139
 msgid "Icon"
-msgstr ""
+msgstr "Ícono"
 
 #: src/configuration_dialog.cpp:140
 msgid "Title"
-msgstr ""
+msgstr "Título"
 
 #: src/configuration_dialog.cpp:141
 msgid "Icon and title"
-msgstr ""
+msgstr "Ícono y título"
 
 #: src/configuration_dialog.cpp:151
 msgid "_Title:"
-msgstr ""
+msgstr "_Título:"
 
 #: src/configuration_dialog.cpp:166
 msgid "_Icon:"
@@ -77,11 +78,11 @@ msgstr "_Icono:"
 
 #: src/configuration_dialog.cpp:182
 msgid "Behavior"
-msgstr ""
+msgstr "Comportamiento"
 
 #: src/configuration_dialog.cpp:187
 msgid "Switch categories by _hovering"
-msgstr ""
+msgstr "Cambiar categoría al _posicionarse en esta"
 
 #: src/configuration_dialog.cpp:209
 msgid "Select An Icon"
@@ -89,39 +90,39 @@ msgstr "Seleccione un ícono"
 
 #: src/favorites_page.cpp:73
 msgid "Sort Alphabetically A-Z"
-msgstr ""
+msgstr "Ordenar alfabéticamente de A a Z"
 
 #: src/favorites_page.cpp:79
 msgid "Sort Alphabetically Z-A"
-msgstr ""
+msgstr "Ordenar alfabéticamente de Z a A"
 
 #: src/icon_size.cpp:50
 msgid "Very Small"
-msgstr ""
+msgstr "Minúsculo"
 
 #: src/icon_size.cpp:51
 msgid "Smaller"
-msgstr ""
+msgstr "Muy pequeño"
 
 #: src/icon_size.cpp:52
 msgid "Small"
-msgstr ""
+msgstr "Pequeño"
 
 #: src/icon_size.cpp:53
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #: src/icon_size.cpp:54
 msgid "Large"
-msgstr ""
+msgstr "Grande"
 
 #: src/icon_size.cpp:55
 msgid "Larger"
-msgstr ""
+msgstr "Muy grande"
 
 #: src/icon_size.cpp:56
 msgid "Very Large"
-msgstr ""
+msgstr "Gigante"
 
 #: src/launcher.cpp:263
 #, c-format
@@ -186,8 +187,8 @@ msgstr "No se pudo añadir el lanzador al panel."
 
 #: src/panel_plugin.cpp:150
 msgid "Applications Menu"
-msgstr ""
+msgstr "Menú de aplicaciones"
 
 #: src/recent_page.cpp:71
 msgid "Clear Recently Used"
-msgstr ""
+msgstr "Limpiar objetos recientes"
