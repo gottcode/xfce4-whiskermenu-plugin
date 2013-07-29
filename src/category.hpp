@@ -56,11 +56,18 @@ public:
 		return m_items.empty();
 	}
 
-	void push_back(Launcher* launcher)
+	bool has_separators() const
 	{
-		m_items.push_back(launcher);
-		unset_model();
+		return m_has_separators;
 	}
+
+	void append_item(Launcher* launcher)
+	{
+		unset_model();
+		m_items.push_back(launcher);
+	}
+
+	void append_separator();
 
 	void sort();
 
@@ -71,6 +78,7 @@ private:
 	SectionButton* m_button;
 	std::vector<Launcher*> m_items;
 	GtkTreeModel* m_model;
+	bool m_has_separators;
 };
 
 }

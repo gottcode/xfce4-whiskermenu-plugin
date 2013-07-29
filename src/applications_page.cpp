@@ -94,10 +94,14 @@ void ApplicationsPage::apply_filter(GtkToggleButton* togglebutton)
 	// Apply filter
 	if (category)
 	{
+		get_view()->unset_model();
+		get_view()->set_fixed_height_mode(!category->has_separators());
 		get_view()->set_model(category->get_model());
 	}
 	else
 	{
+		get_view()->unset_model();
+		get_view()->set_fixed_height_mode(true);
 		get_view()->set_model(m_model);
 	}
 }
@@ -154,6 +158,7 @@ void ApplicationsPage::load_applications()
 	}
 	m_model = model.get_model();
 	g_object_ref(m_model);
+	get_view()->set_fixed_height_mode(true);
 	get_view()->set_model(m_model);
 
 	// Update filters
@@ -239,6 +244,10 @@ void ApplicationsPage::load_menu(GarconMenu* menu)
 		{
 			load_menu(GARCON_MENU(li->data));
 		}
+		else if (GARCON_IS_MENU_SEPARATOR(li->data) && m_current_category)
+		{
+			m_current_category->append_separator();
+		}
 	}
 	g_list_free(elements);
 
@@ -279,7 +288,7 @@ void ApplicationsPage::load_menu_item(GarconMenuItem* menu_item)
 	// Add menu item to current category
 	if (m_current_category)
 	{
-		m_current_category->push_back(iter->second);
+		m_current_category->append_item(iter->second);
 	}
 
 	// Listen for menu changes

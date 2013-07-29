@@ -28,7 +28,8 @@ using namespace WhiskerMenu;
 
 Category::Category(GarconMenuDirectory* directory) :
 	m_button(NULL),
-	m_model(NULL)
+	m_model(NULL),
+	m_has_separators(false)
 {
 	// Fetch icon
 	const gchar* icon = garcon_menu_directory_get_icon_name(directory);
@@ -84,6 +85,18 @@ GtkTreeModel* Category::get_model()
 	}
 
 	return m_model;
+}
+
+//-----------------------------------------------------------------------------
+
+void Category::append_separator()
+{
+	if (!m_items.empty() && m_items.back())
+	{
+		unset_model();
+		m_items.push_back(NULL);
+		m_has_separators = true;
+	}
 }
 
 //-----------------------------------------------------------------------------

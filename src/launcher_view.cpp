@@ -33,6 +33,13 @@ using namespace WhiskerMenu;
 
 static IconSize f_icon_size(IconSize::Small);
 
+static gboolean is_separator(GtkTreeModel* model, GtkTreeIter* iter, gpointer)
+{
+	const gchar* text;
+	gtk_tree_model_get(model, iter, LauncherModel::COLUMN_TEXT, &text, -1);
+	return exo_str_is_empty(text);
+}
+
 //-----------------------------------------------------------------------------
 
 LauncherView::LauncherView() :
@@ -46,6 +53,7 @@ LauncherView::LauncherView() :
 	gtk_tree_view_set_hover_selection(m_view, true);
 	gtk_tree_view_set_enable_search(m_view, false);
 	gtk_tree_view_set_fixed_height_mode(m_view, true);
+	gtk_tree_view_set_row_separator_func(m_view, &is_separator, NULL, NULL);
 	create_column();
 	g_signal_connect(m_view, "key-press-event", G_CALLBACK(LauncherView::on_key_press_event_slot), this);
 	g_signal_connect(m_view, "key-release-event", G_CALLBACK(LauncherView::on_key_release_event_slot), this);
@@ -111,6 +119,13 @@ void LauncherView::select_path(GtkTreePath* path)
 void LauncherView::set_cursor(GtkTreePath* path)
 {
 	gtk_tree_view_set_cursor(m_view, path, NULL, false);
+}
+
+//-----------------------------------------------------------------------------
+
+void LauncherView::set_fixed_height_mode(bool fixed_height)
+{
+	gtk_tree_view_set_fixed_height_mode(m_view, fixed_height);
 }
 
 //-----------------------------------------------------------------------------

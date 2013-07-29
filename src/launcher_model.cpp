@@ -56,12 +56,21 @@ LauncherModel::~LauncherModel()
 
 void LauncherModel::insert_item(Launcher* launcher, int position)
 {
-	gtk_list_store_insert_with_values(
-			m_model, NULL, position,
-			COLUMN_ICON, launcher->get_icon(),
-			COLUMN_TEXT, launcher->get_text(),
-			COLUMN_LAUNCHER, launcher,
-			-1);
+	if (launcher)
+	{
+		gtk_list_store_insert_with_values(
+				m_model, NULL, position,
+				COLUMN_ICON, launcher->get_icon(),
+				COLUMN_TEXT, launcher->get_text(),
+				COLUMN_LAUNCHER, launcher,
+				-1);
+	}
+	else
+	{
+		gtk_list_store_insert_with_values(
+				m_model, NULL, position,
+				-1);
+	}
 }
 
 //-----------------------------------------------------------------------------
