@@ -31,7 +31,8 @@ using namespace WhiskerMenu;
 //-----------------------------------------------------------------------------
 
 SearchPage::SearchPage(Menu* menu) :
-	FilterPage(menu),
+	Page(menu),
+	m_filter_model(NULL),
 	m_sort_model(NULL),
 	m_current_results(NULL)
 {
@@ -114,7 +115,7 @@ void SearchPage::set_filter(const gchar* filter)
 	get_view()->unset_model();
 	gtk_tree_model_sort_reset_default_sort_func(m_sort_model);
 
-	refilter();
+	gtk_tree_model_filter_refilter(m_filter_model);
 
 	gtk_tree_sortable_set_default_sort_func(GTK_TREE_SORTABLE(m_sort_model), (GtkTreeIterCompareFunc)&SearchPage::on_sort, this, NULL);
 	get_view()->set_model(GTK_TREE_MODEL(m_sort_model));
@@ -152,11 +153,13 @@ void SearchPage::set_menu_items(GtkTreeModel* model)
 		valid = gtk_tree_model_iter_next(model, &iter);
 	}
 
-	unset_search_model();
-	set_model(model);
-	m_sort_model = GTK_TREE_MODEL_SORT(gtk_tree_model_sort_new_with_model(get_view()->get_model()));
+	unset_model();
+
+	m_filter_model = GTK_TREE_MODEL_FILTER(gtk_tree_model_filter_new(model, NULL));
+	gtk_tree_model_filter_set_visible_func(m_filter_model, (GtkTreeModelFilterVisibleFunc)&SearchPage::on_filter, this, NULL);
+
+	m_sort_model = GTK_TREE_MODEL_SORT(gtk_tree_model_sort_new_with_model(GTK_TREE_MODEL(m_filter_model)));
 	gtk_tree_sortable_set_default_sort_func(GTK_TREE_SORTABLE(m_sort_model), (GtkTreeIterCompareFunc)&SearchPage::on_sort, this, NULL);
-	get_view()->unset_model();
 }
 
 //-----------------------------------------------------------------------------
@@ -166,15 +169,14 @@ void SearchPage::unset_menu_items()
 	m_launchers.clear();
 	m_results.clear();
 	m_current_results = NULL;
-	unset_search_model();
 	unset_model();
 }
 
 //-----------------------------------------------------------------------------
 
-bool SearchPage::on_filter(GtkTreeModel* model, GtkTreeIter* iter)
+gboolean SearchPage::on_filter(GtkTreeModel* model, GtkTreeIter* iter, SearchPage* page)
 {
-	if (!m_current_results)
+	if (!page->m_current_results)
 	{
 		return false;
 	}
@@ -182,7 +184,7 @@ bool SearchPage::on_filter(GtkTreeModel* model, GtkTreeIter* iter)
 	// Check if launcher search string contains text
 	Launcher* launcher = NULL;
 	gtk_tree_model_get(model, iter, LauncherModel::COLUMN_LAUNCHER, &launcher, -1);
-	return launcher && (m_current_results->find(launcher) != m_current_results->end());
+	return launcher && (page->m_current_results->find(launcher) != page->m_current_results->end());
 }
 
 //-----------------------------------------------------------------------------
@@ -204,14 +206,21 @@ gint SearchPage::on_sort(GtkTreeModel* model, GtkTreeIter* a, GtkTreeIter* b, Se
 
 //-----------------------------------------------------------------------------
 
-void SearchPage::unset_search_model()
+void SearchPage::unset_model()
 {
+	get_view()->unset_model();
+
+	if (m_filter_model)
+	{
+		g_object_unref(m_filter_model);
+		m_filter_model = NULL;
+	}
+
 	if (m_sort_model)
 	{
 		g_object_unref(m_sort_model);
 		m_sort_model = NULL;
 	}
-	get_view()->unset_model();
 }
 
 //-----------------------------------------------------------------------------

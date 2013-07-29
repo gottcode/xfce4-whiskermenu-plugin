@@ -17,7 +17,7 @@
 #ifndef WHISKERMENU_SEARCH_PAGE_HPP
 #define WHISKERMENU_SEARCH_PAGE_HPP
 
-#include "filter_page.hpp"
+#include "page.hpp"
 #include "query.hpp"
 
 #include <map>
@@ -29,7 +29,7 @@ namespace WhiskerMenu
 
 class LauncherView;
 
-class SearchPage : public FilterPage
+class SearchPage : public Page
 {
 public:
 	explicit SearchPage(Menu* menu);
@@ -42,12 +42,13 @@ public:
 private:
 	void clear_search(GtkEntry* entry, GtkEntryIconPosition icon_pos);
 	bool search_entry_key_press(GtkWidget* widget, GdkEventKey* event);
-	bool on_filter(GtkTreeModel* model, GtkTreeIter* iter);
 	static gint on_sort(GtkTreeModel* model, GtkTreeIter* a, GtkTreeIter* b, SearchPage* page);
-	void unset_search_model();
+	static gboolean on_filter(GtkTreeModel* model, GtkTreeIter* iter, SearchPage* page);
+	void unset_model();
 
 private:
 	Query m_query;
+	GtkTreeModelFilter* m_filter_model;
 	GtkTreeModelSort* m_sort_model;
 	std::vector<Launcher*> m_launchers;
 	std::map<std::string, std::map<Launcher*, int> > m_results;
