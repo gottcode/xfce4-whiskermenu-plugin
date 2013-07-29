@@ -85,7 +85,7 @@ void FavoritesPage::extend_context_menu(GtkWidget* menu)
 
 //-----------------------------------------------------------------------------
 
-void FavoritesPage::sort(std::map<std::string, Launcher*>& items) const
+void FavoritesPage::sort(std::vector<Launcher*>& items) const
 {
 	const std::vector<std::string>& desktop_ids = get_desktop_ids();
 	for (std::vector<std::string>::const_iterator i = desktop_ids.begin(), end = desktop_ids.end(); i != end; ++i)
@@ -95,10 +95,9 @@ void FavoritesPage::sort(std::map<std::string, Launcher*>& items) const
 		{
 			continue;
 		}
-		gchar* collation_key = g_utf8_collate_key(launcher->get_text(), -1);
-		items[collation_key] = launcher;
-		g_free(collation_key);
+		items.push_back(launcher);
 	}
+	std::sort(items.begin(), items.end(), &Element::less_than);
 }
 
 //-----------------------------------------------------------------------------
@@ -106,11 +105,11 @@ void FavoritesPage::sort(std::map<std::string, Launcher*>& items) const
 void FavoritesPage::sort_ascending()
 {
 	std::vector<std::string> desktop_ids;
-	std::map<std::string, Launcher*> items;
+	std::vector<Launcher*> items;
 	sort(items);
-	for (std::map<std::string, Launcher*>::const_iterator i = items.begin(), end = items.end(); i != end; ++i)
+	for (std::vector<Launcher*>::const_iterator i = items.begin(), end = items.end(); i != end; ++i)
 	{
-		desktop_ids.push_back(i->second->get_desktop_id());
+		desktop_ids.push_back((*i)->get_desktop_id());
 	}
 	set_desktop_ids(desktop_ids);
 }
@@ -120,11 +119,11 @@ void FavoritesPage::sort_ascending()
 void FavoritesPage::sort_descending()
 {
 	std::vector<std::string> desktop_ids;
-	std::map<std::string, Launcher*> items;
+	std::vector<Launcher*> items;
 	sort(items);
-	for (std::map<std::string, Launcher*>::const_reverse_iterator i = items.rbegin(), end = items.rend(); i != end; ++i)
+	for (std::vector<Launcher*>::const_reverse_iterator i = items.rbegin(), end = items.rend(); i != end; ++i)
 	{
-		desktop_ids.push_back(i->second->get_desktop_id());
+		desktop_ids.push_back((*i)->get_desktop_id());
 	}
 	set_desktop_ids(desktop_ids);
 }

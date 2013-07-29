@@ -16,8 +16,11 @@
 
 #include "category.hpp"
 
+#include "launcher.hpp"
 #include "launcher_model.hpp"
 #include "section_button.hpp"
+
+#include <algorithm>
 
 using namespace WhiskerMenu;
 
@@ -81,6 +84,14 @@ GtkTreeModel* Category::get_model()
 	}
 
 	return m_model;
+}
+
+//-----------------------------------------------------------------------------
+
+void Category::sort()
+{
+	unset_model();
+	std::sort(m_items.begin(), m_items.end(), &Element::less_than);
 }
 
 //-----------------------------------------------------------------------------

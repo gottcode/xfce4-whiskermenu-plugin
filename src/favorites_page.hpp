@@ -33,7 +33,7 @@ public:
 
 private:
 	void extend_context_menu(GtkWidget* menu);
-	void sort(std::map<std::string, Launcher*>& items) const;
+	void sort(std::vector<Launcher*>& items) const;
 	void sort_ascending();
 	void sort_descending();
 

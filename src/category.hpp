@@ -62,6 +62,8 @@ public:
 		unset_model();
 	}
 
+	void sort();
+
 private:
 	void unset_model();
 

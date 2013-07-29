@@ -30,7 +30,8 @@ class Element
 public:
 	Element() :
 		m_icon(NULL),
-		m_text(NULL)
+		m_text(NULL),
+		m_sort_key(NULL)
 	{
 	}
 
@@ -38,6 +39,7 @@ public:
 	{
 		g_free(m_icon);
 		g_free(m_text);
+		g_free(m_sort_key);
 	}
 
 	virtual int get_type() const = 0;
@@ -50,6 +52,11 @@ public:
 	const gchar* get_text() const
 	{
 		return m_text;
+	}
+
+	static bool less_than(const Element* lhs, const Element* rhs)
+	{
+		return g_strcmp0(lhs->m_sort_key, rhs->m_sort_key) < 0;
 	}
 
 protected:
@@ -66,16 +73,19 @@ protected:
 	void set_text(const gchar* text)
 	{
 		m_text = g_strdup(text);
+		m_sort_key = g_utf8_collate_key(m_text, -1);
 	}
 
 	void set_text(gchar* text)
 	{
 		m_text = text;
+		m_sort_key = g_utf8_collate_key(m_text, -1);
 	}
 
 private:
 	gchar* m_icon;
 	gchar* m_text;
+	gchar* m_sort_key;
 };
 
 }

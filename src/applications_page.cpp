@@ -130,20 +130,27 @@ void ApplicationsPage::load_applications()
 		load_menu(m_garcon_menu);
 	}
 
+	// Sort items and categories
+	for (std::vector<Category*>::const_iterator i = m_categories.begin(), end = m_categories.end(); i != end; ++i)
+	{
+		(*i)->sort();
+	}
+	std::sort(m_categories.begin(), m_categories.end(), &Element::less_than);
+
 	// Create sorted list of menu items
-	std::multimap<std::string, Launcher*> sorted_items;
+	std::vector<Launcher*> sorted_items;
+	sorted_items.reserve(m_items.size());
 	for (std::map<std::string, Launcher*>::const_iterator i = m_items.begin(), end = m_items.end(); i != end; ++i)
 	{
-		gchar* collation_key = g_utf8_collate_key(i->second->get_text(), -1);
-		sorted_items.insert(std::make_pair(collation_key, i->second));
-		g_free(collation_key);
+		sorted_items.push_back(i->second);
 	}
+	std::sort(sorted_items.begin(), sorted_items.end(), &Element::less_than);
 
 	// Add all items to model
 	LauncherModel model;
-	for (std::multimap<std::string, Launcher*>::const_iterator i = sorted_items.begin(), end = sorted_items.end(); i != end; ++i)
+	for (std::vector<Launcher*>::const_iterator i = sorted_items.begin(), end = sorted_items.end(); i != end; ++i)
 	{
-		model.append_item(i->second);
+		model.append_item(*i);
 	}
 	m_model = model.get_model();
 	g_object_ref(m_model);
@@ -220,21 +227,20 @@ void ApplicationsPage::load_menu(GarconMenu* menu)
 		g_object_unref(directory);
 	}
 
-	// Add submenus
-	GList* menus = garcon_menu_get_menus(menu);
-	for (GList* li = menus; li != NULL; li = li->next)
+	// Add menu elements
+	GList* elements = garcon_menu_get_elements(menu);
+	for (GList* li = elements; li != NULL; li = li->next)
 	{
-		load_menu(GARCON_MENU(li->data));
+		if (GARCON_IS_MENU_ITEM(li->data))
+		{
+			load_menu_item(GARCON_MENU_ITEM(li->data));
+		}
+		else if (GARCON_IS_MENU(li->data))
+		{
+			load_menu(GARCON_MENU(li->data));
+		}
 	}
-	g_list_free(menus);
-
-	// Add items
-	GList* items = garcon_menu_get_items(menu);
-	for (GList* li = items; li != NULL; li = li->next)
-	{
-		load_menu_item(GARCON_MENU_ITEM(li->data));
-	}
-	g_list_free(items);
+	g_list_free(elements);
 
 	// Only track single level of categories
 	if (first_level)
