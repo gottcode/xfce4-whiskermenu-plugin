@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-24 22:13+0000\n"
-"PO-Revision-Date: 2013-07-27 23:45+0000\n"
+"PO-Revision-Date: 2013-07-30 09:05+0000\n"
 "Last-Translator: Pablo Lezaeta <prflr88@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr "Todo"
 
 #: src/configuration_dialog.cpp:54
 msgid "Whisker Menu"
-msgstr "Whisker Menu"
+msgstr "Menú Whisker"
 
 #: src/configuration_dialog.cpp:68
 msgid "Appearance"
@@ -34,11 +34,11 @@ msgstr "Apariencia"
 
 #: src/configuration_dialog.cpp:73
 msgid "Show applications by _name"
-msgstr "Mostrar aplicaciones por nombre"
+msgstr "Mostrar aplicaciones por _nombre"
 
 #: src/configuration_dialog.cpp:79
 msgid "Show application _descriptions"
-msgstr "Mostrar aplicaciones descripción"
+msgstr "Mostrar aplicaciones _descripción"
 
 #: src/configuration_dialog.cpp:88
 msgid "Ite_m icon size:"
@@ -74,7 +74,7 @@ msgstr "_Título:"
 
 #: src/configuration_dialog.cpp:166
 msgid "_Icon:"
-msgstr "_Icono:"
+msgstr "_Ícono:"
 
 #: src/configuration_dialog.cpp:182
 msgid "Behavior"
