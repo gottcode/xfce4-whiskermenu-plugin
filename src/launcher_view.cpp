@@ -145,6 +145,13 @@ void LauncherView::set_selection_mode(GtkSelectionMode mode)
 
 //-----------------------------------------------------------------------------
 
+void LauncherView::collapse_all()
+{
+	gtk_tree_view_collapse_all(m_view);
+}
+
+//-----------------------------------------------------------------------------
+
 void LauncherView::unselect_all()
 {
 	GtkTreeSelection* selection = gtk_tree_view_get_selection(m_view);

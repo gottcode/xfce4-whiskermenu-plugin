@@ -68,6 +68,8 @@ Page::~Page()
 
 void Page::reset_selection()
 {
+	m_view->collapse_all();
+
 	// Clear selection and scroll to top
 	GtkTreeModel* model = m_view->get_model();
 	GtkTreeIter iter;

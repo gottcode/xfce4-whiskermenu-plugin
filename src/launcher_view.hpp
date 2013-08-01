@@ -40,7 +40,6 @@ public:
 
 	GtkTreePath* get_selected_path() const;
 	void activate_path(GtkTreePath* path);
-
 	void scroll_to_path(GtkTreePath* path);
 	void select_path(GtkTreePath* path);
 	void set_cursor(GtkTreePath* path);
@@ -49,6 +48,7 @@ public:
 	void set_reorderable(bool reorderable);
 	void set_selection_mode(GtkSelectionMode mode);
 
+	void collapse_all();
 	void unselect_all();
 
 	GtkTreeModel* get_model() const
