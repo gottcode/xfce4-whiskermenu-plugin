@@ -34,10 +34,13 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
+static bool f_load_hierarchy = false;
+
+//-----------------------------------------------------------------------------
+
 ApplicationsPage::ApplicationsPage(Menu* menu) :
 	Page(menu),
 	m_garcon_menu(NULL),
-	m_current_category(NULL),
 	m_all_button(NULL),
 	m_model(NULL),
 	m_loaded(false)
@@ -131,15 +134,18 @@ void ApplicationsPage::load_applications()
 	if (garcon_menu_load(m_garcon_menu, NULL, NULL))
 	{
 		g_signal_connect_swapped(m_garcon_menu, "reload-required", G_CALLBACK(ApplicationsPage::invalidate_applications_slot), this);
-		load_menu(m_garcon_menu);
+		load_menu(m_garcon_menu, NULL);
 	}
 
 	// Sort items and categories
-	for (std::vector<Category*>::const_iterator i = m_categories.begin(), end = m_categories.end(); i != end; ++i)
+	if (!f_load_hierarchy)
 	{
-		(*i)->sort();
+		for (std::vector<Category*>::const_iterator i = m_categories.begin(), end = m_categories.end(); i != end; ++i)
+		{
+			(*i)->sort();
+		}
+		std::sort(m_categories.begin(), m_categories.end(), &Element::less_than);
 	}
-	std::sort(m_categories.begin(), m_categories.end(), &Element::less_than);
 
 	// Create sorted list of menu items
 	std::vector<Launcher*> sorted_items;
@@ -209,7 +215,7 @@ void ApplicationsPage::clear_applications()
 
 //-----------------------------------------------------------------------------
 
-void ApplicationsPage::load_menu(GarconMenu* menu)
+void ApplicationsPage::load_menu(GarconMenu* menu, Category* parent_category)
 {
 	GarconMenuDirectory* directory = garcon_menu_get_directory(menu);
 
@@ -220,15 +226,20 @@ void ApplicationsPage::load_menu(GarconMenu* menu)
 		return;
 	}
 
-	// Only track single level of categories
+	// Track categories
 	bool first_level = directory && (garcon_menu_get_parent(menu) == m_garcon_menu);
-	if (first_level)
-	{
-		m_current_category = new Category(directory);
-		m_categories.push_back(m_current_category);
-	}
+	Category* category = NULL;
 	if (directory)
 	{
+		if (first_level)
+		{
+			category = new Category(directory);
+			m_categories.push_back(category);
+		}
+		else if (parent_category)
+		{
+			category = parent_category->append_menu(directory);
+		}
 		g_object_unref(directory);
 	}
 
@@ -238,29 +249,25 @@ void ApplicationsPage::load_menu(GarconMenu* menu)
 	{
 		if (GARCON_IS_MENU_ITEM(li->data))
 		{
-			load_menu_item(GARCON_MENU_ITEM(li->data));
+			load_menu_item(GARCON_MENU_ITEM(li->data), category);
 		}
 		else if (GARCON_IS_MENU(li->data))
 		{
-			load_menu(GARCON_MENU(li->data));
+			load_menu(GARCON_MENU(li->data), category);
 		}
-		else if (GARCON_IS_MENU_SEPARATOR(li->data) && m_current_category)
+		else if (GARCON_IS_MENU_SEPARATOR(li->data) && f_load_hierarchy && category)
 		{
-			m_current_category->append_separator();
+			category->append_separator();
 		}
 	}
 	g_list_free(elements);
 
-	// Only track single level of categories
-	if (first_level)
+	// Free unused top-level categories
+	if (first_level && category->empty())
 	{
-		// Free unused categories
-		if (m_current_category->empty())
-		{
-			m_categories.erase(std::find(m_categories.begin(), m_categories.end(), m_current_category));
-			delete m_current_category;
-		}
-		m_current_category = NULL;
+		m_categories.erase(std::find(m_categories.begin(), m_categories.end(), category));
+		delete category;
+		category = NULL;
 	}
 
 	// Listen for menu changes
@@ -269,7 +276,7 @@ void ApplicationsPage::load_menu(GarconMenu* menu)
 
 //-----------------------------------------------------------------------------
 
-void ApplicationsPage::load_menu_item(GarconMenuItem* menu_item)
+void ApplicationsPage::load_menu_item(GarconMenuItem* menu_item, Category* category)
 {
 	// Skip hidden items
 	if (!garcon_menu_element_get_visible(GARCON_MENU_ELEMENT(menu_item)))
@@ -286,9 +293,9 @@ void ApplicationsPage::load_menu_item(GarconMenuItem* menu_item)
 	}
 
 	// Add menu item to current category
-	if (m_current_category)
+	if (category)
 	{
-		m_current_category->append_item(iter->second);
+		category->append_item(iter->second);
 	}
 
 	// Listen for menu changes
@@ -327,6 +334,20 @@ void ApplicationsPage::unset_model()
 		g_object_unref(m_model);
 		m_model = NULL;
 	}
+}
+
+//-----------------------------------------------------------------------------
+
+bool ApplicationsPage::get_load_hierarchy()
+{
+	return f_load_hierarchy;
+}
+
+//-----------------------------------------------------------------------------
+
+void ApplicationsPage::set_load_hierarchy(bool load)
+{
+	f_load_hierarchy = load;
 }
 
 //-----------------------------------------------------------------------------

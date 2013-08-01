@@ -47,6 +47,7 @@ private:
 	void toggle_hover_switch_category(GtkToggleButton* button);
 	void toggle_show_name(GtkToggleButton* button);
 	void toggle_show_description(GtkToggleButton* button);
+	void toggle_load_hierarchy(GtkToggleButton* button);
 	void response(int response_id);
 
 private:
@@ -62,6 +63,7 @@ private:
 	GtkWidget* m_show_names;
 	GtkWidget* m_show_descriptions;
 	GtkWidget* m_hover_switch_category;
+	GtkWidget* m_load_hierarchy;
 
 
 private:
@@ -103,6 +105,11 @@ private:
 	static void toggle_show_description_slot(GtkToggleButton* button, ConfigurationDialog* obj)
 	{
 		obj->toggle_show_description(button);
+	}
+
+	static void toggle_load_hierarchy_slot(GtkToggleButton* button, ConfigurationDialog* obj)
+	{
+		obj->toggle_load_hierarchy(button);
 	}
 
 	static void response_slot(GtkDialog*, gint response_id, ConfigurationDialog* obj)

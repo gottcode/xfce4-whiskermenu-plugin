@@ -54,18 +54,20 @@ public:
 	void invalidate_applications();
 	void load_applications();
 
+	static bool get_load_hierarchy();
+	static void set_load_hierarchy(bool load);
+
 private:
 	void apply_filter(GtkToggleButton* togglebutton);
 	bool on_filter(GtkTreeModel* model, GtkTreeIter* iter);
 	void clear_applications();
-	void load_menu(GarconMenu* menu);
-	void load_menu_item(GarconMenuItem* menu_item);
+	void load_menu(GarconMenu* menu, Category* parent_category);
+	void load_menu_item(GarconMenuItem* menu_item, Category* category);
 	void load_categories();
 	void unset_model();
 
 private:
 	GarconMenu* m_garcon_menu;
-	Category* m_current_category;
 	SectionButton* m_all_button;
 	std::vector<Category*> m_categories;
 	std::map<std::string, Launcher*> m_items;

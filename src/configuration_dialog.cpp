@@ -16,6 +16,7 @@
 
 #include "configuration_dialog.hpp"
 
+#include "applications_page.hpp"
 #include "icon_size.hpp"
 #include "launcher.hpp"
 #include "launcher_view.hpp"
@@ -189,6 +190,12 @@ ConfigurationDialog::ConfigurationDialog(PanelPlugin* plugin) :
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_hover_switch_category), SectionButton::get_hover_activate());
 	g_signal_connect(m_hover_switch_category, "toggled", G_CALLBACK(ConfigurationDialog::toggle_hover_switch_category_slot), this);
 
+	// Add option to load menu hierarchy
+	m_load_hierarchy = gtk_check_button_new_with_mnemonic(_("Load menu hie_rarchy"));
+	gtk_box_pack_start(behavior_vbox, m_load_hierarchy, true, true, 0);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_load_hierarchy), ApplicationsPage::get_load_hierarchy());
+	g_signal_connect(m_load_hierarchy, "toggled", G_CALLBACK(ConfigurationDialog::toggle_load_hierarchy_slot), this);
+
 	// Show GTK window
 	gtk_widget_show_all(m_window);
 
@@ -280,6 +287,14 @@ void ConfigurationDialog::toggle_show_name(GtkToggleButton* button)
 void ConfigurationDialog::toggle_show_description(GtkToggleButton* button)
 {
 	Launcher::set_show_description(gtk_toggle_button_get_active(button));
+	m_plugin->reload();
+}
+
+//-----------------------------------------------------------------------------
+
+void ConfigurationDialog::toggle_load_hierarchy(GtkToggleButton* button)
+{
+	ApplicationsPage::set_load_hierarchy(gtk_toggle_button_get_active(button));
 	m_plugin->reload();
 }
 

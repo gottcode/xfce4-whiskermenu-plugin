@@ -66,6 +66,7 @@ PanelPlugin::PanelPlugin(XfcePanelPlugin* plugin) :
 		SectionButton::set_hover_activate(xfce_rc_read_bool_entry(settings, "hover-switch-category", SectionButton::get_hover_activate()));
 		SectionButton::set_icon_size(xfce_rc_read_int_entry(settings, "category-icon-size", SectionButton::get_icon_size()));
 		LauncherView::set_icon_size(xfce_rc_read_int_entry(settings, "item-icon-size", LauncherView::get_icon_size()));
+		ApplicationsPage::set_load_hierarchy(xfce_rc_read_bool_entry(settings, "load-hierarchy", ApplicationsPage::get_load_hierarchy()));
 		m_menu = new Menu(settings);
 
 		xfce_rc_close(settings);
@@ -309,6 +310,7 @@ void PanelPlugin::save()
 	xfce_rc_write_bool_entry(settings, "hover-switch-category", SectionButton::get_hover_activate());
 	xfce_rc_write_int_entry(settings, "category-icon-size", SectionButton::get_icon_size());
 	xfce_rc_write_int_entry(settings, "item-icon-size", LauncherView::get_icon_size());
+	xfce_rc_write_bool_entry(settings, "load-hierarchy", ApplicationsPage::get_load_hierarchy());
 	m_menu->save(settings);
 
 	xfce_rc_close(settings);

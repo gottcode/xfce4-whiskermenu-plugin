@@ -17,7 +17,7 @@
 #ifndef WHISKERMENU_CATEGORY_HPP
 #define WHISKERMENU_CATEGORY_HPP
 
-#include "element.hpp"
+#include "launcher.hpp"
 
 #include <vector>
 
@@ -51,10 +51,7 @@ public:
 
 	GtkTreeModel* get_model();
 
-	bool empty() const
-	{
-		return m_items.empty();
-	}
+	bool empty() const;
 
 	bool has_separators() const
 	{
@@ -67,16 +64,20 @@ public:
 		m_items.push_back(launcher);
 	}
 
+	Category* append_menu(GarconMenuDirectory* directory);
+
 	void append_separator();
 
 	void sort();
 
 private:
+	void insert_items(GtkTreeStore* model, GtkTreeIter* parent, const gchar* fallback_icon);
+	void merge();
 	void unset_model();
 
 private:
 	SectionButton* m_button;
-	std::vector<Launcher*> m_items;
+	std::vector<Element*> m_items;
 	GtkTreeModel* m_model;
 	bool m_has_separators;
 };

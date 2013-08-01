@@ -16,13 +16,24 @@
 
 #include "category.hpp"
 
-#include "launcher.hpp"
 #include "launcher_model.hpp"
 #include "section_button.hpp"
 
 #include <algorithm>
 
 using namespace WhiskerMenu;
+
+//-----------------------------------------------------------------------------
+
+static bool is_category(const Element* element)
+{
+	return element && (element->get_type() == Category::Type);
+}
+
+static bool is_null(const Element* element)
+{
+	return !element;
+}
 
 //-----------------------------------------------------------------------------
 
@@ -55,6 +66,14 @@ Category::~Category()
 	unset_model();
 
 	delete m_button;
+
+	for (std::vector<Element*>::const_iterator i = m_items.begin(), end = m_items.end(); i != end; ++i)
+	{
+		if (is_category(*i))
+		{
+			delete *i;
+		}
+	}
 }
 
 //-----------------------------------------------------------------------------
@@ -75,16 +94,41 @@ GtkTreeModel* Category::get_model()
 {
 	if (!m_model)
 	{
-		LauncherModel model;
-		for (std::vector<Launcher*>::const_iterator i = m_items.begin(), end = m_items.end(); i != end; ++i)
-		{
-			model.append_item(*i);
-		}
-		m_model = model.get_model();
-		g_object_ref(m_model);
+		GtkTreeStore* model = gtk_tree_store_new(
+				LauncherModel::N_COLUMNS,
+				G_TYPE_STRING,
+				G_TYPE_STRING,
+				G_TYPE_POINTER);
+		insert_items(model, NULL, get_icon());
+		m_model = GTK_TREE_MODEL(model);
 	}
 
 	return m_model;
+}
+
+//-----------------------------------------------------------------------------
+
+bool Category::empty() const
+{
+	for (std::vector<Element*>::const_iterator i = m_items.begin(), end = m_items.end(); i != end; ++i)
+	{
+		if (*i && (!is_category(*i) || !static_cast<Category*>(*i)->empty()))
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+//-----------------------------------------------------------------------------
+
+Category* Category::append_menu(GarconMenuDirectory* directory)
+{
+	unset_model();
+	Category* category = new Category(directory);
+	m_items.push_back(category);
+	return category;
 }
 
 //-----------------------------------------------------------------------------
@@ -104,7 +148,109 @@ void Category::append_separator()
 void Category::sort()
 {
 	unset_model();
+	merge();
 	std::sort(m_items.begin(), m_items.end(), &Element::less_than);
+}
+
+//-----------------------------------------------------------------------------
+
+void Category::insert_items(GtkTreeStore* model, GtkTreeIter* parent, const gchar* fallback_icon)
+{
+	for (std::vector<Element*>::size_type i = 0, end = m_items.size(); i < end; ++i)
+	{
+		Element* element = m_items.at(i);
+		if (is_category(element))
+		{
+			Category* category = static_cast<Category*>(element);
+			if (category->empty())
+			{
+				continue;
+			}
+
+			const gchar* icon = category->get_icon();
+			if (!gtk_icon_theme_has_icon(gtk_icon_theme_get_default(), icon))
+			{
+				icon = fallback_icon;
+			}
+			gchar* text = g_markup_escape_text(category->get_text(), -1);
+
+			GtkTreeIter iter;
+			gtk_tree_store_insert_with_values(model,
+					&iter, parent, INT_MAX,
+					LauncherModel::COLUMN_ICON, icon,
+					LauncherModel::COLUMN_TEXT, text,
+					LauncherModel::COLUMN_LAUNCHER, NULL,
+					-1);
+			g_free(text);
+			category->insert_items(model, &iter, icon);
+		}
+		else if (element)
+		{
+			Launcher* launcher = static_cast<Launcher*>(element);
+			gtk_tree_store_insert_with_values(model,
+					NULL, parent, INT_MAX,
+					LauncherModel::COLUMN_ICON, launcher->get_icon(),
+					LauncherModel::COLUMN_TEXT, launcher->get_text(),
+					LauncherModel::COLUMN_LAUNCHER, launcher,
+					-1);
+		}
+		else if ((i + 1) < end)
+		{
+			gtk_tree_store_insert_with_values(model,
+					NULL, parent, INT_MAX,
+					LauncherModel::COLUMN_ICON, NULL,
+					LauncherModel::COLUMN_TEXT, NULL,
+					LauncherModel::COLUMN_LAUNCHER, NULL,
+					-1);
+		}
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void Category::merge()
+{
+	// Find subcategories
+	std::vector<Category*> items;
+	items.push_back(this);
+	std::vector<Element*>::size_type count = 0;
+	for (std::vector<Category*>::size_type i = 0; i < items.size(); ++i)
+	{
+		Category* category = items.at(i);
+		count += category->m_items.size();
+
+		for (std::vector<Element*>::const_iterator j = category->m_items.begin(), end = category->m_items.end(); j != end; ++j)
+		{
+			if (is_category(*j))
+			{
+				items.push_back(static_cast<Category*>(*j));
+			}
+		}
+	}
+
+	// Stop if there is nothing to merge
+	if (items.size() == 1)
+	{
+		return;
+	}
+
+	// Append items
+	m_items.reserve(count);
+	for (std::vector<Category*>::const_iterator i = items.begin() + 1, end = items.end(); i != end; ++i)
+	{
+		m_items.insert(m_items.end(), (*i)->m_items.begin(), (*i)->m_items.end());
+	}
+
+	// Remove subcategories and separators
+	for (std::vector<Element*>::iterator i = m_items.begin(), end = m_items.end(); i != end; ++i)
+	{
+		if (is_category(*i))
+		{
+			delete *i;
+			*i = NULL;
+		}
+	}
+	m_items.erase(std::remove_if(m_items.begin(), m_items.end(), is_null), m_items.end());
 }
 
 //-----------------------------------------------------------------------------
