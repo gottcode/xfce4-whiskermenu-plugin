@@ -24,6 +24,7 @@ using namespace WhiskerMenu;
 //-----------------------------------------------------------------------------
 
 Category::Category(GarconMenuDirectory* directory) :
+	m_button(NULL),
 	m_model(NULL)
 {
 	// Fetch icon
@@ -32,6 +33,7 @@ Category::Category(GarconMenuDirectory* directory) :
 	{
 		icon = "";
 	}
+	set_icon(icon);
 
 	// Fetch text
 	const gchar* text = garcon_menu_directory_get_name(directory);
@@ -39,9 +41,7 @@ Category::Category(GarconMenuDirectory* directory) :
 	{
 		text = "";
 	}
-
-	// Create button
-	m_button = new SectionButton(icon, text);
+	set_text(text);
 }
 
 //-----------------------------------------------------------------------------
@@ -51,6 +51,18 @@ Category::~Category()
 	unset_model();
 
 	delete m_button;
+}
+
+//-----------------------------------------------------------------------------
+
+SectionButton* Category::get_button()
+{
+	if (!m_button)
+	{
+		m_button = new SectionButton(get_icon(), get_text());
+	}
+
+	return m_button;
 }
 
 //-----------------------------------------------------------------------------

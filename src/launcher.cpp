@@ -77,9 +77,7 @@ static void replace_with_quoted_string(std::string& command, size_t& index, gcha
 //-----------------------------------------------------------------------------
 
 Launcher::Launcher(GarconMenuItem* item) :
-	m_item(item),
-	m_icon(NULL),
-	m_text(NULL)
+	m_item(item)
 {
 	garcon_menu_item_ref(m_item);
 
@@ -92,7 +90,7 @@ Launcher::Launcher(GarconMenuItem* item) :
 			gchar* pos = g_strrstr(icon, ".");
 			if (!pos)
 			{
-				m_icon = g_strdup(icon);
+				set_icon(icon);
 			}
 			else
 			{
@@ -102,18 +100,18 @@ Launcher::Launcher(GarconMenuItem* item) :
 						|| (strcmp(suffix, ".svg") == 0)
 						|| (strcmp(suffix, ".svgz") == 0))
 				{
-					m_icon = g_strndup(icon, pos - icon);
+					set_icon(g_strndup(icon, pos - icon));
 				}
 				else
 				{
-					m_icon = g_strdup(icon);
+					set_icon(icon);
 				}
 				g_free(suffix);
 			}
 		}
 		else
 		{
-			m_icon = g_strdup(icon);
+			set_icon(icon);
 		}
 	}
 
@@ -140,7 +138,7 @@ Launcher::Launcher(GarconMenuItem* item) :
 		{
 			details = generic_name;
 		}
-		m_text = g_markup_printf_escaped("%s<b>%s</b>\n%s%s", direction, m_display_name, direction, details);
+		set_text(g_markup_printf_escaped("%s<b>%s</b>\n%s%s", direction, m_display_name, direction, details));
 
 		// Create search text for comment
 		gchar* normalized = g_utf8_normalize(details, -1, G_NORMALIZE_DEFAULT);
@@ -151,7 +149,7 @@ Launcher::Launcher(GarconMenuItem* item) :
 	}
 	else
 	{
-		m_text = g_markup_printf_escaped("%s%s", direction, m_display_name);
+		set_text(g_markup_printf_escaped("%s%s", direction, m_display_name));
 	}
 
 	// Create search text for display name
@@ -178,8 +176,6 @@ Launcher::Launcher(GarconMenuItem* item) :
 Launcher::~Launcher()
 {
 	garcon_menu_item_unref(m_item);
-	g_free(m_icon);
-	g_free(m_text);
 }
 
 //-----------------------------------------------------------------------------

@@ -14,63 +14,70 @@
 // along with this library.  If not, see <http://www.gnu.org/licenses/>.
 
 
-#ifndef WHISKERMENU_CATEGORY_HPP
-#define WHISKERMENU_CATEGORY_HPP
-
-#include "element.hpp"
-
-#include <vector>
+#ifndef WHISKERMENU_ELEMENT_HPP
+#define WHISKERMENU_ELEMENT_HPP
 
 extern "C"
 {
-#include <garcon/garcon.h>
+#include <gtk/gtk.h>
 }
 
 namespace WhiskerMenu
 {
 
-class Launcher;
-class SectionButton;
-
-class Category : public Element
+class Element
 {
 public:
-	explicit Category(GarconMenuDirectory* directory);
-	~Category();
-
-	enum
+	Element() :
+		m_icon(NULL),
+		m_text(NULL)
 	{
-		Type = 1
-	};
-	int get_type() const
-	{
-		return Type;
 	}
 
-	SectionButton* get_button();
-
-	GtkTreeModel* get_model();
-
-	bool empty() const
+	virtual ~Element()
 	{
-		return m_items.empty();
+		g_free(m_icon);
+		g_free(m_text);
 	}
 
-	void push_back(Launcher* launcher)
+	virtual int get_type() const = 0;
+
+	const gchar* get_icon() const
 	{
-		m_items.push_back(launcher);
-		unset_model();
+		return m_icon;
+	}
+
+	const gchar* get_text() const
+	{
+		return m_text;
+	}
+
+protected:
+	void set_icon(const gchar* icon)
+	{
+		m_icon = g_strdup(icon);
+	}
+
+	void set_icon(gchar* icon)
+	{
+		m_icon = icon;
+	}
+
+	void set_text(const gchar* text)
+	{
+		m_text = g_strdup(text);
+	}
+
+	void set_text(gchar* text)
+	{
+		m_text = text;
 	}
 
 private:
-	void unset_model();
-
-private:
-	SectionButton* m_button;
-	std::vector<Launcher*> m_items;
-	GtkTreeModel* m_model;
+	gchar* m_icon;
+	gchar* m_text;
 };
 
 }
 
-#endif // WHISKERMENU_CATEGORY_HPP
+#endif // WHISKERMENU_ELEMENT_HPP

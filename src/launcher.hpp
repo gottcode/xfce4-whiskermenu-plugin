@@ -17,6 +17,7 @@
 #ifndef WHISKERMENU_LAUNCHER_HPP
 #define WHISKERMENU_LAUNCHER_HPP
 
+#include "element.hpp"
 #include "query.hpp"
 
 #include <string>
@@ -30,25 +31,24 @@ extern "C"
 namespace WhiskerMenu
 {
 
-class Launcher
+class Launcher : public Element
 {
 public:
 	explicit Launcher(GarconMenuItem* item);
 	~Launcher();
 
+	enum
+	{
+		Type = 2
+	};
+	int get_type() const
+	{
+		return Type;
+	}
+
 	const gchar* get_display_name() const
 	{
 		return m_display_name;
-	}
-
-	const gchar* get_icon() const
-	{
-		return m_icon;
-	}
-
-	const gchar* get_text() const
-	{
-		return m_text;
 	}
 
 	const gchar* get_desktop_id() const
@@ -77,8 +77,6 @@ private:
 private:
 	GarconMenuItem* m_item;
 	const gchar* m_display_name;
-	gchar* m_icon;
-	gchar* m_text;
 	std::string m_search_name;
 	std::string m_search_comment;
 	std::string m_search_command;
