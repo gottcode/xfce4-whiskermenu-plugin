@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-24 22:13+0000\n"
-"PO-Revision-Date: 2013-07-16 10:25+0000\n"
+"PO-Revision-Date: 2013-07-31 21:33+0000\n"
 "Last-Translator: Mohamad Hasan Al Banna\n"
 "Language-Team: Indonesian (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/id/)\n"
 "MIME-Version: 1.0\n"
@@ -80,7 +80,7 @@ msgstr "Kebiasaan"
 
 #: src/configuration_dialog.cpp:187
 msgid "Switch categories by _hovering"
-msgstr ""
+msgstr "Ganti kategori dengan _melayang"
 
 #: src/configuration_dialog.cpp:209
 msgid "Select An Icon"
@@ -88,39 +88,39 @@ msgstr "Pilih Ikon"
 
 #: src/favorites_page.cpp:73
 msgid "Sort Alphabetically A-Z"
-msgstr ""
+msgstr "Urutan Alfabet A-Z"
 
 #: src/favorites_page.cpp:79
 msgid "Sort Alphabetically Z-A"
-msgstr ""
+msgstr "Urutan Alfabet Z-A"
 
 #: src/icon_size.cpp:50
 msgid "Very Small"
-msgstr ""
+msgstr "Sangat Kecil"
 
 #: src/icon_size.cpp:51
 msgid "Smaller"
-msgstr ""
+msgstr "Lebih Kecil"
 
 #: src/icon_size.cpp:52
 msgid "Small"
-msgstr ""
+msgstr "Kecil"
 
 #: src/icon_size.cpp:53
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #: src/icon_size.cpp:54
 msgid "Large"
-msgstr ""
+msgstr "Besar"
 
 #: src/icon_size.cpp:55
 msgid "Larger"
-msgstr ""
+msgstr "Lebih Besar"
 
 #: src/icon_size.cpp:56
 msgid "Very Large"
-msgstr ""
+msgstr "Sangat Besar"
 
 #: src/launcher.cpp:263
 #, c-format
@@ -185,8 +185,8 @@ msgstr "Gagal menambahkan peluncur ke panel."
 
 #: src/panel_plugin.cpp:150
 msgid "Applications Menu"
-msgstr ""
+msgstr "Menu Aplikasi"
 
 #: src/recent_page.cpp:71
 msgid "Clear Recently Used"
-msgstr ""
+msgstr "Bersihkan yang Baru diGunakan"
