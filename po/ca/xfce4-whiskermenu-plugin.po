@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-24 22:13+0000\n"
-"PO-Revision-Date: 2013-06-30 08:26+0000\n"
+"PO-Revision-Date: 2013-08-02 15:30+0000\n"
 "Last-Translator: oriolfa <oriolfa@ono.com>\n"
 "Language-Team: Catalan (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -40,35 +40,35 @@ msgstr "Mostra _descripcions de l'aplicació"
 
 #: src/configuration_dialog.cpp:88
 msgid "Ite_m icon size:"
-msgstr ""
+msgstr "tamany d'icona ite_m:"
 
 #: src/configuration_dialog.cpp:108
 msgid "Categ_ory icon size:"
-msgstr ""
+msgstr "Tamany d'icona Categ_ory:"
 
 #: src/configuration_dialog.cpp:125
 msgid "Panel Button"
-msgstr ""
+msgstr "Botó Panel"
 
 #: src/configuration_dialog.cpp:133
 msgid "Di_splay:"
-msgstr ""
+msgstr "Di_splay:"
 
 #: src/configuration_dialog.cpp:139
 msgid "Icon"
-msgstr ""
+msgstr "Icona"
 
 #: src/configuration_dialog.cpp:140
 msgid "Title"
-msgstr ""
+msgstr "Títol"
 
 #: src/configuration_dialog.cpp:141
 msgid "Icon and title"
-msgstr ""
+msgstr "Icona i títol"
 
 #: src/configuration_dialog.cpp:151
 msgid "_Title:"
-msgstr ""
+msgstr "_Title:"
 
 #: src/configuration_dialog.cpp:166
 msgid "_Icon:"
@@ -76,11 +76,11 @@ msgstr "_Icona:"
 
 #: src/configuration_dialog.cpp:182
 msgid "Behavior"
-msgstr ""
+msgstr "Comportament"
 
 #: src/configuration_dialog.cpp:187
 msgid "Switch categories by _hovering"
-msgstr ""
+msgstr "Canviar categories per _hovering"
 
 #: src/configuration_dialog.cpp:209
 msgid "Select An Icon"
@@ -88,39 +88,39 @@ msgstr "Sel·lecciona una icona"
 
 #: src/favorites_page.cpp:73
 msgid "Sort Alphabetically A-Z"
-msgstr ""
+msgstr "Ordenar Alfabèticament A-Z"
 
 #: src/favorites_page.cpp:79
 msgid "Sort Alphabetically Z-A"
-msgstr ""
+msgstr "Ordenar Alfabèticament Z-A"
 
 #: src/icon_size.cpp:50
 msgid "Very Small"
-msgstr ""
+msgstr "Molt Petit"
 
 #: src/icon_size.cpp:51
 msgid "Smaller"
-msgstr ""
+msgstr "Més petit"
 
 #: src/icon_size.cpp:52
 msgid "Small"
-msgstr ""
+msgstr "Petit"
 
 #: src/icon_size.cpp:53
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #: src/icon_size.cpp:54
 msgid "Large"
-msgstr ""
+msgstr "Gran"
 
 #: src/icon_size.cpp:55
 msgid "Larger"
-msgstr ""
+msgstr "Més gran"
 
 #: src/icon_size.cpp:56
 msgid "Very Large"
-msgstr ""
+msgstr "Molt Gran"
 
 #: src/launcher.cpp:263
 #, c-format
@@ -185,8 +185,8 @@ msgstr "No s'ha pogut afegir l'accés directa al panell."
 
 #: src/panel_plugin.cpp:150
 msgid "Applications Menu"
-msgstr ""
+msgstr "Menú d'Aplicacions"
 
 #: src/recent_page.cpp:71
 msgid "Clear Recently Used"
-msgstr ""
+msgstr "Neteja Emprats Recentment"
