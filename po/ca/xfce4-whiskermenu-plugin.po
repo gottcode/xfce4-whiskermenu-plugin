@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
+# Adolfo Jayme Barrientos <fitoschido@ubuntu.com>, 2013
 # oriolfa <oriolfa@ono.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-24 22:13+0000\n"
-"PO-Revision-Date: 2013-08-02 15:30+0000\n"
-"Last-Translator: oriolfa <oriolfa@ono.com>\n"
+"PO-Revision-Date: 2013-08-06 13:43+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitoschido@ubuntu.com>\n"
 "Language-Team: Catalan (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,11 +21,11 @@ msgstr ""
 
 #: src/applications_page.cpp:299
 msgid "All"
-msgstr "Tot"
+msgstr "Totes"
 
 #: src/configuration_dialog.cpp:54
 msgid "Whisker Menu"
-msgstr "Menu Whisker"
+msgstr "Menú Whisker"
 
 #: src/configuration_dialog.cpp:68
 msgid "Appearance"
@@ -32,27 +33,27 @@ msgstr "Aparença"
 
 #: src/configuration_dialog.cpp:73
 msgid "Show applications by _name"
-msgstr "Mostra aplicacions pe _nom"
+msgstr "Ordena les aplicacions per _nom"
 
 #: src/configuration_dialog.cpp:79
 msgid "Show application _descriptions"
-msgstr "Mostra _descripcions de l'aplicació"
+msgstr "Mostra la _descripció de les aplicacions"
 
 #: src/configuration_dialog.cpp:88
 msgid "Ite_m icon size:"
-msgstr "tamany d'icona ite_m:"
+msgstr "Mida d’icona de l’ele_ment:"
 
 #: src/configuration_dialog.cpp:108
 msgid "Categ_ory icon size:"
-msgstr "Tamany d'icona Categ_ory:"
+msgstr "Mida d’icona de la categ_oria:"
 
 #: src/configuration_dialog.cpp:125
 msgid "Panel Button"
-msgstr "Botó Panel"
+msgstr "Botó del panell"
 
 #: src/configuration_dialog.cpp:133
 msgid "Di_splay:"
-msgstr "Di_splay:"
+msgstr "Mo_stra:"
 
 #: src/configuration_dialog.cpp:139
 msgid "Icon"
@@ -68,7 +69,7 @@ msgstr "Icona i títol"
 
 #: src/configuration_dialog.cpp:151
 msgid "_Title:"
-msgstr "_Title:"
+msgstr "_Títol:"
 
 #: src/configuration_dialog.cpp:166
 msgid "_Icon:"
@@ -80,23 +81,23 @@ msgstr "Comportament"
 
 #: src/configuration_dialog.cpp:187
 msgid "Switch categories by _hovering"
-msgstr "Canviar categories per _hovering"
+msgstr "Canvia de categoria en a_puntar amb el ratolí"
 
 #: src/configuration_dialog.cpp:209
 msgid "Select An Icon"
-msgstr "Sel·lecciona una icona"
+msgstr "Trieu una icona"
 
 #: src/favorites_page.cpp:73
 msgid "Sort Alphabetically A-Z"
-msgstr "Ordenar Alfabèticament A-Z"
+msgstr "Ordena alfabèticament A–Z"
 
 #: src/favorites_page.cpp:79
 msgid "Sort Alphabetically Z-A"
-msgstr "Ordenar Alfabèticament Z-A"
+msgstr "Ordena alfabèticament Z–A"
 
 #: src/icon_size.cpp:50
 msgid "Very Small"
-msgstr "Molt Petit"
+msgstr "Molt petit"
 
 #: src/icon_size.cpp:51
 msgid "Smaller"
@@ -120,12 +121,12 @@ msgstr "Més gran"
 
 #: src/icon_size.cpp:56
 msgid "Very Large"
-msgstr "Molt Gran"
+msgstr "Molt gran"
 
 #: src/launcher.cpp:263
 #, c-format
 msgid "Failed to execute command \"%s\"."
-msgstr "Error a l'executar la commanda \"%s\"."
+msgstr "S’ha produït un error en executar l’ordre «%s»."
 
 #: src/menu.cpp:100
 msgid "All Settings"
@@ -137,11 +138,11 @@ msgstr "Bloca la pantalla"
 
 #: src/menu.cpp:106
 msgid "Log Out"
-msgstr "Tanca la sessió"
+msgstr "Finalitza la sessió"
 
 #: src/menu.cpp:120
 msgid "Favorites"
-msgstr "Favorits"
+msgstr "Favorites"
 
 #: src/menu.cpp:126
 msgid "Recently Used"
@@ -149,31 +150,31 @@ msgstr "Recents"
 
 #: src/menu.cpp:742
 msgid "Failed to open settings manager."
-msgstr "Error obrint el gestor de la configuració."
+msgstr "S’ha produït un error en obrir el gestor de configuració."
 
 #: src/menu.cpp:756
 msgid "Failed to lock screen."
-msgstr "Error al blocar la pantalla."
+msgstr "S’ha produït un error en blocar la pantalla."
 
 #: src/menu.cpp:770
 msgid "Failed to log out."
-msgstr "Error al tancar la sessió."
+msgstr "S’ha produït un error en tancar la sessió."
 
 #: src/page.cpp:182
 msgid "Add to Favorites"
-msgstr "Afegir a Favorits"
+msgstr "Afegeix a Favorites"
 
 #: src/page.cpp:190
 msgid "Remove From Favorites"
-msgstr "Suprimir de favorits"
+msgstr "Suprimeix de Favorites"
 
 #: src/page.cpp:197
 msgid "Add to Desktop"
-msgstr "Afegir a l'Escriptori"
+msgstr "Afegeix a l’escriptori"
 
 #: src/page.cpp:201
 msgid "Add to Panel"
-msgstr "Afegir al Panell"
+msgstr "Afegeix al panell"
 
 #: src/page.cpp:291
 msgid "Unable to add launcher to desktop."
@@ -185,8 +186,8 @@ msgstr "No s'ha pogut afegir l'accés directa al panell."
 
 #: src/panel_plugin.cpp:150
 msgid "Applications Menu"
-msgstr "Menú d'Aplicacions"
+msgstr "Menú d’aplicacions"
 
 #: src/recent_page.cpp:71
 msgid "Clear Recently Used"
-msgstr "Neteja Emprats Recentment"
+msgstr "Neteja els elements recents"
