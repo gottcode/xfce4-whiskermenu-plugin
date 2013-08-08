@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-24 22:13+0000\n"
-"PO-Revision-Date: 2013-06-30 16:49+0000\n"
+"PO-Revision-Date: 2013-08-07 15:21+0000\n"
 "Last-Translator: Karim Oulad Chalha <herr.linux88@gmail.com>\n"
 "Language-Team: Arabic (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/ar/)\n"
 "MIME-Version: 1.0\n"
@@ -40,35 +40,35 @@ msgstr "عرض _وصف التطبيقات"
 
 #: src/configuration_dialog.cpp:88
 msgid "Ite_m icon size:"
-msgstr ""
+msgstr "ح_جم أيقونة العنصر:"
 
 #: src/configuration_dialog.cpp:108
 msgid "Categ_ory icon size:"
-msgstr ""
+msgstr "_حجم أيقونة الصنف:"
 
 #: src/configuration_dialog.cpp:125
 msgid "Panel Button"
-msgstr ""
+msgstr "زر الشريط"
 
 #: src/configuration_dialog.cpp:133
 msgid "Di_splay:"
-msgstr ""
+msgstr "عر_ض:"
 
 #: src/configuration_dialog.cpp:139
 msgid "Icon"
-msgstr ""
+msgstr "أيقونة"
 
 #: src/configuration_dialog.cpp:140
 msgid "Title"
-msgstr ""
+msgstr "عنوان"
 
 #: src/configuration_dialog.cpp:141
 msgid "Icon and title"
-msgstr ""
+msgstr "أيقونة و عنوان"
 
 #: src/configuration_dialog.cpp:151
 msgid "_Title:"
-msgstr ""
+msgstr "عن_وان:"
 
 #: src/configuration_dialog.cpp:166
 msgid "_Icon:"
@@ -76,11 +76,11 @@ msgstr "_أيقونة:"
 
 #: src/configuration_dialog.cpp:182
 msgid "Behavior"
-msgstr ""
+msgstr "سلوك"
 
 #: src/configuration_dialog.cpp:187
 msgid "Switch categories by _hovering"
-msgstr ""
+msgstr "تبديل الأصناف ح_سب الترفيف"
 
 #: src/configuration_dialog.cpp:209
 msgid "Select An Icon"
@@ -88,39 +88,39 @@ msgstr "إختر أيقونة"
 
 #: src/favorites_page.cpp:73
 msgid "Sort Alphabetically A-Z"
-msgstr ""
+msgstr "رتب أبجديا أ-ي"
 
 #: src/favorites_page.cpp:79
 msgid "Sort Alphabetically Z-A"
-msgstr ""
+msgstr "رتب أبجديا ي-أ"
 
 #: src/icon_size.cpp:50
 msgid "Very Small"
-msgstr ""
+msgstr "صغير جدا"
 
 #: src/icon_size.cpp:51
 msgid "Smaller"
-msgstr ""
+msgstr "أصغر"
 
 #: src/icon_size.cpp:52
 msgid "Small"
-msgstr ""
+msgstr "صغير"
 
 #: src/icon_size.cpp:53
 msgid "Normal"
-msgstr ""
+msgstr "عادي"
 
 #: src/icon_size.cpp:54
 msgid "Large"
-msgstr ""
+msgstr "كبير"
 
 #: src/icon_size.cpp:55
 msgid "Larger"
-msgstr ""
+msgstr "أكبر"
 
 #: src/icon_size.cpp:56
 msgid "Very Large"
-msgstr ""
+msgstr "كبير جدا"
 
 #: src/launcher.cpp:263
 #, c-format
@@ -185,8 +185,8 @@ msgstr "عاجز عن إضافة المطلقة إلى الشريط."
 
 #: src/panel_plugin.cpp:150
 msgid "Applications Menu"
-msgstr ""
+msgstr "قائمة التطبيقات"
 
 #: src/recent_page.cpp:71
 msgid "Clear Recently Used"
-msgstr ""
+msgstr "محو المستعملة حديثا"
