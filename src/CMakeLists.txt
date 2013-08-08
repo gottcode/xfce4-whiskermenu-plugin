@@ -1,11 +1,11 @@
 set(WHISKERMENU_FLAGS "-Wall -Wextra")
 if(ENABLE_WERROR)
-	set(WHISKERMENU_FLAGS "${WHISKERMENU_FLAGS} -Werror")
+    set(WHISKERMENU_FLAGS "${WHISKERMENU_FLAGS} -Werror")
 endif()
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${WHISKERMENU_FLAGS}")
 set(CMAKE_CXX_FLAGS "-fvisibility=hidden ${WHISKERMENU_FLAGS} ${CMAKE_CXX_FLAGS}")
 if(ENABLE_AS_NEEDED)
-	set(CMAKE_SHARED_LINKER_FLAGS "-Wl,--as-needed ${CMAKE_SHARED_LINKER_FLAGS}")
+    set(CMAKE_SHARED_LINKER_FLAGS "-Wl,--as-needed ${CMAKE_SHARED_LINKER_FLAGS}")
 endif()
 
 find_package(GTK2 REQUIRED)
@@ -61,7 +61,7 @@ if(${DISABLE_DEPRECATED})
         -DGTK_DISABLE_DEPRECATED=1)
 endif()
 
-add_library(whiskermenu SHARED
+add_library(whiskermenu MODULE
     applications_page.cpp
     category.cpp
     configuration_dialog.cpp
