@@ -6,9 +6,9 @@
 # Pjotr123 <pjotrvertaalt@gmail.com>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-whiskermenu-plugin 1.1.0\n"
+"Project-Id-Version: xfce4-whiskermenu-plugin 1.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-24 22:13+0000\n"
+"POT-Creation-Date: 2013-08-08 15:36+0000\n"
 "PO-Revision-Date: 2013-07-13 17:04+0000\n"
 "Last-Translator: Pjotr123 <pjotrvertaalt@gmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/nl/)\n"
@@ -127,35 +127,35 @@ msgstr "Heel groot"
 msgid "Failed to execute command \"%s\"."
 msgstr "Kon opdracht '%s' niet uitvoeren"
 
-#: src/menu.cpp:100
+#: src/menu.cpp:101
 msgid "All Settings"
 msgstr "Alle instellingen"
 
-#: src/menu.cpp:103
+#: src/menu.cpp:104
 msgid "Lock Screen"
 msgstr "Scherm vergrendelen"
 
-#: src/menu.cpp:106
+#: src/menu.cpp:107
 msgid "Log Out"
 msgstr "Afmelden"
 
-#: src/menu.cpp:120
+#: src/menu.cpp:121
 msgid "Favorites"
 msgstr "Favorieten"
 
-#: src/menu.cpp:126
+#: src/menu.cpp:127
 msgid "Recently Used"
 msgstr "Onlangs gebruikt"
 
-#: src/menu.cpp:742
+#: src/menu.cpp:743
 msgid "Failed to open settings manager."
 msgstr "Kon instellingenbeheerder niet openen."
 
-#: src/menu.cpp:756
+#: src/menu.cpp:757
 msgid "Failed to lock screen."
 msgstr "Kon scherm niet vergrendelen."
 
-#: src/menu.cpp:770
+#: src/menu.cpp:771
 msgid "Failed to log out."
 msgstr "Kon niet afmelden."
 

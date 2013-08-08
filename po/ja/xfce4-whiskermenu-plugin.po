@@ -6,9 +6,9 @@
 # Masato HASHIMOTO <cabezon.hashimoto@gmail.com>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: Whisker Menu\n"
+"Project-Id-Version: xfce4-whiskermenu-plugin 1.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-24 22:13+0000\n"
+"POT-Creation-Date: 2013-08-08 15:36+0000\n"
 "PO-Revision-Date: 2013-07-25 15:14+0000\n"
 "Last-Translator: Masato HASHIMOTO <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/ja/)\n"
@@ -127,35 +127,35 @@ msgstr "とても大きい"
 msgid "Failed to execute command \"%s\"."
 msgstr "コマンド \"%s\" の実行に失敗しました。"
 
-#: src/menu.cpp:100
+#: src/menu.cpp:101
 msgid "All Settings"
 msgstr "すべての設定"
 
-#: src/menu.cpp:103
+#: src/menu.cpp:104
 msgid "Lock Screen"
 msgstr "スクリーンをロック"
 
-#: src/menu.cpp:106
+#: src/menu.cpp:107
 msgid "Log Out"
 msgstr "ログアウト"
 
-#: src/menu.cpp:120
+#: src/menu.cpp:121
 msgid "Favorites"
 msgstr "お気に入り"
 
-#: src/menu.cpp:126
+#: src/menu.cpp:127
 msgid "Recently Used"
 msgstr "最近使ったもの"
 
-#: src/menu.cpp:742
+#: src/menu.cpp:743
 msgid "Failed to open settings manager."
 msgstr "設定マネージャーを開くことに失敗しました。"
 
-#: src/menu.cpp:756
+#: src/menu.cpp:757
 msgid "Failed to lock screen."
 msgstr "スクリーンのロックに失敗しました。"
 
-#: src/menu.cpp:770
+#: src/menu.cpp:771
 msgid "Failed to log out."
 msgstr "ログアウトに失敗しました。"
 

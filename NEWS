@@ -1,3 +1,9 @@
+1.1.1
+=====
+- Add name to main widget to allow styling.
+- Build system improvements.
+- Translation updates: Arabic, Catalan, French, Indonesian, Japanese, Malay, Russian, Spanish.
+
 1.1.0
 =====
 - Fix hang at launch when there are too many recent items.

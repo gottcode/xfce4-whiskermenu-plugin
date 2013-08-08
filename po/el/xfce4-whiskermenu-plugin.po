@@ -6,9 +6,9 @@
 # angel_solomos <angelsolomos@gmail.com>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-whiskermenu-plugin 1.1.0\n"
+"Project-Id-Version: xfce4-whiskermenu-plugin 1.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-24 22:13+0000\n"
+"POT-Creation-Date: 2013-08-08 15:36+0000\n"
 "PO-Revision-Date: 2013-07-14 11:47+0000\n"
 "Last-Translator: angel_solomos <angelsolomos@gmail.com>\n"
 "Language-Team: Greek (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/el/)\n"
@@ -127,35 +127,35 @@ msgstr "Πολύ μεγάλα"
 msgid "Failed to execute command \"%s\"."
 msgstr "Αποτυχία εκτέλεσης εντολής \"%s\"."
 
-#: src/menu.cpp:100
+#: src/menu.cpp:101
 msgid "All Settings"
 msgstr "Όλες οι επιλογές"
 
-#: src/menu.cpp:103
+#: src/menu.cpp:104
 msgid "Lock Screen"
 msgstr "Κλείδωμα οθόνης"
 
-#: src/menu.cpp:106
+#: src/menu.cpp:107
 msgid "Log Out"
 msgstr "Αποσύνδεση"
 
-#: src/menu.cpp:120
+#: src/menu.cpp:121
 msgid "Favorites"
 msgstr "Αγαπημένα"
 
-#: src/menu.cpp:126
+#: src/menu.cpp:127
 msgid "Recently Used"
 msgstr "Χρησημοποιήθηκαν πρόσφατα"
 
-#: src/menu.cpp:742
+#: src/menu.cpp:743
 msgid "Failed to open settings manager."
 msgstr "Αποτυχία εκκίνησης του διαχειριστή ρυθμίσεων"
 
-#: src/menu.cpp:756
+#: src/menu.cpp:757
 msgid "Failed to lock screen."
 msgstr "Αποτυχία κλειδώματος οθόνης."
 
-#: src/menu.cpp:770
+#: src/menu.cpp:771
 msgid "Failed to log out."
 msgstr "Αποτυχία αποσύνδεσης."
 
