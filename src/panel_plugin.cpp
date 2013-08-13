@@ -107,7 +107,8 @@ PanelPlugin::PanelPlugin(XfcePanelPlugin* plugin) :
 		gtk_widget_show(GTK_WIDGET(m_button_icon));
 	}
 
-	m_button_label = GTK_LABEL(gtk_label_new(m_button_title.c_str()));
+	m_button_label = GTK_LABEL(gtk_label_new(NULL));
+	gtk_label_set_markup(m_button_label, m_button_title.c_str());
 	gtk_box_pack_start(m_button_box, GTK_WIDGET(m_button_label), false, false, 0);
 	if (m_button_title_visible)
 	{
@@ -191,7 +192,7 @@ void PanelPlugin::set_button_style(ButtonStyle style)
 void PanelPlugin::set_button_title(const std::string& title)
 {
 	m_button_title = title;
-	gtk_label_set_label(m_button_label, m_button_title.c_str());
+	gtk_label_set_markup(m_button_label, m_button_title.c_str());
 	size_changed(xfce_panel_plugin_get_size(m_plugin));
 }
 
