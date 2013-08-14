@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-08-08 15:36+0000\n"
-"PO-Revision-Date: 2013-07-25 15:14+0000\n"
+"PO-Revision-Date: 2013-08-11 08:11+0000\n"
 "Last-Translator: Masato HASHIMOTO <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -129,7 +129,7 @@ msgstr "コマンド \"%s\" の実行に失敗しました。"
 
 #: src/menu.cpp:101
 msgid "All Settings"
-msgstr "すべての設定"
+msgstr "設定マネージャー"
 
 #: src/menu.cpp:104
 msgid "Lock Screen"
