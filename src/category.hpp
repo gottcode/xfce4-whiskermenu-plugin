@@ -72,6 +72,7 @@ public:
 
 private:
 	void insert_items(GtkTreeStore* model, GtkTreeIter* parent, const gchar* fallback_icon);
+	void insert_items(GtkListStore* model);
 	void merge();
 	void unset_model();
 
@@ -80,6 +81,7 @@ private:
 	std::vector<Element*> m_items;
 	GtkTreeModel* m_model;
 	bool m_has_separators;
+	bool m_has_subcategories;
 };
 
 }

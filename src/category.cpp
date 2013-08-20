@@ -40,7 +40,8 @@ static bool is_null(const Element* element)
 Category::Category(GarconMenuDirectory* directory) :
 	m_button(NULL),
 	m_model(NULL),
-	m_has_separators(false)
+	m_has_separators(false),
+	m_has_subcategories(false)
 {
 	// Fetch icon
 	const gchar* icon = garcon_menu_directory_get_icon_name(directory);
@@ -94,13 +95,26 @@ GtkTreeModel* Category::get_model()
 {
 	if (!m_model)
 	{
-		GtkTreeStore* model = gtk_tree_store_new(
-				LauncherModel::N_COLUMNS,
-				G_TYPE_STRING,
-				G_TYPE_STRING,
-				G_TYPE_POINTER);
-		insert_items(model, NULL, get_icon());
-		m_model = GTK_TREE_MODEL(model);
+		if (m_has_subcategories)
+		{
+			GtkTreeStore* model = gtk_tree_store_new(
+					LauncherModel::N_COLUMNS,
+					G_TYPE_STRING,
+					G_TYPE_STRING,
+					G_TYPE_POINTER);
+			insert_items(model, NULL, get_icon());
+			m_model = GTK_TREE_MODEL(model);
+		}
+		else
+		{
+			GtkListStore* model = gtk_list_store_new(
+					LauncherModel::N_COLUMNS,
+					G_TYPE_STRING,
+					G_TYPE_STRING,
+					G_TYPE_POINTER);
+			insert_items(model);
+			m_model = GTK_TREE_MODEL(model);
+		}
 	}
 
 	return m_model;
@@ -125,6 +139,7 @@ bool Category::empty() const
 
 Category* Category::append_menu(GarconMenuDirectory* directory)
 {
+	m_has_subcategories = true;
 	unset_model();
 	Category* category = new Category(directory);
 	m_items.push_back(category);
@@ -208,8 +223,42 @@ void Category::insert_items(GtkTreeStore* model, GtkTreeIter* parent, const gcha
 
 //-----------------------------------------------------------------------------
 
+void Category::insert_items(GtkListStore* model)
+{
+	for (std::vector<Element*>::size_type i = 0, end = m_items.size(); i < end; ++i)
+	{
+		Element* element = m_items.at(i);
+		if (element)
+		{
+			Launcher* launcher = static_cast<Launcher*>(element);
+			gtk_list_store_insert_with_values(model,
+					NULL, INT_MAX,
+					LauncherModel::COLUMN_ICON, launcher->get_icon(),
+					LauncherModel::COLUMN_TEXT, launcher->get_text(),
+					LauncherModel::COLUMN_LAUNCHER, launcher,
+					-1);
+		}
+		else if ((i + 1) < end)
+		{
+			gtk_list_store_insert_with_values(model,
+					NULL, INT_MAX,
+					LauncherModel::COLUMN_ICON, NULL,
+					LauncherModel::COLUMN_TEXT, NULL,
+					LauncherModel::COLUMN_LAUNCHER, NULL,
+					-1);
+		}
+	}
+}
+
+//-----------------------------------------------------------------------------
+
 void Category::merge()
 {
+	if (!m_has_subcategories)
+	{
+		return;
+	}
+
 	// Find direct subcategories
 	std::vector<Category*> categories;
 	for (std::vector<Element*>::const_iterator i = m_items.begin(), end = m_items.end(); i != end; ++i)
@@ -220,12 +269,6 @@ void Category::merge()
 		}
 	}
 	std::vector<Category*>::size_type last_direct = categories.size();
-
-	// Stop if there is nothing to merge
-	if (last_direct == 0)
-	{
-		return;
-	}
 
 	// Recursively find subcategories
 	std::vector<Element*>::size_type count = m_items.size();
@@ -265,6 +308,8 @@ void Category::merge()
 	{
 		delete categories.at(i);
 	}
+
+	m_has_subcategories = false;
 }
 
 //-----------------------------------------------------------------------------
