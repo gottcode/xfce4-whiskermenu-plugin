@@ -210,33 +210,42 @@ void Category::insert_items(GtkTreeStore* model, GtkTreeIter* parent, const gcha
 
 void Category::merge()
 {
-	// Find subcategories
-	std::vector<Category*> items;
-	items.push_back(this);
-	std::vector<Element*>::size_type count = 0;
-	for (std::vector<Category*>::size_type i = 0; i < items.size(); ++i)
+	// Find direct subcategories
+	std::vector<Category*> categories;
+	for (std::vector<Element*>::const_iterator i = m_items.begin(), end = m_items.end(); i != end; ++i)
 	{
-		Category* category = items.at(i);
+		if (is_category(*i))
+		{
+			categories.push_back(static_cast<Category*>(*i));
+		}
+	}
+	std::vector<Category*>::size_type last_direct = categories.size();
+
+	// Stop if there is nothing to merge
+	if (last_direct == 0)
+	{
+		return;
+	}
+
+	// Recursively find subcategories
+	std::vector<Element*>::size_type count = m_items.size();
+	for (std::vector<Category*>::size_type i = 0; i < categories.size(); ++i)
+	{
+		Category* category = categories.at(i);
 		count += category->m_items.size();
 
 		for (std::vector<Element*>::const_iterator j = category->m_items.begin(), end = category->m_items.end(); j != end; ++j)
 		{
 			if (is_category(*j))
 			{
-				items.push_back(static_cast<Category*>(*j));
+				categories.push_back(static_cast<Category*>(*j));
 			}
 		}
 	}
 
-	// Stop if there is nothing to merge
-	if (items.size() == 1)
-	{
-		return;
-	}
-
 	// Append items
 	m_items.reserve(count);
-	for (std::vector<Category*>::const_iterator i = items.begin() + 1, end = items.end(); i != end; ++i)
+	for (std::vector<Category*>::const_iterator i = categories.begin(), end = categories.end(); i != end; ++i)
 	{
 		m_items.insert(m_items.end(), (*i)->m_items.begin(), (*i)->m_items.end());
 	}
@@ -246,11 +255,16 @@ void Category::merge()
 	{
 		if (is_category(*i))
 		{
-			delete *i;
 			*i = NULL;
 		}
 	}
 	m_items.erase(std::remove_if(m_items.begin(), m_items.end(), is_null), m_items.end());
+
+	// Delete direct subcategories; they will recursively delete their subcategories
+	for (std::vector<Category*>::size_type i = 0; i < last_direct; ++i)
+	{
+		delete categories.at(i);
+	}
 }
 
 //-----------------------------------------------------------------------------
