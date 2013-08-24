@@ -4,13 +4,14 @@
 #
 # Translators:
 # angel_solomos <angelsolomos@gmail.com>, 2013
+# Γιάννης Ανθυμίδης <yannanth@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-08-08 15:36+0000\n"
-"PO-Revision-Date: 2013-07-14 11:47+0000\n"
-"Last-Translator: angel_solomos <angelsolomos@gmail.com>\n"
+"PO-Revision-Date: 2013-08-23 19:51+0000\n"
+"Last-Translator: Γιάννης Ανθυμίδης <yannanth@gmail.com>\n"
 "Language-Team: Greek (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,19 +33,19 @@ msgstr "Εμφάνιση"
 
 #: src/configuration_dialog.cpp:73
 msgid "Show applications by _name"
-msgstr "Προβολή εφαρμογών κατά όνομα"
+msgstr "Προβολή εφαρμογών κατά ό_νομα"
 
 #: src/configuration_dialog.cpp:79
 msgid "Show application _descriptions"
-msgstr "Εμφάνιση περιγραφής εφαρμογών"
+msgstr "Εμφάνιση περιγραφής _εφαρμογών"
 
 #: src/configuration_dialog.cpp:88
 msgid "Ite_m icon size:"
-msgstr "Μέγεθος εικονιδίων αντικειμένων:"
+msgstr "Μέγεθος εικονιδίων _αντικειμένων:"
 
 #: src/configuration_dialog.cpp:108
 msgid "Categ_ory icon size:"
-msgstr "Μέγεθος εικονιδίων κατηγοριών:"
+msgstr "Μέγεθος εικονιδίων _κατηγοριών:"
 
 #: src/configuration_dialog.cpp:125
 msgid "Panel Button"
@@ -52,7 +53,7 @@ msgstr "Κουμπί ταμπλό"
 
 #: src/configuration_dialog.cpp:133
 msgid "Di_splay:"
-msgstr "Εμφάνιση:"
+msgstr "Εμ_φάνιση:"
 
 #: src/configuration_dialog.cpp:139
 msgid "Icon"
@@ -68,11 +69,11 @@ msgstr "Εικονίδιο και τίτλος"
 
 #: src/configuration_dialog.cpp:151
 msgid "_Title:"
-msgstr "Τίτλος:"
+msgstr "_Τίτλος:"
 
 #: src/configuration_dialog.cpp:166
 msgid "_Icon:"
-msgstr "Εικονίδιο:"
+msgstr "_Εικονίδιο:"
 
 #: src/configuration_dialog.cpp:182
 msgid "Behavior"
@@ -80,23 +81,23 @@ msgstr "Συμπεριφορά"
 
 #: src/configuration_dialog.cpp:187
 msgid "Switch categories by _hovering"
-msgstr "Αλλαγή κατηγοριών στο πέρασμα του ποντικιού"
+msgstr "Αλλαγή κατηγοριών στο _πέρασμα του ποντικιού"
 
 #: src/configuration_dialog.cpp:209
 msgid "Select An Icon"
-msgstr "Επιλογή εικονιδίου"
+msgstr "Επιλογή Εικονιδίου"
 
 #: src/favorites_page.cpp:73
 msgid "Sort Alphabetically A-Z"
-msgstr "Αλφαβητική ταξινόμηση Α-Ζ"
+msgstr "Αλφαβητική Ταξινόμηση Α-Ω"
 
 #: src/favorites_page.cpp:79
 msgid "Sort Alphabetically Z-A"
-msgstr "Αλφαβητική ταξινόμηση Ζ-Α"
+msgstr "Αλφαβητική Ταξινόμηση Ω-Α"
 
 #: src/icon_size.cpp:50
 msgid "Very Small"
-msgstr "Πολύ μικρά"
+msgstr "Πολύ Μικρά"
 
 #: src/icon_size.cpp:51
 msgid "Smaller"
@@ -120,20 +121,20 @@ msgstr "Μεγαλύτερα"
 
 #: src/icon_size.cpp:56
 msgid "Very Large"
-msgstr "Πολύ μεγάλα"
+msgstr "Πολύ Μεγάλα"
 
 #: src/launcher.cpp:263
 #, c-format
 msgid "Failed to execute command \"%s\"."
-msgstr "Αποτυχία εκτέλεσης εντολής \"%s\"."
+msgstr "Αποτυχία εκτέλεσης εντολής «%s»."
 
 #: src/menu.cpp:101
 msgid "All Settings"
-msgstr "Όλες οι επιλογές"
+msgstr "Όλες οι Επιλογές"
 
 #: src/menu.cpp:104
 msgid "Lock Screen"
-msgstr "Κλείδωμα οθόνης"
+msgstr "Κλείδωμα Οθόνης"
 
 #: src/menu.cpp:107
 msgid "Log Out"
@@ -145,11 +146,11 @@ msgstr "Αγαπημένα"
 
 #: src/menu.cpp:127
 msgid "Recently Used"
-msgstr "Χρησημοποιήθηκαν πρόσφατα"
+msgstr "Χρησιμοποιήθηκαν Πρόσφατα"
 
 #: src/menu.cpp:743
 msgid "Failed to open settings manager."
-msgstr "Αποτυχία εκκίνησης του διαχειριστή ρυθμίσεων"
+msgstr "Αποτυχία εκκίνησης του διαχειριστή ρυθμίσεων."
 
 #: src/menu.cpp:757
 msgid "Failed to lock screen."
@@ -169,11 +170,11 @@ msgstr "Αφαίρεση από τα Αγαπημένα"
 
 #: src/page.cpp:197
 msgid "Add to Desktop"
-msgstr "Προσθήκη στην επιφάνει εργασίας"
+msgstr "Προσθήκη στην Επιφάνειά Εργασίας"
 
 #: src/page.cpp:201
 msgid "Add to Panel"
-msgstr "Προσθήκη στο ταμπλό"
+msgstr "Προσθήκη στο Ταμπλό"
 
 #: src/page.cpp:291
 msgid "Unable to add launcher to desktop."
@@ -185,8 +186,8 @@ msgstr "Απέτυχε η προσθήκη εκκινητή στο ταμπλό.
 
 #: src/panel_plugin.cpp:150
 msgid "Applications Menu"
-msgstr "Μενού εφαρμογών"
+msgstr "Μενού Εφαρμογών"
 
 #: src/recent_page.cpp:71
 msgid "Clear Recently Used"
-msgstr "Καθαρισμός πρόσφατα χρησιμοποιημένων"
+msgstr "Εκκαθάριση Πρόσφατα Χρησιμοποιημένων"
