@@ -31,8 +31,12 @@ public:
 
 	void add(Launcher* launcher);
 
+	static bool get_remember_favorites();
+	static void set_remember_favorites(bool remember);
+
 private:
 	void extend_context_menu(GtkWidget* menu);
+	bool remember_launcher(Launcher* launcher);
 	void sort(std::vector<Launcher*>& items) const;
 	void sort_ascending();
 	void sort_descending();

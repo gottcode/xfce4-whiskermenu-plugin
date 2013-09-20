@@ -17,6 +17,7 @@
 #include "configuration_dialog.hpp"
 
 #include "applications_page.hpp"
+#include "favorites_page.hpp"
 #include "icon_size.hpp"
 #include "launcher.hpp"
 #include "launcher_view.hpp"
@@ -196,6 +197,12 @@ ConfigurationDialog::ConfigurationDialog(PanelPlugin* plugin) :
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_load_hierarchy), ApplicationsPage::get_load_hierarchy());
 	g_signal_connect(m_load_hierarchy, "toggled", G_CALLBACK(ConfigurationDialog::toggle_load_hierarchy_slot), this);
 
+	// Add option to remember favorites
+	m_remember_favorites = gtk_check_button_new_with_mnemonic(_("Include _favorites in recently used"));
+	gtk_box_pack_start(behavior_vbox, m_remember_favorites, true, true, 0);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_remember_favorites), FavoritesPage::get_remember_favorites());
+	g_signal_connect(m_remember_favorites, "toggled", G_CALLBACK(ConfigurationDialog::toggle_remember_favorites_slot), this);
+
 	// Show GTK window
 	gtk_widget_show_all(m_window);
 
@@ -296,6 +303,13 @@ void ConfigurationDialog::toggle_load_hierarchy(GtkToggleButton* button)
 {
 	ApplicationsPage::set_load_hierarchy(gtk_toggle_button_get_active(button));
 	m_plugin->reload();
+}
+
+//-----------------------------------------------------------------------------
+
+void ConfigurationDialog::toggle_remember_favorites(GtkToggleButton* button)
+{
+	FavoritesPage::set_remember_favorites(gtk_toggle_button_get_active(button));
 }
 
 //-----------------------------------------------------------------------------

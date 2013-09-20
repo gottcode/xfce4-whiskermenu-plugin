@@ -100,6 +100,13 @@ Launcher* Page::get_selected_launcher() const
 
 //-----------------------------------------------------------------------------
 
+bool Page::remember_launcher(Launcher*)
+{
+	return true;
+}
+
+//-----------------------------------------------------------------------------
+
 void Page::launcher_activated(GtkTreeView* view, GtkTreePath* path)
 {
 	GtkTreeIter iter;
@@ -115,7 +122,10 @@ void Page::launcher_activated(GtkTreeView* view, GtkTreePath* path)
 	}
 
 	// Add to recent
-	m_menu->get_recent()->add(launcher);
+	if (remember_launcher(launcher))
+	{
+		m_menu->get_recent()->add(launcher);
+	}
 
 	// Hide window
 	m_menu->hide();

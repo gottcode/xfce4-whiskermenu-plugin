@@ -55,6 +55,7 @@ protected:
 	}
 
 private:
+	virtual bool remember_launcher(Launcher* launcher);
 	void launcher_activated(GtkTreeView* view, GtkTreePath* path);
 	bool view_button_press_event(GtkWidget* view, GdkEventButton* event);
 	bool view_popup_menu_event(GtkWidget* view);

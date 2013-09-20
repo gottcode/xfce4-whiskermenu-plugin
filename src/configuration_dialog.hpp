@@ -48,6 +48,7 @@ private:
 	void toggle_show_name(GtkToggleButton* button);
 	void toggle_show_description(GtkToggleButton* button);
 	void toggle_load_hierarchy(GtkToggleButton* button);
+	void toggle_remember_favorites(GtkToggleButton* button);
 	void response(int response_id);
 
 private:
@@ -64,6 +65,7 @@ private:
 	GtkWidget* m_show_descriptions;
 	GtkWidget* m_hover_switch_category;
 	GtkWidget* m_load_hierarchy;
+	GtkWidget* m_remember_favorites;
 
 
 private:
@@ -110,6 +112,11 @@ private:
 	static void toggle_load_hierarchy_slot(GtkToggleButton* button, ConfigurationDialog* obj)
 	{
 		obj->toggle_load_hierarchy(button);
+	}
+
+	static void toggle_remember_favorites_slot(GtkToggleButton* button, ConfigurationDialog* obj)
+	{
+		obj->toggle_remember_favorites(button);
 	}
 
 	static void response_slot(GtkDialog*, gint response_id, ConfigurationDialog* obj)

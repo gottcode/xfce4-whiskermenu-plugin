@@ -28,6 +28,8 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
+static bool f_remember_favorites = true;
+
 static const std::string default_favorites[4] =
 {
 	"exo-terminal-emulator.desktop",
@@ -65,6 +67,20 @@ void FavoritesPage::add(Launcher* launcher)
 
 //-----------------------------------------------------------------------------
 
+bool FavoritesPage::get_remember_favorites()
+{
+	return f_remember_favorites;
+}
+
+//-----------------------------------------------------------------------------
+
+void FavoritesPage::set_remember_favorites(bool remember)
+{
+	f_remember_favorites = remember;
+}
+
+//-----------------------------------------------------------------------------
+
 void FavoritesPage::extend_context_menu(GtkWidget* menu)
 {
 	GtkWidget* menuitem = gtk_separator_menu_item_new();
@@ -81,6 +97,13 @@ void FavoritesPage::extend_context_menu(GtkWidget* menu)
 	gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM(menuitem), image);
 	g_signal_connect(menuitem, "activate", G_CALLBACK(FavoritesPage::sort_descending_slot), this);
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+}
+
+//-----------------------------------------------------------------------------
+
+bool FavoritesPage::remember_launcher(Launcher* launcher)
+{
+	return f_remember_favorites ? true : !contains(launcher);
 }
 
 //-----------------------------------------------------------------------------

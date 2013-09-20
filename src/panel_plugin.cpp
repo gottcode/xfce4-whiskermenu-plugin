@@ -18,6 +18,7 @@
 
 #include "applications_page.hpp"
 #include "configuration_dialog.hpp"
+#include "favorites_page.hpp"
 #include "icon_size.hpp"
 #include "launcher.hpp"
 #include "launcher_view.hpp"
@@ -67,6 +68,7 @@ PanelPlugin::PanelPlugin(XfcePanelPlugin* plugin) :
 		SectionButton::set_icon_size(xfce_rc_read_int_entry(settings, "category-icon-size", SectionButton::get_icon_size()));
 		LauncherView::set_icon_size(xfce_rc_read_int_entry(settings, "item-icon-size", LauncherView::get_icon_size()));
 		ApplicationsPage::set_load_hierarchy(xfce_rc_read_bool_entry(settings, "load-hierarchy", ApplicationsPage::get_load_hierarchy()));
+		FavoritesPage::set_remember_favorites(xfce_rc_read_bool_entry(settings, "favorites-in-recent", FavoritesPage::get_remember_favorites()));
 		m_menu = new Menu(settings);
 
 		xfce_rc_close(settings);
@@ -312,6 +314,7 @@ void PanelPlugin::save()
 	xfce_rc_write_int_entry(settings, "category-icon-size", SectionButton::get_icon_size());
 	xfce_rc_write_int_entry(settings, "item-icon-size", LauncherView::get_icon_size());
 	xfce_rc_write_bool_entry(settings, "load-hierarchy", ApplicationsPage::get_load_hierarchy());
+	xfce_rc_write_bool_entry(settings, "favorites-in-recent", FavoritesPage::get_remember_favorites());
 	m_menu->save(settings);
 
 	xfce_rc_close(settings);
