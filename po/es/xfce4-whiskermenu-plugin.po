@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-08-08 15:36+0000\n"
-"PO-Revision-Date: 2013-08-06 13:30+0000\n"
+"PO-Revision-Date: 2013-08-31 22:44+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitoschido@ubuntu.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -39,7 +39,7 @@ msgstr "Ordenar las aplicaciones por _nombre"
 
 #: src/configuration_dialog.cpp:79
 msgid "Show application _descriptions"
-msgstr "Mostrar _descripción de las aplicaciones"
+msgstr "Mostrar las _descripciones de las aplicaciones"
 
 #: src/configuration_dialog.cpp:88
 msgid "Ite_m icon size:"
@@ -55,7 +55,7 @@ msgstr "Botón del panel"
 
 #: src/configuration_dialog.cpp:133
 msgid "Di_splay:"
-msgstr "Mue_stra:"
+msgstr "Mo_strar:"
 
 #: src/configuration_dialog.cpp:139
 msgid "Icon"
