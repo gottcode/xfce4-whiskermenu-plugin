@@ -59,149 +59,18 @@ ConfigurationDialog::ConfigurationDialog(PanelPlugin* plugin) :
 	g_signal_connect(m_window, "response", G_CALLBACK(ConfigurationDialog::response_slot), this);
 	g_signal_connect_swapped(m_window, "destroy", G_CALLBACK(whiskermenu_config_dialog_delete), this);
 
-	// Fetch contents box
-	GtkBox* contents_vbox = GTK_BOX(gtk_dialog_get_content_area(GTK_DIALOG(m_window)));
+	// Create tabs
+	GtkNotebook* notebook = GTK_NOTEBOOK(gtk_notebook_new());
+	gtk_notebook_append_page(notebook, init_appearance_tab(), gtk_label_new_with_mnemonic("_Appearance"));
+	gtk_notebook_append_page(notebook, init_panel_button_tab(), gtk_label_new_with_mnemonic("_Panel Button"));
+	gtk_notebook_append_page(notebook, init_behavior_tab(), gtk_label_new_with_mnemonic("_Behavior"));
 
-	// Create size group for labels
-	GtkSizeGroup* label_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
-
-	// Create appearance section
-	GtkBox* appearance_vbox = GTK_BOX(gtk_vbox_new(false, 8));
-	GtkWidget* appearance_frame = xfce_gtk_frame_box_new_with_content(_("Appearance"), GTK_WIDGET(appearance_vbox));
-	gtk_box_pack_start(contents_vbox, appearance_frame, false, false, 0);
-	gtk_container_set_border_width(GTK_CONTAINER(appearance_frame), 6);
-
-	// Add option to use generic names
-	m_show_names = gtk_check_button_new_with_mnemonic(_("Show applications by _name"));
-	gtk_box_pack_start(appearance_vbox, m_show_names, true, true, 0);
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_names), Launcher::get_show_name());
-	g_signal_connect(m_show_names, "toggled", G_CALLBACK(ConfigurationDialog::toggle_show_name_slot), this);
-
-	// Add option to hide descriptions
-	m_show_descriptions = gtk_check_button_new_with_mnemonic(_("Show application _descriptions"));
-	gtk_box_pack_start(appearance_vbox, m_show_descriptions, true, true, 0);
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_descriptions), Launcher::get_show_description());
-	g_signal_connect(m_show_descriptions, "toggled", G_CALLBACK(ConfigurationDialog::toggle_show_description_slot), this);
-
-	// Add item icon size selector
-	GtkBox* hbox = GTK_BOX(gtk_hbox_new(false, 12));
-	gtk_box_pack_start(appearance_vbox, GTK_WIDGET(hbox), false, false, 0);
-
-	GtkWidget* label = gtk_label_new_with_mnemonic(_("Ite_m icon size:"));
-	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
-	gtk_box_pack_start(hbox, label, false, false, 0);
-	gtk_size_group_add_widget(label_size_group, label);
-
-	m_item_icon_size = gtk_combo_box_text_new();
-	std::vector<std::string> icon_sizes = IconSize::get_strings();
-	for (std::vector<std::string>::const_iterator i = icon_sizes.begin(), end = icon_sizes.end(); i != end; ++i)
-	{
-		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_item_icon_size), i->c_str());
-	}
-	gtk_combo_box_set_active(GTK_COMBO_BOX(m_item_icon_size), LauncherView::get_icon_size());
-	gtk_box_pack_start(hbox, m_item_icon_size, false, false, 0);
-	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_item_icon_size);
-	g_signal_connect(m_item_icon_size, "changed", G_CALLBACK(ConfigurationDialog::item_icon_size_changed_slot), this);
-
-	// Add category icon size selector
-	hbox = GTK_BOX(gtk_hbox_new(false, 12));
-	gtk_box_pack_start(appearance_vbox, GTK_WIDGET(hbox), false, false, 0);
-
-	label = gtk_label_new_with_mnemonic(_("Categ_ory icon size:"));
-	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
-	gtk_box_pack_start(hbox, label, false, false, 0);
-	gtk_size_group_add_widget(label_size_group, label);
-
-	m_category_icon_size = gtk_combo_box_text_new();
-	for (std::vector<std::string>::const_iterator i = icon_sizes.begin(), end = icon_sizes.end(); i != end; ++i)
-	{
-		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_category_icon_size), i->c_str());
-	}
-	gtk_combo_box_set_active(GTK_COMBO_BOX(m_category_icon_size), SectionButton::get_icon_size());
-	gtk_box_pack_start(hbox, m_category_icon_size, false, false, 0);
-	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_category_icon_size);
-	g_signal_connect(m_category_icon_size, "changed", G_CALLBACK(ConfigurationDialog::category_icon_size_changed_slot), this);
-
-	// Create panel button section
-	GtkBox* panel_vbox = GTK_BOX(gtk_vbox_new(false, 8));
-	GtkWidget* panel_frame = xfce_gtk_frame_box_new_with_content(_("Panel Button"), GTK_WIDGET(panel_vbox));
-	gtk_box_pack_start(contents_vbox, panel_frame, false, false, 0);
-	gtk_container_set_border_width(GTK_CONTAINER(panel_frame), 6);
-
-	// Add button style selector
-	hbox = GTK_BOX(gtk_hbox_new(false, 12));
-	gtk_box_pack_start(panel_vbox, GTK_WIDGET(hbox), false, false, 0);
-
-	label = gtk_label_new_with_mnemonic(_("Di_splay:"));
-	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
-	gtk_box_pack_start(hbox, label, false, false, 0);
-	gtk_size_group_add_widget(label_size_group, label);
-
-	m_button_style = gtk_combo_box_text_new();
-	gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_button_style), _("Icon"));
-	gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_button_style), _("Title"));
-	gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_button_style), _("Icon and title"));
-	gtk_combo_box_set_active(GTK_COMBO_BOX(m_button_style), static_cast<int>(m_plugin->get_button_style()) - 1);
-	gtk_box_pack_start(hbox, m_button_style, false, false, 0);
-	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_button_style);
-	g_signal_connect(m_button_style, "changed", G_CALLBACK(ConfigurationDialog::style_changed_slot), this);
-
-	// Add title selector
-	hbox = GTK_BOX(gtk_hbox_new(false, 12));
-	gtk_box_pack_start(panel_vbox, GTK_WIDGET(hbox), false, false, 0);
-
-	label = gtk_label_new_with_mnemonic(_("_Title:"));
-	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
-	gtk_box_pack_start(hbox, label, false, false, 0);
-	gtk_size_group_add_widget(label_size_group, label);
-
-	m_title = gtk_entry_new();
-	gtk_entry_set_text(GTK_ENTRY(m_title), m_plugin->get_button_title().c_str());
-	gtk_box_pack_start(hbox, m_title, true, true, 0);
-	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_title);
-	g_signal_connect(m_title, "changed", G_CALLBACK(ConfigurationDialog::title_changed_slot), this);
-
-	// Add icon selector
-	hbox = GTK_BOX(gtk_hbox_new(false, 12));
-	gtk_box_pack_start(panel_vbox, GTK_WIDGET(hbox), false, false, 0);
-
-	label = gtk_label_new_with_mnemonic(_("_Icon:"));
-	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
-	gtk_box_pack_start(hbox, label, false, false, 0);
-	gtk_size_group_add_widget(label_size_group, label);
-
-	m_icon_button = gtk_button_new();
-	gtk_box_pack_start(hbox, m_icon_button, false, false, 0);
-	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_icon_button);
-	g_signal_connect(m_icon_button, "clicked", G_CALLBACK(ConfigurationDialog::choose_icon_slot), this);
-
-	m_icon = xfce_panel_image_new_from_source(m_plugin->get_button_icon_name().c_str());
-	xfce_panel_image_set_size(XFCE_PANEL_IMAGE(m_icon), 48);
-	gtk_container_add(GTK_CONTAINER(m_icon_button), m_icon);
-
-	// Create behavior section
-	GtkBox* behavior_vbox = GTK_BOX(gtk_vbox_new(false, 8));
-	GtkWidget* behavior_frame = xfce_gtk_frame_box_new_with_content(_("Behavior"), GTK_WIDGET(behavior_vbox));
-	gtk_box_pack_start(contents_vbox, behavior_frame, false, false, 0);
-	gtk_container_set_border_width(GTK_CONTAINER(behavior_frame), 6);
-
-	// Add option to use generic names
-	m_hover_switch_category = gtk_check_button_new_with_mnemonic(_("Switch categories by _hovering"));
-	gtk_box_pack_start(behavior_vbox, m_hover_switch_category, true, true, 0);
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_hover_switch_category), SectionButton::get_hover_activate());
-	g_signal_connect(m_hover_switch_category, "toggled", G_CALLBACK(ConfigurationDialog::toggle_hover_switch_category_slot), this);
-
-	// Add option to load menu hierarchy
-	m_load_hierarchy = gtk_check_button_new_with_mnemonic(_("Load menu hie_rarchy"));
-	gtk_box_pack_start(behavior_vbox, m_load_hierarchy, true, true, 0);
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_load_hierarchy), ApplicationsPage::get_load_hierarchy());
-	g_signal_connect(m_load_hierarchy, "toggled", G_CALLBACK(ConfigurationDialog::toggle_load_hierarchy_slot), this);
-
-	// Add option to remember favorites
-	m_remember_favorites = gtk_check_button_new_with_mnemonic(_("Include _favorites in recently used"));
-	gtk_box_pack_start(behavior_vbox, m_remember_favorites, true, true, 0);
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_remember_favorites), FavoritesPage::get_remember_favorites());
-	g_signal_connect(m_remember_favorites, "toggled", G_CALLBACK(ConfigurationDialog::toggle_remember_favorites_slot), this);
+	// Add tabs to dialog
+	GtkBox* vbox = GTK_BOX(gtk_vbox_new(false, 8));
+	gtk_container_set_border_width(GTK_CONTAINER(vbox), 6);
+	gtk_box_pack_start(vbox, GTK_WIDGET(notebook), true, true, 0);
+	GtkBox* contents = GTK_BOX(gtk_dialog_get_content_area(GTK_DIALOG(m_window)));
+	gtk_box_pack_start(contents, GTK_WIDGET(vbox), true, true, 0);
 
 	// Show GTK window
 	gtk_widget_show_all(m_window);
@@ -325,6 +194,171 @@ void ConfigurationDialog::response(int response_id)
 	{
 		gtk_widget_destroy(m_window);
 	}
+}
+
+//-----------------------------------------------------------------------------
+
+GtkWidget* ConfigurationDialog::init_appearance_tab()
+{
+	// Create size group for labels
+	GtkSizeGroup* label_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
+
+	// Create appearance section
+	GtkWidget* page = gtk_alignment_new(0, 0, 1, 0);
+	gtk_container_set_border_width(GTK_CONTAINER(page), 8);
+	GtkBox* appearance_vbox = GTK_BOX(gtk_vbox_new(false, 8));
+	gtk_container_add(GTK_CONTAINER(page), GTK_WIDGET(appearance_vbox));
+
+	// Add option to use generic names
+	m_show_names = gtk_check_button_new_with_mnemonic(_("Show applications by _name"));
+	gtk_box_pack_start(appearance_vbox, m_show_names, true, true, 0);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_names), Launcher::get_show_name());
+	g_signal_connect(m_show_names, "toggled", G_CALLBACK(ConfigurationDialog::toggle_show_name_slot), this);
+
+	// Add option to hide descriptions
+	m_show_descriptions = gtk_check_button_new_with_mnemonic(_("Show application _descriptions"));
+	gtk_box_pack_start(appearance_vbox, m_show_descriptions, true, true, 0);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_descriptions), Launcher::get_show_description());
+	g_signal_connect(m_show_descriptions, "toggled", G_CALLBACK(ConfigurationDialog::toggle_show_description_slot), this);
+
+	// Add item icon size selector
+	GtkBox* hbox = GTK_BOX(gtk_hbox_new(false, 12));
+	gtk_box_pack_start(appearance_vbox, GTK_WIDGET(hbox), false, false, 0);
+
+	GtkWidget* label = gtk_label_new_with_mnemonic(_("Ite_m icon size:"));
+	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+	gtk_box_pack_start(hbox, label, false, false, 0);
+	gtk_size_group_add_widget(label_size_group, label);
+
+	m_item_icon_size = gtk_combo_box_text_new();
+	std::vector<std::string> icon_sizes = IconSize::get_strings();
+	for (std::vector<std::string>::const_iterator i = icon_sizes.begin(), end = icon_sizes.end(); i != end; ++i)
+	{
+		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_item_icon_size), i->c_str());
+	}
+	gtk_combo_box_set_active(GTK_COMBO_BOX(m_item_icon_size), LauncherView::get_icon_size());
+	gtk_box_pack_start(hbox, m_item_icon_size, false, false, 0);
+	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_item_icon_size);
+	g_signal_connect(m_item_icon_size, "changed", G_CALLBACK(ConfigurationDialog::item_icon_size_changed_slot), this);
+
+	// Add category icon size selector
+	hbox = GTK_BOX(gtk_hbox_new(false, 12));
+	gtk_box_pack_start(appearance_vbox, GTK_WIDGET(hbox), false, false, 0);
+
+	label = gtk_label_new_with_mnemonic(_("Categ_ory icon size:"));
+	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+	gtk_box_pack_start(hbox, label, false, false, 0);
+	gtk_size_group_add_widget(label_size_group, label);
+
+	m_category_icon_size = gtk_combo_box_text_new();
+	for (std::vector<std::string>::const_iterator i = icon_sizes.begin(), end = icon_sizes.end(); i != end; ++i)
+	{
+		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_category_icon_size), i->c_str());
+	}
+	gtk_combo_box_set_active(GTK_COMBO_BOX(m_category_icon_size), SectionButton::get_icon_size());
+	gtk_box_pack_start(hbox, m_category_icon_size, false, false, 0);
+	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_category_icon_size);
+	g_signal_connect(m_category_icon_size, "changed", G_CALLBACK(ConfigurationDialog::category_icon_size_changed_slot), this);
+
+	return page;
+}
+
+//-----------------------------------------------------------------------------
+
+GtkWidget* ConfigurationDialog::init_panel_button_tab()
+{
+	// Create size group for labels
+	GtkSizeGroup* label_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
+
+	// Create panel button section
+	GtkWidget* page = gtk_alignment_new(0, 0, 1, 0);
+	gtk_container_set_border_width(GTK_CONTAINER(page), 8);
+	GtkBox* panel_vbox = GTK_BOX(gtk_vbox_new(false, 8));
+	gtk_container_add(GTK_CONTAINER(page), GTK_WIDGET(panel_vbox));
+
+	// Add button style selector
+	GtkBox* hbox = GTK_BOX(gtk_hbox_new(false, 12));
+	gtk_box_pack_start(panel_vbox, GTK_WIDGET(hbox), false, false, 0);
+
+	GtkWidget* label = gtk_label_new_with_mnemonic(_("Di_splay:"));
+	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+	gtk_box_pack_start(hbox, label, false, false, 0);
+	gtk_size_group_add_widget(label_size_group, label);
+
+	m_button_style = gtk_combo_box_text_new();
+	gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_button_style), _("Icon"));
+	gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_button_style), _("Title"));
+	gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_button_style), _("Icon and title"));
+	gtk_combo_box_set_active(GTK_COMBO_BOX(m_button_style), static_cast<int>(m_plugin->get_button_style()) - 1);
+	gtk_box_pack_start(hbox, m_button_style, false, false, 0);
+	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_button_style);
+	g_signal_connect(m_button_style, "changed", G_CALLBACK(ConfigurationDialog::style_changed_slot), this);
+
+	// Add title selector
+	hbox = GTK_BOX(gtk_hbox_new(false, 12));
+	gtk_box_pack_start(panel_vbox, GTK_WIDGET(hbox), false, false, 0);
+
+	label = gtk_label_new_with_mnemonic(_("_Title:"));
+	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+	gtk_box_pack_start(hbox, label, false, false, 0);
+	gtk_size_group_add_widget(label_size_group, label);
+
+	m_title = gtk_entry_new();
+	gtk_entry_set_text(GTK_ENTRY(m_title), m_plugin->get_button_title().c_str());
+	gtk_box_pack_start(hbox, m_title, true, true, 0);
+	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_title);
+	g_signal_connect(m_title, "changed", G_CALLBACK(ConfigurationDialog::title_changed_slot), this);
+
+	// Add icon selector
+	hbox = GTK_BOX(gtk_hbox_new(false, 12));
+	gtk_box_pack_start(panel_vbox, GTK_WIDGET(hbox), false, false, 0);
+
+	label = gtk_label_new_with_mnemonic(_("_Icon:"));
+	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+	gtk_box_pack_start(hbox, label, false, false, 0);
+	gtk_size_group_add_widget(label_size_group, label);
+
+	m_icon_button = gtk_button_new();
+	gtk_box_pack_start(hbox, m_icon_button, false, false, 0);
+	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_icon_button);
+	g_signal_connect(m_icon_button, "clicked", G_CALLBACK(ConfigurationDialog::choose_icon_slot), this);
+
+	m_icon = xfce_panel_image_new_from_source(m_plugin->get_button_icon_name().c_str());
+	xfce_panel_image_set_size(XFCE_PANEL_IMAGE(m_icon), 48);
+	gtk_container_add(GTK_CONTAINER(m_icon_button), m_icon);
+
+	return page;
+}
+
+//-----------------------------------------------------------------------------
+
+GtkWidget* ConfigurationDialog::init_behavior_tab()
+{
+	// Create behavior section
+	GtkWidget* page = gtk_alignment_new(0, 0, 1, 0);
+	gtk_container_set_border_width(GTK_CONTAINER(page), 8);
+	GtkBox* behavior_vbox = GTK_BOX(gtk_vbox_new(false, 8));
+	gtk_container_add(GTK_CONTAINER(page), GTK_WIDGET(behavior_vbox));
+
+	// Add option to use generic names
+	m_hover_switch_category = gtk_check_button_new_with_mnemonic(_("Switch categories by _hovering"));
+	gtk_box_pack_start(behavior_vbox, m_hover_switch_category, true, true, 0);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_hover_switch_category), SectionButton::get_hover_activate());
+	g_signal_connect(m_hover_switch_category, "toggled", G_CALLBACK(ConfigurationDialog::toggle_hover_switch_category_slot), this);
+
+	// Add option to load menu hierarchy
+	m_load_hierarchy = gtk_check_button_new_with_mnemonic(_("Load menu hie_rarchy"));
+	gtk_box_pack_start(behavior_vbox, m_load_hierarchy, true, true, 0);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_load_hierarchy), ApplicationsPage::get_load_hierarchy());
+	g_signal_connect(m_load_hierarchy, "toggled", G_CALLBACK(ConfigurationDialog::toggle_load_hierarchy_slot), this);
+
+	// Add option to remember favorites
+	m_remember_favorites = gtk_check_button_new_with_mnemonic(_("Include _favorites in recently used"));
+	gtk_box_pack_start(behavior_vbox, m_remember_favorites, true, true, 0);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_remember_favorites), FavoritesPage::get_remember_favorites());
+	g_signal_connect(m_remember_favorites, "toggled", G_CALLBACK(ConfigurationDialog::toggle_remember_favorites_slot), this);
+
+	return page;
 }
 
 //-----------------------------------------------------------------------------

@@ -50,6 +50,9 @@ private:
 	void toggle_load_hierarchy(GtkToggleButton* button);
 	void toggle_remember_favorites(GtkToggleButton* button);
 	void response(int response_id);
+	GtkWidget* init_appearance_tab();
+	GtkWidget* init_panel_button_tab();
+	GtkWidget* init_behavior_tab();
 
 private:
 	PanelPlugin* m_plugin;
