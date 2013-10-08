@@ -49,6 +49,10 @@ static GtkButton* new_action_button(const gchar* icon, const gchar* text)
 	return button;
 }
 
+std::string Menu::m_settings_command = "xfce4-settings-manager";
+std::string Menu::m_lockscreen_command = "xflock4";
+std::string Menu::m_logout_command = "xfce4-session-logout";
+
 //-----------------------------------------------------------------------------
 
 Menu::Menu(XfceRc* settings) :
@@ -506,6 +510,48 @@ bool Menu::on_enter_notify_event(GdkEventCrossing* event)
 
 //-----------------------------------------------------------------------------
 
+std::string Menu::get_settings_command()
+{
+	return m_settings_command;
+}
+
+//-----------------------------------------------------------------------------
+
+std::string Menu::get_lockscreen_command()
+{
+	return m_lockscreen_command;
+}
+
+//-----------------------------------------------------------------------------
+
+std::string Menu::get_logout_command()
+{
+	return m_logout_command;
+}
+
+//-----------------------------------------------------------------------------
+
+void Menu::set_settings_command(const std::string& command)
+{
+	m_settings_command = command;
+}
+
+//-----------------------------------------------------------------------------
+
+void Menu::set_lockscreen_command(const std::string& command)
+{
+	m_lockscreen_command = command;
+}
+
+//-----------------------------------------------------------------------------
+
+void Menu::set_logout_command(const std::string& command)
+{
+	m_logout_command = command;
+}
+
+//-----------------------------------------------------------------------------
+
 bool Menu::on_leave_notify_event(GdkEventCrossing* event)
 {
 	if ( (event->detail == GDK_NOTIFY_INFERIOR)
@@ -738,7 +784,7 @@ void Menu::launch_settings_manager()
 	hide();
 
 	GError* error = NULL;
-	if (g_spawn_command_line_async("xfce4-settings-manager", &error) == false)
+	if (g_spawn_command_line_async(m_settings_command.c_str(), &error) == false)
 	{
 		xfce_dialog_show_error(NULL, error, _("Failed to open settings manager."));
 		g_error_free(error);
@@ -752,7 +798,7 @@ void Menu::lock_screen()
 	hide();
 
 	GError* error = NULL;
-	if (g_spawn_command_line_async("xflock4", &error) == false)
+	if (g_spawn_command_line_async(m_lockscreen_command.c_str(), &error) == false)
 	{
 		xfce_dialog_show_error(NULL, error, _("Failed to lock screen."));
 		g_error_free(error);
@@ -766,7 +812,7 @@ void Menu::log_out()
 	hide();
 
 	GError* error = NULL;
-	if (g_spawn_command_line_async("xfce4-session-logout", &error) == false)
+	if (g_spawn_command_line_async(m_logout_command.c_str(), &error) == false)
 	{
 		xfce_dialog_show_error(NULL, error, _("Failed to log out."));
 		g_error_free(error);

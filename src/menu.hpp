@@ -82,6 +82,13 @@ public:
 	void set_modified();
 	void unset_items();
 
+	static std::string get_settings_command();
+	static std::string get_lockscreen_command();
+	static std::string get_logout_command();
+	static void set_settings_command(const std::string& command);
+	static void set_lockscreen_command(const std::string& command);
+	static void set_logout_command(const std::string& command);
+
 private:
 	bool on_enter_notify_event(GdkEventCrossing* event);
 	bool on_leave_notify_event(GdkEventCrossing* event);
@@ -130,6 +137,10 @@ private:
 	bool m_layout_left;
 	bool m_layout_bottom;
 	bool m_modified;
+
+	static std::string m_settings_command;
+	static std::string m_lockscreen_command;
+	static std::string m_logout_command;
 
 
 private:
