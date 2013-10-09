@@ -185,6 +185,14 @@ void ConfigurationDialog::toggle_remember_favorites(GtkToggleButton* button)
 
 //-----------------------------------------------------------------------------
 
+void ConfigurationDialog::toggle_display_recent(GtkToggleButton* button)
+{
+	Menu::set_display_recent(gtk_toggle_button_get_active(button));
+	m_plugin->reload();
+}
+
+//-----------------------------------------------------------------------------
+
 void ConfigurationDialog::settings_command_changed()
 {
 	const gchar* text = gtk_entry_get_text(GTK_ENTRY(m_settings_command));
@@ -383,6 +391,12 @@ GtkWidget* ConfigurationDialog::init_behavior_tab()
 	gtk_box_pack_start(behavior_vbox, m_remember_favorites, true, true, 0);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_remember_favorites), FavoritesPage::get_remember_favorites());
 	g_signal_connect(m_remember_favorites, "toggled", G_CALLBACK(ConfigurationDialog::toggle_remember_favorites_slot), this);
+
+	// Add option to display recently used
+	m_display_recent = gtk_check_button_new_with_mnemonic(_("Display recently _used by default"));
+	gtk_box_pack_start(behavior_vbox, m_display_recent, true, true, 0);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_display_recent), Menu::get_display_recent());
+	g_signal_connect(m_display_recent, "toggled", G_CALLBACK(ConfigurationDialog::toggle_display_recent_slot), this);
 
 	return page;
 }

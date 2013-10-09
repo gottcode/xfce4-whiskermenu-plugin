@@ -33,6 +33,7 @@ namespace WhiskerMenu
 class ApplicationsPage;
 class FavoritesPage;
 class Launcher;
+class Page;
 class ResizerWidget;
 class RecentPage;
 class SearchPage;
@@ -85,9 +86,11 @@ public:
 	static std::string get_settings_command();
 	static std::string get_lockscreen_command();
 	static std::string get_logout_command();
+	static bool get_display_recent();
 	static void set_settings_command(const std::string& command);
 	static void set_lockscreen_command(const std::string& command);
 	static void set_logout_command(const std::string& command);
+	static void set_display_recent(bool display);
 
 private:
 	bool on_enter_notify_event(GdkEventCrossing* event);
@@ -102,6 +105,7 @@ private:
 	void recent_toggled();
 	void category_toggled();
 	void show_favorites();
+	void show_default_page();
 	void search();
 	void launch_settings_manager();
 	void lock_screen();
@@ -128,10 +132,12 @@ private:
 	FavoritesPage* m_favorites;
 	RecentPage* m_recent;
 	ApplicationsPage* m_applications;
+	Page* m_default_page;
 
 	GtkScrolledWindow* m_sidebar;
 	SectionButton* m_favorites_button;
 	SectionButton* m_recent_button;
+	SectionButton* m_default_button;
 
 	GdkRectangle m_geometry;
 	bool m_layout_left;
@@ -141,6 +147,7 @@ private:
 	static std::string m_settings_command;
 	static std::string m_lockscreen_command;
 	static std::string m_logout_command;
+	static bool m_display_recent;
 
 
 private:

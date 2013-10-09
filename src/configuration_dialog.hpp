@@ -49,6 +49,7 @@ private:
 	void toggle_show_description(GtkToggleButton* button);
 	void toggle_load_hierarchy(GtkToggleButton* button);
 	void toggle_remember_favorites(GtkToggleButton* button);
+	void toggle_display_recent(GtkToggleButton* button);
 	void settings_command_changed();
 	void lockscreen_command_changed();
 	void logout_command_changed();
@@ -73,6 +74,7 @@ private:
 	GtkWidget* m_hover_switch_category;
 	GtkWidget* m_load_hierarchy;
 	GtkWidget* m_remember_favorites;
+	GtkWidget* m_display_recent;
 	GtkWidget* m_settings_command;
 	GtkWidget* m_lockscreen_command;
 	GtkWidget* m_logout_command;
@@ -127,6 +129,11 @@ private:
 	static void toggle_remember_favorites_slot(GtkToggleButton* button, ConfigurationDialog* obj)
 	{
 		obj->toggle_remember_favorites(button);
+	}
+
+	static void toggle_display_recent_slot(GtkToggleButton* button, ConfigurationDialog* obj)
+	{
+		obj->toggle_display_recent(button);
 	}
 
 	static void response_slot(GtkDialog*, gint response_id, ConfigurationDialog* obj)

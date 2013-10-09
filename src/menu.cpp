@@ -52,6 +52,7 @@ static GtkButton* new_action_button(const gchar* icon, const gchar* text)
 std::string Menu::m_settings_command = "xfce4-settings-manager";
 std::string Menu::m_lockscreen_command = "xflock4";
 std::string Menu::m_logout_command = "xfce4-session-logout";
+bool Menu::m_display_recent = false;
 
 //-----------------------------------------------------------------------------
 
@@ -138,6 +139,18 @@ Menu::Menu(XfceRc* settings) :
 	// Create search results
 	m_search_results = new SearchPage(this);
 
+	// Handle default page
+	if (!m_display_recent)
+	{
+		m_default_button = m_favorites_button;
+		m_default_page = m_favorites;
+	}
+	else
+	{
+		m_default_button = m_recent_button;
+		m_default_page = m_recent;
+	}
+
 	// Create box for packing children
 	m_vbox = GTK_BOX(gtk_vbox_new(false, 6));
 	gtk_container_add(GTK_CONTAINER(frame), GTK_WIDGET(m_vbox));
@@ -189,10 +202,11 @@ Menu::Menu(XfceRc* settings) :
 
 	// Show widgets
 	gtk_widget_show_all(GTK_WIDGET(m_vbox));
+	gtk_widget_hide(m_favorites->get_widget());
 	gtk_widget_hide(m_recent->get_widget());
 	gtk_widget_hide(m_applications->get_widget());
 	gtk_widget_hide(m_search_results->get_widget());
-	m_favorites_button->set_active(true);
+	m_default_button->set_active(true);
 	gtk_widget_show(frame);
 
 	// Resize to last known size
@@ -228,11 +242,23 @@ void Menu::hide()
 	// Hide window
 	gtk_widget_hide(GTK_WIDGET(m_window));
 
-	// Reset mouse cursor by forcing favorites to hide
-	gtk_widget_hide(m_favorites->get_widget());
+	// Update default page
+	if (m_display_recent && (m_default_page == m_favorites))
+	{
+		m_default_button = m_recent_button;
+		m_default_page = m_recent;
+	}
+	else if (!m_display_recent && (m_default_page == m_recent))
+	{
+		m_default_button = m_favorites_button;
+		m_default_page = m_favorites;
+	}
 
-	// Switch back to favorites
-	show_favorites();
+	// Reset mouse cursor by forcing default page to hide
+	gtk_widget_hide(m_default_page->get_widget());
+
+	// Switch back to default page
+	show_default_page();
 }
 
 //-----------------------------------------------------------------------------
@@ -251,8 +277,8 @@ void Menu::show(GtkWidget* parent, bool horizontal)
 	// Make sure applications list is current; does nothing unless list has changed
 	m_applications->load_applications();
 
-	// Reset mouse cursor by forcing favorites to hide
-	gtk_widget_show(m_favorites->get_widget());
+	// Reset mouse cursor by forcing default page to hide
+	gtk_widget_show(m_default_page->get_widget());
 
 	GdkScreen* screen = NULL;
 	int parent_x = 0, parent_y = 0, parent_w = 0, parent_h = 0;
@@ -452,7 +478,7 @@ void Menu::set_categories(const std::vector<SectionButton*>& categories)
 	}
 	gtk_widget_show_all(GTK_WIDGET(m_sidebar_box));
 
-	show_favorites();
+	show_default_page();
 }
 
 //-----------------------------------------------------------------------------
@@ -531,6 +557,13 @@ std::string Menu::get_logout_command()
 
 //-----------------------------------------------------------------------------
 
+bool Menu::get_display_recent()
+{
+	return m_display_recent;
+}
+
+//-----------------------------------------------------------------------------
+
 void Menu::set_settings_command(const std::string& command)
 {
 	m_settings_command = command;
@@ -548,6 +581,13 @@ void Menu::set_lockscreen_command(const std::string& command)
 void Menu::set_logout_command(const std::string& command)
 {
 	m_logout_command = command;
+}
+
+//-----------------------------------------------------------------------------
+
+void Menu::set_display_recent(bool display)
+{
+	m_display_recent = display;
 }
 
 //-----------------------------------------------------------------------------
@@ -732,6 +772,18 @@ void Menu::show_favorites()
 {
 	// Switch to favorites panel
 	m_favorites_button->set_active(true);
+
+	// Clear search entry
+	gtk_entry_set_text(m_search_entry, "");
+	gtk_widget_grab_focus(GTK_WIDGET(m_search_entry));
+}
+
+//-----------------------------------------------------------------------------
+
+void Menu::show_default_page()
+{
+	// Switch to favorites panel
+	m_default_button->set_active(true);
 
 	// Clear search entry
 	gtk_entry_set_text(m_search_entry, "");
