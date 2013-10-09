@@ -42,6 +42,7 @@ private:
 	void toggle_show_name(GtkToggleButton* button);
 	void toggle_show_description(GtkToggleButton* button);
 	void toggle_position_search_alternate(GtkToggleButton* button);
+	void toggle_position_commands_alternate(GtkToggleButton* button);
 	void category_icon_size_changed(GtkComboBox* combo);
 	void item_icon_size_changed(GtkComboBox* combo);
 
@@ -71,6 +72,7 @@ private:
 	GtkWidget* m_show_names;
 	GtkWidget* m_show_descriptions;
 	GtkWidget* m_position_search_alternate;
+	GtkWidget* m_position_commands_alternate;
 	GtkWidget* m_category_icon_size;
 	GtkWidget* m_item_icon_size;
 
@@ -133,6 +135,11 @@ private:
 	static void toggle_position_search_alternate_slot(GtkToggleButton* button, ConfigurationDialog* obj)
 	{
 		obj->toggle_position_search_alternate(button);
+	}
+
+	static void toggle_position_commands_alternate_slot(GtkToggleButton* button, ConfigurationDialog* obj)
+	{
+		obj->toggle_position_commands_alternate(button);
 	}
 
 	static void toggle_load_hierarchy_slot(GtkToggleButton* button, ConfigurationDialog* obj)

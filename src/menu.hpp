@@ -88,11 +88,13 @@ public:
 	static std::string get_logout_command();
 	static bool get_display_recent();
 	static bool get_position_search_alternate();
+	static bool get_position_commands_alternate();
 	static void set_settings_command(const std::string& command);
 	static void set_lockscreen_command(const std::string& command);
 	static void set_logout_command(const std::string& command);
 	static void set_display_recent(bool display);
 	static void set_position_search_alternate(bool alternate);
+	static void set_position_commands_alternate(bool alternate);
 
 private:
 	bool on_enter_notify_event(GdkEventCrossing* event);
@@ -118,15 +120,19 @@ private:
 
 	GtkBox* m_vbox;
 	GtkBox* m_title_box;
+	GtkBox* m_commands_box;
+	GtkBox* m_search_box;
 	GtkBox* m_contents_box;
 	GtkBox* m_panels_box;
 	GtkBox* m_sidebar_box;
 
 	GtkLabel* m_username;
+	ResizerWidget* m_resizer;
+
+	GtkAlignment* m_commands_align;
 	GtkButton* m_settings_button;
 	GtkButton* m_lock_screen_button;
 	GtkButton* m_log_out_button;
-	ResizerWidget* m_resizer;
 
 	GtkEntry* m_search_entry;
 
@@ -145,6 +151,7 @@ private:
 	bool m_layout_left;
 	bool m_layout_bottom;
 	bool m_layout_search_alternate;
+	bool m_layout_commands_alternate;
 	bool m_modified;
 
 	static std::string m_settings_command;
@@ -152,6 +159,7 @@ private:
 	static std::string m_logout_command;
 	static bool m_display_recent;
 	static bool m_position_search_alternate;
+	static bool m_position_commands_alternate;
 
 
 private:

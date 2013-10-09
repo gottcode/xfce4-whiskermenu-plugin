@@ -54,6 +54,7 @@ std::string Menu::m_lockscreen_command = "xflock4";
 std::string Menu::m_logout_command = "xfce4-session-logout";
 bool Menu::m_display_recent = false;
 bool Menu::m_position_search_alternate = false;
+bool Menu::m_position_commands_alternate = false;
 
 //-----------------------------------------------------------------------------
 
@@ -62,6 +63,7 @@ Menu::Menu(XfceRc* settings) :
 	m_layout_left(true),
 	m_layout_bottom(true),
 	m_layout_search_alternate(false),
+	m_layout_commands_alternate(false),
 	m_modified(false)
 {
 	m_geometry.x = 0;
@@ -158,17 +160,25 @@ Menu::Menu(XfceRc* settings) :
 	gtk_container_add(GTK_CONTAINER(frame), GTK_WIDGET(m_vbox));
 	gtk_container_set_border_width(GTK_CONTAINER(m_vbox), 2);
 
-	// Create box for packing username and action buttons
+	// Create box for packing commands
+	m_commands_align = GTK_ALIGNMENT(gtk_alignment_new(1, 0, 0, 0));
+	m_commands_box = GTK_BOX(gtk_hbox_new(false, 0));
+	gtk_box_pack_start(m_commands_box, GTK_WIDGET(m_settings_button), false, false, 0);
+	gtk_box_pack_start(m_commands_box, GTK_WIDGET(m_lock_screen_button), false, false, 0);
+	gtk_box_pack_start(m_commands_box, GTK_WIDGET(m_log_out_button), false, false, 0);
+	gtk_container_add(GTK_CONTAINER(m_commands_align), GTK_WIDGET(m_commands_box));
+
+	// Create box for packing username, commands, and resize widget
 	m_title_box = GTK_BOX(gtk_hbox_new(false, 0));
 	gtk_box_pack_start(m_vbox, GTK_WIDGET(m_title_box), false, false, 0);
 	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_username), true, true, 0);
-	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_settings_button), false, false, 0);
-	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_lock_screen_button), false, false, 0);
-	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_log_out_button), false, false, 0);
+	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_commands_align), false, false, 0);
 	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_resizer->get_widget()), false, false, 0);
 
 	// Add search to layout
-	gtk_box_pack_start(m_vbox, GTK_WIDGET(m_search_entry), false, true, 0);
+	m_search_box = GTK_BOX(gtk_hbox_new(false, 6));
+	gtk_box_pack_start(m_vbox, GTK_WIDGET(m_search_box), false, true, 0);
+	gtk_box_pack_start(m_search_box, GTK_WIDGET(m_search_entry), true, true, 0);
 
 	// Create box for packing launcher pages and sidebar
 	m_contents_box = GTK_BOX(gtk_hbox_new(false, 6));
@@ -198,6 +208,10 @@ Menu::Menu(XfceRc* settings) :
 	gtk_viewport_set_shadow_type(GTK_VIEWPORT(viewport), GTK_SHADOW_NONE);
 	gtk_container_add(GTK_CONTAINER(m_sidebar), viewport);
 	gtk_container_add(GTK_CONTAINER(viewport), GTK_WIDGET(m_sidebar_box));
+
+	GtkSizeGroup* sidebar_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
+	gtk_size_group_add_widget(sidebar_size_group, GTK_WIDGET(m_sidebar));
+	gtk_size_group_add_widget(sidebar_size_group, GTK_WIDGET(m_commands_align));
 
 	// Populate app menu
 	m_applications->load_applications();
@@ -401,18 +415,76 @@ void Menu::show(GtkWidget* parent, bool horizontal)
 	{
 		layout_left = !layout_left;
 	}
+	if (m_layout_commands_alternate != m_position_commands_alternate)
+	{
+		m_layout_left = !layout_left;
+		m_layout_commands_alternate = m_position_commands_alternate;
+		if (m_layout_commands_alternate)
+		{
+			g_object_ref(m_commands_align);
+			gtk_container_remove(GTK_CONTAINER(m_title_box), GTK_WIDGET(m_commands_align));
+			gtk_box_pack_start(m_search_box, GTK_WIDGET(m_commands_align), false, false, 0);
+			g_object_unref(m_commands_align);
+		}
+		else
+		{
+			g_object_ref(m_commands_align);
+			gtk_container_remove(GTK_CONTAINER(m_search_box), GTK_WIDGET(m_commands_align));
+			gtk_box_pack_start(m_title_box, GTK_WIDGET(m_commands_align), false, false, 0);
+			g_object_unref(m_commands_align);
+		}
+	}
 	if (layout_left != m_layout_left)
 	{
 		m_layout_left = layout_left;
-		if (m_layout_left)
+		if (m_layout_left && m_layout_commands_alternate)
 		{
 			gtk_misc_set_alignment(GTK_MISC(m_username), 0.0f, 0.5f);
 
+			gtk_alignment_set(m_commands_align, 1, 0, 0, 0);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_settings_button), 0);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_lock_screen_button), 1);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_log_out_button), 2);
+
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 0);
-			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_settings_button), 1);
-			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_lock_screen_button), 2);
-			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_log_out_button), 3);
-			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 4);
+			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 1);
+
+			gtk_box_reorder_child(m_search_box, GTK_WIDGET(m_search_entry), 0);
+			gtk_box_reorder_child(m_search_box, GTK_WIDGET(m_commands_align), 1);
+
+			gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_panels_box), 1);
+			gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_sidebar), 2);
+		}
+		else if (m_layout_commands_alternate)
+		{
+			gtk_misc_set_alignment(GTK_MISC(m_username), 1.0f, 0.5f);
+
+			gtk_alignment_set(m_commands_align, 0, 0, 0, 0);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_settings_button), 2);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_lock_screen_button), 1);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_log_out_button), 0);
+
+			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 1);
+			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 0);
+
+			gtk_box_reorder_child(m_search_box, GTK_WIDGET(m_search_entry), 1);
+			gtk_box_reorder_child(m_search_box, GTK_WIDGET(m_commands_align), 0);
+
+			gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_panels_box), 2);
+			gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_sidebar), 1);
+		}
+		else if (m_layout_left)
+		{
+			gtk_misc_set_alignment(GTK_MISC(m_username), 0.0f, 0.5f);
+
+			gtk_alignment_set(m_commands_align, 1, 0, 0, 0);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_settings_button), 0);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_lock_screen_button), 1);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_log_out_button), 2);
+
+			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 0);
+			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_commands_align), 1);
+			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 2);
 
 			gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_panels_box), 1);
 			gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_sidebar), 2);
@@ -421,10 +493,13 @@ void Menu::show(GtkWidget* parent, bool horizontal)
 		{
 			gtk_misc_set_alignment(GTK_MISC(m_username), 1.0f, 0.5f);
 
-			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 4);
-			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_settings_button), 3);
-			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_lock_screen_button), 2);
-			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_log_out_button), 1);
+			gtk_alignment_set(m_commands_align, 0, 0, 0, 0);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_settings_button), 2);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_lock_screen_button), 1);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_log_out_button), 0);
+
+			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 2);
+			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_commands_align), 1);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 0);
 
 			gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_panels_box), 2);
@@ -440,24 +515,24 @@ void Menu::show(GtkWidget* parent, bool horizontal)
 		{
 			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_title_box), 0);
 			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_contents_box), 1);
-			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_search_entry), 2);
+			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_search_box), 2);
 		}
 		else if (m_layout_search_alternate)
 		{
 			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_title_box), 2);
 			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_contents_box), 1);
-			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_search_entry), 0);
+			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_search_box), 0);
 		}
 		else if (m_layout_bottom)
 		{
 			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_title_box), 0);
-			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_search_entry), 1);
+			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_search_box), 1);
 			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_contents_box), 2);
 		}
 		else
 		{
 			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_title_box), 2);
-			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_search_entry), 1);
+			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_search_box), 1);
 			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_contents_box), 0);
 		}
 	}
@@ -586,6 +661,13 @@ bool Menu::get_position_search_alternate()
 
 //-----------------------------------------------------------------------------
 
+bool Menu::get_position_commands_alternate()
+{
+	return m_position_commands_alternate;
+}
+
+//-----------------------------------------------------------------------------
+
 void Menu::set_settings_command(const std::string& command)
 {
 	m_settings_command = command;
@@ -617,6 +699,17 @@ void Menu::set_display_recent(bool display)
 void Menu::set_position_search_alternate(bool alternate)
 {
 	m_position_search_alternate = alternate;
+	if (!alternate)
+	{
+		m_position_commands_alternate = false;
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void Menu::set_position_commands_alternate(bool alternate)
+{
+	m_position_commands_alternate = alternate && m_position_search_alternate;
 }
 
 //-----------------------------------------------------------------------------
