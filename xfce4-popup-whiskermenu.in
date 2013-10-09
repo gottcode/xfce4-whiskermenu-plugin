@@ -19,7 +19,7 @@
 #
 
 export TEXTDOMAIN="xfce4-panel"
-export TEXTDOMAINDIR="@localedir@"
+export TEXTDOMAINDIR="@CMAKE_INSTALL_FULL_LOCALEDIR@"
 
 ATPOINTER="false"
 
@@ -35,7 +35,8 @@ case "$1" in
     exit 0
     ;;
   -V|--version)
-    exec @bindir@/xfce4-panel -V "$(basename $0)"
+    echo "$(basename $0) 1.1.1"
+    echo "Copyright (C) 2013 Graeme Gott"
     exit 0
     ;;
   -p|--pointer)
