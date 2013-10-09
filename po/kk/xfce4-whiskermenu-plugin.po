@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-whiskermenu-plugin 1.1.0\n"
+"Project-Id-Version: xfce4-whiskermenu-plugin 1.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-24 22:13+0000\n"
+"POT-Creation-Date: 2013-10-09 22:00+0000\n"
 "PO-Revision-Date: 2013-07-18 22:46+0600\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
@@ -18,79 +18,121 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: src/applications_page.cpp:299
+#: src/applications_page.cpp:312
 msgid "All"
 msgstr "Барлығы"
 
-#: src/configuration_dialog.cpp:54
+#: src/configuration_dialog.cpp:57
 msgid "Whisker Menu"
 msgstr "Whisker мәзірі"
 
-#: src/configuration_dialog.cpp:68
-msgid "Appearance"
+#: src/configuration_dialog.cpp:65
+#, fuzzy
+msgid "_Appearance"
 msgstr "Сыртқы түрі"
 
-#: src/configuration_dialog.cpp:73
-msgid "Show applications by _name"
-msgstr "Қолданбаларды а_ты бойынша көрсету"
-
-#: src/configuration_dialog.cpp:79
-msgid "Show application _descriptions"
-msgstr "Қолданбалар с_ипаттамаларын көрсету"
-
-#: src/configuration_dialog.cpp:88
-msgid "Ite_m icon size:"
-msgstr "Эле_мент таңбашасы өлшемі:"
-
-#: src/configuration_dialog.cpp:108
-msgid "Categ_ory icon size:"
-msgstr "Сан_ат таңбашасы өлшемі:"
-
-#: src/configuration_dialog.cpp:125
-msgid "Panel Button"
+#: src/configuration_dialog.cpp:66
+#, fuzzy
+msgid "_Panel Button"
 msgstr "Панель батырмасы"
 
-#: src/configuration_dialog.cpp:133
-msgid "Di_splay:"
-msgstr "Көр_сету:"
-
-#: src/configuration_dialog.cpp:139
-msgid "Icon"
-msgstr "Таңбаша"
-
-#: src/configuration_dialog.cpp:140
-msgid "Title"
-msgstr "Атауы"
-
-#: src/configuration_dialog.cpp:141
-msgid "Icon and title"
-msgstr "Таңбаша және атауы"
-
-#: src/configuration_dialog.cpp:151
-msgid "_Title:"
-msgstr "А_тауы:"
-
-#: src/configuration_dialog.cpp:166
-msgid "_Icon:"
-msgstr "_Таңбаша:"
-
-#: src/configuration_dialog.cpp:182
-msgid "Behavior"
+#: src/configuration_dialog.cpp:67
+#, fuzzy
+msgid "_Behavior"
 msgstr "Мінез-құлығы"
 
-#: src/configuration_dialog.cpp:187
-msgid "Switch categories by _hovering"
-msgstr "Санаттарды үстіне а_пару арқылы ауыстырыңыз"
+#: src/configuration_dialog.cpp:68
+msgid "_Commands"
+msgstr ""
 
-#: src/configuration_dialog.cpp:209
+#: src/configuration_dialog.cpp:94
 msgid "Select An Icon"
 msgstr "Таңбашаны таңдаңыз"
 
-#: src/favorites_page.cpp:73
+#: src/configuration_dialog.cpp:265
+msgid "Show applications by _name"
+msgstr "Қолданбаларды а_ты бойынша көрсету"
+
+#: src/configuration_dialog.cpp:271
+msgid "Show application _descriptions"
+msgstr "Қолданбалар с_ипаттамаларын көрсету"
+
+#: src/configuration_dialog.cpp:277
+msgid "Position _search entry next to panel button"
+msgstr ""
+
+#: src/configuration_dialog.cpp:283
+msgid "Position commands next to search _entry"
+msgstr ""
+
+#: src/configuration_dialog.cpp:293
+msgid "Ite_m icon size:"
+msgstr "Эле_мент таңбашасы өлшемі:"
+
+#: src/configuration_dialog.cpp:313
+msgid "Categ_ory icon size:"
+msgstr "Сан_ат таңбашасы өлшемі:"
+
+#: src/configuration_dialog.cpp:348
+msgid "Di_splay:"
+msgstr "Көр_сету:"
+
+#: src/configuration_dialog.cpp:354
+msgid "Icon"
+msgstr "Таңбаша"
+
+#: src/configuration_dialog.cpp:355
+msgid "Title"
+msgstr "Атауы"
+
+#: src/configuration_dialog.cpp:356
+msgid "Icon and title"
+msgstr "Таңбаша және атауы"
+
+#: src/configuration_dialog.cpp:366
+msgid "_Title:"
+msgstr "А_тауы:"
+
+#: src/configuration_dialog.cpp:381
+msgid "_Icon:"
+msgstr "_Таңбаша:"
+
+#: src/configuration_dialog.cpp:409
+msgid "Switch categories by _hovering"
+msgstr "Санаттарды үстіне а_пару арқылы ауыстырыңыз"
+
+#: src/configuration_dialog.cpp:415
+msgid "Load menu hie_rarchy"
+msgstr ""
+
+#: src/configuration_dialog.cpp:421
+msgid "Include _favorites in recently used"
+msgstr ""
+
+#: src/configuration_dialog.cpp:427
+msgid "Display recently _used by default"
+msgstr ""
+
+#: src/configuration_dialog.cpp:452
+#, fuzzy
+msgid "_Settings:"
+msgstr "Барлық баптаулар"
+
+#: src/configuration_dialog.cpp:467
+#, fuzzy
+msgid "Lock _Screen:"
+msgstr "Экранды бұғаттау"
+
+#: src/configuration_dialog.cpp:482
+#, fuzzy
+msgid "Log _Out:"
+msgstr "Шығу"
+
+#: src/favorites_page.cpp:89
 msgid "Sort Alphabetically A-Z"
 msgstr "Әліппемен сұрыптау A-Z"
 
-#: src/favorites_page.cpp:79
+#: src/favorites_page.cpp:95
 msgid "Sort Alphabetically Z-A"
 msgstr "Әліппемен сұрыптау Z-A"
 
@@ -122,68 +164,68 @@ msgstr "Үлкенірек"
 msgid "Very Large"
 msgstr "Өте үлкен"
 
-#: src/launcher.cpp:263
+#: src/launcher.cpp:259
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "\"%s\" командасын орындау сәтсіз аяқталды."
 
-#: src/menu.cpp:100
+#: src/menu.cpp:110
 msgid "All Settings"
 msgstr "Барлық баптаулар"
 
-#: src/menu.cpp:103
+#: src/menu.cpp:113
 msgid "Lock Screen"
 msgstr "Экранды бұғаттау"
 
-#: src/menu.cpp:106
+#: src/menu.cpp:116
 msgid "Log Out"
 msgstr "Шығу"
 
-#: src/menu.cpp:120
+#: src/menu.cpp:130
 msgid "Favorites"
 msgstr "Таңдамалы"
 
-#: src/menu.cpp:126
+#: src/menu.cpp:136
 msgid "Recently Used"
 msgstr "Соңғы қолданылған"
 
-#: src/menu.cpp:742
+#: src/menu.cpp:963
 msgid "Failed to open settings manager."
 msgstr "Баптаулар басқарушысын ашу сәтсіз аяқталды."
 
-#: src/menu.cpp:756
+#: src/menu.cpp:977
 msgid "Failed to lock screen."
 msgstr "Экранды бұғаттау сәтсіз аяқталды."
 
-#: src/menu.cpp:770
+#: src/menu.cpp:991
 msgid "Failed to log out."
 msgstr "Жүйеден шығу сәтсіз аяқталды."
 
-#: src/page.cpp:182
+#: src/page.cpp:194
 msgid "Add to Favorites"
 msgstr "Таңдамалыларға қосу"
 
-#: src/page.cpp:190
+#: src/page.cpp:202
 msgid "Remove From Favorites"
 msgstr "Таңдамалылардан өшіру"
 
-#: src/page.cpp:197
+#: src/page.cpp:209
 msgid "Add to Desktop"
 msgstr "Жұмыс үстеліне қосу"
 
-#: src/page.cpp:201
+#: src/page.cpp:213
 msgid "Add to Panel"
 msgstr "Панельге қосу"
 
-#: src/page.cpp:291
+#: src/page.cpp:303
 msgid "Unable to add launcher to desktop."
 msgstr "Жөнелткішті жұмыс үстеліне қосу мүмкін емес."
 
-#: src/page.cpp:330 src/page.cpp:339
+#: src/page.cpp:342 src/page.cpp:351
 msgid "Unable to add launcher to panel."
 msgstr "Жөнелткішті панельге қосу мүмкін емес."
 
-#: src/panel_plugin.cpp:150
+#: src/panel_plugin.cpp:160
 msgid "Applications Menu"
 msgstr "Қолданбалар мәзірі"
 

@@ -9,9 +9,9 @@
 # Pablo Lezaeta <prflr88@gmail.com>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-whiskermenu-plugin 1.1.0\n"
+"Project-Id-Version: xfce4-whiskermenu-plugin 1.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-24 22:13+0000\n"
+"POT-Creation-Date: 2013-10-09 22:00+0000\n"
 "PO-Revision-Date: 2013-08-31 22:44+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitoschido@ubuntu.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/es/)\n"
@@ -21,79 +21,121 @@ msgstr ""
 "Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/applications_page.cpp:299
+#: src/applications_page.cpp:312
 msgid "All"
 msgstr "Todas"
 
-#: src/configuration_dialog.cpp:54
+#: src/configuration_dialog.cpp:57
 msgid "Whisker Menu"
 msgstr "Menú Whisker"
 
-#: src/configuration_dialog.cpp:68
-msgid "Appearance"
+#: src/configuration_dialog.cpp:65
+#, fuzzy
+msgid "_Appearance"
 msgstr "Apariencia"
 
-#: src/configuration_dialog.cpp:73
-msgid "Show applications by _name"
-msgstr "Ordenar las aplicaciones por _nombre"
-
-#: src/configuration_dialog.cpp:79
-msgid "Show application _descriptions"
-msgstr "Mostrar las _descripciones de las aplicaciones"
-
-#: src/configuration_dialog.cpp:88
-msgid "Ite_m icon size:"
-msgstr "Tamaño de icono de los ele_mentos:"
-
-#: src/configuration_dialog.cpp:108
-msgid "Categ_ory icon size:"
-msgstr "Tamaño de icono de las categ_orías:"
-
-#: src/configuration_dialog.cpp:125
-msgid "Panel Button"
+#: src/configuration_dialog.cpp:66
+#, fuzzy
+msgid "_Panel Button"
 msgstr "Botón del panel"
 
-#: src/configuration_dialog.cpp:133
-msgid "Di_splay:"
-msgstr "Mo_strar:"
-
-#: src/configuration_dialog.cpp:139
-msgid "Icon"
-msgstr "Icono"
-
-#: src/configuration_dialog.cpp:140
-msgid "Title"
-msgstr "Título"
-
-#: src/configuration_dialog.cpp:141
-msgid "Icon and title"
-msgstr "Icono y título"
-
-#: src/configuration_dialog.cpp:151
-msgid "_Title:"
-msgstr "_Título:"
-
-#: src/configuration_dialog.cpp:166
-msgid "_Icon:"
-msgstr "_Icono:"
-
-#: src/configuration_dialog.cpp:182
-msgid "Behavior"
+#: src/configuration_dialog.cpp:67
+#, fuzzy
+msgid "_Behavior"
 msgstr "Comportamiento"
 
-#: src/configuration_dialog.cpp:187
-msgid "Switch categories by _hovering"
-msgstr "Cambiar de categoría al a_puntarla con el ratón"
+#: src/configuration_dialog.cpp:68
+msgid "_Commands"
+msgstr ""
 
-#: src/configuration_dialog.cpp:209
+#: src/configuration_dialog.cpp:94
 msgid "Select An Icon"
 msgstr "Seleccione un icono"
 
-#: src/favorites_page.cpp:73
+#: src/configuration_dialog.cpp:265
+msgid "Show applications by _name"
+msgstr "Ordenar las aplicaciones por _nombre"
+
+#: src/configuration_dialog.cpp:271
+msgid "Show application _descriptions"
+msgstr "Mostrar las _descripciones de las aplicaciones"
+
+#: src/configuration_dialog.cpp:277
+msgid "Position _search entry next to panel button"
+msgstr ""
+
+#: src/configuration_dialog.cpp:283
+msgid "Position commands next to search _entry"
+msgstr ""
+
+#: src/configuration_dialog.cpp:293
+msgid "Ite_m icon size:"
+msgstr "Tamaño de icono de los ele_mentos:"
+
+#: src/configuration_dialog.cpp:313
+msgid "Categ_ory icon size:"
+msgstr "Tamaño de icono de las categ_orías:"
+
+#: src/configuration_dialog.cpp:348
+msgid "Di_splay:"
+msgstr "Mo_strar:"
+
+#: src/configuration_dialog.cpp:354
+msgid "Icon"
+msgstr "Icono"
+
+#: src/configuration_dialog.cpp:355
+msgid "Title"
+msgstr "Título"
+
+#: src/configuration_dialog.cpp:356
+msgid "Icon and title"
+msgstr "Icono y título"
+
+#: src/configuration_dialog.cpp:366
+msgid "_Title:"
+msgstr "_Título:"
+
+#: src/configuration_dialog.cpp:381
+msgid "_Icon:"
+msgstr "_Icono:"
+
+#: src/configuration_dialog.cpp:409
+msgid "Switch categories by _hovering"
+msgstr "Cambiar de categoría al a_puntarla con el ratón"
+
+#: src/configuration_dialog.cpp:415
+msgid "Load menu hie_rarchy"
+msgstr ""
+
+#: src/configuration_dialog.cpp:421
+msgid "Include _favorites in recently used"
+msgstr ""
+
+#: src/configuration_dialog.cpp:427
+msgid "Display recently _used by default"
+msgstr ""
+
+#: src/configuration_dialog.cpp:452
+#, fuzzy
+msgid "_Settings:"
+msgstr "Todas las configuraciones"
+
+#: src/configuration_dialog.cpp:467
+#, fuzzy
+msgid "Lock _Screen:"
+msgstr "Bloquear la pantalla"
+
+#: src/configuration_dialog.cpp:482
+#, fuzzy
+msgid "Log _Out:"
+msgstr "Cerrar la sesión"
+
+#: src/favorites_page.cpp:89
 msgid "Sort Alphabetically A-Z"
 msgstr "Ordenar alfabéticamente de A a Z"
 
-#: src/favorites_page.cpp:79
+#: src/favorites_page.cpp:95
 msgid "Sort Alphabetically Z-A"
 msgstr "Ordenar alfabéticamente de Z a A"
 
@@ -125,68 +167,68 @@ msgstr "Muy grande"
 msgid "Very Large"
 msgstr "Gigante"
 
-#: src/launcher.cpp:263
+#: src/launcher.cpp:259
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "No se pudo ejecutar la orden «%s»."
 
-#: src/menu.cpp:100
+#: src/menu.cpp:110
 msgid "All Settings"
 msgstr "Todas las configuraciones"
 
-#: src/menu.cpp:103
+#: src/menu.cpp:113
 msgid "Lock Screen"
 msgstr "Bloquear la pantalla"
 
-#: src/menu.cpp:106
+#: src/menu.cpp:116
 msgid "Log Out"
 msgstr "Cerrar la sesión"
 
-#: src/menu.cpp:120
+#: src/menu.cpp:130
 msgid "Favorites"
 msgstr "Favoritas"
 
-#: src/menu.cpp:126
+#: src/menu.cpp:136
 msgid "Recently Used"
 msgstr "Usadas recientemente"
 
-#: src/menu.cpp:742
+#: src/menu.cpp:963
 msgid "Failed to open settings manager."
 msgstr "Falló la ejecución del gestor de configuración."
 
-#: src/menu.cpp:756
+#: src/menu.cpp:977
 msgid "Failed to lock screen."
 msgstr "No se pudo bloquear la pantalla."
 
-#: src/menu.cpp:770
+#: src/menu.cpp:991
 msgid "Failed to log out."
 msgstr "No se pudo cerrar la sesión."
 
-#: src/page.cpp:182
+#: src/page.cpp:194
 msgid "Add to Favorites"
 msgstr "Añadir a Favoritas"
 
-#: src/page.cpp:190
+#: src/page.cpp:202
 msgid "Remove From Favorites"
 msgstr "Eliminar de Favoritas"
 
-#: src/page.cpp:197
+#: src/page.cpp:209
 msgid "Add to Desktop"
 msgstr "Añadir al escritorio"
 
-#: src/page.cpp:201
+#: src/page.cpp:213
 msgid "Add to Panel"
 msgstr "Añadir al panel"
 
-#: src/page.cpp:291
+#: src/page.cpp:303
 msgid "Unable to add launcher to desktop."
 msgstr "No se pudo añadir el lanzador al escritorio."
 
-#: src/page.cpp:330 src/page.cpp:339
+#: src/page.cpp:342 src/page.cpp:351
 msgid "Unable to add launcher to panel."
 msgstr "No se pudo añadir el lanzador al panel."
 
-#: src/panel_plugin.cpp:150
+#: src/panel_plugin.cpp:160
 msgid "Applications Menu"
 msgstr "Menú de aplicaciones"
 

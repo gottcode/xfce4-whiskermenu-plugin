@@ -6,9 +6,9 @@
 # Mohamad Hasan Al Banna, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-whiskermenu-plugin 1.1.0\n"
+"Project-Id-Version: xfce4-whiskermenu-plugin 1.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-24 22:13+0000\n"
+"POT-Creation-Date: 2013-10-09 22:00+0000\n"
 "PO-Revision-Date: 2013-07-31 21:33+0000\n"
 "Last-Translator: Mohamad Hasan Al Banna\n"
 "Language-Team: Indonesian (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/id/)\n"
@@ -18,79 +18,121 @@ msgstr ""
 "Language: id\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: src/applications_page.cpp:299
+#: src/applications_page.cpp:312
 msgid "All"
 msgstr "Semua"
 
-#: src/configuration_dialog.cpp:54
+#: src/configuration_dialog.cpp:57
 msgid "Whisker Menu"
 msgstr "Menu Whisker"
 
-#: src/configuration_dialog.cpp:68
-msgid "Appearance"
+#: src/configuration_dialog.cpp:65
+#, fuzzy
+msgid "_Appearance"
 msgstr "Penampilan"
 
-#: src/configuration_dialog.cpp:73
-msgid "Show applications by _name"
-msgstr "Tampilkan aplikasi berdasarkan _nama"
-
-#: src/configuration_dialog.cpp:79
-msgid "Show application _descriptions"
-msgstr "Tampilkan _deskripsi aplikasi"
-
-#: src/configuration_dialog.cpp:88
-msgid "Ite_m icon size:"
-msgstr "ukuran ikon ite_m:"
-
-#: src/configuration_dialog.cpp:108
-msgid "Categ_ory icon size:"
-msgstr "ukuran ikon Kateg_ory:"
-
-#: src/configuration_dialog.cpp:125
-msgid "Panel Button"
+#: src/configuration_dialog.cpp:66
+#, fuzzy
+msgid "_Panel Button"
 msgstr "Tombol Panel"
 
-#: src/configuration_dialog.cpp:133
-msgid "Di_splay:"
-msgstr "Ta_mpilan:"
-
-#: src/configuration_dialog.cpp:139
-msgid "Icon"
-msgstr "Ikon"
-
-#: src/configuration_dialog.cpp:140
-msgid "Title"
-msgstr "Judul"
-
-#: src/configuration_dialog.cpp:141
-msgid "Icon and title"
-msgstr "Ikon dan judul"
-
-#: src/configuration_dialog.cpp:151
-msgid "_Title:"
-msgstr "_Judul:"
-
-#: src/configuration_dialog.cpp:166
-msgid "_Icon:"
-msgstr "_Ikon:"
-
-#: src/configuration_dialog.cpp:182
-msgid "Behavior"
+#: src/configuration_dialog.cpp:67
+#, fuzzy
+msgid "_Behavior"
 msgstr "Kebiasaan"
 
-#: src/configuration_dialog.cpp:187
-msgid "Switch categories by _hovering"
-msgstr "Ganti kategori dengan _melayang"
+#: src/configuration_dialog.cpp:68
+msgid "_Commands"
+msgstr ""
 
-#: src/configuration_dialog.cpp:209
+#: src/configuration_dialog.cpp:94
 msgid "Select An Icon"
 msgstr "Pilih Ikon"
 
-#: src/favorites_page.cpp:73
+#: src/configuration_dialog.cpp:265
+msgid "Show applications by _name"
+msgstr "Tampilkan aplikasi berdasarkan _nama"
+
+#: src/configuration_dialog.cpp:271
+msgid "Show application _descriptions"
+msgstr "Tampilkan _deskripsi aplikasi"
+
+#: src/configuration_dialog.cpp:277
+msgid "Position _search entry next to panel button"
+msgstr ""
+
+#: src/configuration_dialog.cpp:283
+msgid "Position commands next to search _entry"
+msgstr ""
+
+#: src/configuration_dialog.cpp:293
+msgid "Ite_m icon size:"
+msgstr "ukuran ikon ite_m:"
+
+#: src/configuration_dialog.cpp:313
+msgid "Categ_ory icon size:"
+msgstr "ukuran ikon Kateg_ory:"
+
+#: src/configuration_dialog.cpp:348
+msgid "Di_splay:"
+msgstr "Ta_mpilan:"
+
+#: src/configuration_dialog.cpp:354
+msgid "Icon"
+msgstr "Ikon"
+
+#: src/configuration_dialog.cpp:355
+msgid "Title"
+msgstr "Judul"
+
+#: src/configuration_dialog.cpp:356
+msgid "Icon and title"
+msgstr "Ikon dan judul"
+
+#: src/configuration_dialog.cpp:366
+msgid "_Title:"
+msgstr "_Judul:"
+
+#: src/configuration_dialog.cpp:381
+msgid "_Icon:"
+msgstr "_Ikon:"
+
+#: src/configuration_dialog.cpp:409
+msgid "Switch categories by _hovering"
+msgstr "Ganti kategori dengan _melayang"
+
+#: src/configuration_dialog.cpp:415
+msgid "Load menu hie_rarchy"
+msgstr ""
+
+#: src/configuration_dialog.cpp:421
+msgid "Include _favorites in recently used"
+msgstr ""
+
+#: src/configuration_dialog.cpp:427
+msgid "Display recently _used by default"
+msgstr ""
+
+#: src/configuration_dialog.cpp:452
+#, fuzzy
+msgid "_Settings:"
+msgstr "Semua Pengaturan"
+
+#: src/configuration_dialog.cpp:467
+#, fuzzy
+msgid "Lock _Screen:"
+msgstr "Kunci Layar"
+
+#: src/configuration_dialog.cpp:482
+#, fuzzy
+msgid "Log _Out:"
+msgstr "Keluar"
+
+#: src/favorites_page.cpp:89
 msgid "Sort Alphabetically A-Z"
 msgstr "Urutan Alfabet A-Z"
 
-#: src/favorites_page.cpp:79
+#: src/favorites_page.cpp:95
 msgid "Sort Alphabetically Z-A"
 msgstr "Urutan Alfabet Z-A"
 
@@ -122,68 +164,68 @@ msgstr "Lebih Besar"
 msgid "Very Large"
 msgstr "Sangat Besar"
 
-#: src/launcher.cpp:263
+#: src/launcher.cpp:259
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "Gagak mengeksekusi perintah \"%s\"."
 
-#: src/menu.cpp:100
+#: src/menu.cpp:110
 msgid "All Settings"
 msgstr "Semua Pengaturan"
 
-#: src/menu.cpp:103
+#: src/menu.cpp:113
 msgid "Lock Screen"
 msgstr "Kunci Layar"
 
-#: src/menu.cpp:106
+#: src/menu.cpp:116
 msgid "Log Out"
 msgstr "Keluar"
 
-#: src/menu.cpp:120
+#: src/menu.cpp:130
 msgid "Favorites"
 msgstr "Favorit"
 
-#: src/menu.cpp:126
+#: src/menu.cpp:136
 msgid "Recently Used"
 msgstr "Terakhir diGunakan"
 
-#: src/menu.cpp:742
+#: src/menu.cpp:963
 msgid "Failed to open settings manager."
 msgstr "Gagal membuka menejer pengaturan."
 
-#: src/menu.cpp:756
+#: src/menu.cpp:977
 msgid "Failed to lock screen."
 msgstr "Gagal mengunci layar."
 
-#: src/menu.cpp:770
+#: src/menu.cpp:991
 msgid "Failed to log out."
 msgstr "Gagal keluar."
 
-#: src/page.cpp:182
+#: src/page.cpp:194
 msgid "Add to Favorites"
 msgstr "Tambahkan ke Favorit"
 
-#: src/page.cpp:190
+#: src/page.cpp:202
 msgid "Remove From Favorites"
 msgstr "Hapus Dari Favorit"
 
-#: src/page.cpp:197
+#: src/page.cpp:209
 msgid "Add to Desktop"
 msgstr "Tambahkan ke Desktop"
 
-#: src/page.cpp:201
+#: src/page.cpp:213
 msgid "Add to Panel"
 msgstr "Tambahkan ke Panel"
 
-#: src/page.cpp:291
+#: src/page.cpp:303
 msgid "Unable to add launcher to desktop."
 msgstr "Gagal menambahkan peluncur ke desktop."
 
-#: src/page.cpp:330 src/page.cpp:339
+#: src/page.cpp:342 src/page.cpp:351
 msgid "Unable to add launcher to panel."
 msgstr "Gagal menambahkan peluncur ke panel."
 
-#: src/panel_plugin.cpp:150
+#: src/panel_plugin.cpp:160
 msgid "Applications Menu"
 msgstr "Menu Aplikasi"
 
