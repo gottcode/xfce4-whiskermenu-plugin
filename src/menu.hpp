@@ -87,10 +87,12 @@ public:
 	static std::string get_lockscreen_command();
 	static std::string get_logout_command();
 	static bool get_display_recent();
+	static bool get_position_search_alternate();
 	static void set_settings_command(const std::string& command);
 	static void set_lockscreen_command(const std::string& command);
 	static void set_logout_command(const std::string& command);
 	static void set_display_recent(bool display);
+	static void set_position_search_alternate(bool alternate);
 
 private:
 	bool on_enter_notify_event(GdkEventCrossing* event);
@@ -142,12 +144,14 @@ private:
 	GdkRectangle m_geometry;
 	bool m_layout_left;
 	bool m_layout_bottom;
+	bool m_layout_search_alternate;
 	bool m_modified;
 
 	static std::string m_settings_command;
 	static std::string m_lockscreen_command;
 	static std::string m_logout_command;
 	static bool m_display_recent;
+	static bool m_position_search_alternate;
 
 
 private:

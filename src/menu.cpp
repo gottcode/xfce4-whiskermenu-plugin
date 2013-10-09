@@ -53,6 +53,7 @@ std::string Menu::m_settings_command = "xfce4-settings-manager";
 std::string Menu::m_lockscreen_command = "xflock4";
 std::string Menu::m_logout_command = "xfce4-session-logout";
 bool Menu::m_display_recent = false;
+bool Menu::m_position_search_alternate = false;
 
 //-----------------------------------------------------------------------------
 
@@ -60,6 +61,7 @@ Menu::Menu(XfceRc* settings) :
 	m_window(NULL),
 	m_layout_left(true),
 	m_layout_bottom(true),
+	m_layout_search_alternate(false),
 	m_modified(false)
 {
 	m_geometry.x = 0;
@@ -430,10 +432,23 @@ void Menu::show(GtkWidget* parent, bool horizontal)
 		}
 	}
 
-	if (layout_bottom != m_layout_bottom)
+	if ((layout_bottom != m_layout_bottom) || (m_layout_search_alternate != m_position_search_alternate))
 	{
 		m_layout_bottom = layout_bottom;
-		if (m_layout_bottom)
+		m_layout_search_alternate = m_position_search_alternate;
+		if (m_layout_bottom && m_layout_search_alternate)
+		{
+			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_title_box), 0);
+			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_contents_box), 1);
+			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_search_entry), 2);
+		}
+		else if (m_layout_search_alternate)
+		{
+			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_title_box), 2);
+			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_contents_box), 1);
+			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_search_entry), 0);
+		}
+		else if (m_layout_bottom)
 		{
 			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_title_box), 0);
 			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_search_entry), 1);
@@ -564,6 +579,13 @@ bool Menu::get_display_recent()
 
 //-----------------------------------------------------------------------------
 
+bool Menu::get_position_search_alternate()
+{
+	return m_position_search_alternate;
+}
+
+//-----------------------------------------------------------------------------
+
 void Menu::set_settings_command(const std::string& command)
 {
 	m_settings_command = command;
@@ -588,6 +610,13 @@ void Menu::set_logout_command(const std::string& command)
 void Menu::set_display_recent(bool display)
 {
 	m_display_recent = display;
+}
+
+//-----------------------------------------------------------------------------
+
+void Menu::set_position_search_alternate(bool alternate)
+{
+	m_position_search_alternate = alternate;
 }
 
 //-----------------------------------------------------------------------------

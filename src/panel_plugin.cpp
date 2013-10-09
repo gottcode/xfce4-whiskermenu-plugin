@@ -70,6 +70,7 @@ PanelPlugin::PanelPlugin(XfcePanelPlugin* plugin) :
 		ApplicationsPage::set_load_hierarchy(xfce_rc_read_bool_entry(settings, "load-hierarchy", ApplicationsPage::get_load_hierarchy()));
 		FavoritesPage::set_remember_favorites(xfce_rc_read_bool_entry(settings, "favorites-in-recent", FavoritesPage::get_remember_favorites()));
 		Menu::set_display_recent(xfce_rc_read_bool_entry(settings, "display-recent-default", Menu::get_display_recent()));
+		Menu::set_position_search_alternate(xfce_rc_read_bool_entry(settings, "position-search-alternate", Menu::get_position_search_alternate()));
 		Menu::set_settings_command(xfce_rc_read_entry(settings, "command-settings", Menu::get_settings_command().c_str()));
 		Menu::set_lockscreen_command(xfce_rc_read_entry(settings, "command-lockscreen", Menu::get_lockscreen_command().c_str()));
 		Menu::set_logout_command(xfce_rc_read_entry(settings, "command-logout", Menu::get_logout_command().c_str()));
@@ -320,6 +321,7 @@ void PanelPlugin::save()
 	xfce_rc_write_bool_entry(settings, "load-hierarchy", ApplicationsPage::get_load_hierarchy());
 	xfce_rc_write_bool_entry(settings, "favorites-in-recent", FavoritesPage::get_remember_favorites());
 	xfce_rc_write_bool_entry(settings, "display-recent-default", Menu::get_display_recent());
+	xfce_rc_write_bool_entry(settings, "position-search-alternate", Menu::get_position_search_alternate());
 	xfce_rc_write_entry(settings, "command-settings", Menu::get_settings_command().c_str());
 	xfce_rc_write_entry(settings, "command-lockscreen", Menu::get_lockscreen_command().c_str());
 	xfce_rc_write_entry(settings, "command-logout", Menu::get_logout_command().c_str());

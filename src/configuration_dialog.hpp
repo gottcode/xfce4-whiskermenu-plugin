@@ -39,20 +39,25 @@ public:
 	}
 
 private:
-	void choose_icon();
-	void category_icon_size_changed(GtkComboBox* combo);
-	void item_icon_size_changed(GtkComboBox* combo);
-	void style_changed(GtkComboBox* combo);
-	void title_changed();
-	void toggle_hover_switch_category(GtkToggleButton* button);
 	void toggle_show_name(GtkToggleButton* button);
 	void toggle_show_description(GtkToggleButton* button);
+	void toggle_position_search_alternate(GtkToggleButton* button);
+	void category_icon_size_changed(GtkComboBox* combo);
+	void item_icon_size_changed(GtkComboBox* combo);
+
+	void style_changed(GtkComboBox* combo);
+	void title_changed();
+	void choose_icon();
+
+	void toggle_hover_switch_category(GtkToggleButton* button);
 	void toggle_load_hierarchy(GtkToggleButton* button);
 	void toggle_remember_favorites(GtkToggleButton* button);
 	void toggle_display_recent(GtkToggleButton* button);
+
 	void settings_command_changed();
 	void lockscreen_command_changed();
 	void logout_command_changed();
+
 	void response(int response_id);
 	GtkWidget* init_appearance_tab();
 	GtkWidget* init_panel_button_tab();
@@ -61,20 +66,24 @@ private:
 
 private:
 	PanelPlugin* m_plugin;
-
 	GtkWidget* m_window;
+
+	GtkWidget* m_show_names;
+	GtkWidget* m_show_descriptions;
+	GtkWidget* m_position_search_alternate;
+	GtkWidget* m_category_icon_size;
+	GtkWidget* m_item_icon_size;
+
 	GtkWidget* m_button_style;
 	GtkWidget* m_title;
 	GtkWidget* m_icon;
 	GtkWidget* m_icon_button;
-	GtkWidget* m_category_icon_size;
-	GtkWidget* m_item_icon_size;
-	GtkWidget* m_show_names;
-	GtkWidget* m_show_descriptions;
+
 	GtkWidget* m_hover_switch_category;
 	GtkWidget* m_load_hierarchy;
 	GtkWidget* m_remember_favorites;
 	GtkWidget* m_display_recent;
+
 	GtkWidget* m_settings_command;
 	GtkWidget* m_lockscreen_command;
 	GtkWidget* m_logout_command;
@@ -119,6 +128,11 @@ private:
 	static void toggle_show_description_slot(GtkToggleButton* button, ConfigurationDialog* obj)
 	{
 		obj->toggle_show_description(button);
+	}
+
+	static void toggle_position_search_alternate_slot(GtkToggleButton* button, ConfigurationDialog* obj)
+	{
+		obj->toggle_position_search_alternate(button);
 	}
 
 	static void toggle_load_hierarchy_slot(GtkToggleButton* button, ConfigurationDialog* obj)

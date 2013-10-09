@@ -170,6 +170,14 @@ void ConfigurationDialog::toggle_show_description(GtkToggleButton* button)
 
 //-----------------------------------------------------------------------------
 
+void ConfigurationDialog::toggle_position_search_alternate(GtkToggleButton* button)
+{
+	Menu::set_position_search_alternate(gtk_toggle_button_get_active(button));
+	m_plugin->reload();
+}
+
+//-----------------------------------------------------------------------------
+
 void ConfigurationDialog::toggle_load_hierarchy(GtkToggleButton* button)
 {
 	ApplicationsPage::set_load_hierarchy(gtk_toggle_button_get_active(button));
@@ -254,6 +262,12 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	gtk_box_pack_start(appearance_vbox, m_show_descriptions, true, true, 0);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_descriptions), Launcher::get_show_description());
 	g_signal_connect(m_show_descriptions, "toggled", G_CALLBACK(ConfigurationDialog::toggle_show_description_slot), this);
+
+	// Add option to use alternate search entry position
+	m_position_search_alternate = gtk_check_button_new_with_mnemonic(_("Position _search entry next to panel button"));
+	gtk_box_pack_start(appearance_vbox, m_position_search_alternate, true, true, 0);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_search_alternate), Menu::get_position_search_alternate());
+	g_signal_connect(m_position_search_alternate, "toggled", G_CALLBACK(ConfigurationDialog::toggle_position_search_alternate_slot), this);
 
 	// Add item icon size selector
 	GtkBox* hbox = GTK_BOX(gtk_hbox_new(false, 12));
