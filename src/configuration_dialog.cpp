@@ -62,10 +62,10 @@ ConfigurationDialog::ConfigurationDialog(PanelPlugin* plugin) :
 
 	// Create tabs
 	GtkNotebook* notebook = GTK_NOTEBOOK(gtk_notebook_new());
-	gtk_notebook_append_page(notebook, init_appearance_tab(), gtk_label_new_with_mnemonic("_Appearance"));
-	gtk_notebook_append_page(notebook, init_panel_button_tab(), gtk_label_new_with_mnemonic("_Panel Button"));
-	gtk_notebook_append_page(notebook, init_behavior_tab(), gtk_label_new_with_mnemonic("_Behavior"));
-	gtk_notebook_append_page(notebook, init_commands_tab(), gtk_label_new_with_mnemonic("_Commands"));
+	gtk_notebook_append_page(notebook, init_appearance_tab(), gtk_label_new_with_mnemonic(_("_Appearance")));
+	gtk_notebook_append_page(notebook, init_panel_button_tab(), gtk_label_new_with_mnemonic(_("_Panel Button")));
+	gtk_notebook_append_page(notebook, init_behavior_tab(), gtk_label_new_with_mnemonic(_("_Behavior")));
+	gtk_notebook_append_page(notebook, init_commands_tab(), gtk_label_new_with_mnemonic(_("_Commands")));
 
 	// Add tabs to dialog
 	GtkBox* vbox = GTK_BOX(gtk_vbox_new(false, 8));
