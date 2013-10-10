@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-09 22:00+0000\n"
-"PO-Revision-Date: 2013-08-14 09:22+0000\n"
+"PO-Revision-Date: 2013-10-10 09:43+0000\n"
 "Last-Translator: Umidjon Almasov <u.almasov@gmail.com>\n"
 "Language-Team: Uzbek (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/uz/)\n"
 "MIME-Version: 1.0\n"
@@ -27,23 +27,20 @@ msgid "Whisker Menu"
 msgstr "Whisker Menyu"
 
 #: src/configuration_dialog.cpp:65
-#, fuzzy
 msgid "_Appearance"
-msgstr "Ko'rinish"
+msgstr "_Ko'rinish"
 
 #: src/configuration_dialog.cpp:66
-#, fuzzy
 msgid "_Panel Button"
-msgstr "Panel tugmasi"
+msgstr "_Panel tugmasi"
 
 #: src/configuration_dialog.cpp:67
-#, fuzzy
 msgid "_Behavior"
-msgstr "Amali"
+msgstr "_Muomala"
 
 #: src/configuration_dialog.cpp:68
 msgid "_Commands"
-msgstr ""
+msgstr "_Buyruqlar"
 
 #: src/configuration_dialog.cpp:94
 msgid "Select An Icon"
@@ -114,19 +111,16 @@ msgid "Display recently _used by default"
 msgstr ""
 
 #: src/configuration_dialog.cpp:452
-#, fuzzy
 msgid "_Settings:"
-msgstr "Hamma moslamalar"
+msgstr "_Moslamalar:"
 
 #: src/configuration_dialog.cpp:467
-#, fuzzy
 msgid "Lock _Screen:"
-msgstr "Ekranni qulflash"
+msgstr "_Ekranni qulflash:"
 
 #: src/configuration_dialog.cpp:482
-#, fuzzy
 msgid "Log _Out:"
-msgstr "Tizimdan chiqish"
+msgstr "Tizimdan _chiqish:"
 
 #: src/favorites_page.cpp:89
 msgid "Sort Alphabetically A-Z"

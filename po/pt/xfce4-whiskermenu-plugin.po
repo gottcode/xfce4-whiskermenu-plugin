@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-09 22:00+0000\n"
-"PO-Revision-Date: 2013-07-22 09:19+0000\n"
+"PO-Revision-Date: 2013-10-10 00:00+0000\n"
 "Last-Translator: Sérgio Marques <smarquespt@gmail.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/pt/)\n"
 "MIME-Version: 1.0\n"
@@ -28,23 +28,20 @@ msgid "Whisker Menu"
 msgstr "Menu Whisker"
 
 #: src/configuration_dialog.cpp:65
-#, fuzzy
 msgid "_Appearance"
-msgstr "Aparência"
+msgstr "_Aparência"
 
 #: src/configuration_dialog.cpp:66
-#, fuzzy
 msgid "_Panel Button"
-msgstr "Botão do painel"
+msgstr "Botão do _painel"
 
 #: src/configuration_dialog.cpp:67
-#, fuzzy
 msgid "_Behavior"
-msgstr "Comportamento"
+msgstr "C_omportamento"
 
 #: src/configuration_dialog.cpp:68
 msgid "_Commands"
-msgstr ""
+msgstr "_Comandos"
 
 #: src/configuration_dialog.cpp:94
 msgid "Select An Icon"
@@ -60,11 +57,11 @@ msgstr "Mostrar _descrição das aplicações"
 
 #: src/configuration_dialog.cpp:277
 msgid "Position _search entry next to panel button"
-msgstr ""
+msgstr "Po_sicionar pesquisa junto ao botão do painel"
 
 #: src/configuration_dialog.cpp:283
 msgid "Position commands next to search _entry"
-msgstr ""
+msgstr "Posicionar comandos junto à _entrada de pesquisa"
 
 #: src/configuration_dialog.cpp:293
 msgid "Ite_m icon size:"
@@ -104,30 +101,27 @@ msgstr "Trocar categorias ao _passar com o rato"
 
 #: src/configuration_dialog.cpp:415
 msgid "Load menu hie_rarchy"
-msgstr ""
+msgstr "Carrega_r hierarquida de menu"
 
 #: src/configuration_dialog.cpp:421
 msgid "Include _favorites in recently used"
-msgstr ""
+msgstr "Incluir _favoritos nos itens recentes"
 
 #: src/configuration_dialog.cpp:427
 msgid "Display recently _used by default"
-msgstr ""
+msgstr "Por definição, mostrar itens recentes _utilizados"
 
 #: src/configuration_dialog.cpp:452
-#, fuzzy
 msgid "_Settings:"
-msgstr "Todas as definições"
+msgstr "Definiçõe_s:"
 
 #: src/configuration_dialog.cpp:467
-#, fuzzy
 msgid "Lock _Screen:"
-msgstr "Bloquear ecrã"
+msgstr "Ecrã de _bloqueio:"
 
 #: src/configuration_dialog.cpp:482
-#, fuzzy
 msgid "Log _Out:"
-msgstr "Sair"
+msgstr "_Sair:"
 
 #: src/favorites_page.cpp:89
 msgid "Sort Alphabetically A-Z"
