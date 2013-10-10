@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-09 22:00+0000\n"
-"PO-Revision-Date: 2013-07-14 09:22+0000\n"
+"PO-Revision-Date: 2013-10-10 22:04+0000\n"
 "Last-Translator: Ayceman <alexandru.ianu@gmail.com>\n"
 "Language-Team: Romanian (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/ro/)\n"
 "MIME-Version: 1.0\n"
@@ -27,23 +27,20 @@ msgid "Whisker Menu"
 msgstr "Meniu Whisker"
 
 #: src/configuration_dialog.cpp:65
-#, fuzzy
 msgid "_Appearance"
-msgstr "Aspect"
+msgstr "_Aspect"
 
 #: src/configuration_dialog.cpp:66
-#, fuzzy
 msgid "_Panel Button"
-msgstr "Butonul panoului"
+msgstr "_Buton de Panou"
 
 #: src/configuration_dialog.cpp:67
-#, fuzzy
 msgid "_Behavior"
-msgstr "Comportare"
+msgstr "Compo_rtament"
 
 #: src/configuration_dialog.cpp:68
 msgid "_Commands"
-msgstr ""
+msgstr "_Comenzi"
 
 #: src/configuration_dialog.cpp:94
 msgid "Select An Icon"
@@ -59,11 +56,11 @@ msgstr "Arată _descrierile aplicațiilor"
 
 #: src/configuration_dialog.cpp:277
 msgid "Position _search entry next to panel button"
-msgstr ""
+msgstr "Poziționează căsuța de căutare _lângă butonul de panou"
 
 #: src/configuration_dialog.cpp:283
 msgid "Position commands next to search _entry"
-msgstr ""
+msgstr "Poziționează comen_zi lângă căsuța de căutare"
 
 #: src/configuration_dialog.cpp:293
 msgid "Ite_m icon size:"
@@ -103,30 +100,27 @@ msgstr "Schimbă categoriile _planând cursorul"
 
 #: src/configuration_dialog.cpp:415
 msgid "Load menu hie_rarchy"
-msgstr ""
+msgstr "Încarcă ierar_hia meniului"
 
 #: src/configuration_dialog.cpp:421
 msgid "Include _favorites in recently used"
-msgstr ""
+msgstr "Include _favoritele în utilizate recent"
 
 #: src/configuration_dialog.cpp:427
 msgid "Display recently _used by default"
-msgstr ""
+msgstr "Arată implicit recent _utilizatele"
 
 #: src/configuration_dialog.cpp:452
-#, fuzzy
 msgid "_Settings:"
-msgstr "Toate setările"
+msgstr "_Setări"
 
 #: src/configuration_dialog.cpp:467
-#, fuzzy
 msgid "Lock _Screen:"
-msgstr "Blochează ecranul"
+msgstr "Blochează _Ecranul:"
 
 #: src/configuration_dialog.cpp:482
-#, fuzzy
 msgid "Log _Out:"
-msgstr "Închide sesiunea"
+msgstr "Delo_ghează:"
 
 #: src/favorites_page.cpp:89
 msgid "Sort Alphabetically A-Z"
