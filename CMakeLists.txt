@@ -15,9 +15,13 @@ add_subdirectory(src)
 add_subdirectory(po)
 add_subdirectory(icons)
 
+# popup script
 configure_file(${PROJECT_SOURCE_DIR}/xfce4-popup-whiskermenu.in
     ${PROJECT_BINARY_DIR}/xfce4-popup-whiskermenu ESCAPE_QUOTES @ONLY)
-install(PROGRAMS ${PROJECT_BINARY_DIR}/xfce4-popup-whiskermenu DESTINATION ${CMAKE_INSTALL_BINDIR})
+install(PROGRAMS ${PROJECT_BINARY_DIR}/xfce4-popup-whiskermenu
+    DESTINATION ${CMAKE_INSTALL_BINDIR})
+install(FILES ${PROJECT_SOURCE_DIR}/xfce4-popup-whiskermenu.1
+    DESTINATION ${CMAKE_INSTALL_MANDIR}/man1 COMPONENT doc)
 
 # uninstall target
 configure_file(
