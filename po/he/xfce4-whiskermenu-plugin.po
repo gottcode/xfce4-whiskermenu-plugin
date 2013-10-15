@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-09 22:00+0000\n"
-"PO-Revision-Date: 2013-10-10 09:32+0000\n"
+"PO-Revision-Date: 2013-10-15 05:15+0000\n"
 "Last-Translator: GenghisKhan <genghiskhan@gmx.ca>\n"
 "Language-Team: Hebrew (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/he/)\n"
 "MIME-Version: 1.0\n"
@@ -104,11 +104,11 @@ msgstr "טען מ_דרג תפריט"
 
 #: src/configuration_dialog.cpp:421
 msgid "Include _favorites in recently used"
-msgstr "הכלל _מועדפים בתוך בשימוש"
+msgstr "הכלל _מועדפים בתוך בשימוש לאחרונה"
 
 #: src/configuration_dialog.cpp:427
 msgid "Display recently _used by default"
-msgstr "הצג ב_שימוש לאחרונה באופן משתמט"
+msgstr "הצג בפתיחה את ב_שימוש לאחרונה"
 
 #: src/configuration_dialog.cpp:452
 msgid "_Settings:"
