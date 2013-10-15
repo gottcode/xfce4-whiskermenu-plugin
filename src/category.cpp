@@ -164,6 +164,10 @@ void Category::sort()
 {
 	unset_model();
 	merge();
+	if (m_has_separators)
+	{
+		m_items.erase(std::remove_if(m_items.begin(), m_items.end(), is_null), m_items.end());
+	}
 	std::sort(m_items.begin(), m_items.end(), &Element::less_than);
 }
 
@@ -293,7 +297,7 @@ void Category::merge()
 		m_items.insert(m_items.end(), (*i)->m_items.begin(), (*i)->m_items.end());
 	}
 
-	// Remove subcategories and separators
+	// Remove subcategories
 	for (std::vector<Element*>::iterator i = m_items.begin(), end = m_items.end(); i != end; ++i)
 	{
 		if (is_category(*i))
@@ -301,7 +305,6 @@ void Category::merge()
 			*i = NULL;
 		}
 	}
-	m_items.erase(std::remove_if(m_items.begin(), m_items.end(), is_null), m_items.end());
 
 	// Delete direct subcategories; they will recursively delete their subcategories
 	for (std::vector<Category*>::size_type i = 0; i < last_direct; ++i)
@@ -310,6 +313,7 @@ void Category::merge()
 	}
 
 	m_has_subcategories = false;
+	m_has_separators = true;
 }
 
 //-----------------------------------------------------------------------------

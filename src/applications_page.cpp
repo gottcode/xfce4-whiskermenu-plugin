@@ -229,6 +229,10 @@ void ApplicationsPage::load_menu(GarconMenu* menu, Category* parent_category)
 			category = new Category(directory);
 			m_categories.push_back(category);
 		}
+		else if (!f_load_hierarchy)
+		{
+			category = parent_category;
+		}
 		else if (parent_category)
 		{
 			category = parent_category->append_menu(directory);
