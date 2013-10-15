@@ -130,7 +130,6 @@ void ApplicationsPage::load_applications()
 
 	// Populate map of menu data
 	m_garcon_menu = garcon_menu_new_applications();
-	g_object_ref(m_garcon_menu);
 	if (garcon_menu_load(m_garcon_menu, NULL, NULL))
 	{
 		g_signal_connect_swapped(m_garcon_menu, "reload-required", G_CALLBACK(ApplicationsPage::invalidate_applications_slot), this);
@@ -222,7 +221,6 @@ void ApplicationsPage::load_menu(GarconMenu* menu, Category* parent_category)
 	// Skip hidden categories
 	if (directory && !garcon_menu_directory_get_visible(directory))
 	{
-		g_object_unref(directory);
 		return;
 	}
 
@@ -240,7 +238,6 @@ void ApplicationsPage::load_menu(GarconMenu* menu, Category* parent_category)
 		{
 			category = parent_category->append_menu(directory);
 		}
-		g_object_unref(directory);
 	}
 
 	// Add menu elements

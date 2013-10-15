@@ -79,8 +79,6 @@ static void replace_with_quoted_string(std::string& command, size_t& index, gcha
 Launcher::Launcher(GarconMenuItem* item) :
 	m_item(item)
 {
-	garcon_menu_item_ref(m_item);
-
 	// Fetch icon
 	const gchar* icon = garcon_menu_item_get_icon_name(m_item);
 	if (G_LIKELY(icon))
@@ -175,7 +173,6 @@ Launcher::Launcher(GarconMenuItem* item) :
 
 Launcher::~Launcher()
 {
-	garcon_menu_item_unref(m_item);
 }
 
 //-----------------------------------------------------------------------------
