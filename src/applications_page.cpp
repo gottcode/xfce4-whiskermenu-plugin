@@ -205,11 +205,6 @@ void ApplicationsPage::clear_applications()
 		g_object_unref(m_garcon_menu);
 		m_garcon_menu = NULL;
 	}
-
-	// Clear menu item cache
-	GarconMenuItemCache* cache = garcon_menu_item_cache_get_default();
-	garcon_menu_item_cache_invalidate(cache);
-	g_object_unref(cache);
 }
 
 //-----------------------------------------------------------------------------
