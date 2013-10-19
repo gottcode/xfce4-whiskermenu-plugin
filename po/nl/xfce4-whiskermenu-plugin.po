@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-09 22:00+0000\n"
-"PO-Revision-Date: 2013-07-13 17:04+0000\n"
+"PO-Revision-Date: 2013-10-17 22:25+0000\n"
 "Last-Translator: Pjotr123 <pjotrvertaalt@gmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/nl/)\n"
 "MIME-Version: 1.0\n"
@@ -27,23 +27,20 @@ msgid "Whisker Menu"
 msgstr "Whiskermenu"
 
 #: src/configuration_dialog.cpp:65
-#, fuzzy
 msgid "_Appearance"
 msgstr "Uiterlijk"
 
 #: src/configuration_dialog.cpp:66
-#, fuzzy
 msgid "_Panel Button"
 msgstr "Werkbalkknop"
 
 #: src/configuration_dialog.cpp:67
-#, fuzzy
 msgid "_Behavior"
 msgstr "Gedrag"
 
 #: src/configuration_dialog.cpp:68
 msgid "_Commands"
-msgstr ""
+msgstr "Opdrachten"
 
 #: src/configuration_dialog.cpp:94
 msgid "Select An Icon"
@@ -59,11 +56,11 @@ msgstr "Toon _beschrijvingen van toepassingen"
 
 #: src/configuration_dialog.cpp:277
 msgid "Position _search entry next to panel button"
-msgstr ""
+msgstr "Plaats zoekopdracht naast werkbalkknop"
 
 #: src/configuration_dialog.cpp:283
 msgid "Position commands next to search _entry"
-msgstr ""
+msgstr "Plaats opdrachten naast zoekopdracht"
 
 #: src/configuration_dialog.cpp:293
 msgid "Ite_m icon size:"
@@ -103,30 +100,27 @@ msgstr "Verwissel van categorie door muispijl erop te laten rusten"
 
 #: src/configuration_dialog.cpp:415
 msgid "Load menu hie_rarchy"
-msgstr ""
+msgstr "Menu-opbouw laden"
 
 #: src/configuration_dialog.cpp:421
 msgid "Include _favorites in recently used"
-msgstr ""
+msgstr "Favorieten opnemen in onlangs gebruikt"
 
 #: src/configuration_dialog.cpp:427
 msgid "Display recently _used by default"
-msgstr ""
+msgstr "Toon standaard onlangs gebruikt"
 
 #: src/configuration_dialog.cpp:452
-#, fuzzy
 msgid "_Settings:"
-msgstr "Alle instellingen"
+msgstr "Instellingen:"
 
 #: src/configuration_dialog.cpp:467
-#, fuzzy
 msgid "Lock _Screen:"
-msgstr "Scherm vergrendelen"
+msgstr "Scherm vergrendelen:"
 
 #: src/configuration_dialog.cpp:482
-#, fuzzy
 msgid "Log _Out:"
-msgstr "Afmelden"
+msgstr "Afmelden:"
 
 #: src/favorites_page.cpp:89
 msgid "Sort Alphabetically A-Z"

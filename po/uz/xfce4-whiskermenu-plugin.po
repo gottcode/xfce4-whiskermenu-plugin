@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-09 22:00+0000\n"
-"PO-Revision-Date: 2013-10-10 09:43+0000\n"
+"PO-Revision-Date: 2013-10-19 10:18+0000\n"
 "Last-Translator: Umidjon Almasov <u.almasov@gmail.com>\n"
 "Language-Team: Uzbek (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/uz/)\n"
 "MIME-Version: 1.0\n"
@@ -20,11 +20,11 @@ msgstr ""
 
 #: src/applications_page.cpp:312
 msgid "All"
-msgstr "Hamma"
+msgstr "Hammasi"
 
 #: src/configuration_dialog.cpp:57
 msgid "Whisker Menu"
-msgstr "Whisker Menyu"
+msgstr "Whisker menyusi"
 
 #: src/configuration_dialog.cpp:65
 msgid "_Appearance"
@@ -36,7 +36,7 @@ msgstr "_Panel tugmasi"
 
 #: src/configuration_dialog.cpp:67
 msgid "_Behavior"
-msgstr "_Muomala"
+msgstr "_Xulqi"
 
 #: src/configuration_dialog.cpp:68
 msgid "_Commands"
@@ -56,11 +56,11 @@ msgstr "Dastur _ta'riflarini ko'rsatish"
 
 #: src/configuration_dialog.cpp:277
 msgid "Position _search entry next to panel button"
-msgstr ""
+msgstr "_Qidirish elementini panel tugmasidan keyin joylashtirish"
 
 #: src/configuration_dialog.cpp:283
 msgid "Position commands next to search _entry"
-msgstr ""
+msgstr "_Buyruqlarni qidirish elementidan keyin joylashtirish"
 
 #: src/configuration_dialog.cpp:293
 msgid "Ite_m icon size:"
@@ -68,7 +68,7 @@ msgstr "_Band nishonchasining o'lchami:"
 
 #: src/configuration_dialog.cpp:313
 msgid "Categ_ory icon size:"
-msgstr "_Turkum nishonchasinig o'lchami:"
+msgstr "_Toifa nishonchasinig o'lchami:"
 
 #: src/configuration_dialog.cpp:348
 msgid "Di_splay:"
@@ -96,19 +96,19 @@ msgstr "_Nishoncha:"
 
 #: src/configuration_dialog.cpp:409
 msgid "Switch categories by _hovering"
-msgstr "Turkumlarni sichqoncha ustiga borganda o'zgartirish"
+msgstr "Toifalarni sichqoncha ustiga borganda o'zgartirish"
 
 #: src/configuration_dialog.cpp:415
 msgid "Load menu hie_rarchy"
-msgstr ""
+msgstr "Menyu _ierarxiyasini yuklash"
 
 #: src/configuration_dialog.cpp:421
 msgid "Include _favorites in recently used"
-msgstr ""
+msgstr "_Tanlanganlarni yaqinda foydalanilganlarga qo'shish"
 
 #: src/configuration_dialog.cpp:427
 msgid "Display recently _used by default"
-msgstr ""
+msgstr "Yaqinda _foydalanilganlarni sukut bo'yicha ko'rsatish"
 
 #: src/configuration_dialog.cpp:452
 msgid "_Settings:"
@@ -181,7 +181,7 @@ msgstr "Tanlanganlar"
 
 #: src/menu.cpp:136
 msgid "Recently Used"
-msgstr "Oxirgi ishlatilganlar"
+msgstr "Yaqinda foydalanilganlar"
 
 #: src/menu.cpp:963
 msgid "Failed to open settings manager."
@@ -201,11 +201,11 @@ msgstr "Tanlanganlarga qo'shish"
 
 #: src/page.cpp:202
 msgid "Remove From Favorites"
-msgstr "Tanlanganlardan o'chirish"
+msgstr "Tanlanganlardan olib tashlash"
 
 #: src/page.cpp:209
 msgid "Add to Desktop"
-msgstr "Ish stoliga qo'shish"
+msgstr "Ishchi stolga qo'shish"
 
 #: src/page.cpp:213
 msgid "Add to Panel"
@@ -213,7 +213,7 @@ msgstr "Panelga qo'shish"
 
 #: src/page.cpp:303
 msgid "Unable to add launcher to desktop."
-msgstr "Ishga tushiruvchini ish stoliga qo'shib bo'lmadi."
+msgstr "Ishga tushiruvchini ishchi stolga qo'shib bo'lmadi."
 
 #: src/page.cpp:342 src/page.cpp:351
 msgid "Unable to add launcher to panel."
@@ -225,4 +225,4 @@ msgstr "Dasturlar menyusi"
 
 #: src/recent_page.cpp:71
 msgid "Clear Recently Used"
-msgstr "Oxirgi ishlatilganlarni tozalash"
+msgstr "Yaqinda foydalanilganlarni tozalash"
