@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-09 22:00+0000\n"
-"PO-Revision-Date: 2013-10-10 19:25+0000\n"
+"PO-Revision-Date: 2013-10-21 02:25+0000\n"
 "Last-Translator: Pablo Lezaeta <prflr88@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -43,7 +43,7 @@ msgstr "_Comportamiento"
 
 #: src/configuration_dialog.cpp:68
 msgid "_Commands"
-msgstr "_Comandos"
+msgstr "_Órdenes"
 
 #: src/configuration_dialog.cpp:94
 msgid "Select An Icon"
