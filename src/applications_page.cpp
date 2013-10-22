@@ -135,6 +135,10 @@ void ApplicationsPage::load_applications()
 		g_signal_connect_swapped(m_garcon_menu, "reload-required", G_CALLBACK(ApplicationsPage::invalidate_applications_slot), this);
 		load_menu(m_garcon_menu, NULL);
 	}
+	else
+	{
+		return;
+	}
 
 	// Sort items and categories
 	if (!f_load_hierarchy)

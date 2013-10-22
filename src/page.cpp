@@ -73,7 +73,7 @@ void Page::reset_selection()
 	// Clear selection and scroll to top
 	GtkTreeModel* model = m_view->get_model();
 	GtkTreeIter iter;
-	if (gtk_tree_model_get_iter_first(model, &iter))
+	if (model && gtk_tree_model_get_iter_first(model, &iter))
 	{
 		GtkTreePath* path = gtk_tree_model_get_path(model, &iter);
 		get_view()->scroll_to_path(path);
