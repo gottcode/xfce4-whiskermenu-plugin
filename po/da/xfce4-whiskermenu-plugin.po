@@ -4,13 +4,14 @@
 #
 # Translators:
 # Jens E. Jensen <jens.e.jensen@gmail.com>, 2013
+# Morten Juhl-Johansen Zölde-Fejér <morten@writtenandread.net>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-09 22:00+0000\n"
-"PO-Revision-Date: 2013-07-19 09:41+0000\n"
-"Last-Translator: Jens E. Jensen <jens.e.jensen@gmail.com>\n"
+"PO-Revision-Date: 2013-10-27 16:23+0000\n"
+"Last-Translator: Morten Juhl-Johansen Zölde-Fejér <morten@writtenandread.net>\n"
 "Language-Team: Danish (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,23 +28,20 @@ msgid "Whisker Menu"
 msgstr "Whisker Menu"
 
 #: src/configuration_dialog.cpp:65
-#, fuzzy
 msgid "_Appearance"
-msgstr "Udseende"
+msgstr "_Udseende"
 
 #: src/configuration_dialog.cpp:66
-#, fuzzy
 msgid "_Panel Button"
-msgstr "Panelknap"
+msgstr "_Panelknap"
 
 #: src/configuration_dialog.cpp:67
-#, fuzzy
 msgid "_Behavior"
-msgstr "Opførsel"
+msgstr "_Opførsel"
 
 #: src/configuration_dialog.cpp:68
 msgid "_Commands"
-msgstr ""
+msgstr "_Kommandoer"
 
 #: src/configuration_dialog.cpp:94
 msgid "Select An Icon"
@@ -59,11 +57,11 @@ msgstr "Vis applikationers _beskrivelser"
 
 #: src/configuration_dialog.cpp:277
 msgid "Position _search entry next to panel button"
-msgstr ""
+msgstr "Placer _søgning ved siden af panelknap"
 
 #: src/configuration_dialog.cpp:283
 msgid "Position commands next to search _entry"
-msgstr ""
+msgstr "Placer kommandoer ved siden af søgning"
 
 #: src/configuration_dialog.cpp:293
 msgid "Ite_m icon size:"
@@ -103,30 +101,27 @@ msgstr "Skift kategori ved at flytte musemarkør"
 
 #: src/configuration_dialog.cpp:415
 msgid "Load menu hie_rarchy"
-msgstr ""
+msgstr "Indlæs menuers hie_rarki"
 
 #: src/configuration_dialog.cpp:421
 msgid "Include _favorites in recently used"
-msgstr ""
+msgstr "Medtag _favoritter blandt senest anvendte"
 
 #: src/configuration_dialog.cpp:427
 msgid "Display recently _used by default"
-msgstr ""
+msgstr "Vis _senest anvendte som standard"
 
 #: src/configuration_dialog.cpp:452
-#, fuzzy
 msgid "_Settings:"
-msgstr "Alle indstillinger"
+msgstr "_Indstillinger"
 
 #: src/configuration_dialog.cpp:467
-#, fuzzy
 msgid "Lock _Screen:"
-msgstr "Lås skærm"
+msgstr "Lås _skærm:"
 
 #: src/configuration_dialog.cpp:482
-#, fuzzy
 msgid "Log _Out:"
-msgstr "Log ud"
+msgstr "Log _ud:"
 
 #: src/favorites_page.cpp:89
 msgid "Sort Alphabetically A-Z"
@@ -195,7 +190,7 @@ msgstr "Kunne ikke åbne indstillings-håndtering"
 
 #: src/menu.cpp:977
 msgid "Failed to lock screen."
-msgstr "Kunne ikke låse skærmen"
+msgstr "Kunne ikke låse skærmen."
 
 #: src/menu.cpp:991
 msgid "Failed to log out."
