@@ -1,3 +1,18 @@
+1.2.0
+=====
+- Fix popup script to show correct version information.
+- Fix memory leak when reloading applications.
+- Fix favorites and recent deleted when menu failed to load.
+- Add option to load menu hierarchy.
+- Add option to not include favorites in recently used.
+- Add options to set custom commands.
+- Add option to show recently used by default.
+- Add option to position search entry next to panel button.
+- Add option to position command buttons next to search entry.
+- Add manual page for popup script.
+- Use tabs for configuration dialog layout.
+- Translation updates: Brazilian Portuguese, Bulgarian, Catalan, Croatian, Danish, Dutch, Finnish, French, German, Greek, Hebrew, Italian, Japanese, Malay, Norwegian Bokmål, Polish, Portuguese, Romanian, Russian, Serbian (Latin), Slovak, Spanish, Uzbek.
+
 1.1.1
 =====
 - Add name to main widget to allow styling.
