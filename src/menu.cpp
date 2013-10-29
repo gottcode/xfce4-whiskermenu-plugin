@@ -49,9 +49,9 @@ static GtkButton* new_action_button(const gchar* icon, const gchar* text)
 	return button;
 }
 
-std::string Menu::m_settings_command = "xfce4-settings-manager";
-std::string Menu::m_lockscreen_command = "xflock4";
-std::string Menu::m_logout_command = "xfce4-session-logout";
+Menu::Command Menu::m_settings_command = "xfce4-settings-manager";
+Menu::Command Menu::m_lockscreen_command = "xflock4";
+Menu::Command Menu::m_logout_command = "xfce4-session-logout";
 bool Menu::m_display_recent = false;
 bool Menu::m_position_search_alternate = false;
 bool Menu::m_position_commands_alternate = false;
@@ -289,6 +289,11 @@ void Menu::show(GtkWidget* parent, bool horizontal)
 	m_favorites->get_view()->reload_icon_size();
 	m_recent->get_view()->reload_icon_size();
 	m_applications->get_view()->reload_icon_size();
+
+	// Make sure commands are valid
+	check_command(m_settings_command, GTK_WIDGET(m_settings_button));
+	check_command(m_lockscreen_command, GTK_WIDGET(m_lock_screen_button));
+	check_command(m_logout_command, GTK_WIDGET(m_log_out_button));
 
 	// Make sure applications list is current; does nothing unless list has changed
 	m_applications->load_applications();
@@ -628,21 +633,21 @@ bool Menu::on_enter_notify_event(GdkEventCrossing* event)
 
 std::string Menu::get_settings_command()
 {
-	return m_settings_command;
+	return m_settings_command.m_exec;
 }
 
 //-----------------------------------------------------------------------------
 
 std::string Menu::get_lockscreen_command()
 {
-	return m_lockscreen_command;
+	return m_lockscreen_command.m_exec;
 }
 
 //-----------------------------------------------------------------------------
 
 std::string Menu::get_logout_command()
 {
-	return m_logout_command;
+	return m_logout_command.m_exec;
 }
 
 //-----------------------------------------------------------------------------
@@ -958,7 +963,7 @@ void Menu::launch_settings_manager()
 	hide();
 
 	GError* error = NULL;
-	if (g_spawn_command_line_async(m_settings_command.c_str(), &error) == false)
+	if (g_spawn_command_line_async(m_settings_command.m_exec.c_str(), &error) == false)
 	{
 		xfce_dialog_show_error(NULL, error, _("Failed to open settings manager."));
 		g_error_free(error);
@@ -972,7 +977,7 @@ void Menu::lock_screen()
 	hide();
 
 	GError* error = NULL;
-	if (g_spawn_command_line_async(m_lockscreen_command.c_str(), &error) == false)
+	if (g_spawn_command_line_async(m_lockscreen_command.m_exec.c_str(), &error) == false)
 	{
 		xfce_dialog_show_error(NULL, error, _("Failed to lock screen."));
 		g_error_free(error);
@@ -986,11 +991,24 @@ void Menu::log_out()
 	hide();
 
 	GError* error = NULL;
-	if (g_spawn_command_line_async(m_logout_command.c_str(), &error) == false)
+	if (g_spawn_command_line_async(m_logout_command.m_exec.c_str(), &error) == false)
 	{
 		xfce_dialog_show_error(NULL, error, _("Failed to log out."));
 		g_error_free(error);
 	}
+}
+
+//-----------------------------------------------------------------------------
+
+void Menu::check_command(Command& command, GtkWidget* button)
+{
+	if (command.m_status == Unchecked)
+	{
+		gchar* path = g_find_program_in_path(command.m_exec.c_str());
+		command.m_status = path ? Valid : Invalid;
+		g_free(path);
+	}
+	gtk_widget_set_sensitive(button, command.m_status == Valid);
 }
 
 //-----------------------------------------------------------------------------

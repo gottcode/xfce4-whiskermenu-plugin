@@ -41,6 +41,32 @@ class SectionButton;
 
 class Menu
 {
+	enum CommandStatus
+	{
+		Unchecked = -1,
+		Invalid,
+		Valid
+	};
+
+	struct Command
+	{
+		std::string m_exec;
+		CommandStatus m_status;
+
+		Command(const char* exec = NULL) :
+			m_exec(exec ? exec : ""),
+			m_status(Unchecked)
+		{
+		}
+
+		Command& operator=(const std::string& exec)
+		{
+			m_exec = exec;
+			m_status = Unchecked;
+			return *this;
+		}
+	};
+
 public:
 	explicit Menu(XfceRc* settings);
 	~Menu();
@@ -114,6 +140,7 @@ private:
 	void launch_settings_manager();
 	void lock_screen();
 	void log_out();
+	static void check_command(Command& command, GtkWidget* button);
 
 private:
 	GtkWindow* m_window;
@@ -154,9 +181,9 @@ private:
 	bool m_layout_commands_alternate;
 	bool m_modified;
 
-	static std::string m_settings_command;
-	static std::string m_lockscreen_command;
-	static std::string m_logout_command;
+	static Command m_settings_command;
+	static Command m_lockscreen_command;
+	static Command m_logout_command;
 	static bool m_display_recent;
 	static bool m_position_search_alternate;
 	static bool m_position_commands_alternate;
