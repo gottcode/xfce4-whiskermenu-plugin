@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-09 22:00+0000\n"
-"PO-Revision-Date: 2013-10-21 11:25+0000\n"
+"PO-Revision-Date: 2013-10-30 00:23+0000\n"
 "Last-Translator: Asto Banko <kusmis@hot.ee>\n"
 "Language-Team: Estonian (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/et/)\n"
 "MIME-Version: 1.0\n"
@@ -48,11 +48,11 @@ msgstr "Vali ikoon"
 
 #: src/configuration_dialog.cpp:265
 msgid "Show applications by _name"
-msgstr "Näita programme, järgi _nime"
+msgstr "Näita programme by_name"
 
 #: src/configuration_dialog.cpp:271
 msgid "Show application _descriptions"
-msgstr ""
+msgstr "Näita application _descriptions"
 
 #: src/configuration_dialog.cpp:277
 msgid "Position _search entry next to panel button"
@@ -161,7 +161,7 @@ msgstr "Väga suur"
 #: src/launcher.cpp:259
 #, c-format
 msgid "Failed to execute command \"%s\"."
-msgstr ""
+msgstr "Ebaõnnestus käsu käivitamisel \"%s\"."
 
 #: src/menu.cpp:110
 msgid "All Settings"
@@ -169,7 +169,7 @@ msgstr "Kõik sätted"
 
 #: src/menu.cpp:113
 msgid "Lock Screen"
-msgstr ""
+msgstr "Lukusta Ekraan"
 
 #: src/menu.cpp:116
 msgid "Log Out"
