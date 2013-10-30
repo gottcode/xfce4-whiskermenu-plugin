@@ -48,6 +48,11 @@ public:
 		ShowIconAndText = ShowIcon | ShowText
 	};
 
+	Menu* get_menu() const
+	{
+		return m_menu;
+	}
+
 	ButtonStyle get_button_style() const
 	{
 		return ButtonStyle(m_button_icon_visible | (m_button_title_visible << 1));

@@ -64,6 +64,7 @@ endif()
 add_library(whiskermenu MODULE
     applications_page.cpp
     category.cpp
+    command_button.cpp
     configuration_dialog.cpp
     favorites_page.cpp
     icon_size.cpp

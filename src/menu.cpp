@@ -17,6 +17,7 @@
 #include "menu.hpp"
 
 #include "applications_page.hpp"
+#include "command_button.hpp"
 #include "favorites_page.hpp"
 #include "launcher_view.hpp"
 #include "recent_page.hpp"
@@ -37,21 +38,6 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-static GtkButton* new_action_button(const gchar* icon, const gchar* text)
-{
-	GtkButton* button = GTK_BUTTON(gtk_button_new());
-	gtk_button_set_relief(button, GTK_RELIEF_NONE);
-	gtk_widget_set_tooltip_text(GTK_WIDGET(button), text);
-
-	GtkWidget* image = gtk_image_new_from_icon_name(icon, GTK_ICON_SIZE_LARGE_TOOLBAR);
-	gtk_container_add(GTK_CONTAINER(button), GTK_WIDGET(image));
-
-	return button;
-}
-
-Menu::Command Menu::m_settings_command = "xfce4-settings-manager";
-Menu::Command Menu::m_lockscreen_command = "xflock4";
-Menu::Command Menu::m_logout_command = "xfce4-session-logout";
 bool Menu::m_display_recent = false;
 bool Menu::m_position_search_alternate = false;
 bool Menu::m_position_commands_alternate = false;
@@ -107,14 +93,14 @@ Menu::Menu(XfceRc* settings) :
 	g_free(username);
 
 	// Create action buttons
-	m_settings_button = new_action_button("preferences-desktop", _("All Settings"));
-	g_signal_connect(m_settings_button, "clicked", G_CALLBACK(Menu::launch_settings_manager_slot), this);
+	m_settings_button = new CommandButton("preferences-desktop", _("All Settings"), "xfce4-settings-manager", _("Failed to open settings manager."));
+	g_signal_connect_swapped(m_settings_button->get_widget(), "clicked", G_CALLBACK(Menu::hide_slot), this);
 
-	m_lock_screen_button = new_action_button("system-lock-screen", _("Lock Screen"));
-	g_signal_connect(m_lock_screen_button, "clicked", G_CALLBACK(Menu::lock_screen_slot), this);
+	m_lockscreen_button = new CommandButton("system-lock-screen", _("Lock Screen"), "xflock4", _("Failed to lock screen."));
+	g_signal_connect_swapped(m_lockscreen_button->get_widget(), "clicked", G_CALLBACK(Menu::hide_slot), this);
 
-	m_log_out_button = new_action_button("system-log-out", _("Log Out"));
-	g_signal_connect(m_log_out_button, "clicked", G_CALLBACK(Menu::log_out_slot), this);
+	m_logout_button = new CommandButton("system-log-out", _("Log Out"), "xfce4-session-logout", _("Failed to log out."));
+	g_signal_connect_swapped(m_logout_button->get_widget(), "clicked", G_CALLBACK(Menu::hide_slot), this);
 
 	m_resizer = new ResizerWidget(m_window);
 
@@ -163,9 +149,9 @@ Menu::Menu(XfceRc* settings) :
 	// Create box for packing commands
 	m_commands_align = GTK_ALIGNMENT(gtk_alignment_new(1, 0, 0, 0));
 	m_commands_box = GTK_BOX(gtk_hbox_new(false, 0));
-	gtk_box_pack_start(m_commands_box, GTK_WIDGET(m_settings_button), false, false, 0);
-	gtk_box_pack_start(m_commands_box, GTK_WIDGET(m_lock_screen_button), false, false, 0);
-	gtk_box_pack_start(m_commands_box, GTK_WIDGET(m_log_out_button), false, false, 0);
+	gtk_box_pack_start(m_commands_box, GTK_WIDGET(m_settings_button->get_widget()), false, false, 0);
+	gtk_box_pack_start(m_commands_box, GTK_WIDGET(m_lockscreen_button->get_widget()), false, false, 0);
+	gtk_box_pack_start(m_commands_box, GTK_WIDGET(m_logout_button->get_widget()), false, false, 0);
 	gtk_container_add(GTK_CONTAINER(m_commands_align), GTK_WIDGET(m_commands_box));
 
 	// Create box for packing username, commands, and resize widget
@@ -245,6 +231,10 @@ Menu::~Menu()
 	delete m_recent;
 	delete m_favorites;
 
+	delete m_settings_button;
+	delete m_lockscreen_button;
+	delete m_logout_button;
+
 	delete m_resizer;
 	g_object_unref(m_window);
 }
@@ -291,9 +281,9 @@ void Menu::show(GtkWidget* parent, bool horizontal)
 	m_applications->get_view()->reload_icon_size();
 
 	// Make sure commands are valid
-	check_command(m_settings_command, GTK_WIDGET(m_settings_button));
-	check_command(m_lockscreen_command, GTK_WIDGET(m_lock_screen_button));
-	check_command(m_logout_command, GTK_WIDGET(m_log_out_button));
+	m_settings_button->check();
+	m_lockscreen_button->check();
+	m_logout_button->check();
 
 	// Make sure applications list is current; does nothing unless list has changed
 	m_applications->load_applications();
@@ -447,9 +437,9 @@ void Menu::show(GtkWidget* parent, bool horizontal)
 			gtk_misc_set_alignment(GTK_MISC(m_username), 0.0f, 0.5f);
 
 			gtk_alignment_set(m_commands_align, 1, 0, 0, 0);
-			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_settings_button), 0);
-			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_lock_screen_button), 1);
-			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_log_out_button), 2);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_settings_button->get_widget()), 0);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_lockscreen_button->get_widget()), 1);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_logout_button->get_widget()), 2);
 
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 0);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 1);
@@ -465,9 +455,9 @@ void Menu::show(GtkWidget* parent, bool horizontal)
 			gtk_misc_set_alignment(GTK_MISC(m_username), 1.0f, 0.5f);
 
 			gtk_alignment_set(m_commands_align, 0, 0, 0, 0);
-			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_settings_button), 2);
-			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_lock_screen_button), 1);
-			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_log_out_button), 0);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_settings_button->get_widget()), 2);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_lockscreen_button->get_widget()), 1);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_logout_button->get_widget()), 0);
 
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 1);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 0);
@@ -483,9 +473,9 @@ void Menu::show(GtkWidget* parent, bool horizontal)
 			gtk_misc_set_alignment(GTK_MISC(m_username), 0.0f, 0.5f);
 
 			gtk_alignment_set(m_commands_align, 1, 0, 0, 0);
-			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_settings_button), 0);
-			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_lock_screen_button), 1);
-			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_log_out_button), 2);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_settings_button->get_widget()), 0);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_lockscreen_button->get_widget()), 1);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_logout_button->get_widget()), 2);
 
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 0);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_commands_align), 1);
@@ -499,9 +489,9 @@ void Menu::show(GtkWidget* parent, bool horizontal)
 			gtk_misc_set_alignment(GTK_MISC(m_username), 1.0f, 0.5f);
 
 			gtk_alignment_set(m_commands_align, 0, 0, 0, 0);
-			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_settings_button), 2);
-			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_lock_screen_button), 1);
-			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_log_out_button), 0);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_settings_button->get_widget()), 2);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_lockscreen_button->get_widget()), 1);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_logout_button->get_widget()), 0);
 
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 2);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_commands_align), 1);
@@ -633,21 +623,42 @@ bool Menu::on_enter_notify_event(GdkEventCrossing* event)
 
 std::string Menu::get_settings_command()
 {
-	return m_settings_command.m_exec;
+	return m_settings_button->get_command();
 }
 
 //-----------------------------------------------------------------------------
 
 std::string Menu::get_lockscreen_command()
 {
-	return m_lockscreen_command.m_exec;
+	return m_lockscreen_button->get_command();
 }
 
 //-----------------------------------------------------------------------------
 
 std::string Menu::get_logout_command()
 {
-	return m_logout_command.m_exec;
+	return m_logout_button->get_command();
+}
+
+//-----------------------------------------------------------------------------
+
+void Menu::set_settings_command(const std::string& command)
+{
+	m_settings_button->set_command(command);
+}
+
+//-----------------------------------------------------------------------------
+
+void Menu::set_lockscreen_command(const std::string& command)
+{
+	m_lockscreen_button->set_command(command);
+}
+
+//-----------------------------------------------------------------------------
+
+void Menu::set_logout_command(const std::string& command)
+{
+	m_logout_button->set_command(command);
 }
 
 //-----------------------------------------------------------------------------
@@ -669,27 +680,6 @@ bool Menu::get_position_search_alternate()
 bool Menu::get_position_commands_alternate()
 {
 	return m_position_commands_alternate;
-}
-
-//-----------------------------------------------------------------------------
-
-void Menu::set_settings_command(const std::string& command)
-{
-	m_settings_command = command;
-}
-
-//-----------------------------------------------------------------------------
-
-void Menu::set_lockscreen_command(const std::string& command)
-{
-	m_lockscreen_command = command;
-}
-
-//-----------------------------------------------------------------------------
-
-void Menu::set_logout_command(const std::string& command)
-{
-	m_logout_command = command;
 }
 
 //-----------------------------------------------------------------------------
@@ -954,61 +944,6 @@ void Menu::search()
 	// Apply filter
 	m_search_results->set_filter(visible ? filter_string : NULL);
 	g_free(filter_string);
-}
-
-//-----------------------------------------------------------------------------
-
-void Menu::launch_settings_manager()
-{
-	hide();
-
-	GError* error = NULL;
-	if (g_spawn_command_line_async(m_settings_command.m_exec.c_str(), &error) == false)
-	{
-		xfce_dialog_show_error(NULL, error, _("Failed to open settings manager."));
-		g_error_free(error);
-	}
-}
-
-//-----------------------------------------------------------------------------
-
-void Menu::lock_screen()
-{
-	hide();
-
-	GError* error = NULL;
-	if (g_spawn_command_line_async(m_lockscreen_command.m_exec.c_str(), &error) == false)
-	{
-		xfce_dialog_show_error(NULL, error, _("Failed to lock screen."));
-		g_error_free(error);
-	}
-}
-
-//-----------------------------------------------------------------------------
-
-void Menu::log_out()
-{
-	hide();
-
-	GError* error = NULL;
-	if (g_spawn_command_line_async(m_logout_command.m_exec.c_str(), &error) == false)
-	{
-		xfce_dialog_show_error(NULL, error, _("Failed to log out."));
-		g_error_free(error);
-	}
-}
-
-//-----------------------------------------------------------------------------
-
-void Menu::check_command(Command& command, GtkWidget* button)
-{
-	if (command.m_status == Unchecked)
-	{
-		gchar* path = g_find_program_in_path(command.m_exec.c_str());
-		command.m_status = path ? Valid : Invalid;
-		g_free(path);
-	}
-	gtk_widget_set_sensitive(button, command.m_status == Valid);
 }
 
 //-----------------------------------------------------------------------------

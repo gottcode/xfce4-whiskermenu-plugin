@@ -72,10 +72,11 @@ PanelPlugin::PanelPlugin(XfcePanelPlugin* plugin) :
 		Menu::set_display_recent(xfce_rc_read_bool_entry(settings, "display-recent-default", Menu::get_display_recent()));
 		Menu::set_position_search_alternate(xfce_rc_read_bool_entry(settings, "position-search-alternate", Menu::get_position_search_alternate()));
 		Menu::set_position_commands_alternate(xfce_rc_read_bool_entry(settings, "position-commands-alternate", Menu::get_position_commands_alternate()));
-		Menu::set_settings_command(xfce_rc_read_entry(settings, "command-settings", Menu::get_settings_command().c_str()));
-		Menu::set_lockscreen_command(xfce_rc_read_entry(settings, "command-lockscreen", Menu::get_lockscreen_command().c_str()));
-		Menu::set_logout_command(xfce_rc_read_entry(settings, "command-logout", Menu::get_logout_command().c_str()));
+
 		m_menu = new Menu(settings);
+		m_menu->set_settings_command(xfce_rc_read_entry(settings, "command-settings", m_menu->get_settings_command().c_str()));
+		m_menu->set_lockscreen_command(xfce_rc_read_entry(settings, "command-lockscreen", m_menu->get_lockscreen_command().c_str()));
+		m_menu->set_logout_command(xfce_rc_read_entry(settings, "command-logout", m_menu->get_logout_command().c_str()));
 
 		xfce_rc_close(settings);
 	}
@@ -324,9 +325,9 @@ void PanelPlugin::save()
 	xfce_rc_write_bool_entry(settings, "display-recent-default", Menu::get_display_recent());
 	xfce_rc_write_bool_entry(settings, "position-search-alternate", Menu::get_position_search_alternate());
 	xfce_rc_write_bool_entry(settings, "position-commands-alternate", Menu::get_position_commands_alternate());
-	xfce_rc_write_entry(settings, "command-settings", Menu::get_settings_command().c_str());
-	xfce_rc_write_entry(settings, "command-lockscreen", Menu::get_lockscreen_command().c_str());
-	xfce_rc_write_entry(settings, "command-logout", Menu::get_logout_command().c_str());
+	xfce_rc_write_entry(settings, "command-settings", m_menu->get_settings_command().c_str());
+	xfce_rc_write_entry(settings, "command-lockscreen", m_menu->get_lockscreen_command().c_str());
+	xfce_rc_write_entry(settings, "command-logout", m_menu->get_logout_command().c_str());
 	m_menu->save(settings);
 
 	xfce_rc_close(settings);

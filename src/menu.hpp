@@ -31,6 +31,7 @@ namespace WhiskerMenu
 {
 
 class ApplicationsPage;
+class CommandButton;
 class FavoritesPage;
 class Launcher;
 class Page;
@@ -41,32 +42,6 @@ class SectionButton;
 
 class Menu
 {
-	enum CommandStatus
-	{
-		Unchecked = -1,
-		Invalid,
-		Valid
-	};
-
-	struct Command
-	{
-		std::string m_exec;
-		CommandStatus m_status;
-
-		Command(const char* exec = NULL) :
-			m_exec(exec ? exec : ""),
-			m_status(Unchecked)
-		{
-		}
-
-		Command& operator=(const std::string& exec)
-		{
-			m_exec = exec;
-			m_status = Unchecked;
-			return *this;
-		}
-	};
-
 public:
 	explicit Menu(XfceRc* settings);
 	~Menu();
@@ -109,15 +84,16 @@ public:
 	void set_modified();
 	void unset_items();
 
-	static std::string get_settings_command();
-	static std::string get_lockscreen_command();
-	static std::string get_logout_command();
+	std::string get_settings_command();
+	std::string get_lockscreen_command();
+	std::string get_logout_command();
+	void set_settings_command(const std::string& command);
+	void set_lockscreen_command(const std::string& command);
+	void set_logout_command(const std::string& command);
+
 	static bool get_display_recent();
 	static bool get_position_search_alternate();
 	static bool get_position_commands_alternate();
-	static void set_settings_command(const std::string& command);
-	static void set_lockscreen_command(const std::string& command);
-	static void set_logout_command(const std::string& command);
 	static void set_display_recent(bool display);
 	static void set_position_search_alternate(bool alternate);
 	static void set_position_commands_alternate(bool alternate);
@@ -137,10 +113,6 @@ private:
 	void show_favorites();
 	void show_default_page();
 	void search();
-	void launch_settings_manager();
-	void lock_screen();
-	void log_out();
-	static void check_command(Command& command, GtkWidget* button);
 
 private:
 	GtkWindow* m_window;
@@ -157,9 +129,9 @@ private:
 	ResizerWidget* m_resizer;
 
 	GtkAlignment* m_commands_align;
-	GtkButton* m_settings_button;
-	GtkButton* m_lock_screen_button;
-	GtkButton* m_log_out_button;
+	CommandButton* m_settings_button;
+	CommandButton* m_lockscreen_button;
+	CommandButton* m_logout_button;
 
 	GtkEntry* m_search_entry;
 
@@ -181,9 +153,6 @@ private:
 	bool m_layout_commands_alternate;
 	bool m_modified;
 
-	static Command m_settings_command;
-	static Command m_lockscreen_command;
-	static Command m_logout_command;
 	static bool m_display_recent;
 	static bool m_position_search_alternate;
 	static bool m_position_commands_alternate;
@@ -255,19 +224,9 @@ private:
 		obj->search();
 	}
 
-	static void launch_settings_manager_slot(GtkButton*, Menu* obj)
+	static void hide_slot(Menu* obj)
 	{
-		obj->launch_settings_manager();
-	}
-
-	static void lock_screen_slot(GtkButton*, Menu* obj)
-	{
-		obj->lock_screen();
-	}
-
-	static void log_out_slot(GtkButton*, Menu* obj)
-	{
-		obj->log_out();
+		obj->hide();
 	}
 };
 
