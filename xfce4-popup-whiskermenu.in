@@ -35,7 +35,7 @@ case "$1" in
     exit 0
     ;;
   -V|--version)
-    echo "$(basename $0) 1.2.0"
+    echo "$(basename $0) @whiskermenu_version@"
     echo "Copyright (C) 2013 Graeme Gott"
     exit 0
     ;;

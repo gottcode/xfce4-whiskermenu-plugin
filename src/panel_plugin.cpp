@@ -31,7 +31,7 @@ using namespace WhiskerMenu;
 
 extern "C" void whiskermenu_construct(XfcePanelPlugin* plugin)
 {
-	xfce_textdomain(GETTEXT_PACKAGE, LOCALEDIR, "UTF-8");
+	xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 	new PanelPlugin(plugin);
 }
 
