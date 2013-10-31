@@ -1,57 +1,60 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Graeme Gott
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Arabic translation of xfce4-whiskermenu-plugin.
+# Copyright (C) 2013 Graeme Gott
+# This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
-#, fuzzy
+# Translators:
+# Karim Oulad Chalha <herr.linux88@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-31 20:34+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2013-08-07 15:21+0000\n"
+"Last-Translator: Karim Oulad Chalha <herr.linux88@gmail.com>\n"
+"Language-Team: Arabic (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
+"plugin/language/ar/)\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #: ../panel-plugin/page.cpp:210
 msgid "Add to Desktop"
-msgstr ""
+msgstr "أضف إلى سطح المكتب"
 
 #: ../panel-plugin/page.cpp:195
 msgid "Add to Favorites"
-msgstr ""
+msgstr "أضف إلى المفضلات"
 
 #: ../panel-plugin/page.cpp:214
 msgid "Add to Panel"
-msgstr ""
+msgstr "أضف إلى الشريط"
 
 #: ../panel-plugin/applications-page.cpp:313
 msgid "All"
-msgstr ""
+msgstr "كل"
 
 #: ../panel-plugin/window.cpp:97
 msgid "All Settings"
-msgstr ""
+msgstr "كل الإعدادات"
 
 #: ../panel-plugin/plugin.cpp:162
 msgid "Applications Menu"
-msgstr ""
+msgstr "قائمة التطبيقات"
 
 #: ../panel-plugin/configuration-dialog.cpp:314
 msgid "Categ_ory icon size:"
-msgstr ""
+msgstr "_حجم أيقونة الصنف:"
 
 #: ../panel-plugin/recent-page.cpp:72
 msgid "Clear Recently Used"
-msgstr ""
+msgstr "محو المستعملة حديثا"
 
 #: ../panel-plugin/configuration-dialog.cpp:349
 msgid "Di_splay:"
-msgstr ""
+msgstr "عر_ض:"
 
 #: ../panel-plugin/configuration-dialog.cpp:428
 msgid "Display recently _used by default"
@@ -60,31 +63,31 @@ msgstr ""
 #: ../panel-plugin/launcher.cpp:259
 #, c-format
 msgid "Failed to execute command \"%s\"."
-msgstr ""
+msgstr "فشل تنفيذ الأمر \"%s\"."
 
 #: ../panel-plugin/window.cpp:100
 msgid "Failed to lock screen."
-msgstr ""
+msgstr "فشل إغلاق الشاشة."
 
 #: ../panel-plugin/window.cpp:103
 msgid "Failed to log out."
-msgstr ""
+msgstr "فشل تسجيل الخروج."
 
 #: ../panel-plugin/window.cpp:97
 msgid "Failed to open settings manager."
-msgstr ""
+msgstr "فشل فتح مدير الإعدادات."
 
 #: ../panel-plugin/window.cpp:117
 msgid "Favorites"
-msgstr ""
+msgstr "مفضلات"
 
 #: ../panel-plugin/configuration-dialog.cpp:355
 msgid "Icon"
-msgstr ""
+msgstr "أيقونة"
 
 #: ../panel-plugin/configuration-dialog.cpp:357
 msgid "Icon and title"
-msgstr ""
+msgstr "أيقونة و عنوان"
 
 #: ../panel-plugin/configuration-dialog.cpp:422
 msgid "Include _favorites in recently used"
@@ -92,15 +95,15 @@ msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:294
 msgid "Ite_m icon size:"
-msgstr ""
+msgstr "ح_جم أيقونة العنصر:"
 
 #: ../panel-plugin/icon-size.cpp:55
 msgid "Large"
-msgstr ""
+msgstr "كبير"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Larger"
-msgstr ""
+msgstr "أكبر"
 
 #: ../panel-plugin/configuration-dialog.cpp:416
 msgid "Load menu hie_rarchy"
@@ -108,23 +111,25 @@ msgstr ""
 
 #: ../panel-plugin/window.cpp:100
 msgid "Lock Screen"
-msgstr ""
+msgstr "قفل الشاشة"
 
 #: ../panel-plugin/configuration-dialog.cpp:468
+#, fuzzy
 msgid "Lock _Screen:"
-msgstr ""
+msgstr "قفل الشاشة"
 
 #: ../panel-plugin/window.cpp:103
 msgid "Log Out"
-msgstr ""
+msgstr "تسجيل الخروج"
 
 #: ../panel-plugin/configuration-dialog.cpp:483
+#, fuzzy
 msgid "Log _Out:"
-msgstr ""
+msgstr "تسجيل الخروج"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Normal"
-msgstr ""
+msgstr "عادي"
 
 #: ../panel-plugin/configuration-dialog.cpp:278
 msgid "Position _search entry next to panel button"
@@ -136,80 +141,82 @@ msgstr ""
 
 #: ../panel-plugin/window.cpp:123
 msgid "Recently Used"
-msgstr ""
+msgstr "مستعملة حديثا"
 
 #: ../panel-plugin/page.cpp:203
 msgid "Remove From Favorites"
-msgstr ""
+msgstr "حذف من المفضلات"
 
 #: ../panel-plugin/configuration-dialog.cpp:95
 msgid "Select An Icon"
-msgstr ""
+msgstr "إختر أيقونة"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
-msgstr ""
+msgstr "عرض القائمة لوصول إلى التطبيقات المثبتة بكل سهولة"
 
 #: ../panel-plugin/configuration-dialog.cpp:272
 msgid "Show application _descriptions"
-msgstr ""
+msgstr "عرض _وصف التطبيقات"
 
 #: ../panel-plugin/configuration-dialog.cpp:266
 msgid "Show applications by _name"
-msgstr ""
+msgstr "عرض التطبيقات حسب _الإسم"
 
 #: ../panel-plugin/icon-size.cpp:53
 msgid "Small"
-msgstr ""
+msgstr "صغير"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Smaller"
-msgstr ""
+msgstr "أصغر"
 
 #: ../panel-plugin/favorites-page.cpp:90
 msgid "Sort Alphabetically A-Z"
-msgstr ""
+msgstr "رتب أبجديا أ-ي"
 
 #: ../panel-plugin/favorites-page.cpp:96
 msgid "Sort Alphabetically Z-A"
-msgstr ""
+msgstr "رتب أبجديا ي-أ"
 
 #: ../panel-plugin/configuration-dialog.cpp:410
 msgid "Switch categories by _hovering"
-msgstr ""
+msgstr "تبديل الأصناف ح_سب الترفيف"
 
 #: ../panel-plugin/configuration-dialog.cpp:356
 msgid "Title"
-msgstr ""
+msgstr "عنوان"
 
 #: ../panel-plugin/page.cpp:304
 msgid "Unable to add launcher to desktop."
-msgstr ""
+msgstr "عاجز عن إضافة المطلقة إلى سطح المكتب."
 
 #: ../panel-plugin/page.cpp:343 ../panel-plugin/page.cpp:352
 msgid "Unable to add launcher to panel."
-msgstr ""
+msgstr "عاجز عن إضافة المطلقة إلى الشريط."
 
 #: ../panel-plugin/icon-size.cpp:57
 msgid "Very Large"
-msgstr ""
+msgstr "كبير جدا"
 
 #: ../panel-plugin/icon-size.cpp:51
 msgid "Very Small"
-msgstr ""
+msgstr "صغير جدا"
 
 #: ../panel-plugin/configuration-dialog.cpp:58
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
 msgid "Whisker Menu"
-msgstr ""
+msgstr "قائمة Whisker"
 
 #: ../panel-plugin/configuration-dialog.cpp:66
+#, fuzzy
 msgid "_Appearance"
-msgstr ""
+msgstr "مظهر"
 
 #: ../panel-plugin/configuration-dialog.cpp:68
+#, fuzzy
 msgid "_Behavior"
-msgstr ""
+msgstr "سلوك"
 
 #: ../panel-plugin/configuration-dialog.cpp:69
 msgid "_Commands"
@@ -217,16 +224,18 @@ msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:382
 msgid "_Icon:"
-msgstr ""
+msgstr "_أيقونة:"
 
 #: ../panel-plugin/configuration-dialog.cpp:67
+#, fuzzy
 msgid "_Panel Button"
-msgstr ""
+msgstr "زر الشريط"
 
 #: ../panel-plugin/configuration-dialog.cpp:453
+#, fuzzy
 msgid "_Settings:"
-msgstr ""
+msgstr "كل الإعدادات"
 
 #: ../panel-plugin/configuration-dialog.cpp:367
 msgid "_Title:"
-msgstr ""
+msgstr "عن_وان:"

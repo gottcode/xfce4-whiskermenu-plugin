@@ -1,232 +1,234 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Graeme Gott
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Uzbek translation of xfce4-whiskermenu-plugin.
+# Copyright (C) 2013 Graeme Gott
+# This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
-#, fuzzy
+# Translators:
+# Umidjon Almasov <u.almasov@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-31 20:34+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2013-10-19 10:18+0000\n"
+"Last-Translator: Umidjon Almasov <u.almasov@gmail.com>\n"
+"Language-Team: Uzbek (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
+"plugin/language/uz/)\n"
+"Language: uz\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../panel-plugin/page.cpp:210
 msgid "Add to Desktop"
-msgstr ""
+msgstr "Ishchi stolga qo'shish"
 
 #: ../panel-plugin/page.cpp:195
 msgid "Add to Favorites"
-msgstr ""
+msgstr "Tanlanganlarga qo'shish"
 
 #: ../panel-plugin/page.cpp:214
 msgid "Add to Panel"
-msgstr ""
+msgstr "Panelga qo'shish"
 
 #: ../panel-plugin/applications-page.cpp:313
 msgid "All"
-msgstr ""
+msgstr "Hammasi"
 
 #: ../panel-plugin/window.cpp:97
 msgid "All Settings"
-msgstr ""
+msgstr "Hamma moslamalar"
 
 #: ../panel-plugin/plugin.cpp:162
 msgid "Applications Menu"
-msgstr ""
+msgstr "Dasturlar menyusi"
 
 #: ../panel-plugin/configuration-dialog.cpp:314
 msgid "Categ_ory icon size:"
-msgstr ""
+msgstr "_Toifa nishonchasinig o'lchami:"
 
 #: ../panel-plugin/recent-page.cpp:72
 msgid "Clear Recently Used"
-msgstr ""
+msgstr "Yaqinda foydalanilganlarni tozalash"
 
 #: ../panel-plugin/configuration-dialog.cpp:349
 msgid "Di_splay:"
-msgstr ""
+msgstr "_Ko'rsatish:"
 
 #: ../panel-plugin/configuration-dialog.cpp:428
 msgid "Display recently _used by default"
-msgstr ""
+msgstr "Yaqinda _foydalanilganlarni sukut bo'yicha ko'rsatish"
 
 #: ../panel-plugin/launcher.cpp:259
 #, c-format
 msgid "Failed to execute command \"%s\"."
-msgstr ""
+msgstr "\"%s\" buyrug'ini bajarish muvaffaqiyatsiz tugadi."
 
 #: ../panel-plugin/window.cpp:100
 msgid "Failed to lock screen."
-msgstr ""
+msgstr "Ekranni qulflash muvaffaqiyatsiz tugadi."
 
 #: ../panel-plugin/window.cpp:103
 msgid "Failed to log out."
-msgstr ""
+msgstr "Tizimdan chiqish muvaffaqiyatsiz tugadi."
 
 #: ../panel-plugin/window.cpp:97
 msgid "Failed to open settings manager."
-msgstr ""
+msgstr "Moslamalar boshqaruvchisini ochish muvaffaqiyatsiz tugadi."
 
 #: ../panel-plugin/window.cpp:117
 msgid "Favorites"
-msgstr ""
+msgstr "Tanlanganlar"
 
 #: ../panel-plugin/configuration-dialog.cpp:355
 msgid "Icon"
-msgstr ""
+msgstr "Nishoncha"
 
 #: ../panel-plugin/configuration-dialog.cpp:357
 msgid "Icon and title"
-msgstr ""
+msgstr "Nishoncha va sarlavha"
 
 #: ../panel-plugin/configuration-dialog.cpp:422
 msgid "Include _favorites in recently used"
-msgstr ""
+msgstr "_Tanlanganlarni yaqinda foydalanilganlarga qo'shish"
 
 #: ../panel-plugin/configuration-dialog.cpp:294
 msgid "Ite_m icon size:"
-msgstr ""
+msgstr "_Band nishonchasining o'lchami:"
 
 #: ../panel-plugin/icon-size.cpp:55
 msgid "Large"
-msgstr ""
+msgstr "Katta"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Larger"
-msgstr ""
+msgstr "Kattaroq"
 
 #: ../panel-plugin/configuration-dialog.cpp:416
 msgid "Load menu hie_rarchy"
-msgstr ""
+msgstr "Menyu _ierarxiyasini yuklash"
 
 #: ../panel-plugin/window.cpp:100
 msgid "Lock Screen"
-msgstr ""
+msgstr "Ekranni qulflash"
 
 #: ../panel-plugin/configuration-dialog.cpp:468
 msgid "Lock _Screen:"
-msgstr ""
+msgstr "_Ekranni qulflash:"
 
 #: ../panel-plugin/window.cpp:103
 msgid "Log Out"
-msgstr ""
+msgstr "Tizimdan chiqish"
 
 #: ../panel-plugin/configuration-dialog.cpp:483
 msgid "Log _Out:"
-msgstr ""
+msgstr "Tizimdan _chiqish:"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Normal"
-msgstr ""
+msgstr "Oddiy"
 
 #: ../panel-plugin/configuration-dialog.cpp:278
 msgid "Position _search entry next to panel button"
-msgstr ""
+msgstr "_Qidirish elementini panel tugmasidan keyin joylashtirish"
 
 #: ../panel-plugin/configuration-dialog.cpp:284
 msgid "Position commands next to search _entry"
-msgstr ""
+msgstr "_Buyruqlarni qidirish elementidan keyin joylashtirish"
 
 #: ../panel-plugin/window.cpp:123
 msgid "Recently Used"
-msgstr ""
+msgstr "Yaqinda foydalanilganlar"
 
 #: ../panel-plugin/page.cpp:203
 msgid "Remove From Favorites"
-msgstr ""
+msgstr "Tanlanganlardan olib tashlash"
 
 #: ../panel-plugin/configuration-dialog.cpp:95
 msgid "Select An Icon"
-msgstr ""
+msgstr "Nishonchani tanlash"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
-msgstr ""
+msgstr "O'rnatilgan dasturlarga oson yetish uchun menyu ko'rsatish"
 
 #: ../panel-plugin/configuration-dialog.cpp:272
 msgid "Show application _descriptions"
-msgstr ""
+msgstr "Dastur _ta'riflarini ko'rsatish"
 
 #: ../panel-plugin/configuration-dialog.cpp:266
 msgid "Show applications by _name"
-msgstr ""
+msgstr "Dasturlarni _nomi bo'yicha ko'rsatish"
 
 #: ../panel-plugin/icon-size.cpp:53
 msgid "Small"
-msgstr ""
+msgstr "Kichik"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Smaller"
-msgstr ""
+msgstr "Kichikroq"
 
 #: ../panel-plugin/favorites-page.cpp:90
 msgid "Sort Alphabetically A-Z"
-msgstr ""
+msgstr "Alifbo bo'yicha saralash A-Z"
 
 #: ../panel-plugin/favorites-page.cpp:96
 msgid "Sort Alphabetically Z-A"
-msgstr ""
+msgstr "Alifbo bo'yicha saralash Z-A"
 
 #: ../panel-plugin/configuration-dialog.cpp:410
 msgid "Switch categories by _hovering"
-msgstr ""
+msgstr "Toifalarni sichqoncha ustiga borganda o'zgartirish"
 
 #: ../panel-plugin/configuration-dialog.cpp:356
 msgid "Title"
-msgstr ""
+msgstr "Sarlavha"
 
 #: ../panel-plugin/page.cpp:304
 msgid "Unable to add launcher to desktop."
-msgstr ""
+msgstr "Ishga tushiruvchini ishchi stolga qo'shib bo'lmadi."
 
 #: ../panel-plugin/page.cpp:343 ../panel-plugin/page.cpp:352
 msgid "Unable to add launcher to panel."
-msgstr ""
+msgstr "Ishga tushiruvchini panelga qo'shib bo'lmadi."
 
 #: ../panel-plugin/icon-size.cpp:57
 msgid "Very Large"
-msgstr ""
+msgstr "Juda katta"
 
 #: ../panel-plugin/icon-size.cpp:51
 msgid "Very Small"
-msgstr ""
+msgstr "Juda kichik"
 
 #: ../panel-plugin/configuration-dialog.cpp:58
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
 msgid "Whisker Menu"
-msgstr ""
+msgstr "Whisker menyusi"
 
 #: ../panel-plugin/configuration-dialog.cpp:66
 msgid "_Appearance"
-msgstr ""
+msgstr "_Ko'rinish"
 
 #: ../panel-plugin/configuration-dialog.cpp:68
 msgid "_Behavior"
-msgstr ""
+msgstr "_Xulqi"
 
 #: ../panel-plugin/configuration-dialog.cpp:69
 msgid "_Commands"
-msgstr ""
+msgstr "_Buyruqlar"
 
 #: ../panel-plugin/configuration-dialog.cpp:382
 msgid "_Icon:"
-msgstr ""
+msgstr "_Nishoncha:"
 
 #: ../panel-plugin/configuration-dialog.cpp:67
 msgid "_Panel Button"
-msgstr ""
+msgstr "_Panel tugmasi"
 
 #: ../panel-plugin/configuration-dialog.cpp:453
 msgid "_Settings:"
-msgstr ""
+msgstr "_Moslamalar:"
 
 #: ../panel-plugin/configuration-dialog.cpp:367
 msgid "_Title:"
-msgstr ""
+msgstr "_Sarlavha"

@@ -1,232 +1,236 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Graeme Gott
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Japanese translation of xfce4-whiskermenu-plugin.
+# Copyright (C) 2013 Graeme Gott
+# This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
-#, fuzzy
+# Translators:
+# Masato HASHIMOTO <cabezon.hashimoto@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-31 20:34+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2013-10-18 06:16+0000\n"
+"Last-Translator: Masato HASHIMOTO <cabezon.hashimoto@gmail.com>\n"
+"Language-Team: Japanese (http://www.transifex.com/projects/p/xfce4-"
+"whiskermenu-plugin/language/ja/)\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../panel-plugin/page.cpp:210
 msgid "Add to Desktop"
-msgstr ""
+msgstr "デスクトップに追加"
 
 #: ../panel-plugin/page.cpp:195
 msgid "Add to Favorites"
-msgstr ""
+msgstr "お気に入りに追加"
 
 #: ../panel-plugin/page.cpp:214
 msgid "Add to Panel"
-msgstr ""
+msgstr "パネルに追加"
 
 #: ../panel-plugin/applications-page.cpp:313
 msgid "All"
-msgstr ""
+msgstr "すべて"
 
 #: ../panel-plugin/window.cpp:97
 msgid "All Settings"
-msgstr ""
+msgstr "設定マネージャー"
 
 #: ../panel-plugin/plugin.cpp:162
 msgid "Applications Menu"
-msgstr ""
+msgstr "アプリケーションメニュー"
 
 #: ../panel-plugin/configuration-dialog.cpp:314
 msgid "Categ_ory icon size:"
-msgstr ""
+msgstr "カテゴリのアイコンサイズ(_O):"
 
 #: ../panel-plugin/recent-page.cpp:72
 msgid "Clear Recently Used"
-msgstr ""
+msgstr "最近使ったものをクリア"
 
 #: ../panel-plugin/configuration-dialog.cpp:349
 msgid "Di_splay:"
-msgstr ""
+msgstr "表示(_S):"
 
 #: ../panel-plugin/configuration-dialog.cpp:428
 msgid "Display recently _used by default"
-msgstr ""
+msgstr "デフォルトで最近使ったものを表示する(_U)"
 
 #: ../panel-plugin/launcher.cpp:259
 #, c-format
 msgid "Failed to execute command \"%s\"."
-msgstr ""
+msgstr "コマンド \"%s\" の実行に失敗しました。"
 
 #: ../panel-plugin/window.cpp:100
 msgid "Failed to lock screen."
-msgstr ""
+msgstr "スクリーンのロックに失敗しました。"
 
 #: ../panel-plugin/window.cpp:103
 msgid "Failed to log out."
-msgstr ""
+msgstr "ログアウトに失敗しました。"
 
 #: ../panel-plugin/window.cpp:97
 msgid "Failed to open settings manager."
-msgstr ""
+msgstr "設定マネージャーを開くことに失敗しました。"
 
 #: ../panel-plugin/window.cpp:117
 msgid "Favorites"
-msgstr ""
+msgstr "お気に入り"
 
 #: ../panel-plugin/configuration-dialog.cpp:355
 msgid "Icon"
-msgstr ""
+msgstr "アイコン"
 
 #: ../panel-plugin/configuration-dialog.cpp:357
 msgid "Icon and title"
-msgstr ""
+msgstr "アイコンとタイトル"
 
 #: ../panel-plugin/configuration-dialog.cpp:422
 msgid "Include _favorites in recently used"
-msgstr ""
+msgstr "最近使ったものにお気に入りを含める(_F)"
 
 #: ../panel-plugin/configuration-dialog.cpp:294
 msgid "Ite_m icon size:"
-msgstr ""
+msgstr "アイテムのアイコンサイズ(_M):"
 
 #: ../panel-plugin/icon-size.cpp:55
 msgid "Large"
-msgstr ""
+msgstr "少し大きい"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Larger"
-msgstr ""
+msgstr "大きい"
 
 #: ../panel-plugin/configuration-dialog.cpp:416
 msgid "Load menu hie_rarchy"
-msgstr ""
+msgstr "メニュー階層を読み込む(_R)"
 
 #: ../panel-plugin/window.cpp:100
 msgid "Lock Screen"
-msgstr ""
+msgstr "スクリーンをロック"
 
 #: ../panel-plugin/configuration-dialog.cpp:468
 msgid "Lock _Screen:"
-msgstr ""
+msgstr "スクリーンをロック(_S):"
 
 #: ../panel-plugin/window.cpp:103
 msgid "Log Out"
-msgstr ""
+msgstr "ログアウト"
 
 #: ../panel-plugin/configuration-dialog.cpp:483
 msgid "Log _Out:"
-msgstr ""
+msgstr "ログアウト(_O):"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Normal"
-msgstr ""
+msgstr "普通"
 
 #: ../panel-plugin/configuration-dialog.cpp:278
 msgid "Position _search entry next to panel button"
-msgstr ""
+msgstr "検索フィールドをパネルボタンの後に置く(_S)"
 
 #: ../panel-plugin/configuration-dialog.cpp:284
 msgid "Position commands next to search _entry"
-msgstr ""
+msgstr "コマンドを検索フィールドの後に置く(_E)"
 
 #: ../panel-plugin/window.cpp:123
 msgid "Recently Used"
-msgstr ""
+msgstr "最近使ったもの"
 
 #: ../panel-plugin/page.cpp:203
 msgid "Remove From Favorites"
-msgstr ""
+msgstr "お気に入りから削除"
 
 #: ../panel-plugin/configuration-dialog.cpp:95
 msgid "Select An Icon"
-msgstr ""
+msgstr "アイコンの選択"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
 msgstr ""
+"インストールされているアプリケーションに簡単にアクセスできるメニューを表示し"
+"ます"
 
 #: ../panel-plugin/configuration-dialog.cpp:272
 msgid "Show application _descriptions"
-msgstr ""
+msgstr "アプリケーションの説明を表示する(_D)"
 
 #: ../panel-plugin/configuration-dialog.cpp:266
 msgid "Show applications by _name"
-msgstr ""
+msgstr "アプリケーションを名前で表示する(_N)"
 
 #: ../panel-plugin/icon-size.cpp:53
 msgid "Small"
-msgstr ""
+msgstr "少し小さい"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Smaller"
-msgstr ""
+msgstr "小さい"
 
 #: ../panel-plugin/favorites-page.cpp:90
 msgid "Sort Alphabetically A-Z"
-msgstr ""
+msgstr "アルファベット順 (A-Z) で並び替え"
 
 #: ../panel-plugin/favorites-page.cpp:96
 msgid "Sort Alphabetically Z-A"
-msgstr ""
+msgstr "アルファベットの逆順 (Z-A) で並び替え"
 
 #: ../panel-plugin/configuration-dialog.cpp:410
 msgid "Switch categories by _hovering"
-msgstr ""
+msgstr "ホバーでカテゴリを切り替える(_H)"
 
 #: ../panel-plugin/configuration-dialog.cpp:356
 msgid "Title"
-msgstr ""
+msgstr "タイトル"
 
 #: ../panel-plugin/page.cpp:304
 msgid "Unable to add launcher to desktop."
-msgstr ""
+msgstr "デスクトップにランチャーを追加できません。"
 
 #: ../panel-plugin/page.cpp:343 ../panel-plugin/page.cpp:352
 msgid "Unable to add launcher to panel."
-msgstr ""
+msgstr "パネルにランチャーを追加できません。"
 
 #: ../panel-plugin/icon-size.cpp:57
 msgid "Very Large"
-msgstr ""
+msgstr "とても大きい"
 
 #: ../panel-plugin/icon-size.cpp:51
 msgid "Very Small"
-msgstr ""
+msgstr "とても小さい"
 
 #: ../panel-plugin/configuration-dialog.cpp:58
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
 msgid "Whisker Menu"
-msgstr ""
+msgstr "Whisker Menu"
 
 #: ../panel-plugin/configuration-dialog.cpp:66
 msgid "_Appearance"
-msgstr ""
+msgstr "外観(_A)"
 
 #: ../panel-plugin/configuration-dialog.cpp:68
 msgid "_Behavior"
-msgstr ""
+msgstr "振る舞い(_B)"
 
 #: ../panel-plugin/configuration-dialog.cpp:69
 msgid "_Commands"
-msgstr ""
+msgstr "コマンド(_C)"
 
 #: ../panel-plugin/configuration-dialog.cpp:382
 msgid "_Icon:"
-msgstr ""
+msgstr "アイコン(_I):"
 
 #: ../panel-plugin/configuration-dialog.cpp:67
 msgid "_Panel Button"
-msgstr ""
+msgstr "パネルボタン(_P)"
 
 #: ../panel-plugin/configuration-dialog.cpp:453
 msgid "_Settings:"
-msgstr ""
+msgstr "設定(_S):"
 
 #: ../panel-plugin/configuration-dialog.cpp:367
 msgid "_Title:"
-msgstr ""
+msgstr "タイトル(_T):"

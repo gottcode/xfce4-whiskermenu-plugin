@@ -1,232 +1,234 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Graeme Gott
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Bulgarian translation of xfce4-whiskermenu-plugin.
+# Copyright (C) 2013 Graeme Gott
+# This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
-#, fuzzy
+# Translators:
+# cybercop <cybercop_montana@abv.bg>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-31 20:34+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2013-10-20 15:43+0000\n"
+"Last-Translator: cybercop <cybercop_montana@abv.bg>\n"
+"Language-Team: Bulgarian (http://www.transifex.com/projects/p/xfce4-"
+"whiskermenu-plugin/language/bg/)\n"
+"Language: bg\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/page.cpp:210
 msgid "Add to Desktop"
-msgstr ""
+msgstr "Добавяне към Работният плот"
 
 #: ../panel-plugin/page.cpp:195
 msgid "Add to Favorites"
-msgstr ""
+msgstr "Добавяне към Любими"
 
 #: ../panel-plugin/page.cpp:214
 msgid "Add to Panel"
-msgstr ""
+msgstr "Добавяне в панела"
 
 #: ../panel-plugin/applications-page.cpp:313
 msgid "All"
-msgstr ""
+msgstr "Всички"
 
 #: ../panel-plugin/window.cpp:97
 msgid "All Settings"
-msgstr ""
+msgstr "Всички настройки"
 
 #: ../panel-plugin/plugin.cpp:162
 msgid "Applications Menu"
-msgstr ""
+msgstr "Меню на програмите"
 
 #: ../panel-plugin/configuration-dialog.cpp:314
 msgid "Categ_ory icon size:"
-msgstr ""
+msgstr "Размер на иконите на категориите:"
 
 #: ../panel-plugin/recent-page.cpp:72
 msgid "Clear Recently Used"
-msgstr ""
+msgstr "Изчисти последно използваните"
 
 #: ../panel-plugin/configuration-dialog.cpp:349
 msgid "Di_splay:"
-msgstr ""
+msgstr "Покажи:"
 
 #: ../panel-plugin/configuration-dialog.cpp:428
 msgid "Display recently _used by default"
-msgstr ""
+msgstr "Покажи последно използваните по подразбиране"
 
 #: ../panel-plugin/launcher.cpp:259
 #, c-format
 msgid "Failed to execute command \"%s\"."
-msgstr ""
+msgstr "Неуспешно изпълнение на команда \"%s\"."
 
 #: ../panel-plugin/window.cpp:100
 msgid "Failed to lock screen."
-msgstr ""
+msgstr "Неуспешно заключване на екрана."
 
 #: ../panel-plugin/window.cpp:103
 msgid "Failed to log out."
-msgstr ""
+msgstr "Неуспешно излизане."
 
 #: ../panel-plugin/window.cpp:97
 msgid "Failed to open settings manager."
-msgstr ""
+msgstr "Неуспешно отваряне на мениджъра на настройките."
 
 #: ../panel-plugin/window.cpp:117
 msgid "Favorites"
-msgstr ""
+msgstr "Любими"
 
 #: ../panel-plugin/configuration-dialog.cpp:355
 msgid "Icon"
-msgstr ""
+msgstr "Икона"
 
 #: ../panel-plugin/configuration-dialog.cpp:357
 msgid "Icon and title"
-msgstr ""
+msgstr "Икона и заглавие"
 
 #: ../panel-plugin/configuration-dialog.cpp:422
 msgid "Include _favorites in recently used"
-msgstr ""
+msgstr "Покажи любимите в последно използваните"
 
 #: ../panel-plugin/configuration-dialog.cpp:294
 msgid "Ite_m icon size:"
-msgstr ""
+msgstr "Размер на иконите на елементите:"
 
 #: ../panel-plugin/icon-size.cpp:55
 msgid "Large"
-msgstr ""
+msgstr "Голяма"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Larger"
-msgstr ""
+msgstr "По- голяма"
 
 #: ../panel-plugin/configuration-dialog.cpp:416
 msgid "Load menu hie_rarchy"
-msgstr ""
+msgstr "Йерархия на зареждане на менюто"
 
 #: ../panel-plugin/window.cpp:100
 msgid "Lock Screen"
-msgstr ""
+msgstr "Заключване на екрана"
 
 #: ../panel-plugin/configuration-dialog.cpp:468
 msgid "Lock _Screen:"
-msgstr ""
+msgstr "Заключване на екрана:"
 
 #: ../panel-plugin/window.cpp:103
 msgid "Log Out"
-msgstr ""
+msgstr "Изход"
 
 #: ../panel-plugin/configuration-dialog.cpp:483
 msgid "Log _Out:"
-msgstr ""
+msgstr "Изход:"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Normal"
-msgstr ""
+msgstr "Нормална"
 
 #: ../panel-plugin/configuration-dialog.cpp:278
 msgid "Position _search entry next to panel button"
-msgstr ""
+msgstr "Полето за търсене да се намира след бутона в панела"
 
 #: ../panel-plugin/configuration-dialog.cpp:284
 msgid "Position commands next to search _entry"
-msgstr ""
+msgstr "Командите да се намират след полето за търсене"
 
 #: ../panel-plugin/window.cpp:123
 msgid "Recently Used"
-msgstr ""
+msgstr "Последно използвани"
 
 #: ../panel-plugin/page.cpp:203
 msgid "Remove From Favorites"
-msgstr ""
+msgstr "Премахване от Любими"
 
 #: ../panel-plugin/configuration-dialog.cpp:95
 msgid "Select An Icon"
-msgstr ""
+msgstr "Избор на икона"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
-msgstr ""
+msgstr "Показване на меню за лесен достъп до инсталираните приложения"
 
 #: ../panel-plugin/configuration-dialog.cpp:272
 msgid "Show application _descriptions"
-msgstr ""
+msgstr "Показване на програмите по описание"
 
 #: ../panel-plugin/configuration-dialog.cpp:266
 msgid "Show applications by _name"
-msgstr ""
+msgstr "Показване на програмите по имена"
 
 #: ../panel-plugin/icon-size.cpp:53
 msgid "Small"
-msgstr ""
+msgstr "Малка"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Smaller"
-msgstr ""
+msgstr "По- малка"
 
 #: ../panel-plugin/favorites-page.cpp:90
 msgid "Sort Alphabetically A-Z"
-msgstr ""
+msgstr "Сортиране по азбучен ред от А-Я"
 
 #: ../panel-plugin/favorites-page.cpp:96
 msgid "Sort Alphabetically Z-A"
-msgstr ""
+msgstr "Сортиране по азбучен ред от Я-А"
 
 #: ../panel-plugin/configuration-dialog.cpp:410
 msgid "Switch categories by _hovering"
-msgstr ""
+msgstr "Смяна на категориите при посочване"
 
 #: ../panel-plugin/configuration-dialog.cpp:356
 msgid "Title"
-msgstr ""
+msgstr "Заглавие"
 
 #: ../panel-plugin/page.cpp:304
 msgid "Unable to add launcher to desktop."
-msgstr ""
+msgstr "Неуспешно добавяне на стартер върху работният плот."
 
 #: ../panel-plugin/page.cpp:343 ../panel-plugin/page.cpp:352
 msgid "Unable to add launcher to panel."
-msgstr ""
+msgstr "Неуспешно добавяне на стартер в панела."
 
 #: ../panel-plugin/icon-size.cpp:57
 msgid "Very Large"
-msgstr ""
+msgstr "Много голяма"
 
 #: ../panel-plugin/icon-size.cpp:51
 msgid "Very Small"
-msgstr ""
+msgstr "Много малка"
 
 #: ../panel-plugin/configuration-dialog.cpp:58
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
 msgid "Whisker Menu"
-msgstr ""
+msgstr "Whisker Меню"
 
 #: ../panel-plugin/configuration-dialog.cpp:66
 msgid "_Appearance"
-msgstr ""
+msgstr "Външен вид"
 
 #: ../panel-plugin/configuration-dialog.cpp:68
 msgid "_Behavior"
-msgstr ""
+msgstr "Поведение"
 
 #: ../panel-plugin/configuration-dialog.cpp:69
 msgid "_Commands"
-msgstr ""
+msgstr "Команди"
 
 #: ../panel-plugin/configuration-dialog.cpp:382
 msgid "_Icon:"
-msgstr ""
+msgstr "Икона:"
 
 #: ../panel-plugin/configuration-dialog.cpp:67
 msgid "_Panel Button"
-msgstr ""
+msgstr "Бутон в панела"
 
 #: ../panel-plugin/configuration-dialog.cpp:453
 msgid "_Settings:"
-msgstr ""
+msgstr "Настройки:"
 
 #: ../panel-plugin/configuration-dialog.cpp:367
 msgid "_Title:"
-msgstr ""
+msgstr "Заглавие:"

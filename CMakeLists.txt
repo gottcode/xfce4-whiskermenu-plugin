@@ -1,7 +1,4 @@
 cmake_minimum_required(VERSION 2.8)
-if(${CMAKE_VERSION} VERSION_LESS "2.8.8")
-	cmake_policy(SET CMP0002 OLD)
-endif()
 
 project(whiskermenu)
 

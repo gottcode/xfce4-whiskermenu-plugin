@@ -1,57 +1,60 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Graeme Gott
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Swedish translation of xfce4-whiskermenu-plugin.
+# Copyright (C) 2013 Graeme Gott
+# This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
-#, fuzzy
+# Translators:
+# addegsson <addegsson@gmail.com>, 2013
+# tsw <tarvidsson7834@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-31 20:34+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2013-07-24 09:29+0000\n"
+"Last-Translator: addegsson <addegsson@gmail.com>\n"
+"Language-Team: Swedish (Sweden) (http://www.transifex.com/projects/p/xfce4-"
+"whiskermenu-plugin/language/sv_SE/)\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/page.cpp:210
 msgid "Add to Desktop"
-msgstr ""
+msgstr "Lägg till på skrivbordet"
 
 #: ../panel-plugin/page.cpp:195
 msgid "Add to Favorites"
-msgstr ""
+msgstr "Lägg till i favoriter"
 
 #: ../panel-plugin/page.cpp:214
 msgid "Add to Panel"
-msgstr ""
+msgstr "Lägg till i panlen"
 
 #: ../panel-plugin/applications-page.cpp:313
 msgid "All"
-msgstr ""
+msgstr "Alla"
 
 #: ../panel-plugin/window.cpp:97
 msgid "All Settings"
-msgstr ""
+msgstr "Alla inställningar"
 
 #: ../panel-plugin/plugin.cpp:162
 msgid "Applications Menu"
-msgstr ""
+msgstr "Programmeny"
 
 #: ../panel-plugin/configuration-dialog.cpp:314
 msgid "Categ_ory icon size:"
-msgstr ""
+msgstr "Kategori ikonstorlek:"
 
 #: ../panel-plugin/recent-page.cpp:72
 msgid "Clear Recently Used"
-msgstr ""
+msgstr "Töm Nyligen Använda"
 
 #: ../panel-plugin/configuration-dialog.cpp:349
 msgid "Di_splay:"
-msgstr ""
+msgstr "Visa:"
 
 #: ../panel-plugin/configuration-dialog.cpp:428
 msgid "Display recently _used by default"
@@ -60,31 +63,31 @@ msgstr ""
 #: ../panel-plugin/launcher.cpp:259
 #, c-format
 msgid "Failed to execute command \"%s\"."
-msgstr ""
+msgstr "Misslyckades att exekvera kommando \"%s\"."
 
 #: ../panel-plugin/window.cpp:100
 msgid "Failed to lock screen."
-msgstr ""
+msgstr "Kan ej låsa skärmen."
 
 #: ../panel-plugin/window.cpp:103
 msgid "Failed to log out."
-msgstr ""
+msgstr "Kan ej logga ut."
 
 #: ../panel-plugin/window.cpp:97
 msgid "Failed to open settings manager."
-msgstr ""
+msgstr "Kan ej öppna inställningshanteraren."
 
 #: ../panel-plugin/window.cpp:117
 msgid "Favorites"
-msgstr ""
+msgstr "Favoriter"
 
 #: ../panel-plugin/configuration-dialog.cpp:355
 msgid "Icon"
-msgstr ""
+msgstr "Ikon"
 
 #: ../panel-plugin/configuration-dialog.cpp:357
 msgid "Icon and title"
-msgstr ""
+msgstr "Ikon och titel"
 
 #: ../panel-plugin/configuration-dialog.cpp:422
 msgid "Include _favorites in recently used"
@@ -92,15 +95,15 @@ msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:294
 msgid "Ite_m icon size:"
-msgstr ""
+msgstr "Objekt ikonstorlek:"
 
 #: ../panel-plugin/icon-size.cpp:55
 msgid "Large"
-msgstr ""
+msgstr "Stor"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Larger"
-msgstr ""
+msgstr "Större"
 
 #: ../panel-plugin/configuration-dialog.cpp:416
 msgid "Load menu hie_rarchy"
@@ -108,23 +111,25 @@ msgstr ""
 
 #: ../panel-plugin/window.cpp:100
 msgid "Lock Screen"
-msgstr ""
+msgstr "Låskärm"
 
 #: ../panel-plugin/configuration-dialog.cpp:468
+#, fuzzy
 msgid "Lock _Screen:"
-msgstr ""
+msgstr "Låskärm"
 
 #: ../panel-plugin/window.cpp:103
 msgid "Log Out"
-msgstr ""
+msgstr "Logga ut"
 
 #: ../panel-plugin/configuration-dialog.cpp:483
+#, fuzzy
 msgid "Log _Out:"
-msgstr ""
+msgstr "Logga ut"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #: ../panel-plugin/configuration-dialog.cpp:278
 msgid "Position _search entry next to panel button"
@@ -136,80 +141,82 @@ msgstr ""
 
 #: ../panel-plugin/window.cpp:123
 msgid "Recently Used"
-msgstr ""
+msgstr "Nyligen använda"
 
 #: ../panel-plugin/page.cpp:203
 msgid "Remove From Favorites"
-msgstr ""
+msgstr "Ta bort från favoriter"
 
 #: ../panel-plugin/configuration-dialog.cpp:95
 msgid "Select An Icon"
-msgstr ""
+msgstr "Välj en ikon"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
-msgstr ""
+msgstr "En meny för att visa dina installerade program"
 
 #: ../panel-plugin/configuration-dialog.cpp:272
 msgid "Show application _descriptions"
-msgstr ""
+msgstr "Applikations beskrivning"
 
 #: ../panel-plugin/configuration-dialog.cpp:266
 msgid "Show applications by _name"
-msgstr ""
+msgstr "Visa applikationer efter _namn"
 
 #: ../panel-plugin/icon-size.cpp:53
 msgid "Small"
-msgstr ""
+msgstr "Liten"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Smaller"
-msgstr ""
+msgstr "Mindre"
 
 #: ../panel-plugin/favorites-page.cpp:90
 msgid "Sort Alphabetically A-Z"
-msgstr ""
+msgstr "Sortera Alfabetiskt A-Z"
 
 #: ../panel-plugin/favorites-page.cpp:96
 msgid "Sort Alphabetically Z-A"
-msgstr ""
+msgstr "Sortera Alfabetiskt Z-A"
 
 #: ../panel-plugin/configuration-dialog.cpp:410
 msgid "Switch categories by _hovering"
-msgstr ""
+msgstr "Byt kategori med muspekaren"
 
 #: ../panel-plugin/configuration-dialog.cpp:356
 msgid "Title"
-msgstr ""
+msgstr "Titel"
 
 #: ../panel-plugin/page.cpp:304
 msgid "Unable to add launcher to desktop."
-msgstr ""
+msgstr "Kan ej skapa skrivbordsgenväg."
 
 #: ../panel-plugin/page.cpp:343 ../panel-plugin/page.cpp:352
 msgid "Unable to add launcher to panel."
-msgstr ""
+msgstr "Kan ej lägga till i panelen."
 
 #: ../panel-plugin/icon-size.cpp:57
 msgid "Very Large"
-msgstr ""
+msgstr "Väldigt Stor"
 
 #: ../panel-plugin/icon-size.cpp:51
 msgid "Very Small"
-msgstr ""
+msgstr "Väldigt Liten"
 
 #: ../panel-plugin/configuration-dialog.cpp:58
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
 msgid "Whisker Menu"
-msgstr ""
+msgstr "Whiskermeny"
 
 #: ../panel-plugin/configuration-dialog.cpp:66
+#, fuzzy
 msgid "_Appearance"
-msgstr ""
+msgstr "Utseende"
 
 #: ../panel-plugin/configuration-dialog.cpp:68
+#, fuzzy
 msgid "_Behavior"
-msgstr ""
+msgstr "Beteende"
 
 #: ../panel-plugin/configuration-dialog.cpp:69
 msgid "_Commands"
@@ -217,16 +224,18 @@ msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:382
 msgid "_Icon:"
-msgstr ""
+msgstr "_Ikon:"
 
 #: ../panel-plugin/configuration-dialog.cpp:67
+#, fuzzy
 msgid "_Panel Button"
-msgstr ""
+msgstr "Panelknapp"
 
 #: ../panel-plugin/configuration-dialog.cpp:453
+#, fuzzy
 msgid "_Settings:"
-msgstr ""
+msgstr "Alla inställningar"
 
 #: ../panel-plugin/configuration-dialog.cpp:367
 msgid "_Title:"
-msgstr ""
+msgstr "Titel:"
