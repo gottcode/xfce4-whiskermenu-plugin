@@ -28,17 +28,9 @@ option(ENABLE_LINKER_OPTIMIZED_HASH_TABLES "Enable -Wl,-O1 for the linker" ON)
 
 include(GNUInstallDirs)
 
-add_subdirectory(src)
-add_subdirectory(po)
 add_subdirectory(icons)
-
-# popup script
-configure_file(${PROJECT_SOURCE_DIR}/xfce4-popup-whiskermenu.in
-	${PROJECT_BINARY_DIR}/xfce4-popup-whiskermenu ESCAPE_QUOTES @ONLY)
-install(PROGRAMS ${PROJECT_BINARY_DIR}/xfce4-popup-whiskermenu
-	DESTINATION ${CMAKE_INSTALL_BINDIR})
-install(FILES ${PROJECT_SOURCE_DIR}/xfce4-popup-whiskermenu.1
-	DESTINATION ${CMAKE_INSTALL_MANDIR}/man1 COMPONENT doc)
+add_subdirectory(panel-plugin)
+add_subdirectory(po)
 
 # uninstall target
 configure_file(
