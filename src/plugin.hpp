@@ -14,8 +14,8 @@
 // along with this library.  If not, see <http://www.gnu.org/licenses/>.
 
 
-#ifndef WHISKERMENU_PANEL_PLUGIN_HPP
-#define WHISKERMENU_PANEL_PLUGIN_HPP
+#ifndef WHISKERMENU_PLUGIN_HPP
+#define WHISKERMENU_PLUGIN_HPP
 
 #include <string>
 
@@ -30,11 +30,11 @@ namespace WhiskerMenu
 
 class Window;
 
-class PanelPlugin
+class Plugin
 {
 public:
-	explicit PanelPlugin(XfcePanelPlugin* plugin);
-	~PanelPlugin();
+	explicit Plugin(XfcePanelPlugin* plugin);
+	~Plugin();
 
 	GtkWidget* get_button() const
 	{
@@ -102,43 +102,43 @@ private:
 
 
 private:
-	static gboolean button_clicked_slot(GtkWidget*, GdkEventButton* event, PanelPlugin* obj)
+	static gboolean button_clicked_slot(GtkWidget*, GdkEventButton* event, Plugin* obj)
 	{
 		return obj->button_clicked(event);
 	}
 
-	static void menu_hidden_slot(GtkWidget*, PanelPlugin* obj)
+	static void menu_hidden_slot(GtkWidget*, Plugin* obj)
 	{
 		obj->menu_hidden();
 	}
 
-	static void configure_slot(XfcePanelPlugin*, PanelPlugin* obj)
+	static void configure_slot(XfcePanelPlugin*, Plugin* obj)
 	{
 		obj->configure();
 	}
 
-	static gboolean remote_event_slot(XfcePanelPlugin*, gchar* name, GValue* value, PanelPlugin* obj)
+	static gboolean remote_event_slot(XfcePanelPlugin*, gchar* name, GValue* value, Plugin* obj)
 	{
 		return obj->remote_event(name, value);
 	}
 
-	static void save_slot(PanelPlugin* obj)
+	static void save_slot(Plugin* obj)
 	{
 		obj->save();
 	}
 
-	static gboolean size_changed_slot(XfcePanelPlugin*, gint size, PanelPlugin* obj)
+	static gboolean size_changed_slot(XfcePanelPlugin*, gint size, Plugin* obj)
 	{
 		return obj->size_changed(size);
 	}
 
 #if (LIBXFCE4PANEL_CHECK_VERSION(4,10,0))
-	static void mode_changed_slot(XfcePanelPlugin*, XfcePanelPluginMode mode, PanelPlugin* obj)
+	static void mode_changed_slot(XfcePanelPlugin*, XfcePanelPluginMode mode, Plugin* obj)
 	{
 		obj->orientation_changed(mode == XFCE_PANEL_PLUGIN_MODE_VERTICAL);
 	}
 #else
-	static void orientation_changed_slot(XfcePanelPlugin*, GtkOrientation orientation, PanelPlugin* obj)
+	static void orientation_changed_slot(XfcePanelPlugin*, GtkOrientation orientation, Plugin* obj)
 	{
 		obj->orientation_changed(orientation == GTK_ORIENTATION_VERTICAL);
 	}
@@ -147,4 +147,4 @@ private:
 
 }
 
-#endif // WHISKERMENU_PANEL_PLUGIN_HPP
+#endif // WHISKERMENU_PLUGIN_HPP

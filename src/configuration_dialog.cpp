@@ -21,7 +21,7 @@
 #include "icon_size.hpp"
 #include "launcher.hpp"
 #include "launcher_view.hpp"
-#include "panel_plugin.hpp"
+#include "plugin.hpp"
 #include "section_button.hpp"
 #include "window.hpp"
 
@@ -44,7 +44,7 @@ static void whiskermenu_config_dialog_delete(ConfigurationDialog* dialog)
 
 //-----------------------------------------------------------------------------
 
-ConfigurationDialog::ConfigurationDialog(PanelPlugin* plugin) :
+ConfigurationDialog::ConfigurationDialog(Plugin* plugin) :
 	m_plugin(plugin)
 {
 	// Create dialog window
@@ -134,7 +134,7 @@ void ConfigurationDialog::item_icon_size_changed(GtkComboBox* combo)
 
 void ConfigurationDialog::style_changed(GtkComboBox* combo)
 {
-	m_plugin->set_button_style(PanelPlugin::ButtonStyle(gtk_combo_box_get_active(combo) + 1));
+	m_plugin->set_button_style(Plugin::ButtonStyle(gtk_combo_box_get_active(combo) + 1));
 }
 
 //-----------------------------------------------------------------------------
@@ -237,9 +237,9 @@ void ConfigurationDialog::logout_command_changed()
 
 void ConfigurationDialog::response(int response_id)
 {
-	if ((m_plugin->get_button_style() == PanelPlugin::ShowText) && m_plugin->get_button_title().empty())
+	if ((m_plugin->get_button_style() == Plugin::ShowText) && m_plugin->get_button_title().empty())
 	{
-		m_plugin->set_button_title(PanelPlugin::get_button_title_default());
+		m_plugin->set_button_title(Plugin::get_button_title_default());
 	}
 
 	if (response_id == GTK_RESPONSE_CLOSE)

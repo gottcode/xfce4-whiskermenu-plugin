@@ -25,12 +25,12 @@ extern "C"
 namespace WhiskerMenu
 {
 
-class PanelPlugin;
+class Plugin;
 
 class ConfigurationDialog
 {
 public:
-	explicit ConfigurationDialog(PanelPlugin* plugin);
+	explicit ConfigurationDialog(Plugin* plugin);
 	~ConfigurationDialog();
 
 	GtkWidget* get_widget() const
@@ -66,7 +66,7 @@ private:
 	GtkWidget* init_commands_tab();
 
 private:
-	PanelPlugin* m_plugin;
+	Plugin* m_plugin;
 	GtkWidget* m_window;
 
 	GtkWidget* m_show_names;

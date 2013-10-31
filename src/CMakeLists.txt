@@ -63,6 +63,7 @@ add_library(whiskermenu MODULE
 	category.cpp
 	command_button.cpp
 	configuration_dialog.cpp
+	element.hpp
 	favorites_page.cpp
 	icon_size.cpp
 	launcher.cpp
@@ -70,7 +71,7 @@ add_library(whiskermenu MODULE
 	launcher_view.cpp
 	list_page.cpp
 	page.cpp
-	panel_plugin.cpp
+	plugin.cpp
 	query.cpp
 	recent_page.cpp
 	register_plugin.c
