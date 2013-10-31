@@ -37,7 +37,7 @@ You should create different directories for each type of build:
 
   1. `mkdir debug && cd debug' to create a location for building.
 
-  2. `cmake -DCMAKE_BUILD_TYPE=Debugfull ..' to configure the sources.
+  2. `cmake -DCMAKE_BUILD_TYPE=Debug ..' to configure the sources.
 
   3. `make' to compile the plugin.
 
@@ -46,7 +46,7 @@ More CMake Options
 
 -DCMAKE_BUILD_TYPE=<type>
     Choose the type of build. Possible values are:
-      'Release' 'RelWithDebInfo' 'Debug' 'Debugfull' 'Profile'
+      'None' 'Debug' 'Release' 'RelWithDebInfo' 'MinSizeRel'
 
 -DCMAKE_INSTALL_PREFIX=<path>
     Choose the base location where the plugin is installed
@@ -67,3 +67,16 @@ More CMake Options
 -DCMAKE_INSTALL_LOCALEDIR=<path>
     Choose where the localization files are installed
     (defaults to $CMAKE_INSTALL_DATADIR/locale).
+
+-DCMAKE_INSTALL_MANDIR=<path>
+    Choose where manual pages are installed
+    (defaults to $CMAKE_INSTALL_DATADIR/man).
+
+-ENABLE_WERROR=[OFF]
+    Make compiler treat warnings as errors for development.
+
+-ENABLE_AS_NEEDED=[ON]
+    Pass -Wl,--as-needed to the linker to reduce symbols in plugin.
+
+-ENABLE_LINKER_OPTIMIZED_HASH_TABLES=[ON]
+    Pass -Wl,-O1 to the linker to optimize hash tables in plugin.
