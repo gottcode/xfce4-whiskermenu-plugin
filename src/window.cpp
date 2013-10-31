@@ -14,7 +14,7 @@
 // along with this library.  If not, see <http://www.gnu.org/licenses/>.
 
 
-#include "menu.hpp"
+#include "window.hpp"
 
 #include "applications_page.hpp"
 #include "command_button.hpp"
@@ -38,13 +38,13 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-bool Menu::m_display_recent = false;
-bool Menu::m_position_search_alternate = false;
-bool Menu::m_position_commands_alternate = false;
+bool Window::m_display_recent = false;
+bool Window::m_position_search_alternate = false;
+bool Window::m_position_commands_alternate = false;
 
 //-----------------------------------------------------------------------------
 
-Menu::Menu(XfceRc* settings) :
+Window::Window(XfceRc* settings) :
 	m_window(NULL),
 	m_layout_left(true),
 	m_layout_bottom(true),
@@ -66,14 +66,14 @@ Menu::Menu(XfceRc* settings) :
 	gtk_window_set_skip_pager_hint(m_window, true);
 	gtk_window_stick(m_window);
 	gtk_widget_add_events(GTK_WIDGET(m_window), GDK_BUTTON_PRESS_MASK | GDK_LEAVE_NOTIFY_MASK | GDK_STRUCTURE_MASK);
-	g_signal_connect(m_window, "enter-notify-event", G_CALLBACK(Menu::on_enter_notify_event_slot), this);
-	g_signal_connect(m_window, "leave-notify-event", G_CALLBACK(Menu::on_leave_notify_event_slot), this);
+	g_signal_connect(m_window, "enter-notify-event", G_CALLBACK(Window::on_enter_notify_event_slot), this);
+	g_signal_connect(m_window, "leave-notify-event", G_CALLBACK(Window::on_leave_notify_event_slot), this);
 	g_signal_connect(m_window, "focus-in-event", G_CALLBACK(on_focus_in_event_slot), this);
-	g_signal_connect(m_window, "button-press-event", G_CALLBACK(Menu::on_button_press_event_slot), this);
-	g_signal_connect(m_window, "key-press-event", G_CALLBACK(Menu::on_key_press_event_slot), this);
-	g_signal_connect_after(m_window, "key-press-event", G_CALLBACK(Menu::on_key_press_event_after_slot), this);
-	g_signal_connect(m_window, "map-event", G_CALLBACK(Menu::on_map_event_slot), this);
-	g_signal_connect(m_window, "configure-event", G_CALLBACK(Menu::on_configure_event_slot), this);
+	g_signal_connect(m_window, "button-press-event", G_CALLBACK(Window::on_button_press_event_slot), this);
+	g_signal_connect(m_window, "key-press-event", G_CALLBACK(Window::on_key_press_event_slot), this);
+	g_signal_connect_after(m_window, "key-press-event", G_CALLBACK(Window::on_key_press_event_after_slot), this);
+	g_signal_connect(m_window, "map-event", G_CALLBACK(Window::on_map_event_slot), this);
+	g_signal_connect(m_window, "configure-event", G_CALLBACK(Window::on_configure_event_slot), this);
 
 	// Create the border of the window
 	GtkWidget* frame = gtk_frame_new(NULL);
@@ -94,13 +94,13 @@ Menu::Menu(XfceRc* settings) :
 
 	// Create action buttons
 	m_settings_button = new CommandButton("preferences-desktop", _("All Settings"), "xfce4-settings-manager", _("Failed to open settings manager."));
-	g_signal_connect_swapped(m_settings_button->get_widget(), "clicked", G_CALLBACK(Menu::hide_slot), this);
+	g_signal_connect_swapped(m_settings_button->get_widget(), "clicked", G_CALLBACK(Window::hide_slot), this);
 
 	m_lockscreen_button = new CommandButton("system-lock-screen", _("Lock Screen"), "xflock4", _("Failed to lock screen."));
-	g_signal_connect_swapped(m_lockscreen_button->get_widget(), "clicked", G_CALLBACK(Menu::hide_slot), this);
+	g_signal_connect_swapped(m_lockscreen_button->get_widget(), "clicked", G_CALLBACK(Window::hide_slot), this);
 
 	m_logout_button = new CommandButton("system-log-out", _("Log Out"), "xfce4-session-logout", _("Failed to log out."));
-	g_signal_connect_swapped(m_logout_button->get_widget(), "clicked", G_CALLBACK(Menu::hide_slot), this);
+	g_signal_connect_swapped(m_logout_button->get_widget(), "clicked", G_CALLBACK(Window::hide_slot), this);
 
 	m_resizer = new ResizerWidget(m_window);
 
@@ -108,20 +108,20 @@ Menu::Menu(XfceRc* settings) :
 	m_search_entry = GTK_ENTRY(gtk_entry_new());
 	gtk_entry_set_icon_from_stock(m_search_entry, GTK_ENTRY_ICON_SECONDARY, GTK_STOCK_FIND);
 	gtk_entry_set_icon_activatable(m_search_entry, GTK_ENTRY_ICON_SECONDARY, false);
-	g_signal_connect(m_search_entry, "changed", G_CALLBACK(Menu::search_slot), this);
+	g_signal_connect(m_search_entry, "changed", G_CALLBACK(Window::search_slot), this);
 
 	// Create favorites
 	m_favorites = new FavoritesPage(settings, this);
 
 	m_favorites_button = new SectionButton("user-bookmarks", _("Favorites"));
-	g_signal_connect(m_favorites_button->get_button(), "toggled", G_CALLBACK(Menu::favorites_toggled_slot), this);
+	g_signal_connect(m_favorites_button->get_button(), "toggled", G_CALLBACK(Window::favorites_toggled_slot), this);
 
 	// Create recent
 	m_recent = new RecentPage(settings, this);
 
 	m_recent_button = new SectionButton("document-open-recent", _("Recently Used"));
 	m_recent_button->set_group(m_favorites_button->get_group());
-	g_signal_connect(m_recent_button->get_button(), "toggled", G_CALLBACK(Menu::recent_toggled_slot), this);
+	g_signal_connect(m_recent_button->get_button(), "toggled", G_CALLBACK(Window::recent_toggled_slot), this);
 
 	// Create applications
 	m_applications = new ApplicationsPage(this);
@@ -224,7 +224,7 @@ Menu::Menu(XfceRc* settings) :
 
 //-----------------------------------------------------------------------------
 
-Menu::~Menu()
+Window::~Window()
 {
 	delete m_applications;
 	delete m_search_results;
@@ -241,7 +241,7 @@ Menu::~Menu()
 
 //-----------------------------------------------------------------------------
 
-void Menu::hide()
+void Window::hide()
 {
 	gdk_pointer_ungrab(gtk_get_current_event_time());
 
@@ -269,7 +269,7 @@ void Menu::hide()
 
 //-----------------------------------------------------------------------------
 
-void Menu::show(GtkWidget* parent, bool horizontal)
+void Window::show(GtkWidget* parent, bool horizontal)
 {
 	// Make sure icon sizes are correct
 	m_favorites_button->reload_icon_size();
@@ -539,7 +539,7 @@ void Menu::show(GtkWidget* parent, bool horizontal)
 
 //-----------------------------------------------------------------------------
 
-void Menu::save(XfceRc* settings)
+void Window::save(XfceRc* settings)
 {
 	if (settings)
 	{
@@ -553,13 +553,13 @@ void Menu::save(XfceRc* settings)
 
 //-----------------------------------------------------------------------------
 
-void Menu::set_categories(const std::vector<SectionButton*>& categories)
+void Window::set_categories(const std::vector<SectionButton*>& categories)
 {
 	for (std::vector<SectionButton*>::const_iterator i = categories.begin(), end = categories.end(); i != end; ++i)
 	{
 		(*i)->set_group(m_recent_button->get_group());
 		gtk_box_pack_start(m_sidebar_box, GTK_WIDGET((*i)->get_button()), false, false, 0);
-		g_signal_connect((*i)->get_button(), "toggled", G_CALLBACK(Menu::category_toggled_slot), this);
+		g_signal_connect((*i)->get_button(), "toggled", G_CALLBACK(Window::category_toggled_slot), this);
 	}
 	gtk_widget_show_all(GTK_WIDGET(m_sidebar_box));
 
@@ -568,7 +568,7 @@ void Menu::set_categories(const std::vector<SectionButton*>& categories)
 
 //-----------------------------------------------------------------------------
 
-void Menu::set_items()
+void Window::set_items()
 {
 	m_search_results->set_menu_items(m_applications->get_model());
 	m_favorites->set_menu_items();
@@ -576,19 +576,19 @@ void Menu::set_items()
 
 	// Handle switching to favorites are added
 	GtkTreeModel* favorites_model = m_favorites->get_view()->get_model();
-	g_signal_connect(favorites_model, "row-inserted", G_CALLBACK(Menu::show_favorites_slot), this);
+	g_signal_connect(favorites_model, "row-inserted", G_CALLBACK(Window::show_favorites_slot), this);
 }
 
 //-----------------------------------------------------------------------------
 
-void Menu::set_modified()
+void Window::set_modified()
 {
 	m_modified = true;
 }
 
 //-----------------------------------------------------------------------------
 
-void Menu::unset_items()
+void Window::unset_items()
 {
 	m_search_results->unset_menu_items();
 	m_favorites->unset_menu_items();
@@ -597,7 +597,7 @@ void Menu::unset_items()
 
 //-----------------------------------------------------------------------------
 
-bool Menu::on_enter_notify_event(GdkEventCrossing* event)
+bool Window::on_enter_notify_event(GdkEventCrossing* event)
 {
 	if ( (event->detail == GDK_NOTIFY_INFERIOR)
 			|| (event->mode == GDK_CROSSING_GRAB)
@@ -621,77 +621,77 @@ bool Menu::on_enter_notify_event(GdkEventCrossing* event)
 
 //-----------------------------------------------------------------------------
 
-std::string Menu::get_settings_command()
+std::string Window::get_settings_command()
 {
 	return m_settings_button->get_command();
 }
 
 //-----------------------------------------------------------------------------
 
-std::string Menu::get_lockscreen_command()
+std::string Window::get_lockscreen_command()
 {
 	return m_lockscreen_button->get_command();
 }
 
 //-----------------------------------------------------------------------------
 
-std::string Menu::get_logout_command()
+std::string Window::get_logout_command()
 {
 	return m_logout_button->get_command();
 }
 
 //-----------------------------------------------------------------------------
 
-void Menu::set_settings_command(const std::string& command)
+void Window::set_settings_command(const std::string& command)
 {
 	m_settings_button->set_command(command);
 }
 
 //-----------------------------------------------------------------------------
 
-void Menu::set_lockscreen_command(const std::string& command)
+void Window::set_lockscreen_command(const std::string& command)
 {
 	m_lockscreen_button->set_command(command);
 }
 
 //-----------------------------------------------------------------------------
 
-void Menu::set_logout_command(const std::string& command)
+void Window::set_logout_command(const std::string& command)
 {
 	m_logout_button->set_command(command);
 }
 
 //-----------------------------------------------------------------------------
 
-bool Menu::get_display_recent()
+bool Window::get_display_recent()
 {
 	return m_display_recent;
 }
 
 //-----------------------------------------------------------------------------
 
-bool Menu::get_position_search_alternate()
+bool Window::get_position_search_alternate()
 {
 	return m_position_search_alternate;
 }
 
 //-----------------------------------------------------------------------------
 
-bool Menu::get_position_commands_alternate()
+bool Window::get_position_commands_alternate()
 {
 	return m_position_commands_alternate;
 }
 
 //-----------------------------------------------------------------------------
 
-void Menu::set_display_recent(bool display)
+void Window::set_display_recent(bool display)
 {
 	m_display_recent = display;
 }
 
 //-----------------------------------------------------------------------------
 
-void Menu::set_position_search_alternate(bool alternate)
+void Window::set_position_search_alternate(bool alternate)
 {
 	m_position_search_alternate = alternate;
 	if (!alternate)
@@ -702,14 +702,14 @@ void Menu::set_position_search_alternate(bool alternate)
 
 //-----------------------------------------------------------------------------
 
-void Menu::set_position_commands_alternate(bool alternate)
+void Window::set_position_commands_alternate(bool alternate)
 {
 	m_position_commands_alternate = alternate && m_position_search_alternate;
 }
 
 //-----------------------------------------------------------------------------
 
-bool Menu::on_leave_notify_event(GdkEventCrossing* event)
+bool Window::on_leave_notify_event(GdkEventCrossing* event)
 {
 	if ( (event->detail == GDK_NOTIFY_INFERIOR)
 			|| (event->mode != GDK_CROSSING_NORMAL) )
@@ -734,7 +734,7 @@ bool Menu::on_leave_notify_event(GdkEventCrossing* event)
 
 //-----------------------------------------------------------------------------
 
-bool Menu::on_focus_in_event()
+bool Window::on_focus_in_event()
 {
 	gdk_pointer_grab(gtk_widget_get_window(GTK_WIDGET(m_window)), true,
 			GdkEventMask(
@@ -747,7 +747,7 @@ bool Menu::on_focus_in_event()
 
 //-----------------------------------------------------------------------------
 
-bool Menu::on_button_press_event(GdkEventButton* event)
+bool Window::on_button_press_event(GdkEventButton* event)
 {
 	// Hide menu if user clicks outside
 	if ((event->x_root <= m_geometry.x) || (event->x_root >= m_geometry.x + m_geometry.width)
@@ -760,7 +760,7 @@ bool Menu::on_button_press_event(GdkEventButton* event)
 
 //-----------------------------------------------------------------------------
 
-bool Menu::on_key_press_event(GtkWidget* widget, GdkEventKey* event)
+bool Window::on_key_press_event(GtkWidget* widget, GdkEventKey* event)
 {
 	// Hide if escape is pressed and there is no text in search entry
 	if ( (event->keyval == GDK_Escape) && exo_str_is_empty(gtk_entry_get_text(m_search_entry)) )
@@ -801,7 +801,7 @@ bool Menu::on_key_press_event(GtkWidget* widget, GdkEventKey* event)
 
 //-----------------------------------------------------------------------------
 
-bool Menu::on_key_press_event_after(GtkWidget* widget, GdkEventKey* event)
+bool Window::on_key_press_event_after(GtkWidget* widget, GdkEventKey* event)
 {
 	// Pass unhandled key presses to search entry
 	GtkWidget* search_entry = GTK_WIDGET(m_search_entry);
@@ -816,7 +816,7 @@ bool Menu::on_key_press_event_after(GtkWidget* widget, GdkEventKey* event)
 
 //-----------------------------------------------------------------------------
 
-bool Menu::on_map_event()
+bool Window::on_map_event()
 {
 	m_favorites->reset_selection();
 
@@ -838,7 +838,7 @@ bool Menu::on_map_event()
 
 //-----------------------------------------------------------------------------
 
-bool Menu::on_configure_event(GdkEventConfigure* event)
+bool Window::on_configure_event(GdkEventConfigure* event)
 {
 	if (event->width && event->height)
 	{
@@ -852,7 +852,7 @@ bool Menu::on_configure_event(GdkEventConfigure* event)
 
 //-----------------------------------------------------------------------------
 
-void Menu::favorites_toggled()
+void Window::favorites_toggled()
 {
 	m_favorites->reset_selection();
 	gtk_widget_hide(m_recent->get_widget());
@@ -863,7 +863,7 @@ void Menu::favorites_toggled()
 
 //-----------------------------------------------------------------------------
 
-void Menu::recent_toggled()
+void Window::recent_toggled()
 {
 	m_recent->reset_selection();
 	gtk_widget_hide(m_favorites->get_widget());
@@ -874,7 +874,7 @@ void Menu::recent_toggled()
 
 //-----------------------------------------------------------------------------
 
-void Menu::category_toggled()
+void Window::category_toggled()
 {
 	m_applications->reset_selection();
 	gtk_widget_hide(m_favorites->get_widget());
@@ -885,7 +885,7 @@ void Menu::category_toggled()
 
 //-----------------------------------------------------------------------------
 
-void Menu::show_favorites()
+void Window::show_favorites()
 {
 	// Switch to favorites panel
 	m_favorites_button->set_active(true);
@@ -897,7 +897,7 @@ void Menu::show_favorites()
 
 //-----------------------------------------------------------------------------
 
-void Menu::show_default_page()
+void Window::show_default_page()
 {
 	// Switch to favorites panel
 	m_default_button->set_active(true);
@@ -909,7 +909,7 @@ void Menu::show_default_page()
 
 //-----------------------------------------------------------------------------
 
-void Menu::search()
+void Window::search()
 {
 	// Fetch search string
 	gchar* filter_string = NULL;

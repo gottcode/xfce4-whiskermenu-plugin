@@ -27,7 +27,7 @@ class Launcher;
 class FavoritesPage : public ListPage
 {
 public:
-	FavoritesPage(XfceRc* settings, Menu* menu);
+	FavoritesPage(XfceRc* settings, Window* window);
 
 	void add(Launcher* launcher);
 

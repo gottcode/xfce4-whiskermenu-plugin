@@ -28,7 +28,7 @@ extern "C"
 namespace WhiskerMenu
 {
 
-class Menu;
+class Window;
 
 class PanelPlugin
 {
@@ -48,9 +48,9 @@ public:
 		ShowIconAndText = ShowIcon | ShowText
 	};
 
-	Menu* get_menu() const
+	Window* get_window() const
 	{
-		return m_menu;
+		return m_window;
 	}
 
 	ButtonStyle get_button_style() const
@@ -88,7 +88,7 @@ private:
 
 private:
 	XfcePanelPlugin* m_plugin;
-	Menu* m_menu;
+	Window* m_window;
 
 	std::string m_button_title;
 	std::string m_button_icon_name;

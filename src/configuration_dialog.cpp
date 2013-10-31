@@ -21,9 +21,9 @@
 #include "icon_size.hpp"
 #include "launcher.hpp"
 #include "launcher_view.hpp"
-#include "menu.hpp"
 #include "panel_plugin.hpp"
 #include "section_button.hpp"
+#include "window.hpp"
 
 extern "C"
 {
@@ -173,7 +173,7 @@ void ConfigurationDialog::toggle_show_description(GtkToggleButton* button)
 void ConfigurationDialog::toggle_position_search_alternate(GtkToggleButton* button)
 {
 	bool active = gtk_toggle_button_get_active(button);
-	Menu::set_position_search_alternate(gtk_toggle_button_get_active(button));
+	Window::set_position_search_alternate(gtk_toggle_button_get_active(button));
 	gtk_widget_set_sensitive(GTK_WIDGET(m_position_commands_alternate), active);
 	m_plugin->reload();
 }
@@ -182,7 +182,7 @@ void ConfigurationDialog::toggle_position_search_alternate(GtkToggleButton* butt
 
 void ConfigurationDialog::toggle_position_commands_alternate(GtkToggleButton* button)
 {
-	Menu::set_position_commands_alternate(gtk_toggle_button_get_active(button));
+	Window::set_position_commands_alternate(gtk_toggle_button_get_active(button));
 	m_plugin->reload();
 }
 
@@ -205,7 +205,7 @@ void ConfigurationDialog::toggle_remember_favorites(GtkToggleButton* button)
 
 void ConfigurationDialog::toggle_display_recent(GtkToggleButton* button)
 {
-	Menu::set_display_recent(gtk_toggle_button_get_active(button));
+	Window::set_display_recent(gtk_toggle_button_get_active(button));
 	m_plugin->reload();
 }
 
@@ -214,7 +214,7 @@ void ConfigurationDialog::toggle_display_recent(GtkToggleButton* button)
 void ConfigurationDialog::settings_command_changed()
 {
 	const gchar* text = gtk_entry_get_text(GTK_ENTRY(m_settings_command));
-	m_plugin->get_menu()->set_settings_command(text ? text : "");
+	m_plugin->get_window()->set_settings_command(text ? text : "");
 }
 
 //-----------------------------------------------------------------------------
@@ -222,7 +222,7 @@ void ConfigurationDialog::settings_command_changed()
 void ConfigurationDialog::lockscreen_command_changed()
 {
 	const gchar* text = gtk_entry_get_text(GTK_ENTRY(m_lockscreen_command));
-	m_plugin->get_menu()->set_lockscreen_command(text ? text : "");
+	m_plugin->get_window()->set_lockscreen_command(text ? text : "");
 }
 
 //-----------------------------------------------------------------------------
@@ -230,7 +230,7 @@ void ConfigurationDialog::lockscreen_command_changed()
 void ConfigurationDialog::logout_command_changed()
 {
 	const gchar* text = gtk_entry_get_text(GTK_ENTRY(m_logout_command));
-	m_plugin->get_menu()->set_logout_command(text ? text : "");
+	m_plugin->get_window()->set_logout_command(text ? text : "");
 }
 
 //-----------------------------------------------------------------------------
@@ -276,13 +276,13 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	// Add option to use alternate search entry position
 	m_position_search_alternate = gtk_check_button_new_with_mnemonic(_("Position _search entry next to panel button"));
 	gtk_box_pack_start(appearance_vbox, m_position_search_alternate, true, true, 0);
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_search_alternate), Menu::get_position_search_alternate());
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_search_alternate), Window::get_position_search_alternate());
 	g_signal_connect(m_position_search_alternate, "toggled", G_CALLBACK(ConfigurationDialog::toggle_position_search_alternate_slot), this);
 
 	// Add option to use alternate commands position
 	m_position_commands_alternate = gtk_check_button_new_with_mnemonic(_("Position commands next to search _entry"));
 	gtk_box_pack_start(appearance_vbox, m_position_commands_alternate, true, true, 0);
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_commands_alternate), Menu::get_position_commands_alternate());
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_commands_alternate), Window::get_position_commands_alternate());
 	gtk_widget_set_sensitive(GTK_WIDGET(m_position_commands_alternate), gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(m_position_search_alternate)));
 	g_signal_connect(m_position_commands_alternate, "toggled", G_CALLBACK(ConfigurationDialog::toggle_position_commands_alternate_slot), this);
 
@@ -426,7 +426,7 @@ GtkWidget* ConfigurationDialog::init_behavior_tab()
 	// Add option to display recently used
 	m_display_recent = gtk_check_button_new_with_mnemonic(_("Display recently _used by default"));
 	gtk_box_pack_start(behavior_vbox, m_display_recent, true, true, 0);
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_display_recent), Menu::get_display_recent());
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_display_recent), Window::get_display_recent());
 	g_signal_connect(m_display_recent, "toggled", G_CALLBACK(ConfigurationDialog::toggle_display_recent_slot), this);
 
 	return page;
@@ -455,7 +455,7 @@ GtkWidget* ConfigurationDialog::init_commands_tab()
 	gtk_size_group_add_widget(label_size_group, label);
 
 	m_settings_command = gtk_entry_new();
-	gtk_entry_set_text(GTK_ENTRY(m_settings_command), m_plugin->get_menu()->get_settings_command().c_str());
+	gtk_entry_set_text(GTK_ENTRY(m_settings_command), m_plugin->get_window()->get_settings_command().c_str());
 	gtk_box_pack_start(hbox, m_settings_command, true, true, 0);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_settings_command);
 	g_signal_connect(m_settings_command, "changed", G_CALLBACK(ConfigurationDialog::settings_command_changed_slot), this);
@@ -470,7 +470,7 @@ GtkWidget* ConfigurationDialog::init_commands_tab()
 	gtk_size_group_add_widget(label_size_group, label);
 
 	m_lockscreen_command = gtk_entry_new();
-	gtk_entry_set_text(GTK_ENTRY(m_lockscreen_command), m_plugin->get_menu()->get_lockscreen_command().c_str());
+	gtk_entry_set_text(GTK_ENTRY(m_lockscreen_command), m_plugin->get_window()->get_lockscreen_command().c_str());
 	gtk_box_pack_start(hbox, m_lockscreen_command, true, true, 0);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_lockscreen_command);
 	g_signal_connect(m_lockscreen_command, "changed", G_CALLBACK(ConfigurationDialog::lockscreen_command_changed_slot), this);
@@ -485,7 +485,7 @@ GtkWidget* ConfigurationDialog::init_commands_tab()
 	gtk_size_group_add_widget(label_size_group, label);
 
 	m_logout_command = gtk_entry_new();
-	gtk_entry_set_text(GTK_ENTRY(m_logout_command), m_plugin->get_menu()->get_logout_command().c_str());
+	gtk_entry_set_text(GTK_ENTRY(m_logout_command), m_plugin->get_window()->get_logout_command().c_str());
 	gtk_box_pack_start(hbox, m_logout_command, true, true, 0);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_logout_command);
 	g_signal_connect(m_logout_command, "changed", G_CALLBACK(ConfigurationDialog::logout_command_changed_slot), this);

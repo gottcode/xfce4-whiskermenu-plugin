@@ -28,12 +28,12 @@ namespace WhiskerMenu
 class FavoritesPage;
 class Launcher;
 class LauncherView;
-class Menu;
+class Window;
 
 class Page
 {
 public:
-	explicit Page(Menu* menu);
+	explicit Page(WhiskerMenu::Window *window);
 	virtual ~Page();
 
 	GtkWidget* get_widget() const
@@ -49,9 +49,9 @@ public:
 	void reset_selection();
 
 protected:
-	Menu* get_menu() const
+	Window* get_window() const
 	{
-		return m_menu;
+		return m_window;
 	}
 
 private:
@@ -71,7 +71,7 @@ private:
 	static void position_context_menu(GtkMenu*, gint* x, gint* y, gboolean* push_in, Page* page);
 
 private:
-	Menu* m_menu;
+	Window* m_window;
 	GtkWidget* m_widget;
 	LauncherView* m_view;
 	GtkTreePath* m_selected_path;

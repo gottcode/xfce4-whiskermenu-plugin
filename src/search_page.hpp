@@ -32,7 +32,7 @@ class LauncherView;
 class SearchPage : public Page
 {
 public:
-	explicit SearchPage(Menu* menu);
+	explicit SearchPage(Window* window);
 	~SearchPage();
 
 	void set_filter(const gchar* filter);

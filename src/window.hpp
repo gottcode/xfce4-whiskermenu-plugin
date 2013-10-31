@@ -14,8 +14,8 @@
 // along with this library.  If not, see <http://www.gnu.org/licenses/>.
 
 
-#ifndef WHISKERMENU_MENU_HPP
-#define WHISKERMENU_MENU_HPP
+#ifndef WHISKERMENU_WINDOW_HPP
+#define WHISKERMENU_WINDOW_HPP
 
 #include <map>
 #include <string>
@@ -40,11 +40,11 @@ class RecentPage;
 class SearchPage;
 class SectionButton;
 
-class Menu
+class Window
 {
 public:
-	explicit Menu(XfceRc* settings);
-	~Menu();
+	explicit Window(XfceRc* settings);
+	~Window();
 
 	GtkWidget* get_widget() const
 	{
@@ -159,72 +159,72 @@ private:
 
 
 private:
-	static gboolean on_enter_notify_event_slot(GtkWidget*, GdkEventCrossing* event, Menu* obj)
+	static gboolean on_enter_notify_event_slot(GtkWidget*, GdkEventCrossing* event, Window* obj)
 	{
 		return obj->on_enter_notify_event(event);
 	}
 
-	static gboolean on_leave_notify_event_slot(GtkWidget*, GdkEventCrossing* event, Menu* obj)
+	static gboolean on_leave_notify_event_slot(GtkWidget*, GdkEventCrossing* event, Window* obj)
 	{
 		return obj->on_leave_notify_event(event);
 	}
 
-	static gboolean on_focus_in_event_slot(GtkWidget*, GdkEventFocus*, Menu* obj)
+	static gboolean on_focus_in_event_slot(GtkWidget*, GdkEventFocus*, Window* obj)
 	{
 		return obj->on_focus_in_event();
 	}
 
-	static gboolean on_button_press_event_slot(GtkWidget*, GdkEventButton* event, Menu* obj)
+	static gboolean on_button_press_event_slot(GtkWidget*, GdkEventButton* event, Window* obj)
 	{
 		return obj->on_button_press_event(event);
 	}
 
-	static gboolean on_key_press_event_slot(GtkWidget* widget, GdkEventKey* event, Menu* obj)
+	static gboolean on_key_press_event_slot(GtkWidget* widget, GdkEventKey* event, Window* obj)
 	{
 		return obj->on_key_press_event(widget, event);
 	}
 
-	static gboolean on_key_press_event_after_slot(GtkWidget* widget, GdkEventKey* event, Menu* obj)
+	static gboolean on_key_press_event_after_slot(GtkWidget* widget, GdkEventKey* event, Window* obj)
 	{
 		return obj->on_key_press_event_after(widget, event);
 	}
 
-	static gboolean on_map_event_slot(GtkWidget*, GdkEventAny*, Menu* obj)
+	static gboolean on_map_event_slot(GtkWidget*, GdkEventAny*, Window* obj)
 	{
 		return obj->on_map_event();
 	}
 
-	static gboolean on_configure_event_slot(GtkWidget*, GdkEventConfigure* event, Menu* obj)
+	static gboolean on_configure_event_slot(GtkWidget*, GdkEventConfigure* event, Window* obj)
 	{
 		return obj->on_configure_event(event);
 	}
 
-	static void favorites_toggled_slot(GtkToggleButton*, Menu* obj)
+	static void favorites_toggled_slot(GtkToggleButton*, Window* obj)
 	{
 		obj->favorites_toggled();
 	}
 
-	static void recent_toggled_slot(GtkToggleButton*, Menu* obj)
+	static void recent_toggled_slot(GtkToggleButton*, Window* obj)
 	{
 		obj->recent_toggled();
 	}
 
-	static void category_toggled_slot(GtkToggleButton*, Menu* obj)
+	static void category_toggled_slot(GtkToggleButton*, Window* obj)
 	{
 		obj->category_toggled();
 	}
 
-	static void show_favorites_slot(GtkTreeModel*, GtkTreePath*, GtkTreeIter*, Menu* obj)
+	static void show_favorites_slot(GtkTreeModel*, GtkTreePath*, GtkTreeIter*, Window* obj)
 	{
 		obj->show_favorites();
 	}
 
-	static void search_slot(GtkEditable*, Menu* obj)
+	static void search_slot(GtkEditable*, Window* obj)
 	{
 		obj->search();
 	}
 
-	static void hide_slot(Menu* obj)
+	static void hide_slot(Window* obj)
 	{
 		obj->hide();
 	}
@@ -232,4 +232,4 @@ private:
 
 }
 
-#endif // WHISKERMENU_MENU_HPP
+#endif // WHISKERMENU_WINDOW_HPP

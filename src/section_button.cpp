@@ -18,6 +18,11 @@
 
 #include "icon_size.hpp"
 
+extern "C"
+{
+#include <libxfce4panel/libxfce4panel.h>
+}
+
 using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
@@ -56,7 +61,7 @@ SectionButton::SectionButton(const gchar* icon, const gchar* text)
 	GtkBox* box = GTK_BOX(gtk_hbox_new(false, 4));
 	gtk_container_add(GTK_CONTAINER(m_button), GTK_WIDGET(box));
 
-	m_icon = XFCE_PANEL_IMAGE(xfce_panel_image_new_from_source(icon));
+	m_icon = xfce_panel_image_new_from_source(icon);
 	reload_icon_size();
 	gtk_box_pack_start(box, GTK_WIDGET(m_icon), false, false, 0);
 
@@ -75,7 +80,7 @@ SectionButton::~SectionButton()
 
 void SectionButton::reload_icon_size()
 {
-	xfce_panel_image_set_size(m_icon, f_icon_size.get_size());
+	xfce_panel_image_set_size(XFCE_PANEL_IMAGE(m_icon), f_icon_size.get_size());
 }
 
 //-----------------------------------------------------------------------------

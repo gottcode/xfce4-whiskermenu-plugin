@@ -20,7 +20,7 @@
 #include "launcher.hpp"
 #include "launcher_model.hpp"
 #include "launcher_view.hpp"
-#include "menu.hpp"
+#include "window.hpp"
 
 #include <algorithm>
 
@@ -28,8 +28,8 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-ListPage::ListPage(XfceRc* rc, const gchar* key, const std::vector<std::string>& default_desktop_ids, Menu* menu) :
-	Page(menu),
+ListPage::ListPage(XfceRc* rc, const gchar* key, const std::vector<std::string>& default_desktop_ids, Window* window) :
+	Page(window),
 	m_key(key)
 {
 	if (!rc || !xfce_rc_has_entry(rc, key))
@@ -110,7 +110,7 @@ void ListPage::set_menu_items()
 			continue;
 		}
 
-		Launcher* launcher = get_menu()->get_applications()->get_application(*i);
+		Launcher* launcher = get_window()->get_applications()->get_application(*i);
 		if (launcher)
 		{
 			model.append_item(launcher);
@@ -163,7 +163,7 @@ void ListPage::on_row_changed(GtkTreeModel* model, GtkTreePath* path, GtkTreeIte
 	if (launcher)
 	{
 		m_desktop_ids[pos] = launcher->get_desktop_id();
-		get_menu()->set_modified(); // Handle favorites being rearranged
+		get_window()->set_modified(); // Handle favorites being rearranged
 	}
 }
 

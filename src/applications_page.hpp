@@ -34,14 +34,13 @@ namespace WhiskerMenu
 class Category;
 class Launcher;
 class LauncherView;
-class Menu;
 class SectionButton;
 
 class ApplicationsPage : public Page
 {
 
 public:
-	explicit ApplicationsPage(Menu* menu);
+	explicit ApplicationsPage(Window* window);
 	~ApplicationsPage();
 
 	Launcher* get_application(const std::string& desktop_id) const;

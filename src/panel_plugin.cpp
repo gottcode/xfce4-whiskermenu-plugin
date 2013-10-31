@@ -22,8 +22,8 @@
 #include "icon_size.hpp"
 #include "launcher.hpp"
 #include "launcher_view.hpp"
-#include "menu.hpp"
 #include "section_button.hpp"
+#include "window.hpp"
 
 using namespace WhiskerMenu;
 
@@ -45,7 +45,7 @@ static void whiskermenu_free(XfcePanelPlugin*, PanelPlugin* whiskermenu)
 
 PanelPlugin::PanelPlugin(XfcePanelPlugin* plugin) :
 	m_plugin(plugin),
-	m_menu(NULL),
+	m_window(NULL),
 	m_button_title(get_button_title_default()),
 	m_button_icon_name("xfce4-whiskermenu"),
 	m_button_title_visible(false),
@@ -69,22 +69,22 @@ PanelPlugin::PanelPlugin(XfcePanelPlugin* plugin) :
 		LauncherView::set_icon_size(xfce_rc_read_int_entry(settings, "item-icon-size", LauncherView::get_icon_size()));
 		ApplicationsPage::set_load_hierarchy(xfce_rc_read_bool_entry(settings, "load-hierarchy", ApplicationsPage::get_load_hierarchy()));
 		FavoritesPage::set_remember_favorites(xfce_rc_read_bool_entry(settings, "favorites-in-recent", FavoritesPage::get_remember_favorites()));
-		Menu::set_display_recent(xfce_rc_read_bool_entry(settings, "display-recent-default", Menu::get_display_recent()));
-		Menu::set_position_search_alternate(xfce_rc_read_bool_entry(settings, "position-search-alternate", Menu::get_position_search_alternate()));
-		Menu::set_position_commands_alternate(xfce_rc_read_bool_entry(settings, "position-commands-alternate", Menu::get_position_commands_alternate()));
+		Window::set_display_recent(xfce_rc_read_bool_entry(settings, "display-recent-default", Window::get_display_recent()));
+		Window::set_position_search_alternate(xfce_rc_read_bool_entry(settings, "position-search-alternate", Window::get_position_search_alternate()));
+		Window::set_position_commands_alternate(xfce_rc_read_bool_entry(settings, "position-commands-alternate", Window::get_position_commands_alternate()));
 
-		m_menu = new Menu(settings);
-		m_menu->set_settings_command(xfce_rc_read_entry(settings, "command-settings", m_menu->get_settings_command().c_str()));
-		m_menu->set_lockscreen_command(xfce_rc_read_entry(settings, "command-lockscreen", m_menu->get_lockscreen_command().c_str()));
-		m_menu->set_logout_command(xfce_rc_read_entry(settings, "command-logout", m_menu->get_logout_command().c_str()));
+		m_window = new Window(settings);
+		m_window->set_settings_command(xfce_rc_read_entry(settings, "command-settings", m_window->get_settings_command().c_str()));
+		m_window->set_lockscreen_command(xfce_rc_read_entry(settings, "command-lockscreen", m_window->get_lockscreen_command().c_str()));
+		m_window->set_logout_command(xfce_rc_read_entry(settings, "command-logout", m_window->get_logout_command().c_str()));
 
 		xfce_rc_close(settings);
 	}
 	else
 	{
-		m_menu = new Menu(NULL);
+		m_window = new Window(NULL);
 	}
-	g_signal_connect(m_menu->get_widget(), "unmap", G_CALLBACK(PanelPlugin::menu_hidden_slot), this);
+	g_signal_connect(m_window->get_widget(), "unmap", G_CALLBACK(PanelPlugin::menu_hidden_slot), this);
 
 	// Prevent empty panel button
 	if (!m_button_icon_visible)
@@ -148,8 +148,8 @@ PanelPlugin::~PanelPlugin()
 {
 	save();
 
-	delete m_menu;
-	m_menu = NULL;
+	delete m_window;
+	m_window = NULL;
 
 	gtk_widget_destroy(m_button);
 }
@@ -165,8 +165,8 @@ std::string PanelPlugin::get_button_title_default()
 
 void PanelPlugin::reload()
 {
-	m_menu->hide();
-	m_menu->get_applications()->invalidate_applications();
+	m_window->hide();
+	m_window->get_applications()->invalidate_applications();
 }
 
 //-----------------------------------------------------------------------------
@@ -239,7 +239,7 @@ bool PanelPlugin::button_clicked(GdkEventButton* event)
 
 	if (gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(m_button)) == true)
 	{
-		m_menu->hide();
+		m_window->hide();
 	}
 	else
 	{
@@ -255,7 +255,7 @@ void PanelPlugin::menu_hidden()
 {
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_button), false);
 	xfce_panel_plugin_block_autohide(m_plugin, false);
-	if (m_menu->get_modified())
+	if (m_window->get_modified())
 	{
 		save();
 	}
@@ -287,9 +287,9 @@ bool PanelPlugin::remote_event(gchar* name, GValue* value)
 		return false;
 	}
 
-	if (gtk_widget_get_visible(m_menu->get_widget()))
+	if (gtk_widget_get_visible(m_window->get_widget()))
 	{
-		m_menu->hide();
+		m_window->hide();
 	}
 	else
 	{
@@ -322,13 +322,13 @@ void PanelPlugin::save()
 	xfce_rc_write_int_entry(settings, "item-icon-size", LauncherView::get_icon_size());
 	xfce_rc_write_bool_entry(settings, "load-hierarchy", ApplicationsPage::get_load_hierarchy());
 	xfce_rc_write_bool_entry(settings, "favorites-in-recent", FavoritesPage::get_remember_favorites());
-	xfce_rc_write_bool_entry(settings, "display-recent-default", Menu::get_display_recent());
-	xfce_rc_write_bool_entry(settings, "position-search-alternate", Menu::get_position_search_alternate());
-	xfce_rc_write_bool_entry(settings, "position-commands-alternate", Menu::get_position_commands_alternate());
-	xfce_rc_write_entry(settings, "command-settings", m_menu->get_settings_command().c_str());
-	xfce_rc_write_entry(settings, "command-lockscreen", m_menu->get_lockscreen_command().c_str());
-	xfce_rc_write_entry(settings, "command-logout", m_menu->get_logout_command().c_str());
-	m_menu->save(settings);
+	xfce_rc_write_bool_entry(settings, "display-recent-default", Window::get_display_recent());
+	xfce_rc_write_bool_entry(settings, "position-search-alternate", Window::get_position_search_alternate());
+	xfce_rc_write_bool_entry(settings, "position-commands-alternate", Window::get_position_commands_alternate());
+	xfce_rc_write_entry(settings, "command-settings", m_window->get_settings_command().c_str());
+	xfce_rc_write_entry(settings, "command-lockscreen", m_window->get_lockscreen_command().c_str());
+	xfce_rc_write_entry(settings, "command-logout", m_window->get_logout_command().c_str());
+	m_window->save(settings);
 
 	xfce_rc_close(settings);
 }
@@ -397,11 +397,11 @@ void PanelPlugin::popup_menu(bool at_cursor)
 	{
 		xfce_panel_plugin_block_autohide(m_plugin, true);
 		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_button), true);
-		m_menu->show(m_button, xfce_panel_plugin_get_orientation(m_plugin) == GTK_ORIENTATION_HORIZONTAL);
+		m_window->show(m_button, xfce_panel_plugin_get_orientation(m_plugin) == GTK_ORIENTATION_HORIZONTAL);
 	}
 	else
 	{
-		m_menu->show(NULL, true);
+		m_window->show(NULL, true);
 	}
 }
 

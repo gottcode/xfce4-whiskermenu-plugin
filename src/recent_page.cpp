@@ -19,14 +19,14 @@
 #include "launcher.hpp"
 #include "launcher_model.hpp"
 #include "launcher_view.hpp"
-#include "menu.hpp"
+#include "window.hpp"
 
 using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-RecentPage::RecentPage(XfceRc* settings, Menu* menu) :
-	ListPage(settings, "recent", std::vector<std::string>(), menu),
+RecentPage::RecentPage(XfceRc* settings, Window* window) :
+	ListPage(settings, "recent", std::vector<std::string>(), window),
 	m_max_items(10)
 {
 	// Prevent going over max
@@ -84,7 +84,7 @@ void RecentPage::clear_menu()
 	{
 		model.remove_first_item();
 	}
-	get_menu()->set_modified();
+	get_window()->set_modified();
 }
 
 //-----------------------------------------------------------------------------

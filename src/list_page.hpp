@@ -37,7 +37,7 @@ class LauncherView;
 class ListPage : public Page
 {
 public:
-	ListPage(XfceRc* settings, const gchar* key, const std::vector<std::string>& default_desktop_ids, Menu* menu);
+	ListPage(XfceRc* settings, const gchar* key, const std::vector<std::string>& default_desktop_ids, Window* window);
 	~ListPage();
 
 	bool contains(Launcher* launcher) const;

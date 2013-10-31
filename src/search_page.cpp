@@ -19,7 +19,7 @@
 #include "launcher.hpp"
 #include "launcher_model.hpp"
 #include "launcher_view.hpp"
-#include "menu.hpp"
+#include "window.hpp"
 
 extern "C"
 {
@@ -30,16 +30,16 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-SearchPage::SearchPage(Menu* menu) :
-	Page(menu),
+SearchPage::SearchPage(Window* window) :
+	Page(window),
 	m_filter_model(NULL),
 	m_sort_model(NULL),
 	m_current_results(NULL)
 {
 	get_view()->set_selection_mode(GTK_SELECTION_BROWSE);
 
-	g_signal_connect(menu->get_search_entry(), "icon-release", G_CALLBACK(SearchPage::clear_search_slot), this);
-	g_signal_connect(menu->get_search_entry(), "key-press-event", G_CALLBACK(SearchPage::search_entry_key_press_slot), this);
+	g_signal_connect(window->get_search_entry(), "icon-release", G_CALLBACK(SearchPage::clear_search_slot), this);
+	g_signal_connect(window->get_search_entry(), "key-press-event", G_CALLBACK(SearchPage::search_entry_key_press_slot), this);
 }
 
 //-----------------------------------------------------------------------------

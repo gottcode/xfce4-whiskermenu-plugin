@@ -69,7 +69,6 @@ add_library(whiskermenu MODULE
 	launcher_model.cpp
 	launcher_view.cpp
 	list_page.cpp
-	menu.cpp
 	page.cpp
 	panel_plugin.cpp
 	query.cpp
@@ -77,7 +76,8 @@ add_library(whiskermenu MODULE
 	register_plugin.c
 	resizer_widget.cpp
 	search_page.cpp
-	section_button.cpp)
+	section_button.cpp
+	window.cpp)
 
 target_link_libraries(whiskermenu
 	${exo_LIBRARIES}

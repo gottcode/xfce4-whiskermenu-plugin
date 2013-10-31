@@ -20,7 +20,7 @@
 #include "launcher.hpp"
 #include "launcher_model.hpp"
 #include "launcher_view.hpp"
-#include "menu.hpp"
+#include "window.hpp"
 
 #include <algorithm>
 
@@ -40,10 +40,10 @@ static const std::string default_favorites[4] =
 
 //-----------------------------------------------------------------------------
 
-FavoritesPage::FavoritesPage(XfceRc* settings, Menu* menu) :
+FavoritesPage::FavoritesPage(XfceRc* settings, Window* window) :
 	ListPage(settings, "favorites",
 	std::vector<std::string>(default_favorites, default_favorites + 4),
-	menu)
+	window)
 {
 	get_view()->set_reorderable(true);
 }
@@ -113,7 +113,7 @@ void FavoritesPage::sort(std::vector<Launcher*>& items) const
 	const std::vector<std::string>& desktop_ids = get_desktop_ids();
 	for (std::vector<std::string>::const_iterator i = desktop_ids.begin(), end = desktop_ids.end(); i != end; ++i)
 	{
-		Launcher* launcher = get_menu()->get_applications()->get_application(*i);
+		Launcher* launcher = get_window()->get_applications()->get_application(*i);
 		if (!launcher)
 		{
 			continue;

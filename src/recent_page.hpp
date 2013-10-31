@@ -28,7 +28,7 @@ class LauncherView;
 class RecentPage : public ListPage
 {
 public:
-	RecentPage(XfceRc* settings, Menu* menu);
+	RecentPage(XfceRc* settings, Window* window);
 
 	void add(Launcher* launcher);
 

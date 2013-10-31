@@ -20,8 +20,8 @@
 #include "launcher.hpp"
 #include "launcher_model.hpp"
 #include "launcher_view.hpp"
-#include "menu.hpp"
 #include "recent_page.hpp"
+#include "window.hpp"
 
 extern "C"
 {
@@ -32,8 +32,8 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-Page::Page(Menu* menu) :
-	m_menu(menu),
+Page::Page(Window* window) :
+	m_window(window),
 	m_selected_path(NULL)
 {
 	// Create view
@@ -41,7 +41,7 @@ Page::Page(Menu* menu) :
 	g_signal_connect(m_view->get_widget(), "button-press-event", G_CALLBACK(Page::view_button_press_event_slot), this);
 	g_signal_connect(m_view->get_widget(), "popup-menu", G_CALLBACK(Page::view_popup_menu_event_slot), this);
 	g_signal_connect(m_view->get_widget(), "row-activated", G_CALLBACK(Page::launcher_activated_slot), this);
-	g_signal_connect_swapped(m_view->get_widget(), "start-interactive-search", G_CALLBACK(gtk_widget_grab_focus), m_menu->get_search_entry());
+	g_signal_connect_swapped(m_view->get_widget(), "start-interactive-search", G_CALLBACK(gtk_widget_grab_focus), m_window->get_search_entry());
 
 	// Add scrolling to view
 	m_widget = gtk_scrolled_window_new(NULL, NULL);
@@ -124,11 +124,11 @@ void Page::launcher_activated(GtkTreeView* view, GtkTreePath* path)
 	// Add to recent
 	if (remember_launcher(launcher))
 	{
-		m_menu->get_recent()->add(launcher);
+		m_window->get_recent()->add(launcher);
 	}
 
 	// Hide window
-	m_menu->hide();
+	m_window->hide();
 
 	// Execute app
 	launcher->run(gtk_widget_get_screen(GTK_WIDGET(view)));
@@ -189,7 +189,7 @@ void Page::create_context_menu(GtkTreeIter* iter, GdkEventButton* event)
 	menuitem = gtk_separator_menu_item_new();
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
-	if (!m_menu->get_favorites()->contains(launcher))
+	if (!m_window->get_favorites()->contains(launcher))
 	{
 		menuitem = gtk_image_menu_item_new_with_label(_("Add to Favorites"));
 		GtkWidget* image = gtk_image_new_from_icon_name("stock_add-bookmark", GTK_ICON_SIZE_MENU);
@@ -359,8 +359,8 @@ void Page::add_selected_to_favorites()
 {
 	Launcher* launcher = get_selected_launcher();
 	g_assert(launcher != NULL);
-	m_menu->get_favorites()->add(launcher);
-	m_menu->set_modified();
+	m_window->get_favorites()->add(launcher);
+	m_window->set_modified();
 }
 
 //-----------------------------------------------------------------------------
@@ -369,8 +369,8 @@ void Page::remove_selected_from_favorites()
 {
 	Launcher* launcher = get_selected_launcher();
 	g_assert(launcher != NULL);
-	m_menu->get_favorites()->remove(launcher);
-	m_menu->set_modified();
+	m_window->get_favorites()->remove(launcher);
+	m_window->set_modified();
 }
 
 //-----------------------------------------------------------------------------

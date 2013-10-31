@@ -20,8 +20,8 @@
 #include "launcher.hpp"
 #include "launcher_model.hpp"
 #include "launcher_view.hpp"
-#include "menu.hpp"
 #include "section_button.hpp"
+#include "window.hpp"
 
 #include <algorithm>
 
@@ -38,8 +38,8 @@ static bool f_load_hierarchy = false;
 
 //-----------------------------------------------------------------------------
 
-ApplicationsPage::ApplicationsPage(Menu* menu) :
-	Page(menu),
+ApplicationsPage::ApplicationsPage(Window* window) :
+	Page(window),
 	m_garcon_menu(NULL),
 	m_all_button(NULL),
 	m_model(NULL),
@@ -174,7 +174,7 @@ void ApplicationsPage::load_applications()
 	load_categories();
 
 	// Update menu items of other panels
-	get_menu()->set_items();
+	get_window()->set_items();
 
 	m_loaded = true;
 }
@@ -194,7 +194,7 @@ void ApplicationsPage::clear_applications()
 	m_categories.clear();
 
 	// Free menu items
-	get_menu()->unset_items();
+	get_window()->unset_items();
 	unset_model();
 
 	for (std::map<std::string, Launcher*>::iterator i = m_items.begin(), end = m_items.end(); i != end; ++i)
@@ -322,7 +322,7 @@ void ApplicationsPage::load_categories()
 	}
 
 	// Add category buttons to window
-	get_menu()->set_categories(category_buttons);
+	get_window()->set_categories(category_buttons);
 }
 
 //-----------------------------------------------------------------------------
