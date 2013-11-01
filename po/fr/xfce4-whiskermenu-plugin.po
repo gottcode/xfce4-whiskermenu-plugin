@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-09 22:00+0000\n"
-"PO-Revision-Date: 2013-10-27 09:22+0000\n"
+"PO-Revision-Date: 2013-10-30 20:58+0000\n"
 "Last-Translator: Pingax <pingax@gmail.com>\n"
 "Language-Team: French (France) (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/fr_FR/)\n"
 "MIME-Version: 1.0\n"
@@ -33,14 +33,12 @@ msgid "_Appearance"
 msgstr "_Apparence"
 
 #: src/configuration_dialog.cpp:66
-#, fuzzy
 msgid "_Panel Button"
-msgstr "Bouton du panneau"
+msgstr "Bouton du _panneau"
 
 #: src/configuration_dialog.cpp:67
-#, fuzzy
 msgid "_Behavior"
-msgstr "Comportement"
+msgstr "_Comportement"
 
 #: src/configuration_dialog.cpp:68
 msgid "_Commands"
@@ -60,11 +58,11 @@ msgstr "Montrer les _descriptions des applications"
 
 #: src/configuration_dialog.cpp:277
 msgid "Position _search entry next to panel button"
-msgstr ""
+msgstr "Positionner le champ de _recherche à côté du bouton du panneau"
 
 #: src/configuration_dialog.cpp:283
 msgid "Position commands next to search _entry"
-msgstr ""
+msgstr "Positionner les commandes à côté du _champ de recherche"
 
 #: src/configuration_dialog.cpp:293
 msgid "Ite_m icon size:"
@@ -84,7 +82,7 @@ msgstr "Icône"
 
 #: src/configuration_dialog.cpp:355
 msgid "Title"
-msgstr "Texte"
+msgstr "Titre"
 
 #: src/configuration_dialog.cpp:356
 msgid "Icon and title"
@@ -104,30 +102,27 @@ msgstr "C_hanger de catégories en survolant"
 
 #: src/configuration_dialog.cpp:415
 msgid "Load menu hie_rarchy"
-msgstr ""
+msgstr "Charger la hié_rarchie des menus"
 
 #: src/configuration_dialog.cpp:421
 msgid "Include _favorites in recently used"
-msgstr ""
+msgstr "Inclure les _favoris dans les éléments récemment utilisés"
 
 #: src/configuration_dialog.cpp:427
 msgid "Display recently _used by default"
-msgstr ""
+msgstr "Afficher les éléments récemment _utilisés par défaut"
 
 #: src/configuration_dialog.cpp:452
-#, fuzzy
 msgid "_Settings:"
-msgstr "Tous les paramètres"
+msgstr "_Paramètres :"
 
 #: src/configuration_dialog.cpp:467
-#, fuzzy
 msgid "Lock _Screen:"
-msgstr "Écran de verrouillage"
+msgstr "Verrouiller _l'écran :"
 
 #: src/configuration_dialog.cpp:482
-#, fuzzy
 msgid "Log _Out:"
-msgstr "Déconnexion"
+msgstr "Se _déconnecter :"
 
 #: src/favorites_page.cpp:89
 msgid "Sort Alphabetically A-Z"
