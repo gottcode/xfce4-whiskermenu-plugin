@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-31 20:34+0000\n"
-"PO-Revision-Date: 2013-10-27 09:22+0000\n"
+"PO-Revision-Date: 2013-10-30 20:58+0000\n"
 "Last-Translator: Pingax <pingax@gmail.com>\n"
 "Language-Team: French (France) (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/fr_FR/)\n"
@@ -59,7 +59,7 @@ msgstr "Affichage"
 
 #: ../panel-plugin/configuration-dialog.cpp:428
 msgid "Display recently _used by default"
-msgstr ""
+msgstr "Afficher les éléments récemment _utilisés par défaut"
 
 #: ../panel-plugin/launcher.cpp:259
 #, c-format
@@ -92,7 +92,7 @@ msgstr "Icône et texte"
 
 #: ../panel-plugin/configuration-dialog.cpp:422
 msgid "Include _favorites in recently used"
-msgstr ""
+msgstr "Inclure les _favoris dans les éléments récemment utilisés"
 
 #: ../panel-plugin/configuration-dialog.cpp:294
 msgid "Ite_m icon size:"
@@ -108,25 +108,23 @@ msgstr "Plus grand"
 
 #: ../panel-plugin/configuration-dialog.cpp:416
 msgid "Load menu hie_rarchy"
-msgstr ""
+msgstr "Charger la hié_rarchie des menus"
 
 #: ../panel-plugin/window.cpp:100
 msgid "Lock Screen"
 msgstr "Écran de verrouillage"
 
 #: ../panel-plugin/configuration-dialog.cpp:468
-#, fuzzy
 msgid "Lock _Screen:"
-msgstr "Écran de verrouillage"
+msgstr "Verrouiller _l'écran :"
 
 #: ../panel-plugin/window.cpp:103
 msgid "Log Out"
 msgstr "Déconnexion"
 
 #: ../panel-plugin/configuration-dialog.cpp:483
-#, fuzzy
 msgid "Log _Out:"
-msgstr "Déconnexion"
+msgstr "Se _déconnecter :"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Normal"
@@ -134,11 +132,11 @@ msgstr "Normal"
 
 #: ../panel-plugin/configuration-dialog.cpp:278
 msgid "Position _search entry next to panel button"
-msgstr ""
+msgstr "Positionner le champ de _recherche à côté du bouton du panneau"
 
 #: ../panel-plugin/configuration-dialog.cpp:284
 msgid "Position commands next to search _entry"
-msgstr ""
+msgstr "Positionner les commandes à côté du _champ de recherche"
 
 #: ../panel-plugin/window.cpp:123
 msgid "Recently Used"
@@ -186,7 +184,7 @@ msgstr "C_hanger de catégories en survolant"
 
 #: ../panel-plugin/configuration-dialog.cpp:356
 msgid "Title"
-msgstr "Texte"
+msgstr "Titre"
 
 #: ../panel-plugin/page.cpp:304
 msgid "Unable to add launcher to desktop."
@@ -214,9 +212,8 @@ msgid "_Appearance"
 msgstr "_Apparence"
 
 #: ../panel-plugin/configuration-dialog.cpp:68
-#, fuzzy
 msgid "_Behavior"
-msgstr "Comportement"
+msgstr "_Comportement"
 
 #: ../panel-plugin/configuration-dialog.cpp:69
 msgid "_Commands"
@@ -227,14 +224,12 @@ msgid "_Icon:"
 msgstr "_Icône :"
 
 #: ../panel-plugin/configuration-dialog.cpp:67
-#, fuzzy
 msgid "_Panel Button"
-msgstr "Bouton du panneau"
+msgstr "Bouton du _panneau"
 
 #: ../panel-plugin/configuration-dialog.cpp:453
-#, fuzzy
 msgid "_Settings:"
-msgstr "Tous les paramètres"
+msgstr "_Paramètres :"
 
 #: ../panel-plugin/configuration-dialog.cpp:367
 msgid "_Title:"
