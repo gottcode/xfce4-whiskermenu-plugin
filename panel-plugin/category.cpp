@@ -22,6 +22,11 @@
 
 #include <algorithm>
 
+extern "C"
+{
+#include <glib/gi18n.h>
+}
+
 using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
@@ -44,21 +49,20 @@ Category::Category(GarconMenuDirectory* directory) :
 	m_has_separators(false),
 	m_has_subcategories(false)
 {
-	// Fetch icon
-	const gchar* icon = garcon_menu_directory_get_icon_name(directory);
-	if (G_UNLIKELY(!icon))
+	const gchar* icon = NULL;
+	const gchar* text = NULL;
+	if (directory)
 	{
-		icon = "";
+		icon = garcon_menu_directory_get_icon_name(directory);
+		text = garcon_menu_directory_get_name(directory);
 	}
-	set_icon(icon);
-
-	// Fetch text
-	const gchar* text = garcon_menu_directory_get_name(directory);
-	if (G_UNLIKELY(!text))
+	else
 	{
-		text = "";
+		icon = "applications-other";
+		text = _("All");
 	}
-	set_text(text);
+	set_icon(icon ? icon : "");
+	set_text(text ? text : "");
 }
 
 //-----------------------------------------------------------------------------

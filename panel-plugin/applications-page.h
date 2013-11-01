@@ -46,11 +46,6 @@ public:
 
 	Launcher* get_application(const std::string& desktop_id) const;
 
-	GtkTreeModel* get_model() const
-	{
-		return m_model;
-	}
-
 	void invalidate_applications();
 	void load_applications();
 
@@ -64,14 +59,11 @@ private:
 	void load_menu(GarconMenu* menu, Category* parent_category);
 	void load_menu_item(GarconMenuItem* menu_item, Category* category);
 	void load_categories();
-	void unset_model();
 
 private:
 	GarconMenu* m_garcon_menu;
-	SectionButton* m_all_button;
 	std::vector<Category*> m_categories;
 	std::map<std::string, Launcher*> m_items;
-	GtkTreeModel* m_model;
 	bool m_loaded;
 
 

@@ -19,17 +19,11 @@
 
 #include "category.h"
 #include "launcher.h"
-#include "launcher-model.h"
 #include "launcher-view.h"
 #include "section-button.h"
 #include "window.h"
 
 #include <algorithm>
-
-extern "C"
-{
-#include <libxfce4util/libxfce4util.h>
-}
 
 using namespace WhiskerMenu;
 
@@ -42,8 +36,6 @@ static bool f_load_hierarchy = false;
 ApplicationsPage::ApplicationsPage(Window* window) :
 	Page(window),
 	m_garcon_menu(NULL),
-	m_all_button(NULL),
-	m_model(NULL),
 	m_loaded(false)
 {
 	// Set desktop environment for applications
@@ -94,20 +86,15 @@ void ApplicationsPage::apply_filter(GtkToggleButton* togglebutton)
 			break;
 		}
 	}
+	if (!category)
+	{
+		return;
+	}
 
 	// Apply filter
-	if (category)
-	{
-		get_view()->unset_model();
-		get_view()->set_fixed_height_mode(!category->has_separators());
-		get_view()->set_model(category->get_model());
-	}
-	else
-	{
-		get_view()->unset_model();
-		get_view()->set_fixed_height_mode(true);
-		get_view()->set_model(m_model);
-	}
+	get_view()->unset_model();
+	get_view()->set_fixed_height_mode(!category->has_separators());
+	get_view()->set_model(category->get_model());
 }
 
 //-----------------------------------------------------------------------------
@@ -151,25 +138,17 @@ void ApplicationsPage::load_applications()
 		std::sort(m_categories.begin(), m_categories.end(), &Element::less_than);
 	}
 
-	// Create sorted list of menu items
-	std::vector<Launcher*> sorted_items;
-	sorted_items.reserve(m_items.size());
+	// Create all items category
+	Category* category = new Category(NULL);
 	for (std::map<std::string, Launcher*>::const_iterator i = m_items.begin(), end = m_items.end(); i != end; ++i)
 	{
-		sorted_items.push_back(i->second);
+		category->append_item(i->second);
 	}
-	std::sort(sorted_items.begin(), sorted_items.end(), &Element::less_than);
+	category->sort();
+	m_categories.insert(m_categories.begin(), category);
 
-	// Add all items to model
-	LauncherModel model;
-	for (std::vector<Launcher*>::const_iterator i = sorted_items.begin(), end = sorted_items.end(); i != end; ++i)
-	{
-		model.append_item(*i);
-	}
-	m_model = model.get_model();
-	g_object_ref(m_model);
 	get_view()->set_fixed_height_mode(true);
-	get_view()->set_model(m_model);
+	get_view()->set_model(category->get_model());
 
 	// Update filters
 	load_categories();
@@ -185,9 +164,6 @@ void ApplicationsPage::load_applications()
 void ApplicationsPage::clear_applications()
 {
 	// Free categories
-	delete m_all_button;
-	m_all_button = NULL;
-
 	for (std::vector<Category*>::iterator i = m_categories.begin(), end = m_categories.end(); i != end; ++i)
 	{
 		delete *i;
@@ -196,7 +172,7 @@ void ApplicationsPage::clear_applications()
 
 	// Free menu items
 	get_window()->unset_items();
-	unset_model();
+	get_view()->unset_model();
 
 	for (std::map<std::string, Launcher*>::iterator i = m_items.begin(), end = m_items.end(); i != end; ++i)
 	{
@@ -309,11 +285,6 @@ void ApplicationsPage::load_categories()
 {
 	std::vector<SectionButton*> category_buttons;
 
-	// Add button for all applications
-	m_all_button = new SectionButton("applications-other", _("All"));
-	g_signal_connect(m_all_button->get_button(), "toggled", G_CALLBACK(ApplicationsPage::apply_filter_slot), this);
-	category_buttons.push_back(m_all_button);
-
 	// Add buttons for categories
 	for (std::vector<Category*>::const_iterator i = m_categories.begin(), end = m_categories.end(); i != end; ++i)
 	{
@@ -324,17 +295,6 @@ void ApplicationsPage::load_categories()
 
 	// Add category buttons to window
 	get_window()->set_categories(category_buttons);
-}
-
-//-----------------------------------------------------------------------------
-
-void ApplicationsPage::unset_model()
-{
-	if (m_model)
-	{
-		g_object_unref(m_model);
-		m_model = NULL;
-	}
 }
 
 //-----------------------------------------------------------------------------
