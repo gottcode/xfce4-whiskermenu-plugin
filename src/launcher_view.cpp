@@ -181,7 +181,7 @@ void LauncherView::reload_icon_size()
 	// Force exo to reload SVG icons
 	int size = 0;
 	g_object_get(m_icon_renderer, "size", &size, NULL);
-	if (size != f_icon_size)
+	if (size != f_icon_size.get_size())
 	{
 		gtk_tree_view_remove_column(m_view, m_column);
 		create_column();
