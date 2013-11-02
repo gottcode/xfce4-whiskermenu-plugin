@@ -67,11 +67,6 @@ public:
 
 	int search(const Query& query) const;
 
-	static bool get_show_name();
-	static bool get_show_description();
-	static void set_show_name(bool show);
-	static void set_show_description(bool show);
-
 private:
 	Launcher(const Launcher& launcher);
 	Launcher& operator=(const Launcher& launcher);

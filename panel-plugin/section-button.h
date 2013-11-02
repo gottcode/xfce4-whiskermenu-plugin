@@ -59,11 +59,6 @@ public:
 
 	void reload_icon_size();
 
-	static bool get_hover_activate();
-	static void set_hover_activate(bool hover_activate);
-	static int get_icon_size();
-	static void set_icon_size(const int size);
-
 private:
 	GtkRadioButton* m_button;
 	GtkWidget* m_icon;

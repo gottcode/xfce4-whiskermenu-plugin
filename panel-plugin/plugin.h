@@ -49,27 +49,10 @@ public:
 		ShowIconAndText = ShowIcon | ShowText
 	};
 
-	Window* get_window() const
-	{
-		return m_window;
-	}
-
-	ButtonStyle get_button_style() const
-	{
-		return ButtonStyle(m_button_icon_visible | (m_button_title_visible << 1));
-	}
-
-	std::string get_button_title() const
-	{
-		return m_button_title;
-	}
-
+	ButtonStyle get_button_style() const;
+	std::string get_button_title() const;
 	static std::string get_button_title_default();
-
-	std::string get_button_icon_name() const
-	{
-		return m_button_icon_name;
-	}
+	std::string get_button_icon_name() const;
 
 	void reload();
 	void set_button_style(ButtonStyle style);
@@ -90,11 +73,6 @@ private:
 private:
 	XfcePanelPlugin* m_plugin;
 	Window* m_window;
-
-	std::string m_button_title;
-	std::string m_button_icon_name;
-	bool m_button_title_visible;
-	bool m_button_icon_visible;
 
 	GtkWidget* m_button;
 	GtkBox* m_button_box;

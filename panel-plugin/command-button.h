@@ -38,7 +38,7 @@ class CommandButton
 	};
 
 public:
-	CommandButton(const gchar* icon, const gchar* text, const std::string& command, const std::string& error_text);
+	CommandButton(const gchar* icon, const gchar* text, std::string& command, const std::string& error_text);
 	~CommandButton();
 
 	GtkWidget* get_widget() const
@@ -60,7 +60,7 @@ private:
 
 private:
 	GtkButton* m_button;
-	std::string m_command;
+	std::string& m_command;
 	std::string m_error_text;
 	Status m_status;
 

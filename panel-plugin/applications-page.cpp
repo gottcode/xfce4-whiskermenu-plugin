@@ -21,15 +21,12 @@
 #include "launcher.h"
 #include "launcher-view.h"
 #include "section-button.h"
+#include "settings.h"
 #include "window.h"
 
 #include <algorithm>
 
 using namespace WhiskerMenu;
-
-//-----------------------------------------------------------------------------
-
-static bool f_load_hierarchy = false;
 
 //-----------------------------------------------------------------------------
 
@@ -129,7 +126,7 @@ void ApplicationsPage::load_applications()
 	}
 
 	// Sort items and categories
-	if (!f_load_hierarchy)
+	if (!wm_settings->load_hierarchy)
 	{
 		for (std::vector<Category*>::const_iterator i = m_categories.begin(), end = m_categories.end(); i != end; ++i)
 		{
@@ -210,7 +207,7 @@ void ApplicationsPage::load_menu(GarconMenu* menu, Category* parent_category)
 			category = new Category(directory);
 			m_categories.push_back(category);
 		}
-		else if (!f_load_hierarchy)
+		else if (!wm_settings->load_hierarchy)
 		{
 			category = parent_category;
 		}
@@ -232,7 +229,7 @@ void ApplicationsPage::load_menu(GarconMenu* menu, Category* parent_category)
 		{
 			load_menu(GARCON_MENU(li->data), category);
 		}
-		else if (GARCON_IS_MENU_SEPARATOR(li->data) && f_load_hierarchy && category)
+		else if (GARCON_IS_MENU_SEPARATOR(li->data) && wm_settings->load_hierarchy && category)
 		{
 			category->append_separator();
 		}
@@ -295,20 +292,6 @@ void ApplicationsPage::load_categories()
 
 	// Add category buttons to window
 	get_window()->set_categories(category_buttons);
-}
-
-//-----------------------------------------------------------------------------
-
-bool ApplicationsPage::get_load_hierarchy()
-{
-	return f_load_hierarchy;
-}
-
-//-----------------------------------------------------------------------------
-
-void ApplicationsPage::set_load_hierarchy(bool load)
-{
-	f_load_hierarchy = load;
 }
 
 //-----------------------------------------------------------------------------

@@ -25,6 +25,7 @@
 #include "resizer-widget.h"
 #include "search-page.h"
 #include "section-button.h"
+#include "settings.h"
 
 extern "C"
 {
@@ -39,13 +40,7 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-bool Window::m_display_recent = false;
-bool Window::m_position_search_alternate = false;
-bool Window::m_position_commands_alternate = false;
-
-//-----------------------------------------------------------------------------
-
-Window::Window(XfceRc* settings) :
+Window::Window() :
 	m_window(NULL),
 	m_layout_left(true),
 	m_layout_bottom(true),
@@ -55,8 +50,8 @@ Window::Window(XfceRc* settings) :
 {
 	m_geometry.x = 0;
 	m_geometry.y = 0;
-	m_geometry.width = 400;
-	m_geometry.height = 500;
+	m_geometry.width = wm_settings->menu_width;
+	m_geometry.height = wm_settings->menu_height;
 
 	// Create the window
 	m_window = GTK_WINDOW(gtk_window_new(GTK_WINDOW_TOPLEVEL));
@@ -94,13 +89,16 @@ Window::Window(XfceRc* settings) :
 	g_free(username);
 
 	// Create action buttons
-	m_settings_button = new CommandButton("preferences-desktop", _("All Settings"), "xfce4-settings-manager", _("Failed to open settings manager."));
+	m_settings_button = new CommandButton("preferences-desktop", _("All Settings"),
+			wm_settings->command_settings, _("Failed to open settings manager."));
 	g_signal_connect_swapped(m_settings_button->get_widget(), "clicked", G_CALLBACK(Window::hide_slot), this);
 
-	m_lockscreen_button = new CommandButton("system-lock-screen", _("Lock Screen"), "xflock4", _("Failed to lock screen."));
+	m_lockscreen_button = new CommandButton("system-lock-screen", _("Lock Screen"),
+			wm_settings->command_lockscreen, _("Failed to lock screen."));
 	g_signal_connect_swapped(m_lockscreen_button->get_widget(), "clicked", G_CALLBACK(Window::hide_slot), this);
 
-	m_logout_button = new CommandButton("system-log-out", _("Log Out"), "xfce4-session-logout", _("Failed to log out."));
+	m_logout_button = new CommandButton("system-log-out", _("Log Out"),
+			wm_settings->command_logout, _("Failed to log out."));
 	g_signal_connect_swapped(m_logout_button->get_widget(), "clicked", G_CALLBACK(Window::hide_slot), this);
 
 	m_resizer = new ResizerWidget(m_window);
@@ -112,13 +110,13 @@ Window::Window(XfceRc* settings) :
 	g_signal_connect(m_search_entry, "changed", G_CALLBACK(Window::search_slot), this);
 
 	// Create favorites
-	m_favorites = new FavoritesPage(settings, this);
+	m_favorites = new FavoritesPage(this);
 
 	m_favorites_button = new SectionButton("user-bookmarks", _("Favorites"));
 	g_signal_connect(m_favorites_button->get_button(), "toggled", G_CALLBACK(Window::favorites_toggled_slot), this);
 
 	// Create recent
-	m_recent = new RecentPage(settings, this);
+	m_recent = new RecentPage(this);
 
 	m_recent_button = new SectionButton("document-open-recent", _("Recently Used"));
 	m_recent_button->set_group(m_favorites_button->get_group());
@@ -131,7 +129,7 @@ Window::Window(XfceRc* settings) :
 	m_search_results = new SearchPage(this);
 
 	// Handle default page
-	if (!m_display_recent)
+	if (!wm_settings->display_recent)
 	{
 		m_default_button = m_favorites_button;
 		m_default_page = m_favorites;
@@ -213,11 +211,6 @@ Window::Window(XfceRc* settings) :
 	gtk_widget_show(frame);
 
 	// Resize to last known size
-	if (settings)
-	{
-		m_geometry.width = std::max(300, xfce_rc_read_int_entry(settings, "menu-width", m_geometry.width));
-		m_geometry.height = std::max(400, xfce_rc_read_int_entry(settings, "menu-height", m_geometry.height));
-	}
 	gtk_window_set_default_size(m_window, m_geometry.width, m_geometry.height);
 
 	g_object_ref_sink(m_window);
@@ -250,12 +243,12 @@ void Window::hide()
 	gtk_widget_hide(GTK_WIDGET(m_window));
 
 	// Update default page
-	if (m_display_recent && (m_default_page == m_favorites))
+	if (wm_settings->display_recent && (m_default_page == m_favorites))
 	{
 		m_default_button = m_recent_button;
 		m_default_page = m_recent;
 	}
-	else if (!m_display_recent && (m_default_page == m_recent))
+	else if (!wm_settings->display_recent && (m_default_page == m_recent))
 	{
 		m_default_button = m_favorites_button;
 		m_default_page = m_favorites;
@@ -411,10 +404,10 @@ void Window::show(GtkWidget* parent, bool horizontal)
 	{
 		layout_left = !layout_left;
 	}
-	if (m_layout_commands_alternate != m_position_commands_alternate)
+	if (m_layout_commands_alternate != wm_settings->position_commands_alternate)
 	{
 		m_layout_left = !layout_left;
-		m_layout_commands_alternate = m_position_commands_alternate;
+		m_layout_commands_alternate = wm_settings->position_commands_alternate;
 		if (m_layout_commands_alternate)
 		{
 			g_object_ref(m_commands_align);
@@ -503,10 +496,10 @@ void Window::show(GtkWidget* parent, bool horizontal)
 		}
 	}
 
-	if ((layout_bottom != m_layout_bottom) || (m_layout_search_alternate != m_position_search_alternate))
+	if ((layout_bottom != m_layout_bottom) || (m_layout_search_alternate != wm_settings->position_search_alternate))
 	{
 		m_layout_bottom = layout_bottom;
-		m_layout_search_alternate = m_position_search_alternate;
+		m_layout_search_alternate = wm_settings->position_search_alternate;
 		if (m_layout_bottom && m_layout_search_alternate)
 		{
 			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_title_box), 0);
@@ -540,16 +533,11 @@ void Window::show(GtkWidget* parent, bool horizontal)
 
 //-----------------------------------------------------------------------------
 
-void Window::save(XfceRc* settings)
+void Window::save()
 {
-	if (settings)
-	{
-		m_favorites->save(settings);
-		m_recent->save(settings);
-		xfce_rc_write_int_entry(settings, "menu-width", m_geometry.width);
-		xfce_rc_write_int_entry(settings, "menu-height", m_geometry.height);
-		m_modified = false;
-	}
+	wm_settings->menu_width = m_geometry.width;
+	wm_settings->menu_height = m_geometry.height;
+	m_modified = false;
 }
 
 //-----------------------------------------------------------------------------
@@ -618,94 +606,6 @@ bool Window::on_enter_notify_event(GdkEventCrossing* event)
 	}
 
 	return false;
-}
-
-//-----------------------------------------------------------------------------
-
-std::string Window::get_settings_command()
-{
-	return m_settings_button->get_command();
-}
-
-//-----------------------------------------------------------------------------
-
-std::string Window::get_lockscreen_command()
-{
-	return m_lockscreen_button->get_command();
-}
-
-//-----------------------------------------------------------------------------
-
-std::string Window::get_logout_command()
-{
-	return m_logout_button->get_command();
-}
-
-//-----------------------------------------------------------------------------
-
-void Window::set_settings_command(const std::string& command)
-{
-	m_settings_button->set_command(command);
-}
-
-//-----------------------------------------------------------------------------
-
-void Window::set_lockscreen_command(const std::string& command)
-{
-	m_lockscreen_button->set_command(command);
-}
-
-//-----------------------------------------------------------------------------
-
-void Window::set_logout_command(const std::string& command)
-{
-	m_logout_button->set_command(command);
-}
-
-//-----------------------------------------------------------------------------
-
-bool Window::get_display_recent()
-{
-	return m_display_recent;
-}
-
-//-----------------------------------------------------------------------------
-
-bool Window::get_position_search_alternate()
-{
-	return m_position_search_alternate;
-}
-
-//-----------------------------------------------------------------------------
-
-bool Window::get_position_commands_alternate()
-{
-	return m_position_commands_alternate;
-}
-
-//-----------------------------------------------------------------------------
-
-void Window::set_display_recent(bool display)
-{
-	m_display_recent = display;
-}
-
-//-----------------------------------------------------------------------------
-
-void Window::set_position_search_alternate(bool alternate)
-{
-	m_position_search_alternate = alternate;
-	if (!alternate)
-	{
-		m_position_commands_alternate = false;
-	}
-}
-
-//-----------------------------------------------------------------------------
-
-void Window::set_position_commands_alternate(bool alternate)
-{
-	m_position_commands_alternate = alternate && m_position_search_alternate;
 }
 
 //-----------------------------------------------------------------------------

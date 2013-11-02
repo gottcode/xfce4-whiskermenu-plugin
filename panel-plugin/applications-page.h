@@ -49,9 +49,6 @@ public:
 	void invalidate_applications();
 	void load_applications();
 
-	static bool get_load_hierarchy();
-	static void set_load_hierarchy(bool load);
-
 private:
 	void apply_filter(GtkToggleButton* togglebutton);
 	bool on_filter(GtkTreeModel* model, GtkTreeIter* iter);

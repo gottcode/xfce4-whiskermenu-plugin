@@ -18,7 +18,6 @@
 #ifndef WHISKERMENU_WINDOW_H
 #define WHISKERMENU_WINDOW_H
 
-#include <map>
 #include <string>
 #include <vector>
 
@@ -44,7 +43,7 @@ class SectionButton;
 class Window
 {
 public:
-	explicit Window(XfceRc* settings);
+	explicit Window();
 	~Window();
 
 	GtkWidget* get_widget() const
@@ -79,25 +78,11 @@ public:
 
 	void hide();
 	void show(GtkWidget* parent, bool horizontal);
-	void save(XfceRc* settings);
+	void save();
 	void set_categories(const std::vector<SectionButton*>& categories);
 	void set_items();
 	void set_modified();
 	void unset_items();
-
-	std::string get_settings_command();
-	std::string get_lockscreen_command();
-	std::string get_logout_command();
-	void set_settings_command(const std::string& command);
-	void set_lockscreen_command(const std::string& command);
-	void set_logout_command(const std::string& command);
-
-	static bool get_display_recent();
-	static bool get_position_search_alternate();
-	static bool get_position_commands_alternate();
-	static void set_display_recent(bool display);
-	static void set_position_search_alternate(bool alternate);
-	static void set_position_commands_alternate(bool alternate);
 
 private:
 	bool on_enter_notify_event(GdkEventCrossing* event);
@@ -153,10 +138,6 @@ private:
 	bool m_layout_search_alternate;
 	bool m_layout_commands_alternate;
 	bool m_modified;
-
-	static bool m_display_recent;
-	static bool m_position_search_alternate;
-	static bool m_position_commands_alternate;
 
 
 private:

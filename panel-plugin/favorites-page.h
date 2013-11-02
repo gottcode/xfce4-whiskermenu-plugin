@@ -28,12 +28,9 @@ class Launcher;
 class FavoritesPage : public ListPage
 {
 public:
-	FavoritesPage(XfceRc* settings, Window* window);
+	FavoritesPage(Window* window);
 
 	void add(Launcher* launcher);
-
-	static bool get_remember_favorites();
-	static void set_remember_favorites(bool remember);
 
 private:
 	void extend_context_menu(GtkWidget* menu);

@@ -20,22 +20,21 @@
 #include "launcher.h"
 #include "launcher-model.h"
 #include "launcher-view.h"
+#include "settings.h"
 #include "window.h"
 
 using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-RecentPage::RecentPage(XfceRc* settings, Window* window) :
-	ListPage(settings, "recent", std::vector<std::string>(), window),
+RecentPage::RecentPage(Window* window) :
+	ListPage(wm_settings->recent, window),
 	m_max_items(10)
 {
 	// Prevent going over max
-	if (size() > m_max_items)
+	if (wm_settings->recent.size() > m_max_items)
 	{
-		std::vector<std::string> desktop_ids = get_desktop_ids();
-		desktop_ids.erase(desktop_ids.begin() + m_max_items, desktop_ids.end());
-		set_desktop_ids(desktop_ids);
+		wm_settings->recent.erase(wm_settings->recent.begin() + m_max_items, wm_settings->recent.end());
 	}
 }
 
@@ -56,7 +55,7 @@ void RecentPage::add(Launcher* launcher)
 	model.prepend_item(launcher);
 
 	// Prevent going over max
-	while (size() > m_max_items)
+	while (wm_settings->recent.size() > m_max_items)
 	{
 		model.remove_last_item();
 	}
@@ -81,7 +80,7 @@ void RecentPage::extend_context_menu(GtkWidget* menu)
 void RecentPage::clear_menu()
 {
 	LauncherModel model(GTK_LIST_STORE(get_view()->get_model()));
-	for (size_t i = 0, count = size(); i < count; ++i)
+	for (size_t i = 0, count = wm_settings->recent.size(); i < count; ++i)
 	{
 		model.remove_first_item();
 	}

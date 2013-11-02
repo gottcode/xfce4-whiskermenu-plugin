@@ -29,7 +29,7 @@ class LauncherView;
 class RecentPage : public ListPage
 {
 public:
-	RecentPage(XfceRc* settings, Window* window);
+	RecentPage(Window* window);
 
 	void add(Launcher* launcher);
 

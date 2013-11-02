@@ -17,7 +17,7 @@
 
 #include "section-button.h"
 
-#include "icon-size.h"
+#include "settings.h"
 
 extern "C"
 {
@@ -27,9 +27,6 @@ extern "C"
 using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
-
-static bool f_hover_activate = false;
-static WhiskerMenu::IconSize f_icon_size(WhiskerMenu::IconSize::Smaller);
 
 static gboolean hover_timeout(GtkToggleButton* button)
 {
@@ -42,7 +39,7 @@ static gboolean hover_timeout(GtkToggleButton* button)
 
 static gboolean on_enter_notify_event(GtkWidget*, GdkEventCrossing*, GtkToggleButton* button)
 {
-	if (f_hover_activate && !gtk_toggle_button_get_active(button))
+	if (wm_settings->category_hover_activate && !gtk_toggle_button_get_active(button))
 	{
 		g_timeout_add(150, (GSourceFunc)hover_timeout, button);
 	}
@@ -81,35 +78,7 @@ SectionButton::~SectionButton()
 
 void SectionButton::reload_icon_size()
 {
-	xfce_panel_image_set_size(XFCE_PANEL_IMAGE(m_icon), f_icon_size.get_size());
-}
-
-//-----------------------------------------------------------------------------
-
-bool SectionButton::get_hover_activate()
-{
-	return f_hover_activate;
-}
-
-//-----------------------------------------------------------------------------
-
-void SectionButton::set_hover_activate(bool hover_activate)
-{
-	f_hover_activate = hover_activate;
-}
-
-//-----------------------------------------------------------------------------
-
-int SectionButton::get_icon_size()
-{
-	return f_icon_size;
-}
-
-//-----------------------------------------------------------------------------
-
-void SectionButton::set_icon_size(const int size)
-{
-	f_icon_size = size;
+	xfce_panel_image_set_size(XFCE_PANEL_IMAGE(m_icon), wm_settings->category_icon_size.get_size());
 }
 
 //-----------------------------------------------------------------------------

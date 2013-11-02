@@ -26,7 +26,7 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-CommandButton::CommandButton(const gchar* icon, const gchar* text, const std::string& command, const std::string& error_text) :
+CommandButton::CommandButton(const gchar* icon, const gchar* text, std::string& command, const std::string& error_text) :
 	m_command(command),
 	m_error_text(error_text),
 	m_status(Unchecked)

@@ -21,6 +21,7 @@
 #include "launcher.h"
 #include "launcher-model.h"
 #include "launcher-view.h"
+#include "settings.h"
 #include "window.h"
 
 #include <algorithm>
@@ -29,22 +30,8 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-static bool f_remember_favorites = true;
-
-static const std::string default_favorites[4] =
-{
-	"exo-terminal-emulator.desktop",
-	"exo-file-manager.desktop",
-	"exo-mail-reader.desktop",
-	"exo-web-browser.desktop"
-};
-
-//-----------------------------------------------------------------------------
-
-FavoritesPage::FavoritesPage(XfceRc* settings, Window* window) :
-	ListPage(settings, "favorites",
-	std::vector<std::string>(default_favorites, default_favorites + 4),
-	window)
+FavoritesPage::FavoritesPage(Window* window) :
+	ListPage(wm_settings->favorites, window)
 {
 	get_view()->set_reorderable(true);
 }
@@ -64,20 +51,6 @@ void FavoritesPage::add(Launcher* launcher)
 	// Add to list of items
 	LauncherModel model(GTK_LIST_STORE(get_view()->get_model()));
 	model.append_item(launcher);
-}
-
-//-----------------------------------------------------------------------------
-
-bool FavoritesPage::get_remember_favorites()
-{
-	return f_remember_favorites;
-}
-
-//-----------------------------------------------------------------------------
-
-void FavoritesPage::set_remember_favorites(bool remember)
-{
-	f_remember_favorites = remember;
 }
 
 //-----------------------------------------------------------------------------
@@ -104,15 +77,14 @@ void FavoritesPage::extend_context_menu(GtkWidget* menu)
 
 bool FavoritesPage::remember_launcher(Launcher* launcher)
 {
-	return f_remember_favorites ? true : !contains(launcher);
+	return wm_settings->favorites_in_recent ? true : !contains(launcher);
 }
 
 //-----------------------------------------------------------------------------
 
 void FavoritesPage::sort(std::vector<Launcher*>& items) const
 {
-	const std::vector<std::string>& desktop_ids = get_desktop_ids();
-	for (std::vector<std::string>::const_iterator i = desktop_ids.begin(), end = desktop_ids.end(); i != end; ++i)
+	for (std::vector<std::string>::const_iterator i = wm_settings->favorites.begin(), end = wm_settings->favorites.end(); i != end; ++i)
 	{
 		Launcher* launcher = get_window()->get_applications()->get_application(*i);
 		if (!launcher)
@@ -128,9 +100,10 @@ void FavoritesPage::sort(std::vector<Launcher*>& items) const
 
 void FavoritesPage::sort_ascending()
 {
-	std::vector<std::string> desktop_ids;
 	std::vector<Launcher*> items;
 	sort(items);
+
+	std::vector<std::string> desktop_ids;
 	for (std::vector<Launcher*>::const_iterator i = items.begin(), end = items.end(); i != end; ++i)
 	{
 		desktop_ids.push_back((*i)->get_desktop_id());
@@ -142,9 +115,10 @@ void FavoritesPage::sort_ascending()
 
 void FavoritesPage::sort_descending()
 {
-	std::vector<std::string> desktop_ids;
 	std::vector<Launcher*> items;
 	sort(items);
+
+	std::vector<std::string> desktop_ids;
 	for (std::vector<Launcher*>::const_reverse_iterator i = items.rbegin(), end = items.rend(); i != end; ++i)
 	{
 		desktop_ids.push_back((*i)->get_desktop_id());

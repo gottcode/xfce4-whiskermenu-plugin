@@ -17,8 +17,8 @@
 
 #include "launcher-view.h"
 
-#include "icon-size.h"
 #include "launcher-model.h"
+#include "settings.h"
 
 #include <algorithm>
 
@@ -31,8 +31,6 @@ extern "C"
 using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
-
-static IconSize f_icon_size(IconSize::Small);
 
 static gboolean is_separator(GtkTreeModel* model, GtkTreeIter* iter, gpointer)
 {
@@ -182,25 +180,11 @@ void LauncherView::reload_icon_size()
 	// Force exo to reload SVG icons
 	int size = 0;
 	g_object_get(m_icon_renderer, "size", &size, NULL);
-	if (size != f_icon_size.get_size())
+	if (size != wm_settings->launcher_icon_size.get_size())
 	{
 		gtk_tree_view_remove_column(m_view, m_column);
 		create_column();
 	}
-}
-
-//-----------------------------------------------------------------------------
-
-int LauncherView::get_icon_size()
-{
-	return f_icon_size;
-}
-
-//-----------------------------------------------------------------------------
-
-void LauncherView::set_icon_size(const int size)
-{
-	f_icon_size = size;
 }
 
 //-----------------------------------------------------------------------------
@@ -212,7 +196,7 @@ void LauncherView::create_column()
 	gtk_tree_view_column_set_visible(m_column, true);
 
 	m_icon_renderer = exo_cell_renderer_icon_new();
-	g_object_set(m_icon_renderer, "size", f_icon_size.get_size(), NULL);
+	g_object_set(m_icon_renderer, "size", wm_settings->launcher_icon_size.get_size(), NULL);
 	gtk_tree_view_column_pack_start(m_column, m_icon_renderer, false);
 	gtk_tree_view_column_add_attribute(m_column, m_icon_renderer, "icon", LauncherModel::COLUMN_ICON);
 

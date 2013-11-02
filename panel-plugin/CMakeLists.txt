@@ -78,6 +78,7 @@ add_library(whiskermenu MODULE
 	resizer-widget.cpp
 	search-page.cpp
 	section-button.cpp
+	settings.cpp
 	window.cpp)
 
 target_link_libraries(whiskermenu

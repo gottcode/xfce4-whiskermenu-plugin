@@ -62,9 +62,6 @@ public:
 
 	void reload_icon_size();
 
-	static int get_icon_size();
-	static void set_icon_size(const int size);
-
 private:
 	void create_column();
 	bool on_key_press_event(GdkEventKey* event);

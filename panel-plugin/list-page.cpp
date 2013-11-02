@@ -29,26 +29,10 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-ListPage::ListPage(XfceRc* rc, const gchar* key, const std::vector<std::string>& default_desktop_ids, Window* window) :
+ListPage::ListPage(std::vector<std::string>& desktop_ids, Window* window) :
 	Page(window),
-	m_key(key)
+	m_desktop_ids(desktop_ids)
 {
-	if (!rc || !xfce_rc_has_entry(rc, key))
-	{
-		m_desktop_ids = default_desktop_ids;
-		return;
-	}
-
-	gchar** values = xfce_rc_read_list_entry(rc, key, ",");
-	for (size_t i = 0; values[i] != NULL; ++i)
-	{
-		std::string desktop_id(values[i]);
-		if (std::find(m_desktop_ids.begin(), m_desktop_ids.end(), desktop_id) == m_desktop_ids.end())
-		{
-			m_desktop_ids.push_back(desktop_id);
-		}
-	}
-	g_strfreev(values);
 }
 
 //-----------------------------------------------------------------------------
@@ -77,23 +61,6 @@ void ListPage::remove(Launcher* launcher)
 {
 	LauncherModel model(GTK_LIST_STORE(get_view()->get_model()));
 	model.remove_item(launcher);
-}
-
-//-----------------------------------------------------------------------------
-
-void ListPage::save(XfceRc* settings)
-{
-	// Save list
-	std::string desktop_ids;
-	for (std::vector<std::string>::const_iterator i = m_desktop_ids.begin(), end = m_desktop_ids.end(); i != end; ++i)
-	{
-		if (!desktop_ids.empty())
-		{
-			desktop_ids += ",";
-		}
-		desktop_ids += *i;
-	}
-	xfce_rc_write_entry(settings, m_key, desktop_ids.c_str());
 }
 
 //-----------------------------------------------------------------------------

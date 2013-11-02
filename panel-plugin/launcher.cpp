@@ -18,6 +18,7 @@
 #include "launcher.h"
 
 #include "query.h"
+#include "settings.h"
 
 extern "C"
 {
@@ -26,11 +27,6 @@ extern "C"
 }
 
 using namespace WhiskerMenu;
-
-//-----------------------------------------------------------------------------
-
-static bool f_show_name = true;
-static bool f_show_description = true;
 
 //-----------------------------------------------------------------------------
 
@@ -131,8 +127,8 @@ Launcher::Launcher(GarconMenuItem* item) :
 
 	// Create display text
 	const gchar* direction = (gtk_widget_get_default_direction() != GTK_TEXT_DIR_RTL) ? "\342\200\216" : "\342\200\217";
-	m_display_name = (f_show_name || exo_str_is_empty(generic_name)) ? name : generic_name;
-	if (f_show_description)
+	m_display_name = (wm_settings->launcher_show_name || exo_str_is_empty(generic_name)) ? name : generic_name;
+	if (wm_settings->launcher_show_description)
 	{
 		const gchar* details = garcon_menu_item_get_comment(m_item);
 		if (!details)
@@ -275,7 +271,7 @@ int Launcher::search(const Query& query) const
 			match += 10;
 		}
 	}
-	if ((match == INT_MAX) && f_show_description)
+	if ((match == INT_MAX) && wm_settings->launcher_show_description)
 	{
 		match = query.match(m_search_comment);
 		if (match != INT_MAX)
@@ -285,34 +281,6 @@ int Launcher::search(const Query& query) const
 		}
 	}
 	return match;
-}
-
-//-----------------------------------------------------------------------------
-
-bool Launcher::get_show_name()
-{
-	return f_show_name;
-}
-
-//-----------------------------------------------------------------------------
-
-bool Launcher::get_show_description()
-{
-	return f_show_description;
-}
-
-//-----------------------------------------------------------------------------
-
-void Launcher::set_show_name(bool show)
-{
-	f_show_name = show;
-}
-
-//-----------------------------------------------------------------------------
-
-void Launcher::set_show_description(bool show)
-{
-	f_show_description = show;
 }
 
 //-----------------------------------------------------------------------------

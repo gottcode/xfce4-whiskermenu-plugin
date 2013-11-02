@@ -38,27 +38,17 @@ class LauncherView;
 class ListPage : public Page
 {
 public:
-	ListPage(XfceRc* settings, const gchar* key, const std::vector<std::string>& default_desktop_ids, Window* window);
+	ListPage(std::vector<std::string>& desktop_ids, Window* window);
 	~ListPage();
 
 	bool contains(Launcher* launcher) const;
-	size_t size() const
-	{
-		return m_desktop_ids.size();
-	}
 
 	virtual void add(Launcher* launcher)=0;
 	void remove(Launcher* launcher);
-	void save(XfceRc* settings);
 	void set_menu_items();
 	void unset_menu_items();
 
 protected:
-	const std::vector<std::string>& get_desktop_ids() const
-	{
-		return m_desktop_ids;
-	}
-
 	void set_desktop_ids(const std::vector<std::string>& desktop_ids);
 
 private:
@@ -67,8 +57,7 @@ private:
 	void on_row_deleted(GtkTreePath*);
 
 private:
-	const gchar* m_key;
-	std::vector<std::string> m_desktop_ids;
+	std::vector<std::string>& m_desktop_ids;
 
 
 private:
