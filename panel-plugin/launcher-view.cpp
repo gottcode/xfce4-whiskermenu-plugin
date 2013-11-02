@@ -17,7 +17,6 @@
 
 #include "launcher-view.h"
 
-#include "launcher-model.h"
 #include "settings.h"
 
 #include <algorithm>
@@ -35,7 +34,7 @@ using namespace WhiskerMenu;
 static gboolean is_separator(GtkTreeModel* model, GtkTreeIter* iter, gpointer)
 {
 	const gchar* text;
-	gtk_tree_model_get(model, iter, LauncherModel::COLUMN_TEXT, &text, -1);
+	gtk_tree_model_get(model, iter, LauncherView::COLUMN_TEXT, &text, -1);
 	return exo_str_is_empty(text);
 }
 
@@ -198,12 +197,12 @@ void LauncherView::create_column()
 	m_icon_renderer = exo_cell_renderer_icon_new();
 	g_object_set(m_icon_renderer, "size", wm_settings->launcher_icon_size.get_size(), NULL);
 	gtk_tree_view_column_pack_start(m_column, m_icon_renderer, false);
-	gtk_tree_view_column_add_attribute(m_column, m_icon_renderer, "icon", LauncherModel::COLUMN_ICON);
+	gtk_tree_view_column_add_attribute(m_column, m_icon_renderer, "icon", LauncherView::COLUMN_ICON);
 
 	GtkCellRenderer* text_renderer = gtk_cell_renderer_text_new();
 	g_object_set(text_renderer, "ellipsize", PANGO_ELLIPSIZE_END, NULL);
 	gtk_tree_view_column_pack_start(m_column, text_renderer, true);
-	gtk_tree_view_column_add_attribute(m_column, text_renderer, "markup", LauncherModel::COLUMN_TEXT);
+	gtk_tree_view_column_add_attribute(m_column, text_renderer, "markup", LauncherView::COLUMN_TEXT);
 
 	gtk_tree_view_column_set_sizing(m_column, GTK_TREE_VIEW_COLUMN_FIXED);
 

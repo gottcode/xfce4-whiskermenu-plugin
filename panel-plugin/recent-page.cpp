@@ -18,7 +18,6 @@
 #include "recent-page.h"
 
 #include "launcher.h"
-#include "launcher-model.h"
 #include "launcher-view.h"
 #include "settings.h"
 #include "window.h"
@@ -47,17 +46,32 @@ void RecentPage::add(Launcher* launcher)
 		return;
 	}
 
+	// Skip if already first launcher
+	if (!wm_settings->recent.empty() && (wm_settings->recent.front() == launcher->get_desktop_id()))
+	{
+		return;
+	}
+
 	// Remove item if already in list
 	remove(launcher);
 
 	// Prepend to list of items
-	LauncherModel model(GTK_LIST_STORE(get_view()->get_model()));
-	model.prepend_item(launcher);
+	GtkListStore* store = GTK_LIST_STORE(get_view()->get_model());
+	gtk_list_store_insert_with_values(
+			store, NULL, 0,
+			LauncherView::COLUMN_ICON, launcher->get_icon(),
+			LauncherView::COLUMN_TEXT, launcher->get_text(),
+			LauncherView::COLUMN_LAUNCHER, launcher,
+			-1);
 
 	// Prevent going over max
 	while (wm_settings->recent.size() > m_max_items)
 	{
-		model.remove_last_item();
+		GtkTreeIter iter;
+		if (gtk_tree_model_iter_nth_child(GTK_TREE_MODEL(store), &iter, NULL, wm_settings->recent.size() - 1))
+		{
+			gtk_list_store_remove(store, &iter);
+		}
 	}
 }
 
@@ -79,11 +93,7 @@ void RecentPage::extend_context_menu(GtkWidget* menu)
 
 void RecentPage::clear_menu()
 {
-	LauncherModel model(GTK_LIST_STORE(get_view()->get_model()));
-	for (size_t i = 0, count = wm_settings->recent.size(); i < count; ++i)
-	{
-		model.remove_first_item();
-	}
+	gtk_list_store_clear(GTK_LIST_STORE(get_view()->get_model()));
 	get_window()->set_modified();
 }
 

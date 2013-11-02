@@ -18,7 +18,6 @@
 #include "search-page.h"
 
 #include "launcher.h"
-#include "launcher-model.h"
 #include "launcher-view.h"
 #include "window.h"
 
@@ -146,7 +145,7 @@ void SearchPage::set_menu_items(GtkTreeModel* model)
 	while (valid)
 	{
 		Launcher* launcher = NULL;
-		gtk_tree_model_get(model, &iter, LauncherModel::COLUMN_LAUNCHER, &launcher, -1);
+		gtk_tree_model_get(model, &iter, LauncherView::COLUMN_LAUNCHER, &launcher, -1);
 		if (launcher)
 		{
 			m_launchers.push_back(launcher);
@@ -184,7 +183,7 @@ gboolean SearchPage::on_filter(GtkTreeModel* model, GtkTreeIter* iter, SearchPag
 
 	// Check if launcher search string contains text
 	Launcher* launcher = NULL;
-	gtk_tree_model_get(model, iter, LauncherModel::COLUMN_LAUNCHER, &launcher, -1);
+	gtk_tree_model_get(model, iter, LauncherView::COLUMN_LAUNCHER, &launcher, -1);
 	return launcher && (page->m_current_results->find(launcher) != page->m_current_results->end());
 }
 
@@ -193,12 +192,12 @@ gboolean SearchPage::on_filter(GtkTreeModel* model, GtkTreeIter* iter, SearchPag
 gint SearchPage::on_sort(GtkTreeModel* model, GtkTreeIter* a, GtkTreeIter* b, SearchPage* page)
 {
 	Launcher* launcher_a = NULL;
-	gtk_tree_model_get(model, a, LauncherModel::COLUMN_LAUNCHER, &launcher_a, -1);
+	gtk_tree_model_get(model, a, LauncherView::COLUMN_LAUNCHER, &launcher_a, -1);
 	g_assert(launcher_a != NULL);
 	g_assert(page->m_current_results->find(launcher_a) != page->m_current_results->end());
 
 	Launcher* launcher_b = NULL;
-	gtk_tree_model_get(model, b, LauncherModel::COLUMN_LAUNCHER, &launcher_b, -1);
+	gtk_tree_model_get(model, b, LauncherView::COLUMN_LAUNCHER, &launcher_b, -1);
 	g_assert(launcher_b != NULL);
 	g_assert(page->m_current_results->find(launcher_b) != page->m_current_results->end());
 

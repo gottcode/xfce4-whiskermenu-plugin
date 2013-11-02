@@ -19,7 +19,6 @@
 
 #include "applications-page.h"
 #include "launcher.h"
-#include "launcher-model.h"
 #include "launcher-view.h"
 #include "settings.h"
 #include "window.h"
@@ -40,17 +39,19 @@ FavoritesPage::FavoritesPage(Window* window) :
 
 void FavoritesPage::add(Launcher* launcher)
 {
-	if (!launcher)
+	if (!launcher || contains(launcher))
 	{
 		return;
 	}
 
-	// Remove item if already in list
-	remove(launcher);
-
-	// Add to list of items
-	LauncherModel model(GTK_LIST_STORE(get_view()->get_model()));
-	model.append_item(launcher);
+	// Append to list of items
+	GtkListStore* store = GTK_LIST_STORE(get_view()->get_model());
+	gtk_list_store_insert_with_values(
+			store, NULL, G_MAXINT,
+			LauncherView::COLUMN_ICON, launcher->get_icon(),
+			LauncherView::COLUMN_TEXT, launcher->get_text(),
+			LauncherView::COLUMN_LAUNCHER, launcher,
+			-1);
 }
 
 //-----------------------------------------------------------------------------

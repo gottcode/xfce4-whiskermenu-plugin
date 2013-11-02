@@ -62,6 +62,14 @@ public:
 
 	void reload_icon_size();
 
+	enum Columns
+	{
+		COLUMN_ICON = 0,
+		COLUMN_TEXT,
+		COLUMN_LAUNCHER,
+		N_COLUMNS
+	};
+
 private:
 	void create_column();
 	bool on_key_press_event(GdkEventKey* event);

@@ -17,7 +17,7 @@
 
 #include "category.h"
 
-#include "launcher-model.h"
+#include "launcher-view.h"
 #include "section-button.h"
 
 #include <algorithm>
@@ -103,7 +103,7 @@ GtkTreeModel* Category::get_model()
 		if (m_has_subcategories)
 		{
 			GtkTreeStore* model = gtk_tree_store_new(
-					LauncherModel::N_COLUMNS,
+					LauncherView::N_COLUMNS,
 					G_TYPE_STRING,
 					G_TYPE_STRING,
 					G_TYPE_POINTER);
@@ -113,7 +113,7 @@ GtkTreeModel* Category::get_model()
 		else
 		{
 			GtkListStore* model = gtk_list_store_new(
-					LauncherModel::N_COLUMNS,
+					LauncherView::N_COLUMNS,
 					G_TYPE_STRING,
 					G_TYPE_STRING,
 					G_TYPE_POINTER);
@@ -201,9 +201,9 @@ void Category::insert_items(GtkTreeStore* model, GtkTreeIter* parent, const gcha
 			GtkTreeIter iter;
 			gtk_tree_store_insert_with_values(model,
 					&iter, parent, INT_MAX,
-					LauncherModel::COLUMN_ICON, icon,
-					LauncherModel::COLUMN_TEXT, text,
-					LauncherModel::COLUMN_LAUNCHER, NULL,
+					LauncherView::COLUMN_ICON, icon,
+					LauncherView::COLUMN_TEXT, text,
+					LauncherView::COLUMN_LAUNCHER, NULL,
 					-1);
 			g_free(text);
 			category->insert_items(model, &iter, icon);
@@ -213,18 +213,18 @@ void Category::insert_items(GtkTreeStore* model, GtkTreeIter* parent, const gcha
 			Launcher* launcher = static_cast<Launcher*>(element);
 			gtk_tree_store_insert_with_values(model,
 					NULL, parent, INT_MAX,
-					LauncherModel::COLUMN_ICON, launcher->get_icon(),
-					LauncherModel::COLUMN_TEXT, launcher->get_text(),
-					LauncherModel::COLUMN_LAUNCHER, launcher,
+					LauncherView::COLUMN_ICON, launcher->get_icon(),
+					LauncherView::COLUMN_TEXT, launcher->get_text(),
+					LauncherView::COLUMN_LAUNCHER, launcher,
 					-1);
 		}
 		else if ((i + 1) < end)
 		{
 			gtk_tree_store_insert_with_values(model,
 					NULL, parent, INT_MAX,
-					LauncherModel::COLUMN_ICON, NULL,
-					LauncherModel::COLUMN_TEXT, NULL,
-					LauncherModel::COLUMN_LAUNCHER, NULL,
+					LauncherView::COLUMN_ICON, NULL,
+					LauncherView::COLUMN_TEXT, NULL,
+					LauncherView::COLUMN_LAUNCHER, NULL,
 					-1);
 		}
 	}
@@ -242,18 +242,18 @@ void Category::insert_items(GtkListStore* model)
 			Launcher* launcher = static_cast<Launcher*>(element);
 			gtk_list_store_insert_with_values(model,
 					NULL, INT_MAX,
-					LauncherModel::COLUMN_ICON, launcher->get_icon(),
-					LauncherModel::COLUMN_TEXT, launcher->get_text(),
-					LauncherModel::COLUMN_LAUNCHER, launcher,
+					LauncherView::COLUMN_ICON, launcher->get_icon(),
+					LauncherView::COLUMN_TEXT, launcher->get_text(),
+					LauncherView::COLUMN_LAUNCHER, launcher,
 					-1);
 		}
 		else if ((i + 1) < end)
 		{
 			gtk_list_store_insert_with_values(model,
 					NULL, INT_MAX,
-					LauncherModel::COLUMN_ICON, NULL,
-					LauncherModel::COLUMN_TEXT, NULL,
-					LauncherModel::COLUMN_LAUNCHER, NULL,
+					LauncherView::COLUMN_ICON, NULL,
+					LauncherView::COLUMN_TEXT, NULL,
+					LauncherView::COLUMN_LAUNCHER, NULL,
 					-1);
 		}
 	}

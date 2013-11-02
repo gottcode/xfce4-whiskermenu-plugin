@@ -19,7 +19,6 @@
 
 #include "applications-page.h"
 #include "launcher.h"
-#include "launcher-model.h"
 #include "launcher-view.h"
 #include "window.h"
 
@@ -59,8 +58,22 @@ bool ListPage::contains(Launcher* launcher) const
 
 void ListPage::remove(Launcher* launcher)
 {
-	LauncherModel model(GTK_LIST_STORE(get_view()->get_model()));
-	model.remove_item(launcher);
+	GtkTreeModel* model = GTK_TREE_MODEL(get_view()->get_model());
+	GtkListStore* store = GTK_LIST_STORE(model);
+	GtkTreeIter iter;
+	Launcher* test_launcher = NULL;
+
+	bool valid = gtk_tree_model_get_iter_first(model, &iter);
+	while (valid)
+	{
+		gtk_tree_model_get(model, &iter, LauncherView::COLUMN_LAUNCHER, &test_launcher, -1);
+		if (test_launcher == launcher)
+		{
+			gtk_list_store_remove(store, &iter);
+			break;
+		}
+		valid = gtk_tree_model_iter_next(model, &iter);
+	}
 }
 
 //-----------------------------------------------------------------------------
@@ -68,7 +81,11 @@ void ListPage::remove(Launcher* launcher)
 void ListPage::set_menu_items()
 {
 	// Create new model for treeview
-	LauncherModel model;
+	GtkListStore* store = gtk_list_store_new(
+			LauncherView::N_COLUMNS,
+			G_TYPE_STRING,
+			G_TYPE_STRING,
+			G_TYPE_POINTER);
 
 	// Fetch menu items or remove them from list if missing
 	for (std::vector<std::string>::iterator i = m_desktop_ids.begin(); i != m_desktop_ids.end(); ++i)
@@ -81,7 +98,12 @@ void ListPage::set_menu_items()
 		Launcher* launcher = get_window()->get_applications()->get_application(*i);
 		if (launcher)
 		{
-			model.append_item(launcher);
+			gtk_list_store_insert_with_values(
+					store, NULL, G_MAXINT,
+					LauncherView::COLUMN_ICON, launcher->get_icon(),
+					LauncherView::COLUMN_TEXT, launcher->get_text(),
+					LauncherView::COLUMN_LAUNCHER, launcher,
+					-1);
 		}
 		else
 		{
@@ -91,10 +113,12 @@ void ListPage::set_menu_items()
 	}
 
 	// Replace treeview contents
-	get_view()->set_model(model.get_model());
-	g_signal_connect(get_view()->get_model(), "row-changed", G_CALLBACK(ListPage::on_row_changed_slot), this);
-	g_signal_connect(get_view()->get_model(), "row-inserted", G_CALLBACK(ListPage::on_row_inserted_slot), this);
-	g_signal_connect(get_view()->get_model(), "row-deleted", G_CALLBACK(ListPage::on_row_deleted_slot), this);
+	GtkTreeModel* model = GTK_TREE_MODEL(store);
+	get_view()->set_model(model);
+	g_signal_connect(model, "row-changed", G_CALLBACK(ListPage::on_row_changed_slot), this);
+	g_signal_connect(model, "row-inserted", G_CALLBACK(ListPage::on_row_inserted_slot), this);
+	g_signal_connect(model, "row-deleted", G_CALLBACK(ListPage::on_row_deleted_slot), this);
+	g_object_unref(model);
 }
 
 //-----------------------------------------------------------------------------
@@ -127,7 +151,7 @@ void ListPage::on_row_changed(GtkTreeModel* model, GtkTreePath* path, GtkTreeIte
 	}
 
 	Launcher* launcher;
-	gtk_tree_model_get(model, iter, LauncherModel::COLUMN_LAUNCHER, &launcher, -1);
+	gtk_tree_model_get(model, iter, LauncherView::COLUMN_LAUNCHER, &launcher, -1);
 	if (launcher)
 	{
 		m_desktop_ids[pos] = launcher->get_desktop_id();
@@ -143,7 +167,7 @@ void ListPage::on_row_inserted(GtkTreeModel* model, GtkTreePath* path, GtkTreeIt
 
 	std::string desktop_id;
 	Launcher* launcher;
-	gtk_tree_model_get(model, iter, LauncherModel::COLUMN_LAUNCHER, &launcher, -1);
+	gtk_tree_model_get(model, iter, LauncherView::COLUMN_LAUNCHER, &launcher, -1);
 	if (launcher)
 	{
 		desktop_id = launcher->get_desktop_id();

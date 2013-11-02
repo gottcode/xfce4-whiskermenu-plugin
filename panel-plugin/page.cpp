@@ -19,7 +19,6 @@
 
 #include "favorites-page.h"
 #include "launcher.h"
-#include "launcher-model.h"
 #include "launcher-view.h"
 #include "recent-page.h"
 #include "window.h"
@@ -94,7 +93,7 @@ Launcher* Page::get_selected_launcher() const
 		GtkTreeModel* model = m_view->get_model();
 		GtkTreeIter iter;
 		gtk_tree_model_get_iter(model, &iter, m_selected_path);
-		gtk_tree_model_get(model, &iter, LauncherModel::COLUMN_LAUNCHER, &launcher, -1);
+		gtk_tree_model_get(model, &iter, LauncherView::COLUMN_LAUNCHER, &launcher, -1);
 	}
 	return launcher;
 }
@@ -116,7 +115,7 @@ void Page::launcher_activated(GtkTreeView* view, GtkTreePath* path)
 
 	// Find launcher
 	Launcher* launcher = NULL;
-	gtk_tree_model_get(model, &iter, LauncherModel::COLUMN_LAUNCHER, &launcher, -1);
+	gtk_tree_model_get(model, &iter, LauncherView::COLUMN_LAUNCHER, &launcher, -1);
 	if (!launcher)
 	{
 		return;
