@@ -47,6 +47,7 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	// Load settings
 	wm_settings = new Settings;
 	wm_settings->button_title = get_button_title_default();
+	wm_settings->load(g_strconcat(DATADIR, "/xfce4/whiskermenu/defaults.rc", NULL));
 	wm_settings->load(xfce_panel_plugin_lookup_rc_file(m_plugin));
 
 	// Prevent empty panel button
