@@ -71,10 +71,25 @@ Window::Window() :
 	g_signal_connect(m_window, "map-event", G_CALLBACK(Window::on_map_event_slot), this);
 	g_signal_connect(m_window, "configure-event", G_CALLBACK(Window::on_configure_event_slot), this);
 
+	m_window_box = GTK_BOX(gtk_vbox_new(false, 0));
+	gtk_container_add(GTK_CONTAINER(m_window), GTK_WIDGET(m_window_box));
+
+	// Create loading message
+	m_window_load_contents = gtk_frame_new(NULL);
+	gtk_frame_set_shadow_type(GTK_FRAME(m_window_load_contents), GTK_SHADOW_OUT);
+	gtk_box_pack_start(m_window_box, m_window_load_contents, true, true, 0);
+
+	m_window_load_spinner = GTK_SPINNER(gtk_spinner_new());
+
+	GtkAlignment* alignment = GTK_ALIGNMENT(gtk_alignment_new(0.5, 0.5, 0.1, 0.1));
+	gtk_container_add(GTK_CONTAINER(alignment), GTK_WIDGET(m_window_load_spinner));
+
+	gtk_container_add(GTK_CONTAINER(m_window_load_contents), GTK_WIDGET(alignment));
+
 	// Create the border of the window
-	GtkWidget* frame = gtk_frame_new(NULL);
-	gtk_frame_set_shadow_type(GTK_FRAME(frame), GTK_SHADOW_OUT);
-	gtk_container_add(GTK_CONTAINER(m_window), frame);
+	m_window_contents = gtk_frame_new(NULL);
+	gtk_frame_set_shadow_type(GTK_FRAME(m_window_contents), GTK_SHADOW_OUT);
+	gtk_box_pack_start(m_window_box, m_window_contents, true, true, 0);
 
 	// Create the username label
 	const gchar* name = g_get_real_name();
@@ -142,7 +157,7 @@ Window::Window() :
 
 	// Create box for packing children
 	m_vbox = GTK_BOX(gtk_vbox_new(false, 6));
-	gtk_container_add(GTK_CONTAINER(frame), GTK_WIDGET(m_vbox));
+	gtk_container_add(GTK_CONTAINER(m_window_contents), GTK_WIDGET(m_vbox));
 	gtk_container_set_border_width(GTK_CONTAINER(m_vbox), 2);
 
 	// Create box for packing commands
@@ -198,17 +213,14 @@ Window::Window() :
 	gtk_size_group_add_widget(sidebar_size_group, GTK_WIDGET(m_sidebar));
 	gtk_size_group_add_widget(sidebar_size_group, GTK_WIDGET(m_commands_align));
 
-	// Populate app menu
-	m_applications->load_applications();
-
 	// Show widgets
-	gtk_widget_show_all(GTK_WIDGET(m_vbox));
+	gtk_widget_show_all(GTK_WIDGET(m_window_box));
 	gtk_widget_hide(m_favorites->get_widget());
 	gtk_widget_hide(m_recent->get_widget());
 	gtk_widget_hide(m_applications->get_widget());
 	gtk_widget_hide(m_search_results->get_widget());
 	m_default_button->set_active(true);
-	gtk_widget_show(frame);
+	gtk_widget_hide(m_window_contents);
 
 	// Resize to last known size
 	gtk_window_set_default_size(m_window, m_geometry.width, m_geometry.height);
@@ -269,7 +281,12 @@ void Window::show(GtkWidget* parent, bool horizontal)
 	m_logout_button->check();
 
 	// Make sure applications list is current; does nothing unless list has changed
-	m_applications->load_applications();
+	if (m_applications->load_applications())
+	{
+		gtk_widget_hide(m_window_contents);
+		gtk_widget_show(m_window_load_contents);
+		gtk_spinner_start(m_window_load_spinner);
+	}
 
 	// Reset mouse cursor by forcing default page to hide
 	gtk_widget_show(m_default_page->get_widget());
@@ -568,6 +585,16 @@ void Window::set_items()
 	// Handle switching to favorites are added
 	GtkTreeModel* favorites_model = m_favorites->get_view()->get_model();
 	g_signal_connect(favorites_model, "row-inserted", G_CALLBACK(Window::show_favorites_slot), this);
+}
+
+//-----------------------------------------------------------------------------
+
+void Window::set_loaded()
+{
+	gtk_spinner_stop(m_window_load_spinner);
+	gtk_widget_hide(m_window_load_contents);
+	gtk_widget_show(m_window_contents);
+	gtk_widget_grab_focus(GTK_WIDGET(m_search_entry));
 }
 
 //-----------------------------------------------------------------------------

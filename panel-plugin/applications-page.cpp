@@ -30,10 +30,20 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
+enum
+{
+	STATUS_INVALID,
+	STATUS_LOADING,
+	STATUS_LOADED
+};
+
+//-----------------------------------------------------------------------------
+
 ApplicationsPage::ApplicationsPage(Window* window) :
 	Page(window),
 	m_garcon_menu(NULL),
-	m_loaded(false)
+	m_load_thread(NULL),
+	m_load_status(STATUS_INVALID)
 {
 	// Set desktop environment for applications
 	const gchar* desktop = g_getenv("XDG_CURRENT_DESKTOP");
@@ -52,6 +62,12 @@ ApplicationsPage::ApplicationsPage(Window* window) :
 
 ApplicationsPage::~ApplicationsPage()
 {
+	if (m_load_thread)
+	{
+		g_thread_join(m_load_thread);
+		m_load_thread = NULL;
+	}
+
 	clear_applications();
 }
 
@@ -98,62 +114,40 @@ void ApplicationsPage::apply_filter(GtkToggleButton* togglebutton)
 
 void ApplicationsPage::invalidate_applications()
 {
-	m_loaded = false;
+	m_load_status = STATUS_INVALID;
 }
 
 //-----------------------------------------------------------------------------
 
-void ApplicationsPage::load_applications()
+bool ApplicationsPage::load_applications()
 {
-	if (m_loaded)
+	// Check if already loaded
+	if (m_load_status == STATUS_LOADED)
 	{
-		return;
+		return false;
 	}
+	// Check if currently loading
+	else if (m_load_status == STATUS_LOADING)
+	{
+		return true;
+	}
+	// Check if loading garcon
+	else if (m_load_thread)
+	{
+		return true;
+	}
+	m_load_status = STATUS_LOADING;
 
-	// Remove previous menu data
 	clear_applications();
 
-	// Populate map of menu data
-	m_garcon_menu = garcon_menu_new_applications();
-	if (garcon_menu_load(m_garcon_menu, NULL, NULL))
+	// Load garcon menu in thread if possible
+	m_load_thread = g_thread_try_new(NULL, (GThreadFunc)&ApplicationsPage::load_garcon_menu_slot, this, NULL);
+	if (!m_load_thread)
 	{
-		g_signal_connect_swapped(m_garcon_menu, "reload-required", G_CALLBACK(ApplicationsPage::invalidate_applications_slot), this);
-		load_menu(m_garcon_menu, NULL);
-	}
-	else
-	{
-		return;
+		load_garcon_menu();
 	}
 
-	// Sort items and categories
-	if (!wm_settings->load_hierarchy)
-	{
-		for (std::vector<Category*>::const_iterator i = m_categories.begin(), end = m_categories.end(); i != end; ++i)
-		{
-			(*i)->sort();
-		}
-		std::sort(m_categories.begin(), m_categories.end(), &Element::less_than);
-	}
-
-	// Create all items category
-	Category* category = new Category(NULL);
-	for (std::map<std::string, Launcher*>::const_iterator i = m_items.begin(), end = m_items.end(); i != end; ++i)
-	{
-		category->append_item(i->second);
-	}
-	category->sort();
-	m_categories.insert(m_categories.begin(), category);
-
-	get_view()->set_fixed_height_mode(true);
-	get_view()->set_model(category->get_model());
-
-	// Update filters
-	load_categories();
-
-	// Update menu items of other panels
-	get_window()->set_items();
-
-	m_loaded = true;
+	return true;
 }
 
 //-----------------------------------------------------------------------------
@@ -193,6 +187,84 @@ void ApplicationsPage::clear_applications()
 		g_object_unref(m_garcon_menu);
 		m_garcon_menu = NULL;
 	}
+}
+
+//-----------------------------------------------------------------------------
+
+void ApplicationsPage::load_garcon_menu()
+{
+	m_garcon_menu = garcon_menu_new_applications();
+
+	if (!garcon_menu_load(m_garcon_menu, NULL, NULL))
+	{
+		g_object_unref(m_garcon_menu);
+		m_garcon_menu = NULL;
+	}
+
+	g_idle_add((GSourceFunc)&ApplicationsPage::load_contents_slot, this);
+}
+
+//-----------------------------------------------------------------------------
+
+bool ApplicationsPage::load_contents()
+{
+	if (!m_garcon_menu)
+	{
+		get_window()->set_loaded();
+
+		m_load_status = STATUS_INVALID;
+		m_load_thread = NULL;
+
+		return false;
+	}
+
+	// Populate map of menu data
+	g_signal_connect_swapped(m_garcon_menu, "reload-required", G_CALLBACK(ApplicationsPage::invalidate_applications_slot), this);
+	load_menu(m_garcon_menu, NULL);
+
+	// Sort items and categories
+	if (!wm_settings->load_hierarchy)
+	{
+		for (std::vector<Category*>::const_iterator i = m_categories.begin(), end = m_categories.end(); i != end; ++i)
+		{
+			(*i)->sort();
+		}
+		std::sort(m_categories.begin(), m_categories.end(), &Element::less_than);
+	}
+
+	// Create all items category
+	Category* category = new Category(NULL);
+	for (std::map<std::string, Launcher*>::const_iterator i = m_items.begin(), end = m_items.end(); i != end; ++i)
+	{
+		category->append_item(i->second);
+	}
+	category->sort();
+	m_categories.insert(m_categories.begin(), category);
+
+	// Set all applications category
+	get_view()->set_fixed_height_mode(true);
+	get_view()->set_model(category->get_model());
+
+	// Add buttons for categories
+	std::vector<SectionButton*> category_buttons;
+	for (std::vector<Category*>::const_iterator i = m_categories.begin(), end = m_categories.end(); i != end; ++i)
+	{
+		SectionButton* category_button = (*i)->get_button();
+		g_signal_connect(category_button->get_button(), "toggled", G_CALLBACK(ApplicationsPage::apply_filter_slot), this);
+		category_buttons.push_back(category_button);
+	}
+
+	// Add category buttons to window
+	get_window()->set_categories(category_buttons);
+
+	// Update menu items of other panels
+	get_window()->set_items();
+	get_window()->set_loaded();
+
+	m_load_status = STATUS_LOADED;
+	m_load_thread = NULL;
+
+	return false;
 }
 
 //-----------------------------------------------------------------------------
@@ -284,24 +356,6 @@ void ApplicationsPage::load_menu_item(GarconMenuItem* menu_item, Category* categ
 
 	// Listen for menu changes
 	g_signal_connect_swapped(menu_item, "changed", G_CALLBACK(ApplicationsPage::invalidate_applications_slot), this);
-}
-
-//-----------------------------------------------------------------------------
-
-void ApplicationsPage::load_categories()
-{
-	std::vector<SectionButton*> category_buttons;
-
-	// Add buttons for categories
-	for (std::vector<Category*>::const_iterator i = m_categories.begin(), end = m_categories.end(); i != end; ++i)
-	{
-		SectionButton* category_button = (*i)->get_button();
-		g_signal_connect(category_button->get_button(), "toggled", G_CALLBACK(ApplicationsPage::apply_filter_slot), this);
-		category_buttons.push_back(category_button);
-	}
-
-	// Add category buttons to window
-	get_window()->set_categories(category_buttons);
 }
 
 //-----------------------------------------------------------------------------

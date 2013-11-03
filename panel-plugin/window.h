@@ -81,6 +81,7 @@ public:
 	void save();
 	void set_categories(const std::vector<SectionButton*>& categories);
 	void set_items();
+	void set_loaded();
 	void set_modified();
 	void unset_items();
 
@@ -102,6 +103,11 @@ private:
 
 private:
 	GtkWindow* m_window;
+
+	GtkBox* m_window_box;
+	GtkWidget* m_window_contents;
+	GtkSpinner* m_window_load_spinner;
+	GtkWidget* m_window_load_contents;
 
 	GtkBox* m_vbox;
 	GtkBox* m_title_box;

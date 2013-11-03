@@ -47,22 +47,24 @@ public:
 	Launcher* get_application(const std::string& desktop_id) const;
 
 	void invalidate_applications();
-	void load_applications();
+	bool load_applications();
 	void reload_category_icon_size();
 
 private:
 	void apply_filter(GtkToggleButton* togglebutton);
 	bool on_filter(GtkTreeModel* model, GtkTreeIter* iter);
 	void clear_applications();
+	void load_garcon_menu();
+	bool load_contents();
 	void load_menu(GarconMenu* menu, Category* parent_category);
 	void load_menu_item(GarconMenuItem* menu_item, Category* category);
-	void load_categories();
 
 private:
 	GarconMenu* m_garcon_menu;
 	std::vector<Category*> m_categories;
 	std::map<std::string, Launcher*> m_items;
-	bool m_loaded;
+	GThread* m_load_thread;
+	gint m_load_status;
 
 
 private:
@@ -74,6 +76,17 @@ private:
 	static void apply_filter_slot(GtkToggleButton* togglebutton, ApplicationsPage* obj)
 	{
 		obj->apply_filter(togglebutton);
+	}
+
+	static gpointer load_garcon_menu_slot(ApplicationsPage *obj)
+	{
+		obj->load_garcon_menu();
+		return NULL;
+	}
+
+	static gboolean load_contents_slot(ApplicationsPage* obj)
+	{
+		return obj->load_contents();
 	}
 };
 
