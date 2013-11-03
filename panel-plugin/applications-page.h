@@ -48,6 +48,7 @@ public:
 
 	void invalidate_applications();
 	void load_applications();
+	void reload_category_icon_size();
 
 private:
 	void apply_filter(GtkToggleButton* togglebutton);

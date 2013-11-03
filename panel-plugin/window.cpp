@@ -242,18 +242,6 @@ void Window::hide()
 	// Hide window
 	gtk_widget_hide(GTK_WIDGET(m_window));
 
-	// Update default page
-	if (wm_settings->display_recent && (m_default_page == m_favorites))
-	{
-		m_default_button = m_recent_button;
-		m_default_page = m_recent;
-	}
-	else if (!wm_settings->display_recent && (m_default_page == m_recent))
-	{
-		m_default_button = m_favorites_button;
-		m_default_page = m_favorites;
-	}
-
 	// Reset mouse cursor by forcing default page to hide
 	gtk_widget_hide(m_default_page->get_widget());
 
@@ -268,6 +256,7 @@ void Window::show(GtkWidget* parent, bool horizontal)
 	// Make sure icon sizes are correct
 	m_favorites_button->reload_icon_size();
 	m_recent_button->reload_icon_size();
+	m_applications->reload_category_icon_size();
 
 	m_search_results->get_view()->reload_icon_size();
 	m_favorites->get_view()->reload_icon_size();
@@ -284,6 +273,19 @@ void Window::show(GtkWidget* parent, bool horizontal)
 
 	// Reset mouse cursor by forcing default page to hide
 	gtk_widget_show(m_default_page->get_widget());
+
+	// Update default page
+	if (wm_settings->display_recent && (m_default_page == m_favorites))
+	{
+		m_default_button = m_recent_button;
+		m_default_page = m_recent;
+	}
+	else if (!wm_settings->display_recent && (m_default_page == m_recent))
+	{
+		m_default_button = m_favorites_button;
+		m_default_page = m_favorites;
+	}
+	show_default_page();
 
 	GdkScreen* screen = NULL;
 	int parent_x = 0, parent_y = 0, parent_w = 0, parent_h = 0;

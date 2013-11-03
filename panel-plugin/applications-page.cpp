@@ -158,6 +158,16 @@ void ApplicationsPage::load_applications()
 
 //-----------------------------------------------------------------------------
 
+void ApplicationsPage::reload_category_icon_size()
+{
+	for (std::vector<Category*>::const_iterator i = m_categories.begin(), end = m_categories.end(); i != end; ++i)
+	{
+		(*i)->get_button()->reload_icon_size();
+	}
+}
+
+//-----------------------------------------------------------------------------
+
 void ApplicationsPage::clear_applications()
 {
 	// Free categories
