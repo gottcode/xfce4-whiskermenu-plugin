@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-09 22:00+0000\n"
-"PO-Revision-Date: 2013-07-31 21:33+0000\n"
+"PO-Revision-Date: 2013-11-04 01:16+0000\n"
 "Last-Translator: Mohamad Hasan Al Banna\n"
 "Language-Team: Indonesian (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/id/)\n"
 "MIME-Version: 1.0\n"
@@ -27,23 +27,20 @@ msgid "Whisker Menu"
 msgstr "Menu Whisker"
 
 #: src/configuration_dialog.cpp:65
-#, fuzzy
 msgid "_Appearance"
-msgstr "Penampilan"
+msgstr "_Tampilan"
 
 #: src/configuration_dialog.cpp:66
-#, fuzzy
 msgid "_Panel Button"
-msgstr "Tombol Panel"
+msgstr "_Tombol Panel"
 
 #: src/configuration_dialog.cpp:67
-#, fuzzy
 msgid "_Behavior"
-msgstr "Kebiasaan"
+msgstr "_Kebiasaan"
 
 #: src/configuration_dialog.cpp:68
 msgid "_Commands"
-msgstr ""
+msgstr "_Perintah"
 
 #: src/configuration_dialog.cpp:94
 msgid "Select An Icon"
@@ -59,11 +56,11 @@ msgstr "Tampilkan _deskripsi aplikasi"
 
 #: src/configuration_dialog.cpp:277
 msgid "Position _search entry next to panel button"
-msgstr ""
+msgstr "Posisi entri _cari setelah tombol panel"
 
 #: src/configuration_dialog.cpp:283
 msgid "Position commands next to search _entry"
-msgstr ""
+msgstr "Posisi perintah setelah _entri cari"
 
 #: src/configuration_dialog.cpp:293
 msgid "Ite_m icon size:"
@@ -103,30 +100,27 @@ msgstr "Ganti kategori dengan _melayang"
 
 #: src/configuration_dialog.cpp:415
 msgid "Load menu hie_rarchy"
-msgstr ""
+msgstr "Muat menu hie_rarki"
 
 #: src/configuration_dialog.cpp:421
 msgid "Include _favorites in recently used"
-msgstr ""
+msgstr "Masukkan _kesukaan di yang terakhir dipakai"
 
 #: src/configuration_dialog.cpp:427
 msgid "Display recently _used by default"
-msgstr ""
+msgstr "Tampilkan yang terakhir _dipakai sebagai bawaan"
 
 #: src/configuration_dialog.cpp:452
-#, fuzzy
 msgid "_Settings:"
-msgstr "Semua Pengaturan"
+msgstr "_Pengaturan:"
 
 #: src/configuration_dialog.cpp:467
-#, fuzzy
 msgid "Lock _Screen:"
-msgstr "Kunci Layar"
+msgstr "Kunci _Layar:"
 
 #: src/configuration_dialog.cpp:482
-#, fuzzy
 msgid "Log _Out:"
-msgstr "Keluar"
+msgstr "Keluar:"
 
 #: src/favorites_page.cpp:89
 msgid "Sort Alphabetically A-Z"
