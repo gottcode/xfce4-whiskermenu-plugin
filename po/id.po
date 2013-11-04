@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-31 20:34+0000\n"
-"PO-Revision-Date: 2013-07-31 21:33+0000\n"
+"PO-Revision-Date: 2013-11-04 01:16+0000\n"
 "Last-Translator: Mohamad Hasan Al Banna\n"
 "Language-Team: Indonesian (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/id/)\n"
@@ -57,7 +57,7 @@ msgstr "Ta_mpilan:"
 
 #: ../panel-plugin/configuration-dialog.cpp:428
 msgid "Display recently _used by default"
-msgstr ""
+msgstr "Tampilkan yang terakhir _dipakai sebagai bawaan"
 
 #: ../panel-plugin/launcher.cpp:259
 #, c-format
@@ -90,7 +90,7 @@ msgstr "Ikon dan judul"
 
 #: ../panel-plugin/configuration-dialog.cpp:422
 msgid "Include _favorites in recently used"
-msgstr ""
+msgstr "Masukkan _kesukaan di yang terakhir dipakai"
 
 #: ../panel-plugin/configuration-dialog.cpp:294
 msgid "Ite_m icon size:"
@@ -106,25 +106,23 @@ msgstr "Lebih Besar"
 
 #: ../panel-plugin/configuration-dialog.cpp:416
 msgid "Load menu hie_rarchy"
-msgstr ""
+msgstr "Muat menu hie_rarki"
 
 #: ../panel-plugin/window.cpp:100
 msgid "Lock Screen"
 msgstr "Kunci Layar"
 
 #: ../panel-plugin/configuration-dialog.cpp:468
-#, fuzzy
 msgid "Lock _Screen:"
-msgstr "Kunci Layar"
+msgstr "Kunci _Layar:"
 
 #: ../panel-plugin/window.cpp:103
 msgid "Log Out"
 msgstr "Keluar"
 
 #: ../panel-plugin/configuration-dialog.cpp:483
-#, fuzzy
 msgid "Log _Out:"
-msgstr "Keluar"
+msgstr "Keluar:"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Normal"
@@ -132,11 +130,11 @@ msgstr "Normal"
 
 #: ../panel-plugin/configuration-dialog.cpp:278
 msgid "Position _search entry next to panel button"
-msgstr ""
+msgstr "Posisi entri _cari setelah tombol panel"
 
 #: ../panel-plugin/configuration-dialog.cpp:284
 msgid "Position commands next to search _entry"
-msgstr ""
+msgstr "Posisi perintah setelah _entri cari"
 
 #: ../panel-plugin/window.cpp:123
 msgid "Recently Used"
@@ -208,32 +206,28 @@ msgid "Whisker Menu"
 msgstr "Menu Whisker"
 
 #: ../panel-plugin/configuration-dialog.cpp:66
-#, fuzzy
 msgid "_Appearance"
-msgstr "Penampilan"
+msgstr "_Tampilan"
 
 #: ../panel-plugin/configuration-dialog.cpp:68
-#, fuzzy
 msgid "_Behavior"
-msgstr "Kebiasaan"
+msgstr "_Kebiasaan"
 
 #: ../panel-plugin/configuration-dialog.cpp:69
 msgid "_Commands"
-msgstr ""
+msgstr "_Perintah"
 
 #: ../panel-plugin/configuration-dialog.cpp:382
 msgid "_Icon:"
 msgstr "_Ikon:"
 
 #: ../panel-plugin/configuration-dialog.cpp:67
-#, fuzzy
 msgid "_Panel Button"
-msgstr "Tombol Panel"
+msgstr "_Tombol Panel"
 
 #: ../panel-plugin/configuration-dialog.cpp:453
-#, fuzzy
 msgid "_Settings:"
-msgstr "Semua Pengaturan"
+msgstr "_Pengaturan:"
 
 #: ../panel-plugin/configuration-dialog.cpp:367
 msgid "_Title:"
