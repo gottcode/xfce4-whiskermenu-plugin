@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-09 22:00+0000\n"
-"PO-Revision-Date: 2013-08-21 15:50+0000\n"
+"PO-Revision-Date: 2013-11-04 13:07+0000\n"
 "Last-Translator: Riftyful <riftyful@gmail.com>\n"
 "Language-Team: Czech (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -27,23 +27,20 @@ msgid "Whisker Menu"
 msgstr "Whisker Menu"
 
 #: src/configuration_dialog.cpp:65
-#, fuzzy
 msgid "_Appearance"
-msgstr "Vzhled"
+msgstr "Vzh_led"
 
 #: src/configuration_dialog.cpp:66
-#, fuzzy
 msgid "_Panel Button"
-msgstr "Tlačítko Panelu"
+msgstr "Tlačítko Pa_nelu"
 
 #: src/configuration_dialog.cpp:67
-#, fuzzy
 msgid "_Behavior"
-msgstr "Chování"
+msgstr "_Chování"
 
 #: src/configuration_dialog.cpp:68
 msgid "_Commands"
-msgstr ""
+msgstr "Pří_kazy"
 
 #: src/configuration_dialog.cpp:94
 msgid "Select An Icon"
@@ -59,11 +56,11 @@ msgstr "Ukázat _popisy aplikací"
 
 #: src/configuration_dialog.cpp:277
 msgid "Position _search entry next to panel button"
-msgstr ""
+msgstr "Umístit v_yhledávání vedle tlačítka panelu"
 
 #: src/configuration_dialog.cpp:283
 msgid "Position commands next to search _entry"
-msgstr ""
+msgstr "U_místit příkazy vedle pole vyhledávání"
 
 #: src/configuration_dialog.cpp:293
 msgid "Ite_m icon size:"
@@ -103,30 +100,27 @@ msgstr "Přepínat _kategorie najetím kurzoru"
 
 #: src/configuration_dialog.cpp:415
 msgid "Load menu hie_rarchy"
-msgstr ""
+msgstr "_Hiearchie načtení menu "
 
 #: src/configuration_dialog.cpp:421
 msgid "Include _favorites in recently used"
-msgstr ""
+msgstr "Z_ahrnout oblíbené do nedávno použitých"
 
 #: src/configuration_dialog.cpp:427
 msgid "Display recently _used by default"
-msgstr ""
+msgstr "Zob_razovat nedávno použité jako výchozí"
 
 #: src/configuration_dialog.cpp:452
-#, fuzzy
 msgid "_Settings:"
-msgstr "Všechna Nastavení"
+msgstr "Na_stavení"
 
 #: src/configuration_dialog.cpp:467
-#, fuzzy
 msgid "Lock _Screen:"
-msgstr "Uzamknout Obrazovku"
+msgstr "_Uzamknout Obrazovku"
 
 #: src/configuration_dialog.cpp:482
-#, fuzzy
 msgid "Log _Out:"
-msgstr "Odhlásit se"
+msgstr "O_dhlásit se"
 
 #: src/favorites_page.cpp:89
 msgid "Sort Alphabetically A-Z"
