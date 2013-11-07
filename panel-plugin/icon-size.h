@@ -29,7 +29,8 @@ class IconSize
 public:
 	enum Size
 	{
-		Smallest = 0,
+		NONE = -1,
+		Smallest,
 		Smaller,
 		Small,
 		Normal,
@@ -39,7 +40,7 @@ public:
 	};
 
 	IconSize(const int size) :
-		m_size(size > int(Smallest) ? (size < int(Largest) ? size : int(Largest)) : int(Smallest))
+		m_size(size > int(NONE) ? (size < int(Largest) ? size : int(Largest)) : int(NONE))
 	{
 	}
 

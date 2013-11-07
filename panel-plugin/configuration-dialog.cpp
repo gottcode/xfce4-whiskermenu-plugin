@@ -115,14 +115,14 @@ void ConfigurationDialog::choose_icon()
 
 void ConfigurationDialog::category_icon_size_changed(GtkComboBox* combo)
 {
-	wm_settings->category_icon_size = gtk_combo_box_get_active(combo);
+	wm_settings->category_icon_size = gtk_combo_box_get_active(combo) - 1;
 }
 
 //-----------------------------------------------------------------------------
 
 void ConfigurationDialog::item_icon_size_changed(GtkComboBox* combo)
 {
-	wm_settings->launcher_icon_size = gtk_combo_box_get_active(combo);
+	wm_settings->launcher_icon_size = gtk_combo_box_get_active(combo) - 1;
 }
 
 //-----------------------------------------------------------------------------
@@ -306,7 +306,7 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	{
 		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_item_icon_size), i->c_str());
 	}
-	gtk_combo_box_set_active(GTK_COMBO_BOX(m_item_icon_size), wm_settings->launcher_icon_size);
+	gtk_combo_box_set_active(GTK_COMBO_BOX(m_item_icon_size), wm_settings->launcher_icon_size + 1);
 	gtk_box_pack_start(hbox, m_item_icon_size, false, false, 0);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_item_icon_size);
 	g_signal_connect(m_item_icon_size, "changed", G_CALLBACK(ConfigurationDialog::item_icon_size_changed_slot), this);
@@ -325,7 +325,7 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	{
 		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_category_icon_size), i->c_str());
 	}
-	gtk_combo_box_set_active(GTK_COMBO_BOX(m_category_icon_size), wm_settings->category_icon_size);
+	gtk_combo_box_set_active(GTK_COMBO_BOX(m_category_icon_size), wm_settings->category_icon_size + 1);
 	gtk_box_pack_start(hbox, m_category_icon_size, false, false, 0);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_category_icon_size);
 	g_signal_connect(m_category_icon_size, "changed", G_CALLBACK(ConfigurationDialog::category_icon_size_changed_slot), this);

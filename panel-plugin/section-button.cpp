@@ -48,7 +48,8 @@ static gboolean on_enter_notify_event(GtkWidget*, GdkEventCrossing*, GtkToggleBu
 
 //-----------------------------------------------------------------------------
 
-SectionButton::SectionButton(const gchar* icon, const gchar* text)
+SectionButton::SectionButton(const gchar* icon, const gchar* text) :
+	m_icon_name(g_strdup(icon))
 {
 	m_button = GTK_RADIO_BUTTON(gtk_radio_button_new(NULL));
 	gtk_toggle_button_set_mode(GTK_TOGGLE_BUTTON(m_button), false);
@@ -59,9 +60,9 @@ SectionButton::SectionButton(const gchar* icon, const gchar* text)
 	GtkBox* box = GTK_BOX(gtk_hbox_new(false, 4));
 	gtk_container_add(GTK_CONTAINER(m_button), GTK_WIDGET(box));
 
-	m_icon = xfce_panel_image_new_from_source(icon);
+	m_icon = xfce_panel_image_new();
 	reload_icon_size();
-	gtk_box_pack_start(box, GTK_WIDGET(m_icon), false, false, 0);
+	gtk_box_pack_start(box, m_icon, false, false, 0);
 
 	GtkWidget* label = gtk_label_new(text);
 	gtk_box_pack_start(box, label, false, true, 0);
@@ -71,6 +72,7 @@ SectionButton::SectionButton(const gchar* icon, const gchar* text)
 
 SectionButton::~SectionButton()
 {
+	g_free(m_icon_name);
 	gtk_widget_destroy(GTK_WIDGET(m_button));
 }
 
@@ -78,7 +80,13 @@ SectionButton::~SectionButton()
 
 void SectionButton::reload_icon_size()
 {
-	xfce_panel_image_set_size(XFCE_PANEL_IMAGE(m_icon), wm_settings->category_icon_size.get_size());
+	xfce_panel_image_clear(XFCE_PANEL_IMAGE(m_icon));
+	int size = wm_settings->category_icon_size.get_size();
+	xfce_panel_image_set_size(XFCE_PANEL_IMAGE(m_icon), size);
+	if (size > 1)
+	{
+		xfce_panel_image_set_from_source(XFCE_PANEL_IMAGE(m_icon), m_icon_name);
+	}
 }
 
 //-----------------------------------------------------------------------------

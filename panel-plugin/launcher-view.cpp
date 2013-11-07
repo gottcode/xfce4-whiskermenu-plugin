@@ -41,7 +41,8 @@ static gboolean is_separator(GtkTreeModel* model, GtkTreeIter* iter, gpointer)
 //-----------------------------------------------------------------------------
 
 LauncherView::LauncherView() :
-	m_model(NULL)
+	m_model(NULL),
+	m_icon_size(0)
 {
 	// Create the view
 	m_view = GTK_TREE_VIEW(exo_tree_view_new());
@@ -177,9 +178,7 @@ void LauncherView::unset_model()
 void LauncherView::reload_icon_size()
 {
 	// Force exo to reload SVG icons
-	int size = 0;
-	g_object_get(m_icon_renderer, "size", &size, NULL);
-	if (size != wm_settings->launcher_icon_size.get_size())
+	if (m_icon_size != wm_settings->launcher_icon_size.get_size())
 	{
 		gtk_tree_view_remove_column(m_view, m_column);
 		create_column();
@@ -190,14 +189,19 @@ void LauncherView::reload_icon_size()
 
 void LauncherView::create_column()
 {
+	m_icon_size = wm_settings->launcher_icon_size.get_size();
+
 	m_column = gtk_tree_view_column_new();
 	gtk_tree_view_column_set_expand(m_column, true);
 	gtk_tree_view_column_set_visible(m_column, true);
 
-	m_icon_renderer = exo_cell_renderer_icon_new();
-	g_object_set(m_icon_renderer, "size", wm_settings->launcher_icon_size.get_size(), NULL);
-	gtk_tree_view_column_pack_start(m_column, m_icon_renderer, false);
-	gtk_tree_view_column_add_attribute(m_column, m_icon_renderer, "icon", LauncherView::COLUMN_ICON);
+	if (m_icon_size > 1)
+	{
+		GtkCellRenderer* icon_renderer = exo_cell_renderer_icon_new();
+		g_object_set(icon_renderer, "size", m_icon_size, NULL);
+		gtk_tree_view_column_pack_start(m_column, icon_renderer, false);
+		gtk_tree_view_column_add_attribute(m_column, icon_renderer, "icon", LauncherView::COLUMN_ICON);
+	}
 
 	GtkCellRenderer* text_renderer = gtk_cell_renderer_text_new();
 	g_object_set(text_renderer, "ellipsize", PANGO_ELLIPSIZE_END, NULL);

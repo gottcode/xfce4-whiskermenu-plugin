@@ -62,6 +62,7 @@ public:
 private:
 	GtkRadioButton* m_button;
 	GtkWidget* m_icon;
+	gchar* m_icon_name;
 };
 
 }

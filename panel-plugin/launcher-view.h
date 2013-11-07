@@ -79,7 +79,7 @@ private:
 	GtkTreeModel* m_model;
 	GtkTreeView* m_view;
 	GtkTreeViewColumn* m_column;
-	GtkCellRenderer* m_icon_renderer;
+	int m_icon_size;
 
 
 private:

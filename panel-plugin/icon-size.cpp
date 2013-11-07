@@ -31,6 +31,7 @@ int IconSize::get_size() const
 	int size = 0;
 	switch (m_size)
 	{
+		case NONE:     size =   1; break;
 		case Smallest: size =  16; break;
 		case Smaller:  size =  24; break;
 		case Small:    size =  32; break;
@@ -48,6 +49,7 @@ int IconSize::get_size() const
 std::vector<std::string> IconSize::get_strings()
 {
 	std::vector<std::string> strings;
+	strings.push_back(_("None"));
 	strings.push_back(_("Very Small"));
 	strings.push_back(_("Smaller"));
 	strings.push_back(_("Small"));
