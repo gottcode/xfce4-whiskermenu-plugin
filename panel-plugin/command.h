@@ -33,6 +33,7 @@ public:
 	~Command();
 
 	GtkWidget* get_button();
+	GtkWidget* get_menuitem();
 
 	const gchar* get() const
 	{
@@ -48,6 +49,7 @@ private:
 
 private:
 	GtkWidget* m_button;
+	GtkWidget* m_menuitem;
 	gchar* m_icon;
 	gchar* m_text;
 	gchar* m_command;

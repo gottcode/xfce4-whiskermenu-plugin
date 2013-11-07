@@ -227,6 +227,14 @@ void ConfigurationDialog::logout_command_changed()
 
 //-----------------------------------------------------------------------------
 
+void ConfigurationDialog::menueditor_command_changed()
+{
+	const gchar* text = gtk_entry_get_text(GTK_ENTRY(m_menueditor_command));
+	wm_settings->command_menueditor->set(text);
+}
+
+//-----------------------------------------------------------------------------
+
 void ConfigurationDialog::response(int response_id)
 {
 	if ((m_plugin->get_button_style() == Plugin::ShowText) && m_plugin->get_button_title().empty())
@@ -237,6 +245,7 @@ void ConfigurationDialog::response(int response_id)
 	wm_settings->command_settings->check();
 	wm_settings->command_lockscreen->check();
 	wm_settings->command_logout->check();
+	wm_settings->command_menueditor->check();
 
 	if (response_id == GTK_RESPONSE_CLOSE)
 	{
@@ -485,6 +494,21 @@ GtkWidget* ConfigurationDialog::init_commands_tab()
 	gtk_box_pack_start(hbox, m_logout_command, true, true, 0);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_logout_command);
 	g_signal_connect(m_logout_command, "changed", G_CALLBACK(ConfigurationDialog::logout_command_changed_slot), this);
+
+	// Add menu editor command entry
+	hbox = GTK_BOX(gtk_hbox_new(false, 12));
+	gtk_box_pack_start(panel_vbox, GTK_WIDGET(hbox), false, false, 0);
+
+	label = gtk_label_new_with_mnemonic(_("Edit _Applications:"));
+	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+	gtk_box_pack_start(hbox, label, false, false, 0);
+	gtk_size_group_add_widget(label_size_group, label);
+
+	m_menueditor_command = gtk_entry_new();
+	gtk_entry_set_text(GTK_ENTRY(m_menueditor_command), wm_settings->command_menueditor->get());
+	gtk_box_pack_start(hbox, m_menueditor_command, true, true, 0);
+	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_menueditor_command);
+	g_signal_connect(m_menueditor_command, "changed", G_CALLBACK(ConfigurationDialog::menueditor_command_changed_slot), this);
 
 	return page;
 }

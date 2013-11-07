@@ -37,6 +37,7 @@ enum
 
 Command::Command(const gchar* icon, const gchar* text, const gchar* command, const gchar* error_text) :
 	m_button(NULL),
+	m_menuitem(NULL),
 	m_icon(g_strdup(icon)),
 	m_text(g_strdup(text)),
 	m_command(g_strdup(command)),
@@ -53,6 +54,10 @@ Command::~Command()
 	if (m_button)
 	{
 		g_object_unref(m_button);
+	}
+	if (m_menuitem)
+	{
+		g_object_unref(m_menuitem);
 	}
 
 	g_free(m_icon);
@@ -88,6 +93,28 @@ GtkWidget* Command::get_button()
 
 //-----------------------------------------------------------------------------
 
+GtkWidget* Command::get_menuitem()
+{
+	if (m_menuitem)
+	{
+		return m_menuitem;
+	}
+
+	m_menuitem = gtk_image_menu_item_new_with_mnemonic(m_text);
+	GtkWidget* image = gtk_image_new_from_icon_name(m_icon, GTK_ICON_SIZE_MENU);
+	gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM(m_menuitem), image);
+	g_signal_connect(m_menuitem, "activate", G_CALLBACK(Command::activated_slot), this);
+
+	gtk_widget_show(m_menuitem);
+	gtk_widget_set_sensitive(m_menuitem, m_status == WHISKERMENU_COMMAND_VALID);
+
+	g_object_ref_sink(m_menuitem);
+
+	return m_menuitem;
+}
+
+//-----------------------------------------------------------------------------
+
 void Command::set(const gchar* command)
 {
 	if (command != m_command)
@@ -112,6 +139,10 @@ void Command::check()
 	if (m_button)
 	{
 		gtk_widget_set_sensitive(m_button, m_status == WHISKERMENU_COMMAND_VALID);
+	}
+	if (m_menuitem)
+	{
+		gtk_widget_set_sensitive(m_menuitem, m_status == WHISKERMENU_COMMAND_VALID);
 	}
 }
 

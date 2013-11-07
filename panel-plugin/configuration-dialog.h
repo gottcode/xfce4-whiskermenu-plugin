@@ -59,6 +59,7 @@ private:
 	void settings_command_changed();
 	void lockscreen_command_changed();
 	void logout_command_changed();
+	void menueditor_command_changed();
 
 	void response(int response_id);
 	GtkWidget* init_appearance_tab();
@@ -90,6 +91,7 @@ private:
 	GtkWidget* m_settings_command;
 	GtkWidget* m_lockscreen_command;
 	GtkWidget* m_logout_command;
+	GtkWidget* m_menueditor_command;
 
 
 private:
@@ -176,6 +178,11 @@ private:
 	static void logout_command_changed_slot(GtkEditable*, ConfigurationDialog* obj)
 	{
 		obj->logout_command_changed();
+	}
+
+	static void menueditor_command_changed_slot(GtkEditable*, ConfigurationDialog* obj)
+	{
+		obj->menueditor_command_changed();
 	}
 };
 
