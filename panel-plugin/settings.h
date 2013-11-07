@@ -26,6 +26,7 @@
 namespace WhiskerMenu
 {
 
+class Command;
 class Plugin;
 
 class Settings
@@ -61,9 +62,9 @@ public:
 	bool position_search_alternate;
 	bool position_commands_alternate;
 
-	std::string command_settings;
-	std::string command_lockscreen;
-	std::string command_logout;
+	Command* command_settings;
+	Command* command_lockscreen;
+	Command* command_logout;
 
 	int menu_width;
 	int menu_height;

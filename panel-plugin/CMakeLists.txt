@@ -62,7 +62,7 @@ endif()
 add_library(whiskermenu MODULE
 	applications-page.cpp
 	category.cpp
-	command-button.cpp
+	command.cpp
 	configuration-dialog.cpp
 	element.h
 	favorites-page.cpp

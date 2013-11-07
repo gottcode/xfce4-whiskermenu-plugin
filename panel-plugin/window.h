@@ -31,7 +31,6 @@ namespace WhiskerMenu
 {
 
 class ApplicationsPage;
-class CommandButton;
 class FavoritesPage;
 class Launcher;
 class Page;
@@ -121,9 +120,6 @@ private:
 	ResizerWidget* m_resizer;
 
 	GtkAlignment* m_commands_align;
-	CommandButton* m_settings_button;
-	CommandButton* m_lockscreen_button;
-	CommandButton* m_logout_button;
 
 	GtkEntry* m_search_entry;
 

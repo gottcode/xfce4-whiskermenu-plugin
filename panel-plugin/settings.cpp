@@ -17,6 +17,8 @@
 
 #include "settings.h"
 
+#include "command.h"
+
 #include <algorithm>
 
 extern "C"
@@ -88,10 +90,6 @@ Settings::Settings() :
 	position_search_alternate(false),
 	position_commands_alternate(false),
 
-	command_settings("xfce4-settings-manager"),
-	command_lockscreen("xflock4"),
-	command_logout("xfce4-session-logout"),
-
 	menu_width(400),
 	menu_height(500)
 {
@@ -99,12 +97,19 @@ Settings::Settings() :
 	favorites.push_back("exo-file-manager.desktop");
 	favorites.push_back("exo-mail-reader.desktop");
 	favorites.push_back("exo-web-browser.desktop");
+
+	command_settings = new Command("preferences-desktop", _("All Settings"), "xfce4-settings-manager", _("Failed to open settings manager."));
+	command_lockscreen = new Command("system-lock-screen", _("Lock Screen"), "xflock4", _("Failed to lock screen."));
+	command_logout = new Command("system-log-out", _("Log Out"), "xfce4-session-logout", _("Failed to log out."));
 }
 
 //-----------------------------------------------------------------------------
 
 Settings::~Settings()
 {
+	delete command_settings;
+	delete command_lockscreen;
+	delete command_logout;
 }
 
 //-----------------------------------------------------------------------------
@@ -145,14 +150,18 @@ void Settings::load(char* file)
 	position_search_alternate = xfce_rc_read_bool_entry(rc, "position-search-alternate", position_search_alternate);
 	position_commands_alternate = xfce_rc_read_bool_entry(rc, "position-commands-alternate", position_commands_alternate) && position_search_alternate;
 
-	command_settings = xfce_rc_read_entry(rc, "command-settings", command_settings.c_str());
-	command_lockscreen = xfce_rc_read_entry(rc, "command-lockscreen", command_lockscreen.c_str());
-	command_logout = xfce_rc_read_entry(rc, "command-logout", command_logout.c_str());
+	command_settings->set(xfce_rc_read_entry(rc, "command-settings", command_settings->get()));
+	command_lockscreen->set(xfce_rc_read_entry(rc, "command-lockscreen", command_lockscreen->get()));
+	command_logout->set(xfce_rc_read_entry(rc, "command-logout", command_logout->get()));
 
 	menu_width = std::max(300, xfce_rc_read_int_entry(rc, "menu-width", menu_width));
 	menu_height = std::max(400, xfce_rc_read_int_entry(rc, "menu-height", menu_height));
 
 	xfce_rc_close(rc);
+
+	command_settings->check();
+	command_lockscreen->check();
+	command_logout->check();
 }
 
 //-----------------------------------------------------------------------------
@@ -193,9 +202,9 @@ void Settings::save(char* file)
 	xfce_rc_write_bool_entry(rc, "position-search-alternate", position_search_alternate);
 	xfce_rc_write_bool_entry(rc, "position-commands-alternate", position_commands_alternate);
 
-	xfce_rc_write_entry(rc, "command-settings", command_settings.c_str());
-	xfce_rc_write_entry(rc, "command-lockscreen", command_lockscreen.c_str());
-	xfce_rc_write_entry(rc, "command-logout", command_logout.c_str());
+	xfce_rc_write_entry(rc, "command-settings", command_settings->get());
+	xfce_rc_write_entry(rc, "command-lockscreen", command_lockscreen->get());
+	xfce_rc_write_entry(rc, "command-logout", command_logout->get());
 
 	xfce_rc_write_int_entry(rc, "menu-width", menu_width);
 	xfce_rc_write_int_entry(rc, "menu-height", menu_height);

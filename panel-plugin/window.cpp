@@ -18,7 +18,7 @@
 #include "window.h"
 
 #include "applications-page.h"
-#include "command-button.h"
+#include "command.h"
 #include "favorites-page.h"
 #include "launcher-view.h"
 #include "recent-page.h"
@@ -104,17 +104,9 @@ Window::Window() :
 	g_free(username);
 
 	// Create action buttons
-	m_settings_button = new CommandButton("preferences-desktop", _("All Settings"),
-			wm_settings->command_settings, _("Failed to open settings manager."));
-	g_signal_connect_swapped(m_settings_button->get_widget(), "clicked", G_CALLBACK(Window::hide_slot), this);
-
-	m_lockscreen_button = new CommandButton("system-lock-screen", _("Lock Screen"),
-			wm_settings->command_lockscreen, _("Failed to lock screen."));
-	g_signal_connect_swapped(m_lockscreen_button->get_widget(), "clicked", G_CALLBACK(Window::hide_slot), this);
-
-	m_logout_button = new CommandButton("system-log-out", _("Log Out"),
-			wm_settings->command_logout, _("Failed to log out."));
-	g_signal_connect_swapped(m_logout_button->get_widget(), "clicked", G_CALLBACK(Window::hide_slot), this);
+	g_signal_connect_swapped(wm_settings->command_settings->get_button(), "clicked", G_CALLBACK(Window::hide_slot), this);
+	g_signal_connect_swapped(wm_settings->command_lockscreen->get_button(), "clicked", G_CALLBACK(Window::hide_slot), this);
+	g_signal_connect_swapped(wm_settings->command_logout->get_button(), "clicked", G_CALLBACK(Window::hide_slot), this);
 
 	m_resizer = new ResizerWidget(m_window);
 
@@ -163,9 +155,9 @@ Window::Window() :
 	// Create box for packing commands
 	m_commands_align = GTK_ALIGNMENT(gtk_alignment_new(1, 0, 0, 0));
 	m_commands_box = GTK_BOX(gtk_hbox_new(false, 0));
-	gtk_box_pack_start(m_commands_box, GTK_WIDGET(m_settings_button->get_widget()), false, false, 0);
-	gtk_box_pack_start(m_commands_box, GTK_WIDGET(m_lockscreen_button->get_widget()), false, false, 0);
-	gtk_box_pack_start(m_commands_box, GTK_WIDGET(m_logout_button->get_widget()), false, false, 0);
+	gtk_box_pack_start(m_commands_box, GTK_WIDGET(wm_settings->command_settings->get_button()), false, false, 0);
+	gtk_box_pack_start(m_commands_box, GTK_WIDGET(wm_settings->command_lockscreen->get_button()), false, false, 0);
+	gtk_box_pack_start(m_commands_box, GTK_WIDGET(wm_settings->command_logout->get_button()), false, false, 0);
 	gtk_container_add(GTK_CONTAINER(m_commands_align), GTK_WIDGET(m_commands_box));
 
 	// Create box for packing username, commands, and resize widget
@@ -237,10 +229,6 @@ Window::~Window()
 	delete m_recent;
 	delete m_favorites;
 
-	delete m_settings_button;
-	delete m_lockscreen_button;
-	delete m_logout_button;
-
 	delete m_resizer;
 	g_object_unref(m_window);
 }
@@ -274,11 +262,6 @@ void Window::show(GtkWidget* parent, bool horizontal)
 	m_favorites->get_view()->reload_icon_size();
 	m_recent->get_view()->reload_icon_size();
 	m_applications->get_view()->reload_icon_size();
-
-	// Make sure commands are valid
-	m_settings_button->check();
-	m_lockscreen_button->check();
-	m_logout_button->check();
 
 	// Make sure applications list is current; does nothing unless list has changed
 	if (m_applications->load_applications())
@@ -450,9 +433,9 @@ void Window::show(GtkWidget* parent, bool horizontal)
 			gtk_misc_set_alignment(GTK_MISC(m_username), 0.0f, 0.5f);
 
 			gtk_alignment_set(m_commands_align, 1, 0, 0, 0);
-			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_settings_button->get_widget()), 0);
-			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_lockscreen_button->get_widget()), 1);
-			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_logout_button->get_widget()), 2);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(wm_settings->command_settings->get_button()), 0);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(wm_settings->command_lockscreen->get_button()), 1);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(wm_settings->command_logout->get_button()), 2);
 
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 0);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 1);
@@ -468,9 +451,9 @@ void Window::show(GtkWidget* parent, bool horizontal)
 			gtk_misc_set_alignment(GTK_MISC(m_username), 1.0f, 0.5f);
 
 			gtk_alignment_set(m_commands_align, 0, 0, 0, 0);
-			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_settings_button->get_widget()), 2);
-			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_lockscreen_button->get_widget()), 1);
-			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_logout_button->get_widget()), 0);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(wm_settings->command_settings->get_button()), 2);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(wm_settings->command_lockscreen->get_button()), 1);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(wm_settings->command_logout->get_button()), 0);
 
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 1);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 0);
@@ -486,9 +469,9 @@ void Window::show(GtkWidget* parent, bool horizontal)
 			gtk_misc_set_alignment(GTK_MISC(m_username), 0.0f, 0.5f);
 
 			gtk_alignment_set(m_commands_align, 1, 0, 0, 0);
-			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_settings_button->get_widget()), 0);
-			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_lockscreen_button->get_widget()), 1);
-			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_logout_button->get_widget()), 2);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(wm_settings->command_settings->get_button()), 0);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(wm_settings->command_lockscreen->get_button()), 1);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(wm_settings->command_logout->get_button()), 2);
 
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 0);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_commands_align), 1);
@@ -502,9 +485,9 @@ void Window::show(GtkWidget* parent, bool horizontal)
 			gtk_misc_set_alignment(GTK_MISC(m_username), 1.0f, 0.5f);
 
 			gtk_alignment_set(m_commands_align, 0, 0, 0, 0);
-			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_settings_button->get_widget()), 2);
-			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_lockscreen_button->get_widget()), 1);
-			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(m_logout_button->get_widget()), 0);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(wm_settings->command_settings->get_button()), 2);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(wm_settings->command_lockscreen->get_button()), 1);
+			gtk_box_reorder_child(m_commands_box, GTK_WIDGET(wm_settings->command_logout->get_button()), 0);
 
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 2);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_commands_align), 1);

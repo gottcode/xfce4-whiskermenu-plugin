@@ -17,6 +17,7 @@
 
 #include "configuration-dialog.h"
 
+#include "command.h"
 #include "icon-size.h"
 #include "plugin.h"
 #include "settings.h"
@@ -205,7 +206,7 @@ void ConfigurationDialog::toggle_display_recent(GtkToggleButton* button)
 void ConfigurationDialog::settings_command_changed()
 {
 	const gchar* text = gtk_entry_get_text(GTK_ENTRY(m_settings_command));
-	wm_settings->command_settings = std::string(text ? text : "");
+	wm_settings->command_settings->set(text);
 }
 
 //-----------------------------------------------------------------------------
@@ -213,7 +214,7 @@ void ConfigurationDialog::settings_command_changed()
 void ConfigurationDialog::lockscreen_command_changed()
 {
 	const gchar* text = gtk_entry_get_text(GTK_ENTRY(m_lockscreen_command));
-	wm_settings->command_lockscreen = std::string(text ? text : "");
+	wm_settings->command_lockscreen->set(text);
 }
 
 //-----------------------------------------------------------------------------
@@ -221,7 +222,7 @@ void ConfigurationDialog::lockscreen_command_changed()
 void ConfigurationDialog::logout_command_changed()
 {
 	const gchar* text = gtk_entry_get_text(GTK_ENTRY(m_logout_command));
-	wm_settings->command_logout = std::string(text ? text : "");
+	wm_settings->command_logout->set(text);
 }
 
 //-----------------------------------------------------------------------------
@@ -232,6 +233,10 @@ void ConfigurationDialog::response(int response_id)
 	{
 		m_plugin->set_button_title(Plugin::get_button_title_default());
 	}
+
+	wm_settings->command_settings->check();
+	wm_settings->command_lockscreen->check();
+	wm_settings->command_logout->check();
 
 	if (response_id == GTK_RESPONSE_CLOSE)
 	{
@@ -446,7 +451,7 @@ GtkWidget* ConfigurationDialog::init_commands_tab()
 	gtk_size_group_add_widget(label_size_group, label);
 
 	m_settings_command = gtk_entry_new();
-	gtk_entry_set_text(GTK_ENTRY(m_settings_command), wm_settings->command_settings.c_str());
+	gtk_entry_set_text(GTK_ENTRY(m_settings_command), wm_settings->command_settings->get());
 	gtk_box_pack_start(hbox, m_settings_command, true, true, 0);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_settings_command);
 	g_signal_connect(m_settings_command, "changed", G_CALLBACK(ConfigurationDialog::settings_command_changed_slot), this);
@@ -461,7 +466,7 @@ GtkWidget* ConfigurationDialog::init_commands_tab()
 	gtk_size_group_add_widget(label_size_group, label);
 
 	m_lockscreen_command = gtk_entry_new();
-	gtk_entry_set_text(GTK_ENTRY(m_lockscreen_command), wm_settings->command_lockscreen.c_str());
+	gtk_entry_set_text(GTK_ENTRY(m_lockscreen_command), wm_settings->command_lockscreen->get());
 	gtk_box_pack_start(hbox, m_lockscreen_command, true, true, 0);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_lockscreen_command);
 	g_signal_connect(m_lockscreen_command, "changed", G_CALLBACK(ConfigurationDialog::lockscreen_command_changed_slot), this);
@@ -476,7 +481,7 @@ GtkWidget* ConfigurationDialog::init_commands_tab()
 	gtk_size_group_add_widget(label_size_group, label);
 
 	m_logout_command = gtk_entry_new();
-	gtk_entry_set_text(GTK_ENTRY(m_logout_command), wm_settings->command_logout.c_str());
+	gtk_entry_set_text(GTK_ENTRY(m_logout_command), wm_settings->command_logout->get());
 	gtk_box_pack_start(hbox, m_logout_command, true, true, 0);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_logout_command);
 	g_signal_connect(m_logout_command, "changed", G_CALLBACK(ConfigurationDialog::logout_command_changed_slot), this);

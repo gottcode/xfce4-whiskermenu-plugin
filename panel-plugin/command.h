@@ -15,10 +15,8 @@
  * along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef WHISKERMENU_COMMAND_BUTTON_H
-#define WHISKERMENU_COMMAND_BUTTON_H
-
-#include <string>
+#ifndef WHISKERMENU_COMMAND_H
+#define WHISKERMENU_COMMAND_H
 
 extern "C"
 {
@@ -28,50 +26,47 @@ extern "C"
 namespace WhiskerMenu
 {
 
-class CommandButton
+class Command
 {
-	enum Status
-	{
-		Unchecked = -1,
-		Invalid,
-		Valid
-	};
-
 public:
-	CommandButton(const gchar* icon, const gchar* text, std::string& command, const std::string& error_text);
-	~CommandButton();
+	Command(const gchar* icon, const gchar* text, const gchar* command, const gchar* error_text);
+	~Command();
 
-	GtkWidget* get_widget() const
-	{
-		return GTK_WIDGET(m_button);
-	}
+	GtkWidget* get_button();
 
-	std::string get_command() const
+	const gchar* get() const
 	{
 		return m_command;
 	}
 
-	void set_command(const std::string& command);
+	void set(const gchar* command);
 
 	void check();
 
 private:
-	void clicked();
+	void activated();
 
 private:
-	GtkButton* m_button;
-	std::string& m_command;
-	std::string m_error_text;
-	Status m_status;
+	GtkWidget* m_button;
+	gchar* m_icon;
+	gchar* m_text;
+	gchar* m_command;
+	gchar* m_error_text;
+	gint m_status;
 
 
 private:
-	static void clicked_slot(GtkButton*, CommandButton* obj)
+	static void clicked_slot(GtkButton*, Command* obj)
 	{
-		obj->clicked();
+		obj->activated();
+	}
+
+	static void activated_slot(GtkMenuItem*, Command* obj)
+	{
+		obj->activated();
 	}
 };
 
 }
 
-#endif // WHISKERMENU_COMMAND_BUTTON_H
+#endif // WHISKERMENU_COMMAND_H
