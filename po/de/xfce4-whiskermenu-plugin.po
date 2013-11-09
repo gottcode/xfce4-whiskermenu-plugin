@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
+# hjudt <h.judt@gmx.at>, 2013
 # manjarolinux <philm@manjaro.org>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-09 22:00+0000\n"
-"PO-Revision-Date: 2013-10-18 18:29+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2013-11-08 15:23+0000\n"
+"Last-Translator: hjudt <h.judt@gmx.at>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,7 +33,7 @@ msgstr "_Aussehen"
 
 #: src/configuration_dialog.cpp:66
 msgid "_Panel Button"
-msgstr "_Panel-Knopf"
+msgstr "_Leiste"
 
 #: src/configuration_dialog.cpp:67
 msgid "_Behavior"
@@ -48,15 +49,15 @@ msgstr "Wähle ein Symbol"
 
 #: src/configuration_dialog.cpp:265
 msgid "Show applications by _name"
-msgstr "Zeige Programme bei _Namen"
+msgstr "Zeige Anwendungen nach _Namen"
 
 #: src/configuration_dialog.cpp:271
 msgid "Show application _descriptions"
-msgstr "Zeige Programm _Beschreibungen"
+msgstr "Zeige Anwendungs_beschreibungen"
 
 #: src/configuration_dialog.cpp:277
 msgid "Position _search entry next to panel button"
-msgstr "Positioniere _Sucheintrag neben Panel-Knopf"
+msgstr "Positioniere _Sucheintrag neben Leistenschaltfläche"
 
 #: src/configuration_dialog.cpp:283
 msgid "Position commands next to search _entry"
@@ -72,7 +73,7 @@ msgstr "Kateg_oriegröße:"
 
 #: src/configuration_dialog.cpp:348
 msgid "Di_splay:"
-msgstr "Di_splay:"
+msgstr "_Zeige:"
 
 #: src/configuration_dialog.cpp:354
 msgid "Icon"
@@ -96,19 +97,19 @@ msgstr "_Symbol:"
 
 #: src/configuration_dialog.cpp:409
 msgid "Switch categories by _hovering"
-msgstr "Wechsel Kategorien mit sc_hweben"
+msgstr "_Wechsle Kategorien durch Daraufzeigen"
 
 #: src/configuration_dialog.cpp:415
 msgid "Load menu hie_rarchy"
-msgstr "Lademenü-Hie_rarchie"
+msgstr "Lade Menü_hierarchie"
 
 #: src/configuration_dialog.cpp:421
 msgid "Include _favorites in recently used"
-msgstr "Beziehe _Favorieten in zuletzt benutzt mit ein"
+msgstr "Beziehe _Favoriten in »Zuletzt verwendet« mit ein"
 
 #: src/configuration_dialog.cpp:427
 msgid "Display recently _used by default"
-msgstr "Zeige zuletzt ben_utzt standardmäßig an"
+msgstr "Zeige »zuletzt verwendet« _standardmäßig an"
 
 #: src/configuration_dialog.cpp:452
 msgid "_Settings:"
@@ -116,7 +117,7 @@ msgstr "Ein_stellungen:"
 
 #: src/configuration_dialog.cpp:467
 msgid "Lock _Screen:"
-msgstr "Sperre Bild_schirm:"
+msgstr "Bild_schirmsperre:"
 
 #: src/configuration_dialog.cpp:482
 msgid "Log _Out:"
@@ -181,11 +182,11 @@ msgstr "Favoriten"
 
 #: src/menu.cpp:136
 msgid "Recently Used"
-msgstr "Zuletzt genutzt"
+msgstr "Zuletzt verwendet"
 
 #: src/menu.cpp:963
 msgid "Failed to open settings manager."
-msgstr "Konnte Einstellungs-Manager nicht starten."
+msgstr "Konnte Einstellungsverwaltung nicht starten."
 
 #: src/menu.cpp:977
 msgid "Failed to lock screen."
@@ -213,16 +214,16 @@ msgstr "Zum Panel hinzufügen"
 
 #: src/page.cpp:303
 msgid "Unable to add launcher to desktop."
-msgstr "Konnte Launcher nicht zum Desktop hinzufügen."
+msgstr "Konnte Starter nicht zum Desktop hinzufügen."
 
 #: src/page.cpp:342 src/page.cpp:351
 msgid "Unable to add launcher to panel."
-msgstr "Konnte Launcher nicht zum Panel hinzufügen."
+msgstr "Konnte Starter nicht zur Leiste hinzufügen."
 
 #: src/panel_plugin.cpp:160
 msgid "Applications Menu"
-msgstr "Programm Menü"
+msgstr "Anwendungsmenü"
 
 #: src/recent_page.cpp:71
 msgid "Clear Recently Used"
-msgstr "Lösche zuletzt benutzt"
+msgstr "Leere »Zuletzt verwendet«"
