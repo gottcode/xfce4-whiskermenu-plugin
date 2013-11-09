@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Llumex03 <l.lumex03.tornes@gmail.com>, 2013
+# Tornes Llume <l.lumex03.tornes@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-09 22:00+0000\n"
-"PO-Revision-Date: 2013-11-04 16:12+0000\n"
-"Last-Translator: Llumex03 <l.lumex03.tornes@gmail.com>\n"
+"PO-Revision-Date: 2013-11-08 17:54+0000\n"
+"Last-Translator: Tornes Llume <l.lumex03.tornes@gmail.com>\n"
 "Language-Team: Asturian (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/ast/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,67 +28,67 @@ msgstr "Menú Whisker"
 
 #: src/configuration_dialog.cpp:65
 msgid "_Appearance"
-msgstr ""
+msgstr "_Paecencia"
 
 #: src/configuration_dialog.cpp:66
 msgid "_Panel Button"
-msgstr ""
+msgstr "_Botón del panel"
 
 #: src/configuration_dialog.cpp:67
 msgid "_Behavior"
-msgstr ""
+msgstr "_Comportamientu"
 
 #: src/configuration_dialog.cpp:68
 msgid "_Commands"
-msgstr ""
+msgstr "_Comandos"
 
 #: src/configuration_dialog.cpp:94
 msgid "Select An Icon"
-msgstr "Esbillar un iconu"
+msgstr "Esbilla un iconu"
 
 #: src/configuration_dialog.cpp:265
 msgid "Show applications by _name"
-msgstr "Amosar aplicaciones per nome"
+msgstr "Amosar aplicaciones per _nome"
 
 #: src/configuration_dialog.cpp:271
 msgid "Show application _descriptions"
-msgstr ""
+msgstr "Amosar descripciones _d'aplicaciones"
 
 #: src/configuration_dialog.cpp:277
 msgid "Position _search entry next to panel button"
-msgstr ""
+msgstr "Allugar el cuadru de _gueta xunto al botón del panel"
 
 #: src/configuration_dialog.cpp:283
 msgid "Position commands next to search _entry"
-msgstr ""
+msgstr "Allugar los comandos xunto al caxuetu de _gueta"
 
 #: src/configuration_dialog.cpp:293
 msgid "Ite_m icon size:"
-msgstr ""
+msgstr "Gran_dor d'iconu d'oxetu:"
 
 #: src/configuration_dialog.cpp:313
 msgid "Categ_ory icon size:"
-msgstr ""
+msgstr "Grand_or d'iconu d'estaya:"
 
 #: src/configuration_dialog.cpp:348
 msgid "Di_splay:"
-msgstr ""
+msgstr "Pa_ntalla:"
 
 #: src/configuration_dialog.cpp:354
 msgid "Icon"
-msgstr ""
+msgstr "Iconu"
 
 #: src/configuration_dialog.cpp:355
 msgid "Title"
-msgstr ""
+msgstr "Títulu"
 
 #: src/configuration_dialog.cpp:356
 msgid "Icon and title"
-msgstr ""
+msgstr "Iconu ya títulu"
 
 #: src/configuration_dialog.cpp:366
 msgid "_Title:"
-msgstr ""
+msgstr "_Títulu:"
 
 #: src/configuration_dialog.cpp:381
 msgid "_Icon:"
@@ -96,67 +96,67 @@ msgstr "_Iconu:"
 
 #: src/configuration_dialog.cpp:409
 msgid "Switch categories by _hovering"
-msgstr ""
+msgstr "Camudar ente estayes _n'apuntando col mur"
 
 #: src/configuration_dialog.cpp:415
 msgid "Load menu hie_rarchy"
-msgstr ""
+msgstr "Cargar _xerarquía del menú"
 
 #: src/configuration_dialog.cpp:421
 msgid "Include _favorites in recently used"
-msgstr ""
+msgstr "Incluyir _favoritos n'Usaos dapoco"
 
 #: src/configuration_dialog.cpp:427
 msgid "Display recently _used by default"
-msgstr ""
+msgstr "Amosar Usao _dapoco per defeutu"
 
 #: src/configuration_dialog.cpp:452
 msgid "_Settings:"
-msgstr ""
+msgstr "_Axustes:"
 
 #: src/configuration_dialog.cpp:467
 msgid "Lock _Screen:"
-msgstr ""
+msgstr "Bloquiar _pantalla:"
 
 #: src/configuration_dialog.cpp:482
 msgid "Log _Out:"
-msgstr ""
+msgstr "Zarrar _sesión:"
 
 #: src/favorites_page.cpp:89
 msgid "Sort Alphabetically A-Z"
-msgstr ""
+msgstr "Ordenar alfabéticamente A-Z"
 
 #: src/favorites_page.cpp:95
 msgid "Sort Alphabetically Z-A"
-msgstr ""
+msgstr "Ordenar alfabéticamente Z-A"
 
 #: src/icon_size.cpp:50
 msgid "Very Small"
-msgstr ""
+msgstr "Perpequeñu"
 
 #: src/icon_size.cpp:51
 msgid "Smaller"
-msgstr ""
+msgstr "Más pequeñu"
 
 #: src/icon_size.cpp:52
 msgid "Small"
-msgstr ""
+msgstr "Pequeñu"
 
 #: src/icon_size.cpp:53
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #: src/icon_size.cpp:54
 msgid "Large"
-msgstr ""
+msgstr "Grande"
 
 #: src/icon_size.cpp:55
 msgid "Larger"
-msgstr ""
+msgstr "Más grande"
 
 #: src/icon_size.cpp:56
 msgid "Very Large"
-msgstr ""
+msgstr "Pergrande"
 
 #: src/launcher.cpp:259
 #, c-format
@@ -165,64 +165,64 @@ msgstr "Fallu al executar el comandu \"%s\"."
 
 #: src/menu.cpp:110
 msgid "All Settings"
-msgstr ""
+msgstr "Tolos axustes"
 
 #: src/menu.cpp:113
 msgid "Lock Screen"
-msgstr ""
+msgstr "Bloquiar pantalla"
 
 #: src/menu.cpp:116
 msgid "Log Out"
-msgstr ""
+msgstr "Zarrar sesión"
 
 #: src/menu.cpp:130
 msgid "Favorites"
-msgstr ""
+msgstr "Favoritos"
 
 #: src/menu.cpp:136
 msgid "Recently Used"
-msgstr ""
+msgstr "Usao dapoco"
 
 #: src/menu.cpp:963
 msgid "Failed to open settings manager."
-msgstr ""
+msgstr "Fallu al abrir l'alministrador d'axustes."
 
 #: src/menu.cpp:977
 msgid "Failed to lock screen."
-msgstr ""
+msgstr "Fallu al bloquiar la pantalla."
 
 #: src/menu.cpp:991
 msgid "Failed to log out."
-msgstr ""
+msgstr "Fallu al zarrar sesión."
 
 #: src/page.cpp:194
 msgid "Add to Favorites"
-msgstr ""
+msgstr "Amestar a favoritos"
 
 #: src/page.cpp:202
 msgid "Remove From Favorites"
-msgstr ""
+msgstr "Esniciar de favoritos"
 
 #: src/page.cpp:209
 msgid "Add to Desktop"
-msgstr ""
+msgstr "Amestar al escritoriu"
 
 #: src/page.cpp:213
 msgid "Add to Panel"
-msgstr ""
+msgstr "Amestar al panel"
 
 #: src/page.cpp:303
 msgid "Unable to add launcher to desktop."
-msgstr ""
+msgstr "Nun pue amestase'l llanzador al escritoriu."
 
 #: src/page.cpp:342 src/page.cpp:351
 msgid "Unable to add launcher to panel."
-msgstr ""
+msgstr "Nun pue amestase'l llanzador al panel."
 
 #: src/panel_plugin.cpp:160
 msgid "Applications Menu"
-msgstr ""
+msgstr "Menú d'aplicaciones"
 
 #: src/recent_page.cpp:71
 msgid "Clear Recently Used"
-msgstr ""
+msgstr "Llimpiar Usao dapoco"
