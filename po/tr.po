@@ -4,14 +4,15 @@
 #
 # Translators:
 # reis33 <bahadiroglu33@gmail.com>, 2013
+# tulliana <mdemiray@msn.com>, 2013
 # yfdogan <yfdogan@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-31 20:34+0000\n"
-"PO-Revision-Date: 2013-07-14 22:07+0000\n"
-"Last-Translator: yfdogan <yfdogan@gmail.com>\n"
+"PO-Revision-Date: 2013-11-09 17:13+0000\n"
+"Last-Translator: tulliana <mdemiray@msn.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/tr/)\n"
 "Language: tr\n"
@@ -58,7 +59,7 @@ msgstr "Görüntü:"
 
 #: ../panel-plugin/configuration-dialog.cpp:428
 msgid "Display recently _used by default"
-msgstr ""
+msgstr "Varsayılan olarak son ekran _kullanıldı"
 
 #: ../panel-plugin/launcher.cpp:259
 #, c-format
@@ -91,7 +92,7 @@ msgstr "Başlık ve Simge"
 
 #: ../panel-plugin/configuration-dialog.cpp:422
 msgid "Include _favorites in recently used"
-msgstr ""
+msgstr "Son kullanılanlar içine _favoriler dahil"
 
 #: ../panel-plugin/configuration-dialog.cpp:294
 msgid "Ite_m icon size:"
@@ -107,25 +108,23 @@ msgstr "Daha büyük"
 
 #: ../panel-plugin/configuration-dialog.cpp:416
 msgid "Load menu hie_rarchy"
-msgstr ""
+msgstr "Menü_hiyerarşisini yükle"
 
 #: ../panel-plugin/window.cpp:100
 msgid "Lock Screen"
 msgstr "Ekranı Kilitle"
 
 #: ../panel-plugin/configuration-dialog.cpp:468
-#, fuzzy
 msgid "Lock _Screen:"
-msgstr "Ekranı Kilitle"
+msgstr "Kilit_Ekranı:"
 
 #: ../panel-plugin/window.cpp:103
 msgid "Log Out"
 msgstr "Çıkış"
 
 #: ../panel-plugin/configuration-dialog.cpp:483
-#, fuzzy
 msgid "Log _Out:"
-msgstr "Çıkış"
+msgstr "Çıkış_Yap:"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Normal"
@@ -133,11 +132,11 @@ msgstr "Normal"
 
 #: ../panel-plugin/configuration-dialog.cpp:278
 msgid "Position _search entry next to panel button"
-msgstr ""
+msgstr "_arama pozisyonu panel düğmesinin yanında"
 
 #: ../panel-plugin/configuration-dialog.cpp:284
 msgid "Position commands next to search _entry"
-msgstr ""
+msgstr "Pozisyon komutlarından sonra arama _girişi"
 
 #: ../panel-plugin/window.cpp:123
 msgid "Recently Used"
@@ -209,32 +208,28 @@ msgid "Whisker Menu"
 msgstr "Gözde Menü"
 
 #: ../panel-plugin/configuration-dialog.cpp:66
-#, fuzzy
 msgid "_Appearance"
-msgstr "Görünüm"
+msgstr "_Görünüm"
 
 #: ../panel-plugin/configuration-dialog.cpp:68
-#, fuzzy
 msgid "_Behavior"
-msgstr "Davranış:"
+msgstr "_Davranış"
 
 #: ../panel-plugin/configuration-dialog.cpp:69
 msgid "_Commands"
-msgstr ""
+msgstr "_Komutlar"
 
 #: ../panel-plugin/configuration-dialog.cpp:382
 msgid "_Icon:"
 msgstr "_Simge"
 
 #: ../panel-plugin/configuration-dialog.cpp:67
-#, fuzzy
 msgid "_Panel Button"
-msgstr "Panel Düğmesi"
+msgstr "_Panel Düğmesi"
 
 #: ../panel-plugin/configuration-dialog.cpp:453
-#, fuzzy
 msgid "_Settings:"
-msgstr "Bütün Ayarlar"
+msgstr "_Ayarlar:"
 
 #: ../panel-plugin/configuration-dialog.cpp:367
 msgid "_Title:"
