@@ -98,10 +98,10 @@ Settings::Settings() :
 	favorites.push_back("exo-mail-reader.desktop");
 	favorites.push_back("exo-web-browser.desktop");
 
-	command_settings = new Command("preferences-desktop", _("All Settings"), "xfce4-settings-manager", _("Failed to open settings manager."));
-	command_lockscreen = new Command("system-lock-screen", _("Lock Screen"), "xflock4", _("Failed to lock screen."));
-	command_logout = new Command("system-log-out", _("Log Out"), "xfce4-session-logout", _("Failed to log out."));
-	command_menueditor = new Command("xfce4-menueditor", _("Edit _Applications"), "menulibre", _("Failed to launch menu editor."));
+	command_settings = new Command("preferences-desktop", _("All _Settings"), "xfce4-settings-manager", _("Failed to open settings manager."));
+	command_lockscreen = new Command("system-lock-screen", _("_Lock Screen"), "xflock4", _("Failed to lock screen."));
+	command_logout = new Command("system-log-out", _("Log _Out"), "xfce4-session-logout", _("Failed to log out."));
+	command_menueditor = new Command("xfce4-menueditor", _("_Edit Applications"), "menulibre", _("Failed to launch menu editor."));
 }
 
 //-----------------------------------------------------------------------------

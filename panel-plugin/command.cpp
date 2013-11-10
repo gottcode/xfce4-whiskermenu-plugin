@@ -17,6 +17,8 @@
 
 #include "command.h"
 
+#include <string>
+
 extern "C"
 {
 #include <libxfce4ui/libxfce4ui.h>
@@ -75,9 +77,20 @@ GtkWidget* Command::get_button()
 		return m_button;
 	}
 
+	std::string tooltip(m_text ? m_text : "");
+	for (std::string::size_type i = 0, length = tooltip.length(); i < length; ++i)
+	{
+		if (tooltip[i] == '_')
+		{
+			tooltip.erase(i, 1);
+			--length;
+			--i;
+		}
+	}
+
 	m_button = gtk_button_new();
 	gtk_button_set_relief(GTK_BUTTON(m_button), GTK_RELIEF_NONE);
-	gtk_widget_set_tooltip_text(m_button, m_text);
+	gtk_widget_set_tooltip_text(m_button, tooltip.c_str());
 	g_signal_connect(m_button, "clicked", G_CALLBACK(Command::clicked_slot), this);
 
 	GtkWidget* image = gtk_image_new_from_icon_name(m_icon, GTK_ICON_SIZE_LARGE_TOOLBAR);
