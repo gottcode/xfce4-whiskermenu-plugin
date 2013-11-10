@@ -15,8 +15,8 @@
  * along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef WHISKERMENU_COMMAND_H
-#define WHISKERMENU_COMMAND_H
+#ifndef WHISKERMENU_COMMAND_EDIT_H
+#define WHISKERMENU_COMMAND_EDIT_H
 
 extern "C"
 {
@@ -26,65 +26,49 @@ extern "C"
 namespace WhiskerMenu
 {
 
-class Command
+class Command;
+
+class CommandEdit
 {
 public:
-	Command(const gchar* icon, const gchar* text, const gchar* command, const gchar* error_text);
-	~Command();
+	CommandEdit(Command* command);
 
-	GtkWidget* get_button();
-	GtkWidget* get_menuitem();
-
-	const gchar* get() const
+	GtkWidget* get_widget() const
 	{
-		return m_command;
+		return m_widget;
 	}
-
-	bool get_shown() const
-	{
-		return m_shown;
-	}
-
-	const gchar* get_text() const
-	{
-		return m_text;
-	}
-
-	void set(const gchar* command);
-
-	void set_shown(bool shown)
-	{
-		m_shown = shown;
-	}
-
-	void check();
 
 private:
-	void activated();
+	void browse_clicked();
+	void command_changed();
+	void shown_toggled();
 
 private:
-	GtkWidget* m_button;
-	GtkWidget* m_menuitem;
-	gchar* m_icon;
-	gchar* m_text;
-	gchar* m_command;
-	gchar* m_error_text;
-	gint m_status;
-	bool m_shown;
+	Command* m_command;
+
+	GtkWidget* m_widget;
+	GtkToggleButton* m_shown;
+	GtkEntry* m_entry;
+	GtkWidget* m_browse_button;
 
 
 private:
-	static void clicked_slot(GtkButton*, Command* obj)
+	static void browse_clicked_slot(GtkWidget*, CommandEdit* obj)
 	{
-		obj->activated();
+		obj->browse_clicked();
 	}
 
-	static void activated_slot(GtkMenuItem*, Command* obj)
+	static void command_changed_slot(GtkEditable*, CommandEdit* obj)
 	{
-		obj->activated();
+		obj->command_changed();
+	}
+
+	static void shown_toggled_slot(GtkToggleButton*, CommandEdit* obj)
+	{
+		obj->shown_toggled();
 	}
 };
 
 }
 
-#endif // WHISKERMENU_COMMAND_H
+#endif // WHISKERMENU_COMMAND_EDIT_H

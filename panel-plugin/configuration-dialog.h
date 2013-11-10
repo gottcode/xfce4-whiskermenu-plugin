@@ -26,6 +26,7 @@ extern "C"
 namespace WhiskerMenu
 {
 
+class CommandEdit;
 class Plugin;
 
 class ConfigurationDialog
@@ -56,11 +57,6 @@ private:
 	void toggle_remember_favorites(GtkToggleButton* button);
 	void toggle_display_recent(GtkToggleButton* button);
 
-	void settings_command_changed();
-	void lockscreen_command_changed();
-	void logout_command_changed();
-	void menueditor_command_changed();
-
 	void response(int response_id);
 	GtkWidget* init_appearance_tab();
 	GtkWidget* init_panel_button_tab();
@@ -88,10 +84,10 @@ private:
 	GtkWidget* m_remember_favorites;
 	GtkWidget* m_display_recent;
 
-	GtkWidget* m_settings_command;
-	GtkWidget* m_lockscreen_command;
-	GtkWidget* m_logout_command;
-	GtkWidget* m_menueditor_command;
+	CommandEdit* m_settings_command;
+	CommandEdit* m_lockscreen_command;
+	CommandEdit* m_logout_command;
+	CommandEdit* m_menueditor_command;
 
 
 private:
@@ -163,26 +159,6 @@ private:
 	static void response_slot(GtkDialog*, gint response_id, ConfigurationDialog* obj)
 	{
 		obj->response(response_id);
-	}
-
-	static void settings_command_changed_slot(GtkEditable*, ConfigurationDialog* obj)
-	{
-		obj->settings_command_changed();
-	}
-
-	static void lockscreen_command_changed_slot(GtkEditable*, ConfigurationDialog* obj)
-	{
-		obj->lockscreen_command_changed();
-	}
-
-	static void logout_command_changed_slot(GtkEditable*, ConfigurationDialog* obj)
-	{
-		obj->logout_command_changed();
-	}
-
-	static void menueditor_command_changed_slot(GtkEditable*, ConfigurationDialog* obj)
-	{
-		obj->menueditor_command_changed();
 	}
 };
 
