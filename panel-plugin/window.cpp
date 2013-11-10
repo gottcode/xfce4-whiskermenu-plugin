@@ -263,6 +263,12 @@ void Window::show(GtkWidget* parent, bool horizontal)
 	m_recent->get_view()->reload_icon_size();
 	m_applications->get_view()->reload_icon_size();
 
+	// Make sure commands are valid and visible
+	wm_settings->command_settings->check();
+	wm_settings->command_lockscreen->check();
+	wm_settings->command_logout->check();
+	wm_settings->command_menueditor->check();
+
 	// Make sure applications list is current; does nothing unless list has changed
 	if (m_applications->load_applications())
 	{

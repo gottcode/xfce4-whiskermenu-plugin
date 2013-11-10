@@ -44,7 +44,8 @@ Command::Command(const gchar* icon, const gchar* text, const gchar* command, con
 	m_text(g_strdup(text)),
 	m_command(g_strdup(command)),
 	m_error_text(g_strdup(error_text)),
-	m_status(WHISKERMENU_COMMAND_UNCHECKED)
+	m_status(WHISKERMENU_COMMAND_UNCHECKED),
+	m_shown(true)
 {
 	check();
 }
@@ -96,7 +97,7 @@ GtkWidget* Command::get_button()
 	GtkWidget* image = gtk_image_new_from_icon_name(m_icon, GTK_ICON_SIZE_LARGE_TOOLBAR);
 	gtk_container_add(GTK_CONTAINER(m_button), GTK_WIDGET(image));
 
-	gtk_widget_show(m_button);
+	gtk_widget_set_visible(m_button, m_shown);
 	gtk_widget_set_sensitive(m_button, m_status == WHISKERMENU_COMMAND_VALID);
 
 	g_object_ref_sink(m_button);
@@ -118,7 +119,7 @@ GtkWidget* Command::get_menuitem()
 	gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM(m_menuitem), image);
 	g_signal_connect(m_menuitem, "activate", G_CALLBACK(Command::activated_slot), this);
 
-	gtk_widget_show(m_menuitem);
+	gtk_widget_set_visible(m_menuitem, m_shown);
 	gtk_widget_set_sensitive(m_menuitem, m_status == WHISKERMENU_COMMAND_VALID);
 
 	g_object_ref_sink(m_menuitem);
@@ -151,10 +152,12 @@ void Command::check()
 
 	if (m_button)
 	{
+		gtk_widget_set_visible(m_button, m_shown);
 		gtk_widget_set_sensitive(m_button, m_status == WHISKERMENU_COMMAND_VALID);
 	}
 	if (m_menuitem)
 	{
+		gtk_widget_set_visible(m_menuitem, m_shown);
 		gtk_widget_set_sensitive(m_menuitem, m_status == WHISKERMENU_COMMAND_VALID);
 	}
 }

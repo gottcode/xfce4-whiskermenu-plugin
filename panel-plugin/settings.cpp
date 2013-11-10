@@ -157,6 +157,11 @@ void Settings::load(char* file)
 	command_logout->set(xfce_rc_read_entry(rc, "command-logout", command_logout->get()));
 	command_menueditor->set(xfce_rc_read_entry(rc, "command-menueditor", command_menueditor->get()));
 
+	command_settings->set_shown(xfce_rc_read_bool_entry(rc, "show-command-settings", command_settings->get_shown()));
+	command_lockscreen->set_shown(xfce_rc_read_bool_entry(rc, "show-command-lockscreen", command_lockscreen->get_shown()));
+	command_logout->set_shown(xfce_rc_read_bool_entry(rc, "show-command-logout", command_logout->get_shown()));
+	command_menueditor->set_shown(xfce_rc_read_bool_entry(rc, "show-command-menueditor", command_menueditor->get_shown()));
+
 	menu_width = std::max(300, xfce_rc_read_int_entry(rc, "menu-width", menu_width));
 	menu_height = std::max(400, xfce_rc_read_int_entry(rc, "menu-height", menu_height));
 
@@ -210,6 +215,11 @@ void Settings::save(char* file)
 	xfce_rc_write_entry(rc, "command-lockscreen", command_lockscreen->get());
 	xfce_rc_write_entry(rc, "command-logout", command_logout->get());
 	xfce_rc_write_entry(rc, "command-menueditor", command_menueditor->get());
+
+	xfce_rc_write_bool_entry(rc, "show-command-settings", command_settings->get_shown());
+	xfce_rc_write_bool_entry(rc, "show-command-lockscreen", command_lockscreen->get_shown());
+	xfce_rc_write_bool_entry(rc, "show-command-logout", command_logout->get_shown());
+	xfce_rc_write_bool_entry(rc, "show-command-menueditor", command_menueditor->get_shown());
 
 	xfce_rc_write_int_entry(rc, "menu-width", menu_width);
 	xfce_rc_write_int_entry(rc, "menu-height", menu_height);

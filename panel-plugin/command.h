@@ -40,7 +40,17 @@ public:
 		return m_command;
 	}
 
+	bool get_shown() const
+	{
+		return m_shown;
+	}
+
 	void set(const gchar* command);
+
+	void set_shown(bool shown)
+	{
+		m_shown = shown;
+	}
 
 	void check();
 
@@ -55,6 +65,7 @@ private:
 	gchar* m_command;
 	gchar* m_error_text;
 	gint m_status;
+	bool m_shown;
 
 
 private:
