@@ -218,6 +218,7 @@ void ConfigurationDialog::response(int response_id)
 
 	wm_settings->command_settings->check();
 	wm_settings->command_lockscreen->check();
+	wm_settings->command_switchuser->check();
 	wm_settings->command_logout->check();
 	wm_settings->command_menueditor->check();
 
@@ -428,6 +429,10 @@ GtkWidget* ConfigurationDialog::init_commands_tab()
 	// Add lock screen command entry
 	m_lockscreen_command = new CommandEdit(wm_settings->command_lockscreen);
 	gtk_box_pack_start(panel_vbox, m_lockscreen_command->get_widget(), false, false, 0);
+
+	// Add switch user command entry
+	m_switchuser_command = new CommandEdit(wm_settings->command_switchuser);
+	gtk_box_pack_start(panel_vbox, m_switchuser_command->get_widget(), false, false, 0);
 
 	// Add log out command entry
 	m_logout_command = new CommandEdit(wm_settings->command_logout);

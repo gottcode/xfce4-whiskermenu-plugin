@@ -86,6 +86,7 @@ private:
 
 	CommandEdit* m_settings_command;
 	CommandEdit* m_lockscreen_command;
+	CommandEdit* m_switchuser_command;
 	CommandEdit* m_logout_command;
 	CommandEdit* m_menueditor_command;
 

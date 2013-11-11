@@ -64,6 +64,7 @@ public:
 
 	Command* command_settings;
 	Command* command_lockscreen;
+	Command* command_switchuser;
 	Command* command_logout;
 	Command* command_menueditor;
 
