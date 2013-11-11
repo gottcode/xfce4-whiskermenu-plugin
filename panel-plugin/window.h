@@ -70,18 +70,12 @@ public:
 		return m_recent;
 	}
 
-	bool get_modified() const
-	{
-		return m_modified;
-	}
-
 	void hide();
 	void show(GtkWidget* parent, bool horizontal);
 	void save();
 	void set_categories(const std::vector<SectionButton*>& categories);
 	void set_items();
 	void set_loaded();
-	void set_modified();
 	void unset_items();
 
 private:
@@ -139,7 +133,6 @@ private:
 	bool m_layout_bottom;
 	bool m_layout_search_alternate;
 	bool m_layout_commands_alternate;
-	bool m_modified;
 
 
 private:

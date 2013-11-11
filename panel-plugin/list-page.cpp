@@ -20,6 +20,7 @@
 #include "applications-page.h"
 #include "launcher.h"
 #include "launcher-view.h"
+#include "settings.h"
 #include "window.h"
 
 #include <algorithm>
@@ -155,7 +156,7 @@ void ListPage::on_row_changed(GtkTreeModel* model, GtkTreePath* path, GtkTreeIte
 	if (launcher)
 	{
 		m_desktop_ids[pos] = launcher->get_desktop_id();
-		get_window()->set_modified(); // Handle favorites being rearranged
+		wm_settings->set_modified();
 	}
 }
 
@@ -176,10 +177,12 @@ void ListPage::on_row_inserted(GtkTreeModel* model, GtkTreePath* path, GtkTreeIt
 	if (pos >= m_desktop_ids.size())
 	{
 		m_desktop_ids.push_back(desktop_id);
+		wm_settings->set_modified();
 	}
 	else if (m_desktop_ids.at(pos) != desktop_id)
 	{
 		m_desktop_ids.insert(m_desktop_ids.begin() + pos, desktop_id);
+		wm_settings->set_modified();
 	}
 }
 
@@ -191,6 +194,7 @@ void ListPage::on_row_deleted(GtkTreePath* path)
 	if (pos < m_desktop_ids.size())
 	{
 		m_desktop_ids.erase(m_desktop_ids.begin() + pos);
+		wm_settings->set_modified();
 	}
 }
 

@@ -121,6 +121,7 @@ void ConfigurationDialog::choose_icon()
 void ConfigurationDialog::category_icon_size_changed(GtkComboBox* combo)
 {
 	wm_settings->category_icon_size = gtk_combo_box_get_active(combo) - 1;
+	wm_settings->set_modified();
 }
 
 //-----------------------------------------------------------------------------
@@ -128,6 +129,7 @@ void ConfigurationDialog::category_icon_size_changed(GtkComboBox* combo)
 void ConfigurationDialog::item_icon_size_changed(GtkComboBox* combo)
 {
 	wm_settings->launcher_icon_size = gtk_combo_box_get_active(combo) - 1;
+	wm_settings->set_modified();
 }
 
 //-----------------------------------------------------------------------------
@@ -150,6 +152,7 @@ void ConfigurationDialog::title_changed()
 void ConfigurationDialog::toggle_hover_switch_category(GtkToggleButton* button)
 {
 	wm_settings->category_hover_activate = gtk_toggle_button_get_active(button);
+	wm_settings->set_modified();
 }
 
 //-----------------------------------------------------------------------------
@@ -157,6 +160,7 @@ void ConfigurationDialog::toggle_hover_switch_category(GtkToggleButton* button)
 void ConfigurationDialog::toggle_show_name(GtkToggleButton* button)
 {
 	wm_settings->launcher_show_name = gtk_toggle_button_get_active(button);
+	wm_settings->set_modified();
 	m_plugin->reload();
 }
 
@@ -165,6 +169,7 @@ void ConfigurationDialog::toggle_show_name(GtkToggleButton* button)
 void ConfigurationDialog::toggle_show_description(GtkToggleButton* button)
 {
 	wm_settings->launcher_show_description = gtk_toggle_button_get_active(button);
+	wm_settings->set_modified();
 	m_plugin->reload();
 }
 
@@ -174,6 +179,7 @@ void ConfigurationDialog::toggle_position_search_alternate(GtkToggleButton* butt
 {
 	bool active = gtk_toggle_button_get_active(button);
 	wm_settings->position_search_alternate = gtk_toggle_button_get_active(button);
+	wm_settings->set_modified();
 	gtk_widget_set_sensitive(GTK_WIDGET(m_position_commands_alternate), active);
 }
 
@@ -182,6 +188,7 @@ void ConfigurationDialog::toggle_position_search_alternate(GtkToggleButton* butt
 void ConfigurationDialog::toggle_position_commands_alternate(GtkToggleButton* button)
 {
 	wm_settings->position_commands_alternate = gtk_toggle_button_get_active(button);
+	wm_settings->set_modified();
 }
 
 //-----------------------------------------------------------------------------
@@ -189,6 +196,7 @@ void ConfigurationDialog::toggle_position_commands_alternate(GtkToggleButton* bu
 void ConfigurationDialog::toggle_load_hierarchy(GtkToggleButton* button)
 {
 	wm_settings->load_hierarchy = gtk_toggle_button_get_active(button);
+	wm_settings->set_modified();
 	m_plugin->reload();
 }
 
@@ -197,6 +205,7 @@ void ConfigurationDialog::toggle_load_hierarchy(GtkToggleButton* button)
 void ConfigurationDialog::toggle_remember_favorites(GtkToggleButton* button)
 {
 	wm_settings->favorites_in_recent = gtk_toggle_button_get_active(button);
+	wm_settings->set_modified();
 }
 
 //-----------------------------------------------------------------------------
@@ -204,6 +213,7 @@ void ConfigurationDialog::toggle_remember_favorites(GtkToggleButton* button)
 void ConfigurationDialog::toggle_display_recent(GtkToggleButton* button)
 {
 	wm_settings->display_recent = gtk_toggle_button_get_active(button);
+	wm_settings->set_modified();
 }
 
 //-----------------------------------------------------------------------------

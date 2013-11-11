@@ -39,6 +39,19 @@ class Settings
 	void load(char* file);
 	void save(char* file);
 
+	bool m_modified;
+
+public:
+	bool get_modified() const
+	{
+		return m_modified;
+	}
+
+	void set_modified()
+	{
+		m_modified = true;
+	}
+
 public:
 	std::vector<std::string> favorites;
 	std::vector<std::string> recent;

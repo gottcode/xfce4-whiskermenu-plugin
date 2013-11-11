@@ -360,7 +360,6 @@ void Page::add_selected_to_favorites()
 	Launcher* launcher = get_selected_launcher();
 	g_assert(launcher != NULL);
 	m_window->get_favorites()->add(launcher);
-	m_window->set_modified();
 }
 
 //-----------------------------------------------------------------------------
@@ -370,7 +369,6 @@ void Page::remove_selected_from_favorites()
 	Launcher* launcher = get_selected_launcher();
 	g_assert(launcher != NULL);
 	m_window->get_favorites()->remove(launcher);
-	m_window->set_modified();
 }
 
 //-----------------------------------------------------------------------------

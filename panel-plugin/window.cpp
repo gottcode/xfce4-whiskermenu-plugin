@@ -45,8 +45,7 @@ Window::Window() :
 	m_layout_left(true),
 	m_layout_bottom(true),
 	m_layout_search_alternate(false),
-	m_layout_commands_alternate(false),
-	m_modified(false)
+	m_layout_commands_alternate(false)
 {
 	m_geometry.x = 0;
 	m_geometry.y = 0;
@@ -550,9 +549,16 @@ void Window::show(GtkWidget* parent, bool horizontal)
 
 void Window::save()
 {
-	wm_settings->menu_width = m_geometry.width;
-	wm_settings->menu_height = m_geometry.height;
-	m_modified = false;
+	if (wm_settings->menu_width != m_geometry.width)
+	{
+		wm_settings->menu_width = m_geometry.width;
+		wm_settings->set_modified();
+	}
+	if (wm_settings->menu_height != m_geometry.height)
+	{
+		wm_settings->menu_height = m_geometry.height;
+		wm_settings->set_modified();
+	}
 }
 
 //-----------------------------------------------------------------------------
@@ -591,13 +597,6 @@ void Window::set_loaded()
 	gtk_widget_hide(m_window_load_contents);
 	gtk_widget_show(m_window_contents);
 	gtk_widget_grab_focus(GTK_WIDGET(m_search_entry));
-}
-
-//-----------------------------------------------------------------------------
-
-void Window::set_modified()
-{
-	m_modified = true;
 }
 
 //-----------------------------------------------------------------------------

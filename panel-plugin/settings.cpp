@@ -72,6 +72,8 @@ static void write_vector_entry(XfceRc* rc, const char* key, const std::vector<st
 //-----------------------------------------------------------------------------
 
 Settings::Settings() :
+	m_modified(false),
+
 	button_icon_name("xfce4-whiskermenu"),
 	button_title_visible(false),
 	button_icon_visible(true),
@@ -171,6 +173,8 @@ void Settings::load(char* file)
 
 	xfce_rc_close(rc);
 
+	m_modified = false;
+
 	command_settings->check();
 	command_lockscreen->check();
 	command_logout->check();
@@ -231,6 +235,8 @@ void Settings::save(char* file)
 	xfce_rc_write_int_entry(rc, "menu-height", menu_height);
 
 	xfce_rc_close(rc);
+
+	m_modified = false;
 }
 
 //-----------------------------------------------------------------------------

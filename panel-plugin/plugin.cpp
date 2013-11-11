@@ -188,6 +188,8 @@ void Plugin::set_button_style(ButtonStyle style)
 		gtk_widget_hide(GTK_WIDGET(m_button_label));
 	}
 
+	wm_settings->set_modified();
+
 	size_changed(xfce_panel_plugin_get_size(m_plugin));
 }
 
@@ -196,6 +198,7 @@ void Plugin::set_button_style(ButtonStyle style)
 void Plugin::set_button_title(const std::string& title)
 {
 	wm_settings->button_title = title;
+	wm_settings->set_modified();
 	gtk_label_set_markup(m_button_label, wm_settings->button_title.c_str());
 	size_changed(xfce_panel_plugin_get_size(m_plugin));
 }
@@ -205,6 +208,7 @@ void Plugin::set_button_title(const std::string& title)
 void Plugin::set_button_icon_name(const std::string& icon)
 {
 	wm_settings->button_icon_name = icon;
+	wm_settings->set_modified();
 	xfce_panel_image_set_from_source(m_button_icon, icon.c_str());
 	size_changed(xfce_panel_plugin_get_size(m_plugin));
 }
@@ -250,10 +254,7 @@ void Plugin::menu_hidden()
 {
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_button), false);
 	xfce_panel_plugin_block_autohide(m_plugin, false);
-	if (m_window->get_modified())
-	{
-		save();
-	}
+	save();
 }
 
 //-----------------------------------------------------------------------------
@@ -299,7 +300,11 @@ bool Plugin::remote_event(gchar* name, GValue* value)
 void Plugin::save()
 {
 	m_window->save();
-	wm_settings->save(xfce_panel_plugin_save_location(m_plugin, true));
+
+	if (wm_settings->get_modified())
+	{
+		wm_settings->save(xfce_panel_plugin_save_location(m_plugin, true));
+	}
 }
 
 //-----------------------------------------------------------------------------

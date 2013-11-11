@@ -34,6 +34,7 @@ RecentPage::RecentPage(Window* window) :
 	if (wm_settings->recent.size() > m_max_items)
 	{
 		wm_settings->recent.erase(wm_settings->recent.begin() + m_max_items, wm_settings->recent.end());
+		wm_settings->set_modified();
 	}
 }
 
@@ -94,7 +95,6 @@ void RecentPage::extend_context_menu(GtkWidget* menu)
 void RecentPage::clear_menu()
 {
 	gtk_list_store_clear(GTK_LIST_STORE(get_view()->get_model()));
-	get_window()->set_modified();
 }
 
 //-----------------------------------------------------------------------------

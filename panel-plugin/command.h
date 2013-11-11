@@ -52,10 +52,7 @@ public:
 
 	void set(const gchar* command);
 
-	void set_shown(bool shown)
-	{
-		m_shown = shown;
-	}
+	void set_shown(bool shown);
 
 	void check();
 

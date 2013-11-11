@@ -17,6 +17,8 @@
 
 #include "command.h"
 
+#include "settings.h"
+
 #include <string>
 
 extern "C"
@@ -136,6 +138,18 @@ void Command::set(const gchar* command)
 		g_free(m_command);
 		m_command = g_strdup(command);
 		m_status = WHISKERMENU_COMMAND_UNCHECKED;
+		wm_settings->set_modified();
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void Command::set_shown(bool shown)
+{
+	if (shown != m_shown)
+	{
+		m_shown = shown;
+		wm_settings->set_modified();
 	}
 }
 
