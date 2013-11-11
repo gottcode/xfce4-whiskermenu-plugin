@@ -61,7 +61,6 @@ ConfigurationDialog::ConfigurationDialog(Plugin* plugin) :
 	// Create tabs
 	GtkNotebook* notebook = GTK_NOTEBOOK(gtk_notebook_new());
 	gtk_notebook_append_page(notebook, init_appearance_tab(), gtk_label_new_with_mnemonic(_("_Appearance")));
-	gtk_notebook_append_page(notebook, init_panel_button_tab(), gtk_label_new_with_mnemonic(_("_Panel Button")));
 	gtk_notebook_append_page(notebook, init_behavior_tab(), gtk_label_new_with_mnemonic(_("_Behavior")));
 	gtk_notebook_append_page(notebook, init_commands_tab(), gtk_label_new_with_mnemonic(_("_Commands")));
 
@@ -232,94 +231,17 @@ void ConfigurationDialog::response(int response_id)
 
 GtkWidget* ConfigurationDialog::init_appearance_tab()
 {
-	// Create size group for labels
-	GtkSizeGroup* label_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
-
-	// Create appearance section
+	// Create page
 	GtkWidget* page = gtk_alignment_new(0, 0, 1, 0);
-	gtk_container_set_border_width(GTK_CONTAINER(page), 8);
-	GtkBox* appearance_vbox = GTK_BOX(gtk_vbox_new(false, 8));
-	gtk_container_add(GTK_CONTAINER(page), GTK_WIDGET(appearance_vbox));
-
-	// Add option to use generic names
-	m_show_names = gtk_check_button_new_with_mnemonic(_("Show applications by _name"));
-	gtk_box_pack_start(appearance_vbox, m_show_names, true, true, 0);
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_names), wm_settings->launcher_show_name);
-	g_signal_connect(m_show_names, "toggled", G_CALLBACK(ConfigurationDialog::toggle_show_name_slot), this);
-
-	// Add option to hide descriptions
-	m_show_descriptions = gtk_check_button_new_with_mnemonic(_("Show application _descriptions"));
-	gtk_box_pack_start(appearance_vbox, m_show_descriptions, true, true, 0);
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_descriptions), wm_settings->launcher_show_description);
-	g_signal_connect(m_show_descriptions, "toggled", G_CALLBACK(ConfigurationDialog::toggle_show_description_slot), this);
-
-	// Add option to use alternate search entry position
-	m_position_search_alternate = gtk_check_button_new_with_mnemonic(_("Position _search entry next to panel button"));
-	gtk_box_pack_start(appearance_vbox, m_position_search_alternate, true, true, 0);
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_search_alternate), wm_settings->position_search_alternate);
-	g_signal_connect(m_position_search_alternate, "toggled", G_CALLBACK(ConfigurationDialog::toggle_position_search_alternate_slot), this);
-
-	// Add option to use alternate commands position
-	m_position_commands_alternate = gtk_check_button_new_with_mnemonic(_("Position commands next to search _entry"));
-	gtk_box_pack_start(appearance_vbox, m_position_commands_alternate, true, true, 0);
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_commands_alternate), wm_settings->position_commands_alternate);
-	gtk_widget_set_sensitive(GTK_WIDGET(m_position_commands_alternate), gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(m_position_search_alternate)));
-	g_signal_connect(m_position_commands_alternate, "toggled", G_CALLBACK(ConfigurationDialog::toggle_position_commands_alternate_slot), this);
-
-	// Add item icon size selector
-	GtkBox* hbox = GTK_BOX(gtk_hbox_new(false, 12));
-	gtk_box_pack_start(appearance_vbox, GTK_WIDGET(hbox), false, false, 0);
-
-	GtkWidget* label = gtk_label_new_with_mnemonic(_("Ite_m icon size:"));
-	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
-	gtk_box_pack_start(hbox, label, false, false, 0);
-	gtk_size_group_add_widget(label_size_group, label);
-
-	m_item_icon_size = gtk_combo_box_text_new();
-	std::vector<std::string> icon_sizes = IconSize::get_strings();
-	for (std::vector<std::string>::const_iterator i = icon_sizes.begin(), end = icon_sizes.end(); i != end; ++i)
-	{
-		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_item_icon_size), i->c_str());
-	}
-	gtk_combo_box_set_active(GTK_COMBO_BOX(m_item_icon_size), wm_settings->launcher_icon_size + 1);
-	gtk_box_pack_start(hbox, m_item_icon_size, false, false, 0);
-	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_item_icon_size);
-	g_signal_connect(m_item_icon_size, "changed", G_CALLBACK(ConfigurationDialog::item_icon_size_changed_slot), this);
-
-	// Add category icon size selector
-	hbox = GTK_BOX(gtk_hbox_new(false, 12));
-	gtk_box_pack_start(appearance_vbox, GTK_WIDGET(hbox), false, false, 0);
-
-	label = gtk_label_new_with_mnemonic(_("Categ_ory icon size:"));
-	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
-	gtk_box_pack_start(hbox, label, false, false, 0);
-	gtk_size_group_add_widget(label_size_group, label);
-
-	m_category_icon_size = gtk_combo_box_text_new();
-	for (std::vector<std::string>::const_iterator i = icon_sizes.begin(), end = icon_sizes.end(); i != end; ++i)
-	{
-		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_category_icon_size), i->c_str());
-	}
-	gtk_combo_box_set_active(GTK_COMBO_BOX(m_category_icon_size), wm_settings->category_icon_size + 1);
-	gtk_box_pack_start(hbox, m_category_icon_size, false, false, 0);
-	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_category_icon_size);
-	g_signal_connect(m_category_icon_size, "changed", G_CALLBACK(ConfigurationDialog::category_icon_size_changed_slot), this);
-
-	return page;
-}
-
-//-----------------------------------------------------------------------------
-
-GtkWidget* ConfigurationDialog::init_panel_button_tab()
-{
-	// Create size group for labels
-	GtkSizeGroup* label_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
+	GtkBox* contents_vbox = GTK_BOX(gtk_vbox_new(false, 0));
+	gtk_container_add(GTK_CONTAINER(page), GTK_WIDGET(contents_vbox));
 
 	// Create panel button section
-	GtkWidget* page = gtk_alignment_new(0, 0, 1, 0);
-	gtk_container_set_border_width(GTK_CONTAINER(page), 8);
-	GtkBox* panel_vbox = GTK_BOX(gtk_vbox_new(false, 8));
-	gtk_container_add(GTK_CONTAINER(page), GTK_WIDGET(panel_vbox));
+	GtkSizeGroup* label_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
+	GtkBox* panel_vbox = GTK_BOX(gtk_vbox_new(false, 6));
+	GtkWidget* panel_frame = xfce_gtk_frame_box_new_with_content(_("Panel Button"), GTK_WIDGET(panel_vbox));
+	gtk_box_pack_start(contents_vbox, panel_frame, false, false, 0);
+	gtk_container_set_border_width(GTK_CONTAINER(panel_frame), 6);
 
 	// Add button style selector
 	GtkBox* hbox = GTK_BOX(gtk_hbox_new(false, 12));
@@ -371,6 +293,77 @@ GtkWidget* ConfigurationDialog::init_panel_button_tab()
 	m_icon = xfce_panel_image_new_from_source(m_plugin->get_button_icon_name().c_str());
 	xfce_panel_image_set_size(XFCE_PANEL_IMAGE(m_icon), 48);
 	gtk_container_add(GTK_CONTAINER(m_icon_button), m_icon);
+
+	// Create menu section
+	label_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
+	GtkBox* appearance_vbox = GTK_BOX(gtk_vbox_new(false, 6));
+	GtkWidget* appearance_frame = xfce_gtk_frame_box_new_with_content(_("Menu"), GTK_WIDGET(appearance_vbox));
+	gtk_box_pack_start(contents_vbox, appearance_frame, false, false, 0);
+	gtk_container_set_border_width(GTK_CONTAINER(appearance_frame), 6);
+
+	// Add option to use generic names
+	m_show_names = gtk_check_button_new_with_mnemonic(_("Show applications by _name"));
+	gtk_box_pack_start(appearance_vbox, m_show_names, true, true, 0);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_names), wm_settings->launcher_show_name);
+	g_signal_connect(m_show_names, "toggled", G_CALLBACK(ConfigurationDialog::toggle_show_name_slot), this);
+
+	// Add option to hide descriptions
+	m_show_descriptions = gtk_check_button_new_with_mnemonic(_("Show application _descriptions"));
+	gtk_box_pack_start(appearance_vbox, m_show_descriptions, true, true, 0);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_descriptions), wm_settings->launcher_show_description);
+	g_signal_connect(m_show_descriptions, "toggled", G_CALLBACK(ConfigurationDialog::toggle_show_description_slot), this);
+
+	// Add option to use alternate search entry position
+	m_position_search_alternate = gtk_check_button_new_with_mnemonic(_("Position _search entry next to panel button"));
+	gtk_box_pack_start(appearance_vbox, m_position_search_alternate, true, true, 0);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_search_alternate), wm_settings->position_search_alternate);
+	g_signal_connect(m_position_search_alternate, "toggled", G_CALLBACK(ConfigurationDialog::toggle_position_search_alternate_slot), this);
+
+	// Add option to use alternate commands position
+	m_position_commands_alternate = gtk_check_button_new_with_mnemonic(_("Position commands next to search _entry"));
+	gtk_box_pack_start(appearance_vbox, m_position_commands_alternate, true, true, 0);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_commands_alternate), wm_settings->position_commands_alternate);
+	gtk_widget_set_sensitive(GTK_WIDGET(m_position_commands_alternate), gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(m_position_search_alternate)));
+	g_signal_connect(m_position_commands_alternate, "toggled", G_CALLBACK(ConfigurationDialog::toggle_position_commands_alternate_slot), this);
+
+	// Add item icon size selector
+	hbox = GTK_BOX(gtk_hbox_new(false, 12));
+	gtk_box_pack_start(appearance_vbox, GTK_WIDGET(hbox), false, false, 0);
+
+	label = gtk_label_new_with_mnemonic(_("Ite_m icon size:"));
+	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+	gtk_box_pack_start(hbox, label, false, false, 0);
+	gtk_size_group_add_widget(label_size_group, label);
+
+	m_item_icon_size = gtk_combo_box_text_new();
+	std::vector<std::string> icon_sizes = IconSize::get_strings();
+	for (std::vector<std::string>::const_iterator i = icon_sizes.begin(), end = icon_sizes.end(); i != end; ++i)
+	{
+		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_item_icon_size), i->c_str());
+	}
+	gtk_combo_box_set_active(GTK_COMBO_BOX(m_item_icon_size), wm_settings->launcher_icon_size + 1);
+	gtk_box_pack_start(hbox, m_item_icon_size, false, false, 0);
+	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_item_icon_size);
+	g_signal_connect(m_item_icon_size, "changed", G_CALLBACK(ConfigurationDialog::item_icon_size_changed_slot), this);
+
+	// Add category icon size selector
+	hbox = GTK_BOX(gtk_hbox_new(false, 12));
+	gtk_box_pack_start(appearance_vbox, GTK_WIDGET(hbox), false, false, 0);
+
+	label = gtk_label_new_with_mnemonic(_("Categ_ory icon size:"));
+	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+	gtk_box_pack_start(hbox, label, false, false, 0);
+	gtk_size_group_add_widget(label_size_group, label);
+
+	m_category_icon_size = gtk_combo_box_text_new();
+	for (std::vector<std::string>::const_iterator i = icon_sizes.begin(), end = icon_sizes.end(); i != end; ++i)
+	{
+		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_category_icon_size), i->c_str());
+	}
+	gtk_combo_box_set_active(GTK_COMBO_BOX(m_category_icon_size), wm_settings->category_icon_size + 1);
+	gtk_box_pack_start(hbox, m_category_icon_size, false, false, 0);
+	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_category_icon_size);
+	g_signal_connect(m_category_icon_size, "changed", G_CALLBACK(ConfigurationDialog::category_icon_size_changed_slot), this);
 
 	return page;
 }
