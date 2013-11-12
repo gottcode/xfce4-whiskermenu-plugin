@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-09 22:00+0000\n"
-"PO-Revision-Date: 2013-10-30 13:52+0000\n"
+"PO-Revision-Date: 2013-11-12 03:04+0000\n"
 "Last-Translator: 柏諺 黃 <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -28,107 +28,107 @@ msgstr "Whisker選單"
 
 #: src/configuration_dialog.cpp:65
 msgid "_Appearance"
-msgstr ""
+msgstr "外觀"
 
 #: src/configuration_dialog.cpp:66
 msgid "_Panel Button"
-msgstr ""
+msgstr "面板按鈕"
 
 #: src/configuration_dialog.cpp:67
 msgid "_Behavior"
-msgstr ""
+msgstr "擁有者"
 
 #: src/configuration_dialog.cpp:68
 msgid "_Commands"
-msgstr ""
+msgstr "指令"
 
 #: src/configuration_dialog.cpp:94
 msgid "Select An Icon"
-msgstr ""
+msgstr "選擇一個圖標"
 
 #: src/configuration_dialog.cpp:265
 msgid "Show applications by _name"
-msgstr ""
+msgstr "顯示程式並以名稱排序"
 
 #: src/configuration_dialog.cpp:271
 msgid "Show application _descriptions"
-msgstr ""
+msgstr "顯示程式描述"
 
 #: src/configuration_dialog.cpp:277
 msgid "Position _search entry next to panel button"
-msgstr ""
+msgstr "下一個面板按鈕的搜尋結果"
 
 #: src/configuration_dialog.cpp:283
 msgid "Position commands next to search _entry"
-msgstr ""
+msgstr "下一個指令的搜尋結果"
 
 #: src/configuration_dialog.cpp:293
 msgid "Ite_m icon size:"
-msgstr ""
+msgstr "項目圖標大小："
 
 #: src/configuration_dialog.cpp:313
 msgid "Categ_ory icon size:"
-msgstr ""
+msgstr "分類圖標大小："
 
 #: src/configuration_dialog.cpp:348
 msgid "Di_splay:"
-msgstr ""
+msgstr "顯示："
 
 #: src/configuration_dialog.cpp:354
 msgid "Icon"
-msgstr ""
+msgstr "圖標"
 
 #: src/configuration_dialog.cpp:355
 msgid "Title"
-msgstr ""
+msgstr "標題"
 
 #: src/configuration_dialog.cpp:356
 msgid "Icon and title"
-msgstr ""
+msgstr "圖標與標題"
 
 #: src/configuration_dialog.cpp:366
 msgid "_Title:"
-msgstr ""
+msgstr "標題："
 
 #: src/configuration_dialog.cpp:381
 msgid "_Icon:"
-msgstr ""
+msgstr "圖標："
 
 #: src/configuration_dialog.cpp:409
 msgid "Switch categories by _hovering"
-msgstr ""
+msgstr "滑鼠置於其上以切換到該分類"
 
 #: src/configuration_dialog.cpp:415
 msgid "Load menu hie_rarchy"
-msgstr ""
+msgstr "載入階層選單"
 
 #: src/configuration_dialog.cpp:421
 msgid "Include _favorites in recently used"
-msgstr ""
+msgstr "在最近使用中包含最愛"
 
 #: src/configuration_dialog.cpp:427
 msgid "Display recently _used by default"
-msgstr ""
+msgstr "預設顯示最近使用"
 
 #: src/configuration_dialog.cpp:452
 msgid "_Settings:"
-msgstr ""
+msgstr "設定："
 
 #: src/configuration_dialog.cpp:467
 msgid "Lock _Screen:"
-msgstr ""
+msgstr "鎖定螢幕："
 
 #: src/configuration_dialog.cpp:482
 msgid "Log _Out:"
-msgstr ""
+msgstr "登出："
 
 #: src/favorites_page.cpp:89
 msgid "Sort Alphabetically A-Z"
-msgstr ""
+msgstr "依字母遞增順序排列"
 
 #: src/favorites_page.cpp:95
 msgid "Sort Alphabetically Z-A"
-msgstr ""
+msgstr "依字母遞減順序排列"
 
 #: src/icon_size.cpp:50
 msgid "Very Small"
@@ -161,63 +161,63 @@ msgstr "非常大"
 #: src/launcher.cpp:259
 #, c-format
 msgid "Failed to execute command \"%s\"."
-msgstr ""
+msgstr "執行 \"%s\" 指令時失敗。"
 
 #: src/menu.cpp:110
 msgid "All Settings"
-msgstr ""
+msgstr "所有設定"
 
 #: src/menu.cpp:113
 msgid "Lock Screen"
-msgstr ""
+msgstr "鎖定螢幕"
 
 #: src/menu.cpp:116
 msgid "Log Out"
-msgstr ""
+msgstr "登出"
 
 #: src/menu.cpp:130
 msgid "Favorites"
-msgstr ""
+msgstr "最愛"
 
 #: src/menu.cpp:136
 msgid "Recently Used"
-msgstr ""
+msgstr "最近使用"
 
 #: src/menu.cpp:963
 msgid "Failed to open settings manager."
-msgstr ""
+msgstr "無法開啟設定管理員。"
 
 #: src/menu.cpp:977
 msgid "Failed to lock screen."
-msgstr ""
+msgstr "無法鎖定螢幕。"
 
 #: src/menu.cpp:991
 msgid "Failed to log out."
-msgstr ""
+msgstr "無法登出。"
 
 #: src/page.cpp:194
 msgid "Add to Favorites"
-msgstr ""
+msgstr "新增到最愛"
 
 #: src/page.cpp:202
 msgid "Remove From Favorites"
-msgstr ""
+msgstr "從最愛中移除"
 
 #: src/page.cpp:209
 msgid "Add to Desktop"
-msgstr ""
+msgstr "新增到桌面"
 
 #: src/page.cpp:213
 msgid "Add to Panel"
-msgstr ""
+msgstr "新增到面板上"
 
 #: src/page.cpp:303
 msgid "Unable to add launcher to desktop."
-msgstr ""
+msgstr "無法在桌面上新增啟動器。"
 
 #: src/page.cpp:342 src/page.cpp:351
 msgid "Unable to add launcher to panel."
-msgstr ""
+msgstr "無法在面板上新增啟動器。"
 
 #: src/panel_plugin.cpp:160
 msgid "Applications Menu"
@@ -225,4 +225,4 @@ msgstr "應用程式選單"
 
 #: src/recent_page.cpp:71
 msgid "Clear Recently Used"
-msgstr ""
+msgstr "清除最近使用"
