@@ -177,6 +177,7 @@ void Settings::load(char* file)
 
 	command_settings->check();
 	command_lockscreen->check();
+	command_switchuser->check();
 	command_logout->check();
 	command_menueditor->check();
 }

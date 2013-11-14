@@ -133,23 +133,36 @@ GtkWidget* Command::get_menuitem()
 
 void Command::set(const gchar* command)
 {
-	if (command != m_command)
+	if (command == m_command)
 	{
-		g_free(m_command);
-		m_command = g_strdup(command);
-		m_status = WHISKERMENU_COMMAND_UNCHECKED;
-		wm_settings->set_modified();
+		return;
 	}
+
+	g_free(m_command);
+	m_command = g_strdup(command);
+	m_status = WHISKERMENU_COMMAND_UNCHECKED;
+	wm_settings->set_modified();
 }
 
 //-----------------------------------------------------------------------------
 
 void Command::set_shown(bool shown)
 {
-	if (shown != m_shown)
+	if (shown == m_shown)
 	{
-		m_shown = shown;
-		wm_settings->set_modified();
+		return;
+	}
+
+	m_shown = shown;
+	wm_settings->set_modified();
+
+	if (m_button)
+	{
+		gtk_widget_set_visible(m_button, m_shown);
+	}
+	if (m_menuitem)
+	{
+		gtk_widget_set_visible(m_menuitem, m_shown);
 	}
 }
 
@@ -166,12 +179,10 @@ void Command::check()
 
 	if (m_button)
 	{
-		gtk_widget_set_visible(m_button, m_shown);
 		gtk_widget_set_sensitive(m_button, m_status == WHISKERMENU_COMMAND_VALID);
 	}
 	if (m_menuitem)
 	{
-		gtk_widget_set_visible(m_menuitem, m_shown);
 		gtk_widget_set_sensitive(m_menuitem, m_status == WHISKERMENU_COMMAND_VALID);
 	}
 }
