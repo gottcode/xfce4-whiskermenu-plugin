@@ -72,11 +72,15 @@ More CMake Options
     Choose where manual pages are installed
     (defaults to $CMAKE_INSTALL_DATADIR/man).
 
--ENABLE_WERROR=[OFF]
-    Make compiler treat warnings as errors for development.
+-DENABLE_VISIBILITY=[ON]
+    Make compiler hide local symbols in plugin.
 
--ENABLE_AS_NEEDED=[ON]
+-DENABLE_AS_NEEDED=[ON]
     Pass -Wl,--as-needed to the linker to reduce symbols in plugin.
 
--ENABLE_LINKER_OPTIMIZED_HASH_TABLES=[ON]
+-DENABLE_LINKER_OPTIMIZED_HASH_TABLES=[ON]
     Pass -Wl,-O1 to the linker to optimize hash tables in plugin.
+
+-DENABLE_DEVELOPER_MODE=[OFF]
+    Enable strict checks which are not needed by users of the plugin
+    but are useful for development.
