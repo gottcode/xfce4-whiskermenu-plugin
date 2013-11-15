@@ -101,7 +101,6 @@ void CommandEdit::browse_clicked()
 	{
 		filename = gtk_file_chooser_get_filename(chooser);
 		gtk_entry_set_text(m_entry, filename);
-		m_command->set(filename);
 		g_free(filename);
 	}
 
