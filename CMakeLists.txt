@@ -22,9 +22,10 @@ if(${whiskermenu_version_tag} MATCHES "git")
 endif()
 
 # options
-option(ENABLE_WERROR "Enable -Werror flag for development" OFF)
+option(ENABLE_VISIBILITY "Enable ELF visibility attributes" ON)
 option(ENABLE_AS_NEEDED "Enable -Wl,--as-needed for the linker" ON)
 option(ENABLE_LINKER_OPTIMIZED_HASH_TABLES "Enable -Wl,-O1 for the linker" ON)
+option(ENABLE_DEVELOPER_MODE "Enable strict checks to help with development" OFF)
 
 include(GNUInstallDirs)
 
