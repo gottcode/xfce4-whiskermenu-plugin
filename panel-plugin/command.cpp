@@ -21,10 +21,7 @@
 
 #include <string>
 
-extern "C"
-{
 #include <libxfce4ui/libxfce4ui.h>
-}
 
 using namespace WhiskerMenu;
 

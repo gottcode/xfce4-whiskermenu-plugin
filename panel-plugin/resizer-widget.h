@@ -20,10 +20,7 @@
 
 #include <vector>
 
-extern "C"
-{
 #include <gtk/gtk.h>
-}
 
 namespace WhiskerMenu
 {

@@ -18,10 +18,7 @@
 #ifndef WHISKERMENU_LAUNCHER_VIEW_H
 #define WHISKERMENU_LAUNCHER_VIEW_H
 
-extern "C"
-{
 #include <gtk/gtk.h>
-}
 
 namespace WhiskerMenu
 {

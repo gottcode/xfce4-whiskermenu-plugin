@@ -25,6 +25,8 @@
 
 #include <algorithm>
 
+#include <glib/gi18n-lib.h>
+
 using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------

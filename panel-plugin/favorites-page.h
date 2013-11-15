@@ -23,8 +23,6 @@
 namespace WhiskerMenu
 {
 
-class Launcher;
-
 class FavoritesPage : public ListPage
 {
 public:

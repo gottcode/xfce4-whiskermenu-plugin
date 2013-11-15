@@ -21,10 +21,7 @@
 #include "launcher-view.h"
 #include "window.h"
 
-extern "C"
-{
 #include <gdk/gdkkeysyms.h>
-}
 
 using namespace WhiskerMenu;
 

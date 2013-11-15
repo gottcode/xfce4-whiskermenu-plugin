@@ -22,11 +22,8 @@
 
 #include <string>
 
-extern "C"
-{
 #include <garcon/garcon.h>
 #include <gdk/gdk.h>
-}
 
 namespace WhiskerMenu
 {

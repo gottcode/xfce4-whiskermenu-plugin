@@ -28,8 +28,6 @@
 namespace WhiskerMenu
 {
 
-class LauncherView;
-
 class SearchPage : public Page
 {
 public:

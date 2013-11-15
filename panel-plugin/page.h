@@ -18,15 +18,11 @@
 #ifndef WHISKERMENU_PAGE_H
 #define WHISKERMENU_PAGE_H
 
-extern "C"
-{
 #include <gtk/gtk.h>
-}
 
 namespace WhiskerMenu
 {
 
-class FavoritesPage;
 class Launcher;
 class LauncherView;
 class Window;

@@ -22,10 +22,7 @@
 #include <climits>
 #include <cstring>
 
-extern "C"
-{
 #include <glib.h>
-}
 
 using namespace WhiskerMenu;
 

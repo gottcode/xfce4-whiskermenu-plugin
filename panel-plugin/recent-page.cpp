@@ -20,7 +20,8 @@
 #include "launcher.h"
 #include "launcher-view.h"
 #include "settings.h"
-#include "window.h"
+
+#include <glib/gi18n-lib.h>
 
 using namespace WhiskerMenu;
 

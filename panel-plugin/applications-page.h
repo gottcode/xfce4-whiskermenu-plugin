@@ -24,17 +24,12 @@
 #include <string>
 #include <vector>
 
-extern "C"
-{
 #include <garcon/garcon.h>
-}
 
 namespace WhiskerMenu
 {
 
 class Category;
-class Launcher;
-class LauncherView;
 class SectionButton;
 
 class ApplicationsPage : public Page

@@ -23,6 +23,11 @@
 #include "settings.h"
 #include "window.h"
 
+extern "C"
+{
+#include <libxfce4util/libxfce4util.h>
+}
+
 using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------

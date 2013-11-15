@@ -23,10 +23,7 @@
 #include "recent-page.h"
 #include "window.h"
 
-extern "C"
-{
 #include <libxfce4ui/libxfce4ui.h>
-}
 
 using namespace WhiskerMenu;
 

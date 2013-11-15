@@ -18,10 +18,7 @@
 #ifndef WHISKERMENU_COMMAND_EDIT_H
 #define WHISKERMENU_COMMAND_EDIT_H
 
-extern "C"
-{
 #include <gtk/gtk.h>
-}
 
 namespace WhiskerMenu
 {

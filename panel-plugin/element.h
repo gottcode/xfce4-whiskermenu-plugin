@@ -18,10 +18,7 @@
 #ifndef WHISKERMENU_ELEMENT_H
 #define WHISKERMENU_ELEMENT_H
 
-extern "C"
-{
-#include <gtk/gtk.h>
-}
+#include <glib.h>
 
 namespace WhiskerMenu
 {

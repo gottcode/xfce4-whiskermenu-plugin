@@ -20,11 +20,8 @@
 
 #include <string>
 
-extern "C"
-{
 #include <gtk/gtk.h>
 #include <libxfce4panel/libxfce4panel.h>
-}
 
 namespace WhiskerMenu
 {

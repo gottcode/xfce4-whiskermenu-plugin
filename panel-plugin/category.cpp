@@ -22,10 +22,7 @@
 
 #include <algorithm>
 
-extern "C"
-{
-#include <glib/gi18n.h>
-}
+#include <glib/gi18n-lib.h>
 
 using namespace WhiskerMenu;
 

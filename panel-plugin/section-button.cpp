@@ -19,10 +19,7 @@
 
 #include "settings.h"
 
-extern "C"
-{
 #include <libxfce4panel/libxfce4panel.h>
-}
 
 using namespace WhiskerMenu;
 

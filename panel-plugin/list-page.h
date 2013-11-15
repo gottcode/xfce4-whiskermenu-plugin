@@ -20,20 +20,11 @@
 
 #include "page.h"
 
-#include <map>
 #include <string>
 #include <vector>
 
-extern "C"
-{
-#include <libxfce4util/libxfce4util.h>
-}
-
 namespace WhiskerMenu
 {
-
-class Launcher;
-class LauncherView;
 
 class ListPage : public Page
 {

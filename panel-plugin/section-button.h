@@ -18,10 +18,7 @@
 #ifndef WHISKERMENU_SECTION_BUTTON_H
 #define WHISKERMENU_SECTION_BUTTON_H
 
-extern "C"
-{
 #include <gtk/gtk.h>
-}
 
 namespace WhiskerMenu
 {

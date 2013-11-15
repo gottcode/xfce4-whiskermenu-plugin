@@ -27,12 +27,9 @@
 #include "section-button.h"
 #include "settings.h"
 
-extern "C"
-{
 #include <exo/exo.h>
 #include <gdk/gdkkeysyms.h>
 #include <libxfce4ui/libxfce4ui.h>
-}
 
 #include <ctime>
 

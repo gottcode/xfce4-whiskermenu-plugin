@@ -22,15 +22,12 @@
 
 #include <vector>
 
-extern "C"
-{
 #include <garcon/garcon.h>
-}
+#include <gtk/gtk.h>
 
 namespace WhiskerMenu
 {
 
-class Launcher;
 class SectionButton;
 
 class Category : public Element

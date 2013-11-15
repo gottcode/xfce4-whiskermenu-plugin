@@ -18,21 +18,15 @@
 #ifndef WHISKERMENU_WINDOW_H
 #define WHISKERMENU_WINDOW_H
 
-#include <string>
 #include <vector>
 
-extern "C"
-{
 #include <gtk/gtk.h>
-#include <libxfce4util/libxfce4util.h>
-}
 
 namespace WhiskerMenu
 {
 
 class ApplicationsPage;
 class FavoritesPage;
-class Launcher;
 class Page;
 class ResizerWidget;
 class RecentPage;

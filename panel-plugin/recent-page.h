@@ -23,9 +23,6 @@
 namespace WhiskerMenu
 {
 
-class Launcher;
-class LauncherView;
-
 class RecentPage : public ListPage
 {
 public:

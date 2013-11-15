@@ -18,10 +18,7 @@
 #ifndef WHISKERMENU_CONFIGURATION_DIALOG_H
 #define WHISKERMENU_CONFIGURATION_DIALOG_H
 
-extern "C"
-{
 #include <gtk/gtk.h>
-}
 
 namespace WhiskerMenu
 {

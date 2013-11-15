@@ -20,11 +20,8 @@
 #include "query.h"
 #include "settings.h"
 
-extern "C"
-{
 #include <exo/exo.h>
 #include <libxfce4ui/libxfce4ui.h>
-}
 
 using namespace WhiskerMenu;
 

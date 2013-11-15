@@ -21,11 +21,8 @@
 
 #include <algorithm>
 
-extern "C"
-{
 #include <exo/exo.h>
 #include <gdk/gdkkeysyms.h>
-}
 
 using namespace WhiskerMenu;
 
