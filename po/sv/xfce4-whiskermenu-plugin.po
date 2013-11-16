@@ -4,14 +4,15 @@
 #
 # Translators:
 # addegsson <addegsson@gmail.com>, 2013
+# FredN <fredrik@nyqvist.biz>, 2013
 # tsw <tarvidsson7834@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-09 22:00+0000\n"
-"PO-Revision-Date: 2013-07-24 09:29+0000\n"
-"Last-Translator: addegsson <addegsson@gmail.com>\n"
+"PO-Revision-Date: 2013-11-12 16:25+0000\n"
+"Last-Translator: FredN <fredrik@nyqvist.biz>\n"
 "Language-Team: Swedish (Sweden) (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/sv_SE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,23 +29,20 @@ msgid "Whisker Menu"
 msgstr "Whiskermeny"
 
 #: src/configuration_dialog.cpp:65
-#, fuzzy
 msgid "_Appearance"
 msgstr "Utseende"
 
 #: src/configuration_dialog.cpp:66
-#, fuzzy
 msgid "_Panel Button"
 msgstr "Panelknapp"
 
 #: src/configuration_dialog.cpp:67
-#, fuzzy
 msgid "_Behavior"
-msgstr "Beteende"
+msgstr "Utförande"
 
 #: src/configuration_dialog.cpp:68
 msgid "_Commands"
-msgstr ""
+msgstr "Kommandon"
 
 #: src/configuration_dialog.cpp:94
 msgid "Select An Icon"
@@ -56,7 +54,7 @@ msgstr "Visa applikationer efter _namn"
 
 #: src/configuration_dialog.cpp:271
 msgid "Show application _descriptions"
-msgstr "Applikations beskrivning"
+msgstr "Visa applikationsbeskrivning"
 
 #: src/configuration_dialog.cpp:277
 msgid "Position _search entry next to panel button"
@@ -115,19 +113,16 @@ msgid "Display recently _used by default"
 msgstr ""
 
 #: src/configuration_dialog.cpp:452
-#, fuzzy
 msgid "_Settings:"
-msgstr "Alla inställningar"
+msgstr ""
 
 #: src/configuration_dialog.cpp:467
-#, fuzzy
 msgid "Lock _Screen:"
-msgstr "Låskärm"
+msgstr ""
 
 #: src/configuration_dialog.cpp:482
-#, fuzzy
 msgid "Log _Out:"
-msgstr "Logga ut"
+msgstr ""
 
 #: src/favorites_page.cpp:89
 msgid "Sort Alphabetically A-Z"
@@ -176,7 +171,7 @@ msgstr "Alla inställningar"
 
 #: src/menu.cpp:113
 msgid "Lock Screen"
-msgstr "Låskärm"
+msgstr "Lås Skärm"
 
 #: src/menu.cpp:116
 msgid "Log Out"
@@ -192,15 +187,15 @@ msgstr "Nyligen använda"
 
 #: src/menu.cpp:963
 msgid "Failed to open settings manager."
-msgstr "Kan ej öppna inställningshanteraren."
+msgstr "Misslyckades att öppna inställningshanteraren."
 
 #: src/menu.cpp:977
 msgid "Failed to lock screen."
-msgstr "Kan ej låsa skärmen."
+msgstr "Misslyckades att låsa skärmen."
 
 #: src/menu.cpp:991
 msgid "Failed to log out."
-msgstr "Kan ej logga ut."
+msgstr "Misslyckades att logga ut."
 
 #: src/page.cpp:194
 msgid "Add to Favorites"
@@ -216,7 +211,7 @@ msgstr "Lägg till på skrivbordet"
 
 #: src/page.cpp:213
 msgid "Add to Panel"
-msgstr "Lägg till i panlen"
+msgstr "Lägg till i Panelen"
 
 #: src/page.cpp:303
 msgid "Unable to add launcher to desktop."
