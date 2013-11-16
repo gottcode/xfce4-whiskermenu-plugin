@@ -4,14 +4,15 @@
 #
 # Translators:
 # addegsson <addegsson@gmail.com>, 2013
+# FredN <fredrik@nyqvist.biz>, 2013
 # tsw <tarvidsson7834@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-31 20:34+0000\n"
-"PO-Revision-Date: 2013-07-24 09:29+0000\n"
-"Last-Translator: addegsson <addegsson@gmail.com>\n"
+"PO-Revision-Date: 2013-11-12 16:25+0000\n"
+"Last-Translator: FredN <fredrik@nyqvist.biz>\n"
 "Language-Team: Swedish (Sweden) (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/sv_SE/)\n"
 "Language: sv\n"
@@ -30,7 +31,7 @@ msgstr "Lägg till i favoriter"
 
 #: ../panel-plugin/page.cpp:214
 msgid "Add to Panel"
-msgstr "Lägg till i panlen"
+msgstr "Lägg till i Panelen"
 
 #: ../panel-plugin/applications-page.cpp:313
 msgid "All"
@@ -67,15 +68,15 @@ msgstr "Misslyckades att exekvera kommando \"%s\"."
 
 #: ../panel-plugin/window.cpp:100
 msgid "Failed to lock screen."
-msgstr "Kan ej låsa skärmen."
+msgstr "Misslyckades att låsa skärmen."
 
 #: ../panel-plugin/window.cpp:103
 msgid "Failed to log out."
-msgstr "Kan ej logga ut."
+msgstr "Misslyckades att logga ut."
 
 #: ../panel-plugin/window.cpp:97
 msgid "Failed to open settings manager."
-msgstr "Kan ej öppna inställningshanteraren."
+msgstr "Misslyckades att öppna inställningshanteraren."
 
 #: ../panel-plugin/window.cpp:117
 msgid "Favorites"
@@ -111,21 +112,19 @@ msgstr ""
 
 #: ../panel-plugin/window.cpp:100
 msgid "Lock Screen"
-msgstr "Låskärm"
+msgstr "Lås Skärm"
 
 #: ../panel-plugin/configuration-dialog.cpp:468
-#, fuzzy
 msgid "Lock _Screen:"
-msgstr "Låskärm"
+msgstr ""
 
 #: ../panel-plugin/window.cpp:103
 msgid "Log Out"
 msgstr "Logga ut"
 
 #: ../panel-plugin/configuration-dialog.cpp:483
-#, fuzzy
 msgid "Log _Out:"
-msgstr "Logga ut"
+msgstr ""
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Normal"
@@ -157,7 +156,7 @@ msgstr "En meny för att visa dina installerade program"
 
 #: ../panel-plugin/configuration-dialog.cpp:272
 msgid "Show application _descriptions"
-msgstr "Applikations beskrivning"
+msgstr "Visa applikationsbeskrivning"
 
 #: ../panel-plugin/configuration-dialog.cpp:266
 msgid "Show applications by _name"
@@ -209,32 +208,28 @@ msgid "Whisker Menu"
 msgstr "Whiskermeny"
 
 #: ../panel-plugin/configuration-dialog.cpp:66
-#, fuzzy
 msgid "_Appearance"
 msgstr "Utseende"
 
 #: ../panel-plugin/configuration-dialog.cpp:68
-#, fuzzy
 msgid "_Behavior"
-msgstr "Beteende"
+msgstr "Utförande"
 
 #: ../panel-plugin/configuration-dialog.cpp:69
 msgid "_Commands"
-msgstr ""
+msgstr "Kommandon"
 
 #: ../panel-plugin/configuration-dialog.cpp:382
 msgid "_Icon:"
 msgstr "_Ikon:"
 
 #: ../panel-plugin/configuration-dialog.cpp:67
-#, fuzzy
 msgid "_Panel Button"
 msgstr "Panelknapp"
 
 #: ../panel-plugin/configuration-dialog.cpp:453
-#, fuzzy
 msgid "_Settings:"
-msgstr "Alla inställningar"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:367
 msgid "_Title:"
