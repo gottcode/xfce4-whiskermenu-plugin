@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-09 22:00+0000\n"
-"PO-Revision-Date: 2013-11-10 18:50+0000\n"
+"PO-Revision-Date: 2013-11-13 12:39+0000\n"
 "Last-Translator: Haiku <reza.gharibi.rg@gmail.com>\n"
 "Language-Team: Persian (Iran) (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/fa_IR/)\n"
 "MIME-Version: 1.0\n"
@@ -24,27 +24,27 @@ msgstr "همه"
 
 #: src/configuration_dialog.cpp:57
 msgid "Whisker Menu"
-msgstr ""
+msgstr "منوی Whisker"
 
 #: src/configuration_dialog.cpp:65
 msgid "_Appearance"
-msgstr ""
+msgstr "_ظاهر"
 
 #: src/configuration_dialog.cpp:66
 msgid "_Panel Button"
-msgstr ""
+msgstr "_دکمه‌ی پنل"
 
 #: src/configuration_dialog.cpp:67
 msgid "_Behavior"
-msgstr ""
+msgstr "_رفتار"
 
 #: src/configuration_dialog.cpp:68
 msgid "_Commands"
-msgstr ""
+msgstr "_دستورها"
 
 #: src/configuration_dialog.cpp:94
 msgid "Select An Icon"
-msgstr ""
+msgstr "انتخاب یک آیکان"
 
 #: src/configuration_dialog.cpp:265
 msgid "Show applications by _name"
@@ -52,31 +52,31 @@ msgstr "نمایش برنامه‌ها براساس _اسم"
 
 #: src/configuration_dialog.cpp:271
 msgid "Show application _descriptions"
-msgstr ""
+msgstr "نمایش برنامه _توضیحات"
 
 #: src/configuration_dialog.cpp:277
 msgid "Position _search entry next to panel button"
-msgstr ""
+msgstr "قراردادن ورودی _جست‌و‌جو کنار دکمه‌ی پنل"
 
 #: src/configuration_dialog.cpp:283
 msgid "Position commands next to search _entry"
-msgstr ""
+msgstr "قراردادن دستورها کنار _ورودی جست‌و‌جو"
 
 #: src/configuration_dialog.cpp:293
 msgid "Ite_m icon size:"
-msgstr ""
+msgstr "اندازه‌ی آیکان آیت_م:"
 
 #: src/configuration_dialog.cpp:313
 msgid "Categ_ory icon size:"
-msgstr ""
+msgstr "اندازه‌ی آیکان دست_ه:"
 
 #: src/configuration_dialog.cpp:348
 msgid "Di_splay:"
-msgstr ""
+msgstr "نم_ایش:"
 
 #: src/configuration_dialog.cpp:354
 msgid "Icon"
-msgstr ""
+msgstr "آیکان"
 
 #: src/configuration_dialog.cpp:355
 msgid "Title"
@@ -84,51 +84,51 @@ msgstr "عنوان"
 
 #: src/configuration_dialog.cpp:356
 msgid "Icon and title"
-msgstr ""
+msgstr "آیکان و عنوان"
 
 #: src/configuration_dialog.cpp:366
 msgid "_Title:"
-msgstr ""
+msgstr "_عنوان:"
 
 #: src/configuration_dialog.cpp:381
 msgid "_Icon:"
-msgstr ""
+msgstr "_آیکان:"
 
 #: src/configuration_dialog.cpp:409
 msgid "Switch categories by _hovering"
-msgstr ""
+msgstr "تغییر دسته‌ها با _بردن موس روی آن"
 
 #: src/configuration_dialog.cpp:415
 msgid "Load menu hie_rarchy"
-msgstr ""
+msgstr "لودکردن سلسله_مراتب منو"
 
 #: src/configuration_dialog.cpp:421
 msgid "Include _favorites in recently used"
-msgstr ""
+msgstr "اضافه‌کردن _علاقه‌مندی‌ها در به تازگی استفاده شده"
 
 #: src/configuration_dialog.cpp:427
 msgid "Display recently _used by default"
-msgstr ""
+msgstr "نمایش به تازگی _استفاده شده به صورت پیش‌فرض"
 
 #: src/configuration_dialog.cpp:452
 msgid "_Settings:"
-msgstr ""
+msgstr "_تنظیمات:"
 
 #: src/configuration_dialog.cpp:467
 msgid "Lock _Screen:"
-msgstr ""
+msgstr "قفل‌کردن _صفحه‌نمایش"
 
 #: src/configuration_dialog.cpp:482
 msgid "Log _Out:"
-msgstr ""
+msgstr "خر_وج"
 
 #: src/favorites_page.cpp:89
 msgid "Sort Alphabetically A-Z"
-msgstr ""
+msgstr "مرتب‌سازی براساس حروف الفبا الف-ی"
 
 #: src/favorites_page.cpp:95
 msgid "Sort Alphabetically Z-A"
-msgstr ""
+msgstr "مرتب‌سازی براساس حروف الفبا ی-الف"
 
 #: src/icon_size.cpp:50
 msgid "Very Small"
@@ -144,7 +144,7 @@ msgstr "کوچک"
 
 #: src/icon_size.cpp:53
 msgid "Normal"
-msgstr ""
+msgstr "عادی"
 
 #: src/icon_size.cpp:54
 msgid "Large"
@@ -161,7 +161,7 @@ msgstr "خیلی بزرگ"
 #: src/launcher.cpp:259
 #, c-format
 msgid "Failed to execute command \"%s\"."
-msgstr ""
+msgstr "اجرای دستور \"%s\" شکست خورد."
 
 #: src/menu.cpp:110
 msgid "All Settings"
@@ -169,7 +169,7 @@ msgstr "همه‌ی تنظیمات"
 
 #: src/menu.cpp:113
 msgid "Lock Screen"
-msgstr "قفل کردن صفحه"
+msgstr "قفل‌کردن صفحه‌نمایش"
 
 #: src/menu.cpp:116
 msgid "Log Out"
@@ -177,31 +177,31 @@ msgstr "خروج"
 
 #: src/menu.cpp:130
 msgid "Favorites"
-msgstr ""
+msgstr "علاقه‌مندی‌ها"
 
 #: src/menu.cpp:136
 msgid "Recently Used"
-msgstr ""
+msgstr "به تازگی استفاده شده"
 
 #: src/menu.cpp:963
 msgid "Failed to open settings manager."
-msgstr ""
+msgstr "بازکردن مدیریت تنظیمات با شکست مواجه شد."
 
 #: src/menu.cpp:977
 msgid "Failed to lock screen."
-msgstr ""
+msgstr "قفل‌کردن صفحه‌نمایش با شکست مواجه شد."
 
 #: src/menu.cpp:991
 msgid "Failed to log out."
-msgstr ""
+msgstr "خروج با شکست مواجه شد."
 
 #: src/page.cpp:194
 msgid "Add to Favorites"
-msgstr ""
+msgstr "اضافه‌کردن به علاقه‌مندی‌ها"
 
 #: src/page.cpp:202
 msgid "Remove From Favorites"
-msgstr ""
+msgstr "حذف‌کردن از علاقه‌مندی‌ها"
 
 #: src/page.cpp:209
 msgid "Add to Desktop"
@@ -209,15 +209,15 @@ msgstr "اضافه کردن به میزکار"
 
 #: src/page.cpp:213
 msgid "Add to Panel"
-msgstr ""
+msgstr "اضافه‌کردن به پنل"
 
 #: src/page.cpp:303
 msgid "Unable to add launcher to desktop."
-msgstr ""
+msgstr "ناتوان در اضافه‌کردن لانچر به میزکار."
 
 #: src/page.cpp:342 src/page.cpp:351
 msgid "Unable to add launcher to panel."
-msgstr ""
+msgstr "ناتوان در اضافه‌کردن لانچر به پنل."
 
 #: src/panel_plugin.cpp:160
 msgid "Applications Menu"
@@ -225,4 +225,4 @@ msgstr "منوی برنامه‌ها"
 
 #: src/recent_page.cpp:71
 msgid "Clear Recently Used"
-msgstr ""
+msgstr "پاک‌کردن به‌تازگی استفاده شده"
