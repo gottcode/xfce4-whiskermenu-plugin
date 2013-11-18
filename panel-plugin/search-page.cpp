@@ -21,6 +21,8 @@
 #include "launcher-view.h"
 #include "window.h"
 
+#include <algorithm>
+
 #include <gdk/gdkkeysyms.h>
 
 using namespace WhiskerMenu;
@@ -28,10 +30,7 @@ using namespace WhiskerMenu;
 //-----------------------------------------------------------------------------
 
 SearchPage::SearchPage(Window* window) :
-	Page(window),
-	m_filter_model(NULL),
-	m_sort_model(NULL),
-	m_current_results(NULL)
+	Page(window)
 {
 	get_view()->set_selection_mode(GTK_SELECTION_BROWSE);
 
@@ -50,73 +49,59 @@ SearchPage::~SearchPage()
 
 void SearchPage::set_filter(const gchar* filter)
 {
-	// Store filter string
-	std::string query(filter ? filter : "");
+	// Clear search results for empty filter
+	if (!filter)
+	{
+		m_query.clear();
+		m_matches.resize(0);
+		return;
+	}
+
+	// Make sure this is a new search
+	std::string query(filter);
 	if (m_query.query() == query)
 	{
 		return;
 	}
+
+	// Reset search results if new search does not start with previous search
+	if (m_query.query().empty() || !g_str_has_prefix(filter, m_query.query().c_str()))
+	{
+		m_matches.resize(0);
+		for (std::vector<Launcher*>::size_type i = 0, end = m_launchers.size(); i < end; ++i)
+		{
+			m_matches.push_back(m_launchers[i]);
+		}
+	}
 	m_query.set(query);
 
-	// Find longest previous search that starts query
-	const std::map<Launcher*, int>* previous = NULL;
-	m_current_results = NULL;
-	for (std::map<std::string, std::map<Launcher*, int> >::const_reverse_iterator i = m_results.rbegin(), end = m_results.rend(); i != end; ++i)
-	{
-		if ( (i->first.length() < query.length())
-			&& (query.compare(0, i->first.length(), i->first) == 0) )
-		{
-			previous = &i->second;
-			break;
-		}
-		else if (i->first == query)
-		{
-			m_current_results = &i->second;
-			break;
-		}
-	}
-
 	// Create search results
-	if (!m_current_results && !m_query.empty())
+	for (std::vector<Match>::size_type i = 0, end = m_matches.size(); i < end; ++i)
 	{
-		std::map<Launcher*, int> results;
-		if (previous)
-		{
-			// Only check launchers that had previous search results
-			for (std::map<Launcher*, int>::const_iterator i = previous->begin(), end = previous->end(); i != end; ++i)
-			{
-				int result = i->first->search(m_query);
-				if (result != INT_MAX)
-				{
-					results.insert(std::make_pair(i->first, result));
-				}
-			}
-		}
-		else
-		{
-			// Check all launchers
-			for (std::vector<Launcher*>::const_iterator i = m_launchers.begin(), end = m_launchers.end(); i != end; ++i)
-			{
-				int result = (*i)->search(m_query);
-				if (result != INT_MAX)
-				{
-					results.insert(std::make_pair(*i, result));
-				}
-			}
-		}
-		m_current_results = &m_results.insert(std::make_pair(query, results)).first->second;
+		m_matches[i].update(m_query);
 	}
+	m_matches.erase(std::remove_if(m_matches.begin(), m_matches.end(), &Match::invalid), m_matches.end());
+	std::stable_sort(m_matches.begin(), m_matches.end());
 
 	// Show search results
-	g_object_freeze_notify(G_OBJECT(get_view()->get_widget()));
-	get_view()->unset_model();
-	gtk_tree_model_sort_reset_default_sort_func(m_sort_model);
-
-	gtk_tree_model_filter_refilter(m_filter_model);
-
-	gtk_tree_sortable_set_default_sort_func(GTK_TREE_SORTABLE(m_sort_model), (GtkTreeIterCompareFunc)&SearchPage::on_sort, this, NULL);
-	get_view()->set_model(GTK_TREE_MODEL(m_sort_model));
-	g_object_thaw_notify(G_OBJECT(get_view()->get_widget()));
+	GtkListStore* store = gtk_list_store_new(
+			LauncherView::N_COLUMNS,
+			G_TYPE_STRING,
+			G_TYPE_STRING,
+			G_TYPE_POINTER);
+	Launcher* launcher;
+	for (std::vector<Match>::size_type i = 0, end = m_matches.size(); i < end; ++i)
+	{
+		launcher = m_matches[i].launcher();
+		gtk_list_store_insert_with_values(
+				store, NULL, G_MAXINT,
+				LauncherView::COLUMN_ICON, launcher->get_icon(),
+				LauncherView::COLUMN_TEXT, launcher->get_text(),
+				LauncherView::COLUMN_LAUNCHER, launcher,
+				-1);
+	}
+	get_view()->set_model(GTK_TREE_MODEL(store));
+	g_object_unref(store);
 
 	// Find first result
 	GtkTreeIter iter;
@@ -150,13 +135,10 @@ void SearchPage::set_menu_items(GtkTreeModel* model)
 		valid = gtk_tree_model_iter_next(model, &iter);
 	}
 
-	unset_model();
+	get_view()->unset_model();
 
-	m_filter_model = GTK_TREE_MODEL_FILTER(gtk_tree_model_filter_new(model, NULL));
-	gtk_tree_model_filter_set_visible_func(m_filter_model, (GtkTreeModelFilterVisibleFunc)&SearchPage::on_filter, this, NULL);
-
-	m_sort_model = GTK_TREE_MODEL_SORT(gtk_tree_model_sort_new_with_model(GTK_TREE_MODEL(m_filter_model)));
-	gtk_tree_sortable_set_default_sort_func(GTK_TREE_SORTABLE(m_sort_model), (GtkTreeIterCompareFunc)&SearchPage::on_sort, this, NULL);
+	m_matches.resize(0);
+	m_matches.reserve(m_launchers.size());
 }
 
 //-----------------------------------------------------------------------------
@@ -164,60 +146,8 @@ void SearchPage::set_menu_items(GtkTreeModel* model)
 void SearchPage::unset_menu_items()
 {
 	m_launchers.clear();
-	m_results.clear();
-	m_current_results = NULL;
-	unset_model();
-}
-
-//-----------------------------------------------------------------------------
-
-gboolean SearchPage::on_filter(GtkTreeModel* model, GtkTreeIter* iter, SearchPage* page)
-{
-	if (!page->m_current_results)
-	{
-		return false;
-	}
-
-	// Check if launcher search string contains text
-	Launcher* launcher = NULL;
-	gtk_tree_model_get(model, iter, LauncherView::COLUMN_LAUNCHER, &launcher, -1);
-	return launcher && (page->m_current_results->find(launcher) != page->m_current_results->end());
-}
-
-//-----------------------------------------------------------------------------
-
-gint SearchPage::on_sort(GtkTreeModel* model, GtkTreeIter* a, GtkTreeIter* b, SearchPage* page)
-{
-	Launcher* launcher_a = NULL;
-	gtk_tree_model_get(model, a, LauncherView::COLUMN_LAUNCHER, &launcher_a, -1);
-	g_assert(launcher_a != NULL);
-	g_assert(page->m_current_results->find(launcher_a) != page->m_current_results->end());
-
-	Launcher* launcher_b = NULL;
-	gtk_tree_model_get(model, b, LauncherView::COLUMN_LAUNCHER, &launcher_b, -1);
-	g_assert(launcher_b != NULL);
-	g_assert(page->m_current_results->find(launcher_b) != page->m_current_results->end());
-
-	return page->m_current_results->find(launcher_a)->second - page->m_current_results->find(launcher_b)->second;
-}
-
-//-----------------------------------------------------------------------------
-
-void SearchPage::unset_model()
-{
+	m_matches.resize(0);
 	get_view()->unset_model();
-
-	if (m_filter_model)
-	{
-		g_object_unref(m_filter_model);
-		m_filter_model = NULL;
-	}
-
-	if (m_sort_model)
-	{
-		g_object_unref(m_sort_model);
-		m_sort_model = NULL;
-	}
 }
 
 //-----------------------------------------------------------------------------

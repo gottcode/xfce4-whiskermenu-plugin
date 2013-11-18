@@ -18,10 +18,10 @@
 #ifndef WHISKERMENU_SEARCH_PAGE_H
 #define WHISKERMENU_SEARCH_PAGE_H
 
+#include "launcher.h"
 #include "page.h"
 #include "query.h"
 
-#include <map>
 #include <string>
 #include <vector>
 
@@ -41,17 +41,46 @@ public:
 private:
 	void clear_search(GtkEntry* entry, GtkEntryIconPosition icon_pos);
 	bool search_entry_key_press(GtkWidget* widget, GdkEventKey* event);
-	static gint on_sort(GtkTreeModel* model, GtkTreeIter* a, GtkTreeIter* b, SearchPage* page);
-	static gboolean on_filter(GtkTreeModel* model, GtkTreeIter* iter, SearchPage* page);
-	void unset_model();
 
 private:
 	Query m_query;
-	GtkTreeModelFilter* m_filter_model;
-	GtkTreeModelSort* m_sort_model;
 	std::vector<Launcher*> m_launchers;
-	std::map<std::string, std::map<Launcher*, int> > m_results;
-	const std::map<Launcher*, int>* m_current_results;
+
+	class Match
+	{
+	public:
+		Match(Launcher* launcher = NULL) :
+			m_launcher(launcher),
+			m_relevancy(G_MAXINT)
+		{
+		}
+
+		Launcher* launcher() const
+		{
+			return m_launcher;
+		}
+
+		bool operator<(const Match& match) const
+		{
+			return m_relevancy < match.m_relevancy;
+		}
+
+		void update(const Query& query)
+		{
+			g_assert(m_launcher != NULL);
+			m_relevancy = m_launcher->search(query);
+		}
+
+		static bool invalid(const Match& match)
+		{
+			return match.m_relevancy == G_MAXINT;
+		}
+
+	private:
+		Launcher* m_launcher;
+		int m_relevancy;
+	};
+	std::vector<Match> m_matches;
 
 
 private:
