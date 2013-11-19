@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xfce4-whiskermenu-plugin 1.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-09 22:00+0000\n"
-"PO-Revision-Date: 2013-07-24 09:59+0000\n"
+"PO-Revision-Date: 2013-11-19 13:40+0000\n"
 "Last-Translator: xazax <xazax.hun@gmail.com>\n"
 "Language-Team: Hungarian (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -27,23 +27,20 @@ msgid "Whisker Menu"
 msgstr "Whisker Menü"
 
 #: src/configuration_dialog.cpp:65
-#, fuzzy
 msgid "_Appearance"
-msgstr "Kinézet"
+msgstr "_Kinézet"
 
 #: src/configuration_dialog.cpp:66
-#, fuzzy
 msgid "_Panel Button"
-msgstr "Panel Gomb"
+msgstr "_Panel gomb"
 
 #: src/configuration_dialog.cpp:67
-#, fuzzy
 msgid "_Behavior"
-msgstr "Működés"
+msgstr "_Viselkedés"
 
 #: src/configuration_dialog.cpp:68
 msgid "_Commands"
-msgstr ""
+msgstr "_Parancsok"
 
 #: src/configuration_dialog.cpp:94
 msgid "Select An Icon"
@@ -114,19 +111,16 @@ msgid "Display recently _used by default"
 msgstr ""
 
 #: src/configuration_dialog.cpp:452
-#, fuzzy
 msgid "_Settings:"
-msgstr "Minden beállítás"
+msgstr "_Beállítások:"
 
 #: src/configuration_dialog.cpp:467
-#, fuzzy
 msgid "Lock _Screen:"
-msgstr "Képernyő zárolása"
+msgstr "Képernyő _Zárolása:"
 
 #: src/configuration_dialog.cpp:482
-#, fuzzy
 msgid "Log _Out:"
-msgstr "Kijelentkezés"
+msgstr "K_ijelentkezés:"
 
 #: src/favorites_page.cpp:89
 msgid "Sort Alphabetically A-Z"
