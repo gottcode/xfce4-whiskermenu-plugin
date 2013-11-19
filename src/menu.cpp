@@ -1006,9 +1006,18 @@ void Menu::check_command(Command& command, GtkWidget* button)
 {
 	if (command.m_status == Unchecked)
 	{
-		gchar* path = g_find_program_in_path(command.m_exec.c_str());
-		command.m_status = path ? Valid : Invalid;
-		g_free(path);
+		gchar** argv;
+		if (g_shell_parse_argv(command.m_exec.c_str(), NULL, &argv, NULL))
+		{
+			gchar* path = g_find_program_in_path(argv[0]);
+			command.m_status = path ? Valid : Invalid;
+			g_free(path);
+			g_strfreev(argv);
+		}
+		else
+		{
+			command.m_status = Invalid;
+		}
 	}
 	gtk_widget_set_sensitive(button, command.m_status == Valid);
 }
