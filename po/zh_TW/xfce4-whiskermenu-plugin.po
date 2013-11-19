@@ -8,14 +8,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-09 22:00+0000\n"
+"POT-Creation-Date: 2013-11-19 18:01+0000\n"
 "PO-Revision-Date: 2013-11-12 03:04+0000\n"
 "Last-Translator: 柏諺 黃 <s8321414@gmail.com>\n"
-"Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/zh_TW/)\n"
+"Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/xfce4-"
+"whiskermenu-plugin/language/zh_TW/)\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/applications_page.cpp:312
@@ -158,40 +159,40 @@ msgstr "很大"
 msgid "Very Large"
 msgstr "非常大"
 
-#: src/launcher.cpp:259
+#: src/launcher.cpp:256
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "執行 \"%s\" 指令時失敗。"
 
-#: src/menu.cpp:110
+#: src/menu.cpp:112
 msgid "All Settings"
 msgstr "所有設定"
 
-#: src/menu.cpp:113
+#: src/menu.cpp:115
 msgid "Lock Screen"
 msgstr "鎖定螢幕"
 
-#: src/menu.cpp:116
+#: src/menu.cpp:118
 msgid "Log Out"
 msgstr "登出"
 
-#: src/menu.cpp:130
+#: src/menu.cpp:132
 msgid "Favorites"
 msgstr "最愛"
 
-#: src/menu.cpp:136
+#: src/menu.cpp:138
 msgid "Recently Used"
 msgstr "最近使用"
 
-#: src/menu.cpp:963
+#: src/menu.cpp:970
 msgid "Failed to open settings manager."
 msgstr "無法開啟設定管理員。"
 
-#: src/menu.cpp:977
+#: src/menu.cpp:984
 msgid "Failed to lock screen."
 msgstr "無法鎖定螢幕。"
 
-#: src/menu.cpp:991
+#: src/menu.cpp:998
 msgid "Failed to log out."
 msgstr "無法登出。"
 

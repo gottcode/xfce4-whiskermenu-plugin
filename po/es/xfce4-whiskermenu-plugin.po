@@ -9,16 +9,17 @@
 # Pablo Lezaeta <prflr88@gmail.com>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-whiskermenu-plugin 1.2.0\n"
+"Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-09 22:00+0000\n"
+"POT-Creation-Date: 2013-11-19 18:01+0000\n"
 "PO-Revision-Date: 2013-10-30 03:35+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitoschido@ubuntu.com>\n"
-"Language-Team: Spanish (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/es/)\n"
+"Language-Team: Spanish (http://www.transifex.com/projects/p/xfce4-"
+"whiskermenu-plugin/language/es/)\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/applications_page.cpp:312
@@ -161,40 +162,40 @@ msgstr "Muy grande"
 msgid "Very Large"
 msgstr "Gigante"
 
-#: src/launcher.cpp:259
+#: src/launcher.cpp:256
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "No se pudo ejecutar la orden «%s»."
 
-#: src/menu.cpp:110
+#: src/menu.cpp:112
 msgid "All Settings"
 msgstr "Todas las configuraciones"
 
-#: src/menu.cpp:113
+#: src/menu.cpp:115
 msgid "Lock Screen"
 msgstr "Bloquear la pantalla"
 
-#: src/menu.cpp:116
+#: src/menu.cpp:118
 msgid "Log Out"
 msgstr "Cerrar la sesión"
 
-#: src/menu.cpp:130
+#: src/menu.cpp:132
 msgid "Favorites"
 msgstr "Favoritas"
 
-#: src/menu.cpp:136
+#: src/menu.cpp:138
 msgid "Recently Used"
 msgstr "Usadas recientemente"
 
-#: src/menu.cpp:963
+#: src/menu.cpp:970
 msgid "Failed to open settings manager."
 msgstr "Falló la ejecución del gestor de configuración."
 
-#: src/menu.cpp:977
+#: src/menu.cpp:984
 msgid "Failed to lock screen."
 msgstr "No se pudo bloquear la pantalla."
 
-#: src/menu.cpp:991
+#: src/menu.cpp:998
 msgid "Failed to log out."
 msgstr "No se pudo cerrar la sesión."
 

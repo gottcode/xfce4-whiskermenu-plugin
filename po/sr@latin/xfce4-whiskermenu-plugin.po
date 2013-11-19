@@ -7,17 +7,19 @@
 # Vladimir Rujević <vladimir.rujevic95@gmail.com>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-whiskermenu-plugin 1.2.0\n"
+"Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-09 22:00+0000\n"
+"POT-Creation-Date: 2013-11-19 18:01+0000\n"
 "PO-Revision-Date: 2013-10-19 13:35+0000\n"
 "Last-Translator: Vladimir Rujević <vladimir.rujevic95@gmail.com>\n"
-"Language-Team: Serbian (Latin) (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/sr@latin/)\n"
+"Language-Team: Serbian (Latin) (http://www.transifex.com/projects/p/xfce4-"
+"whiskermenu-plugin/language/sr@latin/)\n"
+"Language: sr@latin\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sr@latin\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: src/applications_page.cpp:312
 msgid "All"
@@ -159,40 +161,40 @@ msgstr "Veće"
 msgid "Very Large"
 msgstr "Najveće"
 
-#: src/launcher.cpp:259
+#: src/launcher.cpp:256
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "Neuspelo izvrašavanje komande \"%s\""
 
-#: src/menu.cpp:110
+#: src/menu.cpp:112
 msgid "All Settings"
 msgstr "Sva podešavanja"
 
-#: src/menu.cpp:113
+#: src/menu.cpp:115
 msgid "Lock Screen"
 msgstr "Zaključaj ekran"
 
-#: src/menu.cpp:116
+#: src/menu.cpp:118
 msgid "Log Out"
 msgstr "Odjavi se"
 
-#: src/menu.cpp:130
+#: src/menu.cpp:132
 msgid "Favorites"
 msgstr "Omiljeni"
 
-#: src/menu.cpp:136
+#: src/menu.cpp:138
 msgid "Recently Used"
 msgstr "Nedavno korišćeno"
 
-#: src/menu.cpp:963
+#: src/menu.cpp:970
 msgid "Failed to open settings manager."
 msgstr "Neuspelo otvaranje menadžera podešavanja."
 
-#: src/menu.cpp:977
+#: src/menu.cpp:984
 msgid "Failed to lock screen."
 msgstr "Neuspelo zaključavanje ekrana."
 
-#: src/menu.cpp:991
+#: src/menu.cpp:998
 msgid "Failed to log out."
 msgstr "Neuspelo odjavljivanje."
 

@@ -6,17 +6,19 @@
 # Ayceman <alexandru.ianu@gmail.com>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-whiskermenu-plugin 1.2.0\n"
+"Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-09 22:00+0000\n"
+"POT-Creation-Date: 2013-11-19 18:01+0000\n"
 "PO-Revision-Date: 2013-10-10 22:04+0000\n"
 "Last-Translator: Ayceman <alexandru.ianu@gmail.com>\n"
-"Language-Team: Romanian (http://www.transifex.com/projects/p/xfce4-whiskermenu-plugin/language/ro/)\n"
+"Language-Team: Romanian (http://www.transifex.com/projects/p/xfce4-"
+"whiskermenu-plugin/language/ro/)\n"
+"Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ro\n"
-"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
+"2:1));\n"
 
 #: src/applications_page.cpp:312
 msgid "All"
@@ -158,40 +160,40 @@ msgstr "Mai mare"
 msgid "Very Large"
 msgstr "Foarte mare"
 
-#: src/launcher.cpp:259
+#: src/launcher.cpp:256
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "A eșuat executarea comenzii \"%s\""
 
-#: src/menu.cpp:110
+#: src/menu.cpp:112
 msgid "All Settings"
 msgstr "Toate setările"
 
-#: src/menu.cpp:113
+#: src/menu.cpp:115
 msgid "Lock Screen"
 msgstr "Blochează ecranul"
 
-#: src/menu.cpp:116
+#: src/menu.cpp:118
 msgid "Log Out"
 msgstr "Închide sesiunea"
 
-#: src/menu.cpp:130
+#: src/menu.cpp:132
 msgid "Favorites"
 msgstr "Favorite"
 
-#: src/menu.cpp:136
+#: src/menu.cpp:138
 msgid "Recently Used"
 msgstr "Folosite recent"
 
-#: src/menu.cpp:963
+#: src/menu.cpp:970
 msgid "Failed to open settings manager."
 msgstr "A eșuat deschiderea gestionarului de setări."
 
-#: src/menu.cpp:977
+#: src/menu.cpp:984
 msgid "Failed to lock screen."
 msgstr "A eșuat blocarea ecranului."
 
-#: src/menu.cpp:991
+#: src/menu.cpp:998
 msgid "Failed to log out."
 msgstr "A eșuat închiderea sesiunii."
 
