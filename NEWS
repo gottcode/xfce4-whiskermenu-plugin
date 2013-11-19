@@ -1,3 +1,11 @@
+1.2.1
+=====
+- Fix incorrect comparison for checking icon sizes.
+- Add window title to allow identifying menu window.
+- Add tips to README for popup script and compiz workaround.
+- Improve build system files.
+- Translation updates: Asturian, Catalan, Chinese (Taiwan), Czech, German, Estonian, French, Hungarian, Indonesian, Persian, Russian, Spanish, Turkish.
+
 1.2.0
 =====
 - Fix popup script to show correct version information.
