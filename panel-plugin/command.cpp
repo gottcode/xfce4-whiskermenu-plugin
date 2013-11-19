@@ -191,7 +191,7 @@ void Command::activated()
 	GError* error = NULL;
 	if (g_spawn_command_line_async(m_command, &error) == false)
 	{
-		xfce_dialog_show_error(NULL, error, m_error_text);
+		xfce_dialog_show_error(NULL, error, m_error_text, NULL);
 		g_error_free(error);
 	}
 }
