@@ -169,9 +169,18 @@ void Command::check()
 {
 	if (m_status == WHISKERMENU_COMMAND_UNCHECKED)
 	{
-		gchar* path = g_find_program_in_path(m_command);
-		m_status = path ? WHISKERMENU_COMMAND_VALID : WHISKERMENU_COMMAND_INVALID;
-		g_free(path);
+		gchar** argv;
+		if (g_shell_parse_argv(m_command, NULL, &argv, NULL))
+		{
+			gchar* path = g_find_program_in_path(argv[0]);
+			m_status = path ? WHISKERMENU_COMMAND_VALID : WHISKERMENU_COMMAND_INVALID;
+			g_free(path);
+			g_strfreev(argv);
+		}
+		else
+		{
+			m_status = WHISKERMENU_COMMAND_INVALID;
+		}
 	}
 
 	if (m_button)
