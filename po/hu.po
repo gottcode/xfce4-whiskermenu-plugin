@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-31 20:34+0000\n"
-"PO-Revision-Date: 2013-07-24 09:59+0000\n"
+"PO-Revision-Date: 2013-11-19 13:40+0000\n"
 "Last-Translator: xazax <xazax.hun@gmail.com>\n"
 "Language-Team: Hungarian (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/hu/)\n"
@@ -113,18 +113,16 @@ msgid "Lock Screen"
 msgstr "Képernyő zárolása"
 
 #: ../panel-plugin/configuration-dialog.cpp:468
-#, fuzzy
 msgid "Lock _Screen:"
-msgstr "Képernyő zárolása"
+msgstr "Képernyő _Zárolása:"
 
 #: ../panel-plugin/window.cpp:103
 msgid "Log Out"
 msgstr "Kijelentkezés"
 
 #: ../panel-plugin/configuration-dialog.cpp:483
-#, fuzzy
 msgid "Log _Out:"
-msgstr "Kijelentkezés"
+msgstr "K_ijelentkezés:"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Normal"
@@ -208,32 +206,28 @@ msgid "Whisker Menu"
 msgstr "Whisker Menü"
 
 #: ../panel-plugin/configuration-dialog.cpp:66
-#, fuzzy
 msgid "_Appearance"
-msgstr "Kinézet"
+msgstr "_Kinézet"
 
 #: ../panel-plugin/configuration-dialog.cpp:68
-#, fuzzy
 msgid "_Behavior"
-msgstr "Működés"
+msgstr "_Viselkedés"
 
 #: ../panel-plugin/configuration-dialog.cpp:69
 msgid "_Commands"
-msgstr ""
+msgstr "_Parancsok"
 
 #: ../panel-plugin/configuration-dialog.cpp:382
 msgid "_Icon:"
 msgstr "_Ikon:"
 
 #: ../panel-plugin/configuration-dialog.cpp:67
-#, fuzzy
 msgid "_Panel Button"
-msgstr "Panel Gomb"
+msgstr "_Panel gomb"
 
 #: ../panel-plugin/configuration-dialog.cpp:453
-#, fuzzy
 msgid "_Settings:"
-msgstr "Minden beállítás"
+msgstr "_Beállítások:"
 
 #: ../panel-plugin/configuration-dialog.cpp:367
 msgid "_Title:"
