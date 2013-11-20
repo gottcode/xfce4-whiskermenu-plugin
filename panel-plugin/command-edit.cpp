@@ -25,34 +25,25 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-CommandEdit::CommandEdit(Command* command) :
+CommandEdit::CommandEdit(Command* command, GtkSizeGroup* label_size_group) :
 	m_command(command)
 {
-	m_widget = gtk_vbox_new(false, 6);
+	m_widget = gtk_hbox_new(false, 6);
 
 	m_shown = GTK_TOGGLE_BUTTON(gtk_check_button_new_with_mnemonic(m_command->get_text()));
 	gtk_toggle_button_set_active(m_shown, m_command->get_shown());
 	gtk_box_pack_start(GTK_BOX(m_widget), GTK_WIDGET(m_shown), false, false, 0);
+	gtk_size_group_add_widget(label_size_group, GTK_WIDGET(m_shown));
 	g_signal_connect(m_shown, "toggled", G_CALLBACK(CommandEdit::shown_toggled_slot), this);
-
-	GtkAlignment* alignment = GTK_ALIGNMENT(gtk_alignment_new(0.0, 0.0, 1.0, 1.0));
-	gtk_alignment_set_padding(alignment, 0, 0, 18, 0);
-	gtk_box_pack_start(GTK_BOX(m_widget), GTK_WIDGET(alignment), false, false, 0);
-
-	GtkBox* hbox = GTK_BOX(gtk_hbox_new(false, 6));
-	gtk_container_add(GTK_CONTAINER(alignment), GTK_WIDGET(hbox));
-
-	GtkWidget* label = gtk_label_new(_("Command:"));
-	gtk_box_pack_start(hbox, label, false, false, 6);
 
 	m_entry = GTK_ENTRY(gtk_entry_new());
 	gtk_entry_set_text(m_entry, m_command->get());
-	gtk_box_pack_start(hbox, GTK_WIDGET(m_entry), true, true, 0);
+	gtk_box_pack_start(GTK_BOX(m_widget), GTK_WIDGET(m_entry), true, true, 0);
 	g_signal_connect(m_entry, "changed", G_CALLBACK(CommandEdit::command_changed_slot), this);
 
 	m_browse_button = gtk_button_new();
 	gtk_widget_set_tooltip_text(m_browse_button, _("Browse the file system to choose a custom command."));
-	gtk_box_pack_start(hbox, m_browse_button, false, false, 0);
+	gtk_box_pack_start(GTK_BOX(m_widget), m_browse_button, false, false, 0);
 	gtk_widget_show(m_browse_button);
 
 	GtkWidget* image = gtk_image_new_from_stock(GTK_STOCK_OPEN, GTK_ICON_SIZE_BUTTON);

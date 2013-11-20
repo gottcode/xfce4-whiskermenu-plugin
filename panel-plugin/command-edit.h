@@ -28,7 +28,7 @@ class Command;
 class CommandEdit
 {
 public:
-	CommandEdit(Command* command);
+	CommandEdit(Command* command, GtkSizeGroup* label_size_group);
 
 	GtkWidget* get_widget() const
 	{

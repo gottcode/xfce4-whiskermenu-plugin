@@ -59,7 +59,6 @@ ConfigurationDialog::ConfigurationDialog(Plugin* plugin) :
 	GtkNotebook* notebook = GTK_NOTEBOOK(gtk_notebook_new());
 	gtk_notebook_append_page(notebook, init_appearance_tab(), gtk_label_new_with_mnemonic(_("_Appearance")));
 	gtk_notebook_append_page(notebook, init_behavior_tab(), gtk_label_new_with_mnemonic(_("_Behavior")));
-	gtk_notebook_append_page(notebook, init_commands_tab(), gtk_label_new_with_mnemonic(_("_Commands")));
 
 	// Add tabs to dialog
 	GtkBox* vbox = GTK_BOX(gtk_vbox_new(false, 8));
@@ -80,6 +79,7 @@ ConfigurationDialog::~ConfigurationDialog()
 {
 	delete m_settings_command;
 	delete m_lockscreen_command;
+	delete m_switchuser_command;
 	delete m_logout_command;
 	delete m_menueditor_command;
 
@@ -409,38 +409,32 @@ GtkWidget* ConfigurationDialog::init_behavior_tab()
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_display_recent), wm_settings->display_recent);
 	g_signal_connect(m_display_recent, "toggled", G_CALLBACK(ConfigurationDialog::toggle_display_recent_slot), this);
 
-	return page;
-}
-
-//-----------------------------------------------------------------------------
-
-GtkWidget* ConfigurationDialog::init_commands_tab()
-{
 	// Create commands section
-	GtkWidget* page = gtk_alignment_new(0, 0, 1, 0);
-	gtk_container_set_border_width(GTK_CONTAINER(page), 8);
-	GtkBox* panel_vbox = GTK_BOX(gtk_vbox_new(false, 18));
-	gtk_container_add(GTK_CONTAINER(page), GTK_WIDGET(panel_vbox));
+	GtkSizeGroup* label_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
+	GtkBox* commands_vbox = GTK_BOX(gtk_vbox_new(false, 6));
+	GtkWidget* commands_frame = xfce_gtk_frame_box_new_with_content(_("Commands"), GTK_WIDGET(commands_vbox));
+	gtk_box_pack_start(behavior_vbox, commands_frame, false, false, 6);
+	gtk_container_set_border_width(GTK_CONTAINER(commands_frame), 0);
 
 	// Add settings command entry
-	m_settings_command = new CommandEdit(wm_settings->command_settings);
-	gtk_box_pack_start(panel_vbox, m_settings_command->get_widget(), false, false, 0);
+	m_settings_command = new CommandEdit(wm_settings->command_settings, label_size_group);
+	gtk_box_pack_start(commands_vbox, m_settings_command->get_widget(), false, false, 0);
 
 	// Add lock screen command entry
-	m_lockscreen_command = new CommandEdit(wm_settings->command_lockscreen);
-	gtk_box_pack_start(panel_vbox, m_lockscreen_command->get_widget(), false, false, 0);
+	m_lockscreen_command = new CommandEdit(wm_settings->command_lockscreen, label_size_group);
+	gtk_box_pack_start(commands_vbox, m_lockscreen_command->get_widget(), false, false, 0);
 
 	// Add switch user command entry
-	m_switchuser_command = new CommandEdit(wm_settings->command_switchuser);
-	gtk_box_pack_start(panel_vbox, m_switchuser_command->get_widget(), false, false, 0);
+	m_switchuser_command = new CommandEdit(wm_settings->command_switchuser, label_size_group);
+	gtk_box_pack_start(commands_vbox, m_switchuser_command->get_widget(), false, false, 0);
 
 	// Add log out command entry
-	m_logout_command = new CommandEdit(wm_settings->command_logout);
-	gtk_box_pack_start(panel_vbox, m_logout_command->get_widget(), false, false, 0);
+	m_logout_command = new CommandEdit(wm_settings->command_logout, label_size_group);
+	gtk_box_pack_start(commands_vbox, m_logout_command->get_widget(), false, false, 0);
 
 	// Add menu editor command entry
-	m_menueditor_command = new CommandEdit(wm_settings->command_menueditor);
-	gtk_box_pack_start(panel_vbox, m_menueditor_command->get_widget(), false, false, 0);
+	m_menueditor_command = new CommandEdit(wm_settings->command_menueditor, label_size_group);
+	gtk_box_pack_start(commands_vbox, m_menueditor_command->get_widget(), false, false, 0);
 
 	return page;
 }

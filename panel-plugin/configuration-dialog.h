@@ -57,7 +57,6 @@ private:
 	void response(int response_id);
 	GtkWidget* init_appearance_tab();
 	GtkWidget* init_behavior_tab();
-	GtkWidget* init_commands_tab();
 
 private:
 	Plugin* m_plugin;
@@ -79,7 +78,6 @@ private:
 	GtkWidget* m_hover_switch_category;
 	GtkWidget* m_remember_favorites;
 	GtkWidget* m_display_recent;
-
 	CommandEdit* m_settings_command;
 	CommandEdit* m_lockscreen_command;
 	CommandEdit* m_switchuser_command;
