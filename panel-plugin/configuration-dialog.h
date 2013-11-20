@@ -38,7 +38,7 @@ public:
 	}
 
 private:
-	void toggle_show_name(GtkToggleButton* button);
+	void toggle_show_generic_name(GtkToggleButton* button);
 	void toggle_show_description(GtkToggleButton* button);
 	void toggle_show_hierarchy(GtkToggleButton* button);
 	void toggle_position_search_alternate(GtkToggleButton* button);
@@ -63,7 +63,7 @@ private:
 	Plugin* m_plugin;
 	GtkWidget* m_window;
 
-	GtkWidget* m_show_names;
+	GtkWidget* m_show_generic_names;
 	GtkWidget* m_show_descriptions;
 	GtkWidget* m_show_hierarchy;
 	GtkWidget* m_position_search_alternate;
@@ -118,9 +118,9 @@ private:
 		obj->toggle_hover_switch_category(button);
 	}
 
-	static void toggle_show_name_slot(GtkToggleButton* button, ConfigurationDialog* obj)
+	static void toggle_show_generic_name_slot(GtkToggleButton* button, ConfigurationDialog* obj)
 	{
-		obj->toggle_show_name(button);
+		obj->toggle_show_generic_name(button);
 	}
 
 	static void toggle_show_description_slot(GtkToggleButton* button, ConfigurationDialog* obj)

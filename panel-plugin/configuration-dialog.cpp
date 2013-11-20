@@ -154,9 +154,9 @@ void ConfigurationDialog::toggle_hover_switch_category(GtkToggleButton* button)
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::toggle_show_name(GtkToggleButton* button)
+void ConfigurationDialog::toggle_show_generic_name(GtkToggleButton* button)
 {
-	wm_settings->launcher_show_name = gtk_toggle_button_get_active(button);
+	wm_settings->launcher_show_name = !gtk_toggle_button_get_active(button);
 	wm_settings->set_modified();
 	m_plugin->reload();
 }
@@ -309,10 +309,10 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	gtk_container_set_border_width(GTK_CONTAINER(appearance_frame), 6);
 
 	// Add option to use generic names
-	m_show_names = gtk_check_button_new_with_mnemonic(_("Show applications by _name"));
-	gtk_box_pack_start(appearance_vbox, m_show_names, true, true, 0);
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_names), wm_settings->launcher_show_name);
-	g_signal_connect(m_show_names, "toggled", G_CALLBACK(ConfigurationDialog::toggle_show_name_slot), this);
+	m_show_generic_names = gtk_check_button_new_with_mnemonic(_("Show generic application _names"));
+	gtk_box_pack_start(appearance_vbox, m_show_generic_names, true, true, 0);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_generic_names), !wm_settings->launcher_show_name);
+	g_signal_connect(m_show_generic_names, "toggled", G_CALLBACK(ConfigurationDialog::toggle_show_generic_name_slot), this);
 
 	// Add option to hide descriptions
 	m_show_descriptions = gtk_check_button_new_with_mnemonic(_("Show application _descriptions"));
