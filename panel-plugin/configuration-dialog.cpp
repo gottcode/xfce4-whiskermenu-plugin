@@ -172,6 +172,15 @@ void ConfigurationDialog::toggle_show_description(GtkToggleButton* button)
 
 //-----------------------------------------------------------------------------
 
+void ConfigurationDialog::toggle_show_hierarchy(GtkToggleButton* button)
+{
+	wm_settings->load_hierarchy = gtk_toggle_button_get_active(button);
+	wm_settings->set_modified();
+	m_plugin->reload();
+}
+
+//-----------------------------------------------------------------------------
+
 void ConfigurationDialog::toggle_position_search_alternate(GtkToggleButton* button)
 {
 	bool active = gtk_toggle_button_get_active(button);
@@ -186,15 +195,6 @@ void ConfigurationDialog::toggle_position_commands_alternate(GtkToggleButton* bu
 {
 	wm_settings->position_commands_alternate = gtk_toggle_button_get_active(button);
 	wm_settings->set_modified();
-}
-
-//-----------------------------------------------------------------------------
-
-void ConfigurationDialog::toggle_load_hierarchy(GtkToggleButton* button)
-{
-	wm_settings->load_hierarchy = gtk_toggle_button_get_active(button);
-	wm_settings->set_modified();
-	m_plugin->reload();
 }
 
 //-----------------------------------------------------------------------------
@@ -320,6 +320,12 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_descriptions), wm_settings->launcher_show_description);
 	g_signal_connect(m_show_descriptions, "toggled", G_CALLBACK(ConfigurationDialog::toggle_show_description_slot), this);
 
+	// Add option to show menu hierarchy
+	m_show_hierarchy = gtk_check_button_new_with_mnemonic(_("Show menu hie_rarchy"));
+	gtk_box_pack_start(appearance_vbox, m_show_hierarchy, true, true, 0);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_hierarchy), wm_settings->load_hierarchy);
+	g_signal_connect(m_show_hierarchy, "toggled", G_CALLBACK(ConfigurationDialog::toggle_show_hierarchy_slot), this);
+
 	// Add option to use alternate search entry position
 	m_position_search_alternate = gtk_check_button_new_with_mnemonic(_("Position _search entry next to panel button"));
 	gtk_box_pack_start(appearance_vbox, m_position_search_alternate, true, true, 0);
@@ -385,17 +391,11 @@ GtkWidget* ConfigurationDialog::init_behavior_tab()
 	GtkBox* behavior_vbox = GTK_BOX(gtk_vbox_new(false, 8));
 	gtk_container_add(GTK_CONTAINER(page), GTK_WIDGET(behavior_vbox));
 
-	// Add option to use generic names
+	// Add option to switch categories by hovering
 	m_hover_switch_category = gtk_check_button_new_with_mnemonic(_("Switch categories by _hovering"));
 	gtk_box_pack_start(behavior_vbox, m_hover_switch_category, true, true, 0);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_hover_switch_category), wm_settings->category_hover_activate);
 	g_signal_connect(m_hover_switch_category, "toggled", G_CALLBACK(ConfigurationDialog::toggle_hover_switch_category_slot), this);
-
-	// Add option to load menu hierarchy
-	m_load_hierarchy = gtk_check_button_new_with_mnemonic(_("Load menu hie_rarchy"));
-	gtk_box_pack_start(behavior_vbox, m_load_hierarchy, true, true, 0);
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_load_hierarchy), wm_settings->load_hierarchy);
-	g_signal_connect(m_load_hierarchy, "toggled", G_CALLBACK(ConfigurationDialog::toggle_load_hierarchy_slot), this);
 
 	// Add option to remember favorites
 	m_remember_favorites = gtk_check_button_new_with_mnemonic(_("Include _favorites in recently used"));

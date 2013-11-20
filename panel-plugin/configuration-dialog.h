@@ -40,6 +40,7 @@ public:
 private:
 	void toggle_show_name(GtkToggleButton* button);
 	void toggle_show_description(GtkToggleButton* button);
+	void toggle_show_hierarchy(GtkToggleButton* button);
 	void toggle_position_search_alternate(GtkToggleButton* button);
 	void toggle_position_commands_alternate(GtkToggleButton* button);
 	void category_icon_size_changed(GtkComboBox* combo);
@@ -50,7 +51,6 @@ private:
 	void choose_icon();
 
 	void toggle_hover_switch_category(GtkToggleButton* button);
-	void toggle_load_hierarchy(GtkToggleButton* button);
 	void toggle_remember_favorites(GtkToggleButton* button);
 	void toggle_display_recent(GtkToggleButton* button);
 
@@ -65,6 +65,7 @@ private:
 
 	GtkWidget* m_show_names;
 	GtkWidget* m_show_descriptions;
+	GtkWidget* m_show_hierarchy;
 	GtkWidget* m_position_search_alternate;
 	GtkWidget* m_position_commands_alternate;
 	GtkWidget* m_category_icon_size;
@@ -76,7 +77,6 @@ private:
 	GtkWidget* m_icon_button;
 
 	GtkWidget* m_hover_switch_category;
-	GtkWidget* m_load_hierarchy;
 	GtkWidget* m_remember_favorites;
 	GtkWidget* m_display_recent;
 
@@ -128,6 +128,11 @@ private:
 		obj->toggle_show_description(button);
 	}
 
+	static void toggle_show_hierarchy_slot(GtkToggleButton* button, ConfigurationDialog* obj)
+	{
+		obj->toggle_show_hierarchy(button);
+	}
+
 	static void toggle_position_search_alternate_slot(GtkToggleButton* button, ConfigurationDialog* obj)
 	{
 		obj->toggle_position_search_alternate(button);
@@ -136,11 +141,6 @@ private:
 	static void toggle_position_commands_alternate_slot(GtkToggleButton* button, ConfigurationDialog* obj)
 	{
 		obj->toggle_position_commands_alternate(button);
-	}
-
-	static void toggle_load_hierarchy_slot(GtkToggleButton* button, ConfigurationDialog* obj)
-	{
-		obj->toggle_load_hierarchy(button);
 	}
 
 	static void toggle_remember_favorites_slot(GtkToggleButton* button, ConfigurationDialog* obj)
