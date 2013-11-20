@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-31 20:34+0000\n"
-"PO-Revision-Date: 2013-11-08 15:23+0000\n"
+"PO-Revision-Date: 2013-11-20 10:23+0000\n"
 "Last-Translator: hjudt <h.judt@gmx.at>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
 "plugin/language/de/)\n"
@@ -46,7 +46,7 @@ msgstr "Anwendungsmenü"
 
 #: ../panel-plugin/configuration-dialog.cpp:314
 msgid "Categ_ory icon size:"
-msgstr "Kateg_oriegröße:"
+msgstr "_Kategoriesymbolgröße:"
 
 #: ../panel-plugin/recent-page.cpp:72
 msgid "Clear Recently Used"
@@ -58,7 +58,7 @@ msgstr "_Zeige:"
 
 #: ../panel-plugin/configuration-dialog.cpp:428
 msgid "Display recently _used by default"
-msgstr "Zeige »zuletzt verwendet« _standardmäßig an"
+msgstr "Zeige »Z_uletzt verwendet« als Voreinstellung"
 
 #: ../panel-plugin/launcher.cpp:259
 #, c-format
@@ -115,7 +115,7 @@ msgstr "Bildschirm sperren"
 
 #: ../panel-plugin/configuration-dialog.cpp:468
 msgid "Lock _Screen:"
-msgstr "Bild_schirmsperre:"
+msgstr "Bildschirms_perre:"
 
 #: ../panel-plugin/window.cpp:103
 msgid "Log Out"
@@ -123,7 +123,7 @@ msgstr "Abmelden"
 
 #: ../panel-plugin/configuration-dialog.cpp:483
 msgid "Log _Out:"
-msgstr "_Abmelden:"
+msgstr "Ab_melden:"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Normal"
@@ -131,11 +131,11 @@ msgstr "Normal"
 
 #: ../panel-plugin/configuration-dialog.cpp:278
 msgid "Position _search entry next to panel button"
-msgstr "Positioniere _Sucheintrag neben Leistenschaltfläche"
+msgstr "Platziere _Sucheintrag neben Leistenschaltfläche"
 
 #: ../panel-plugin/configuration-dialog.cpp:284
 msgid "Position commands next to search _entry"
-msgstr "Positioniere Kommandos neben Such_eintrag"
+msgstr "Platziere Befehle neben Such_eintrag"
 
 #: ../panel-plugin/window.cpp:123
 msgid "Recently Used"
@@ -155,11 +155,11 @@ msgstr "Zeige ein Menü um installierte Programme einfach zugänglich zu machen"
 
 #: ../panel-plugin/configuration-dialog.cpp:272
 msgid "Show application _descriptions"
-msgstr "Zeige Anwendungs_beschreibungen"
+msgstr "Zei_ge Anwendungsbeschreibungen"
 
 #: ../panel-plugin/configuration-dialog.cpp:266
 msgid "Show applications by _name"
-msgstr "Zeige Anwendungen nach _Namen"
+msgstr "Zeige Anwendungs_namen anstatt generischen Namen"
 
 #: ../panel-plugin/icon-size.cpp:53
 msgid "Small"
