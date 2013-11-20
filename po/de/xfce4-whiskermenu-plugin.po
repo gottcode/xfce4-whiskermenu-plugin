@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-19 18:01+0000\n"
-"PO-Revision-Date: 2013-11-08 15:23+0000\n"
+"PO-Revision-Date: 2013-11-20 10:23+0000\n"
 "Last-Translator: hjudt <h.judt@gmx.at>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
 "plugin/language/de/)\n"
@@ -50,19 +50,19 @@ msgstr "Wähle ein Symbol"
 
 #: src/configuration_dialog.cpp:265
 msgid "Show applications by _name"
-msgstr "Zeige Anwendungen nach _Namen"
+msgstr "Zeige Anwendungs_namen anstatt generischen Namen"
 
 #: src/configuration_dialog.cpp:271
 msgid "Show application _descriptions"
-msgstr "Zeige Anwendungs_beschreibungen"
+msgstr "Zei_ge Anwendungsbeschreibungen"
 
 #: src/configuration_dialog.cpp:277
 msgid "Position _search entry next to panel button"
-msgstr "Positioniere _Sucheintrag neben Leistenschaltfläche"
+msgstr "Platziere _Sucheintrag neben Leistenschaltfläche"
 
 #: src/configuration_dialog.cpp:283
 msgid "Position commands next to search _entry"
-msgstr "Positioniere Kommandos neben Such_eintrag"
+msgstr "Platziere Befehle neben Such_eintrag"
 
 #: src/configuration_dialog.cpp:293
 msgid "Ite_m icon size:"
@@ -70,7 +70,7 @@ msgstr "Sy_mbolgröße:"
 
 #: src/configuration_dialog.cpp:313
 msgid "Categ_ory icon size:"
-msgstr "Kateg_oriegröße:"
+msgstr "_Kategoriesymbolgröße:"
 
 #: src/configuration_dialog.cpp:348
 msgid "Di_splay:"
@@ -110,7 +110,7 @@ msgstr "Beziehe _Favoriten in »Zuletzt verwendet« mit ein"
 
 #: src/configuration_dialog.cpp:427
 msgid "Display recently _used by default"
-msgstr "Zeige »zuletzt verwendet« _standardmäßig an"
+msgstr "Zeige »Z_uletzt verwendet« als Voreinstellung"
 
 #: src/configuration_dialog.cpp:452
 msgid "_Settings:"
@@ -118,11 +118,11 @@ msgstr "Ein_stellungen:"
 
 #: src/configuration_dialog.cpp:467
 msgid "Lock _Screen:"
-msgstr "Bild_schirmsperre:"
+msgstr "Bildschirms_perre:"
 
 #: src/configuration_dialog.cpp:482
 msgid "Log _Out:"
-msgstr "_Abmelden:"
+msgstr "Ab_melden:"
 
 #: src/favorites_page.cpp:89
 msgid "Sort Alphabetically A-Z"
