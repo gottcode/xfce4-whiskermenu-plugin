@@ -340,6 +340,10 @@ bool Plugin::size_changed(int size)
 
 	if (!wm_settings->button_title_visible)
 	{
+#if (LIBXFCE4PANEL_CHECK_VERSION(4,9,0))
+		xfce_panel_plugin_set_small(m_plugin, true);
+#endif
+
 		xfce_panel_image_set_size(m_button_icon, -1);
 		if (orientation == GTK_ORIENTATION_HORIZONTAL)
 		{
@@ -358,15 +362,21 @@ bool Plugin::size_changed(int size)
 		gtk_widget_set_size_request(GTK_WIDGET(m_plugin), -1, -1);
 
 #if (LIBXFCE4PANEL_CHECK_VERSION(4,9,0))
-		// Put title next to icon if panel is wide enough
 		if (mode == XFCE_PANEL_PLUGIN_MODE_DESKBAR)
 		{
+			xfce_panel_plugin_set_small(m_plugin, false);
+
+			// Put title next to icon if panel is wide enough
 			GtkRequisition label_size;
 			gtk_widget_size_request(GTK_WIDGET(m_button_label), &label_size);
 			if (label_size.width <= (size - row_size))
 			{
 				orientation = GTK_ORIENTATION_HORIZONTAL;
 			}
+		}
+		else
+		{
+			xfce_panel_plugin_set_small(m_plugin, true);
 		}
 #endif
 	}
