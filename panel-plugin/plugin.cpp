@@ -105,7 +105,7 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	// Connect plugin signals to functions
 	g_signal_connect(plugin, "free-data", G_CALLBACK(whiskermenu_free), this);
 	g_signal_connect(plugin, "configure-plugin", G_CALLBACK(Plugin::configure_slot), this);
-#if (LIBXFCE4PANEL_CHECK_VERSION(4,10,0))
+#if (LIBXFCE4PANEL_CHECK_VERSION(4,9,0))
 	g_signal_connect(plugin, "mode-changed", G_CALLBACK(Plugin::mode_changed_slot), this);
 #else
 	g_signal_connect(plugin, "orientation-changed", G_CALLBACK(Plugin::orientation_changed_slot), this);
@@ -113,9 +113,15 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	g_signal_connect(plugin, "remote-event", G_CALLBACK(Plugin::remote_event_slot), this);
 	g_signal_connect_swapped(plugin, "save", G_CALLBACK(Plugin::save_slot), this);
 	g_signal_connect(plugin, "size-changed", G_CALLBACK(Plugin::size_changed_slot), this);
-	xfce_panel_plugin_menu_show_configure(plugin);
 
+	xfce_panel_plugin_menu_show_configure(plugin);
 	xfce_panel_plugin_menu_insert_item(plugin, GTK_MENU_ITEM(wm_settings->command_menueditor->get_menuitem()));
+
+#if (LIBXFCE4PANEL_CHECK_VERSION(4,9,0))
+	mode_changed_slot(m_plugin, xfce_panel_plugin_get_mode(m_plugin), this);
+#else
+	orientation_changed_slot(m_plugin, xfce_panel_plugin_get_orientation(m_plugin), this);
+#endif
 }
 
 //-----------------------------------------------------------------------------
@@ -316,13 +322,15 @@ void Plugin::save()
 
 bool Plugin::size_changed(int size)
 {
-#if (LIBXFCE4PANEL_CHECK_VERSION(4,10,0))
+#if (LIBXFCE4PANEL_CHECK_VERSION(4,9,0))
 	gint row_size = size / xfce_panel_plugin_get_nrows(m_plugin);
+	XfcePanelPluginMode mode = xfce_panel_plugin_get_mode(m_plugin);
+	GtkOrientation orientation = (mode == XFCE_PANEL_PLUGIN_MODE_HORIZONTAL)
+			? GTK_ORIENTATION_HORIZONTAL : GTK_ORIENTATION_VERTICAL;
 #else
 	gint row_size = size;
-#endif
-
 	GtkOrientation orientation = xfce_panel_plugin_get_orientation(m_plugin);
+#endif
 
 	// Make icon expand to fill button if title is not visible
 	gtk_box_set_child_packing(GTK_BOX(m_button_box), GTK_WIDGET(m_button_icon),
@@ -349,9 +357,9 @@ bool Plugin::size_changed(int size)
 		xfce_panel_image_set_size(m_button_icon, row_size - border);
 		gtk_widget_set_size_request(GTK_WIDGET(m_plugin), -1, -1);
 
-#if (LIBXFCE4PANEL_CHECK_VERSION(4,10,0))
+#if (LIBXFCE4PANEL_CHECK_VERSION(4,9,0))
 		// Put title next to icon if panel is wide enough
-		if (xfce_panel_plugin_get_mode(m_plugin) == XFCE_PANEL_PLUGIN_MODE_DESKBAR)
+		if (mode == XFCE_PANEL_PLUGIN_MODE_DESKBAR)
 		{
 			GtkRequisition label_size;
 			gtk_widget_size_request(GTK_WIDGET(m_button_label), &label_size);

@@ -108,7 +108,7 @@ private:
 		return obj->size_changed(size);
 	}
 
-#if (LIBXFCE4PANEL_CHECK_VERSION(4,10,0))
+#if (LIBXFCE4PANEL_CHECK_VERSION(4,9,0))
 	static void mode_changed_slot(XfcePanelPlugin*, XfcePanelPluginMode mode, Plugin* obj)
 	{
 		obj->orientation_changed(mode == XFCE_PANEL_PLUGIN_MODE_VERTICAL);
