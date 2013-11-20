@@ -211,6 +211,7 @@ void LauncherView::create_column()
 	gtk_tree_view_column_set_visible(m_column, true);
 
 	m_icon_renderer = exo_cell_renderer_icon_new();
+	g_object_set(m_icon_renderer, "follow-state", false, NULL);
 	g_object_set(m_icon_renderer, "size", f_icon_size.get_size(), NULL);
 	gtk_tree_view_column_pack_start(m_column, m_icon_renderer, false);
 	gtk_tree_view_column_add_attribute(m_column, m_icon_renderer, "icon", LauncherModel::COLUMN_ICON);
