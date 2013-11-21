@@ -75,11 +75,16 @@ public:
 	bool position_search_alternate;
 	bool position_commands_alternate;
 
-	Command* command_settings;
-	Command* command_lockscreen;
-	Command* command_switchuser;
-	Command* command_logout;
-	Command* command_menueditor;
+	enum Commands
+	{
+		CommandSettings = 0,
+		CommandLockScreen,
+		CommandSwitchUser,
+		CommandLogOut,
+		CommandMenuEditor,
+		CountCommands
+	};
+	Command* command[CountCommands];
 
 	int menu_width;
 	int menu_height;

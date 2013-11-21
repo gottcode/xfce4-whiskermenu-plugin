@@ -18,6 +18,8 @@
 #ifndef WHISKERMENU_CONFIGURATION_DIALOG_H
 #define WHISKERMENU_CONFIGURATION_DIALOG_H
 
+#include <vector>
+
 #include <gtk/gtk.h>
 
 namespace WhiskerMenu
@@ -78,11 +80,7 @@ private:
 	GtkWidget* m_hover_switch_category;
 	GtkWidget* m_remember_favorites;
 	GtkWidget* m_display_recent;
-	CommandEdit* m_settings_command;
-	CommandEdit* m_lockscreen_command;
-	CommandEdit* m_switchuser_command;
-	CommandEdit* m_logout_command;
-	CommandEdit* m_menueditor_command;
+	std::vector<CommandEdit*> m_commands;
 
 
 private:

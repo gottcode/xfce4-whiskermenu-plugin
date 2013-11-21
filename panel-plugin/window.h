@@ -108,6 +108,7 @@ private:
 	ResizerWidget* m_resizer;
 
 	GtkAlignment* m_commands_align;
+	GtkWidget* m_commands_button[4];
 
 	GtkEntry* m_search_entry;
 

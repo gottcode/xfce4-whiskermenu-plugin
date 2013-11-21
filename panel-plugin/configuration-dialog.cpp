@@ -77,11 +77,10 @@ ConfigurationDialog::ConfigurationDialog(Plugin* plugin) :
 
 ConfigurationDialog::~ConfigurationDialog()
 {
-	delete m_settings_command;
-	delete m_lockscreen_command;
-	delete m_switchuser_command;
-	delete m_logout_command;
-	delete m_menueditor_command;
+	for (std::vector<CommandEdit*>::size_type i = 0; i < m_commands.size(); ++i)
+	{
+		delete m_commands[i];
+	}
 
 	m_plugin->set_configure_enabled(true);
 }
@@ -222,11 +221,10 @@ void ConfigurationDialog::response(int response_id)
 		m_plugin->set_button_title(Plugin::get_button_title_default());
 	}
 
-	wm_settings->command_settings->check();
-	wm_settings->command_lockscreen->check();
-	wm_settings->command_switchuser->check();
-	wm_settings->command_logout->check();
-	wm_settings->command_menueditor->check();
+	for (int i = 0; i < Settings::CountCommands; ++i)
+	{
+		wm_settings->command[i]->check();
+	}
 
 	if (response_id == GTK_RESPONSE_CLOSE)
 	{
@@ -416,25 +414,13 @@ GtkWidget* ConfigurationDialog::init_behavior_tab()
 	gtk_box_pack_start(behavior_vbox, commands_frame, false, false, 6);
 	gtk_container_set_border_width(GTK_CONTAINER(commands_frame), 0);
 
-	// Add settings command entry
-	m_settings_command = new CommandEdit(wm_settings->command_settings, label_size_group);
-	gtk_box_pack_start(commands_vbox, m_settings_command->get_widget(), false, false, 0);
-
-	// Add lock screen command entry
-	m_lockscreen_command = new CommandEdit(wm_settings->command_lockscreen, label_size_group);
-	gtk_box_pack_start(commands_vbox, m_lockscreen_command->get_widget(), false, false, 0);
-
-	// Add switch user command entry
-	m_switchuser_command = new CommandEdit(wm_settings->command_switchuser, label_size_group);
-	gtk_box_pack_start(commands_vbox, m_switchuser_command->get_widget(), false, false, 0);
-
-	// Add log out command entry
-	m_logout_command = new CommandEdit(wm_settings->command_logout, label_size_group);
-	gtk_box_pack_start(commands_vbox, m_logout_command->get_widget(), false, false, 0);
-
-	// Add menu editor command entry
-	m_menueditor_command = new CommandEdit(wm_settings->command_menueditor, label_size_group);
-	gtk_box_pack_start(commands_vbox, m_menueditor_command->get_widget(), false, false, 0);
+	// Add command entries
+	for (int i = 0; i < Settings::CountCommands; ++i)
+	{
+		CommandEdit* command_edit = new CommandEdit(wm_settings->command[i], label_size_group);
+		gtk_box_pack_start(commands_vbox, command_edit->get_widget(), false, false, 0);
+		m_commands.push_back(command_edit);
+	}
 
 	return page;
 }

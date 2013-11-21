@@ -29,6 +29,14 @@ using namespace WhiskerMenu;
 
 Settings* WhiskerMenu::wm_settings = NULL;
 
+static const char* const settings_command[Settings::CountCommands][2] = {
+	{ "command-settings",   "show-command-settings"   },
+	{ "command-lockscreen", "show-command-lockscreen" },
+	{ "command-switchuser", "show-command-switchuser" },
+	{ "command-logout",     "show-command-logout"     },
+	{ "command-menueditor", "show-command-menueditor" }
+};
+
 //-----------------------------------------------------------------------------
 
 static void read_vector_entry(XfceRc* rc, const char* key, std::vector<std::string>& desktop_ids)
@@ -97,22 +105,21 @@ Settings::Settings() :
 	favorites.push_back("exo-mail-reader.desktop");
 	favorites.push_back("exo-web-browser.desktop");
 
-	command_settings = new Command("preferences-desktop", _("All _Settings"), "xfce4-settings-manager", _("Failed to open settings manager."));
-	command_lockscreen = new Command("system-lock-screen", _("_Lock Screen"), "xflock4", _("Failed to lock screen."));
-	command_switchuser = new Command("system-users", _("Switch _Users"), "gdmflexiserver", _("Failed to switch users."));
-	command_logout = new Command("system-log-out", _("Log _Out"), "xfce4-session-logout", _("Failed to log out."));
-	command_menueditor = new Command("xfce4-menueditor", _("_Edit Applications"), "menulibre", _("Failed to launch menu editor."));
+	command[CommandSettings] = new Command("preferences-desktop", _("All _Settings"), "xfce4-settings-manager", _("Failed to open settings manager."));
+	command[CommandLockScreen] = new Command("system-lock-screen", _("_Lock Screen"), "xflock4", _("Failed to lock screen."));
+	command[CommandSwitchUser] = new Command("system-users", _("Switch _Users"), "gdmflexiserver", _("Failed to switch users."));
+	command[CommandLogOut] = new Command("system-log-out", _("Log _Out"), "xfce4-session-logout", _("Failed to log out."));
+	command[CommandMenuEditor] = new Command("xfce4-menueditor", _("_Edit Applications"), "menulibre", _("Failed to launch menu editor."));
 }
 
 //-----------------------------------------------------------------------------
 
 Settings::~Settings()
 {
-	delete command_settings;
-	delete command_lockscreen;
-	delete command_switchuser;
-	delete command_logout;
-	delete command_menueditor;
+	for (int i = 0; i < CountCommands; ++i)
+	{
+		delete command[i];
+	}
 }
 
 //-----------------------------------------------------------------------------
@@ -153,17 +160,12 @@ void Settings::load(char* file)
 	position_search_alternate = xfce_rc_read_bool_entry(rc, "position-search-alternate", position_search_alternate);
 	position_commands_alternate = xfce_rc_read_bool_entry(rc, "position-commands-alternate", position_commands_alternate) && position_search_alternate;
 
-	command_settings->set(xfce_rc_read_entry(rc, "command-settings", command_settings->get()));
-	command_lockscreen->set(xfce_rc_read_entry(rc, "command-lockscreen", command_lockscreen->get()));
-	command_switchuser->set(xfce_rc_read_entry(rc, "command-switchuser", command_switchuser->get()));
-	command_logout->set(xfce_rc_read_entry(rc, "command-logout", command_logout->get()));
-	command_menueditor->set(xfce_rc_read_entry(rc, "command-menueditor", command_menueditor->get()));
-
-	command_settings->set_shown(xfce_rc_read_bool_entry(rc, "show-command-settings", command_settings->get_shown()));
-	command_lockscreen->set_shown(xfce_rc_read_bool_entry(rc, "show-command-lockscreen", command_lockscreen->get_shown()));
-	command_switchuser->set_shown(xfce_rc_read_bool_entry(rc, "show-command-switchuser", command_switchuser->get_shown()));
-	command_logout->set_shown(xfce_rc_read_bool_entry(rc, "show-command-logout", command_logout->get_shown()));
-	command_menueditor->set_shown(xfce_rc_read_bool_entry(rc, "show-command-menueditor", command_menueditor->get_shown()));
+	for (int i = 0; i < CountCommands; ++i)
+	{
+		command[i]->set(xfce_rc_read_entry(rc, settings_command[i][0], command[i]->get()));
+		command[i]->set_shown(xfce_rc_read_bool_entry(rc, settings_command[i][1], command[i]->get_shown()));
+		command[i]->check();
+	}
 
 	menu_width = std::max(300, xfce_rc_read_int_entry(rc, "menu-width", menu_width));
 	menu_height = std::max(400, xfce_rc_read_int_entry(rc, "menu-height", menu_height));
@@ -171,12 +173,6 @@ void Settings::load(char* file)
 	xfce_rc_close(rc);
 
 	m_modified = false;
-
-	command_settings->check();
-	command_lockscreen->check();
-	command_switchuser->check();
-	command_logout->check();
-	command_menueditor->check();
 }
 
 //-----------------------------------------------------------------------------
@@ -217,17 +213,11 @@ void Settings::save(char* file)
 	xfce_rc_write_bool_entry(rc, "position-search-alternate", position_search_alternate);
 	xfce_rc_write_bool_entry(rc, "position-commands-alternate", position_commands_alternate);
 
-	xfce_rc_write_entry(rc, "command-settings", command_settings->get());
-	xfce_rc_write_entry(rc, "command-lockscreen", command_lockscreen->get());
-	xfce_rc_write_entry(rc, "command-switchuser", command_switchuser->get());
-	xfce_rc_write_entry(rc, "command-logout", command_logout->get());
-	xfce_rc_write_entry(rc, "command-menueditor", command_menueditor->get());
-
-	xfce_rc_write_bool_entry(rc, "show-command-settings", command_settings->get_shown());
-	xfce_rc_write_bool_entry(rc, "show-command-lockscreen", command_lockscreen->get_shown());
-	xfce_rc_write_bool_entry(rc, "show-command-switchuser", command_switchuser->get_shown());
-	xfce_rc_write_bool_entry(rc, "show-command-logout", command_logout->get_shown());
-	xfce_rc_write_bool_entry(rc, "show-command-menueditor", command_menueditor->get_shown());
+	for (int i = 0; i < CountCommands; ++i)
+	{
+		xfce_rc_write_entry(rc, settings_command[i][0], command[i]->get());
+		xfce_rc_write_bool_entry(rc, settings_command[i][1], command[i]->get_shown());
+	}
 
 	xfce_rc_write_int_entry(rc, "menu-width", menu_width);
 	xfce_rc_write_int_entry(rc, "menu-height", menu_height);

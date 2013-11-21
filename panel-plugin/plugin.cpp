@@ -115,7 +115,7 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	g_signal_connect(plugin, "size-changed", G_CALLBACK(Plugin::size_changed_slot), this);
 
 	xfce_panel_plugin_menu_show_configure(plugin);
-	xfce_panel_plugin_menu_insert_item(plugin, GTK_MENU_ITEM(wm_settings->command_menueditor->get_menuitem()));
+	xfce_panel_plugin_menu_insert_item(plugin, GTK_MENU_ITEM(wm_settings->command[Settings::CommandMenuEditor]->get_menuitem()));
 
 #if (LIBXFCE4PANEL_CHECK_VERSION(4,9,0))
 	mode_changed_slot(m_plugin, xfce_panel_plugin_get_mode(m_plugin), this);
