@@ -185,10 +185,12 @@ void Command::check()
 
 	if (m_button)
 	{
+		gtk_widget_set_visible(m_button, m_shown);
 		gtk_widget_set_sensitive(m_button, m_status == WHISKERMENU_COMMAND_VALID);
 	}
 	if (m_menuitem)
 	{
+		gtk_widget_set_visible(m_menuitem, m_shown);
 		gtk_widget_set_sensitive(m_menuitem, m_status == WHISKERMENU_COMMAND_VALID);
 	}
 }
