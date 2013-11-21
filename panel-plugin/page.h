@@ -53,7 +53,7 @@ protected:
 
 private:
 	virtual bool remember_launcher(Launcher* launcher);
-	void launcher_activated(GtkTreeView* view, GtkTreePath* path, GtkTreeViewColumn*);
+	void item_activated(GtkTreeView* view, GtkTreePath* path, GtkTreeViewColumn*);
 	gboolean view_button_press_event(GtkWidget* view, GdkEventButton* event);
 	gboolean view_popup_menu_event(GtkWidget* view);
 	void on_unmap();

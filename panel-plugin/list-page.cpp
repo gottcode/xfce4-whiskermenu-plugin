@@ -154,6 +154,7 @@ void ListPage::on_row_changed(GtkTreeModel* model, GtkTreePath* path, GtkTreeIte
 
 	Launcher* launcher;
 	gtk_tree_model_get(model, iter, LauncherView::COLUMN_LAUNCHER, &launcher, -1);
+	g_assert(launcher->get_type() == Launcher::Type);
 	if (launcher)
 	{
 		m_desktop_ids[pos] = launcher->get_desktop_id();
@@ -170,6 +171,7 @@ void ListPage::on_row_inserted(GtkTreeModel* model, GtkTreePath* path, GtkTreeIt
 	std::string desktop_id;
 	Launcher* launcher;
 	gtk_tree_model_get(model, iter, LauncherView::COLUMN_LAUNCHER, &launcher, -1);
+	g_assert(launcher->get_type() == Launcher::Type);
 	if (launcher)
 	{
 		desktop_id = launcher->get_desktop_id();

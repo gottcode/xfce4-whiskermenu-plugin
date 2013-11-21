@@ -23,7 +23,6 @@
 #include <string>
 
 #include <garcon/garcon.h>
-#include <gdk/gdk.h>
 
 namespace WhiskerMenu
 {
@@ -63,10 +62,6 @@ public:
 	void run(GdkScreen* screen) const;
 
 	int search(const Query& query) const;
-
-private:
-	Launcher(const Launcher& launcher);
-	Launcher& operator=(const Launcher& launcher);
 
 private:
 	GarconMenuItem* m_item;

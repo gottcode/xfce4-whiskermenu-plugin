@@ -18,7 +18,7 @@
 #ifndef WHISKERMENU_ELEMENT_H
 #define WHISKERMENU_ELEMENT_H
 
-#include <glib.h>
+#include <gdk/gdk.h>
 
 namespace WhiskerMenu
 {
@@ -52,6 +52,10 @@ public:
 		return m_text;
 	}
 
+	virtual void run(GdkScreen*) const
+	{
+	}
+
 	static bool less_than(const Element* lhs, const Element* rhs)
 	{
 		return g_strcmp0(lhs->m_sort_key, rhs->m_sort_key) < 0;
@@ -79,6 +83,10 @@ protected:
 		m_text = text;
 		m_sort_key = g_utf8_collate_key(m_text, -1);
 	}
+
+private:
+	Element(const Element&);
+	Element& operator=(const Element&);
 
 private:
 	gchar* m_icon;

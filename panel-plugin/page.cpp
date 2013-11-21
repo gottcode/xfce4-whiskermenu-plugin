@@ -38,7 +38,7 @@ Page::Page(Window* window) :
 	m_view = new LauncherView;
 	g_signal_connect_slot(m_view->get_widget(), "button-press-event", &Page::view_button_press_event, this);
 	g_signal_connect_slot(m_view->get_widget(), "popup-menu", &Page::view_popup_menu_event, this);
-	g_signal_connect_slot(m_view->get_widget(), "row-activated", &Page::launcher_activated, this);
+	g_signal_connect_slot(m_view->get_widget(), "row-activated", &Page::item_activated, this);
 	g_signal_connect_swapped(m_view->get_widget(), "start-interactive-search", G_CALLBACK(gtk_widget_grab_focus), m_window->get_search_entry());
 
 	// Add scrolling to view
@@ -93,7 +93,7 @@ Launcher* Page::get_selected_launcher() const
 		gtk_tree_model_get_iter(model, &iter, m_selected_path);
 		gtk_tree_model_get(model, &iter, LauncherView::COLUMN_LAUNCHER, &launcher, -1);
 	}
-	return launcher;
+	return (launcher->get_type() == Launcher::Type) ? launcher : NULL;
 }
 
 //-----------------------------------------------------------------------------
@@ -105,31 +105,35 @@ bool Page::remember_launcher(Launcher*)
 
 //-----------------------------------------------------------------------------
 
-void Page::launcher_activated(GtkTreeView* view, GtkTreePath* path, GtkTreeViewColumn*)
+void Page::item_activated(GtkTreeView* view, GtkTreePath* path, GtkTreeViewColumn*)
 {
 	GtkTreeIter iter;
 	GtkTreeModel* model = gtk_tree_view_get_model(view);
 	gtk_tree_model_get_iter(model, &iter, path);
 
-	// Find launcher
-	Launcher* launcher = NULL;
-	gtk_tree_model_get(model, &iter, LauncherView::COLUMN_LAUNCHER, &launcher, -1);
-	if (!launcher)
+	// Find element
+	Element* element = NULL;
+	gtk_tree_model_get(model, &iter, LauncherView::COLUMN_LAUNCHER, &element, -1);
+	if (!element)
 	{
 		return;
 	}
 
 	// Add to recent
-	if (remember_launcher(launcher))
+	if (element->get_type() == Launcher::Type)
 	{
-		m_window->get_recent()->add(launcher);
+		Launcher* launcher = static_cast<Launcher*>(element);
+		if (remember_launcher(launcher))
+		{
+			m_window->get_recent()->add(launcher);
+		}
 	}
 
 	// Hide window
 	m_window->hide();
 
 	// Execute app
-	launcher->run(gtk_widget_get_screen(GTK_WIDGET(view)));
+	element->run(gtk_widget_get_screen(GTK_WIDGET(view)));
 }
 
 //-----------------------------------------------------------------------------
