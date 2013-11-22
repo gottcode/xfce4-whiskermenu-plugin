@@ -28,6 +28,7 @@ namespace WhiskerMenu
 
 class Command;
 class Plugin;
+class SearchAction;
 
 class Settings
 {
@@ -85,6 +86,8 @@ public:
 		CountCommands
 	};
 	Command* command[CountCommands];
+
+	std::vector<SearchAction*> search_actions;
 
 	int menu_width;
 	int menu_height;

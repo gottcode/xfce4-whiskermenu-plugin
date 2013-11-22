@@ -19,6 +19,8 @@
 
 #include "launcher.h"
 #include "launcher-view.h"
+#include "search-action.h"
+#include "settings.h"
 #include "slot.h"
 #include "window.h"
 
@@ -90,6 +92,20 @@ void SearchPage::set_filter(const gchar* filter)
 			G_TYPE_STRING,
 			G_TYPE_STRING,
 			G_TYPE_POINTER);
+	SearchAction* action;
+	for (std::vector<SearchAction*>::size_type i = 0, end = wm_settings->search_actions.size(); i < end; ++i)
+	{
+		action = wm_settings->search_actions[i];
+		if (action->match(filter))
+		{
+			gtk_list_store_insert_with_values(
+					store, NULL, G_MAXINT,
+					LauncherView::COLUMN_ICON, action->get_icon(),
+					LauncherView::COLUMN_TEXT, action->get_text(),
+					LauncherView::COLUMN_LAUNCHER, action,
+					-1);
+		}
+	}
 	Launcher* launcher;
 	for (std::vector<Match>::size_type i = 0, end = m_matches.size(); i < end; ++i)
 	{

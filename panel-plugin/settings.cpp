@@ -18,6 +18,7 @@
 #include "settings.h"
 
 #include "command.h"
+#include "search-action.h"
 
 #include <algorithm>
 
@@ -112,6 +113,11 @@ Settings::Settings() :
 	command[CommandSwitchUser] = new Command("system-users", _("Switch _Users"), "gdmflexiserver", _("Failed to switch users."));
 	command[CommandLogOut] = new Command("system-log-out", _("Log _Out"), "xfce4-session-logout", _("Failed to log out."));
 	command[CommandMenuEditor] = new Command("xfce4-menueditor", _("_Edit Applications"), "menulibre", _("Failed to launch menu editor."));
+
+	search_actions.push_back(new SearchAction(_("Man Pages"), "#", "exo-open --launch TerminalEmulator man %s", false, true));
+	search_actions.push_back(new SearchAction(_("Wikipedia"), "!w", "exo-open --launch WebBrowser http://en.wikipedia.org/wiki/%u", false, true));
+	search_actions.push_back(new SearchAction(_("Run in Terminal"), "!", "exo-open --launch TerminalEmulator %s", false, true));
+	search_actions.push_back(new SearchAction(_("Open URI"), "^(file|http|https):\\/\\/(.*)$", "exo-open \\0", true, true));
 }
 
 //-----------------------------------------------------------------------------
@@ -121,6 +127,11 @@ Settings::~Settings()
 	for (int i = 0; i < CountCommands; ++i)
 	{
 		delete command[i];
+	}
+
+	for (std::vector<SearchAction*>::size_type i = 0, end = search_actions.size(); i < end; ++i)
+	{
+		delete search_actions[i];
 	}
 }
 
