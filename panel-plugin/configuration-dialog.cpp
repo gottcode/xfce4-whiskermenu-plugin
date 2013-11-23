@@ -21,14 +21,32 @@
 #include "command-edit.h"
 #include "icon-size.h"
 #include "plugin.h"
+#include "search-action.h"
 #include "settings.h"
 #include "slot.h"
+
+#include <algorithm>
 
 #include <exo/exo.h>
 #include <libxfce4panel/libxfce4panel.h>
 #include <libxfce4ui/libxfce4ui.h>
 
 using namespace WhiskerMenu;
+
+//-----------------------------------------------------------------------------
+
+namespace
+{
+
+enum
+{
+	COLUMN_NAME,
+	COLUMN_PATTERN,
+	COLUMN_ACTION,
+	N_COLUMNS
+};
+
+}
 
 //-----------------------------------------------------------------------------
 
@@ -60,6 +78,7 @@ ConfigurationDialog::ConfigurationDialog(Plugin* plugin) :
 	GtkNotebook* notebook = GTK_NOTEBOOK(gtk_notebook_new());
 	gtk_notebook_append_page(notebook, init_appearance_tab(), gtk_label_new_with_mnemonic(_("_Appearance")));
 	gtk_notebook_append_page(notebook, init_behavior_tab(), gtk_label_new_with_mnemonic(_("_Behavior")));
+	gtk_notebook_append_page(notebook, init_search_actions_tab(), gtk_label_new_with_mnemonic(_("Search Actio_ns")));
 
 	// Add tabs to dialog
 	GtkBox* vbox = GTK_BOX(gtk_vbox_new(false, 8));
@@ -82,6 +101,8 @@ ConfigurationDialog::~ConfigurationDialog()
 	{
 		delete m_commands[i];
 	}
+
+	g_object_unref(m_actions_model);
 
 	m_plugin->set_configure_enabled(true);
 }
@@ -211,6 +232,183 @@ void ConfigurationDialog::toggle_display_recent(GtkToggleButton* button)
 {
 	wm_settings->display_recent = gtk_toggle_button_get_active(button);
 	wm_settings->set_modified();
+}
+
+//-----------------------------------------------------------------------------
+
+SearchAction* ConfigurationDialog::get_selected_action(GtkTreeIter* iter) const
+{
+	GtkTreeIter selected_iter;
+	if (!iter)
+	{
+		iter = &selected_iter;
+	}
+
+	SearchAction* action = NULL;
+	GtkTreeSelection* selection = gtk_tree_view_get_selection(m_actions_view);
+	GtkTreeModel* model = NULL;
+	if (gtk_tree_selection_get_selected(selection, &model, iter))
+	{
+		gtk_tree_model_get(model, iter, COLUMN_ACTION, &action, -1);
+	}
+	return action;
+}
+
+//-----------------------------------------------------------------------------
+
+void ConfigurationDialog::action_selected(GtkTreeView*)
+{
+	SearchAction* action = get_selected_action();
+	{
+		gtk_entry_set_text(GTK_ENTRY(m_action_name), action->get_name());
+		gtk_entry_set_text(GTK_ENTRY(m_action_pattern), action->get_pattern());
+		gtk_entry_set_text(GTK_ENTRY(m_action_command), action->get_command());
+		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_action_regex), action->get_is_regex());
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void ConfigurationDialog::action_name_changed(GtkEditable* editable)
+{
+	GtkTreeIter iter;
+	SearchAction* action = get_selected_action(&iter);
+	if (action)
+	{
+		const gchar* text = gtk_entry_get_text(GTK_ENTRY(editable));
+		action->set_name(text);
+		gtk_list_store_set(m_actions_model, &iter, COLUMN_NAME, text, -1);
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void ConfigurationDialog::action_pattern_changed(GtkEditable* editable)
+{
+	GtkTreeIter iter;
+	SearchAction* action = get_selected_action(&iter);
+	if (action)
+	{
+		const gchar* text = gtk_entry_get_text(GTK_ENTRY(editable));
+		action->set_pattern(text);
+		gtk_list_store_set(m_actions_model, &iter, COLUMN_PATTERN, text, -1);
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void ConfigurationDialog::action_command_changed(GtkEditable* editable)
+{
+	SearchAction* action = get_selected_action();
+	if (action)
+	{
+		action->set_command(gtk_entry_get_text(GTK_ENTRY(editable)));
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void ConfigurationDialog::action_toggle_regex(GtkToggleButton* button)
+{
+	SearchAction* action = get_selected_action();
+	if (action)
+	{
+		action->set_is_regex(gtk_toggle_button_get_active(button));
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void ConfigurationDialog::add_action(GtkButton*)
+{
+	// Add to action list
+	SearchAction* action = new SearchAction;
+	wm_settings->search_actions.push_back(action);
+	wm_settings->set_modified();
+
+	// Add to model
+	GtkTreeIter iter;
+	gtk_list_store_insert_with_values(m_actions_model, &iter, G_MAXINT,
+			COLUMN_NAME, "",
+			COLUMN_PATTERN, "",
+			COLUMN_ACTION, action,
+			-1);
+	GtkTreePath* path = gtk_tree_model_get_path(GTK_TREE_MODEL(m_actions_model), &iter);
+	gtk_tree_view_set_cursor(m_actions_view, path, NULL, false);
+	gtk_tree_path_free(path);
+
+	// Make sure editing is allowed
+	gtk_widget_set_sensitive(m_action_remove, true);
+	gtk_widget_set_sensitive(m_action_name, true);
+	gtk_widget_set_sensitive(m_action_pattern, true);
+	gtk_widget_set_sensitive(m_action_command, true);
+	gtk_widget_set_sensitive(m_action_regex, true);
+}
+
+//-----------------------------------------------------------------------------
+
+void ConfigurationDialog::remove_action(GtkButton* button)
+{
+	// Fetch action
+	GtkTreeIter iter;
+	SearchAction* action = get_selected_action(&iter);
+	if (!action)
+	{
+		return;
+	}
+
+	// Confirm removal
+	if (!xfce_dialog_confirm(GTK_WINDOW(gtk_widget_get_toplevel(GTK_WIDGET(button))),
+			GTK_STOCK_DELETE, NULL,
+			_("The action will be deleted permanently."),
+			_("Remove action \"%s\"?"),
+			action->get_name()))
+	{
+		return;
+	}
+
+	// Fetch path of previous action
+	GtkTreePath* path = gtk_tree_model_get_path(GTK_TREE_MODEL(m_actions_model), &iter);
+	if (!gtk_tree_path_prev(path))
+	{
+		gtk_tree_path_free(path);
+		path = NULL;
+	}
+
+	// Remove from model
+	if (gtk_list_store_remove(m_actions_model, &iter))
+	{
+		if (path)
+		{
+			gtk_tree_path_free(path);
+		}
+		path = gtk_tree_model_get_path(GTK_TREE_MODEL(m_actions_model), &iter);
+	}
+
+	// Remove from list
+	wm_settings->search_actions.erase(std::find(wm_settings->search_actions.begin(), wm_settings->search_actions.end(), action));
+	wm_settings->set_modified();
+	delete action;
+
+	// Select next action
+	if (path)
+	{
+		gtk_tree_view_set_cursor(m_actions_view, path, NULL, false);
+		gtk_tree_path_free(path);
+	}
+	else
+	{
+		gtk_entry_set_text(GTK_ENTRY(m_action_name), "");
+		gtk_entry_set_text(GTK_ENTRY(m_action_pattern), "");
+		gtk_entry_set_text(GTK_ENTRY(m_action_command), "");
+		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_action_regex), false);
+
+		gtk_widget_set_sensitive(m_action_remove, false);
+		gtk_widget_set_sensitive(m_action_name, false);
+		gtk_widget_set_sensitive(m_action_pattern, false);
+		gtk_widget_set_sensitive(m_action_command, false);
+		gtk_widget_set_sensitive(m_action_regex, false);
+	}
 }
 
 //-----------------------------------------------------------------------------
@@ -421,6 +619,153 @@ GtkWidget* ConfigurationDialog::init_behavior_tab()
 		CommandEdit* command_edit = new CommandEdit(wm_settings->command[i], label_size_group);
 		gtk_box_pack_start(commands_vbox, command_edit->get_widget(), false, false, 0);
 		m_commands.push_back(command_edit);
+	}
+
+	return page;
+}
+
+//-----------------------------------------------------------------------------
+
+GtkWidget* ConfigurationDialog::init_search_actions_tab()
+{
+	// Create search actions section
+	GtkWidget* page = gtk_alignment_new(0, 0, 1, 1);
+	gtk_container_set_border_width(GTK_CONTAINER(page), 8);
+	GtkTable* actions_table = GTK_TABLE(gtk_table_new(3, 2, false));
+	gtk_table_set_col_spacings(actions_table, 6);
+	gtk_table_set_row_spacings(actions_table, 6);
+	gtk_container_add(GTK_CONTAINER(page), GTK_WIDGET(actions_table));
+
+	// Create model
+	m_actions_model = gtk_list_store_new(N_COLUMNS,
+			G_TYPE_STRING,
+			G_TYPE_STRING,
+			G_TYPE_POINTER);
+	for (std::vector<SearchAction*>::size_type i = 0, end = wm_settings->search_actions.size(); i < end; ++i)
+	{
+		SearchAction* action = wm_settings->search_actions[i];
+		gtk_list_store_insert_with_values(m_actions_model,
+				NULL, G_MAXINT,
+				COLUMN_NAME, action->get_name(),
+				COLUMN_PATTERN, action->get_pattern(),
+				COLUMN_ACTION, action,
+				-1);
+	}
+
+	// Create view
+	m_actions_view = GTK_TREE_VIEW(gtk_tree_view_new_with_model(GTK_TREE_MODEL(m_actions_model)));
+	g_signal_connect_slot(m_actions_view, "cursor-changed", &ConfigurationDialog::action_selected, this);
+
+	GtkCellRenderer* renderer = gtk_cell_renderer_text_new();
+	GtkTreeViewColumn* column = gtk_tree_view_column_new_with_attributes(_("Name"),
+			renderer, "text", COLUMN_NAME, NULL);
+	gtk_tree_view_append_column(m_actions_view, column);
+
+	renderer = gtk_cell_renderer_text_new();
+	column = gtk_tree_view_column_new_with_attributes(_("Pattern"),
+			renderer, "text", COLUMN_PATTERN, NULL);
+	gtk_tree_view_append_column(m_actions_view, column);
+
+	GtkTreeSelection* selection = gtk_tree_view_get_selection(m_actions_view);
+	gtk_tree_selection_set_mode(selection, GTK_SELECTION_BROWSE);
+
+	GtkWidget* scrolled_window = gtk_scrolled_window_new(NULL, NULL);
+	gtk_scrolled_window_set_policy(GTK_SCROLLED_WINDOW(scrolled_window), GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
+	gtk_scrolled_window_set_shadow_type(GTK_SCROLLED_WINDOW(scrolled_window), GTK_SHADOW_ETCHED_IN);
+	gtk_container_add(GTK_CONTAINER(scrolled_window), GTK_WIDGET(m_actions_view));
+	gtk_table_attach_defaults(actions_table, scrolled_window, 0, 1, 0, 1);
+
+	// Create buttons
+	m_action_add = gtk_button_new();
+	gtk_widget_set_tooltip_text(m_action_add, _("Add action"));
+	gtk_widget_show(m_action_add);
+
+	GtkWidget* image = gtk_image_new_from_stock(GTK_STOCK_ADD, GTK_ICON_SIZE_BUTTON);
+	gtk_container_add(GTK_CONTAINER(m_action_add), image);
+	gtk_widget_show(image);
+	g_signal_connect_slot(m_action_add, "clicked", &ConfigurationDialog::add_action, this);
+
+	m_action_remove = gtk_button_new();
+	gtk_widget_set_tooltip_text(m_action_remove, _("Remove selected action"));
+	gtk_widget_show(m_action_remove);
+
+	image = gtk_image_new_from_stock(GTK_STOCK_REMOVE, GTK_ICON_SIZE_BUTTON);
+	gtk_container_add(GTK_CONTAINER(m_action_remove), image);
+	gtk_widget_show(image);
+	g_signal_connect_slot(m_action_remove, "clicked", &ConfigurationDialog::remove_action, this);
+
+	GtkWidget* actions = gtk_alignment_new(0.5, 0, 0, 0);
+	GtkBox* actions_box = GTK_BOX(gtk_vbox_new(false, 6));
+	gtk_container_add(GTK_CONTAINER(actions), GTK_WIDGET(actions_box));
+	gtk_box_pack_start(actions_box, m_action_add, false, false, 0);
+	gtk_box_pack_start(actions_box, m_action_remove, false, false, 0);
+	gtk_table_attach(actions_table, actions, 1, 2, 0, 1, GTK_FILL, GtkAttachOptions(GTK_FILL | GTK_EXPAND), 0, 0);
+	gtk_widget_show_all(actions);
+
+	// Create details section
+	GtkTable* details_table = GTK_TABLE(gtk_table_new(4, 3, false));
+	gtk_table_set_col_spacings(details_table, 6);
+	gtk_table_set_row_spacings(details_table, 6);
+	GtkWidget* details_frame = xfce_gtk_frame_box_new_with_content(_("Details"), GTK_WIDGET(details_table));
+	gtk_table_attach(actions_table, details_frame, 0, 2, 2, 3, GtkAttachOptions(GTK_FILL | GTK_EXPAND), GTK_FILL, 0, 0);
+	gtk_container_set_border_width(GTK_CONTAINER(details_frame), 0);
+
+	// Create entry for name
+	GtkWidget* label = gtk_label_new_with_mnemonic(_("Nam_e:"));
+	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+	gtk_widget_show(label);
+	gtk_table_attach(details_table, label, 0, 1, 0, 1, GTK_FILL, GTK_FILL, 0, 0);
+
+	m_action_name = gtk_entry_new();
+	gtk_widget_show(m_action_name);
+	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_action_name);
+	gtk_table_attach(details_table, m_action_name, 2, 3, 0, 1, GtkAttachOptions(GTK_FILL | GTK_EXPAND), GTK_FILL, 0, 0);
+	g_signal_connect_slot(m_action_name, "changed", &ConfigurationDialog::action_name_changed, this);
+
+	// Create entry for keyword
+	label = gtk_label_new_with_mnemonic(_("_Pattern:"));
+	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+	gtk_widget_show(label);
+	gtk_table_attach(details_table, label, 0, 1, 1, 2, GTK_FILL, GTK_FILL, 0, 0);
+
+	m_action_pattern = gtk_entry_new();
+	gtk_widget_show(m_action_pattern);
+	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_action_pattern);
+	gtk_table_attach(details_table, m_action_pattern, 2, 3, 1, 2, GtkAttachOptions(GTK_FILL | GTK_EXPAND), GTK_FILL, 0, 0);
+	g_signal_connect_slot(m_action_pattern, "changed", &ConfigurationDialog::action_pattern_changed, this);
+
+	// Create entry for command
+	label = gtk_label_new_with_mnemonic(_("C_ommand:"));
+	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+	gtk_widget_show(label);
+	gtk_table_attach(details_table, label, 0, 1, 2, 3, GTK_FILL, GTK_FILL, 0, 0);
+
+	m_action_command = gtk_entry_new();
+	gtk_widget_show(m_action_command);
+	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_action_command);
+	gtk_table_attach(details_table, m_action_command, 2, 3, 2, 3, GtkAttachOptions(GTK_FILL | GTK_EXPAND), GTK_FILL, 0, 0);
+	g_signal_connect_slot(m_action_command, "changed", &ConfigurationDialog::action_command_changed, this);
+
+	// Create toggle button for regular expressions
+	m_action_regex = gtk_check_button_new_with_mnemonic(_("_Regular expression"));
+	gtk_widget_show(m_action_regex);
+	gtk_table_attach(details_table, m_action_regex, 2, 3, 3, 4, GtkAttachOptions(GTK_FILL | GTK_EXPAND), GTK_FILL, 0, 0);
+	g_signal_connect_slot(m_action_regex, "toggled", &ConfigurationDialog::action_toggle_regex, this);
+
+	// Select first action
+	if (!wm_settings->search_actions.empty())
+	{
+		GtkTreePath* path = gtk_tree_path_new_first();
+		gtk_tree_view_set_cursor(m_actions_view, path, NULL, false);
+		gtk_tree_path_free(path);
+	}
+	else
+	{
+		gtk_widget_set_sensitive(m_action_remove, false);
+		gtk_widget_set_sensitive(m_action_name, false);
+		gtk_widget_set_sensitive(m_action_pattern, false);
+		gtk_widget_set_sensitive(m_action_command, false);
+		gtk_widget_set_sensitive(m_action_regex, false);
 	}
 
 	return page;

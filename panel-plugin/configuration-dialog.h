@@ -27,6 +27,7 @@ namespace WhiskerMenu
 
 class CommandEdit;
 class Plugin;
+class SearchAction;
 
 class ConfigurationDialog
 {
@@ -56,9 +57,19 @@ private:
 	void toggle_remember_favorites(GtkToggleButton* button);
 	void toggle_display_recent(GtkToggleButton* button);
 
+	SearchAction* get_selected_action(GtkTreeIter* iter = NULL) const;
+	void action_selected(GtkTreeView* view);
+	void action_name_changed(GtkEditable* editable);
+	void action_pattern_changed(GtkEditable* editable);
+	void action_command_changed(GtkEditable* editable);
+	void action_toggle_regex(GtkToggleButton* button);
+	void add_action(GtkButton*);
+	void remove_action(GtkButton* button);
+
 	void response(GtkDialog*, int response_id);
 	GtkWidget* init_appearance_tab();
 	GtkWidget* init_behavior_tab();
+	GtkWidget* init_search_actions_tab();
 
 private:
 	Plugin* m_plugin;
@@ -81,6 +92,15 @@ private:
 	GtkWidget* m_remember_favorites;
 	GtkWidget* m_display_recent;
 	std::vector<CommandEdit*> m_commands;
+
+	GtkTreeView* m_actions_view;
+	GtkListStore* m_actions_model;
+	GtkWidget* m_action_add;
+	GtkWidget* m_action_remove;
+	GtkWidget* m_action_name;
+	GtkWidget* m_action_pattern;
+	GtkWidget* m_action_command;
+	GtkWidget* m_action_regex;
 };
 
 }
