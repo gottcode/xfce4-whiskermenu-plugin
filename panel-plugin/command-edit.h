@@ -47,23 +47,6 @@ private:
 	GtkToggleButton* m_shown;
 	GtkEntry* m_entry;
 	GtkWidget* m_browse_button;
-
-
-private:
-	static void browse_clicked_slot(GtkWidget*, CommandEdit* obj)
-	{
-		obj->browse_clicked();
-	}
-
-	static void command_changed_slot(GtkEditable*, CommandEdit* obj)
-	{
-		obj->command_changed();
-	}
-
-	static void shown_toggled_slot(GtkToggleButton*, CommandEdit* obj)
-	{
-		obj->shown_toggled();
-	}
 };
 
 }

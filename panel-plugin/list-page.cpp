@@ -21,6 +21,7 @@
 #include "launcher.h"
 #include "launcher-view.h"
 #include "settings.h"
+#include "slot.h"
 #include "window.h"
 
 #include <algorithm>
@@ -116,9 +117,9 @@ void ListPage::set_menu_items()
 	// Replace treeview contents
 	GtkTreeModel* model = GTK_TREE_MODEL(store);
 	get_view()->set_model(model);
-	g_signal_connect(model, "row-changed", G_CALLBACK(ListPage::on_row_changed_slot), this);
-	g_signal_connect(model, "row-inserted", G_CALLBACK(ListPage::on_row_inserted_slot), this);
-	g_signal_connect(model, "row-deleted", G_CALLBACK(ListPage::on_row_deleted_slot), this);
+	g_signal_connect_slot(model, "row-changed", &ListPage::on_row_changed, this);
+	g_signal_connect_slot(model, "row-inserted", &ListPage::on_row_inserted, this);
+	g_signal_connect_slot(model, "row-deleted", &ListPage::on_row_deleted, this);
 	g_object_unref(model);
 }
 
@@ -188,7 +189,7 @@ void ListPage::on_row_inserted(GtkTreeModel* model, GtkTreePath* path, GtkTreeIt
 
 //-----------------------------------------------------------------------------
 
-void ListPage::on_row_deleted(GtkTreePath* path)
+void ListPage::on_row_deleted(GtkTreeModel*, GtkTreePath* path)
 {
 	size_t pos = gtk_tree_path_get_indices(path)[0];
 	if (pos < m_desktop_ids.size())

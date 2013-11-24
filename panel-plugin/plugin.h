@@ -58,13 +58,17 @@ public:
 	void set_configure_enabled(bool enabled);
 
 private:
-	bool button_clicked(GdkEventButton* event);
+	gboolean button_clicked(GtkWidget*, GdkEventButton* event);
 	void menu_hidden();
 	void configure();
-	bool remote_event(gchar* name, GValue* value);
+#if (LIBXFCE4PANEL_CHECK_VERSION(4,9,0))
+	void mode_changed(XfcePanelPlugin*, XfcePanelPluginMode mode);
+#else
+	void orientation_changed(XfcePanelPlugin*, GtkOrientation orientation);
+#endif
+	gboolean remote_event(XfcePanelPlugin*, gchar* name, GValue* value);
 	void save();
-	bool size_changed(int size);
-	void orientation_changed(bool vertical);
+	gboolean size_changed(XfcePanelPlugin*, gint size);
 	void popup_menu(bool at_cursor);
 
 private:
@@ -75,50 +79,6 @@ private:
 	GtkBox* m_button_box;
 	GtkLabel* m_button_label;
 	XfcePanelImage* m_button_icon;
-
-
-private:
-	static gboolean button_clicked_slot(GtkWidget*, GdkEventButton* event, Plugin* obj)
-	{
-		return obj->button_clicked(event);
-	}
-
-	static void menu_hidden_slot(GtkWidget*, Plugin* obj)
-	{
-		obj->menu_hidden();
-	}
-
-	static void configure_slot(XfcePanelPlugin*, Plugin* obj)
-	{
-		obj->configure();
-	}
-
-	static gboolean remote_event_slot(XfcePanelPlugin*, gchar* name, GValue* value, Plugin* obj)
-	{
-		return obj->remote_event(name, value);
-	}
-
-	static void save_slot(Plugin* obj)
-	{
-		obj->save();
-	}
-
-	static gboolean size_changed_slot(XfcePanelPlugin*, gint size, Plugin* obj)
-	{
-		return obj->size_changed(size);
-	}
-
-#if (LIBXFCE4PANEL_CHECK_VERSION(4,9,0))
-	static void mode_changed_slot(XfcePanelPlugin*, XfcePanelPluginMode mode, Plugin* obj)
-	{
-		obj->orientation_changed(mode == XFCE_PANEL_PLUGIN_MODE_VERTICAL);
-	}
-#else
-	static void orientation_changed_slot(XfcePanelPlugin*, GtkOrientation orientation, Plugin* obj)
-	{
-		obj->orientation_changed(orientation == GTK_ORIENTATION_VERTICAL);
-	}
-#endif
 };
 
 }

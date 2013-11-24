@@ -22,6 +22,7 @@
 #include "launcher-view.h"
 #include "section-button.h"
 #include "settings.h"
+#include "slot.h"
 #include "window.h"
 
 #include <algorithm>
@@ -206,7 +207,7 @@ void ApplicationsPage::load_garcon_menu()
 
 //-----------------------------------------------------------------------------
 
-bool ApplicationsPage::load_contents()
+void ApplicationsPage::load_contents()
 {
 	if (!m_garcon_menu)
 	{
@@ -215,11 +216,11 @@ bool ApplicationsPage::load_contents()
 		m_load_status = STATUS_INVALID;
 		m_load_thread = NULL;
 
-		return false;
+		return;
 	}
 
 	// Populate map of menu data
-	g_signal_connect_swapped(m_garcon_menu, "reload-required", G_CALLBACK(ApplicationsPage::invalidate_applications_slot), this);
+	g_signal_connect_slot(m_garcon_menu, "reload-required", &ApplicationsPage::invalidate_applications, this);
 	load_menu(m_garcon_menu, NULL);
 
 	// Sort items and categories
@@ -250,7 +251,7 @@ bool ApplicationsPage::load_contents()
 	for (std::vector<Category*>::const_iterator i = m_categories.begin(), end = m_categories.end(); i != end; ++i)
 	{
 		SectionButton* category_button = (*i)->get_button();
-		g_signal_connect(category_button->get_button(), "toggled", G_CALLBACK(ApplicationsPage::apply_filter_slot), this);
+		g_signal_connect_slot(category_button->get_button(), "toggled", &ApplicationsPage::apply_filter, this);
 		category_buttons.push_back(category_button);
 	}
 
@@ -263,8 +264,6 @@ bool ApplicationsPage::load_contents()
 
 	m_load_status = STATUS_LOADED;
 	m_load_thread = NULL;
-
-	return false;
 }
 
 //-----------------------------------------------------------------------------
@@ -327,7 +326,7 @@ void ApplicationsPage::load_menu(GarconMenu* menu, Category* parent_category)
 	}
 
 	// Listen for menu changes
-	g_signal_connect_swapped(menu, "directory-changed", G_CALLBACK(ApplicationsPage::invalidate_applications_slot), this);
+	g_signal_connect_slot(menu, "directory-changed", &ApplicationsPage::invalidate_applications, this);
 }
 
 //-----------------------------------------------------------------------------
@@ -355,7 +354,7 @@ void ApplicationsPage::load_menu_item(GarconMenuItem* menu_item, Category* categ
 	}
 
 	// Listen for menu changes
-	g_signal_connect_swapped(menu_item, "changed", G_CALLBACK(ApplicationsPage::invalidate_applications_slot), this);
+	g_signal_connect_slot(menu_item, "changed", &ApplicationsPage::invalidate_applications, this);
 }
 
 //-----------------------------------------------------------------------------

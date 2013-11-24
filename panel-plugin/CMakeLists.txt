@@ -87,6 +87,7 @@ add_library(whiskermenu MODULE
 	search-page.cpp
 	section-button.cpp
 	settings.cpp
+	slot.h
 	window.cpp)
 
 target_link_libraries(whiskermenu

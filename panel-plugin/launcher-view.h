@@ -69,26 +69,14 @@ public:
 
 private:
 	void create_column();
-	bool on_key_press_event(GdkEventKey* event);
-	bool on_key_release_event(GdkEventKey* event);
+	gboolean on_key_press_event(GtkWidget*, GdkEventKey* event);
+	gboolean on_key_release_event(GtkWidget*, GdkEventKey* event);
 
 private:
 	GtkTreeModel* m_model;
 	GtkTreeView* m_view;
 	GtkTreeViewColumn* m_column;
 	int m_icon_size;
-
-
-private:
-	static gboolean on_key_press_event_slot(GtkWidget*, GdkEventKey* event, LauncherView* obj)
-	{
-		return obj->on_key_press_event(event);
-	}
-
-	static gboolean on_key_release_event_slot(GtkWidget*, GdkEventKey* event, LauncherView* obj)
-	{
-		return obj->on_key_release_event(event);
-	}
 };
 
 }

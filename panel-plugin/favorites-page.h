@@ -36,18 +36,6 @@ private:
 	void sort(std::vector<Launcher*>& items) const;
 	void sort_ascending();
 	void sort_descending();
-
-
-private:
-	static void sort_ascending_slot(GtkMenuItem*, FavoritesPage* obj)
-	{
-		obj->sort_ascending();
-	}
-
-	static void sort_descending_slot(GtkMenuItem*, FavoritesPage* obj)
-	{
-		obj->sort_descending();
-	}
 };
 
 }

@@ -49,14 +49,14 @@ private:
 	void item_icon_size_changed(GtkComboBox* combo);
 
 	void style_changed(GtkComboBox* combo);
-	void title_changed();
+	void title_changed(GtkEditable* editable);
 	void choose_icon();
 
 	void toggle_hover_switch_category(GtkToggleButton* button);
 	void toggle_remember_favorites(GtkToggleButton* button);
 	void toggle_display_recent(GtkToggleButton* button);
 
-	void response(int response_id);
+	void response(GtkDialog*, int response_id);
 	GtkWidget* init_appearance_tab();
 	GtkWidget* init_behavior_tab();
 
@@ -81,78 +81,6 @@ private:
 	GtkWidget* m_remember_favorites;
 	GtkWidget* m_display_recent;
 	std::vector<CommandEdit*> m_commands;
-
-
-private:
-	static void choose_icon_slot(GtkButton*, ConfigurationDialog* obj)
-	{
-		obj->choose_icon();
-	}
-
-	static void category_icon_size_changed_slot(GtkComboBox* combo, ConfigurationDialog* obj)
-	{
-		obj->category_icon_size_changed(combo);
-	}
-
-	static void item_icon_size_changed_slot(GtkComboBox* combo, ConfigurationDialog* obj)
-	{
-		obj->item_icon_size_changed(combo);
-	}
-
-	static void style_changed_slot(GtkComboBox* combo, ConfigurationDialog* obj)
-	{
-		obj->style_changed(combo);
-	}
-
-	static void title_changed_slot(GtkEditable*, ConfigurationDialog* obj)
-	{
-		obj->title_changed();
-	}
-
-	static void toggle_hover_switch_category_slot(GtkToggleButton* button, ConfigurationDialog* obj)
-	{
-		obj->toggle_hover_switch_category(button);
-	}
-
-	static void toggle_show_generic_name_slot(GtkToggleButton* button, ConfigurationDialog* obj)
-	{
-		obj->toggle_show_generic_name(button);
-	}
-
-	static void toggle_show_description_slot(GtkToggleButton* button, ConfigurationDialog* obj)
-	{
-		obj->toggle_show_description(button);
-	}
-
-	static void toggle_show_hierarchy_slot(GtkToggleButton* button, ConfigurationDialog* obj)
-	{
-		obj->toggle_show_hierarchy(button);
-	}
-
-	static void toggle_position_search_alternate_slot(GtkToggleButton* button, ConfigurationDialog* obj)
-	{
-		obj->toggle_position_search_alternate(button);
-	}
-
-	static void toggle_position_commands_alternate_slot(GtkToggleButton* button, ConfigurationDialog* obj)
-	{
-		obj->toggle_position_commands_alternate(button);
-	}
-
-	static void toggle_remember_favorites_slot(GtkToggleButton* button, ConfigurationDialog* obj)
-	{
-		obj->toggle_remember_favorites(button);
-	}
-
-	static void toggle_display_recent_slot(GtkToggleButton* button, ConfigurationDialog* obj)
-	{
-		obj->toggle_display_recent(button);
-	}
-
-	static void response_slot(GtkDialog*, gint response_id, ConfigurationDialog* obj)
-	{
-		obj->response(response_id);
-	}
 };
 
 }

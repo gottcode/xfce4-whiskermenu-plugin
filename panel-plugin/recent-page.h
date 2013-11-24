@@ -36,13 +36,6 @@ private:
 
 private:
 	size_t m_max_items;
-
-
-private:
-	static void clear_menu_slot(GtkMenuItem*, RecentPage* obj)
-	{
-		obj->clear_menu();
-	}
 };
 
 }

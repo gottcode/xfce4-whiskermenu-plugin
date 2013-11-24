@@ -46,10 +46,10 @@ public:
 	void set_corner(Corner corner);
 
 private:
-	bool on_button_press_event(GdkEventButton* event);
-	bool on_enter_notify_event(GtkWidget* widget);
-	bool on_leave_notify_event(GtkWidget* widget);
-	bool on_expose_event(GtkWidget* widget);
+	gboolean on_button_press_event(GtkWidget*, GdkEventButton* event);
+	gboolean on_enter_notify_event(GtkWidget* widget, GdkEventCrossing*);
+	gboolean on_leave_notify_event(GtkWidget* widget, GdkEventCrossing*);
+	gboolean on_expose_event(GtkWidget* widget, GdkEventExpose*);
 
 private:
 	GtkWindow* m_window;
@@ -58,28 +58,6 @@ private:
 	GdkCursor* m_cursor;
 	GdkWindowEdge m_edge;
 	std::vector<GdkPoint> m_shape;
-
-
-private:
-	static gboolean on_button_press_event_slot(GtkWidget*, GdkEventButton* event, ResizerWidget* obj)
-	{
-		return obj->on_button_press_event(event);
-	}
-
-	static gboolean on_enter_notify_event_slot(GtkWidget* widget, GdkEventCrossing*, ResizerWidget* obj)
-	{
-		return obj->on_enter_notify_event(widget);
-	}
-
-	static gboolean on_leave_notify_event_slot(GtkWidget* widget, GdkEventCrossing*, ResizerWidget* obj)
-	{
-		return obj->on_leave_notify_event(widget);
-	}
-
-	static gboolean on_expose_event_slot(GtkWidget* widget, GdkEventExpose*, ResizerWidget* obj)
-	{
-		return obj->on_expose_event(widget);
-	}
 };
 
 }

@@ -22,6 +22,7 @@
 #include "icon-size.h"
 #include "plugin.h"
 #include "settings.h"
+#include "slot.h"
 
 #include <exo/exo.h>
 #include <libxfce4panel/libxfce4panel.h>
@@ -52,7 +53,7 @@ ConfigurationDialog::ConfigurationDialog(Plugin* plugin) :
 	m_window = xfce_titled_dialog_new_with_buttons(_("Whisker Menu"), window, GTK_DIALOG_NO_SEPARATOR, GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE, NULL);
 	gtk_window_set_icon_name(GTK_WINDOW(m_window), GTK_STOCK_PROPERTIES);
 	gtk_window_set_position(GTK_WINDOW(m_window), GTK_WIN_POS_CENTER);
-	g_signal_connect(m_window, "response", G_CALLBACK(ConfigurationDialog::response_slot), this);
+	g_signal_connect_slot(m_window, "response", &ConfigurationDialog::response, this);
 	g_signal_connect_swapped(m_window, "destroy", G_CALLBACK(whiskermenu_config_dialog_delete), this);
 
 	// Create tabs
@@ -137,9 +138,9 @@ void ConfigurationDialog::style_changed(GtkComboBox* combo)
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::title_changed()
+void ConfigurationDialog::title_changed(GtkEditable* editable)
 {
-	const gchar* text = gtk_entry_get_text(GTK_ENTRY(m_title));
+	const gchar* text = gtk_entry_get_text(GTK_ENTRY(editable));
 	m_plugin->set_button_title(text ? text : "");
 }
 
@@ -214,7 +215,7 @@ void ConfigurationDialog::toggle_display_recent(GtkToggleButton* button)
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::response(int response_id)
+void ConfigurationDialog::response(GtkDialog*, int response_id)
 {
 	if ((m_plugin->get_button_style() == Plugin::ShowText) && m_plugin->get_button_title().empty())
 	{
@@ -264,7 +265,7 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	gtk_combo_box_set_active(GTK_COMBO_BOX(m_button_style), static_cast<int>(m_plugin->get_button_style()) - 1);
 	gtk_box_pack_start(hbox, m_button_style, false, false, 0);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_button_style);
-	g_signal_connect(m_button_style, "changed", G_CALLBACK(ConfigurationDialog::style_changed_slot), this);
+	g_signal_connect_slot(m_button_style, "changed", &ConfigurationDialog::style_changed, this);
 
 	// Add title selector
 	hbox = GTK_BOX(gtk_hbox_new(false, 12));
@@ -279,7 +280,7 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	gtk_entry_set_text(GTK_ENTRY(m_title), m_plugin->get_button_title().c_str());
 	gtk_box_pack_start(hbox, m_title, true, true, 0);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_title);
-	g_signal_connect(m_title, "changed", G_CALLBACK(ConfigurationDialog::title_changed_slot), this);
+	g_signal_connect_slot(m_title, "changed", &ConfigurationDialog::title_changed, this);
 
 	// Add icon selector
 	hbox = GTK_BOX(gtk_hbox_new(false, 12));
@@ -293,7 +294,7 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	m_icon_button = gtk_button_new();
 	gtk_box_pack_start(hbox, m_icon_button, false, false, 0);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_icon_button);
-	g_signal_connect(m_icon_button, "clicked", G_CALLBACK(ConfigurationDialog::choose_icon_slot), this);
+	g_signal_connect_slot(m_icon_button, "clicked", &ConfigurationDialog::choose_icon, this);
 
 	m_icon = xfce_panel_image_new_from_source(m_plugin->get_button_icon_name().c_str());
 	xfce_panel_image_set_size(XFCE_PANEL_IMAGE(m_icon), 48);
@@ -310,32 +311,32 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	m_show_generic_names = gtk_check_button_new_with_mnemonic(_("Show generic application _names"));
 	gtk_box_pack_start(appearance_vbox, m_show_generic_names, true, true, 0);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_generic_names), !wm_settings->launcher_show_name);
-	g_signal_connect(m_show_generic_names, "toggled", G_CALLBACK(ConfigurationDialog::toggle_show_generic_name_slot), this);
+	g_signal_connect_slot(m_show_generic_names, "toggled", &ConfigurationDialog::toggle_show_generic_name, this);
 
 	// Add option to hide descriptions
 	m_show_descriptions = gtk_check_button_new_with_mnemonic(_("Show application _descriptions"));
 	gtk_box_pack_start(appearance_vbox, m_show_descriptions, true, true, 0);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_descriptions), wm_settings->launcher_show_description);
-	g_signal_connect(m_show_descriptions, "toggled", G_CALLBACK(ConfigurationDialog::toggle_show_description_slot), this);
+	g_signal_connect_slot(m_show_descriptions, "toggled", &ConfigurationDialog::toggle_show_description, this);
 
 	// Add option to show menu hierarchy
 	m_show_hierarchy = gtk_check_button_new_with_mnemonic(_("Show menu hie_rarchy"));
 	gtk_box_pack_start(appearance_vbox, m_show_hierarchy, true, true, 0);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_hierarchy), wm_settings->load_hierarchy);
-	g_signal_connect(m_show_hierarchy, "toggled", G_CALLBACK(ConfigurationDialog::toggle_show_hierarchy_slot), this);
+	g_signal_connect_slot(m_show_hierarchy, "toggled", &ConfigurationDialog::toggle_show_hierarchy, this);
 
 	// Add option to use alternate search entry position
 	m_position_search_alternate = gtk_check_button_new_with_mnemonic(_("Position _search entry next to panel button"));
 	gtk_box_pack_start(appearance_vbox, m_position_search_alternate, true, true, 0);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_search_alternate), wm_settings->position_search_alternate);
-	g_signal_connect(m_position_search_alternate, "toggled", G_CALLBACK(ConfigurationDialog::toggle_position_search_alternate_slot), this);
+	g_signal_connect_slot(m_position_search_alternate, "toggled", &ConfigurationDialog::toggle_position_search_alternate, this);
 
 	// Add option to use alternate commands position
 	m_position_commands_alternate = gtk_check_button_new_with_mnemonic(_("Position commands next to search _entry"));
 	gtk_box_pack_start(appearance_vbox, m_position_commands_alternate, true, true, 0);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_commands_alternate), wm_settings->position_commands_alternate);
-	gtk_widget_set_sensitive(GTK_WIDGET(m_position_commands_alternate), gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(m_position_search_alternate)));
-	g_signal_connect(m_position_commands_alternate, "toggled", G_CALLBACK(ConfigurationDialog::toggle_position_commands_alternate_slot), this);
+	gtk_widget_set_sensitive(GTK_WIDGET(m_position_commands_alternate), wm_settings->position_commands_alternate);
+	g_signal_connect_slot(m_position_commands_alternate, "toggled", &ConfigurationDialog::toggle_position_commands_alternate, this);
 
 	// Add item icon size selector
 	hbox = GTK_BOX(gtk_hbox_new(false, 12));
@@ -355,7 +356,7 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	gtk_combo_box_set_active(GTK_COMBO_BOX(m_item_icon_size), wm_settings->launcher_icon_size + 1);
 	gtk_box_pack_start(hbox, m_item_icon_size, false, false, 0);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_item_icon_size);
-	g_signal_connect(m_item_icon_size, "changed", G_CALLBACK(ConfigurationDialog::item_icon_size_changed_slot), this);
+	g_signal_connect_slot(m_item_icon_size, "changed", &ConfigurationDialog::item_icon_size_changed, this);
 
 	// Add category icon size selector
 	hbox = GTK_BOX(gtk_hbox_new(false, 12));
@@ -374,7 +375,7 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	gtk_combo_box_set_active(GTK_COMBO_BOX(m_category_icon_size), wm_settings->category_icon_size + 1);
 	gtk_box_pack_start(hbox, m_category_icon_size, false, false, 0);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_category_icon_size);
-	g_signal_connect(m_category_icon_size, "changed", G_CALLBACK(ConfigurationDialog::category_icon_size_changed_slot), this);
+	g_signal_connect_slot(m_category_icon_size, "changed", &ConfigurationDialog::category_icon_size_changed, this);
 
 	return page;
 }
@@ -393,19 +394,19 @@ GtkWidget* ConfigurationDialog::init_behavior_tab()
 	m_hover_switch_category = gtk_check_button_new_with_mnemonic(_("Switch categories by _hovering"));
 	gtk_box_pack_start(behavior_vbox, m_hover_switch_category, true, true, 0);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_hover_switch_category), wm_settings->category_hover_activate);
-	g_signal_connect(m_hover_switch_category, "toggled", G_CALLBACK(ConfigurationDialog::toggle_hover_switch_category_slot), this);
+	g_signal_connect_slot(m_hover_switch_category, "toggled", &ConfigurationDialog::toggle_hover_switch_category, this);
 
 	// Add option to remember favorites
 	m_remember_favorites = gtk_check_button_new_with_mnemonic(_("Include _favorites in recently used"));
 	gtk_box_pack_start(behavior_vbox, m_remember_favorites, true, true, 0);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_remember_favorites), wm_settings->favorites_in_recent);
-	g_signal_connect(m_remember_favorites, "toggled", G_CALLBACK(ConfigurationDialog::toggle_remember_favorites_slot), this);
+	g_signal_connect_slot(m_remember_favorites, "toggled", &ConfigurationDialog::toggle_remember_favorites, this);
 
 	// Add option to display recently used
 	m_display_recent = gtk_check_button_new_with_mnemonic(_("Display recently _used by default"));
 	gtk_box_pack_start(behavior_vbox, m_display_recent, true, true, 0);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_display_recent), wm_settings->display_recent);
-	g_signal_connect(m_display_recent, "toggled", G_CALLBACK(ConfigurationDialog::toggle_display_recent_slot), this);
+	g_signal_connect_slot(m_display_recent, "toggled", &ConfigurationDialog::toggle_display_recent, this);
 
 	// Create commands section
 	GtkSizeGroup* label_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);

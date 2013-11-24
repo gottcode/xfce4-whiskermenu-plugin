@@ -21,6 +21,7 @@
 #include "launcher.h"
 #include "launcher-view.h"
 #include "recent-page.h"
+#include "slot.h"
 #include "window.h"
 
 #include <libxfce4ui/libxfce4ui.h>
@@ -35,9 +36,9 @@ Page::Page(Window* window) :
 {
 	// Create view
 	m_view = new LauncherView;
-	g_signal_connect(m_view->get_widget(), "button-press-event", G_CALLBACK(Page::view_button_press_event_slot), this);
-	g_signal_connect(m_view->get_widget(), "popup-menu", G_CALLBACK(Page::view_popup_menu_event_slot), this);
-	g_signal_connect(m_view->get_widget(), "row-activated", G_CALLBACK(Page::launcher_activated_slot), this);
+	g_signal_connect_slot(m_view->get_widget(), "button-press-event", &Page::view_button_press_event, this);
+	g_signal_connect_slot(m_view->get_widget(), "popup-menu", &Page::view_popup_menu_event, this);
+	g_signal_connect_slot(m_view->get_widget(), "row-activated", &Page::launcher_activated, this);
 	g_signal_connect_swapped(m_view->get_widget(), "start-interactive-search", G_CALLBACK(gtk_widget_grab_focus), m_window->get_search_entry());
 
 	// Add scrolling to view
@@ -104,7 +105,7 @@ bool Page::remember_launcher(Launcher*)
 
 //-----------------------------------------------------------------------------
 
-void Page::launcher_activated(GtkTreeView* view, GtkTreePath* path)
+void Page::launcher_activated(GtkTreeView* view, GtkTreePath* path, GtkTreeViewColumn*)
 {
 	GtkTreeIter iter;
 	GtkTreeModel* model = gtk_tree_view_get_model(view);
@@ -133,7 +134,7 @@ void Page::launcher_activated(GtkTreeView* view, GtkTreePath* path)
 
 //-----------------------------------------------------------------------------
 
-bool Page::view_button_press_event(GtkWidget* view, GdkEventButton* event)
+gboolean Page::view_button_press_event(GtkWidget* view, GdkEventButton* event)
 {
 	GtkTreeSelection* selection = gtk_tree_view_get_selection(GTK_TREE_VIEW(view));
 	GtkTreeIter iter;
@@ -150,7 +151,7 @@ bool Page::view_button_press_event(GtkWidget* view, GdkEventButton* event)
 
 //-----------------------------------------------------------------------------
 
-bool Page::view_popup_menu_event(GtkWidget* view)
+gboolean Page::view_popup_menu_event(GtkWidget* view)
 {
 	GtkTreeSelection* selection = gtk_tree_view_get_selection(GTK_TREE_VIEW(view));
 	GtkTreeIter iter;
@@ -176,7 +177,7 @@ void Page::create_context_menu(GtkTreeIter* iter, GdkEventButton* event)
 
 	// Create context menu
 	GtkWidget* menu = gtk_menu_new();
-	g_signal_connect(menu, "selection-done", G_CALLBACK(Page::destroy_context_menu_slot), this);
+	g_signal_connect_slot(menu, "selection-done", &Page::destroy_context_menu, this);
 
 	// Add menu items
 	GtkWidget* menuitem = gtk_menu_item_new_with_label(launcher->get_display_name());
@@ -191,7 +192,7 @@ void Page::create_context_menu(GtkTreeIter* iter, GdkEventButton* event)
 		menuitem = gtk_image_menu_item_new_with_label(_("Add to Favorites"));
 		GtkWidget* image = gtk_image_new_from_icon_name("stock_add-bookmark", GTK_ICON_SIZE_MENU);
 		gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM(menuitem), image);
-		g_signal_connect(menuitem, "activate", G_CALLBACK(Page::add_selected_to_favorites_slot), this);
+		g_signal_connect_slot(menuitem, "activate", &Page::add_selected_to_favorites, this);
 		gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 	}
 	else
@@ -199,16 +200,16 @@ void Page::create_context_menu(GtkTreeIter* iter, GdkEventButton* event)
 		menuitem = gtk_image_menu_item_new_with_label(_("Remove From Favorites"));
 		GtkWidget* image = gtk_image_new_from_stock(GTK_STOCK_REMOVE, GTK_ICON_SIZE_MENU);
 		gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM(menuitem), image);
-		g_signal_connect(menuitem, "activate", G_CALLBACK(Page::remove_selected_from_favorites_slot), this);
+		g_signal_connect_slot(menuitem, "activate", &Page::remove_selected_from_favorites, this);
 		gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 	}
 
 	menuitem = gtk_menu_item_new_with_label(_("Add to Desktop"));
-	g_signal_connect(menuitem, "activate", G_CALLBACK(Page::add_selected_to_desktop_slot), this);
+	g_signal_connect_slot(menuitem, "activate", &Page::add_selected_to_desktop, this);
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
 	menuitem = gtk_menu_item_new_with_label(_("Add to Panel"));
-	g_signal_connect(menuitem, "activate", G_CALLBACK(Page::add_selected_to_panel_slot), this);
+	g_signal_connect_slot(menuitem, "activate", &Page::add_selected_to_panel, this);
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
 	extend_context_menu(menu);

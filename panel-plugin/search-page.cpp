@@ -19,6 +19,7 @@
 
 #include "launcher.h"
 #include "launcher-view.h"
+#include "slot.h"
 #include "window.h"
 
 #include <algorithm>
@@ -34,8 +35,8 @@ SearchPage::SearchPage(Window* window) :
 {
 	get_view()->set_selection_mode(GTK_SELECTION_BROWSE);
 
-	g_signal_connect(window->get_search_entry(), "icon-release", G_CALLBACK(SearchPage::clear_search_slot), this);
-	g_signal_connect(window->get_search_entry(), "key-press-event", G_CALLBACK(SearchPage::search_entry_key_press_slot), this);
+	g_signal_connect_slot(window->get_search_entry(), "icon-release", &SearchPage::clear_search, this);
+	g_signal_connect_slot(window->get_search_entry(), "key-press-event", &SearchPage::search_entry_key_press, this);
 }
 
 //-----------------------------------------------------------------------------
@@ -152,7 +153,7 @@ void SearchPage::unset_menu_items()
 
 //-----------------------------------------------------------------------------
 
-void SearchPage::clear_search(GtkEntry* entry, GtkEntryIconPosition icon_pos)
+void SearchPage::clear_search(GtkEntry* entry, GtkEntryIconPosition icon_pos, GdkEvent*)
 {
 	if (icon_pos == GTK_ENTRY_ICON_SECONDARY)
 	{
@@ -162,7 +163,7 @@ void SearchPage::clear_search(GtkEntry* entry, GtkEntryIconPosition icon_pos)
 
 //-----------------------------------------------------------------------------
 
-bool SearchPage::search_entry_key_press(GtkWidget* widget, GdkEventKey* event)
+gboolean SearchPage::search_entry_key_press(GtkWidget* widget, GdkEventKey* event)
 {
 	if (event->keyval == GDK_Escape)
 	{

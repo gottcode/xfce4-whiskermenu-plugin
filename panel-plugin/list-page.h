@@ -45,27 +45,10 @@ protected:
 private:
 	void on_row_changed(GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter);
 	void on_row_inserted(GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter);
-	void on_row_deleted(GtkTreePath*);
+	void on_row_deleted(GtkTreeModel*, GtkTreePath* path);
 
 private:
 	std::vector<std::string>& m_desktop_ids;
-
-
-private:
-	static void on_row_changed_slot(GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter, ListPage* obj)
-	{
-		obj->on_row_changed(model, path, iter);
-	}
-
-	static void on_row_inserted_slot(GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter, ListPage* obj)
-	{
-		obj->on_row_inserted(model, path, iter);
-	}
-
-	static void on_row_deleted_slot(GtkTreeModel*, GtkTreePath* path, ListPage* obj)
-	{
-		obj->on_row_deleted(path);
-	}
 };
 
 }

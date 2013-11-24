@@ -21,6 +21,7 @@
 #include "launcher.h"
 #include "launcher-view.h"
 #include "settings.h"
+#include "slot.h"
 #include "window.h"
 
 #include <algorithm>
@@ -66,13 +67,13 @@ void FavoritesPage::extend_context_menu(GtkWidget* menu)
 	menuitem = gtk_image_menu_item_new_with_label(_("Sort Alphabetically A-Z"));
 	GtkWidget* image = gtk_image_new_from_stock(GTK_STOCK_SORT_ASCENDING, GTK_ICON_SIZE_MENU);
 	gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM(menuitem), image);
-	g_signal_connect(menuitem, "activate", G_CALLBACK(FavoritesPage::sort_ascending_slot), this);
+	g_signal_connect_slot(menuitem, "activate", &FavoritesPage::sort_ascending, this);
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
 	menuitem = gtk_image_menu_item_new_with_label(_("Sort Alphabetically Z-A"));
 	image = gtk_image_new_from_stock(GTK_STOCK_SORT_DESCENDING, GTK_ICON_SIZE_MENU);
 	gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM(menuitem), image);
-	g_signal_connect(menuitem, "activate", G_CALLBACK(FavoritesPage::sort_descending_slot), this);
+	g_signal_connect_slot(menuitem, "activate", &FavoritesPage::sort_descending, this);
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 }
 

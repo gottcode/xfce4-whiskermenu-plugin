@@ -39,8 +39,8 @@ public:
 	void unset_menu_items();
 
 private:
-	void clear_search(GtkEntry* entry, GtkEntryIconPosition icon_pos);
-	bool search_entry_key_press(GtkWidget* widget, GdkEventKey* event);
+	void clear_search(GtkEntry* entry, GtkEntryIconPosition icon_pos, GdkEvent*);
+	gboolean search_entry_key_press(GtkWidget* widget, GdkEventKey* event);
 
 private:
 	Query m_query;
@@ -81,18 +81,6 @@ private:
 		int m_relevancy;
 	};
 	std::vector<Match> m_matches;
-
-
-private:
-	static void clear_search_slot(GtkEntry* entry, GtkEntryIconPosition icon_pos, GdkEvent*, SearchPage* obj)
-	{
-		obj->clear_search(entry, icon_pos);
-	}
-
-	static gboolean search_entry_key_press_slot(GtkWidget* widget, GdkEventKey* event, SearchPage* obj)
-	{
-		return obj->search_entry_key_press(widget, event);
-	}
 };
 
 }

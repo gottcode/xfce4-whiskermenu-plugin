@@ -18,6 +18,7 @@
 #include "launcher-view.h"
 
 #include "settings.h"
+#include "slot.h"
 
 #include <algorithm>
 
@@ -51,8 +52,8 @@ LauncherView::LauncherView() :
 	gtk_tree_view_set_fixed_height_mode(m_view, true);
 	gtk_tree_view_set_row_separator_func(m_view, &is_separator, NULL, NULL);
 	create_column();
-	g_signal_connect(m_view, "key-press-event", G_CALLBACK(LauncherView::on_key_press_event_slot), this);
-	g_signal_connect(m_view, "key-release-event", G_CALLBACK(LauncherView::on_key_release_event_slot), this);
+	g_signal_connect_slot(m_view, "key-press-event", &LauncherView::on_key_press_event, this);
+	g_signal_connect_slot(m_view, "key-release-event", &LauncherView::on_key_release_event, this);
 
 	// Use single clicks to activate items
 	exo_tree_view_set_single_click(EXO_TREE_VIEW(m_view), true);
@@ -213,7 +214,7 @@ void LauncherView::create_column()
 
 //-----------------------------------------------------------------------------
 
-bool LauncherView::on_key_press_event(GdkEventKey* event)
+gboolean LauncherView::on_key_press_event(GtkWidget*, GdkEventKey* event)
 {
 	if ((event->keyval == GDK_KEY_Up) || (event->keyval == GDK_KEY_Down))
 	{
@@ -224,7 +225,7 @@ bool LauncherView::on_key_press_event(GdkEventKey* event)
 
 //-----------------------------------------------------------------------------
 
-bool LauncherView::on_key_release_event(GdkEventKey* event)
+gboolean LauncherView::on_key_release_event(GtkWidget*, GdkEventKey* event)
 {
 	if ((event->keyval == GDK_KEY_Up) || (event->keyval == GDK_KEY_Down))
 	{

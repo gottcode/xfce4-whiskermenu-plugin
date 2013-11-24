@@ -63,20 +63,8 @@ private:
 	gchar* m_text;
 	gchar* m_command;
 	gchar* m_error_text;
-	gint m_status;
+	int m_status;
 	bool m_shown;
-
-
-private:
-	static void clicked_slot(GtkButton*, Command* obj)
-	{
-		obj->activated();
-	}
-
-	static void activated_slot(GtkMenuItem*, Command* obj)
-	{
-		obj->activated();
-	}
 };
 
 }

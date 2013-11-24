@@ -73,14 +73,14 @@ public:
 	void unset_items();
 
 private:
-	bool on_enter_notify_event(GdkEventCrossing* event);
-	bool on_leave_notify_event(GdkEventCrossing* event);
-	bool on_focus_in_event();
-	bool on_button_press_event(GdkEventButton* event);
-	bool on_key_press_event(GtkWidget* widget, GdkEventKey* event);
-	bool on_key_press_event_after(GtkWidget* widget, GdkEventKey* event);
-	bool on_map_event();
-	bool on_configure_event(GdkEventConfigure* event);
+	gboolean on_enter_notify_event(GtkWidget*, GdkEventCrossing* event);
+	gboolean on_leave_notify_event(GtkWidget*, GdkEventCrossing* event);
+	gboolean on_focus_in_event(GtkWidget*, GdkEventFocus*);
+	gboolean on_button_press_event(GtkWidget*, GdkEventButton* event);
+	gboolean on_key_press_event(GtkWidget* widget, GdkEventKey* event);
+	gboolean on_key_press_event_after(GtkWidget* widget, GdkEventKey* event);
+	gboolean on_map_event(GtkWidget*, GdkEventAny*);
+	gboolean on_configure_event(GtkWidget*, GdkEventConfigure* event);
 	void favorites_toggled();
 	void recent_toggled();
 	void category_toggled();
@@ -128,78 +128,6 @@ private:
 	bool m_layout_bottom;
 	bool m_layout_search_alternate;
 	bool m_layout_commands_alternate;
-
-
-private:
-	static gboolean on_enter_notify_event_slot(GtkWidget*, GdkEventCrossing* event, Window* obj)
-	{
-		return obj->on_enter_notify_event(event);
-	}
-
-	static gboolean on_leave_notify_event_slot(GtkWidget*, GdkEventCrossing* event, Window* obj)
-	{
-		return obj->on_leave_notify_event(event);
-	}
-
-	static gboolean on_focus_in_event_slot(GtkWidget*, GdkEventFocus*, Window* obj)
-	{
-		return obj->on_focus_in_event();
-	}
-
-	static gboolean on_button_press_event_slot(GtkWidget*, GdkEventButton* event, Window* obj)
-	{
-		return obj->on_button_press_event(event);
-	}
-
-	static gboolean on_key_press_event_slot(GtkWidget* widget, GdkEventKey* event, Window* obj)
-	{
-		return obj->on_key_press_event(widget, event);
-	}
-
-	static gboolean on_key_press_event_after_slot(GtkWidget* widget, GdkEventKey* event, Window* obj)
-	{
-		return obj->on_key_press_event_after(widget, event);
-	}
-
-	static gboolean on_map_event_slot(GtkWidget*, GdkEventAny*, Window* obj)
-	{
-		return obj->on_map_event();
-	}
-
-	static gboolean on_configure_event_slot(GtkWidget*, GdkEventConfigure* event, Window* obj)
-	{
-		return obj->on_configure_event(event);
-	}
-
-	static void favorites_toggled_slot(GtkToggleButton*, Window* obj)
-	{
-		obj->favorites_toggled();
-	}
-
-	static void recent_toggled_slot(GtkToggleButton*, Window* obj)
-	{
-		obj->recent_toggled();
-	}
-
-	static void category_toggled_slot(GtkToggleButton*, Window* obj)
-	{
-		obj->category_toggled();
-	}
-
-	static void show_favorites_slot(GtkTreeModel*, GtkTreePath*, GtkTreeIter*, Window* obj)
-	{
-		obj->show_favorites();
-	}
-
-	static void search_slot(GtkEditable*, Window* obj)
-	{
-		obj->search();
-	}
-
-	static void hide_slot(Window* obj)
-	{
-		obj->hide();
-	}
 };
 
 }
