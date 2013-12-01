@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-19 18:01+0000\n"
-"PO-Revision-Date: 2013-08-07 15:21+0000\n"
+"PO-Revision-Date: 2013-12-01 13:24+0000\n"
 "Last-Translator: Karim Oulad Chalha <herr.linux88@gmail.com>\n"
 "Language-Team: Arabic (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
 "plugin/language/ar/)\n"
@@ -29,23 +29,20 @@ msgid "Whisker Menu"
 msgstr "قائمة Whisker"
 
 #: src/configuration_dialog.cpp:65
-#, fuzzy
 msgid "_Appearance"
-msgstr "مظهر"
+msgstr "_مظهر"
 
 #: src/configuration_dialog.cpp:66
-#, fuzzy
 msgid "_Panel Button"
-msgstr "زر الشريط"
+msgstr "زر الشري_ط"
 
 #: src/configuration_dialog.cpp:67
-#, fuzzy
 msgid "_Behavior"
-msgstr "سلوك"
+msgstr "س_لوك"
 
 #: src/configuration_dialog.cpp:68
 msgid "_Commands"
-msgstr ""
+msgstr "_أوامر"
 
 #: src/configuration_dialog.cpp:94
 msgid "Select An Icon"
@@ -61,11 +58,11 @@ msgstr "عرض _وصف التطبيقات"
 
 #: src/configuration_dialog.cpp:277
 msgid "Position _search entry next to panel button"
-msgstr ""
+msgstr "موضع مربع البحث يلي زر الشريط"
 
 #: src/configuration_dialog.cpp:283
 msgid "Position commands next to search _entry"
-msgstr ""
+msgstr "موضع الأوامر يلي مربع البحث"
 
 #: src/configuration_dialog.cpp:293
 msgid "Ite_m icon size:"
@@ -105,30 +102,27 @@ msgstr "تبديل الأصناف ح_سب الترفيف"
 
 #: src/configuration_dialog.cpp:415
 msgid "Load menu hie_rarchy"
-msgstr ""
+msgstr "تحميل القائمة تسلسلي_ا"
 
 #: src/configuration_dialog.cpp:421
 msgid "Include _favorites in recently used"
-msgstr ""
+msgstr "تدمج المفضلة في مستعملة ح_ديثا"
 
 #: src/configuration_dialog.cpp:427
 msgid "Display recently _used by default"
-msgstr ""
+msgstr "إظهار المستعملة حد_يثا  إفتراضيا"
 
 #: src/configuration_dialog.cpp:452
-#, fuzzy
 msgid "_Settings:"
-msgstr "كل الإعدادات"
+msgstr "إ_عدادات:"
 
 #: src/configuration_dialog.cpp:467
-#, fuzzy
 msgid "Lock _Screen:"
-msgstr "قفل الشاشة"
+msgstr "ق_فل الشاشة:"
 
 #: src/configuration_dialog.cpp:482
-#, fuzzy
 msgid "Log _Out:"
-msgstr "تسجيل الخروج"
+msgstr "تسجيل ال_خروج:"
 
 #: src/favorites_page.cpp:89
 msgid "Sort Alphabetically A-Z"
