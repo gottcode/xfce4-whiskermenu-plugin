@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-31 20:34+0000\n"
-"PO-Revision-Date: 2013-08-07 15:21+0000\n"
+"PO-Revision-Date: 2013-12-01 13:24+0000\n"
 "Last-Translator: Karim Oulad Chalha <herr.linux88@gmail.com>\n"
 "Language-Team: Arabic (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
 "plugin/language/ar/)\n"
@@ -58,7 +58,7 @@ msgstr "عر_ض:"
 
 #: ../panel-plugin/configuration-dialog.cpp:428
 msgid "Display recently _used by default"
-msgstr ""
+msgstr "إظهار المستعملة حد_يثا  إفتراضيا"
 
 #: ../panel-plugin/launcher.cpp:259
 #, c-format
@@ -91,7 +91,7 @@ msgstr "أيقونة و عنوان"
 
 #: ../panel-plugin/configuration-dialog.cpp:422
 msgid "Include _favorites in recently used"
-msgstr ""
+msgstr "تدمج المفضلة في مستعملة ح_ديثا"
 
 #: ../panel-plugin/configuration-dialog.cpp:294
 msgid "Ite_m icon size:"
@@ -107,25 +107,23 @@ msgstr "أكبر"
 
 #: ../panel-plugin/configuration-dialog.cpp:416
 msgid "Load menu hie_rarchy"
-msgstr ""
+msgstr "تحميل القائمة تسلسلي_ا"
 
 #: ../panel-plugin/window.cpp:100
 msgid "Lock Screen"
 msgstr "قفل الشاشة"
 
 #: ../panel-plugin/configuration-dialog.cpp:468
-#, fuzzy
 msgid "Lock _Screen:"
-msgstr "قفل الشاشة"
+msgstr "ق_فل الشاشة:"
 
 #: ../panel-plugin/window.cpp:103
 msgid "Log Out"
 msgstr "تسجيل الخروج"
 
 #: ../panel-plugin/configuration-dialog.cpp:483
-#, fuzzy
 msgid "Log _Out:"
-msgstr "تسجيل الخروج"
+msgstr "تسجيل ال_خروج:"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Normal"
@@ -133,11 +131,11 @@ msgstr "عادي"
 
 #: ../panel-plugin/configuration-dialog.cpp:278
 msgid "Position _search entry next to panel button"
-msgstr ""
+msgstr "موضع مربع البحث يلي زر الشريط"
 
 #: ../panel-plugin/configuration-dialog.cpp:284
 msgid "Position commands next to search _entry"
-msgstr ""
+msgstr "موضع الأوامر يلي مربع البحث"
 
 #: ../panel-plugin/window.cpp:123
 msgid "Recently Used"
@@ -209,32 +207,28 @@ msgid "Whisker Menu"
 msgstr "قائمة Whisker"
 
 #: ../panel-plugin/configuration-dialog.cpp:66
-#, fuzzy
 msgid "_Appearance"
-msgstr "مظهر"
+msgstr "_مظهر"
 
 #: ../panel-plugin/configuration-dialog.cpp:68
-#, fuzzy
 msgid "_Behavior"
-msgstr "سلوك"
+msgstr "س_لوك"
 
 #: ../panel-plugin/configuration-dialog.cpp:69
 msgid "_Commands"
-msgstr ""
+msgstr "_أوامر"
 
 #: ../panel-plugin/configuration-dialog.cpp:382
 msgid "_Icon:"
 msgstr "_أيقونة:"
 
 #: ../panel-plugin/configuration-dialog.cpp:67
-#, fuzzy
 msgid "_Panel Button"
-msgstr "زر الشريط"
+msgstr "زر الشري_ط"
 
 #: ../panel-plugin/configuration-dialog.cpp:453
-#, fuzzy
 msgid "_Settings:"
-msgstr "كل الإعدادات"
+msgstr "إ_عدادات:"
 
 #: ../panel-plugin/configuration-dialog.cpp:367
 msgid "_Title:"
