@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-31 20:34+0000\n"
-"PO-Revision-Date: 2013-10-30 03:35+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitoschido@ubuntu.com>\n"
+"PO-Revision-Date: 2013-11-23 04:27+0000\n"
+"Last-Translator: Pablo Lezaeta <prflr88@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/es/)\n"
 "Language: es\n"
@@ -48,7 +48,7 @@ msgstr "Menú de aplicaciones"
 
 #: ../panel-plugin/configuration-dialog.cpp:314
 msgid "Categ_ory icon size:"
-msgstr "Tamaño de icono de las categ_orías:"
+msgstr "Tamaño del icono de las categ_orías:"
 
 #: ../panel-plugin/recent-page.cpp:72
 msgid "Clear Recently Used"
