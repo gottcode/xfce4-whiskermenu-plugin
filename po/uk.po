@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-31 20:34+0000\n"
-"PO-Revision-Date: 2013-10-20 22:01+0000\n"
+"PO-Revision-Date: 2013-11-29 21:56+0000\n"
 "Last-Translator: zubr139 <zubr139@ukr.net>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/uk/)\n"
@@ -25,9 +25,8 @@ msgid "Add to Desktop"
 msgstr "Додати до стільниці"
 
 #: ../panel-plugin/page.cpp:195
-#, fuzzy
 msgid "Add to Favorites"
-msgstr "Додати на панель"
+msgstr "Додати до обраного"
 
 #: ../panel-plugin/page.cpp:214
 msgid "Add to Panel"
@@ -35,7 +34,7 @@ msgstr "Додати на панель"
 
 #: ../panel-plugin/applications-page.cpp:313
 msgid "All"
-msgstr ""
+msgstr "Все"
 
 #: ../panel-plugin/window.cpp:97
 msgid "All Settings"
@@ -43,7 +42,7 @@ msgstr "Всі налаштування"
 
 #: ../panel-plugin/plugin.cpp:162
 msgid "Applications Menu"
-msgstr ""
+msgstr "Меню програм"
 
 #: ../panel-plugin/configuration-dialog.cpp:314
 msgid "Categ_ory icon size:"
@@ -64,23 +63,23 @@ msgstr ""
 #: ../panel-plugin/launcher.cpp:259
 #, c-format
 msgid "Failed to execute command \"%s\"."
-msgstr ""
+msgstr "Не вдалося виконати команду \"%s\"."
 
 #: ../panel-plugin/window.cpp:100
 msgid "Failed to lock screen."
-msgstr ""
+msgstr "Не вдалося заблокувати екран."
 
 #: ../panel-plugin/window.cpp:103
 msgid "Failed to log out."
-msgstr ""
+msgstr "Не вдалося вийти з системи."
 
 #: ../panel-plugin/window.cpp:97
 msgid "Failed to open settings manager."
-msgstr ""
+msgstr "Не вдалося відкрити менеджер налаштувань."
 
 #: ../panel-plugin/window.cpp:117
 msgid "Favorites"
-msgstr ""
+msgstr "Обране"
 
 #: ../panel-plugin/configuration-dialog.cpp:355
 msgid "Icon"
@@ -100,11 +99,11 @@ msgstr ""
 
 #: ../panel-plugin/icon-size.cpp:55
 msgid "Large"
-msgstr ""
+msgstr "Великий"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Larger"
-msgstr ""
+msgstr "Дуже великий"
 
 #: ../panel-plugin/configuration-dialog.cpp:416
 msgid "Load menu hie_rarchy"
@@ -115,22 +114,20 @@ msgid "Lock Screen"
 msgstr "Блокування екрану"
 
 #: ../panel-plugin/configuration-dialog.cpp:468
-#, fuzzy
 msgid "Lock _Screen:"
-msgstr "Блокування екрану"
+msgstr "Заблокувати _екран:"
 
 #: ../panel-plugin/window.cpp:103
 msgid "Log Out"
 msgstr "Вихід"
 
 #: ../panel-plugin/configuration-dialog.cpp:483
-#, fuzzy
 msgid "Log _Out:"
-msgstr "Вихід"
+msgstr "_Вихід:"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Normal"
-msgstr ""
+msgstr "Нормальний"
 
 #: ../panel-plugin/configuration-dialog.cpp:278
 msgid "Position _search entry next to panel button"
@@ -142,11 +139,11 @@ msgstr ""
 
 #: ../panel-plugin/window.cpp:123
 msgid "Recently Used"
-msgstr ""
+msgstr "Нещодавно використані"
 
 #: ../panel-plugin/page.cpp:203
 msgid "Remove From Favorites"
-msgstr ""
+msgstr "Видалити з обраного"
 
 #: ../panel-plugin/configuration-dialog.cpp:95
 msgid "Select An Icon"
@@ -154,23 +151,23 @@ msgstr ""
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
-msgstr ""
+msgstr "Показує меню для легко доступу до встановлених додатків"
 
 #: ../panel-plugin/configuration-dialog.cpp:272
 msgid "Show application _descriptions"
-msgstr ""
+msgstr "Показувати _опис програм"
 
 #: ../panel-plugin/configuration-dialog.cpp:266
 msgid "Show applications by _name"
-msgstr ""
+msgstr "Відображати програми за _назвою"
 
 #: ../panel-plugin/icon-size.cpp:53
 msgid "Small"
-msgstr ""
+msgstr "Малий"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Smaller"
-msgstr ""
+msgstr "Дуже малий"
 
 #: ../panel-plugin/favorites-page.cpp:90
 msgid "Sort Alphabetically A-Z"
@@ -190,24 +187,24 @@ msgstr ""
 
 #: ../panel-plugin/page.cpp:304
 msgid "Unable to add launcher to desktop."
-msgstr ""
+msgstr "Неможливо додати до стільниці."
 
 #: ../panel-plugin/page.cpp:343 ../panel-plugin/page.cpp:352
 msgid "Unable to add launcher to panel."
-msgstr ""
+msgstr "Неможливо додати на панель."
 
 #: ../panel-plugin/icon-size.cpp:57
 msgid "Very Large"
-msgstr ""
+msgstr "Гігантській"
 
 #: ../panel-plugin/icon-size.cpp:51
 msgid "Very Small"
-msgstr ""
+msgstr "Крихітний"
 
 #: ../panel-plugin/configuration-dialog.cpp:58
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
 msgid "Whisker Menu"
-msgstr ""
+msgstr "Whisker Меню"
 
 #: ../panel-plugin/configuration-dialog.cpp:66
 msgid "_Appearance"
@@ -219,7 +216,7 @@ msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:69
 msgid "_Commands"
-msgstr ""
+msgstr "Ко_манди"
 
 #: ../panel-plugin/configuration-dialog.cpp:382
 msgid "_Icon:"
@@ -227,12 +224,11 @@ msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:67
 msgid "_Panel Button"
-msgstr ""
+msgstr "_Кнопка панелі"
 
 #: ../panel-plugin/configuration-dialog.cpp:453
-#, fuzzy
 msgid "_Settings:"
-msgstr "Всі налаштування"
+msgstr "_Налаштування:"
 
 #: ../panel-plugin/configuration-dialog.cpp:367
 msgid "_Title:"
