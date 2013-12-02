@@ -351,16 +351,8 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 #if (LIBXFCE4PANEL_CHECK_VERSION(4,9,0))
 		xfce_panel_plugin_set_small(m_plugin, true);
 #endif
-
 		xfce_panel_image_set_size(m_button_icon, -1);
-		if (orientation == GTK_ORIENTATION_HORIZONTAL)
-		{
-			gtk_widget_set_size_request(GTK_WIDGET(m_plugin), row_size, size);
-		}
-		else
-		{
-			gtk_widget_set_size_request(GTK_WIDGET(m_plugin), size, row_size);
-		}
+		gtk_widget_set_size_request(GTK_WIDGET(m_plugin), row_size, row_size);
 	}
 	else
 	{
