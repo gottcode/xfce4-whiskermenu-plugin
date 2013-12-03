@@ -93,7 +93,7 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 
 	m_button_label = GTK_LABEL(gtk_label_new(NULL));
 	gtk_label_set_markup(m_button_label, wm_settings->button_title.c_str());
-	gtk_box_pack_start(m_button_box, GTK_WIDGET(m_button_label), false, false, 0);
+	gtk_box_pack_start(m_button_box, GTK_WIDGET(m_button_label), true, true, 0);
 	if (wm_settings->button_title_visible)
 	{
 		gtk_widget_show(GTK_WIDGET(m_button_label));
