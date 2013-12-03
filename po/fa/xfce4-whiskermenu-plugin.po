@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-19 18:01+0000\n"
+"POT-Creation-Date: 2013-12-03 11:37+0000\n"
 "PO-Revision-Date: 2013-11-13 12:39+0000\n"
 "Last-Translator: Haiku <reza.gharibi.rg@gmail.com>\n"
 "Language-Team: Persian (Iran) (http://www.transifex.com/projects/p/xfce4-"
@@ -220,7 +220,7 @@ msgstr "ناتوان در اضافه‌کردن لانچر به میزکار."
 msgid "Unable to add launcher to panel."
 msgstr "ناتوان در اضافه‌کردن لانچر به پنل."
 
-#: src/panel_plugin.cpp:160
+#: src/panel_plugin.cpp:167
 msgid "Applications Menu"
 msgstr "منوی برنامه‌ها"
 

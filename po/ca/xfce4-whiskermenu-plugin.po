@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-19 18:01+0000\n"
+"POT-Creation-Date: 2013-12-03 11:37+0000\n"
 "PO-Revision-Date: 2013-10-30 03:44+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitoschido@ubuntu.com>\n"
 "Language-Team: Catalan (http://www.transifex.com/projects/p/xfce4-"
@@ -221,7 +221,7 @@ msgstr "No s’ha pogut afegir el llançador a l’escriptori."
 msgid "Unable to add launcher to panel."
 msgstr "No s’ha pogut afegir el llançador al panell."
 
-#: src/panel_plugin.cpp:160
+#: src/panel_plugin.cpp:167
 msgid "Applications Menu"
 msgstr "Menú d’aplicacions"
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-19 18:01+0000\n"
+"POT-Creation-Date: 2013-12-03 11:37+0000\n"
 "PO-Revision-Date: 2013-07-13 01:38+0000\n"
 "Last-Translator: ppanhh <ppanhh@gmail.com>\n"
 "Language-Team: Vietnamese (http://www.transifex.com/projects/p/xfce4-"
@@ -226,7 +226,7 @@ msgstr "Không thể thêm vào thanh truy cập nhanh ở desktop."
 msgid "Unable to add launcher to panel."
 msgstr "Không thể thêm vào thanh truy cập nhanh hay khung."
 
-#: src/panel_plugin.cpp:160
+#: src/panel_plugin.cpp:167
 msgid "Applications Menu"
 msgstr "Menu ứng dụng"
 

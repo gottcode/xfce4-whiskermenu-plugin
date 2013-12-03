@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2013 Graeme Gott
-# This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-19 18:01+0000\n"
+"POT-Creation-Date: 2013-12-03 11:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -218,7 +218,7 @@ msgstr ""
 msgid "Unable to add launcher to panel."
 msgstr ""
 
-#: src/panel_plugin.cpp:160
+#: src/panel_plugin.cpp:167
 msgid "Applications Menu"
 msgstr ""
 

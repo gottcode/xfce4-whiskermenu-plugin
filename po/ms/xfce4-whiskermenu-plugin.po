@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-19 18:01+0000\n"
+"POT-Creation-Date: 2013-12-03 11:37+0000\n"
 "PO-Revision-Date: 2013-10-26 05:10+0000\n"
 "Last-Translator: abuyop <abuyop@gmail.com>\n"
 "Language-Team: Malay (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
@@ -220,7 +220,7 @@ msgstr "Tidak boleh tambah pelancar ke desktop."
 msgid "Unable to add launcher to panel."
 msgstr "Tidak boleh tambah pelancar ke panel."
 
-#: src/panel_plugin.cpp:160
+#: src/panel_plugin.cpp:167
 msgid "Applications Menu"
 msgstr "Menu Aplikasi"
 

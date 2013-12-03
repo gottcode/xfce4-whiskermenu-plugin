@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-19 18:01+0000\n"
+"POT-Creation-Date: 2013-12-03 11:37+0000\n"
 "PO-Revision-Date: 2013-10-19 10:18+0000\n"
 "Last-Translator: Umidjon Almasov <u.almasov@gmail.com>\n"
 "Language-Team: Uzbek (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
@@ -220,7 +220,7 @@ msgstr "Ishga tushiruvchini ishchi stolga qo'shib bo'lmadi."
 msgid "Unable to add launcher to panel."
 msgstr "Ishga tushiruvchini panelga qo'shib bo'lmadi."
 
-#: src/panel_plugin.cpp:160
+#: src/panel_plugin.cpp:167
 msgid "Applications Menu"
 msgstr "Dasturlar menyusi"
 

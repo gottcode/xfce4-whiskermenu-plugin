@@ -1,3 +1,10 @@
+1.2.2
+=====
+- Fix incorrect fetching of panel orientation in Xfce 4.10.
+- Fix menu item icons colored by selection background.
+- Fix unable to set custom commands with parameters.
+- Translation updates: Arabic, German, Spanish, Ukrainian.
+
 1.2.1
 =====
 - Fix incorrect comparison for checking icon sizes.

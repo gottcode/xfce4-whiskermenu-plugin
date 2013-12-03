@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-19 18:01+0000\n"
+"POT-Creation-Date: 2013-12-03 11:37+0000\n"
 "PO-Revision-Date: 2013-11-08 17:54+0000\n"
 "Last-Translator: Tornes Llume <l.lumex03.tornes@gmail.com>\n"
 "Language-Team: Asturian (http://www.transifex.com/projects/p/xfce4-"
@@ -220,7 +220,7 @@ msgstr "Nun pue amestase'l llanzador al escritoriu."
 msgid "Unable to add launcher to panel."
 msgstr "Nun pue amestase'l llanzador al panel."
 
-#: src/panel_plugin.cpp:160
+#: src/panel_plugin.cpp:167
 msgid "Applications Menu"
 msgstr "Menú d'aplicaciones"
 

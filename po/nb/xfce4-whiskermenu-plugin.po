@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-19 18:01+0000\n"
+"POT-Creation-Date: 2013-12-03 11:37+0000\n"
 "PO-Revision-Date: 2013-10-21 15:08+0000\n"
 "Last-Translator: viking60 <thomasbjornvold@gmail.com>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/projects/p/xfce4-"
@@ -220,7 +220,7 @@ msgstr "Kunne ikke legge oppstarter til skrivebordet"
 msgid "Unable to add launcher to panel."
 msgstr "Kunne ikke legge oppstarter til panelet"
 
-#: src/panel_plugin.cpp:160
+#: src/panel_plugin.cpp:167
 msgid "Applications Menu"
 msgstr "Applikasjonsmeny"
 

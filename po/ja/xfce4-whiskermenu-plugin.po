@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-19 18:01+0000\n"
+"POT-Creation-Date: 2013-12-03 11:37+0000\n"
 "PO-Revision-Date: 2013-10-18 06:16+0000\n"
 "Last-Translator: Masato HASHIMOTO <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/xfce4-"
@@ -220,7 +220,7 @@ msgstr "デスクトップにランチャーを追加できません。"
 msgid "Unable to add launcher to panel."
 msgstr "パネルにランチャーを追加できません。"
 
-#: src/panel_plugin.cpp:160
+#: src/panel_plugin.cpp:167
 msgid "Applications Menu"
 msgstr "アプリケーションメニュー"
 

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-19 18:01+0000\n"
+"POT-Creation-Date: 2013-12-03 11:37+0000\n"
 "PO-Revision-Date: 2013-10-30 06:44+0000\n"
 "Last-Translator: shlyapugin <shlyapugin@gmail.com>\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/xfce4-"
@@ -224,7 +224,7 @@ msgstr "Нельзя добавить на рабочий стол."
 msgid "Unable to add launcher to panel."
 msgstr "Нельзя добавить на панель."
 
-#: src/panel_plugin.cpp:160
+#: src/panel_plugin.cpp:167
 msgid "Applications Menu"
 msgstr "Меню приложений"
 

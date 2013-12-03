@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-19 18:01+0000\n"
+"POT-Creation-Date: 2013-12-03 11:37+0000\n"
 "PO-Revision-Date: 2013-10-28 22:44+0000\n"
 "Last-Translator: brk0_0\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/"
@@ -221,7 +221,7 @@ msgstr "Impossível adicionar o lançador à área de trabalho"
 msgid "Unable to add launcher to panel."
 msgstr "Impossível adicionar o lançador ao painel"
 
-#: src/panel_plugin.cpp:160
+#: src/panel_plugin.cpp:167
 msgid "Applications Menu"
 msgstr "Menu de aplicativos"
 

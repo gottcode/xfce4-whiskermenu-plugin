@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-19 18:01+0000\n"
+"POT-Creation-Date: 2013-12-03 11:37+0000\n"
 "PO-Revision-Date: 2013-11-20 10:23+0000\n"
 "Last-Translator: hjudt <h.judt@gmx.at>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
@@ -221,7 +221,7 @@ msgstr "Konnte Starter nicht zum Desktop hinzufügen."
 msgid "Unable to add launcher to panel."
 msgstr "Konnte Starter nicht zur Leiste hinzufügen."
 
-#: src/panel_plugin.cpp:160
+#: src/panel_plugin.cpp:167
 msgid "Applications Menu"
 msgstr "Anwendungsmenü"
 

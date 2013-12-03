@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-19 18:01+0000\n"
+"POT-Creation-Date: 2013-12-03 11:37+0000\n"
 "PO-Revision-Date: 2013-11-04 01:16+0000\n"
 "Last-Translator: Mohamad Hasan Al Banna\n"
 "Language-Team: Indonesian (http://www.transifex.com/projects/p/xfce4-"
@@ -220,7 +220,7 @@ msgstr "Gagal menambahkan peluncur ke desktop."
 msgid "Unable to add launcher to panel."
 msgstr "Gagal menambahkan peluncur ke panel."
 
-#: src/panel_plugin.cpp:160
+#: src/panel_plugin.cpp:167
 msgid "Applications Menu"
 msgstr "Menu Aplikasi"
 

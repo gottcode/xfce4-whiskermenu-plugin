@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-19 18:01+0000\n"
+"POT-Creation-Date: 2013-12-03 11:37+0000\n"
 "PO-Revision-Date: 2013-10-10 22:04+0000\n"
 "Last-Translator: Ayceman <alexandru.ianu@gmail.com>\n"
 "Language-Team: Romanian (http://www.transifex.com/projects/p/xfce4-"
@@ -221,7 +221,7 @@ msgstr "Nu s-a putut adăuga lansator la desktop."
 msgid "Unable to add launcher to panel."
 msgstr "Nu s-a putut adăuga lansator la panou."
 
-#: src/panel_plugin.cpp:160
+#: src/panel_plugin.cpp:167
 msgid "Applications Menu"
 msgstr "Meniul de aplicații"
 

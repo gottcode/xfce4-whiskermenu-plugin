@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-19 18:01+0000\n"
+"POT-Creation-Date: 2013-12-03 11:37+0000\n"
 "PO-Revision-Date: 2013-12-01 13:24+0000\n"
 "Last-Translator: Karim Oulad Chalha <herr.linux88@gmail.com>\n"
 "Language-Team: Arabic (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
@@ -221,7 +221,7 @@ msgstr "عاجز عن إضافة المطلقة إلى سطح المكتب."
 msgid "Unable to add launcher to panel."
 msgstr "عاجز عن إضافة المطلقة إلى الشريط."
 
-#: src/panel_plugin.cpp:160
+#: src/panel_plugin.cpp:167
 msgid "Applications Menu"
 msgstr "قائمة التطبيقات"
 
