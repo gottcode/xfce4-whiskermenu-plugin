@@ -150,6 +150,7 @@ void Settings::load(char* file)
 	{
 		return;
 	}
+	xfce_rc_set_group(rc, NULL);
 
 	read_vector_entry(rc, "favorites", favorites);
 	read_vector_entry(rc, "recent", recent);
@@ -173,6 +174,9 @@ void Settings::load(char* file)
 	position_search_alternate = xfce_rc_read_bool_entry(rc, "position-search-alternate", position_search_alternate);
 	position_commands_alternate = xfce_rc_read_bool_entry(rc, "position-commands-alternate", position_commands_alternate) && position_search_alternate;
 
+	menu_width = std::max(300, xfce_rc_read_int_entry(rc, "menu-width", menu_width));
+	menu_height = std::max(400, xfce_rc_read_int_entry(rc, "menu-height", menu_height));
+
 	for (int i = 0; i < CountCommands; ++i)
 	{
 		command[i]->set(xfce_rc_read_entry(rc, settings_command[i][0], command[i]->get()));
@@ -180,8 +184,34 @@ void Settings::load(char* file)
 		command[i]->check();
 	}
 
-	menu_width = std::max(300, xfce_rc_read_int_entry(rc, "menu-width", menu_width));
-	menu_height = std::max(400, xfce_rc_read_int_entry(rc, "menu-height", menu_height));
+	int actions_count = xfce_rc_read_int_entry(rc, "search-actions", -1);
+	if (actions_count > -1)
+	{
+		for (std::vector<SearchAction*>::size_type i = 0, end = search_actions.size(); i < end; ++i)
+		{
+			delete search_actions[i];
+		}
+		search_actions.clear();
+
+		for (int i = 0; i < actions_count; ++i)
+		{
+			gchar* key = g_strdup_printf("action%i", i);
+			if (!xfce_rc_has_group(rc, key))
+			{
+				g_free(key);
+				continue;
+			}
+			xfce_rc_set_group(rc, key);
+			g_free(key);
+
+			search_actions.push_back(new SearchAction(
+					xfce_rc_read_entry(rc, "name", ""),
+					xfce_rc_read_entry(rc, "pattern", ""),
+					xfce_rc_read_entry(rc, "command", ""),
+					xfce_rc_read_bool_entry(rc, "regex", false),
+					launcher_show_description));
+		}
+	}
 
 	xfce_rc_close(rc);
 
@@ -206,6 +236,7 @@ void Settings::save(char* file)
 	{
 		return;
 	}
+	xfce_rc_set_group(rc, NULL);
 
 	write_vector_entry(rc, "favorites", favorites);
 	write_vector_entry(rc, "recent", recent);
@@ -229,14 +260,29 @@ void Settings::save(char* file)
 	xfce_rc_write_bool_entry(rc, "position-search-alternate", position_search_alternate);
 	xfce_rc_write_bool_entry(rc, "position-commands-alternate", position_commands_alternate);
 
+	xfce_rc_write_int_entry(rc, "menu-width", menu_width);
+	xfce_rc_write_int_entry(rc, "menu-height", menu_height);
+
 	for (int i = 0; i < CountCommands; ++i)
 	{
 		xfce_rc_write_entry(rc, settings_command[i][0], command[i]->get());
 		xfce_rc_write_bool_entry(rc, settings_command[i][1], command[i]->get_shown());
 	}
 
-	xfce_rc_write_int_entry(rc, "menu-width", menu_width);
-	xfce_rc_write_int_entry(rc, "menu-height", menu_height);
+	int actions_count = search_actions.size();
+	xfce_rc_write_int_entry(rc, "search-actions", actions_count);
+	for (int i = 0; i < actions_count; ++i)
+	{
+		gchar* key = g_strdup_printf("action%i", i);
+		xfce_rc_set_group(rc, key);
+		g_free(key);
+
+		const SearchAction* action = search_actions[i];
+		xfce_rc_write_entry(rc, "name", action->get_name());
+		xfce_rc_write_entry(rc, "pattern", action->get_pattern());
+		xfce_rc_write_entry(rc, "command", action->get_command());
+		xfce_rc_write_bool_entry(rc, "regex", action->get_is_regex());
+	}
 
 	xfce_rc_close(rc);
 
