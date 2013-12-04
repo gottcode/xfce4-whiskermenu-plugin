@@ -23,6 +23,8 @@
 
 #include <libxfce4util/libxfce4util.h>
 
+#include <unistd.h>
+
 using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
@@ -183,6 +185,9 @@ void Settings::save(char* file)
 	{
 		return;
 	}
+
+	// Start with fresh settings
+	unlink(file);
 
 	XfceRc* rc = xfce_rc_simple_open(file, false);
 	g_free(file);
