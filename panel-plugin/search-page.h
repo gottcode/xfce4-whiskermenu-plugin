@@ -18,9 +18,9 @@
 #ifndef WHISKERMENU_SEARCH_PAGE_H
 #define WHISKERMENU_SEARCH_PAGE_H
 
-#include "launcher.h"
 #include "page.h"
 #include "query.h"
+#include "run-action.h"
 
 #include <string>
 #include <vector>
@@ -45,6 +45,7 @@ private:
 private:
 	Query m_query;
 	std::vector<Launcher*> m_launchers;
+	RunAction m_run_action;
 
 	class Match
 	{
@@ -63,6 +64,11 @@ private:
 		bool operator<(const Match& match) const
 		{
 			return m_relevancy < match.m_relevancy;
+		}
+
+		bool operator==(const Match& match) const
+		{
+			return m_element == match.m_element;
 		}
 
 		void update(const Query& query)

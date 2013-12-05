@@ -84,6 +84,7 @@ add_library(whiskermenu MODULE
 	recent-page.cpp
 	register-plugin.c
 	resizer-widget.cpp
+	run-action.cpp
 	search-action.cpp
 	search-page.cpp
 	section-button.cpp

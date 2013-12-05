@@ -56,7 +56,7 @@ void SearchPage::set_filter(const gchar* filter)
 	if (!filter)
 	{
 		m_query.clear();
-		m_matches.resize(0);
+		m_matches.clear();
 		return;
 	}
 
@@ -70,11 +70,16 @@ void SearchPage::set_filter(const gchar* filter)
 	// Reset search results if new search does not start with previous search
 	if (m_query.query().empty() || !g_str_has_prefix(filter, m_query.query().c_str()))
 	{
-		m_matches.resize(0);
+		m_matches.clear();
+		m_matches.push_back(&m_run_action);
 		for (std::vector<Launcher*>::size_type i = 0, end = m_launchers.size(); i < end; ++i)
 		{
 			m_matches.push_back(m_launchers[i]);
 		}
+	}
+	else if (std::find(m_matches.begin(), m_matches.end(), &m_run_action) == m_matches.end())
+	{
+		m_matches.insert(m_matches.begin(), &m_run_action);
 	}
 	m_query.set(query);
 
@@ -154,8 +159,8 @@ void SearchPage::set_menu_items(GtkTreeModel* model)
 
 	get_view()->unset_model();
 
-	m_matches.resize(0);
-	m_matches.reserve(m_launchers.size());
+	m_matches.clear();
+	m_matches.reserve(m_launchers.size() + 1);
 }
 
 //-----------------------------------------------------------------------------
@@ -163,7 +168,7 @@ void SearchPage::set_menu_items(GtkTreeModel* model)
 void SearchPage::unset_menu_items()
 {
 	m_launchers.clear();
-	m_matches.resize(0);
+	m_matches.clear();
 	get_view()->unset_model();
 }
 
