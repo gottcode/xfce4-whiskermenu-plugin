@@ -61,8 +61,8 @@ public:
 		return m_is_regex;
 	}
 
-	bool match(const gchar* haystack);
 	void run(GdkScreen* screen) const;
+	int search(const Query& query);
 
 	void set_name(const gchar* name);
 	void set_pattern(const gchar* pattern);

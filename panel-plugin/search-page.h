@@ -49,15 +49,15 @@ private:
 	class Match
 	{
 	public:
-		Match(Launcher* launcher = NULL) :
-			m_launcher(launcher),
+		Match(Element* element = NULL) :
+			m_element(element),
 			m_relevancy(G_MAXINT)
 		{
 		}
 
-		Launcher* launcher() const
+		Element* element() const
 		{
-			return m_launcher;
+			return m_element;
 		}
 
 		bool operator<(const Match& match) const
@@ -67,8 +67,8 @@ private:
 
 		void update(const Query& query)
 		{
-			g_assert(m_launcher != NULL);
-			m_relevancy = m_launcher->search(query);
+			g_assert(m_element != NULL);
+			m_relevancy = m_element->search(query);
 		}
 
 		static bool invalid(const Match& match)
@@ -77,7 +77,7 @@ private:
 		}
 
 	private:
-		Launcher* m_launcher;
+		Element* m_element;
 		int m_relevancy;
 	};
 	std::vector<Match> m_matches;

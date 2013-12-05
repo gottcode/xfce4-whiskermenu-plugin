@@ -96,7 +96,7 @@ void SearchPage::set_filter(const gchar* filter)
 	for (std::vector<SearchAction*>::size_type i = 0, end = wm_settings->search_actions.size(); i < end; ++i)
 	{
 		action = wm_settings->search_actions[i];
-		if (action->match(filter))
+		if (action->search(m_query) != G_MAXINT)
 		{
 			gtk_list_store_insert_with_values(
 					store, NULL, G_MAXINT,
@@ -106,15 +106,15 @@ void SearchPage::set_filter(const gchar* filter)
 					-1);
 		}
 	}
-	Launcher* launcher;
+	Element* element;
 	for (std::vector<Match>::size_type i = 0, end = m_matches.size(); i < end; ++i)
 	{
-		launcher = m_matches[i].launcher();
+		element = m_matches[i].element();
 		gtk_list_store_insert_with_values(
 				store, NULL, G_MAXINT,
-				LauncherView::COLUMN_ICON, launcher->get_icon(),
-				LauncherView::COLUMN_TEXT, launcher->get_text(),
-				LauncherView::COLUMN_LAUNCHER, launcher,
+				LauncherView::COLUMN_ICON, element->get_icon(),
+				LauncherView::COLUMN_TEXT, element->get_text(),
+				LauncherView::COLUMN_LAUNCHER, element,
 				-1);
 	}
 	get_view()->set_model(GTK_TREE_MODEL(store));

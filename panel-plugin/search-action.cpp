@@ -17,9 +17,9 @@
 
 #include "search-action.h"
 
+#include "query.h"
 #include "settings.h"
 
-#include <exo/exo.h>
 #include <libxfce4ui/libxfce4ui.h>
 
 using namespace WhiskerMenu;
@@ -61,15 +61,16 @@ SearchAction::~SearchAction()
 
 //-----------------------------------------------------------------------------
 
-bool SearchAction::match(const gchar* haystack)
+int SearchAction::search(const Query& query)
 {
-	if (exo_str_is_empty(haystack) || m_pattern.empty() || m_command.empty())
+	if (m_pattern.empty() || m_command.empty())
 	{
 		return false;
 	}
 
 	m_expanded_command.clear();
 
+	const gchar* haystack = query.query().c_str();
 	bool found = !m_is_regex ? match_prefix(haystack) : match_regex(haystack);
 
 	if (found && (m_show_description != wm_settings->launcher_show_description))
@@ -78,7 +79,7 @@ bool SearchAction::match(const gchar* haystack)
 		update_text();
 	}
 
-	return found;
+	return found ? 0 : G_MAXINT;
 }
 
 //-----------------------------------------------------------------------------

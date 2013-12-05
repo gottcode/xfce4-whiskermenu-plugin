@@ -256,24 +256,28 @@ void Launcher::run(GdkScreen* screen) const
 
 //-----------------------------------------------------------------------------
 
-int Launcher::search(const Query& query) const
+int Launcher::search(const Query& query)
 {
 	int match = query.match(m_search_name);
-	if (match == INT_MAX)
+	if (match != G_MAXINT)
 	{
-		match = query.match(m_search_command);
-		if (match != INT_MAX)
-		{
-			// Sort matches in executables after matches in names
-			match += 10;
-		}
+		return match;
 	}
-	if ((match == INT_MAX) && wm_settings->launcher_show_description)
+
+	// Sort matches in executables after matches in names
+	match = query.match(m_search_command);
+	if (match != G_MAXINT)
+	{
+		match += 10;
+		return match;
+	}
+
+	// Sort matches in comments after matches in names
+	if (wm_settings->launcher_show_description)
 	{
 		match = query.match(m_search_comment);
-		if (match != INT_MAX)
+		if (match != G_MAXINT)
 		{
-			// Sort matches in comments after matches in names
 			match += 20;
 		}
 	}

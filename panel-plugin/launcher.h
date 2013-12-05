@@ -27,8 +27,6 @@
 namespace WhiskerMenu
 {
 
-class Query;
-
 class Launcher : public Element
 {
 public:
@@ -61,7 +59,7 @@ public:
 
 	void run(GdkScreen* screen) const;
 
-	int search(const Query& query) const;
+	int search(const Query& query);
 
 private:
 	GarconMenuItem* m_item;

@@ -23,6 +23,8 @@
 namespace WhiskerMenu
 {
 
+class Query;
+
 class Element
 {
 public:
@@ -54,6 +56,11 @@ public:
 
 	virtual void run(GdkScreen*) const
 	{
+	}
+
+	virtual int search(const Query&)
+	{
+		return G_MAXINT;
 	}
 
 	static bool less_than(const Element* lhs, const Element* rhs)
