@@ -1,0 +1,229 @@
+# Nepali translation of xfce4-whiskermenu-plugin.
+# Copyright (C) 2013 Graeme Gott
+# This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
+#
+# Translators:
+# starryprabin <mr.prabin@gmail.com>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: Whisker Menu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-12-03 11:37+0000\n"
+"PO-Revision-Date: 2013-12-05 18:29+0000\n"
+"Last-Translator: starryprabin <mr.prabin@gmail.com>\n"
+"Language-Team: Nepali (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
+"plugin/language/ne/)\n"
+"Language: ne\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/applications_page.cpp:312
+msgid "All"
+msgstr "समस्त"
+
+#: src/configuration_dialog.cpp:57
+msgid "Whisker Menu"
+msgstr "विस्कर मेन्यू"
+
+#: src/configuration_dialog.cpp:65
+msgid "_Appearance"
+msgstr "_रुप"
+
+#: src/configuration_dialog.cpp:66
+msgid "_Panel Button"
+msgstr "प॒ट्टीको टांक"
+
+#: src/configuration_dialog.cpp:67
+msgid "_Behavior"
+msgstr "ब्य॒वहार"
+
+#: src/configuration_dialog.cpp:68
+msgid "_Commands"
+msgstr "अा॒देशहरु"
+
+#: src/configuration_dialog.cpp:94
+msgid "Select An Icon"
+msgstr "मूर्ति चयन गर्नुहोस् "
+
+#: src/configuration_dialog.cpp:265
+msgid "Show applications by _name"
+msgstr "_नामद्वारा प्रयुक्तिहरु देखाउनुहोस् "
+
+#: src/configuration_dialog.cpp:271
+msgid "Show application _descriptions"
+msgstr "प्रयुक्तिका _विवरण देखाउनुहोस् "
+
+#: src/configuration_dialog.cpp:277
+msgid "Position _search entry next to panel button"
+msgstr "पट्टीको टांकको नजिक  ॒खोजलाई स्थानाङ्कित गर्नुहोस् "
+
+#: src/configuration_dialog.cpp:283
+msgid "Position commands next to search _entry"
+msgstr "खोजको नजिक अादेशहरुलाई स्थानाङ्कित गर्नुहोस् "
+
+#: src/configuration_dialog.cpp:293
+msgid "Ite_m icon size:"
+msgstr "वस्तु॒मूर्तिको अाकार: "
+
+#: src/configuration_dialog.cpp:313
+msgid "Categ_ory icon size:"
+msgstr "वर्ग॒मूर्तिको अाकार: "
+
+#: src/configuration_dialog.cpp:348
+msgid "Di_splay:"
+msgstr "प्रदर्श॒न:"
+
+#: src/configuration_dialog.cpp:354
+msgid "Icon"
+msgstr "मूर्ति"
+
+#: src/configuration_dialog.cpp:355
+msgid "Title"
+msgstr "शीर्षक "
+
+#: src/configuration_dialog.cpp:356
+msgid "Icon and title"
+msgstr "मूर्ति र शीर्षक "
+
+#: src/configuration_dialog.cpp:366
+msgid "_Title:"
+msgstr "शी॒र्षक"
+
+#: src/configuration_dialog.cpp:381
+msgid "_Icon:"
+msgstr "_मूर्ति:"
+
+#: src/configuration_dialog.cpp:409
+msgid "Switch categories by _hovering"
+msgstr "मं॒डराएर वर्गहरुलाई बद्नुहोस् "
+
+#: src/configuration_dialog.cpp:415
+msgid "Load menu hie_rarchy"
+msgstr "मेन्यू  _पदक्रमलाई भर्नुहोस् "
+
+#: src/configuration_dialog.cpp:421
+msgid "Include _favorites in recently used"
+msgstr "हालसालै प्रयोग भएकामा _मन पर्नेलाई सामेल गर्नुहोस् "
+
+#: src/configuration_dialog.cpp:427
+msgid "Display recently _used by default"
+msgstr "हालसालै _प्रयोग भएकालाई डिफल्टमा देखाउनुहोस् "
+
+#: src/configuration_dialog.cpp:452
+msgid "_Settings:"
+msgstr "_प्राथमिकताहरु "
+
+#: src/configuration_dialog.cpp:467
+msgid "Lock _Screen:"
+msgstr "_पर्दा बन्द गर्नुहोस् "
+
+#: src/configuration_dialog.cpp:482
+msgid "Log _Out:"
+msgstr "_बाहिरीनुहोस्"
+
+#: src/favorites_page.cpp:89
+msgid "Sort Alphabetically A-Z"
+msgstr "A-Z  अनुसार वर्णक्रमीक गर्नुहोस् "
+
+#: src/favorites_page.cpp:95
+msgid "Sort Alphabetically Z-A"
+msgstr "Z-A अनुसार वर्णक्रमीक गर्नुहोस् "
+
+#: src/icon_size.cpp:50
+msgid "Very Small"
+msgstr "अत्यन्त सानो "
+
+#: src/icon_size.cpp:51
+msgid "Smaller"
+msgstr "अझ सानो "
+
+#: src/icon_size.cpp:52
+msgid "Small"
+msgstr "सानो"
+
+#: src/icon_size.cpp:53
+msgid "Normal"
+msgstr "साधारण"
+
+#: src/icon_size.cpp:54
+msgid "Large"
+msgstr "ठूलो"
+
+#: src/icon_size.cpp:55
+msgid "Larger"
+msgstr "अझ ठूलो"
+
+#: src/icon_size.cpp:56
+msgid "Very Large"
+msgstr "अत्यन्त ठूलो"
+
+#: src/launcher.cpp:256
+#, c-format
+msgid "Failed to execute command \"%s\"."
+msgstr "\"%s\" अादेशलाई कार्यान्वयन गर्न असफल भयो ।"
+
+#: src/menu.cpp:112
+msgid "All Settings"
+msgstr "समस्त प्राथमिकताहरु "
+
+#: src/menu.cpp:115
+msgid "Lock Screen"
+msgstr "पर्दा बन्द गर्नुहोस् "
+
+#: src/menu.cpp:118
+msgid "Log Out"
+msgstr "बाहिरीनुहोस् "
+
+#: src/menu.cpp:132
+msgid "Favorites"
+msgstr "मन पर्ने"
+
+#: src/menu.cpp:138
+msgid "Recently Used"
+msgstr "हालसालै प्रयोग भएका "
+
+#: src/menu.cpp:970
+msgid "Failed to open settings manager."
+msgstr "प्राथमिकता व्यवस्थापक उघार्न असफल भयो ।"
+
+#: src/menu.cpp:984
+msgid "Failed to lock screen."
+msgstr "पर्दा बन्द गर्न असफल भयो ।"
+
+#: src/menu.cpp:998
+msgid "Failed to log out."
+msgstr "बाहिरीन असफल भयो ।"
+
+#: src/page.cpp:194
+msgid "Add to Favorites"
+msgstr "मन पर्नेमा थप्नुहोस ।"
+
+#: src/page.cpp:202
+msgid "Remove From Favorites"
+msgstr "मन पर्नेबाट हटाउनुहोस् "
+
+#: src/page.cpp:209
+msgid "Add to Desktop"
+msgstr "डेस्कटपमा थप्नुहोस "
+
+#: src/page.cpp:213
+msgid "Add to Panel"
+msgstr "पट्टीकामा थप्नुहोस् "
+
+#: src/page.cpp:303
+msgid "Unable to add launcher to desktop."
+msgstr "प्रक्षेपकलाई डेस्कटपमा थप्न असमर्थ भयो ।"
+
+#: src/page.cpp:342 src/page.cpp:351
+msgid "Unable to add launcher to panel."
+msgstr "प्रक्षेपकलाई पट्टीकामा थप्न असमर्थ भयो ।"
+
+#: src/panel_plugin.cpp:167
+msgid "Applications Menu"
+msgstr "प्रयुक्तिका मेन्यू "
+
+#: src/recent_page.cpp:71
+msgid "Clear Recently Used"
+msgstr "हालसालै प्रयोग भएकालाई सफा गर्नुहोस् "
