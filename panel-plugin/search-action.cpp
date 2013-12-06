@@ -70,7 +70,7 @@ int SearchAction::search(const Query& query)
 
 	m_expanded_command.clear();
 
-	const gchar* haystack = query.query().c_str();
+	const gchar* haystack = query.raw_query().c_str();
 	bool found = !m_is_regex ? match_prefix(haystack) : match_regex(haystack);
 
 	if (found && (m_show_description != wm_settings->launcher_show_description))

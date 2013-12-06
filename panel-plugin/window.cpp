@@ -840,17 +840,14 @@ void Window::show_default_page()
 void Window::search()
 {
 	// Fetch search string
-	gchar* filter_string = NULL;
 	const gchar* text = gtk_entry_get_text(m_search_entry);
-	if (!exo_str_is_empty(text))
+	if (exo_str_is_empty(text))
 	{
-		gchar* normalized = g_utf8_normalize(text, -1, G_NORMALIZE_DEFAULT);
-		filter_string = g_utf8_casefold(normalized, -1);
-		g_free(normalized);
+		text = NULL;
 	}
 
 	// Update search entry icon
-	bool visible = filter_string != NULL;
+	bool visible = text != NULL;
 	gtk_entry_set_icon_from_stock(m_search_entry, GTK_ENTRY_ICON_SECONDARY, !visible ? GTK_STOCK_FIND : GTK_STOCK_CLEAR);
 	gtk_entry_set_icon_activatable(m_search_entry, GTK_ENTRY_ICON_SECONDARY, visible);
 
@@ -870,8 +867,7 @@ void Window::search()
 	}
 
 	// Apply filter
-	m_search_results->set_filter(visible ? filter_string : NULL);
-	g_free(filter_string);
+	m_search_results->set_filter(text);
 }
 
 //-----------------------------------------------------------------------------

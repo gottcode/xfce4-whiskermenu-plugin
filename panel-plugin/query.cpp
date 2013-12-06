@@ -159,6 +159,7 @@ int Query::match(const std::string& haystack) const
 
 void Query::clear()
 {
+	m_raw_query.clear();
 	m_query.clear();
 	m_query_words.clear();
 }
@@ -167,16 +168,23 @@ void Query::clear()
 
 void Query::set(const std::string& query)
 {
+	m_query.clear();
 	m_query_words.clear();
 
-	m_query = query;
-	if (m_query.empty())
+	m_raw_query = query;
+	if (m_raw_query.empty())
 	{
 		return;
 	}
 
+	gchar* normalized = g_utf8_normalize(m_raw_query.c_str(), -1, G_NORMALIZE_DEFAULT);
+	gchar* utf8 = g_utf8_casefold(normalized, -1);
+	m_query = utf8;
+	g_free(utf8);
+	g_free(normalized);
+
 	std::string buffer;
-	std::stringstream ss(query);
+	std::stringstream ss(m_query);
 	while (ss >> buffer)
 	{
 		m_query_words.push_back(buffer);

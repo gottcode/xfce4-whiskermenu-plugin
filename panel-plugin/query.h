@@ -43,10 +43,16 @@ public:
 		return m_query;
 	}
 
+	std::string raw_query() const
+	{
+		return m_raw_query;
+	}
+
 	void clear();
 	void set(const std::string& query);
 
 private:
+	std::string m_raw_query;
 	std::string m_query;
 	std::vector<std::string> m_query_words;
 };

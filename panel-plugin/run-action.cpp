@@ -51,7 +51,7 @@ int RunAction::search(const Query& query)
 	bool valid = false;
 
 	gchar** argv;
-	if (g_shell_parse_argv(query.query().c_str(), NULL, &argv, NULL))
+	if (g_shell_parse_argv(query.raw_query().c_str(), NULL, &argv, NULL))
 	{
 		gchar* path = g_find_program_in_path(argv[0]);
 		valid = path != NULL;
@@ -64,7 +64,7 @@ int RunAction::search(const Query& query)
 		return G_MAXINT;
 	}
 
-	m_command_line = query.query();
+	m_command_line = query.raw_query();
 
 	// Set item text
 	const gchar* direction = (gtk_widget_get_default_direction() != GTK_TEXT_DIR_RTL) ? "\342\200\216" : "\342\200\217";

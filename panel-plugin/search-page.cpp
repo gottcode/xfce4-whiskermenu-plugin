@@ -62,13 +62,13 @@ void SearchPage::set_filter(const gchar* filter)
 
 	// Make sure this is a new search
 	std::string query(filter);
-	if (m_query.query() == query)
+	if (m_query.raw_query() == query)
 	{
 		return;
 	}
 
 	// Reset search results if new search does not start with previous search
-	if (m_query.query().empty() || !g_str_has_prefix(filter, m_query.query().c_str()))
+	if (m_query.raw_query().empty() || !g_str_has_prefix(filter, m_query.raw_query().c_str()))
 	{
 		m_matches.clear();
 		m_matches.push_back(&m_run_action);
