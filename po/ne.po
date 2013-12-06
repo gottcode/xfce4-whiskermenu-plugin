@@ -1,0 +1,234 @@
+# Nepali translation of xfce4-whiskermenu-plugin.
+# Copyright (C) 2013 Graeme Gott
+# This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
+#
+# Translators:
+# starryprabin <mr.prabin@gmail.com>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: Whisker Menu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-10-31 20:34+0000\n"
+"PO-Revision-Date: 2013-12-05 18:29+0000\n"
+"Last-Translator: starryprabin <mr.prabin@gmail.com>\n"
+"Language-Team: Nepali (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
+"plugin/language/ne/)\n"
+"Language: ne\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../panel-plugin/page.cpp:210
+msgid "Add to Desktop"
+msgstr "डेस्कटपमा थप्नुहोस "
+
+#: ../panel-plugin/page.cpp:195
+msgid "Add to Favorites"
+msgstr "मन पर्नेमा थप्नुहोस ।"
+
+#: ../panel-plugin/page.cpp:214
+msgid "Add to Panel"
+msgstr "पट्टीकामा थप्नुहोस् "
+
+#: ../panel-plugin/applications-page.cpp:313
+msgid "All"
+msgstr "समस्त"
+
+#: ../panel-plugin/window.cpp:97
+msgid "All Settings"
+msgstr "समस्त प्राथमिकताहरु "
+
+#: ../panel-plugin/plugin.cpp:162
+msgid "Applications Menu"
+msgstr "प्रयुक्तिका मेन्यू "
+
+#: ../panel-plugin/configuration-dialog.cpp:314
+msgid "Categ_ory icon size:"
+msgstr "वर्ग॒मूर्तिको अाकार: "
+
+#: ../panel-plugin/recent-page.cpp:72
+msgid "Clear Recently Used"
+msgstr "हालसालै प्रयोग भएकालाई सफा गर्नुहोस् "
+
+#: ../panel-plugin/configuration-dialog.cpp:349
+msgid "Di_splay:"
+msgstr "प्रदर्श॒न:"
+
+#: ../panel-plugin/configuration-dialog.cpp:428
+msgid "Display recently _used by default"
+msgstr "हालसालै _प्रयोग भएकालाई डिफल्टमा देखाउनुहोस् "
+
+#: ../panel-plugin/launcher.cpp:259
+#, c-format
+msgid "Failed to execute command \"%s\"."
+msgstr "\"%s\" अादेशलाई कार्यान्वयन गर्न असफल भयो ।"
+
+#: ../panel-plugin/window.cpp:100
+msgid "Failed to lock screen."
+msgstr "पर्दा बन्द गर्न असफल भयो ।"
+
+#: ../panel-plugin/window.cpp:103
+msgid "Failed to log out."
+msgstr "बाहिरीन असफल भयो ।"
+
+#: ../panel-plugin/window.cpp:97
+msgid "Failed to open settings manager."
+msgstr "प्राथमिकता व्यवस्थापक उघार्न असफल भयो ।"
+
+#: ../panel-plugin/window.cpp:117
+msgid "Favorites"
+msgstr "मन पर्ने"
+
+#: ../panel-plugin/configuration-dialog.cpp:355
+msgid "Icon"
+msgstr "मूर्ति"
+
+#: ../panel-plugin/configuration-dialog.cpp:357
+msgid "Icon and title"
+msgstr "मूर्ति र शीर्षक "
+
+#: ../panel-plugin/configuration-dialog.cpp:422
+msgid "Include _favorites in recently used"
+msgstr "हालसालै प्रयोग भएकामा _मन पर्नेलाई सामेल गर्नुहोस् "
+
+#: ../panel-plugin/configuration-dialog.cpp:294
+msgid "Ite_m icon size:"
+msgstr "वस्तु॒मूर्तिको अाकार: "
+
+#: ../panel-plugin/icon-size.cpp:55
+msgid "Large"
+msgstr "ठूलो"
+
+#: ../panel-plugin/icon-size.cpp:56
+msgid "Larger"
+msgstr "अझ ठूलो"
+
+#: ../panel-plugin/configuration-dialog.cpp:416
+msgid "Load menu hie_rarchy"
+msgstr "मेन्यू  _पदक्रमलाई भर्नुहोस् "
+
+#: ../panel-plugin/window.cpp:100
+msgid "Lock Screen"
+msgstr "पर्दा बन्द गर्नुहोस् "
+
+#: ../panel-plugin/configuration-dialog.cpp:468
+msgid "Lock _Screen:"
+msgstr "_पर्दा बन्द गर्नुहोस् "
+
+#: ../panel-plugin/window.cpp:103
+msgid "Log Out"
+msgstr "बाहिरीनुहोस् "
+
+#: ../panel-plugin/configuration-dialog.cpp:483
+msgid "Log _Out:"
+msgstr "_बाहिरीनुहोस्"
+
+#: ../panel-plugin/icon-size.cpp:54
+msgid "Normal"
+msgstr "साधारण"
+
+#: ../panel-plugin/configuration-dialog.cpp:278
+msgid "Position _search entry next to panel button"
+msgstr "पट्टीको टांकको नजिक  ॒खोजलाई स्थानाङ्कित गर्नुहोस् "
+
+#: ../panel-plugin/configuration-dialog.cpp:284
+msgid "Position commands next to search _entry"
+msgstr "खोजको नजिक अादेशहरुलाई स्थानाङ्कित गर्नुहोस् "
+
+#: ../panel-plugin/window.cpp:123
+msgid "Recently Used"
+msgstr "हालसालै प्रयोग भएका "
+
+#: ../panel-plugin/page.cpp:203
+msgid "Remove From Favorites"
+msgstr "मन पर्नेबाट हटाउनुहोस् "
+
+#: ../panel-plugin/configuration-dialog.cpp:95
+msgid "Select An Icon"
+msgstr "मूर्ति चयन गर्नुहोस् "
+
+#: ../panel-plugin/whiskermenu.desktop.in.h:2
+msgid "Show a menu to easily access installed applications"
+msgstr "स्थापित गरिएका प्रयुक्ति सहजै पहुँच गर्न एक मेन्यू देखाउनुहोस् "
+
+#: ../panel-plugin/configuration-dialog.cpp:272
+msgid "Show application _descriptions"
+msgstr "प्रयुक्तिका _विवरण देखाउनुहोस् "
+
+#: ../panel-plugin/configuration-dialog.cpp:266
+msgid "Show applications by _name"
+msgstr "_नामद्वारा प्रयुक्तिहरु देखाउनुहोस् "
+
+#: ../panel-plugin/icon-size.cpp:53
+msgid "Small"
+msgstr "सानो"
+
+#: ../panel-plugin/icon-size.cpp:52
+msgid "Smaller"
+msgstr "अझ सानो "
+
+#: ../panel-plugin/favorites-page.cpp:90
+msgid "Sort Alphabetically A-Z"
+msgstr "A-Z  अनुसार वर्णक्रमीक गर्नुहोस् "
+
+#: ../panel-plugin/favorites-page.cpp:96
+msgid "Sort Alphabetically Z-A"
+msgstr "Z-A अनुसार वर्णक्रमीक गर्नुहोस् "
+
+#: ../panel-plugin/configuration-dialog.cpp:410
+msgid "Switch categories by _hovering"
+msgstr "मं॒डराएर वर्गहरुलाई बद्नुहोस् "
+
+#: ../panel-plugin/configuration-dialog.cpp:356
+msgid "Title"
+msgstr "शीर्षक "
+
+#: ../panel-plugin/page.cpp:304
+msgid "Unable to add launcher to desktop."
+msgstr "प्रक्षेपकलाई डेस्कटपमा थप्न असमर्थ भयो ।"
+
+#: ../panel-plugin/page.cpp:343 ../panel-plugin/page.cpp:352
+msgid "Unable to add launcher to panel."
+msgstr "प्रक्षेपकलाई पट्टीकामा थप्न असमर्थ भयो ।"
+
+#: ../panel-plugin/icon-size.cpp:57
+msgid "Very Large"
+msgstr "अत्यन्त ठूलो"
+
+#: ../panel-plugin/icon-size.cpp:51
+msgid "Very Small"
+msgstr "अत्यन्त सानो "
+
+#: ../panel-plugin/configuration-dialog.cpp:58
+#: ../panel-plugin/whiskermenu.desktop.in.h:1
+msgid "Whisker Menu"
+msgstr "विस्कर मेन्यू"
+
+#: ../panel-plugin/configuration-dialog.cpp:66
+msgid "_Appearance"
+msgstr "_रुप"
+
+#: ../panel-plugin/configuration-dialog.cpp:68
+msgid "_Behavior"
+msgstr "ब्य॒वहार"
+
+#: ../panel-plugin/configuration-dialog.cpp:69
+msgid "_Commands"
+msgstr "अा॒देशहरु"
+
+#: ../panel-plugin/configuration-dialog.cpp:382
+msgid "_Icon:"
+msgstr "_मूर्ति:"
+
+#: ../panel-plugin/configuration-dialog.cpp:67
+msgid "_Panel Button"
+msgstr "प॒ट्टीको टांक"
+
+#: ../panel-plugin/configuration-dialog.cpp:453
+msgid "_Settings:"
+msgstr "_प्राथमिकताहरु "
+
+#: ../panel-plugin/configuration-dialog.cpp:367
+msgid "_Title:"
+msgstr "शी॒र्षक"
