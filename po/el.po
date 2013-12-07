@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-31 20:34+0000\n"
+"POT-Creation-Date: 2013-12-07 12:53+0000\n"
 "PO-Revision-Date: 2013-08-23 19:51+0000\n"
 "Last-Translator: Γιάννης Ανθυμίδης <yannanth@gmail.com>\n"
 "Language-Team: Greek (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
@@ -20,135 +20,215 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/page.cpp:210
+#: ../panel-plugin/configuration-dialog.cpp:680
+#, fuzzy
+msgid "Add action"
+msgstr "Προσθήκη στο Ταμπλό"
+
+#: ../panel-plugin/page.cpp:211
 msgid "Add to Desktop"
 msgstr "Προσθήκη στην Επιφάνειά Εργασίας"
 
-#: ../panel-plugin/page.cpp:195
+#: ../panel-plugin/page.cpp:196
 msgid "Add to Favorites"
 msgstr "Προσθήκη στα Αγαπημένα"
 
-#: ../panel-plugin/page.cpp:214
+#: ../panel-plugin/page.cpp:215
 msgid "Add to Panel"
 msgstr "Προσθήκη στο Ταμπλό"
 
-#: ../panel-plugin/applications-page.cpp:313
+#: ../panel-plugin/category.cpp:59
 msgid "All"
 msgstr "Όλα"
 
-#: ../panel-plugin/window.cpp:97
-msgid "All Settings"
+#: ../panel-plugin/settings.cpp:111
+#, fuzzy
+msgid "All _Settings"
 msgstr "Όλες οι Επιλογές"
 
-#: ../panel-plugin/plugin.cpp:162
+#: ../panel-plugin/plugin.cpp:161
 msgid "Applications Menu"
 msgstr "Μενού Εφαρμογών"
 
-#: ../panel-plugin/configuration-dialog.cpp:314
+#: ../panel-plugin/command-edit.cpp:46
+msgid "Browse the file system to choose a custom command."
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:738
+msgid "C_ommand:"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:563
 msgid "Categ_ory icon size:"
 msgstr "Μέγεθος εικονιδίων _κατηγοριών:"
 
-#: ../panel-plugin/recent-page.cpp:72
+#: ../panel-plugin/recent-page.cpp:88
 msgid "Clear Recently Used"
 msgstr "Εκκαθάριση Πρόσφατα Χρησιμοποιημένων"
 
-#: ../panel-plugin/configuration-dialog.cpp:349
+#: ../panel-plugin/configuration-dialog.cpp:612
+msgid "Commands"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:709
+msgid "Details"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:454
 msgid "Di_splay:"
 msgstr "Εμ_φάνιση:"
 
-#: ../panel-plugin/configuration-dialog.cpp:428
+#: ../panel-plugin/configuration-dialog.cpp:604
 msgid "Display recently _used by default"
 msgstr ""
 
-#: ../panel-plugin/launcher.cpp:259
+#: ../panel-plugin/launcher.cpp:252 ../panel-plugin/run-action.cpp:41
+#: ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "Αποτυχία εκτέλεσης εντολής «%s»."
 
-#: ../panel-plugin/window.cpp:100
+#: ../panel-plugin/settings.cpp:115
+#, fuzzy
+msgid "Failed to launch menu editor."
+msgstr "Αποτυχία αποσύνδεσης."
+
+#: ../panel-plugin/settings.cpp:112
 msgid "Failed to lock screen."
 msgstr "Αποτυχία κλειδώματος οθόνης."
 
-#: ../panel-plugin/window.cpp:103
+#: ../panel-plugin/settings.cpp:114
 msgid "Failed to log out."
 msgstr "Αποτυχία αποσύνδεσης."
 
-#: ../panel-plugin/window.cpp:97
+#: ../panel-plugin/settings.cpp:111
 msgid "Failed to open settings manager."
 msgstr "Αποτυχία εκκίνησης του διαχειριστή ρυθμίσεων."
 
-#: ../panel-plugin/window.cpp:117
+#: ../panel-plugin/settings.cpp:113
+#, fuzzy
+msgid "Failed to switch users."
+msgstr "Αποτυχία κλειδώματος οθόνης."
+
+#: ../panel-plugin/window.cpp:126
 msgid "Favorites"
 msgstr "Αγαπημένα"
 
-#: ../panel-plugin/configuration-dialog.cpp:355
+#: ../panel-plugin/configuration-dialog.cpp:460
 msgid "Icon"
 msgstr "Εικονίδιο"
 
-#: ../panel-plugin/configuration-dialog.cpp:357
+#: ../panel-plugin/configuration-dialog.cpp:462
 msgid "Icon and title"
 msgstr "Εικονίδιο και τίτλος"
 
-#: ../panel-plugin/configuration-dialog.cpp:422
+#: ../panel-plugin/configuration-dialog.cpp:598
 msgid "Include _favorites in recently used"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:294
+#: ../panel-plugin/configuration-dialog.cpp:543
 msgid "Ite_m icon size:"
 msgstr "Μέγεθος εικονιδίων _αντικειμένων:"
 
-#: ../panel-plugin/icon-size.cpp:55
+#: ../panel-plugin/icon-size.cpp:54
 msgid "Large"
 msgstr "Μεγάλα"
 
-#: ../panel-plugin/icon-size.cpp:56
+#: ../panel-plugin/icon-size.cpp:55
 msgid "Larger"
 msgstr "Μεγαλύτερα"
 
-#: ../panel-plugin/configuration-dialog.cpp:416
-msgid "Load menu hie_rarchy"
+#: ../panel-plugin/settings.cpp:114
+#, fuzzy
+msgid "Log _Out"
+msgstr "Αποσύνδεση"
+
+#: ../panel-plugin/settings.cpp:117
+msgid "Man Pages"
 msgstr ""
 
-#: ../panel-plugin/window.cpp:100
-msgid "Lock Screen"
-msgstr "Κλείδωμα Οθόνης"
+#: ../panel-plugin/configuration-dialog.cpp:504
+msgid "Menu"
+msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:468
-#, fuzzy
-msgid "Lock _Screen:"
-msgstr "Κλείδωμα Οθόνης"
+#: ../panel-plugin/configuration-dialog.cpp:714
+msgid "Nam_e:"
+msgstr ""
 
-#: ../panel-plugin/window.cpp:103
-msgid "Log Out"
-msgstr "Αποσύνδεση"
+#: ../panel-plugin/configuration-dialog.cpp:660
+msgid "Name"
+msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:483
-#, fuzzy
-msgid "Log _Out:"
-msgstr "Αποσύνδεση"
+#: ../panel-plugin/icon-size.cpp:49
+msgid "None"
+msgstr ""
 
-#: ../panel-plugin/icon-size.cpp:54
+#: ../panel-plugin/icon-size.cpp:53
 msgid "Normal"
 msgstr "Κανονικά"
 
-#: ../panel-plugin/configuration-dialog.cpp:278
+#: ../panel-plugin/settings.cpp:120
+msgid "Open URI"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:446
+#, fuzzy
+msgid "Panel Button"
+msgstr "Κουμπί ταμπλό"
+
+#: ../panel-plugin/configuration-dialog.cpp:665
+msgid "Pattern"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:527
 msgid "Position _search entry next to panel button"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:284
+#: ../panel-plugin/configuration-dialog.cpp:533
 msgid "Position commands next to search _entry"
 msgstr ""
 
-#: ../panel-plugin/window.cpp:123
+#: ../panel-plugin/window.cpp:132
 msgid "Recently Used"
 msgstr "Χρησιμοποιήθηκαν Πρόσφατα"
 
-#: ../panel-plugin/page.cpp:203
+#: ../panel-plugin/page.cpp:204
 msgid "Remove From Favorites"
 msgstr "Αφαίρεση από τα Αγαπημένα"
 
-#: ../panel-plugin/configuration-dialog.cpp:95
+#: ../panel-plugin/configuration-dialog.cpp:364
+#, c-format
+msgid "Remove action \"%s\"?"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:689
+msgid "Remove selected action"
+msgstr ""
+
+#: ../panel-plugin/run-action.cpp:71
+#, c-format
+msgid "Run %s"
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:119
+msgid "Run in Terminal"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:81
+msgid "Search Actio_ns"
+msgstr ""
+
+#: ../panel-plugin/search-action.cpp:261
+msgid "Search Action"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:114
 msgid "Select An Icon"
+msgstr "Επιλογή Εικονιδίου"
+
+#: ../panel-plugin/command-edit.cpp:60
+#, fuzzy
+msgid "Select Command"
 msgstr "Επιλογή Εικονιδίου"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
@@ -156,87 +236,119 @@ msgid "Show a menu to easily access installed applications"
 msgstr ""
 "Εμφάνιση ενός μενού για την γρήγορη πρόσβαση στις εγκατεστημένες εφαρμογές."
 
-#: ../panel-plugin/configuration-dialog.cpp:272
+#: ../panel-plugin/configuration-dialog.cpp:515
 msgid "Show application _descriptions"
 msgstr "Εμφάνιση περιγραφής _εφαρμογών"
 
-#: ../panel-plugin/configuration-dialog.cpp:266
-msgid "Show applications by _name"
+#: ../panel-plugin/configuration-dialog.cpp:509
+#, fuzzy
+msgid "Show generic application _names"
 msgstr "Προβολή εφαρμογών κατά ό_νομα"
 
-#: ../panel-plugin/icon-size.cpp:53
+#: ../panel-plugin/configuration-dialog.cpp:521
+msgid "Show menu hie_rarchy"
+msgstr ""
+
+#: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
 msgstr "Μικρά"
 
-#: ../panel-plugin/icon-size.cpp:52
+#: ../panel-plugin/icon-size.cpp:51
 msgid "Smaller"
 msgstr "Μικρότερα"
 
-#: ../panel-plugin/favorites-page.cpp:90
+#: ../panel-plugin/favorites-page.cpp:67
 msgid "Sort Alphabetically A-Z"
 msgstr "Αλφαβητική Ταξινόμηση Α-Ω"
 
-#: ../panel-plugin/favorites-page.cpp:96
+#: ../panel-plugin/favorites-page.cpp:73
 msgid "Sort Alphabetically Z-A"
 msgstr "Αλφαβητική Ταξινόμηση Ω-Α"
 
-#: ../panel-plugin/configuration-dialog.cpp:410
+#: ../panel-plugin/settings.cpp:113
+msgid "Switch _Users"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:592
 msgid "Switch categories by _hovering"
 msgstr "Αλλαγή κατηγοριών στο _πέρασμα του ποντικιού"
 
-#: ../panel-plugin/configuration-dialog.cpp:356
+#: ../panel-plugin/configuration-dialog.cpp:363
+msgid "The action will be deleted permanently."
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:461
 msgid "Title"
 msgstr "Τίτλος"
 
-#: ../panel-plugin/page.cpp:304
+#: ../panel-plugin/page.cpp:305
 msgid "Unable to add launcher to desktop."
 msgstr "Απέτυχε η προσθήκη εκκινητή στην επιφάνεια εργασίας."
 
-#: ../panel-plugin/page.cpp:343 ../panel-plugin/page.cpp:352
+#: ../panel-plugin/page.cpp:344 ../panel-plugin/page.cpp:353
 msgid "Unable to add launcher to panel."
 msgstr "Απέτυχε η προσθήκη εκκινητή στο ταμπλό."
 
-#: ../panel-plugin/icon-size.cpp:57
+#: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
 msgstr "Πολύ Μεγάλα"
 
-#: ../panel-plugin/icon-size.cpp:51
+#: ../panel-plugin/icon-size.cpp:50
 msgid "Very Small"
 msgstr "Πολύ Μικρά"
 
-#: ../panel-plugin/configuration-dialog.cpp:58
+#: ../panel-plugin/configuration-dialog.cpp:71
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
 msgid "Whisker Menu"
 msgstr "Μενού Whisker"
 
-#: ../panel-plugin/configuration-dialog.cpp:66
+#: ../panel-plugin/settings.cpp:118
+msgid "Wikipedia"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:79
 #, fuzzy
 msgid "_Appearance"
 msgstr "Εμφάνιση"
 
-#: ../panel-plugin/configuration-dialog.cpp:68
+#: ../panel-plugin/configuration-dialog.cpp:80
 #, fuzzy
 msgid "_Behavior"
 msgstr "Συμπεριφορά"
 
-#: ../panel-plugin/configuration-dialog.cpp:69
-msgid "_Commands"
-msgstr ""
+#: ../panel-plugin/settings.cpp:115
+#, fuzzy
+msgid "_Edit Applications"
+msgstr "Μενού Εφαρμογών"
 
-#: ../panel-plugin/configuration-dialog.cpp:382
+#: ../panel-plugin/configuration-dialog.cpp:487
 msgid "_Icon:"
 msgstr "_Εικονίδιο:"
 
-#: ../panel-plugin/configuration-dialog.cpp:67
+#: ../panel-plugin/settings.cpp:112
 #, fuzzy
-msgid "_Panel Button"
-msgstr "Κουμπί ταμπλό"
+msgid "_Lock Screen"
+msgstr "Κλείδωμα Οθόνης"
 
-#: ../panel-plugin/configuration-dialog.cpp:453
-#, fuzzy
-msgid "_Settings:"
-msgstr "Όλες οι Επιλογές"
+#: ../panel-plugin/configuration-dialog.cpp:726
+msgid "_Pattern:"
+msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:367
+#: ../panel-plugin/configuration-dialog.cpp:750
+msgid "_Regular expression"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:472
 msgid "_Title:"
 msgstr "_Τίτλος:"
+
+#, fuzzy
+#~ msgid "Lock _Screen:"
+#~ msgstr "Κλείδωμα Οθόνης"
+
+#~ msgid "Log Out"
+#~ msgstr "Αποσύνδεση"
+
+#, fuzzy
+#~ msgid "_Settings:"
+#~ msgstr "Όλες οι Επιλογές"
