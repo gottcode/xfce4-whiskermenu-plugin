@@ -4,12 +4,13 @@
 #
 # Translators:
 # GenghisKhan <genghiskhan@gmx.ca>, 2013
+# GenghisKhan <genghiskhan@gmx.ca>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-07 12:53+0000\n"
-"PO-Revision-Date: 2013-10-15 05:15+0000\n"
+"PO-Revision-Date: 2013-12-07 14:41+0000\n"
 "Last-Translator: GenghisKhan <genghiskhan@gmx.ca>\n"
 "Language-Team: Hebrew (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
 "plugin/language/he/)\n"
@@ -20,9 +21,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/configuration-dialog.cpp:680
-#, fuzzy
 msgid "Add action"
-msgstr "הוסף אל תוך לוח"
+msgstr "הוספת פעולה"
 
 #: ../panel-plugin/page.cpp:211
 msgid "Add to Desktop"
@@ -41,9 +41,8 @@ msgid "All"
 msgstr "כולם"
 
 #: ../panel-plugin/settings.cpp:111
-#, fuzzy
 msgid "All _Settings"
-msgstr "כל ההגדרות"
+msgstr "כל _ההגדרות"
 
 #: ../panel-plugin/plugin.cpp:161
 msgid "Applications Menu"
@@ -51,12 +50,11 @@ msgstr "תפריט יישומים"
 
 #: ../panel-plugin/command-edit.cpp:46
 msgid "Browse the file system to choose a custom command."
-msgstr ""
+msgstr "עיין במערכת הקבצים כדי למצוא פקודה מותאמת."
 
 #: ../panel-plugin/configuration-dialog.cpp:738
-#, fuzzy
 msgid "C_ommand:"
-msgstr "_פקודות"
+msgstr "פ_קודה:"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
 msgid "Categ_ory icon size:"
@@ -67,13 +65,12 @@ msgid "Clear Recently Used"
 msgstr "טהר תפריט בשימוש לאחרונה"
 
 #: ../panel-plugin/configuration-dialog.cpp:612
-#, fuzzy
 msgid "Commands"
-msgstr "_פקודות"
+msgstr "פקודות"
 
 #: ../panel-plugin/configuration-dialog.cpp:709
 msgid "Details"
-msgstr ""
+msgstr "פרטים"
 
 #: ../panel-plugin/configuration-dialog.cpp:454
 msgid "Di_splay:"
@@ -90,9 +87,8 @@ msgid "Failed to execute command \"%s\"."
 msgstr "נכשל להוציא לפועל פקודה \"%s\"."
 
 #: ../panel-plugin/settings.cpp:115
-#, fuzzy
 msgid "Failed to launch menu editor."
-msgstr "נכשל להתנתק."
+msgstr "נכשל לשגר עורך תפריט."
 
 #: ../panel-plugin/settings.cpp:112
 msgid "Failed to lock screen."
@@ -107,9 +103,8 @@ msgid "Failed to open settings manager."
 msgstr "נכשל לפתוח מנהל הגדרות."
 
 #: ../panel-plugin/settings.cpp:113
-#, fuzzy
 msgid "Failed to switch users."
-msgstr "נכשל לנעול מרקע."
+msgstr "נכשל להחליף משתמשים."
 
 #: ../panel-plugin/window.cpp:126
 msgid "Favorites"
@@ -140,29 +135,28 @@ msgid "Larger"
 msgstr "גדול יותר"
 
 #: ../panel-plugin/settings.cpp:114
-#, fuzzy
 msgid "Log _Out"
-msgstr "הת_נתק:"
+msgstr "הת_נתק"
 
 #: ../panel-plugin/settings.cpp:117
 msgid "Man Pages"
-msgstr ""
+msgstr "עמודי Man"
 
 #: ../panel-plugin/configuration-dialog.cpp:504
 msgid "Menu"
-msgstr ""
+msgstr "תפריט"
 
 #: ../panel-plugin/configuration-dialog.cpp:714
 msgid "Nam_e:"
-msgstr ""
+msgstr "_שם:"
 
 #: ../panel-plugin/configuration-dialog.cpp:660
 msgid "Name"
-msgstr ""
+msgstr "שם"
 
 #: ../panel-plugin/icon-size.cpp:49
 msgid "None"
-msgstr ""
+msgstr "כלום"
 
 #: ../panel-plugin/icon-size.cpp:53
 msgid "Normal"
@@ -170,16 +164,15 @@ msgstr "רגיל"
 
 #: ../panel-plugin/settings.cpp:120
 msgid "Open URI"
-msgstr ""
+msgstr "פתח URI"
 
 #: ../panel-plugin/configuration-dialog.cpp:446
-#, fuzzy
 msgid "Panel Button"
-msgstr "_לחצן לוח"
+msgstr "לחצן לוח"
 
 #: ../panel-plugin/configuration-dialog.cpp:665
 msgid "Pattern"
-msgstr ""
+msgstr "תבנית"
 
 #: ../panel-plugin/configuration-dialog.cpp:527
 msgid "Position _search entry next to panel button"
@@ -200,55 +193,52 @@ msgstr "הסר מתוך מועדפים"
 #: ../panel-plugin/configuration-dialog.cpp:364
 #, c-format
 msgid "Remove action \"%s\"?"
-msgstr ""
+msgstr "להסיר את פעולה \"%s\"?"
 
 #: ../panel-plugin/configuration-dialog.cpp:689
 msgid "Remove selected action"
-msgstr ""
+msgstr "הסרת פעולה נבחרת"
 
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
 msgid "Run %s"
-msgstr ""
+msgstr "הרץ את %s"
 
 #: ../panel-plugin/settings.cpp:119
 msgid "Run in Terminal"
-msgstr ""
+msgstr "הרצה בתוך מסוף"
 
 #: ../panel-plugin/configuration-dialog.cpp:81
 msgid "Search Actio_ns"
-msgstr ""
+msgstr "חפש פעו_לות"
 
 #: ../panel-plugin/search-action.cpp:261
 msgid "Search Action"
-msgstr ""
+msgstr "חיפוש פעולות"
 
 #: ../panel-plugin/configuration-dialog.cpp:114
 msgid "Select An Icon"
 msgstr "בחר צלמית"
 
 #: ../panel-plugin/command-edit.cpp:60
-#, fuzzy
 msgid "Select Command"
-msgstr "בחר צלמית"
+msgstr "בחירת פקודה"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
-msgstr "תפריט לגישה קלה ליישומים מותקנים"
+msgstr "הצג תפריט כדי לגשת בקלות אל יישומים מותקנים"
 
 #: ../panel-plugin/configuration-dialog.cpp:515
 msgid "Show application _descriptions"
 msgstr "הצג _תיאורי יישום"
 
 #: ../panel-plugin/configuration-dialog.cpp:509
-#, fuzzy
 msgid "Show generic application _names"
-msgstr "הצג יישומים לפי _שם"
+msgstr "הצג שמות יישום _כלליים"
 
 #: ../panel-plugin/configuration-dialog.cpp:521
-#, fuzzy
 msgid "Show menu hie_rarchy"
-msgstr "טען מ_דרג תפריט"
+msgstr "הצג מ_דרג תפריט"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -268,7 +258,7 @@ msgstr "מיין לפי אלף-בית ת-א"
 
 #: ../panel-plugin/settings.cpp:113
 msgid "Switch _Users"
-msgstr ""
+msgstr "החלף _משתמשים"
 
 #: ../panel-plugin/configuration-dialog.cpp:592
 msgid "Switch categories by _hovering"
@@ -276,7 +266,7 @@ msgstr "החלף קטגוריות על ידי _ריחוף"
 
 #: ../panel-plugin/configuration-dialog.cpp:363
 msgid "The action will be deleted permanently."
-msgstr ""
+msgstr "הפעולה תימחק לצמיתות."
 
 #: ../panel-plugin/configuration-dialog.cpp:461
 msgid "Title"
@@ -305,7 +295,7 @@ msgstr "תפריט זיף"
 
 #: ../panel-plugin/settings.cpp:118
 msgid "Wikipedia"
-msgstr ""
+msgstr "ויקיפדיה"
 
 #: ../panel-plugin/configuration-dialog.cpp:79
 msgid "_Appearance"
@@ -316,36 +306,25 @@ msgid "_Behavior"
 msgstr "הת_נהגות"
 
 #: ../panel-plugin/settings.cpp:115
-#, fuzzy
 msgid "_Edit Applications"
-msgstr "תפריט יישומים"
+msgstr "_ערוך יישומים"
 
 #: ../panel-plugin/configuration-dialog.cpp:487
 msgid "_Icon:"
 msgstr "_צלמית:"
 
 #: ../panel-plugin/settings.cpp:112
-#, fuzzy
 msgid "_Lock Screen"
-msgstr "נעל מרקע"
+msgstr "_נעל מסך"
 
 #: ../panel-plugin/configuration-dialog.cpp:726
 msgid "_Pattern:"
-msgstr ""
+msgstr "_תבנית:"
 
 #: ../panel-plugin/configuration-dialog.cpp:750
 msgid "_Regular expression"
-msgstr ""
+msgstr "_ביטוי רגולרי"
 
 #: ../panel-plugin/configuration-dialog.cpp:472
 msgid "_Title:"
 msgstr "_כותרת:"
-
-#~ msgid "Lock _Screen:"
-#~ msgstr "נעל _מסך:"
-
-#~ msgid "Log Out"
-#~ msgstr "התנתק"
-
-#~ msgid "_Settings:"
-#~ msgstr "_הגדרות:"
