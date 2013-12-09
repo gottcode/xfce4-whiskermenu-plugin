@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-07 12:53+0000\n"
-"PO-Revision-Date: 2013-10-20 15:43+0000\n"
+"PO-Revision-Date: 2013-12-09 09:17+0000\n"
 "Last-Translator: cybercop <cybercop_montana@abv.bg>\n"
 "Language-Team: Bulgarian (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/bg/)\n"
@@ -20,9 +20,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/configuration-dialog.cpp:680
-#, fuzzy
 msgid "Add action"
-msgstr "Добавяне в панела"
+msgstr "Добавяне на действие"
 
 #: ../panel-plugin/page.cpp:211
 msgid "Add to Desktop"
@@ -41,7 +40,6 @@ msgid "All"
 msgstr "Всички"
 
 #: ../panel-plugin/settings.cpp:111
-#, fuzzy
 msgid "All _Settings"
 msgstr "Всички настройки"
 
@@ -51,12 +49,11 @@ msgstr "Меню на програмите"
 
 #: ../panel-plugin/command-edit.cpp:46
 msgid "Browse the file system to choose a custom command."
-msgstr ""
+msgstr "Преглед на файловата система за избор на потребителска команда"
 
 #: ../panel-plugin/configuration-dialog.cpp:738
-#, fuzzy
 msgid "C_ommand:"
-msgstr "Команди"
+msgstr "Команда:"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
 msgid "Categ_ory icon size:"
@@ -67,13 +64,12 @@ msgid "Clear Recently Used"
 msgstr "Изчисти последно използваните"
 
 #: ../panel-plugin/configuration-dialog.cpp:612
-#, fuzzy
 msgid "Commands"
 msgstr "Команди"
 
 #: ../panel-plugin/configuration-dialog.cpp:709
 msgid "Details"
-msgstr ""
+msgstr "Подробности"
 
 #: ../panel-plugin/configuration-dialog.cpp:454
 msgid "Di_splay:"
@@ -90,9 +86,8 @@ msgid "Failed to execute command \"%s\"."
 msgstr "Неуспешно изпълнение на команда \"%s\"."
 
 #: ../panel-plugin/settings.cpp:115
-#, fuzzy
 msgid "Failed to launch menu editor."
-msgstr "Неуспешно излизане."
+msgstr "Неуспешно стартиране на редактора на менюто."
 
 #: ../panel-plugin/settings.cpp:112
 msgid "Failed to lock screen."
@@ -107,9 +102,8 @@ msgid "Failed to open settings manager."
 msgstr "Неуспешно отваряне на мениджъра на настройките."
 
 #: ../panel-plugin/settings.cpp:113
-#, fuzzy
 msgid "Failed to switch users."
-msgstr "Неуспешно заключване на екрана."
+msgstr "Неуспешна смяна на потребител."
 
 #: ../panel-plugin/window.cpp:126
 msgid "Favorites"
@@ -140,29 +134,28 @@ msgid "Larger"
 msgstr "По- голяма"
 
 #: ../panel-plugin/settings.cpp:114
-#, fuzzy
 msgid "Log _Out"
-msgstr "Изход:"
+msgstr "Изход"
 
 #: ../panel-plugin/settings.cpp:117
 msgid "Man Pages"
-msgstr ""
+msgstr "Страница с ръководство"
 
 #: ../panel-plugin/configuration-dialog.cpp:504
 msgid "Menu"
-msgstr ""
+msgstr "Меню"
 
 #: ../panel-plugin/configuration-dialog.cpp:714
 msgid "Nam_e:"
-msgstr ""
+msgstr "Име:"
 
 #: ../panel-plugin/configuration-dialog.cpp:660
 msgid "Name"
-msgstr ""
+msgstr "Име"
 
 #: ../panel-plugin/icon-size.cpp:49
 msgid "None"
-msgstr ""
+msgstr "Няма"
 
 #: ../panel-plugin/icon-size.cpp:53
 msgid "Normal"
@@ -170,16 +163,15 @@ msgstr "Нормална"
 
 #: ../panel-plugin/settings.cpp:120
 msgid "Open URI"
-msgstr ""
+msgstr "Отвори URI"
 
 #: ../panel-plugin/configuration-dialog.cpp:446
-#, fuzzy
 msgid "Panel Button"
 msgstr "Бутон в панела"
 
 #: ../panel-plugin/configuration-dialog.cpp:665
 msgid "Pattern"
-msgstr ""
+msgstr "Шаблон"
 
 #: ../panel-plugin/configuration-dialog.cpp:527
 msgid "Position _search entry next to panel button"
@@ -200,37 +192,36 @@ msgstr "Премахване от Любими"
 #: ../panel-plugin/configuration-dialog.cpp:364
 #, c-format
 msgid "Remove action \"%s\"?"
-msgstr ""
+msgstr "Премахване на действие \"%s\"?"
 
 #: ../panel-plugin/configuration-dialog.cpp:689
 msgid "Remove selected action"
-msgstr ""
+msgstr "Премахване на избраното действие"
 
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
 msgid "Run %s"
-msgstr ""
+msgstr "Стартирай %s"
 
 #: ../panel-plugin/settings.cpp:119
 msgid "Run in Terminal"
-msgstr ""
+msgstr "Изпълни в Терминал"
 
 #: ../panel-plugin/configuration-dialog.cpp:81
 msgid "Search Actio_ns"
-msgstr ""
+msgstr "Търсене на действия"
 
 #: ../panel-plugin/search-action.cpp:261
 msgid "Search Action"
-msgstr ""
+msgstr "Търсене на действие"
 
 #: ../panel-plugin/configuration-dialog.cpp:114
 msgid "Select An Icon"
 msgstr "Избор на икона"
 
 #: ../panel-plugin/command-edit.cpp:60
-#, fuzzy
 msgid "Select Command"
-msgstr "Избор на икона"
+msgstr "Избор на команда"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
@@ -241,14 +232,12 @@ msgid "Show application _descriptions"
 msgstr "Показване на програмите по описание"
 
 #: ../panel-plugin/configuration-dialog.cpp:509
-#, fuzzy
 msgid "Show generic application _names"
-msgstr "Показване на програмите по имена"
+msgstr "Показване на родовите имена на програмите"
 
 #: ../panel-plugin/configuration-dialog.cpp:521
-#, fuzzy
 msgid "Show menu hie_rarchy"
-msgstr "Йерархия на зареждане на менюто"
+msgstr "Йерархично показване на менюто"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -268,7 +257,7 @@ msgstr "Сортиране по азбучен ред от Я-А"
 
 #: ../panel-plugin/settings.cpp:113
 msgid "Switch _Users"
-msgstr ""
+msgstr "Смяна на потребител"
 
 #: ../panel-plugin/configuration-dialog.cpp:592
 msgid "Switch categories by _hovering"
@@ -276,7 +265,7 @@ msgstr "Смяна на категориите при посочване"
 
 #: ../panel-plugin/configuration-dialog.cpp:363
 msgid "The action will be deleted permanently."
-msgstr ""
+msgstr "Действието ще бъде премахнато завинаги."
 
 #: ../panel-plugin/configuration-dialog.cpp:461
 msgid "Title"
@@ -305,7 +294,7 @@ msgstr "Whisker Меню"
 
 #: ../panel-plugin/settings.cpp:118
 msgid "Wikipedia"
-msgstr ""
+msgstr "Уикипедия"
 
 #: ../panel-plugin/configuration-dialog.cpp:79
 msgid "_Appearance"
@@ -316,36 +305,25 @@ msgid "_Behavior"
 msgstr "Поведение"
 
 #: ../panel-plugin/settings.cpp:115
-#, fuzzy
 msgid "_Edit Applications"
-msgstr "Меню на програмите"
+msgstr "Редактиране на програмите"
 
 #: ../panel-plugin/configuration-dialog.cpp:487
 msgid "_Icon:"
 msgstr "Икона:"
 
 #: ../panel-plugin/settings.cpp:112
-#, fuzzy
 msgid "_Lock Screen"
 msgstr "Заключване на екрана"
 
 #: ../panel-plugin/configuration-dialog.cpp:726
 msgid "_Pattern:"
-msgstr ""
+msgstr "Шаблон:"
 
 #: ../panel-plugin/configuration-dialog.cpp:750
 msgid "_Regular expression"
-msgstr ""
+msgstr "Регулярен израз"
 
 #: ../panel-plugin/configuration-dialog.cpp:472
 msgid "_Title:"
 msgstr "Заглавие:"
-
-#~ msgid "Lock _Screen:"
-#~ msgstr "Заключване на екрана:"
-
-#~ msgid "Log Out"
-#~ msgstr "Изход"
-
-#~ msgid "_Settings:"
-#~ msgstr "Настройки:"
