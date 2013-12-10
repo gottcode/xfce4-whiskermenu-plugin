@@ -118,7 +118,11 @@ void LauncherView::select_path(GtkTreePath* path)
 
 void LauncherView::set_cursor(GtkTreePath* path)
 {
+	GtkTreeSelection* selection = gtk_tree_view_get_selection(m_view);
+	GtkSelectionMode mode = gtk_tree_selection_get_mode(selection);
+	gtk_tree_selection_set_mode(selection, GTK_SELECTION_NONE);
 	gtk_tree_view_set_cursor(m_view, path, NULL, false);
+	gtk_tree_selection_set_mode(selection, mode);
 }
 
 //-----------------------------------------------------------------------------
@@ -148,14 +152,6 @@ void LauncherView::set_selection_mode(GtkSelectionMode mode)
 void LauncherView::collapse_all()
 {
 	gtk_tree_view_collapse_all(m_view);
-}
-
-//-----------------------------------------------------------------------------
-
-void LauncherView::unselect_all()
-{
-	GtkTreeSelection* selection = gtk_tree_view_get_selection(m_view);
-	gtk_tree_selection_unselect_all(selection);
 }
 
 //-----------------------------------------------------------------------------

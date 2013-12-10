@@ -49,7 +49,6 @@ public:
 	void set_selection_mode(GtkSelectionMode mode);
 
 	void collapse_all();
-	void unselect_all();
 
 	GtkTreeModel* get_model() const
 	{
