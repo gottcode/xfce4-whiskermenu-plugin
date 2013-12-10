@@ -4,14 +4,16 @@
 #
 # Translators:
 # hjudt <h.judt@gmx.at>, 2013
+# hjudt <h.judt@gmx.at>, 2013
+# manjarolinux <philm@manjaro.org>, 2013
 # manjarolinux <philm@manjaro.org>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-07 12:53+0000\n"
-"PO-Revision-Date: 2013-12-07 21:52+0000\n"
-"Last-Translator: manjarolinux <philm@manjaro.org>\n"
+"PO-Revision-Date: 2013-12-09 16:57+0000\n"
+"Last-Translator: hjudt <h.judt@gmx.at>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
 "plugin/language/de/)\n"
 "Language: de\n"
@@ -42,23 +44,23 @@ msgstr "Alle"
 
 #: ../panel-plugin/settings.cpp:111
 msgid "All _Settings"
-msgstr "Alle Ein_stellungen"
+msgstr "Alle _Einstellungen"
 
 #: ../panel-plugin/plugin.cpp:161
 msgid "Applications Menu"
-msgstr "Anwendungsmenü"
+msgstr "Anwendungen"
 
 #: ../panel-plugin/command-edit.cpp:46
 msgid "Browse the file system to choose a custom command."
-msgstr "Durchsuche das Dateisystem um einen Befehl auszuwählen"
+msgstr "Durchsuche das Dateisystem, um einen Befehl auszuwählen."
 
 #: ../panel-plugin/configuration-dialog.cpp:738
 msgid "C_ommand:"
-msgstr "B_efehl:"
+msgstr "_Befehl:"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
 msgid "Categ_ory icon size:"
-msgstr "_Kategoriesymbolgröße:"
+msgstr "Symbolgröße _Kategorie:"
 
 #: ../panel-plugin/recent-page.cpp:88
 msgid "Clear Recently Used"
@@ -78,17 +80,17 @@ msgstr "_Zeige:"
 
 #: ../panel-plugin/configuration-dialog.cpp:604
 msgid "Display recently _used by default"
-msgstr "Zeige »Z_uletzt verwendet« als Voreinstellung"
+msgstr "_Zeige »Zuletzt verwendet« als Voreinstellung"
 
 #: ../panel-plugin/launcher.cpp:252 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
-msgstr "Konnte Kommando \"%s\" nicht ausführen."
+msgstr "Konnte Befehl »%s« nicht ausführen."
 
 #: ../panel-plugin/settings.cpp:115
 msgid "Failed to launch menu editor."
-msgstr "Menüeditor konnte nicht gestartet werden."
+msgstr "Konnte Menüeditor nicht starten."
 
 #: ../panel-plugin/settings.cpp:112
 msgid "Failed to lock screen."
@@ -104,7 +106,7 @@ msgstr "Konnte Einstellungsverwaltung nicht starten."
 
 #: ../panel-plugin/settings.cpp:113
 msgid "Failed to switch users."
-msgstr "Wechsel der Benutzer fehlgeschlagen."
+msgstr "Konnte Programm zum Benutzerwechsel nicht ausführen."
 
 #: ../panel-plugin/window.cpp:126
 msgid "Favorites"
@@ -124,7 +126,7 @@ msgstr "Beziehe _Favoriten in »Zuletzt verwendet« mit ein"
 
 #: ../panel-plugin/configuration-dialog.cpp:543
 msgid "Ite_m icon size:"
-msgstr "Sy_mbolgröße:"
+msgstr "Symbolgröße An_wendung:"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Large"
@@ -136,11 +138,11 @@ msgstr "Größer"
 
 #: ../panel-plugin/settings.cpp:114
 msgid "Log _Out"
-msgstr "Ausl_oggen"
+msgstr "Abme_lden"
 
 #: ../panel-plugin/settings.cpp:117
 msgid "Man Pages"
-msgstr "Handbuch"
+msgstr "Handbuchseiten"
 
 #: ../panel-plugin/configuration-dialog.cpp:504
 msgid "Menu"
@@ -148,7 +150,7 @@ msgstr "Menü"
 
 #: ../panel-plugin/configuration-dialog.cpp:714
 msgid "Nam_e:"
-msgstr "N_ame:"
+msgstr "_Name:"
 
 #: ../panel-plugin/configuration-dialog.cpp:660
 msgid "Name"
@@ -156,7 +158,7 @@ msgstr "Name"
 
 #: ../panel-plugin/icon-size.cpp:49
 msgid "None"
-msgstr "Nichts"
+msgstr "Keines"
 
 #: ../panel-plugin/icon-size.cpp:53
 msgid "Normal"
@@ -164,11 +166,11 @@ msgstr "Normal"
 
 #: ../panel-plugin/settings.cpp:120
 msgid "Open URI"
-msgstr "Öffne URI"
+msgstr "URI öffnen"
 
 #: ../panel-plugin/configuration-dialog.cpp:446
 msgid "Panel Button"
-msgstr "Panel Knopf"
+msgstr "Leiste"
 
 #: ../panel-plugin/configuration-dialog.cpp:665
 msgid "Pattern"
@@ -176,7 +178,7 @@ msgstr "Muster"
 
 #: ../panel-plugin/configuration-dialog.cpp:527
 msgid "Position _search entry next to panel button"
-msgstr "Platziere _Sucheintrag neben Leistenschaltfläche"
+msgstr "_Platziere Sucheintrag neben Leistenschaltfläche"
 
 #: ../panel-plugin/configuration-dialog.cpp:533
 msgid "Position commands next to search _entry"
@@ -193,7 +195,7 @@ msgstr "Von Favoriten entfernen"
 #: ../panel-plugin/configuration-dialog.cpp:364
 #, c-format
 msgid "Remove action \"%s\"?"
-msgstr "Aktion \"%s\" entfernen?"
+msgstr "Aktion »%s« entfernen?"
 
 #: ../panel-plugin/configuration-dialog.cpp:689
 msgid "Remove selected action"
@@ -202,19 +204,19 @@ msgstr "Ausgewählte Aktion entfernen"
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
 msgid "Run %s"
-msgstr "Starte %s"
+msgstr "%s ausführen"
 
 #: ../panel-plugin/settings.cpp:119
 msgid "Run in Terminal"
-msgstr "Starte in Konsole"
+msgstr "In Terminal ausführen"
 
 #: ../panel-plugin/configuration-dialog.cpp:81
 msgid "Search Actio_ns"
-msgstr "Suche Aktio_nen"
+msgstr "_Suchbefehle"
 
 #: ../panel-plugin/search-action.cpp:261
 msgid "Search Action"
-msgstr "Suche Aktion"
+msgstr "Suchaktion"
 
 #: ../panel-plugin/configuration-dialog.cpp:114
 msgid "Select An Icon"
@@ -222,24 +224,23 @@ msgstr "Wähle ein Symbol"
 
 #: ../panel-plugin/command-edit.cpp:60
 msgid "Select Command"
-msgstr "Wähle Befehl"
+msgstr "Wähle einen Befehl"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
-msgstr ""
-"Zeige ein Menü um einfach auf installierte Anwendungen zugreifen zu können"
+msgstr "Zeige ein Menü um installierte Programme einfach zugänglich zu machen"
 
 #: ../panel-plugin/configuration-dialog.cpp:515
 msgid "Show application _descriptions"
-msgstr "Zei_ge Anwendungsbeschreibungen"
+msgstr "Zeige Anwendungs_beschreibungen"
 
 #: ../panel-plugin/configuration-dialog.cpp:509
 msgid "Show generic application _names"
-msgstr "Zeige allgemeine Programm_namen"
+msgstr "Zeige generische Anwendungs_namen"
 
 #: ../panel-plugin/configuration-dialog.cpp:521
 msgid "Show menu hie_rarchy"
-msgstr "Zeige Menü-Hie_rarchie"
+msgstr "Zeige Menü_hierarchie"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -259,7 +260,7 @@ msgstr "Sortiere alphabetisch Z-A"
 
 #: ../panel-plugin/settings.cpp:113
 msgid "Switch _Users"
-msgstr "Wechsle Ben_utzer"
+msgstr "_Benutzer wechseln"
 
 #: ../panel-plugin/configuration-dialog.cpp:592
 msgid "Switch categories by _hovering"
@@ -267,7 +268,7 @@ msgstr "_Wechsle Kategorien durch Daraufzeigen"
 
 #: ../panel-plugin/configuration-dialog.cpp:363
 msgid "The action will be deleted permanently."
-msgstr "Die Aktion wird permanent gelöscht."
+msgstr "Die Aktion wird unwiderruflich gelöscht."
 
 #: ../panel-plugin/configuration-dialog.cpp:461
 msgid "Title"
@@ -308,15 +309,15 @@ msgstr "_Verhalten"
 
 #: ../panel-plugin/settings.cpp:115
 msgid "_Edit Applications"
-msgstr "Programme _editieren"
+msgstr "_Menü bearbeiten"
 
 #: ../panel-plugin/configuration-dialog.cpp:487
 msgid "_Icon:"
-msgstr "_Symbol:"
+msgstr "Sy_mbol:"
 
 #: ../panel-plugin/settings.cpp:112
 msgid "_Lock Screen"
-msgstr "Bi_ldschirm sperren"
+msgstr "Bildschirm s_perren"
 
 #: ../panel-plugin/configuration-dialog.cpp:726
 msgid "_Pattern:"
