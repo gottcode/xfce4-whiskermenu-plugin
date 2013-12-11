@@ -167,6 +167,78 @@ gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(
 			after ? G_CONNECT_AFTER : GConnectFlags(0));
 }
 
+// Member function with 4 parameters
+template<typename T, typename R, typename A1, typename A2, typename A3, typename A4>
+gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(T::*member)(A1,A2,A3,A4), T* obj, bool after = false)
+{
+	class Slot
+	{
+		T* m_instance;
+		R (T::*m_member)(A1,A2,A3);
+
+	public:
+		Slot(T* instance, R (T::*member)(A1,A2,A3,A4)) :
+			m_instance(instance),
+			m_member(member)
+		{
+		}
+
+		static R invoke(A1 a1, A2 a2, A3 a3, A4 a4, Slot* slot)
+		{
+			return (slot->m_instance->*slot->m_member)(a1, a2, a3, a4);
+		}
+
+		static void destroy(Slot* slot)
+		{
+			delete slot;
+		}
+	};
+	R (*invoke_slot)(A1,A2,A3,A4,Slot*) = &Slot::invoke;
+	void (*destroy_slot)(Slot*) = &Slot::destroy;
+
+	return g_signal_connect_data(instance, detailed_signal,
+			reinterpret_cast<GCallback>(invoke_slot),
+			new Slot(obj, member),
+			reinterpret_cast<GClosureNotify>(destroy_slot),
+			after ? G_CONNECT_AFTER : GConnectFlags(0));
+}
+
+// Member function with 5 parameters
+template<typename T, typename R, typename A1, typename A2, typename A3, typename A4, typename A5>
+gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(T::*member)(A1,A2,A3,A4,A5), T* obj, bool after = false)
+{
+	class Slot
+	{
+		T* m_instance;
+		R (T::*m_member)(A1,A2,A3,A4,A5);
+
+	public:
+		Slot(T* instance, R (T::*member)(A1,A2,A3,A4,A5)) :
+			m_instance(instance),
+			m_member(member)
+		{
+		}
+
+		static R invoke(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, Slot* slot)
+		{
+			return (slot->m_instance->*slot->m_member)(a1, a2, a3, a4, a5);
+		}
+
+		static void destroy(Slot* slot)
+		{
+			delete slot;
+		}
+	};
+	R (*invoke_slot)(A1,A2,A3,A4,A5,Slot*) = &Slot::invoke;
+	void (*destroy_slot)(Slot*) = &Slot::destroy;
+
+	return g_signal_connect_data(instance, detailed_signal,
+			reinterpret_cast<GCallback>(invoke_slot),
+			new Slot(obj, member),
+			reinterpret_cast<GClosureNotify>(destroy_slot),
+			after ? G_CONNECT_AFTER : GConnectFlags(0));
+}
+
 }
 
 #endif // WHISKERMENU_SLOT_H

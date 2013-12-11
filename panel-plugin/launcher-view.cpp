@@ -17,8 +17,10 @@
 
 #include "launcher-view.h"
 
+#include "launcher.h"
 #include "settings.h"
 #include "slot.h"
+#include "window.h"
 
 #include <algorithm>
 
@@ -38,9 +40,12 @@ static gboolean is_separator(GtkTreeModel* model, GtkTreeIter* iter, gpointer)
 
 //-----------------------------------------------------------------------------
 
-LauncherView::LauncherView() :
+LauncherView::LauncherView(Window* window) :
+	m_window(window),
 	m_model(NULL),
-	m_icon_size(0)
+	m_icon_size(0),
+	m_pressed_launcher(NULL),
+	m_launcher_dragged(false)
 {
 	// Create the view
 	m_view = GTK_TREE_VIEW(exo_tree_view_new());
@@ -63,6 +68,13 @@ LauncherView::LauncherView() :
 	gtk_tree_selection_set_mode(selection, GTK_SELECTION_SINGLE);
 
 	g_object_ref_sink(m_view);
+
+	// Handle drag-and-drop
+	g_signal_connect_slot(m_view, "button-press-event", &LauncherView::on_button_press_event, this);
+	g_signal_connect_slot(m_view, "button-release-event", &LauncherView::on_button_release_event, this);
+	g_signal_connect_slot(m_view, "drag-data-get", &LauncherView::on_drag_data_get, this);
+	g_signal_connect_slot(m_view, "drag-end", &LauncherView::on_drag_end, this);
+	set_reorderable(false);
 }
 
 //-----------------------------------------------------------------------------
@@ -133,7 +145,40 @@ void LauncherView::set_fixed_height_mode(bool fixed_height)
 
 void LauncherView::set_reorderable(bool reorderable)
 {
-	gtk_tree_view_set_reorderable(m_view, reorderable);
+	if (reorderable)
+	{
+		const GtkTargetEntry row_targets[] = {
+			{ g_strdup("GTK_TREE_MODEL_ROW"), GTK_TARGET_SAME_WIDGET, 0 },
+			{ g_strdup("text/uri-list"), GTK_TARGET_OTHER_APP, 1 }
+		};
+
+		gtk_tree_view_enable_model_drag_source(m_view,
+				GDK_BUTTON1_MASK,
+				row_targets, 2,
+				GdkDragAction(GDK_ACTION_MOVE | GDK_ACTION_COPY));
+
+		gtk_tree_view_enable_model_drag_dest(m_view,
+				row_targets, 1,
+				GDK_ACTION_MOVE);
+
+		g_free(row_targets[0].target);
+		g_free(row_targets[1].target);
+	}
+	else
+	{
+		const GtkTargetEntry row_targets[] = {
+			{ g_strdup("text/uri-list"), GTK_TARGET_OTHER_APP, 1 }
+		};
+
+		gtk_tree_view_enable_model_drag_source(m_view,
+				GDK_BUTTON1_MASK,
+				row_targets, 1,
+				GDK_ACTION_COPY);
+
+		gtk_tree_view_unset_rows_drag_dest(m_view);
+
+		g_free(row_targets[0].target);
+	}
 }
 
 //-----------------------------------------------------------------------------
@@ -228,6 +273,81 @@ gboolean LauncherView::on_key_release_event(GtkWidget*, GdkEventKey* event)
 		gtk_tree_view_set_hover_selection(m_view, true);
 	}
 	return false;
+}
+
+//-----------------------------------------------------------------------------
+
+gboolean LauncherView::on_button_press_event(GtkWidget*, GdkEventButton* event)
+{
+	if (event->button != 1)
+	{
+		return false;
+	}
+
+	m_launcher_dragged = false;
+	m_pressed_launcher = NULL;
+
+	GtkTreeIter iter;
+	if (!gtk_tree_selection_get_selected(gtk_tree_view_get_selection(m_view), NULL, &iter))
+	{
+		return false;
+	}
+
+	gtk_tree_model_get(m_model, &iter, LauncherView::COLUMN_LAUNCHER, &m_pressed_launcher, -1);
+	if (m_pressed_launcher->get_type() != Launcher::Type)
+	{
+		m_pressed_launcher = NULL;
+	}
+
+	return false;
+}
+
+//-----------------------------------------------------------------------------
+
+gboolean LauncherView::on_button_release_event(GtkWidget*, GdkEventButton* event)
+{
+	if (event->button != 1)
+	{
+		return false;
+	}
+
+	if (m_launcher_dragged)
+	{
+		m_window->hide();
+		m_launcher_dragged = false;
+	}
+	return false;
+}
+
+//-----------------------------------------------------------------------------
+
+void LauncherView::on_drag_data_get(GtkWidget*, GdkDragContext*, GtkSelectionData* data, guint info, guint)
+{
+	if ((info != 1) || !m_pressed_launcher)
+	{
+		return;
+	}
+
+	gchar* uris[2] = { m_pressed_launcher->get_uri(), NULL };
+	if (uris[0] != NULL)
+	{
+		gtk_selection_data_set_uris(data, uris);
+		g_free(uris[0]);
+	}
+
+	m_launcher_dragged = true;
+}
+
+//-----------------------------------------------------------------------------
+
+void LauncherView::on_drag_end(GtkWidget*, GdkDragContext*)
+{
+	if (m_launcher_dragged)
+	{
+		m_window->hide();
+		m_launcher_dragged = false;
+	}
+	m_pressed_launcher = NULL;
 }
 
 //-----------------------------------------------------------------------------

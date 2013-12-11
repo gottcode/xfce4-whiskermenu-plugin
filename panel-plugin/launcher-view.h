@@ -24,11 +24,13 @@ namespace WhiskerMenu
 {
 
 class IconSize;
+class Launcher;
+class Window;
 
 class LauncherView
 {
 public:
-	LauncherView();
+	LauncherView(Window* window);
 	~LauncherView();
 
 	GtkWidget* get_widget() const
@@ -70,12 +72,21 @@ private:
 	void create_column();
 	gboolean on_key_press_event(GtkWidget*, GdkEventKey* event);
 	gboolean on_key_release_event(GtkWidget*, GdkEventKey* event);
+	gboolean on_button_press_event(GtkWidget*, GdkEventButton* event);
+	gboolean on_button_release_event(GtkWidget*, GdkEventButton* event);
+	void on_drag_data_get(GtkWidget*, GdkDragContext*, GtkSelectionData* data, guint info, guint);
+	void on_drag_end(GtkWidget*, GdkDragContext*);
 
 private:
+	Window* m_window;
+
 	GtkTreeModel* m_model;
 	GtkTreeView* m_view;
 	GtkTreeViewColumn* m_column;
 	int m_icon_size;
+
+	Launcher* m_pressed_launcher;
+	bool m_launcher_dragged;
 };
 
 }

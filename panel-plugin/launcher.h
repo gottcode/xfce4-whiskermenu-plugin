@@ -57,6 +57,11 @@ public:
 		return garcon_menu_item_get_file(m_item);
 	}
 
+	gchar* get_uri() const
+	{
+		return garcon_menu_item_get_uri(m_item);
+	}
+
 	void run(GdkScreen* screen) const;
 
 	int search(const Query& query);

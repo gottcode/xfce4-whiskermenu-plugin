@@ -35,7 +35,7 @@ Page::Page(Window* window) :
 	m_selected_path(NULL)
 {
 	// Create view
-	m_view = new LauncherView;
+	m_view = new LauncherView(window);
 	g_signal_connect_slot(m_view->get_widget(), "button-press-event", &Page::view_button_press_event, this);
 	g_signal_connect_slot(m_view->get_widget(), "popup-menu", &Page::view_popup_menu_event, this);
 	g_signal_connect_slot(m_view->get_widget(), "row-activated", &Page::item_activated, this);
