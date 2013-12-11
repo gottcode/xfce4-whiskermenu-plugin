@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
+# Yarema aka Knedlyk <yupadmin@gmail.com>, 2013
 # zubr139 <zubr139@ukr.net>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-07 12:53+0000\n"
-"PO-Revision-Date: 2013-12-01 23:33+0000\n"
-"Last-Translator: zubr139 <zubr139@ukr.net>\n"
+"PO-Revision-Date: 2013-12-11 09:55+0000\n"
+"Last-Translator: Yarema aka Knedlyk <yupadmin@gmail.com>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/uk/)\n"
 "Language: uk\n"
@@ -21,9 +22,8 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../panel-plugin/configuration-dialog.cpp:680
-#, fuzzy
 msgid "Add action"
-msgstr "Додати на панель"
+msgstr "Додати дію"
 
 #: ../panel-plugin/page.cpp:211
 msgid "Add to Desktop"
@@ -42,9 +42,8 @@ msgid "All"
 msgstr "Все"
 
 #: ../panel-plugin/settings.cpp:111
-#, fuzzy
 msgid "All _Settings"
-msgstr "Всі налаштування"
+msgstr "Всі _Налаштування"
 
 #: ../panel-plugin/plugin.cpp:161
 msgid "Applications Menu"
@@ -52,12 +51,11 @@ msgstr "Меню програм"
 
 #: ../panel-plugin/command-edit.cpp:46
 msgid "Browse the file system to choose a custom command."
-msgstr ""
+msgstr "Переглянути файлову систему, щоб вибрати зовнішню команду"
 
 #: ../panel-plugin/configuration-dialog.cpp:738
-#, fuzzy
 msgid "C_ommand:"
-msgstr "Ко_манди"
+msgstr "К_оманда:"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
 msgid "Categ_ory icon size:"
@@ -68,21 +66,20 @@ msgid "Clear Recently Used"
 msgstr "Очистити історію"
 
 #: ../panel-plugin/configuration-dialog.cpp:612
-#, fuzzy
 msgid "Commands"
-msgstr "Ко_манди"
+msgstr "Команди"
 
 #: ../panel-plugin/configuration-dialog.cpp:709
 msgid "Details"
-msgstr ""
+msgstr "Більше"
 
 #: ../panel-plugin/configuration-dialog.cpp:454
 msgid "Di_splay:"
-msgstr "Ві_дображати:"
+msgstr "По_казувати:"
 
 #: ../panel-plugin/configuration-dialog.cpp:604
 msgid "Display recently _used by default"
-msgstr "Типово відображати Нещодавно використані"
+msgstr "Типово показувати Нещодавно використані"
 
 #: ../panel-plugin/launcher.cpp:252 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
@@ -91,9 +88,8 @@ msgid "Failed to execute command \"%s\"."
 msgstr "Не вдалося виконати команду \"%s\"."
 
 #: ../panel-plugin/settings.cpp:115
-#, fuzzy
 msgid "Failed to launch menu editor."
-msgstr "Не вдалося вийти з системи."
+msgstr "Неможливо запустити редактор меню"
 
 #: ../panel-plugin/settings.cpp:112
 msgid "Failed to lock screen."
@@ -108,9 +104,8 @@ msgid "Failed to open settings manager."
 msgstr "Не вдалося відкрити менеджер налаштувань."
 
 #: ../panel-plugin/settings.cpp:113
-#, fuzzy
 msgid "Failed to switch users."
-msgstr "Не вдалося заблокувати екран."
+msgstr "Неможливо поміняти користувачів."
 
 #: ../panel-plugin/window.cpp:126
 msgid "Favorites"
@@ -141,29 +136,28 @@ msgid "Larger"
 msgstr "Дуже великий"
 
 #: ../panel-plugin/settings.cpp:114
-#, fuzzy
 msgid "Log _Out"
-msgstr "В_ихід:"
+msgstr "Вий_ти"
 
 #: ../panel-plugin/settings.cpp:117
 msgid "Man Pages"
-msgstr ""
+msgstr "Сторінки допомоги"
 
 #: ../panel-plugin/configuration-dialog.cpp:504
 msgid "Menu"
-msgstr ""
+msgstr "Меню"
 
 #: ../panel-plugin/configuration-dialog.cpp:714
 msgid "Nam_e:"
-msgstr ""
+msgstr "Наз_ва:"
 
 #: ../panel-plugin/configuration-dialog.cpp:660
 msgid "Name"
-msgstr ""
+msgstr "Назва"
 
 #: ../panel-plugin/icon-size.cpp:49
 msgid "None"
-msgstr ""
+msgstr "Нічого"
 
 #: ../panel-plugin/icon-size.cpp:53
 msgid "Normal"
@@ -171,24 +165,23 @@ msgstr "Нормальний"
 
 #: ../panel-plugin/settings.cpp:120
 msgid "Open URI"
-msgstr ""
+msgstr "Відкрити посилання"
 
 #: ../panel-plugin/configuration-dialog.cpp:446
-#, fuzzy
 msgid "Panel Button"
-msgstr "Кн_опка панелі"
+msgstr "Кнопка панелі"
 
 #: ../panel-plugin/configuration-dialog.cpp:665
 msgid "Pattern"
-msgstr ""
+msgstr "Шаблон"
 
 #: ../panel-plugin/configuration-dialog.cpp:527
 msgid "Position _search entry next to panel button"
-msgstr "Пошук б_іля панелі"
+msgstr "Помістити П_ошук біля кнопки панелі"
 
 #: ../panel-plugin/configuration-dialog.cpp:533
 msgid "Position commands next to search _entry"
-msgstr "Кнопки команд біля р_ядка пошуку"
+msgstr "Помістити кнопки команд біля р_ядка пошуку"
 
 #: ../panel-plugin/window.cpp:132
 msgid "Recently Used"
@@ -201,55 +194,52 @@ msgstr "Видалити з обраного"
 #: ../panel-plugin/configuration-dialog.cpp:364
 #, c-format
 msgid "Remove action \"%s\"?"
-msgstr ""
+msgstr "Вилучити дію \"%s\"?"
 
 #: ../panel-plugin/configuration-dialog.cpp:689
 msgid "Remove selected action"
-msgstr ""
+msgstr "Вилучити вибрану дію"
 
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
 msgid "Run %s"
-msgstr ""
+msgstr "Запустити %s"
 
 #: ../panel-plugin/settings.cpp:119
 msgid "Run in Terminal"
-msgstr ""
+msgstr "Запустити в терміналі"
 
 #: ../panel-plugin/configuration-dialog.cpp:81
 msgid "Search Actio_ns"
-msgstr ""
+msgstr "Шукати _дії"
 
 #: ../panel-plugin/search-action.cpp:261
 msgid "Search Action"
-msgstr ""
+msgstr "Шукати дію"
 
 #: ../panel-plugin/configuration-dialog.cpp:114
 msgid "Select An Icon"
 msgstr "Виберіть піктограму"
 
 #: ../panel-plugin/command-edit.cpp:60
-#, fuzzy
 msgid "Select Command"
-msgstr "Виберіть піктограму"
+msgstr "Вибрати команду"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
-msgstr "Показує меню для легко доступу до встановлених додатків"
+msgstr "Показ меню для легкого доступу до програм"
 
 #: ../panel-plugin/configuration-dialog.cpp:515
 msgid "Show application _descriptions"
 msgstr "Показувати _опис програм"
 
 #: ../panel-plugin/configuration-dialog.cpp:509
-#, fuzzy
 msgid "Show generic application _names"
-msgstr "Відображати програми за _назвою"
+msgstr "Показати загальні _назви програм"
 
 #: ../panel-plugin/configuration-dialog.cpp:521
-#, fuzzy
 msgid "Show menu hie_rarchy"
-msgstr "Ієрархія мен_ю"
+msgstr "Показати _ієрархію меню"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -269,15 +259,15 @@ msgstr "Сортувати за алфавітом: Я-А"
 
 #: ../panel-plugin/settings.cpp:113
 msgid "Switch _Users"
-msgstr ""
+msgstr "Поміняти _користувачів"
 
 #: ../panel-plugin/configuration-dialog.cpp:592
 msgid "Switch categories by _hovering"
-msgstr "Перемикати категорії нав _еденням курсору"
+msgstr "Перемикати категорії нав_еденням курсору"
 
 #: ../panel-plugin/configuration-dialog.cpp:363
 msgid "The action will be deleted permanently."
-msgstr ""
+msgstr "Дію буде вилучено назавжди."
 
 #: ../panel-plugin/configuration-dialog.cpp:461
 msgid "Title"
@@ -285,15 +275,15 @@ msgstr "Назва"
 
 #: ../panel-plugin/page.cpp:305
 msgid "Unable to add launcher to desktop."
-msgstr "Неможливо додати до стільниці."
+msgstr "Неможливо додати запускач до стільниці."
 
 #: ../panel-plugin/page.cpp:344 ../panel-plugin/page.cpp:353
 msgid "Unable to add launcher to panel."
-msgstr "Неможливо додати на панель."
+msgstr "Неможливо додати запускач на панель."
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
-msgstr "Гігантській"
+msgstr "Гігантський"
 
 #: ../panel-plugin/icon-size.cpp:50
 msgid "Very Small"
@@ -306,7 +296,7 @@ msgstr "Whisker Меню"
 
 #: ../panel-plugin/settings.cpp:118
 msgid "Wikipedia"
-msgstr ""
+msgstr "Вікіпедія"
 
 #: ../panel-plugin/configuration-dialog.cpp:79
 msgid "_Appearance"
@@ -317,36 +307,25 @@ msgid "_Behavior"
 msgstr "Поведінк_а"
 
 #: ../panel-plugin/settings.cpp:115
-#, fuzzy
 msgid "_Edit Applications"
-msgstr "Меню програм"
+msgstr "_Редагувати програми"
 
 #: ../panel-plugin/configuration-dialog.cpp:487
 msgid "_Icon:"
 msgstr "_Піктограма:"
 
 #: ../panel-plugin/settings.cpp:112
-#, fuzzy
 msgid "_Lock Screen"
-msgstr "Блокування екрану"
+msgstr "_Замкнути екран"
 
 #: ../panel-plugin/configuration-dialog.cpp:726
 msgid "_Pattern:"
-msgstr ""
+msgstr "_Шаблон:"
 
 #: ../panel-plugin/configuration-dialog.cpp:750
 msgid "_Regular expression"
-msgstr ""
+msgstr "_Регулярний вираз"
 
 #: ../panel-plugin/configuration-dialog.cpp:472
 msgid "_Title:"
 msgstr "На_зва:"
-
-#~ msgid "Lock _Screen:"
-#~ msgstr "За_блокувати екран:"
-
-#~ msgid "Log Out"
-#~ msgstr "Вихід"
-
-#~ msgid "_Settings:"
-#~ msgstr "На_лаштування:"
