@@ -86,7 +86,9 @@ private:
 	int m_icon_size;
 
 	Launcher* m_pressed_launcher;
+	bool m_drag_enabled;
 	bool m_launcher_dragged;
+	bool m_reorderable;
 };
 
 }

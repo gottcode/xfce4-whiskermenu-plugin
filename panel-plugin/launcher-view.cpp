@@ -45,7 +45,9 @@ LauncherView::LauncherView(Window* window) :
 	m_model(NULL),
 	m_icon_size(0),
 	m_pressed_launcher(NULL),
-	m_launcher_dragged(false)
+	m_drag_enabled(true),
+	m_launcher_dragged(false),
+	m_reorderable(false)
 {
 	// Create the view
 	m_view = GTK_TREE_VIEW(exo_tree_view_new());
@@ -145,7 +147,8 @@ void LauncherView::set_fixed_height_mode(bool fixed_height)
 
 void LauncherView::set_reorderable(bool reorderable)
 {
-	if (reorderable)
+	m_reorderable = reorderable;
+	if (m_reorderable)
 	{
 		const GtkTargetEntry row_targets[] = {
 			{ g_strdup("GTK_TREE_MODEL_ROW"), GTK_TARGET_SAME_WIDGET, 0 },
@@ -297,6 +300,14 @@ gboolean LauncherView::on_button_press_event(GtkWidget*, GdkEventButton* event)
 	if (m_pressed_launcher->get_type() != Launcher::Type)
 	{
 		m_pressed_launcher = NULL;
+		m_drag_enabled = false;
+		gtk_tree_view_unset_rows_drag_source(m_view);
+		gtk_tree_view_unset_rows_drag_dest(m_view);
+	}
+	else if (!m_drag_enabled)
+	{
+		m_drag_enabled = true;
+		set_reorderable(m_reorderable);
 	}
 
 	return false;
