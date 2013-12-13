@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-07 12:53+0000\n"
-"PO-Revision-Date: 2013-10-26 05:10+0000\n"
+"PO-Revision-Date: 2013-12-12 16:23+0000\n"
 "Last-Translator: abuyop <abuyop@gmail.com>\n"
 "Language-Team: Malay (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
 "plugin/language/ms/)\n"
@@ -20,9 +20,8 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../panel-plugin/configuration-dialog.cpp:680
-#, fuzzy
 msgid "Add action"
-msgstr "Tambah ke Panel"
+msgstr "Tambah tindakan"
 
 #: ../panel-plugin/page.cpp:211
 msgid "Add to Desktop"
@@ -41,9 +40,8 @@ msgid "All"
 msgstr "Semua"
 
 #: ../panel-plugin/settings.cpp:111
-#, fuzzy
 msgid "All _Settings"
-msgstr "Semua Tetapan"
+msgstr "Semua _Tetapan"
 
 #: ../panel-plugin/plugin.cpp:161
 msgid "Applications Menu"
@@ -51,12 +49,11 @@ msgstr "Menu Aplikasi"
 
 #: ../panel-plugin/command-edit.cpp:46
 msgid "Browse the file system to choose a custom command."
-msgstr ""
+msgstr "Layar sistem fail untuk memilih perintah suai."
 
 #: ../panel-plugin/configuration-dialog.cpp:738
-#, fuzzy
 msgid "C_ommand:"
-msgstr "P_erintah"
+msgstr "P_erintah:"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
 msgid "Categ_ory icon size:"
@@ -67,13 +64,12 @@ msgid "Clear Recently Used"
 msgstr "Kosongkan Yang Diguna Baru-baru Ini"
 
 #: ../panel-plugin/configuration-dialog.cpp:612
-#, fuzzy
 msgid "Commands"
-msgstr "P_erintah"
+msgstr "Perintah"
 
 #: ../panel-plugin/configuration-dialog.cpp:709
 msgid "Details"
-msgstr ""
+msgstr "Perincian"
 
 #: ../panel-plugin/configuration-dialog.cpp:454
 msgid "Di_splay:"
@@ -90,9 +86,8 @@ msgid "Failed to execute command \"%s\"."
 msgstr "Gagal lakukan perintah \"%s\"."
 
 #: ../panel-plugin/settings.cpp:115
-#, fuzzy
 msgid "Failed to launch menu editor."
-msgstr "Gagal mendaftar keluar."
+msgstr "Gagal melancarkan penyunting menu."
 
 #: ../panel-plugin/settings.cpp:112
 msgid "Failed to lock screen."
@@ -107,9 +102,8 @@ msgid "Failed to open settings manager."
 msgstr "Gagal membuka pengurus tetapan."
 
 #: ../panel-plugin/settings.cpp:113
-#, fuzzy
 msgid "Failed to switch users."
-msgstr "Gagal mengunci skrin."
+msgstr "Gagal menukar pengguna."
 
 #: ../panel-plugin/window.cpp:126
 msgid "Favorites"
@@ -140,29 +134,28 @@ msgid "Larger"
 msgstr "Lebih Besar"
 
 #: ../panel-plugin/settings.cpp:114
-#, fuzzy
 msgid "Log _Out"
-msgstr "_Daftar Keluar:"
+msgstr "Daftar _Keluar"
 
 #: ../panel-plugin/settings.cpp:117
 msgid "Man Pages"
-msgstr ""
+msgstr "Halaman Man"
 
 #: ../panel-plugin/configuration-dialog.cpp:504
 msgid "Menu"
-msgstr ""
+msgstr "Menu"
 
 #: ../panel-plugin/configuration-dialog.cpp:714
 msgid "Nam_e:"
-msgstr ""
+msgstr "Na_ma:"
 
 #: ../panel-plugin/configuration-dialog.cpp:660
 msgid "Name"
-msgstr ""
+msgstr "Nama"
 
 #: ../panel-plugin/icon-size.cpp:49
 msgid "None"
-msgstr ""
+msgstr "Tiada"
 
 #: ../panel-plugin/icon-size.cpp:53
 msgid "Normal"
@@ -170,16 +163,15 @@ msgstr "Biasa"
 
 #: ../panel-plugin/settings.cpp:120
 msgid "Open URI"
-msgstr ""
+msgstr "Buka URI"
 
 #: ../panel-plugin/configuration-dialog.cpp:446
-#, fuzzy
 msgid "Panel Button"
-msgstr "Butang _Panel"
+msgstr "Butang Panel"
 
 #: ../panel-plugin/configuration-dialog.cpp:665
 msgid "Pattern"
-msgstr ""
+msgstr "Corak"
 
 #: ../panel-plugin/configuration-dialog.cpp:527
 msgid "Position _search entry next to panel button"
@@ -200,37 +192,36 @@ msgstr "Buang Dari Kegemaran"
 #: ../panel-plugin/configuration-dialog.cpp:364
 #, c-format
 msgid "Remove action \"%s\"?"
-msgstr ""
+msgstr "Buang tindakan \"%s\"?"
 
 #: ../panel-plugin/configuration-dialog.cpp:689
 msgid "Remove selected action"
-msgstr ""
+msgstr "Buang tindakan terpilih"
 
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
 msgid "Run %s"
-msgstr ""
+msgstr "Jalankan %s"
 
 #: ../panel-plugin/settings.cpp:119
 msgid "Run in Terminal"
-msgstr ""
+msgstr "Jalan dalam Terminal"
 
 #: ../panel-plugin/configuration-dialog.cpp:81
 msgid "Search Actio_ns"
-msgstr ""
+msgstr "Gelintar Ti_ndakan"
 
 #: ../panel-plugin/search-action.cpp:261
 msgid "Search Action"
-msgstr ""
+msgstr "Gelintar Tindakan"
 
 #: ../panel-plugin/configuration-dialog.cpp:114
 msgid "Select An Icon"
 msgstr "Pilih Satu Ikon"
 
 #: ../panel-plugin/command-edit.cpp:60
-#, fuzzy
 msgid "Select Command"
-msgstr "Pilih Satu Ikon"
+msgstr "Pilih Perintah"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
@@ -241,12 +232,10 @@ msgid "Show application _descriptions"
 msgstr "Tunjuk _keterangan aplikasi"
 
 #: ../panel-plugin/configuration-dialog.cpp:509
-#, fuzzy
 msgid "Show generic application _names"
-msgstr "Tunjuk aplikasi mengikut _nama"
+msgstr "Tunjuk _nama aplikasi generik"
 
 #: ../panel-plugin/configuration-dialog.cpp:521
-#, fuzzy
 msgid "Show menu hie_rarchy"
 msgstr "Muat hie_raki menu"
 
@@ -268,7 +257,7 @@ msgstr "Isih Z-A Secara Berabjad"
 
 #: ../panel-plugin/settings.cpp:113
 msgid "Switch _Users"
-msgstr ""
+msgstr "Tukar Pengg_una"
 
 #: ../panel-plugin/configuration-dialog.cpp:592
 msgid "Switch categories by _hovering"
@@ -276,7 +265,7 @@ msgstr "Tukar kategori mengikut pe_ngapungan"
 
 #: ../panel-plugin/configuration-dialog.cpp:363
 msgid "The action will be deleted permanently."
-msgstr ""
+msgstr "Tindakan akan dipadam secara kekal."
 
 #: ../panel-plugin/configuration-dialog.cpp:461
 msgid "Title"
@@ -305,7 +294,7 @@ msgstr "Menu Whisker"
 
 #: ../panel-plugin/settings.cpp:118
 msgid "Wikipedia"
-msgstr ""
+msgstr "Wikipedia"
 
 #: ../panel-plugin/configuration-dialog.cpp:79
 msgid "_Appearance"
@@ -316,36 +305,25 @@ msgid "_Behavior"
 msgstr "_Kelakuan"
 
 #: ../panel-plugin/settings.cpp:115
-#, fuzzy
 msgid "_Edit Applications"
-msgstr "Menu Aplikasi"
+msgstr "_Sunting Aplikasi"
 
 #: ../panel-plugin/configuration-dialog.cpp:487
 msgid "_Icon:"
 msgstr "_Ikon:"
 
 #: ../panel-plugin/settings.cpp:112
-#, fuzzy
 msgid "_Lock Screen"
-msgstr "Kunci Skrin"
+msgstr "_Kunci Skrin"
 
 #: ../panel-plugin/configuration-dialog.cpp:726
 msgid "_Pattern:"
-msgstr ""
+msgstr "_Corak:"
 
 #: ../panel-plugin/configuration-dialog.cpp:750
 msgid "_Regular expression"
-msgstr ""
+msgstr "Ungkapan nala_r"
 
 #: ../panel-plugin/configuration-dialog.cpp:472
 msgid "_Title:"
 msgstr "_Tajuk:"
-
-#~ msgid "Lock _Screen:"
-#~ msgstr "Kunci _Skrin:"
-
-#~ msgid "Log Out"
-#~ msgstr "Daftar Keluar"
-
-#~ msgid "_Settings:"
-#~ msgstr "_Tetapan:"
