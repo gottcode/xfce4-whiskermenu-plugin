@@ -297,7 +297,7 @@ gboolean LauncherView::on_button_press_event(GtkWidget*, GdkEventButton* event)
 	}
 
 	gtk_tree_model_get(m_model, &iter, LauncherView::COLUMN_LAUNCHER, &m_pressed_launcher, -1);
-	if (m_pressed_launcher->get_type() != Launcher::Type)
+	if (!m_pressed_launcher || (m_pressed_launcher->get_type() != Launcher::Type))
 	{
 		m_pressed_launcher = NULL;
 		m_drag_enabled = false;
