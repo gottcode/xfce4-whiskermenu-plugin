@@ -194,9 +194,16 @@ void ApplicationsPage::clear_applications()
 
 void ApplicationsPage::load_garcon_menu()
 {
-	m_garcon_menu = garcon_menu_new_applications();
+	if (wm_settings->custom_menu_file.empty())
+	{
+		m_garcon_menu = garcon_menu_new_applications();
+	}
+	else
+	{
+		m_garcon_menu = garcon_menu_new_for_path(wm_settings->custom_menu_file.c_str());
+	}
 
-	if (!garcon_menu_load(m_garcon_menu, NULL, NULL))
+	if (m_garcon_menu && !garcon_menu_load(m_garcon_menu, NULL, NULL))
 	{
 		g_object_unref(m_garcon_menu);
 		m_garcon_menu = NULL;

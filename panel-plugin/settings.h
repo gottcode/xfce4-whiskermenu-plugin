@@ -57,6 +57,8 @@ public:
 	std::vector<std::string> favorites;
 	std::vector<std::string> recent;
 
+	std::string custom_menu_file;
+
 	std::string button_title;
 	std::string button_icon_name;
 	bool button_title_visible;

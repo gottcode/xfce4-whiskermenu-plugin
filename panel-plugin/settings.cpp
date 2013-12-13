@@ -155,6 +155,8 @@ void Settings::load(char* file)
 	read_vector_entry(rc, "favorites", favorites);
 	read_vector_entry(rc, "recent", recent);
 
+	custom_menu_file = xfce_rc_read_entry(rc, "custom-menu-file", custom_menu_file.c_str());
+
 	button_title = xfce_rc_read_entry(rc, "button-title", button_title.c_str());
 	button_icon_name = xfce_rc_read_entry(rc, "button-icon", button_icon_name.c_str());
 	button_title_visible = xfce_rc_read_bool_entry(rc, "show-button-title", button_title_visible);
@@ -240,6 +242,11 @@ void Settings::save(char* file)
 
 	write_vector_entry(rc, "favorites", favorites);
 	write_vector_entry(rc, "recent", recent);
+
+	if (!custom_menu_file.empty())
+	{
+		xfce_rc_write_entry(rc, "custom-menu-file", custom_menu_file.c_str());
+	}
 
 	xfce_rc_write_entry(rc, "button-title", button_title.c_str());
 	xfce_rc_write_entry(rc, "button-icon", button_icon_name.c_str());
