@@ -1,0 +1,332 @@
+# Serbian translation of xfce4-whiskermenu-plugin.
+# Copyright (C) 2013 Graeme Gott
+# This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
+#
+# Translators:
+# MirosNik <miroslavnikolic@rocketmail.com>, 2012
+# salepetronije <salepetronije@gmail.com>, 2013
+# salepetronije <salepetronije@gmail.com>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: Whisker Menu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-12-07 12:53+0000\n"
+"PO-Revision-Date: 2013-12-11 18:41+0000\n"
+"Last-Translator: salepetronije <salepetronije@gmail.com>\n"
+"Language-Team: Serbian (http://www.transifex.com/projects/p/xfce4-"
+"whiskermenu-plugin/language/sr/)\n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: ../panel-plugin/configuration-dialog.cpp:680
+msgid "Add action"
+msgstr "Додај радњу"
+
+#: ../panel-plugin/page.cpp:211
+msgid "Add to Desktop"
+msgstr "Додај на површ"
+
+#: ../panel-plugin/page.cpp:196
+msgid "Add to Favorites"
+msgstr "Додај у омиљене"
+
+#: ../panel-plugin/page.cpp:215
+msgid "Add to Panel"
+msgstr "Додај на полицу"
+
+#: ../panel-plugin/category.cpp:59
+msgid "All"
+msgstr "Све"
+
+#: ../panel-plugin/settings.cpp:111
+msgid "All _Settings"
+msgstr "Све _поставке"
+
+#: ../panel-plugin/plugin.cpp:161
+msgid "Applications Menu"
+msgstr "Изборник програма"
+
+#: ../panel-plugin/command-edit.cpp:46
+msgid "Browse the file system to choose a custom command."
+msgstr "Разгледај систем датотека ради одабира произвољне наредбе."
+
+#: ../panel-plugin/configuration-dialog.cpp:738
+msgid "C_ommand:"
+msgstr "Наредба"
+
+#: ../panel-plugin/configuration-dialog.cpp:563
+msgid "Categ_ory icon size:"
+msgstr "Величина иконица _врста:"
+
+#: ../panel-plugin/recent-page.cpp:88
+msgid "Clear Recently Used"
+msgstr "Очисти недавно коришћено"
+
+#: ../panel-plugin/configuration-dialog.cpp:612
+msgid "Commands"
+msgstr "Наредбе"
+
+#: ../panel-plugin/configuration-dialog.cpp:709
+msgid "Details"
+msgstr "Појединости"
+
+#: ../panel-plugin/configuration-dialog.cpp:454
+msgid "Di_splay:"
+msgstr "Приказ:"
+
+#: ../panel-plugin/configuration-dialog.cpp:604
+msgid "Display recently _used by default"
+msgstr "Подразумевано приказуј недавно коришћене"
+
+#: ../panel-plugin/launcher.cpp:252 ../panel-plugin/run-action.cpp:41
+#: ../panel-plugin/search-action.cpp:188
+#, c-format
+msgid "Failed to execute command \"%s\"."
+msgstr "Нисам успео да извршим наредбу „%s“."
+
+#: ../panel-plugin/settings.cpp:115
+msgid "Failed to launch menu editor."
+msgstr "Нисам успео да покренем уређивача изборника."
+
+#: ../panel-plugin/settings.cpp:112
+msgid "Failed to lock screen."
+msgstr "Нисам успео да закључам екран."
+
+#: ../panel-plugin/settings.cpp:114
+msgid "Failed to log out."
+msgstr "Нисам успео да се одјавим."
+
+#: ../panel-plugin/settings.cpp:111
+msgid "Failed to open settings manager."
+msgstr "Нисам успео да отворим управника поставки."
+
+#: ../panel-plugin/settings.cpp:113
+msgid "Failed to switch users."
+msgstr "Нисам успео да променим корисника."
+
+#: ../panel-plugin/window.cpp:126
+msgid "Favorites"
+msgstr "Омиљено"
+
+#: ../panel-plugin/configuration-dialog.cpp:460
+msgid "Icon"
+msgstr "Иконица"
+
+#: ../panel-plugin/configuration-dialog.cpp:462
+msgid "Icon and title"
+msgstr "Иконица и наслов"
+
+#: ../panel-plugin/configuration-dialog.cpp:598
+msgid "Include _favorites in recently used"
+msgstr "Укључи _омиљено у недавно коришћеним"
+
+#: ../panel-plugin/configuration-dialog.cpp:543
+msgid "Ite_m icon size:"
+msgstr "Величина иконице став_ке:"
+
+#: ../panel-plugin/icon-size.cpp:54
+msgid "Large"
+msgstr "Велике"
+
+#: ../panel-plugin/icon-size.cpp:55
+msgid "Larger"
+msgstr "Веће"
+
+#: ../panel-plugin/settings.cpp:114
+msgid "Log _Out"
+msgstr "Одја_ва"
+
+#: ../panel-plugin/settings.cpp:117
+msgid "Man Pages"
+msgstr "Упутне странице"
+
+#: ../panel-plugin/configuration-dialog.cpp:504
+msgid "Menu"
+msgstr "Изборник"
+
+#: ../panel-plugin/configuration-dialog.cpp:714
+msgid "Nam_e:"
+msgstr "И_ме:"
+
+#: ../panel-plugin/configuration-dialog.cpp:660
+msgid "Name"
+msgstr "Име"
+
+#: ../panel-plugin/icon-size.cpp:49
+msgid "None"
+msgstr "Ништа"
+
+#: ../panel-plugin/icon-size.cpp:53
+msgid "Normal"
+msgstr "Обичне"
+
+#: ../panel-plugin/settings.cpp:120
+msgid "Open URI"
+msgstr "Отвори адресу"
+
+#: ../panel-plugin/configuration-dialog.cpp:446
+msgid "Panel Button"
+msgstr "Дугме полице"
+
+#: ../panel-plugin/configuration-dialog.cpp:665
+msgid "Pattern"
+msgstr "Образац"
+
+#: ../panel-plugin/configuration-dialog.cpp:527
+msgid "Position _search entry next to panel button"
+msgstr "Положај кућице за унос претраге у односу на дугме полице"
+
+#: ../panel-plugin/configuration-dialog.cpp:533
+msgid "Position commands next to search _entry"
+msgstr "Положај кућице за наредбе у односу на кућицу претраге"
+
+#: ../panel-plugin/window.cpp:132
+msgid "Recently Used"
+msgstr "Недавно коришћено"
+
+#: ../panel-plugin/page.cpp:204
+msgid "Remove From Favorites"
+msgstr "Уклони из омиљених"
+
+#: ../panel-plugin/configuration-dialog.cpp:364
+#, c-format
+msgid "Remove action \"%s\"?"
+msgstr "Да ли да уклоним радњу „%s“?"
+
+#: ../panel-plugin/configuration-dialog.cpp:689
+msgid "Remove selected action"
+msgstr "Уклони означену радњу"
+
+#: ../panel-plugin/run-action.cpp:71
+#, c-format
+msgid "Run %s"
+msgstr "Покрени %s"
+
+#: ../panel-plugin/settings.cpp:119
+msgid "Run in Terminal"
+msgstr "Покрени у терминалу"
+
+#: ../panel-plugin/configuration-dialog.cpp:81
+msgid "Search Actio_ns"
+msgstr "Р_адње претраге"
+
+#: ../panel-plugin/search-action.cpp:261
+msgid "Search Action"
+msgstr "Радње претраге"
+
+#: ../panel-plugin/configuration-dialog.cpp:114
+msgid "Select An Icon"
+msgstr "Изаберите иконицу"
+
+#: ../panel-plugin/command-edit.cpp:60
+msgid "Select Command"
+msgstr "Изаберите наредбу"
+
+#: ../panel-plugin/whiskermenu.desktop.in.h:2
+msgid "Show a menu to easily access installed applications"
+msgstr "Приказуј изборник за брзи приступ уграђеним програмима"
+
+#: ../panel-plugin/configuration-dialog.cpp:515
+msgid "Show application _descriptions"
+msgstr "Приказуј _описе програма"
+
+#: ../panel-plugin/configuration-dialog.cpp:509
+msgid "Show generic application _names"
+msgstr "Приказуј уопштене _називе програма"
+
+#: ../panel-plugin/configuration-dialog.cpp:521
+msgid "Show menu hie_rarchy"
+msgstr "Приказуј гранање изборника"
+
+#: ../panel-plugin/icon-size.cpp:52
+msgid "Small"
+msgstr "Мале"
+
+#: ../panel-plugin/icon-size.cpp:51
+msgid "Smaller"
+msgstr "Малецне"
+
+#: ../panel-plugin/favorites-page.cpp:67
+msgid "Sort Alphabetically A-Z"
+msgstr "Поређај азбучно А-Ш"
+
+#: ../panel-plugin/favorites-page.cpp:73
+msgid "Sort Alphabetically Z-A"
+msgstr "Поређај азбучно Ш-А"
+
+#: ../panel-plugin/settings.cpp:113
+msgid "Switch _Users"
+msgstr "Промени _корисника"
+
+#: ../panel-plugin/configuration-dialog.cpp:592
+msgid "Switch categories by _hovering"
+msgstr "Мењај врсте _надношењем миша"
+
+#: ../panel-plugin/configuration-dialog.cpp:363
+msgid "The action will be deleted permanently."
+msgstr "Радња ће бити трајно избрисана."
+
+#: ../panel-plugin/configuration-dialog.cpp:461
+msgid "Title"
+msgstr "Наслов"
+
+#: ../panel-plugin/page.cpp:305
+msgid "Unable to add launcher to desktop."
+msgstr "Нисам успео да додам покретач на радну површ."
+
+#: ../panel-plugin/page.cpp:344 ../panel-plugin/page.cpp:353
+msgid "Unable to add launcher to panel."
+msgstr "Нисам успео да додам покретач на полицу."
+
+#: ../panel-plugin/icon-size.cpp:56
+msgid "Very Large"
+msgstr "Врло велике"
+
+#: ../panel-plugin/icon-size.cpp:50
+msgid "Very Small"
+msgstr "Врло мале"
+
+#: ../panel-plugin/configuration-dialog.cpp:71
+#: ../panel-plugin/whiskermenu.desktop.in.h:1
+msgid "Whisker Menu"
+msgstr "Бркин изборник"
+
+#: ../panel-plugin/settings.cpp:118
+msgid "Wikipedia"
+msgstr "Википедија"
+
+#: ../panel-plugin/configuration-dialog.cpp:79
+msgid "_Appearance"
+msgstr "_Изглед"
+
+#: ../panel-plugin/configuration-dialog.cpp:80
+msgid "_Behavior"
+msgstr "_Понашање"
+
+#: ../panel-plugin/settings.cpp:115
+msgid "_Edit Applications"
+msgstr "_Уреди програме"
+
+#: ../panel-plugin/configuration-dialog.cpp:487
+msgid "_Icon:"
+msgstr "_Иконица:"
+
+#: ../panel-plugin/settings.cpp:112
+msgid "_Lock Screen"
+msgstr "_Закључај екран"
+
+#: ../panel-plugin/configuration-dialog.cpp:726
+msgid "_Pattern:"
+msgstr "_Образац:"
+
+#: ../panel-plugin/configuration-dialog.cpp:750
+msgid "_Regular expression"
+msgstr "Општи из_раз"
+
+#: ../panel-plugin/configuration-dialog.cpp:472
+msgid "_Title:"
+msgstr "_Наслов:"
