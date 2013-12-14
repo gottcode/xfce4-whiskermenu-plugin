@@ -35,12 +35,12 @@ CommandEdit::CommandEdit(Command* command, GtkSizeGroup* label_size_group) :
 	gtk_toggle_button_set_active(m_shown, m_command->get_shown());
 	gtk_box_pack_start(GTK_BOX(m_widget), GTK_WIDGET(m_shown), false, false, 0);
 	gtk_size_group_add_widget(label_size_group, GTK_WIDGET(m_shown));
-	g_signal_connect_slot(m_shown, "toggled", &CommandEdit::shown_toggled, this);
+	g_signal_connect_slot<GtkToggleButton*>(m_shown, "toggled", &CommandEdit::shown_toggled, this);
 
 	m_entry = GTK_ENTRY(gtk_entry_new());
 	gtk_entry_set_text(m_entry, m_command->get());
 	gtk_box_pack_start(GTK_BOX(m_widget), GTK_WIDGET(m_entry), true, true, 0);
-	g_signal_connect_slot(m_entry, "changed", &CommandEdit::command_changed, this);
+	g_signal_connect_slot<GtkEditable*>(m_entry, "changed", &CommandEdit::command_changed, this);
 
 	m_browse_button = gtk_button_new();
 	gtk_widget_set_tooltip_text(m_browse_button, _("Browse the file system to choose a custom command."));
@@ -50,7 +50,7 @@ CommandEdit::CommandEdit(Command* command, GtkSizeGroup* label_size_group) :
 	GtkWidget* image = gtk_image_new_from_stock(GTK_STOCK_OPEN, GTK_ICON_SIZE_BUTTON);
 	gtk_container_add(GTK_CONTAINER(m_browse_button), image);
 	gtk_widget_show(image);
-	g_signal_connect_slot(m_browse_button, "clicked", &CommandEdit::browse_clicked, this);
+	g_signal_connect_slot<GtkButton*>(m_browse_button, "clicked", &CommandEdit::browse_clicked, this);
 }
 
 //-----------------------------------------------------------------------------

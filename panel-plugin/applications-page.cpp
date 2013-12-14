@@ -333,7 +333,7 @@ void ApplicationsPage::load_menu(GarconMenu* menu, Category* parent_category)
 	}
 
 	// Listen for menu changes
-	g_signal_connect_slot(menu, "directory-changed", &ApplicationsPage::invalidate_applications, this);
+	g_signal_connect_slot<GObject*,GObject*>(menu, "directory-changed", &ApplicationsPage::invalidate_applications, this);
 }
 
 //-----------------------------------------------------------------------------

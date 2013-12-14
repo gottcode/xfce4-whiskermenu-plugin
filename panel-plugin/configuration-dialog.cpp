@@ -492,7 +492,7 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	m_icon_button = gtk_button_new();
 	gtk_box_pack_start(hbox, m_icon_button, false, false, 0);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_icon_button);
-	g_signal_connect_slot(m_icon_button, "clicked", &ConfigurationDialog::choose_icon, this);
+	g_signal_connect_slot<GtkButton*>(m_icon_button, "clicked", &ConfigurationDialog::choose_icon, this);
 
 	m_icon = xfce_panel_image_new_from_source(m_plugin->get_button_icon_name().c_str());
 	xfce_panel_image_set_size(XFCE_PANEL_IMAGE(m_icon), 48);

@@ -88,7 +88,7 @@ void RecentPage::extend_context_menu(GtkWidget* menu)
 	menuitem = gtk_image_menu_item_new_with_label(_("Clear Recently Used"));
 	GtkWidget* image = gtk_image_new_from_stock(GTK_STOCK_CLEAR, GTK_ICON_SIZE_MENU);
 	gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM(menuitem), image);
-	g_signal_connect_slot(menuitem, "activate", &RecentPage::clear_menu, this);
+	g_signal_connect_slot<GtkMenuItem*>(menuitem, "activate", &RecentPage::clear_menu, this);
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 }
 

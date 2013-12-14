@@ -57,7 +57,7 @@ gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(
 			reinterpret_cast<GCallback>(invoke_slot),
 			new Slot(obj, member),
 			destroy_slot,
-			after ? GConnectFlags(G_CONNECT_AFTER | G_CONNECT_SWAPPED) : G_CONNECT_SWAPPED);
+			after ? G_CONNECT_AFTER : GConnectFlags(0));
 }
 
 // Member function with 1 parameter
@@ -80,6 +80,43 @@ gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(
 		{
 			Slot* slot = reinterpret_cast<Slot*>(user_data);
 			return (slot->m_instance->*slot->m_member)(a1);
+		}
+
+		static void destroy(gpointer data, GClosure*)
+		{
+			delete reinterpret_cast<Slot*>(data);
+		}
+	};
+	R (*invoke_slot)(A1,gpointer) = &Slot::invoke;
+	void (*destroy_slot)(gpointer, GClosure*) = &Slot::destroy;
+
+	return g_signal_connect_data(instance, detailed_signal,
+			reinterpret_cast<GCallback>(invoke_slot),
+			new Slot(obj, member),
+			destroy_slot,
+			after ? G_CONNECT_AFTER : GConnectFlags(0));
+}
+
+// Member function with 1 ignored parameter
+template<typename A1, typename T, typename R>
+gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(T::*member)(), T* obj, bool after = false)
+{
+	class Slot
+	{
+		T* m_instance;
+		R (T::*m_member)();
+
+	public:
+		Slot(T* instance, R (T::*member)()) :
+			m_instance(instance),
+			m_member(member)
+		{
+		}
+
+		static R invoke(A1, gpointer user_data)
+		{
+			Slot* slot = reinterpret_cast<Slot*>(user_data);
+			return (slot->m_instance->*slot->m_member)();
 		}
 
 		static void destroy(gpointer data, GClosure*)
@@ -134,6 +171,43 @@ gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(
 			after ? G_CONNECT_AFTER : GConnectFlags(0));
 }
 
+// Member function with 2 ignored parameters
+template<typename A1, typename A2, typename T, typename R>
+gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(T::*member)(), T* obj, bool after = false)
+{
+	class Slot
+	{
+		T* m_instance;
+		R (T::*m_member)();
+
+	public:
+		Slot(T* instance, R (T::*member)()) :
+			m_instance(instance),
+			m_member(member)
+		{
+		}
+
+		static R invoke(A1, A2, gpointer user_data)
+		{
+			Slot* slot = reinterpret_cast<Slot*>(user_data);
+			return (slot->m_instance->*slot->m_member)();
+		}
+
+		static void destroy(gpointer data, GClosure*)
+		{
+			delete reinterpret_cast<Slot*>(data);
+		}
+	};
+	R (*invoke_slot)(A1,A2,gpointer) = &Slot::invoke;
+	void (*destroy_slot)(gpointer, GClosure*) = &Slot::destroy;
+
+	return g_signal_connect_data(instance, detailed_signal,
+			reinterpret_cast<GCallback>(invoke_slot),
+			new Slot(obj, member),
+			destroy_slot,
+			after ? G_CONNECT_AFTER : GConnectFlags(0));
+}
+
 // Member function with 3 parameters
 template<typename T, typename R, typename A1, typename A2, typename A3>
 gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(T::*member)(A1,A2,A3), T* obj, bool after = false)
@@ -154,6 +228,43 @@ gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(
 		{
 			Slot* slot = reinterpret_cast<Slot*>(user_data);
 			return (slot->m_instance->*slot->m_member)(a1, a2, a3);
+		}
+
+		static void destroy(gpointer data, GClosure*)
+		{
+			delete reinterpret_cast<Slot*>(data);
+		}
+	};
+	R (*invoke_slot)(A1,A2,A3,gpointer) = &Slot::invoke;
+	void (*destroy_slot)(gpointer, GClosure*) = &Slot::destroy;
+
+	return g_signal_connect_data(instance, detailed_signal,
+			reinterpret_cast<GCallback>(invoke_slot),
+			new Slot(obj, member),
+			destroy_slot,
+			after ? G_CONNECT_AFTER : GConnectFlags(0));
+}
+
+// Member function with 3 ignored parameters
+template<typename A1, typename A2, typename A3, typename T, typename R>
+gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(T::*member)(), T* obj, bool after = false)
+{
+	class Slot
+	{
+		T* m_instance;
+		R (T::*m_member)();
+
+	public:
+		Slot(T* instance, R (T::*member)()) :
+			m_instance(instance),
+			m_member(member)
+		{
+		}
+
+		static R invoke(A1, A2, A3, gpointer user_data)
+		{
+			Slot* slot = reinterpret_cast<Slot*>(user_data);
+			return (slot->m_instance->*slot->m_member)();
 		}
 
 		static void destroy(gpointer data, GClosure*)
@@ -208,6 +319,43 @@ gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(
 			after ? G_CONNECT_AFTER : GConnectFlags(0));
 }
 
+// Member function with 4 ignored parameters
+template<typename A1, typename A2, typename A3, typename A4, typename T, typename R>
+gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(T::*member)(), T* obj, bool after = false)
+{
+	class Slot
+	{
+		T* m_instance;
+		R (T::*m_member)();
+
+	public:
+		Slot(T* instance, R (T::*member)()) :
+			m_instance(instance),
+			m_member(member)
+		{
+		}
+
+		static R invoke(A1, A2, A3, A4, gpointer user_data)
+		{
+			Slot* slot = reinterpret_cast<Slot*>(user_data);
+			return (slot->m_instance->*slot->m_member)();
+		}
+
+		static void destroy(gpointer data, GClosure*)
+		{
+			delete reinterpret_cast<Slot*>(data);
+		}
+	};
+	R (*invoke_slot)(A1,A2,A3,A4,gpointer) = &Slot::invoke;
+	void (*destroy_slot)(gpointer, GClosure*) = &Slot::destroy;
+
+	return g_signal_connect_data(instance, detailed_signal,
+			reinterpret_cast<GCallback>(invoke_slot),
+			new Slot(obj, member),
+			destroy_slot,
+			after ? G_CONNECT_AFTER : GConnectFlags(0));
+}
+
 // Member function with 5 parameters
 template<typename T, typename R, typename A1, typename A2, typename A3, typename A4, typename A5>
 gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(T::*member)(A1,A2,A3,A4,A5), T* obj, bool after = false)
@@ -228,6 +376,43 @@ gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(
 		{
 			Slot* slot = reinterpret_cast<Slot*>(user_data);
 			return (slot->m_instance->*slot->m_member)(a1, a2, a3, a4, a5);
+		}
+
+		static void destroy(gpointer data, GClosure*)
+		{
+			delete reinterpret_cast<Slot*>(data);
+		}
+	};
+	R (*invoke_slot)(A1,A2,A3,A4,A5,gpointer) = &Slot::invoke;
+	void (*destroy_slot)(gpointer, GClosure*) = &Slot::destroy;
+
+	return g_signal_connect_data(instance, detailed_signal,
+			reinterpret_cast<GCallback>(invoke_slot),
+			new Slot(obj, member),
+			destroy_slot,
+			after ? G_CONNECT_AFTER : GConnectFlags(0));
+}
+
+// Member function with 5 ignored parameters
+template<typename A1, typename A2, typename A3, typename A4, typename A5, typename T, typename R>
+gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(T::*member)(), T* obj, bool after = false)
+{
+	class Slot
+	{
+		T* m_instance;
+		R (T::*m_member)();
+
+	public:
+		Slot(T* instance, R (T::*member)()) :
+			m_instance(instance),
+			m_member(member)
+		{
+		}
+
+		static R invoke(A1, A2, A3, A4, A5, gpointer user_data)
+		{
+			Slot* slot = reinterpret_cast<Slot*>(user_data);
+			return (slot->m_instance->*slot->m_member)();
 		}
 
 		static void destroy(gpointer data, GClosure*)

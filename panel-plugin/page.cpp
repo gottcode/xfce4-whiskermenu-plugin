@@ -195,7 +195,7 @@ void Page::create_context_menu(GtkTreeIter* iter, GdkEventButton* event)
 		menuitem = gtk_image_menu_item_new_with_label(_("Add to Favorites"));
 		GtkWidget* image = gtk_image_new_from_icon_name("stock_add-bookmark", GTK_ICON_SIZE_MENU);
 		gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM(menuitem), image);
-		g_signal_connect_slot(menuitem, "activate", &Page::add_selected_to_favorites, this);
+		g_signal_connect_slot<GtkMenuItem*>(menuitem, "activate", &Page::add_selected_to_favorites, this);
 		gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 	}
 	else
@@ -203,16 +203,16 @@ void Page::create_context_menu(GtkTreeIter* iter, GdkEventButton* event)
 		menuitem = gtk_image_menu_item_new_with_label(_("Remove From Favorites"));
 		GtkWidget* image = gtk_image_new_from_stock(GTK_STOCK_REMOVE, GTK_ICON_SIZE_MENU);
 		gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM(menuitem), image);
-		g_signal_connect_slot(menuitem, "activate", &Page::remove_selected_from_favorites, this);
+		g_signal_connect_slot<GtkMenuItem*>(menuitem, "activate", &Page::remove_selected_from_favorites, this);
 		gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 	}
 
 	menuitem = gtk_menu_item_new_with_label(_("Add to Desktop"));
-	g_signal_connect_slot(menuitem, "activate", &Page::add_selected_to_desktop, this);
+	g_signal_connect_slot<GtkMenuItem*>(menuitem, "activate", &Page::add_selected_to_desktop, this);
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
 	menuitem = gtk_menu_item_new_with_label(_("Add to Panel"));
-	g_signal_connect_slot(menuitem, "activate", &Page::add_selected_to_panel, this);
+	g_signal_connect_slot<GtkMenuItem*>(menuitem, "activate", &Page::add_selected_to_panel, this);
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
 	extend_context_menu(menu);

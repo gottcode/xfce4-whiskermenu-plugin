@@ -92,7 +92,7 @@ GtkWidget* Command::get_button()
 	m_button = gtk_button_new();
 	gtk_button_set_relief(GTK_BUTTON(m_button), GTK_RELIEF_NONE);
 	gtk_widget_set_tooltip_text(m_button, tooltip.c_str());
-	g_signal_connect_slot(m_button, "clicked", &Command::activated, this);
+	g_signal_connect_slot<GtkButton*>(m_button, "clicked", &Command::activated, this);
 
 	GtkWidget* image = gtk_image_new_from_icon_name(m_icon, GTK_ICON_SIZE_LARGE_TOOLBAR);
 	gtk_container_add(GTK_CONTAINER(m_button), GTK_WIDGET(image));
@@ -117,7 +117,7 @@ GtkWidget* Command::get_menuitem()
 	m_menuitem = gtk_image_menu_item_new_with_mnemonic(m_text);
 	GtkWidget* image = gtk_image_new_from_icon_name(m_icon, GTK_ICON_SIZE_MENU);
 	gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM(m_menuitem), image);
-	g_signal_connect_slot(m_menuitem, "activate", &Command::activated, this);
+	g_signal_connect_slot<GtkMenuItem*>(m_menuitem, "activate", &Command::activated, this);
 
 	gtk_widget_set_visible(m_menuitem, m_shown);
 	gtk_widget_set_sensitive(m_menuitem, m_status == WHISKERMENU_COMMAND_VALID);

@@ -109,7 +109,7 @@ Window::Window() :
 	m_commands_button[3] = wm_settings->command[Settings::CommandLogOut]->get_button();
 	for (int i = 0; i < 4; ++i)
 	{
-		g_signal_connect_slot(m_commands_button[i], "clicked", &Window::hide, this);
+		g_signal_connect_slot<GtkButton*>(m_commands_button[i], "clicked", &Window::hide, this);
 	}
 
 	m_resizer = new ResizerWidget(m_window);
@@ -118,20 +118,20 @@ Window::Window() :
 	m_search_entry = GTK_ENTRY(gtk_entry_new());
 	gtk_entry_set_icon_from_stock(m_search_entry, GTK_ENTRY_ICON_SECONDARY, GTK_STOCK_FIND);
 	gtk_entry_set_icon_activatable(m_search_entry, GTK_ENTRY_ICON_SECONDARY, false);
-	g_signal_connect_slot(m_search_entry, "changed", &Window::search, this);
+	g_signal_connect_slot<GtkEditable*>(m_search_entry, "changed", &Window::search, this);
 
 	// Create favorites
 	m_favorites = new FavoritesPage(this);
 
 	m_favorites_button = new SectionButton("user-bookmarks", _("Favorites"));
-	g_signal_connect_slot(m_favorites_button->get_button(), "toggled", &Window::favorites_toggled, this);
+	g_signal_connect_slot<GtkToggleButton*>(m_favorites_button->get_button(), "toggled", &Window::favorites_toggled, this);
 
 	// Create recent
 	m_recent = new RecentPage(this);
 
 	m_recent_button = new SectionButton("document-open-recent", _("Recently Used"));
 	m_recent_button->set_group(m_favorites_button->get_group());
-	g_signal_connect_slot(m_recent_button->get_button(), "toggled", &Window::recent_toggled, this);
+	g_signal_connect_slot<GtkToggleButton*>(m_recent_button->get_button(), "toggled", &Window::recent_toggled, this);
 
 	// Create applications
 	m_applications = new ApplicationsPage(this);
@@ -572,7 +572,7 @@ void Window::set_categories(const std::vector<SectionButton*>& categories)
 	{
 		(*i)->set_group(m_recent_button->get_group());
 		gtk_box_pack_start(m_sidebar_box, GTK_WIDGET((*i)->get_button()), false, false, 0);
-		g_signal_connect_slot((*i)->get_button(), "toggled", &Window::category_toggled, this);
+		g_signal_connect_slot<GtkToggleButton*>((*i)->get_button(), "toggled", &Window::category_toggled, this);
 	}
 	gtk_widget_show_all(GTK_WIDGET(m_sidebar_box));
 
@@ -589,7 +589,7 @@ void Window::set_items()
 
 	// Handle switching to favorites are added
 	GtkTreeModel* favorites_model = m_favorites->get_view()->get_model();
-	g_signal_connect_slot(favorites_model, "row-inserted", &Window::show_favorites, this);
+	g_signal_connect_slot<GtkTreeModel*, GtkTreePath*, GtkTreeIter*>(favorites_model, "row-inserted", &Window::show_favorites, this);
 }
 
 //-----------------------------------------------------------------------------

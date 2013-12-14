@@ -72,7 +72,7 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 
 	// Create menu window
 	m_window = new Window;
-	g_signal_connect_slot(m_window->get_widget(), "unmap", &Plugin::menu_hidden, this);
+	g_signal_connect_slot<GtkWidget*>(m_window->get_widget(), "unmap", &Plugin::menu_hidden, this);
 
 	// Create toggle button
 	m_button = xfce_create_panel_toggle_button();
@@ -105,14 +105,14 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 
 	// Connect plugin signals to functions
 	g_signal_connect(plugin, "free-data", G_CALLBACK(whiskermenu_free), this);
-	g_signal_connect_slot(plugin, "configure-plugin", &Plugin::configure, this);
+	g_signal_connect_slot<XfcePanelPlugin*>(plugin, "configure-plugin", &Plugin::configure, this);
 #if (LIBXFCE4PANEL_CHECK_VERSION(4,9,0))
 	g_signal_connect_slot(plugin, "mode-changed", &Plugin::mode_changed, this);
 #else
 	g_signal_connect_slot(plugin, "orientation-changed", &Plugin::orientation_changed, this);
 #endif
 	g_signal_connect_slot(plugin, "remote-event", &Plugin::remote_event, this);
-	g_signal_connect_slot(plugin, "save", &Plugin::save, this);
+	g_signal_connect_slot<XfcePanelPlugin*>(plugin, "save", &Plugin::save, this);
 	g_signal_connect_slot(plugin, "size-changed", &Plugin::size_changed, this);
 
 	xfce_panel_plugin_menu_show_configure(plugin);
@@ -274,7 +274,7 @@ void Plugin::menu_hidden()
 void Plugin::configure()
 {
 	ConfigurationDialog* dialog = new ConfigurationDialog(this);
-	g_signal_connect_slot(dialog->get_widget(), "destroy", &Plugin::save, this);
+	g_signal_connect_slot<GtkObject*>(dialog->get_widget(), "destroy", &Plugin::save, this);
 }
 
 //-----------------------------------------------------------------------------
