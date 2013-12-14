@@ -39,23 +39,24 @@ gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(
 		{
 		}
 
-		static R invoke(Slot* slot)
+		static R invoke(gpointer user_data)
 		{
+			Slot* slot = reinterpret_cast<Slot*>(user_data);
 			return (slot->m_instance->*slot->m_member)();
 		}
 
-		static void destroy(Slot* slot)
+		static void destroy(gpointer data, GClosure*)
 		{
-			delete slot;
+			delete reinterpret_cast<Slot*>(data);
 		}
 	};
-	R (*invoke_slot)(Slot*) = &Slot::invoke;
-	void (*destroy_slot)(Slot*) = &Slot::destroy;
+	R (*invoke_slot)(gpointer) = &Slot::invoke;
+	void (*destroy_slot)(gpointer, GClosure*) = &Slot::destroy;
 
 	return g_signal_connect_data(instance, detailed_signal,
 			reinterpret_cast<GCallback>(invoke_slot),
 			new Slot(obj, member),
-			reinterpret_cast<GClosureNotify>(destroy_slot),
+			destroy_slot,
 			after ? GConnectFlags(G_CONNECT_AFTER | G_CONNECT_SWAPPED) : G_CONNECT_SWAPPED);
 }
 
@@ -75,23 +76,24 @@ gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(
 		{
 		}
 
-		static R invoke(A1 a1, Slot* slot)
+		static R invoke(A1 a1, gpointer user_data)
 		{
+			Slot* slot = reinterpret_cast<Slot*>(user_data);
 			return (slot->m_instance->*slot->m_member)(a1);
 		}
 
-		static void destroy(Slot* slot)
+		static void destroy(gpointer data, GClosure*)
 		{
-			delete slot;
+			delete reinterpret_cast<Slot*>(data);
 		}
 	};
-	R (*invoke_slot)(A1,Slot*) = &Slot::invoke;
-	void (*destroy_slot)(Slot*) = &Slot::destroy;
+	R (*invoke_slot)(A1,gpointer) = &Slot::invoke;
+	void (*destroy_slot)(gpointer, GClosure*) = &Slot::destroy;
 
 	return g_signal_connect_data(instance, detailed_signal,
 			reinterpret_cast<GCallback>(invoke_slot),
 			new Slot(obj, member),
-			reinterpret_cast<GClosureNotify>(destroy_slot),
+			destroy_slot,
 			after ? G_CONNECT_AFTER : GConnectFlags(0));
 }
 
@@ -111,23 +113,24 @@ gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(
 		{
 		}
 
-		static R invoke(A1 a1, A2 a2, Slot* slot)
+		static R invoke(A1 a1, A2 a2, gpointer user_data)
 		{
+			Slot* slot = reinterpret_cast<Slot*>(user_data);
 			return (slot->m_instance->*slot->m_member)(a1, a2);
 		}
 
-		static void destroy(Slot* slot)
+		static void destroy(gpointer data, GClosure*)
 		{
-			delete slot;
+			delete reinterpret_cast<Slot*>(data);
 		}
 	};
-	R (*invoke_slot)(A1,A2,Slot*) = &Slot::invoke;
-	void (*destroy_slot)(Slot*) = &Slot::destroy;
+	R (*invoke_slot)(A1,A2,gpointer) = &Slot::invoke;
+	void (*destroy_slot)(gpointer, GClosure*) = &Slot::destroy;
 
 	return g_signal_connect_data(instance, detailed_signal,
 			reinterpret_cast<GCallback>(invoke_slot),
 			new Slot(obj, member),
-			reinterpret_cast<GClosureNotify>(destroy_slot),
+			destroy_slot,
 			after ? G_CONNECT_AFTER : GConnectFlags(0));
 }
 
@@ -147,23 +150,24 @@ gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(
 		{
 		}
 
-		static R invoke(A1 a1, A2 a2, A3 a3, Slot* slot)
+		static R invoke(A1 a1, A2 a2, A3 a3, gpointer user_data)
 		{
+			Slot* slot = reinterpret_cast<Slot*>(user_data);
 			return (slot->m_instance->*slot->m_member)(a1, a2, a3);
 		}
 
-		static void destroy(Slot* slot)
+		static void destroy(gpointer data, GClosure*)
 		{
-			delete slot;
+			delete reinterpret_cast<Slot*>(data);
 		}
 	};
-	R (*invoke_slot)(A1,A2,A3,Slot*) = &Slot::invoke;
-	void (*destroy_slot)(Slot*) = &Slot::destroy;
+	R (*invoke_slot)(A1,A2,A3,gpointer) = &Slot::invoke;
+	void (*destroy_slot)(gpointer, GClosure*) = &Slot::destroy;
 
 	return g_signal_connect_data(instance, detailed_signal,
 			reinterpret_cast<GCallback>(invoke_slot),
 			new Slot(obj, member),
-			reinterpret_cast<GClosureNotify>(destroy_slot),
+			destroy_slot,
 			after ? G_CONNECT_AFTER : GConnectFlags(0));
 }
 
@@ -183,23 +187,24 @@ gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(
 		{
 		}
 
-		static R invoke(A1 a1, A2 a2, A3 a3, A4 a4, Slot* slot)
+		static R invoke(A1 a1, A2 a2, A3 a3, A4 a4, gpointer user_data)
 		{
+			Slot* slot = reinterpret_cast<Slot*>(user_data);
 			return (slot->m_instance->*slot->m_member)(a1, a2, a3, a4);
 		}
 
-		static void destroy(Slot* slot)
+		static void destroy(gpointer data, GClosure*)
 		{
-			delete slot;
+			delete reinterpret_cast<Slot*>(data);
 		}
 	};
-	R (*invoke_slot)(A1,A2,A3,A4,Slot*) = &Slot::invoke;
-	void (*destroy_slot)(Slot*) = &Slot::destroy;
+	R (*invoke_slot)(A1,A2,A3,A4,gpointer) = &Slot::invoke;
+	void (*destroy_slot)(gpointer, GClosure*) = &Slot::destroy;
 
 	return g_signal_connect_data(instance, detailed_signal,
 			reinterpret_cast<GCallback>(invoke_slot),
 			new Slot(obj, member),
-			reinterpret_cast<GClosureNotify>(destroy_slot),
+			destroy_slot,
 			after ? G_CONNECT_AFTER : GConnectFlags(0));
 }
 
@@ -219,23 +224,24 @@ gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(
 		{
 		}
 
-		static R invoke(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, Slot* slot)
+		static R invoke(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, gpointer user_data)
 		{
+			Slot* slot = reinterpret_cast<Slot*>(user_data);
 			return (slot->m_instance->*slot->m_member)(a1, a2, a3, a4, a5);
 		}
 
-		static void destroy(Slot* slot)
+		static void destroy(gpointer data, GClosure*)
 		{
-			delete slot;
+			delete reinterpret_cast<Slot*>(data);
 		}
 	};
-	R (*invoke_slot)(A1,A2,A3,A4,A5,Slot*) = &Slot::invoke;
-	void (*destroy_slot)(Slot*) = &Slot::destroy;
+	R (*invoke_slot)(A1,A2,A3,A4,A5,gpointer) = &Slot::invoke;
+	void (*destroy_slot)(gpointer, GClosure*) = &Slot::destroy;
 
 	return g_signal_connect_data(instance, detailed_signal,
 			reinterpret_cast<GCallback>(invoke_slot),
 			new Slot(obj, member),
-			reinterpret_cast<GClosureNotify>(destroy_slot),
+			destroy_slot,
 			after ? G_CONNECT_AFTER : GConnectFlags(0));
 }
 
