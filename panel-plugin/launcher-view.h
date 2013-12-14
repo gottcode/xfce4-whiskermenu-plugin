@@ -70,10 +70,10 @@ public:
 
 private:
 	void create_column();
-	gboolean on_key_press_event(GtkWidget*, GdkEventKey* event);
-	gboolean on_key_release_event(GtkWidget*, GdkEventKey* event);
-	gboolean on_button_press_event(GtkWidget*, GdkEventButton* event);
-	gboolean on_button_release_event(GtkWidget*, GdkEventButton* event);
+	gboolean on_key_press_event(GtkWidget*, GdkEvent* event);
+	gboolean on_key_release_event(GtkWidget*, GdkEvent* event);
+	gboolean on_button_press_event(GtkWidget*, GdkEvent* event);
+	gboolean on_button_release_event(GtkWidget*, GdkEvent* event);
 	void on_drag_data_get(GtkWidget*, GdkDragContext*, GtkSelectionData* data, guint info, guint);
 	void on_drag_end(GtkWidget*, GdkDragContext*);
 

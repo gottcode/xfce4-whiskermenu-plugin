@@ -184,9 +184,10 @@ void SearchPage::clear_search(GtkEntry* entry, GtkEntryIconPosition icon_pos, Gd
 
 //-----------------------------------------------------------------------------
 
-gboolean SearchPage::search_entry_key_press(GtkWidget* widget, GdkEventKey* event)
+gboolean SearchPage::search_entry_key_press(GtkWidget* widget, GdkEvent* event)
 {
-	if (event->keyval == GDK_Escape)
+	GdkEventKey* key_event = reinterpret_cast<GdkEventKey*>(event);
+	if (key_event->keyval == GDK_Escape)
 	{
 		GtkEntry* entry = GTK_ENTRY(widget);
 		const gchar* text = gtk_entry_get_text(entry);
@@ -200,7 +201,7 @@ gboolean SearchPage::search_entry_key_press(GtkWidget* widget, GdkEventKey* even
 			return false;
 		}
 	}
-	else if (event->keyval == GDK_Return)
+	else if (key_event->keyval == GDK_Return)
 	{
 		GtkTreePath* path = get_view()->get_selected_path();
 		if (path)

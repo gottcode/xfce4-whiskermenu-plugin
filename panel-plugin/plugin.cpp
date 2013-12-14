@@ -241,9 +241,10 @@ void Plugin::set_configure_enabled(bool enabled)
 
 //-----------------------------------------------------------------------------
 
-gboolean Plugin::button_clicked(GtkWidget*, GdkEventButton* event)
+gboolean Plugin::button_clicked(GtkWidget*, GdkEvent* event)
 {
-	if (event->button != 1 || event->state & GDK_CONTROL_MASK)
+	GdkEventButton* event_button = reinterpret_cast<GdkEventButton*>(event);
+	if (event_button->button != 1 || event_button->state & GDK_CONTROL_MASK)
 	{
 		return false;
 	}

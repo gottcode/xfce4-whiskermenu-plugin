@@ -258,9 +258,10 @@ void LauncherView::create_column()
 
 //-----------------------------------------------------------------------------
 
-gboolean LauncherView::on_key_press_event(GtkWidget*, GdkEventKey* event)
+gboolean LauncherView::on_key_press_event(GtkWidget*, GdkEvent* event)
 {
-	if ((event->keyval == GDK_KEY_Up) || (event->keyval == GDK_KEY_Down))
+	GdkEventKey* key_event = reinterpret_cast<GdkEventKey*>(event);
+	if ((key_event->keyval == GDK_KEY_Up) || (key_event->keyval == GDK_KEY_Down))
 	{
 		gtk_tree_view_set_hover_selection(m_view, false);
 	}
@@ -269,9 +270,10 @@ gboolean LauncherView::on_key_press_event(GtkWidget*, GdkEventKey* event)
 
 //-----------------------------------------------------------------------------
 
-gboolean LauncherView::on_key_release_event(GtkWidget*, GdkEventKey* event)
+gboolean LauncherView::on_key_release_event(GtkWidget*, GdkEvent* event)
 {
-	if ((event->keyval == GDK_KEY_Up) || (event->keyval == GDK_KEY_Down))
+	GdkEventKey* key_event = reinterpret_cast<GdkEventKey*>(event);
+	if ((key_event->keyval == GDK_KEY_Up) || (key_event->keyval == GDK_KEY_Down))
 	{
 		gtk_tree_view_set_hover_selection(m_view, true);
 	}
@@ -280,9 +282,10 @@ gboolean LauncherView::on_key_release_event(GtkWidget*, GdkEventKey* event)
 
 //-----------------------------------------------------------------------------
 
-gboolean LauncherView::on_button_press_event(GtkWidget*, GdkEventButton* event)
+gboolean LauncherView::on_button_press_event(GtkWidget*, GdkEvent* event)
 {
-	if (event->button != 1)
+	GdkEventButton* button_event = reinterpret_cast<GdkEventButton*>(event);
+	if (button_event->button != 1)
 	{
 		return false;
 	}
@@ -315,9 +318,10 @@ gboolean LauncherView::on_button_press_event(GtkWidget*, GdkEventButton* event)
 
 //-----------------------------------------------------------------------------
 
-gboolean LauncherView::on_button_release_event(GtkWidget*, GdkEventButton* event)
+gboolean LauncherView::on_button_release_event(GtkWidget*, GdkEvent* event)
 {
-	if (event->button != 1)
+	GdkEventButton* button_event = reinterpret_cast<GdkEventButton*>(event);
+	if (button_event->button != 1)
 	{
 		return false;
 	}

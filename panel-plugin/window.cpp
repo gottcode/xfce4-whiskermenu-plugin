@@ -613,22 +613,25 @@ void Window::unset_items()
 
 //-----------------------------------------------------------------------------
 
-gboolean Window::on_enter_notify_event(GtkWidget*, GdkEventCrossing* event)
+gboolean Window::on_enter_notify_event(GtkWidget*, GdkEvent* event)
 {
-	if ( (event->detail == GDK_NOTIFY_INFERIOR)
-			|| (event->mode == GDK_CROSSING_GRAB)
-			|| (event->mode == GDK_CROSSING_GTK_GRAB) )
+	GdkEventCrossing* crossing_event = reinterpret_cast<GdkEventCrossing*>(event);
+	if ((crossing_event->detail == GDK_NOTIFY_INFERIOR)
+			|| (crossing_event->mode == GDK_CROSSING_GRAB)
+			|| (crossing_event->mode == GDK_CROSSING_GTK_GRAB))
 	{
 		return false;
 	}
 
 	// Don't grab cursor over menu
-	if ((event->x_root >= m_geometry.x) && (event->x_root < (m_geometry.x + m_geometry.width))
-			&& (event->y_root >= m_geometry.y) && (event->y_root < (m_geometry.y + m_geometry.height)))
+	if ((crossing_event->x_root >= m_geometry.x)
+			&& (crossing_event->x_root < (m_geometry.x + m_geometry.width))
+			&& (crossing_event->y_root >= m_geometry.y)
+			&& (crossing_event->y_root < (m_geometry.y + m_geometry.height)))
 	{
 		if (gdk_pointer_is_grabbed())
 		{
-			gdk_pointer_ungrab(gtk_get_current_event_time());
+			gdk_pointer_ungrab(crossing_event->time);
 		}
 	}
 
@@ -637,24 +640,27 @@ gboolean Window::on_enter_notify_event(GtkWidget*, GdkEventCrossing* event)
 
 //-----------------------------------------------------------------------------
 
-gboolean Window::on_leave_notify_event(GtkWidget*, GdkEventCrossing* event)
+gboolean Window::on_leave_notify_event(GtkWidget*, GdkEvent* event)
 {
-	if ( (event->detail == GDK_NOTIFY_INFERIOR)
-			|| (event->mode != GDK_CROSSING_NORMAL) )
+	GdkEventCrossing* crossing_event = reinterpret_cast<GdkEventCrossing*>(event);
+	if ((crossing_event->detail == GDK_NOTIFY_INFERIOR)
+			|| (crossing_event->mode != GDK_CROSSING_NORMAL))
 	{
 		return false;
 	}
 
 	// Track mouse clicks outside of menu
-	if ((event->x_root <= m_geometry.x) || (event->x_root >= m_geometry.x + m_geometry.width)
-			|| (event->y_root <= m_geometry.y) || (event->y_root >= m_geometry.y + m_geometry.height))
+	if ((crossing_event->x_root <= m_geometry.x)
+			|| (crossing_event->x_root >= m_geometry.x + m_geometry.width)
+			|| (crossing_event->y_root <= m_geometry.y)
+			|| (crossing_event->y_root >= m_geometry.y + m_geometry.height))
 	{
 		gdk_pointer_grab(gtk_widget_get_window(GTK_WIDGET(m_window)), true,
 				GdkEventMask(
 					GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK |
 					GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK
 				),
-				NULL, NULL, event->time);
+				NULL, NULL, crossing_event->time);
 	}
 
 	return false;
@@ -662,7 +668,7 @@ gboolean Window::on_leave_notify_event(GtkWidget*, GdkEventCrossing* event)
 
 //-----------------------------------------------------------------------------
 
-gboolean Window::on_focus_in_event(GtkWidget*, GdkEventFocus*)
+gboolean Window::on_focus_in_event(GtkWidget*, GdkEvent*)
 {
 	gdk_pointer_grab(gtk_widget_get_window(GTK_WIDGET(m_window)), true,
 			GdkEventMask(
@@ -675,11 +681,14 @@ gboolean Window::on_focus_in_event(GtkWidget*, GdkEventFocus*)
 
 //-----------------------------------------------------------------------------
 
-gboolean Window::on_button_press_event(GtkWidget*, GdkEventButton* event)
+gboolean Window::on_button_press_event(GtkWidget*, GdkEvent* event)
 {
 	// Hide menu if user clicks outside
-	if ((event->x_root <= m_geometry.x) || (event->x_root >= m_geometry.x + m_geometry.width)
-			|| (event->y_root <= m_geometry.y) || (event->y_root >= m_geometry.y + m_geometry.height))
+	GdkEventButton* button_event = reinterpret_cast<GdkEventButton*>(event);
+	if ((button_event->x_root <= m_geometry.x)
+			|| (button_event->x_root >= m_geometry.x + m_geometry.width)
+			|| (button_event->y_root <= m_geometry.y)
+			|| (button_event->y_root >= m_geometry.y + m_geometry.height))
 	{
 		hide();
 	}
@@ -688,17 +697,19 @@ gboolean Window::on_button_press_event(GtkWidget*, GdkEventButton* event)
 
 //-----------------------------------------------------------------------------
 
-gboolean Window::on_key_press_event(GtkWidget* widget, GdkEventKey* event)
+gboolean Window::on_key_press_event(GtkWidget* widget, GdkEvent* event)
 {
+	GdkEventKey* key_event = reinterpret_cast<GdkEventKey*>(event);
+
 	// Hide if escape is pressed and there is no text in search entry
-	if ( (event->keyval == GDK_Escape) && exo_str_is_empty(gtk_entry_get_text(m_search_entry)) )
+	if ( (key_event->keyval == GDK_Escape) && exo_str_is_empty(gtk_entry_get_text(m_search_entry)) )
 	{
 		hide();
 		return true;
 	}
 
 	// Make up and down keys always scroll current list of applications
-	if ((event->keyval == GDK_KEY_Up) || (event->keyval == GDK_KEY_Down))
+	if ((key_event->keyval == GDK_KEY_Up) || (key_event->keyval == GDK_KEY_Down))
 	{
 		GtkWidget* view = NULL;
 		if (gtk_widget_get_visible(m_search_results->get_widget()))
@@ -729,14 +740,14 @@ gboolean Window::on_key_press_event(GtkWidget* widget, GdkEventKey* event)
 
 //-----------------------------------------------------------------------------
 
-gboolean Window::on_key_press_event_after(GtkWidget* widget, GdkEventKey* event)
+gboolean Window::on_key_press_event_after(GtkWidget* widget, GdkEvent* event)
 {
 	// Pass unhandled key presses to search entry
 	GtkWidget* search_entry = GTK_WIDGET(m_search_entry);
 	if ((widget != search_entry) && (gtk_window_get_focus(m_window) != search_entry))
 	{
 		gtk_widget_grab_focus(search_entry);
-		gtk_window_propagate_key_event(m_window, event);
+		gtk_window_propagate_key_event(m_window, reinterpret_cast<GdkEventKey*>(event));
 		return true;
 	}
 	return false;
@@ -744,7 +755,7 @@ gboolean Window::on_key_press_event_after(GtkWidget* widget, GdkEventKey* event)
 
 //-----------------------------------------------------------------------------
 
-gboolean Window::on_map_event(GtkWidget*, GdkEventAny*)
+gboolean Window::on_map_event(GtkWidget*, GdkEvent*)
 {
 	m_favorites->reset_selection();
 
@@ -766,14 +777,15 @@ gboolean Window::on_map_event(GtkWidget*, GdkEventAny*)
 
 //-----------------------------------------------------------------------------
 
-gboolean Window::on_configure_event(GtkWidget*, GdkEventConfigure* event)
+gboolean Window::on_configure_event(GtkWidget*, GdkEvent* event)
 {
-	if (event->width && event->height)
+	GdkEventConfigure* configure_event = reinterpret_cast<GdkEventConfigure*>(event);
+	if (configure_event->width && configure_event->height)
 	{
-		m_geometry.x = event->x;
-		m_geometry.y = event->y;
-		m_geometry.width = event->width;
-		m_geometry.height = event->height;
+		m_geometry.x = configure_event->x;
+		m_geometry.y = configure_event->y;
+		m_geometry.width = configure_event->width;
+		m_geometry.height = configure_event->height;
 	}
 	return false;
 }

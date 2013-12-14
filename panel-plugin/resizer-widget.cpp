@@ -101,20 +101,21 @@ void ResizerWidget::set_corner(Corner corner)
 
 //-----------------------------------------------------------------------------
 
-gboolean ResizerWidget::on_button_press_event(GtkWidget*, GdkEventButton* event)
+gboolean ResizerWidget::on_button_press_event(GtkWidget*, GdkEvent* event)
 {
+	GdkEventButton* event_button = reinterpret_cast<GdkEventButton*>(event);
 	gtk_window_begin_resize_drag(m_window,
 			m_edge,
-			event->button,
-			event->x_root,
-			event->y_root,
-			event->time);
+			event_button->button,
+			event_button->x_root,
+			event_button->y_root,
+			event_button->time);
 	return true;
 }
 
 //-----------------------------------------------------------------------------
 
-gboolean ResizerWidget::on_enter_notify_event(GtkWidget* widget, GdkEventCrossing*)
+gboolean ResizerWidget::on_enter_notify_event(GtkWidget* widget, GdkEvent*)
 {
 	gtk_widget_set_state(widget, GTK_STATE_PRELIGHT);
 	GdkWindow* window = gtk_widget_get_window(widget);
@@ -124,7 +125,7 @@ gboolean ResizerWidget::on_enter_notify_event(GtkWidget* widget, GdkEventCrossin
 
 //-----------------------------------------------------------------------------
 
-gboolean ResizerWidget::on_leave_notify_event(GtkWidget* widget, GdkEventCrossing*)
+gboolean ResizerWidget::on_leave_notify_event(GtkWidget* widget, GdkEvent*)
 {
 	gtk_widget_set_state(widget, GTK_STATE_NORMAL);
 	GdkWindow* window = gtk_widget_get_window(widget);
@@ -134,7 +135,7 @@ gboolean ResizerWidget::on_leave_notify_event(GtkWidget* widget, GdkEventCrossin
 
 //-----------------------------------------------------------------------------
 
-gboolean ResizerWidget::on_expose_event(GtkWidget* widget, GdkEventExpose*)
+gboolean ResizerWidget::on_expose_event(GtkWidget* widget, GdkEvent*)
 {
 	cairo_t* cr = gdk_cairo_create(gtk_widget_get_window(widget));
 

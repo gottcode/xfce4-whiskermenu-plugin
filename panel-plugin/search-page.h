@@ -40,7 +40,7 @@ public:
 
 private:
 	void clear_search(GtkEntry* entry, GtkEntryIconPosition icon_pos, GdkEvent*);
-	gboolean search_entry_key_press(GtkWidget* widget, GdkEventKey* event);
+	gboolean search_entry_key_press(GtkWidget* widget, GdkEvent* event);
 
 private:
 	Query m_query;

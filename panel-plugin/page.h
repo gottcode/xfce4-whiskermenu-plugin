@@ -54,7 +54,7 @@ protected:
 private:
 	virtual bool remember_launcher(Launcher* launcher);
 	void item_activated(GtkTreeView* view, GtkTreePath* path, GtkTreeViewColumn*);
-	gboolean view_button_press_event(GtkWidget* view, GdkEventButton* event);
+	gboolean view_button_press_event(GtkWidget* view, GdkEvent* event);
 	gboolean view_popup_menu_event(GtkWidget* view);
 	void on_unmap();
 	void destroy_context_menu(GtkMenuShell* menu);
@@ -63,7 +63,7 @@ private:
 	void add_selected_to_favorites();
 	void remove_selected_from_favorites();
 	Launcher* get_selected_launcher() const;
-	void create_context_menu(GtkTreeIter* iter, GdkEventButton* event);
+	void create_context_menu(GtkTreeIter* iter, GdkEvent* event);
 	virtual void extend_context_menu(GtkWidget* menu);
 	static void position_context_menu(GtkMenu*, gint* x, gint* y, gboolean* push_in, Page* page);
 

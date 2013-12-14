@@ -46,10 +46,10 @@ public:
 	void set_corner(Corner corner);
 
 private:
-	gboolean on_button_press_event(GtkWidget*, GdkEventButton* event);
-	gboolean on_enter_notify_event(GtkWidget* widget, GdkEventCrossing*);
-	gboolean on_leave_notify_event(GtkWidget* widget, GdkEventCrossing*);
-	gboolean on_expose_event(GtkWidget* widget, GdkEventExpose*);
+	gboolean on_button_press_event(GtkWidget*, GdkEvent* event);
+	gboolean on_enter_notify_event(GtkWidget* widget, GdkEvent*);
+	gboolean on_leave_notify_event(GtkWidget* widget, GdkEvent*);
+	gboolean on_expose_event(GtkWidget* widget, GdkEvent*);
 
 private:
 	GtkWindow* m_window;

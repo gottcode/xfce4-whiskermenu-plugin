@@ -73,14 +73,14 @@ public:
 	void unset_items();
 
 private:
-	gboolean on_enter_notify_event(GtkWidget*, GdkEventCrossing* event);
-	gboolean on_leave_notify_event(GtkWidget*, GdkEventCrossing* event);
-	gboolean on_focus_in_event(GtkWidget*, GdkEventFocus*);
-	gboolean on_button_press_event(GtkWidget*, GdkEventButton* event);
-	gboolean on_key_press_event(GtkWidget* widget, GdkEventKey* event);
-	gboolean on_key_press_event_after(GtkWidget* widget, GdkEventKey* event);
-	gboolean on_map_event(GtkWidget*, GdkEventAny*);
-	gboolean on_configure_event(GtkWidget*, GdkEventConfigure* event);
+	gboolean on_enter_notify_event(GtkWidget*, GdkEvent* event);
+	gboolean on_leave_notify_event(GtkWidget*, GdkEvent* event);
+	gboolean on_focus_in_event(GtkWidget*, GdkEvent*);
+	gboolean on_button_press_event(GtkWidget*, GdkEvent* event);
+	gboolean on_key_press_event(GtkWidget* widget, GdkEvent* event);
+	gboolean on_key_press_event_after(GtkWidget* widget, GdkEvent* event);
+	gboolean on_map_event(GtkWidget*, GdkEvent*);
+	gboolean on_configure_event(GtkWidget*, GdkEvent* event);
 	void favorites_toggled();
 	void recent_toggled();
 	void category_toggled();

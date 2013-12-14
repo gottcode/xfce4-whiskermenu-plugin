@@ -137,13 +137,14 @@ void Page::item_activated(GtkTreeView* view, GtkTreePath* path, GtkTreeViewColum
 
 //-----------------------------------------------------------------------------
 
-gboolean Page::view_button_press_event(GtkWidget* view, GdkEventButton* event)
+gboolean Page::view_button_press_event(GtkWidget* view, GdkEvent* event)
 {
+	GdkEventButton* event_button = reinterpret_cast<GdkEventButton*>(event);
 	GtkTreeSelection* selection = gtk_tree_view_get_selection(GTK_TREE_VIEW(view));
 	GtkTreeIter iter;
 	if (gtk_tree_selection_get_selected(selection, NULL, &iter)
-			&& (event->type == GDK_BUTTON_PRESS)
-			&& (event->button == 3))
+			&& (event_button->type == GDK_BUTTON_PRESS)
+			&& (event_button->button == 3))
 	{
 		create_context_menu(&iter, event);
 		return true;
@@ -169,8 +170,9 @@ gboolean Page::view_popup_menu_event(GtkWidget* view)
 
 //-----------------------------------------------------------------------------
 
-void Page::create_context_menu(GtkTreeIter* iter, GdkEventButton* event)
+void Page::create_context_menu(GtkTreeIter* iter, GdkEvent* event)
 {
+	GdkEventButton* event_button = reinterpret_cast<GdkEventButton*>(event);
 	m_selected_path = gtk_tree_model_get_path(m_view->get_model(), iter);
 	Launcher* launcher = get_selected_launcher();
 	if (!launcher)
@@ -225,8 +227,8 @@ void Page::create_context_menu(GtkTreeIter* iter, GdkEventButton* event)
 	GtkMenuPositionFunc position_func = NULL;
 	if (event)
 	{
-		button = event->button;
-		event_time = event->time;
+		button = event_button->button;
+		event_time = event_button->time;
 	}
 	else
 	{
