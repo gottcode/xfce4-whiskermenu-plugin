@@ -341,46 +341,29 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 	GtkOrientation orientation = xfce_panel_plugin_get_orientation(m_plugin);
 #endif
 
-	// Make icon expand to fill button if title is not visible
-	gtk_box_set_child_packing(GTK_BOX(m_button_box), GTK_WIDGET(m_button_icon),
-			!wm_settings->button_title_visible,
-			!wm_settings->button_title_visible,
-			0, GTK_PACK_START);
+	// Resize icon
+	GtkStyle* style = gtk_widget_get_style(m_button);
+	gint border = (2 * std::max(style->xthickness, style->ythickness)) + 2;
+	xfce_panel_image_set_size(m_button_icon, row_size - border);
 
-	if (!wm_settings->button_title_visible)
-	{
 #if (LIBXFCE4PANEL_CHECK_VERSION(4,9,0))
-		xfce_panel_plugin_set_small(m_plugin, true);
-#endif
-		xfce_panel_image_set_size(m_button_icon, -1);
-		gtk_widget_set_size_request(GTK_WIDGET(m_plugin), row_size, row_size);
+	if (wm_settings->button_title_visible && (mode == XFCE_PANEL_PLUGIN_MODE_DESKBAR))
+	{
+		xfce_panel_plugin_set_small(m_plugin, false);
+
+		// Put title next to icon if panel is wide enough
+		GtkRequisition label_size;
+		gtk_widget_size_request(GTK_WIDGET(m_button_label), &label_size);
+		if (label_size.width <= (size - row_size))
+		{
+			orientation = GTK_ORIENTATION_HORIZONTAL;
+		}
 	}
 	else
 	{
-		GtkStyle* style = gtk_widget_get_style(m_button);
-		gint border = (2 * std::max(style->xthickness, style->ythickness)) + 2;
-		xfce_panel_image_set_size(m_button_icon, row_size - border);
-		gtk_widget_set_size_request(GTK_WIDGET(m_plugin), -1, -1);
-
-#if (LIBXFCE4PANEL_CHECK_VERSION(4,9,0))
-		if (mode == XFCE_PANEL_PLUGIN_MODE_DESKBAR)
-		{
-			xfce_panel_plugin_set_small(m_plugin, false);
-
-			// Put title next to icon if panel is wide enough
-			GtkRequisition label_size;
-			gtk_widget_size_request(GTK_WIDGET(m_button_label), &label_size);
-			if (label_size.width <= (size - row_size))
-			{
-				orientation = GTK_ORIENTATION_HORIZONTAL;
-			}
-		}
-		else
-		{
-			xfce_panel_plugin_set_small(m_plugin, true);
-		}
-#endif
+		xfce_panel_plugin_set_small(m_plugin, true);
 	}
+#endif
 
 	gtk_orientable_set_orientation(GTK_ORIENTABLE(m_button_box), orientation);
 
