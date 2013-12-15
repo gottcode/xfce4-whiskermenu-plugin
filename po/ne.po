@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-07 12:53+0000\n"
-"PO-Revision-Date: 2013-12-10 16:22+0000\n"
-"Last-Translator: ma OpenThito <PRABINGAUTAM@gmail.com>\n"
+"PO-Revision-Date: 2013-12-14 17:08+0000\n"
+"Last-Translator: starryprabin <mr.prabin@gmail.com>\n"
 "Language-Team: Nepali (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
 "plugin/language/ne/)\n"
 "Language: ne\n"
@@ -46,7 +46,7 @@ msgstr "समस्त ॒सेटिङ"
 
 #: ../panel-plugin/plugin.cpp:161
 msgid "Applications Menu"
-msgstr "प्रयुक्तिका मेन्यू "
+msgstr "प्रयुक्तिका मेनु"
 
 #: ../panel-plugin/command-edit.cpp:46
 msgid "Browse the file system to choose a custom command."
@@ -222,23 +222,23 @@ msgstr "मूर्ति चयन गर्नुहोस् "
 
 #: ../panel-plugin/command-edit.cpp:60
 msgid "Select Command"
-msgstr "आदेश खोज्नुहोस"
+msgstr "आदेश खोज्नुहोस्"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
-msgstr "स्थापित अनुप्रयोगहरुको सहज पहुचको लागी एक मेनू दिखाउनुहोस"
+msgstr "स्थापित अनुप्रयोगहरुको सहज पहुचको लागी एक मेनू दिखाउनुहोस्"
 
 #: ../panel-plugin/configuration-dialog.cpp:515
 msgid "Show application _descriptions"
-msgstr "प्रयुक्तिका _विवरण देखाउनुहोस् "
+msgstr "अनुप्रयोगका _विवरण देखाउनुहोस् "
 
 #: ../panel-plugin/configuration-dialog.cpp:509
 msgid "Show generic application _names"
-msgstr "अनुप्रयोगहरुको समान्य नाम देखाउनुहोस"
+msgstr "अनुप्रयोगहरुको समान्य नाम देखाउनुहोस्"
 
 #: ../panel-plugin/configuration-dialog.cpp:521
 msgid "Show menu hie_rarchy"
-msgstr "मेन्यू  _पदक्रमलाई देखाउनुहोस "
+msgstr "मेन्यू  _पदक्रमलाई देखाउनुहोस् "
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -258,7 +258,7 @@ msgstr "Z-A अनुसार वर्णक्रमीक गर्नुह
 
 #: ../panel-plugin/settings.cpp:113
 msgid "Switch _Users"
-msgstr "प्रयोगकर्ता फेर्नुहोस"
+msgstr "॒प्रयोगकर्ता फेर्नुहोस्"
 
 #: ../panel-plugin/configuration-dialog.cpp:592
 msgid "Switch categories by _hovering"
@@ -291,11 +291,11 @@ msgstr "अत्यन्त सानो "
 #: ../panel-plugin/configuration-dialog.cpp:71
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
 msgid "Whisker Menu"
-msgstr "विस्कर मेन्यू"
+msgstr "विस्कर मेनु"
 
 #: ../panel-plugin/settings.cpp:118
 msgid "Wikipedia"
-msgstr "विकिपिडिया"
+msgstr "विकिपीडिया"
 
 #: ../panel-plugin/configuration-dialog.cpp:79
 msgid "_Appearance"
@@ -307,7 +307,7 @@ msgstr "ब्य॒वहार"
 
 #: ../panel-plugin/settings.cpp:115
 msgid "_Edit Applications"
-msgstr "अनुप्रयोगहरु सम्पादन गर्नुहोस"
+msgstr "अनुप्रयोगहरु सम्पादन गर्नुहोस्"
 
 #: ../panel-plugin/configuration-dialog.cpp:487
 msgid "_Icon:"
@@ -315,11 +315,11 @@ msgstr "_मूर्ति:"
 
 #: ../panel-plugin/settings.cpp:112
 msgid "_Lock Screen"
-msgstr "स्क्रिन लक गर्नुहोस"
+msgstr "स्क्रिन लक गर्नुहोस्"
 
 #: ../panel-plugin/configuration-dialog.cpp:726
 msgid "_Pattern:"
-msgstr "ढाँचा:"
+msgstr "॒ढाँचा:"
 
 #: ../panel-plugin/configuration-dialog.cpp:750
 msgid "_Regular expression"
