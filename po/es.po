@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
+# Fito Jayme <fitoschido@ubuntu.com>, 2013
 # Adolfo Jayme Barrientos <fitoschido@ubuntu.com>, 2013
 # fabioluciano <fabio@naoimporta.com>, 2013
 # intialonso <intialonso@gmail.com>, 2013
@@ -12,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-07 12:53+0000\n"
-"PO-Revision-Date: 2013-11-23 04:27+0000\n"
+"PO-Revision-Date: 2013-12-13 23:16+0000\n"
 "Last-Translator: Pablo Lezaeta <prflr88@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/es/)\n"
@@ -23,9 +24,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/configuration-dialog.cpp:680
-#, fuzzy
 msgid "Add action"
-msgstr "Añadir al panel"
+msgstr "Añadir acción"
 
 #: ../panel-plugin/page.cpp:211
 msgid "Add to Desktop"
@@ -44,9 +44,8 @@ msgid "All"
 msgstr "Todas"
 
 #: ../panel-plugin/settings.cpp:111
-#, fuzzy
 msgid "All _Settings"
-msgstr "Todas las configuraciones"
+msgstr "To_das las configuraciones"
 
 #: ../panel-plugin/plugin.cpp:161
 msgid "Applications Menu"
@@ -57,9 +56,8 @@ msgid "Browse the file system to choose a custom command."
 msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:738
-#, fuzzy
 msgid "C_ommand:"
-msgstr "Ó_rdenes"
+msgstr "Ó_rdenes:"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
 msgid "Categ_ory icon size:"
@@ -70,13 +68,12 @@ msgid "Clear Recently Used"
 msgstr "Limpiar elementos recientes"
 
 #: ../panel-plugin/configuration-dialog.cpp:612
-#, fuzzy
 msgid "Commands"
-msgstr "Ó_rdenes"
+msgstr "Órdenes:"
 
 #: ../panel-plugin/configuration-dialog.cpp:709
 msgid "Details"
-msgstr ""
+msgstr "Detalles"
 
 #: ../panel-plugin/configuration-dialog.cpp:454
 msgid "Di_splay:"
@@ -93,9 +90,8 @@ msgid "Failed to execute command \"%s\"."
 msgstr "No se pudo ejecutar la orden «%s»."
 
 #: ../panel-plugin/settings.cpp:115
-#, fuzzy
 msgid "Failed to launch menu editor."
-msgstr "No se pudo cerrar la sesión."
+msgstr "Falló al iniciar el editor del menú"
 
 #: ../panel-plugin/settings.cpp:112
 msgid "Failed to lock screen."
@@ -110,9 +106,8 @@ msgid "Failed to open settings manager."
 msgstr "Falló la ejecución del gestor de configuración."
 
 #: ../panel-plugin/settings.cpp:113
-#, fuzzy
 msgid "Failed to switch users."
-msgstr "No se pudo bloquear la pantalla."
+msgstr "Falló el cambio de usuarios."
 
 #: ../panel-plugin/window.cpp:126
 msgid "Favorites"
@@ -143,29 +138,28 @@ msgid "Larger"
 msgstr "Muy grande"
 
 #: ../panel-plugin/settings.cpp:114
-#, fuzzy
 msgid "Log _Out"
 msgstr "_Salir de la sesión:"
 
 #: ../panel-plugin/settings.cpp:117
 msgid "Man Pages"
-msgstr ""
+msgstr "Páginas del manual"
 
 #: ../panel-plugin/configuration-dialog.cpp:504
 msgid "Menu"
-msgstr ""
+msgstr "Menú"
 
 #: ../panel-plugin/configuration-dialog.cpp:714
 msgid "Nam_e:"
-msgstr ""
+msgstr "Nom_bre:"
 
 #: ../panel-plugin/configuration-dialog.cpp:660
 msgid "Name"
-msgstr ""
+msgstr "Nombre"
 
 #: ../panel-plugin/icon-size.cpp:49
 msgid "None"
-msgstr ""
+msgstr "Nada"
 
 #: ../panel-plugin/icon-size.cpp:53
 msgid "Normal"
@@ -173,12 +167,11 @@ msgstr "Normal"
 
 #: ../panel-plugin/settings.cpp:120
 msgid "Open URI"
-msgstr ""
+msgstr "Abrir dirección URL"
 
 #: ../panel-plugin/configuration-dialog.cpp:446
-#, fuzzy
 msgid "Panel Button"
-msgstr "Botón del _panel"
+msgstr "Botón del panel"
 
 #: ../panel-plugin/configuration-dialog.cpp:665
 msgid "Pattern"
@@ -203,7 +196,7 @@ msgstr "Eliminar de las favoritas"
 #: ../panel-plugin/configuration-dialog.cpp:364
 #, c-format
 msgid "Remove action \"%s\"?"
-msgstr ""
+msgstr "¿Eliminar accion %s?"
 
 #: ../panel-plugin/configuration-dialog.cpp:689
 msgid "Remove selected action"
@@ -212,28 +205,27 @@ msgstr ""
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
 msgid "Run %s"
-msgstr ""
+msgstr "Iniciar %s"
 
 #: ../panel-plugin/settings.cpp:119
 msgid "Run in Terminal"
-msgstr ""
+msgstr "Iniciar en terminal"
 
 #: ../panel-plugin/configuration-dialog.cpp:81
 msgid "Search Actio_ns"
-msgstr ""
+msgstr "Acc_iónes de búsqueda"
 
 #: ../panel-plugin/search-action.cpp:261
 msgid "Search Action"
-msgstr ""
+msgstr "Acción de búsqueda"
 
 #: ../panel-plugin/configuration-dialog.cpp:114
 msgid "Select An Icon"
 msgstr "Seleccione un icono"
 
 #: ../panel-plugin/command-edit.cpp:60
-#, fuzzy
 msgid "Select Command"
-msgstr "Seleccione un icono"
+msgstr "Seleccione una orden"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
@@ -244,14 +236,12 @@ msgid "Show application _descriptions"
 msgstr "Mostrar las _descripciones de las aplicaciones"
 
 #: ../panel-plugin/configuration-dialog.cpp:509
-#, fuzzy
 msgid "Show generic application _names"
-msgstr "Ordenar las aplicaciones por _nombre"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:521
-#, fuzzy
 msgid "Show menu hie_rarchy"
-msgstr "Cargar _jerarquía del menú"
+msgstr "Mostrar je_rarquía del menú"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -271,7 +261,7 @@ msgstr "Ordenar alfabéticamente de Z a A"
 
 #: ../panel-plugin/settings.cpp:113
 msgid "Switch _Users"
-msgstr ""
+msgstr "Cambiar de _usuario"
 
 #: ../panel-plugin/configuration-dialog.cpp:592
 msgid "Switch categories by _hovering"
@@ -308,7 +298,7 @@ msgstr "Menú Whisker"
 
 #: ../panel-plugin/settings.cpp:118
 msgid "Wikipedia"
-msgstr ""
+msgstr "Wikipedia"
 
 #: ../panel-plugin/configuration-dialog.cpp:79
 msgid "_Appearance"
@@ -319,18 +309,16 @@ msgid "_Behavior"
 msgstr "_Comportamiento"
 
 #: ../panel-plugin/settings.cpp:115
-#, fuzzy
 msgid "_Edit Applications"
-msgstr "Menú de aplicaciones"
+msgstr "_Editar aplicaciones"
 
 #: ../panel-plugin/configuration-dialog.cpp:487
 msgid "_Icon:"
 msgstr "_Icono:"
 
 #: ../panel-plugin/settings.cpp:112
-#, fuzzy
 msgid "_Lock Screen"
-msgstr "Bloquear la pantalla"
+msgstr "_Bloquear Pantalla"
 
 #: ../panel-plugin/configuration-dialog.cpp:726
 msgid "_Pattern:"
@@ -338,17 +326,8 @@ msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:750
 msgid "_Regular expression"
-msgstr ""
+msgstr "Exp_resión regular"
 
 #: ../panel-plugin/configuration-dialog.cpp:472
 msgid "_Title:"
 msgstr "_Título:"
-
-#~ msgid "Lock _Screen:"
-#~ msgstr "Bloquear la _pantalla:"
-
-#~ msgid "Log Out"
-#~ msgstr "Cerrar la sesión"
-
-#~ msgid "_Settings:"
-#~ msgstr "_Configuración:"
