@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
+# Walter Cheuk <wwycheuk@gmail.com>, 2013
 # 柏諺 黃 <s8321414@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-07 12:53+0000\n"
-"PO-Revision-Date: 2013-11-12 03:04+0000\n"
+"PO-Revision-Date: 2013-12-16 13:37+0000\n"
 "Last-Translator: 柏諺 黃 <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/zh_TW/)\n"
@@ -20,9 +21,8 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../panel-plugin/configuration-dialog.cpp:680
-#, fuzzy
 msgid "Add action"
-msgstr "新增到面板上"
+msgstr "加入動作"
 
 #: ../panel-plugin/page.cpp:211
 msgid "Add to Desktop"
@@ -41,9 +41,8 @@ msgid "All"
 msgstr "全部"
 
 #: ../panel-plugin/settings.cpp:111
-#, fuzzy
 msgid "All _Settings"
-msgstr "所有設定"
+msgstr "所有設定(_S)"
 
 #: ../panel-plugin/plugin.cpp:161
 msgid "Applications Menu"
@@ -51,37 +50,35 @@ msgstr "應用程式選單"
 
 #: ../panel-plugin/command-edit.cpp:46
 msgid "Browse the file system to choose a custom command."
-msgstr ""
+msgstr "瀏覽檔案系統以選擇自訂指令。"
 
 #: ../panel-plugin/configuration-dialog.cpp:738
-#, fuzzy
 msgid "C_ommand:"
-msgstr "指令"
+msgstr "指令(_C)："
 
 #: ../panel-plugin/configuration-dialog.cpp:563
 msgid "Categ_ory icon size:"
-msgstr "分類圖標大小："
+msgstr "分類圖示大小(_O)："
 
 #: ../panel-plugin/recent-page.cpp:88
 msgid "Clear Recently Used"
 msgstr "清除最近使用"
 
 #: ../panel-plugin/configuration-dialog.cpp:612
-#, fuzzy
 msgid "Commands"
 msgstr "指令"
 
 #: ../panel-plugin/configuration-dialog.cpp:709
 msgid "Details"
-msgstr ""
+msgstr "詳情"
 
 #: ../panel-plugin/configuration-dialog.cpp:454
 msgid "Di_splay:"
-msgstr "顯示："
+msgstr "顯示(_S)："
 
 #: ../panel-plugin/configuration-dialog.cpp:604
 msgid "Display recently _used by default"
-msgstr "預設顯示最近使用"
+msgstr "預設顯示最近使用(_U)"
 
 #: ../panel-plugin/launcher.cpp:252 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
@@ -90,9 +87,8 @@ msgid "Failed to execute command \"%s\"."
 msgstr "執行 \"%s\" 指令時失敗。"
 
 #: ../panel-plugin/settings.cpp:115
-#, fuzzy
 msgid "Failed to launch menu editor."
-msgstr "無法登出。"
+msgstr "未能啟動選單編輯器。"
 
 #: ../panel-plugin/settings.cpp:112
 msgid "Failed to lock screen."
@@ -107,9 +103,8 @@ msgid "Failed to open settings manager."
 msgstr "無法開啟設定管理員。"
 
 #: ../panel-plugin/settings.cpp:113
-#, fuzzy
 msgid "Failed to switch users."
-msgstr "無法鎖定螢幕。"
+msgstr "未能切換使用者。"
 
 #: ../panel-plugin/window.cpp:126
 msgid "Favorites"
@@ -117,19 +112,19 @@ msgstr "最愛"
 
 #: ../panel-plugin/configuration-dialog.cpp:460
 msgid "Icon"
-msgstr "圖標"
+msgstr "圖示"
 
 #: ../panel-plugin/configuration-dialog.cpp:462
 msgid "Icon and title"
-msgstr "圖標與標題"
+msgstr "圖示與標題"
 
 #: ../panel-plugin/configuration-dialog.cpp:598
 msgid "Include _favorites in recently used"
-msgstr "在最近使用中包含最愛"
+msgstr "在最近使用中包含最愛(_F)"
 
 #: ../panel-plugin/configuration-dialog.cpp:543
 msgid "Ite_m icon size:"
-msgstr "項目圖標大小："
+msgstr "項目圖示大小(_M)："
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Large"
@@ -140,29 +135,28 @@ msgid "Larger"
 msgstr "很大"
 
 #: ../panel-plugin/settings.cpp:114
-#, fuzzy
 msgid "Log _Out"
-msgstr "登出："
+msgstr "登出(_O)"
 
 #: ../panel-plugin/settings.cpp:117
 msgid "Man Pages"
-msgstr ""
+msgstr "手冊頁"
 
 #: ../panel-plugin/configuration-dialog.cpp:504
 msgid "Menu"
-msgstr ""
+msgstr "選單"
 
 #: ../panel-plugin/configuration-dialog.cpp:714
 msgid "Nam_e:"
-msgstr ""
+msgstr "名稱(_E)："
 
 #: ../panel-plugin/configuration-dialog.cpp:660
 msgid "Name"
-msgstr ""
+msgstr "名稱"
 
 #: ../panel-plugin/icon-size.cpp:49
 msgid "None"
-msgstr ""
+msgstr "無"
 
 #: ../panel-plugin/icon-size.cpp:53
 msgid "Normal"
@@ -170,10 +164,9 @@ msgstr "正常"
 
 #: ../panel-plugin/settings.cpp:120
 msgid "Open URI"
-msgstr ""
+msgstr "開啟 URI"
 
 #: ../panel-plugin/configuration-dialog.cpp:446
-#, fuzzy
 msgid "Panel Button"
 msgstr "面板按鈕"
 
@@ -183,11 +176,11 @@ msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:527
 msgid "Position _search entry next to panel button"
-msgstr "下一個面板按鈕的搜尋結果"
+msgstr "下一個面板按鈕的搜尋結果(_S)"
 
 #: ../panel-plugin/configuration-dialog.cpp:533
 msgid "Position commands next to search _entry"
-msgstr "下一個指令的搜尋結果"
+msgstr "下一個指令的搜尋結果(_E)"
 
 #: ../panel-plugin/window.cpp:132
 msgid "Recently Used"
@@ -200,37 +193,36 @@ msgstr "從最愛中移除"
 #: ../panel-plugin/configuration-dialog.cpp:364
 #, c-format
 msgid "Remove action \"%s\"?"
-msgstr ""
+msgstr "是否移除「%s」動作？"
 
 #: ../panel-plugin/configuration-dialog.cpp:689
 msgid "Remove selected action"
-msgstr ""
+msgstr "移除所選動作"
 
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
 msgid "Run %s"
-msgstr ""
+msgstr "執行 %s"
 
 #: ../panel-plugin/settings.cpp:119
 msgid "Run in Terminal"
-msgstr ""
+msgstr "在終端機執行"
 
 #: ../panel-plugin/configuration-dialog.cpp:81
 msgid "Search Actio_ns"
-msgstr ""
+msgstr "搜尋動作(_N)"
 
 #: ../panel-plugin/search-action.cpp:261
 msgid "Search Action"
-msgstr ""
+msgstr "搜尋動作"
 
 #: ../panel-plugin/configuration-dialog.cpp:114
 msgid "Select An Icon"
-msgstr "選擇一個圖標"
+msgstr "選取圖示"
 
 #: ../panel-plugin/command-edit.cpp:60
-#, fuzzy
 msgid "Select Command"
-msgstr "選擇一個圖標"
+msgstr "選取指令"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
@@ -241,14 +233,12 @@ msgid "Show application _descriptions"
 msgstr "顯示程式描述"
 
 #: ../panel-plugin/configuration-dialog.cpp:509
-#, fuzzy
 msgid "Show generic application _names"
-msgstr "顯示程式並以名稱排序"
+msgstr "顯示通用應用程式名稱(_N)"
 
 #: ../panel-plugin/configuration-dialog.cpp:521
-#, fuzzy
 msgid "Show menu hie_rarchy"
-msgstr "載入階層選單"
+msgstr ""
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -268,15 +258,15 @@ msgstr "依字母遞減順序排列"
 
 #: ../panel-plugin/settings.cpp:113
 msgid "Switch _Users"
-msgstr ""
+msgstr "切換使用者(_U)"
 
 #: ../panel-plugin/configuration-dialog.cpp:592
 msgid "Switch categories by _hovering"
-msgstr "滑鼠置於其上以切換到該分類"
+msgstr "滑鼠置於其上以切換到該分類(_H)"
 
 #: ../panel-plugin/configuration-dialog.cpp:363
 msgid "The action will be deleted permanently."
-msgstr ""
+msgstr "會永久刪除該動作。"
 
 #: ../panel-plugin/configuration-dialog.cpp:461
 msgid "Title"
@@ -301,33 +291,31 @@ msgstr "非常小"
 #: ../panel-plugin/configuration-dialog.cpp:71
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
 msgid "Whisker Menu"
-msgstr "Whisker選單"
+msgstr "Whisker 選單"
 
 #: ../panel-plugin/settings.cpp:118
 msgid "Wikipedia"
-msgstr ""
+msgstr "維基百科"
 
 #: ../panel-plugin/configuration-dialog.cpp:79
 msgid "_Appearance"
-msgstr "外觀"
+msgstr "外觀(_A)"
 
 #: ../panel-plugin/configuration-dialog.cpp:80
 msgid "_Behavior"
-msgstr "擁有者"
+msgstr "行為(_B)"
 
 #: ../panel-plugin/settings.cpp:115
-#, fuzzy
 msgid "_Edit Applications"
-msgstr "應用程式選單"
+msgstr "編輯應用程式(_E)"
 
 #: ../panel-plugin/configuration-dialog.cpp:487
 msgid "_Icon:"
-msgstr "圖標："
+msgstr "圖示(_I)："
 
 #: ../panel-plugin/settings.cpp:112
-#, fuzzy
 msgid "_Lock Screen"
-msgstr "鎖定螢幕"
+msgstr "鎖定螢幕(_L)"
 
 #: ../panel-plugin/configuration-dialog.cpp:726
 msgid "_Pattern:"
@@ -339,13 +327,4 @@ msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:472
 msgid "_Title:"
-msgstr "標題："
-
-#~ msgid "Lock _Screen:"
-#~ msgstr "鎖定螢幕："
-
-#~ msgid "Log Out"
-#~ msgstr "登出"
-
-#~ msgid "_Settings:"
-#~ msgstr "設定："
+msgstr "標題(_T)："
