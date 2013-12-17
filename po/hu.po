@@ -4,13 +4,14 @@
 #
 # Translators:
 # xazax <xazax.hun@gmail.com>, 2013
+# gyeben <gyonkibendeguz@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-07 12:53+0000\n"
-"PO-Revision-Date: 2013-11-19 13:40+0000\n"
-"Last-Translator: xazax <xazax.hun@gmail.com>\n"
+"PO-Revision-Date: 2013-12-12 11:15+0000\n"
+"Last-Translator: gyeben <gyonkibendeguz@gmail.com>\n"
 "Language-Team: Hungarian (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/hu/)\n"
 "Language: hu\n"
@@ -20,9 +21,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/configuration-dialog.cpp:680
-#, fuzzy
 msgid "Add action"
-msgstr "Ikon hozzáadása a tálcához"
+msgstr ""
 
 #: ../panel-plugin/page.cpp:211
 msgid "Add to Desktop"
@@ -41,9 +41,8 @@ msgid "All"
 msgstr "Összes"
 
 #: ../panel-plugin/settings.cpp:111
-#, fuzzy
 msgid "All _Settings"
-msgstr "Minden beállítás"
+msgstr "Összes _beállítás"
 
 #: ../panel-plugin/plugin.cpp:161
 msgid "Applications Menu"
@@ -54,9 +53,8 @@ msgid "Browse the file system to choose a custom command."
 msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:738
-#, fuzzy
 msgid "C_ommand:"
-msgstr "_Parancsok"
+msgstr "P_arancs:"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
 msgid "Categ_ory icon size:"
@@ -67,13 +65,12 @@ msgid "Clear Recently Used"
 msgstr "Előzmények törlése"
 
 #: ../panel-plugin/configuration-dialog.cpp:612
-#, fuzzy
 msgid "Commands"
-msgstr "_Parancsok"
+msgstr "Parancsok:"
 
 #: ../panel-plugin/configuration-dialog.cpp:709
 msgid "Details"
-msgstr ""
+msgstr "Részletek"
 
 #: ../panel-plugin/configuration-dialog.cpp:454
 msgid "Di_splay:"
@@ -90,9 +87,8 @@ msgid "Failed to execute command \"%s\"."
 msgstr "Nem sikerült végrehajtani a \"%s\" parancsot."
 
 #: ../panel-plugin/settings.cpp:115
-#, fuzzy
 msgid "Failed to launch menu editor."
-msgstr "A kijelentkezés sikertelen"
+msgstr "Nem sikerült a menüszerkesztő elindítása."
 
 #: ../panel-plugin/settings.cpp:112
 msgid "Failed to lock screen."
@@ -107,9 +103,8 @@ msgid "Failed to open settings manager."
 msgstr "A beállítások megnyitása sikertelen."
 
 #: ../panel-plugin/settings.cpp:113
-#, fuzzy
 msgid "Failed to switch users."
-msgstr "A képernyő zárolása sikertelen."
+msgstr "Nem sikerült a felhasználóváltás."
 
 #: ../panel-plugin/window.cpp:126
 msgid "Favorites"
@@ -140,29 +135,28 @@ msgid "Larger"
 msgstr "Nagyobb"
 
 #: ../panel-plugin/settings.cpp:114
-#, fuzzy
 msgid "Log _Out"
-msgstr "K_ijelentkezés:"
+msgstr "_Kijelentkezés"
 
 #: ../panel-plugin/settings.cpp:117
 msgid "Man Pages"
-msgstr ""
+msgstr "Kézikönyv oldalak"
 
 #: ../panel-plugin/configuration-dialog.cpp:504
 msgid "Menu"
-msgstr ""
+msgstr "Menü"
 
 #: ../panel-plugin/configuration-dialog.cpp:714
 msgid "Nam_e:"
-msgstr ""
+msgstr "Né_v:"
 
 #: ../panel-plugin/configuration-dialog.cpp:660
 msgid "Name"
-msgstr ""
+msgstr "Név"
 
 #: ../panel-plugin/icon-size.cpp:49
 msgid "None"
-msgstr ""
+msgstr "Egyik sem"
 
 #: ../panel-plugin/icon-size.cpp:53
 msgid "Normal"
@@ -170,16 +164,15 @@ msgstr "Normál"
 
 #: ../panel-plugin/settings.cpp:120
 msgid "Open URI"
-msgstr ""
+msgstr "URI megnyitása"
 
 #: ../panel-plugin/configuration-dialog.cpp:446
-#, fuzzy
 msgid "Panel Button"
-msgstr "_Panel gomb"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:665
 msgid "Pattern"
-msgstr ""
+msgstr "Minta"
 
 #: ../panel-plugin/configuration-dialog.cpp:527
 msgid "Position _search entry next to panel button"
@@ -209,11 +202,11 @@ msgstr ""
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
 msgid "Run %s"
-msgstr ""
+msgstr "%s futtatása"
 
 #: ../panel-plugin/settings.cpp:119
 msgid "Run in Terminal"
-msgstr ""
+msgstr "Futtatás terminálban"
 
 #: ../panel-plugin/configuration-dialog.cpp:81
 msgid "Search Actio_ns"
@@ -228,9 +221,8 @@ msgid "Select An Icon"
 msgstr "Ikon kiválasztása"
 
 #: ../panel-plugin/command-edit.cpp:60
-#, fuzzy
 msgid "Select Command"
-msgstr "Ikon kiválasztása"
+msgstr "Parancs kiválasztása"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
@@ -241,13 +233,12 @@ msgid "Show application _descriptions"
 msgstr " _Leírás szerinti megjelenítés"
 
 #: ../panel-plugin/configuration-dialog.cpp:509
-#, fuzzy
 msgid "Show generic application _names"
-msgstr "_Név szerinti megjelenítés"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:521
 msgid "Show menu hie_rarchy"
-msgstr ""
+msgstr "Menühie_archia mutatása"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -267,7 +258,7 @@ msgstr "Rendezés ABC rendben csökkenően"
 
 #: ../panel-plugin/settings.cpp:113
 msgid "Switch _Users"
-msgstr ""
+msgstr "_Felhasználóváltás"
 
 #: ../panel-plugin/configuration-dialog.cpp:592
 msgid "Switch categories by _hovering"
@@ -304,7 +295,7 @@ msgstr "Whisker Menü"
 
 #: ../panel-plugin/settings.cpp:118
 msgid "Wikipedia"
-msgstr ""
+msgstr "Wikipédia"
 
 #: ../panel-plugin/configuration-dialog.cpp:79
 msgid "_Appearance"
@@ -315,36 +306,25 @@ msgid "_Behavior"
 msgstr "_Viselkedés"
 
 #: ../panel-plugin/settings.cpp:115
-#, fuzzy
 msgid "_Edit Applications"
-msgstr "Alkalmazások Menü"
+msgstr "_Alkalmazások szerkesztése"
 
 #: ../panel-plugin/configuration-dialog.cpp:487
 msgid "_Icon:"
 msgstr "_Ikon:"
 
 #: ../panel-plugin/settings.cpp:112
-#, fuzzy
 msgid "_Lock Screen"
-msgstr "Képernyő zárolása"
+msgstr "_Képernyő lezárása"
 
 #: ../panel-plugin/configuration-dialog.cpp:726
 msgid "_Pattern:"
-msgstr ""
+msgstr "_Minta:"
 
 #: ../panel-plugin/configuration-dialog.cpp:750
 msgid "_Regular expression"
-msgstr ""
+msgstr "_Reguláris kifejezés"
 
 #: ../panel-plugin/configuration-dialog.cpp:472
 msgid "_Title:"
 msgstr "_Cím:"
-
-#~ msgid "Lock _Screen:"
-#~ msgstr "Képernyő _Zárolása:"
-
-#~ msgid "Log Out"
-#~ msgstr "Kijelentkezés"
-
-#~ msgid "_Settings:"
-#~ msgstr "_Beállítások:"
