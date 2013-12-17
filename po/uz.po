@@ -4,12 +4,13 @@
 #
 # Translators:
 # Umidjon Almasov <u.almasov@gmail.com>, 2013
+# Umidjon Almasov <u.almasov@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-07 12:53+0000\n"
-"PO-Revision-Date: 2013-10-19 10:18+0000\n"
+"PO-Revision-Date: 2013-12-10 12:30+0000\n"
 "Last-Translator: Umidjon Almasov <u.almasov@gmail.com>\n"
 "Language-Team: Uzbek (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
 "plugin/language/uz/)\n"
@@ -20,9 +21,8 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../panel-plugin/configuration-dialog.cpp:680
-#, fuzzy
 msgid "Add action"
-msgstr "Panelga qo'shish"
+msgstr ""
 
 #: ../panel-plugin/page.cpp:211
 msgid "Add to Desktop"
@@ -41,9 +41,8 @@ msgid "All"
 msgstr "Hammasi"
 
 #: ../panel-plugin/settings.cpp:111
-#, fuzzy
 msgid "All _Settings"
-msgstr "Hamma moslamalar"
+msgstr ""
 
 #: ../panel-plugin/plugin.cpp:161
 msgid "Applications Menu"
@@ -54,9 +53,8 @@ msgid "Browse the file system to choose a custom command."
 msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:738
-#, fuzzy
 msgid "C_ommand:"
-msgstr "_Buyruqlar"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:563
 msgid "Categ_ory icon size:"
@@ -67,13 +65,12 @@ msgid "Clear Recently Used"
 msgstr "Yaqinda foydalanilganlarni tozalash"
 
 #: ../panel-plugin/configuration-dialog.cpp:612
-#, fuzzy
 msgid "Commands"
-msgstr "_Buyruqlar"
+msgstr "Buyruqlar"
 
 #: ../panel-plugin/configuration-dialog.cpp:709
 msgid "Details"
-msgstr ""
+msgstr "Tafsilotlar"
 
 #: ../panel-plugin/configuration-dialog.cpp:454
 msgid "Di_splay:"
@@ -90,9 +87,8 @@ msgid "Failed to execute command \"%s\"."
 msgstr "\"%s\" buyrug'ini bajarish muvaffaqiyatsiz tugadi."
 
 #: ../panel-plugin/settings.cpp:115
-#, fuzzy
 msgid "Failed to launch menu editor."
-msgstr "Tizimdan chiqish muvaffaqiyatsiz tugadi."
+msgstr ""
 
 #: ../panel-plugin/settings.cpp:112
 msgid "Failed to lock screen."
@@ -107,9 +103,8 @@ msgid "Failed to open settings manager."
 msgstr "Moslamalar boshqaruvchisini ochish muvaffaqiyatsiz tugadi."
 
 #: ../panel-plugin/settings.cpp:113
-#, fuzzy
 msgid "Failed to switch users."
-msgstr "Ekranni qulflash muvaffaqiyatsiz tugadi."
+msgstr ""
 
 #: ../panel-plugin/window.cpp:126
 msgid "Favorites"
@@ -140,9 +135,8 @@ msgid "Larger"
 msgstr "Kattaroq"
 
 #: ../panel-plugin/settings.cpp:114
-#, fuzzy
 msgid "Log _Out"
-msgstr "Tizimdan _chiqish:"
+msgstr ""
 
 #: ../panel-plugin/settings.cpp:117
 msgid "Man Pages"
@@ -150,7 +144,7 @@ msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:504
 msgid "Menu"
-msgstr ""
+msgstr "Menyu"
 
 #: ../panel-plugin/configuration-dialog.cpp:714
 msgid "Nam_e:"
@@ -158,7 +152,7 @@ msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:660
 msgid "Name"
-msgstr ""
+msgstr "Nomi"
 
 #: ../panel-plugin/icon-size.cpp:49
 msgid "None"
@@ -170,12 +164,11 @@ msgstr "Oddiy"
 
 #: ../panel-plugin/settings.cpp:120
 msgid "Open URI"
-msgstr ""
+msgstr "URI ochish"
 
 #: ../panel-plugin/configuration-dialog.cpp:446
-#, fuzzy
 msgid "Panel Button"
-msgstr "_Panel tugmasi"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:665
 msgid "Pattern"
@@ -209,11 +202,11 @@ msgstr ""
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
 msgid "Run %s"
-msgstr ""
+msgstr "%s ishga tushirish"
 
 #: ../panel-plugin/settings.cpp:119
 msgid "Run in Terminal"
-msgstr ""
+msgstr "Terminalda ishga tushirish"
 
 #: ../panel-plugin/configuration-dialog.cpp:81
 msgid "Search Actio_ns"
@@ -228,9 +221,8 @@ msgid "Select An Icon"
 msgstr "Nishonchani tanlash"
 
 #: ../panel-plugin/command-edit.cpp:60
-#, fuzzy
 msgid "Select Command"
-msgstr "Nishonchani tanlash"
+msgstr "Buyruqni tanlash"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
@@ -241,14 +233,12 @@ msgid "Show application _descriptions"
 msgstr "Dastur _ta'riflarini ko'rsatish"
 
 #: ../panel-plugin/configuration-dialog.cpp:509
-#, fuzzy
 msgid "Show generic application _names"
-msgstr "Dasturlarni _nomi bo'yicha ko'rsatish"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:521
-#, fuzzy
 msgid "Show menu hie_rarchy"
-msgstr "Menyu _ierarxiyasini yuklash"
+msgstr ""
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -305,7 +295,7 @@ msgstr "Whisker menyusi"
 
 #: ../panel-plugin/settings.cpp:118
 msgid "Wikipedia"
-msgstr ""
+msgstr "Vikipedia"
 
 #: ../panel-plugin/configuration-dialog.cpp:79
 msgid "_Appearance"
@@ -316,18 +306,16 @@ msgid "_Behavior"
 msgstr "_Xulqi"
 
 #: ../panel-plugin/settings.cpp:115
-#, fuzzy
 msgid "_Edit Applications"
-msgstr "Dasturlar menyusi"
+msgstr "Dasturlarni _tahrirlash"
 
 #: ../panel-plugin/configuration-dialog.cpp:487
 msgid "_Icon:"
 msgstr "_Nishoncha:"
 
 #: ../panel-plugin/settings.cpp:112
-#, fuzzy
 msgid "_Lock Screen"
-msgstr "Ekranni qulflash"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:726
 msgid "_Pattern:"
@@ -340,12 +328,3 @@ msgstr ""
 #: ../panel-plugin/configuration-dialog.cpp:472
 msgid "_Title:"
 msgstr "_Sarlavha"
-
-#~ msgid "Lock _Screen:"
-#~ msgstr "_Ekranni qulflash:"
-
-#~ msgid "Log Out"
-#~ msgstr "Tizimdan chiqish"
-
-#~ msgid "_Settings:"
-#~ msgstr "_Moslamalar:"
