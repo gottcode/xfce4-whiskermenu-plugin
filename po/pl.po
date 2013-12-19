@@ -15,8 +15,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-07 12:53+0000\n"
-"PO-Revision-Date: 2013-12-17 07:34+0000\n"
-"Last-Translator: december\n"
+"PO-Revision-Date: 2013-12-18 21:04+0000\n"
+"Last-Translator: OSWorld <michal.olber@osworld.pl>\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
 "plugin/language/pl/)\n"
 "Language: pl\n"
@@ -48,7 +48,7 @@ msgstr "Wszystkie"
 
 #: ../panel-plugin/settings.cpp:111
 msgid "All _Settings"
-msgstr "Wszystkie _Ustawienia"
+msgstr "Wszystkie ustawienia"
 
 #: ../panel-plugin/plugin.cpp:161
 msgid "Applications Menu"
@@ -56,11 +56,11 @@ msgstr "Menu aplikacji"
 
 #: ../panel-plugin/command-edit.cpp:46
 msgid "Browse the file system to choose a custom command."
-msgstr "Przeglądnij system plików, aby wybrać własne polecenie."
+msgstr "Przeglądaj system plików, aby wybrać własne polecenie."
 
 #: ../panel-plugin/configuration-dialog.cpp:738
 msgid "C_ommand:"
-msgstr "P_olecenie:"
+msgstr "_Polecenie:"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
 msgid "Categ_ory icon size:"
@@ -84,7 +84,7 @@ msgstr "_Wyświetlacz:"
 
 #: ../panel-plugin/configuration-dialog.cpp:604
 msgid "Display recently _used by default"
-msgstr "Pokaż ostatnio _używane domyślnie"
+msgstr "Pokazuje zawsze ostatnio _używane"
 
 #: ../panel-plugin/launcher.cpp:252 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
@@ -126,7 +126,7 @@ msgstr "Ikona i nazwa"
 
 #: ../panel-plugin/configuration-dialog.cpp:598
 msgid "Include _favorites in recently used"
-msgstr "Dołącz _faworyty do ostatnio używanych"
+msgstr "Dołącz _ulubione do ostatnio używanych"
 
 #: ../panel-plugin/configuration-dialog.cpp:543
 msgid "Ite_m icon size:"
@@ -199,7 +199,7 @@ msgstr "Usuń z Ulubionych"
 #: ../panel-plugin/configuration-dialog.cpp:364
 #, c-format
 msgid "Remove action \"%s\"?"
-msgstr "Usunąć czynność \"%s\"?"
+msgstr "Usunąć czynność „%s”?"
 
 #: ../panel-plugin/configuration-dialog.cpp:689
 msgid "Remove selected action"
