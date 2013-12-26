@@ -84,6 +84,20 @@ void SearchPage::set_filter(const gchar* filter)
 	m_query.set(query);
 
 	// Create search results
+	std::vector<Match> search_action_matches;
+	search_action_matches.reserve(wm_settings->search_actions.size());
+	for (std::vector<SearchAction*>::size_type i = 0, end = wm_settings->search_actions.size(); i < end; ++i)
+	{
+		Match match(wm_settings->search_actions[i]);
+		match.update(m_query);
+		if (!Match::invalid(match))
+		{
+			search_action_matches.push_back(match);
+		}
+	}
+	std::stable_sort(search_action_matches.begin(), search_action_matches.end());
+	std::reverse(search_action_matches.begin(), search_action_matches.end());
+
 	for (std::vector<Match>::size_type i = 0, end = m_matches.size(); i < end; ++i)
 	{
 		m_matches[i].update(m_query);
@@ -97,21 +111,17 @@ void SearchPage::set_filter(const gchar* filter)
 			G_TYPE_STRING,
 			G_TYPE_STRING,
 			G_TYPE_POINTER);
-	SearchAction* action;
-	for (std::vector<SearchAction*>::size_type i = 0, end = wm_settings->search_actions.size(); i < end; ++i)
-	{
-		action = wm_settings->search_actions[i];
-		if (action->search(m_query) != G_MAXINT)
-		{
-			gtk_list_store_insert_with_values(
-					store, NULL, G_MAXINT,
-					LauncherView::COLUMN_ICON, action->get_icon(),
-					LauncherView::COLUMN_TEXT, action->get_text(),
-					LauncherView::COLUMN_LAUNCHER, action,
-					-1);
-		}
-	}
 	Element* element;
+	for (std::vector<Match>::size_type i = 0, end = search_action_matches.size(); i < end; ++i)
+	{
+		element = search_action_matches[i].element();
+		gtk_list_store_insert_with_values(
+				store, NULL, G_MAXINT,
+				LauncherView::COLUMN_ICON, element->get_icon(),
+				LauncherView::COLUMN_TEXT, element->get_text(),
+				LauncherView::COLUMN_LAUNCHER, element,
+				-1);
+	}
 	for (std::vector<Match>::size_type i = 0, end = m_matches.size(); i < end; ++i)
 	{
 		element = m_matches[i].element();

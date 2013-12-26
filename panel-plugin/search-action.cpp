@@ -71,7 +71,7 @@ int SearchAction::search(const Query& query)
 	m_expanded_command.clear();
 
 	const gchar* haystack = query.raw_query().c_str();
-	bool found = !m_is_regex ? match_prefix(haystack) : match_regex(haystack);
+	int found = !m_is_regex ? match_prefix(haystack) : match_regex(haystack);
 
 	if (found && (m_show_description != wm_settings->launcher_show_description))
 	{
@@ -79,16 +79,16 @@ int SearchAction::search(const Query& query)
 		update_text();
 	}
 
-	return found ? 0 : G_MAXINT;
+	return found;
 }
 
 //-----------------------------------------------------------------------------
 
-bool SearchAction::match_prefix(const gchar* haystack)
+int SearchAction::match_prefix(const gchar* haystack)
 {
 	if (!g_str_has_prefix(haystack, m_pattern.c_str()))
 	{
-		return false;
+		return G_MAXINT;
 	}
 
 	gchar* trimmed = g_strdup(haystack + m_pattern.length());
@@ -140,21 +140,21 @@ bool SearchAction::match_prefix(const gchar* haystack)
 	g_free(trimmed);
 	g_free(uri);
 
-	return true;
+	return m_pattern.length();
 }
 
 //-----------------------------------------------------------------------------
 
-bool SearchAction::match_regex(const gchar* haystack)
+int SearchAction::match_regex(const gchar* haystack)
 {
-	bool found = false;
+	int found = G_MAXINT;
 
 	if (!m_regex)
 	{
 		m_regex = g_regex_new(m_pattern.c_str(), G_REGEX_OPTIMIZE, GRegexMatchFlags(0), NULL);
 		if (!m_regex)
 		{
-			return false;
+			return found;
 		}
 	}
 	GMatchInfo* match = NULL;
@@ -165,7 +165,7 @@ bool SearchAction::match_regex(const gchar* haystack)
 		{
 			m_expanded_command = expanded;
 			g_free(expanded);
-			found = true;
+			found = m_pattern.length();
 		}
 	}
 	if (match != NULL)

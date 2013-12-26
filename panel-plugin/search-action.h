@@ -70,8 +70,8 @@ public:
 	void set_is_regex(bool is_regex);
 
 private:
-	bool match_prefix(const gchar* haystack);
-	bool match_regex(const gchar* haystack);
+	int match_prefix(const gchar* haystack);
+	int match_regex(const gchar* haystack);
 	void update_text();
 
 private:
