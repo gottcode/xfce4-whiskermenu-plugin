@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-07 12:53+0000\n"
-"PO-Revision-Date: 2013-12-13 00:14+0000\n"
+"PO-Revision-Date: 2013-12-23 14:55+0000\n"
 "Last-Translator: Tornes Llume <l.lumex03.tornes@gmail.com>\n"
 "Language-Team: Asturian (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/ast/)\n"
@@ -135,7 +135,7 @@ msgstr "Más grande"
 
 #: ../panel-plugin/settings.cpp:114
 msgid "Log _Out"
-msgstr ""
+msgstr "Zarrar _sesión:"
 
 #: ../panel-plugin/settings.cpp:117
 msgid "Man Pages"
@@ -233,11 +233,11 @@ msgstr "Amosar descripciones _d'aplicaciones"
 
 #: ../panel-plugin/configuration-dialog.cpp:509
 msgid "Show generic application _names"
-msgstr ""
+msgstr "Amosar _nomes d'aplicaciones xenéricos"
 
 #: ../panel-plugin/configuration-dialog.cpp:521
 msgid "Show menu hie_rarchy"
-msgstr ""
+msgstr "Amosar xe_rarquía del menú"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -257,7 +257,7 @@ msgstr "Ordenar alfabéticamente Z-A"
 
 #: ../panel-plugin/settings.cpp:113
 msgid "Switch _Users"
-msgstr ""
+msgstr "Cambear _usuarios"
 
 #: ../panel-plugin/configuration-dialog.cpp:592
 msgid "Switch categories by _hovering"
@@ -322,7 +322,7 @@ msgstr "_Patrón:"
 
 #: ../panel-plugin/configuration-dialog.cpp:750
 msgid "_Regular expression"
-msgstr ""
+msgstr "Espresión _regular"
 
 #: ../panel-plugin/configuration-dialog.cpp:472
 msgid "_Title:"
