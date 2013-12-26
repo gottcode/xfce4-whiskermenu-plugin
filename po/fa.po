@@ -9,10 +9,10 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-07 12:53+0000\n"
-"PO-Revision-Date: 2013-11-13 12:39+0000\n"
+"PO-Revision-Date: 2013-12-22 07:34+0000\n"
 "Last-Translator: Haiku <reza.gharibi.rg@gmail.com>\n"
-"Language-Team: Persian (Iran) (http://www.transifex.com/projects/p/xfce4-"
-"whiskermenu-plugin/language/fa_IR/)\n"
+"Language-Team: Persian (http://www.transifex.com/projects/p/xfce4-"
+"whiskermenu-plugin/language/fa/)\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,9 +20,8 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../panel-plugin/configuration-dialog.cpp:680
-#, fuzzy
 msgid "Add action"
-msgstr "اضافه‌کردن به پنل"
+msgstr "اضافه‌کردن عمل"
 
 #: ../panel-plugin/page.cpp:211
 msgid "Add to Desktop"
@@ -41,9 +40,8 @@ msgid "All"
 msgstr "همه"
 
 #: ../panel-plugin/settings.cpp:111
-#, fuzzy
 msgid "All _Settings"
-msgstr "همه‌ی تنظیمات"
+msgstr "همه‌ی _تنظیمات"
 
 #: ../panel-plugin/plugin.cpp:161
 msgid "Applications Menu"
@@ -51,12 +49,11 @@ msgstr "منوی برنامه‌ها"
 
 #: ../panel-plugin/command-edit.cpp:46
 msgid "Browse the file system to choose a custom command."
-msgstr ""
+msgstr "مرور سیستم‌فایل برای انتخاب‌کردن یک دستور سفارشی."
 
 #: ../panel-plugin/configuration-dialog.cpp:738
-#, fuzzy
 msgid "C_ommand:"
-msgstr "_دستورها"
+msgstr "د_ستور:"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
 msgid "Categ_ory icon size:"
@@ -67,13 +64,12 @@ msgid "Clear Recently Used"
 msgstr "پاک‌کردن به‌تازگی استفاده شده"
 
 #: ../panel-plugin/configuration-dialog.cpp:612
-#, fuzzy
 msgid "Commands"
-msgstr "_دستورها"
+msgstr "دستورها"
 
 #: ../panel-plugin/configuration-dialog.cpp:709
 msgid "Details"
-msgstr ""
+msgstr "جزئیات"
 
 #: ../panel-plugin/configuration-dialog.cpp:454
 msgid "Di_splay:"
@@ -90,9 +86,8 @@ msgid "Failed to execute command \"%s\"."
 msgstr "اجرای دستور \"%s\" شکست خورد."
 
 #: ../panel-plugin/settings.cpp:115
-#, fuzzy
 msgid "Failed to launch menu editor."
-msgstr "خروج با شکست مواجه شد."
+msgstr "اجرای ویرایشگر منو با شکست مواجه شد."
 
 #: ../panel-plugin/settings.cpp:112
 msgid "Failed to lock screen."
@@ -107,9 +102,8 @@ msgid "Failed to open settings manager."
 msgstr "بازکردن مدیریت تنظیمات با شکست مواجه شد."
 
 #: ../panel-plugin/settings.cpp:113
-#, fuzzy
 msgid "Failed to switch users."
-msgstr "قفل‌کردن صفحه‌نمایش با شکست مواجه شد."
+msgstr "تغییر کاربر با شکست مواجه شد."
 
 #: ../panel-plugin/window.cpp:126
 msgid "Favorites"
@@ -140,29 +134,28 @@ msgid "Larger"
 msgstr "بزرگ‌تر"
 
 #: ../panel-plugin/settings.cpp:114
-#, fuzzy
 msgid "Log _Out"
 msgstr "خر_وج"
 
 #: ../panel-plugin/settings.cpp:117
 msgid "Man Pages"
-msgstr ""
+msgstr "صفحه‌های راهنما"
 
 #: ../panel-plugin/configuration-dialog.cpp:504
 msgid "Menu"
-msgstr ""
+msgstr "منو"
 
 #: ../panel-plugin/configuration-dialog.cpp:714
 msgid "Nam_e:"
-msgstr ""
+msgstr "نا_م:"
 
 #: ../panel-plugin/configuration-dialog.cpp:660
 msgid "Name"
-msgstr ""
+msgstr "نام"
 
 #: ../panel-plugin/icon-size.cpp:49
 msgid "None"
-msgstr ""
+msgstr "هیچ"
 
 #: ../panel-plugin/icon-size.cpp:53
 msgid "Normal"
@@ -170,16 +163,15 @@ msgstr "عادی"
 
 #: ../panel-plugin/settings.cpp:120
 msgid "Open URI"
-msgstr ""
+msgstr "بازکردن آدرس"
 
 #: ../panel-plugin/configuration-dialog.cpp:446
-#, fuzzy
 msgid "Panel Button"
-msgstr "_دکمه‌ی پنل"
+msgstr "دکمه‌ی پنل"
 
 #: ../panel-plugin/configuration-dialog.cpp:665
 msgid "Pattern"
-msgstr ""
+msgstr "الگو"
 
 #: ../panel-plugin/configuration-dialog.cpp:527
 msgid "Position _search entry next to panel button"
@@ -200,37 +192,36 @@ msgstr "حذف‌کردن از علاقه‌مندی‌ها"
 #: ../panel-plugin/configuration-dialog.cpp:364
 #, c-format
 msgid "Remove action \"%s\"?"
-msgstr ""
+msgstr "حذف عمل \"%s\"؟"
 
 #: ../panel-plugin/configuration-dialog.cpp:689
 msgid "Remove selected action"
-msgstr ""
+msgstr "حذف عمل انتخاب شده"
 
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
 msgid "Run %s"
-msgstr ""
+msgstr "اجرای %s"
 
 #: ../panel-plugin/settings.cpp:119
 msgid "Run in Terminal"
-msgstr ""
+msgstr "اجراکردن در ترمینال"
 
 #: ../panel-plugin/configuration-dialog.cpp:81
 msgid "Search Actio_ns"
-msgstr ""
+msgstr "جست‌و‌جوی اعما_ل"
 
 #: ../panel-plugin/search-action.cpp:261
 msgid "Search Action"
-msgstr ""
+msgstr "جست‌و‌جوی اعمال"
 
 #: ../panel-plugin/configuration-dialog.cpp:114
 msgid "Select An Icon"
 msgstr "انتخاب یک آیکان"
 
 #: ../panel-plugin/command-edit.cpp:60
-#, fuzzy
 msgid "Select Command"
-msgstr "انتخاب یک آیکان"
+msgstr "انتخاب دستور"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
@@ -241,14 +232,12 @@ msgid "Show application _descriptions"
 msgstr "نمایش برنامه _توضیحات"
 
 #: ../panel-plugin/configuration-dialog.cpp:509
-#, fuzzy
 msgid "Show generic application _names"
-msgstr "نمایش برنامه‌ها براساس _اسم"
+msgstr "نمایش _نام‌های برنامه‌‌ی عمومی"
 
 #: ../panel-plugin/configuration-dialog.cpp:521
-#, fuzzy
 msgid "Show menu hie_rarchy"
-msgstr "لودکردن سلسله_مراتب منو"
+msgstr "نمایش سلسله‌_مراتب منو"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -268,7 +257,7 @@ msgstr "مرتب‌سازی براساس حروف الفبا ی-الف"
 
 #: ../panel-plugin/settings.cpp:113
 msgid "Switch _Users"
-msgstr ""
+msgstr "تغییر _کاربر"
 
 #: ../panel-plugin/configuration-dialog.cpp:592
 msgid "Switch categories by _hovering"
@@ -276,7 +265,7 @@ msgstr "تغییر دسته‌ها با _بردن موس روی آن"
 
 #: ../panel-plugin/configuration-dialog.cpp:363
 msgid "The action will be deleted permanently."
-msgstr ""
+msgstr "عمل برای همیشه حذف خواهدشد."
 
 #: ../panel-plugin/configuration-dialog.cpp:461
 msgid "Title"
@@ -305,7 +294,7 @@ msgstr "منوی Whisker"
 
 #: ../panel-plugin/settings.cpp:118
 msgid "Wikipedia"
-msgstr ""
+msgstr "ویکی‌پدیا"
 
 #: ../panel-plugin/configuration-dialog.cpp:79
 msgid "_Appearance"
@@ -316,36 +305,25 @@ msgid "_Behavior"
 msgstr "_رفتار"
 
 #: ../panel-plugin/settings.cpp:115
-#, fuzzy
 msgid "_Edit Applications"
-msgstr "منوی برنامه‌ها"
+msgstr "_ویرایش برنامه‌ها"
 
 #: ../panel-plugin/configuration-dialog.cpp:487
 msgid "_Icon:"
 msgstr "_آیکان:"
 
 #: ../panel-plugin/settings.cpp:112
-#, fuzzy
 msgid "_Lock Screen"
-msgstr "قفل‌کردن صفحه‌نمایش"
+msgstr "_قفل‌کردن صفحه‌نمایش"
 
 #: ../panel-plugin/configuration-dialog.cpp:726
 msgid "_Pattern:"
-msgstr ""
+msgstr "_الگو:"
 
 #: ../panel-plugin/configuration-dialog.cpp:750
 msgid "_Regular expression"
-msgstr ""
+msgstr "_عبارت منظم"
 
 #: ../panel-plugin/configuration-dialog.cpp:472
 msgid "_Title:"
 msgstr "_عنوان:"
-
-#~ msgid "Lock _Screen:"
-#~ msgstr "قفل‌کردن _صفحه‌نمایش"
-
-#~ msgid "Log Out"
-#~ msgstr "خروج"
-
-#~ msgid "_Settings:"
-#~ msgstr "_تنظیمات:"
