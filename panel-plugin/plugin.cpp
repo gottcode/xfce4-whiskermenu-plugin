@@ -75,13 +75,15 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	g_signal_connect_slot<GtkWidget*>(m_window->get_widget(), "unmap", &Plugin::menu_hidden, this);
 
 	// Create toggle button
-	m_button = xfce_create_panel_toggle_button();
+	m_button = xfce_panel_create_toggle_button();
 	gtk_button_set_relief(GTK_BUTTON(m_button), GTK_RELIEF_NONE);
+	gtk_button_set_focus_on_click(GTK_BUTTON(m_button), false);
 	g_signal_connect_slot(m_button, "button-press-event", &Plugin::button_clicked, this);
 	gtk_widget_show(m_button);
 
-	m_button_box = GTK_BOX(gtk_hbox_new(false, 1));
+	m_button_box = GTK_BOX(gtk_hbox_new(false, 2));
 	gtk_container_add(GTK_CONTAINER(m_button), GTK_WIDGET(m_button_box));
+	gtk_container_set_border_width(GTK_CONTAINER(m_button_box), 0);
 	gtk_widget_show(GTK_WIDGET(m_button_box));
 
 	m_button_icon = XFCE_PANEL_IMAGE(xfce_panel_image_new_from_source(wm_settings->button_icon_name.c_str()));
