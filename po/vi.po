@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-07 12:53+0000\n"
+"POT-Creation-Date: 2013-12-29 12:13+0000\n"
 "PO-Revision-Date: 2013-07-13 01:38+0000\n"
 "Last-Translator: ppanhh <ppanhh@gmail.com>\n"
 "Language-Team: Vietnamese (http://www.transifex.com/projects/p/xfce4-"
@@ -24,15 +24,15 @@ msgstr ""
 msgid "Add action"
 msgstr "Thêm và Khung"
 
-#: ../panel-plugin/page.cpp:211
+#: ../panel-plugin/page.cpp:212
 msgid "Add to Desktop"
 msgstr "Thêm vào Desktop"
 
-#: ../panel-plugin/page.cpp:196
+#: ../panel-plugin/page.cpp:197
 msgid "Add to Favorites"
 msgstr "Thêm vào Ưa Thích"
 
-#: ../panel-plugin/page.cpp:215
+#: ../panel-plugin/page.cpp:216
 msgid "Add to Panel"
 msgstr "Thêm và Khung"
 
@@ -45,7 +45,7 @@ msgstr "Tất cả"
 msgid "All _Settings"
 msgstr "Tất cả thiết lập"
 
-#: ../panel-plugin/plugin.cpp:161
+#: ../panel-plugin/plugin.cpp:163
 msgid "Applications Menu"
 msgstr "Menu ứng dụng"
 
@@ -191,7 +191,7 @@ msgstr ""
 msgid "Recently Used"
 msgstr "Truy cập gần đây"
 
-#: ../panel-plugin/page.cpp:204
+#: ../panel-plugin/page.cpp:205
 msgid "Remove From Favorites"
 msgstr "Loại bỏ khỏi Ưa Thích"
 
@@ -279,11 +279,11 @@ msgstr ""
 msgid "Title"
 msgstr "Tiêu đề"
 
-#: ../panel-plugin/page.cpp:305
+#: ../panel-plugin/page.cpp:306
 msgid "Unable to add launcher to desktop."
 msgstr "Không thể thêm vào thanh truy cập nhanh ở desktop."
 
-#: ../panel-plugin/page.cpp:344 ../panel-plugin/page.cpp:353
+#: ../panel-plugin/page.cpp:345 ../panel-plugin/page.cpp:354
 msgid "Unable to add launcher to panel."
 msgstr "Không thể thêm vào thanh truy cập nhanh hay khung."
 

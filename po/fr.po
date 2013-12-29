@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-07 12:53+0000\n"
+"POT-Creation-Date: 2013-12-29 12:13+0000\n"
 "PO-Revision-Date: 2013-12-18 11:19+0000\n"
 "Last-Translator: Pingax <pingax@frugalware.org>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
@@ -26,15 +26,15 @@ msgstr ""
 msgid "Add action"
 msgstr "Ajouter une action"
 
-#: ../panel-plugin/page.cpp:211
+#: ../panel-plugin/page.cpp:212
 msgid "Add to Desktop"
 msgstr "Ajouter au bureau"
 
-#: ../panel-plugin/page.cpp:196
+#: ../panel-plugin/page.cpp:197
 msgid "Add to Favorites"
 msgstr "Ajouter aux favoris"
 
-#: ../panel-plugin/page.cpp:215
+#: ../panel-plugin/page.cpp:216
 msgid "Add to Panel"
 msgstr "Ajouter au tableau de bord"
 
@@ -46,7 +46,7 @@ msgstr "Tout"
 msgid "All _Settings"
 msgstr "Tous les _paramètres"
 
-#: ../panel-plugin/plugin.cpp:161
+#: ../panel-plugin/plugin.cpp:163
 msgid "Applications Menu"
 msgstr "Menu des applications"
 
@@ -189,7 +189,7 @@ msgstr "Positionner les commandes à côté du _champ de recherche"
 msgid "Recently Used"
 msgstr "Récemment utilisés"
 
-#: ../panel-plugin/page.cpp:204
+#: ../panel-plugin/page.cpp:205
 msgid "Remove From Favorites"
 msgstr "Retirer des favoris"
 
@@ -275,11 +275,11 @@ msgstr "Cette action sera supprimée définitivement."
 msgid "Title"
 msgstr "Titre"
 
-#: ../panel-plugin/page.cpp:305
+#: ../panel-plugin/page.cpp:306
 msgid "Unable to add launcher to desktop."
 msgstr "Impossible d'ajouter le lanceur sur le bureau."
 
-#: ../panel-plugin/page.cpp:344 ../panel-plugin/page.cpp:353
+#: ../panel-plugin/page.cpp:345 ../panel-plugin/page.cpp:354
 msgid "Unable to add launcher to panel."
 msgstr "Impossible d'ajouter le lanceur dans le tableau de bord."
 

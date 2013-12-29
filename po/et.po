@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-07 12:53+0000\n"
+"POT-Creation-Date: 2013-12-29 12:13+0000\n"
 "PO-Revision-Date: 2013-10-30 00:23+0000\n"
 "Last-Translator: Asto Banko <kusmis@hot.ee>\n"
 "Language-Team: Estonian (http://www.transifex.com/projects/p/xfce4-"
@@ -24,15 +24,15 @@ msgstr ""
 msgid "Add action"
 msgstr "Lisa paneelile"
 
-#: ../panel-plugin/page.cpp:211
+#: ../panel-plugin/page.cpp:212
 msgid "Add to Desktop"
 msgstr "Lisa töölauale"
 
-#: ../panel-plugin/page.cpp:196
+#: ../panel-plugin/page.cpp:197
 msgid "Add to Favorites"
 msgstr "Lisa lemmikutesse"
 
-#: ../panel-plugin/page.cpp:215
+#: ../panel-plugin/page.cpp:216
 msgid "Add to Panel"
 msgstr "Lisa paneelile"
 
@@ -45,7 +45,7 @@ msgstr ""
 msgid "All _Settings"
 msgstr "Kõik sätted"
 
-#: ../panel-plugin/plugin.cpp:161
+#: ../panel-plugin/plugin.cpp:163
 msgid "Applications Menu"
 msgstr "Rakenduste menüü"
 
@@ -191,7 +191,7 @@ msgstr ""
 msgid "Recently Used"
 msgstr "Hiljuti kasutatud"
 
-#: ../panel-plugin/page.cpp:204
+#: ../panel-plugin/page.cpp:205
 msgid "Remove From Favorites"
 msgstr "Eemalda lemmikutest"
 
@@ -280,11 +280,11 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: ../panel-plugin/page.cpp:305
+#: ../panel-plugin/page.cpp:306
 msgid "Unable to add launcher to desktop."
 msgstr ""
 
-#: ../panel-plugin/page.cpp:344 ../panel-plugin/page.cpp:353
+#: ../panel-plugin/page.cpp:345 ../panel-plugin/page.cpp:354
 msgid "Unable to add launcher to panel."
 msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-07 12:53+0000\n"
+"POT-Creation-Date: 2013-12-29 12:13+0000\n"
 "PO-Revision-Date: 2013-12-01 13:24+0000\n"
 "Last-Translator: Karim Oulad Chalha <herr.linux88@gmail.com>\n"
 "Language-Team: Arabic (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
@@ -25,15 +25,15 @@ msgstr ""
 msgid "Add action"
 msgstr "أضف إلى الشريط"
 
-#: ../panel-plugin/page.cpp:211
+#: ../panel-plugin/page.cpp:212
 msgid "Add to Desktop"
 msgstr "أضف إلى سطح المكتب"
 
-#: ../panel-plugin/page.cpp:196
+#: ../panel-plugin/page.cpp:197
 msgid "Add to Favorites"
 msgstr "أضف إلى المفضلات"
 
-#: ../panel-plugin/page.cpp:215
+#: ../panel-plugin/page.cpp:216
 msgid "Add to Panel"
 msgstr "أضف إلى الشريط"
 
@@ -46,7 +46,7 @@ msgstr "كل"
 msgid "All _Settings"
 msgstr "كل الإعدادات"
 
-#: ../panel-plugin/plugin.cpp:161
+#: ../panel-plugin/plugin.cpp:163
 msgid "Applications Menu"
 msgstr "قائمة التطبيقات"
 
@@ -194,7 +194,7 @@ msgstr "موضع الأوامر يلي مربع البحث"
 msgid "Recently Used"
 msgstr "مستعملة حديثا"
 
-#: ../panel-plugin/page.cpp:204
+#: ../panel-plugin/page.cpp:205
 msgid "Remove From Favorites"
 msgstr "حذف من المفضلات"
 
@@ -283,11 +283,11 @@ msgstr ""
 msgid "Title"
 msgstr "عنوان"
 
-#: ../panel-plugin/page.cpp:305
+#: ../panel-plugin/page.cpp:306
 msgid "Unable to add launcher to desktop."
 msgstr "عاجز عن إضافة المطلقة إلى سطح المكتب."
 
-#: ../panel-plugin/page.cpp:344 ../panel-plugin/page.cpp:353
+#: ../panel-plugin/page.cpp:345 ../panel-plugin/page.cpp:354
 msgid "Unable to add launcher to panel."
 msgstr "عاجز عن إضافة المطلقة إلى الشريط."
 

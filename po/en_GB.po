@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-07 12:53+0000\n"
+"POT-Creation-Date: 2013-12-29 12:13+0000\n"
 "PO-Revision-Date: 2013-12-08 23:43+0000\n"
 "Last-Translator: Graeme Gott <graeme@gottcode.org>\n"
 "Language-Team: English (United Kingdom) (http://www.transifex.com/projects/p/"
@@ -23,15 +23,15 @@ msgstr ""
 msgid "Add action"
 msgstr "Add action"
 
-#: ../panel-plugin/page.cpp:211
+#: ../panel-plugin/page.cpp:212
 msgid "Add to Desktop"
 msgstr "Add to Desktop"
 
-#: ../panel-plugin/page.cpp:196
+#: ../panel-plugin/page.cpp:197
 msgid "Add to Favorites"
 msgstr "Add to Favourites"
 
-#: ../panel-plugin/page.cpp:215
+#: ../panel-plugin/page.cpp:216
 msgid "Add to Panel"
 msgstr "Add to Panel"
 
@@ -43,7 +43,7 @@ msgstr "All"
 msgid "All _Settings"
 msgstr "All _Settings"
 
-#: ../panel-plugin/plugin.cpp:161
+#: ../panel-plugin/plugin.cpp:163
 msgid "Applications Menu"
 msgstr "Applications Menu"
 
@@ -185,7 +185,7 @@ msgstr "Position commands next to search _entry"
 msgid "Recently Used"
 msgstr "Recently Used"
 
-#: ../panel-plugin/page.cpp:204
+#: ../panel-plugin/page.cpp:205
 msgid "Remove From Favorites"
 msgstr "Remove From Favourites"
 
@@ -271,11 +271,11 @@ msgstr "The action will be deleted permanently."
 msgid "Title"
 msgstr "Title"
 
-#: ../panel-plugin/page.cpp:305
+#: ../panel-plugin/page.cpp:306
 msgid "Unable to add launcher to desktop."
 msgstr "Unable to add launcher to desktop."
 
-#: ../panel-plugin/page.cpp:344 ../panel-plugin/page.cpp:353
+#: ../panel-plugin/page.cpp:345 ../panel-plugin/page.cpp:354
 msgid "Unable to add launcher to panel."
 msgstr "Unable to add launcher to panel."
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-07 12:53+0000\n"
+"POT-Creation-Date: 2013-12-29 12:13+0000\n"
 "PO-Revision-Date: 2013-12-07 14:41+0000\n"
 "Last-Translator: GenghisKhan <genghiskhan@gmx.ca>\n"
 "Language-Team: Hebrew (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
@@ -24,15 +24,15 @@ msgstr ""
 msgid "Add action"
 msgstr "הוספת פעולה"
 
-#: ../panel-plugin/page.cpp:211
+#: ../panel-plugin/page.cpp:212
 msgid "Add to Desktop"
 msgstr "הוסף אל תוך שולחן עבודה"
 
-#: ../panel-plugin/page.cpp:196
+#: ../panel-plugin/page.cpp:197
 msgid "Add to Favorites"
 msgstr "הוסף אל תוך מועדפים"
 
-#: ../panel-plugin/page.cpp:215
+#: ../panel-plugin/page.cpp:216
 msgid "Add to Panel"
 msgstr "הוסף אל תוך לוח"
 
@@ -44,7 +44,7 @@ msgstr "כולם"
 msgid "All _Settings"
 msgstr "כל _ההגדרות"
 
-#: ../panel-plugin/plugin.cpp:161
+#: ../panel-plugin/plugin.cpp:163
 msgid "Applications Menu"
 msgstr "תפריט יישומים"
 
@@ -186,7 +186,7 @@ msgstr "מקם פקודות ליד _רישום חיפוש"
 msgid "Recently Used"
 msgstr "בשימוש לאחרונה"
 
-#: ../panel-plugin/page.cpp:204
+#: ../panel-plugin/page.cpp:205
 msgid "Remove From Favorites"
 msgstr "הסר מתוך מועדפים"
 
@@ -272,11 +272,11 @@ msgstr "הפעולה תימחק לצמיתות."
 msgid "Title"
 msgstr "כותרת"
 
-#: ../panel-plugin/page.cpp:305
+#: ../panel-plugin/page.cpp:306
 msgid "Unable to add launcher to desktop."
 msgstr "אין אפשרות להוסיף משגר אל תוך שולחן עבודה."
 
-#: ../panel-plugin/page.cpp:344 ../panel-plugin/page.cpp:353
+#: ../panel-plugin/page.cpp:345 ../panel-plugin/page.cpp:354
 msgid "Unable to add launcher to panel."
 msgstr "אין אפשרות להוסיף משגר אל תוך לוח."
 

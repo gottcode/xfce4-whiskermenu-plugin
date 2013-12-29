@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-07 12:53+0000\n"
+"POT-Creation-Date: 2013-12-29 12:13+0000\n"
 "PO-Revision-Date: 2013-08-23 19:51+0000\n"
 "Last-Translator: Γιάννης Ανθυμίδης <yannanth@gmail.com>\n"
 "Language-Team: Greek (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
@@ -25,15 +25,15 @@ msgstr ""
 msgid "Add action"
 msgstr "Προσθήκη στο Ταμπλό"
 
-#: ../panel-plugin/page.cpp:211
+#: ../panel-plugin/page.cpp:212
 msgid "Add to Desktop"
 msgstr "Προσθήκη στην Επιφάνειά Εργασίας"
 
-#: ../panel-plugin/page.cpp:196
+#: ../panel-plugin/page.cpp:197
 msgid "Add to Favorites"
 msgstr "Προσθήκη στα Αγαπημένα"
 
-#: ../panel-plugin/page.cpp:215
+#: ../panel-plugin/page.cpp:216
 msgid "Add to Panel"
 msgstr "Προσθήκη στο Ταμπλό"
 
@@ -46,7 +46,7 @@ msgstr "Όλα"
 msgid "All _Settings"
 msgstr "Όλες οι Επιλογές"
 
-#: ../panel-plugin/plugin.cpp:161
+#: ../panel-plugin/plugin.cpp:163
 msgid "Applications Menu"
 msgstr "Μενού Εφαρμογών"
 
@@ -192,7 +192,7 @@ msgstr ""
 msgid "Recently Used"
 msgstr "Χρησιμοποιήθηκαν Πρόσφατα"
 
-#: ../panel-plugin/page.cpp:204
+#: ../panel-plugin/page.cpp:205
 msgid "Remove From Favorites"
 msgstr "Αφαίρεση από τα Αγαπημένα"
 
@@ -281,11 +281,11 @@ msgstr ""
 msgid "Title"
 msgstr "Τίτλος"
 
-#: ../panel-plugin/page.cpp:305
+#: ../panel-plugin/page.cpp:306
 msgid "Unable to add launcher to desktop."
 msgstr "Απέτυχε η προσθήκη εκκινητή στην επιφάνεια εργασίας."
 
-#: ../panel-plugin/page.cpp:344 ../panel-plugin/page.cpp:353
+#: ../panel-plugin/page.cpp:345 ../panel-plugin/page.cpp:354
 msgid "Unable to add launcher to panel."
 msgstr "Απέτυχε η προσθήκη εκκινητή στο ταμπλό."
 

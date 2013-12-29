@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-07 12:53+0000\n"
+"POT-Creation-Date: 2013-12-29 12:13+0000\n"
 "PO-Revision-Date: 2013-12-18 21:04+0000\n"
 "Last-Translator: OSWorld <michal.olber@osworld.pl>\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
@@ -30,15 +30,15 @@ msgstr ""
 msgid "Add action"
 msgstr "Dodaj czynność"
 
-#: ../panel-plugin/page.cpp:211
+#: ../panel-plugin/page.cpp:212
 msgid "Add to Desktop"
 msgstr "Dodaj na Pulpit"
 
-#: ../panel-plugin/page.cpp:196
+#: ../panel-plugin/page.cpp:197
 msgid "Add to Favorites"
 msgstr "Dodaj do Ulubionych"
 
-#: ../panel-plugin/page.cpp:215
+#: ../panel-plugin/page.cpp:216
 msgid "Add to Panel"
 msgstr "Dodaj do Panelu"
 
@@ -50,7 +50,7 @@ msgstr "Wszystkie"
 msgid "All _Settings"
 msgstr "Wszystkie ustawienia"
 
-#: ../panel-plugin/plugin.cpp:161
+#: ../panel-plugin/plugin.cpp:163
 msgid "Applications Menu"
 msgstr "Menu aplikacji"
 
@@ -192,7 +192,7 @@ msgstr "Umieść _polecenia obok paska wyszukiwania"
 msgid "Recently Used"
 msgstr "Ostatnio używane"
 
-#: ../panel-plugin/page.cpp:204
+#: ../panel-plugin/page.cpp:205
 msgid "Remove From Favorites"
 msgstr "Usuń z Ulubionych"
 
@@ -278,11 +278,11 @@ msgstr "Czynność zostanie nieodwracalnie usunięta."
 msgid "Title"
 msgstr "Etykieta"
 
-#: ../panel-plugin/page.cpp:305
+#: ../panel-plugin/page.cpp:306
 msgid "Unable to add launcher to desktop."
 msgstr "Nie można dodać aktywatora na pulpicie"
 
-#: ../panel-plugin/page.cpp:344 ../panel-plugin/page.cpp:353
+#: ../panel-plugin/page.cpp:345 ../panel-plugin/page.cpp:354
 msgid "Unable to add launcher to panel."
 msgstr "Nie można dodać aktywatora do panelu"
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-07 12:53+0000\n"
+"POT-Creation-Date: 2013-12-29 12:13+0000\n"
 "PO-Revision-Date: 2013-12-07 19:07+0000\n"
 "Last-Translator: Slavko <linux@slavino.sk>\n"
 "Language-Team: Slovak (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
@@ -23,15 +23,15 @@ msgstr ""
 msgid "Add action"
 msgstr "Pridať akciu"
 
-#: ../panel-plugin/page.cpp:211
+#: ../panel-plugin/page.cpp:212
 msgid "Add to Desktop"
 msgstr "Pridať na plochu"
 
-#: ../panel-plugin/page.cpp:196
+#: ../panel-plugin/page.cpp:197
 msgid "Add to Favorites"
 msgstr "Pridať k obľúbeným"
 
-#: ../panel-plugin/page.cpp:215
+#: ../panel-plugin/page.cpp:216
 msgid "Add to Panel"
 msgstr "Pridať do panela"
 
@@ -43,7 +43,7 @@ msgstr "Všetky"
 msgid "All _Settings"
 msgstr "Všetky _nastavenia"
 
-#: ../panel-plugin/plugin.cpp:161
+#: ../panel-plugin/plugin.cpp:163
 msgid "Applications Menu"
 msgstr "Menu aplikácií"
 
@@ -185,7 +185,7 @@ msgstr "Umiestniť príkazy _vedľa položky hľadať"
 msgid "Recently Used"
 msgstr "Nedávne"
 
-#: ../panel-plugin/page.cpp:204
+#: ../panel-plugin/page.cpp:205
 msgid "Remove From Favorites"
 msgstr "Odstrániť z obľúbených"
 
@@ -271,11 +271,11 @@ msgstr "Akcia bude odstránená natrvalo"
 msgid "Title"
 msgstr "Názov"
 
-#: ../panel-plugin/page.cpp:305
+#: ../panel-plugin/page.cpp:306
 msgid "Unable to add launcher to desktop."
 msgstr "Nemožno pridať spúšťač na plochu"
 
-#: ../panel-plugin/page.cpp:344 ../panel-plugin/page.cpp:353
+#: ../panel-plugin/page.cpp:345 ../panel-plugin/page.cpp:354
 msgid "Unable to add launcher to panel."
 msgstr "Nemožno pridať spúšťač do panela"
 

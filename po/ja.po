@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-07 12:53+0000\n"
+"POT-Creation-Date: 2013-12-29 12:13+0000\n"
 "PO-Revision-Date: 2013-12-08 14:47+0000\n"
 "Last-Translator: Masato HASHIMOTO <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/xfce4-"
@@ -23,15 +23,15 @@ msgstr ""
 msgid "Add action"
 msgstr "アクションの追加"
 
-#: ../panel-plugin/page.cpp:211
+#: ../panel-plugin/page.cpp:212
 msgid "Add to Desktop"
 msgstr "デスクトップに追加"
 
-#: ../panel-plugin/page.cpp:196
+#: ../panel-plugin/page.cpp:197
 msgid "Add to Favorites"
 msgstr "お気に入りに追加"
 
-#: ../panel-plugin/page.cpp:215
+#: ../panel-plugin/page.cpp:216
 msgid "Add to Panel"
 msgstr "パネルに追加"
 
@@ -43,7 +43,7 @@ msgstr "すべて"
 msgid "All _Settings"
 msgstr "設定マネージャー(_S)"
 
-#: ../panel-plugin/plugin.cpp:161
+#: ../panel-plugin/plugin.cpp:163
 msgid "Applications Menu"
 msgstr "アプリケーションメニュー"
 
@@ -185,7 +185,7 @@ msgstr "コマンドを検索フィールドの後に置く(_E)"
 msgid "Recently Used"
 msgstr "最近使ったもの"
 
-#: ../panel-plugin/page.cpp:204
+#: ../panel-plugin/page.cpp:205
 msgid "Remove From Favorites"
 msgstr "お気に入りから削除"
 
@@ -273,11 +273,11 @@ msgstr "アクションは完全に削除されます。"
 msgid "Title"
 msgstr "タイトル"
 
-#: ../panel-plugin/page.cpp:305
+#: ../panel-plugin/page.cpp:306
 msgid "Unable to add launcher to desktop."
 msgstr "デスクトップにランチャーを追加できません。"
 
-#: ../panel-plugin/page.cpp:344 ../panel-plugin/page.cpp:353
+#: ../panel-plugin/page.cpp:345 ../panel-plugin/page.cpp:354
 msgid "Unable to add launcher to panel."
 msgstr "パネルにランチャーを追加できません。"
 

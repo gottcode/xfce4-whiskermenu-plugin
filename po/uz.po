@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-07 12:53+0000\n"
+"POT-Creation-Date: 2013-12-29 12:13+0000\n"
 "PO-Revision-Date: 2013-12-10 12:30+0000\n"
 "Last-Translator: Umidjon Almasov <u.almasov@gmail.com>\n"
 "Language-Team: Uzbek (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
@@ -24,15 +24,15 @@ msgstr ""
 msgid "Add action"
 msgstr ""
 
-#: ../panel-plugin/page.cpp:211
+#: ../panel-plugin/page.cpp:212
 msgid "Add to Desktop"
 msgstr "Ishchi stolga qo'shish"
 
-#: ../panel-plugin/page.cpp:196
+#: ../panel-plugin/page.cpp:197
 msgid "Add to Favorites"
 msgstr "Tanlanganlarga qo'shish"
 
-#: ../panel-plugin/page.cpp:215
+#: ../panel-plugin/page.cpp:216
 msgid "Add to Panel"
 msgstr "Panelga qo'shish"
 
@@ -44,7 +44,7 @@ msgstr "Hammasi"
 msgid "All _Settings"
 msgstr ""
 
-#: ../panel-plugin/plugin.cpp:161
+#: ../panel-plugin/plugin.cpp:163
 msgid "Applications Menu"
 msgstr "Dasturlar menyusi"
 
@@ -186,7 +186,7 @@ msgstr "_Buyruqlarni qidirish elementidan keyin joylashtirish"
 msgid "Recently Used"
 msgstr "Yaqinda foydalanilganlar"
 
-#: ../panel-plugin/page.cpp:204
+#: ../panel-plugin/page.cpp:205
 msgid "Remove From Favorites"
 msgstr "Tanlanganlardan olib tashlash"
 
@@ -272,11 +272,11 @@ msgstr ""
 msgid "Title"
 msgstr "Sarlavha"
 
-#: ../panel-plugin/page.cpp:305
+#: ../panel-plugin/page.cpp:306
 msgid "Unable to add launcher to desktop."
 msgstr "Ishga tushiruvchini ishchi stolga qo'shib bo'lmadi."
 
-#: ../panel-plugin/page.cpp:344 ../panel-plugin/page.cpp:353
+#: ../panel-plugin/page.cpp:345 ../panel-plugin/page.cpp:354
 msgid "Unable to add launcher to panel."
 msgstr "Ishga tushiruvchini panelga qo'shib bo'lmadi."
 

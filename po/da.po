@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-07 12:53+0000\n"
+"POT-Creation-Date: 2013-12-29 12:13+0000\n"
 "PO-Revision-Date: 2013-10-27 16:23+0000\n"
 "Last-Translator: Morten Juhl-Johansen Zölde-Fejér <morten@writtenandread."
 "net>\n"
@@ -26,15 +26,15 @@ msgstr ""
 msgid "Add action"
 msgstr "Tilføj til panel"
 
-#: ../panel-plugin/page.cpp:211
+#: ../panel-plugin/page.cpp:212
 msgid "Add to Desktop"
 msgstr "Tilføj til skrivebord"
 
-#: ../panel-plugin/page.cpp:196
+#: ../panel-plugin/page.cpp:197
 msgid "Add to Favorites"
 msgstr "Tilføj til favoritter"
 
-#: ../panel-plugin/page.cpp:215
+#: ../panel-plugin/page.cpp:216
 msgid "Add to Panel"
 msgstr "Tilføj til panel"
 
@@ -47,7 +47,7 @@ msgstr "Alt"
 msgid "All _Settings"
 msgstr "Alle indstillinger"
 
-#: ../panel-plugin/plugin.cpp:161
+#: ../panel-plugin/plugin.cpp:163
 msgid "Applications Menu"
 msgstr "Applikationsmenu"
 
@@ -195,7 +195,7 @@ msgstr "Placer kommandoer ved siden af søgning"
 msgid "Recently Used"
 msgstr "Senest anvendt"
 
-#: ../panel-plugin/page.cpp:204
+#: ../panel-plugin/page.cpp:205
 msgid "Remove From Favorites"
 msgstr "Fjern fra favoritter"
 
@@ -284,11 +284,11 @@ msgstr ""
 msgid "Title"
 msgstr "Titel"
 
-#: ../panel-plugin/page.cpp:305
+#: ../panel-plugin/page.cpp:306
 msgid "Unable to add launcher to desktop."
 msgstr "Kunne ikke tilføje opstartsikon til skrivebordet."
 
-#: ../panel-plugin/page.cpp:344 ../panel-plugin/page.cpp:353
+#: ../panel-plugin/page.cpp:345 ../panel-plugin/page.cpp:354
 msgid "Unable to add launcher to panel."
 msgstr "Kunne ikke tilføje opstartsikon til panelet"
 

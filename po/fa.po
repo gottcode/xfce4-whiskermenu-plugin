@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-07 12:53+0000\n"
+"POT-Creation-Date: 2013-12-29 12:13+0000\n"
 "PO-Revision-Date: 2013-12-22 07:34+0000\n"
 "Last-Translator: Haiku <reza.gharibi.rg@gmail.com>\n"
 "Language-Team: Persian (http://www.transifex.com/projects/p/xfce4-"
@@ -23,15 +23,15 @@ msgstr ""
 msgid "Add action"
 msgstr "اضافه‌کردن عمل"
 
-#: ../panel-plugin/page.cpp:211
+#: ../panel-plugin/page.cpp:212
 msgid "Add to Desktop"
 msgstr "اضافه کردن به میزکار"
 
-#: ../panel-plugin/page.cpp:196
+#: ../panel-plugin/page.cpp:197
 msgid "Add to Favorites"
 msgstr "اضافه‌کردن به علاقه‌مندی‌ها"
 
-#: ../panel-plugin/page.cpp:215
+#: ../panel-plugin/page.cpp:216
 msgid "Add to Panel"
 msgstr "اضافه‌کردن به پنل"
 
@@ -43,7 +43,7 @@ msgstr "همه"
 msgid "All _Settings"
 msgstr "همه‌ی _تنظیمات"
 
-#: ../panel-plugin/plugin.cpp:161
+#: ../panel-plugin/plugin.cpp:163
 msgid "Applications Menu"
 msgstr "منوی برنامه‌ها"
 
@@ -185,7 +185,7 @@ msgstr "قراردادن دستورها کنار _ورودی جست‌و‌جو"
 msgid "Recently Used"
 msgstr "به تازگی استفاده شده"
 
-#: ../panel-plugin/page.cpp:204
+#: ../panel-plugin/page.cpp:205
 msgid "Remove From Favorites"
 msgstr "حذف‌کردن از علاقه‌مندی‌ها"
 
@@ -271,11 +271,11 @@ msgstr "عمل برای همیشه حذف خواهدشد."
 msgid "Title"
 msgstr "عنوان"
 
-#: ../panel-plugin/page.cpp:305
+#: ../panel-plugin/page.cpp:306
 msgid "Unable to add launcher to desktop."
 msgstr "ناتوان در اضافه‌کردن لانچر به میزکار."
 
-#: ../panel-plugin/page.cpp:344 ../panel-plugin/page.cpp:353
+#: ../panel-plugin/page.cpp:345 ../panel-plugin/page.cpp:354
 msgid "Unable to add launcher to panel."
 msgstr "ناتوان در اضافه‌کردن لانچر به پنل."
 

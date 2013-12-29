@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-07 12:53+0000\n"
+"POT-Creation-Date: 2013-12-29 12:13+0000\n"
 "PO-Revision-Date: 2013-12-20 14:25+0000\n"
 "Last-Translator: viking60 <thomasbjornvold@gmail.com>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/projects/p/xfce4-"
@@ -23,15 +23,15 @@ msgstr ""
 msgid "Add action"
 msgstr "Legg til aktivitet"
 
-#: ../panel-plugin/page.cpp:211
+#: ../panel-plugin/page.cpp:212
 msgid "Add to Desktop"
 msgstr "Legg til på skrivebordet"
 
-#: ../panel-plugin/page.cpp:196
+#: ../panel-plugin/page.cpp:197
 msgid "Add to Favorites"
 msgstr "Legg til i favoritter"
 
-#: ../panel-plugin/page.cpp:215
+#: ../panel-plugin/page.cpp:216
 msgid "Add to Panel"
 msgstr "Legg til på panel"
 
@@ -43,7 +43,7 @@ msgstr "Alle"
 msgid "All _Settings"
 msgstr "Alle_Innstillinger"
 
-#: ../panel-plugin/plugin.cpp:161
+#: ../panel-plugin/plugin.cpp:163
 msgid "Applications Menu"
 msgstr "Applikasjonsmeny"
 
@@ -185,7 +185,7 @@ msgstr "Plasser kommandoer ved siden av søket"
 msgid "Recently Used"
 msgstr "Siste brukte"
 
-#: ../panel-plugin/page.cpp:204
+#: ../panel-plugin/page.cpp:205
 msgid "Remove From Favorites"
 msgstr "Fjern fra favoritter"
 
@@ -271,11 +271,11 @@ msgstr "Aktiviteten vill bli slettet for godt."
 msgid "Title"
 msgstr "Tittel"
 
-#: ../panel-plugin/page.cpp:305
+#: ../panel-plugin/page.cpp:306
 msgid "Unable to add launcher to desktop."
 msgstr "Kunne ikke legge oppstarter til skrivebordet"
 
-#: ../panel-plugin/page.cpp:344 ../panel-plugin/page.cpp:353
+#: ../panel-plugin/page.cpp:345 ../panel-plugin/page.cpp:354
 msgid "Unable to add launcher to panel."
 msgstr "Kunne ikke legge oppstarter til panelet"
 
