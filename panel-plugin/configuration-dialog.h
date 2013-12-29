@@ -53,6 +53,7 @@ private:
 	void title_changed(GtkEditable* editable);
 	void choose_icon();
 
+	void toggle_button_single_row(GtkToggleButton* button);
 	void toggle_hover_switch_category(GtkToggleButton* button);
 	void toggle_remember_favorites(GtkToggleButton* button);
 	void toggle_display_recent(GtkToggleButton* button);
@@ -75,6 +76,7 @@ private:
 	Plugin* m_plugin;
 	GtkWidget* m_window;
 
+	GtkWidget* m_button_single_row;
 	GtkWidget* m_show_generic_names;
 	GtkWidget* m_show_descriptions;
 	GtkWidget* m_show_hierarchy;
