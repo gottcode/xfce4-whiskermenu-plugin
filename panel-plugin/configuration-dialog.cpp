@@ -155,6 +155,7 @@ void ConfigurationDialog::item_icon_size_changed(GtkComboBox* combo)
 void ConfigurationDialog::style_changed(GtkComboBox* combo)
 {
 	m_plugin->set_button_style(Plugin::ButtonStyle(gtk_combo_box_get_active(combo) + 1));
+	gtk_widget_set_sensitive(m_button_single_row, gtk_combo_box_get_active(combo) == 0);
 }
 
 //-----------------------------------------------------------------------------
@@ -163,6 +164,14 @@ void ConfigurationDialog::title_changed(GtkEditable* editable)
 {
 	const gchar* text = gtk_entry_get_text(GTK_ENTRY(editable));
 	m_plugin->set_button_title(text ? text : "");
+}
+
+//-----------------------------------------------------------------------------
+
+void ConfigurationDialog::toggle_button_single_row(GtkToggleButton* button)
+{
+	wm_settings->button_single_row = gtk_toggle_button_get_active(button);
+	m_plugin->set_button_style(Plugin::ButtonStyle(gtk_combo_box_get_active(GTK_COMBO_BOX(m_button_style)) + 1));
 }
 
 //-----------------------------------------------------------------------------
@@ -497,6 +506,12 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	m_icon = xfce_panel_image_new_from_source(m_plugin->get_button_icon_name().c_str());
 	xfce_panel_image_set_size(XFCE_PANEL_IMAGE(m_icon), 48);
 	gtk_container_add(GTK_CONTAINER(m_icon_button), m_icon);
+
+	m_button_single_row = gtk_check_button_new_with_mnemonic(_("Lay out icon in a single _panel row"));
+	gtk_box_pack_start(panel_vbox, m_button_single_row, true, true, 0);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_button_single_row), wm_settings->button_single_row);
+	gtk_widget_set_sensitive(m_button_single_row, gtk_combo_box_get_active(GTK_COMBO_BOX (m_button_style)) == 0);
+	g_signal_connect_slot(m_button_single_row, "toggled", &ConfigurationDialog::toggle_button_single_row, this);
 
 	// Create menu section
 	label_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);

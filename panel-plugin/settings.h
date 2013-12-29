@@ -63,6 +63,7 @@ public:
 	std::string button_icon_name;
 	bool button_title_visible;
 	bool button_icon_visible;
+	bool button_single_row;
 
 	bool launcher_show_name;
 	bool launcher_show_description;

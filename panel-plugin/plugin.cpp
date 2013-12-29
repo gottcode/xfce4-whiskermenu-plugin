@@ -349,7 +349,7 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 	xfce_panel_image_set_size(m_button_icon, row_size - border);
 
 #if (LIBXFCE4PANEL_CHECK_VERSION(4,9,0))
-	if (wm_settings->button_title_visible && (mode == XFCE_PANEL_PLUGIN_MODE_DESKBAR))
+	if (wm_settings->button_title_visible || !wm_settings->button_single_row)
 	{
 		xfce_panel_plugin_set_small(m_plugin, false);
 
