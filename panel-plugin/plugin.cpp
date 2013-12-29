@@ -87,7 +87,7 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	gtk_widget_show(GTK_WIDGET(m_button_box));
 
 	m_button_icon = XFCE_PANEL_IMAGE(xfce_panel_image_new_from_source(wm_settings->button_icon_name.c_str()));
-	gtk_box_pack_start(m_button_box, GTK_WIDGET(m_button_icon), false, false, 0);
+	gtk_box_pack_start(m_button_box, GTK_WIDGET(m_button_icon), true, false, 0);
 	if (wm_settings->button_icon_visible)
 	{
 		gtk_widget_show(GTK_WIDGET(m_button_icon));
@@ -333,14 +333,13 @@ void Plugin::save()
 
 gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 {
+	GtkOrientation panel_orientation = xfce_panel_plugin_get_orientation(m_plugin);
+	GtkOrientation orientation = panel_orientation;
 #if (LIBXFCE4PANEL_CHECK_VERSION(4,9,0))
 	gint row_size = size / xfce_panel_plugin_get_nrows(m_plugin);
 	XfcePanelPluginMode mode = xfce_panel_plugin_get_mode(m_plugin);
-	GtkOrientation orientation = (mode == XFCE_PANEL_PLUGIN_MODE_HORIZONTAL)
-			? GTK_ORIENTATION_HORIZONTAL : GTK_ORIENTATION_VERTICAL;
 #else
 	gint row_size = size;
-	GtkOrientation orientation = xfce_panel_plugin_get_orientation(m_plugin);
 #endif
 
 	// Resize icon
@@ -356,7 +355,10 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 		// Put title next to icon if panel is wide enough
 		GtkRequisition label_size;
 		gtk_widget_size_request(GTK_WIDGET(m_button_label), &label_size);
-		if (label_size.width <= (size - row_size))
+		if (mode == XFCE_PANEL_PLUGIN_MODE_DESKBAR &&
+		    wm_settings->button_title_visible &&
+		    wm_settings->button_icon_visible &&
+		    label_size.width <= (size - row_size))
 		{
 			orientation = GTK_ORIENTATION_HORIZONTAL;
 		}
@@ -367,7 +369,21 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 	}
 #endif
 
+	// Fix alignment in deskbar mode
+        if (panel_orientation == GTK_ORIENTATION_VERTICAL &&
+	    orientation == GTK_ORIENTATION_HORIZONTAL)
+	{
+		gtk_box_set_child_packing(m_button_box, GTK_WIDGET(m_button_icon), false, false, 0, GTK_PACK_START);
+		gtk_box_set_child_packing(m_button_box, GTK_WIDGET(m_button_label), false, false, 0, GTK_PACK_START);
+	}
+	else
+	{
+		gtk_box_set_child_packing(m_button_box, GTK_WIDGET(m_button_icon), true, false, 0, GTK_PACK_START);
+		gtk_box_set_child_packing(m_button_box, GTK_WIDGET(m_button_label), true, true, 0, GTK_PACK_START);
+	}
+
 	gtk_orientable_set_orientation(GTK_ORIENTABLE(m_button_box), orientation);
+
 
 	return true;
 }
