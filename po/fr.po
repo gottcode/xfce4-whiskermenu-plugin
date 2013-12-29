@@ -7,13 +7,14 @@
 # Pingax <pingax@gmail.com>, 2013
 # Draky <draky@draky.net>, 2013
 # Ennoia <ennoia11@gmail.com>, 2013
+# jc1 <jc1.quebecos@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-29 12:13+0000\n"
-"PO-Revision-Date: 2013-12-18 11:19+0000\n"
-"Last-Translator: Pingax <pingax@frugalware.org>\n"
+"PO-Revision-Date: 2013-12-29 15:49+0000\n"
+"Last-Translator: jc1 <jc1.quebecos@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
 "plugin/language/fr/)\n"
 "Language: fr\n"
@@ -213,11 +214,11 @@ msgstr "Lancer dans un terminal"
 
 #: ../panel-plugin/configuration-dialog.cpp:81
 msgid "Search Actio_ns"
-msgstr ""
+msgstr "Rechercher des actio_ns"
 
 #: ../panel-plugin/search-action.cpp:261
 msgid "Search Action"
-msgstr ""
+msgstr "Rechercher une action"
 
 #: ../panel-plugin/configuration-dialog.cpp:114
 msgid "Select An Icon"
@@ -261,7 +262,7 @@ msgstr "Classement alphabétique décroissant"
 
 #: ../panel-plugin/settings.cpp:113
 msgid "Switch _Users"
-msgstr ""
+msgstr "Changer des utilisateurs"
 
 #: ../panel-plugin/configuration-dialog.cpp:592
 msgid "Switch categories by _hovering"
