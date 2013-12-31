@@ -32,6 +32,26 @@ class Command;
 class Plugin;
 class SearchAction;
 
+
+// Boolean setting
+class Boolean
+{
+public:
+	explicit Boolean(bool data);
+
+	operator bool() const
+	{
+		return m_data;
+	}
+
+	Boolean& operator=(bool data);
+
+private:
+	bool m_data;
+};
+
+
+// Settings class
 class Settings
 {
 	Settings();
@@ -67,18 +87,18 @@ public:
 
 	std::string button_title;
 	std::string button_icon_name;
-	bool button_title_visible;
-	bool button_icon_visible;
-	bool button_single_row;
+	Boolean button_title_visible;
+	Boolean button_icon_visible;
+	Boolean button_single_row;
 
-	bool launcher_show_name;
-	bool launcher_show_description;
-	bool launcher_show_tooltip;
+	Boolean launcher_show_name;
+	Boolean launcher_show_description;
+	Boolean launcher_show_tooltip;
 	IconSize launcher_icon_size;
 
-	bool category_hover_activate;
-	bool category_show_name;
-	bool sort_categories;
+	Boolean category_hover_activate;
+	Boolean category_show_name;
+	Boolean sort_categories;
 	IconSize category_icon_size;
 
 	enum ViewMode
@@ -98,13 +118,13 @@ public:
 	int default_category;
 
 	decltype(recent.size()) recent_items_max;
-	bool favorites_in_recent;
+	Boolean favorites_in_recent;
 
-	bool position_search_alternate;
-	bool position_commands_alternate;
-	bool position_categories_alternate;
-	bool position_categories_horizontal;
-	bool stay_on_focus_out;
+	Boolean position_search_alternate;
+	Boolean position_commands_alternate;
+	Boolean position_categories_alternate;
+	Boolean position_categories_horizontal;
+	Boolean stay_on_focus_out;
 
 	enum ProfileShape
 	{
@@ -130,7 +150,7 @@ public:
 		CountCommands
 	};
 	Command* command[CountCommands];
-	bool confirm_session_command;
+	Boolean confirm_session_command;
 
 	std::vector<SearchAction*> search_actions;
 

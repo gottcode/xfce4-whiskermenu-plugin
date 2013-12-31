@@ -276,8 +276,6 @@ void Plugin::set_button_style(ButtonStyle style)
 		gtk_widget_set_has_tooltip(m_button, true);
 	}
 
-	wm_settings->set_modified();
-
 	size_changed(m_plugin, xfce_panel_plugin_get_size(m_plugin));
 }
 

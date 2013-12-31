@@ -187,7 +187,6 @@ void SettingsDialog::toggle_show_as_tree(GtkToggleButton* button)
 void SettingsDialog::toggle_show_generic_name(GtkToggleButton* button)
 {
 	wm_settings->launcher_show_name = !gtk_toggle_button_get_active(button);
-	wm_settings->set_modified();
 	m_plugin->reload();
 }
 
@@ -196,7 +195,6 @@ void SettingsDialog::toggle_show_generic_name(GtkToggleButton* button)
 void SettingsDialog::toggle_show_category_name(GtkToggleButton* button)
 {
 	wm_settings->category_show_name = gtk_toggle_button_get_active(button);
-	wm_settings->set_modified();
 }
 
 //-----------------------------------------------------------------------------
@@ -204,7 +202,6 @@ void SettingsDialog::toggle_show_category_name(GtkToggleButton* button)
 void SettingsDialog::toggle_show_description(GtkToggleButton* button)
 {
 	wm_settings->launcher_show_description = gtk_toggle_button_get_active(button);
-	wm_settings->set_modified();
 	m_plugin->reload();
 }
 
@@ -213,7 +210,6 @@ void SettingsDialog::toggle_show_description(GtkToggleButton* button)
 void SettingsDialog::toggle_show_tooltip(GtkToggleButton* button)
 {
 	wm_settings->launcher_show_tooltip = gtk_toggle_button_get_active(button);
-	wm_settings->set_modified();
 }
 
 //-----------------------------------------------------------------------------
@@ -254,7 +250,6 @@ void SettingsDialog::toggle_position_categories_horizontal(GtkToggleButton* butt
 	wm_settings->position_categories_horizontal = gtk_toggle_button_get_active(button);
 	const bool active = (wm_settings->category_icon_size != -1) && !wm_settings->position_categories_horizontal;
 	gtk_widget_set_sensitive(m_show_category_names, active);
-	wm_settings->set_modified();
 }
 
 //-----------------------------------------------------------------------------
@@ -262,7 +257,6 @@ void SettingsDialog::toggle_position_categories_horizontal(GtkToggleButton* butt
 void SettingsDialog::toggle_position_categories_alternate(GtkToggleButton* button)
 {
 	wm_settings->position_categories_alternate = gtk_toggle_button_get_active(button);
-	wm_settings->set_modified();
 }
 
 //-----------------------------------------------------------------------------
@@ -270,7 +264,6 @@ void SettingsDialog::toggle_position_categories_alternate(GtkToggleButton* butto
 void SettingsDialog::toggle_position_search_alternate(GtkToggleButton* button)
 {
 	wm_settings->position_search_alternate = gtk_toggle_button_get_active(button);
-	wm_settings->set_modified();
 }
 
 //-----------------------------------------------------------------------------
@@ -278,7 +271,6 @@ void SettingsDialog::toggle_position_search_alternate(GtkToggleButton* button)
 void SettingsDialog::toggle_position_commands_alternate(GtkToggleButton* button)
 {
 	wm_settings->position_commands_alternate = gtk_toggle_button_get_active(button);
-	wm_settings->set_modified();
 }
 
 //-----------------------------------------------------------------------------
@@ -286,7 +278,6 @@ void SettingsDialog::toggle_position_commands_alternate(GtkToggleButton* button)
 void SettingsDialog::profile_shape_changed(GtkComboBox* combo)
 {
 	wm_settings->profile_shape = gtk_combo_box_get_active(combo);
-	wm_settings->set_modified();
 }
 
 //-----------------------------------------------------------------------------
@@ -342,7 +333,6 @@ void SettingsDialog::toggle_button_single_row(GtkToggleButton* button)
 void SettingsDialog::toggle_hover_switch_category(GtkToggleButton* button)
 {
 	wm_settings->category_hover_activate = gtk_toggle_button_get_active(button);
-	wm_settings->set_modified();
 }
 
 //-----------------------------------------------------------------------------
@@ -350,7 +340,6 @@ void SettingsDialog::toggle_hover_switch_category(GtkToggleButton* button)
 void SettingsDialog::toggle_stay_on_focus_out(GtkToggleButton* button)
 {
 	wm_settings->stay_on_focus_out = gtk_toggle_button_get_active(button);
-	wm_settings->set_modified();
 }
 
 //-----------------------------------------------------------------------------
@@ -358,7 +347,6 @@ void SettingsDialog::toggle_stay_on_focus_out(GtkToggleButton* button)
 void SettingsDialog::toggle_sort_categories(GtkToggleButton* button)
 {
 	wm_settings->sort_categories = gtk_toggle_button_get_active(button);
-	wm_settings->set_modified();
 	m_plugin->reload();
 }
 
@@ -414,7 +402,6 @@ void SettingsDialog::recent_items_max_changed(GtkSpinButton* button)
 void SettingsDialog::toggle_remember_favorites(GtkToggleButton* button)
 {
 	wm_settings->favorites_in_recent = gtk_toggle_button_get_active(button);
-	wm_settings->set_modified();
 }
 
 //-----------------------------------------------------------------------------
@@ -422,7 +409,6 @@ void SettingsDialog::toggle_remember_favorites(GtkToggleButton* button)
 void SettingsDialog::toggle_confirm_session_command(GtkToggleButton* button)
 {
 	wm_settings->confirm_session_command = gtk_toggle_button_get_active(button);
-	wm_settings->set_modified();
 }
 
 //-----------------------------------------------------------------------------
@@ -516,7 +502,6 @@ void SettingsDialog::add_action(GtkButton*)
 	// Add to action list
 	SearchAction* action = new SearchAction;
 	wm_settings->search_actions.push_back(action);
-	wm_settings->set_modified();
 
 	// Add to model
 	GtkTreeIter iter;

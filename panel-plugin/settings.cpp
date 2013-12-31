@@ -463,3 +463,22 @@ void Settings::save(gchar* file)
 }
 
 //-----------------------------------------------------------------------------
+
+Boolean::Boolean(bool data) :
+	m_data(data)
+{
+}
+
+//-----------------------------------------------------------------------------
+
+Boolean& Boolean::operator=(bool data)
+{
+	if (m_data != data)
+	{
+		m_data = data;
+		wm_settings->set_modified();
+	}
+	return *this;
+}
+
+//-----------------------------------------------------------------------------
