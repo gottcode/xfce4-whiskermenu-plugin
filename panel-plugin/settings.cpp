@@ -139,11 +139,11 @@ Settings::Settings() :
 	sort_categories(true),
 	category_icon_size(IconSize::Smaller),
 
-	view_mode(ViewAsIcons),
+	view_mode(ViewAsIcons, ViewAsIcons, ViewAsTree),
 
-	default_category(CategoryFavorites),
+	default_category(CategoryFavorites, CategoryFavorites, CategoryAll),
 
-	recent_items_max(10),
+	recent_items_max(10, 0, 100),
 	favorites_in_recent(true),
 
 	position_search_alternate(true),
@@ -152,7 +152,7 @@ Settings::Settings() :
 	position_categories_horizontal(true),
 	stay_on_focus_out(false),
 
-	profile_shape(ProfileRound),
+	profile_shape(ProfileRound, ProfileRound, ProfileHidden),
 
 	confirm_session_command(true),
 
@@ -165,9 +165,9 @@ Settings::Settings() :
 		new SearchAction(_("Open URI"), "^(file|http|https):\\/\\/(.*)$", "exo-open \\0", true, true)
 	},
 
-	menu_width(560),
-	menu_height(500),
-	menu_opacity(100)
+	menu_width(560, 10, INT_MAX),
+	menu_height(500, 10, INT_MAX),
+	menu_opacity(100, 0, 100)
 {
 	command[CommandSettings] = new Command("org.xfce.settings.manager", "preferences-desktop",
 			_("_Settings Manager"),
@@ -279,7 +279,7 @@ void Settings::load(gchar* file)
 
 	if (xfce_rc_has_entry(rc, "view-mode"))
 	{
-		view_mode = CLAMP(xfce_rc_read_int_entry(rc, "view-mode", view_mode), ViewAsIcons, ViewAsTree);
+		view_mode = xfce_rc_read_int_entry(rc, "view-mode", view_mode);
 	}
 	else if (xfce_rc_has_entry(rc, "load-hierarchy"))
 	{
@@ -296,9 +296,9 @@ void Settings::load(gchar* file)
 	sort_categories = xfce_rc_read_bool_entry(rc, "sort-categories", sort_categories);
 
 	default_category = xfce_rc_read_bool_entry(rc, "display-recent-default", default_category);
-	default_category = CLAMP(xfce_rc_read_int_entry(rc, "default-category", default_category), CategoryFavorites, CategoryAll);
+	default_category = xfce_rc_read_int_entry(rc, "default-category", default_category);
 
-	recent_items_max = std::max(0, xfce_rc_read_int_entry(rc, "recent-items-max", recent_items_max));
+	recent_items_max = xfce_rc_read_int_entry(rc, "recent-items-max", recent_items_max);
 	favorites_in_recent = xfce_rc_read_bool_entry(rc, "favorites-in-recent", favorites_in_recent);
 	if (!recent_items_max && (default_category == CategoryRecent))
 	{
@@ -310,7 +310,7 @@ void Settings::load(gchar* file)
 	position_categories_alternate = xfce_rc_read_bool_entry(rc, "position-categories-alternate", position_categories_alternate);
 	stay_on_focus_out = xfce_rc_read_bool_entry(rc, "stay-on-focus-out", stay_on_focus_out);
 
-	profile_shape = CLAMP(xfce_rc_read_int_entry(rc, "profile-shape", profile_shape), ProfileRound, ProfileHidden);
+	profile_shape = xfce_rc_read_int_entry(rc, "profile-shape", profile_shape);
 
 	if (xfce_rc_has_entry(rc, "position-categories-horizontal"))
 	{
@@ -323,9 +323,9 @@ void Settings::load(gchar* file)
 
 	confirm_session_command = xfce_rc_read_bool_entry(rc, "confirm-session-command", confirm_session_command);
 
-	menu_width = std::max(10, xfce_rc_read_int_entry(rc, "menu-width", menu_width));
-	menu_height = std::max(10, xfce_rc_read_int_entry(rc, "menu-height", menu_height));
-	menu_opacity = std::min(100, std::max(0, xfce_rc_read_int_entry(rc, "menu-opacity", menu_opacity)));
+	menu_width = xfce_rc_read_int_entry(rc, "menu-width", menu_width);
+	menu_height = xfce_rc_read_int_entry(rc, "menu-height", menu_height);
+	menu_opacity = xfce_rc_read_int_entry(rc, "menu-opacity", menu_opacity);
 
 	for (int i = 0; i < CountCommands; ++i)
 	{
@@ -473,6 +473,28 @@ Boolean::Boolean(bool data) :
 
 Boolean& Boolean::operator=(bool data)
 {
+	if (m_data != data)
+	{
+		m_data = data;
+		wm_settings->set_modified();
+	}
+	return *this;
+}
+
+//-----------------------------------------------------------------------------
+
+Integer::Integer(int data, int min, int max) :
+	m_min(min),
+	m_max(max),
+	m_data(CLAMP(data, min, max))
+{
+}
+
+//-----------------------------------------------------------------------------
+
+Integer& Integer::operator=(int data)
+{
+	data = CLAMP(data, m_min, m_max);
 	if (m_data != data)
 	{
 		m_data = data;

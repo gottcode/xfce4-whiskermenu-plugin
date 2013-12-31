@@ -37,7 +37,7 @@ RecentPage::RecentPage(Window* window) :
 	Page(window, "document-open-recent", _("Recently Used"))
 {
 	// Prevent going over max
-	if (wm_settings->recent.size() > wm_settings->recent_items_max)
+	if (wm_settings->recent.size() > static_cast<unsigned int>(wm_settings->recent_items_max))
 	{
 		wm_settings->recent.erase(wm_settings->recent.begin() + wm_settings->recent_items_max, wm_settings->recent.end());
 		wm_settings->set_modified();
@@ -105,7 +105,7 @@ void RecentPage::add(Launcher* launcher)
 
 void RecentPage::enforce_item_count()
 {
-	if (wm_settings->recent_items_max >= wm_settings->recent.size())
+	if (wm_settings->recent.size() <= static_cast<unsigned int>(wm_settings->recent_items_max))
 	{
 		return;
 	}

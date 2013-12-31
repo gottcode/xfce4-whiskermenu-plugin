@@ -147,7 +147,6 @@ void SettingsDialog::toggle_show_as_icons(GtkToggleButton *button)
 	if (gtk_toggle_button_get_active(button))
 	{
 		wm_settings->view_mode = Settings::ViewAsIcons;
-		wm_settings->set_modified();
 		m_plugin->reload();
 
 		gtk_widget_set_sensitive(GTK_WIDGET(m_show_descriptions), false);
@@ -161,7 +160,6 @@ void SettingsDialog::toggle_show_as_list(GtkToggleButton *button)
 	if (gtk_toggle_button_get_active(button))
 	{
 		wm_settings->view_mode = Settings::ViewAsList;
-		wm_settings->set_modified();
 		m_plugin->reload();
 
 		gtk_widget_set_sensitive(GTK_WIDGET(m_show_descriptions), true);
@@ -175,7 +173,6 @@ void SettingsDialog::toggle_show_as_tree(GtkToggleButton* button)
 	if (gtk_toggle_button_get_active(button))
 	{
 		wm_settings->view_mode = Settings::ViewAsTree;
-		wm_settings->set_modified();
 		m_plugin->reload();
 
 		gtk_widget_set_sensitive(GTK_WIDGET(m_show_descriptions), true);
@@ -240,7 +237,6 @@ void SettingsDialog::item_icon_size_changed(GtkComboBox* combo)
 void SettingsDialog::background_opacity_changed(GtkRange* range)
 {
 	wm_settings->menu_opacity = gtk_range_get_value(range);
-	wm_settings->set_modified();
 }
 
 //-----------------------------------------------------------------------------
@@ -357,7 +353,6 @@ void SettingsDialog::toggle_display_favorites(GtkToggleButton* button)
 	if (gtk_toggle_button_get_active(button))
 	{
 		wm_settings->default_category = Settings::CategoryFavorites;
-		wm_settings->set_modified();
 	}
 }
 
@@ -368,7 +363,6 @@ void SettingsDialog::toggle_display_recent(GtkToggleButton* button)
 	if (gtk_toggle_button_get_active(button))
 	{
 		wm_settings->default_category = Settings::CategoryRecent;
-		wm_settings->set_modified();
 	}
 }
 
@@ -379,7 +373,6 @@ void SettingsDialog::toggle_display_applications(GtkToggleButton *button)
 	if (gtk_toggle_button_get_active(button))
 	{
 		wm_settings->default_category = Settings::CategoryAll;
-		wm_settings->set_modified();
 	}
 }
 
@@ -388,7 +381,6 @@ void SettingsDialog::toggle_display_applications(GtkToggleButton *button)
 void SettingsDialog::recent_items_max_changed(GtkSpinButton* button)
 {
 	wm_settings->recent_items_max = gtk_spin_button_get_value_as_int(button);
-	wm_settings->set_modified();
 	const bool active = wm_settings->recent_items_max;
 	gtk_widget_set_sensitive(GTK_WIDGET(m_display_recent), active);
 	if (!active && gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(m_display_recent)))

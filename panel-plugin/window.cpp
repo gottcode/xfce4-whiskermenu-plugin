@@ -484,12 +484,10 @@ void WhiskerMenu::Window::save()
 	if (wm_settings->menu_width != m_geometry.width)
 	{
 		wm_settings->menu_width = m_geometry.width;
-		wm_settings->set_modified();
 	}
 	if (wm_settings->menu_height != m_geometry.height)
 	{
 		wm_settings->menu_height = m_geometry.height;
-		wm_settings->set_modified();
 	}
 }
 

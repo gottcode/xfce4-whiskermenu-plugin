@@ -51,6 +51,26 @@ private:
 };
 
 
+// Integer setting
+class Integer
+{
+public:
+	explicit Integer(int data, int min, int max);
+
+	operator int() const
+	{
+		return m_data;
+	}
+
+	Integer& operator=(int data);
+
+private:
+	const int m_min;
+	const int m_max;
+	int m_data;
+};
+
+
 // Settings class
 class Settings
 {
@@ -107,7 +127,7 @@ public:
 		ViewAsList,
 		ViewAsTree
 	};
-	int view_mode;
+	Integer view_mode;
 
 	enum DefaultCategory
 	{
@@ -115,9 +135,9 @@ public:
 		CategoryRecent,
 		CategoryAll
 	};
-	int default_category;
+	Integer default_category;
 
-	decltype(recent.size()) recent_items_max;
+	Integer recent_items_max;
 	Boolean favorites_in_recent;
 
 	Boolean position_search_alternate;
@@ -132,7 +152,7 @@ public:
 		ProfileSquare,
 		ProfileHidden
 	};
-	int profile_shape;
+	Integer profile_shape;
 
 	enum Commands
 	{
@@ -154,9 +174,9 @@ public:
 
 	std::vector<SearchAction*> search_actions;
 
-	int menu_width;
-	int menu_height;
-	int menu_opacity;
+	Integer menu_width;
+	Integer menu_height;
+	Integer menu_opacity;
 
 	friend class Plugin;
 };
