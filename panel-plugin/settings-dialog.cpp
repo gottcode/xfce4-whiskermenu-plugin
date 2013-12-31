@@ -303,7 +303,7 @@ void SettingsDialog::choose_icon()
 			nullptr);
 
 	gtk_dialog_set_default_response(GTK_DIALOG(chooser), GTK_RESPONSE_ACCEPT);
-	exo_icon_chooser_dialog_set_icon(EXO_ICON_CHOOSER_DIALOG(chooser), m_plugin->get_button_icon_name().c_str());
+	exo_icon_chooser_dialog_set_icon(EXO_ICON_CHOOSER_DIALOG(chooser), wm_settings->button_icon_name);
 
 	if (gtk_dialog_run(GTK_DIALOG (chooser)) == GTK_RESPONSE_ACCEPT)
 	{
@@ -595,7 +595,7 @@ void SettingsDialog::response(GtkDialog*, int response_id)
 	}
 	else
 	{
-		if ((m_plugin->get_button_style() == Plugin::ShowText) && m_plugin->get_button_title().empty())
+		if ((m_plugin->get_button_style() == Plugin::ShowText) && wm_settings->button_title.empty())
 		{
 			m_plugin->set_button_title(Plugin::get_button_title_default());
 		}
@@ -893,7 +893,7 @@ GtkWidget* SettingsDialog::init_appearance_tab()
 	gtk_grid_attach(panel_table, label, 0, 1, 1, 1);
 
 	m_title = gtk_entry_new();
-	gtk_entry_set_text(GTK_ENTRY(m_title), m_plugin->get_button_title().c_str());
+	gtk_entry_set_text(GTK_ENTRY(m_title), wm_settings->button_title);
 	gtk_widget_set_hexpand(m_title, true);
 	gtk_grid_attach(panel_table, m_title, 1, 1, 1, 1);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_title);
@@ -910,7 +910,7 @@ GtkWidget* SettingsDialog::init_appearance_tab()
 	g_signal_connect_slot<GtkButton*>(m_icon_button, "clicked", &SettingsDialog::choose_icon, this);
 	gtk_grid_attach(panel_table, m_icon_button, 1, 2, 1, 1);
 
-	m_icon = gtk_image_new_from_icon_name(m_plugin->get_button_icon_name().c_str(), GTK_ICON_SIZE_DIALOG);
+	m_icon = gtk_image_new_from_icon_name(wm_settings->button_icon_name, GTK_ICON_SIZE_DIALOG);
 	gtk_container_add(GTK_CONTAINER(m_icon_button), m_icon);
 
 	m_button_single_row = gtk_check_button_new_with_mnemonic(_("Use a single _panel row"));

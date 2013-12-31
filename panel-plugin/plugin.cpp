@@ -150,8 +150,8 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	gtk_widget_show(GTK_WIDGET(m_button_box));
 
 	m_button_icon = GTK_IMAGE(gtk_image_new());
-	icon_changed(wm_settings->button_icon_name.c_str());
-	gtk_widget_set_tooltip_markup(m_button, wm_settings->button_title.c_str());
+	icon_changed(wm_settings->button_icon_name);
+	gtk_widget_set_tooltip_markup(m_button, wm_settings->button_title);
 	gtk_box_pack_start(m_button_box, GTK_WIDGET(m_button_icon), true, false, 0);
 	if (wm_settings->button_icon_visible)
 	{
@@ -164,7 +164,7 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	gtk_widget_set_sensitive(GTK_WIDGET(m_button_icon), false);
 
 	m_button_label = GTK_LABEL(gtk_label_new(nullptr));
-	gtk_label_set_markup(m_button_label, wm_settings->button_title.c_str());
+	gtk_label_set_markup(m_button_label, wm_settings->button_title);
 	gtk_box_pack_start(m_button_box, GTK_WIDGET(m_button_label), true, true, 0);
 	if (wm_settings->button_title_visible)
 	{
@@ -223,23 +223,9 @@ Plugin::ButtonStyle Plugin::get_button_style() const
 
 //-----------------------------------------------------------------------------
 
-std::string Plugin::get_button_title() const
-{
-	return wm_settings->button_title;
-}
-
-//-----------------------------------------------------------------------------
-
 std::string Plugin::get_button_title_default()
 {
 	return wm_settings->m_button_title_default;
-}
-
-//-----------------------------------------------------------------------------
-
-std::string Plugin::get_button_icon_name() const
-{
-	return wm_settings->button_icon_name;
 }
 
 //-----------------------------------------------------------------------------
@@ -284,9 +270,8 @@ void Plugin::set_button_style(ButtonStyle style)
 void Plugin::set_button_title(const std::string& title)
 {
 	wm_settings->button_title = title;
-	wm_settings->set_modified();
-	gtk_label_set_markup(m_button_label, wm_settings->button_title.c_str());
-	gtk_widget_set_tooltip_markup(m_button, wm_settings->button_title.c_str());
+	gtk_label_set_markup(m_button_label, wm_settings->button_title);
+	gtk_widget_set_tooltip_markup(m_button, wm_settings->button_title);
 	gtk_widget_set_has_tooltip(m_button, !wm_settings->button_title_visible);
 	size_changed(m_plugin, xfce_panel_plugin_get_size(m_plugin));
 }
@@ -296,7 +281,6 @@ void Plugin::set_button_title(const std::string& title)
 void Plugin::set_button_icon_name(const std::string& icon)
 {
 	wm_settings->button_icon_name = icon;
-	wm_settings->set_modified();
 	icon_changed(icon.c_str());
 	size_changed(m_plugin, xfce_panel_plugin_get_size(m_plugin));
 }
@@ -506,7 +490,7 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 			max_height *= 6;
 		}
 
-		GdkPixbuf* pixbuf = gdk_pixbuf_new_from_file_at_size(wm_settings->button_icon_name.c_str(), max_width, max_height, nullptr);
+		GdkPixbuf* pixbuf = gdk_pixbuf_new_from_file_at_size(wm_settings->button_icon_name, max_width, max_height, nullptr);
 		if (pixbuf)
 		{
 			// Handle high dpi

@@ -71,6 +71,39 @@ private:
 };
 
 
+// String setting
+class String
+{
+public:
+	explicit String(const std::string& data = std::string());
+
+	bool empty() const
+	{
+		return m_data.empty();
+	}
+
+	operator const char*() const
+	{
+		return m_data.c_str();
+	}
+
+	bool operator==(const char* data) const
+	{
+		return m_data == data;
+	}
+
+	bool operator!=(const std::string& data) const
+	{
+		return m_data != data;
+	}
+
+	String& operator=(const std::string& data);
+
+private:
+	std::string m_data;
+};
+
+
 // Settings class
 class Settings
 {
@@ -103,10 +136,10 @@ public:
 	std::vector<std::string> favorites;
 	std::vector<std::string> recent;
 
-	std::string custom_menu_file;
+	String custom_menu_file;
 
-	std::string button_title;
-	std::string button_icon_name;
+	String button_title;
+	String button_icon_name;
 	Boolean button_title_visible;
 	Boolean button_icon_visible;
 	Boolean button_single_row;

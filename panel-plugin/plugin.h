@@ -54,9 +54,7 @@ public:
 	};
 
 	ButtonStyle get_button_style() const;
-	std::string get_button_title() const;
 	static std::string get_button_title_default();
-	std::string get_button_icon_name() const;
 
 	void reload();
 	void set_button_style(ButtonStyle style);

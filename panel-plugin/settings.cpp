@@ -260,10 +260,10 @@ void Settings::load(gchar* file)
 	read_vector_entry(rc, "favorites", favorites);
 	read_vector_entry(rc, "recent", recent);
 
-	custom_menu_file = xfce_rc_read_entry(rc, "custom-menu-file", custom_menu_file.c_str());
+	custom_menu_file = xfce_rc_read_entry(rc, "custom-menu-file", custom_menu_file);
 
-	button_title = xfce_rc_read_entry(rc, "button-title", button_title.c_str());
-	button_icon_name = xfce_rc_read_entry(rc, "button-icon", button_icon_name.c_str());
+	button_title = xfce_rc_read_entry(rc, "button-title", button_title);
+	button_icon_name = xfce_rc_read_entry(rc, "button-icon", button_icon_name);
 	button_single_row = xfce_rc_read_bool_entry(rc, "button-single-row", button_single_row);
 	button_title_visible = xfce_rc_read_bool_entry(rc, "show-button-title", button_title_visible);
 	button_icon_visible = xfce_rc_read_bool_entry(rc, "show-button-icon", button_icon_visible);
@@ -393,14 +393,14 @@ void Settings::save(gchar* file)
 
 	if (!custom_menu_file.empty())
 	{
-		xfce_rc_write_entry(rc, "custom-menu-file", custom_menu_file.c_str());
+		xfce_rc_write_entry(rc, "custom-menu-file", custom_menu_file);
 	}
 
 	if (button_title != Plugin::get_button_title_default())
 	{
-		xfce_rc_write_entry(rc, "button-title", button_title.c_str());
+		xfce_rc_write_entry(rc, "button-title", button_title);
 	}
-	xfce_rc_write_entry(rc, "button-icon", button_icon_name.c_str());
+	xfce_rc_write_entry(rc, "button-icon", button_icon_name);
 	xfce_rc_write_bool_entry(rc, "button-single-row", button_single_row);
 	xfce_rc_write_bool_entry(rc, "show-button-title", button_title_visible);
 	xfce_rc_write_bool_entry(rc, "show-button-icon", button_icon_visible);
@@ -495,6 +495,25 @@ Integer::Integer(int data, int min, int max) :
 Integer& Integer::operator=(int data)
 {
 	data = CLAMP(data, m_min, m_max);
+	if (m_data != data)
+	{
+		m_data = data;
+		wm_settings->set_modified();
+	}
+	return *this;
+}
+
+//-----------------------------------------------------------------------------
+
+String::String(const std::string& data) :
+	m_data(data)
+{
+}
+
+//-----------------------------------------------------------------------------
+
+String& String::operator=(const std::string& data)
+{
 	if (m_data != data)
 	{
 		m_data = data;

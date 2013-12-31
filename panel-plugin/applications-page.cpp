@@ -235,7 +235,7 @@ void ApplicationsPage::load_garcon_menu()
 	}
 	else
 	{
-		m_garcon_menu = garcon_menu_new_for_path(wm_settings->custom_menu_file.c_str());
+		m_garcon_menu = garcon_menu_new_for_path(wm_settings->custom_menu_file);
 	}
 
 	// Load menu
