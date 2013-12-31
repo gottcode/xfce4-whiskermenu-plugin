@@ -22,6 +22,8 @@
 #include "settings.h"
 #include "slot.h"
 
+#include <algorithm>
+
 #include <glib/gi18n-lib.h>
 
 using namespace WhiskerMenu;
@@ -48,14 +50,25 @@ void RecentPage::add(Launcher* launcher)
 		return;
 	}
 
-	// Skip if already first launcher
-	if (!wm_settings->recent.empty() && (wm_settings->recent.front() == launcher->get_desktop_id()))
+	if (!wm_settings->recent.empty())
 	{
-		return;
-	}
+		std::vector<std::string>::iterator i = std::find(wm_settings->recent.begin(), wm_settings->recent.end(), launcher->get_desktop_id());
 
-	// Remove item if already in list
-	remove(launcher);
+		// Skip if already first launcher
+		if (i == wm_settings->recent.begin())
+		{
+			return;
+		}
+		// Move to front if already in list
+		else if (i != wm_settings->recent.end())
+		{
+			GtkTreeModel* model = get_view()->get_model();
+			GtkTreeIter iter;
+			gtk_tree_model_iter_nth_child(model, &iter, NULL, std::distance(wm_settings->recent.begin(), i));
+			gtk_list_store_move_after(GTK_LIST_STORE(model), &iter, NULL);
+			return;
+		}
+	}
 
 	// Prepend to list of items
 	GtkListStore* store = GTK_LIST_STORE(get_view()->get_model());
