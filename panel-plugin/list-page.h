@@ -33,7 +33,6 @@ public:
 	~ListPage();
 
 	virtual void add(Launcher* launcher)=0;
-	void remove(Launcher* launcher);
 	void set_menu_items();
 	void unset_menu_items();
 

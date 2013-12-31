@@ -31,6 +31,7 @@ public:
 	bool contains(Launcher* launcher) const;
 
 	void add(Launcher* launcher);
+	void remove(Launcher* launcher);
 
 private:
 	void extend_context_menu(GtkWidget* menu);

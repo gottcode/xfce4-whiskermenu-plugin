@@ -43,28 +43,6 @@ ListPage::~ListPage()
 
 //-----------------------------------------------------------------------------
 
-void ListPage::remove(Launcher* launcher)
-{
-	GtkTreeModel* model = GTK_TREE_MODEL(get_view()->get_model());
-	GtkListStore* store = GTK_LIST_STORE(model);
-	GtkTreeIter iter;
-	Launcher* test_launcher = NULL;
-
-	bool valid = gtk_tree_model_get_iter_first(model, &iter);
-	while (valid)
-	{
-		gtk_tree_model_get(model, &iter, LauncherView::COLUMN_LAUNCHER, &test_launcher, -1);
-		if (test_launcher == launcher)
-		{
-			gtk_list_store_remove(store, &iter);
-			break;
-		}
-		valid = gtk_tree_model_iter_next(model, &iter);
-	}
-}
-
-//-----------------------------------------------------------------------------
-
 void ListPage::set_menu_items()
 {
 	GtkTreeModel* model = get_window()->get_applications()->create_launcher_model(m_desktop_ids);

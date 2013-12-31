@@ -72,6 +72,28 @@ void FavoritesPage::add(Launcher* launcher)
 
 //-----------------------------------------------------------------------------
 
+void FavoritesPage::remove(Launcher* launcher)
+{
+	GtkTreeModel* model = GTK_TREE_MODEL(get_view()->get_model());
+	GtkListStore* store = GTK_LIST_STORE(model);
+	GtkTreeIter iter;
+	Launcher* test_launcher = NULL;
+
+	bool valid = gtk_tree_model_get_iter_first(model, &iter);
+	while (valid)
+	{
+		gtk_tree_model_get(model, &iter, LauncherView::COLUMN_LAUNCHER, &test_launcher, -1);
+		if (test_launcher == launcher)
+		{
+			gtk_list_store_remove(store, &iter);
+			break;
+		}
+		valid = gtk_tree_model_iter_next(model, &iter);
+	}
+}
+
+//-----------------------------------------------------------------------------
+
 void FavoritesPage::extend_context_menu(GtkWidget* menu)
 {
 	GtkWidget* menuitem = gtk_separator_menu_item_new();
