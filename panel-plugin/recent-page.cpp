@@ -17,10 +17,12 @@
 
 #include "recent-page.h"
 
+#include "applications-page.h"
 #include "launcher.h"
 #include "launcher-view.h"
 #include "settings.h"
 #include "slot.h"
+#include "window.h"
 
 #include <algorithm>
 
@@ -31,7 +33,7 @@ using namespace WhiskerMenu;
 //-----------------------------------------------------------------------------
 
 RecentPage::RecentPage(Window* window) :
-	ListPage(wm_settings->recent, window)
+	Page(window)
 {
 	// Prevent going over max
 	if (wm_settings->recent.size() > wm_settings->recent_items_max)
@@ -43,6 +45,13 @@ RecentPage::RecentPage(Window* window) :
 
 //-----------------------------------------------------------------------------
 
+RecentPage::~RecentPage()
+{
+	unset_menu_items();
+}
+
+//-----------------------------------------------------------------------------
+
 void RecentPage::add(Launcher* launcher)
 {
 	if (!launcher)
@@ -50,9 +59,10 @@ void RecentPage::add(Launcher* launcher)
 		return;
 	}
 
+	std::string desktop_id = launcher->get_desktop_id();
 	if (!wm_settings->recent.empty())
 	{
-		std::vector<std::string>::iterator i = std::find(wm_settings->recent.begin(), wm_settings->recent.end(), launcher->get_desktop_id());
+		std::vector<std::string>::iterator i = std::find(wm_settings->recent.begin(), wm_settings->recent.end(), desktop_id);
 
 		// Skip if already first launcher
 		if (i == wm_settings->recent.begin())
@@ -66,6 +76,9 @@ void RecentPage::add(Launcher* launcher)
 			GtkTreeIter iter;
 			gtk_tree_model_iter_nth_child(model, &iter, NULL, std::distance(wm_settings->recent.begin(), i));
 			gtk_list_store_move_after(GTK_LIST_STORE(model), &iter, NULL);
+			wm_settings->recent.erase(i);
+			wm_settings->recent.insert(wm_settings->recent.begin(), desktop_id);
+			wm_settings->set_modified();
 			return;
 		}
 	}
@@ -78,6 +91,8 @@ void RecentPage::add(Launcher* launcher)
 			LauncherView::COLUMN_TEXT, launcher->get_text(),
 			LauncherView::COLUMN_LAUNCHER, launcher,
 			-1);
+	wm_settings->recent.insert(wm_settings->recent.begin(), desktop_id);
+	wm_settings->set_modified();
 
 	// Prevent going over max
 	enforce_item_count();
@@ -87,15 +102,40 @@ void RecentPage::add(Launcher* launcher)
 
 void RecentPage::enforce_item_count()
 {
+	if (wm_settings->recent_items_max >= wm_settings->recent.size())
+	{
+		return;
+	}
+
 	GtkListStore* store = GTK_LIST_STORE(get_view()->get_model());
-	while (wm_settings->recent.size() > wm_settings->recent_items_max)
+	for (size_t i = wm_settings->recent.size() - 1, end = wm_settings->recent_items_max; i >= end; --i)
 	{
 		GtkTreeIter iter;
-		if (gtk_tree_model_iter_nth_child(GTK_TREE_MODEL(store), &iter, NULL, wm_settings->recent.size() - 1))
+		if (gtk_tree_model_iter_nth_child(GTK_TREE_MODEL(store), &iter, NULL, i))
 		{
 			gtk_list_store_remove(store, &iter);
 		}
 	}
+
+	wm_settings->recent.erase(wm_settings->recent.begin() + wm_settings->recent_items_max, wm_settings->recent.end());
+	wm_settings->set_modified();
+}
+
+//-----------------------------------------------------------------------------
+
+void RecentPage::set_menu_items()
+{
+	GtkTreeModel* model = get_window()->get_applications()->create_launcher_model(wm_settings->recent);
+	get_view()->set_model(model);
+	g_object_unref(model);
+}
+
+//-----------------------------------------------------------------------------
+
+void RecentPage::unset_menu_items()
+{
+	// Clear treeview
+	get_view()->unset_model();
 }
 
 //-----------------------------------------------------------------------------
@@ -117,6 +157,7 @@ void RecentPage::extend_context_menu(GtkWidget* menu)
 void RecentPage::clear_menu()
 {
 	gtk_list_store_clear(GTK_LIST_STORE(get_view()->get_model()));
+	wm_settings->set_modified();
 }
 
 //-----------------------------------------------------------------------------

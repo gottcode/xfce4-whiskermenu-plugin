@@ -18,25 +18,25 @@
 #ifndef WHISKERMENU_RECENT_PAGE_H
 #define WHISKERMENU_RECENT_PAGE_H
 
-#include "list-page.h"
+#include "page.h"
 
 namespace WhiskerMenu
 {
 
-class RecentPage : public ListPage
+class RecentPage : public Page
 {
 public:
 	RecentPage(Window* window);
+	~RecentPage();
 
 	void add(Launcher* launcher);
 	void enforce_item_count();
+	void set_menu_items();
+	void unset_menu_items();
 
 private:
 	void extend_context_menu(GtkWidget* menu);
 	void clear_menu();
-
-private:
-	size_t m_max_items;
 };
 
 }

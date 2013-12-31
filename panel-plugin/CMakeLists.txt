@@ -79,7 +79,6 @@ add_library(whiskermenu MODULE
 	icon-size.cpp
 	launcher.cpp
 	launcher-view.cpp
-	list-page.cpp
 	page.cpp
 	plugin.cpp
 	profile-picture.cpp

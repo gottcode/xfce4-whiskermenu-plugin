@@ -18,24 +18,32 @@
 #ifndef WHISKERMENU_FAVORITES_PAGE_H
 #define WHISKERMENU_FAVORITES_PAGE_H
 
-#include "list-page.h"
+#include "page.h"
+
+#include <vector>
 
 namespace WhiskerMenu
 {
 
-class FavoritesPage : public ListPage
+class FavoritesPage : public Page
 {
 public:
 	FavoritesPage(Window* window);
+	~FavoritesPage();
 
 	bool contains(Launcher* launcher) const;
 
 	void add(Launcher* launcher);
 	void remove(Launcher* launcher);
+	void set_menu_items();
+	void unset_menu_items();
 
 private:
 	void extend_context_menu(GtkWidget* menu);
 	bool remember_launcher(Launcher* launcher);
+	void on_row_changed(GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter);
+	void on_row_inserted(GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter);
+	void on_row_deleted(GtkTreeModel*, GtkTreePath* path);
 	void sort(std::vector<Launcher*>& items) const;
 	void sort_ascending();
 	void sort_descending();

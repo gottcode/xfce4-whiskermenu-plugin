@@ -33,9 +33,16 @@ using namespace WhiskerMenu;
 //-----------------------------------------------------------------------------
 
 FavoritesPage::FavoritesPage(Window* window) :
-	ListPage(wm_settings->favorites, window)
+	Page(window)
 {
 	get_view()->set_reorderable(true);
+}
+
+//-----------------------------------------------------------------------------
+
+FavoritesPage::~FavoritesPage()
+{
+	unset_menu_items();
 }
 
 //-----------------------------------------------------------------------------
@@ -94,6 +101,26 @@ void FavoritesPage::remove(Launcher* launcher)
 
 //-----------------------------------------------------------------------------
 
+void FavoritesPage::set_menu_items()
+{
+	GtkTreeModel* model = get_window()->get_applications()->create_launcher_model(wm_settings->favorites);
+	get_view()->set_model(model);
+	g_signal_connect_slot(model, "row-changed", &FavoritesPage::on_row_changed, this);
+	g_signal_connect_slot(model, "row-inserted", &FavoritesPage::on_row_inserted, this);
+	g_signal_connect_slot(model, "row-deleted", &FavoritesPage::on_row_deleted, this);
+	g_object_unref(model);
+}
+
+//-----------------------------------------------------------------------------
+
+void FavoritesPage::unset_menu_items()
+{
+	// Clear treeview
+	get_view()->unset_model();
+}
+
+//-----------------------------------------------------------------------------
+
 void FavoritesPage::extend_context_menu(GtkWidget* menu)
 {
 	GtkWidget* menuitem = gtk_separator_menu_item_new();
@@ -117,6 +144,65 @@ void FavoritesPage::extend_context_menu(GtkWidget* menu)
 bool FavoritesPage::remember_launcher(Launcher* launcher)
 {
 	return wm_settings->favorites_in_recent ? true : !contains(launcher);
+}
+
+//-----------------------------------------------------------------------------
+
+void FavoritesPage::on_row_changed(GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter)
+{
+	size_t pos = gtk_tree_path_get_indices(path)[0];
+	if (pos >= wm_settings->favorites.size())
+	{
+		return;
+	}
+
+	Launcher* launcher;
+	gtk_tree_model_get(model, iter, LauncherView::COLUMN_LAUNCHER, &launcher, -1);
+	if (launcher)
+	{
+		g_assert(launcher->get_type() == Launcher::Type);
+		wm_settings->favorites[pos] = launcher->get_desktop_id();
+		wm_settings->set_modified();
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void FavoritesPage::on_row_inserted(GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter)
+{
+	size_t pos = gtk_tree_path_get_indices(path)[0];
+
+	std::string desktop_id;
+	Launcher* launcher;
+	gtk_tree_model_get(model, iter, LauncherView::COLUMN_LAUNCHER, &launcher, -1);
+	if (launcher)
+	{
+		g_assert(launcher->get_type() == Launcher::Type);
+		desktop_id = launcher->get_desktop_id();
+	}
+
+	if (pos >= wm_settings->favorites.size())
+	{
+		wm_settings->favorites.push_back(desktop_id);
+		wm_settings->set_modified();
+	}
+	else if (wm_settings->favorites.at(pos) != desktop_id)
+	{
+		wm_settings->favorites.insert(wm_settings->favorites.begin() + pos, desktop_id);
+		wm_settings->set_modified();
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void FavoritesPage::on_row_deleted(GtkTreeModel*, GtkTreePath* path)
+{
+	size_t pos = gtk_tree_path_get_indices(path)[0];
+	if (pos < wm_settings->favorites.size())
+	{
+		wm_settings->favorites.erase(wm_settings->favorites.begin() + pos);
+		wm_settings->set_modified();
+	}
 }
 
 //-----------------------------------------------------------------------------
@@ -147,7 +233,9 @@ void FavoritesPage::sort_ascending()
 	{
 		desktop_ids.push_back((*i)->get_desktop_id());
 	}
-	set_desktop_ids(desktop_ids);
+	wm_settings->favorites = desktop_ids;
+	wm_settings->set_modified();
+	set_menu_items();
 }
 
 //-----------------------------------------------------------------------------
@@ -162,7 +250,9 @@ void FavoritesPage::sort_descending()
 	{
 		desktop_ids.push_back((*i)->get_desktop_id());
 	}
-	set_desktop_ids(desktop_ids);
+	wm_settings->favorites = desktop_ids;
+	wm_settings->set_modified();
+	set_menu_items();
 }
 
 //-----------------------------------------------------------------------------
