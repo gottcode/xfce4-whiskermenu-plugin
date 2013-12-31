@@ -28,6 +28,8 @@ class FavoritesPage : public ListPage
 public:
 	FavoritesPage(Window* window);
 
+	bool contains(Launcher* launcher) const;
+
 	void add(Launcher* launcher);
 
 private:

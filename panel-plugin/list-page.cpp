@@ -24,8 +24,6 @@
 #include "slot.h"
 #include "window.h"
 
-#include <algorithm>
-
 using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
@@ -41,19 +39,6 @@ ListPage::ListPage(std::vector<std::string>& desktop_ids, Window* window) :
 ListPage::~ListPage()
 {
 	unset_menu_items();
-}
-
-//-----------------------------------------------------------------------------
-
-bool ListPage::contains(Launcher* launcher) const
-{
-	if (!launcher)
-	{
-		return false;
-	}
-
-	std::string desktop_id(launcher->get_desktop_id());
-	return std::find(m_desktop_ids.begin(), m_desktop_ids.end(), desktop_id) != m_desktop_ids.end();
 }
 
 //-----------------------------------------------------------------------------

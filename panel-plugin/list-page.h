@@ -32,8 +32,6 @@ public:
 	ListPage(std::vector<std::string>& desktop_ids, Window* window);
 	~ListPage();
 
-	bool contains(Launcher* launcher) const;
-
 	virtual void add(Launcher* launcher)=0;
 	void remove(Launcher* launcher);
 	void set_menu_items();
