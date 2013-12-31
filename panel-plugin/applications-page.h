@@ -39,6 +39,7 @@ public:
 	explicit ApplicationsPage(Window* window);
 	~ApplicationsPage();
 
+	GtkTreeModel* create_launcher_model(std::vector<std::string>& desktop_ids) const;
 	Launcher* get_application(const std::string& desktop_id) const;
 
 	void invalidate_applications();

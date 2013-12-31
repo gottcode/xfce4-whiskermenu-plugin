@@ -82,40 +82,7 @@ void ListPage::remove(Launcher* launcher)
 
 void ListPage::set_menu_items()
 {
-	// Create new model for treeview
-	GtkListStore* store = gtk_list_store_new(
-			LauncherView::N_COLUMNS,
-			G_TYPE_STRING,
-			G_TYPE_STRING,
-			G_TYPE_POINTER);
-
-	// Fetch menu items or remove them from list if missing
-	for (std::vector<std::string>::iterator i = m_desktop_ids.begin(); i != m_desktop_ids.end(); ++i)
-	{
-		if (i->empty())
-		{
-			continue;
-		}
-
-		Launcher* launcher = get_window()->get_applications()->get_application(*i);
-		if (launcher)
-		{
-			gtk_list_store_insert_with_values(
-					store, NULL, G_MAXINT,
-					LauncherView::COLUMN_ICON, launcher->get_icon(),
-					LauncherView::COLUMN_TEXT, launcher->get_text(),
-					LauncherView::COLUMN_LAUNCHER, launcher,
-					-1);
-		}
-		else
-		{
-			i = m_desktop_ids.erase(i);
-			--i;
-		}
-	}
-
-	// Replace treeview contents
-	GtkTreeModel* model = GTK_TREE_MODEL(store);
+	GtkTreeModel* model = get_window()->get_applications()->create_launcher_model(m_desktop_ids);
 	get_view()->set_model(model);
 	g_signal_connect_slot(model, "row-changed", &ListPage::on_row_changed, this);
 	g_signal_connect_slot(model, "row-inserted", &ListPage::on_row_inserted, this);

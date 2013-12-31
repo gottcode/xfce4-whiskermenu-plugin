@@ -74,6 +74,46 @@ ApplicationsPage::~ApplicationsPage()
 
 //-----------------------------------------------------------------------------
 
+GtkTreeModel* ApplicationsPage::create_launcher_model(std::vector<std::string>& desktop_ids) const
+{
+	// Create new model for treeview
+	GtkListStore* store = gtk_list_store_new(
+			LauncherView::N_COLUMNS,
+			G_TYPE_STRING,
+			G_TYPE_STRING,
+			G_TYPE_POINTER);
+
+	// Fetch menu items or remove them from list if missing
+	for (std::vector<std::string>::iterator i = desktop_ids.begin(); i != desktop_ids.end(); ++i)
+	{
+		if (i->empty())
+		{
+			continue;
+		}
+
+		Launcher* launcher = get_application(*i);
+		if (launcher)
+		{
+			gtk_list_store_insert_with_values(
+					store, NULL, G_MAXINT,
+					LauncherView::COLUMN_ICON, launcher->get_icon(),
+					LauncherView::COLUMN_TEXT, launcher->get_text(),
+					LauncherView::COLUMN_LAUNCHER, launcher,
+					-1);
+		}
+		else
+		{
+			i = desktop_ids.erase(i);
+			--i;
+			wm_settings->set_modified();
+		}
+	}
+
+	return GTK_TREE_MODEL(store);
+}
+
+//-----------------------------------------------------------------------------
+
 Launcher* ApplicationsPage::get_application(const std::string& desktop_id) const
 {
 	std::map<std::string, Launcher*>::const_iterator i = m_items.find(desktop_id);
