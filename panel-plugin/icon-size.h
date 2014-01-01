@@ -23,6 +23,11 @@
 
 #include <glib.h>
 
+extern "C"
+{
+#include <libxfce4util/libxfce4util.h>
+}
+
 namespace WhiskerMenu
 {
 
@@ -41,23 +46,31 @@ public:
 		Largest
 	};
 
-	explicit IconSize(const int size) :
-		m_size(CLAMP(size, NONE, Largest))
-	{
-	}
+	explicit IconSize(const gchar* property, const int size);
 
 	int get_size() const;
+
+	static std::vector<std::string> get_strings();
 
 	operator int() const
 	{
 		return m_size;
 	}
 
-	IconSize& operator=(int size);
+	IconSize& operator=(const int size)
+	{
+		set(size);
+		return *this;
+	}
 
-	static std::vector<std::string> get_strings();
+	void load(XfceRc* rc);
+	void save(XfceRc* rc);
 
 private:
+	void set(int size);
+
+private:
+	const gchar* const m_property;
 	int m_size;
 };
 

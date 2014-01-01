@@ -20,13 +20,23 @@
 
 #include <gtk/gtk.h>
 
+extern "C"
+{
+#include <libxfce4util/libxfce4util.h>
+}
+
 namespace WhiskerMenu
 {
 
 class Command
 {
 public:
-	Command(const gchar* icon, const gchar* fallback_icon, const gchar* text, const gchar* command, const gchar* error_text, const gchar* confirm_question = nullptr, const gchar* confirm_status = nullptr);
+	explicit Command(const gchar* property, const gchar* show_property,
+			const gchar* icon, const gchar* fallback_icon,
+			const gchar* text,
+			const gchar* command, bool shown,
+			const gchar* error_text,
+			const gchar* confirm_question = nullptr, const gchar* confirm_status = nullptr);
 	~Command();
 
 	Command(const Command&) = delete;
@@ -65,11 +75,16 @@ public:
 
 	void activate();
 
+	void load(XfceRc* rc);
+	void save(XfceRc* rc);
+
 private:
 	bool confirm();
 	static gboolean confirm_countdown(gpointer data);
 
 private:
+	const gchar* const m_property;
+	const gchar* const m_property_show;
 	GtkWidget* m_button;
 	GtkWidget* m_menuitem;
 	gchar* m_icon;

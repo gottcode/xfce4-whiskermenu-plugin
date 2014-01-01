@@ -20,9 +20,6 @@
 
 #include "icon-size.h"
 
-#include <string>
-#include <vector>
-
 namespace WhiskerMenu
 {
 
@@ -35,16 +32,27 @@ class SearchAction;
 class Boolean
 {
 public:
-	explicit Boolean(bool data);
+	explicit Boolean(const gchar* property, bool data);
 
 	operator bool() const
 	{
 		return m_data;
 	}
 
-	Boolean& operator=(bool data);
+	Boolean& operator=(bool data)
+	{
+		set(data);
+		return *this;
+	}
+
+	void load(XfceRc* rc);
+	void save(XfceRc* rc);
 
 private:
+	void set(bool data);
+
+private:
+	const gchar* const m_property;
 	bool m_data;
 };
 
@@ -53,16 +61,27 @@ private:
 class Integer
 {
 public:
-	explicit Integer(int data, int min, int max);
+	explicit Integer(const gchar* property, int data, int min, int max);
 
 	operator int() const
 	{
 		return m_data;
 	}
 
-	Integer& operator=(int data);
+	Integer& operator=(int data)
+	{
+		set(data);
+		return *this;
+	}
+
+	void load(XfceRc* rc);
+	void save(XfceRc* rc);
 
 private:
+	void set(int data);
+
+private:
+	const gchar* const m_property;
 	const int m_min;
 	const int m_max;
 	int m_data;
@@ -73,7 +92,7 @@ private:
 class String
 {
 public:
-	explicit String(const std::string& data = std::string());
+	explicit String(const gchar* property, const std::string& data = std::string());
 
 	bool empty() const
 	{
@@ -95,9 +114,20 @@ public:
 		return m_data != data;
 	}
 
-	String& operator=(const std::string& data);
+	String& operator=(const std::string& data)
+	{
+		set(data);
+		return *this;
+	}
+
+	void load(XfceRc* rc);
+	void save(XfceRc* rc);
 
 private:
+	void set(const std::string& data);
+
+private:
+	const gchar* const m_property;
 	std::string m_data;
 };
 
@@ -106,7 +136,7 @@ private:
 class StringList
 {
 public:
-	explicit StringList(std::initializer_list<std::string> data);
+	explicit StringList(const gchar* property, std::initializer_list<std::string> data);
 
 	bool empty() const
 	{
@@ -140,9 +170,11 @@ public:
 	void resize(int count);
 	void set(int pos, const std::string& value);
 
-	void load(gchar** data);
+	void load(XfceRc* rc);
+	void save(XfceRc* rc);
 
 private:
+	const gchar* const m_property;
 	std::vector<std::string> m_data;
 };
 
@@ -179,9 +211,11 @@ public:
 		return m_data.size();
 	}
 
-	void clear();
 	void erase(SearchAction* value);
 	void push_back(SearchAction* value);
+
+	void load(XfceRc* rc);
+	void save(XfceRc* rc);
 
 private:
 	std::vector<SearchAction*> m_data;

@@ -30,13 +30,20 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-Command::Command(const gchar* icon, const gchar* fallback_icon, const gchar* text, const gchar* command, const gchar* error_text, const gchar* confirm_question, const gchar* confirm_status) :
+Command::Command(const gchar* property, const gchar* show_property,
+		const gchar* icon, const gchar* fallback_icon,
+		const gchar* text,
+		const gchar* command, bool shown,
+		const gchar* error_text,
+		const gchar* confirm_question, const gchar* confirm_status) :
+	m_property(property),
+	m_property_show(show_property),
 	m_button(nullptr),
 	m_menuitem(nullptr),
 	m_mnemonic(g_strdup(text)),
 	m_command(g_strdup(command)),
 	m_error_text(g_strdup(error_text)),
-	m_shown(true),
+	m_shown(shown),
 	m_status(CommandStatus::Unchecked),
 	m_timeout_details({nullptr, g_strdup(confirm_question), g_strdup(confirm_status), 0})
 {
@@ -222,6 +229,23 @@ void Command::activate()
 		xfce_dialog_show_error(nullptr, error, m_error_text, nullptr);
 		g_error_free(error);
 	}
+}
+
+//-----------------------------------------------------------------------------
+
+void Command::load(XfceRc* rc)
+{
+	set(xfce_rc_read_entry(rc, m_property, m_command));
+	set_shown(xfce_rc_read_bool_entry(rc, m_property_show, m_shown));
+	check();
+}
+
+//-----------------------------------------------------------------------------
+
+void Command::save(XfceRc* rc)
+{
+	xfce_rc_write_entry(rc, m_property, m_command);
+	xfce_rc_write_bool_entry(rc, m_property_show, m_shown);
 }
 
 //-----------------------------------------------------------------------------

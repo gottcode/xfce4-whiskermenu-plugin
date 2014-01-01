@@ -24,7 +24,6 @@
 #include <algorithm>
 
 #include <exo/exo.h>
-#include <libxfce4util/libxfce4util.h>
 
 #include <unistd.h>
 
@@ -34,41 +33,13 @@ using namespace WhiskerMenu;
 
 Settings* WhiskerMenu::wm_settings = nullptr;
 
-static const gchar* const settings_command[Settings::CountCommands][2] = {
-	{ "command-settings",   "show-command-settings"   },
-	{ "command-lockscreen", "show-command-lockscreen" },
-	{ "command-switchuser", "show-command-switchuser" },
-	{ "command-logoutuser", "show-command-logoutuser" },
-	{ "command-restart",    "show-command-restart"    },
-	{ "command-shutdown",   "show-command-shutdown"   },
-	{ "command-suspend",    "show-command-suspend"    },
-	{ "command-hibernate",  "show-command-hibernate"  },
-	{ "command-logout",     "show-command-logout"     },
-	{ "command-menueditor", "show-command-menueditor" },
-	{ "command-profile",    "show-command-profile"    }
-};
-
-//-----------------------------------------------------------------------------
-
-static void write_vector_entry(XfceRc* rc, const gchar* key, const StringList& desktop_ids)
-{
-	const auto size = desktop_ids.size();
-	gchar** values = g_new0(gchar*, size + 1);
-	for (decltype(desktop_ids.size()) i = 0; i < size; ++i)
-	{
-		values[i] = g_strdup(desktop_ids[i].c_str());
-	}
-	xfce_rc_write_list_entry(rc, key, values, ",");
-	g_strfreev(values);
-}
-
 //-----------------------------------------------------------------------------
 
 Settings::Settings() :
 	m_button_title_default(_("Applications")),
 	m_modified(false),
 
-	favorites {
+	favorites("favorites", {
 #if EXO_CHECK_VERSION(4,15,0)
 		"xfce4-web-browser.desktop",
 		"xfce4-mail-reader.desktop",
@@ -80,41 +51,43 @@ Settings::Settings() :
 		"exo-file-manager.desktop",
 		"exo-terminal-emulator.desktop"
 #endif
-	},
-	recent { },
+	}),
+	recent("recent", { }),
 
-	button_title(m_button_title_default),
-	button_icon_name("org.xfce.panel.whiskermenu"),
-	button_title_visible(false),
-	button_icon_visible(true),
-	button_single_row(false),
+	custom_menu_file("custom-menu-file"),
 
-	launcher_show_name(true),
-	launcher_show_description(true),
-	launcher_show_tooltip(true),
-	launcher_icon_size(IconSize::Small),
+	button_title("button-title", m_button_title_default),
+	button_icon_name("button-icon", "org.xfce.panel.whiskermenu"),
+	button_title_visible("show-button-title", false),
+	button_icon_visible("show-button-icon", true),
+	button_single_row("button-single-row", false),
 
-	category_hover_activate(false),
-	category_show_name(true),
-	sort_categories(true),
-	category_icon_size(IconSize::Smaller),
+	launcher_show_name("launcher-show-name", true),
+	launcher_show_description("launcher-show-description", true),
+	launcher_show_tooltip("launcher-show-tooltip", true),
+	launcher_icon_size("launcher-icon-size", IconSize::Small),
 
-	view_mode(ViewAsList, ViewAsIcons, ViewAsTree),
+	category_hover_activate("hover-switch-category", false),
+	category_show_name("category-show-name", true),
+	sort_categories("sort-categories", true),
+	category_icon_size("category-icon-size", IconSize::Smaller),
 
-	default_category(CategoryFavorites, CategoryFavorites, CategoryAll),
+	view_mode("view-mode", ViewAsList, ViewAsIcons, ViewAsTree),
 
-	recent_items_max(10, 0, 100),
-	favorites_in_recent(true),
+	default_category("default-category", CategoryFavorites, CategoryFavorites, CategoryAll),
 
-	position_search_alternate(false),
-	position_commands_alternate(false),
-	position_categories_alternate(false),
-	position_categories_horizontal(false),
-	stay_on_focus_out(false),
+	recent_items_max("recent-items-max", 10, 0, 100),
+	favorites_in_recent("favorites-in-recent", true),
 
-	profile_shape(ProfileRound, ProfileRound, ProfileHidden),
+	position_search_alternate("position-search-alternate", false),
+	position_commands_alternate("position-commands-alternate", false),
+	position_categories_alternate("position-categories-alternate", false),
+	position_categories_horizontal("position-categories-horizontal", false),
+	stay_on_focus_out("stay-on-focus-out", false),
 
-	confirm_session_command(true),
+	profile_shape("profile-shape", ProfileRound, ProfileRound, ProfileHidden),
+
+	confirm_session_command("confirm-session-command", true),
 
 	search_actions {
 		new SearchAction(_("Man Pages"), "#", "exo-open --launch TerminalEmulator man %s", false, true),
@@ -125,63 +98,74 @@ Settings::Settings() :
 		new SearchAction(_("Open URI"), "^(file|http|https):\\/\\/(.*)$", "exo-open \\0", true, true)
 	},
 
-	menu_width(450, 10, INT_MAX),
-	menu_height(500, 10, INT_MAX),
-	menu_opacity(100, 0, 100)
+	menu_width("menu-width", 450, 10, INT_MAX),
+	menu_height("menu-height", 500, 10, INT_MAX),
+	menu_opacity("menu-opacity", 100, 0, 100)
 {
-	command[CommandSettings] = new Command("org.xfce.settings.manager", "preferences-desktop",
+	command[CommandSettings] = new Command("command-settings", "show-command-settings",
+			"org.xfce.settings.manager", "preferences-desktop",
 			_("_Settings Manager"),
-			"xfce4-settings-manager",
+			"xfce4-settings-manager", true,
 			_("Failed to open settings manager."));
-	command[CommandLockScreen] = new Command("xfsm-lock", "system-lock-screen",
+	command[CommandLockScreen] = new Command("command-lockscreen", "show-command-lockscreen",
+			"xfsm-lock", "system-lock-screen",
 			_("_Lock Screen"),
-			"xflock4",
+			"xflock4", true,
 			_("Failed to lock screen."));
-	command[CommandSwitchUser] = new Command("xfsm-switch-user", "system-users",
+	command[CommandSwitchUser] = new Command("command-switchuser", "show-command-switchuser",
+			"xfsm-switch-user", "system-users",
 			_("Switch _User"),
-			"dm-tool switch-to-greeter",
+			"dm-tool switch-to-greeter", false,
 			_("Failed to switch user."));
-	command[CommandLogOutUser] = new Command("xfsm-logout", "system-log-out",
+	command[CommandLogOutUser] = new Command("command-logoutuser", "show-command-logoutuser",
+			"xfsm-logout", "system-log-out",
 			_("Log _Out"),
-			"xfce4-session-logout --logout --fast",
+			"xfce4-session-logout --logout --fast", false,
 			_("Failed to log out."),
 			_("Are you sure you want to log out?"),
 			_("Logging out in %d seconds."));
-	command[CommandRestart] = new Command("xfsm-reboot", "system-reboot",
+	command[CommandRestart] = new Command("command-restart", "show-command-restart",
+			"xfsm-reboot", "system-reboot",
 			_("_Restart"),
-			"xfce4-session-logout --reboot --fast",
+			"xfce4-session-logout --reboot --fast", false,
 			_("Failed to restart."),
 			_("Are you sure you want to restart?"),
 			_("Restarting computer in %d seconds."));
-	command[CommandShutDown] = new Command("xfsm-shutdown", "system-shutdown",
+	command[CommandShutDown] = new Command("command-shutdown", "show-command-shutdown",
+			"xfsm-shutdown", "system-shutdown",
 			_("Shut _Down"),
-			"xfce4-session-logout --halt --fast",
+			"xfce4-session-logout --halt --fast", false,
 			_("Failed to shut down."),
 			_("Are you sure you want to shut down?"),
 			_("Turning off computer in %d seconds."));
-	command[CommandSuspend] = new Command("xfsm-suspend", "system-suspend",
+	command[CommandSuspend] = new Command("command-suspend", "show-command-suspend",
+			"xfsm-suspend", "system-suspend",
 			_("Suspe_nd"),
-			"xfce4-session-logout --suspend",
+			"xfce4-session-logout --suspend", false,
 			_("Failed to suspend."),
 			_("Do you want to suspend to RAM?"),
 			_("Suspending computer in %d seconds."));
-	command[CommandHibernate] = new Command("xfsm-hibernate", "system-hibernate",
+	command[CommandHibernate] = new Command("command-hibernate", "show-command-hibernate",
+			"xfsm-hibernate", "system-hibernate",
 			_("_Hibernate"),
-			"xfce4-session-logout --hibernate",
+			"xfce4-session-logout --hibernate", false,
 			_("Failed to hibernate."),
 			_("Do you want to suspend to disk?"),
 			_("Hibernating computer in %d seconds."));
-	command[CommandLogOut] = new Command("xfsm-logout", "system-log-out",
+	command[CommandLogOut] = new Command("command-logout", "show-command-logout",
+			"xfsm-logout", "system-log-out",
 			_("Log Ou_t..."),
-			"xfce4-session-logout",
+			"xfce4-session-logout", true,
 			_("Failed to log out."));
-	command[CommandMenuEditor] = new Command("menu-editor", "xfce4-menueditor",
+	command[CommandMenuEditor] = new Command("command-menueditor", "show-command-menueditor",
+			"menu-editor", "xfce4-menueditor",
 			_("_Edit Applications"),
-			"menulibre",
+			"menulibre", true,
 			_("Failed to launch menu editor."));
-	command[CommandProfile] = new Command("avatar-default", "preferences-desktop-user",
+	command[CommandProfile] = new Command("command-profile", "show-command-profile",
+			"avatar-default", "preferences-desktop-user",
 			_("Edit _Profile"),
-			"mugshot",
+			"mugshot", true,
 			_("Failed to edit profile."));
 }
 
@@ -212,113 +196,85 @@ void Settings::load(gchar* file)
 	}
 	xfce_rc_set_group(rc, nullptr);
 
-	if (xfce_rc_has_entry(rc, "favorites"))
+	favorites.load(rc);
+	recent.load(rc);
+
+	custom_menu_file.load(rc);
+
+	button_title.load(rc);
+	button_icon_name.load(rc);
+	button_single_row.load(rc);
+	button_title_visible.load(rc);
+	button_icon_visible.load(rc);
+
+	launcher_show_name.load(rc);
+	launcher_show_description.load(rc);
+	launcher_show_tooltip.load(rc);
+	if (xfce_rc_has_entry(rc, "item-icon-size"))
 	{
-		favorites.load(xfce_rc_read_list_entry(rc, "favorites", ","));
+		launcher_icon_size = xfce_rc_read_int_entry(rc, "item-icon-size", launcher_icon_size);
 	}
-	if (xfce_rc_has_entry(rc, "recent"))
+	launcher_icon_size.load(rc);
+
+	category_hover_activate.load(rc);
+	category_show_name.load(rc);
+	category_icon_size.load(rc);
+	if (!category_show_name && (category_icon_size == -1))
 	{
-		recent.load(xfce_rc_read_list_entry(rc, "recent", ","));
+		category_show_name = true;
 	}
 
-	custom_menu_file = xfce_rc_read_entry(rc, "custom-menu-file", custom_menu_file);
-
-	button_title = xfce_rc_read_entry(rc, "button-title", button_title);
-	button_icon_name = xfce_rc_read_entry(rc, "button-icon", button_icon_name);
-	button_single_row = xfce_rc_read_bool_entry(rc, "button-single-row", button_single_row);
-	button_title_visible = xfce_rc_read_bool_entry(rc, "show-button-title", button_title_visible);
-	button_icon_visible = xfce_rc_read_bool_entry(rc, "show-button-icon", button_icon_visible);
-
-	launcher_show_name = xfce_rc_read_bool_entry(rc, "launcher-show-name", launcher_show_name);
-	launcher_show_description = xfce_rc_read_bool_entry(rc, "launcher-show-description", launcher_show_description);
-	launcher_show_tooltip = xfce_rc_read_bool_entry(rc, "launcher-show-tooltip", launcher_show_tooltip);
-	launcher_icon_size = xfce_rc_read_int_entry(rc, "item-icon-size", launcher_icon_size);
-
-	category_hover_activate = xfce_rc_read_bool_entry(rc, "hover-switch-category", category_hover_activate);
-	category_icon_size = xfce_rc_read_int_entry(rc, "category-icon-size", category_icon_size);
-	category_show_name = xfce_rc_read_bool_entry(rc, "category-show-name", category_show_name) || (category_icon_size == -1);
-
-	if (xfce_rc_has_entry(rc, "view-mode"))
-	{
-		view_mode = xfce_rc_read_int_entry(rc, "view-mode", view_mode);
-	}
-	else if (xfce_rc_has_entry(rc, "load-hierarchy"))
+	if (!xfce_rc_has_entry(rc, "view-mode"))
 	{
 		if (xfce_rc_read_bool_entry(rc, "load-hierarchy", view_mode == ViewAsTree))
 		{
 			view_mode = ViewAsTree;
-			sort_categories = false;
+			if (!xfce_rc_has_entry(rc, "sort-categories"))
+			{
+				sort_categories = false;
+			}
 		}
-		else
+		else if (xfce_rc_read_bool_entry(rc, "view-as-icons", view_mode == ViewAsIcons))
 		{
-			view_mode = ViewAsList;
+			view_mode = ViewAsIcons;
 		}
 	}
-	sort_categories = xfce_rc_read_bool_entry(rc, "sort-categories", sort_categories);
+	view_mode.load(rc);
+	sort_categories.load(rc);
 
-	default_category = xfce_rc_read_bool_entry(rc, "display-recent-default", default_category);
-	default_category = xfce_rc_read_int_entry(rc, "default-category", default_category);
+	if (xfce_rc_has_entry(rc, "display-recent-default"))
+	{
+		default_category = xfce_rc_read_bool_entry(rc, "display-recent-default", default_category);
+	}
+	default_category.load(rc);
 
-	recent_items_max = xfce_rc_read_int_entry(rc, "recent-items-max", recent_items_max);
-	favorites_in_recent = xfce_rc_read_bool_entry(rc, "favorites-in-recent", favorites_in_recent);
+	recent_items_max.load(rc);
+	favorites_in_recent.load(rc);
 	if (!recent_items_max && (default_category == CategoryRecent))
 	{
 		default_category = CategoryFavorites;
 	}
 
-	position_search_alternate = xfce_rc_read_bool_entry(rc, "position-search-alternate", position_search_alternate);
-	position_commands_alternate = xfce_rc_read_bool_entry(rc, "position-commands-alternate", position_commands_alternate);
-	position_categories_alternate = xfce_rc_read_bool_entry(rc, "position-categories-alternate", position_categories_alternate);
-	stay_on_focus_out = xfce_rc_read_bool_entry(rc, "stay-on-focus-out", stay_on_focus_out);
+	position_search_alternate.load(rc);
+	position_commands_alternate.load(rc);
+	position_categories_alternate.load(rc);
+	position_categories_horizontal.load(rc);
+	stay_on_focus_out.load(rc);
 
-	profile_shape = xfce_rc_read_int_entry(rc, "profile-shape", profile_shape);
+	profile_shape.load(rc);
 
-	if (xfce_rc_has_entry(rc, "position-categories-horizontal"))
+	confirm_session_command.load(rc);
+
+	menu_width.load(rc);
+	menu_height.load(rc);
+	menu_opacity.load(rc);
+
+	for (auto i : command)
 	{
-		position_categories_horizontal = xfce_rc_read_bool_entry(rc, "position-categories-horizontal", position_categories_horizontal);
-	}
-	else
-	{
-		position_categories_horizontal = false;
-	}
-
-	confirm_session_command = xfce_rc_read_bool_entry(rc, "confirm-session-command", confirm_session_command);
-
-	menu_width = xfce_rc_read_int_entry(rc, "menu-width", menu_width);
-	menu_height = xfce_rc_read_int_entry(rc, "menu-height", menu_height);
-	menu_opacity = xfce_rc_read_int_entry(rc, "menu-opacity", menu_opacity);
-
-	for (int i = 0; i < CountCommands; ++i)
-	{
-		command[i]->set(xfce_rc_read_entry(rc, settings_command[i][0], command[i]->get()));
-		command[i]->set_shown(xfce_rc_read_bool_entry(rc, settings_command[i][1], command[i]->get_shown()));
-		command[i]->check();
+		i->load(rc);
 	}
 
-	int actions_count = xfce_rc_read_int_entry(rc, "search-actions", -1);
-	if (actions_count > -1)
-	{
-		search_actions.clear();
-
-		for (int i = 0; i < actions_count; ++i)
-		{
-			gchar* key = g_strdup_printf("action%i", i);
-			if (!xfce_rc_has_group(rc, key))
-			{
-				g_free(key);
-				continue;
-			}
-			xfce_rc_set_group(rc, key);
-			g_free(key);
-
-			search_actions.push_back(new SearchAction(
-					xfce_rc_read_entry(rc, "name", ""),
-					xfce_rc_read_entry(rc, "pattern", ""),
-					xfce_rc_read_entry(rc, "command", ""),
-					xfce_rc_read_bool_entry(rc, "regex", false),
-					launcher_show_description));
-		}
-	}
+	search_actions.load(rc);
 
 	xfce_rc_close(rc);
 
@@ -345,74 +301,60 @@ void Settings::save(gchar* file)
 	}
 	xfce_rc_set_group(rc, nullptr);
 
-	write_vector_entry(rc, "favorites", favorites);
-	write_vector_entry(rc, "recent", recent);
+	favorites.save(rc);
+	recent.save(rc);
 
 	if (!custom_menu_file.empty())
 	{
-		xfce_rc_write_entry(rc, "custom-menu-file", custom_menu_file);
+		custom_menu_file.save(rc);
 	}
 
 	if (button_title != Plugin::get_button_title_default())
 	{
-		xfce_rc_write_entry(rc, "button-title", button_title);
+		button_title.save(rc);
 	}
-	xfce_rc_write_entry(rc, "button-icon", button_icon_name);
-	xfce_rc_write_bool_entry(rc, "button-single-row", button_single_row);
-	xfce_rc_write_bool_entry(rc, "show-button-title", button_title_visible);
-	xfce_rc_write_bool_entry(rc, "show-button-icon", button_icon_visible);
+	button_icon_name.save(rc);
+	button_single_row.save(rc);
+	button_title_visible.save(rc);
+	button_icon_visible.save(rc);
 
-	xfce_rc_write_bool_entry(rc, "launcher-show-name", launcher_show_name);
-	xfce_rc_write_bool_entry(rc, "launcher-show-description", launcher_show_description);
-	xfce_rc_write_bool_entry(rc, "launcher-show-tooltip", launcher_show_tooltip);
-	xfce_rc_write_int_entry(rc, "item-icon-size", launcher_icon_size);
+	launcher_show_name.save(rc);
+	launcher_show_description.save(rc);
+	launcher_show_tooltip.save(rc);
+	launcher_icon_size.save(rc);
 
-	xfce_rc_write_bool_entry(rc, "hover-switch-category", category_hover_activate);
-	xfce_rc_write_bool_entry(rc, "category-show-name", category_show_name);
-	xfce_rc_write_int_entry(rc, "category-icon-size", category_icon_size);
-	xfce_rc_write_bool_entry(rc, "sort-categories", sort_categories);
+	category_hover_activate.save(rc);
+	category_show_name.save(rc);
+	category_icon_size.save(rc);
+	sort_categories.save(rc);
 
-	xfce_rc_write_int_entry(rc, "view-mode", view_mode);
+	view_mode.save(rc);
 
-	xfce_rc_write_int_entry(rc, "default-category", default_category);
+	default_category.save(rc);
 
-	xfce_rc_write_int_entry(rc, "recent-items-max", recent_items_max);
-	xfce_rc_write_bool_entry(rc, "favorites-in-recent", favorites_in_recent);
+	recent_items_max.save(rc);
+	favorites_in_recent.save(rc);
 
-	xfce_rc_write_bool_entry(rc, "position-search-alternate", position_search_alternate);
-	xfce_rc_write_bool_entry(rc, "position-commands-alternate", position_commands_alternate);
-	xfce_rc_write_bool_entry(rc, "position-categories-alternate", position_categories_alternate);
-	xfce_rc_write_bool_entry(rc, "position-categories-horizontal", position_categories_horizontal);
-	xfce_rc_write_bool_entry(rc, "stay-on-focus-out", stay_on_focus_out);
+	position_search_alternate.save(rc);
+	position_commands_alternate.save(rc);
+	position_categories_alternate.save(rc);
+	position_categories_horizontal.save(rc);
+	stay_on_focus_out.save(rc);
 
-	xfce_rc_write_int_entry(rc, "profile-shape", profile_shape);
+	profile_shape.save(rc);
 
-	xfce_rc_write_bool_entry(rc, "confirm-session-command", confirm_session_command);
+	confirm_session_command.save(rc);
 
-	xfce_rc_write_int_entry(rc, "menu-width", menu_width);
-	xfce_rc_write_int_entry(rc, "menu-height", menu_height);
-	xfce_rc_write_int_entry(rc, "menu-opacity", menu_opacity);
+	menu_width.save(rc);
+	menu_height.save(rc);
+	menu_opacity.save(rc);
 
-	for (int i = 0; i < CountCommands; ++i)
+	for (auto i : command)
 	{
-		xfce_rc_write_entry(rc, settings_command[i][0], command[i]->get());
-		xfce_rc_write_bool_entry(rc, settings_command[i][1], command[i]->get_shown());
+		i->save(rc);
 	}
 
-	int actions_count = search_actions.size();
-	xfce_rc_write_int_entry(rc, "search-actions", actions_count);
-	for (int i = 0; i < actions_count; ++i)
-	{
-		gchar* key = g_strdup_printf("action%i", i);
-		xfce_rc_set_group(rc, key);
-		g_free(key);
-
-		const SearchAction* action = search_actions[i];
-		xfce_rc_write_entry(rc, "name", action->get_name());
-		xfce_rc_write_entry(rc, "pattern", action->get_pattern());
-		xfce_rc_write_entry(rc, "command", action->get_command());
-		xfce_rc_write_bool_entry(rc, "regex", action->get_is_regex());
-	}
+	search_actions.save(rc);
 
 	xfce_rc_close(rc);
 
@@ -421,26 +363,43 @@ void Settings::save(gchar* file)
 
 //-----------------------------------------------------------------------------
 
-Boolean::Boolean(bool data) :
+Boolean::Boolean(const gchar* property, bool data) :
+	m_property(property),
 	m_data(data)
 {
 }
 
 //-----------------------------------------------------------------------------
 
-Boolean& Boolean::operator=(bool data)
+void Boolean::load(XfceRc* rc)
 {
-	if (m_data != data)
-	{
-		m_data = data;
-		wm_settings->set_modified();
-	}
-	return *this;
+	set(xfce_rc_read_bool_entry(rc, m_property, m_data));
 }
 
 //-----------------------------------------------------------------------------
 
-Integer::Integer(int data, int min, int max) :
+void Boolean::save(XfceRc* rc)
+{
+	xfce_rc_write_bool_entry(rc, m_property, m_data);
+}
+
+//-----------------------------------------------------------------------------
+
+void Boolean::set(bool data)
+{
+	if (m_data == data)
+	{
+		return;
+	}
+
+	m_data = data;
+	wm_settings->set_modified();
+}
+
+//-----------------------------------------------------------------------------
+
+Integer::Integer(const gchar* property, int data, int min, int max) :
+	m_property(property),
 	m_min(min),
 	m_max(max),
 	m_data(CLAMP(data, min, max))
@@ -449,39 +408,71 @@ Integer::Integer(int data, int min, int max) :
 
 //-----------------------------------------------------------------------------
 
-Integer& Integer::operator=(int data)
+void Integer::load(XfceRc* rc)
 {
-	data = CLAMP(data, m_min, m_max);
-	if (m_data != data)
-	{
-		m_data = data;
-		wm_settings->set_modified();
-	}
-	return *this;
+	set(xfce_rc_read_int_entry(rc, m_property, m_data));
 }
 
 //-----------------------------------------------------------------------------
 
-String::String(const std::string& data) :
+void Integer::save(XfceRc* rc)
+{
+	xfce_rc_write_int_entry(rc, m_property, m_data);
+}
+
+//-----------------------------------------------------------------------------
+
+void Integer::set(int data)
+{
+	data = CLAMP(data, m_min, m_max);
+	if (m_data == data)
+	{
+		return;
+	}
+
+	m_data = data;
+	wm_settings->set_modified();
+}
+
+//-----------------------------------------------------------------------------
+
+String::String(const gchar* property, const std::string& data) :
+	m_property(property),
 	m_data(data)
 {
 }
 
 //-----------------------------------------------------------------------------
 
-String& String::operator=(const std::string& data)
+void String::load(XfceRc* rc)
 {
-	if (m_data != data)
-	{
-		m_data = data;
-		wm_settings->set_modified();
-	}
-	return *this;
+	set(xfce_rc_read_entry(rc, m_property, m_data.c_str()));
 }
 
 //-----------------------------------------------------------------------------
 
-StringList::StringList(std::initializer_list<std::string> data) :
+void String::save(XfceRc* rc)
+{
+	xfce_rc_write_entry(rc, m_property, m_data.c_str());
+}
+
+//-----------------------------------------------------------------------------
+
+void String::set(const std::string& data)
+{
+	if (m_data == data)
+	{
+		return;
+	}
+
+	m_data = data;
+	wm_settings->set_modified();
+}
+
+//-----------------------------------------------------------------------------
+
+StringList::StringList(const gchar* property, std::initializer_list<std::string> data) :
+	m_property(property),
 	m_data(data)
 {
 }
@@ -536,10 +527,16 @@ void StringList::set(int pos, const std::string& value)
 
 //-----------------------------------------------------------------------------
 
-void StringList::load(gchar** data)
+void StringList::load(XfceRc* rc)
 {
+	if (!xfce_rc_has_entry(rc, m_property))
+	{
+		return;
+	}
+
 	m_data.clear();
 
+	gchar** data = xfce_rc_read_list_entry(rc, m_property, ",");
 	if (!data)
 	{
 		return;
@@ -577,6 +574,20 @@ void StringList::load(gchar** data)
 
 //-----------------------------------------------------------------------------
 
+void StringList::save(XfceRc* rc)
+{
+	const int size = m_data.size();
+	gchar** values = g_new0(gchar*, size + 1);
+	for (int i = 0; i < size; ++i)
+	{
+		values[i] = g_strdup(m_data[i].c_str());
+	}
+	xfce_rc_write_list_entry(rc, m_property, values, ",");
+	g_strfreev(values);
+}
+
+//-----------------------------------------------------------------------------
+
 SearchActionList::SearchActionList(std::initializer_list<SearchAction*> data) :
 	m_data(data)
 {
@@ -594,18 +605,6 @@ SearchActionList::~SearchActionList()
 
 //-----------------------------------------------------------------------------
 
-void SearchActionList::clear()
-{
-	for (auto action : m_data)
-	{
-		delete action;
-	}
-	m_data.clear();
-	wm_settings->set_modified();
-}
-
-//-----------------------------------------------------------------------------
-
 void SearchActionList::erase(SearchAction* value)
 {
 	m_data.erase(std::find(m_data.begin(), m_data.end(), value));
@@ -618,6 +617,65 @@ void SearchActionList::push_back(SearchAction* value)
 {
 	m_data.push_back(value);
 	wm_settings->set_modified();
+}
+
+//-----------------------------------------------------------------------------
+
+void SearchActionList::load(XfceRc* rc)
+{
+	const int size = xfce_rc_read_int_entry(rc, "search-actions", -1);
+	if (size < 0)
+	{
+		return;
+	}
+
+	for (auto action : m_data)
+	{
+		delete action;
+	}
+	m_data.clear();
+
+	for (int i = 0; i < size; ++i)
+	{
+		gchar* key = g_strdup_printf("action%i", i);
+		if (!xfce_rc_has_group(rc, key))
+		{
+			g_free(key);
+			continue;
+		}
+		xfce_rc_set_group(rc, key);
+		g_free(key);
+
+		m_data.push_back(new SearchAction(
+				xfce_rc_read_entry(rc, "name", ""),
+				xfce_rc_read_entry(rc, "pattern", ""),
+				xfce_rc_read_entry(rc, "command", ""),
+				xfce_rc_read_bool_entry(rc, "regex", false),
+				wm_settings->launcher_show_description));
+	}
+
+	wm_settings->set_modified();
+}
+
+//-----------------------------------------------------------------------------
+
+void SearchActionList::save(XfceRc* rc)
+{
+	const int size = m_data.size();
+	xfce_rc_write_int_entry(rc, "search-actions", size);
+
+	for (int i = 0; i < size; ++i)
+	{
+		gchar* key = g_strdup_printf("action%i", i);
+		xfce_rc_set_group(rc, key);
+		g_free(key);
+
+		const SearchAction* action = m_data[i];
+		xfce_rc_write_entry(rc, "name", action->get_name());
+		xfce_rc_write_entry(rc, "pattern", action->get_pattern());
+		xfce_rc_write_entry(rc, "command", action->get_command());
+		xfce_rc_write_bool_entry(rc, "regex", action->get_is_regex());
+	}
 }
 
 //-----------------------------------------------------------------------------

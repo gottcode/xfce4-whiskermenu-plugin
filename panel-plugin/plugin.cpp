@@ -24,11 +24,7 @@
 #include "slot.h"
 #include "window.h"
 
-extern "C"
-{
-#include <libxfce4util/libxfce4util.h>
 #include <libxfce4ui/libxfce4ui.h>
-}
 
 using namespace WhiskerMenu;
 
@@ -106,10 +102,6 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 {
 	// Load settings
 	wm_settings = new Settings;
-	for (int i = Settings::CommandSwitchUser; i < Settings::CommandLogOut; ++i)
-	{
-		wm_settings->command[i]->set_shown(false);
-	}
 	wm_settings->load(xfce_resource_lookup(XFCE_RESOURCE_CONFIG, "xfce4/whiskermenu/defaults.rc"));
 	wm_settings->m_button_title_default = wm_settings->button_title;
 	wm_settings->load(xfce_panel_plugin_lookup_rc_file(m_plugin));

@@ -25,6 +25,14 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
+IconSize::IconSize(const gchar* property, const int size) :
+	m_property(property),
+	m_size(CLAMP(size, NONE, Largest))
+{
+}
+
+//-----------------------------------------------------------------------------
+
 int IconSize::get_size() const
 {
 	int size = 0;
@@ -45,19 +53,6 @@ int IconSize::get_size() const
 
 //-----------------------------------------------------------------------------
 
-IconSize& IconSize::operator=(int size)
-{
-	size = CLAMP(size, NONE, Largest);
-	if (m_size != size)
-	{
-		m_size = size;
-		wm_settings->set_modified();
-	}
-	return *this;
-}
-
-//-----------------------------------------------------------------------------
-
 std::vector<std::string> IconSize::get_strings()
 {
 	return {
@@ -70,6 +65,34 @@ std::vector<std::string> IconSize::get_strings()
 		_("Larger"),
 		_("Very Large")
 	};
+}
+
+//-----------------------------------------------------------------------------
+
+void IconSize::load(XfceRc* rc)
+{
+	set(xfce_rc_read_int_entry(rc, m_property, m_size));
+}
+
+//-----------------------------------------------------------------------------
+
+void IconSize::save(XfceRc* rc)
+{
+	xfce_rc_write_int_entry(rc, m_property, m_size);
+}
+
+//-----------------------------------------------------------------------------
+
+void IconSize::set(int size)
+{
+	size = CLAMP(size, NONE, Largest);
+	if (m_size == size)
+	{
+		return;
+	}
+
+	m_size = size;
+	wm_settings->set_modified();
 }
 
 //-----------------------------------------------------------------------------

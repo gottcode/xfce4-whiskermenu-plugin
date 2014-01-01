@@ -27,11 +27,6 @@
 
 #include <algorithm>
 
-extern "C"
-{
-#include <libxfce4util/libxfce4util.h>
-}
-
 using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
