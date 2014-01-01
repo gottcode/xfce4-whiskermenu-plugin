@@ -214,7 +214,6 @@ void SettingsDialog::toggle_show_tooltip(GtkToggleButton* button)
 void SettingsDialog::category_icon_size_changed(GtkComboBox* combo)
 {
 	wm_settings->category_icon_size = gtk_combo_box_get_active(combo) - 1;
-	wm_settings->set_modified();
 
 	const bool active = (wm_settings->category_icon_size != -1) && !wm_settings->position_categories_horizontal;
 	gtk_widget_set_sensitive(m_show_category_names, active);
@@ -229,7 +228,6 @@ void SettingsDialog::category_icon_size_changed(GtkComboBox* combo)
 void SettingsDialog::item_icon_size_changed(GtkComboBox* combo)
 {
 	wm_settings->launcher_icon_size = gtk_combo_box_get_active(combo) - 1;
-	wm_settings->set_modified();
 }
 
 //-----------------------------------------------------------------------------

@@ -21,6 +21,8 @@
 #include <string>
 #include <vector>
 
+#include <glib.h>
+
 namespace WhiskerMenu
 {
 
@@ -39,8 +41,8 @@ public:
 		Largest
 	};
 
-	IconSize(const int size) :
-		m_size(size > int(NONE) ? (size < int(Largest) ? size : int(Largest)) : int(NONE))
+	explicit IconSize(const int size) :
+		m_size(CLAMP(size, NONE, Largest))
 	{
 	}
 
@@ -50,6 +52,8 @@ public:
 	{
 		return m_size;
 	}
+
+	IconSize& operator=(int size);
 
 	static std::vector<std::string> get_strings();
 

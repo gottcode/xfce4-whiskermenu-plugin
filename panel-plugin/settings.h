@@ -23,8 +23,6 @@
 #include <string>
 #include <vector>
 
-#include <glib.h>
-
 namespace WhiskerMenu
 {
 

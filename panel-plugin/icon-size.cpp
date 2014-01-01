@@ -17,6 +17,8 @@
 
 #include "icon-size.h"
 
+#include "settings.h"
+
 #include <glib/gi18n-lib.h>
 
 using namespace WhiskerMenu;
@@ -39,6 +41,19 @@ int IconSize::get_size() const
 		default:       size =   0; break;
 	}
 	return size;
+}
+
+//-----------------------------------------------------------------------------
+
+IconSize& IconSize::operator=(int size)
+{
+	size = CLAMP(size, NONE, Largest);
+	if (m_size != size)
+	{
+		m_size = size;
+		wm_settings->set_modified();
+	}
+	return *this;
 }
 
 //-----------------------------------------------------------------------------
