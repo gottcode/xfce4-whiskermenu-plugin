@@ -30,6 +30,7 @@ namespace WhiskerMenu
 {
 
 class Category;
+class StringList;
 
 class ApplicationsPage : public Page
 {
@@ -38,7 +39,7 @@ public:
 	explicit ApplicationsPage(Window* window);
 	~ApplicationsPage();
 
-	GtkTreeModel* create_launcher_model(std::vector<std::string>& desktop_ids) const;
+	GtkTreeModel* create_launcher_model(StringList& desktop_ids) const;
 	Launcher* find(const std::string& desktop_id) const;
 	std::vector<Launcher*> find_all() const;
 

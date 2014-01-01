@@ -56,7 +56,7 @@ bool FavoritesPage::contains(Launcher* launcher) const
 	}
 
 	std::string desktop_id(launcher->get_desktop_id());
-	return std::find(wm_settings->favorites.cbegin(), wm_settings->favorites.cend(), desktop_id) != wm_settings->favorites.cend();
+	return std::find(wm_settings->favorites.begin(), wm_settings->favorites.end(), desktop_id) != wm_settings->favorites.end();
 }
 
 //-----------------------------------------------------------------------------
@@ -164,7 +164,7 @@ bool FavoritesPage::remember_launcher(Launcher* launcher)
 
 void FavoritesPage::on_row_changed(GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter)
 {
-	const decltype(wm_settings->favorites.size()) pos = gtk_tree_path_get_indices(path)[0];
+	const int pos = gtk_tree_path_get_indices(path)[0];
 	if (pos >= wm_settings->favorites.size())
 	{
 		return;
@@ -174,8 +174,7 @@ void FavoritesPage::on_row_changed(GtkTreeModel* model, GtkTreePath* path, GtkTr
 	gtk_tree_model_get(model, iter, LauncherView::COLUMN_LAUNCHER, &element, -1);
 	if (Launcher* launcher = dynamic_cast<Launcher*>(element))
 	{
-		wm_settings->favorites[pos] = launcher->get_desktop_id();
-		wm_settings->set_modified();
+		wm_settings->favorites.set(pos, launcher->get_desktop_id());
 	}
 }
 
@@ -183,7 +182,7 @@ void FavoritesPage::on_row_changed(GtkTreeModel* model, GtkTreePath* path, GtkTr
 
 void FavoritesPage::on_row_inserted(GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter)
 {
-	const decltype(wm_settings->favorites.size()) pos = gtk_tree_path_get_indices(path)[0];
+	const int pos = gtk_tree_path_get_indices(path)[0];
 
 	std::string desktop_id;
 	Element* element = nullptr;
@@ -195,13 +194,11 @@ void FavoritesPage::on_row_inserted(GtkTreeModel* model, GtkTreePath* path, GtkT
 
 	if (pos >= wm_settings->favorites.size())
 	{
-		wm_settings->favorites.push_back(std::move(desktop_id));
-		wm_settings->set_modified();
+		wm_settings->favorites.push_back(desktop_id);
 	}
 	else if (wm_settings->favorites[pos] != desktop_id)
 	{
-		wm_settings->favorites.insert(wm_settings->favorites.begin() + pos, std::move(desktop_id));
-		wm_settings->set_modified();
+		wm_settings->favorites.insert(pos, desktop_id);
 	}
 }
 
@@ -209,11 +206,10 @@ void FavoritesPage::on_row_inserted(GtkTreeModel* model, GtkTreePath* path, GtkT
 
 void FavoritesPage::on_row_deleted(GtkTreeModel*, GtkTreePath* path)
 {
-	const decltype(wm_settings->favorites.size()) pos = gtk_tree_path_get_indices(path)[0];
+	const int pos = gtk_tree_path_get_indices(path)[0];
 	if (pos < wm_settings->favorites.size())
 	{
-		wm_settings->favorites.erase(wm_settings->favorites.begin() + pos);
-		wm_settings->set_modified();
+		wm_settings->favorites.erase(pos);
 	}
 }
 
@@ -247,7 +243,6 @@ void FavoritesPage::sort_ascending()
 	{
 		wm_settings->favorites.push_back(launcher->get_desktop_id());
 	}
-	wm_settings->set_modified();
 	set_menu_items();
 }
 
@@ -262,7 +257,6 @@ void FavoritesPage::sort_descending()
 	{
 		wm_settings->favorites.push_back((*i)->get_desktop_id());
 	}
-	wm_settings->set_modified();
 	set_menu_items();
 }
 

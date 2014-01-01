@@ -37,10 +37,9 @@ RecentPage::RecentPage(Window* window) :
 	Page(window, "document-open-recent", _("Recently Used"))
 {
 	// Prevent going over max
-	if (wm_settings->recent.size() > static_cast<unsigned int>(wm_settings->recent_items_max))
+	if (wm_settings->recent.size() > wm_settings->recent_items_max)
 	{
-		wm_settings->recent.erase(wm_settings->recent.begin() + wm_settings->recent_items_max, wm_settings->recent.end());
-		wm_settings->set_modified();
+		wm_settings->recent.resize(wm_settings->recent_items_max);
 	}
 }
 
@@ -74,13 +73,13 @@ void RecentPage::add(Launcher* launcher)
 		// Move to front if already in list
 		else if (i != wm_settings->recent.end())
 		{
+			const int pos = std::distance(wm_settings->recent.begin(), i);
 			GtkTreeModel* model = get_view()->get_model();
 			GtkTreeIter iter;
-			gtk_tree_model_iter_nth_child(model, &iter, nullptr, std::distance(wm_settings->recent.begin(), i));
+			gtk_tree_model_iter_nth_child(model, &iter, nullptr, pos);
 			gtk_list_store_move_after(GTK_LIST_STORE(model), &iter, nullptr);
-			wm_settings->recent.erase(i);
-			wm_settings->recent.insert(wm_settings->recent.begin(), std::move(desktop_id));
-			wm_settings->set_modified();
+			wm_settings->recent.erase(pos);
+			wm_settings->recent.insert(0, desktop_id);
 			return;
 		}
 	}
@@ -94,8 +93,7 @@ void RecentPage::add(Launcher* launcher)
 			LauncherView::COLUMN_TOOLTIP, launcher->get_tooltip(),
 			LauncherView::COLUMN_LAUNCHER, launcher,
 			-1);
-	wm_settings->recent.insert(wm_settings->recent.begin(), std::move(desktop_id));
-	wm_settings->set_modified();
+	wm_settings->recent.insert(0, desktop_id);
 
 	// Prevent going over max
 	enforce_item_count();
@@ -105,13 +103,13 @@ void RecentPage::add(Launcher* launcher)
 
 void RecentPage::enforce_item_count()
 {
-	if (wm_settings->recent.size() <= static_cast<unsigned int>(wm_settings->recent_items_max))
+	if (wm_settings->recent.size() <= wm_settings->recent_items_max)
 	{
 		return;
 	}
 
 	GtkListStore* store = GTK_LIST_STORE(get_view()->get_model());
-	for (ssize_t i = wm_settings->recent.size() - 1, end = wm_settings->recent_items_max; i >= end; --i)
+	for (int i = wm_settings->recent.size() - 1, end = wm_settings->recent_items_max; i >= end; --i)
 	{
 		Launcher* launcher = get_window()->get_applications()->find(wm_settings->recent[i]);
 		if (launcher)
@@ -126,8 +124,7 @@ void RecentPage::enforce_item_count()
 		}
 	}
 
-	wm_settings->recent.erase(wm_settings->recent.begin() + wm_settings->recent_items_max, wm_settings->recent.end());
-	wm_settings->set_modified();
+	wm_settings->recent.resize(wm_settings->recent_items_max);
 }
 
 //-----------------------------------------------------------------------------
@@ -183,7 +180,6 @@ void RecentPage::clear_menu()
 
 	gtk_list_store_clear(GTK_LIST_STORE(get_view()->get_model()));
 	wm_settings->recent.clear();
-	wm_settings->set_modified();
 }
 
 //-----------------------------------------------------------------------------

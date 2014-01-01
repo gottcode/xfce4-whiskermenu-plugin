@@ -50,48 +50,7 @@ static const gchar* const settings_command[Settings::CountCommands][2] = {
 
 //-----------------------------------------------------------------------------
 
-static void read_vector_entry(XfceRc* rc, const gchar* key, std::vector<std::string>& desktop_ids)
-{
-	if (!xfce_rc_has_entry(rc, key))
-	{
-		return;
-	}
-
-	desktop_ids.clear();
-
-	gchar** values = xfce_rc_read_list_entry(rc, key, ",");
-	for (size_t i = 0; values[i]; ++i)
-	{
-		std::string desktop_id(values[i]);
-#if EXO_CHECK_VERSION(4,15,0)
-		if (desktop_id == "exo-web-browser.desktop")
-		{
-			desktop_id = "xfce4-web-browser.desktop";
-		}
-		else if (desktop_id == "exo-mail-reader.desktop")
-		{
-			desktop_id = "xfce4-mail-reader.desktop";
-		}
-		else if (desktop_id == "exo-file-manager.desktop")
-		{
-			desktop_id = "xfce4-file-manager.desktop";
-		}
-		else if (desktop_id == "exo-terminal-emulator.desktop")
-		{
-			desktop_id = "xfce4-terminal-emulator.desktop";
-		}
-#endif
-		if (std::find(desktop_ids.cbegin(), desktop_ids.cend(), desktop_id) == desktop_ids.cend())
-		{
-			desktop_ids.push_back(std::move(desktop_id));
-		}
-	}
-	g_strfreev(values);
-}
-
-//-----------------------------------------------------------------------------
-
-static void write_vector_entry(XfceRc* rc, const gchar* key, const std::vector<std::string>& desktop_ids)
+static void write_vector_entry(XfceRc* rc, const gchar* key, const StringList& desktop_ids)
 {
 	const auto size = desktop_ids.size();
 	gchar** values = g_new0(gchar*, size + 1);
@@ -122,6 +81,7 @@ Settings::Settings() :
 		"exo-terminal-emulator.desktop"
 #endif
 	},
+	recent { },
 
 	button_title(m_button_title_default),
 	button_icon_name("org.xfce.panel.whiskermenu"),
@@ -257,8 +217,14 @@ void Settings::load(gchar* file)
 	}
 	xfce_rc_set_group(rc, nullptr);
 
-	read_vector_entry(rc, "favorites", favorites);
-	read_vector_entry(rc, "recent", recent);
+	if (xfce_rc_has_entry(rc, "favorites"))
+	{
+		favorites.load(xfce_rc_read_list_entry(rc, "favorites", ","));
+	}
+	if (xfce_rc_has_entry(rc, "recent"))
+	{
+		recent.load(xfce_rc_read_list_entry(rc, "recent", ","));
+	}
 
 	custom_menu_file = xfce_rc_read_entry(rc, "custom-menu-file", custom_menu_file);
 
@@ -520,6 +486,102 @@ String& String::operator=(const std::string& data)
 		wm_settings->set_modified();
 	}
 	return *this;
+}
+
+//-----------------------------------------------------------------------------
+
+StringList::StringList(std::initializer_list<std::string> data) :
+	m_data(data)
+{
+}
+
+//-----------------------------------------------------------------------------
+
+void StringList::clear()
+{
+	m_data.clear();
+	wm_settings->set_modified();
+}
+
+//-----------------------------------------------------------------------------
+
+void StringList::erase(int pos)
+{
+	m_data.erase(m_data.begin() + pos);
+	wm_settings->set_modified();
+}
+
+//-----------------------------------------------------------------------------
+
+void StringList::insert(int pos, const std::string& value)
+{
+	m_data.insert(m_data.begin() + pos, value);
+	wm_settings->set_modified();
+}
+
+//-----------------------------------------------------------------------------
+
+void StringList::push_back(const std::string& value)
+{
+	m_data.push_back(value);
+	wm_settings->set_modified();
+}
+
+//-----------------------------------------------------------------------------
+
+void StringList::resize(int count)
+{
+	m_data.resize(count);
+	wm_settings->set_modified();
+}
+
+//-----------------------------------------------------------------------------
+
+void StringList::set(int pos, const std::string& value)
+{
+	m_data[pos] = value;
+	wm_settings->set_modified();
+}
+
+//-----------------------------------------------------------------------------
+
+void StringList::load(gchar** data)
+{
+	m_data.clear();
+
+	if (!data)
+	{
+		return;
+	}
+
+	for (int i = 0; data[i]; ++i)
+	{
+		std::string desktop_id(data[i]);
+#if EXO_CHECK_VERSION(4,15,0)
+		if (desktop_id == "exo-web-browser.desktop")
+		{
+			desktop_id = "xfce4-web-browser.desktop";
+		}
+		else if (desktop_id == "exo-mail-reader.desktop")
+		{
+			desktop_id = "xfce4-mail-reader.desktop";
+		}
+		else if (desktop_id == "exo-file-manager.desktop")
+		{
+			desktop_id = "xfce4-file-manager.desktop";
+		}
+		else if (desktop_id == "exo-terminal-emulator.desktop")
+		{
+			desktop_id = "xfce4-terminal-emulator.desktop";
+		}
+#endif
+		if (std::find(m_data.begin(), m_data.end(), desktop_id) == m_data.end())
+		{
+			m_data.push_back(std::move(desktop_id));
+		}
+	}
+
+	g_strfreev(data);
 }
 
 //-----------------------------------------------------------------------------

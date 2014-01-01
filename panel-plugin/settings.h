@@ -104,6 +104,51 @@ private:
 };
 
 
+// String list setting
+class StringList
+{
+public:
+	explicit StringList(std::initializer_list<std::string> data);
+
+	bool empty() const
+	{
+		return m_data.empty();
+	}
+
+	std::vector<std::string>::const_iterator begin() const
+	{
+		return m_data.cbegin();
+	}
+
+	std::vector<std::string>::const_iterator end() const
+	{
+		return m_data.cend();
+	}
+
+	const std::string& operator[](int pos) const
+	{
+		return m_data[pos];
+	}
+
+	int size() const
+	{
+		return m_data.size();
+	}
+
+	void clear();
+	void erase(int pos);
+	void insert(int pos, const std::string& value);
+	void push_back(const std::string& value);
+	void resize(int count);
+	void set(int pos, const std::string& value);
+
+	void load(gchar** data);
+
+private:
+	std::vector<std::string> m_data;
+};
+
+
 // Settings class
 class Settings
 {
@@ -133,8 +178,8 @@ public:
 	}
 
 public:
-	std::vector<std::string> favorites;
-	std::vector<std::string> recent;
+	StringList favorites;
+	StringList recent;
 
 	String custom_menu_file;
 

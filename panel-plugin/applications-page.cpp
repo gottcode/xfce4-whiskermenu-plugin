@@ -57,7 +57,7 @@ ApplicationsPage::~ApplicationsPage()
 
 //-----------------------------------------------------------------------------
 
-GtkTreeModel* ApplicationsPage::create_launcher_model(std::vector<std::string>& desktop_ids) const
+GtkTreeModel* ApplicationsPage::create_launcher_model(StringList& desktop_ids) const
 {
 	// Create new model for treeview
 	GtkListStore* store = gtk_list_store_new(
@@ -68,14 +68,15 @@ GtkTreeModel* ApplicationsPage::create_launcher_model(std::vector<std::string>& 
 			G_TYPE_POINTER);
 
 	// Fetch menu items or remove them from list if missing
-	for (auto i = desktop_ids.begin(); i != desktop_ids.end(); ++i)
+	for (int i = 0; i < desktop_ids.size(); ++i)
 	{
-		if (i->empty())
+		const std::string& desktop_id = desktop_ids[i];
+		if (desktop_id.empty())
 		{
 			continue;
 		}
 
-		Launcher* launcher = find(*i);
+		Launcher* launcher = find(desktop_id);
 		if (launcher)
 		{
 			gtk_list_store_insert_with_values(
@@ -88,9 +89,8 @@ GtkTreeModel* ApplicationsPage::create_launcher_model(std::vector<std::string>& 
 		}
 		else
 		{
-			i = desktop_ids.erase(i);
+			desktop_ids.erase(i);
 			--i;
-			wm_settings->set_modified();
 		}
 	}
 
