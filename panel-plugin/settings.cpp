@@ -193,11 +193,6 @@ Settings::~Settings()
 	{
 		delete i;
 	}
-
-	for (auto action : search_actions)
-	{
-		delete action;
-	}
 }
 
 //-----------------------------------------------------------------------------
@@ -303,10 +298,6 @@ void Settings::load(gchar* file)
 	int actions_count = xfce_rc_read_int_entry(rc, "search-actions", -1);
 	if (actions_count > -1)
 	{
-		for (auto action : search_actions)
-		{
-			delete action;
-		}
 		search_actions.clear();
 
 		for (int i = 0; i < actions_count; ++i)
@@ -582,6 +573,51 @@ void StringList::load(gchar** data)
 	}
 
 	g_strfreev(data);
+}
+
+//-----------------------------------------------------------------------------
+
+SearchActionList::SearchActionList(std::initializer_list<SearchAction*> data) :
+	m_data(data)
+{
+}
+
+//-----------------------------------------------------------------------------
+
+SearchActionList::~SearchActionList()
+{
+	for (auto action : m_data)
+	{
+		delete action;
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void SearchActionList::clear()
+{
+	for (auto action : m_data)
+	{
+		delete action;
+	}
+	m_data.clear();
+	wm_settings->set_modified();
+}
+
+//-----------------------------------------------------------------------------
+
+void SearchActionList::erase(SearchAction* value)
+{
+	m_data.erase(std::find(m_data.begin(), m_data.end(), value));
+	wm_settings->set_modified();
+}
+
+//-----------------------------------------------------------------------------
+
+void SearchActionList::push_back(SearchAction* value)
+{
+	m_data.push_back(value);
+	wm_settings->set_modified();
 }
 
 //-----------------------------------------------------------------------------

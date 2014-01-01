@@ -555,8 +555,7 @@ void SettingsDialog::remove_action(GtkButton* button)
 	}
 
 	// Remove from list
-	wm_settings->search_actions.erase(std::find(wm_settings->search_actions.begin(), wm_settings->search_actions.end(), action));
-	wm_settings->set_modified();
+	wm_settings->search_actions.erase(action);
 	delete action;
 
 	// Select next action

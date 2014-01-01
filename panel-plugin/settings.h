@@ -149,6 +149,47 @@ private:
 };
 
 
+// SearchAction list setting
+class SearchActionList
+{
+public:
+	explicit SearchActionList(std::initializer_list<SearchAction*> data);
+	~SearchActionList();
+
+	bool empty() const
+	{
+		return m_data.empty();
+	}
+
+	std::vector<SearchAction*>::const_iterator begin() const
+	{
+		return m_data.cbegin();
+	}
+
+	std::vector<SearchAction*>::const_iterator end() const
+	{
+		return m_data.cend();
+	}
+
+	SearchAction* operator[](int pos) const
+	{
+		return m_data[pos];
+	}
+
+	int size() const
+	{
+		return m_data.size();
+	}
+
+	void clear();
+	void erase(SearchAction* value);
+	void push_back(SearchAction* value);
+
+private:
+	std::vector<SearchAction*> m_data;
+};
+
+
 // Settings class
 class Settings
 {
@@ -250,7 +291,7 @@ public:
 	Command* command[CountCommands];
 	Boolean confirm_session_command;
 
-	std::vector<SearchAction*> search_actions;
+	SearchActionList search_actions;
 
 	Integer menu_width;
 	Integer menu_height;
