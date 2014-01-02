@@ -227,7 +227,7 @@ void ApplicationsPage::load_contents()
 	}
 
 	// Populate map of menu data
-	g_signal_connect_slot(m_garcon_menu, "reload-required", &ApplicationsPage::invalidate_applications, this);
+	g_signal_connect_slot<GarconMenu*>(m_garcon_menu, "reload-required", &ApplicationsPage::invalidate_applications, this);
 	load_menu(m_garcon_menu, NULL);
 
 	// Sort items and categories
@@ -333,7 +333,7 @@ void ApplicationsPage::load_menu(GarconMenu* menu, Category* parent_category)
 	}
 
 	// Listen for menu changes
-	g_signal_connect_slot<GObject*,GObject*>(menu, "directory-changed", &ApplicationsPage::invalidate_applications, this);
+	g_signal_connect_slot<GarconMenu*,GarconMenuDirectory*,GarconMenuDirectory*>(menu, "directory-changed", &ApplicationsPage::invalidate_applications, this);
 }
 
 //-----------------------------------------------------------------------------
@@ -361,7 +361,7 @@ void ApplicationsPage::load_menu_item(GarconMenuItem* menu_item, Category* categ
 	}
 
 	// Listen for menu changes
-	g_signal_connect_slot(menu_item, "changed", &ApplicationsPage::invalidate_applications, this);
+	g_signal_connect_slot<GarconMenuItem*>(menu_item, "changed", &ApplicationsPage::invalidate_applications, this);
 }
 
 //-----------------------------------------------------------------------------
