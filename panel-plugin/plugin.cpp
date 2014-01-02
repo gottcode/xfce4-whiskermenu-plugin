@@ -24,6 +24,7 @@
 #include "slot.h"
 #include "window.h"
 
+#include <glib/gstdio.h>
 #include <libxfce4ui/libxfce4ui.h>
 
 using namespace WhiskerMenu;
@@ -45,12 +46,33 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	m_file_icon(false),
 	m_hide_time(0)
 {
-	// Load settings
-	wm_settings = new Settings(xfce_panel_plugin_get_property_base(m_plugin));
-	wm_settings->load(xfce_resource_lookup(XFCE_RESOURCE_CONFIG, "xfce4/whiskermenu/defaults.rc"));
-	wm_settings->m_button_title_default = wm_settings->button_title;
-	wm_settings->load();
-	wm_settings->load(xfce_panel_plugin_lookup_rc_file(m_plugin));
+	// Create settings
+	wm_settings = new Settings;
+
+	// Load default settings
+	gchar* defaults_file = xfce_resource_lookup(XFCE_RESOURCE_CONFIG, "xfce4/whiskermenu/defaults.rc");
+	wm_settings->load(defaults_file, true);
+	g_free(defaults_file);
+
+	gchar* rc_file = xfce_panel_plugin_lookup_rc_file(m_plugin);
+	gchar* save_file = xfce_panel_plugin_save_location(m_plugin, false);
+	if (g_strcmp0(rc_file, save_file) != 0)
+	{
+		wm_settings->load(rc_file, true);
+	}
+	g_free(rc_file);
+
+	// Load user settings
+	wm_settings->load(xfce_panel_plugin_get_property_base(m_plugin));
+
+	// Migrate old user settings if they exist
+	if (wm_settings->channel)
+	{
+		wm_settings->load(save_file, false);
+		g_remove(save_file);
+	}
+	g_free(save_file);
+
 	m_opacity = wm_settings->menu_opacity;
 
 	// Switch to new icon only if theme is missing old icon

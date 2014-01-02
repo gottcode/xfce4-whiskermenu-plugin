@@ -247,7 +247,7 @@ private:
 // Settings class
 class Settings
 {
-	Settings(const gchar* base);
+	Settings();
 	~Settings();
 
 	Settings(const Settings&) = delete;
@@ -255,8 +255,8 @@ class Settings
 	Settings& operator=(const Settings&) = delete;
 	Settings& operator=(Settings&&) = delete;
 
-	void load(gchar* file);
-	void load();
+	void load(const gchar* file, bool is_default);
+	void load(const gchar* base);
 	void save();
 
 	void prevent_invalid();

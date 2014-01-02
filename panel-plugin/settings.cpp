@@ -33,7 +33,7 @@ Settings* WhiskerMenu::wm_settings = nullptr;
 
 //-----------------------------------------------------------------------------
 
-Settings::Settings(const gchar* base) :
+Settings::Settings() :
 	m_button_title_default(_("Applications")),
 	m_modified(false),
 	channel(nullptr),
@@ -166,11 +166,6 @@ Settings::Settings(const gchar* base) :
 			_("Edit _Profile"),
 			"mugshot", true,
 			_("Failed to edit profile."));
-
-	if (base && xfconf_init(nullptr))
-	{
-		channel = xfconf_channel_new_with_property_base(xfce_panel_get_channel_name(), base);
-	}
 }
 
 //-----------------------------------------------------------------------------
@@ -191,7 +186,7 @@ Settings::~Settings()
 
 //-----------------------------------------------------------------------------
 
-void Settings::load(gchar* file)
+void Settings::load(const gchar* file, bool is_default)
 {
 	if (!file)
 	{
@@ -199,7 +194,6 @@ void Settings::load(gchar* file)
 	}
 
 	XfceRc* rc = xfce_rc_simple_open(file, true);
-	g_free(file);
 	if (!rc)
 	{
 		return;
@@ -282,14 +276,25 @@ void Settings::load(gchar* file)
 
 	prevent_invalid();
 
-	m_modified = false;
+	if (!is_default)
+	{
+		save();
+	}
+	else if (!button_title.empty())
+	{
+		m_button_title_default = button_title;
+	}
 }
 
 //-----------------------------------------------------------------------------
 
-void Settings::load()
+void Settings::load(const gchar* base)
 {
-	if (!channel)
+	if (base && xfconf_init(nullptr))
+	{
+		channel = xfconf_channel_new_with_property_base(xfce_panel_get_channel_name(), base);
+	}
+	else
 	{
 		return;
 	}
@@ -659,7 +664,7 @@ void StringList::load(XfceRc* rc)
 
 	g_strfreev(data);
 
-	m_modified = false;
+	m_modified = true;
 }
 
 //-----------------------------------------------------------------------------
@@ -841,7 +846,7 @@ void SearchActionList::load(XfceRc* rc)
 				xfce_rc_read_bool_entry(rc, "regex", false)));
 	}
 
-	m_modified = false;
+	m_modified = true;
 }
 
 //-----------------------------------------------------------------------------
