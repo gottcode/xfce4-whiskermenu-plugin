@@ -77,7 +77,7 @@ public:
 
 	void load(XfceRc* rc);
 	void load();
-	void save(XfceRc* rc);
+	void save();
 
 private:
 	bool confirm();

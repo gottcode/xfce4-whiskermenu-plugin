@@ -83,9 +83,9 @@ void IconSize::load()
 
 //-----------------------------------------------------------------------------
 
-void IconSize::save(XfceRc* rc)
+void IconSize::save()
 {
-	xfce_rc_write_int_entry(rc, m_property + 1, m_size);
+	xfconf_channel_set_int(wm_settings->channel, m_property, m_size);
 }
 
 //-----------------------------------------------------------------------------

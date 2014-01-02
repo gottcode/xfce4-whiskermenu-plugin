@@ -25,8 +25,6 @@
 
 #include <exo/exo.h>
 
-#include <unistd.h>
-
 using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
@@ -352,80 +350,69 @@ void Settings::load()
 
 //-----------------------------------------------------------------------------
 
-void Settings::save(gchar* file)
+void Settings::save()
 {
-	if (!file)
+	if (!channel)
 	{
 		return;
 	}
 
-	// Start with fresh settings
-	unlink(file);
+	favorites.save();
+	recent.save();
 
-	XfceRc* rc = xfce_rc_simple_open(file, false);
-	g_free(file);
-	if (!rc)
+	search_actions.save();
+
+	if (!m_modified)
 	{
 		return;
 	}
-	xfce_rc_set_group(rc, nullptr);
 
-	favorites.save(rc);
-	recent.save(rc);
-
-	if (!custom_menu_file.empty())
-	{
-		custom_menu_file.save(rc);
-	}
+	custom_menu_file.save();
 
 	if (button_title != Plugin::get_button_title_default())
 	{
-		button_title.save(rc);
+		button_title.save();
 	}
-	button_icon_name.save(rc);
-	button_single_row.save(rc);
-	button_title_visible.save(rc);
-	button_icon_visible.save(rc);
+	button_icon_name.save();
+	button_title_visible.save();
+	button_icon_visible.save();
+	button_single_row.save();
 
-	launcher_show_name.save(rc);
-	launcher_show_description.save(rc);
-	launcher_show_tooltip.save(rc);
-	launcher_icon_size.save(rc);
+	launcher_show_name.save();
+	launcher_show_description.save();
+	launcher_show_tooltip.save();
+	launcher_icon_size.save();
 
-	category_hover_activate.save(rc);
-	category_show_name.save(rc);
-	category_icon_size.save(rc);
-	sort_categories.save(rc);
+	category_hover_activate.save();
+	category_show_name.save();
+	sort_categories.save();
+	category_icon_size.save();
 
-	view_mode.save(rc);
+	view_mode.save();
 
-	default_category.save(rc);
+	default_category.save();
 
-	recent_items_max.save(rc);
-	favorites_in_recent.save(rc);
+	recent_items_max.save();
+	favorites_in_recent.save();
 
-	position_search_alternate.save(rc);
-	position_commands_alternate.save(rc);
-	position_categories_alternate.save(rc);
-	position_categories_horizontal.save(rc);
-	stay_on_focus_out.save(rc);
+	position_search_alternate.save();
+	position_commands_alternate.save();
+	position_categories_alternate.save();
+	position_categories_horizontal.save();
+	stay_on_focus_out.save();
 
-	profile_shape.save(rc);
+	profile_shape.save();
 
-	confirm_session_command.save(rc);
+	confirm_session_command.save();
 
-	menu_width.save(rc);
-	menu_height.save(rc);
-	menu_opacity.save(rc);
+	menu_width.save();
+	menu_height.save();
+	menu_opacity.save();
 
 	for (auto i : command)
 	{
-		i->save(rc);
+		i->save();
 	}
-
-	search_actions.save(rc);
-
-	xfce_rc_close(rc);
 
 	m_modified = false;
 }
@@ -484,9 +471,9 @@ void Boolean::load()
 
 //-----------------------------------------------------------------------------
 
-void Boolean::save(XfceRc* rc)
+void Boolean::save()
 {
-	xfce_rc_write_bool_entry(rc, m_property + 1, m_data);
+	xfconf_channel_set_bool(wm_settings->channel, m_property, m_data);
 }
 
 //-----------------------------------------------------------------------------
@@ -528,9 +515,9 @@ void Integer::load()
 
 //-----------------------------------------------------------------------------
 
-void Integer::save(XfceRc* rc)
+void Integer::save()
 {
-	xfce_rc_write_int_entry(rc, m_property + 1, m_data);
+	xfconf_channel_set_int(wm_settings->channel, m_property, m_data);
 }
 
 //-----------------------------------------------------------------------------
@@ -573,9 +560,9 @@ void String::load()
 
 //-----------------------------------------------------------------------------
 
-void String::save(XfceRc* rc)
+void String::save()
 {
-	xfce_rc_write_entry(rc, m_property + 1, m_data.c_str());
+	xfconf_channel_set_string(wm_settings->channel, m_property, m_data.c_str());
 }
 
 //-----------------------------------------------------------------------------
@@ -595,7 +582,8 @@ void String::set(const std::string& data)
 
 StringList::StringList(const gchar* property, std::initializer_list<std::string> data) :
 	m_property(property),
-	m_data(data)
+	m_data(data),
+	m_modified(false)
 {
 }
 
@@ -604,7 +592,7 @@ StringList::StringList(const gchar* property, std::initializer_list<std::string>
 void StringList::clear()
 {
 	m_data.clear();
-	wm_settings->set_modified();
+	m_modified = true;
 }
 
 //-----------------------------------------------------------------------------
@@ -612,7 +600,7 @@ void StringList::clear()
 void StringList::erase(int pos)
 {
 	m_data.erase(m_data.begin() + pos);
-	wm_settings->set_modified();
+	m_modified = true;
 }
 
 //-----------------------------------------------------------------------------
@@ -620,7 +608,7 @@ void StringList::erase(int pos)
 void StringList::insert(int pos, const std::string& value)
 {
 	m_data.insert(m_data.begin() + pos, value);
-	wm_settings->set_modified();
+	m_modified = true;
 }
 
 //-----------------------------------------------------------------------------
@@ -628,7 +616,7 @@ void StringList::insert(int pos, const std::string& value)
 void StringList::push_back(const std::string& value)
 {
 	m_data.push_back(value);
-	wm_settings->set_modified();
+	m_modified = true;
 }
 
 //-----------------------------------------------------------------------------
@@ -636,7 +624,7 @@ void StringList::push_back(const std::string& value)
 void StringList::resize(int count)
 {
 	m_data.resize(count);
-	wm_settings->set_modified();
+	m_modified = true;
 }
 
 //-----------------------------------------------------------------------------
@@ -644,7 +632,7 @@ void StringList::resize(int count)
 void StringList::set(int pos, const std::string& value)
 {
 	m_data[pos] = value;
-	wm_settings->set_modified();
+	m_modified = true;
 }
 
 //-----------------------------------------------------------------------------
@@ -670,6 +658,8 @@ void StringList::load(XfceRc* rc)
 	set(strings);
 
 	g_strfreev(data);
+
+	m_modified = false;
 }
 
 //-----------------------------------------------------------------------------
@@ -681,6 +671,9 @@ void StringList::load()
 	{
 		return;
 	}
+
+	// Do not save changes
+	m_modified = false;
 
 	// Convert GValue to string list
 	std::vector<std::string> strings;
@@ -723,16 +716,28 @@ void StringList::load()
 
 //-----------------------------------------------------------------------------
 
-void StringList::save(XfceRc* rc)
+void StringList::save()
 {
+	if (!m_modified)
+	{
+		return;
+	}
+
 	const int size = m_data.size();
-	gchar** values = g_new0(gchar*, size + 1);
+	GPtrArray* array = g_ptr_array_sized_new(size);
+
 	for (int i = 0; i < size; ++i)
 	{
-		values[i] = g_strdup(m_data[i].c_str());
+		GValue* value = g_new0(GValue, 1);
+		g_value_init(value, G_TYPE_STRING);
+		g_value_set_static_string(value, m_data[i].c_str());
+		g_ptr_array_add(array, value);
 	}
-	xfce_rc_write_list_entry(rc, m_property + 1, values, ",");
-	g_strfreev(values);
+
+	xfconf_channel_set_arrayv(wm_settings->channel, m_property, array);
+	xfconf_array_free(array);
+
+	m_modified = false;
 }
 
 //-----------------------------------------------------------------------------
@@ -771,7 +776,8 @@ void StringList::set(std::vector<std::string>& data)
 //-----------------------------------------------------------------------------
 
 SearchActionList::SearchActionList(std::initializer_list<SearchAction*> data) :
-	m_data(data)
+	m_data(data),
+	m_modified(false)
 {
 }
 
@@ -790,7 +796,7 @@ SearchActionList::~SearchActionList()
 void SearchActionList::erase(SearchAction* value)
 {
 	m_data.erase(std::find(m_data.begin(), m_data.end(), value));
-	wm_settings->set_modified();
+	m_modified = true;
 }
 
 //-----------------------------------------------------------------------------
@@ -798,7 +804,7 @@ void SearchActionList::erase(SearchAction* value)
 void SearchActionList::push_back(SearchAction* value)
 {
 	m_data.push_back(value);
-	wm_settings->set_modified();
+	m_modified = true;
 }
 
 //-----------------------------------------------------------------------------
@@ -835,7 +841,7 @@ void SearchActionList::load(XfceRc* rc)
 				xfce_rc_read_bool_entry(rc, "regex", false)));
 	}
 
-	wm_settings->set_modified();
+	m_modified = false;
 }
 
 //-----------------------------------------------------------------------------
@@ -884,27 +890,49 @@ void SearchActionList::load()
 		g_free(pattern);
 		g_free(command);
 	}
+
+	m_modified = false;
 }
 
 //-----------------------------------------------------------------------------
 
-void SearchActionList::save(XfceRc* rc)
+void SearchActionList::save()
 {
+	if (!m_modified)
+	{
+		return;
+	}
+
+	xfconf_channel_reset_property(wm_settings->channel, "/search-actions", true);
+
 	const int size = m_data.size();
-	xfce_rc_write_int_entry(rc, "search-actions", size);
+	xfconf_channel_set_int(wm_settings->channel, "/search-actions", size);
+
+	gchar* property = nullptr;
+	const SearchAction* action = nullptr;
 
 	for (int i = 0; i < size; ++i)
 	{
-		gchar* key = g_strdup_printf("action%i", i);
-		xfce_rc_set_group(rc, key);
-		g_free(key);
+		action = m_data[i];
 
-		const SearchAction* action = m_data[i];
-		xfce_rc_write_entry(rc, "name", action->get_name());
-		xfce_rc_write_entry(rc, "pattern", action->get_pattern());
-		xfce_rc_write_entry(rc, "command", action->get_command());
-		xfce_rc_write_bool_entry(rc, "regex", action->get_is_regex());
+		property = g_strdup_printf("/search-actions/action-%d/name", i);
+		xfconf_channel_set_string(wm_settings->channel, property, action->get_name());
+		g_free(property);
+
+		property = g_strdup_printf("/search-actions/action-%d/pattern", i);
+		xfconf_channel_set_string(wm_settings->channel, property, action->get_pattern());
+		g_free(property);
+
+		property = g_strdup_printf("/search-actions/action-%d/command", i);
+		xfconf_channel_set_string(wm_settings->channel, property, action->get_command());
+		g_free(property);
+
+		property = g_strdup_printf("/search-actions/action-%d/regex", i);
+		xfconf_channel_set_bool(wm_settings->channel, property, action->get_is_regex());
+		g_free(property);
 	}
+
+	m_modified = false;
 }
 
 //-----------------------------------------------------------------------------

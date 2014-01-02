@@ -192,7 +192,7 @@ void SearchAction::set_name(const gchar* name)
 	}
 
 	m_name = name;
-	wm_settings->set_modified();
+	wm_settings->search_actions.set_modified();
 
 	m_show_description = wm_settings->launcher_show_description && (wm_settings->view_mode != Settings::ViewAsIcons);
 	update_text();
@@ -208,7 +208,7 @@ void SearchAction::set_pattern(const gchar* pattern)
 	}
 
 	m_pattern = pattern;
-	wm_settings->set_modified();
+	wm_settings->search_actions.set_modified();
 
 	if (m_regex)
 	{
@@ -227,7 +227,7 @@ void SearchAction::set_command(const gchar* command)
 	}
 
 	m_command = command;
-	wm_settings->set_modified();
+	wm_settings->search_actions.set_modified();
 }
 
 //-----------------------------------------------------------------------------
@@ -240,7 +240,7 @@ void SearchAction::set_is_regex(bool is_regex)
 	}
 
 	m_is_regex = is_regex;
-	wm_settings->set_modified();
+	wm_settings->search_actions.set_modified();
 }
 
 //-----------------------------------------------------------------------------

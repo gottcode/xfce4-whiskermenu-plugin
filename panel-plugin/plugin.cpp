@@ -364,10 +364,7 @@ gboolean Plugin::remote_event(const gchar* name, const GValue* value)
 
 void Plugin::save()
 {
-	if (wm_settings->get_modified())
-	{
-		wm_settings->save(xfce_panel_plugin_save_location(m_plugin, true));
-	}
+	wm_settings->save();
 }
 
 //-----------------------------------------------------------------------------

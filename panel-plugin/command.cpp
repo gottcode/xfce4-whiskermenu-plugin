@@ -263,10 +263,11 @@ void Command::load()
 
 //-----------------------------------------------------------------------------
 
-void Command::save(XfceRc* rc)
+void Command::save()
 {
-	xfce_rc_write_entry(rc, m_property + 1, m_command);
-	xfce_rc_write_bool_entry(rc, m_property_show + 1, m_shown);
+	xfconf_channel_set_string(wm_settings->channel, m_property, m_command);
+
+	xfconf_channel_set_bool(wm_settings->channel, m_property_show, m_shown);
 }
 
 //-----------------------------------------------------------------------------

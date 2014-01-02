@@ -49,7 +49,7 @@ public:
 
 	void load(XfceRc* rc);
 	void load();
-	void save(XfceRc* rc);
+	void save();
 
 private:
 	void set(bool data);
@@ -79,7 +79,7 @@ public:
 
 	void load(XfceRc* rc);
 	void load();
-	void save(XfceRc* rc);
+	void save();
 
 private:
 	void set(int data);
@@ -131,7 +131,7 @@ public:
 
 	void load(XfceRc* rc);
 	void load();
-	void save(XfceRc* rc);
+	void save();
 
 private:
 	void set(const std::string& data);
@@ -182,7 +182,7 @@ public:
 
 	void load(XfceRc* rc);
 	void load();
-	void save(XfceRc* rc);
+	void save();
 
 private:
 	void set(std::vector<std::string>& data);
@@ -190,6 +190,7 @@ private:
 private:
 	const gchar* const m_property;
 	std::vector<std::string> m_data;
+	bool m_modified;
 };
 
 
@@ -228,12 +229,18 @@ public:
 	void erase(SearchAction* value);
 	void push_back(SearchAction* value);
 
+	void set_modified()
+	{
+		m_modified = true;
+	}
+
 	void load(XfceRc* rc);
 	void load();
-	void save(XfceRc* rc);
+	void save();
 
 private:
 	std::vector<SearchAction*> m_data;
+	bool m_modified;
 };
 
 
@@ -250,7 +257,7 @@ class Settings
 
 	void load(gchar* file);
 	void load();
-	void save(gchar* file);
+	void save();
 
 	void prevent_invalid();
 
@@ -258,11 +265,6 @@ class Settings
 	bool m_modified;
 
 public:
-	bool get_modified() const
-	{
-		return m_modified;
-	}
-
 	void set_modified()
 	{
 		m_modified = true;
