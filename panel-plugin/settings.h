@@ -48,6 +48,7 @@ public:
 	}
 
 	void load(XfceRc* rc);
+	void load();
 	void save(XfceRc* rc);
 
 private:
@@ -77,6 +78,7 @@ public:
 	}
 
 	void load(XfceRc* rc);
+	void load();
 	void save(XfceRc* rc);
 
 private:
@@ -128,6 +130,7 @@ public:
 	}
 
 	void load(XfceRc* rc);
+	void load();
 	void save(XfceRc* rc);
 
 private:
@@ -178,7 +181,11 @@ public:
 	void set(int pos, const std::string& value);
 
 	void load(XfceRc* rc);
+	void load();
 	void save(XfceRc* rc);
+
+private:
+	void set(std::vector<std::string>& data);
 
 private:
 	const gchar* const m_property;
@@ -222,6 +229,7 @@ public:
 	void push_back(SearchAction* value);
 
 	void load(XfceRc* rc);
+	void load();
 	void save(XfceRc* rc);
 
 private:
@@ -241,7 +249,10 @@ class Settings
 	Settings& operator=(Settings&&) = delete;
 
 	void load(gchar* file);
+	void load();
 	void save(gchar* file);
+
+	void prevent_invalid();
 
 	std::string m_button_title_default;
 	bool m_modified;

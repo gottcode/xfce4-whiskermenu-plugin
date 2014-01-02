@@ -64,6 +64,7 @@ public:
 	}
 
 	void load(XfceRc* rc);
+	void load();
 	void save(XfceRc* rc);
 
 private:

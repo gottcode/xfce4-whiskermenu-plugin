@@ -40,7 +40,7 @@ Settings::Settings(const gchar* base) :
 	m_modified(false),
 	channel(nullptr),
 
-	favorites("favorites", {
+	favorites("/favorites", {
 #if EXO_CHECK_VERSION(4,15,0)
 		"xfce4-web-browser.desktop",
 		"xfce4-mail-reader.desktop",
@@ -53,42 +53,42 @@ Settings::Settings(const gchar* base) :
 		"exo-terminal-emulator.desktop"
 #endif
 	}),
-	recent("recent", { }),
+	recent("/recent", { }),
 
-	custom_menu_file("custom-menu-file"),
+	custom_menu_file("/custom-menu-file"),
 
-	button_title("button-title", m_button_title_default),
-	button_icon_name("button-icon", "org.xfce.panel.whiskermenu"),
-	button_title_visible("show-button-title", false),
-	button_icon_visible("show-button-icon", true),
-	button_single_row("button-single-row", false),
+	button_title("/button-title", m_button_title_default),
+	button_icon_name("/button-icon", "org.xfce.panel.whiskermenu"),
+	button_title_visible("/show-button-title", false),
+	button_icon_visible("/show-button-icon", true),
+	button_single_row("/button-single-row", false),
 
-	launcher_show_name("launcher-show-name", true),
-	launcher_show_description("launcher-show-description", true),
-	launcher_show_tooltip("launcher-show-tooltip", true),
-	launcher_icon_size("launcher-icon-size", IconSize::Small),
+	launcher_show_name("/launcher-show-name", true),
+	launcher_show_description("/launcher-show-description", true),
+	launcher_show_tooltip("/launcher-show-tooltip", true),
+	launcher_icon_size("/launcher-icon-size", IconSize::Small),
 
-	category_hover_activate("hover-switch-category", false),
-	category_show_name("category-show-name", true),
-	sort_categories("sort-categories", true),
-	category_icon_size("category-icon-size", IconSize::Smaller),
+	category_hover_activate("/hover-switch-category", false),
+	category_show_name("/category-show-name", true),
+	sort_categories("/sort-categories", true),
+	category_icon_size("/category-icon-size", IconSize::Smaller),
 
-	view_mode("view-mode", ViewAsList, ViewAsIcons, ViewAsTree),
+	view_mode("/view-mode", ViewAsList, ViewAsIcons, ViewAsTree),
 
-	default_category("default-category", CategoryFavorites, CategoryFavorites, CategoryAll),
+	default_category("/default-category", CategoryFavorites, CategoryFavorites, CategoryAll),
 
-	recent_items_max("recent-items-max", 10, 0, 100),
-	favorites_in_recent("favorites-in-recent", true),
+	recent_items_max("/recent-items-max", 10, 0, 100),
+	favorites_in_recent("/favorites-in-recent", true),
 
-	position_search_alternate("position-search-alternate", false),
-	position_commands_alternate("position-commands-alternate", false),
-	position_categories_alternate("position-categories-alternate", false),
-	position_categories_horizontal("position-categories-horizontal", false),
-	stay_on_focus_out("stay-on-focus-out", false),
+	position_search_alternate("/position-search-alternate", false),
+	position_commands_alternate("/position-commands-alternate", false),
+	position_categories_alternate("/position-categories-alternate", false),
+	position_categories_horizontal("/position-categories-horizontal", false),
+	stay_on_focus_out("/stay-on-focus-out", false),
 
-	profile_shape("profile-shape", ProfileRound, ProfileRound, ProfileHidden),
+	profile_shape("/profile-shape", ProfileRound, ProfileRound, ProfileHidden),
 
-	confirm_session_command("confirm-session-command", true),
+	confirm_session_command("/confirm-session-command", true),
 
 	search_actions {
 		new SearchAction(_("Man Pages"), "#", "exo-open --launch TerminalEmulator man %s", false),
@@ -99,71 +99,71 @@ Settings::Settings(const gchar* base) :
 		new SearchAction(_("Open URI"), "^(file|http|https):\\/\\/(.*)$", "exo-open \\0", true)
 	},
 
-	menu_width("menu-width", 450, 10, INT_MAX),
-	menu_height("menu-height", 500, 10, INT_MAX),
-	menu_opacity("menu-opacity", 100, 0, 100)
+	menu_width("/menu-width", 450, 10, INT_MAX),
+	menu_height("/menu-height", 500, 10, INT_MAX),
+	menu_opacity("/menu-opacity", 100, 0, 100)
 {
-	command[CommandSettings] = new Command("command-settings", "show-command-settings",
+	command[CommandSettings] = new Command("/command-settings", "/show-command-settings",
 			"org.xfce.settings.manager", "preferences-desktop",
 			_("_Settings Manager"),
 			"xfce4-settings-manager", true,
 			_("Failed to open settings manager."));
-	command[CommandLockScreen] = new Command("command-lockscreen", "show-command-lockscreen",
+	command[CommandLockScreen] = new Command("/command-lockscreen", "/show-command-lockscreen",
 			"xfsm-lock", "system-lock-screen",
 			_("_Lock Screen"),
 			"xflock4", true,
 			_("Failed to lock screen."));
-	command[CommandSwitchUser] = new Command("command-switchuser", "show-command-switchuser",
+	command[CommandSwitchUser] = new Command("/command-switchuser", "/show-command-switchuser",
 			"xfsm-switch-user", "system-users",
 			_("Switch _User"),
 			"xfce4-session-logout --switch-user", false,
 			_("Failed to switch user."));
-	command[CommandLogOutUser] = new Command("command-logoutuser", "show-command-logoutuser",
+	command[CommandLogOutUser] = new Command("/command-logoutuser", "/show-command-logoutuser",
 			"xfsm-logout", "system-log-out",
 			_("Log _Out"),
 			"xfce4-session-logout --logout --fast", false,
 			_("Failed to log out."),
 			_("Are you sure you want to log out?"),
 			_("Logging out in %d seconds."));
-	command[CommandRestart] = new Command("command-restart", "show-command-restart",
+	command[CommandRestart] = new Command("/command-restart", "/show-command-restart",
 			"xfsm-reboot", "system-reboot",
 			_("_Restart"),
 			"xfce4-session-logout --reboot --fast", false,
 			_("Failed to restart."),
 			_("Are you sure you want to restart?"),
 			_("Restarting computer in %d seconds."));
-	command[CommandShutDown] = new Command("command-shutdown", "show-command-shutdown",
+	command[CommandShutDown] = new Command("/command-shutdown", "/show-command-shutdown",
 			"xfsm-shutdown", "system-shutdown",
 			_("Shut _Down"),
 			"xfce4-session-logout --halt --fast", false,
 			_("Failed to shut down."),
 			_("Are you sure you want to shut down?"),
 			_("Turning off computer in %d seconds."));
-	command[CommandSuspend] = new Command("command-suspend", "show-command-suspend",
+	command[CommandSuspend] = new Command("/command-suspend", "/show-command-suspend",
 			"xfsm-suspend", "system-suspend",
 			_("Suspe_nd"),
 			"xfce4-session-logout --suspend", false,
 			_("Failed to suspend."),
 			_("Do you want to suspend to RAM?"),
 			_("Suspending computer in %d seconds."));
-	command[CommandHibernate] = new Command("command-hibernate", "show-command-hibernate",
+	command[CommandHibernate] = new Command("/command-hibernate", "/show-command-hibernate",
 			"xfsm-hibernate", "system-hibernate",
 			_("_Hibernate"),
 			"xfce4-session-logout --hibernate", false,
 			_("Failed to hibernate."),
 			_("Do you want to suspend to disk?"),
 			_("Hibernating computer in %d seconds."));
-	command[CommandLogOut] = new Command("command-logout", "show-command-logout",
+	command[CommandLogOut] = new Command("/command-logout", "/show-command-logout",
 			"xfsm-logout", "system-log-out",
 			_("Log Ou_t..."),
 			"xfce4-session-logout", true,
 			_("Failed to log out."));
-	command[CommandMenuEditor] = new Command("command-menueditor", "show-command-menueditor",
+	command[CommandMenuEditor] = new Command("/command-menueditor", "/show-command-menueditor",
 			"menu-editor", "xfce4-menueditor",
 			_("_Edit Applications"),
 			"menulibre", true,
 			_("Failed to launch menu editor."));
-	command[CommandProfile] = new Command("command-profile", "show-command-profile",
+	command[CommandProfile] = new Command("/command-profile", "/show-command-profile",
 			"avatar-default", "preferences-desktop-user",
 			_("Edit _Profile"),
 			"mugshot", true,
@@ -231,10 +231,6 @@ void Settings::load(gchar* file)
 	category_hover_activate.load(rc);
 	category_show_name.load(rc);
 	category_icon_size.load(rc);
-	if (!category_show_name && (category_icon_size == -1))
-	{
-		category_show_name = true;
-	}
 
 	if (!xfce_rc_has_entry(rc, "view-mode"))
 	{
@@ -262,10 +258,6 @@ void Settings::load(gchar* file)
 
 	recent_items_max.load(rc);
 	favorites_in_recent.load(rc);
-	if (!recent_items_max && (default_category == CategoryRecent))
-	{
-		default_category = CategoryFavorites;
-	}
 
 	position_search_alternate.load(rc);
 	position_commands_alternate.load(rc);
@@ -289,6 +281,71 @@ void Settings::load(gchar* file)
 	search_actions.load(rc);
 
 	xfce_rc_close(rc);
+
+	prevent_invalid();
+
+	m_modified = false;
+}
+
+//-----------------------------------------------------------------------------
+
+void Settings::load()
+{
+	if (!channel)
+	{
+		return;
+	}
+
+	favorites.load();
+	recent.load();
+
+	custom_menu_file.load();
+
+	button_title.load();
+	button_icon_name.load();
+	button_title_visible.load();
+	button_icon_visible.load();
+	button_single_row.load();
+
+	launcher_show_name.load();
+	launcher_show_description.load();
+	launcher_show_tooltip.load();
+	launcher_icon_size.load();
+
+	category_hover_activate.load();
+	category_show_name.load();
+	sort_categories.load();
+	category_icon_size.load();
+
+	view_mode.load();
+
+	default_category.load();
+
+	recent_items_max.load();
+	favorites_in_recent.load();
+
+	position_search_alternate.load();
+	position_commands_alternate.load();
+	position_categories_alternate.load();
+	position_categories_horizontal.load();
+	stay_on_focus_out.load();
+
+	profile_shape.load();
+
+	confirm_session_command.load();
+
+	menu_width.load();
+	menu_height.load();
+	menu_opacity.load();
+
+	for (auto i : command)
+	{
+		i->load();
+	}
+
+	search_actions.load();
+
+	prevent_invalid();
 
 	m_modified = false;
 }
@@ -375,6 +432,36 @@ void Settings::save(gchar* file)
 
 //-----------------------------------------------------------------------------
 
+void Settings::prevent_invalid()
+{
+	// Prevent empty categories
+	if (!category_show_name && (category_icon_size == -1))
+	{
+		category_show_name = true;
+	}
+
+	// Reset default category if recent is hidden
+	if (!recent_items_max && (default_category == CategoryRecent))
+	{
+		default_category = CategoryFavorites;
+	}
+
+	// Prevent empty panel button
+	if (!button_icon_visible)
+	{
+		if (!button_title_visible)
+		{
+			button_icon_visible = true;
+		}
+		else if (button_title.empty())
+		{
+			button_title = m_button_title_default;
+		}
+	}
+}
+
+//-----------------------------------------------------------------------------
+
 Boolean::Boolean(const gchar* property, bool data) :
 	m_property(property),
 	m_data(data)
@@ -385,14 +472,21 @@ Boolean::Boolean(const gchar* property, bool data) :
 
 void Boolean::load(XfceRc* rc)
 {
-	set(xfce_rc_read_bool_entry(rc, m_property, m_data));
+	set(xfce_rc_read_bool_entry(rc, m_property + 1, m_data));
+}
+
+//-----------------------------------------------------------------------------
+
+void Boolean::load()
+{
+	set(xfconf_channel_get_bool(wm_settings->channel, m_property, m_data));
 }
 
 //-----------------------------------------------------------------------------
 
 void Boolean::save(XfceRc* rc)
 {
-	xfce_rc_write_bool_entry(rc, m_property, m_data);
+	xfce_rc_write_bool_entry(rc, m_property + 1, m_data);
 }
 
 //-----------------------------------------------------------------------------
@@ -422,14 +516,21 @@ Integer::Integer(const gchar* property, int data, int min, int max) :
 
 void Integer::load(XfceRc* rc)
 {
-	set(xfce_rc_read_int_entry(rc, m_property, m_data));
+	set(xfce_rc_read_int_entry(rc, m_property + 1, m_data));
+}
+
+//-----------------------------------------------------------------------------
+
+void Integer::load()
+{
+	set(xfconf_channel_get_int(wm_settings->channel, m_property, m_data));
 }
 
 //-----------------------------------------------------------------------------
 
 void Integer::save(XfceRc* rc)
 {
-	xfce_rc_write_int_entry(rc, m_property, m_data);
+	xfce_rc_write_int_entry(rc, m_property + 1, m_data);
 }
 
 //-----------------------------------------------------------------------------
@@ -458,14 +559,23 @@ String::String(const gchar* property, const std::string& data) :
 
 void String::load(XfceRc* rc)
 {
-	set(xfce_rc_read_entry(rc, m_property, m_data.c_str()));
+	set(xfce_rc_read_entry(rc, m_property + 1, m_data.c_str()));
+}
+
+//-----------------------------------------------------------------------------
+
+void String::load()
+{
+	gchar* value = xfconf_channel_get_string(wm_settings->channel, m_property, m_data.c_str());
+	set(value);
+	g_free(value);
 }
 
 //-----------------------------------------------------------------------------
 
 void String::save(XfceRc* rc)
 {
-	xfce_rc_write_entry(rc, m_property, m_data.c_str());
+	xfce_rc_write_entry(rc, m_property + 1, m_data.c_str());
 }
 
 //-----------------------------------------------------------------------------
@@ -541,22 +651,98 @@ void StringList::set(int pos, const std::string& value)
 
 void StringList::load(XfceRc* rc)
 {
-	if (!xfce_rc_has_entry(rc, m_property))
+	if (!xfce_rc_has_entry(rc, m_property + 1))
 	{
 		return;
 	}
 
-	m_data.clear();
-
-	gchar** data = xfce_rc_read_list_entry(rc, m_property, ",");
+	gchar** data = xfce_rc_read_list_entry(rc, m_property + 1, ",");
 	if (!data)
 	{
 		return;
 	}
 
+	std::vector<std::string> strings;
 	for (int i = 0; data[i]; ++i)
 	{
-		std::string desktop_id(data[i]);
+		strings.push_back(data[i]);
+	}
+	set(strings);
+
+	g_strfreev(data);
+}
+
+//-----------------------------------------------------------------------------
+
+void StringList::load()
+{
+	GValue value = G_VALUE_INIT;
+	if (!xfconf_channel_get_property(wm_settings->channel, m_property, &value))
+	{
+		return;
+	}
+
+	// Convert GValue to string list
+	std::vector<std::string> strings;
+	if (G_VALUE_HOLDS(&value, G_TYPE_PTR_ARRAY))
+	{
+		const GPtrArray* values = static_cast<GPtrArray*>(g_value_get_boxed(&value));
+		for (guint i = 0; i < values->len; ++i)
+		{
+			const GValue* string = static_cast<GValue*>(g_ptr_array_index(values, i));
+			if (G_VALUE_HOLDS_STRING(string))
+			{
+				strings.push_back(g_value_get_string(string));
+			}
+		}
+	}
+	else if (G_VALUE_HOLDS(&value, G_TYPE_STRV))
+	{
+		const gchar** values = static_cast<const gchar**>(g_value_get_boxed(&value));
+		for (int i = 0; values[i]; ++i)
+		{
+			strings.push_back(values[i]);
+		}
+	}
+	else if (G_VALUE_HOLDS_STRING(&value))
+	{
+		strings.push_back(g_value_get_string(&value));
+	}
+	else
+	{
+		return;
+	}
+
+	// Load string list
+	set(strings);
+
+	g_value_unset(&value);
+
+	return;
+}
+
+//-----------------------------------------------------------------------------
+
+void StringList::save(XfceRc* rc)
+{
+	const int size = m_data.size();
+	gchar** values = g_new0(gchar*, size + 1);
+	for (int i = 0; i < size; ++i)
+	{
+		values[i] = g_strdup(m_data[i].c_str());
+	}
+	xfce_rc_write_list_entry(rc, m_property + 1, values, ",");
+	g_strfreev(values);
+}
+
+//-----------------------------------------------------------------------------
+
+void StringList::set(std::vector<std::string>& data)
+{
+	m_data.clear();
+
+	for (auto& desktop_id : data)
+	{
 #if EXO_CHECK_VERSION(4,15,0)
 		if (desktop_id == "exo-web-browser.desktop")
 		{
@@ -580,22 +766,6 @@ void StringList::load(XfceRc* rc)
 			m_data.push_back(std::move(desktop_id));
 		}
 	}
-
-	g_strfreev(data);
-}
-
-//-----------------------------------------------------------------------------
-
-void StringList::save(XfceRc* rc)
-{
-	const int size = m_data.size();
-	gchar** values = g_new0(gchar*, size + 1);
-	for (int i = 0; i < size; ++i)
-	{
-		values[i] = g_strdup(m_data[i].c_str());
-	}
-	xfce_rc_write_list_entry(rc, m_property, values, ",");
-	g_strfreev(values);
 }
 
 //-----------------------------------------------------------------------------
@@ -666,6 +836,54 @@ void SearchActionList::load(XfceRc* rc)
 	}
 
 	wm_settings->set_modified();
+}
+
+//-----------------------------------------------------------------------------
+
+void SearchActionList::load()
+{
+	const int size = xfconf_channel_get_int(wm_settings->channel, "/search-actions", -1);
+	if (size < 0)
+	{
+		return;
+	}
+
+	for (auto action : m_data)
+	{
+		delete action;
+	}
+	m_data.clear();
+
+	gchar* property = nullptr;
+	gchar* name = nullptr;
+	gchar* pattern = nullptr;
+	gchar* command = nullptr;
+	bool regex;
+
+	for (int i = 0; i < size; ++i)
+	{
+		property = g_strdup_printf("/search-actions/action-%d/name", i);
+		name = xfconf_channel_get_string(wm_settings->channel, property, nullptr);
+		g_free(property);
+
+		property = g_strdup_printf("/search-actions/action-%d/pattern", i);
+		pattern = xfconf_channel_get_string(wm_settings->channel, property, nullptr);
+		g_free(property);
+
+		property = g_strdup_printf("/search-actions/action-%d/command", i);
+		command = xfconf_channel_get_string(wm_settings->channel, property, nullptr);
+		g_free(property);
+
+		property = g_strdup_printf("/search-actions/action-%d/regex", i);
+		regex = xfconf_channel_get_bool(wm_settings->channel, property, false);
+		g_free(property);
+
+		m_data.push_back(new SearchAction(name, pattern, command, regex));
+
+		g_free(name);
+		g_free(pattern);
+		g_free(command);
+	}
 }
 
 //-----------------------------------------------------------------------------

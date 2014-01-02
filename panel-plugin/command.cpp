@@ -243,8 +243,21 @@ void Command::activate()
 
 void Command::load(XfceRc* rc)
 {
-	set(xfce_rc_read_entry(rc, m_property, m_command));
-	set_shown(xfce_rc_read_bool_entry(rc, m_property_show, m_shown));
+	set(xfce_rc_read_entry(rc, m_property + 1, m_command));
+	set_shown(xfce_rc_read_bool_entry(rc, m_property_show + 1, m_shown));
+	check();
+}
+
+//-----------------------------------------------------------------------------
+
+void Command::load()
+{
+	gchar* value = xfconf_channel_get_string(wm_settings->channel, m_property, m_command);
+	set(value);
+	g_free(value);
+
+	set_shown(xfconf_channel_get_bool(wm_settings->channel, m_property_show, m_shown));
+
 	check();
 }
 
@@ -252,8 +265,8 @@ void Command::load(XfceRc* rc)
 
 void Command::save(XfceRc* rc)
 {
-	xfce_rc_write_entry(rc, m_property, m_command);
-	xfce_rc_write_bool_entry(rc, m_property_show, m_shown);
+	xfce_rc_write_entry(rc, m_property + 1, m_command);
+	xfce_rc_write_bool_entry(rc, m_property_show + 1, m_shown);
 }
 
 //-----------------------------------------------------------------------------

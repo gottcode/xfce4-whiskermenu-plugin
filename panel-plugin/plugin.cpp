@@ -49,21 +49,9 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	wm_settings = new Settings(xfce_panel_plugin_get_property_base(m_plugin));
 	wm_settings->load(xfce_resource_lookup(XFCE_RESOURCE_CONFIG, "xfce4/whiskermenu/defaults.rc"));
 	wm_settings->m_button_title_default = wm_settings->button_title;
+	wm_settings->load();
 	wm_settings->load(xfce_panel_plugin_lookup_rc_file(m_plugin));
 	m_opacity = wm_settings->menu_opacity;
-
-	// Prevent empty panel button
-	if (!wm_settings->button_icon_visible)
-	{
-		if (!wm_settings->button_title_visible)
-		{
-			wm_settings->button_icon_visible = true;
-		}
-		else if (wm_settings->button_title.empty())
-		{
-			wm_settings->button_title = get_button_title_default();
-		}
-	}
 
 	// Switch to new icon only if theme is missing old icon
 	if ((wm_settings->button_icon_name == "xfce4-whiskermenu")
