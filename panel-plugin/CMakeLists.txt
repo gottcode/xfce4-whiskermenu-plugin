@@ -55,7 +55,8 @@ target_link_libraries(whiskermenu PRIVATE
 	PkgConfig::garcon
 	PkgConfig::libxfce4panel
 	PkgConfig::libxfce4ui
-	PkgConfig::libxfce4util)
+	PkgConfig::libxfce4util
+	PkgConfig::libxfconf)
 
 target_compile_options(whiskermenu PRIVATE -Wall -Wextra)
 

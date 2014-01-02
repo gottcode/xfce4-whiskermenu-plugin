@@ -35,9 +35,10 @@ Settings* WhiskerMenu::wm_settings = nullptr;
 
 //-----------------------------------------------------------------------------
 
-Settings::Settings() :
+Settings::Settings(const gchar* base) :
 	m_button_title_default(_("Applications")),
 	m_modified(false),
+	channel(nullptr),
 
 	favorites("favorites", {
 #if EXO_CHECK_VERSION(4,15,0)
@@ -167,6 +168,11 @@ Settings::Settings() :
 			_("Edit _Profile"),
 			"mugshot", true,
 			_("Failed to edit profile."));
+
+	if (base && xfconf_init(nullptr))
+	{
+		channel = xfconf_channel_new_with_property_base(xfce_panel_get_channel_name(), base);
+	}
 }
 
 //-----------------------------------------------------------------------------
@@ -176,6 +182,12 @@ Settings::~Settings()
 	for (auto i : command)
 	{
 		delete i;
+	}
+
+	if (channel)
+	{
+		g_object_unref(channel);
+		xfconf_shutdown();
 	}
 }
 

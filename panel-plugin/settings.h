@@ -20,6 +20,8 @@
 
 #include "icon-size.h"
 
+#include <xfconf/xfconf.h>
+
 namespace WhiskerMenu
 {
 
@@ -230,7 +232,7 @@ private:
 // Settings class
 class Settings
 {
-	Settings();
+	Settings(const gchar* base);
 	~Settings();
 
 	Settings(const Settings&) = delete;
@@ -256,6 +258,8 @@ public:
 	}
 
 public:
+	XfconfChannel* channel;
+
 	StringList favorites;
 	StringList recent;
 

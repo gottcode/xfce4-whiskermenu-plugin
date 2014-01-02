@@ -46,7 +46,7 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	m_hide_time(0)
 {
 	// Load settings
-	wm_settings = new Settings;
+	wm_settings = new Settings(xfce_panel_plugin_get_property_base(m_plugin));
 	wm_settings->load(xfce_resource_lookup(XFCE_RESOURCE_CONFIG, "xfce4/whiskermenu/defaults.rc"));
 	wm_settings->m_button_title_default = wm_settings->button_title;
 	wm_settings->load(xfce_panel_plugin_lookup_rc_file(m_plugin));
