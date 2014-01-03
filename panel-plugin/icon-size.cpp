@@ -71,26 +71,19 @@ std::vector<std::string> IconSize::get_strings()
 
 void IconSize::load(XfceRc* rc)
 {
-	set(xfce_rc_read_int_entry(rc, m_property + 1, m_size));
+	set(xfce_rc_read_int_entry(rc, m_property + 1, m_size), false);
 }
 
 //-----------------------------------------------------------------------------
 
 void IconSize::load()
 {
-	set(xfconf_channel_get_int(wm_settings->channel, m_property, m_size));
+	set(xfconf_channel_get_int(wm_settings->channel, m_property, m_size), false);
 }
 
 //-----------------------------------------------------------------------------
 
-void IconSize::save()
-{
-	xfconf_channel_set_int(wm_settings->channel, m_property, m_size);
-}
-
-//-----------------------------------------------------------------------------
-
-void IconSize::set(int size)
+void IconSize::set(int size, bool store)
 {
 	size = CLAMP(size, NONE, Largest);
 	if (m_size == size)
@@ -99,7 +92,11 @@ void IconSize::set(int size)
 	}
 
 	m_size = size;
-	wm_settings->set_modified();
+
+	if (store && wm_settings->channel)
+	{
+		xfconf_channel_set_int(wm_settings->channel, m_property, m_size);
+	}
 }
 
 //-----------------------------------------------------------------------------

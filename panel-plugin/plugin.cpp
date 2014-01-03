@@ -164,12 +164,6 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 			return remote_event(name, value);
 		});
 
-	connect(m_plugin, "save",
-		[this](XfcePanelPlugin*)
-		{
-			save();
-		});
-
 	connect(m_plugin, "about",
 		[this](XfcePanelPlugin*)
 		{
@@ -318,9 +312,9 @@ void Plugin::configure()
 {
 	SettingsDialog* dialog = new SettingsDialog(this);
 	connect(dialog->get_widget(), "destroy",
-		[this, dialog](GtkWidget*)
+		[dialog](GtkWidget*)
 		{
-			save();
+			wm_settings->search_actions.save();
 			delete dialog;
 		});
 }
@@ -380,13 +374,6 @@ gboolean Plugin::remote_event(const gchar* name, const GValue* value)
 	}
 
 	return true;
-}
-
-//-----------------------------------------------------------------------------
-
-void Plugin::save()
-{
-	wm_settings->save();
 }
 
 //-----------------------------------------------------------------------------

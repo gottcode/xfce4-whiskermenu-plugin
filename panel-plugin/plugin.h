@@ -69,7 +69,6 @@ private:
 	void icon_changed(const gchar* icon);
 	void mode_changed(XfcePanelPluginMode mode);
 	gboolean remote_event(const gchar* name, const GValue* value);
-	void save();
 	void show_about();
 	gboolean size_changed(gint size);
 	void update_size();

@@ -59,16 +59,15 @@ public:
 
 	IconSize& operator=(const int size)
 	{
-		set(size);
+		set(size, true);
 		return *this;
 	}
 
 	void load(XfceRc* rc);
 	void load();
-	void save();
 
 private:
-	void set(int size);
+	void set(int size, bool store);
 
 private:
 	const gchar* const m_property;

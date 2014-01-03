@@ -35,7 +35,6 @@ Settings* WhiskerMenu::wm_settings = nullptr;
 
 Settings::Settings() :
 	m_button_title_default(_("Applications")),
-	m_modified(false),
 	channel(nullptr),
 
 	favorites("/favorites", {
@@ -278,7 +277,9 @@ void Settings::load(const gchar* file, bool is_default)
 
 	if (!is_default)
 	{
-		save();
+		favorites.save();
+		recent.save();
+		search_actions.save();
 	}
 	else if (!button_title.empty())
 	{
@@ -349,77 +350,6 @@ void Settings::load(const gchar* base)
 	search_actions.load();
 
 	prevent_invalid();
-
-	m_modified = false;
-}
-
-//-----------------------------------------------------------------------------
-
-void Settings::save()
-{
-	if (!channel)
-	{
-		return;
-	}
-
-	favorites.save();
-	recent.save();
-
-	search_actions.save();
-
-	if (!m_modified)
-	{
-		return;
-	}
-
-	custom_menu_file.save();
-
-	if (button_title != Plugin::get_button_title_default())
-	{
-		button_title.save();
-	}
-	button_icon_name.save();
-	button_title_visible.save();
-	button_icon_visible.save();
-	button_single_row.save();
-
-	launcher_show_name.save();
-	launcher_show_description.save();
-	launcher_show_tooltip.save();
-	launcher_icon_size.save();
-
-	category_hover_activate.save();
-	category_show_name.save();
-	sort_categories.save();
-	category_icon_size.save();
-
-	view_mode.save();
-
-	default_category.save();
-
-	recent_items_max.save();
-	favorites_in_recent.save();
-
-	position_search_alternate.save();
-	position_commands_alternate.save();
-	position_categories_alternate.save();
-	position_categories_horizontal.save();
-	stay_on_focus_out.save();
-
-	profile_shape.save();
-
-	confirm_session_command.save();
-
-	menu_width.save();
-	menu_height.save();
-	menu_opacity.save();
-
-	for (auto i : command)
-	{
-		i->save();
-	}
-
-	m_modified = false;
 }
 
 //-----------------------------------------------------------------------------
@@ -464,26 +394,19 @@ Boolean::Boolean(const gchar* property, bool data) :
 
 void Boolean::load(XfceRc* rc)
 {
-	set(xfce_rc_read_bool_entry(rc, m_property + 1, m_data));
+	set(xfce_rc_read_bool_entry(rc, m_property + 1, m_data), false);
 }
 
 //-----------------------------------------------------------------------------
 
 void Boolean::load()
 {
-	set(xfconf_channel_get_bool(wm_settings->channel, m_property, m_data));
+	set(xfconf_channel_get_bool(wm_settings->channel, m_property, m_data), false);
 }
 
 //-----------------------------------------------------------------------------
 
-void Boolean::save()
-{
-	xfconf_channel_set_bool(wm_settings->channel, m_property, m_data);
-}
-
-//-----------------------------------------------------------------------------
-
-void Boolean::set(bool data)
+void Boolean::set(bool data, bool store)
 {
 	if (m_data == data)
 	{
@@ -491,7 +414,11 @@ void Boolean::set(bool data)
 	}
 
 	m_data = data;
-	wm_settings->set_modified();
+
+	if (store && wm_settings->channel)
+	{
+		xfconf_channel_set_bool(wm_settings->channel, m_property, m_data);
+	}
 }
 
 //-----------------------------------------------------------------------------
@@ -508,26 +435,19 @@ Integer::Integer(const gchar* property, int data, int min, int max) :
 
 void Integer::load(XfceRc* rc)
 {
-	set(xfce_rc_read_int_entry(rc, m_property + 1, m_data));
+	set(xfce_rc_read_int_entry(rc, m_property + 1, m_data), false);
 }
 
 //-----------------------------------------------------------------------------
 
 void Integer::load()
 {
-	set(xfconf_channel_get_int(wm_settings->channel, m_property, m_data));
+	set(xfconf_channel_get_int(wm_settings->channel, m_property, m_data), false);
 }
 
 //-----------------------------------------------------------------------------
 
-void Integer::save()
-{
-	xfconf_channel_set_int(wm_settings->channel, m_property, m_data);
-}
-
-//-----------------------------------------------------------------------------
-
-void Integer::set(int data)
+void Integer::set(int data, bool store)
 {
 	data = CLAMP(data, m_min, m_max);
 	if (m_data == data)
@@ -536,7 +456,11 @@ void Integer::set(int data)
 	}
 
 	m_data = data;
-	wm_settings->set_modified();
+
+	if (store && wm_settings->channel)
+	{
+		xfconf_channel_set_int(wm_settings->channel, m_property, m_data);
+	}
 }
 
 //-----------------------------------------------------------------------------
@@ -551,7 +475,7 @@ String::String(const gchar* property, const std::string& data) :
 
 void String::load(XfceRc* rc)
 {
-	set(xfce_rc_read_entry(rc, m_property + 1, m_data.c_str()));
+	set(xfce_rc_read_entry(rc, m_property + 1, m_data.c_str()), false);
 }
 
 //-----------------------------------------------------------------------------
@@ -559,20 +483,13 @@ void String::load(XfceRc* rc)
 void String::load()
 {
 	gchar* value = xfconf_channel_get_string(wm_settings->channel, m_property, m_data.c_str());
-	set(value);
+	set(value, false);
 	g_free(value);
 }
 
 //-----------------------------------------------------------------------------
 
-void String::save()
-{
-	xfconf_channel_set_string(wm_settings->channel, m_property, m_data.c_str());
-}
-
-//-----------------------------------------------------------------------------
-
-void String::set(const std::string& data)
+void String::set(const std::string& data, bool store)
 {
 	if (m_data == data)
 	{
@@ -580,7 +497,11 @@ void String::set(const std::string& data)
 	}
 
 	m_data = data;
-	wm_settings->set_modified();
+
+	if (store && wm_settings->channel)
+	{
+		xfconf_channel_set_string(wm_settings->channel, m_property, m_data.c_str());
+	}
 }
 
 //-----------------------------------------------------------------------------
@@ -660,11 +581,9 @@ void StringList::load(XfceRc* rc)
 	{
 		strings.push_back(data[i]);
 	}
-	set(strings);
+	set(strings, true);
 
 	g_strfreev(data);
-
-	m_modified = true;
 }
 
 //-----------------------------------------------------------------------------
@@ -676,9 +595,6 @@ void StringList::load()
 	{
 		return;
 	}
-
-	// Do not save changes
-	m_modified = false;
 
 	// Convert GValue to string list
 	std::vector<std::string> strings;
@@ -712,7 +628,7 @@ void StringList::load()
 	}
 
 	// Load string list
-	set(strings);
+	set(strings, false);
 
 	g_value_unset(&value);
 
@@ -723,7 +639,7 @@ void StringList::load()
 
 void StringList::save()
 {
-	if (!m_modified)
+	if (!m_modified || !wm_settings->channel)
 	{
 		return;
 	}
@@ -747,7 +663,7 @@ void StringList::save()
 
 //-----------------------------------------------------------------------------
 
-void StringList::set(std::vector<std::string>& data)
+void StringList::set(std::vector<std::string>& data, bool store)
 {
 	m_data.clear();
 
@@ -776,6 +692,8 @@ void StringList::set(std::vector<std::string>& data)
 			m_data.push_back(std::move(desktop_id));
 		}
 	}
+
+	m_modified = store;
 }
 
 //-----------------------------------------------------------------------------
@@ -903,7 +821,7 @@ void SearchActionList::load()
 
 void SearchActionList::save()
 {
-	if (!m_modified)
+	if (!m_modified || !wm_settings->channel)
 	{
 		return;
 	}

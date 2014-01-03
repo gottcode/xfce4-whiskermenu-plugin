@@ -67,9 +67,9 @@ public:
 		return m_text;
 	}
 
-	void set(const gchar* command);
+	void set(const gchar* command, bool store);
 
-	void set_shown(bool shown);
+	void set_shown(bool shown, bool store);
 
 	void check();
 
@@ -77,7 +77,6 @@ public:
 
 	void load(XfceRc* rc);
 	void load();
-	void save();
 
 private:
 	bool confirm();

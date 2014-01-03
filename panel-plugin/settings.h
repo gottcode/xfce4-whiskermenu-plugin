@@ -43,16 +43,15 @@ public:
 
 	Boolean& operator=(bool data)
 	{
-		set(data);
+		set(data, true);
 		return *this;
 	}
 
 	void load(XfceRc* rc);
 	void load();
-	void save();
 
 private:
-	void set(bool data);
+	void set(bool data, bool store);
 
 private:
 	const gchar* const m_property;
@@ -73,16 +72,15 @@ public:
 
 	Integer& operator=(int data)
 	{
-		set(data);
+		set(data, true);
 		return *this;
 	}
 
 	void load(XfceRc* rc);
 	void load();
-	void save();
 
 private:
-	void set(int data);
+	void set(int data, bool store);
 
 private:
 	const gchar* const m_property;
@@ -113,14 +111,9 @@ public:
 		return data ? (m_data == data) : m_data.empty();
 	}
 
-	bool operator!=(const std::string& data) const
-	{
-		return m_data != data;
-	}
-
 	String& operator=(const std::string& data)
 	{
-		set(data);
+		set(data, true);
 		return *this;
 	}
 
@@ -131,10 +124,9 @@ public:
 
 	void load(XfceRc* rc);
 	void load();
-	void save();
 
 private:
-	void set(const std::string& data);
+	void set(const std::string& data, bool store);
 
 private:
 	const gchar* const m_property;
@@ -185,7 +177,7 @@ public:
 	void save();
 
 private:
-	void set(std::vector<std::string>& data);
+	void set(std::vector<std::string>& data, bool store);
 
 private:
 	const gchar* const m_property;
@@ -257,18 +249,10 @@ class Settings
 
 	void load(const gchar* file, bool is_default);
 	void load(const gchar* base);
-	void save();
 
 	void prevent_invalid();
 
 	std::string m_button_title_default;
-	bool m_modified;
-
-public:
-	void set_modified()
-	{
-		m_modified = true;
-	}
 
 public:
 	XfconfChannel* channel;

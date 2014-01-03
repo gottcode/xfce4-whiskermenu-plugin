@@ -379,7 +379,10 @@ WhiskerMenu::Window::~Window()
 
 void WhiskerMenu::Window::hide(bool lost_focus)
 {
-	// Save size
+	// Save settings
+	wm_settings->favorites.save();
+	wm_settings->recent.save();
+
 	wm_settings->menu_width = m_geometry.width;
 	wm_settings->menu_height = m_geometry.height;
 

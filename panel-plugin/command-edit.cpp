@@ -43,7 +43,7 @@ CommandEdit::CommandEdit(Command* command, GtkSizeGroup* label_size_group) :
 		[this](GtkToggleButton* button)
 		{
 			const bool active = gtk_toggle_button_get_active(button);
-			m_command->set_shown(active);
+			m_command->set_shown(active, true);
 			gtk_widget_set_sensitive(GTK_WIDGET(m_entry), active);
 			gtk_widget_set_sensitive(GTK_WIDGET(m_browse_button), active);
 		});
@@ -57,7 +57,7 @@ CommandEdit::CommandEdit(Command* command, GtkSizeGroup* label_size_group) :
 	connect(m_entry, "changed",
 		[this](GtkEditable* entry)
 		{
-			m_command->set(gtk_entry_get_text(GTK_ENTRY(entry)));
+			m_command->set(gtk_entry_get_text(GTK_ENTRY(entry)), true);
 		});
 
 	// Add browse button

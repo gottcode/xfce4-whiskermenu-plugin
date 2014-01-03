@@ -152,7 +152,7 @@ GtkWidget* Command::get_menuitem()
 
 //-----------------------------------------------------------------------------
 
-void Command::set(const gchar* command)
+void Command::set(const gchar* command, bool store)
 {
 	if (g_strcmp0(command, m_command) == 0)
 	{
@@ -162,12 +162,16 @@ void Command::set(const gchar* command)
 	g_free(m_command);
 	m_command = g_strdup(command);
 	m_status = CommandStatus::Unchecked;
-	wm_settings->set_modified();
+
+	if (store && wm_settings->channel)
+	{
+		xfconf_channel_set_string(wm_settings->channel, m_property, m_command);
+	}
 }
 
 //-----------------------------------------------------------------------------
 
-void Command::set_shown(bool shown)
+void Command::set_shown(bool shown, bool store)
 {
 	if (shown == m_shown)
 	{
@@ -175,7 +179,11 @@ void Command::set_shown(bool shown)
 	}
 
 	m_shown = shown;
-	wm_settings->set_modified();
+
+	if (store && wm_settings->channel)
+	{
+		xfconf_channel_set_bool(wm_settings->channel, m_property_show, m_shown);
+	}
 
 	if (m_button)
 	{
@@ -243,8 +251,8 @@ void Command::activate()
 
 void Command::load(XfceRc* rc)
 {
-	set(xfce_rc_read_entry(rc, m_property + 1, m_command));
-	set_shown(xfce_rc_read_bool_entry(rc, m_property_show + 1, m_shown));
+	set(xfce_rc_read_entry(rc, m_property + 1, m_command), true);
+	set_shown(xfce_rc_read_bool_entry(rc, m_property_show + 1, m_shown), true);
 	check();
 }
 
@@ -253,21 +261,12 @@ void Command::load(XfceRc* rc)
 void Command::load()
 {
 	gchar* value = xfconf_channel_get_string(wm_settings->channel, m_property, m_command);
-	set(value);
+	set(value, false);
 	g_free(value);
 
-	set_shown(xfconf_channel_get_bool(wm_settings->channel, m_property_show, m_shown));
+	set_shown(xfconf_channel_get_bool(wm_settings->channel, m_property_show, m_shown), false);
 
 	check();
-}
-
-//-----------------------------------------------------------------------------
-
-void Command::save()
-{
-	xfconf_channel_set_string(wm_settings->channel, m_property, m_command);
-
-	xfconf_channel_set_bool(wm_settings->channel, m_property_show, m_shown);
 }
 
 //-----------------------------------------------------------------------------
