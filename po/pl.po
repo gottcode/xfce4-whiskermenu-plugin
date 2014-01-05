@@ -1,5 +1,5 @@
 # Polish translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2013 Graeme Gott
+# Copyright (C) 2014 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -9,14 +9,14 @@
 # OSWorld <michal.olber@osworld.pl>, 2013
 # M T <michtrz@gmail.com>, 2013
 # OSWorld <michal.olber@osworld.pl>, 2013
-# Piotr Sokół <psokol@jabster.pl>, 2013
+# Piotr Sokół <psokol@jabster.pl>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-29 12:13+0000\n"
-"PO-Revision-Date: 2013-12-18 21:04+0000\n"
-"Last-Translator: OSWorld <michal.olber@osworld.pl>\n"
+"PO-Revision-Date: 2014-01-02 18:10+0000\n"
+"Last-Translator: Piotr Sokół <psokol@jabster.pl>\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
 "plugin/language/pl/)\n"
 "Language: pl\n"
@@ -32,15 +32,15 @@ msgstr "Dodaj czynność"
 
 #: ../panel-plugin/page.cpp:212
 msgid "Add to Desktop"
-msgstr "Dodaj na Pulpit"
+msgstr "Dodaj na pulpit"
 
 #: ../panel-plugin/page.cpp:197
 msgid "Add to Favorites"
-msgstr "Dodaj do Ulubionych"
+msgstr "Dodaj do ulubionych"
 
 #: ../panel-plugin/page.cpp:216
 msgid "Add to Panel"
-msgstr "Dodaj do Panelu"
+msgstr "Dodaj do panelu"
 
 #: ../panel-plugin/category.cpp:59
 msgid "All"
@@ -48,11 +48,11 @@ msgstr "Wszystkie"
 
 #: ../panel-plugin/settings.cpp:111
 msgid "All _Settings"
-msgstr "Wszystkie ustawienia"
+msgstr "Wszystkie _ustawienia"
 
 #: ../panel-plugin/plugin.cpp:163
 msgid "Applications Menu"
-msgstr "Menu aplikacji"
+msgstr "Menu programów"
 
 #: ../panel-plugin/command-edit.cpp:46
 msgid "Browse the file system to choose a custom command."
@@ -80,17 +80,17 @@ msgstr "Szczegóły"
 
 #: ../panel-plugin/configuration-dialog.cpp:454
 msgid "Di_splay:"
-msgstr "_Wyświetlacz:"
+msgstr "_Wyświetlanie:"
 
 #: ../panel-plugin/configuration-dialog.cpp:604
 msgid "Display recently _used by default"
-msgstr "Pokazuje zawsze ostatnio _używane"
+msgstr "Wyświetlanie ostatnio _używanych domyślnie"
 
 #: ../panel-plugin/launcher.cpp:252 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
-msgstr "Nie można uruchomić polecenia \"%s\"."
+msgstr "Nie udało się uruchomić polecenia „%s”."
 
 #: ../panel-plugin/settings.cpp:115
 msgid "Failed to launch menu editor."
@@ -98,15 +98,15 @@ msgstr "Nie udało się uruchomić edytora menu."
 
 #: ../panel-plugin/settings.cpp:112
 msgid "Failed to lock screen."
-msgstr "Niepowodzenie zablokowania ekranu"
+msgstr "Nie udało się zablokować ekranu."
 
 #: ../panel-plugin/settings.cpp:114
 msgid "Failed to log out."
-msgstr "Niepowodzenie wylogowania"
+msgstr "Nie udało się wylogować."
 
 #: ../panel-plugin/settings.cpp:111
 msgid "Failed to open settings manager."
-msgstr "Niepowodzenie uruchomienia menedżera ustawień"
+msgstr "Nie udało się uruchomić menedżera ustawień."
 
 #: ../panel-plugin/settings.cpp:113
 msgid "Failed to switch users."
@@ -122,23 +122,23 @@ msgstr "Ikona"
 
 #: ../panel-plugin/configuration-dialog.cpp:462
 msgid "Icon and title"
-msgstr "Ikona i nazwa"
+msgstr "Ikona i etykieta"
 
 #: ../panel-plugin/configuration-dialog.cpp:598
 msgid "Include _favorites in recently used"
-msgstr "Dołącz _ulubione do ostatnio używanych"
+msgstr "Dołączenie _ulubionych do ostatnio używanych"
 
 #: ../panel-plugin/configuration-dialog.cpp:543
 msgid "Ite_m icon size:"
-msgstr "Rozmiar ikony przed_miotu:"
+msgstr "Rozmiar ikon _zawartości:"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Large"
-msgstr "Duża"
+msgstr "Duży"
 
 #: ../panel-plugin/icon-size.cpp:55
 msgid "Larger"
-msgstr "Większa"
+msgstr "Większy"
 
 #: ../panel-plugin/settings.cpp:114
 msgid "Log _Out"
@@ -166,7 +166,7 @@ msgstr "Brak"
 
 #: ../panel-plugin/icon-size.cpp:53
 msgid "Normal"
-msgstr "Standardowa"
+msgstr "Zwykły"
 
 #: ../panel-plugin/settings.cpp:120
 msgid "Open URI"
@@ -182,11 +182,11 @@ msgstr "Wzór"
 
 #: ../panel-plugin/configuration-dialog.cpp:527
 msgid "Position _search entry next to panel button"
-msgstr "Umieść pasek _wyszukiwania obok przycisku panelu"
+msgstr "Umieszczenie paska _wyszukiwania obok przycisku panelu"
 
 #: ../panel-plugin/configuration-dialog.cpp:533
 msgid "Position commands next to search _entry"
-msgstr "Umieść _polecenia obok paska wyszukiwania"
+msgstr "Umieszczenie przycisków p_oleceń obok paska wyszukiwania"
 
 #: ../panel-plugin/window.cpp:132
 msgid "Recently Used"
@@ -194,7 +194,7 @@ msgstr "Ostatnio używane"
 
 #: ../panel-plugin/page.cpp:205
 msgid "Remove From Favorites"
-msgstr "Usuń z Ulubionych"
+msgstr "Usuń z ulubionych"
 
 #: ../panel-plugin/configuration-dialog.cpp:364
 #, c-format
@@ -216,7 +216,7 @@ msgstr "Uruchom w terminalu"
 
 #: ../panel-plugin/configuration-dialog.cpp:81
 msgid "Search Actio_ns"
-msgstr "Wyszukaj _czynności"
+msgstr "_Czynności"
 
 #: ../panel-plugin/search-action.cpp:261
 msgid "Search Action"
@@ -224,35 +224,35 @@ msgstr "Wyszukaj czynność"
 
 #: ../panel-plugin/configuration-dialog.cpp:114
 msgid "Select An Icon"
-msgstr "Wybierz ikonę"
+msgstr "Wybór ikony"
 
 #: ../panel-plugin/command-edit.cpp:60
 msgid "Select Command"
-msgstr "Wybierz polecenie"
+msgstr "Wybór polecenia"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
-msgstr "Pokaż menu łatwego dostępu do zainstalowanych aplikacji"
+msgstr "Wyświetla aktywatory zainstalowanych programów rozmieszczone w menu"
 
 #: ../panel-plugin/configuration-dialog.cpp:515
 msgid "Show application _descriptions"
-msgstr "Pokaż _opis aplikacji"
+msgstr "_Opisy programów"
 
 #: ../panel-plugin/configuration-dialog.cpp:509
 msgid "Show generic application _names"
-msgstr "Wyświetlanie uproszczonych _nazw programów"
+msgstr "Uproszczone _nazwy programów"
 
 #: ../panel-plugin/configuration-dialog.cpp:521
 msgid "Show menu hie_rarchy"
-msgstr "Pokaż hie_rarchię menu"
+msgstr "Zachowanie _hierarchii menu"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
-msgstr "Mała"
+msgstr "Mały"
 
 #: ../panel-plugin/icon-size.cpp:51
 msgid "Smaller"
-msgstr "Mniejsza"
+msgstr "Mniejszy"
 
 #: ../panel-plugin/favorites-page.cpp:67
 msgid "Sort Alphabetically A-Z"
@@ -268,7 +268,7 @@ msgstr "Przełącz _użytkownika"
 
 #: ../panel-plugin/configuration-dialog.cpp:592
 msgid "Switch categories by _hovering"
-msgstr "Zmień kategorię _najeżdżając"
+msgstr "Przełączanie kategorii _wskazywaniem kursora myszy"
 
 #: ../panel-plugin/configuration-dialog.cpp:363
 msgid "The action will be deleted permanently."
@@ -288,11 +288,11 @@ msgstr "Nie można dodać aktywatora do panelu"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
-msgstr "Największa"
+msgstr "Największy"
 
 #: ../panel-plugin/icon-size.cpp:50
 msgid "Very Small"
-msgstr "Najmniejsza"
+msgstr "Najmniejszy"
 
 #: ../panel-plugin/configuration-dialog.cpp:71
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
@@ -313,7 +313,7 @@ msgstr "_Zachowanie"
 
 #: ../panel-plugin/settings.cpp:115
 msgid "_Edit Applications"
-msgstr "_Edytuj aplikacje"
+msgstr "_Edytuj programy"
 
 #: ../panel-plugin/configuration-dialog.cpp:487
 msgid "_Icon:"
@@ -333,4 +333,4 @@ msgstr "Wyrażenie _regularne"
 
 #: ../panel-plugin/configuration-dialog.cpp:472
 msgid "_Title:"
-msgstr "_Nazwa"
+msgstr "_Nazwa:"
