@@ -436,6 +436,17 @@ void Window::show(GtkWidget* parent, bool horizontal)
 			g_object_unref(m_commands_align);
 		}
 	}
+	if ((layout_left && !wm_settings->position_categories_alternate)
+			|| (!layout_left && wm_settings->position_categories_alternate))
+	{
+		gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_panels_box), 1);
+		gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_sidebar), 2);
+	}
+	else
+	{
+		gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_panels_box), 2);
+		gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_sidebar), 1);
+	}
 	if (layout_left != m_layout_left)
 	{
 		m_layout_left = layout_left;
@@ -454,9 +465,6 @@ void Window::show(GtkWidget* parent, bool horizontal)
 
 			gtk_box_reorder_child(m_search_box, GTK_WIDGET(m_search_entry), 0);
 			gtk_box_reorder_child(m_search_box, GTK_WIDGET(m_commands_align), 1);
-
-			gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_panels_box), 1);
-			gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_sidebar), 2);
 		}
 		else if (m_layout_commands_alternate)
 		{
@@ -473,9 +481,6 @@ void Window::show(GtkWidget* parent, bool horizontal)
 
 			gtk_box_reorder_child(m_search_box, GTK_WIDGET(m_search_entry), 1);
 			gtk_box_reorder_child(m_search_box, GTK_WIDGET(m_commands_align), 0);
-
-			gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_panels_box), 2);
-			gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_sidebar), 1);
 		}
 		else if (m_layout_left)
 		{
@@ -490,9 +495,6 @@ void Window::show(GtkWidget* parent, bool horizontal)
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 0);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_commands_align), 1);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 2);
-
-			gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_panels_box), 1);
-			gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_sidebar), 2);
 		}
 		else
 		{
@@ -507,9 +509,6 @@ void Window::show(GtkWidget* parent, bool horizontal)
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 2);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_commands_align), 1);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 0);
-
-			gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_panels_box), 2);
-			gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_sidebar), 1);
 		}
 	}
 
