@@ -229,6 +229,14 @@ void ConfigurationDialog::toggle_position_commands_alternate(GtkToggleButton* bu
 
 //-----------------------------------------------------------------------------
 
+void ConfigurationDialog::toggle_position_categories_alternate(GtkToggleButton* button)
+{
+	wm_settings->position_categories_alternate = gtk_toggle_button_get_active(button);
+	wm_settings->set_modified();
+}
+
+//-----------------------------------------------------------------------------
+
 void ConfigurationDialog::toggle_remember_favorites(GtkToggleButton* button)
 {
 	wm_settings->favorites_in_recent = gtk_toggle_button_get_active(button);
@@ -550,6 +558,12 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_commands_alternate), wm_settings->position_commands_alternate);
 	gtk_widget_set_sensitive(GTK_WIDGET(m_position_commands_alternate), wm_settings->position_commands_alternate);
 	g_signal_connect_slot(m_position_commands_alternate, "toggled", &ConfigurationDialog::toggle_position_commands_alternate, this);
+
+	// Add option to use alternate categories position
+	m_position_categories_alternate = gtk_check_button_new_with_mnemonic(_("Position cate_gories next to panel button"));
+	gtk_box_pack_start(appearance_vbox, m_position_categories_alternate, true, true, 0);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_categories_alternate), wm_settings->position_categories_alternate);
+	g_signal_connect_slot(m_position_categories_alternate, "toggled", &ConfigurationDialog::toggle_position_categories_alternate, this);
 
 	// Add item icon size selector
 	hbox = GTK_BOX(gtk_hbox_new(false, 12));
