@@ -85,7 +85,7 @@ Settings::Settings() :
 	button_icon_name("xfce4-whiskermenu"),
 	button_title_visible(false),
 	button_icon_visible(true),
-        button_single_row(false),
+	button_single_row(false),
 
 	launcher_show_name(true),
 	launcher_show_description(true),

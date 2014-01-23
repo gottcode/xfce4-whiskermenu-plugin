@@ -370,7 +370,7 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 #endif
 
 	// Fix alignment in deskbar mode
-        if (panel_orientation == GTK_ORIENTATION_VERTICAL &&
+	if (panel_orientation == GTK_ORIENTATION_VERTICAL &&
 	    orientation == GTK_ORIENTATION_HORIZONTAL)
 	{
 		gtk_box_set_child_packing(m_button_box, GTK_WIDGET(m_button_icon), false, false, 0, GTK_PACK_START);
