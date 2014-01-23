@@ -78,6 +78,7 @@ public:
 	bool display_recent;
 	bool position_search_alternate;
 	bool position_commands_alternate;
+	bool position_categories_alternate;
 
 	enum Commands
 	{

@@ -46,6 +46,7 @@ private:
 	void toggle_show_hierarchy(GtkToggleButton* button);
 	void toggle_position_search_alternate(GtkToggleButton* button);
 	void toggle_position_commands_alternate(GtkToggleButton* button);
+	void toggle_position_categories_alternate(GtkToggleButton* button);
 	void category_icon_size_changed(GtkComboBox* combo);
 	void item_icon_size_changed(GtkComboBox* combo);
 
@@ -82,6 +83,7 @@ private:
 	GtkWidget* m_show_hierarchy;
 	GtkWidget* m_position_search_alternate;
 	GtkWidget* m_position_commands_alternate;
+	GtkWidget* m_position_categories_alternate;
 	GtkWidget* m_category_icon_size;
 	GtkWidget* m_item_icon_size;
 
