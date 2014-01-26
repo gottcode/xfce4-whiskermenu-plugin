@@ -344,19 +344,21 @@ void Plugin::orientation_changed(XfcePanelPlugin*, GtkOrientation orientation)
 
 gboolean Plugin::remote_event(XfcePanelPlugin*, gchar* name, GValue* value)
 {
-	if (strcmp(name, "popup") == 0 && panel_utils_grab_available())
+	if (strcmp(name, "popup") || !panel_utils_grab_available())
 	{
-		if (gtk_widget_get_visible(m_window->get_widget()))
-		{
-			m_window->hide();
-		}
-		else
-		{
-			popup_menu(value && G_VALUE_HOLDS_BOOLEAN(value) && g_value_get_boolean(value));
-		}
-		return true;
+		return false;
 	}
-	return false;
+
+	if (gtk_widget_get_visible(m_window->get_widget()))
+	{
+		m_window->hide();
+	}
+	else
+	{
+		popup_menu(value && G_VALUE_HOLDS_BOOLEAN(value) && g_value_get_boolean(value));
+	}
+
+	return true;
 }
 
 //-----------------------------------------------------------------------------
