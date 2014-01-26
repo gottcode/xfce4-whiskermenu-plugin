@@ -27,6 +27,7 @@
 extern "C"
 {
 #include <libxfce4util/libxfce4util.h>
+#include <libxfce4ui/libxfce4ui.h>
 }
 
 using namespace WhiskerMenu;
@@ -43,6 +44,49 @@ static void whiskermenu_free(XfcePanelPlugin*, Plugin* whiskermenu)
 {
 	delete whiskermenu;
 	whiskermenu = NULL;
+}
+
+// Prevents instant popup in Plugin::remote_event; allows the same keyboard key as modifier
+// Adapted from http://git.xfce.org/xfce/xfce4-panel/tree/common/panel-utils.c#n122
+gboolean panel_utils_grab_available (void)
+{
+	GdkScreen     *screen = xfce_gdk_screen_get_active (NULL);
+	GdkWindow     *root = gdk_screen_get_root_window (screen);
+	GdkGrabStatus  grab_pointer = GDK_GRAB_FROZEN;
+	GdkGrabStatus  grab_keyboard = GDK_GRAB_FROZEN;
+	gboolean       grab_succeed = false;
+	GdkEventMask   pointer_mask = static_cast<GdkEventMask>(GDK_BUTTON_PRESS_MASK
+	                            | GDK_BUTTON_RELEASE_MASK | GDK_ENTER_NOTIFY_MASK
+	                            | GDK_LEAVE_NOTIFY_MASK | GDK_POINTER_MOTION_MASK);
+
+	/* don't try to get the grab for longer then 1/4 second */
+	for (guint i = 0; i < (G_USEC_PER_SEC / 100 / 4); ++i)
+	{
+		grab_keyboard = gdk_keyboard_grab (root, true, GDK_CURRENT_TIME);
+		if (grab_keyboard == GDK_GRAB_SUCCESS)
+		{
+			grab_pointer = gdk_pointer_grab (root, true, pointer_mask, NULL, NULL, GDK_CURRENT_TIME);
+			if (grab_pointer == GDK_GRAB_SUCCESS)
+			{
+				grab_succeed = true;
+				break;
+			}
+		}
+		g_usleep (100);
+	}
+
+	/* release the grab so the gtk_menu_popup() can take it */
+	if (grab_pointer == GDK_GRAB_SUCCESS)
+		gdk_pointer_ungrab (GDK_CURRENT_TIME);
+	if (grab_keyboard == GDK_GRAB_SUCCESS)
+		gdk_keyboard_ungrab (GDK_CURRENT_TIME);
+
+	if (!grab_succeed)
+	{
+		g_printerr ("xfce4-whiskermenu-plugin: Unable to get keyboard and mouse grab. Menu popup failed.\n");
+	}
+
+	return grab_succeed;
 }
 
 //-----------------------------------------------------------------------------
@@ -300,7 +344,7 @@ void Plugin::orientation_changed(XfcePanelPlugin*, GtkOrientation orientation)
 
 gboolean Plugin::remote_event(XfcePanelPlugin*, gchar* name, GValue* value)
 {
-	if (strcmp(name, "popup"))
+	if (strcmp(name, "popup") || !panel_utils_grab_available())
 	{
 		return false;
 	}
