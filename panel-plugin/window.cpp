@@ -101,6 +101,7 @@ Window::Window() :
 	m_username = GTK_LABEL(gtk_label_new(NULL));
 	gtk_label_set_markup(m_username, username);
 	gtk_misc_set_alignment(GTK_MISC(m_username), 0.0f, 0.5f);
+	gtk_misc_set_padding(GTK_MISC(m_username), 10, 0);
 	g_free(username);
 
 	// Create action buttons
