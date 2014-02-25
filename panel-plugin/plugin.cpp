@@ -342,6 +342,12 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 	gint row_size = size;
 #endif
 
+	// Make icon expand to fill button if title is not visible
+	gtk_box_set_child_packing(GTK_BOX(m_button_box), GTK_WIDGET(m_button_icon),
+			!wm_settings->button_title_visible,
+			!wm_settings->button_title_visible,
+			0, GTK_PACK_START);
+
 	// Resize icon
 	GtkStyle* style = gtk_widget_get_style(m_button);
 	gint border = (2 * std::max(style->xthickness, style->ythickness)) + 2;
@@ -356,9 +362,9 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 		GtkRequisition label_size;
 		gtk_widget_size_request(GTK_WIDGET(m_button_label), &label_size);
 		if (mode == XFCE_PANEL_PLUGIN_MODE_DESKBAR &&
-		    wm_settings->button_title_visible &&
-		    wm_settings->button_icon_visible &&
-		    label_size.width <= (size - row_size))
+				wm_settings->button_title_visible &&
+				wm_settings->button_icon_visible &&
+				label_size.width <= (size - row_size))
 		{
 			orientation = GTK_ORIENTATION_HORIZONTAL;
 		}
@@ -370,20 +376,16 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 #endif
 
 	// Fix alignment in deskbar mode
-        if (panel_orientation == GTK_ORIENTATION_VERTICAL &&
-	    orientation == GTK_ORIENTATION_HORIZONTAL)
+	if ((panel_orientation == GTK_ORIENTATION_VERTICAL) && (orientation == GTK_ORIENTATION_HORIZONTAL))
 	{
-		gtk_box_set_child_packing(m_button_box, GTK_WIDGET(m_button_icon), false, false, 0, GTK_PACK_START);
 		gtk_box_set_child_packing(m_button_box, GTK_WIDGET(m_button_label), false, false, 0, GTK_PACK_START);
 	}
 	else
 	{
-		gtk_box_set_child_packing(m_button_box, GTK_WIDGET(m_button_icon), true, false, 0, GTK_PACK_START);
 		gtk_box_set_child_packing(m_button_box, GTK_WIDGET(m_button_label), true, true, 0, GTK_PACK_START);
 	}
 
 	gtk_orientable_set_orientation(GTK_ORIENTABLE(m_button_box), orientation);
-
 
 	return true;
 }
