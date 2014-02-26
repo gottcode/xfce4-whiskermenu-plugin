@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -67,6 +67,7 @@ public:
 	void hide();
 	void show(GtkWidget* parent, bool horizontal);
 	void save();
+	void on_context_menu_destroyed();
 	void set_categories(const std::vector<SectionButton*>& categories);
 	void set_items();
 	void set_loaded();
@@ -75,7 +76,6 @@ public:
 private:
 	gboolean on_enter_notify_event(GtkWidget*, GdkEvent* event);
 	gboolean on_leave_notify_event(GtkWidget*, GdkEvent* event);
-	gboolean on_focus_in_event(GtkWidget*, GdkEvent*);
 	gboolean on_button_press_event(GtkWidget*, GdkEvent* event);
 	gboolean on_key_press_event(GtkWidget* widget, GdkEvent* event);
 	gboolean on_key_press_event_after(GtkWidget* widget, GdkEvent* event);
