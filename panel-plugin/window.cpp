@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -64,7 +64,6 @@ Window::Window() :
 	gtk_widget_add_events(GTK_WIDGET(m_window), GDK_BUTTON_PRESS_MASK | GDK_LEAVE_NOTIFY_MASK | GDK_STRUCTURE_MASK);
 	g_signal_connect_slot(m_window, "enter-notify-event", &Window::on_enter_notify_event, this);
 	g_signal_connect_slot(m_window, "leave-notify-event", &Window::on_leave_notify_event, this);
-	g_signal_connect_slot(m_window, "focus-in-event", &Window::on_focus_in_event, this);
 	g_signal_connect_slot(m_window, "button-press-event", &Window::on_button_press_event, this);
 	g_signal_connect_slot(m_window, "key-press-event", &Window::on_key_press_event, this);
 	g_signal_connect_slot(m_window, "key-press-event", &Window::on_key_press_event_after, this, true);
@@ -566,6 +565,18 @@ void Window::save()
 
 //-----------------------------------------------------------------------------
 
+void Window::on_context_menu_destroyed()
+{
+	gdk_pointer_grab(gtk_widget_get_window(GTK_WIDGET(m_window)), true,
+			GdkEventMask(
+				GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK |
+				GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK
+			),
+			NULL, NULL, gtk_get_current_event_time());
+}
+
+//-----------------------------------------------------------------------------
+
 void Window::set_categories(const std::vector<SectionButton*>& categories)
 {
 	for (std::vector<SectionButton*>::const_iterator i = categories.begin(), end = categories.end(); i != end; ++i)
@@ -663,19 +674,6 @@ gboolean Window::on_leave_notify_event(GtkWidget*, GdkEvent* event)
 				NULL, NULL, crossing_event->time);
 	}
 
-	return false;
-}
-
-//-----------------------------------------------------------------------------
-
-gboolean Window::on_focus_in_event(GtkWidget*, GdkEvent*)
-{
-	gdk_pointer_grab(gtk_widget_get_window(GTK_WIDGET(m_window)), true,
-			GdkEventMask(
-				GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK |
-				GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK
-			),
-			NULL, NULL, gtk_get_current_event_time());
 	return false;
 }
 
