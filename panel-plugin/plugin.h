@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -69,7 +69,7 @@ private:
 	gboolean remote_event(XfcePanelPlugin*, gchar* name, GValue* value);
 	void save();
 	gboolean size_changed(XfcePanelPlugin*, gint size);
-	void popup_menu(bool at_cursor);
+	void popup_menu(bool at_cursor, bool activate_button);
 
 private:
 	XfcePanelPlugin* m_plugin;
