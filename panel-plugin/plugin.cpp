@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -257,7 +257,7 @@ gboolean Plugin::button_clicked(GtkWidget*, GdkEvent* event)
 	}
 	else
 	{
-		popup_menu(false);
+		popup_menu(false, false);
 	}
 
 	return true;
@@ -311,7 +311,7 @@ gboolean Plugin::remote_event(XfcePanelPlugin*, gchar* name, GValue* value)
 	}
 	else
 	{
-		popup_menu(value && G_VALUE_HOLDS_BOOLEAN(value) && g_value_get_boolean(value));
+		popup_menu(value && G_VALUE_HOLDS_BOOLEAN(value) && g_value_get_boolean(value), true);
 	}
 
 	return true;
@@ -392,12 +392,15 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 
 //-----------------------------------------------------------------------------
 
-void Plugin::popup_menu(bool at_cursor)
+void Plugin::popup_menu(bool at_cursor, bool activate_button)
 {
 	if (!at_cursor)
 	{
 		xfce_panel_plugin_block_autohide(m_plugin, true);
-		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_button), true);
+		if (activate_button)
+		{
+			gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_button), true);
+		}
 		m_window->show(m_button, xfce_panel_plugin_get_orientation(m_plugin) == GTK_ORIENTATION_HORIZONTAL);
 	}
 	else
