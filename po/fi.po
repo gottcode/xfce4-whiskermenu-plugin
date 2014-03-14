@@ -1,16 +1,17 @@
 # Finnish translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2013 Graeme Gott
+# Copyright (C) 2014 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
+# knome <pasi@shimmerproject.org>, 2014
 # SamiPerkele <zazaamm@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-29 12:13+0000\n"
-"PO-Revision-Date: 2013-10-25 22:27+0000\n"
-"Last-Translator: SamiPerkele <zazaamm@gmail.com>\n"
+"PO-Revision-Date: 2014-03-12 18:06+0000\n"
+"Last-Translator: knome <pasi@shimmerproject.org>\n"
 "Language-Team: Finnish (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/fi/)\n"
 "Language: fi\n"
@@ -20,9 +21,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/configuration-dialog.cpp:680
-#, fuzzy
 msgid "Add action"
-msgstr "Lisää paneeliin"
+msgstr "Lisää toiminto"
 
 #: ../panel-plugin/page.cpp:212
 msgid "Add to Desktop"
@@ -41,9 +41,8 @@ msgid "All"
 msgstr "Kaikki"
 
 #: ../panel-plugin/settings.cpp:111
-#, fuzzy
 msgid "All _Settings"
-msgstr "Kaikki asetukset"
+msgstr "Kaikki a_setukset"
 
 #: ../panel-plugin/plugin.cpp:163
 msgid "Applications Menu"
@@ -51,12 +50,11 @@ msgstr "Ohjelmavalikko"
 
 #: ../panel-plugin/command-edit.cpp:46
 msgid "Browse the file system to choose a custom command."
-msgstr ""
+msgstr "Selaa tiedostojärjestelmää valitaksesi komennon."
 
 #: ../panel-plugin/configuration-dialog.cpp:738
-#, fuzzy
 msgid "C_ommand:"
-msgstr "_Komennot"
+msgstr "K_omento"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
 msgid "Categ_ory icon size:"
@@ -67,13 +65,12 @@ msgid "Clear Recently Used"
 msgstr "Pyyhi viimeksi käytetyt"
 
 #: ../panel-plugin/configuration-dialog.cpp:612
-#, fuzzy
 msgid "Commands"
-msgstr "_Komennot"
+msgstr "Komennot"
 
 #: ../panel-plugin/configuration-dialog.cpp:709
 msgid "Details"
-msgstr ""
+msgstr "Tiedot"
 
 #: ../panel-plugin/configuration-dialog.cpp:454
 msgid "Di_splay:"
@@ -90,9 +87,8 @@ msgid "Failed to execute command \"%s\"."
 msgstr "Komennon \"%s\" suorittaminen epäonnistui."
 
 #: ../panel-plugin/settings.cpp:115
-#, fuzzy
 msgid "Failed to launch menu editor."
-msgstr "Ulos kirjautuminen epäonnistui."
+msgstr "Valikon muokkaimen käynnistäminen epäonnistui."
 
 #: ../panel-plugin/settings.cpp:112
 msgid "Failed to lock screen."
@@ -107,9 +103,8 @@ msgid "Failed to open settings manager."
 msgstr "Asetustenhallinnan avaaminen epäonnistui."
 
 #: ../panel-plugin/settings.cpp:113
-#, fuzzy
 msgid "Failed to switch users."
-msgstr "Näytön lukitseminen epäonnistui."
+msgstr "Käyttäjän vaihtaminen epäonnistui."
 
 #: ../panel-plugin/window.cpp:126
 msgid "Favorites"
@@ -140,29 +135,28 @@ msgid "Larger"
 msgstr "Suurempi"
 
 #: ../panel-plugin/settings.cpp:114
-#, fuzzy
 msgid "Log _Out"
-msgstr "Kirjaudu _ulos:"
+msgstr "Kirjaudu ul_os"
 
 #: ../panel-plugin/settings.cpp:117
 msgid "Man Pages"
-msgstr ""
+msgstr "Ohjesivut"
 
 #: ../panel-plugin/configuration-dialog.cpp:504
 msgid "Menu"
-msgstr ""
+msgstr "Valikko"
 
 #: ../panel-plugin/configuration-dialog.cpp:714
 msgid "Nam_e:"
-msgstr ""
+msgstr "Nimi:"
 
 #: ../panel-plugin/configuration-dialog.cpp:660
 msgid "Name"
-msgstr ""
+msgstr "Nimi"
 
 #: ../panel-plugin/icon-size.cpp:49
 msgid "None"
-msgstr ""
+msgstr "Ei kuvaketta"
 
 #: ../panel-plugin/icon-size.cpp:53
 msgid "Normal"
@@ -170,16 +164,15 @@ msgstr "Normaali"
 
 #: ../panel-plugin/settings.cpp:120
 msgid "Open URI"
-msgstr ""
+msgstr "Avaa URI-osoite"
 
 #: ../panel-plugin/configuration-dialog.cpp:446
-#, fuzzy
 msgid "Panel Button"
-msgstr "_Paneelinäppäin"
+msgstr "Paneelipainike"
 
 #: ../panel-plugin/configuration-dialog.cpp:665
 msgid "Pattern"
-msgstr ""
+msgstr "Hakulauseke"
 
 #: ../panel-plugin/configuration-dialog.cpp:527
 msgid "Position _search entry next to panel button"
@@ -200,55 +193,52 @@ msgstr "Poista suosikeista"
 #: ../panel-plugin/configuration-dialog.cpp:364
 #, c-format
 msgid "Remove action \"%s\"?"
-msgstr ""
+msgstr "Poistetaanko toiminto \"%s\"?"
 
 #: ../panel-plugin/configuration-dialog.cpp:689
 msgid "Remove selected action"
-msgstr ""
+msgstr "Poista valittu toiminto"
 
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
 msgid "Run %s"
-msgstr ""
+msgstr "Suorita %s"
 
 #: ../panel-plugin/settings.cpp:119
 msgid "Run in Terminal"
-msgstr ""
+msgstr "Suorita pääteohjelmassa"
 
 #: ../panel-plugin/configuration-dialog.cpp:81
 msgid "Search Actio_ns"
-msgstr ""
+msgstr "Haun toimi_nnot"
 
 #: ../panel-plugin/search-action.cpp:261
 msgid "Search Action"
-msgstr ""
+msgstr "Haun toiminto"
 
 #: ../panel-plugin/configuration-dialog.cpp:114
 msgid "Select An Icon"
 msgstr "Valitse kuvake"
 
 #: ../panel-plugin/command-edit.cpp:60
-#, fuzzy
 msgid "Select Command"
-msgstr "Valitse kuvake"
+msgstr "Valitse komento"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
-msgstr "Näytä valikko, josta on helppo pääsy asennettuihin ohjelmiin"
+msgstr "Näytä valikko, josta on helppo pääsy asennettuihin sovelluksiin"
 
 #: ../panel-plugin/configuration-dialog.cpp:515
 msgid "Show application _descriptions"
-msgstr "Näytä ohjelmien _kuvaukset"
+msgstr "Näytä sovelluksien _kuvaukset"
 
 #: ../panel-plugin/configuration-dialog.cpp:509
-#, fuzzy
 msgid "Show generic application _names"
-msgstr "Näytä ohjelmat _nimen mukaan"
+msgstr "Näytä sovelluksien ystävälliset _nimet"
 
 #: ../panel-plugin/configuration-dialog.cpp:521
-#, fuzzy
 msgid "Show menu hie_rarchy"
-msgstr "Lataa valikkohie_rarkia"
+msgstr "Näytä valikkohie_rarkia"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -268,15 +258,15 @@ msgstr "Järjestä aakkosten mukaan Ö-A"
 
 #: ../panel-plugin/settings.cpp:113
 msgid "Switch _Users"
-msgstr ""
+msgstr "Vaihda _käyttäjää"
 
 #: ../panel-plugin/configuration-dialog.cpp:592
 msgid "Switch categories by _hovering"
-msgstr "Vaihda ryhmiä _klikkaamatta"
+msgstr "Vaihda ryhmiä _napsauttamatta"
 
 #: ../panel-plugin/configuration-dialog.cpp:363
 msgid "The action will be deleted permanently."
-msgstr ""
+msgstr "Toiminto poistetaan pysyvästi."
 
 #: ../panel-plugin/configuration-dialog.cpp:461
 msgid "Title"
@@ -305,7 +295,7 @@ msgstr "Whisker-valikko"
 
 #: ../panel-plugin/settings.cpp:118
 msgid "Wikipedia"
-msgstr ""
+msgstr "Wikipedia"
 
 #: ../panel-plugin/configuration-dialog.cpp:79
 msgid "_Appearance"
@@ -316,36 +306,25 @@ msgid "_Behavior"
 msgstr "_Toimintatapa"
 
 #: ../panel-plugin/settings.cpp:115
-#, fuzzy
 msgid "_Edit Applications"
-msgstr "Ohjelmavalikko"
+msgstr "Muokkaa sov_elluksia"
 
 #: ../panel-plugin/configuration-dialog.cpp:487
 msgid "_Icon:"
 msgstr "_Kuvake:"
 
 #: ../panel-plugin/settings.cpp:112
-#, fuzzy
 msgid "_Lock Screen"
-msgstr "Lukitse näyttö"
+msgstr "_Lukitse näyttö"
 
 #: ../panel-plugin/configuration-dialog.cpp:726
 msgid "_Pattern:"
-msgstr ""
+msgstr "_Hakulauseke:"
 
 #: ../panel-plugin/configuration-dialog.cpp:750
 msgid "_Regular expression"
-msgstr ""
+msgstr "Säännöllinen lauseke (_regex)"
 
 #: ../panel-plugin/configuration-dialog.cpp:472
 msgid "_Title:"
 msgstr "_Otsikko:"
-
-#~ msgid "Lock _Screen:"
-#~ msgstr "Lukitse _näyttö:"
-
-#~ msgid "Log Out"
-#~ msgstr "Kirjaudu ulos"
-
-#~ msgid "_Settings:"
-#~ msgstr "_Asetukset:"
