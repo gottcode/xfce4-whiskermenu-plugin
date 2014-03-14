@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-29 12:13+0000\n"
-"PO-Revision-Date: 2014-01-04 15:28+0000\n"
+"PO-Revision-Date: 2014-01-23 15:15+0000\n"
 "Last-Translator: starryprabin <mr.prabin@gmail.com>\n"
 "Language-Team: Nepali (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
 "plugin/language/ne/)\n"
@@ -210,7 +210,7 @@ msgstr "टर्मिनलमा चालु गर्नुहोस्"
 
 #: ../panel-plugin/configuration-dialog.cpp:81
 msgid "Search Actio_ns"
-msgstr "Actio_ns खोज्नुहोस्"
+msgstr "कार्यहरु खोज्नुहोस्"
 
 #: ../panel-plugin/search-action.cpp:261
 msgid "Search Action"
@@ -262,7 +262,7 @@ msgstr "॒प्रयोगकर्ता फेर्नुहोस्"
 
 #: ../panel-plugin/configuration-dialog.cpp:592
 msgid "Switch categories by _hovering"
-msgstr "मं॒डराएर वर्गहरुलाई बद्नुहोस् "
+msgstr "मं॒डराएर वर्गहरुलाई बदल्नुहोस् "
 
 #: ../panel-plugin/configuration-dialog.cpp:363
 msgid "The action will be deleted permanently."
@@ -274,7 +274,7 @@ msgstr "शीर्षक "
 
 #: ../panel-plugin/page.cpp:306
 msgid "Unable to add launcher to desktop."
-msgstr "प्रक्षेपकलाई डेस्कटपमा थप्न असमर्थ भयो ।"
+msgstr "प्रक्षेपकलाई डेस्कटपमा थप्न असमर्थ ।"
 
 #: ../panel-plugin/page.cpp:345 ../panel-plugin/page.cpp:354
 msgid "Unable to add launcher to panel."
