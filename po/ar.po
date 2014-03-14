@@ -1,15 +1,15 @@
 # Arabic translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2013 Graeme Gott
+# Copyright (C) 2014 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Karim Oulad Chalha <herr.linux88@gmail.com>, 2013
+# Karim Oulad Chalha <herr.linux88@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-29 12:13+0000\n"
-"PO-Revision-Date: 2013-12-01 13:24+0000\n"
+"PO-Revision-Date: 2014-01-27 17:43+0000\n"
 "Last-Translator: Karim Oulad Chalha <herr.linux88@gmail.com>\n"
 "Language-Team: Arabic (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
 "plugin/language/ar/)\n"
@@ -21,9 +21,8 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #: ../panel-plugin/configuration-dialog.cpp:680
-#, fuzzy
 msgid "Add action"
-msgstr "أضف إلى الشريط"
+msgstr "أضف إجراء"
 
 #: ../panel-plugin/page.cpp:212
 msgid "Add to Desktop"
@@ -42,9 +41,8 @@ msgid "All"
 msgstr "كل"
 
 #: ../panel-plugin/settings.cpp:111
-#, fuzzy
 msgid "All _Settings"
-msgstr "كل الإعدادات"
+msgstr "كل الإعدا_دات"
 
 #: ../panel-plugin/plugin.cpp:163
 msgid "Applications Menu"
@@ -52,12 +50,11 @@ msgstr "قائمة التطبيقات"
 
 #: ../panel-plugin/command-edit.cpp:46
 msgid "Browse the file system to choose a custom command."
-msgstr ""
+msgstr "تصفح نظام الملفات لإختيار أمر مخصص."
 
 #: ../panel-plugin/configuration-dialog.cpp:738
-#, fuzzy
 msgid "C_ommand:"
-msgstr "_أوامر"
+msgstr "أ_مر:"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
 msgid "Categ_ory icon size:"
@@ -68,13 +65,12 @@ msgid "Clear Recently Used"
 msgstr "محو المستعملة حديثا"
 
 #: ../panel-plugin/configuration-dialog.cpp:612
-#, fuzzy
 msgid "Commands"
-msgstr "_أوامر"
+msgstr "أوامر"
 
 #: ../panel-plugin/configuration-dialog.cpp:709
 msgid "Details"
-msgstr ""
+msgstr "تفاصيل"
 
 #: ../panel-plugin/configuration-dialog.cpp:454
 msgid "Di_splay:"
@@ -91,9 +87,8 @@ msgid "Failed to execute command \"%s\"."
 msgstr "فشل تنفيذ الأمر \"%s\"."
 
 #: ../panel-plugin/settings.cpp:115
-#, fuzzy
 msgid "Failed to launch menu editor."
-msgstr "فشل تسجيل الخروج."
+msgstr "فشل إطلاق محرر القائمة."
 
 #: ../panel-plugin/settings.cpp:112
 msgid "Failed to lock screen."
@@ -108,9 +103,8 @@ msgid "Failed to open settings manager."
 msgstr "فشل فتح مدير الإعدادات."
 
 #: ../panel-plugin/settings.cpp:113
-#, fuzzy
 msgid "Failed to switch users."
-msgstr "فشل إغلاق الشاشة."
+msgstr "فشل تبديل المستخدم."
 
 #: ../panel-plugin/window.cpp:126
 msgid "Favorites"
@@ -141,29 +135,28 @@ msgid "Larger"
 msgstr "أكبر"
 
 #: ../panel-plugin/settings.cpp:114
-#, fuzzy
 msgid "Log _Out"
-msgstr "تسجيل ال_خروج:"
+msgstr "ت_سجيل الخروج"
 
 #: ../panel-plugin/settings.cpp:117
 msgid "Man Pages"
-msgstr ""
+msgstr "صفحات الدليل"
 
 #: ../panel-plugin/configuration-dialog.cpp:504
 msgid "Menu"
-msgstr ""
+msgstr "قائمة"
 
 #: ../panel-plugin/configuration-dialog.cpp:714
 msgid "Nam_e:"
-msgstr ""
+msgstr "_إسم:"
 
 #: ../panel-plugin/configuration-dialog.cpp:660
 msgid "Name"
-msgstr ""
+msgstr "إسم"
 
 #: ../panel-plugin/icon-size.cpp:49
 msgid "None"
-msgstr ""
+msgstr "بدون"
 
 #: ../panel-plugin/icon-size.cpp:53
 msgid "Normal"
@@ -174,9 +167,8 @@ msgid "Open URI"
 msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:446
-#, fuzzy
 msgid "Panel Button"
-msgstr "زر الشري_ط"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:665
 msgid "Pattern"
@@ -201,55 +193,52 @@ msgstr "حذف من المفضلات"
 #: ../panel-plugin/configuration-dialog.cpp:364
 #, c-format
 msgid "Remove action \"%s\"?"
-msgstr ""
+msgstr "حذف الإجراء \"%s\"?"
 
 #: ../panel-plugin/configuration-dialog.cpp:689
 msgid "Remove selected action"
-msgstr ""
+msgstr "حذف"
 
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
 msgid "Run %s"
-msgstr ""
+msgstr "شغل %s"
 
 #: ../panel-plugin/settings.cpp:119
 msgid "Run in Terminal"
-msgstr ""
+msgstr "شغل في الطرفية"
 
 #: ../panel-plugin/configuration-dialog.cpp:81
 msgid "Search Actio_ns"
-msgstr ""
+msgstr "بح_ث عن الإجراءات"
 
 #: ../panel-plugin/search-action.cpp:261
 msgid "Search Action"
-msgstr ""
+msgstr "بحث عن إجراء"
 
 #: ../panel-plugin/configuration-dialog.cpp:114
 msgid "Select An Icon"
 msgstr "إختر أيقونة"
 
 #: ../panel-plugin/command-edit.cpp:60
-#, fuzzy
 msgid "Select Command"
-msgstr "إختر أيقونة"
+msgstr "حدد أمرا"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
-msgstr "عرض القائمة لوصول إلى التطبيقات المثبتة بكل سهولة"
+msgstr "إظهار قائمة لولوج إلى التطبيقات المثبتة بسهولة"
 
 #: ../panel-plugin/configuration-dialog.cpp:515
 msgid "Show application _descriptions"
 msgstr "عرض _وصف التطبيقات"
 
 #: ../panel-plugin/configuration-dialog.cpp:509
-#, fuzzy
 msgid "Show generic application _names"
-msgstr "عرض التطبيقات حسب _الإسم"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:521
-#, fuzzy
 msgid "Show menu hie_rarchy"
-msgstr "تحميل القائمة تسلسلي_ا"
+msgstr ""
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -317,18 +306,16 @@ msgid "_Behavior"
 msgstr "س_لوك"
 
 #: ../panel-plugin/settings.cpp:115
-#, fuzzy
 msgid "_Edit Applications"
-msgstr "قائمة التطبيقات"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:487
 msgid "_Icon:"
 msgstr "_أيقونة:"
 
 #: ../panel-plugin/settings.cpp:112
-#, fuzzy
 msgid "_Lock Screen"
-msgstr "قفل الشاشة"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:726
 msgid "_Pattern:"
@@ -341,12 +328,3 @@ msgstr ""
 #: ../panel-plugin/configuration-dialog.cpp:472
 msgid "_Title:"
 msgstr "عن_وان:"
-
-#~ msgid "Lock _Screen:"
-#~ msgstr "ق_فل الشاشة:"
-
-#~ msgid "Log Out"
-#~ msgstr "تسجيل الخروج"
-
-#~ msgid "_Settings:"
-#~ msgstr "إ_عدادات:"
