@@ -1,15 +1,15 @@
 # Croatian translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2013 Graeme Gott
+# Copyright (C) 2014 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# ilija.culap14 <ilija.culap14@gmail.com>, 2013
+# ilija.culap14 <ilija.culap14@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-29 12:13+0000\n"
-"PO-Revision-Date: 2013-10-13 09:52+0000\n"
+"PO-Revision-Date: 2014-01-10 09:51+0000\n"
 "Last-Translator: ilija.culap14 <ilija.culap14@gmail.com>\n"
 "Language-Team: Croatian (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/hr/)\n"
@@ -21,9 +21,8 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #: ../panel-plugin/configuration-dialog.cpp:680
-#, fuzzy
 msgid "Add action"
-msgstr "Dodaj na ploču"
+msgstr "Dodaj akciju"
 
 #: ../panel-plugin/page.cpp:212
 msgid "Add to Desktop"
@@ -42,9 +41,8 @@ msgid "All"
 msgstr "Sve"
 
 #: ../panel-plugin/settings.cpp:111
-#, fuzzy
 msgid "All _Settings"
-msgstr "Sve Postavke"
+msgstr "Sve _Postavke"
 
 #: ../panel-plugin/plugin.cpp:163
 msgid "Applications Menu"
@@ -52,12 +50,11 @@ msgstr "Izbornik aplikacija"
 
 #: ../panel-plugin/command-edit.cpp:46
 msgid "Browse the file system to choose a custom command."
-msgstr ""
+msgstr "Pretraži datotečni sustav za odabir naredbe."
 
 #: ../panel-plugin/configuration-dialog.cpp:738
-#, fuzzy
 msgid "C_ommand:"
-msgstr "Nared_be"
+msgstr "N_aredba:"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
 msgid "Categ_ory icon size:"
@@ -68,17 +65,16 @@ msgid "Clear Recently Used"
 msgstr "Očisti kategoriju Najčešće korišteno"
 
 #: ../panel-plugin/configuration-dialog.cpp:612
-#, fuzzy
 msgid "Commands"
-msgstr "Nared_be"
+msgstr "Naredbe"
 
 #: ../panel-plugin/configuration-dialog.cpp:709
 msgid "Details"
-msgstr ""
+msgstr "Detalji"
 
 #: ../panel-plugin/configuration-dialog.cpp:454
 msgid "Di_splay:"
-msgstr "Zas_lon:"
+msgstr "Pri_kaži:"
 
 #: ../panel-plugin/configuration-dialog.cpp:604
 msgid "Display recently _used by default"
@@ -88,29 +84,27 @@ msgstr "Prikaži Najčešće korišteno prema zadanom"
 #: ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
-msgstr "Greška pri izvođenju naredbe \"%s\"."
+msgstr "Nije moguće izvršiti naredbu \"%s\"."
 
 #: ../panel-plugin/settings.cpp:115
-#, fuzzy
 msgid "Failed to launch menu editor."
-msgstr "Greška pri pokušaju odjave."
+msgstr "Nije moguće pokrenuti uređivač izbornika."
 
 #: ../panel-plugin/settings.cpp:112
 msgid "Failed to lock screen."
-msgstr "Greška pri zaključavanju zaslona."
+msgstr "Zaključavanje zaslona nije moguće."
 
 #: ../panel-plugin/settings.cpp:114
 msgid "Failed to log out."
-msgstr "Greška pri pokušaju odjave."
+msgstr "Odjava nije moguća."
 
 #: ../panel-plugin/settings.cpp:111
 msgid "Failed to open settings manager."
-msgstr "Greška pri otvaranju upravitelja postavki."
+msgstr "Nije moguće otvoriti Upravitelja Postavki."
 
 #: ../panel-plugin/settings.cpp:113
-#, fuzzy
 msgid "Failed to switch users."
-msgstr "Greška pri zaključavanju zaslona."
+msgstr "Nije moguće promijeniti korisnika."
 
 #: ../panel-plugin/window.cpp:126
 msgid "Favorites"
@@ -122,7 +116,7 @@ msgstr "Ikona"
 
 #: ../panel-plugin/configuration-dialog.cpp:462
 msgid "Icon and title"
-msgstr "Ikona i naslov"
+msgstr "Ikona i ime"
 
 #: ../panel-plugin/configuration-dialog.cpp:598
 msgid "Include _favorites in recently used"
@@ -141,29 +135,28 @@ msgid "Larger"
 msgstr "Veće"
 
 #: ../panel-plugin/settings.cpp:114
-#, fuzzy
 msgid "Log _Out"
-msgstr "Od_java"
+msgstr "O_djava"
 
 #: ../panel-plugin/settings.cpp:117
 msgid "Man Pages"
-msgstr ""
+msgstr "Man Stranice"
 
 #: ../panel-plugin/configuration-dialog.cpp:504
 msgid "Menu"
-msgstr ""
+msgstr "Izbornik"
 
 #: ../panel-plugin/configuration-dialog.cpp:714
 msgid "Nam_e:"
-msgstr ""
+msgstr "I_me:"
 
 #: ../panel-plugin/configuration-dialog.cpp:660
 msgid "Name"
-msgstr ""
+msgstr "Ime"
 
 #: ../panel-plugin/icon-size.cpp:49
 msgid "None"
-msgstr ""
+msgstr "Ništa"
 
 #: ../panel-plugin/icon-size.cpp:53
 msgid "Normal"
@@ -171,16 +164,15 @@ msgstr "Normalno"
 
 #: ../panel-plugin/settings.cpp:120
 msgid "Open URI"
-msgstr ""
+msgstr "Otvori URL"
 
 #: ../panel-plugin/configuration-dialog.cpp:446
-#, fuzzy
 msgid "Panel Button"
-msgstr "Dugm_e na ploči"
+msgstr "Gumb na ploči"
 
 #: ../panel-plugin/configuration-dialog.cpp:665
 msgid "Pattern"
-msgstr ""
+msgstr "Uzorak"
 
 #: ../panel-plugin/configuration-dialog.cpp:527
 msgid "Position _search entry next to panel button"
@@ -201,55 +193,52 @@ msgstr "Obriši iz grupe Omiljeno"
 #: ../panel-plugin/configuration-dialog.cpp:364
 #, c-format
 msgid "Remove action \"%s\"?"
-msgstr ""
+msgstr "Ukloni akciju \"%s\"?"
 
 #: ../panel-plugin/configuration-dialog.cpp:689
 msgid "Remove selected action"
-msgstr ""
+msgstr "Ukloni odabranu akciju"
 
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
 msgid "Run %s"
-msgstr ""
+msgstr "Pokreni %s"
 
 #: ../panel-plugin/settings.cpp:119
 msgid "Run in Terminal"
-msgstr ""
+msgstr "Pokreni u Terminalu"
 
 #: ../panel-plugin/configuration-dialog.cpp:81
 msgid "Search Actio_ns"
-msgstr ""
+msgstr "Pretraži a_kcije"
 
 #: ../panel-plugin/search-action.cpp:261
 msgid "Search Action"
-msgstr ""
+msgstr "Pretraži akcije"
 
 #: ../panel-plugin/configuration-dialog.cpp:114
 msgid "Select An Icon"
 msgstr "Izaberi ikonu"
 
 #: ../panel-plugin/command-edit.cpp:60
-#, fuzzy
 msgid "Select Command"
-msgstr "Izaberi ikonu"
+msgstr "Odaberite Komandu"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
-msgstr "Prikaži izbornik za brzo pristupanje instaliranim aplikacijama"
+msgstr "Prikaži izbornik da bi lakše pristupili instaliranim aplikacijama"
 
 #: ../panel-plugin/configuration-dialog.cpp:515
 msgid "Show application _descriptions"
 msgstr "Prikazi _opis aplikacije"
 
 #: ../panel-plugin/configuration-dialog.cpp:509
-#, fuzzy
 msgid "Show generic application _names"
-msgstr "Prikaži aplikacije po _imenu"
+msgstr "Prikaži generička i_mena aplikacija"
 
 #: ../panel-plugin/configuration-dialog.cpp:521
-#, fuzzy
 msgid "Show menu hie_rarchy"
-msgstr "Učitaj redosljed izbornika"
+msgstr "Prikaži poredak izbo_rnika"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -269,7 +258,7 @@ msgstr "Posloži prema abecedi (Ž-A)"
 
 #: ../panel-plugin/settings.cpp:113
 msgid "Switch _Users"
-msgstr ""
+msgstr "Zamjeni _Korisnike"
 
 #: ../panel-plugin/configuration-dialog.cpp:592
 msgid "Switch categories by _hovering"
@@ -277,11 +266,11 @@ msgstr "Promjeni kategoriju prij_elazom miša"
 
 #: ../panel-plugin/configuration-dialog.cpp:363
 msgid "The action will be deleted permanently."
-msgstr ""
+msgstr "Akcija će biti trajno uklonjena."
 
 #: ../panel-plugin/configuration-dialog.cpp:461
 msgid "Title"
-msgstr "Naslov"
+msgstr "Ime"
 
 #: ../panel-plugin/page.cpp:306
 msgid "Unable to add launcher to desktop."
@@ -306,7 +295,7 @@ msgstr "Whisker Izbornik"
 
 #: ../panel-plugin/settings.cpp:118
 msgid "Wikipedia"
-msgstr ""
+msgstr "Wikipedia"
 
 #: ../panel-plugin/configuration-dialog.cpp:79
 msgid "_Appearance"
@@ -317,36 +306,25 @@ msgid "_Behavior"
 msgstr "Pon_ašanje"
 
 #: ../panel-plugin/settings.cpp:115
-#, fuzzy
 msgid "_Edit Applications"
-msgstr "Izbornik aplikacija"
+msgstr "_Uredi Aplikacije"
 
 #: ../panel-plugin/configuration-dialog.cpp:487
 msgid "_Icon:"
 msgstr "_Ikona"
 
 #: ../panel-plugin/settings.cpp:112
-#, fuzzy
 msgid "_Lock Screen"
-msgstr "Zaključaj zaslon"
+msgstr "_Zaključaj Zaslon"
 
 #: ../panel-plugin/configuration-dialog.cpp:726
 msgid "_Pattern:"
-msgstr ""
+msgstr "_Uzorak:"
 
 #: ../panel-plugin/configuration-dialog.cpp:750
 msgid "_Regular expression"
-msgstr ""
+msgstr "_Normalan izraz"
 
 #: ../panel-plugin/configuration-dialog.cpp:472
 msgid "_Title:"
 msgstr "_Naslov:"
-
-#~ msgid "Lock _Screen:"
-#~ msgstr "Zaključaj _zaslon:"
-
-#~ msgid "Log Out"
-#~ msgstr "Odjava"
-
-#~ msgid "_Settings:"
-#~ msgstr "Postavke:"
