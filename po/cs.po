@@ -1,16 +1,17 @@
 # Czech translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2013 Graeme Gott
+# Copyright (C) 2014 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # Riftyful <riftyful@gmail.com>, 2013
+# halfark <vojtechprecechtel@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-29 12:13+0000\n"
-"PO-Revision-Date: 2013-11-04 13:07+0000\n"
-"Last-Translator: Riftyful <riftyful@gmail.com>\n"
+"PO-Revision-Date: 2014-02-22 18:21+0000\n"
+"Last-Translator: halfark <vojtechprecechtel@gmail.com>\n"
 "Language-Team: Czech (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
 "plugin/language/cs/)\n"
 "Language: cs\n"
@@ -20,9 +21,8 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: ../panel-plugin/configuration-dialog.cpp:680
-#, fuzzy
 msgid "Add action"
-msgstr "Přidat na Panel"
+msgstr "Přidat akci"
 
 #: ../panel-plugin/page.cpp:212
 msgid "Add to Desktop"
@@ -41,9 +41,8 @@ msgid "All"
 msgstr "Vše"
 
 #: ../panel-plugin/settings.cpp:111
-#, fuzzy
 msgid "All _Settings"
-msgstr "Všechna Nastavení"
+msgstr "Všechna _nastavení"
 
 #: ../panel-plugin/plugin.cpp:163
 msgid "Applications Menu"
@@ -51,12 +50,11 @@ msgstr "Menu Aplikací"
 
 #: ../panel-plugin/command-edit.cpp:46
 msgid "Browse the file system to choose a custom command."
-msgstr ""
+msgstr "Procházet souborový systém a vybrat vlastní příkaz."
 
 #: ../panel-plugin/configuration-dialog.cpp:738
-#, fuzzy
 msgid "C_ommand:"
-msgstr "Pří_kazy"
+msgstr "P_říkaz"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
 msgid "Categ_ory icon size:"
@@ -67,13 +65,12 @@ msgid "Clear Recently Used"
 msgstr "Vyčistit Nedávno Použité"
 
 #: ../panel-plugin/configuration-dialog.cpp:612
-#, fuzzy
 msgid "Commands"
-msgstr "Pří_kazy"
+msgstr "Příkazy"
 
 #: ../panel-plugin/configuration-dialog.cpp:709
 msgid "Details"
-msgstr ""
+msgstr "Detaily"
 
 #: ../panel-plugin/configuration-dialog.cpp:454
 msgid "Di_splay:"
@@ -90,9 +87,8 @@ msgid "Failed to execute command \"%s\"."
 msgstr "Nepodařilo se vykonat příkaz \"%s\"."
 
 #: ../panel-plugin/settings.cpp:115
-#, fuzzy
 msgid "Failed to launch menu editor."
-msgstr "Nepodařilo se odhlásit."
+msgstr "Selhalo spuštění editoru menu."
 
 #: ../panel-plugin/settings.cpp:112
 msgid "Failed to lock screen."
@@ -107,9 +103,8 @@ msgid "Failed to open settings manager."
 msgstr "Nepodařilo se otevřít správce nastavení."
 
 #: ../panel-plugin/settings.cpp:113
-#, fuzzy
 msgid "Failed to switch users."
-msgstr "Nepodařilo se uzamknout obrazovku."
+msgstr "Selhalo přepnutí uživatelů."
 
 #: ../panel-plugin/window.cpp:126
 msgid "Favorites"
@@ -140,29 +135,28 @@ msgid "Larger"
 msgstr "Větší"
 
 #: ../panel-plugin/settings.cpp:114
-#, fuzzy
 msgid "Log _Out"
-msgstr "O_dhlásit se"
+msgstr "Odhlásit _se"
 
 #: ../panel-plugin/settings.cpp:117
 msgid "Man Pages"
-msgstr ""
+msgstr "Manuál"
 
 #: ../panel-plugin/configuration-dialog.cpp:504
 msgid "Menu"
-msgstr ""
+msgstr "Menu"
 
 #: ../panel-plugin/configuration-dialog.cpp:714
 msgid "Nam_e:"
-msgstr ""
+msgstr "Náze_v:"
 
 #: ../panel-plugin/configuration-dialog.cpp:660
 msgid "Name"
-msgstr ""
+msgstr "Název"
 
 #: ../panel-plugin/icon-size.cpp:49
 msgid "None"
-msgstr ""
+msgstr "Žádný"
 
 #: ../panel-plugin/icon-size.cpp:53
 msgid "Normal"
@@ -170,16 +164,15 @@ msgstr "Normální"
 
 #: ../panel-plugin/settings.cpp:120
 msgid "Open URI"
-msgstr ""
+msgstr "Otevřít URl"
 
 #: ../panel-plugin/configuration-dialog.cpp:446
-#, fuzzy
 msgid "Panel Button"
-msgstr "Tlačítko Pa_nelu"
+msgstr "Tlačítko panelu"
 
 #: ../panel-plugin/configuration-dialog.cpp:665
 msgid "Pattern"
-msgstr ""
+msgstr "Vzorec"
 
 #: ../panel-plugin/configuration-dialog.cpp:527
 msgid "Position _search entry next to panel button"
@@ -200,55 +193,52 @@ msgstr "Odebrat z Oblíbených"
 #: ../panel-plugin/configuration-dialog.cpp:364
 #, c-format
 msgid "Remove action \"%s\"?"
-msgstr ""
+msgstr "Odebrat akci \"%s\"?"
 
 #: ../panel-plugin/configuration-dialog.cpp:689
 msgid "Remove selected action"
-msgstr ""
+msgstr "Odebrat vybranou akci"
 
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
 msgid "Run %s"
-msgstr ""
+msgstr "Spustit %s"
 
 #: ../panel-plugin/settings.cpp:119
 msgid "Run in Terminal"
-msgstr ""
+msgstr "Spustit v terminálu"
 
 #: ../panel-plugin/configuration-dialog.cpp:81
 msgid "Search Actio_ns"
-msgstr ""
+msgstr "Hledat akc_e"
 
 #: ../panel-plugin/search-action.cpp:261
 msgid "Search Action"
-msgstr ""
+msgstr "Hledání"
 
 #: ../panel-plugin/configuration-dialog.cpp:114
 msgid "Select An Icon"
 msgstr "Vyberte Ikonu"
 
 #: ../panel-plugin/command-edit.cpp:60
-#, fuzzy
 msgid "Select Command"
-msgstr "Vyberte Ikonu"
+msgstr "Vybrat příkaz"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
-msgstr "Ukázat menu pro snadný přístup k nainstalovaným aplikacím"
+msgstr "Ukázat menu pro lehký přístup k instalovaným aplikacím"
 
 #: ../panel-plugin/configuration-dialog.cpp:515
 msgid "Show application _descriptions"
 msgstr "Ukázat _popisy aplikací"
 
 #: ../panel-plugin/configuration-dialog.cpp:509
-#, fuzzy
 msgid "Show generic application _names"
-msgstr "Ukázat aplikace podle _Jména"
+msgstr "Ukázat původní názvy aplikací"
 
 #: ../panel-plugin/configuration-dialog.cpp:521
-#, fuzzy
 msgid "Show menu hie_rarchy"
-msgstr "_Hiearchie načtení menu "
+msgstr "Ukázat strom menu"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -268,7 +258,7 @@ msgstr "Seřadit Abecedně Z-A"
 
 #: ../panel-plugin/settings.cpp:113
 msgid "Switch _Users"
-msgstr ""
+msgstr "Přepnout _uživatele"
 
 #: ../panel-plugin/configuration-dialog.cpp:592
 msgid "Switch categories by _hovering"
@@ -276,7 +266,7 @@ msgstr "Přepínat _kategorie najetím kurzoru"
 
 #: ../panel-plugin/configuration-dialog.cpp:363
 msgid "The action will be deleted permanently."
-msgstr ""
+msgstr "Tato akce bude nenávratně smazána."
 
 #: ../panel-plugin/configuration-dialog.cpp:461
 msgid "Title"
@@ -305,7 +295,7 @@ msgstr "Whisker Menu"
 
 #: ../panel-plugin/settings.cpp:118
 msgid "Wikipedia"
-msgstr ""
+msgstr "Wikipedia"
 
 #: ../panel-plugin/configuration-dialog.cpp:79
 msgid "_Appearance"
@@ -316,36 +306,25 @@ msgid "_Behavior"
 msgstr "_Chování"
 
 #: ../panel-plugin/settings.cpp:115
-#, fuzzy
 msgid "_Edit Applications"
-msgstr "Menu Aplikací"
+msgstr "_Editovat aplikace"
 
 #: ../panel-plugin/configuration-dialog.cpp:487
 msgid "_Icon:"
 msgstr "_Ikona:"
 
 #: ../panel-plugin/settings.cpp:112
-#, fuzzy
 msgid "_Lock Screen"
-msgstr "Uzamknout Obrazovku"
+msgstr "_Zamknout obrazovku"
 
 #: ../panel-plugin/configuration-dialog.cpp:726
 msgid "_Pattern:"
-msgstr ""
+msgstr "_Vzorec:"
 
 #: ../panel-plugin/configuration-dialog.cpp:750
 msgid "_Regular expression"
-msgstr ""
+msgstr "_Obvyklý výraz"
 
 #: ../panel-plugin/configuration-dialog.cpp:472
 msgid "_Title:"
 msgstr "Náz_ev:"
-
-#~ msgid "Lock _Screen:"
-#~ msgstr "_Uzamknout Obrazovku"
-
-#~ msgid "Log Out"
-#~ msgstr "Odhlásit se"
-
-#~ msgid "_Settings:"
-#~ msgstr "Na_stavení"
