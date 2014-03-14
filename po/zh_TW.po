@@ -1,16 +1,16 @@
 # Chinese (Taiwan) translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2013 Graeme Gott
+# Copyright (C) 2014 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # Walter Cheuk <wwycheuk@gmail.com>, 2013
-# 柏諺 黃 <s8321414@gmail.com>, 2013
+# 柏諺 黃 <s8321414@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-29 12:13+0000\n"
-"PO-Revision-Date: 2013-12-16 13:37+0000\n"
+"PO-Revision-Date: 2014-02-26 11:13+0000\n"
 "Last-Translator: 柏諺 黃 <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/zh_TW/)\n"
@@ -54,7 +54,7 @@ msgstr "瀏覽檔案系統以選擇自訂指令。"
 
 #: ../panel-plugin/configuration-dialog.cpp:738
 msgid "C_ommand:"
-msgstr "指令(_C)："
+msgstr "指令(_O)："
 
 #: ../panel-plugin/configuration-dialog.cpp:563
 msgid "Categ_ory icon size:"
@@ -172,7 +172,7 @@ msgstr "面板按鈕"
 
 #: ../panel-plugin/configuration-dialog.cpp:665
 msgid "Pattern"
-msgstr ""
+msgstr "圖案"
 
 #: ../panel-plugin/configuration-dialog.cpp:527
 msgid "Position _search entry next to panel button"
@@ -230,7 +230,7 @@ msgstr "顯示選單以方便開啟已安裝的應用程式"
 
 #: ../panel-plugin/configuration-dialog.cpp:515
 msgid "Show application _descriptions"
-msgstr "顯示程式描述"
+msgstr "顯示程式描述(_D)"
 
 #: ../panel-plugin/configuration-dialog.cpp:509
 msgid "Show generic application _names"
@@ -238,7 +238,7 @@ msgstr "顯示通用應用程式名稱(_N)"
 
 #: ../panel-plugin/configuration-dialog.cpp:521
 msgid "Show menu hie_rarchy"
-msgstr ""
+msgstr "顯示選單分類(_R)"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -319,11 +319,11 @@ msgstr "鎖定螢幕(_L)"
 
 #: ../panel-plugin/configuration-dialog.cpp:726
 msgid "_Pattern:"
-msgstr ""
+msgstr "圖案(_P)："
 
 #: ../panel-plugin/configuration-dialog.cpp:750
 msgid "_Regular expression"
-msgstr ""
+msgstr "正規表達式(_R)"
 
 #: ../panel-plugin/configuration-dialog.cpp:472
 msgid "_Title:"
