@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-29 12:13+0000\n"
-"PO-Revision-Date: 2014-01-05 17:24+0000\n"
+"PO-Revision-Date: 2014-02-16 06:32+0000\n"
 "Last-Translator: truongap <truongap.ars@gmail.com>\n"
 "Language-Team: Vietnamese (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/vi/)\n"
@@ -46,19 +46,19 @@ msgstr "Tất cả cài đặt"
 
 #: ../panel-plugin/plugin.cpp:163
 msgid "Applications Menu"
-msgstr "Menu ứng dụng"
+msgstr "Thực đơn ứng dụng"
 
 #: ../panel-plugin/command-edit.cpp:46
 msgid "Browse the file system to choose a custom command."
-msgstr ""
+msgstr "Duyệt hệ thống để chọn một lệnh tùy thích."
 
 #: ../panel-plugin/configuration-dialog.cpp:738
 msgid "C_ommand:"
-msgstr ""
+msgstr "Lệnh"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
 msgid "Categ_ory icon size:"
-msgstr "Kích thướ_c biểu tượng phân loại:"
+msgstr "Kích thước biểu tượng phân l_oại:"
 
 #: ../panel-plugin/recent-page.cpp:88
 msgid "Clear Recently Used"
@@ -78,7 +78,7 @@ msgstr "H_iển thị:"
 
 #: ../panel-plugin/configuration-dialog.cpp:604
 msgid "Display recently _used by default"
-msgstr ""
+msgstr "Hiển thị mặc định mục vừa sử dụng"
 
 #: ../panel-plugin/launcher.cpp:252 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
@@ -120,7 +120,7 @@ msgstr "Tiêu đề và biểu tượng"
 
 #: ../panel-plugin/configuration-dialog.cpp:598
 msgid "Include _favorites in recently used"
-msgstr ""
+msgstr "Kèm mục ưa thích vào mục vừa sử dụng"
 
 #: ../panel-plugin/configuration-dialog.cpp:543
 msgid "Ite_m icon size:"
@@ -148,7 +148,7 @@ msgstr "Thực đơn"
 
 #: ../panel-plugin/configuration-dialog.cpp:714
 msgid "Nam_e:"
-msgstr ""
+msgstr "Tên"
 
 #: ../panel-plugin/configuration-dialog.cpp:660
 msgid "Name"
@@ -156,7 +156,7 @@ msgstr "Tên"
 
 #: ../panel-plugin/icon-size.cpp:49
 msgid "None"
-msgstr ""
+msgstr "Trống"
 
 #: ../panel-plugin/icon-size.cpp:53
 msgid "Normal"
@@ -164,23 +164,23 @@ msgstr "Bình thường"
 
 #: ../panel-plugin/settings.cpp:120
 msgid "Open URI"
-msgstr ""
+msgstr "Mở URI"
 
 #: ../panel-plugin/configuration-dialog.cpp:446
 msgid "Panel Button"
-msgstr ""
+msgstr "Nút điều khiển"
 
 #: ../panel-plugin/configuration-dialog.cpp:665
 msgid "Pattern"
-msgstr ""
+msgstr "Mẫu"
 
 #: ../panel-plugin/configuration-dialog.cpp:527
 msgid "Position _search entry next to panel button"
-msgstr ""
+msgstr "Đặt ô tìm kiếm gần biểu tượng Whisker"
 
 #: ../panel-plugin/configuration-dialog.cpp:533
 msgid "Position commands next to search _entry"
-msgstr ""
+msgstr "Đặt các nút lệnh cạnh ô tìm kiếm"
 
 #: ../panel-plugin/window.cpp:132
 msgid "Recently Used"
@@ -193,7 +193,7 @@ msgstr "Loại bỏ khỏi Ưa Thích"
 #: ../panel-plugin/configuration-dialog.cpp:364
 #, c-format
 msgid "Remove action \"%s\"?"
-msgstr ""
+msgstr "Xóa bỏ hành động %s?"
 
 #: ../panel-plugin/configuration-dialog.cpp:689
 msgid "Remove selected action"
@@ -202,7 +202,7 @@ msgstr "Hủy bỏ "
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
 msgid "Run %s"
-msgstr ""
+msgstr "Chạy %s"
 
 #: ../panel-plugin/settings.cpp:119
 msgid "Run in Terminal"
@@ -210,15 +210,15 @@ msgstr "Chạy trong dòng lệnh"
 
 #: ../panel-plugin/configuration-dialog.cpp:81
 msgid "Search Actio_ns"
-msgstr ""
+msgstr "Tìm kiếm hành động"
 
 #: ../panel-plugin/search-action.cpp:261
 msgid "Search Action"
-msgstr ""
+msgstr "Tìm "
 
 #: ../panel-plugin/configuration-dialog.cpp:114
 msgid "Select An Icon"
-msgstr "Chọn một biểu tượng"
+msgstr "Chọn biểu tượng"
 
 #: ../panel-plugin/command-edit.cpp:60
 msgid "Select Command"
@@ -226,7 +226,7 @@ msgstr "Lựa chọn lệnh"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
-msgstr "Hiển thị menu để dễ dàng truy cập tới các ứng dụng đã cài đặt"
+msgstr "Hiển thị thực đơn để chạy ứng dụng dễ dàng"
 
 #: ../panel-plugin/configuration-dialog.cpp:515
 msgid "Show application _descriptions"
@@ -234,11 +234,11 @@ msgstr "Hiển thị mô tả_ứng dụng"
 
 #: ../panel-plugin/configuration-dialog.cpp:509
 msgid "Show generic application _names"
-msgstr ""
+msgstr "Hiển thị bằng tên chung cho ứng dụng"
 
 #: ../panel-plugin/configuration-dialog.cpp:521
 msgid "Show menu hie_rarchy"
-msgstr ""
+msgstr "Hiểu thị thực đơn theo thứ tự ưu tiên"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -258,7 +258,7 @@ msgstr "Sắp xếp theo thứ tự Z-A"
 
 #: ../panel-plugin/settings.cpp:113
 msgid "Switch _Users"
-msgstr ""
+msgstr "Chuyển đổi người dùng"
 
 #: ../panel-plugin/configuration-dialog.cpp:592
 msgid "Switch categories by _hovering"
@@ -266,7 +266,7 @@ msgstr "Chuyển đổi tiêu đề khi rê ch_uột"
 
 #: ../panel-plugin/configuration-dialog.cpp:363
 msgid "The action will be deleted permanently."
-msgstr ""
+msgstr "Hành động sẽ bị xóa vĩnh viễn"
 
 #: ../panel-plugin/configuration-dialog.cpp:461
 msgid "Title"
@@ -295,19 +295,19 @@ msgstr "Menu Tách Biệt"
 
 #: ../panel-plugin/settings.cpp:118
 msgid "Wikipedia"
-msgstr ""
+msgstr "Wikipedia"
 
 #: ../panel-plugin/configuration-dialog.cpp:79
 msgid "_Appearance"
-msgstr ""
+msgstr "_Diện mạo"
 
 #: ../panel-plugin/configuration-dialog.cpp:80
 msgid "_Behavior"
-msgstr ""
+msgstr "_Thói quen"
 
 #: ../panel-plugin/settings.cpp:115
 msgid "_Edit Applications"
-msgstr ""
+msgstr "_Sửa Ứng dụng"
 
 #: ../panel-plugin/configuration-dialog.cpp:487
 msgid "_Icon:"
@@ -315,15 +315,15 @@ msgstr "_Biểu tượng:"
 
 #: ../panel-plugin/settings.cpp:112
 msgid "_Lock Screen"
-msgstr ""
+msgstr "_Khóa màn hình"
 
 #: ../panel-plugin/configuration-dialog.cpp:726
 msgid "_Pattern:"
-msgstr ""
+msgstr "_Mẫu"
 
 #: ../panel-plugin/configuration-dialog.cpp:750
 msgid "_Regular expression"
-msgstr ""
+msgstr "_Quy tắc thể hiện"
 
 #: ../panel-plugin/configuration-dialog.cpp:472
 msgid "_Title:"
