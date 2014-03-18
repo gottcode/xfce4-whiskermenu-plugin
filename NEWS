@@ -1,3 +1,11 @@
+1.3.2
+=====
+- Fix crash when rearranging favorites.
+- Fix menu flashing when panel button is pressed rapidly.
+- Fix unable to click command buttons when focus follows mouse.
+- Fix panel button icon alignment in deskbar mode.
+- Translation updates: Arabic, Asturian, Chinese (Taiwan), Croatian, Czech, Danish, Finnish, Latvian, Nepali, Norwegian Bokmål, Portuguese (Brazil), Slovenian, Vietnamese.
+
 1.3.1
 =====
 - Fix crash when menu items are changed.
