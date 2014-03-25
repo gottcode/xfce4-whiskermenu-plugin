@@ -76,6 +76,8 @@ private:
 	gboolean on_button_release_event(GtkWidget*, GdkEvent* event);
 	void on_drag_data_get(GtkWidget*, GdkDragContext*, GtkSelectionData* data, guint info, guint);
 	void on_drag_end(GtkWidget*, GdkDragContext*);
+	void on_row_activated(GtkTreeView* tree_view, GtkTreePath* path, GtkTreeViewColumn* column);
+	gboolean test_row_toggle();
 
 private:
 	Window* m_window;
@@ -88,6 +90,7 @@ private:
 	Launcher* m_pressed_launcher;
 	bool m_drag_enabled;
 	bool m_launcher_dragged;
+	bool m_row_activated;
 	bool m_reorderable;
 };
 

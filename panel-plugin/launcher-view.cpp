@@ -47,6 +47,7 @@ LauncherView::LauncherView(Window* window) :
 	m_pressed_launcher(NULL),
 	m_drag_enabled(true),
 	m_launcher_dragged(false),
+	m_row_activated(false),
 	m_reorderable(false)
 {
 	// Create the view
@@ -76,6 +77,9 @@ LauncherView::LauncherView(Window* window) :
 	g_signal_connect_slot(m_view, "button-release-event", &LauncherView::on_button_release_event, this);
 	g_signal_connect_slot(m_view, "drag-data-get", &LauncherView::on_drag_data_get, this);
 	g_signal_connect_slot(m_view, "drag-end", &LauncherView::on_drag_end, this);
+	g_signal_connect_slot(m_view, "row-activated", &LauncherView::on_row_activated, this);
+	g_signal_connect_slot<GtkTreeView*,GtkTreeIter*,GtkTreePath*>(m_view, "test-collapse-row", &LauncherView::test_row_toggle, this);
+	g_signal_connect_slot<GtkTreeView*,GtkTreeIter*,GtkTreePath*>(m_view, "test-expand-row", &LauncherView::test_row_toggle, this);
 	set_reorderable(false);
 }
 
@@ -284,6 +288,8 @@ gboolean LauncherView::on_key_release_event(GtkWidget*, GdkEvent* event)
 
 gboolean LauncherView::on_button_press_event(GtkWidget*, GdkEvent* event)
 {
+	m_row_activated = false;
+
 	GdkEventButton* button_event = reinterpret_cast<GdkEventButton*>(event);
 	if (button_event->button != 1)
 	{
@@ -363,6 +369,36 @@ void LauncherView::on_drag_end(GtkWidget*, GdkDragContext*)
 		m_launcher_dragged = false;
 	}
 	m_pressed_launcher = NULL;
+}
+
+//-----------------------------------------------------------------------------
+
+void LauncherView::on_row_activated(GtkTreeView* tree_view, GtkTreePath* path, GtkTreeViewColumn*)
+{
+	if (m_pressed_launcher)
+	{
+		return;
+	}
+
+	m_row_activated = true;
+
+	if (gtk_tree_view_row_expanded(tree_view, path))
+	{
+		gtk_tree_view_collapse_row(tree_view, path);
+	}
+	else
+	{
+		gtk_tree_view_expand_row(tree_view, path, false);
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+gboolean LauncherView::test_row_toggle()
+{
+	bool allow = !m_row_activated;
+	m_row_activated = false;
+	return allow;
 }
 
 //-----------------------------------------------------------------------------
