@@ -211,7 +211,7 @@ gboolean SearchPage::search_entry_key_press(GtkWidget* widget, GdkEvent* event)
 			return false;
 		}
 	}
-	else if (key_event->keyval == GDK_Return)
+	else if (key_event->keyval == GDK_Return || key_event->keyval == GDK_KP_Enter)
 	{
 		GtkTreePath* path = get_view()->get_selected_path();
 		if (path)
