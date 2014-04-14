@@ -14,6 +14,7 @@ if(${whiskermenu_version_tag} MATCHES "git")
 			WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
 			OUTPUT_VARIABLE whiskermenu_version_build)
 		string(REGEX REPLACE "^.*-g" "" whiskermenu_version_build "${whiskermenu_version_build}")
+		string(REGEX REPLACE "\n" "" whiskermenu_version_build "${whiskermenu_version_build}")
 	endif()
 	set(whiskermenu_version "${whiskermenu_version}.${whiskermenu_version_tag}-${whiskermenu_version_build}")
 endif()

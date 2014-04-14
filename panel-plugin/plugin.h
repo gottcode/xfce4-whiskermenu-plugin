@@ -68,6 +68,7 @@ private:
 #endif
 	gboolean remote_event(XfcePanelPlugin*, gchar* name, GValue* value);
 	void save();
+	void show_about();
 	gboolean size_changed(XfcePanelPlugin*, gint size);
 	void popup_menu(bool at_cursor, bool activate_button);
 

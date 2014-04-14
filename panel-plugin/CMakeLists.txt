@@ -38,6 +38,8 @@ link_directories(
 add_definitions(
 	-DGETTEXT_PACKAGE="xfce4-whiskermenu-plugin"
 	-DPACKAGE_LOCALE_DIR="${CMAKE_INSTALL_FULL_LOCALEDIR}"
+	-DPACKAGE_NAME="xfce4-whiskermenu-plugin"
+	-DPACKAGE_VERSION="${whiskermenu_version}"
 	-DBINDIR="${CMAKE_INSTALL_FULL_BINDIR}"
 	-DDATADIR="${CMAKE_INSTALL_FULL_DATADIR}"
 	-DG_LOG_DOMAIN="whiskermenu"

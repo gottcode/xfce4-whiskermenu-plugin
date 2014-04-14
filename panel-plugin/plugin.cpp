@@ -162,8 +162,10 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 #endif
 	g_signal_connect_slot(plugin, "remote-event", &Plugin::remote_event, this);
 	g_signal_connect_slot<XfcePanelPlugin*>(plugin, "save", &Plugin::save, this);
+	g_signal_connect_slot<XfcePanelPlugin*>(plugin, "about", &Plugin::show_about, this);
 	g_signal_connect_slot(plugin, "size-changed", &Plugin::size_changed, this);
 
+	xfce_panel_plugin_menu_show_about(plugin);
 	xfce_panel_plugin_menu_show_configure(plugin);
 	xfce_panel_plugin_menu_insert_item(plugin, GTK_MENU_ITEM(wm_settings->command[Settings::CommandMenuEditor]->get_menuitem()));
 
@@ -374,6 +376,28 @@ void Plugin::save()
 	{
 		wm_settings->save(xfce_panel_plugin_save_location(m_plugin, true));
 	}
+}
+
+//-----------------------------------------------------------------------------
+
+void Plugin::show_about()
+{
+	const gchar* authors[] = {
+		"Graeme Gott <graeme@gottcode.org>",
+		NULL };
+
+	gtk_show_about_dialog
+		(NULL,
+		"authors", authors,
+		"comments", _("Alternate application launcher for Xfce"),
+		"copyright", _("Copyright \302\251 2013-2014 Graeme Gott"),
+		"license", XFCE_LICENSE_GPL,
+		"logo-icon-name", "xfce4-whiskermenu",
+		"program-name", PACKAGE_NAME,
+		"translator-credits", _("translator-credits"),
+		"version", PACKAGE_VERSION,
+		"website", "http://gottcode.org/xfce4-whiskermenu-plugin/",
+		NULL);
 }
 
 //-----------------------------------------------------------------------------
