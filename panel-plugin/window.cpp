@@ -219,11 +219,16 @@ Window::Window() :
 	gtk_widget_hide(m_search_results->get_widget());
 	m_default_button->set_active(true);
 	gtk_widget_hide(m_window_contents);
+	gtk_widget_show(m_window_load_contents);
 
 	// Resize to last known size
 	gtk_window_set_default_size(m_window, m_geometry.width, m_geometry.height);
 
 	g_object_ref_sink(m_window);
+
+	// Start loading applications immediately
+	m_applications->load_applications();
+	gtk_spinner_start(m_window_load_spinner);
 }
 
 //-----------------------------------------------------------------------------
@@ -276,7 +281,7 @@ void Window::show(GtkWidget* parent, bool horizontal)
 	}
 
 	// Make sure applications list is current; does nothing unless list has changed
-	if (m_applications->load_applications())
+	if (m_applications->load_applications() && gtk_widget_get_visible(m_window_contents))
 	{
 		gtk_widget_hide(m_window_contents);
 		gtk_widget_show(m_window_load_contents);
