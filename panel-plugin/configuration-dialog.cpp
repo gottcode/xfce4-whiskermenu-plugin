@@ -253,6 +253,14 @@ void ConfigurationDialog::toggle_display_recent(GtkToggleButton* button)
 
 //-----------------------------------------------------------------------------
 
+void ConfigurationDialog::recent_max_number_changed(GtkSpinButton* button)
+{
+	wm_settings->recent_max_number = gtk_spin_button_get_value_as_int(button);
+	wm_settings->set_modified();
+}
+
+//-----------------------------------------------------------------------------
+
 SearchAction* ConfigurationDialog::get_selected_action(GtkTreeIter* iter) const
 {
 	GtkTreeIter selected_iter;
@@ -634,6 +642,21 @@ GtkWidget* ConfigurationDialog::init_behavior_tab()
 	gtk_box_pack_start(behavior_vbox, m_display_recent, true, true, 0);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_display_recent), wm_settings->display_recent);
 	g_signal_connect_slot(m_display_recent, "toggled", &ConfigurationDialog::toggle_display_recent, this);
+
+	// Add value to change maximum number of recently used entries
+	GtkBox* hbox = GTK_BOX(gtk_hbox_new(false, 12));
+	gtk_box_pack_start(behavior_vbox, GTK_WIDGET(hbox), false, false, 0);
+
+	GtkWidget* label = gtk_label_new_with_mnemonic(_("_Maximum number of recently used entries:"));
+	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+	gtk_box_pack_start(hbox, label, false, false, 0);
+
+	m_recent_max_number = gtk_spin_button_new_with_range(5, 100, 1);
+	gtk_box_pack_start(hbox, m_recent_max_number, false, false, 0);
+	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_recent_max_number);
+	//wm_settings->recent_max_number = gtk_spin_button_get_value_as_int(button);
+	gtk_spin_button_set_value(GTK_SPIN_BUTTON(m_recent_max_number), (double)wm_settings->recent_max_number);
+	g_signal_connect_slot(m_recent_max_number, "value-changed", &ConfigurationDialog::recent_max_number_changed, this);
 
 	// Create commands section
 	GtkSizeGroup* label_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);

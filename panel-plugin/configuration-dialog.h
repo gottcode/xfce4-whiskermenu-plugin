@@ -58,6 +58,7 @@ private:
 	void toggle_hover_switch_category(GtkToggleButton* button);
 	void toggle_remember_favorites(GtkToggleButton* button);
 	void toggle_display_recent(GtkToggleButton* button);
+	void recent_max_number_changed(GtkSpinButton* button);
 
 	SearchAction* get_selected_action(GtkTreeIter* iter = NULL) const;
 	void action_selected(GtkTreeView* view);
@@ -95,6 +96,7 @@ private:
 	GtkWidget* m_hover_switch_category;
 	GtkWidget* m_remember_favorites;
 	GtkWidget* m_display_recent;
+	GtkWidget* m_recent_max_number;
 	std::vector<CommandEdit*> m_commands;
 
 	GtkTreeView* m_actions_view;
