@@ -73,9 +73,11 @@ public:
 	IconSize category_icon_size;
 
 	bool load_hierarchy;
-	bool favorites_in_recent;
 
+	unsigned int recent_items_max;
+	bool favorites_in_recent;
 	bool display_recent;
+
 	bool position_search_alternate;
 	bool position_commands_alternate;
 	bool position_categories_alternate;

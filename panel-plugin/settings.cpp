@@ -85,7 +85,7 @@ Settings::Settings() :
 	button_icon_name("xfce4-whiskermenu"),
 	button_title_visible(false),
 	button_icon_visible(true),
-        button_single_row(false),
+	button_single_row(false),
 
 	launcher_show_name(true),
 	launcher_show_description(true),
@@ -95,9 +95,11 @@ Settings::Settings() :
 	category_icon_size(IconSize::Smaller),
 
 	load_hierarchy(false),
-	favorites_in_recent(true),
 
+	recent_items_max(10),
+	favorites_in_recent(true),
 	display_recent(false),
+
 	position_search_alternate(false),
 	position_commands_alternate(false),
 	position_categories_alternate(false),
@@ -173,9 +175,11 @@ void Settings::load(char* file)
 	category_icon_size = xfce_rc_read_int_entry(rc, "category-icon-size", category_icon_size);
 
 	load_hierarchy = xfce_rc_read_bool_entry(rc, "load-hierarchy", load_hierarchy);
-	favorites_in_recent = xfce_rc_read_bool_entry(rc, "favorites-in-recent", favorites_in_recent);
 
+	recent_items_max = std::max(5, xfce_rc_read_int_entry(rc, "recent-items-max", recent_items_max));
+	favorites_in_recent = xfce_rc_read_bool_entry(rc, "favorites-in-recent", favorites_in_recent);
 	display_recent = xfce_rc_read_bool_entry(rc, "display-recent-default", display_recent);
+
 	position_search_alternate = xfce_rc_read_bool_entry(rc, "position-search-alternate", position_search_alternate);
 	position_commands_alternate = xfce_rc_read_bool_entry(rc, "position-commands-alternate", position_commands_alternate) && position_search_alternate;
 	position_categories_alternate = xfce_rc_read_bool_entry(rc, "position-categories-alternate", position_categories_alternate);
@@ -266,9 +270,11 @@ void Settings::save(char* file)
 	xfce_rc_write_int_entry(rc, "category-icon-size", category_icon_size);
 
 	xfce_rc_write_bool_entry(rc, "load-hierarchy", load_hierarchy);
-	xfce_rc_write_bool_entry(rc, "favorites-in-recent", favorites_in_recent);
 
+	xfce_rc_write_int_entry(rc, "recent-items-max", recent_items_max);
+	xfce_rc_write_bool_entry(rc, "favorites-in-recent", favorites_in_recent);
 	xfce_rc_write_bool_entry(rc, "display-recent-default", display_recent);
+
 	xfce_rc_write_bool_entry(rc, "position-search-alternate", position_search_alternate);
 	xfce_rc_write_bool_entry(rc, "position-commands-alternate", position_commands_alternate);
 	xfce_rc_write_bool_entry(rc, "position-categories-alternate", position_categories_alternate);

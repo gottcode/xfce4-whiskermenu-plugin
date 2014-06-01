@@ -29,13 +29,12 @@ using namespace WhiskerMenu;
 //-----------------------------------------------------------------------------
 
 RecentPage::RecentPage(Window* window) :
-	ListPage(wm_settings->recent, window),
-	m_max_items(10)
+	ListPage(wm_settings->recent, window)
 {
 	// Prevent going over max
-	if (wm_settings->recent.size() > m_max_items)
+	if (wm_settings->recent.size() > wm_settings->recent_items_max)
 	{
-		wm_settings->recent.erase(wm_settings->recent.begin() + m_max_items, wm_settings->recent.end());
+		wm_settings->recent.erase(wm_settings->recent.begin() + wm_settings->recent_items_max, wm_settings->recent.end());
 		wm_settings->set_modified();
 	}
 }
@@ -68,7 +67,7 @@ void RecentPage::add(Launcher* launcher)
 			-1);
 
 	// Prevent going over max
-	while (wm_settings->recent.size() > m_max_items)
+	while (wm_settings->recent.size() > wm_settings->recent_items_max)
 	{
 		GtkTreeIter iter;
 		if (gtk_tree_model_iter_nth_child(GTK_TREE_MODEL(store), &iter, NULL, wm_settings->recent.size() - 1))

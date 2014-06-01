@@ -237,6 +237,14 @@ void ConfigurationDialog::toggle_position_categories_alternate(GtkToggleButton* 
 
 //-----------------------------------------------------------------------------
 
+void ConfigurationDialog::recent_items_max_changed(GtkSpinButton* button)
+{
+	wm_settings->recent_items_max = gtk_spin_button_get_value_as_int(button);
+	wm_settings->set_modified();
+}
+
+//-----------------------------------------------------------------------------
+
 void ConfigurationDialog::toggle_remember_favorites(GtkToggleButton* button)
 {
 	wm_settings->favorites_in_recent = gtk_toggle_button_get_active(button);
@@ -622,6 +630,20 @@ GtkWidget* ConfigurationDialog::init_behavior_tab()
 	gtk_box_pack_start(behavior_vbox, m_hover_switch_category, true, true, 0);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_hover_switch_category), wm_settings->category_hover_activate);
 	g_signal_connect_slot(m_hover_switch_category, "toggled", &ConfigurationDialog::toggle_hover_switch_category, this);
+
+	// Add value to change maximum number of recently used entries
+	GtkBox* hbox = GTK_BOX(gtk_hbox_new(false, 12));
+	gtk_box_pack_start(behavior_vbox, GTK_WIDGET(hbox), false, false, 0);
+
+	GtkWidget* label = gtk_label_new_with_mnemonic(_("_Maximum number of recently used entries:"));
+	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+	gtk_box_pack_start(hbox, label, false, false, 0);
+
+	m_recent_items_max = gtk_spin_button_new_with_range(5, 100, 1);
+	gtk_box_pack_start(hbox, m_recent_items_max, false, false, 0);
+	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_recent_items_max);
+	gtk_spin_button_set_value(GTK_SPIN_BUTTON(m_recent_items_max), wm_settings->recent_items_max);
+	g_signal_connect_slot(m_recent_items_max, "value-changed", &ConfigurationDialog::recent_items_max_changed, this);
 
 	// Add option to remember favorites
 	m_remember_favorites = gtk_check_button_new_with_mnemonic(_("Include _favorites in recently used"));
