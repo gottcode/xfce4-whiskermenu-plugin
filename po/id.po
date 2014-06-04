@@ -1,16 +1,17 @@
 # Indonesian translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2013 Graeme Gott
+# Copyright (C) 2014 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Mohamad Hasan Al Banna, 2013
+# Hasan Al Banna, 2014
+# Hasan Al Banna, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-29 12:13+0000\n"
-"PO-Revision-Date: 2013-11-04 01:16+0000\n"
-"Last-Translator: Mohamad Hasan Al Banna\n"
+"POT-Creation-Date: 2014-06-04 18:42+0000\n"
+"PO-Revision-Date: 2014-05-04 18:28+0000\n"
+"Last-Translator: Hasan Al Banna\n"
 "Language-Team: Indonesian (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/id/)\n"
 "Language: id\n"
@@ -19,10 +20,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../panel-plugin/configuration-dialog.cpp:680
-#, fuzzy
+#: ../panel-plugin/configuration-dialog.cpp:709
 msgid "Add action"
-msgstr "Tambahkan ke Panel"
+msgstr "Tambah aksi"
 
 #: ../panel-plugin/page.cpp:212
 msgid "Add to Desktop"
@@ -40,25 +40,27 @@ msgstr "Tambahkan ke Panel"
 msgid "All"
 msgstr "Semua"
 
-#: ../panel-plugin/settings.cpp:111
-#, fuzzy
+#: ../panel-plugin/settings.cpp:113
 msgid "All _Settings"
-msgstr "Semua Pengaturan"
+msgstr "Semua _Pengaturan"
 
-#: ../panel-plugin/plugin.cpp:163
+#: ../panel-plugin/plugin.cpp:392
+msgid "Alternate application launcher for Xfce"
+msgstr ""
+
+#: ../panel-plugin/plugin.cpp:212
 msgid "Applications Menu"
 msgstr "Menu Aplikasi"
 
 #: ../panel-plugin/command-edit.cpp:46
 msgid "Browse the file system to choose a custom command."
-msgstr ""
+msgstr "Cari sistem berkas untuk memilih perintah khusus."
 
-#: ../panel-plugin/configuration-dialog.cpp:738
-#, fuzzy
+#: ../panel-plugin/configuration-dialog.cpp:767
 msgid "C_ommand:"
-msgstr "_Perintah"
+msgstr "P_erintah:"
 
-#: ../panel-plugin/configuration-dialog.cpp:563
+#: ../panel-plugin/configuration-dialog.cpp:592
 msgid "Categ_ory icon size:"
 msgstr "ukuran ikon Kateg_ory:"
 
@@ -66,20 +68,23 @@ msgstr "ukuran ikon Kateg_ory:"
 msgid "Clear Recently Used"
 msgstr "Bersihkan yang Baru diGunakan"
 
-#: ../panel-plugin/configuration-dialog.cpp:612
-#, fuzzy
+#: ../panel-plugin/configuration-dialog.cpp:641
 msgid "Commands"
-msgstr "_Perintah"
+msgstr "Perintah"
 
-#: ../panel-plugin/configuration-dialog.cpp:709
-msgid "Details"
+#: ../panel-plugin/plugin.cpp:393
+msgid "Copyright © 2013-2014 Graeme Gott"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:454
+#: ../panel-plugin/configuration-dialog.cpp:738
+msgid "Details"
+msgstr "Rincian"
+
+#: ../panel-plugin/configuration-dialog.cpp:471
 msgid "Di_splay:"
 msgstr "Ta_mpilan:"
 
-#: ../panel-plugin/configuration-dialog.cpp:604
+#: ../panel-plugin/configuration-dialog.cpp:633
 msgid "Display recently _used by default"
 msgstr "Tampilkan yang terakhir _dipakai sebagai bawaan"
 
@@ -89,45 +94,43 @@ msgstr "Tampilkan yang terakhir _dipakai sebagai bawaan"
 msgid "Failed to execute command \"%s\"."
 msgstr "Gagak mengeksekusi perintah \"%s\"."
 
-#: ../panel-plugin/settings.cpp:115
-#, fuzzy
+#: ../panel-plugin/settings.cpp:117
 msgid "Failed to launch menu editor."
-msgstr "Gagal keluar."
+msgstr "Gagal meluncurkan penyunting menu"
 
-#: ../panel-plugin/settings.cpp:112
+#: ../panel-plugin/settings.cpp:114
 msgid "Failed to lock screen."
 msgstr "Gagal mengunci layar."
 
-#: ../panel-plugin/settings.cpp:114
+#: ../panel-plugin/settings.cpp:116
 msgid "Failed to log out."
 msgstr "Gagal keluar."
 
-#: ../panel-plugin/settings.cpp:111
+#: ../panel-plugin/settings.cpp:113
 msgid "Failed to open settings manager."
 msgstr "Gagal membuka menejer pengaturan."
 
-#: ../panel-plugin/settings.cpp:113
-#, fuzzy
+#: ../panel-plugin/settings.cpp:115
 msgid "Failed to switch users."
-msgstr "Gagal mengunci layar."
+msgstr "Gagal berganti pengguna"
 
-#: ../panel-plugin/window.cpp:126
+#: ../panel-plugin/window.cpp:127
 msgid "Favorites"
 msgstr "Favorit"
 
-#: ../panel-plugin/configuration-dialog.cpp:460
+#: ../panel-plugin/configuration-dialog.cpp:477
 msgid "Icon"
 msgstr "Ikon"
 
-#: ../panel-plugin/configuration-dialog.cpp:462
+#: ../panel-plugin/configuration-dialog.cpp:479
 msgid "Icon and title"
 msgstr "Ikon dan judul"
 
-#: ../panel-plugin/configuration-dialog.cpp:598
+#: ../panel-plugin/configuration-dialog.cpp:627
 msgid "Include _favorites in recently used"
 msgstr "Masukkan _kesukaan di yang terakhir dipakai"
 
-#: ../panel-plugin/configuration-dialog.cpp:543
+#: ../panel-plugin/configuration-dialog.cpp:572
 msgid "Ite_m icon size:"
 msgstr "ukuran ikon ite_m:"
 
@@ -139,57 +142,64 @@ msgstr "Besar"
 msgid "Larger"
 msgstr "Lebih Besar"
 
-#: ../panel-plugin/settings.cpp:114
-#, fuzzy
+#: ../panel-plugin/configuration-dialog.cpp:518
+msgid "Lay out icon in a single _panel row"
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:116
 msgid "Log _Out"
-msgstr "Keluar:"
+msgstr "Keluar _Log"
 
-#: ../panel-plugin/settings.cpp:117
+#: ../panel-plugin/settings.cpp:119
 msgid "Man Pages"
-msgstr ""
+msgstr "Man Pages"
 
-#: ../panel-plugin/configuration-dialog.cpp:504
+#: ../panel-plugin/configuration-dialog.cpp:527
 msgid "Menu"
-msgstr ""
+msgstr "Menu"
 
-#: ../panel-plugin/configuration-dialog.cpp:714
+#: ../panel-plugin/configuration-dialog.cpp:743
 msgid "Nam_e:"
-msgstr ""
+msgstr "_Nama:"
 
-#: ../panel-plugin/configuration-dialog.cpp:660
+#: ../panel-plugin/configuration-dialog.cpp:689
 msgid "Name"
-msgstr ""
+msgstr "Nama"
 
 #: ../panel-plugin/icon-size.cpp:49
 msgid "None"
-msgstr ""
+msgstr "Tidak ada"
 
 #: ../panel-plugin/icon-size.cpp:53
 msgid "Normal"
 msgstr "Normal"
 
-#: ../panel-plugin/settings.cpp:120
+#: ../panel-plugin/settings.cpp:122
 msgid "Open URI"
-msgstr ""
+msgstr "Buka URL"
 
-#: ../panel-plugin/configuration-dialog.cpp:446
-#, fuzzy
+#: ../panel-plugin/configuration-dialog.cpp:463
 msgid "Panel Button"
-msgstr "_Tombol Panel"
+msgstr "Tombol Panel"
 
-#: ../panel-plugin/configuration-dialog.cpp:665
+#: ../panel-plugin/configuration-dialog.cpp:694
 msgid "Pattern"
-msgstr ""
+msgstr "Pola"
 
-#: ../panel-plugin/configuration-dialog.cpp:527
+#: ../panel-plugin/configuration-dialog.cpp:550
 msgid "Position _search entry next to panel button"
 msgstr "Posisi entri _cari setelah tombol panel"
 
-#: ../panel-plugin/configuration-dialog.cpp:533
+#: ../panel-plugin/configuration-dialog.cpp:563
+#, fuzzy
+msgid "Position cate_gories next to panel button"
+msgstr "Posisi entri _cari setelah tombol panel"
+
+#: ../panel-plugin/configuration-dialog.cpp:556
 msgid "Position commands next to search _entry"
 msgstr "Posisi perintah setelah _entri cari"
 
-#: ../panel-plugin/window.cpp:132
+#: ../panel-plugin/window.cpp:133
 msgid "Recently Used"
 msgstr "Terakhir diGunakan"
 
@@ -197,58 +207,55 @@ msgstr "Terakhir diGunakan"
 msgid "Remove From Favorites"
 msgstr "Hapus Dari Favorit"
 
-#: ../panel-plugin/configuration-dialog.cpp:364
+#: ../panel-plugin/configuration-dialog.cpp:381
 #, c-format
 msgid "Remove action \"%s\"?"
-msgstr ""
+msgstr "Hapus aksi \"%s\"?"
 
-#: ../panel-plugin/configuration-dialog.cpp:689
+#: ../panel-plugin/configuration-dialog.cpp:718
 msgid "Remove selected action"
-msgstr ""
+msgstr "Hapus aksi yang dipilih"
 
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
 msgid "Run %s"
-msgstr ""
+msgstr "Jalankan %s"
 
-#: ../panel-plugin/settings.cpp:119
+#: ../panel-plugin/settings.cpp:121
 msgid "Run in Terminal"
-msgstr ""
+msgstr "Jalankan di Terminal"
 
 #: ../panel-plugin/configuration-dialog.cpp:81
 msgid "Search Actio_ns"
-msgstr ""
+msgstr "Cari _Aksi"
 
 #: ../panel-plugin/search-action.cpp:261
 msgid "Search Action"
-msgstr ""
+msgstr "Cari Aksi"
 
 #: ../panel-plugin/configuration-dialog.cpp:114
 msgid "Select An Icon"
 msgstr "Pilih Ikon"
 
 #: ../panel-plugin/command-edit.cpp:60
-#, fuzzy
 msgid "Select Command"
-msgstr "Pilih Ikon"
+msgstr "Pilih Perintah"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
-msgstr "Tampilkan menu untuk mempermudah akses aplikasi yang terpasang"
+msgstr "Tampilkan menu untuk mempermudah akses aplikasi yang terinstal"
 
-#: ../panel-plugin/configuration-dialog.cpp:515
+#: ../panel-plugin/configuration-dialog.cpp:538
 msgid "Show application _descriptions"
 msgstr "Tampilkan _deskripsi aplikasi"
 
-#: ../panel-plugin/configuration-dialog.cpp:509
-#, fuzzy
+#: ../panel-plugin/configuration-dialog.cpp:532
 msgid "Show generic application _names"
-msgstr "Tampilkan aplikasi berdasarkan _nama"
+msgstr "Tampilkan _nama aplikasi yang umum"
 
-#: ../panel-plugin/configuration-dialog.cpp:521
-#, fuzzy
+#: ../panel-plugin/configuration-dialog.cpp:544
 msgid "Show menu hie_rarchy"
-msgstr "Muat menu hie_rarki"
+msgstr "Tampilkan menu _hirarki"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -266,27 +273,27 @@ msgstr "Urutan Alfabet A-Z"
 msgid "Sort Alphabetically Z-A"
 msgstr "Urutan Alfabet Z-A"
 
-#: ../panel-plugin/settings.cpp:113
+#: ../panel-plugin/settings.cpp:115
 msgid "Switch _Users"
-msgstr ""
+msgstr "Ganti _Pengguna"
 
-#: ../panel-plugin/configuration-dialog.cpp:592
+#: ../panel-plugin/configuration-dialog.cpp:621
 msgid "Switch categories by _hovering"
 msgstr "Ganti kategori dengan _melayang"
 
-#: ../panel-plugin/configuration-dialog.cpp:363
+#: ../panel-plugin/configuration-dialog.cpp:380
 msgid "The action will be deleted permanently."
-msgstr ""
+msgstr "Aksi akan dihapus secara permanen."
 
-#: ../panel-plugin/configuration-dialog.cpp:461
+#: ../panel-plugin/configuration-dialog.cpp:478
 msgid "Title"
 msgstr "Judul"
 
-#: ../panel-plugin/page.cpp:306
+#: ../panel-plugin/page.cpp:308
 msgid "Unable to add launcher to desktop."
 msgstr "Gagal menambahkan peluncur ke desktop."
 
-#: ../panel-plugin/page.cpp:345 ../panel-plugin/page.cpp:354
+#: ../panel-plugin/page.cpp:347 ../panel-plugin/page.cpp:356
 msgid "Unable to add launcher to panel."
 msgstr "Gagal menambahkan peluncur ke panel."
 
@@ -303,9 +310,9 @@ msgstr "Sangat Kecil"
 msgid "Whisker Menu"
 msgstr "Menu Whisker"
 
-#: ../panel-plugin/settings.cpp:118
+#: ../panel-plugin/settings.cpp:120
 msgid "Wikipedia"
-msgstr ""
+msgstr "Wikipedia"
 
 #: ../panel-plugin/configuration-dialog.cpp:79
 msgid "_Appearance"
@@ -315,37 +322,30 @@ msgstr "_Tampilan"
 msgid "_Behavior"
 msgstr "_Kebiasaan"
 
-#: ../panel-plugin/settings.cpp:115
-#, fuzzy
+#: ../panel-plugin/settings.cpp:117
 msgid "_Edit Applications"
-msgstr "Menu Aplikasi"
+msgstr "_Sunting Aplikasi"
 
-#: ../panel-plugin/configuration-dialog.cpp:487
+#: ../panel-plugin/configuration-dialog.cpp:504
 msgid "_Icon:"
 msgstr "_Ikon:"
 
-#: ../panel-plugin/settings.cpp:112
-#, fuzzy
+#: ../panel-plugin/settings.cpp:114
 msgid "_Lock Screen"
-msgstr "Kunci Layar"
+msgstr "_Kunci Layar"
 
-#: ../panel-plugin/configuration-dialog.cpp:726
+#: ../panel-plugin/configuration-dialog.cpp:755
 msgid "_Pattern:"
-msgstr ""
+msgstr "_Pola:"
 
-#: ../panel-plugin/configuration-dialog.cpp:750
+#: ../panel-plugin/configuration-dialog.cpp:779
 msgid "_Regular expression"
-msgstr ""
+msgstr "Ekspresi _umum"
 
-#: ../panel-plugin/configuration-dialog.cpp:472
+#: ../panel-plugin/configuration-dialog.cpp:489
 msgid "_Title:"
 msgstr "_Judul:"
 
-#~ msgid "Lock _Screen:"
-#~ msgstr "Kunci _Layar:"
-
-#~ msgid "Log Out"
-#~ msgstr "Keluar"
-
-#~ msgid "_Settings:"
-#~ msgstr "_Pengaturan:"
+#: ../panel-plugin/plugin.cpp:397
+msgid "translator-credits"
+msgstr ""

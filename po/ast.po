@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Tornes Llume <l.lumex03.tornes@gmail.com>, 2013-2014
+# Ḷḷumex03 <l.lumex03.tornes@gmail.com>, 2013-2014
+# Ḷḷumex03 <l.lumex03.tornes@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-29 12:13+0000\n"
-"PO-Revision-Date: 2014-01-06 23:32+0000\n"
-"Last-Translator: Tornes Llume <l.lumex03.tornes@gmail.com>\n"
+"POT-Creation-Date: 2014-06-04 18:42+0000\n"
+"PO-Revision-Date: 2014-05-16 08:09+0000\n"
+"Last-Translator: Ḷḷumex03 <l.lumex03.tornes@gmail.com>\n"
 "Language-Team: Asturian (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/ast/)\n"
 "Language: ast\n"
@@ -19,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/configuration-dialog.cpp:680
+#: ../panel-plugin/configuration-dialog.cpp:709
 msgid "Add action"
 msgstr "Amestar aición"
 
@@ -39,45 +40,53 @@ msgstr "Amestar al panel"
 msgid "All"
 msgstr "Too"
 
-#: ../panel-plugin/settings.cpp:111
+#: ../panel-plugin/settings.cpp:113
 msgid "All _Settings"
 msgstr "Tolos axuste_s"
 
-#: ../panel-plugin/plugin.cpp:163
+#: ../panel-plugin/plugin.cpp:392
+msgid "Alternate application launcher for Xfce"
+msgstr ""
+
+#: ../panel-plugin/plugin.cpp:212
 msgid "Applications Menu"
 msgstr "Menú d'aplicaciones"
 
 #: ../panel-plugin/command-edit.cpp:46
 msgid "Browse the file system to choose a custom command."
-msgstr "Restolar pel sistema d'archivos o esbillar un comandu personalizáu."
+msgstr "Restolar pel sistema de ficheros o esbillar un comandu personalizáu."
 
-#: ../panel-plugin/configuration-dialog.cpp:738
+#: ../panel-plugin/configuration-dialog.cpp:767
 msgid "C_ommand:"
 msgstr "C_omandu:"
 
-#: ../panel-plugin/configuration-dialog.cpp:563
+#: ../panel-plugin/configuration-dialog.cpp:592
 msgid "Categ_ory icon size:"
-msgstr "Grand_or d'iconu d'estaya:"
+msgstr "Tamañ_u d'iconu d'estaya:"
 
 #: ../panel-plugin/recent-page.cpp:88
 msgid "Clear Recently Used"
-msgstr "Llimpiar Usao dapoco"
+msgstr "Llimpiar Usáu apocayá"
 
-#: ../panel-plugin/configuration-dialog.cpp:612
+#: ../panel-plugin/configuration-dialog.cpp:641
 msgid "Commands"
 msgstr "Comandos"
 
-#: ../panel-plugin/configuration-dialog.cpp:709
+#: ../panel-plugin/plugin.cpp:393
+msgid "Copyright © 2013-2014 Graeme Gott"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:738
 msgid "Details"
 msgstr "Detalles"
 
-#: ../panel-plugin/configuration-dialog.cpp:454
+#: ../panel-plugin/configuration-dialog.cpp:471
 msgid "Di_splay:"
 msgstr "Pa_ntalla:"
 
-#: ../panel-plugin/configuration-dialog.cpp:604
+#: ../panel-plugin/configuration-dialog.cpp:633
 msgid "Display recently _used by default"
-msgstr "Amosar Usao dapoco per defe_utu"
+msgstr "Amosar Usáu apocayá por defe_utu"
 
 #: ../panel-plugin/launcher.cpp:252 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
@@ -85,45 +94,45 @@ msgstr "Amosar Usao dapoco per defe_utu"
 msgid "Failed to execute command \"%s\"."
 msgstr "Fallu al executar el comandu \"%s\"."
 
-#: ../panel-plugin/settings.cpp:115
+#: ../panel-plugin/settings.cpp:117
 msgid "Failed to launch menu editor."
-msgstr "Fallu al llanzar el menu editor."
+msgstr "Fallu al llanzar l'editor de menú."
 
-#: ../panel-plugin/settings.cpp:112
+#: ../panel-plugin/settings.cpp:114
 msgid "Failed to lock screen."
 msgstr "Fallu al bloquiar la pantalla."
 
-#: ../panel-plugin/settings.cpp:114
+#: ../panel-plugin/settings.cpp:116
 msgid "Failed to log out."
 msgstr "Fallu al zarrar sesión."
 
-#: ../panel-plugin/settings.cpp:111
+#: ../panel-plugin/settings.cpp:113
 msgid "Failed to open settings manager."
 msgstr "Fallu al abrir l'alministrador d'axustes."
 
-#: ../panel-plugin/settings.cpp:113
+#: ../panel-plugin/settings.cpp:115
 msgid "Failed to switch users."
-msgstr "Fallu al cambear usuarios."
+msgstr "Fallu al cambear d'usuarios."
 
-#: ../panel-plugin/window.cpp:126
+#: ../panel-plugin/window.cpp:127
 msgid "Favorites"
 msgstr "Favoritos"
 
-#: ../panel-plugin/configuration-dialog.cpp:460
+#: ../panel-plugin/configuration-dialog.cpp:477
 msgid "Icon"
 msgstr "Iconu"
 
-#: ../panel-plugin/configuration-dialog.cpp:462
+#: ../panel-plugin/configuration-dialog.cpp:479
 msgid "Icon and title"
-msgstr "Iconu ya títulu"
+msgstr "Iconu y títulu"
 
-#: ../panel-plugin/configuration-dialog.cpp:598
+#: ../panel-plugin/configuration-dialog.cpp:627
 msgid "Include _favorites in recently used"
-msgstr "Incluyir _favoritos n'Usaos dapoco"
+msgstr "Incluyir _favoritos n'Usáu apocayá"
 
-#: ../panel-plugin/configuration-dialog.cpp:543
+#: ../panel-plugin/configuration-dialog.cpp:572
 msgid "Ite_m icon size:"
-msgstr "Gran_dor d'iconu d'oxetu:"
+msgstr "Ta_mañu d'iconu d'oxetu:"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Large"
@@ -133,23 +142,27 @@ msgstr "Grande"
 msgid "Larger"
 msgstr "Más grande"
 
-#: ../panel-plugin/settings.cpp:114
+#: ../panel-plugin/configuration-dialog.cpp:518
+msgid "Lay out icon in a single _panel row"
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:116
 msgid "Log _Out"
 msgstr "Zarrar _sesión:"
 
-#: ../panel-plugin/settings.cpp:117
+#: ../panel-plugin/settings.cpp:119
 msgid "Man Pages"
 msgstr "Páxines man"
 
-#: ../panel-plugin/configuration-dialog.cpp:504
+#: ../panel-plugin/configuration-dialog.cpp:527
 msgid "Menu"
 msgstr "Menú"
 
-#: ../panel-plugin/configuration-dialog.cpp:714
+#: ../panel-plugin/configuration-dialog.cpp:743
 msgid "Nam_e:"
 msgstr "Nom_e:"
 
-#: ../panel-plugin/configuration-dialog.cpp:660
+#: ../panel-plugin/configuration-dialog.cpp:689
 msgid "Name"
 msgstr "Nome"
 
@@ -161,59 +174,64 @@ msgstr "Un res"
 msgid "Normal"
 msgstr "Normal"
 
-#: ../panel-plugin/settings.cpp:120
+#: ../panel-plugin/settings.cpp:122
 msgid "Open URI"
 msgstr "Abrir URI"
 
-#: ../panel-plugin/configuration-dialog.cpp:446
+#: ../panel-plugin/configuration-dialog.cpp:463
 msgid "Panel Button"
 msgstr "Botón del panel"
 
-#: ../panel-plugin/configuration-dialog.cpp:665
+#: ../panel-plugin/configuration-dialog.cpp:694
 msgid "Pattern"
 msgstr "Patrón"
 
-#: ../panel-plugin/configuration-dialog.cpp:527
+#: ../panel-plugin/configuration-dialog.cpp:550
 msgid "Position _search entry next to panel button"
-msgstr "Allugar el cuadru de _gueta xunto al botón del panel"
+msgstr "Allugar el cuadru de _gueta co'l botón del panel"
 
-#: ../panel-plugin/configuration-dialog.cpp:533
+#: ../panel-plugin/configuration-dialog.cpp:563
+#, fuzzy
+msgid "Position cate_gories next to panel button"
+msgstr "Allugar el cuadru de _gueta co'l botón del panel"
+
+#: ../panel-plugin/configuration-dialog.cpp:556
 msgid "Position commands next to search _entry"
-msgstr "Allugar los comandos xunto al caxu_etu de gueta"
+msgstr "Allugar los comandos co la caxa de gueta"
 
-#: ../panel-plugin/window.cpp:132
+#: ../panel-plugin/window.cpp:133
 msgid "Recently Used"
-msgstr "Usao dapoco"
+msgstr "Usáu apocayá"
 
 #: ../panel-plugin/page.cpp:205
 msgid "Remove From Favorites"
-msgstr "Esniciar de favoritos"
+msgstr "Desaniciar de favoritos"
 
-#: ../panel-plugin/configuration-dialog.cpp:364
+#: ../panel-plugin/configuration-dialog.cpp:381
 #, c-format
 msgid "Remove action \"%s\"?"
-msgstr "¿Esniciar aición \"%s\"?"
+msgstr "¿Desaniciar aición \"%s\"?"
 
-#: ../panel-plugin/configuration-dialog.cpp:689
+#: ../panel-plugin/configuration-dialog.cpp:718
 msgid "Remove selected action"
-msgstr "Esniciar aición esbillada"
+msgstr "Desaniciar aición esbillada"
 
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
 msgid "Run %s"
 msgstr "Executar %s"
 
-#: ../panel-plugin/settings.cpp:119
+#: ../panel-plugin/settings.cpp:121
 msgid "Run in Terminal"
 msgstr "Executar na terminal"
 
 #: ../panel-plugin/configuration-dialog.cpp:81
 msgid "Search Actio_ns"
-msgstr "Guetar Aicio_nes"
+msgstr "Guetar aicio_nes"
 
 #: ../panel-plugin/search-action.cpp:261
 msgid "Search Action"
-msgstr "Guetar Aición"
+msgstr "Guetar aición"
 
 #: ../panel-plugin/configuration-dialog.cpp:114
 msgid "Select An Icon"
@@ -225,17 +243,17 @@ msgstr "Esbillar comandu"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
-msgstr "Amuesa un menú p'acceder cenciellamente a les aplicaiones instalaes"
+msgstr "Amuesa un menú p'acceder cenciellamente a les aplicaciones instalaes"
 
-#: ../panel-plugin/configuration-dialog.cpp:515
+#: ../panel-plugin/configuration-dialog.cpp:538
 msgid "Show application _descriptions"
 msgstr "Amosar descripciones _d'aplicaciones"
 
-#: ../panel-plugin/configuration-dialog.cpp:509
+#: ../panel-plugin/configuration-dialog.cpp:532
 msgid "Show generic application _names"
 msgstr "Amosar _nomes d'aplicaciones xenéricos"
 
-#: ../panel-plugin/configuration-dialog.cpp:521
+#: ../panel-plugin/configuration-dialog.cpp:544
 msgid "Show menu hie_rarchy"
 msgstr "Amosar xe_rarquía del menú"
 
@@ -255,27 +273,27 @@ msgstr "Ordenar alfabéticamente A-Z"
 msgid "Sort Alphabetically Z-A"
 msgstr "Ordenar alfabéticamente Z-A"
 
-#: ../panel-plugin/settings.cpp:113
+#: ../panel-plugin/settings.cpp:115
 msgid "Switch _Users"
 msgstr "Cambear _usuarios"
 
-#: ../panel-plugin/configuration-dialog.cpp:592
+#: ../panel-plugin/configuration-dialog.cpp:621
 msgid "Switch categories by _hovering"
-msgstr "Camudar ente estayes _n'apuntando col mur"
+msgstr "Camudar ente estayes _apuntando col mur"
 
-#: ../panel-plugin/configuration-dialog.cpp:363
+#: ../panel-plugin/configuration-dialog.cpp:380
 msgid "The action will be deleted permanently."
-msgstr "L'aición esniciaráse dafechu."
+msgstr "L'aición desanciaráse dafechu."
 
-#: ../panel-plugin/configuration-dialog.cpp:461
+#: ../panel-plugin/configuration-dialog.cpp:478
 msgid "Title"
 msgstr "Títulu"
 
-#: ../panel-plugin/page.cpp:306
+#: ../panel-plugin/page.cpp:308
 msgid "Unable to add launcher to desktop."
 msgstr "Nun pue amestase'l llanzador al escritoriu."
 
-#: ../panel-plugin/page.cpp:345 ../panel-plugin/page.cpp:354
+#: ../panel-plugin/page.cpp:347 ../panel-plugin/page.cpp:356
 msgid "Unable to add launcher to panel."
 msgstr "Nun pue amestase'l llanzador al panel."
 
@@ -292,38 +310,42 @@ msgstr "Perpequeñu"
 msgid "Whisker Menu"
 msgstr "Menú Whisker"
 
-#: ../panel-plugin/settings.cpp:118
+#: ../panel-plugin/settings.cpp:120
 msgid "Wikipedia"
 msgstr "Wikipedia"
 
 #: ../panel-plugin/configuration-dialog.cpp:79
 msgid "_Appearance"
-msgstr "_Paecencia"
+msgstr "_Aspeutu"
 
 #: ../panel-plugin/configuration-dialog.cpp:80
 msgid "_Behavior"
 msgstr "_Comportamientu"
 
-#: ../panel-plugin/settings.cpp:115
+#: ../panel-plugin/settings.cpp:117
 msgid "_Edit Applications"
 msgstr "_Editar aplicaciones"
 
-#: ../panel-plugin/configuration-dialog.cpp:487
+#: ../panel-plugin/configuration-dialog.cpp:504
 msgid "_Icon:"
 msgstr "_Iconu:"
 
-#: ../panel-plugin/settings.cpp:112
+#: ../panel-plugin/settings.cpp:114
 msgid "_Lock Screen"
 msgstr "_Bloquiar pantalla"
 
-#: ../panel-plugin/configuration-dialog.cpp:726
+#: ../panel-plugin/configuration-dialog.cpp:755
 msgid "_Pattern:"
 msgstr "_Patrón:"
 
-#: ../panel-plugin/configuration-dialog.cpp:750
+#: ../panel-plugin/configuration-dialog.cpp:779
 msgid "_Regular expression"
 msgstr "Espresión _regular"
 
-#: ../panel-plugin/configuration-dialog.cpp:472
+#: ../panel-plugin/configuration-dialog.cpp:489
 msgid "_Title:"
 msgstr "_Títulu:"
+
+#: ../panel-plugin/plugin.cpp:397
+msgid "translator-credits"
+msgstr ""

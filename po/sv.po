@@ -1,30 +1,31 @@
 # Swedish translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2013 Graeme Gott
+# Copyright (C) 2014 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# addegsson <addegsson@gmail.com>, 2013
-# FredN <fredrik@nyqvist.biz>, 2013
-# tsw <tarvidsson7834@gmail.com>, 2013
+# Andreas Gustafsson <addegsson@gmail.com>, 2013
+# Patrik Nilsson <asavartzeth@gmail.com>, 2014
+# Fredrik Nyqvist <fredrik@nyqvist.biz>, 2013
+# Patrik Nilsson <asavartzeth@gmail.com>, 2014
+# Tommy Arvidsson <tarvidsson7834@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-29 12:13+0000\n"
-"PO-Revision-Date: 2013-11-12 16:25+0000\n"
-"Last-Translator: FredN <fredrik@nyqvist.biz>\n"
+"POT-Creation-Date: 2014-06-04 18:42+0000\n"
+"PO-Revision-Date: 2014-06-03 13:08+0000\n"
+"Last-Translator: Patrik Nilsson <asavartzeth@gmail.com>\n"
 "Language-Team: Swedish (Sweden) (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/sv_SE/)\n"
-"Language: sv\n"
+"Language: sv_SE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/configuration-dialog.cpp:680
-#, fuzzy
+#: ../panel-plugin/configuration-dialog.cpp:709
 msgid "Add action"
-msgstr "Lägg till i Panelen"
+msgstr "Lägg till åtgärd"
 
 #: ../panel-plugin/page.cpp:212
 msgid "Add to Desktop"
@@ -36,102 +37,105 @@ msgstr "Lägg till i favoriter"
 
 #: ../panel-plugin/page.cpp:216
 msgid "Add to Panel"
-msgstr "Lägg till i Panelen"
+msgstr "Lägg till i panelen"
 
 #: ../panel-plugin/category.cpp:59
 msgid "All"
 msgstr "Alla"
 
-#: ../panel-plugin/settings.cpp:111
-#, fuzzy
+#: ../panel-plugin/settings.cpp:113
 msgid "All _Settings"
-msgstr "Alla inställningar"
+msgstr "Alla _inställningar"
 
-#: ../panel-plugin/plugin.cpp:163
+#: ../panel-plugin/plugin.cpp:392
+msgid "Alternate application launcher for Xfce"
+msgstr ""
+
+#: ../panel-plugin/plugin.cpp:212
 msgid "Applications Menu"
 msgstr "Programmeny"
 
 #: ../panel-plugin/command-edit.cpp:46
 msgid "Browse the file system to choose a custom command."
-msgstr ""
+msgstr "Bläddra i filsystemet för att välja ett anpassat kommando."
 
-#: ../panel-plugin/configuration-dialog.cpp:738
-#, fuzzy
+#: ../panel-plugin/configuration-dialog.cpp:767
 msgid "C_ommand:"
-msgstr "Kommandon"
+msgstr "_Kommando:"
 
-#: ../panel-plugin/configuration-dialog.cpp:563
+#: ../panel-plugin/configuration-dialog.cpp:592
 msgid "Categ_ory icon size:"
-msgstr "Kategori ikonstorlek:"
+msgstr "_Kategori ikonstorlek:"
 
 #: ../panel-plugin/recent-page.cpp:88
 msgid "Clear Recently Used"
-msgstr "Töm Nyligen Använda"
+msgstr "Rensa senast använda"
 
-#: ../panel-plugin/configuration-dialog.cpp:612
-#, fuzzy
+#: ../panel-plugin/configuration-dialog.cpp:641
 msgid "Commands"
 msgstr "Kommandon"
 
-#: ../panel-plugin/configuration-dialog.cpp:709
+#: ../panel-plugin/plugin.cpp:393
+msgid "Copyright © 2013-2014 Graeme Gott"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:738
 msgid "Details"
-msgstr ""
+msgstr "Detaljer"
 
-#: ../panel-plugin/configuration-dialog.cpp:454
+#: ../panel-plugin/configuration-dialog.cpp:471
 msgid "Di_splay:"
-msgstr "Visa:"
+msgstr "_Visa:"
 
-#: ../panel-plugin/configuration-dialog.cpp:604
+#: ../panel-plugin/configuration-dialog.cpp:633
 msgid "Display recently _used by default"
-msgstr ""
+msgstr "Visa _senast använda som standard"
 
 #: ../panel-plugin/launcher.cpp:252 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
-msgstr "Misslyckades att exekvera kommando \"%s\"."
+msgstr "Misslyckades med att utföra kommando \"%s\"."
 
-#: ../panel-plugin/settings.cpp:115
-#, fuzzy
+#: ../panel-plugin/settings.cpp:117
 msgid "Failed to launch menu editor."
-msgstr "Misslyckades att logga ut."
-
-#: ../panel-plugin/settings.cpp:112
-msgid "Failed to lock screen."
-msgstr "Misslyckades att låsa skärmen."
+msgstr "Misslyckades med att starta menyredigerare."
 
 #: ../panel-plugin/settings.cpp:114
-msgid "Failed to log out."
-msgstr "Misslyckades att logga ut."
+msgid "Failed to lock screen."
+msgstr "Misslyckades med att låsa skärmen."
 
-#: ../panel-plugin/settings.cpp:111
-msgid "Failed to open settings manager."
-msgstr "Misslyckades att öppna inställningshanteraren."
+#: ../panel-plugin/settings.cpp:116
+msgid "Failed to log out."
+msgstr "Misslyckades med att logga ut."
 
 #: ../panel-plugin/settings.cpp:113
-#, fuzzy
-msgid "Failed to switch users."
-msgstr "Misslyckades att låsa skärmen."
+msgid "Failed to open settings manager."
+msgstr "Misslyckades med att öppna inställningshanteraren."
 
-#: ../panel-plugin/window.cpp:126
+#: ../panel-plugin/settings.cpp:115
+msgid "Failed to switch users."
+msgstr "Misslyckades med att växla användare."
+
+#: ../panel-plugin/window.cpp:127
 msgid "Favorites"
 msgstr "Favoriter"
 
-#: ../panel-plugin/configuration-dialog.cpp:460
+#: ../panel-plugin/configuration-dialog.cpp:477
 msgid "Icon"
 msgstr "Ikon"
 
-#: ../panel-plugin/configuration-dialog.cpp:462
+#: ../panel-plugin/configuration-dialog.cpp:479
 msgid "Icon and title"
 msgstr "Ikon och titel"
 
-#: ../panel-plugin/configuration-dialog.cpp:598
+#: ../panel-plugin/configuration-dialog.cpp:627
 msgid "Include _favorites in recently used"
-msgstr ""
+msgstr "Inkludera _favoriter i senast använda"
 
-#: ../panel-plugin/configuration-dialog.cpp:543
+#: ../panel-plugin/configuration-dialog.cpp:572
 msgid "Ite_m icon size:"
-msgstr "Objekt ikonstorlek:"
+msgstr "_Objekt ikonstorlek:"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Large"
@@ -141,115 +145,120 @@ msgstr "Stor"
 msgid "Larger"
 msgstr "Större"
 
-#: ../panel-plugin/settings.cpp:114
-#, fuzzy
+#: ../panel-plugin/configuration-dialog.cpp:518
+msgid "Lay out icon in a single _panel row"
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:116
 msgid "Log _Out"
-msgstr "Logga ut"
+msgstr "L_ogga ut"
 
-#: ../panel-plugin/settings.cpp:117
+#: ../panel-plugin/settings.cpp:119
 msgid "Man Pages"
-msgstr ""
+msgstr "Manualsidor"
 
-#: ../panel-plugin/configuration-dialog.cpp:504
+#: ../panel-plugin/configuration-dialog.cpp:527
 msgid "Menu"
-msgstr ""
+msgstr "Meny"
 
-#: ../panel-plugin/configuration-dialog.cpp:714
+#: ../panel-plugin/configuration-dialog.cpp:743
 msgid "Nam_e:"
-msgstr ""
+msgstr "_Namn:"
 
-#: ../panel-plugin/configuration-dialog.cpp:660
+#: ../panel-plugin/configuration-dialog.cpp:689
 msgid "Name"
-msgstr ""
+msgstr "Namn"
 
 #: ../panel-plugin/icon-size.cpp:49
 msgid "None"
-msgstr ""
+msgstr "Ingen"
 
 #: ../panel-plugin/icon-size.cpp:53
 msgid "Normal"
 msgstr "Normal"
 
-#: ../panel-plugin/settings.cpp:120
+#: ../panel-plugin/settings.cpp:122
 msgid "Open URI"
-msgstr ""
+msgstr "Öppna URI"
 
-#: ../panel-plugin/configuration-dialog.cpp:446
-#, fuzzy
+#: ../panel-plugin/configuration-dialog.cpp:463
 msgid "Panel Button"
 msgstr "Panelknapp"
 
-#: ../panel-plugin/configuration-dialog.cpp:665
+#: ../panel-plugin/configuration-dialog.cpp:694
 msgid "Pattern"
-msgstr ""
+msgstr "Mönster"
 
-#: ../panel-plugin/configuration-dialog.cpp:527
+#: ../panel-plugin/configuration-dialog.cpp:550
 msgid "Position _search entry next to panel button"
-msgstr ""
+msgstr "Placera _sökfältet intill panelknappen"
 
-#: ../panel-plugin/configuration-dialog.cpp:533
+#: ../panel-plugin/configuration-dialog.cpp:563
+#, fuzzy
+msgid "Position cate_gories next to panel button"
+msgstr "Placera _sökfältet intill panelknappen"
+
+#: ../panel-plugin/configuration-dialog.cpp:556
 msgid "Position commands next to search _entry"
-msgstr ""
+msgstr "Placera kommandon bredvid sök_fältet"
 
-#: ../panel-plugin/window.cpp:132
+#: ../panel-plugin/window.cpp:133
 msgid "Recently Used"
-msgstr "Nyligen använda"
+msgstr "Senast använda"
 
 #: ../panel-plugin/page.cpp:205
 msgid "Remove From Favorites"
 msgstr "Ta bort från favoriter"
 
-#: ../panel-plugin/configuration-dialog.cpp:364
+#: ../panel-plugin/configuration-dialog.cpp:381
 #, c-format
 msgid "Remove action \"%s\"?"
-msgstr ""
+msgstr "Ta bort åtgärd \"%s\"?"
 
-#: ../panel-plugin/configuration-dialog.cpp:689
+#: ../panel-plugin/configuration-dialog.cpp:718
 msgid "Remove selected action"
-msgstr ""
+msgstr "Ta bort markerad åtgärd"
 
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
 msgid "Run %s"
-msgstr ""
+msgstr "Kör %s"
 
-#: ../panel-plugin/settings.cpp:119
+#: ../panel-plugin/settings.cpp:121
 msgid "Run in Terminal"
-msgstr ""
+msgstr "Kör i terminal"
 
 #: ../panel-plugin/configuration-dialog.cpp:81
 msgid "Search Actio_ns"
-msgstr ""
+msgstr "Sök_åtgärder"
 
 #: ../panel-plugin/search-action.cpp:261
 msgid "Search Action"
-msgstr ""
+msgstr "Sökåtgärd"
 
 #: ../panel-plugin/configuration-dialog.cpp:114
 msgid "Select An Icon"
 msgstr "Välj en ikon"
 
 #: ../panel-plugin/command-edit.cpp:60
-#, fuzzy
 msgid "Select Command"
-msgstr "Välj en ikon"
+msgstr "Välj kommando"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
-msgstr "En meny för att visa dina installerade program"
+msgstr "Visa en meny för att enkelt komma åt installerade program"
 
-#: ../panel-plugin/configuration-dialog.cpp:515
+#: ../panel-plugin/configuration-dialog.cpp:538
 msgid "Show application _descriptions"
-msgstr "Visa applikationsbeskrivning"
+msgstr "Visa _programbeskrivningar"
 
-#: ../panel-plugin/configuration-dialog.cpp:509
-#, fuzzy
+#: ../panel-plugin/configuration-dialog.cpp:532
 msgid "Show generic application _names"
-msgstr "Visa applikationer efter _namn"
+msgstr "Visa allmänna program_namn"
 
-#: ../panel-plugin/configuration-dialog.cpp:521
+#: ../panel-plugin/configuration-dialog.cpp:544
 msgid "Show menu hie_rarchy"
-msgstr ""
+msgstr "Visa _hierarkisk meny"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -261,83 +270,85 @@ msgstr "Mindre"
 
 #: ../panel-plugin/favorites-page.cpp:67
 msgid "Sort Alphabetically A-Z"
-msgstr "Sortera Alfabetiskt A-Z"
+msgstr "Sortera alfabetiskt A-Ö"
 
 #: ../panel-plugin/favorites-page.cpp:73
 msgid "Sort Alphabetically Z-A"
-msgstr "Sortera Alfabetiskt Z-A"
+msgstr "Sortera alfabetiskt Ö-A"
 
-#: ../panel-plugin/settings.cpp:113
+#: ../panel-plugin/settings.cpp:115
 msgid "Switch _Users"
-msgstr ""
+msgstr "_Växla användare"
 
-#: ../panel-plugin/configuration-dialog.cpp:592
+#: ../panel-plugin/configuration-dialog.cpp:621
 msgid "Switch categories by _hovering"
-msgstr "Byt kategori med muspekaren"
+msgstr "Växla _kategori genom att sväva med muspekaren"
 
-#: ../panel-plugin/configuration-dialog.cpp:363
+#: ../panel-plugin/configuration-dialog.cpp:380
 msgid "The action will be deleted permanently."
-msgstr ""
+msgstr "Åtgärden kommer att tas bort permanent."
 
-#: ../panel-plugin/configuration-dialog.cpp:461
+#: ../panel-plugin/configuration-dialog.cpp:478
 msgid "Title"
 msgstr "Titel"
 
-#: ../panel-plugin/page.cpp:306
+#: ../panel-plugin/page.cpp:308
 msgid "Unable to add launcher to desktop."
-msgstr "Kan ej skapa skrivbordsgenväg."
+msgstr "Kunde inte skapa skrivbordsgenväg."
 
-#: ../panel-plugin/page.cpp:345 ../panel-plugin/page.cpp:354
+#: ../panel-plugin/page.cpp:347 ../panel-plugin/page.cpp:356
 msgid "Unable to add launcher to panel."
-msgstr "Kan ej lägga till i panelen."
+msgstr "Kunde inte lägga till programstartare i panelen."
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
-msgstr "Väldigt Stor"
+msgstr "Mycket stor"
 
 #: ../panel-plugin/icon-size.cpp:50
 msgid "Very Small"
-msgstr "Väldigt Liten"
+msgstr "Mycket liten"
 
 #: ../panel-plugin/configuration-dialog.cpp:71
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
 msgid "Whisker Menu"
-msgstr "Whiskermeny"
+msgstr "Whisker Meny"
 
-#: ../panel-plugin/settings.cpp:118
+#: ../panel-plugin/settings.cpp:120
 msgid "Wikipedia"
-msgstr ""
+msgstr "Wikipedia"
 
 #: ../panel-plugin/configuration-dialog.cpp:79
 msgid "_Appearance"
-msgstr "Utseende"
+msgstr "_Utseende"
 
 #: ../panel-plugin/configuration-dialog.cpp:80
 msgid "_Behavior"
-msgstr "Utförande"
+msgstr "_Beteende"
 
-#: ../panel-plugin/settings.cpp:115
-#, fuzzy
+#: ../panel-plugin/settings.cpp:117
 msgid "_Edit Applications"
-msgstr "Programmeny"
+msgstr "_Redigera program"
 
-#: ../panel-plugin/configuration-dialog.cpp:487
+#: ../panel-plugin/configuration-dialog.cpp:504
 msgid "_Icon:"
 msgstr "_Ikon:"
 
-#: ../panel-plugin/settings.cpp:112
-#, fuzzy
+#: ../panel-plugin/settings.cpp:114
 msgid "_Lock Screen"
-msgstr "Lås Skärm"
+msgstr "_Lås skärm"
 
-#: ../panel-plugin/configuration-dialog.cpp:726
+#: ../panel-plugin/configuration-dialog.cpp:755
 msgid "_Pattern:"
-msgstr ""
+msgstr "_Mönster:"
 
-#: ../panel-plugin/configuration-dialog.cpp:750
+#: ../panel-plugin/configuration-dialog.cpp:779
 msgid "_Regular expression"
-msgstr ""
+msgstr "_Reguljära uttryck"
 
-#: ../panel-plugin/configuration-dialog.cpp:472
+#: ../panel-plugin/configuration-dialog.cpp:489
 msgid "_Title:"
-msgstr "Titel:"
+msgstr "Tite_l:"
+
+#: ../panel-plugin/plugin.cpp:397
+msgid "translator-credits"
+msgstr ""
