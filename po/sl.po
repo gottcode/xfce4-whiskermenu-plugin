@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Ta Kernc, 2014
+# kernc, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-04 18:42+0000\n"
-"PO-Revision-Date: 2014-01-26 04:59+0000\n"
-"Last-Translator: Ta Kernc\n"
+"PO-Revision-Date: 2014-06-05 13:26+0000\n"
+"Last-Translator: kernc\n"
 "Language-Team: Slovenian (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/sl/)\n"
 "Language: sl\n"
@@ -46,7 +46,7 @@ msgstr "Vse na_stavitve"
 
 #: ../panel-plugin/plugin.cpp:392
 msgid "Alternate application launcher for Xfce"
-msgstr ""
+msgstr "Alternativni zaganjalnik programov za Xfce"
 
 #: ../panel-plugin/plugin.cpp:212
 msgid "Applications Menu"
@@ -74,7 +74,7 @@ msgstr "Dejanja"
 
 #: ../panel-plugin/plugin.cpp:393
 msgid "Copyright © 2013-2014 Graeme Gott"
-msgstr ""
+msgstr "Copyright ©2013-2014 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:738
 msgid "Details"
@@ -144,7 +144,7 @@ msgstr "Večja"
 
 #: ../panel-plugin/configuration-dialog.cpp:518
 msgid "Lay out icon in a single _panel row"
-msgstr ""
+msgstr "Ikona zasede eno vrstico _pulta"
 
 #: ../panel-plugin/settings.cpp:116
 msgid "Log _Out"
@@ -191,9 +191,8 @@ msgid "Position _search entry next to panel button"
 msgstr "Postavi i_skalno polje k gumbu za prikaz"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
-#, fuzzy
 msgid "Position cate_gories next to panel button"
-msgstr "Postavi i_skalno polje k gumbu za prikaz"
+msgstr "Postavi kate_gorije poleg gumba v pultu"
 
 #: ../panel-plugin/configuration-dialog.cpp:556
 msgid "Position commands next to search _entry"
@@ -348,4 +347,4 @@ msgstr "_Naziv:"
 
 #: ../panel-plugin/plugin.cpp:397
 msgid "translator-credits"
-msgstr ""
+msgstr "seznam-prevajalcev"
