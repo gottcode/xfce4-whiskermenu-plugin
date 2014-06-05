@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
+# Jeff Huang <s8321414@gmail.com>, 2014
 # Walter Cheuk <wwycheuk@gmail.com>, 2013
-# 柏諺 黃 <s8321414@gmail.com>, 2013-2014
+# Jeff Huang <s8321414@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-04 18:42+0000\n"
-"PO-Revision-Date: 2014-02-26 11:13+0000\n"
-"Last-Translator: 柏諺 黃 <s8321414@gmail.com>\n"
+"PO-Revision-Date: 2014-06-04 23:37+0000\n"
+"Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/zh_TW/)\n"
 "Language: zh_TW\n"
@@ -46,7 +47,7 @@ msgstr "所有設定(_S)"
 
 #: ../panel-plugin/plugin.cpp:392
 msgid "Alternate application launcher for Xfce"
-msgstr ""
+msgstr "Xfce 上可替換的應用程式啟動器"
 
 #: ../panel-plugin/plugin.cpp:212
 msgid "Applications Menu"
@@ -74,7 +75,7 @@ msgstr "指令"
 
 #: ../panel-plugin/plugin.cpp:393
 msgid "Copyright © 2013-2014 Graeme Gott"
-msgstr ""
+msgstr "Copyright © 2013-2014 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:738
 msgid "Details"
@@ -144,7 +145,7 @@ msgstr "很大"
 
 #: ../panel-plugin/configuration-dialog.cpp:518
 msgid "Lay out icon in a single _panel row"
-msgstr ""
+msgstr "將圖示編排在單一的面板排(_P)"
 
 #: ../panel-plugin/settings.cpp:116
 msgid "Log _Out"
@@ -191,9 +192,8 @@ msgid "Position _search entry next to panel button"
 msgstr "下一個面板按鈕的搜尋結果(_S)"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
-#, fuzzy
 msgid "Position cate_gories next to panel button"
-msgstr "下一個面板按鈕的搜尋結果(_S)"
+msgstr "在面板按鈕旁的定位類別(_G)"
 
 #: ../panel-plugin/configuration-dialog.cpp:556
 msgid "Position commands next to search _entry"
@@ -348,4 +348,4 @@ msgstr "標題(_T)："
 
 #: ../panel-plugin/plugin.cpp:397
 msgid "translator-credits"
-msgstr ""
+msgstr "黃柏諺 <s8321414@yahoo.com.tw>,2014"
