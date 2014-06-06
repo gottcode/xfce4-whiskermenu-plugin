@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# GenghisKhan <genghiskhan@gmx.ca>, 2013
+# GenghisKhan <genghiskhan@gmx.ca>, 2013-2014
 # GenghisKhan <genghiskhan@gmx.ca>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-04 18:42+0000\n"
-"PO-Revision-Date: 2013-12-07 14:41+0000\n"
+"PO-Revision-Date: 2014-06-05 16:23+0000\n"
 "Last-Translator: GenghisKhan <genghiskhan@gmx.ca>\n"
 "Language-Team: Hebrew (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
 "plugin/language/he/)\n"
@@ -46,7 +46,7 @@ msgstr "כל _ההגדרות"
 
 #: ../panel-plugin/plugin.cpp:392
 msgid "Alternate application launcher for Xfce"
-msgstr ""
+msgstr "משגר יישומים חילופי עבור Xfce"
 
 #: ../panel-plugin/plugin.cpp:212
 msgid "Applications Menu"
@@ -144,7 +144,7 @@ msgstr "גדול יותר"
 
 #: ../panel-plugin/configuration-dialog.cpp:518
 msgid "Lay out icon in a single _panel row"
-msgstr ""
+msgstr "פרוס צלמית בשורת _לוח"
 
 #: ../panel-plugin/settings.cpp:116
 msgid "Log _Out"
@@ -191,9 +191,8 @@ msgid "Position _search entry next to panel button"
 msgstr "מקם רישום _חיפוש ליד לחצן לוח"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
-#, fuzzy
 msgid "Position cate_gories next to panel button"
-msgstr "מקם רישום _חיפוש ליד לחצן לוח"
+msgstr "מקם ק_טגוריות לצד לחצן לוח"
 
 #: ../panel-plugin/configuration-dialog.cpp:556
 msgid "Position commands next to search _entry"
@@ -349,3 +348,9 @@ msgstr "_כותרת:"
 #: ../panel-plugin/plugin.cpp:397
 msgid "translator-credits"
 msgstr ""
+"אנא הצטרפו אל קבוצת התרגום העברית של Xfce ועקבו אחר הוראות והנחיות אלו:\n"
+"\n"
+"http://il.kde.org/hebrew/visualdict/\n"
+"http://il.kde.org/hebrew/guidelines/\n"
+"\n"
+"בהצלחה!"
