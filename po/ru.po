@@ -3,17 +3,17 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Артём Демаков <dearalcher@gmail.com>, 2013
+# sorrymak <dearalcher@gmail.com>, 2013
 # Kyrill Detinov <lazy.kent@opensuse.org>, 2013
-# asvl <alyoshin.s@gmail.com>, 2013
-# shlyapugin <shlyapugin@gmail.com>, 2013
+# Sergey Alyoshin <alyoshin.s@gmail.com>, 2013-2014
+# Sergey Shlyapugin <shlyapugin@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-04 18:42+0000\n"
-"PO-Revision-Date: 2013-12-13 19:46+0000\n"
-"Last-Translator: asvl <alyoshin.s@gmail.com>\n"
+"PO-Revision-Date: 2014-06-06 06:00+0000\n"
+"Last-Translator: Sergey Alyoshin <alyoshin.s@gmail.com>\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/ru/)\n"
 "Language: ru\n"
@@ -49,7 +49,7 @@ msgstr "Все _настройки"
 
 #: ../panel-plugin/plugin.cpp:392
 msgid "Alternate application launcher for Xfce"
-msgstr ""
+msgstr "Альтернативное меню запуска приложений для Xfce"
 
 #: ../panel-plugin/plugin.cpp:212
 msgid "Applications Menu"
@@ -77,7 +77,7 @@ msgstr "Команды"
 
 #: ../panel-plugin/plugin.cpp:393
 msgid "Copyright © 2013-2014 Graeme Gott"
-msgstr ""
+msgstr "Copyright © 2013—2014 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:738
 msgid "Details"
@@ -147,7 +147,7 @@ msgstr "Большой"
 
 #: ../panel-plugin/configuration-dialog.cpp:518
 msgid "Lay out icon in a single _panel row"
-msgstr ""
+msgstr "Зн_ачок в одну строку панели"
 
 #: ../panel-plugin/settings.cpp:116
 msgid "Log _Out"
@@ -194,9 +194,8 @@ msgid "Position _search entry next to panel button"
 msgstr "Ст_рока поиска около панели"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
-#, fuzzy
 msgid "Position cate_gories next to panel button"
-msgstr "Ст_рока поиска около панели"
+msgstr "Ка_тегории после кнопок панели"
 
 #: ../panel-plugin/configuration-dialog.cpp:556
 msgid "Position commands next to search _entry"
@@ -352,3 +351,7 @@ msgstr "За_головок:"
 #: ../panel-plugin/plugin.cpp:397
 msgid "translator-credits"
 msgstr ""
+"Артём Демаков <dearalcher@gmail.com>, 2013\n"
+"Кирилл Детинов <lazy.kent@opensuse.org>, 2013\n"
+"Сергей Алёшин <alyoshin.s@gmail.com>, 2013, 2014\n"
+"Сергей Шляпугин <shlyapugin@gmail.com>, 2013"
