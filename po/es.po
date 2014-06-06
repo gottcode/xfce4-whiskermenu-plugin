@@ -3,19 +3,17 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Adolfo Jayme Barrientos <fitoschido@ubuntu.com>, 2013
-# Adolfo Jayme Barrientos <fitoschido@ubuntu.com>, 2014
-# fabioluciano <fabio@naoimporta.com>, 2013
-# Fito Jayme <fitoschido@ubuntu.com>, 2013
-# intialonso <intialonso@gmail.com>, 2013
-# Pablo Lezaeta <prflr88@gmail.com>, 2013
+# Adolfo Jayme Barrientos <fitoschido@ubuntu.com>, 2013
+# Adolfo Jayme Barrientos <fitoschido@ubuntu.com>, 2014
+# Inti Alonso <intialonso@gmail.com>, 2013
+# Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-04 18:42+0000\n"
-"PO-Revision-Date: 2014-01-01 23:08+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitoschido@ubuntu.com>\n"
+"PO-Revision-Date: 2014-06-06 05:28+0000\n"
+"Last-Translator: Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/es/)\n"
 "Language: es\n"
@@ -50,11 +48,11 @@ msgstr "_Toda la configuración"
 
 #: ../panel-plugin/plugin.cpp:392
 msgid "Alternate application launcher for Xfce"
-msgstr ""
+msgstr "Lanzador de aplicaciones alternativo para Xfce"
 
 #: ../panel-plugin/plugin.cpp:212
 msgid "Applications Menu"
-msgstr "Menú de aplicaciones"
+msgstr "Aplicaciones"
 
 #: ../panel-plugin/command-edit.cpp:46
 msgid "Browse the file system to choose a custom command."
@@ -78,7 +76,7 @@ msgstr "Órdenes:"
 
 #: ../panel-plugin/plugin.cpp:393
 msgid "Copyright © 2013-2014 Graeme Gott"
-msgstr ""
+msgstr "Derechos de autor © 2013-2014 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:738
 msgid "Details"
@@ -112,7 +110,7 @@ msgstr "No se pudo cerrar la sesión."
 
 #: ../panel-plugin/settings.cpp:113
 msgid "Failed to open settings manager."
-msgstr "Falló la ejecución del gestor de configuración."
+msgstr "No se pudo ejecutar el gestor de configuración."
 
 #: ../panel-plugin/settings.cpp:115
 msgid "Failed to switch users."
@@ -148,7 +146,7 @@ msgstr "Muy grande"
 
 #: ../panel-plugin/configuration-dialog.cpp:518
 msgid "Lay out icon in a single _panel row"
-msgstr ""
+msgstr "Coloque el icono en una sola fila del panel"
 
 #: ../panel-plugin/settings.cpp:116
 msgid "Log _Out"
@@ -180,7 +178,7 @@ msgstr "Normal"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Open URI"
-msgstr "Abrir un URI"
+msgstr "Abrir una dirección URI"
 
 #: ../panel-plugin/configuration-dialog.cpp:463
 msgid "Panel Button"
@@ -195,9 +193,8 @@ msgid "Position _search entry next to panel button"
 msgstr "Posicionar el cuadro de _búsqueda junto al botón del panel"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
-#, fuzzy
 msgid "Position cate_gories next to panel button"
-msgstr "Posicionar el cuadro de _búsqueda junto al botón del panel"
+msgstr "Colocar cate_gorías al lado del botón del panel"
 
 #: ../panel-plugin/configuration-dialog.cpp:556
 msgid "Position commands next to search _entry"
@@ -227,7 +224,7 @@ msgstr "Abrir %s"
 
 #: ../panel-plugin/settings.cpp:121
 msgid "Run in Terminal"
-msgstr "Abrir en terminal"
+msgstr "Abrir en la terminal"
 
 #: ../panel-plugin/configuration-dialog.cpp:81
 msgid "Search Actio_ns"
@@ -353,3 +350,5 @@ msgstr "_Título:"
 #: ../panel-plugin/plugin.cpp:397
 msgid "translator-credits"
 msgstr ""
+"Adolfo Jayme Barrientos <fitoschido@ubuntu.com>, 2013-2014\n"
+"Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>, 2014"
