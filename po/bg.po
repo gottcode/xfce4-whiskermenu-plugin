@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# cybercop <cybercop_montana@abv.bg>, 2013
+# Kiril Kirilov <cybercop_montana@abv.bg>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-04 18:42+0000\n"
-"PO-Revision-Date: 2013-12-09 09:17+0000\n"
-"Last-Translator: cybercop <cybercop_montana@abv.bg>\n"
+"PO-Revision-Date: 2014-06-06 06:02+0000\n"
+"Last-Translator: Kiril Kirilov <cybercop_montana@abv.bg>\n"
 "Language-Team: Bulgarian (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/bg/)\n"
 "Language: bg\n"
@@ -45,7 +45,7 @@ msgstr "Всички настройки"
 
 #: ../panel-plugin/plugin.cpp:392
 msgid "Alternate application launcher for Xfce"
-msgstr ""
+msgstr "Алтернативно меню на програмите за Xfce"
 
 #: ../panel-plugin/plugin.cpp:212
 msgid "Applications Menu"
@@ -73,7 +73,7 @@ msgstr "Команди"
 
 #: ../panel-plugin/plugin.cpp:393
 msgid "Copyright © 2013-2014 Graeme Gott"
-msgstr ""
+msgstr "Авторски права © 2013-2014 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:738
 msgid "Details"
@@ -143,7 +143,7 @@ msgstr "По- голяма"
 
 #: ../panel-plugin/configuration-dialog.cpp:518
 msgid "Lay out icon in a single _panel row"
-msgstr ""
+msgstr "Излагане на иконите в един ред"
 
 #: ../panel-plugin/settings.cpp:116
 msgid "Log _Out"
@@ -190,9 +190,8 @@ msgid "Position _search entry next to panel button"
 msgstr "Полето за търсене да се намира след бутона в панела"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
-#, fuzzy
 msgid "Position cate_gories next to panel button"
-msgstr "Полето за търсене да се намира след бутона в панела"
+msgstr "Разполагане на категориите след бутона в панела"
 
 #: ../panel-plugin/configuration-dialog.cpp:556
 msgid "Position commands next to search _entry"
@@ -347,4 +346,4 @@ msgstr "Заглавие:"
 
 #: ../panel-plugin/plugin.cpp:397
 msgid "translator-credits"
-msgstr ""
+msgstr "Kiril Kirilov <cybercop_montana@abv.bg>"
