@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-04 18:42+0000\n"
-"PO-Revision-Date: 2014-05-31 11:44+0000\n"
+"PO-Revision-Date: 2014-06-12 22:29+0000\n"
 "Last-Translator: thomas <thomasbjornvold@gmail.com>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/nb/)\n"
@@ -45,7 +45,7 @@ msgstr "Alle innstillinger"
 
 #: ../panel-plugin/plugin.cpp:392
 msgid "Alternate application launcher for Xfce"
-msgstr ""
+msgstr "Alternativ appllikasjonsstarter for Xfce"
 
 #: ../panel-plugin/plugin.cpp:212
 msgid "Applications Menu"
@@ -73,7 +73,7 @@ msgstr "Kommandoer"
 
 #: ../panel-plugin/plugin.cpp:393
 msgid "Copyright © 2013-2014 Graeme Gott"
-msgstr ""
+msgstr "Copyright © 2013-2014 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:738
 msgid "Details"
@@ -143,7 +143,7 @@ msgstr "Større"
 
 #: ../panel-plugin/configuration-dialog.cpp:518
 msgid "Lay out icon in a single _panel row"
-msgstr ""
+msgstr "Plasser icon i en enkel _panelrad"
 
 #: ../panel-plugin/settings.cpp:116
 msgid "Log _Out"
@@ -190,9 +190,8 @@ msgid "Position _search entry next to panel button"
 msgstr "Plasser _søket ved siden av paneltasten"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
-#, fuzzy
 msgid "Position cate_gories next to panel button"
-msgstr "Plasser _søket ved siden av paneltasten"
+msgstr "Plasser kategorier ved siden av paneltasten"
 
 #: ../panel-plugin/configuration-dialog.cpp:556
 msgid "Position commands next to search _entry"
@@ -347,4 +346,4 @@ msgstr "_Tittel"
 
 #: ../panel-plugin/plugin.cpp:397
 msgid "translator-credits"
-msgstr ""
+msgstr "kredit til oversettere"
