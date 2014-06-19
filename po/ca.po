@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Fito Jayme <fitoschido@ubuntu.com>, 2013
-# oriolfa <oriolfa@ono.com>, 2013
+# Adolfo Jayme Barrientos <fitoschido@ubuntu.com>, 2013
+# Adolfo Jayme Barrientos <fitoschido@ubuntu.com>, 2014
+# Oriol Fernandez <oriolfa@ono.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-04 18:42+0000\n"
-"PO-Revision-Date: 2013-12-10 05:47+0000\n"
-"Last-Translator: Fito Jayme <fitoschido@ubuntu.com>\n"
+"PO-Revision-Date: 2014-06-04 18:59+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitoschido@ubuntu.com>\n"
 "Language-Team: Catalan (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/ca/)\n"
 "Language: ca\n"
@@ -46,7 +47,7 @@ msgstr "Tots els paràmetre_s"
 
 #: ../panel-plugin/plugin.cpp:392
 msgid "Alternate application launcher for Xfce"
-msgstr ""
+msgstr "Llançador d’aplicacions alternatiu pel Xfce"
 
 #: ../panel-plugin/plugin.cpp:212
 msgid "Applications Menu"
@@ -74,7 +75,7 @@ msgstr "Ordres"
 
 #: ../panel-plugin/plugin.cpp:393
 msgid "Copyright © 2013-2014 Graeme Gott"
-msgstr ""
+msgstr "Copyright © 2013-2014 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:738
 msgid "Details"
@@ -191,9 +192,8 @@ msgid "Position _search entry next to panel button"
 msgstr "_Situa el quadre de cerca prop del botó del panell"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
-#, fuzzy
 msgid "Position cate_gories next to panel button"
-msgstr "_Situa el quadre de cerca prop del botó del panell"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:556
 msgid "Position commands next to search _entry"
@@ -348,4 +348,4 @@ msgstr "_Títol:"
 
 #: ../panel-plugin/plugin.cpp:397
 msgid "translator-credits"
-msgstr ""
+msgstr "Adolfo Jayme Barrientos <fitoschido@ubuntu.com>, 2013-2014"
