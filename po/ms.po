@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# abuyop <abuyop@gmail.com>, 2013
+# abuyop <abuyop@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-04 18:42+0000\n"
-"PO-Revision-Date: 2013-12-12 16:23+0000\n"
+"PO-Revision-Date: 2014-06-19 12:34+0000\n"
 "Last-Translator: abuyop <abuyop@gmail.com>\n"
 "Language-Team: Malay (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
 "plugin/language/ms/)\n"
@@ -45,7 +45,7 @@ msgstr "Semua _Tetapan"
 
 #: ../panel-plugin/plugin.cpp:392
 msgid "Alternate application launcher for Xfce"
-msgstr ""
+msgstr "Pelancar aplikasi alternatif untuk Xfce"
 
 #: ../panel-plugin/plugin.cpp:212
 msgid "Applications Menu"
@@ -73,7 +73,7 @@ msgstr "Perintah"
 
 #: ../panel-plugin/plugin.cpp:393
 msgid "Copyright © 2013-2014 Graeme Gott"
-msgstr ""
+msgstr "Hakcipta © 2013-2014 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:738
 msgid "Details"
@@ -143,7 +143,7 @@ msgstr "Lebih Besar"
 
 #: ../panel-plugin/configuration-dialog.cpp:518
 msgid "Lay out icon in a single _panel row"
-msgstr ""
+msgstr "Bentangkan ikon dalam satu baris _panel"
 
 #: ../panel-plugin/settings.cpp:116
 msgid "Log _Out"
@@ -190,9 +190,8 @@ msgid "Position _search entry next to panel button"
 msgstr "Kedudukan masukan _gelintar bersebelahan butang panel"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
-#, fuzzy
 msgid "Position cate_gories next to panel button"
-msgstr "Kedudukan masukan _gelintar bersebelahan butang panel"
+msgstr "Letak kate_gori disebelah butang panel"
 
 #: ../panel-plugin/configuration-dialog.cpp:556
 msgid "Position commands next to search _entry"
@@ -347,4 +346,4 @@ msgstr "_Tajuk:"
 
 #: ../panel-plugin/plugin.cpp:397
 msgid "translator-credits"
-msgstr ""
+msgstr "abuyop"
