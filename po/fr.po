@@ -6,13 +6,14 @@
 # Anthony Jorion <pingax@frugalware.org>, 2013
 # jc1 <jc1.quebecos@gmail.com>, 2013
 # Urien Desterres <urien.desterres@gmail.com>, 2014
+# Yannick Le Guen <leguen.yannick@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-04 18:42+0000\n"
-"PO-Revision-Date: 2014-05-20 09:28+0000\n"
-"Last-Translator: Urien Desterres <urien.desterres@gmail.com>\n"
+"PO-Revision-Date: 2014-06-07 18:09+0000\n"
+"Last-Translator: Yannick Le Guen <leguen.yannick@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
 "plugin/language/fr/)\n"
 "Language: fr\n"
@@ -47,7 +48,7 @@ msgstr "Tous les _paramètres"
 
 #: ../panel-plugin/plugin.cpp:392
 msgid "Alternate application launcher for Xfce"
-msgstr ""
+msgstr "Lanceur d'application alternatif pour Xfce"
 
 #: ../panel-plugin/plugin.cpp:212
 msgid "Applications Menu"
@@ -76,7 +77,7 @@ msgstr "Commandes"
 
 #: ../panel-plugin/plugin.cpp:393
 msgid "Copyright © 2013-2014 Graeme Gott"
-msgstr ""
+msgstr "Copyright © 2013-2014 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:738
 msgid "Details"
@@ -146,7 +147,7 @@ msgstr "Plus grand"
 
 #: ../panel-plugin/configuration-dialog.cpp:518
 msgid "Lay out icon in a single _panel row"
-msgstr ""
+msgstr "Afficher l'icône sur une seule ligne du _tableau de bord"
 
 #: ../panel-plugin/settings.cpp:116
 msgid "Log _Out"
@@ -182,7 +183,7 @@ msgstr "Ouvrir l'emplacement"
 
 #: ../panel-plugin/configuration-dialog.cpp:463
 msgid "Panel Button"
-msgstr "Bouton du panneau"
+msgstr "Bouton du tableau de bord"
 
 #: ../panel-plugin/configuration-dialog.cpp:694
 msgid "Pattern"
@@ -190,12 +191,11 @@ msgstr "Motif"
 
 #: ../panel-plugin/configuration-dialog.cpp:550
 msgid "Position _search entry next to panel button"
-msgstr "Positionner le champ de _recherche à côté du bouton du panneau"
+msgstr "Positionner le champ de _recherche à côté du bouton du tableau de bord"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
-#, fuzzy
 msgid "Position cate_gories next to panel button"
-msgstr "Positionner le champ de _recherche à côté du bouton du panneau"
+msgstr "Positionner les caté_gories à côté du bouton du tableau de bord"
 
 #: ../panel-plugin/configuration-dialog.cpp:556
 msgid "Position commands next to search _entry"
@@ -350,4 +350,4 @@ msgstr "_Titre :"
 
 #: ../panel-plugin/plugin.cpp:397
 msgid "translator-credits"
-msgstr ""
+msgstr "L'équipe de traduction francophone du Menu Whisker"
