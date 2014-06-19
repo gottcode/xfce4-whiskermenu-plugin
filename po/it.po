@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Bernardo Miguel Savone <bmsavone@gmail.com>, 2013
+# Bernardo Miguel Savone <bmsavone@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-04 18:42+0000\n"
-"PO-Revision-Date: 2013-12-08 19:41+0000\n"
+"PO-Revision-Date: 2014-06-12 08:15+0000\n"
 "Last-Translator: Bernardo Miguel Savone <bmsavone@gmail.com>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/it/)\n"
@@ -45,7 +45,7 @@ msgstr "Tutte le _Impostazioni"
 
 #: ../panel-plugin/plugin.cpp:392
 msgid "Alternate application launcher for Xfce"
-msgstr ""
+msgstr "Lanciatore delle applicazioni alternativo per Xfce"
 
 #: ../panel-plugin/plugin.cpp:212
 msgid "Applications Menu"
@@ -73,7 +73,7 @@ msgstr "Comandi"
 
 #: ../panel-plugin/plugin.cpp:393
 msgid "Copyright © 2013-2014 Graeme Gott"
-msgstr ""
+msgstr "Copyright © 2013-2014 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:738
 msgid "Details"
@@ -143,7 +143,7 @@ msgstr "Più grande"
 
 #: ../panel-plugin/configuration-dialog.cpp:518
 msgid "Lay out icon in a single _panel row"
-msgstr ""
+msgstr "Disporre l'icona in fila di un singolo _pannello"
 
 #: ../panel-plugin/settings.cpp:116
 msgid "Log _Out"
@@ -190,9 +190,8 @@ msgid "Position _search entry next to panel button"
 msgstr "Posizionare il campo _Cerca accanto al pulsante del pannello"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
-#, fuzzy
 msgid "Position cate_gories next to panel button"
-msgstr "Posizionare il campo _Cerca accanto al pulsante del pannello"
+msgstr "Posizionare cate_gorìe accanto al pulsante del pannello"
 
 #: ../panel-plugin/configuration-dialog.cpp:556
 msgid "Position commands next to search _entry"
@@ -347,4 +346,4 @@ msgstr "_Titolo:"
 
 #: ../panel-plugin/plugin.cpp:397
 msgid "translator-credits"
-msgstr ""
+msgstr "translator-credits"
