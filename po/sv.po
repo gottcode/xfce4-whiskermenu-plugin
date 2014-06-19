@@ -13,11 +13,11 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-04 18:42+0000\n"
-"PO-Revision-Date: 2014-06-03 13:08+0000\n"
+"PO-Revision-Date: 2014-06-04 22:00+0000\n"
 "Last-Translator: Patrik Nilsson <asavartzeth@gmail.com>\n"
 "Language-Team: Swedish (Sweden) (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/sv_SE/)\n"
-"Language: sv_SE\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -49,7 +49,7 @@ msgstr "Alla _inställningar"
 
 #: ../panel-plugin/plugin.cpp:392
 msgid "Alternate application launcher for Xfce"
-msgstr ""
+msgstr "Alternativ programstartare för Xfce"
 
 #: ../panel-plugin/plugin.cpp:212
 msgid "Applications Menu"
@@ -77,7 +77,7 @@ msgstr "Kommandon"
 
 #: ../panel-plugin/plugin.cpp:393
 msgid "Copyright © 2013-2014 Graeme Gott"
-msgstr ""
+msgstr "Upphovsrätt © 2013-2014 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:738
 msgid "Details"
@@ -194,9 +194,8 @@ msgid "Position _search entry next to panel button"
 msgstr "Placera _sökfältet intill panelknappen"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
-#, fuzzy
 msgid "Position cate_gories next to panel button"
-msgstr "Placera _sökfältet intill panelknappen"
+msgstr "Placera _kategorier intill panelknappen"
 
 #: ../panel-plugin/configuration-dialog.cpp:556
 msgid "Position commands next to search _entry"
@@ -282,7 +281,7 @@ msgstr "_Växla användare"
 
 #: ../panel-plugin/configuration-dialog.cpp:621
 msgid "Switch categories by _hovering"
-msgstr "Växla _kategori genom att sväva med muspekaren"
+msgstr "Växla _kategorier genom att sväva med muspekaren"
 
 #: ../panel-plugin/configuration-dialog.cpp:380
 msgid "The action will be deleted permanently."
