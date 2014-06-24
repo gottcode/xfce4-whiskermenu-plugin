@@ -123,7 +123,10 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 
 	// Create toggle button
 	m_button = xfce_panel_create_toggle_button();
-	gtk_button_set_relief(GTK_BUTTON(m_button), GTK_RELIEF_NONE);
+
+	// Set the application button relief style
+	set_relief_style();
+
 	gtk_button_set_focus_on_click(GTK_BUTTON(m_button), false);
 	g_signal_connect_slot(m_button, "button-press-event", &Plugin::button_clicked, this);
 	gtk_widget_show(m_button);
@@ -478,6 +481,32 @@ void Plugin::popup_menu(bool at_cursor, bool activate_button)
 	{
 		m_window->show(NULL, true);
 	}
+}
+
+//-----------------------------------------------------------------------------
+
+void Plugin::set_flat_button(bool flat_button) {
+    wm_settings->flat_button = flat_button;
+    set_relief_style();
+    wm_settings->set_modified();
+}
+
+//-----------------------------------------------------------------------------
+
+bool Plugin::get_flat_button() const {
+    return wm_settings->flat_button;
+}
+
+//-----------------------------------------------------------------------------
+
+void Plugin::set_relief_style() {
+    // GTK_RELIEF_NORMAL allows themes to style the default button when it is not hovered (prelight)
+    // If 'flat_button' is true, we go back to the previous relief style, which is none at all (default)
+    GtkReliefStyle button_relief = GTK_RELIEF_NONE;
+    if (!wm_settings->flat_button) {
+        button_relief = GTK_RELIEF_NORMAL;
+    }
+    gtk_button_set_relief(GTK_BUTTON(m_button), button_relief);
 }
 
 //-----------------------------------------------------------------------------

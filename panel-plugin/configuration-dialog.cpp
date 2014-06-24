@@ -482,6 +482,12 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_button_style);
 	g_signal_connect_slot(m_button_style, "changed", &ConfigurationDialog::style_changed, this);
 
+	// Add an option to use a flat button or not
+	m_flat_button = gtk_check_button_new_with_mnemonic(_("Flat button"));
+	gtk_box_pack_start(hbox, m_flat_button, true, true, 0);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_flat_button), wm_settings->flat_button);
+	g_signal_connect_slot(m_flat_button, "toggled", &ConfigurationDialog::toggle_flat_button, this);
+	
 	// Add title selector
 	hbox = GTK_BOX(gtk_hbox_new(false, 12));
 	gtk_box_pack_start(panel_vbox, GTK_WIDGET(hbox), false, false, 0);
@@ -798,6 +804,16 @@ GtkWidget* ConfigurationDialog::init_search_actions_tab()
 	}
 
 	return page;
+}
+
+//-----------------------------------------------------------------------------
+
+void ConfigurationDialog::toggle_flat_button(GtkToggleButton* button)
+{
+	wm_settings->flat_button = gtk_toggle_button_get_active(button);
+	wm_settings->set_modified();
+	m_plugin->set_flat_button(gtk_toggle_button_get_active(button));
+	m_plugin->reload();
 }
 
 //-----------------------------------------------------------------------------
