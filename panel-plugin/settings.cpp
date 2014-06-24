@@ -101,6 +101,7 @@ Settings::Settings() :
 	position_search_alternate(false),
 	position_commands_alternate(false),
 	position_categories_alternate(false),
+	recent_max_number(10),
 
 	menu_width(400),
 	menu_height(500)
@@ -179,6 +180,7 @@ void Settings::load(char* file)
 	position_search_alternate = xfce_rc_read_bool_entry(rc, "position-search-alternate", position_search_alternate);
 	position_commands_alternate = xfce_rc_read_bool_entry(rc, "position-commands-alternate", position_commands_alternate) && position_search_alternate;
 	position_categories_alternate = xfce_rc_read_bool_entry(rc, "position-categories-alternate", position_categories_alternate);
+	recent_max_number = std::max(5, xfce_rc_read_int_entry(rc, "recent-max-number", recent_max_number));
 
 	menu_width = std::max(300, xfce_rc_read_int_entry(rc, "menu-width", menu_width));
 	menu_height = std::max(400, xfce_rc_read_int_entry(rc, "menu-height", menu_height));
@@ -272,6 +274,7 @@ void Settings::save(char* file)
 	xfce_rc_write_bool_entry(rc, "position-search-alternate", position_search_alternate);
 	xfce_rc_write_bool_entry(rc, "position-commands-alternate", position_commands_alternate);
 	xfce_rc_write_bool_entry(rc, "position-categories-alternate", position_categories_alternate);
+	xfce_rc_write_int_entry(rc, "recent-max-number", recent_max_number);
 
 	xfce_rc_write_int_entry(rc, "menu-width", menu_width);
 	xfce_rc_write_int_entry(rc, "menu-height", menu_height);

@@ -79,6 +79,7 @@ public:
 	bool position_search_alternate;
 	bool position_commands_alternate;
 	bool position_categories_alternate;
+	unsigned int recent_max_number;
 
 	enum Commands
 	{
