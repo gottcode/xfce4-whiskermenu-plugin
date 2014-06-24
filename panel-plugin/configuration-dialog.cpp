@@ -631,11 +631,17 @@ GtkWidget* ConfigurationDialog::init_behavior_tab()
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_hover_switch_category), wm_settings->category_hover_activate);
 	g_signal_connect_slot(m_hover_switch_category, "toggled", &ConfigurationDialog::toggle_hover_switch_category, this);
 
+	// Create recently used section
+	GtkBox* recent_vbox = GTK_BOX(gtk_vbox_new(false, 6));
+	GtkWidget* recent_frame = xfce_gtk_frame_box_new_with_content(_("Recently Used"), GTK_WIDGET(recent_vbox));
+	gtk_box_pack_start(behavior_vbox, recent_frame, false, false, 6);
+	gtk_container_set_border_width(GTK_CONTAINER(recent_frame), 0);
+
 	// Add value to change maximum number of recently used entries
 	GtkBox* hbox = GTK_BOX(gtk_hbox_new(false, 12));
-	gtk_box_pack_start(behavior_vbox, GTK_WIDGET(hbox), false, false, 0);
+	gtk_box_pack_start(recent_vbox, GTK_WIDGET(hbox), false, false, 0);
 
-	GtkWidget* label = gtk_label_new_with_mnemonic(_("_Maximum number of recently used entries:"));
+	GtkWidget* label = gtk_label_new_with_mnemonic(_("Amount of _items:"));
 	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
 	gtk_box_pack_start(hbox, label, false, false, 0);
 
@@ -646,14 +652,14 @@ GtkWidget* ConfigurationDialog::init_behavior_tab()
 	g_signal_connect_slot(m_recent_items_max, "value-changed", &ConfigurationDialog::recent_items_max_changed, this);
 
 	// Add option to remember favorites
-	m_remember_favorites = gtk_check_button_new_with_mnemonic(_("Include _favorites in recently used"));
-	gtk_box_pack_start(behavior_vbox, m_remember_favorites, true, true, 0);
+	m_remember_favorites = gtk_check_button_new_with_mnemonic(_("Include _favorites"));
+	gtk_box_pack_start(recent_vbox, m_remember_favorites, true, true, 0);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_remember_favorites), wm_settings->favorites_in_recent);
 	g_signal_connect_slot(m_remember_favorites, "toggled", &ConfigurationDialog::toggle_remember_favorites, this);
 
 	// Add option to display recently used
-	m_display_recent = gtk_check_button_new_with_mnemonic(_("Display recently _used by default"));
-	gtk_box_pack_start(behavior_vbox, m_display_recent, true, true, 0);
+	m_display_recent = gtk_check_button_new_with_mnemonic(_("Display by _default"));
+	gtk_box_pack_start(recent_vbox, m_display_recent, true, true, 0);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_display_recent), wm_settings->display_recent);
 	g_signal_connect_slot(m_display_recent, "toggled", &ConfigurationDialog::toggle_display_recent, this);
 
