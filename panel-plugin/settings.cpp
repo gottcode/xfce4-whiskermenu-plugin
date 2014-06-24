@@ -85,7 +85,8 @@ Settings::Settings() :
 	button_icon_name("xfce4-whiskermenu"),
 	button_title_visible(false),
 	button_icon_visible(true),
-        button_single_row(false),
+	button_single_row(false),
+	flat_button(true),
 
 	launcher_show_name(true),
 	launcher_show_description(true),
@@ -164,6 +165,7 @@ void Settings::load(char* file)
 	button_single_row = xfce_rc_read_bool_entry(rc, "button-single-row", button_single_row);
 	button_title_visible = xfce_rc_read_bool_entry(rc, "show-button-title", button_title_visible);
 	button_icon_visible = xfce_rc_read_bool_entry(rc, "show-button-icon", button_icon_visible);
+	flat_button = xfce_rc_read_bool_entry(rc, "flat_button", flat_button);
 
 	launcher_show_name = xfce_rc_read_bool_entry(rc, "launcher-show-name", launcher_show_name);
 	launcher_show_description = xfce_rc_read_bool_entry(rc, "launcher-show-description", launcher_show_description);
@@ -173,6 +175,7 @@ void Settings::load(char* file)
 	category_icon_size = xfce_rc_read_int_entry(rc, "category-icon-size", category_icon_size);
 
 	load_hierarchy = xfce_rc_read_bool_entry(rc, "load-hierarchy", load_hierarchy);
+
 	favorites_in_recent = xfce_rc_read_bool_entry(rc, "favorites-in-recent", favorites_in_recent);
 
 	display_recent = xfce_rc_read_bool_entry(rc, "display-recent-default", display_recent);
@@ -266,6 +269,7 @@ void Settings::save(char* file)
 	xfce_rc_write_int_entry(rc, "category-icon-size", category_icon_size);
 
 	xfce_rc_write_bool_entry(rc, "load-hierarchy", load_hierarchy);
+	xfce_rc_write_bool_entry(rc, "flat_button", flat_button);
 	xfce_rc_write_bool_entry(rc, "favorites-in-recent", favorites_in_recent);
 
 	xfce_rc_write_bool_entry(rc, "display-recent-default", display_recent);

@@ -50,12 +50,14 @@ public:
 	std::string get_button_title() const;
 	static std::string get_button_title_default();
 	std::string get_button_icon_name() const;
+       bool get_flat_button() const;
 
 	void reload();
 	void set_button_style(ButtonStyle style);
 	void set_button_title(const std::string& title);
 	void set_button_icon_name(const std::string& icon);
-	void set_configure_enabled(bool enabled);
+       void set_configure_enabled(bool enabled);
+       void set_flat_button(bool);
 
 private:
 	gboolean button_clicked(GtkWidget*, GdkEvent* event);
@@ -71,6 +73,7 @@ private:
 	void show_about();
 	gboolean size_changed(XfcePanelPlugin*, gint size);
 	void popup_menu(bool at_cursor, bool activate_button);
+       void set_relief_style();
 
 private:
 	XfcePanelPlugin* m_plugin;

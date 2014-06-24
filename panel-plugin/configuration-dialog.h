@@ -53,6 +53,7 @@ private:
 	void style_changed(GtkComboBox* combo);
 	void title_changed(GtkEditable* editable);
 	void choose_icon();
+	void toggle_flat_button(GtkToggleButton* button);
 
 	void toggle_button_single_row(GtkToggleButton* button);
 	void toggle_hover_switch_category(GtkToggleButton* button);
@@ -81,6 +82,7 @@ private:
 	GtkWidget* m_show_generic_names;
 	GtkWidget* m_show_descriptions;
 	GtkWidget* m_show_hierarchy;
+	GtkWidget* m_flat_button;
 	GtkWidget* m_position_search_alternate;
 	GtkWidget* m_position_commands_alternate;
 	GtkWidget* m_position_categories_alternate;
