@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-04 18:42+0000\n"
-"PO-Revision-Date: 2014-06-07 18:09+0000\n"
+"PO-Revision-Date: 2014-06-22 14:59+0000\n"
 "Last-Translator: Yannick Le Guen <leguen.yannick@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
 "plugin/language/fr/)\n"
@@ -85,7 +85,7 @@ msgstr "Détails"
 
 #: ../panel-plugin/configuration-dialog.cpp:471
 msgid "Di_splay:"
-msgstr "Affichage"
+msgstr "A_ffichage"
 
 #: ../panel-plugin/configuration-dialog.cpp:633
 msgid "Display recently _used by default"
@@ -212,7 +212,7 @@ msgstr "Retirer des favoris"
 #: ../panel-plugin/configuration-dialog.cpp:381
 #, c-format
 msgid "Remove action \"%s\"?"
-msgstr "Supprimer l'action \"%s\" ?"
+msgstr "Supprimer l'action « %s » ?"
 
 #: ../panel-plugin/configuration-dialog.cpp:718
 msgid "Remove selected action"
