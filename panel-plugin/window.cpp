@@ -280,6 +280,9 @@ void Window::show(GtkWidget* parent, bool horizontal)
 		wm_settings->command[i]->check();
 	}
 
+	// Make sure recent item count is within max
+	m_recent->enforce_item_count();
+
 	// Make sure applications list is current; does nothing unless list has changed
 	if (m_applications->load_applications() && gtk_widget_get_visible(m_window_contents))
 	{

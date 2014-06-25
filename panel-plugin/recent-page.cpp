@@ -67,6 +67,14 @@ void RecentPage::add(Launcher* launcher)
 			-1);
 
 	// Prevent going over max
+	enforce_item_count();
+}
+
+//-----------------------------------------------------------------------------
+
+void RecentPage::enforce_item_count()
+{
+	GtkListStore* store = GTK_LIST_STORE(get_view()->get_model());
 	while (wm_settings->recent.size() > wm_settings->recent_items_max)
 	{
 		GtkTreeIter iter;

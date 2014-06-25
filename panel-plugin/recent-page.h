@@ -29,6 +29,7 @@ public:
 	RecentPage(Window* window);
 
 	void add(Launcher* launcher);
+	void enforce_item_count();
 
 private:
 	void extend_context_menu(GtkWidget* menu);
