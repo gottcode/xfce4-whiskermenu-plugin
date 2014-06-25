@@ -1,3 +1,15 @@
+1.4.0
+=====
+- Add option to switch position of categories and launchers.
+- Add waiting for grabs; allows modifier as shortcut.
+- Add padding to username.
+- Add single panel row option.
+- Add about entry to context menu.
+- Load applications immediately.
+- Recognize keypad enter as return for searching.
+- Set menu window type hint to DIALOG.
+- Translation updates: Bulgarian, Catalan, Chinese (Taiwan), Czech, Dutch, French, German, Hebrew, Italian, Japanese, Malay, Norwegian Bokmål, Polish, Portuguese, Russian, Slovak, Spanish, Swedish.
+
 1.3.2
 =====
 - Fix crash when rearranging favorites.
