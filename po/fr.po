@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-04 18:42+0000\n"
-"PO-Revision-Date: 2014-06-22 14:59+0000\n"
-"Last-Translator: Yannick Le Guen <leguen.yannick@gmail.com>\n"
+"PO-Revision-Date: 2014-07-05 16:12+0000\n"
+"Last-Translator: Urien Desterres <urien.desterres@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
 "plugin/language/fr/)\n"
 "Language: fr\n"
@@ -139,11 +139,11 @@ msgstr "Taille des icônes des élé_ments :"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Large"
-msgstr "Grand"
+msgstr "Grande"
 
 #: ../panel-plugin/icon-size.cpp:55
 msgid "Larger"
-msgstr "Plus grand"
+msgstr "Plus grande"
 
 #: ../panel-plugin/configuration-dialog.cpp:518
 msgid "Lay out icon in a single _panel row"
@@ -175,7 +175,7 @@ msgstr "Aucun"
 
 #: ../panel-plugin/icon-size.cpp:53
 msgid "Normal"
-msgstr "Normal"
+msgstr "Normale"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Open URI"
@@ -203,7 +203,7 @@ msgstr "Positionner les commandes à côté du _champ de recherche"
 
 #: ../panel-plugin/window.cpp:133
 msgid "Recently Used"
-msgstr "Récemment utilisés"
+msgstr "Récemment utilisées"
 
 #: ../panel-plugin/page.cpp:205
 msgid "Remove From Favorites"
@@ -225,7 +225,7 @@ msgstr "Exécuter %s"
 
 #: ../panel-plugin/settings.cpp:121
 msgid "Run in Terminal"
-msgstr "Lancer dans un terminal"
+msgstr "Exécuter dans un terminal"
 
 #: ../panel-plugin/configuration-dialog.cpp:81
 msgid "Search Actio_ns"
@@ -249,7 +249,7 @@ msgstr "Afficher un menu pour accéder facilement aux application installées"
 
 #: ../panel-plugin/configuration-dialog.cpp:538
 msgid "Show application _descriptions"
-msgstr "Montrer les _descriptions des applications"
+msgstr "Afficher la _description des applications"
 
 #: ../panel-plugin/configuration-dialog.cpp:532
 msgid "Show generic application _names"
@@ -261,11 +261,11 @@ msgstr "Afficher la hié_rarchie du menu"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
-msgstr "Petit"
+msgstr "Petite"
 
 #: ../panel-plugin/icon-size.cpp:51
 msgid "Smaller"
-msgstr "Plus petit"
+msgstr "Plus petite"
 
 #: ../panel-plugin/favorites-page.cpp:67
 msgid "Sort Alphabetically A-Z"
@@ -277,7 +277,7 @@ msgstr "Classement alphabétique décroissant"
 
 #: ../panel-plugin/settings.cpp:115
 msgid "Switch _Users"
-msgstr "Changer des utilisateurs"
+msgstr "Changer d’utilisateur"
 
 #: ../panel-plugin/configuration-dialog.cpp:621
 msgid "Switch categories by _hovering"
@@ -301,11 +301,11 @@ msgstr "Impossible d'ajouter le lanceur dans le tableau de bord."
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
-msgstr "Très grand"
+msgstr "Très grande"
 
 #: ../panel-plugin/icon-size.cpp:50
 msgid "Very Small"
-msgstr "Très petit"
+msgstr "Très petite"
 
 #: ../panel-plugin/configuration-dialog.cpp:71
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
@@ -326,7 +326,7 @@ msgstr "_Comportement"
 
 #: ../panel-plugin/settings.cpp:117
 msgid "_Edit Applications"
-msgstr "_Editer les applications"
+msgstr "_Modifier les applications"
 
 #: ../panel-plugin/configuration-dialog.cpp:504
 msgid "_Icon:"
@@ -334,7 +334,7 @@ msgstr "_Icône :"
 
 #: ../panel-plugin/settings.cpp:114
 msgid "_Lock Screen"
-msgstr "_Verrouiller l'écran"
+msgstr "_Verrouiller l’écran"
 
 #: ../panel-plugin/configuration-dialog.cpp:755
 msgid "_Pattern:"
