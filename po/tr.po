@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-04 18:42+0000\n"
-"PO-Revision-Date: 2014-05-21 05:52+0000\n"
+"PO-Revision-Date: 2014-07-17 23:43+0000\n"
 "Last-Translator: Demiray Muhterem <mdemiray@msn.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/tr/)\n"
@@ -47,7 +47,7 @@ msgstr "Tüm _Ayarlar"
 
 #: ../panel-plugin/plugin.cpp:392
 msgid "Alternate application launcher for Xfce"
-msgstr ""
+msgstr "Xfce için alternatif uygulama başlatıcısı"
 
 #: ../panel-plugin/plugin.cpp:212
 msgid "Applications Menu"
@@ -75,7 +75,7 @@ msgstr "Komutlar"
 
 #: ../panel-plugin/plugin.cpp:393
 msgid "Copyright © 2013-2014 Graeme Gott"
-msgstr ""
+msgstr "Telif hakkı © 2013-2014 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:738
 msgid "Details"
@@ -145,7 +145,7 @@ msgstr "Daha büyük"
 
 #: ../panel-plugin/configuration-dialog.cpp:518
 msgid "Lay out icon in a single _panel row"
-msgstr ""
+msgstr "_panelde tek satır simge düzeni"
 
 #: ../panel-plugin/settings.cpp:116
 msgid "Log _Out"
@@ -192,9 +192,8 @@ msgid "Position _search entry next to panel button"
 msgstr "_arama pozisyonu panel düğmesinin yanında"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
-#, fuzzy
 msgid "Position cate_gories next to panel button"
-msgstr "_arama pozisyonu panel düğmesinin yanında"
+msgstr "panel butonuna kate_goriler pozisyonu"
 
 #: ../panel-plugin/configuration-dialog.cpp:556
 msgid "Position commands next to search _entry"
@@ -349,4 +348,4 @@ msgstr "_Başlık:"
 
 #: ../panel-plugin/plugin.cpp:397
 msgid "translator-credits"
-msgstr ""
+msgstr "çeviriler"
