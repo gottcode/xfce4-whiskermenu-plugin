@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-04 18:42+0000\n"
-"PO-Revision-Date: 2014-04-30 00:29+0000\n"
+"PO-Revision-Date: 2014-08-26 17:01+0000\n"
 "Last-Translator: Prabin Gautam <PRABINGAUTAM@gmail.com>\n"
 "Language-Team: Nepali (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
 "plugin/language/ne/)\n"
@@ -46,7 +46,7 @@ msgstr "समस्त ॒सेटिङ"
 
 #: ../panel-plugin/plugin.cpp:392
 msgid "Alternate application launcher for Xfce"
-msgstr ""
+msgstr "Xfceको लागि वैकल्पिक अनुप्रयोग सुरुवातकर्ता"
 
 #: ../panel-plugin/plugin.cpp:212
 msgid "Applications Menu"
@@ -74,7 +74,7 @@ msgstr "आदेशहरु"
 
 #: ../panel-plugin/plugin.cpp:393
 msgid "Copyright © 2013-2014 Graeme Gott"
-msgstr ""
+msgstr "प्रतिलिपि अधिकार © 2013-2014 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:738
 msgid "Details"
@@ -144,7 +144,7 @@ msgstr "अझ ठूलो"
 
 #: ../panel-plugin/configuration-dialog.cpp:518
 msgid "Lay out icon in a single _panel row"
-msgstr ""
+msgstr "एक  प्यानल पङ्क्तिमा सजावट गर"
 
 #: ../panel-plugin/settings.cpp:116
 msgid "Log _Out"
@@ -191,9 +191,8 @@ msgid "Position _search entry next to panel button"
 msgstr "पट्टीको टांकको नजिक  ॒खोजलाई स्थानाङ्कित गर्नुहोस् "
 
 #: ../panel-plugin/configuration-dialog.cpp:563
-#, fuzzy
 msgid "Position cate_gories next to panel button"
-msgstr "पट्टीको टांकको नजिक  ॒खोजलाई स्थानाङ्कित गर्नुहोस् "
+msgstr "पट्टीको टांकको नजिक श्रेणीहरुलाई स्थानाङ्कित गर्नुहोस्"
 
 #: ../panel-plugin/configuration-dialog.cpp:556
 msgid "Position commands next to search _entry"
@@ -348,4 +347,4 @@ msgstr "शी॒र्षक"
 
 #: ../panel-plugin/plugin.cpp:397
 msgid "translator-credits"
-msgstr ""
+msgstr "अनुवादक-अाभार "
