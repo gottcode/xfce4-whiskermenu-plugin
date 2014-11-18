@@ -1,0 +1,350 @@
+# Lithuanian translation for xfce4-whiskermenu-plugin.
+# Copyright (C) 2014 Graeme Gott
+# This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
+#
+# Translators:
+# Moo, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: Whisker Menu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-04 18:42+0000\n"
+"PO-Revision-Date: 2014-11-09 20:36+0000\n"
+"Last-Translator: Moo\n"
+"Language-Team: Lithuanian (http://www.transifex.com/projects/p/xfce4-"
+"whiskermenu-plugin/language/lt/)\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: ../panel-plugin/configuration-dialog.cpp:709
+msgid "Add action"
+msgstr "Pridėti veiksmą"
+
+#: ../panel-plugin/page.cpp:212
+msgid "Add to Desktop"
+msgstr "Pridėti prie Darbastalio"
+
+#: ../panel-plugin/page.cpp:197
+msgid "Add to Favorites"
+msgstr "Pridėti prie Mėgstamiausių"
+
+#: ../panel-plugin/page.cpp:216
+msgid "Add to Panel"
+msgstr "Pridėti prie Skydelio"
+
+#: ../panel-plugin/category.cpp:59
+msgid "All"
+msgstr "Visos"
+
+#: ../panel-plugin/settings.cpp:113
+msgid "All _Settings"
+msgstr "Visi _Nustatymai"
+
+#: ../panel-plugin/plugin.cpp:392
+msgid "Alternate application launcher for Xfce"
+msgstr "Alternatyvus programų leistukas Xfce darbastalio aplinkai"
+
+#: ../panel-plugin/plugin.cpp:212
+msgid "Applications Menu"
+msgstr "Programų Meniu"
+
+#: ../panel-plugin/command-edit.cpp:46
+msgid "Browse the file system to choose a custom command."
+msgstr "Naršyti failų sistemą ir pasirinkti komandą."
+
+#: ../panel-plugin/configuration-dialog.cpp:767
+msgid "C_ommand:"
+msgstr "K_omanda:"
+
+#: ../panel-plugin/configuration-dialog.cpp:592
+msgid "Categ_ory icon size:"
+msgstr "Kategori_jos piktogramos dydis"
+
+#: ../panel-plugin/recent-page.cpp:88
+msgid "Clear Recently Used"
+msgstr "Išvalyti Neseniai Naudotas"
+
+#: ../panel-plugin/configuration-dialog.cpp:641
+msgid "Commands"
+msgstr "Komandos"
+
+#: ../panel-plugin/plugin.cpp:393
+msgid "Copyright © 2013-2014 Graeme Gott"
+msgstr "Autorinės Teisės © 2013-2014 Graeme Gott"
+
+#: ../panel-plugin/configuration-dialog.cpp:738
+msgid "Details"
+msgstr "Išsamiai"
+
+#: ../panel-plugin/configuration-dialog.cpp:471
+msgid "Di_splay:"
+msgstr "Ro_dyti:"
+
+#: ../panel-plugin/configuration-dialog.cpp:633
+msgid "Display recently _used by default"
+msgstr "_Pagal nutylėjimą rodyti neseniai naudotas"
+
+#: ../panel-plugin/launcher.cpp:252 ../panel-plugin/run-action.cpp:41
+#: ../panel-plugin/search-action.cpp:188
+#, c-format
+msgid "Failed to execute command \"%s\"."
+msgstr "Nepavyko įvykdyti komandą \"%s\"."
+
+#: ../panel-plugin/settings.cpp:117
+msgid "Failed to launch menu editor."
+msgstr "Nepavyko paleisti meniu redaktoriaus."
+
+#: ../panel-plugin/settings.cpp:114
+msgid "Failed to lock screen."
+msgstr "Nepavyko užrakinti ekrano."
+
+#: ../panel-plugin/settings.cpp:116
+msgid "Failed to log out."
+msgstr "Nepavyko atsijungti."
+
+#: ../panel-plugin/settings.cpp:113
+msgid "Failed to open settings manager."
+msgstr "Nepavyko atidaryti nuostatų tvarkytuvės."
+
+#: ../panel-plugin/settings.cpp:115
+msgid "Failed to switch users."
+msgstr "Nepavyko keisti naudotojo."
+
+#: ../panel-plugin/window.cpp:127
+msgid "Favorites"
+msgstr "Mėgstamiausios"
+
+#: ../panel-plugin/configuration-dialog.cpp:477
+msgid "Icon"
+msgstr "Piktogramą"
+
+#: ../panel-plugin/configuration-dialog.cpp:479
+msgid "Icon and title"
+msgstr "Piktogramą ir užrašą"
+
+#: ../panel-plugin/configuration-dialog.cpp:627
+msgid "Include _favorites in recently used"
+msgstr "Įtraukti \"_Mėgstamiausias\" į \"Neseniai naudotas\""
+
+#: ../panel-plugin/configuration-dialog.cpp:572
+msgid "Ite_m icon size:"
+msgstr "Element_o piktogramos dydis"
+
+#: ../panel-plugin/icon-size.cpp:54
+msgid "Large"
+msgstr "Didelis"
+
+#: ../panel-plugin/icon-size.cpp:55
+msgid "Larger"
+msgstr "Didesnis"
+
+#: ../panel-plugin/configuration-dialog.cpp:518
+msgid "Lay out icon in a single _panel row"
+msgstr "Išdėstyti pi_ktogramą vienoje skydelio eilutėje"
+
+#: ../panel-plugin/settings.cpp:116
+msgid "Log _Out"
+msgstr "Atsi_jungti"
+
+#: ../panel-plugin/settings.cpp:119
+msgid "Man Pages"
+msgstr "Vadovo Puslapiai"
+
+#: ../panel-plugin/configuration-dialog.cpp:527
+msgid "Menu"
+msgstr "Meniu"
+
+#: ../panel-plugin/configuration-dialog.cpp:743
+msgid "Nam_e:"
+msgstr "_Pavadinimas:"
+
+#: ../panel-plugin/configuration-dialog.cpp:689
+msgid "Name"
+msgstr "Pavadinimas"
+
+#: ../panel-plugin/icon-size.cpp:49
+msgid "None"
+msgstr "Joks"
+
+#: ../panel-plugin/icon-size.cpp:53
+msgid "Normal"
+msgstr "Normalus"
+
+#: ../panel-plugin/settings.cpp:122
+msgid "Open URI"
+msgstr "Atverti URI"
+
+#: ../panel-plugin/configuration-dialog.cpp:463
+msgid "Panel Button"
+msgstr "Skydelio Mygtukas"
+
+#: ../panel-plugin/configuration-dialog.cpp:694
+msgid "Pattern"
+msgstr "Šablonas"
+
+#: ../panel-plugin/configuration-dialog.cpp:550
+msgid "Position _search entry next to panel button"
+msgstr "Išdė_styti paieškos lauką šalia skydelio mygtuko"
+
+#: ../panel-plugin/configuration-dialog.cpp:563
+msgid "Position cate_gories next to panel button"
+msgstr "Išdėstyti kate_gorijas šalia skydelio mygtuko"
+
+#: ../panel-plugin/configuration-dialog.cpp:556
+msgid "Position commands next to search _entry"
+msgstr "Išdės_tyti komandas šalia paieškos lauko"
+
+#: ../panel-plugin/window.cpp:133
+msgid "Recently Used"
+msgstr "Neseniai Naudotos"
+
+#: ../panel-plugin/page.cpp:205
+msgid "Remove From Favorites"
+msgstr "Šalinti Iš Mėgstamiausių"
+
+#: ../panel-plugin/configuration-dialog.cpp:381
+#, c-format
+msgid "Remove action \"%s\"?"
+msgstr "Šalinti veiksmą \"%s\"?"
+
+#: ../panel-plugin/configuration-dialog.cpp:718
+msgid "Remove selected action"
+msgstr "Šalinti pasirinktą veiksmą"
+
+#: ../panel-plugin/run-action.cpp:71
+#, c-format
+msgid "Run %s"
+msgstr "Vykdyti %s"
+
+#: ../panel-plugin/settings.cpp:121
+msgid "Run in Terminal"
+msgstr "Vykdyti Terminale"
+
+#: ../panel-plugin/configuration-dialog.cpp:81
+msgid "Search Actio_ns"
+msgstr "Paieškos Veiksm_ai"
+
+#: ../panel-plugin/search-action.cpp:261
+msgid "Search Action"
+msgstr "Paieškos Veiksmas"
+
+#: ../panel-plugin/configuration-dialog.cpp:114
+msgid "Select An Icon"
+msgstr "Pasirinkti Piktogramą"
+
+#: ../panel-plugin/command-edit.cpp:60
+msgid "Select Command"
+msgstr "Pasirinkti Komandą"
+
+#: ../panel-plugin/whiskermenu.desktop.in.h:2
+msgid "Show a menu to easily access installed applications"
+msgstr "Rodyti meniu, kad lengvai pasiekti įdiegtas programas"
+
+#: ../panel-plugin/configuration-dialog.cpp:538
+msgid "Show application _descriptions"
+msgstr "Rodyti programų aprašy_mus"
+
+#: ../panel-plugin/configuration-dialog.cpp:532
+msgid "Show generic application _names"
+msgstr "Rodyti _bendrinius programų pavadinimus"
+
+#: ../panel-plugin/configuration-dialog.cpp:544
+msgid "Show menu hie_rarchy"
+msgstr "Rodyti meniu _hierarchiją"
+
+#: ../panel-plugin/icon-size.cpp:52
+msgid "Small"
+msgstr "Mažas"
+
+#: ../panel-plugin/icon-size.cpp:51
+msgid "Smaller"
+msgstr "Mažesnis"
+
+#: ../panel-plugin/favorites-page.cpp:67
+msgid "Sort Alphabetically A-Z"
+msgstr "Surikiuoti pagal abėcėlę A-Ž"
+
+#: ../panel-plugin/favorites-page.cpp:73
+msgid "Sort Alphabetically Z-A"
+msgstr "Surikiuoti pagal abėcėlę Ž-A"
+
+#: ../panel-plugin/settings.cpp:115
+msgid "Switch _Users"
+msgstr "Kei_sti Naudotojus"
+
+#: ../panel-plugin/configuration-dialog.cpp:621
+msgid "Switch categories by _hovering"
+msgstr "_Keisti kategorijas, užvedant pelės rodykle"
+
+#: ../panel-plugin/configuration-dialog.cpp:380
+msgid "The action will be deleted permanently."
+msgstr "Šis veiksmas bus pašalintas negrįžtamai."
+
+#: ../panel-plugin/configuration-dialog.cpp:478
+msgid "Title"
+msgstr "Užrašą"
+
+#: ../panel-plugin/page.cpp:308
+msgid "Unable to add launcher to desktop."
+msgstr "Nepavyko pridėti leistuko prie darbastalio."
+
+#: ../panel-plugin/page.cpp:347 ../panel-plugin/page.cpp:356
+msgid "Unable to add launcher to panel."
+msgstr "Nepavyko pridėti leistuko prie skydelio."
+
+#: ../panel-plugin/icon-size.cpp:56
+msgid "Very Large"
+msgstr "Labai Didelis"
+
+#: ../panel-plugin/icon-size.cpp:50
+msgid "Very Small"
+msgstr "Labai Mažas"
+
+#: ../panel-plugin/configuration-dialog.cpp:71
+#: ../panel-plugin/whiskermenu.desktop.in.h:1
+msgid "Whisker Menu"
+msgstr "Whisker Meniu"
+
+#: ../panel-plugin/settings.cpp:120
+msgid "Wikipedia"
+msgstr "Vikipedija"
+
+#: ../panel-plugin/configuration-dialog.cpp:79
+msgid "_Appearance"
+msgstr "_Išvaizda"
+
+#: ../panel-plugin/configuration-dialog.cpp:80
+msgid "_Behavior"
+msgstr "_Elgsena"
+
+#: ../panel-plugin/settings.cpp:117
+msgid "_Edit Applications"
+msgstr "Keisti P_rogramas"
+
+#: ../panel-plugin/configuration-dialog.cpp:504
+msgid "_Icon:"
+msgstr "_Piktograma:"
+
+#: ../panel-plugin/settings.cpp:114
+msgid "_Lock Screen"
+msgstr "_Užrakinti Ekraną"
+
+#: ../panel-plugin/configuration-dialog.cpp:755
+msgid "_Pattern:"
+msgstr "Ša_blonas:"
+
+#: ../panel-plugin/configuration-dialog.cpp:779
+msgid "_Regular expression"
+msgstr "_Reguliari išraiška"
+
+#: ../panel-plugin/configuration-dialog.cpp:489
+msgid "_Title:"
+msgstr "Už_rašas:"
+
+#: ../panel-plugin/plugin.cpp:397
+msgid "translator-credits"
+msgstr "Moo"
