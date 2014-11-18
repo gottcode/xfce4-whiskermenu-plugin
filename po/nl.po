@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-04 18:42+0000\n"
-"PO-Revision-Date: 2014-06-18 10:47+0000\n"
+"PO-Revision-Date: 2014-11-13 11:54+0000\n"
 "Last-Translator: Pjotr <pjotrvertaalt@gmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
 "plugin/language/nl/)\n"
@@ -49,7 +49,7 @@ msgstr "Alternatieve toepassingenstarter voor Xfce"
 
 #: ../panel-plugin/plugin.cpp:212
 msgid "Applications Menu"
-msgstr "Toepassingenmenu"
+msgstr "Menu"
 
 #: ../panel-plugin/command-edit.cpp:46
 msgid "Browse the file system to choose a custom command."
@@ -65,7 +65,7 @@ msgstr "Pictogramgrootte van categorie:"
 
 #: ../panel-plugin/recent-page.cpp:88
 msgid "Clear Recently Used"
-msgstr "Verwijder onlangs gebruikt"
+msgstr "Verwijder 'onlangs gebruikt'"
 
 #: ../panel-plugin/configuration-dialog.cpp:641
 msgid "Commands"
@@ -85,13 +85,13 @@ msgstr "Tonen:"
 
 #: ../panel-plugin/configuration-dialog.cpp:633
 msgid "Display recently _used by default"
-msgstr "Toon standaard onlangs gebruikt"
+msgstr "Toon standaard 'onlangs gebruikt'"
 
 #: ../panel-plugin/launcher.cpp:252 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
-msgstr "Kon opdracht '%s' niet uitvoeren"
+msgstr "Kon opdracht '%s' niet uitvoeren."
 
 #: ../panel-plugin/settings.cpp:117
 msgid "Failed to launch menu editor."
@@ -127,7 +127,7 @@ msgstr "Pictogram en titel"
 
 #: ../panel-plugin/configuration-dialog.cpp:627
 msgid "Include _favorites in recently used"
-msgstr "Favorieten opnemen in onlangs gebruikt"
+msgstr "Favorieten opnemen in 'onlangs gebruikt'"
 
 #: ../panel-plugin/configuration-dialog.cpp:572
 msgid "Ite_m icon size:"
@@ -191,7 +191,7 @@ msgstr "Plaats zoekopdracht naast werkbalkknop"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
 msgid "Position cate_gories next to panel button"
-msgstr "Categorieën naast paneelknoppen plaatsen"
+msgstr "Plaats categorieën naast werkbalkknop"
 
 #: ../panel-plugin/configuration-dialog.cpp:556
 msgid "Position commands next to search _entry"
@@ -221,7 +221,7 @@ msgstr "Draai %s"
 
 #: ../panel-plugin/settings.cpp:121
 msgid "Run in Terminal"
-msgstr "In terminal draaien"
+msgstr "Draai in terminal"
 
 #: ../panel-plugin/configuration-dialog.cpp:81
 msgid "Search Actio_ns"
@@ -241,7 +241,7 @@ msgstr "Opdracht kiezen"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
-msgstr "Toon een menu om geïnstalleerde toepassingen eenvoudig te benaderen"
+msgstr "Toon een menu om geïnstalleerde toepassingen eenvoudig op te starten"
 
 #: ../panel-plugin/configuration-dialog.cpp:538
 msgid "Show application _descriptions"
@@ -249,7 +249,7 @@ msgstr "Toon _beschrijvingen van toepassingen"
 
 #: ../panel-plugin/configuration-dialog.cpp:532
 msgid "Show generic application _names"
-msgstr "Toon generieke toepassingnamen"
+msgstr "Toon generieke toepassingsnamen"
 
 #: ../panel-plugin/configuration-dialog.cpp:544
 msgid "Show menu hie_rarchy"
@@ -273,7 +273,7 @@ msgstr "Sorteer alfabetisch van Z-A"
 
 #: ../panel-plugin/settings.cpp:115
 msgid "Switch _Users"
-msgstr "Gebruiker wisselen"
+msgstr "Gebruikers _wisselen"
 
 #: ../panel-plugin/configuration-dialog.cpp:621
 msgid "Switch categories by _hovering"
@@ -314,31 +314,31 @@ msgstr "Wikipedia"
 
 #: ../panel-plugin/configuration-dialog.cpp:79
 msgid "_Appearance"
-msgstr "Uiterlijk"
+msgstr "_Uiterlijk"
 
 #: ../panel-plugin/configuration-dialog.cpp:80
 msgid "_Behavior"
-msgstr "Gedrag"
+msgstr "_Gedrag"
 
 #: ../panel-plugin/settings.cpp:117
 msgid "_Edit Applications"
-msgstr "Toepassingen bewerken"
+msgstr "Toepassingen _bewerken"
 
 #: ../panel-plugin/configuration-dialog.cpp:504
 msgid "_Icon:"
-msgstr "_Pictogram:"
+msgstr "P_ictogram:"
 
 #: ../panel-plugin/settings.cpp:114
 msgid "_Lock Screen"
-msgstr "Scherm vergrendelen"
+msgstr "Scherm _vergrendelen"
 
 #: ../panel-plugin/configuration-dialog.cpp:755
 msgid "_Pattern:"
-msgstr "Patroon:"
+msgstr "_Patroon:"
 
 #: ../panel-plugin/configuration-dialog.cpp:779
 msgid "_Regular expression"
-msgstr "Reguliere uitdrukking"
+msgstr "_Reguliere uitdrukking"
 
 #: ../panel-plugin/configuration-dialog.cpp:489
 msgid "_Title:"
