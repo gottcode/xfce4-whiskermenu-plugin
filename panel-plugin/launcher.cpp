@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,6 +24,33 @@
 #include <libxfce4ui/libxfce4ui.h>
 
 using namespace WhiskerMenu;
+
+//-----------------------------------------------------------------------------
+
+static std::string normalize(const gchar* string)
+{
+	std::string result;
+
+	gchar* normalized = g_utf8_normalize(string, -1, G_NORMALIZE_DEFAULT);
+	if (G_UNLIKELY(!normalized))
+	{
+		return result;
+	}
+
+	gchar* utf8 = g_utf8_casefold(normalized, -1);
+	if (G_UNLIKELY(!utf8))
+	{
+		g_free(normalized);
+		return result;
+	}
+
+	result = utf8;
+
+	g_free(utf8);
+	g_free(normalized);
+
+	return result;
+}
 
 //-----------------------------------------------------------------------------
 
@@ -111,13 +138,13 @@ Launcher::Launcher(GarconMenuItem* item) :
 
 	// Fetch text
 	const gchar* name = garcon_menu_item_get_name(m_item);
-	if (G_UNLIKELY(!name))
+	if (G_UNLIKELY(!name) || !g_utf8_validate(name, -1, NULL))
 	{
 		name = "";
 	}
 
 	const gchar* generic_name = garcon_menu_item_get_generic_name(m_item);
-	if (G_UNLIKELY(!generic_name))
+	if (G_UNLIKELY(!generic_name) || !g_utf8_validate(generic_name, -1, NULL))
 	{
 		generic_name = "";
 	}
@@ -128,18 +155,14 @@ Launcher::Launcher(GarconMenuItem* item) :
 	if (wm_settings->launcher_show_description)
 	{
 		const gchar* details = garcon_menu_item_get_comment(m_item);
-		if (!details)
+		if (!details || !g_utf8_validate(details, -1, NULL))
 		{
 			details = generic_name;
 		}
 		set_text(g_markup_printf_escaped("%s<b>%s</b>\n%s%s", direction, m_display_name, direction, details));
 
 		// Create search text for comment
-		gchar* normalized = g_utf8_normalize(details, -1, G_NORMALIZE_DEFAULT);
-		gchar* utf8 = g_utf8_casefold(normalized, -1);
-		m_search_comment = utf8;
-		g_free(utf8);
-		g_free(normalized);
+		m_search_comment = normalize(details);
 	}
 	else
 	{
@@ -147,21 +170,13 @@ Launcher::Launcher(GarconMenuItem* item) :
 	}
 
 	// Create search text for display name
-	gchar* normalized = g_utf8_normalize(m_display_name, -1, G_NORMALIZE_DEFAULT);
-	gchar* utf8 = g_utf8_casefold(normalized, -1);
-	m_search_name = utf8;
-	g_free(utf8);
-	g_free(normalized);
+	m_search_name = normalize(m_display_name);
 
 	// Create search text for command
 	const gchar* command = garcon_menu_item_get_command(m_item);
-	if (!exo_str_is_empty(command))
+	if (!exo_str_is_empty(command) && g_utf8_validate(command, -1, NULL))
 	{
-		normalized = g_utf8_normalize(command, -1, G_NORMALIZE_DEFAULT);
-		utf8 = g_utf8_casefold(normalized, -1);
-		m_search_command = utf8;
-		g_free(utf8);
-		g_free(normalized);
+		m_search_command = normalize(command);
 	}
 }
 
