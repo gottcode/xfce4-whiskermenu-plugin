@@ -15,8 +15,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-04 18:42+0000\n"
-"PO-Revision-Date: 2014-06-23 15:35+0000\n"
-"Last-Translator: M T <michtrz@gmail.com>\n"
+"PO-Revision-Date: 2014-08-27 20:17+0000\n"
+"Last-Translator: Piotr Sokół <psokol@jabster.pl>\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
 "plugin/language/pl/)\n"
 "Language: pl\n"
@@ -52,7 +52,7 @@ msgstr "Wszystkie u_stawienia"
 
 #: ../panel-plugin/plugin.cpp:392
 msgid "Alternate application launcher for Xfce"
-msgstr "Alternatywny program uruchamiania aplikacji dla Xfce"
+msgstr "Uruchamia programy w środowisku Xfce"
 
 #: ../panel-plugin/plugin.cpp:212
 msgid "Applications Menu"
@@ -80,7 +80,7 @@ msgstr "Polecenia"
 
 #: ../panel-plugin/plugin.cpp:393
 msgid "Copyright © 2013-2014 Graeme Gott"
-msgstr "Prawa autorskie © 2013-2014 Graeme Gott"
+msgstr "Copyright © 2013-2014 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:738
 msgid "Details"
@@ -150,7 +150,7 @@ msgstr "Większy"
 
 #: ../panel-plugin/configuration-dialog.cpp:518
 msgid "Lay out icon in a single _panel row"
-msgstr "Ułóż ikony w pojedynczym rzędzie _panela"
+msgstr "Rozmieszczenie ikon w pojedynczym rzędzie p_anelu"
 
 #: ../panel-plugin/settings.cpp:116
 msgid "Log _Out"
@@ -198,7 +198,7 @@ msgstr "Umieszczenie paska _wyszukiwania obok przycisku panelu"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
 msgid "Position cate_gories next to panel button"
-msgstr "Umieszczenie kate_gorie obok przycisku panelu"
+msgstr "Umieszczenie kate_gorii poniżej przycisku panelu"
 
 #: ../panel-plugin/configuration-dialog.cpp:556
 msgid "Position commands next to search _entry"
@@ -353,4 +353,4 @@ msgstr "_Nazwa:"
 
 #: ../panel-plugin/plugin.cpp:397
 msgid "translator-credits"
-msgstr "podziękowania dla tłumaczy"
+msgstr "Piotr Sokół <psokol@jabster.pl>, 2013, 2014."
