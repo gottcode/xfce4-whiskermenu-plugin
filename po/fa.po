@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Haiku <reza.gharibi.rg@gmail.com>, 2013
+# Reza Gharibi <reza.gharibi.rg@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-04 18:42+0000\n"
-"PO-Revision-Date: 2013-12-22 07:34+0000\n"
-"Last-Translator: Haiku <reza.gharibi.rg@gmail.com>\n"
+"PO-Revision-Date: 2014-07-24 18:38+0000\n"
+"Last-Translator: Reza Gharibi <reza.gharibi.rg@gmail.com>\n"
 "Language-Team: Persian (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/fa/)\n"
 "Language: fa\n"
@@ -45,7 +45,7 @@ msgstr "همه‌ی _تنظیمات"
 
 #: ../panel-plugin/plugin.cpp:392
 msgid "Alternate application launcher for Xfce"
-msgstr ""
+msgstr "اجراکننده‌ای جایگزین برای Xfce"
 
 #: ../panel-plugin/plugin.cpp:212
 msgid "Applications Menu"
@@ -73,7 +73,7 @@ msgstr "دستورها"
 
 #: ../panel-plugin/plugin.cpp:393
 msgid "Copyright © 2013-2014 Graeme Gott"
-msgstr ""
+msgstr "کپی‌رایت © 2013-2014 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:738
 msgid "Details"
@@ -143,7 +143,7 @@ msgstr "بزرگ‌تر"
 
 #: ../panel-plugin/configuration-dialog.cpp:518
 msgid "Lay out icon in a single _panel row"
-msgstr ""
+msgstr "بیرون گذاشتن آیکون در یک ردیف از _پنل"
 
 #: ../panel-plugin/settings.cpp:116
 msgid "Log _Out"
@@ -190,9 +190,8 @@ msgid "Position _search entry next to panel button"
 msgstr "قراردادن ورودی _جست‌و‌جو کنار دکمه‌ی پنل"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
-#, fuzzy
 msgid "Position cate_gories next to panel button"
-msgstr "قراردادن ورودی _جست‌و‌جو کنار دکمه‌ی پنل"
+msgstr "قراردادن دسته‌ها درکنار دکمه‌ی پنل"
 
 #: ../panel-plugin/configuration-dialog.cpp:556
 msgid "Position commands next to search _entry"
@@ -347,4 +346,4 @@ msgstr "_عنوان:"
 
 #: ../panel-plugin/plugin.cpp:397
 msgid "translator-credits"
-msgstr ""
+msgstr "ترجمه کننده‌ها"
