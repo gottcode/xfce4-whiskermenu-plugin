@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Yarema aka Knedlyk <yupadmin@gmail.com>, 2013
-# zubr139 <zubr139@ukr.net>, 2013
+# Yarema aka Knedlyk <yupadmin@gmail.com>, 2013-2014
+# zubr139, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-04 18:42+0000\n"
-"PO-Revision-Date: 2013-12-11 09:55+0000\n"
+"PO-Revision-Date: 2014-11-11 16:16+0000\n"
 "Last-Translator: Yarema aka Knedlyk <yupadmin@gmail.com>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/uk/)\n"
@@ -47,7 +47,7 @@ msgstr "Всі _Налаштування"
 
 #: ../panel-plugin/plugin.cpp:392
 msgid "Alternate application launcher for Xfce"
-msgstr ""
+msgstr "Альтернативний пускач програм для Xfce"
 
 #: ../panel-plugin/plugin.cpp:212
 msgid "Applications Menu"
@@ -75,7 +75,7 @@ msgstr "Команди"
 
 #: ../panel-plugin/plugin.cpp:393
 msgid "Copyright © 2013-2014 Graeme Gott"
-msgstr ""
+msgstr "Всі права застережено © 2013-2014 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:738
 msgid "Details"
@@ -145,7 +145,7 @@ msgstr "Дуже великий"
 
 #: ../panel-plugin/configuration-dialog.cpp:518
 msgid "Lay out icon in a single _panel row"
-msgstr ""
+msgstr "Розташувати іконки в одному _рядку панелі"
 
 #: ../panel-plugin/settings.cpp:116
 msgid "Log _Out"
@@ -192,9 +192,8 @@ msgid "Position _search entry next to panel button"
 msgstr "Помістити П_ошук біля кнопки панелі"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
-#, fuzzy
 msgid "Position cate_gories next to panel button"
-msgstr "Помістити П_ошук біля кнопки панелі"
+msgstr "Розташувати категорії за кнопками панелі"
 
 #: ../panel-plugin/configuration-dialog.cpp:556
 msgid "Position commands next to search _entry"
@@ -349,4 +348,4 @@ msgstr "На_зва:"
 
 #: ../panel-plugin/plugin.cpp:397
 msgid "translator-credits"
-msgstr ""
+msgstr "Yarema aka Knedlyk <yupadmin at gmail.com>"
