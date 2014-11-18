@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Umidjon Almasov <u.almasov@gmail.com>, 2013
-# Umidjon Almasov <u.almasov@gmail.com>, 2013
+# Umid Almasov <u.almasov@gmail.com>, 2013-2014
+# Umid Almasov <u.almasov@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-04 18:42+0000\n"
-"PO-Revision-Date: 2013-12-30 04:23+0000\n"
-"Last-Translator: Umidjon Almasov <u.almasov@gmail.com>\n"
+"PO-Revision-Date: 2014-08-18 12:06+0000\n"
+"Last-Translator: Umid Almasov <u.almasov@gmail.com>\n"
 "Language-Team: Uzbek (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
 "plugin/language/uz/)\n"
 "Language: uz\n"
@@ -46,7 +46,7 @@ msgstr "Hamma _sozlamalar"
 
 #: ../panel-plugin/plugin.cpp:392
 msgid "Alternate application launcher for Xfce"
-msgstr ""
+msgstr "Xfce uchun muqobil dasturlarni ishga tushiruvchi"
 
 #: ../panel-plugin/plugin.cpp:212
 msgid "Applications Menu"
@@ -74,7 +74,7 @@ msgstr "Buyruqlar"
 
 #: ../panel-plugin/plugin.cpp:393
 msgid "Copyright © 2013-2014 Graeme Gott"
-msgstr ""
+msgstr "Copyright © 2013-2014 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:738
 msgid "Details"
@@ -144,7 +144,7 @@ msgstr "Kattaroq"
 
 #: ../panel-plugin/configuration-dialog.cpp:518
 msgid "Lay out icon in a single _panel row"
-msgstr ""
+msgstr "Ikonchani bir _panelli qatorga joylashtirish"
 
 #: ../panel-plugin/settings.cpp:116
 msgid "Log _Out"
@@ -191,9 +191,8 @@ msgid "Position _search entry next to panel button"
 msgstr "_Qidirish elementini panel tugmasidan keyin joylashtirish"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
-#, fuzzy
 msgid "Position cate_gories next to panel button"
-msgstr "_Qidirish elementini panel tugmasidan keyin joylashtirish"
+msgstr "_Turkumlarni panel tugmasidan keyin joylashtirish"
 
 #: ../panel-plugin/configuration-dialog.cpp:556
 msgid "Position commands next to search _entry"
@@ -348,4 +347,4 @@ msgstr "_Sarlavha"
 
 #: ../panel-plugin/plugin.cpp:397
 msgid "translator-credits"
-msgstr ""
+msgstr "Umid Almasov <u.almasov@gmail.com>, 2014"
