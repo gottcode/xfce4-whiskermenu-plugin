@@ -288,13 +288,10 @@ int Launcher::search(const Query& query)
 	}
 
 	// Sort matches in comments after matches in names
-	if (wm_settings->launcher_show_description)
+	match = query.match(m_search_comment);
+	if (match != G_MAXINT)
 	{
-		match = query.match(m_search_comment);
-		if (match != G_MAXINT)
-		{
-			match += 20;
-		}
+		match += 20;
 	}
 	return match;
 }
