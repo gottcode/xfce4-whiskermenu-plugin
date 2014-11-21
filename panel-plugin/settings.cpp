@@ -117,7 +117,7 @@ Settings::Settings() :
 	command[CommandMenuEditor] = new Command("xfce4-menueditor", _("_Edit Applications"), "menulibre", _("Failed to launch menu editor."));
 
 	search_actions.push_back(new SearchAction(_("Man Pages"), "#", "exo-open --launch TerminalEmulator man %s", false, true));
-	search_actions.push_back(new SearchAction(_("Wikipedia"), "!w", "exo-open --launch WebBrowser http://en.wikipedia.org/wiki/%u", false, true));
+	search_actions.push_back(new SearchAction(_("Wikipedia"), "!w", "exo-open --launch WebBrowser https://en.wikipedia.org/wiki/%u", false, true));
 	search_actions.push_back(new SearchAction(_("Run in Terminal"), "!", "exo-open --launch TerminalEmulator %s", false, true));
 	search_actions.push_back(new SearchAction(_("Open URI"), "^(file|http|https):\\/\\/(.*)$", "exo-open \\0", true, true));
 }
