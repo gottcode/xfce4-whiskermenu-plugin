@@ -210,7 +210,7 @@ std::string Plugin::get_button_title() const
 
 std::string Plugin::get_button_title_default()
 {
-	return _("Applications Menu");
+	return _("Applications");
 }
 
 //-----------------------------------------------------------------------------
