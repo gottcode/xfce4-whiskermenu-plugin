@@ -1,3 +1,10 @@
+1.4.1
+=====
+- Fix crash with invalid utf8 encoding.
+- Fix not searching descriptions unless shown.
+- Fix not using secure connection to Wikipedia.
+- Translation updates: Asturian, Basque, Dutch, Finnish, French, Greek, Indonesian, Kazakh, Lithuanian, Nepali, Persian, Polish, Romanian, Spanish, Swedish, Turkish, Ukrainian, Uzbek.
+
 1.4.0
 =====
 - Add option to switch position of categories and launchers.
