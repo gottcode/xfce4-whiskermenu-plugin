@@ -79,7 +79,7 @@ private:
 	GtkWidget* m_button;
 	GtkBox* m_button_box;
 	GtkLabel* m_button_label;
-	XfcePanelImage* m_button_icon;
+	GtkImage* m_button_icon;
 };
 
 }
