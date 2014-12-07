@@ -34,8 +34,6 @@
 
 #include <ctime>
 
-#include <pwd.h>
-
 using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
@@ -126,12 +124,9 @@ Window::Window() :
 
 	m_profilepic = gtk_image_new();
 
-	struct passwd *pw = getpwuid(getuid());
-	const char *homedir = pw->pw_dir;
-	std::string facepath = homedir;
-	facepath += "/.face";
-
-	GdkPixbuf *face = gdk_pixbuf_new_from_file_at_size(facepath.c_str(), 96, 96, NULL);
+	gchar *facepath = g_build_filename(g_get_home_dir(), ".face", NULL);
+	GdkPixbuf *face = gdk_pixbuf_new_from_file_at_size(facepath, 96, 96, NULL);
+	g_free(facepath);
 	gtk_image_set_from_pixbuf(GTK_IMAGE(m_profilepic), face);
 
 	// Create favorites
