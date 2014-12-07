@@ -31,6 +31,7 @@ ResizerWidget::ResizerWidget(GtkWindow* window) :
 	m_alignment = GTK_ALIGNMENT(gtk_alignment_new(1,0,0,0));
 
 	m_drawing = gtk_drawing_area_new();
+	gtk_widget_set_app_paintable(m_drawing, true);
 	gtk_widget_set_size_request(m_drawing, 10, 10);
 	gtk_widget_add_events(m_drawing, GDK_BUTTON_PRESS_MASK | GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK);
 	gtk_container_add(GTK_CONTAINER(m_alignment), m_drawing);
