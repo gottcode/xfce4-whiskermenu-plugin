@@ -123,9 +123,11 @@ Window::Window() :
 	g_signal_connect_slot<GtkEditable*>(m_search_entry, "changed", &Window::search, this);
 
 	m_profilepic = gtk_image_new();
+	gtk_misc_set_alignment(GTK_MISC(m_profilepic), 0.0f, 0.5f);
+	gtk_misc_set_padding(GTK_MISC(m_profilepic), 5, 0);
 
 	gchar *facepath = g_build_filename(g_get_home_dir(), ".face", NULL);
-	GdkPixbuf *face = gdk_pixbuf_new_from_file_at_size(facepath, 96, 96, NULL);
+	GdkPixbuf *face = gdk_pixbuf_new_from_file_at_size(facepath, 32, 32, NULL);
 	g_free(facepath);
 	gtk_image_set_from_pixbuf(GTK_IMAGE(m_profilepic), face);
 
@@ -177,10 +179,10 @@ Window::Window() :
 	// Create box for packing username, commands, and resize widget
 	m_title_box = GTK_BOX(gtk_hbox_new(false, 0));
 	gtk_box_pack_start(m_vbox, GTK_WIDGET(m_title_box), false, false, 0);
+	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_profilepic), false, false, 0);
 	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_username), true, true, 0);
 	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_commands_align), false, false, 0);
 	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_resizer->get_widget()), false, false, 0);
-
 	// Add search to layout
 	m_search_box = GTK_BOX(gtk_hbox_new(false, 6));
 	gtk_box_pack_start(m_vbox, GTK_WIDGET(m_search_box), false, true, 0);
@@ -200,7 +202,6 @@ Window::Window() :
 
 	// Create box for packing sidebar
 	m_sidebar_box = GTK_BOX(gtk_vbox_new(false, 0));
-	gtk_box_pack_start(m_sidebar_box, m_profilepic, false, false, 0);
 	gtk_box_pack_start(m_sidebar_box, GTK_WIDGET(m_favorites_button->get_button()), false, false, 0);
 	gtk_box_pack_start(m_sidebar_box, GTK_WIDGET(m_recent_button->get_button()), false, false, 0);
 	gtk_box_pack_start(m_sidebar_box, gtk_hseparator_new(), false, true, 0);
@@ -486,8 +487,9 @@ void Window::show(GtkWidget* parent, bool horizontal)
 				gtk_box_reorder_child(m_commands_box, m_commands_button[i], i);
 			}
 
-			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 0);
-			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 1);
+			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_profilepic), 0);
+			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 1);
+			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 2);
 
 			gtk_box_reorder_child(m_search_box, GTK_WIDGET(m_search_entry), 0);
 			gtk_box_reorder_child(m_search_box, GTK_WIDGET(m_commands_align), 1);
@@ -502,6 +504,7 @@ void Window::show(GtkWidget* parent, bool horizontal)
 				gtk_box_reorder_child(m_commands_box, m_commands_button[i], 3 - i);
 			}
 
+			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_profilepic), 2);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 1);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 0);
 
@@ -518,9 +521,10 @@ void Window::show(GtkWidget* parent, bool horizontal)
 				gtk_box_reorder_child(m_commands_box, m_commands_button[i], i);
 			}
 
-			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 0);
-			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_commands_align), 1);
-			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 2);
+			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_profilepic), 0);
+			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 1);
+			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_commands_align), 2);
+			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 3);
 		}
 		else
 		{
