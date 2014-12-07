@@ -34,6 +34,8 @@
 
 #include <ctime>
 
+#include <pwd.h>
+
 using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
@@ -122,6 +124,16 @@ Window::Window() :
 	gtk_entry_set_icon_activatable(m_search_entry, GTK_ENTRY_ICON_SECONDARY, false);
 	g_signal_connect_slot<GtkEditable*>(m_search_entry, "changed", &Window::search, this);
 
+	m_profilepic = gtk_image_new();
+
+	struct passwd *pw = getpwuid(getuid());
+	const char *homedir = pw->pw_dir;
+	std::string facepath = homedir;
+	facepath += "/.face";
+
+	GdkPixbuf *face = gdk_pixbuf_new_from_file_at_size(facepath.c_str(), 96, 96, NULL);
+	gtk_image_set_from_pixbuf(GTK_IMAGE(m_profilepic), face);
+
 	// Create favorites
 	m_favorites = new FavoritesPage(this);
 
@@ -193,6 +205,7 @@ Window::Window() :
 
 	// Create box for packing sidebar
 	m_sidebar_box = GTK_BOX(gtk_vbox_new(false, 0));
+	gtk_box_pack_start(m_sidebar_box, m_profilepic, false, false, 0);
 	gtk_box_pack_start(m_sidebar_box, GTK_WIDGET(m_favorites_button->get_button()), false, false, 0);
 	gtk_box_pack_start(m_sidebar_box, GTK_WIDGET(m_recent_button->get_button()), false, false, 0);
 	gtk_box_pack_start(m_sidebar_box, gtk_hseparator_new(), false, true, 0);

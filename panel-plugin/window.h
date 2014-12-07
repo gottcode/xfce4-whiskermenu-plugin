@@ -121,6 +121,7 @@ private:
 	Page* m_default_page;
 
 	GtkScrolledWindow* m_sidebar;
+	GtkWidget* m_profilepic;
 	SectionButton* m_favorites_button;
 	SectionButton* m_recent_button;
 	SectionButton* m_default_button;
