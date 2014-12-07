@@ -43,7 +43,8 @@ Window::Window() :
 	m_layout_left(true),
 	m_layout_bottom(true),
 	m_layout_search_alternate(false),
-	m_layout_commands_alternate(false)
+	m_layout_commands_alternate(false),
+	m_supports_alpha(false)
 {
 	m_geometry.x = 0;
 	m_geometry.y = 0;
@@ -223,6 +224,14 @@ Window::Window() :
 
 	// Resize to last known size
 	gtk_window_set_default_size(m_window, m_geometry.width, m_geometry.height);
+
+	// Handle transparency
+	gtk_widget_set_app_paintable(GTK_WIDGET(m_sidebar_box), true);
+	g_signal_connect_slot(m_sidebar_box, "expose-event", &Window::on_expose_event, this);
+	gtk_widget_set_app_paintable(GTK_WIDGET(m_window), true);
+	g_signal_connect_slot(m_window, "expose-event", &Window::on_expose_event, this);
+	g_signal_connect_slot(m_window, "screen-changed", &Window::on_screen_changed_event, this);
+	on_screen_changed_event(GTK_WIDGET(m_window), NULL);
 
 	g_object_ref_sink(m_window);
 
@@ -794,6 +803,55 @@ gboolean Window::on_configure_event(GtkWidget*, GdkEvent* event)
 		m_geometry.width = configure_event->width;
 		m_geometry.height = configure_event->height;
 	}
+	return false;
+}
+
+//-----------------------------------------------------------------------------
+
+void Window::on_screen_changed_event(GtkWidget* widget, GdkScreen*)
+{
+	GdkScreen* screen = gtk_widget_get_screen(widget);
+	GdkColormap* colormap = gdk_screen_get_rgba_colormap(screen);
+	if (!colormap)
+	{
+		colormap = gdk_screen_get_rgb_colormap(screen);
+	}
+	else
+	{
+		m_supports_alpha = true;
+	}
+	gtk_widget_set_colormap(widget, colormap);
+}
+
+//-----------------------------------------------------------------------------
+
+gboolean Window::on_expose_event(GtkWidget* widget, GdkEventExpose*)
+{
+	if (!gtk_widget_get_realized(widget))
+	{
+		gtk_widget_realize(widget);
+	}
+
+	GtkStyle* style = gtk_widget_get_style(widget);
+	if (style == NULL)
+	{
+		return false;
+	}
+	GdkColor color = style->bg[GTK_STATE_NORMAL];
+
+	cairo_t* cr = gdk_cairo_create(gtk_widget_get_window(widget));
+	if (m_supports_alpha)
+	{
+		cairo_set_source_rgba(cr, color.red / 65535.0, color.green / 65535.0, color.blue / 65535.0, wm_settings->menu_opacity / 100.0);
+	}
+	else
+	{
+		cairo_set_source_rgb(cr, color.red / 65535.0, color.green / 65535.0, color.blue / 65535.0);
+	}
+	cairo_set_operator(cr, CAIRO_OPERATOR_SOURCE);
+	cairo_paint(cr);
+	cairo_destroy(cr);
+
 	return false;
 }
 

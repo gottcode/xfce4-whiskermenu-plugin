@@ -97,6 +97,7 @@ public:
 
 	int menu_width;
 	int menu_height;
+	int menu_opacity;
 
 	friend class Plugin;
 };
