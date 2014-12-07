@@ -38,7 +38,7 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-Window::Window() :
+WhiskerMenu::Window::Window() :
 	m_window(NULL),
 	m_layout_left(true),
 	m_layout_bottom(true),
@@ -242,7 +242,7 @@ Window::Window() :
 
 //-----------------------------------------------------------------------------
 
-Window::~Window()
+WhiskerMenu::Window::~Window()
 {
 	delete m_applications;
 	delete m_search_results;
@@ -255,7 +255,7 @@ Window::~Window()
 
 //-----------------------------------------------------------------------------
 
-void Window::hide()
+void WhiskerMenu::Window::hide()
 {
 	gdk_pointer_ungrab(gtk_get_current_event_time());
 
@@ -271,7 +271,7 @@ void Window::hide()
 
 //-----------------------------------------------------------------------------
 
-void Window::show(GtkWidget* parent, bool horizontal)
+void WhiskerMenu::Window::show(GtkWidget* parent, bool horizontal)
 {
 	// Make sure icon sizes are correct
 	m_favorites_button->reload_icon_size();
@@ -567,7 +567,7 @@ void Window::show(GtkWidget* parent, bool horizontal)
 
 //-----------------------------------------------------------------------------
 
-void Window::save()
+void WhiskerMenu::Window::save()
 {
 	if (wm_settings->menu_width != m_geometry.width)
 	{
@@ -583,7 +583,7 @@ void Window::save()
 
 //-----------------------------------------------------------------------------
 
-void Window::on_context_menu_destroyed()
+void WhiskerMenu::Window::on_context_menu_destroyed()
 {
 	gdk_pointer_grab(gtk_widget_get_window(GTK_WIDGET(m_window)), true,
 			GdkEventMask(
@@ -595,7 +595,7 @@ void Window::on_context_menu_destroyed()
 
 //-----------------------------------------------------------------------------
 
-void Window::set_categories(const std::vector<SectionButton*>& categories)
+void WhiskerMenu::Window::set_categories(const std::vector<SectionButton*>& categories)
 {
 	for (std::vector<SectionButton*>::const_iterator i = categories.begin(), end = categories.end(); i != end; ++i)
 	{
@@ -610,7 +610,7 @@ void Window::set_categories(const std::vector<SectionButton*>& categories)
 
 //-----------------------------------------------------------------------------
 
-void Window::set_items()
+void WhiskerMenu::Window::set_items()
 {
 	m_search_results->set_menu_items(m_applications->get_view()->get_model());
 	m_favorites->set_menu_items();
@@ -623,7 +623,7 @@ void Window::set_items()
 
 //-----------------------------------------------------------------------------
 
-void Window::set_loaded()
+void WhiskerMenu::Window::set_loaded()
 {
 	gtk_spinner_stop(m_window_load_spinner);
 	gtk_widget_hide(m_window_load_contents);
@@ -633,7 +633,7 @@ void Window::set_loaded()
 
 //-----------------------------------------------------------------------------
 
-void Window::unset_items()
+void WhiskerMenu::Window::unset_items()
 {
 	m_search_results->unset_menu_items();
 	m_favorites->unset_menu_items();
@@ -642,7 +642,7 @@ void Window::unset_items()
 
 //-----------------------------------------------------------------------------
 
-gboolean Window::on_enter_notify_event(GtkWidget*, GdkEvent* event)
+gboolean WhiskerMenu::Window::on_enter_notify_event(GtkWidget*, GdkEvent* event)
 {
 	GdkEventCrossing* crossing_event = reinterpret_cast<GdkEventCrossing*>(event);
 	if ((crossing_event->detail == GDK_NOTIFY_INFERIOR)
@@ -669,7 +669,7 @@ gboolean Window::on_enter_notify_event(GtkWidget*, GdkEvent* event)
 
 //-----------------------------------------------------------------------------
 
-gboolean Window::on_leave_notify_event(GtkWidget*, GdkEvent* event)
+gboolean WhiskerMenu::Window::on_leave_notify_event(GtkWidget*, GdkEvent* event)
 {
 	GdkEventCrossing* crossing_event = reinterpret_cast<GdkEventCrossing*>(event);
 	if ((crossing_event->detail == GDK_NOTIFY_INFERIOR)
@@ -697,7 +697,7 @@ gboolean Window::on_leave_notify_event(GtkWidget*, GdkEvent* event)
 
 //-----------------------------------------------------------------------------
 
-gboolean Window::on_button_press_event(GtkWidget*, GdkEvent* event)
+gboolean WhiskerMenu::Window::on_button_press_event(GtkWidget*, GdkEvent* event)
 {
 	// Hide menu if user clicks outside
 	GdkEventButton* button_event = reinterpret_cast<GdkEventButton*>(event);
@@ -713,7 +713,7 @@ gboolean Window::on_button_press_event(GtkWidget*, GdkEvent* event)
 
 //-----------------------------------------------------------------------------
 
-gboolean Window::on_key_press_event(GtkWidget* widget, GdkEvent* event)
+gboolean WhiskerMenu::Window::on_key_press_event(GtkWidget* widget, GdkEvent* event)
 {
 	GdkEventKey* key_event = reinterpret_cast<GdkEventKey*>(event);
 
@@ -756,7 +756,7 @@ gboolean Window::on_key_press_event(GtkWidget* widget, GdkEvent* event)
 
 //-----------------------------------------------------------------------------
 
-gboolean Window::on_key_press_event_after(GtkWidget* widget, GdkEvent* event)
+gboolean WhiskerMenu::Window::on_key_press_event_after(GtkWidget* widget, GdkEvent* event)
 {
 	// Pass unhandled key presses to search entry
 	GtkWidget* search_entry = GTK_WIDGET(m_search_entry);
@@ -771,7 +771,7 @@ gboolean Window::on_key_press_event_after(GtkWidget* widget, GdkEvent* event)
 
 //-----------------------------------------------------------------------------
 
-gboolean Window::on_map_event(GtkWidget*, GdkEvent*)
+gboolean WhiskerMenu::Window::on_map_event(GtkWidget*, GdkEvent*)
 {
 	m_favorites->reset_selection();
 
@@ -793,7 +793,7 @@ gboolean Window::on_map_event(GtkWidget*, GdkEvent*)
 
 //-----------------------------------------------------------------------------
 
-gboolean Window::on_configure_event(GtkWidget*, GdkEvent* event)
+gboolean WhiskerMenu::Window::on_configure_event(GtkWidget*, GdkEvent* event)
 {
 	GdkEventConfigure* configure_event = reinterpret_cast<GdkEventConfigure*>(event);
 	if (configure_event->width && configure_event->height)
@@ -808,7 +808,7 @@ gboolean Window::on_configure_event(GtkWidget*, GdkEvent* event)
 
 //-----------------------------------------------------------------------------
 
-void Window::on_screen_changed_event(GtkWidget* widget, GdkScreen*)
+void WhiskerMenu::Window::on_screen_changed_event(GtkWidget* widget, GdkScreen*)
 {
 	GdkScreen* screen = gtk_widget_get_screen(widget);
 	GdkColormap* colormap = gdk_screen_get_rgba_colormap(screen);
@@ -825,7 +825,7 @@ void Window::on_screen_changed_event(GtkWidget* widget, GdkScreen*)
 
 //-----------------------------------------------------------------------------
 
-gboolean Window::on_expose_event(GtkWidget* widget, GdkEventExpose*)
+gboolean WhiskerMenu::Window::on_expose_event(GtkWidget* widget, GdkEventExpose*)
 {
 	if (!gtk_widget_get_realized(widget))
 	{
@@ -857,7 +857,7 @@ gboolean Window::on_expose_event(GtkWidget* widget, GdkEventExpose*)
 
 //-----------------------------------------------------------------------------
 
-void Window::favorites_toggled()
+void WhiskerMenu::Window::favorites_toggled()
 {
 	m_favorites->reset_selection();
 	gtk_widget_hide(m_recent->get_widget());
@@ -868,7 +868,7 @@ void Window::favorites_toggled()
 
 //-----------------------------------------------------------------------------
 
-void Window::recent_toggled()
+void WhiskerMenu::Window::recent_toggled()
 {
 	m_recent->reset_selection();
 	gtk_widget_hide(m_favorites->get_widget());
@@ -879,7 +879,7 @@ void Window::recent_toggled()
 
 //-----------------------------------------------------------------------------
 
-void Window::category_toggled()
+void WhiskerMenu::Window::category_toggled()
 {
 	m_applications->reset_selection();
 	gtk_widget_hide(m_favorites->get_widget());
@@ -890,7 +890,7 @@ void Window::category_toggled()
 
 //-----------------------------------------------------------------------------
 
-void Window::show_favorites()
+void WhiskerMenu::Window::show_favorites()
 {
 	// Switch to favorites panel
 	m_favorites_button->set_active(true);
@@ -902,7 +902,7 @@ void Window::show_favorites()
 
 //-----------------------------------------------------------------------------
 
-void Window::show_default_page()
+void WhiskerMenu::Window::show_default_page()
 {
 	// Switch to favorites panel
 	m_default_button->set_active(true);
@@ -914,7 +914,7 @@ void Window::show_default_page()
 
 //-----------------------------------------------------------------------------
 
-void Window::search()
+void WhiskerMenu::Window::search()
 {
 	// Fetch search string
 	const gchar* text = gtk_entry_get_text(m_search_entry);
