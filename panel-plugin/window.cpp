@@ -30,6 +30,7 @@
 
 #include <exo/exo.h>
 #include <gdk/gdkkeysyms.h>
+#include <libxfce4panel/libxfce4panel.h>
 #include <libxfce4ui/libxfce4ui.h>
 
 #include <ctime>
@@ -91,6 +92,31 @@ WhiskerMenu::Window::Window() :
 	gtk_frame_set_shadow_type(GTK_FRAME(m_window_contents), GTK_SHADOW_OUT);
 	gtk_box_pack_start(m_window_box, m_window_contents, true, true, 0);
 
+	// Create the profile picture
+	XfcePanelImage* profilepic = XFCE_PANEL_IMAGE(xfce_panel_image_new());
+
+	gint face_width = 32, face_height = 32;
+	gtk_icon_size_lookup(GTK_ICON_SIZE_DND, &face_width, &face_height);
+
+	gchar* face_path = g_build_filename(g_get_home_dir(), ".face", NULL);
+	GdkPixbuf* face = gdk_pixbuf_new_from_file_at_size(face_path, face_width, face_height, NULL);
+	g_free(face_path);
+
+	if (face)
+	{
+		xfce_panel_image_set_from_pixbuf(profilepic, face);
+		g_object_unref(face);
+	}
+	else
+	{
+		xfce_panel_image_set_size(profilepic, face_height);
+		xfce_panel_image_set_from_source(profilepic, "avatar-default");
+	}
+
+	m_profilepic = gtk_alignment_new(0.5, 0.5, 0, 0);
+	gtk_alignment_set_padding(GTK_ALIGNMENT(m_profilepic), 0, 0, 10, 10);
+	gtk_container_add(GTK_CONTAINER(m_profilepic), GTK_WIDGET(profilepic));
+
 	// Create the username label
 	const gchar* name = g_get_real_name();
 	if (g_strcmp0(name, "Unknown") == 0)
@@ -101,7 +127,6 @@ WhiskerMenu::Window::Window() :
 	m_username = GTK_LABEL(gtk_label_new(NULL));
 	gtk_label_set_markup(m_username, username);
 	gtk_misc_set_alignment(GTK_MISC(m_username), 0.0f, 0.5f);
-	gtk_misc_set_padding(GTK_MISC(m_username), 10, 0);
 	g_free(username);
 
 	// Create action buttons
@@ -170,6 +195,7 @@ WhiskerMenu::Window::Window() :
 	// Create box for packing username, commands, and resize widget
 	m_title_box = GTK_BOX(gtk_hbox_new(false, 0));
 	gtk_box_pack_start(m_vbox, GTK_WIDGET(m_title_box), false, false, 0);
+	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_profilepic), false, false, 0);
 	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_username), true, true, 0);
 	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_commands_align), false, false, 0);
 	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_resizer->get_widget()), false, false, 0);
@@ -478,8 +504,9 @@ void WhiskerMenu::Window::show(GtkWidget* parent, bool horizontal)
 				gtk_box_reorder_child(m_commands_box, m_commands_button[i], i);
 			}
 
-			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 0);
-			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 1);
+			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_profilepic), 0);
+			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 1);
+			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 2);
 
 			gtk_box_reorder_child(m_search_box, GTK_WIDGET(m_search_entry), 0);
 			gtk_box_reorder_child(m_search_box, GTK_WIDGET(m_commands_align), 1);
@@ -494,6 +521,7 @@ void WhiskerMenu::Window::show(GtkWidget* parent, bool horizontal)
 				gtk_box_reorder_child(m_commands_box, m_commands_button[i], 3 - i);
 			}
 
+			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_profilepic), 2);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 1);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 0);
 
@@ -510,9 +538,10 @@ void WhiskerMenu::Window::show(GtkWidget* parent, bool horizontal)
 				gtk_box_reorder_child(m_commands_box, m_commands_button[i], i);
 			}
 
-			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 0);
-			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_commands_align), 1);
-			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 2);
+			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_profilepic), 0);
+			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 1);
+			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_commands_align), 2);
+			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 3);
 		}
 		else
 		{
@@ -524,6 +553,7 @@ void WhiskerMenu::Window::show(GtkWidget* parent, bool horizontal)
 				gtk_box_reorder_child(m_commands_box, m_commands_button[i], 3 - i);
 			}
 
+			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_profilepic), 3);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 2);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_commands_align), 1);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 0);

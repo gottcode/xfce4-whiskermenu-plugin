@@ -106,6 +106,7 @@ private:
 	GtkBox* m_panels_box;
 	GtkBox* m_sidebar_box;
 
+	GtkWidget* m_profilepic;
 	GtkLabel* m_username;
 	ResizerWidget* m_resizer;
 
