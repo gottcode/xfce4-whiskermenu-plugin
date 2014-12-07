@@ -419,26 +419,29 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 			!wm_settings->button_title_visible,
 			0, GTK_PACK_START);
 
-	// Find icon maximum size
+	// Load icon
 	GtkStyle* style = gtk_widget_get_style(m_button);
 	gint border = (2 * std::max(style->xthickness, style->ythickness)) + 2;
+
+	GdkScreen* screen = gtk_widget_get_screen(GTK_WIDGET(m_plugin));
+	GtkIconTheme* icon_theme = G_LIKELY(screen != NULL) ? gtk_icon_theme_get_for_screen(screen) : NULL;
+
+#if (LIBXFCE4PANEL_CHECK_VERSION(4,9,0))
 	gint icon_width_max = (mode == XFCE_PANEL_PLUGIN_MODE_HORIZONTAL) ?
 			6 * row_size - border :
 			size - border;
 	gint icon_height_max = row_size - border;
-
-	// Load icon
-	GdkScreen* screen = gtk_widget_get_screen(GTK_WIDGET(m_plugin));
-	GtkIconTheme* icon_theme = NULL;
-	if (G_LIKELY(screen != NULL))
-	{
-		icon_theme = gtk_icon_theme_get_for_screen (screen);
-	}
 	GdkPixbuf* icon = xfce_panel_pixbuf_from_source_at_size(
 			wm_settings->button_icon_name.c_str(),
 			icon_theme,
 			icon_width_max,
 			icon_height_max);
+#else
+	GdkPixbuf* icon = xfce_panel_pixbuf_from_source(
+			wm_settings->button_icon_name.c_str(),
+			icon_theme,
+			row_size - border);
+#endif
 	gint icon_width = 0;
 	if (G_LIKELY(icon != NULL))
 	{
