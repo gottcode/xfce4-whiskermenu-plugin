@@ -825,6 +825,7 @@ void WhiskerMenu::Window::on_screen_changed_event(GtkWidget* widget, GdkScreen*)
 	if (!colormap)
 	{
 		colormap = gdk_screen_get_system_colormap(screen);
+		m_supports_alpha = false;
 	}
 	else
 	{
