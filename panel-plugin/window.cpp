@@ -147,6 +147,15 @@ WhiskerMenu::Window::Window() :
 	gtk_entry_set_icon_activatable(m_search_entry, GTK_ENTRY_ICON_SECONDARY, false);
 	g_signal_connect_slot<GtkEditable*>(m_search_entry, "changed", &Window::search, this);
 
+	m_profilepic = gtk_image_new();
+	gtk_misc_set_alignment(GTK_MISC(m_profilepic), 0.0f, 0.5f);
+	gtk_misc_set_padding(GTK_MISC(m_profilepic), 5, 0);
+
+	gchar *facepath = g_build_filename(g_get_home_dir(), ".face", NULL);
+	GdkPixbuf *face = gdk_pixbuf_new_from_file_at_size(facepath, 32, 32, NULL);
+	g_free(facepath);
+	gtk_image_set_from_pixbuf(GTK_IMAGE(m_profilepic), face);
+
 	// Create favorites
 	m_favorites = new FavoritesPage(this);
 
@@ -199,7 +208,6 @@ WhiskerMenu::Window::Window() :
 	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_username), true, true, 0);
 	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_commands_align), false, false, 0);
 	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_resizer->get_widget()), false, false, 0);
-
 	// Add search to layout
 	m_search_box = GTK_BOX(gtk_hbox_new(false, 6));
 	gtk_box_pack_start(m_vbox, GTK_WIDGET(m_search_box), false, true, 0);
