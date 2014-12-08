@@ -217,6 +217,10 @@ void ConfigurationDialog::toggle_position_search_alternate(GtkToggleButton* butt
 	wm_settings->position_search_alternate = gtk_toggle_button_get_active(button);
 	wm_settings->set_modified();
 	gtk_widget_set_sensitive(GTK_WIDGET(m_position_commands_alternate), active);
+	if (!active)
+	{
+		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_commands_alternate), false);
+	}
 }
 
 //-----------------------------------------------------------------------------
