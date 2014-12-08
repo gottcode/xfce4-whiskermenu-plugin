@@ -21,6 +21,7 @@
 #include <vector>
 
 #include <gtk/gtk.h>
+#include <libxfce4panel/libxfce4panel.h>
 
 namespace WhiskerMenu
 {
@@ -83,6 +84,7 @@ private:
 	gboolean on_configure_event(GtkWidget*, GdkEvent* event);
 	void on_screen_changed_event(GtkWidget* widget, GdkScreen* old_screen);
 	gboolean on_expose_event(GtkWidget* widget, GdkEventExpose* event);
+	void on_profilepic_changed(GFileMonitor* monitor, GFile* file, GFile* other_file, GFileMonitorEvent event_type);
 	void favorites_toggled();
 	void recent_toggled();
 	void category_toggled();
@@ -107,6 +109,8 @@ private:
 	GtkBox* m_sidebar_box;
 
 	GtkWidget* m_profilepic;
+	XfcePanelImage* m_profilepic_image;
+	GFileMonitor* m_profilepic_monitor;
 	GtkLabel* m_username;
 	ResizerWidget* m_resizer;
 

@@ -251,7 +251,7 @@ gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(
 	class Slot
 	{
 		T* m_instance;
-		R (T::*m_member)(A1,A2,A3);
+		R (T::*m_member)(A1,A2,A3,A4);
 
 	public:
 		Slot(T* instance, R (T::*member)(A1,A2,A3,A4)) :
