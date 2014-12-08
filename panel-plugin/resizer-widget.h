@@ -49,6 +49,7 @@ private:
 	gboolean on_button_press_event(GtkWidget*, GdkEvent* event);
 	gboolean on_enter_notify_event(GtkWidget* widget, GdkEvent*);
 	gboolean on_leave_notify_event(GtkWidget* widget, GdkEvent*);
+	void on_screen_changed_event(GtkWidget* widget, GdkScreen* old_screen);
 	gboolean on_expose_event(GtkWidget* widget, GdkEvent*);
 
 private:
@@ -58,6 +59,7 @@ private:
 	GdkCursor* m_cursor;
 	GdkWindowEdge m_edge;
 	std::vector<GdkPoint> m_shape;
+	bool m_supports_alpha;
 };
 
 }

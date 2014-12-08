@@ -17,6 +17,7 @@
 
 #include "resizer-widget.h"
 
+#include "settings.h"
 #include "slot.h"
 
 using namespace WhiskerMenu;
@@ -26,12 +27,12 @@ using namespace WhiskerMenu;
 ResizerWidget::ResizerWidget(GtkWindow* window) :
 	m_window(window),
 	m_cursor(NULL),
-	m_shape(3)
+	m_shape(3),
+	m_supports_alpha(false)
 {
 	m_alignment = GTK_ALIGNMENT(gtk_alignment_new(1,0,0,0));
 
 	m_drawing = gtk_drawing_area_new();
-	gtk_widget_set_app_paintable(m_drawing, true);
 	gtk_widget_set_size_request(m_drawing, 10, 10);
 	gtk_widget_add_events(m_drawing, GDK_BUTTON_PRESS_MASK | GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK);
 	gtk_container_add(GTK_CONTAINER(m_alignment), m_drawing);
@@ -40,6 +41,9 @@ ResizerWidget::ResizerWidget(GtkWindow* window) :
 	g_signal_connect_slot(m_drawing, "enter-notify-event", &ResizerWidget::on_enter_notify_event, this);
 	g_signal_connect_slot(m_drawing, "leave-notify-event", &ResizerWidget::on_leave_notify_event, this);
 	g_signal_connect_slot(m_drawing, "expose-event", &ResizerWidget::on_expose_event, this);
+	g_signal_connect_slot(m_window, "screen-changed", &ResizerWidget::on_screen_changed_event, this);
+	on_screen_changed_event(GTK_WIDGET(m_drawing), NULL);
+
 
 	set_corner(TopRight);
 }
@@ -136,11 +140,40 @@ gboolean ResizerWidget::on_leave_notify_event(GtkWidget* widget, GdkEvent*)
 
 //-----------------------------------------------------------------------------
 
+void ResizerWidget::on_screen_changed_event(GtkWidget* widget, GdkScreen*)
+{
+	GdkScreen* screen = gtk_widget_get_screen(widget);
+	GdkColormap* colormap = gdk_screen_get_rgba_colormap(screen);
+	if (!colormap)
+	{
+		colormap = gdk_screen_get_system_colormap(screen);
+		m_supports_alpha = false;
+	}
+	else
+	{
+		m_supports_alpha = true;
+	}
+	gtk_widget_set_colormap(widget, colormap);
+}
+
+//-----------------------------------------------------------------------------
+
 gboolean ResizerWidget::on_expose_event(GtkWidget* widget, GdkEvent*)
 {
 	cairo_t* cr = gdk_cairo_create(gtk_widget_get_window(widget));
 
 	GtkStyle* style = gtk_widget_get_style(widget);
+
+	// Draw semi-transparent background to match window
+	if (m_supports_alpha)
+	{
+		const GdkColor& color = style->bg[GTK_STATE_NORMAL];
+		cairo_set_source_rgba(cr, color.red / 65535.0, color.green / 65535.0, color.blue / 65535.0, wm_settings->menu_opacity / 100.0);
+		cairo_set_operator(cr, CAIRO_OPERATOR_SOURCE);
+		cairo_paint(cr);
+	}
+
+	// Draw resize triangle
 	const GdkColor& color = style->text_aa[gtk_widget_get_state(widget)];
 	cairo_set_source_rgb(cr, color.red / 65535.0, color.green / 65535.0, color.blue / 65535.0);
 
