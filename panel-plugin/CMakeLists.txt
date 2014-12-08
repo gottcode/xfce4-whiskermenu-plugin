@@ -82,6 +82,7 @@ add_library(whiskermenu MODULE
 	list-page.cpp
 	page.cpp
 	plugin.cpp
+	profile-picture.cpp
 	query.cpp
 	recent-page.cpp
 	register-plugin.c
