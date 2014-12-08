@@ -35,7 +35,7 @@ ProfilePicture::ProfilePicture()
 
 	m_file_monitor = g_file_monitor_file(file, G_FILE_MONITOR_NONE, NULL, NULL);
 	g_signal_connect_slot(m_file_monitor, "changed", &ProfilePicture::on_file_changed, this);
-	on_file_changed(m_file_monitor, file);
+	on_file_changed(m_file_monitor, file, NULL, G_FILE_MONITOR_EVENT_CHANGED);
 
 	g_object_unref(file);
 
@@ -54,7 +54,7 @@ ProfilePicture::~ProfilePicture()
 
 //-----------------------------------------------------------------------------
 
-void ProfilePicture::on_file_changed(GFileMonitor*, GFile* file)
+void ProfilePicture::on_file_changed(GFileMonitor*, GFile* file, GFile*, GFileMonitorEvent)
 {
 	gint width = 32, height = 32;
 	gtk_icon_size_lookup(GTK_ICON_SIZE_DND, &width, &height);

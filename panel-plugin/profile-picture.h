@@ -35,7 +35,7 @@ public:
 	}
 
 private:
-	void on_file_changed(GFileMonitor* monitor, GFile* file);
+	void on_file_changed(GFileMonitor* monitor, GFile* file, GFile* other_file, GFileMonitorEvent event_type);
 
 private:
 	GtkWidget* m_alignment;
