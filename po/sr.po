@@ -3,16 +3,17 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# MirosNik <miroslavnikolic@rocketmail.com>, 2012
-# salepetronije <salepetronije@gmail.com>, 2013
-# salepetronije <salepetronije@gmail.com>, 2013
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2012
+# Саша Петровић <salepetronije@gmail.com>, 2013
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2012
+# Саша Петровић <salepetronije@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-04 18:42+0000\n"
-"PO-Revision-Date: 2013-12-11 18:41+0000\n"
-"Last-Translator: salepetronije <salepetronije@gmail.com>\n"
+"PO-Revision-Date: 2014-12-05 22:08+0000\n"
+"Last-Translator: Саша Петровић <salepetronije@gmail.com>\n"
 "Language-Team: Serbian (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/sr/)\n"
 "Language: sr\n"
@@ -48,7 +49,7 @@ msgstr "Све _поставке"
 
 #: ../panel-plugin/plugin.cpp:392
 msgid "Alternate application launcher for Xfce"
-msgstr ""
+msgstr "Заменски покретач програма за Иксфце"
 
 #: ../panel-plugin/plugin.cpp:212
 msgid "Applications Menu"
@@ -60,7 +61,7 @@ msgstr "Разгледај систем датотека ради одабира
 
 #: ../panel-plugin/configuration-dialog.cpp:767
 msgid "C_ommand:"
-msgstr "Наредба"
+msgstr "Н_аредба:"
 
 #: ../panel-plugin/configuration-dialog.cpp:592
 msgid "Categ_ory icon size:"
@@ -76,7 +77,7 @@ msgstr "Наредбе"
 
 #: ../panel-plugin/plugin.cpp:393
 msgid "Copyright © 2013-2014 Graeme Gott"
-msgstr ""
+msgstr "Права умножавања © 2013-2014 Грејем Гот (Graeme Gott)"
 
 #: ../panel-plugin/configuration-dialog.cpp:738
 msgid "Details"
@@ -84,11 +85,11 @@ msgstr "Појединости"
 
 #: ../panel-plugin/configuration-dialog.cpp:471
 msgid "Di_splay:"
-msgstr "Приказ:"
+msgstr "Пр_иказ:"
 
 #: ../panel-plugin/configuration-dialog.cpp:633
 msgid "Display recently _used by default"
-msgstr "Подразумевано приказуј недавно коришћене"
+msgstr "Подразумевано приказуј недавно _коришћене"
 
 #: ../panel-plugin/launcher.cpp:252 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
@@ -106,7 +107,7 @@ msgstr "Нисам успео да закључам екран."
 
 #: ../panel-plugin/settings.cpp:116
 msgid "Failed to log out."
-msgstr "Нисам успео да се одјавим."
+msgstr "Нисам успео извршим одјаву."
 
 #: ../panel-plugin/settings.cpp:113
 msgid "Failed to open settings manager."
@@ -146,7 +147,7 @@ msgstr "Веће"
 
 #: ../panel-plugin/configuration-dialog.cpp:518
 msgid "Lay out icon in a single _panel row"
-msgstr ""
+msgstr "Изложити иконицу у један ред полице"
 
 #: ../panel-plugin/settings.cpp:116
 msgid "Log _Out"
@@ -190,16 +191,15 @@ msgstr "Образац"
 
 #: ../panel-plugin/configuration-dialog.cpp:550
 msgid "Position _search entry next to panel button"
-msgstr "Положај кућице за унос претраге у односу на дугме полице"
+msgstr "Постави кућицу за унос до дугмета на полици"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
-#, fuzzy
 msgid "Position cate_gories next to panel button"
-msgstr "Положај кућице за унос претраге у односу на дугме полице"
+msgstr "Постави врсте до дугмета на полици"
 
 #: ../panel-plugin/configuration-dialog.cpp:556
 msgid "Position commands next to search _entry"
-msgstr "Положај кућице за наредбе у односу на кућицу претраге"
+msgstr "Постави наредбе до кућице претраге"
 
 #: ../panel-plugin/window.cpp:133
 msgid "Recently Used"
