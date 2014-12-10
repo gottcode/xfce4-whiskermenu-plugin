@@ -17,7 +17,10 @@
 
 #include "profile-picture.h"
 
+#include "command.h"
+#include "settings.h"
 #include "slot.h"
+#include "window.h"
 
 #include <libxfce4panel/libxfce4panel.h>
 
@@ -25,9 +28,16 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-ProfilePicture::ProfilePicture()
+ProfilePicture::ProfilePicture(Window* window) :
+	m_window(window)
 {
 	m_image = xfce_panel_image_new();
+
+	GtkWidget* eventbox = gtk_event_box_new();
+	gtk_event_box_set_visible_window(GTK_EVENT_BOX(eventbox), false);
+	gtk_widget_add_events(eventbox, GDK_BUTTON_PRESS_MASK);
+	g_signal_connect_slot<GtkWidget*, GdkEvent*>(eventbox, "button-press-event", &ProfilePicture::on_button_press_event, this);
+	gtk_container_add(GTK_CONTAINER(eventbox), m_image);
 
 	gchar* path = g_build_filename(g_get_home_dir(), ".face", NULL);
 	GFile* file = g_file_new_for_path(path);
@@ -41,7 +51,7 @@ ProfilePicture::ProfilePicture()
 
 	m_alignment = gtk_alignment_new(0.5, 0.5, 0, 0);
 	gtk_alignment_set_padding(GTK_ALIGNMENT(m_alignment), 0, 0, 10, 10);
-	gtk_container_add(GTK_CONTAINER(m_alignment), m_image);
+	gtk_container_add(GTK_CONTAINER(m_alignment), eventbox);
 }
 
 //-----------------------------------------------------------------------------
@@ -75,6 +85,20 @@ void ProfilePicture::on_file_changed(GFileMonitor*, GFile* file, GFile*, GFileMo
 		xfce_panel_image_set_size(image, height);
 		xfce_panel_image_set_from_source(image, "avatar-default");
 	}
+}
+
+//-----------------------------------------------------------------------------
+
+void ProfilePicture::on_button_press_event()
+{
+	Command* command = wm_settings->command[Settings::CommandProfile];
+	if (!command->get_shown())
+	{
+		return;
+	}
+
+	m_window->hide();
+	command->activate();
 }
 
 //-----------------------------------------------------------------------------

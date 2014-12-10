@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2104 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -37,7 +37,8 @@ static const char* const settings_command[Settings::CountCommands][2] = {
 	{ "command-lockscreen", "show-command-lockscreen" },
 	{ "command-switchuser", "show-command-switchuser" },
 	{ "command-logout",     "show-command-logout"     },
-	{ "command-menueditor", "show-command-menueditor" }
+	{ "command-menueditor", "show-command-menueditor" },
+	{ "command-profile",    "show-command-profile"    }
 };
 
 //-----------------------------------------------------------------------------
@@ -118,6 +119,7 @@ Settings::Settings() :
 	command[CommandSwitchUser] = new Command("system-users", _("Switch _Users"), "gdmflexiserver", _("Failed to switch users."));
 	command[CommandLogOut] = new Command("system-log-out", _("Log _Out"), "xfce4-session-logout", _("Failed to log out."));
 	command[CommandMenuEditor] = new Command("xfce4-menueditor", _("_Edit Applications"), "menulibre", _("Failed to launch menu editor."));
+	command[CommandProfile] = new Command("avatar-default", _("Edit _Profile"), "mugshot", _("Failed to edit profile."));
 
 	search_actions.push_back(new SearchAction(_("Man Pages"), "#", "exo-open --launch TerminalEmulator man %s", false, true));
 	search_actions.push_back(new SearchAction(_("Wikipedia"), "!w", "exo-open --launch WebBrowser https://en.wikipedia.org/wiki/%u", false, true));

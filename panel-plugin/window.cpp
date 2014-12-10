@@ -94,7 +94,7 @@ WhiskerMenu::Window::Window() :
 	gtk_box_pack_start(m_window_box, m_window_contents, true, true, 0);
 
 	// Create the profile picture
-	m_profilepic = new ProfilePicture;
+	m_profilepic = new ProfilePicture(this);
 
 	// Create the username label
 	const gchar* name = g_get_real_name();

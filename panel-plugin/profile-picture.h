@@ -23,10 +23,12 @@
 namespace WhiskerMenu
 {
 
+class Window;
+
 class ProfilePicture
 {
 public:
-	ProfilePicture();
+	ProfilePicture(Window* window);
 	~ProfilePicture();
 
 	GtkWidget* get_widget() const
@@ -36,8 +38,10 @@ public:
 
 private:
 	void on_file_changed(GFileMonitor* monitor, GFile* file, GFile* other_file, GFileMonitorEvent event_type);
+	void on_button_press_event();
 
 private:
+	Window* m_window;
 	GtkWidget* m_alignment;
 	GtkWidget* m_image;
 	GFileMonitor* m_file_monitor;
