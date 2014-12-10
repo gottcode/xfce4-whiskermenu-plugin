@@ -53,8 +53,7 @@ public:
 
 	void check();
 
-private:
-	void activated();
+	void activate();
 
 private:
 	GtkWidget* m_button;
