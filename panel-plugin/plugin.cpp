@@ -127,6 +127,8 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	gtk_button_set_relief(GTK_BUTTON(m_button), GTK_RELIEF_NONE);
 	gtk_button_set_focus_on_click(GTK_BUTTON(m_button), false);
 	g_signal_connect_slot(m_button, "button-press-event", &Plugin::button_clicked, this);
+	g_signal_connect_slot<GtkWidget*,GtkStyle*>(m_button, "style-set", &Plugin::update_size, this);
+	g_signal_connect_slot<GtkWidget*,GdkScreen*>(m_button, "screen-changed", &Plugin::update_size, this);
 	gtk_widget_show(m_button);
 
 	m_button_box = GTK_BOX(gtk_hbox_new(false, 2));
@@ -335,13 +337,13 @@ void Plugin::configure()
 void Plugin::mode_changed(XfcePanelPlugin*, XfcePanelPluginMode mode)
 {
 	gtk_label_set_angle(m_button_label, (mode == XFCE_PANEL_PLUGIN_MODE_VERTICAL) ? 270: 0);
-	size_changed(m_plugin, xfce_panel_plugin_get_size(m_plugin));
+	update_size();
 }
 #else
 void Plugin::orientation_changed(XfcePanelPlugin*, GtkOrientation orientation)
 {
 	gtk_label_set_angle(m_button_label, (orientation == GTK_ORIENTATION_VERTICAL) ? 270: 0);
-	size_changed(m_plugin, xfce_panel_plugin_get_size(m_plugin));
+	update_size();
 }
 #endif
 
@@ -485,6 +487,13 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 	gtk_orientable_set_orientation(GTK_ORIENTABLE(m_button_box), orientation);
 
 	return true;
+}
+
+//-----------------------------------------------------------------------------
+
+void Plugin::update_size()
+{
+	size_changed(m_plugin, xfce_panel_plugin_get_size(m_plugin));
 }
 
 //-----------------------------------------------------------------------------

@@ -70,6 +70,7 @@ private:
 	void save();
 	void show_about();
 	gboolean size_changed(XfcePanelPlugin*, gint size);
+	void update_size();
 	void popup_menu(bool at_cursor, bool activate_button);
 
 private:
