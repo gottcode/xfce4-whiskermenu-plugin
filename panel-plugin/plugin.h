@@ -58,7 +58,7 @@ public:
 	void set_configure_enabled(bool enabled);
 
 private:
-	gboolean button_clicked(GtkWidget*, GdkEvent* event);
+	void button_toggled(GtkToggleButton* button);
 	void menu_hidden();
 	void configure();
 #if (LIBXFCE4PANEL_CHECK_VERSION(4,9,0))
@@ -70,7 +70,6 @@ private:
 	void save();
 	void show_about();
 	gboolean size_changed(XfcePanelPlugin*, gint size);
-	void popup_menu(bool at_cursor, bool activate_button);
 
 private:
 	XfcePanelPlugin* m_plugin;
