@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-04 18:42+0000\n"
-"PO-Revision-Date: 2014-06-05 16:23+0000\n"
+"PO-Revision-Date: 2014-12-13 07:12+0000\n"
 "Last-Translator: GenghisKhan <genghiskhan@gmx.ca>\n"
 "Language-Team: Hebrew (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
 "plugin/language/he/)\n"
@@ -26,15 +26,15 @@ msgstr "הוספת פעולה"
 
 #: ../panel-plugin/page.cpp:212
 msgid "Add to Desktop"
-msgstr "הוסף אל תוך שולחן עבודה"
+msgstr "הוסף לתוך שולחן עבודה"
 
 #: ../panel-plugin/page.cpp:197
 msgid "Add to Favorites"
-msgstr "הוסף אל תוך מועדפים"
+msgstr "הוסף לתוך מועדפים"
 
 #: ../panel-plugin/page.cpp:216
 msgid "Add to Panel"
-msgstr "הוסף אל תוך לוח"
+msgstr "הוסף לתוך לוח"
 
 #: ../panel-plugin/category.cpp:59
 msgid "All"
@@ -46,7 +46,7 @@ msgstr "כל _ההגדרות"
 
 #: ../panel-plugin/plugin.cpp:392
 msgid "Alternate application launcher for Xfce"
-msgstr "משגר יישומים חילופי עבור Xfce"
+msgstr "משגר יישומים חלופי עבור Xfce"
 
 #: ../panel-plugin/plugin.cpp:212
 msgid "Applications Menu"
@@ -62,7 +62,7 @@ msgstr "פ_קודה:"
 
 #: ../panel-plugin/configuration-dialog.cpp:592
 msgid "Categ_ory icon size:"
-msgstr "גודל צלמית _קטגוריה:"
+msgstr "גודל סמל _קטגוריה:"
 
 #: ../panel-plugin/recent-page.cpp:88
 msgid "Clear Recently Used"
@@ -86,13 +86,13 @@ msgstr "ת_צוגה:"
 
 #: ../panel-plugin/configuration-dialog.cpp:633
 msgid "Display recently _used by default"
-msgstr "הצג בפתיחה את ב_שימוש לאחרונה"
+msgstr "הצג בפתיחה את תפריט ב_שימוש לאחרונה"
 
 #: ../panel-plugin/launcher.cpp:252 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
-msgstr "נכשל להוציא לפועל פקודה \"%s\"."
+msgstr "נכשל לבצע פקודה \"%s\"."
 
 #: ../panel-plugin/settings.cpp:117
 msgid "Failed to launch menu editor."
@@ -120,19 +120,19 @@ msgstr "מועדפים"
 
 #: ../panel-plugin/configuration-dialog.cpp:477
 msgid "Icon"
-msgstr "צלמית"
+msgstr "סמל"
 
 #: ../panel-plugin/configuration-dialog.cpp:479
 msgid "Icon and title"
-msgstr "צלמית וגם כותרת"
+msgstr "סמל וגם כותרת"
 
 #: ../panel-plugin/configuration-dialog.cpp:627
 msgid "Include _favorites in recently used"
-msgstr "הכלל _מועדפים בתוך בשימוש לאחרונה"
+msgstr "הכלל _מועדפים בתפריט בשימוש לאחרונה"
 
 #: ../panel-plugin/configuration-dialog.cpp:572
 msgid "Ite_m icon size:"
-msgstr "גודל צלמית _פריט:"
+msgstr "גודל סמל _פריט:"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Large"
@@ -144,7 +144,7 @@ msgstr "גדול יותר"
 
 #: ../panel-plugin/configuration-dialog.cpp:518
 msgid "Lay out icon in a single _panel row"
-msgstr "פרוס צלמית בשורת _לוח"
+msgstr "פרוס סמל בשורת _לוח בודדת"
 
 #: ../panel-plugin/settings.cpp:116
 msgid "Log _Out"
@@ -188,7 +188,7 @@ msgstr "תבנית"
 
 #: ../panel-plugin/configuration-dialog.cpp:550
 msgid "Position _search entry next to panel button"
-msgstr "מקם רישום _חיפוש ליד לחצן לוח"
+msgstr "מקם שורת _חיפוש ליד לחצן לוח"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
 msgid "Position cate_gories next to panel button"
@@ -196,7 +196,7 @@ msgstr "מקם ק_טגוריות לצד לחצן לוח"
 
 #: ../panel-plugin/configuration-dialog.cpp:556
 msgid "Position commands next to search _entry"
-msgstr "מקם פקודות ליד _רישום חיפוש"
+msgstr "מקם פקודות ליד _שורת חיפוש"
 
 #: ../panel-plugin/window.cpp:133
 msgid "Recently Used"
@@ -218,23 +218,23 @@ msgstr "הסרת פעולה נבחרת"
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
 msgid "Run %s"
-msgstr "הרץ את %s"
+msgstr "הרץ %s"
 
 #: ../panel-plugin/settings.cpp:121
 msgid "Run in Terminal"
-msgstr "הרצה בתוך מסוף"
+msgstr "הרץ בתוך מסוף"
 
 #: ../panel-plugin/configuration-dialog.cpp:81
 msgid "Search Actio_ns"
-msgstr "חפש פעו_לות"
+msgstr "פעו_לות חיפוש"
 
 #: ../panel-plugin/search-action.cpp:261
 msgid "Search Action"
-msgstr "חיפוש פעולות"
+msgstr "פעולת חיפוש"
 
 #: ../panel-plugin/configuration-dialog.cpp:114
 msgid "Select An Icon"
-msgstr "בחר צלמית"
+msgstr "בחר סמל"
 
 #: ../panel-plugin/command-edit.cpp:60
 msgid "Select Command"
@@ -278,7 +278,7 @@ msgstr "החלף _משתמשים"
 
 #: ../panel-plugin/configuration-dialog.cpp:621
 msgid "Switch categories by _hovering"
-msgstr "החלף קטגוריות על ידי _ריחוף"
+msgstr "החלף קטגוריות על ידי _מעבר עליהן"
 
 #: ../panel-plugin/configuration-dialog.cpp:380
 msgid "The action will be deleted permanently."
@@ -290,11 +290,11 @@ msgstr "כותרת"
 
 #: ../panel-plugin/page.cpp:308
 msgid "Unable to add launcher to desktop."
-msgstr "אין אפשרות להוסיף משגר אל תוך שולחן עבודה."
+msgstr "לא מסוגל להוסיף משגר לתוך שולחן עבודה."
 
 #: ../panel-plugin/page.cpp:347 ../panel-plugin/page.cpp:356
 msgid "Unable to add launcher to panel."
-msgstr "אין אפשרות להוסיף משגר אל תוך לוח."
+msgstr "לא מסוגל להוסיף משגר לתוך לוח."
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
@@ -327,7 +327,7 @@ msgstr "_ערוך יישומים"
 
 #: ../panel-plugin/configuration-dialog.cpp:504
 msgid "_Icon:"
-msgstr "_צלמית:"
+msgstr "ס_מל:"
 
 #: ../panel-plugin/settings.cpp:114
 msgid "_Lock Screen"
@@ -347,10 +347,4 @@ msgstr "_כותרת:"
 
 #: ../panel-plugin/plugin.cpp:397
 msgid "translator-credits"
-msgstr ""
-"אנא הצטרפו אל קבוצת התרגום העברית של Xfce ועקבו אחר הוראות והנחיות אלו:\n"
-"\n"
-"http://il.kde.org/hebrew/visualdict/\n"
-"http://il.kde.org/hebrew/guidelines/\n"
-"\n"
-"בהצלחה!"
+msgstr "הינכם מוזמנים להצטרף אל קבוצת התרגום העברית של Xfce"
