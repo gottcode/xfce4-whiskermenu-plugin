@@ -157,6 +157,7 @@ void RecentPage::extend_context_menu(GtkWidget* menu)
 void RecentPage::clear_menu()
 {
 	gtk_list_store_clear(GTK_LIST_STORE(get_view()->get_model()));
+	wm_settings->recent.clear();
 	wm_settings->set_modified();
 }
 
