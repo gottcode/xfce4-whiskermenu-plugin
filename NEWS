@@ -1,3 +1,11 @@
+1.4.2
+=====
+- Fix panel button border not shown when pressed.
+- Fix commands were editable when disabled.
+- Fix incorrectly disabled checkbox for commands position.
+- Fix commands next to search when not next to panel button.
+- Translation updates: French, Hebrew, Serbian.
+
 1.4.1
 =====
 - Fix crash with invalid utf8 encoding.
