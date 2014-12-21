@@ -251,7 +251,7 @@ void ConfigurationDialog::recent_items_max_changed(GtkSpinButton* button)
 
 void ConfigurationDialog::toggle_remember_favorites(GtkToggleButton* button)
 {
-	wm_settings->favorites_in_recent = gtk_toggle_button_get_active(button);
+	wm_settings->favorites_in_recent = !gtk_toggle_button_get_active(button);
 	wm_settings->set_modified();
 }
 
@@ -656,9 +656,9 @@ GtkWidget* ConfigurationDialog::init_behavior_tab()
 	g_signal_connect_slot(m_recent_items_max, "value-changed", &ConfigurationDialog::recent_items_max_changed, this);
 
 	// Add option to remember favorites
-	m_remember_favorites = gtk_check_button_new_with_mnemonic(_("Include _favorites"));
+	m_remember_favorites = gtk_check_button_new_with_mnemonic(_("Ignore _favorites"));
 	gtk_box_pack_start(recent_vbox, m_remember_favorites, true, true, 0);
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_remember_favorites), wm_settings->favorites_in_recent);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_remember_favorites), !wm_settings->favorites_in_recent);
 	g_signal_connect_slot(m_remember_favorites, "toggled", &ConfigurationDialog::toggle_remember_favorites, this);
 
 	// Add option to display recently used
