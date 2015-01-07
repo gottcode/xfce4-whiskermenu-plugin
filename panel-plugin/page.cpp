@@ -26,6 +26,8 @@
 
 #include <libxfce4ui/libxfce4ui.h>
 
+#include <glib/gstdio.h>
+
 using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
@@ -303,7 +305,14 @@ void Page::add_selected_to_desktop()
 
 	// Copy launcher to desktop folder
 	GError* error = NULL;
-	if (!g_file_copy(source_file, destination_file, G_FILE_COPY_NONE, NULL, NULL, NULL, &error))
+	if (g_file_copy(source_file, destination_file, G_FILE_COPY_NONE, NULL, NULL, NULL, &error))
+	{
+		// Make launcher executable
+		gchar* path = g_file_get_path(destination_file);
+		g_chmod(path, S_IRWXU | S_IRGRP | S_IXGRP | S_IROTH | S_IXOTH);
+		g_free(path);
+	}
+	else
 	{
 		xfce_dialog_show_error(NULL, error, _("Unable to add launcher to desktop."));
 		g_error_free(error);
