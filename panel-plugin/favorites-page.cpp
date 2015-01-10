@@ -113,6 +113,8 @@ void FavoritesPage::sort_ascending()
 		desktop_ids.push_back((*i)->get_desktop_id());
 	}
 	set_desktop_ids(desktop_ids);
+
+	wm_settings->set_modified();
 }
 
 //-----------------------------------------------------------------------------
@@ -128,6 +130,8 @@ void FavoritesPage::sort_descending()
 		desktop_ids.push_back((*i)->get_desktop_id());
 	}
 	set_desktop_ids(desktop_ids);
+
+	wm_settings->set_modified();
 }
 
 //-----------------------------------------------------------------------------
