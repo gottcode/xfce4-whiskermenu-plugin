@@ -78,6 +78,7 @@ ConfigurationDialog::ConfigurationDialog(Plugin* plugin) :
 	GtkNotebook* notebook = GTK_NOTEBOOK(gtk_notebook_new());
 	gtk_notebook_append_page(notebook, init_appearance_tab(), gtk_label_new_with_mnemonic(_("_Appearance")));
 	gtk_notebook_append_page(notebook, init_behavior_tab(), gtk_label_new_with_mnemonic(_("_Behavior")));
+	gtk_notebook_append_page(notebook, init_commands_tab(), gtk_label_new_with_mnemonic(_("_Commands")));
 	gtk_notebook_append_page(notebook, init_search_actions_tab(), gtk_label_new_with_mnemonic(_("Search Actio_ns")));
 
 	// Add tabs to dialog
@@ -667,12 +668,19 @@ GtkWidget* ConfigurationDialog::init_behavior_tab()
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_display_recent), wm_settings->display_recent);
 	g_signal_connect_slot(m_display_recent, "toggled", &ConfigurationDialog::toggle_display_recent, this);
 
-	// Create commands section
+	return page;
+}
+
+//-----------------------------------------------------------------------------
+
+GtkWidget* ConfigurationDialog::init_commands_tab()
+{
+	// Create behavior section
+	GtkWidget* page = gtk_alignment_new(0, 0, 1, 0);
+	gtk_container_set_border_width(GTK_CONTAINER(page), 8);
+	GtkBox* commands_vbox = GTK_BOX(gtk_vbox_new(false, 8));
+	gtk_container_add(GTK_CONTAINER(page), GTK_WIDGET(commands_vbox));
 	GtkSizeGroup* label_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
-	GtkBox* commands_vbox = GTK_BOX(gtk_vbox_new(false, 6));
-	GtkWidget* commands_frame = xfce_gtk_frame_box_new_with_content(_("Commands"), GTK_WIDGET(commands_vbox));
-	gtk_box_pack_start(behavior_vbox, commands_frame, false, false, 6);
-	gtk_container_set_border_width(GTK_CONTAINER(commands_frame), 0);
 
 	// Add command entries
 	for (int i = 0; i < Settings::CountCommands; ++i)
