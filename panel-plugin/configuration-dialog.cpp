@@ -266,6 +266,14 @@ void ConfigurationDialog::toggle_display_recent(GtkToggleButton* button)
 
 //-----------------------------------------------------------------------------
 
+void ConfigurationDialog::background_opacity_changed(GtkRange* range)
+{
+	wm_settings->menu_opacity = gtk_range_get_value(range);
+	wm_settings->set_modified();
+}
+
+//-----------------------------------------------------------------------------
+
 SearchAction* ConfigurationDialog::get_selected_action(GtkTreeIter* iter) const
 {
 	GtkTreeIter selected_iter;
@@ -600,6 +608,21 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	gtk_box_pack_start(hbox, m_category_icon_size, false, false, 0);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_category_icon_size);
 	g_signal_connect_slot(m_category_icon_size, "changed", &ConfigurationDialog::category_icon_size_changed, this);
+
+	// Add option to control background opacity
+	hbox = GTK_BOX(gtk_hbox_new(false, 12));
+	gtk_box_pack_start(appearance_vbox, GTK_WIDGET(hbox), false, false, 0);
+
+	label = gtk_label_new_with_mnemonic(_("Background opacit_y:"));
+	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+	gtk_box_pack_start(hbox, label, false, false, 0);
+	gtk_size_group_add_widget(label_size_group, label);
+
+	m_background_opacity = gtk_hscale_new_with_range(0.0, 100.0, 1.0);
+	gtk_box_pack_start(hbox, m_background_opacity, true, true, 0);
+	gtk_scale_set_value_pos(GTK_SCALE(m_background_opacity), GTK_POS_RIGHT);
+	gtk_range_set_value(GTK_RANGE(m_background_opacity), wm_settings->menu_opacity);
+	g_signal_connect_slot(m_background_opacity, "value-changed", &ConfigurationDialog::background_opacity_changed, this);
 
 	return page;
 }

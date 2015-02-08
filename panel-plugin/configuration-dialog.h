@@ -61,6 +61,8 @@ private:
 	void toggle_remember_favorites(GtkToggleButton* button);
 	void toggle_display_recent(GtkToggleButton* button);
 
+	void background_opacity_changed(GtkRange* range);
+
 	SearchAction* get_selected_action(GtkTreeIter* iter = NULL) const;
 	void action_selected(GtkTreeView* view);
 	void action_name_changed(GtkEditable* editable);
@@ -89,6 +91,7 @@ private:
 	GtkWidget* m_position_categories_alternate;
 	GtkWidget* m_category_icon_size;
 	GtkWidget* m_item_icon_size;
+	GtkWidget* m_background_opacity;
 
 	GtkWidget* m_button_style;
 	GtkWidget* m_title;
