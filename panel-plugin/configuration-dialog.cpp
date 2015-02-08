@@ -465,11 +465,12 @@ void ConfigurationDialog::response(GtkDialog*, int response_id)
 
 GtkWidget* ConfigurationDialog::init_appearance_tab()
 {
-	// Create page
+	// Create appearance page
 	GtkWidget* page = gtk_alignment_new(0, 0, 1, 0);
 	gtk_container_set_border_width(GTK_CONTAINER(page), 8);
 	GtkBox* contents_vbox = GTK_BOX(gtk_vbox_new(false, 0));
 	gtk_container_add(GTK_CONTAINER(page), GTK_WIDGET(contents_vbox));
+
 
 	// Create panel button section
 	GtkSizeGroup* label_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
@@ -535,6 +536,7 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	gtk_widget_set_sensitive(m_button_single_row, gtk_combo_box_get_active(GTK_COMBO_BOX (m_button_style)) == 0);
 	g_signal_connect_slot(m_button_single_row, "toggled", &ConfigurationDialog::toggle_button_single_row, this);
 
+
 	// Create menu section
 	label_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
 	GtkBox* appearance_vbox = GTK_BOX(gtk_vbox_new(false, 6));
@@ -559,25 +561,6 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	gtk_box_pack_start(appearance_vbox, m_show_hierarchy, true, true, 0);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_hierarchy), wm_settings->load_hierarchy);
 	g_signal_connect_slot(m_show_hierarchy, "toggled", &ConfigurationDialog::toggle_show_hierarchy, this);
-
-	// Add option to use alternate search entry position
-	m_position_search_alternate = gtk_check_button_new_with_mnemonic(_("Position _search entry next to panel button"));
-	gtk_box_pack_start(appearance_vbox, m_position_search_alternate, true, true, 0);
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_search_alternate), wm_settings->position_search_alternate);
-	g_signal_connect_slot(m_position_search_alternate, "toggled", &ConfigurationDialog::toggle_position_search_alternate, this);
-
-	// Add option to use alternate commands position
-	m_position_commands_alternate = gtk_check_button_new_with_mnemonic(_("Position commands next to search _entry"));
-	gtk_box_pack_start(appearance_vbox, m_position_commands_alternate, true, true, 0);
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_commands_alternate), wm_settings->position_commands_alternate);
-	gtk_widget_set_sensitive(GTK_WIDGET(m_position_commands_alternate), wm_settings->position_search_alternate);
-	g_signal_connect_slot(m_position_commands_alternate, "toggled", &ConfigurationDialog::toggle_position_commands_alternate, this);
-
-	// Add option to use alternate categories position
-	m_position_categories_alternate = gtk_check_button_new_with_mnemonic(_("Position cate_gories next to panel button"));
-	gtk_box_pack_start(appearance_vbox, m_position_categories_alternate, true, true, 0);
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_categories_alternate), wm_settings->position_categories_alternate);
-	g_signal_connect_slot(m_position_categories_alternate, "toggled", &ConfigurationDialog::toggle_position_categories_alternate, this);
 
 	// Add item icon size selector
 	hbox = GTK_BOX(gtk_hbox_new(false, 12));
@@ -625,11 +608,18 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 
 GtkWidget* ConfigurationDialog::init_behavior_tab()
 {
-	// Create behavior section
+	// Create behavior page
 	GtkWidget* page = gtk_alignment_new(0, 0, 1, 0);
 	gtk_container_set_border_width(GTK_CONTAINER(page), 8);
-	GtkBox* behavior_vbox = GTK_BOX(gtk_vbox_new(false, 8));
-	gtk_container_add(GTK_CONTAINER(page), GTK_WIDGET(behavior_vbox));
+	GtkBox* contents_vbox = GTK_BOX(gtk_vbox_new(false, 8));
+	gtk_container_add(GTK_CONTAINER(page), GTK_WIDGET(contents_vbox));
+
+
+	// Create menu section
+	GtkBox* behavior_vbox = GTK_BOX(gtk_vbox_new(false, 6));
+	GtkWidget* behavior_frame = xfce_gtk_frame_box_new_with_content(_("Menu"), GTK_WIDGET(behavior_vbox));
+	gtk_box_pack_start(contents_vbox, behavior_frame, false, false, 6);
+	gtk_container_set_border_width(GTK_CONTAINER(behavior_frame), 0);
 
 	// Add option to switch categories by hovering
 	m_hover_switch_category = gtk_check_button_new_with_mnemonic(_("Switch categories by _hovering"));
@@ -637,10 +627,30 @@ GtkWidget* ConfigurationDialog::init_behavior_tab()
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_hover_switch_category), wm_settings->category_hover_activate);
 	g_signal_connect_slot(m_hover_switch_category, "toggled", &ConfigurationDialog::toggle_hover_switch_category, this);
 
+	// Add option to use alternate search entry position
+	m_position_search_alternate = gtk_check_button_new_with_mnemonic(_("Position _search entry next to panel button"));
+	gtk_box_pack_start(behavior_vbox, m_position_search_alternate, true, true, 0);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_search_alternate), wm_settings->position_search_alternate);
+	g_signal_connect_slot(m_position_search_alternate, "toggled", &ConfigurationDialog::toggle_position_search_alternate, this);
+
+	// Add option to use alternate commands position
+	m_position_commands_alternate = gtk_check_button_new_with_mnemonic(_("Position commands next to search _entry"));
+	gtk_box_pack_start(behavior_vbox, m_position_commands_alternate, true, true, 0);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_commands_alternate), wm_settings->position_commands_alternate);
+	gtk_widget_set_sensitive(GTK_WIDGET(m_position_commands_alternate), wm_settings->position_search_alternate);
+	g_signal_connect_slot(m_position_commands_alternate, "toggled", &ConfigurationDialog::toggle_position_commands_alternate, this);
+
+	// Add option to use alternate categories position
+	m_position_categories_alternate = gtk_check_button_new_with_mnemonic(_("Position cate_gories next to panel button"));
+	gtk_box_pack_start(behavior_vbox, m_position_categories_alternate, true, true, 0);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_categories_alternate), wm_settings->position_categories_alternate);
+	g_signal_connect_slot(m_position_categories_alternate, "toggled", &ConfigurationDialog::toggle_position_categories_alternate, this);
+
+
 	// Create recently used section
 	GtkBox* recent_vbox = GTK_BOX(gtk_vbox_new(false, 6));
 	GtkWidget* recent_frame = xfce_gtk_frame_box_new_with_content(_("Recently Used"), GTK_WIDGET(recent_vbox));
-	gtk_box_pack_start(behavior_vbox, recent_frame, false, false, 6);
+	gtk_box_pack_start(contents_vbox, recent_frame, false, false, 6);
 	gtk_container_set_border_width(GTK_CONTAINER(recent_frame), 0);
 
 	// Add value to change maximum number of recently used entries
@@ -676,7 +686,7 @@ GtkWidget* ConfigurationDialog::init_behavior_tab()
 
 GtkWidget* ConfigurationDialog::init_commands_tab()
 {
-	// Create behavior section
+	// Create commands page
 	GtkWidget* page = gtk_alignment_new(0, 0, 1, 0);
 	gtk_container_set_border_width(GTK_CONTAINER(page), 8);
 	GtkBox* commands_vbox = GTK_BOX(gtk_vbox_new(false, 8));
@@ -698,7 +708,7 @@ GtkWidget* ConfigurationDialog::init_commands_tab()
 
 GtkWidget* ConfigurationDialog::init_search_actions_tab()
 {
-	// Create search actions section
+	// Create search actions page
 	GtkWidget* page = gtk_alignment_new(0, 0, 1, 1);
 	gtk_container_set_border_width(GTK_CONTAINER(page), 8);
 	GtkTable* actions_table = GTK_TABLE(gtk_table_new(3, 2, false));
