@@ -467,6 +467,7 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 {
 	// Create page
 	GtkWidget* page = gtk_alignment_new(0, 0, 1, 0);
+	gtk_container_set_border_width(GTK_CONTAINER(page), 8);
 	GtkBox* contents_vbox = GTK_BOX(gtk_vbox_new(false, 0));
 	gtk_container_add(GTK_CONTAINER(page), GTK_WIDGET(contents_vbox));
 
@@ -474,8 +475,8 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	GtkSizeGroup* label_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
 	GtkBox* panel_vbox = GTK_BOX(gtk_vbox_new(false, 6));
 	GtkWidget* panel_frame = xfce_gtk_frame_box_new_with_content(_("Panel Button"), GTK_WIDGET(panel_vbox));
-	gtk_box_pack_start(contents_vbox, panel_frame, false, false, 0);
-	gtk_container_set_border_width(GTK_CONTAINER(panel_frame), 6);
+	gtk_box_pack_start(contents_vbox, panel_frame, false, false, 6);
+	gtk_container_set_border_width(GTK_CONTAINER(panel_frame), 0);
 
 	// Add button style selector
 	GtkBox* hbox = GTK_BOX(gtk_hbox_new(false, 12));
@@ -538,8 +539,8 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	label_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
 	GtkBox* appearance_vbox = GTK_BOX(gtk_vbox_new(false, 6));
 	GtkWidget* appearance_frame = xfce_gtk_frame_box_new_with_content(_("Menu"), GTK_WIDGET(appearance_vbox));
-	gtk_box_pack_start(contents_vbox, appearance_frame, false, false, 0);
-	gtk_container_set_border_width(GTK_CONTAINER(appearance_frame), 6);
+	gtk_box_pack_start(contents_vbox, appearance_frame, false, false, 6);
+	gtk_container_set_border_width(GTK_CONTAINER(appearance_frame), 0);
 
 	// Add option to use generic names
 	m_show_generic_names = gtk_check_button_new_with_mnemonic(_("Show generic application _names"));
