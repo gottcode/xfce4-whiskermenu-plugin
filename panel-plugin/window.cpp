@@ -45,8 +45,7 @@ WhiskerMenu::Window::Window() :
 	m_layout_bottom(true),
 	m_layout_search_alternate(false),
 	m_layout_commands_alternate(false),
-	m_supports_alpha(false),
-	m_opacity(wm_settings->menu_opacity)
+	m_supports_alpha(false)
 {
 	m_geometry.x = 0;
 	m_geometry.y = 0;
@@ -115,7 +114,7 @@ WhiskerMenu::Window::Window() :
 	m_commands_button[3] = wm_settings->command[Settings::CommandLogOut]->get_button();
 	for (int i = 0; i < 4; ++i)
 	{
-		g_signal_connect_slot<GtkButton*>(m_commands_button[i], "clicked", &Window::hide, this);
+		m_command_slots[i] = g_signal_connect_slot<GtkButton*>(m_commands_button[i], "clicked", &Window::hide, this);
 	}
 
 	m_resizer = new ResizerWidget(m_window);
@@ -249,6 +248,12 @@ WhiskerMenu::Window::Window() :
 
 WhiskerMenu::Window::~Window()
 {
+	for (int i = 0; i < 4; ++i)
+	{
+		g_signal_handler_disconnect(m_commands_button[i], m_command_slots[i]);
+		gtk_container_remove(GTK_CONTAINER(m_commands_box), m_commands_button[i]);
+	}
+
 	delete m_applications;
 	delete m_search_results;
 	delete m_recent;
@@ -256,6 +261,9 @@ WhiskerMenu::Window::~Window()
 
 	delete m_profilepic;
 	delete m_resizer;
+
+	delete m_favorites_button;
+	delete m_recent_button;
 
 	g_object_unref(m_window);
 }
@@ -280,13 +288,6 @@ void WhiskerMenu::Window::hide()
 
 void WhiskerMenu::Window::show(GtkWidget* parent, bool horizontal)
 {
-	// Handle change in opacity
-	if (wm_settings->menu_opacity != m_opacity)
-	{
-		m_opacity = wm_settings->menu_opacity;
-		on_screen_changed_event(GTK_WIDGET(m_window), NULL);
-	}
-
 	// Make sure icon sizes are correct
 	m_favorites_button->reload_icon_size();
 	m_recent_button->reload_icon_size();
@@ -830,7 +831,7 @@ void WhiskerMenu::Window::on_screen_changed_event(GtkWidget* widget, GdkScreen*)
 {
 	GdkScreen* screen = gtk_widget_get_screen(widget);
 	GdkColormap* colormap = gdk_screen_get_rgba_colormap(screen);
-	if (!colormap || (m_opacity == 100))
+	if (!colormap || (wm_settings->menu_opacity == 100))
 	{
 		colormap = gdk_screen_get_system_colormap(screen);
 		m_supports_alpha = false;

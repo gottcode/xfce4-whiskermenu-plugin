@@ -113,6 +113,7 @@ private:
 
 	GtkAlignment* m_commands_align;
 	GtkWidget* m_commands_button[4];
+	gulong m_command_slots[4];
 
 	GtkEntry* m_search_entry;
 
@@ -133,7 +134,6 @@ private:
 	bool m_layout_search_alternate;
 	bool m_layout_commands_alternate;
 	bool m_supports_alpha;
-	int m_opacity;
 };
 
 }

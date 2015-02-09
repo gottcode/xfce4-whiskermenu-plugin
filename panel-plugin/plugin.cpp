@@ -96,13 +96,15 @@ static bool panel_utils_grab_available()
 
 Plugin::Plugin(XfcePanelPlugin* plugin) :
 	m_plugin(plugin),
-	m_window(NULL)
+	m_window(NULL),
+	m_opacity(100)
 {
 	// Load settings
 	wm_settings = new Settings;
 	wm_settings->button_title = get_button_title_default();
 	wm_settings->load(g_strconcat(DATADIR, "/xfce4/whiskermenu/defaults.rc", NULL));
 	wm_settings->load(xfce_panel_plugin_lookup_rc_file(m_plugin));
+	m_opacity = wm_settings->menu_opacity;
 
 	// Prevent empty panel button
 	if (!wm_settings->button_icon_visible)
@@ -304,7 +306,7 @@ void Plugin::button_toggled(GtkToggleButton* button)
 	else
 	{
 		xfce_panel_plugin_block_autohide(m_plugin, true);
-		m_window->show(m_button, xfce_panel_plugin_get_orientation(m_plugin) == GTK_ORIENTATION_HORIZONTAL);
+		show_menu(m_button, xfce_panel_plugin_get_orientation(m_plugin) == GTK_ORIENTATION_HORIZONTAL);
 	}
 }
 
@@ -355,7 +357,7 @@ gboolean Plugin::remote_event(XfcePanelPlugin*, gchar* name, GValue* value)
 	}
 	else if (value && G_VALUE_HOLDS_BOOLEAN(value) && g_value_get_boolean(value))
 	{
-		m_window->show(NULL, true);
+		show_menu(NULL, true);
 	}
 	else
 	{
@@ -491,6 +493,23 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 void Plugin::update_size()
 {
 	size_changed(m_plugin, xfce_panel_plugin_get_size(m_plugin));
+}
+
+//-----------------------------------------------------------------------------
+
+void Plugin::show_menu(GtkWidget* parent, bool horizontal)
+{
+	if (wm_settings->menu_opacity != m_opacity)
+	{
+		if ((m_opacity == 100) || (wm_settings->menu_opacity == 100))
+		{
+			delete m_window;
+			m_window = new Window;
+			g_signal_connect_slot<GtkWidget*>(m_window->get_widget(), "unmap", &Plugin::menu_hidden, this);
+		}
+		m_opacity = wm_settings->menu_opacity;
+	}
+	m_window->show(parent, horizontal);
 }
 
 //-----------------------------------------------------------------------------

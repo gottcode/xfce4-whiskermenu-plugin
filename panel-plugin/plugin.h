@@ -71,6 +71,7 @@ private:
 	void show_about();
 	gboolean size_changed(XfcePanelPlugin*, gint size);
 	void update_size();
+	void show_menu(GtkWidget* parent, bool horizontal);
 
 private:
 	XfcePanelPlugin* m_plugin;
@@ -80,6 +81,8 @@ private:
 	GtkBox* m_button_box;
 	GtkLabel* m_button_label;
 	GtkImage* m_button_icon;
+
+	int m_opacity;
 };
 
 }
