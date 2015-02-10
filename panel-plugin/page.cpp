@@ -94,7 +94,7 @@ Launcher* Page::get_selected_launcher() const
 		gtk_tree_model_get_iter(model, &iter, m_selected_path);
 		gtk_tree_model_get(model, &iter, LauncherView::COLUMN_LAUNCHER, &launcher, -1);
 	}
-	return (launcher->get_type() == Launcher::Type) ? launcher : NULL;
+	return (launcher && (launcher->get_type() == Launcher::Type)) ? launcher : NULL;
 }
 
 //-----------------------------------------------------------------------------
