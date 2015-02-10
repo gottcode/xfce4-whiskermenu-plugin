@@ -129,8 +129,6 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	gtk_button_set_relief(GTK_BUTTON(m_button), GTK_RELIEF_NONE);
 	gtk_button_set_focus_on_click(GTK_BUTTON(m_button), false);
 	g_signal_connect_slot(m_button, "toggled", &Plugin::button_toggled, this);
-	g_signal_connect_slot<GtkWidget*,GtkStyle*>(m_button, "style-set", &Plugin::update_size, this);
-	g_signal_connect_slot<GtkWidget*,GdkScreen*>(m_button, "screen-changed", &Plugin::update_size, this);
 	gtk_widget_show(m_button);
 
 	m_button_box = GTK_BOX(gtk_hbox_new(false, 2));
@@ -179,6 +177,9 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 #else
 	orientation_changed(m_plugin, xfce_panel_plugin_get_orientation(m_plugin));
 #endif
+
+	g_signal_connect_slot<GtkWidget*,GtkStyle*>(m_button, "style-set", &Plugin::update_size, this);
+	g_signal_connect_slot<GtkWidget*,GdkScreen*>(m_button, "screen-changed", &Plugin::update_size, this);
 }
 
 //-----------------------------------------------------------------------------
