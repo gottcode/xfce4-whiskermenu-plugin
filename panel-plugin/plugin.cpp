@@ -119,10 +119,6 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 		}
 	}
 
-	// Create menu window
-	m_window = new Window;
-	g_signal_connect_slot<GtkWidget*>(m_window->get_widget(), "unmap", &Plugin::menu_hidden, this);
-
 	// Create toggle button
 	m_button = xfce_panel_create_toggle_button();
 	gtk_widget_set_name(m_button, "whiskermenu-button");
@@ -180,6 +176,10 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 
 	g_signal_connect_slot<GtkWidget*,GtkStyle*>(m_button, "style-set", &Plugin::update_size, this);
 	g_signal_connect_slot<GtkWidget*,GdkScreen*>(m_button, "screen-changed", &Plugin::update_size, this);
+
+	// Create menu window
+	m_window = new Window;
+	g_signal_connect_slot<GtkWidget*>(m_window->get_widget(), "unmap", &Plugin::menu_hidden, this);
 }
 
 //-----------------------------------------------------------------------------
