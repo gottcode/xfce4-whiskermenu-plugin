@@ -43,7 +43,6 @@ extern "C" void whiskermenu_construct(XfcePanelPlugin* plugin)
 static void whiskermenu_free(XfcePanelPlugin*, Plugin* whiskermenu)
 {
 	delete whiskermenu;
-	whiskermenu = NULL;
 }
 
 // Wait for grab; allows modifier as shortcut

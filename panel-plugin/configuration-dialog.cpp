@@ -53,7 +53,6 @@ enum
 static void whiskermenu_config_dialog_delete(ConfigurationDialog* dialog)
 {
 	delete dialog;
-	dialog = NULL;
 }
 
 //-----------------------------------------------------------------------------
