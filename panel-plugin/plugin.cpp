@@ -190,10 +190,10 @@ Plugin::~Plugin()
 	delete m_window;
 	m_window = NULL;
 
+	gtk_widget_destroy(m_button);
+
 	delete wm_settings;
 	wm_settings = NULL;
-
-	gtk_widget_destroy(m_button);
 }
 
 //-----------------------------------------------------------------------------
