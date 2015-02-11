@@ -530,7 +530,7 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	xfce_panel_image_set_size(XFCE_PANEL_IMAGE(m_icon), 48);
 	gtk_container_add(GTK_CONTAINER(m_icon_button), m_icon);
 
-	m_button_single_row = gtk_check_button_new_with_mnemonic(_("Lay out icon in a single _panel row"));
+	m_button_single_row = gtk_check_button_new_with_mnemonic(_("Use a single _panel row"));
 	gtk_box_pack_start(panel_vbox, m_button_single_row, true, true, 0);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_button_single_row), wm_settings->button_single_row);
 	gtk_widget_set_sensitive(m_button_single_row, gtk_combo_box_get_active(GTK_COMBO_BOX (m_button_style)) == 0);
