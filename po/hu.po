@@ -1,17 +1,17 @@
 # Hungarian translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2014 Graeme Gott
+# Copyright (C) 2015 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # Gábor Horváth <xazax.hun@gmail.com>, 2013
 # Gyönki Bendegúz <gyonkibendeguz@gmail.com>, 2013
-# Rezső Páder <rezso@rezso.net>, 2014
+# Rezső Páder <rezso@rezso.net>, 2014-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-04 18:42+0000\n"
-"PO-Revision-Date: 2014-04-06 12:45+0000\n"
+"PO-Revision-Date: 2015-02-02 21:11+0000\n"
 "Last-Translator: Rezső Páder <rezso@rezso.net>\n"
 "Language-Team: Hungarian (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/hu/)\n"
@@ -47,7 +47,7 @@ msgstr "Összes _beállítás"
 
 #: ../panel-plugin/plugin.cpp:392
 msgid "Alternate application launcher for Xfce"
-msgstr ""
+msgstr "Alternatív alkalmazásindító az Xfce-hez"
 
 #: ../panel-plugin/plugin.cpp:212
 msgid "Applications Menu"
@@ -75,7 +75,7 @@ msgstr "Parancsok:"
 
 #: ../panel-plugin/plugin.cpp:393
 msgid "Copyright © 2013-2014 Graeme Gott"
-msgstr ""
+msgstr "Copyright © 2013-2014 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:738
 msgid "Details"
