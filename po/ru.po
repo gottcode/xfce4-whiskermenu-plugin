@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-04 18:42+0000\n"
+"POT-Creation-Date: 2015-02-14 11:03+0000\n"
 "PO-Revision-Date: 2015-02-08 14:00+0000\n"
 "Last-Translator: Sergey Alyoshin <alyoshin.s@gmail.com>\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/xfce4-"
@@ -23,19 +23,19 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../panel-plugin/configuration-dialog.cpp:709
+#: ../panel-plugin/configuration-dialog.cpp:765
 msgid "Add action"
 msgstr "Добавить действие"
 
-#: ../panel-plugin/page.cpp:212
+#: ../panel-plugin/page.cpp:214
 msgid "Add to Desktop"
 msgstr "Добавить на «Рабочий стол»"
 
-#: ../panel-plugin/page.cpp:197
+#: ../panel-plugin/page.cpp:199
 msgid "Add to Favorites"
 msgstr "Добавить в «Избранное»"
 
-#: ../panel-plugin/page.cpp:216
+#: ../panel-plugin/page.cpp:218
 msgid "Add to Panel"
 msgstr "Добавить на панель"
 
@@ -43,97 +43,113 @@ msgstr "Добавить на панель"
 msgid "All"
 msgstr "Все"
 
-#: ../panel-plugin/settings.cpp:113
+#: ../panel-plugin/settings.cpp:117
 msgid "All _Settings"
 msgstr "Все _настройки"
 
-#: ../panel-plugin/plugin.cpp:392
+#: ../panel-plugin/plugin.cpp:393
 msgid "Alternate application launcher for Xfce"
 msgstr "Альтернативное меню запуска приложений для Xfce"
 
-#: ../panel-plugin/plugin.cpp:212
-msgid "Applications Menu"
+#: ../panel-plugin/configuration-dialog.cpp:665
+msgid "Amount of _items:"
+msgstr ""
+
+#: ../panel-plugin/plugin.cpp:217
+#, fuzzy
+msgid "Applications"
 msgstr "Меню приложений"
 
-#: ../panel-plugin/command-edit.cpp:46
+#: ../panel-plugin/configuration-dialog.cpp:599
+msgid "Background opacit_y:"
+msgstr ""
+
+#: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
 msgstr "Просмотреть файловую системы для выбора специальной команды."
 
-#: ../panel-plugin/configuration-dialog.cpp:767
+#: ../panel-plugin/configuration-dialog.cpp:823
 msgid "C_ommand:"
 msgstr "_Команда:"
 
-#: ../panel-plugin/configuration-dialog.cpp:592
+#: ../panel-plugin/configuration-dialog.cpp:584
 msgid "Categ_ory icon size:"
 msgstr "Размер значка _категории:"
 
-#: ../panel-plugin/recent-page.cpp:88
+#: ../panel-plugin/recent-page.cpp:148
 msgid "Clear Recently Used"
 msgstr "Очистить историю"
 
-#: ../panel-plugin/configuration-dialog.cpp:641
-msgid "Commands"
-msgstr "Команды"
-
-#: ../panel-plugin/plugin.cpp:393
+#: ../panel-plugin/plugin.cpp:394
 msgid "Copyright © 2013-2014 Graeme Gott"
 msgstr "Copyright © 2013—2014 Graeme Gott"
 
-#: ../panel-plugin/configuration-dialog.cpp:738
+#: ../panel-plugin/configuration-dialog.cpp:794
 msgid "Details"
 msgstr "Подробности"
 
-#: ../panel-plugin/configuration-dialog.cpp:471
+#: ../panel-plugin/configuration-dialog.cpp:492
 msgid "Di_splay:"
 msgstr "Показы_вать:"
 
-#: ../panel-plugin/configuration-dialog.cpp:633
-msgid "Display recently _used by default"
+#: ../panel-plugin/configuration-dialog.cpp:682
+#, fuzzy
+msgid "Display by _default"
 msgstr "По умолчанию показывать «_Недавние»"
 
-#: ../panel-plugin/launcher.cpp:252 ../panel-plugin/run-action.cpp:41
+#: ../panel-plugin/settings.cpp:122
+msgid "Edit _Profile"
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:122
+#, fuzzy
+msgid "Failed to edit profile."
+msgstr "Не удалось сменить пользователя."
+
+#: ../panel-plugin/launcher.cpp:267 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "Ошибка выполнения команды «%s»."
 
-#: ../panel-plugin/settings.cpp:117
+#: ../panel-plugin/settings.cpp:121
 msgid "Failed to launch menu editor."
 msgstr "Не удалось запустить редактор меню."
 
-#: ../panel-plugin/settings.cpp:114
+#: ../panel-plugin/settings.cpp:118
 msgid "Failed to lock screen."
 msgstr "Не удалось заблокировать экран."
 
-#: ../panel-plugin/settings.cpp:116
+#: ../panel-plugin/settings.cpp:120
 msgid "Failed to log out."
 msgstr "Не удалось выйти."
 
-#: ../panel-plugin/settings.cpp:113
+#: ../panel-plugin/settings.cpp:117
 msgid "Failed to open settings manager."
 msgstr "Не удалось открыть диспетчер настроек."
 
-#: ../panel-plugin/settings.cpp:115
+#: ../panel-plugin/settings.cpp:119
 msgid "Failed to switch users."
 msgstr "Не удалось сменить пользователя."
 
-#: ../panel-plugin/window.cpp:127
+#: ../panel-plugin/window.cpp:119
 msgid "Favorites"
 msgstr "Избранное"
 
-#: ../panel-plugin/configuration-dialog.cpp:477
+#: ../panel-plugin/configuration-dialog.cpp:497
 msgid "Icon"
 msgstr "Значок"
 
-#: ../panel-plugin/configuration-dialog.cpp:479
+#: ../panel-plugin/configuration-dialog.cpp:499
 msgid "Icon and title"
 msgstr "Значок и заголовок"
 
-#: ../panel-plugin/configuration-dialog.cpp:627
-msgid "Include _favorites in recently used"
-msgstr "Включать «_Избранное» в «Недавние»"
+#: ../panel-plugin/configuration-dialog.cpp:676
+#, fuzzy
+msgid "Ignore _favorites"
+msgstr "Избранное"
 
-#: ../panel-plugin/configuration-dialog.cpp:572
+#: ../panel-plugin/configuration-dialog.cpp:568
 msgid "Ite_m icon size:"
 msgstr "Размер значка _элемента:"
 
@@ -145,27 +161,24 @@ msgstr "Крупный"
 msgid "Larger"
 msgstr "Большой"
 
-#: ../panel-plugin/configuration-dialog.cpp:518
-msgid "Lay out icon in a single _panel row"
-msgstr "Зн_ачок в одну строку панели"
-
-#: ../panel-plugin/settings.cpp:116
+#: ../panel-plugin/settings.cpp:120
 msgid "Log _Out"
 msgstr "_Выйти"
 
-#: ../panel-plugin/settings.cpp:119
+#: ../panel-plugin/settings.cpp:124
 msgid "Man Pages"
 msgstr "Man-страницы"
 
-#: ../panel-plugin/configuration-dialog.cpp:527
+#: ../panel-plugin/configuration-dialog.cpp:545
+#: ../panel-plugin/configuration-dialog.cpp:625
 msgid "Menu"
 msgstr "Меню"
 
-#: ../panel-plugin/configuration-dialog.cpp:743
+#: ../panel-plugin/configuration-dialog.cpp:799
 msgid "Nam_e:"
 msgstr "_Название:"
 
-#: ../panel-plugin/configuration-dialog.cpp:689
+#: ../panel-plugin/configuration-dialog.cpp:745
 msgid "Name"
 msgstr "Название"
 
@@ -177,44 +190,44 @@ msgstr "Нет"
 msgid "Normal"
 msgstr "Нормальный"
 
-#: ../panel-plugin/settings.cpp:122
+#: ../panel-plugin/settings.cpp:127
 msgid "Open URI"
 msgstr "Открыть URI"
 
-#: ../panel-plugin/configuration-dialog.cpp:463
+#: ../panel-plugin/configuration-dialog.cpp:487
 msgid "Panel Button"
 msgstr "Кнопка на панели"
 
-#: ../panel-plugin/configuration-dialog.cpp:694
+#: ../panel-plugin/configuration-dialog.cpp:750
 msgid "Pattern"
 msgstr "Шаблон"
 
-#: ../panel-plugin/configuration-dialog.cpp:550
+#: ../panel-plugin/configuration-dialog.cpp:636
 msgid "Position _search entry next to panel button"
 msgstr "Ст_рока поиска около панели"
 
-#: ../panel-plugin/configuration-dialog.cpp:563
+#: ../panel-plugin/configuration-dialog.cpp:649
 msgid "Position cate_gories next to panel button"
 msgstr "Ка_тегории после кнопок панели"
 
-#: ../panel-plugin/configuration-dialog.cpp:556
+#: ../panel-plugin/configuration-dialog.cpp:642
 msgid "Position commands next to search _entry"
 msgstr "Кнопки _команд рядом со строкой поиска"
 
-#: ../panel-plugin/window.cpp:133
+#: ../panel-plugin/configuration-dialog.cpp:660 ../panel-plugin/window.cpp:125
 msgid "Recently Used"
 msgstr "Недавние"
 
-#: ../panel-plugin/page.cpp:205
+#: ../panel-plugin/page.cpp:207
 msgid "Remove From Favorites"
 msgstr "Удалить из «Избранного»"
 
-#: ../panel-plugin/configuration-dialog.cpp:381
+#: ../panel-plugin/configuration-dialog.cpp:401
 #, c-format
 msgid "Remove action \"%s\"?"
 msgstr "Удалить действие «%s»?"
 
-#: ../panel-plugin/configuration-dialog.cpp:718
+#: ../panel-plugin/configuration-dialog.cpp:774
 msgid "Remove selected action"
 msgstr "Удалить выбранное действие"
 
@@ -223,7 +236,7 @@ msgstr "Удалить выбранное действие"
 msgid "Run %s"
 msgstr "Выполнить %s"
 
-#: ../panel-plugin/settings.cpp:121
+#: ../panel-plugin/settings.cpp:126
 msgid "Run in Terminal"
 msgstr "Выполнить в терминале"
 
@@ -239,7 +252,7 @@ msgstr "Поисковое действие"
 msgid "Select An Icon"
 msgstr "Выбрать значок"
 
-#: ../panel-plugin/command-edit.cpp:60
+#: ../panel-plugin/command-edit.cpp:64
 msgid "Select Command"
 msgstr "Выбор команды"
 
@@ -247,15 +260,15 @@ msgstr "Выбор команды"
 msgid "Show a menu to easily access installed applications"
 msgstr "Показывает меню для простого доступа к установленным приложениям"
 
-#: ../panel-plugin/configuration-dialog.cpp:538
+#: ../panel-plugin/configuration-dialog.cpp:556
 msgid "Show application _descriptions"
 msgstr "Показывать _описания приложений"
 
-#: ../panel-plugin/configuration-dialog.cpp:532
+#: ../panel-plugin/configuration-dialog.cpp:550
 msgid "Show generic application _names"
 msgstr "Показывать общие _названия приложений"
 
-#: ../panel-plugin/configuration-dialog.cpp:544
+#: ../panel-plugin/configuration-dialog.cpp:562
 msgid "Show menu hie_rarchy"
 msgstr "Показывать иерархию _меню"
 
@@ -267,37 +280,42 @@ msgstr "Маленький"
 msgid "Smaller"
 msgstr "Очень маленький"
 
-#: ../panel-plugin/favorites-page.cpp:67
+#: ../panel-plugin/favorites-page.cpp:129
 msgid "Sort Alphabetically A-Z"
 msgstr "Сортировать по алфавиту от А до Я"
 
-#: ../panel-plugin/favorites-page.cpp:73
+#: ../panel-plugin/favorites-page.cpp:135
 msgid "Sort Alphabetically Z-A"
 msgstr "Сортировать по алфавиту от Я до А"
 
-#: ../panel-plugin/settings.cpp:115
+#: ../panel-plugin/settings.cpp:119
 msgid "Switch _Users"
 msgstr "Сменить _пользователя"
 
-#: ../panel-plugin/configuration-dialog.cpp:621
+#: ../panel-plugin/configuration-dialog.cpp:630
 msgid "Switch categories by _hovering"
 msgstr "Переключать категории по наведению _мыши"
 
-#: ../panel-plugin/configuration-dialog.cpp:380
+#: ../panel-plugin/configuration-dialog.cpp:400
 msgid "The action will be deleted permanently."
 msgstr "Действие буден навсегда удалено."
 
-#: ../panel-plugin/configuration-dialog.cpp:478
+#: ../panel-plugin/configuration-dialog.cpp:498
 msgid "Title"
 msgstr "Заголовок"
 
-#: ../panel-plugin/page.cpp:308
+#: ../panel-plugin/page.cpp:317
 msgid "Unable to add launcher to desktop."
 msgstr "Нельзя добавить на «Рабочий стол»."
 
-#: ../panel-plugin/page.cpp:347 ../panel-plugin/page.cpp:356
+#: ../panel-plugin/page.cpp:356 ../panel-plugin/page.cpp:365
 msgid "Unable to add launcher to panel."
 msgstr "Нельзя добавить на панель."
+
+#: ../panel-plugin/configuration-dialog.cpp:532
+#, fuzzy
+msgid "Use a single _panel row"
+msgstr "Зн_ачок в одну строку панели"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
@@ -307,51 +325,59 @@ msgstr "Очень большой"
 msgid "Very Small"
 msgstr "Крошечный"
 
-#: ../panel-plugin/configuration-dialog.cpp:71
+#: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
 msgid "Whisker Menu"
 msgstr "Меню Whisker"
 
-#: ../panel-plugin/settings.cpp:120
+#: ../panel-plugin/settings.cpp:125
 msgid "Wikipedia"
 msgstr "Википедия"
 
-#: ../panel-plugin/configuration-dialog.cpp:79
+#: ../panel-plugin/configuration-dialog.cpp:78
 msgid "_Appearance"
 msgstr "_Вид"
 
-#: ../panel-plugin/configuration-dialog.cpp:80
+#: ../panel-plugin/configuration-dialog.cpp:79
 msgid "_Behavior"
 msgstr "_Поведение"
 
-#: ../panel-plugin/settings.cpp:117
+#: ../panel-plugin/configuration-dialog.cpp:80
+#, fuzzy
+msgid "_Commands"
+msgstr "Команды"
+
+#: ../panel-plugin/settings.cpp:121
 msgid "_Edit Applications"
 msgstr "Изменить п_риложения"
 
-#: ../panel-plugin/configuration-dialog.cpp:504
+#: ../panel-plugin/configuration-dialog.cpp:517
 msgid "_Icon:"
 msgstr "Зна_чок:"
 
-#: ../panel-plugin/settings.cpp:114
+#: ../panel-plugin/settings.cpp:118
 msgid "_Lock Screen"
 msgstr "Заб_локировать экран"
 
-#: ../panel-plugin/configuration-dialog.cpp:755
+#: ../panel-plugin/configuration-dialog.cpp:811
 msgid "_Pattern:"
 msgstr "_Шаблон:"
 
-#: ../panel-plugin/configuration-dialog.cpp:779
+#: ../panel-plugin/configuration-dialog.cpp:835
 msgid "_Regular expression"
 msgstr "_Регулярное выражение"
 
-#: ../panel-plugin/configuration-dialog.cpp:489
+#: ../panel-plugin/configuration-dialog.cpp:506
 msgid "_Title:"
 msgstr "За_головок:"
 
-#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/plugin.cpp:398
 msgid "translator-credits"
 msgstr ""
 "Артём Демаков <dearalcher@gmail.com>, 2013\n"
 "Кирилл Детинов <lazy.kent@opensuse.org>, 2013\n"
 "Сергей Алёшин <alyoshin.s@gmail.com>, 2013, 2014\n"
 "Сергей Шляпугин <shlyapugin@gmail.com>, 2013"
+
+#~ msgid "Include _favorites in recently used"
+#~ msgstr "Включать «_Избранное» в «Недавние»"

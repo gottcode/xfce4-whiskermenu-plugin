@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-04 18:42+0000\n"
+"POT-Creation-Date: 2015-02-14 11:03+0000\n"
 "PO-Revision-Date: 2014-06-04 23:37+0000\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/xfce4-"
@@ -21,19 +21,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../panel-plugin/configuration-dialog.cpp:709
+#: ../panel-plugin/configuration-dialog.cpp:765
 msgid "Add action"
 msgstr "加入動作"
 
-#: ../panel-plugin/page.cpp:212
+#: ../panel-plugin/page.cpp:214
 msgid "Add to Desktop"
 msgstr "新增到桌面"
 
-#: ../panel-plugin/page.cpp:197
+#: ../panel-plugin/page.cpp:199
 msgid "Add to Favorites"
 msgstr "新增到最愛"
 
-#: ../panel-plugin/page.cpp:216
+#: ../panel-plugin/page.cpp:218
 msgid "Add to Panel"
 msgstr "新增到面板上"
 
@@ -41,97 +41,113 @@ msgstr "新增到面板上"
 msgid "All"
 msgstr "全部"
 
-#: ../panel-plugin/settings.cpp:113
+#: ../panel-plugin/settings.cpp:117
 msgid "All _Settings"
 msgstr "所有設定(_S)"
 
-#: ../panel-plugin/plugin.cpp:392
+#: ../panel-plugin/plugin.cpp:393
 msgid "Alternate application launcher for Xfce"
 msgstr "Xfce 上可替換的應用程式啟動器"
 
-#: ../panel-plugin/plugin.cpp:212
-msgid "Applications Menu"
+#: ../panel-plugin/configuration-dialog.cpp:665
+msgid "Amount of _items:"
+msgstr ""
+
+#: ../panel-plugin/plugin.cpp:217
+#, fuzzy
+msgid "Applications"
 msgstr "應用程式選單"
 
-#: ../panel-plugin/command-edit.cpp:46
+#: ../panel-plugin/configuration-dialog.cpp:599
+msgid "Background opacit_y:"
+msgstr ""
+
+#: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
 msgstr "瀏覽檔案系統以選擇自訂指令。"
 
-#: ../panel-plugin/configuration-dialog.cpp:767
+#: ../panel-plugin/configuration-dialog.cpp:823
 msgid "C_ommand:"
 msgstr "指令(_O)："
 
-#: ../panel-plugin/configuration-dialog.cpp:592
+#: ../panel-plugin/configuration-dialog.cpp:584
 msgid "Categ_ory icon size:"
 msgstr "分類圖示大小(_O)："
 
-#: ../panel-plugin/recent-page.cpp:88
+#: ../panel-plugin/recent-page.cpp:148
 msgid "Clear Recently Used"
 msgstr "清除最近使用"
 
-#: ../panel-plugin/configuration-dialog.cpp:641
-msgid "Commands"
-msgstr "指令"
-
-#: ../panel-plugin/plugin.cpp:393
+#: ../panel-plugin/plugin.cpp:394
 msgid "Copyright © 2013-2014 Graeme Gott"
 msgstr "Copyright © 2013-2014 Graeme Gott"
 
-#: ../panel-plugin/configuration-dialog.cpp:738
+#: ../panel-plugin/configuration-dialog.cpp:794
 msgid "Details"
 msgstr "詳情"
 
-#: ../panel-plugin/configuration-dialog.cpp:471
+#: ../panel-plugin/configuration-dialog.cpp:492
 msgid "Di_splay:"
 msgstr "顯示(_S)："
 
-#: ../panel-plugin/configuration-dialog.cpp:633
-msgid "Display recently _used by default"
+#: ../panel-plugin/configuration-dialog.cpp:682
+#, fuzzy
+msgid "Display by _default"
 msgstr "預設顯示最近使用(_U)"
 
-#: ../panel-plugin/launcher.cpp:252 ../panel-plugin/run-action.cpp:41
+#: ../panel-plugin/settings.cpp:122
+msgid "Edit _Profile"
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:122
+#, fuzzy
+msgid "Failed to edit profile."
+msgstr "未能切換使用者。"
+
+#: ../panel-plugin/launcher.cpp:267 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "執行 \"%s\" 指令時失敗。"
 
-#: ../panel-plugin/settings.cpp:117
+#: ../panel-plugin/settings.cpp:121
 msgid "Failed to launch menu editor."
 msgstr "未能啟動選單編輯器。"
 
-#: ../panel-plugin/settings.cpp:114
+#: ../panel-plugin/settings.cpp:118
 msgid "Failed to lock screen."
 msgstr "無法鎖定螢幕。"
 
-#: ../panel-plugin/settings.cpp:116
+#: ../panel-plugin/settings.cpp:120
 msgid "Failed to log out."
 msgstr "無法登出。"
 
-#: ../panel-plugin/settings.cpp:113
+#: ../panel-plugin/settings.cpp:117
 msgid "Failed to open settings manager."
 msgstr "無法開啟設定管理員。"
 
-#: ../panel-plugin/settings.cpp:115
+#: ../panel-plugin/settings.cpp:119
 msgid "Failed to switch users."
 msgstr "未能切換使用者。"
 
-#: ../panel-plugin/window.cpp:127
+#: ../panel-plugin/window.cpp:119
 msgid "Favorites"
 msgstr "最愛"
 
-#: ../panel-plugin/configuration-dialog.cpp:477
+#: ../panel-plugin/configuration-dialog.cpp:497
 msgid "Icon"
 msgstr "圖示"
 
-#: ../panel-plugin/configuration-dialog.cpp:479
+#: ../panel-plugin/configuration-dialog.cpp:499
 msgid "Icon and title"
 msgstr "圖示與標題"
 
-#: ../panel-plugin/configuration-dialog.cpp:627
-msgid "Include _favorites in recently used"
-msgstr "在最近使用中包含最愛(_F)"
+#: ../panel-plugin/configuration-dialog.cpp:676
+#, fuzzy
+msgid "Ignore _favorites"
+msgstr "最愛"
 
-#: ../panel-plugin/configuration-dialog.cpp:572
+#: ../panel-plugin/configuration-dialog.cpp:568
 msgid "Ite_m icon size:"
 msgstr "項目圖示大小(_M)："
 
@@ -143,27 +159,24 @@ msgstr "大"
 msgid "Larger"
 msgstr "很大"
 
-#: ../panel-plugin/configuration-dialog.cpp:518
-msgid "Lay out icon in a single _panel row"
-msgstr "將圖示編排在單一的面板排(_P)"
-
-#: ../panel-plugin/settings.cpp:116
+#: ../panel-plugin/settings.cpp:120
 msgid "Log _Out"
 msgstr "登出(_O)"
 
-#: ../panel-plugin/settings.cpp:119
+#: ../panel-plugin/settings.cpp:124
 msgid "Man Pages"
 msgstr "手冊頁"
 
-#: ../panel-plugin/configuration-dialog.cpp:527
+#: ../panel-plugin/configuration-dialog.cpp:545
+#: ../panel-plugin/configuration-dialog.cpp:625
 msgid "Menu"
 msgstr "選單"
 
-#: ../panel-plugin/configuration-dialog.cpp:743
+#: ../panel-plugin/configuration-dialog.cpp:799
 msgid "Nam_e:"
 msgstr "名稱(_E)："
 
-#: ../panel-plugin/configuration-dialog.cpp:689
+#: ../panel-plugin/configuration-dialog.cpp:745
 msgid "Name"
 msgstr "名稱"
 
@@ -175,44 +188,44 @@ msgstr "無"
 msgid "Normal"
 msgstr "正常"
 
-#: ../panel-plugin/settings.cpp:122
+#: ../panel-plugin/settings.cpp:127
 msgid "Open URI"
 msgstr "開啟 URI"
 
-#: ../panel-plugin/configuration-dialog.cpp:463
+#: ../panel-plugin/configuration-dialog.cpp:487
 msgid "Panel Button"
 msgstr "面板按鈕"
 
-#: ../panel-plugin/configuration-dialog.cpp:694
+#: ../panel-plugin/configuration-dialog.cpp:750
 msgid "Pattern"
 msgstr "圖案"
 
-#: ../panel-plugin/configuration-dialog.cpp:550
+#: ../panel-plugin/configuration-dialog.cpp:636
 msgid "Position _search entry next to panel button"
 msgstr "下一個面板按鈕的搜尋結果(_S)"
 
-#: ../panel-plugin/configuration-dialog.cpp:563
+#: ../panel-plugin/configuration-dialog.cpp:649
 msgid "Position cate_gories next to panel button"
 msgstr "在面板按鈕旁的定位類別(_G)"
 
-#: ../panel-plugin/configuration-dialog.cpp:556
+#: ../panel-plugin/configuration-dialog.cpp:642
 msgid "Position commands next to search _entry"
 msgstr "下一個指令的搜尋結果(_E)"
 
-#: ../panel-plugin/window.cpp:133
+#: ../panel-plugin/configuration-dialog.cpp:660 ../panel-plugin/window.cpp:125
 msgid "Recently Used"
 msgstr "最近使用"
 
-#: ../panel-plugin/page.cpp:205
+#: ../panel-plugin/page.cpp:207
 msgid "Remove From Favorites"
 msgstr "從最愛中移除"
 
-#: ../panel-plugin/configuration-dialog.cpp:381
+#: ../panel-plugin/configuration-dialog.cpp:401
 #, c-format
 msgid "Remove action \"%s\"?"
 msgstr "是否移除「%s」動作？"
 
-#: ../panel-plugin/configuration-dialog.cpp:718
+#: ../panel-plugin/configuration-dialog.cpp:774
 msgid "Remove selected action"
 msgstr "移除所選動作"
 
@@ -221,7 +234,7 @@ msgstr "移除所選動作"
 msgid "Run %s"
 msgstr "執行 %s"
 
-#: ../panel-plugin/settings.cpp:121
+#: ../panel-plugin/settings.cpp:126
 msgid "Run in Terminal"
 msgstr "在終端機執行"
 
@@ -237,7 +250,7 @@ msgstr "搜尋動作"
 msgid "Select An Icon"
 msgstr "選取圖示"
 
-#: ../panel-plugin/command-edit.cpp:60
+#: ../panel-plugin/command-edit.cpp:64
 msgid "Select Command"
 msgstr "選取指令"
 
@@ -245,15 +258,15 @@ msgstr "選取指令"
 msgid "Show a menu to easily access installed applications"
 msgstr "顯示選單以方便開啟已安裝的應用程式"
 
-#: ../panel-plugin/configuration-dialog.cpp:538
+#: ../panel-plugin/configuration-dialog.cpp:556
 msgid "Show application _descriptions"
 msgstr "顯示程式描述(_D)"
 
-#: ../panel-plugin/configuration-dialog.cpp:532
+#: ../panel-plugin/configuration-dialog.cpp:550
 msgid "Show generic application _names"
 msgstr "顯示通用應用程式名稱(_N)"
 
-#: ../panel-plugin/configuration-dialog.cpp:544
+#: ../panel-plugin/configuration-dialog.cpp:562
 msgid "Show menu hie_rarchy"
 msgstr "顯示選單分類(_R)"
 
@@ -265,37 +278,42 @@ msgstr "小"
 msgid "Smaller"
 msgstr "更小"
 
-#: ../panel-plugin/favorites-page.cpp:67
+#: ../panel-plugin/favorites-page.cpp:129
 msgid "Sort Alphabetically A-Z"
 msgstr "依字母遞增順序排列"
 
-#: ../panel-plugin/favorites-page.cpp:73
+#: ../panel-plugin/favorites-page.cpp:135
 msgid "Sort Alphabetically Z-A"
 msgstr "依字母遞減順序排列"
 
-#: ../panel-plugin/settings.cpp:115
+#: ../panel-plugin/settings.cpp:119
 msgid "Switch _Users"
 msgstr "切換使用者(_U)"
 
-#: ../panel-plugin/configuration-dialog.cpp:621
+#: ../panel-plugin/configuration-dialog.cpp:630
 msgid "Switch categories by _hovering"
 msgstr "滑鼠置於其上以切換到該分類(_H)"
 
-#: ../panel-plugin/configuration-dialog.cpp:380
+#: ../panel-plugin/configuration-dialog.cpp:400
 msgid "The action will be deleted permanently."
 msgstr "會永久刪除該動作。"
 
-#: ../panel-plugin/configuration-dialog.cpp:478
+#: ../panel-plugin/configuration-dialog.cpp:498
 msgid "Title"
 msgstr "標題"
 
-#: ../panel-plugin/page.cpp:308
+#: ../panel-plugin/page.cpp:317
 msgid "Unable to add launcher to desktop."
 msgstr "無法在桌面上新增啟動器。"
 
-#: ../panel-plugin/page.cpp:347 ../panel-plugin/page.cpp:356
+#: ../panel-plugin/page.cpp:356 ../panel-plugin/page.cpp:365
 msgid "Unable to add launcher to panel."
 msgstr "無法在面板上新增啟動器。"
+
+#: ../panel-plugin/configuration-dialog.cpp:532
+#, fuzzy
+msgid "Use a single _panel row"
+msgstr "將圖示編排在單一的面板排(_P)"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
@@ -305,47 +323,55 @@ msgstr "非常大"
 msgid "Very Small"
 msgstr "非常小"
 
-#: ../panel-plugin/configuration-dialog.cpp:71
+#: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
 msgid "Whisker Menu"
 msgstr "Whisker 選單"
 
-#: ../panel-plugin/settings.cpp:120
+#: ../panel-plugin/settings.cpp:125
 msgid "Wikipedia"
 msgstr "維基百科"
 
-#: ../panel-plugin/configuration-dialog.cpp:79
+#: ../panel-plugin/configuration-dialog.cpp:78
 msgid "_Appearance"
 msgstr "外觀(_A)"
 
-#: ../panel-plugin/configuration-dialog.cpp:80
+#: ../panel-plugin/configuration-dialog.cpp:79
 msgid "_Behavior"
 msgstr "行為(_B)"
 
-#: ../panel-plugin/settings.cpp:117
+#: ../panel-plugin/configuration-dialog.cpp:80
+#, fuzzy
+msgid "_Commands"
+msgstr "指令"
+
+#: ../panel-plugin/settings.cpp:121
 msgid "_Edit Applications"
 msgstr "編輯應用程式(_E)"
 
-#: ../panel-plugin/configuration-dialog.cpp:504
+#: ../panel-plugin/configuration-dialog.cpp:517
 msgid "_Icon:"
 msgstr "圖示(_I)："
 
-#: ../panel-plugin/settings.cpp:114
+#: ../panel-plugin/settings.cpp:118
 msgid "_Lock Screen"
 msgstr "鎖定螢幕(_L)"
 
-#: ../panel-plugin/configuration-dialog.cpp:755
+#: ../panel-plugin/configuration-dialog.cpp:811
 msgid "_Pattern:"
 msgstr "圖案(_P)："
 
-#: ../panel-plugin/configuration-dialog.cpp:779
+#: ../panel-plugin/configuration-dialog.cpp:835
 msgid "_Regular expression"
 msgstr "正規表達式(_R)"
 
-#: ../panel-plugin/configuration-dialog.cpp:489
+#: ../panel-plugin/configuration-dialog.cpp:506
 msgid "_Title:"
 msgstr "標題(_T)："
 
-#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/plugin.cpp:398
 msgid "translator-credits"
 msgstr "黃柏諺 <s8321414@yahoo.com.tw>,2014"
+
+#~ msgid "Include _favorites in recently used"
+#~ msgstr "在最近使用中包含最愛(_F)"
