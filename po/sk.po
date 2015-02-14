@@ -1,5 +1,5 @@
 # Slovak translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2014 Graeme Gott
+# Copyright (C) 2015 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -72,8 +72,8 @@ msgid "Commands"
 msgstr "Príkazy"
 
 #: ../panel-plugin/plugin.cpp:393
-msgid "Copyright © 2013-2014 Graeme Gott"
-msgstr "Copyright © 2013-2014 Graeme Gott"
+msgid "Copyright © 2013-2015 Graeme Gott"
+msgstr "Copyright © 2013-2015 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:738
 msgid "Details"

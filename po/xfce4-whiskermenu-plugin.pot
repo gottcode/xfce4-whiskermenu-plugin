@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2014 Graeme Gott
+# Copyright (C) 2015 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -70,7 +70,7 @@ msgid "Commands"
 msgstr ""
 
 #: ../panel-plugin/plugin.cpp:393
-msgid "Copyright © 2013-2014 Graeme Gott"
+msgid "Copyright © 2013-2015 Graeme Gott"
 msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:738
