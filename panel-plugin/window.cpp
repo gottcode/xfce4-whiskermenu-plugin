@@ -73,18 +73,6 @@ Window::Window() :
 	m_window_box = GTK_BOX(gtk_vbox_new(false, 0));
 	gtk_container_add(GTK_CONTAINER(m_window), GTK_WIDGET(m_window_box));
 
-	// Create loading message
-	m_window_load_contents = gtk_frame_new(NULL);
-	gtk_frame_set_shadow_type(GTK_FRAME(m_window_load_contents), GTK_SHADOW_OUT);
-	gtk_box_pack_start(m_window_box, m_window_load_contents, true, true, 0);
-
-	m_window_load_spinner = GTK_SPINNER(gtk_spinner_new());
-
-	GtkAlignment* alignment = GTK_ALIGNMENT(gtk_alignment_new(0.5, 0.5, 0.1, 0.1));
-	gtk_container_add(GTK_CONTAINER(alignment), GTK_WIDGET(m_window_load_spinner));
-
-	gtk_container_add(GTK_CONTAINER(m_window_load_contents), GTK_WIDGET(alignment));
-
 	// Create the border of the window
 	m_window_contents = gtk_frame_new(NULL);
 	gtk_frame_set_shadow_type(GTK_FRAME(m_window_contents), GTK_SHADOW_OUT);
@@ -218,17 +206,12 @@ Window::Window() :
 	gtk_widget_hide(m_applications->get_widget());
 	gtk_widget_hide(m_search_results->get_widget());
 	m_default_button->set_active(true);
-	gtk_widget_hide(m_window_contents);
-	gtk_widget_show(m_window_load_contents);
+	gtk_widget_show(m_window_contents);
 
 	// Resize to last known size
 	gtk_window_set_default_size(m_window, m_geometry.width, m_geometry.height);
 
 	g_object_ref_sink(m_window);
-
-	// Start loading applications immediately
-	m_applications->load_applications();
-	gtk_spinner_start(m_window_load_spinner);
 }
 
 //-----------------------------------------------------------------------------
@@ -281,12 +264,10 @@ void Window::show(GtkWidget* parent, bool horizontal)
 	}
 
 	// Make sure applications list is current; does nothing unless list has changed
-	if (m_applications->load_applications() && gtk_widget_get_visible(m_window_contents))
-	{
-		gtk_widget_hide(m_window_contents);
-		gtk_widget_show(m_window_load_contents);
-		gtk_spinner_start(m_window_load_spinner);
-	}
+	m_applications->load_applications();
+
+	// Focus search entry
+	gtk_widget_grab_focus(GTK_WIDGET(m_search_entry));
 
 	// Reset mouse cursor by forcing default page to hide
 	gtk_widget_show(m_default_page->get_widget());
@@ -607,16 +588,6 @@ void Window::set_items()
 	// Handle switching to favorites are added
 	GtkTreeModel* favorites_model = m_favorites->get_view()->get_model();
 	g_signal_connect_slot<GtkTreeModel*, GtkTreePath*, GtkTreeIter*>(favorites_model, "row-inserted", &Window::show_favorites, this);
-}
-
-//-----------------------------------------------------------------------------
-
-void Window::set_loaded()
-{
-	gtk_spinner_stop(m_window_load_spinner);
-	gtk_widget_hide(m_window_load_contents);
-	gtk_widget_show(m_window_contents);
-	gtk_widget_grab_focus(GTK_WIDGET(m_search_entry));
 }
 
 //-----------------------------------------------------------------------------
