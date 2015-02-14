@@ -43,7 +43,6 @@ enum
 ApplicationsPage::ApplicationsPage(Window* window) :
 	Page(window),
 	m_garcon_menu(NULL),
-	m_load_thread(NULL),
 	m_load_status(STATUS_INVALID)
 {
 	// Set desktop environment for applications
@@ -63,12 +62,6 @@ ApplicationsPage::ApplicationsPage(Window* window) :
 
 ApplicationsPage::~ApplicationsPage()
 {
-	if (m_load_thread)
-	{
-		g_thread_join(m_load_thread);
-		m_load_thread = NULL;
-	}
-
 	clear_applications();
 }
 
@@ -160,35 +153,20 @@ void ApplicationsPage::invalidate_applications()
 
 //-----------------------------------------------------------------------------
 
-bool ApplicationsPage::load_applications()
+void ApplicationsPage::load_applications()
 {
 	// Check if already loaded
 	if (m_load_status == STATUS_LOADED)
 	{
-		return false;
-	}
-	// Check if currently loading
-	else if (m_load_status == STATUS_LOADING)
-	{
-		return true;
-	}
-	// Check if loading garcon
-	else if (m_load_thread)
-	{
-		return true;
+		return;
 	}
 	m_load_status = STATUS_LOADING;
 
+	// Load menu
 	clear_applications();
+	load_contents();
 
-	// Load garcon menu in thread if possible
-	m_load_thread = g_thread_try_new(NULL, (GThreadFunc)&ApplicationsPage::load_garcon_menu_slot, this, NULL);
-	if (!m_load_thread)
-	{
-		load_garcon_menu();
-	}
-
-	return true;
+	return;
 }
 
 //-----------------------------------------------------------------------------
@@ -232,8 +210,9 @@ void ApplicationsPage::clear_applications()
 
 //-----------------------------------------------------------------------------
 
-void ApplicationsPage::load_garcon_menu()
+void ApplicationsPage::load_contents()
 {
+	// Load garcon menu
 	if (wm_settings->custom_menu_file.empty())
 	{
 		m_garcon_menu = garcon_menu_new_applications();
@@ -249,19 +228,9 @@ void ApplicationsPage::load_garcon_menu()
 		m_garcon_menu = NULL;
 	}
 
-	g_idle_add((GSourceFunc)&ApplicationsPage::load_contents_slot, this);
-}
-
-//-----------------------------------------------------------------------------
-
-void ApplicationsPage::load_contents()
-{
 	if (!m_garcon_menu)
 	{
-		get_window()->set_loaded();
-
 		m_load_status = STATUS_INVALID;
-		m_load_thread = NULL;
 
 		return;
 	}
@@ -307,10 +276,8 @@ void ApplicationsPage::load_contents()
 
 	// Update menu items of other panels
 	get_window()->set_items();
-	get_window()->set_loaded();
 
 	m_load_status = STATUS_LOADED;
-	m_load_thread = NULL;
 }
 
 //-----------------------------------------------------------------------------
