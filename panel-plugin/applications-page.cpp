@@ -27,6 +27,11 @@
 
 #include <algorithm>
 
+extern "C"
+{
+#include <libxfce4util/libxfce4util.h>
+}
+
 using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
@@ -43,6 +48,7 @@ enum
 ApplicationsPage::ApplicationsPage(Window* window) :
 	Page(window),
 	m_garcon_menu(NULL),
+	m_garcon_settings_menu(NULL),
 	m_load_status(STATUS_INVALID)
 {
 	// Set desktop environment for applications
@@ -68,6 +74,12 @@ ApplicationsPage::~ApplicationsPage()
 	if (G_LIKELY(m_garcon_menu))
 	{
 		g_object_unref(m_garcon_menu);
+	}
+
+	// Free settings menu
+	if (G_LIKELY(m_garcon_settings_menu))
+	{
+		g_object_unref(m_garcon_settings_menu);
 	}
 }
 
@@ -232,6 +244,19 @@ void ApplicationsPage::load_contents()
 		g_signal_connect_slot<GarconMenu*>(m_garcon_menu, "reload-required", &ApplicationsPage::invalidate_applications, this);
 	}
 
+	// Create settings menu
+	if (!m_garcon_settings_menu)
+	{
+		gchar* path = xfce_resource_lookup(XFCE_RESOURCE_CONFIG, "menus/xfce-settings-manager.menu");
+		m_garcon_settings_menu = garcon_menu_new_for_path(path != NULL ? path : SETTINGS_MENUFILE);
+		g_free(path);
+
+		if (m_garcon_settings_menu)
+		{
+			g_signal_connect_slot<GarconMenu*>(m_garcon_settings_menu, "reload-required", &ApplicationsPage::invalidate_applications, this);
+		}
+	}
+
 	// Load menu
 	if (!garcon_menu_load(m_garcon_menu, NULL, NULL))
 	{
@@ -239,6 +264,12 @@ void ApplicationsPage::load_contents()
 		return;
 	}
 	load_menu(m_garcon_menu, NULL);
+
+	// Load settings menu
+	if (m_garcon_settings_menu && garcon_menu_load(m_garcon_settings_menu, NULL, NULL))
+	{
+		load_menu(m_garcon_settings_menu, NULL);
+	}
 
 	// Sort items and categories
 	if (!wm_settings->load_hierarchy)

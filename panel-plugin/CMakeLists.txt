@@ -42,6 +42,7 @@ add_definitions(
 	-DPACKAGE_VERSION="${whiskermenu_version}"
 	-DBINDIR="${CMAKE_INSTALL_FULL_BINDIR}"
 	-DDATADIR="${CMAKE_INSTALL_FULL_DATADIR}"
+	-DSETTINGS_MENUFILE="${CMAKE_INSTALL_FULL_SYSCONFDIR}/xdg/menus/xfce-settings-manager.menu"
 	-DG_LOG_DOMAIN="whiskermenu"
 	-DGSEAL_ENABLE
 	-DGTK_MULTIHEAD_SAFE

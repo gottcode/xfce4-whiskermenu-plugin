@@ -56,6 +56,7 @@ private:
 
 private:
 	GarconMenu* m_garcon_menu;
+	GarconMenu* m_garcon_settings_menu;
 	std::vector<Category*> m_categories;
 	std::map<std::string, Launcher*> m_items;
 	int m_load_status;
