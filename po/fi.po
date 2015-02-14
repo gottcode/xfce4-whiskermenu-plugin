@@ -1,5 +1,5 @@
 # Finnish translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2014 Graeme Gott
+# Copyright (C) 2015 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -79,9 +79,8 @@ msgid "Clear Recently Used"
 msgstr "Pyyhi viimeksi käytetyt"
 
 #: ../panel-plugin/plugin.cpp:394
-#, fuzzy
 msgid "Copyright © 2013-2015 Graeme Gott"
-msgstr "Tekijänoikeudet © 2013-2014 Graeme Gott"
+msgstr "Tekijänoikeudet © 2013-2015 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:794
 msgid "Details"

@@ -1,5 +1,5 @@
 # Serbian translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2014 Graeme Gott
+# Copyright (C) 2015 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -81,9 +81,8 @@ msgid "Clear Recently Used"
 msgstr "Очисти недавно коришћено"
 
 #: ../panel-plugin/plugin.cpp:394
-#, fuzzy
 msgid "Copyright © 2013-2015 Graeme Gott"
-msgstr "Права умножавања © 2013-2014 Грејем Гот (Graeme Gott)"
+msgstr "Права умножавања © 2013-2015 Грејем Гот (Graeme Gott)"
 
 #: ../panel-plugin/configuration-dialog.cpp:794
 msgid "Details"
