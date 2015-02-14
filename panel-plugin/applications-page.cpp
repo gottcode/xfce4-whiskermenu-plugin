@@ -63,6 +63,12 @@ ApplicationsPage::ApplicationsPage(Window* window) :
 ApplicationsPage::~ApplicationsPage()
 {
 	clear_applications();
+
+	// Free menu
+	if (G_LIKELY(m_garcon_menu))
+	{
+		g_object_unref(m_garcon_menu);
+	}
 }
 
 //-----------------------------------------------------------------------------
@@ -199,44 +205,39 @@ void ApplicationsPage::clear_applications()
 		delete i->second;
 	}
 	m_items.clear();
-
-	// Unreference menu
-	if (m_garcon_menu)
-	{
-		g_object_unref(m_garcon_menu);
-		m_garcon_menu = NULL;
-	}
 }
 
 //-----------------------------------------------------------------------------
 
 void ApplicationsPage::load_contents()
 {
-	// Load garcon menu
-	if (wm_settings->custom_menu_file.empty())
-	{
-		m_garcon_menu = garcon_menu_new_applications();
-	}
-	else
-	{
-		m_garcon_menu = garcon_menu_new_for_path(wm_settings->custom_menu_file.c_str());
-	}
-
-	if (m_garcon_menu && !garcon_menu_load(m_garcon_menu, NULL, NULL))
-	{
-		g_object_unref(m_garcon_menu);
-		m_garcon_menu = NULL;
-	}
-
+	// Create menu
 	if (!m_garcon_menu)
 	{
-		m_load_status = STATUS_INVALID;
+		if (wm_settings->custom_menu_file.empty())
+		{
+			m_garcon_menu = garcon_menu_new_applications();
+		}
+		else
+		{
+			m_garcon_menu = garcon_menu_new_for_path(wm_settings->custom_menu_file.c_str());
+		}
 
-		return;
+		if (!m_garcon_menu)
+		{
+			m_load_status = STATUS_INVALID;
+			return;
+		}
+
+		g_signal_connect_slot<GarconMenu*>(m_garcon_menu, "reload-required", &ApplicationsPage::invalidate_applications, this);
 	}
 
-	// Populate map of menu data
-	g_signal_connect_slot<GarconMenu*>(m_garcon_menu, "reload-required", &ApplicationsPage::invalidate_applications, this);
+	// Load menu
+	if (!garcon_menu_load(m_garcon_menu, NULL, NULL))
+	{
+		m_load_status = STATUS_INVALID;
+		return;
+	}
 	load_menu(m_garcon_menu, NULL);
 
 	// Sort items and categories
