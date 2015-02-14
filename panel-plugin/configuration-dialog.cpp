@@ -559,7 +559,7 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	g_signal_connect_slot(m_show_descriptions, "toggled", &ConfigurationDialog::toggle_show_description, this);
 
 	// Add option to show menu hierarchy
-	m_show_hierarchy = gtk_check_button_new_with_mnemonic(_("Show menu subcatego_ries"));
+	m_show_hierarchy = gtk_check_button_new_with_mnemonic(_("Show menu hie_rarchy"));
 	gtk_table_attach_defaults(menu_table, m_show_hierarchy, 0, 2, 2, 3);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_hierarchy), wm_settings->load_hierarchy);
 	g_signal_connect_slot(m_show_hierarchy, "toggled", &ConfigurationDialog::toggle_show_hierarchy, this);
