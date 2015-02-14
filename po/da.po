@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-14 11:03+0000\n"
+"POT-Creation-Date: 2015-02-14 11:32+0000\n"
 "PO-Revision-Date: 2014-02-10 14:33+0000\n"
 "Last-Translator: Morten Juhl-Johansen Zölde-Fejér <morten@writtenandread."
 "net>\n"
@@ -79,7 +79,7 @@ msgid "Clear Recently Used"
 msgstr "Nulstil senest anvendte"
 
 #: ../panel-plugin/plugin.cpp:394
-msgid "Copyright © 2013-2014 Graeme Gott"
+msgid "Copyright © 2013-2015 Graeme Gott"
 msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:794

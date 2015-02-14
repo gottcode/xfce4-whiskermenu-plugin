@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-14 11:03+0000\n"
+"POT-Creation-Date: 2015-02-14 11:32+0000\n"
 "PO-Revision-Date: 2014-07-17 23:43+0000\n"
 "Last-Translator: Demiray Muhterem <mdemiray@msn.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/xfce4-"
@@ -79,7 +79,8 @@ msgid "Clear Recently Used"
 msgstr "Yakında Kullanılanları Temizle"
 
 #: ../panel-plugin/plugin.cpp:394
-msgid "Copyright © 2013-2014 Graeme Gott"
+#, fuzzy
+msgid "Copyright © 2013-2015 Graeme Gott"
 msgstr "Telif hakkı © 2013-2014 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:794

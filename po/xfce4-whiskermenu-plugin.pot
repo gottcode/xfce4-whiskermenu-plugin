@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2015 Graeme Gott
-# This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
+# Copyright (C) YEAR Graeme Gott
+# This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-14 11:03+0000\n"
+"POT-Creation-Date: 2015-02-14 11:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,7 +74,7 @@ msgid "Clear Recently Used"
 msgstr ""
 
 #: ../panel-plugin/plugin.cpp:394
-msgid "Copyright © 2013-2014 Graeme Gott"
+msgid "Copyright © 2013-2015 Graeme Gott"
 msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:794

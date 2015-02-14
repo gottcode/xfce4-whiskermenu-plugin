@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-14 11:03+0000\n"
+"POT-Creation-Date: 2015-02-14 11:32+0000\n"
 "PO-Revision-Date: 2013-12-07 12:58+0000\n"
 "Last-Translator: Graeme Gott <graeme@gottcode.org>\n"
 "Language-Team: Estonian (http://www.transifex.com/projects/p/xfce4-"
@@ -77,7 +77,7 @@ msgid "Clear Recently Used"
 msgstr "Puhasta hiljuti kasutatud"
 
 #: ../panel-plugin/plugin.cpp:394
-msgid "Copyright © 2013-2014 Graeme Gott"
+msgid "Copyright © 2013-2015 Graeme Gott"
 msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:794

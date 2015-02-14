@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-14 11:03+0000\n"
+"POT-Creation-Date: 2015-02-14 11:32+0000\n"
 "PO-Revision-Date: 2015-02-08 14:00+0000\n"
 "Last-Translator: Sergey Alyoshin <alyoshin.s@gmail.com>\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/xfce4-"
@@ -81,7 +81,8 @@ msgid "Clear Recently Used"
 msgstr "Очистить историю"
 
 #: ../panel-plugin/plugin.cpp:394
-msgid "Copyright © 2013-2014 Graeme Gott"
+#, fuzzy
+msgid "Copyright © 2013-2015 Graeme Gott"
 msgstr "Copyright © 2013—2014 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:794
