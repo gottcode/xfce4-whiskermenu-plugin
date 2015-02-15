@@ -39,8 +39,9 @@ public:
 	void unset_menu_items();
 
 private:
+	void activate_search();
 	void clear_search(GtkEntry* entry, GtkEntryIconPosition icon_pos, GdkEvent*);
-	gboolean search_entry_key_press(GtkWidget* widget, GdkEvent* event);
+	gboolean cancel_search(GtkWidget* widget, GdkEvent* event);
 
 private:
 	Query m_query;

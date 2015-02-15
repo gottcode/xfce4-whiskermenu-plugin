@@ -38,7 +38,8 @@ SearchPage::SearchPage(Window* window) :
 	get_view()->set_selection_mode(GTK_SELECTION_BROWSE);
 
 	g_signal_connect_slot(window->get_search_entry(), "icon-release", &SearchPage::clear_search, this);
-	g_signal_connect_slot(window->get_search_entry(), "key-press-event", &SearchPage::search_entry_key_press, this);
+	g_signal_connect_slot(window->get_search_entry(), "key-press-event", &SearchPage::cancel_search, this);
+	g_signal_connect_slot<GtkEntry*>(window->get_search_entry(), "activate", &SearchPage::activate_search, this);
 }
 
 //-----------------------------------------------------------------------------
@@ -184,6 +185,18 @@ void SearchPage::unset_menu_items()
 
 //-----------------------------------------------------------------------------
 
+void SearchPage::activate_search()
+{
+	GtkTreePath* path = get_view()->get_selected_path();
+	if (path)
+	{
+		get_view()->activate_path(path);
+		gtk_tree_path_free(path);
+	}
+}
+
+//-----------------------------------------------------------------------------
+
 void SearchPage::clear_search(GtkEntry* entry, GtkEntryIconPosition icon_pos, GdkEvent*)
 {
 	if (icon_pos == GTK_ENTRY_ICON_SECONDARY)
@@ -194,7 +207,7 @@ void SearchPage::clear_search(GtkEntry* entry, GtkEntryIconPosition icon_pos, Gd
 
 //-----------------------------------------------------------------------------
 
-gboolean SearchPage::search_entry_key_press(GtkWidget* widget, GdkEvent* event)
+gboolean SearchPage::cancel_search(GtkWidget* widget, GdkEvent* event)
 {
 	GdkEventKey* key_event = reinterpret_cast<GdkEventKey*>(event);
 	if (key_event->keyval == GDK_Escape)
@@ -210,16 +223,6 @@ gboolean SearchPage::search_entry_key_press(GtkWidget* widget, GdkEvent* event)
 		{
 			return false;
 		}
-	}
-	else if (key_event->keyval == GDK_Return || key_event->keyval == GDK_KP_Enter)
-	{
-		GtkTreePath* path = get_view()->get_selected_path();
-		if (path)
-		{
-			get_view()->activate_path(path);
-			gtk_tree_path_free(path);
-		}
-		return true;
 	}
 
 	return false;
