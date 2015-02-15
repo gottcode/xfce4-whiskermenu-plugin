@@ -71,6 +71,7 @@ WhiskerMenu::Window::Window() :
 	g_signal_connect_slot(m_window, "key-press-event", &Window::on_key_press_event_after, this, true);
 	g_signal_connect_slot(m_window, "map-event", &Window::on_map_event, this);
 	g_signal_connect_slot(m_window, "configure-event", &Window::on_configure_event, this);
+	g_signal_connect(m_window, "delete_event", G_CALLBACK(gtk_widget_hide_on_delete), NULL);
 
 	m_window_box = GTK_BOX(gtk_vbox_new(false, 0));
 	gtk_container_add(GTK_CONTAINER(m_window), GTK_WIDGET(m_window_box));
