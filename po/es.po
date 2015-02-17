@@ -3,8 +3,9 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Adolfo Jayme Barrientos <fito@libreoffice.org>, 2013
-# Adolfo Jayme Barrientos <fito@libreoffice.org>, 2014
+# Adolfo Jayme Barrientos, 2015
+# Adolfo Jayme Barrientos, 2013
+# Adolfo Jayme Barrientos, 2014
 # Inti Alonso <intialonso@gmail.com>, 2013
 # Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>, 2013-2014
 msgid ""
@@ -12,8 +13,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-14 11:32+0000\n"
-"PO-Revision-Date: 2014-06-29 08:25+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fito@libreoffice.org>\n"
+"PO-Revision-Date: 2015-02-14 12:49+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/es/)\n"
 "Language: es\n"
@@ -52,16 +53,15 @@ msgstr "Lanzador de aplicaciones alternativo para Xfce"
 
 #: ../panel-plugin/configuration-dialog.cpp:665
 msgid "Amount of _items:"
-msgstr ""
+msgstr "Cantidad de _elementos:"
 
 #: ../panel-plugin/plugin.cpp:217
-#, fuzzy
 msgid "Applications"
 msgstr "Aplicaciones"
 
 #: ../panel-plugin/configuration-dialog.cpp:599
 msgid "Background opacit_y:"
-msgstr ""
+msgstr "Opacidad del _fondo:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
@@ -81,7 +81,7 @@ msgstr "Limpiar elementos recientes"
 
 #: ../panel-plugin/plugin.cpp:394
 msgid "Copyright © 2013-2015 Graeme Gott"
-msgstr "Derechos de autor © 2013-2015 Graeme Gott"
+msgstr "© 2013-2015 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:794
 msgid "Details"
@@ -92,18 +92,16 @@ msgid "Di_splay:"
 msgstr "Mo_strar:"
 
 #: ../panel-plugin/configuration-dialog.cpp:682
-#, fuzzy
 msgid "Display by _default"
-msgstr "Mostrar _usadas recientemente de manera predeterminada"
+msgstr "Mostrar de forma predetermina_da"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Edit _Profile"
-msgstr ""
+msgstr "Editar el _perfil"
 
 #: ../panel-plugin/settings.cpp:122
-#, fuzzy
 msgid "Failed to edit profile."
-msgstr "No se pudo cambiar de usuario."
+msgstr "Falló la modificación del perfil."
 
 #: ../panel-plugin/launcher.cpp:267 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
@@ -144,9 +142,8 @@ msgid "Icon and title"
 msgstr "Icono y título"
 
 #: ../panel-plugin/configuration-dialog.cpp:676
-#, fuzzy
 msgid "Ignore _favorites"
-msgstr "Favoritas"
+msgstr "Ignorar los _favoritos"
 
 #: ../panel-plugin/configuration-dialog.cpp:568
 msgid "Ite_m icon size:"
@@ -312,9 +309,8 @@ msgid "Unable to add launcher to panel."
 msgstr "No se pudo añadir el lanzador al panel."
 
 #: ../panel-plugin/configuration-dialog.cpp:532
-#, fuzzy
 msgid "Use a single _panel row"
-msgstr "Coloque el icono en una sola fila del panel"
+msgstr "Usar una sola fila en el _panel"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
@@ -342,9 +338,8 @@ msgid "_Behavior"
 msgstr "_Comportamiento"
 
 #: ../panel-plugin/configuration-dialog.cpp:80
-#, fuzzy
 msgid "_Commands"
-msgstr "Órdenes:"
+msgstr "Ó_rdenes"
 
 #: ../panel-plugin/settings.cpp:121
 msgid "_Edit Applications"
@@ -373,8 +368,5 @@ msgstr "_Título:"
 #: ../panel-plugin/plugin.cpp:398
 msgid "translator-credits"
 msgstr ""
-"Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2013-2014\n"
+"Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2013-2015\n"
 "Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>, 2014"
-
-#~ msgid "Include _favorites in recently used"
-#~ msgstr "Incluir _favoritos en la lista de usadas recientemente"
