@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-14 11:32+0000\n"
-"PO-Revision-Date: 2014-06-14 12:36+0000\n"
+"PO-Revision-Date: 2015-02-14 14:39+0000\n"
 "Last-Translator: Masato HASHIMOTO <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/ja/)\n"
@@ -49,16 +49,15 @@ msgstr "Xfce 用のオルタナティブなアプリケーションランチャ�
 
 #: ../panel-plugin/configuration-dialog.cpp:665
 msgid "Amount of _items:"
-msgstr ""
+msgstr "最大アイテム数(_I):"
 
 #: ../panel-plugin/plugin.cpp:217
-#, fuzzy
 msgid "Applications"
-msgstr "アプリケーションメニュー"
+msgstr "アプリケーション"
 
 #: ../panel-plugin/configuration-dialog.cpp:599
 msgid "Background opacit_y:"
-msgstr ""
+msgstr "背景の不透明度(_Y):"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
@@ -89,18 +88,16 @@ msgid "Di_splay:"
 msgstr "表示(_S):"
 
 #: ../panel-plugin/configuration-dialog.cpp:682
-#, fuzzy
 msgid "Display by _default"
-msgstr "デフォルトで最近使ったものを表示する(_U)"
+msgstr "デフォルトで表示する(_D)"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Edit _Profile"
-msgstr ""
+msgstr "プロファイルの編集(_P):"
 
 #: ../panel-plugin/settings.cpp:122
-#, fuzzy
 msgid "Failed to edit profile."
-msgstr "ユーザーの切り替えに失敗しました。"
+msgstr "プロファイルの編集に失敗しました。"
 
 #: ../panel-plugin/launcher.cpp:267 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
@@ -141,9 +138,8 @@ msgid "Icon and title"
 msgstr "アイコンとタイトル"
 
 #: ../panel-plugin/configuration-dialog.cpp:676
-#, fuzzy
 msgid "Ignore _favorites"
-msgstr "お気に入り"
+msgstr "お気に入りを無視する(_F)"
 
 #: ../panel-plugin/configuration-dialog.cpp:568
 msgid "Ite_m icon size:"
@@ -311,7 +307,6 @@ msgid "Unable to add launcher to panel."
 msgstr "パネルにランチャーを追加できません。"
 
 #: ../panel-plugin/configuration-dialog.cpp:532
-#, fuzzy
 msgid "Use a single _panel row"
 msgstr "アイコンをパネルの 1 行内に配置する(_P)"
 
@@ -341,9 +336,8 @@ msgid "_Behavior"
 msgstr "振る舞い(_B)"
 
 #: ../panel-plugin/configuration-dialog.cpp:80
-#, fuzzy
 msgid "_Commands"
-msgstr "コマンド"
+msgstr "コマンド(_C)"
 
 #: ../panel-plugin/settings.cpp:121
 msgid "_Edit Applications"
@@ -372,6 +366,3 @@ msgstr "タイトル(_T):"
 #: ../panel-plugin/plugin.cpp:398
 msgid "translator-credits"
 msgstr "Masato HASHIMOTO <cabezon.hashimoto@gmail.com>, 2013-2014."
-
-#~ msgid "Include _favorites in recently used"
-#~ msgstr "最近使ったものにお気に入りを含める(_F)"
