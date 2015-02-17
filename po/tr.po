@@ -4,14 +4,14 @@
 #
 # Translators:
 # reis33 <bahadiroglu33@gmail.com>, 2013
-# Demiray Muhterem <mdemiray@msn.com>, 2013-2014
+# Demiray Muhterem <mdemiray@msn.com>, 2013-2015
 # Yusuf Faruk DOĞAN <yfdogan@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-14 11:32+0000\n"
-"PO-Revision-Date: 2014-07-17 23:43+0000\n"
+"PO-Revision-Date: 2015-02-16 21:16+0000\n"
 "Last-Translator: Demiray Muhterem <mdemiray@msn.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/tr/)\n"
@@ -51,16 +51,15 @@ msgstr "Xfce için alternatif uygulama başlatıcısı"
 
 #: ../panel-plugin/configuration-dialog.cpp:665
 msgid "Amount of _items:"
-msgstr ""
+msgstr "Ögelerin _miktarı:"
 
 #: ../panel-plugin/plugin.cpp:217
-#, fuzzy
 msgid "Applications"
-msgstr "Uygulamalar Menüsü"
+msgstr "Uygulamalar"
 
 #: ../panel-plugin/configuration-dialog.cpp:599
 msgid "Background opacit_y:"
-msgstr ""
+msgstr "Arkaplan matlı_k:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
@@ -80,7 +79,7 @@ msgstr "Yakında Kullanılanları Temizle"
 
 #: ../panel-plugin/plugin.cpp:394
 msgid "Copyright © 2013-2015 Graeme Gott"
-msgstr "Telif hakkı © 2013-2015 Graeme Gott"
+msgstr "Telif © 2013-2015 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:794
 msgid "Details"
@@ -91,18 +90,16 @@ msgid "Di_splay:"
 msgstr "Görüntü:"
 
 #: ../panel-plugin/configuration-dialog.cpp:682
-#, fuzzy
 msgid "Display by _default"
-msgstr "Menüde *Son Kullanılanlar* varsayılan _seçim olsun"
+msgstr "Varsayılan _görünüm"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Edit _Profile"
-msgstr ""
+msgstr "Profili _Düzenle"
 
 #: ../panel-plugin/settings.cpp:122
-#, fuzzy
 msgid "Failed to edit profile."
-msgstr "Kullanıcı geçişi başarısız oldu."
+msgstr "Profil düzenleme başarısız."
 
 #: ../panel-plugin/launcher.cpp:267 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
@@ -143,9 +140,8 @@ msgid "Icon and title"
 msgstr "Başlık ve Simge"
 
 #: ../panel-plugin/configuration-dialog.cpp:676
-#, fuzzy
 msgid "Ignore _favorites"
-msgstr "Favoriler"
+msgstr "Favorileri _gözardı et"
 
 #: ../panel-plugin/configuration-dialog.cpp:568
 msgid "Ite_m icon size:"
@@ -311,9 +307,8 @@ msgid "Unable to add launcher to panel."
 msgstr "Çalıştırıcı Panele Eklenemedi"
 
 #: ../panel-plugin/configuration-dialog.cpp:532
-#, fuzzy
 msgid "Use a single _panel row"
-msgstr "_panelde tek satır simge düzeni"
+msgstr "Tek satırlık bir _panel kullan"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
@@ -341,9 +336,8 @@ msgid "_Behavior"
 msgstr "_Davranış"
 
 #: ../panel-plugin/configuration-dialog.cpp:80
-#, fuzzy
 msgid "_Commands"
-msgstr "Komutlar"
+msgstr "_Komutlar"
 
 #: ../panel-plugin/settings.cpp:121
 msgid "_Edit Applications"
@@ -372,6 +366,3 @@ msgstr "_Başlık:"
 #: ../panel-plugin/plugin.cpp:398
 msgid "translator-credits"
 msgstr "çeviriler"
-
-#~ msgid "Include _favorites in recently used"
-#~ msgstr "Son kullanılanlara _favorileri dahil et"
