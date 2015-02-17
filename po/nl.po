@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Pjotr <pjotrvertaalt@gmail.com>, 2013-2014
+# Pjotr <pjotrvertaalt@gmail.com>, 2013-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-14 11:32+0000\n"
-"PO-Revision-Date: 2014-11-13 11:54+0000\n"
+"PO-Revision-Date: 2015-02-16 22:25+0000\n"
 "Last-Translator: Pjotr <pjotrvertaalt@gmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
 "plugin/language/nl/)\n"
@@ -49,16 +49,15 @@ msgstr "Alternatieve toepassingenstarter voor Xfce"
 
 #: ../panel-plugin/configuration-dialog.cpp:665
 msgid "Amount of _items:"
-msgstr ""
+msgstr "Hoeveelheid elementen:"
 
 #: ../panel-plugin/plugin.cpp:217
-#, fuzzy
 msgid "Applications"
-msgstr "Menu"
+msgstr "Toepassingen"
 
 #: ../panel-plugin/configuration-dialog.cpp:599
 msgid "Background opacit_y:"
-msgstr ""
+msgstr "Ondoorzichtigheid van achtergrond:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
@@ -89,18 +88,16 @@ msgid "Di_splay:"
 msgstr "Tonen:"
 
 #: ../panel-plugin/configuration-dialog.cpp:682
-#, fuzzy
 msgid "Display by _default"
-msgstr "Toon standaard 'onlangs gebruikt'"
+msgstr "Standaard tonen"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Edit _Profile"
-msgstr ""
+msgstr "Profiel bewerken"
 
 #: ../panel-plugin/settings.cpp:122
-#, fuzzy
 msgid "Failed to edit profile."
-msgstr "Kon niet van gebruiker wisselen."
+msgstr "Kon profiel niet bewerken."
 
 #: ../panel-plugin/launcher.cpp:267 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
@@ -141,9 +138,8 @@ msgid "Icon and title"
 msgstr "Pictogram en titel"
 
 #: ../panel-plugin/configuration-dialog.cpp:676
-#, fuzzy
 msgid "Ignore _favorites"
-msgstr "Favorieten"
+msgstr "Favorieten negeren"
 
 #: ../panel-plugin/configuration-dialog.cpp:568
 msgid "Ite_m icon size:"
@@ -309,9 +305,8 @@ msgid "Unable to add launcher to panel."
 msgstr "Kon starter niet toevoegen aan werkbalk."
 
 #: ../panel-plugin/configuration-dialog.cpp:532
-#, fuzzy
 msgid "Use a single _panel row"
-msgstr "Pictogrammen weergeven in een enkele paneelrij"
+msgstr "Gebruik een enkele paneelrij"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
@@ -339,7 +334,6 @@ msgid "_Behavior"
 msgstr "_Gedrag"
 
 #: ../panel-plugin/configuration-dialog.cpp:80
-#, fuzzy
 msgid "_Commands"
 msgstr "Opdrachten"
 
@@ -370,6 +364,3 @@ msgstr "_Titel:"
 #: ../panel-plugin/plugin.cpp:398
 msgid "translator-credits"
 msgstr "Pjotr <pjotrvertaalt@gmail.com>"
-
-#~ msgid "Include _favorites in recently used"
-#~ msgstr "Favorieten opnemen in 'onlangs gebruikt'"
