@@ -4,13 +4,13 @@
 #
 # Translators:
 # fabioluciano <fabio@naoimporta.com>, 2013
-# Sérgio Marques <smarquespt@gmail.com>, 2013-2014
+# Sérgio Marques <smarquespt@gmail.com>, 2013-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-14 11:32+0000\n"
-"PO-Revision-Date: 2014-06-05 11:55+0000\n"
+"PO-Revision-Date: 2015-02-15 23:20+0000\n"
 "Last-Translator: Sérgio Marques <smarquespt@gmail.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/pt/)\n"
@@ -50,16 +50,15 @@ msgstr "Lançador de aplicações para o Xfce"
 
 #: ../panel-plugin/configuration-dialog.cpp:665
 msgid "Amount of _items:"
-msgstr ""
+msgstr "Número de _itens:"
 
 #: ../panel-plugin/plugin.cpp:217
-#, fuzzy
 msgid "Applications"
-msgstr "Menu de aplicações"
+msgstr "Aplicações"
 
 #: ../panel-plugin/configuration-dialog.cpp:599
 msgid "Background opacit_y:"
-msgstr ""
+msgstr "Opa_cidade do fundo:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
@@ -79,7 +78,7 @@ msgstr "Limpar itens recentes"
 
 #: ../panel-plugin/plugin.cpp:394
 msgid "Copyright © 2013-2015 Graeme Gott"
-msgstr "Copyright © 2013-2015 Graeme Gott"
+msgstr "Direitos de autor © 2013-2015 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:794
 msgid "Details"
@@ -90,18 +89,16 @@ msgid "Di_splay:"
 msgstr "E_xibição:"
 
 #: ../panel-plugin/configuration-dialog.cpp:682
-#, fuzzy
 msgid "Display by _default"
-msgstr "Por definição, mostrar itens recentes _utilizados"
+msgstr "Mostrar por _definição"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Edit _Profile"
-msgstr ""
+msgstr "Editar _perfil"
 
 #: ../panel-plugin/settings.cpp:122
-#, fuzzy
 msgid "Failed to edit profile."
-msgstr "Falha ao trocar de utilizador."
+msgstr "Falha ao editar o perfil."
 
 #: ../panel-plugin/launcher.cpp:267 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
@@ -142,9 +139,8 @@ msgid "Icon and title"
 msgstr "Icone e título"
 
 #: ../panel-plugin/configuration-dialog.cpp:676
-#, fuzzy
 msgid "Ignore _favorites"
-msgstr "Favoritos"
+msgstr "Ignorar _favoritos"
 
 #: ../panel-plugin/configuration-dialog.cpp:568
 msgid "Ite_m icon size:"
@@ -310,9 +306,8 @@ msgid "Unable to add launcher to panel."
 msgstr "Não foi possível adicionar lançador ao painel."
 
 #: ../panel-plugin/configuration-dialog.cpp:532
-#, fuzzy
 msgid "Use a single _panel row"
-msgstr "Ícone apenas utiliza uma linha do _painel"
+msgstr "Utilizar _painel com uma linha"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
@@ -340,9 +335,8 @@ msgid "_Behavior"
 msgstr "C_omportamento"
 
 #: ../panel-plugin/configuration-dialog.cpp:80
-#, fuzzy
 msgid "_Commands"
-msgstr "Comandos"
+msgstr "_Comandos"
 
 #: ../panel-plugin/settings.cpp:121
 msgid "_Edit Applications"
@@ -371,6 +365,3 @@ msgstr "_Título:"
 #: ../panel-plugin/plugin.cpp:398
 msgid "translator-credits"
 msgstr "Sérgio Marques <smarquespt@gmail.com>"
-
-#~ msgid "Include _favorites in recently used"
-#~ msgstr "Incluir _favoritos nos itens recentes"
