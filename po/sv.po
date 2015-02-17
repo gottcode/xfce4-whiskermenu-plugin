@@ -6,18 +6,18 @@
 # Andreas Gustafsson <addegsson@gmail.com>, 2013
 # Patrik Nilsson <asavartzeth@gmail.com>, 2014
 # Fredrik Nyqvist <fredrik@nyqvist.biz>, 2013
-# Patrik Nilsson <asavartzeth@gmail.com>, 2014
+# Patrik Nilsson <asavartzeth@gmail.com>, 2014-2015
 # Tommy Arvidsson <tarvidsson7834@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-14 11:32+0000\n"
-"PO-Revision-Date: 2014-07-10 17:58+0000\n"
+"PO-Revision-Date: 2015-02-15 21:31+0000\n"
 "Last-Translator: Patrik Nilsson <asavartzeth@gmail.com>\n"
 "Language-Team: Swedish (Sweden) (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/sv_SE/)\n"
-"Language: sv_SE\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -53,16 +53,15 @@ msgstr "Alternativ programstartare för Xfce"
 
 #: ../panel-plugin/configuration-dialog.cpp:665
 msgid "Amount of _items:"
-msgstr ""
+msgstr "Antal _objekt:"
 
 #: ../panel-plugin/plugin.cpp:217
-#, fuzzy
 msgid "Applications"
-msgstr "Programmeny"
+msgstr "Program"
 
 #: ../panel-plugin/configuration-dialog.cpp:599
 msgid "Background opacit_y:"
-msgstr ""
+msgstr "Bakgrundens _opacitet:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
@@ -93,18 +92,16 @@ msgid "Di_splay:"
 msgstr "_Visa:"
 
 #: ../panel-plugin/configuration-dialog.cpp:682
-#, fuzzy
 msgid "Display by _default"
-msgstr "Visa _senast använda som standard"
+msgstr "Visa som _standard"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Edit _Profile"
-msgstr ""
+msgstr "Redigera _profil"
 
 #: ../panel-plugin/settings.cpp:122
-#, fuzzy
 msgid "Failed to edit profile."
-msgstr "Misslyckades med att växla användare."
+msgstr "Misslyckades med att redigera profil."
 
 #: ../panel-plugin/launcher.cpp:267 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
@@ -145,9 +142,8 @@ msgid "Icon and title"
 msgstr "Ikon och titel"
 
 #: ../panel-plugin/configuration-dialog.cpp:676
-#, fuzzy
 msgid "Ignore _favorites"
-msgstr "Favoriter"
+msgstr "Ignorera _favoriter"
 
 #: ../panel-plugin/configuration-dialog.cpp:568
 msgid "Ite_m icon size:"
@@ -313,9 +309,8 @@ msgid "Unable to add launcher to panel."
 msgstr "Kunde inte lägga till programstartare i panelen."
 
 #: ../panel-plugin/configuration-dialog.cpp:532
-#, fuzzy
 msgid "Use a single _panel row"
-msgstr "Lägg ut ikonen i en enda _panel rad"
+msgstr "Använd en enkel _panel rad"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
@@ -343,9 +338,8 @@ msgid "_Behavior"
 msgstr "_Beteende"
 
 #: ../panel-plugin/configuration-dialog.cpp:80
-#, fuzzy
 msgid "_Commands"
-msgstr "Kommandon"
+msgstr "_Kommandon"
 
 #: ../panel-plugin/settings.cpp:121
 msgid "_Edit Applications"
@@ -374,6 +368,3 @@ msgstr "Tite_l:"
 #: ../panel-plugin/plugin.cpp:398
 msgid "translator-credits"
 msgstr "kredit till översättare"
-
-#~ msgid "Include _favorites in recently used"
-#~ msgstr "Inkludera _favoriter i senast använda"
