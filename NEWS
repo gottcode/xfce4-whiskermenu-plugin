@@ -1,3 +1,28 @@
+1.5.0
+=====
+- Fix search activation to allow input methods.
+- Fix broken menu when closed by window manager.
+- Fix unnecessary assignment to NULL.
+- Fix possible null pointer dereference.
+- Add option to set background opacity.
+- Add command to edit profile.
+- Add profile picture.
+- Add customizable limit for recently used.
+- Add support for non-square panel button icon.
+- Add items of Xfce settings manager to allow searching.
+- Expand subcategories when activated.
+- Load default settings from XDG location.
+- Make launchers executable when they are added to desktop.
+- Rearrange options in configuration dialog.
+- Refactor list page code.
+- Rename option for including favorites in recently used.
+- Rename option to use single panel row.
+- Rename button to match default menu applet.
+- Use a single instance of the garcon menu.
+- Translation updates: Bulgarian, Catalan, Dutch, French, German, Hebrew,
+  Italian, Japanese, Lithuanian, Polish, Portuguese, Slovak, Slovenian,
+  Spanish, Swedish, Turkish, Chinese (Taiwan).
+
 1.4.3
 =====
 - Fix hang at launch by removing load thread.
