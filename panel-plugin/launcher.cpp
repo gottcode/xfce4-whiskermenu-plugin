@@ -170,7 +170,8 @@ Launcher::Launcher(GarconMenuItem* item) :
 	}
 
 	// Create search text for display name
-	m_search_name = normalize(m_display_name);
+	m_search_name = normalize(name);
+	m_search_generic_name = normalize(generic_name);
 
 	// Create search text for command
 	const gchar* command = garcon_menu_item_get_command(m_item);
@@ -274,6 +275,12 @@ void Launcher::run(GdkScreen* screen) const
 int Launcher::search(const Query& query)
 {
 	int match = query.match(m_search_name);
+	if (match != G_MAXINT)
+	{
+		return match;
+	}
+
+	match = query.match(m_search_generic_name);
 	if (match != G_MAXINT)
 	{
 		return match;
