@@ -113,7 +113,7 @@ int Query::match(const std::string& haystack) const
 		}
 	}
 
-	// Check if haystack contains query as characters
+	// Check if haystack contains all the characters of query, in order
 	bool characters_start_words = true;
 	bool start_word = true;
 	bool started = false;
@@ -143,13 +143,14 @@ int Query::match(const std::string& haystack) const
 	int result = INT_MAX;
 	if (*query_string == 0)
 	{
-		result = characters_start_words ? 5 : 7;
+		// Sufficiently large to sort after more relevant matches in other fields
+		result = characters_start_words ? 500 : 700;
 	}
 
 	// Check if haystack contains query
-	if ((result > 5) && (pos != std::string::npos))
+	if ((result > 500) && (pos != std::string::npos))
 	{
-		result = 6;
+		result = 600;
 	}
 
 	return result;
