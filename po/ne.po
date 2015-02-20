@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# starryprabin <mr.prabin@gmail.com>, 2013-2014
+# starryprabin <mr.prabin@gmail.com>, 2013-2015
 # Prabin Gautam <PRABINGAUTAM@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-14 11:32+0000\n"
-"PO-Revision-Date: 2014-08-26 17:01+0000\n"
-"Last-Translator: Prabin Gautam <PRABINGAUTAM@gmail.com>\n"
+"PO-Revision-Date: 2015-02-19 18:35+0000\n"
+"Last-Translator: starryprabin <mr.prabin@gmail.com>\n"
 "Language-Team: Nepali (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
 "plugin/language/ne/)\n"
 "Language: ne\n"
@@ -34,7 +34,7 @@ msgstr "मन पर्नेमा थप्नुहोस्"
 
 #: ../panel-plugin/page.cpp:218
 msgid "Add to Panel"
-msgstr "पट्टीकामा थप्नुहोस् "
+msgstr "पट्टीमा थप्नुहोस् "
 
 #: ../panel-plugin/category.cpp:59
 msgid "All"
@@ -42,24 +42,23 @@ msgstr "समस्त"
 
 #: ../panel-plugin/settings.cpp:117
 msgid "All _Settings"
-msgstr "समस्त ॒सेटिङ"
+msgstr "समस्त सेटिङ्"
 
 #: ../panel-plugin/plugin.cpp:393
 msgid "Alternate application launcher for Xfce"
-msgstr "Xfceको लागि वैकल्पिक अनुप्रयोग सुरुवातकर्ता"
+msgstr "Xfce को लागि वैकल्पिक अनुप्रयोग सुरुवातकर्ता"
 
 #: ../panel-plugin/configuration-dialog.cpp:665
 msgid "Amount of _items:"
-msgstr ""
+msgstr "वस्तुको परिमाण:"
 
 #: ../panel-plugin/plugin.cpp:217
-#, fuzzy
 msgid "Applications"
-msgstr "अनुप्रयोगका मेन्यू"
+msgstr "अनुप्रयोगहरु"
 
 #: ../panel-plugin/configuration-dialog.cpp:599
 msgid "Background opacit_y:"
-msgstr ""
+msgstr "पृष्ठभूमिको अपारदर्शिता:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
@@ -71,7 +70,7 @@ msgstr "आदेश:"
 
 #: ../panel-plugin/configuration-dialog.cpp:584
 msgid "Categ_ory icon size:"
-msgstr "वर्गमूर्तिको अाकार: "
+msgstr "वर्गमूर्तिको आकार: "
 
 #: ../panel-plugin/recent-page.cpp:148
 msgid "Clear Recently Used"
@@ -79,7 +78,7 @@ msgstr "हालसालै प्रयोग भएकालाई सफा
 
 #: ../panel-plugin/plugin.cpp:394
 msgid "Copyright © 2013-2015 Graeme Gott"
-msgstr "प्रतिलिपि अधिकार © 2013-2015 Graeme Gott"
+msgstr "प्रतिलिपि अधिकार © २०१३-२०१५ Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:794
 msgid "Details"
@@ -90,24 +89,22 @@ msgid "Di_splay:"
 msgstr "प्रदर्शन:"
 
 #: ../panel-plugin/configuration-dialog.cpp:682
-#, fuzzy
 msgid "Display by _default"
-msgstr "हालसालै _प्रयोग भएकालाई डिफल्टमा देखाउनुहोस् "
+msgstr "स्व:त प्रदर्शन गर्नुहोस्"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Edit _Profile"
-msgstr ""
+msgstr "पाश्र्वचित्र सम्पादन गर्नुहोस्"
 
 #: ../panel-plugin/settings.cpp:122
-#, fuzzy
 msgid "Failed to edit profile."
-msgstr "प्रयोगकर्ता फेर्न बिफल।"
+msgstr "पाश्र्वचित्र सम्पादन गर्न बिफल"
 
 #: ../panel-plugin/launcher.cpp:267 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
-msgstr "\"%s\" अादेशलाई कार्यान्वयन गर्न असफल।"
+msgstr "\"%s\" आदेशलाई कार्यान्वयन गर्न  बिफल।"
 
 #: ../panel-plugin/settings.cpp:121
 msgid "Failed to launch menu editor."
@@ -115,15 +112,15 @@ msgstr "मेनु सम्पादक सुरु गर्न बिफ�
 
 #: ../panel-plugin/settings.cpp:118
 msgid "Failed to lock screen."
-msgstr "स्क्रिन लक गर्न असफल ।"
+msgstr "स्क्रिन लक गर्न  बिफल ।"
 
 #: ../panel-plugin/settings.cpp:120
 msgid "Failed to log out."
-msgstr "बाहिरीन असफल।"
+msgstr "बाहिरीन बिफल ।"
 
 #: ../panel-plugin/settings.cpp:117
 msgid "Failed to open settings manager."
-msgstr "प्राथमिकता व्यवस्थापक खोल्न असफल।"
+msgstr "प्राथमिकता व्यवस्थापक खोल्न  बिफल।"
 
 #: ../panel-plugin/settings.cpp:119
 msgid "Failed to switch users."
@@ -142,13 +139,12 @@ msgid "Icon and title"
 msgstr "मूर्ति र शीर्षक "
 
 #: ../panel-plugin/configuration-dialog.cpp:676
-#, fuzzy
 msgid "Ignore _favorites"
-msgstr "मन पर्ने"
+msgstr "मन पर्नेलाई बेवास्ता गर्नुहोस्"
 
 #: ../panel-plugin/configuration-dialog.cpp:568
 msgid "Ite_m icon size:"
-msgstr "वस्तु॒मूर्तिको अाकार: "
+msgstr "वस्तुमूर्तिको आकार: "
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Large"
@@ -193,7 +189,7 @@ msgstr "युआरआइ खोल्नुहोस्"
 
 #: ../panel-plugin/configuration-dialog.cpp:487
 msgid "Panel Button"
-msgstr "पेनलको बटन"
+msgstr "पट्टीको बटन"
 
 #: ../panel-plugin/configuration-dialog.cpp:750
 msgid "Pattern"
@@ -201,15 +197,15 @@ msgstr "ढाँचा"
 
 #: ../panel-plugin/configuration-dialog.cpp:636
 msgid "Position _search entry next to panel button"
-msgstr "पट्टीको टांकको नजिक  ॒खोजलाई स्थानाङ्कित गर्नुहोस् "
+msgstr "पट्टीको बटनको नजिक खोजलाई स्थानाङ्कित गर्नुहोस् "
 
 #: ../panel-plugin/configuration-dialog.cpp:649
 msgid "Position cate_gories next to panel button"
-msgstr "पट्टीको टांकको नजिक श्रेणीहरुलाई स्थानाङ्कित गर्नुहोस्"
+msgstr "पट्टीको बटनको नजिक श्रेणीहरुलाई स्थानाङ्कित गर्नुहोस्"
 
 #: ../panel-plugin/configuration-dialog.cpp:642
 msgid "Position commands next to search _entry"
-msgstr "खोजको नजिक अादेशहरुलाई स्थानाङ्कित गर्नुहोस् "
+msgstr "खोजको नजिक आदेशहरुलाई स्थानाङ्कित गर्नुहोस् "
 
 #: ../panel-plugin/configuration-dialog.cpp:660 ../panel-plugin/window.cpp:125
 msgid "Recently Used"
@@ -267,7 +263,7 @@ msgstr "अनुप्रयोगहरुको समान्य नाम 
 
 #: ../panel-plugin/configuration-dialog.cpp:562
 msgid "Show menu hie_rarchy"
-msgstr "मेन्यू  _पदक्रमलाई देखाउनुहोस् "
+msgstr "मेन्यू  पदक्रमलाई देखाउनुहोस् "
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -287,11 +283,11 @@ msgstr "Z-A अनुसार वर्णक्रमीक गर्नुह
 
 #: ../panel-plugin/settings.cpp:119
 msgid "Switch _Users"
-msgstr "॒प्रयोगकर्ता फेर्नुहोस्"
+msgstr "प्रयोगकर्ता फेर्नुहोस्"
 
 #: ../panel-plugin/configuration-dialog.cpp:630
 msgid "Switch categories by _hovering"
-msgstr "मं॒डराएर वर्गहरुलाई बदल्नुहोस् "
+msgstr "मण्डराएर वर्गहरुलाई बदल्नुहोस् "
 
 #: ../panel-plugin/configuration-dialog.cpp:400
 msgid "The action will be deleted permanently."
@@ -307,12 +303,11 @@ msgstr "प्रक्षेपकलाई डेस्कटपमा थप�
 
 #: ../panel-plugin/page.cpp:356 ../panel-plugin/page.cpp:365
 msgid "Unable to add launcher to panel."
-msgstr "प्रक्षेपकलाई पट्टीकामा थप्न असमर्थ ।"
+msgstr "प्रक्षेपकलाई पट्टीमा थप्न असमर्थ ।"
 
 #: ../panel-plugin/configuration-dialog.cpp:532
-#, fuzzy
 msgid "Use a single _panel row"
-msgstr "एक  प्यानल पङ्क्तिमा सजावट गर"
+msgstr "एक पङ्क्ति पट्टीको प्रयोग गर्नुहोस्"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
@@ -325,7 +320,7 @@ msgstr "अत्यन्त सानो "
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
 msgid "Whisker Menu"
-msgstr "विस्कर मेनु"
+msgstr "विस्कर मेन्यू"
 
 #: ../panel-plugin/settings.cpp:125
 msgid "Wikipedia"
@@ -333,16 +328,15 @@ msgstr "विकिपीडिया"
 
 #: ../panel-plugin/configuration-dialog.cpp:78
 msgid "_Appearance"
-msgstr "_रुप"
+msgstr "रुप"
 
 #: ../panel-plugin/configuration-dialog.cpp:79
 msgid "_Behavior"
 msgstr "ब्य॒वहार"
 
 #: ../panel-plugin/configuration-dialog.cpp:80
-#, fuzzy
 msgid "_Commands"
-msgstr "आदेशहरु"
+msgstr "आदेशहरू"
 
 #: ../panel-plugin/settings.cpp:121
 msgid "_Edit Applications"
@@ -366,11 +360,8 @@ msgstr "रेगुलर एक्सप्रेसन"
 
 #: ../panel-plugin/configuration-dialog.cpp:506
 msgid "_Title:"
-msgstr "शी॒र्षक"
+msgstr "शीर्षक:"
 
 #: ../panel-plugin/plugin.cpp:398
 msgid "translator-credits"
-msgstr "अनुवादक-अाभार "
-
-#~ msgid "Include _favorites in recently used"
-#~ msgstr "हालसालै प्रयोग भएकामा _मन पर्नेलाई सामेल गर्नुहोस् "
+msgstr "अनुवादक-आभार "
