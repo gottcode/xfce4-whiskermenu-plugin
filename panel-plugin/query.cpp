@@ -113,6 +113,12 @@ int Query::match(const std::string& haystack) const
 		}
 	}
 
+	// Check if haystack contains query
+	if (pos != std::string::npos)
+	{
+		return 5;
+	}
+
 	// Check if haystack contains query as characters
 	bool characters_start_words = true;
 	bool start_word = true;
@@ -143,13 +149,7 @@ int Query::match(const std::string& haystack) const
 	int result = INT_MAX;
 	if (*query_string == 0)
 	{
-		result = characters_start_words ? 5 : 7;
-	}
-
-	// Check if haystack contains query
-	if ((result > 5) && (pos != std::string::npos))
-	{
-		result = 6;
+		result = characters_start_words ? 6 : 7;
 	}
 
 	return result;

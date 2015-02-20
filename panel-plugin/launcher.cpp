@@ -277,6 +277,10 @@ int Launcher::search(const Query& query)
 	int match = query.match(m_search_name);
 	if (match != G_MAXINT)
 	{
+		if (match > 5)
+		{
+			match += 10;
+		}
 		return match;
 	}
 
