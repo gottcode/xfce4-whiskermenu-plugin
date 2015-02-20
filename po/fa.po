@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-14 11:32+0000\n"
+"POT-Creation-Date: 2015-02-20 23:57+0000\n"
 "PO-Revision-Date: 2014-07-24 18:38+0000\n"
 "Last-Translator: Reza Gharibi <reza.gharibi.rg@gmail.com>\n"
 "Language-Team: Persian (http://www.transifex.com/projects/p/xfce4-"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../panel-plugin/configuration-dialog.cpp:765
+#: ../panel-plugin/configuration-dialog.cpp:782
 msgid "Add action"
 msgstr "اضافه‌کردن عمل"
 
@@ -47,7 +47,7 @@ msgstr "همه‌ی _تنظیمات"
 msgid "Alternate application launcher for Xfce"
 msgstr "اجراکننده‌ای جایگزین برای Xfce"
 
-#: ../panel-plugin/configuration-dialog.cpp:665
+#: ../panel-plugin/configuration-dialog.cpp:682
 msgid "Amount of _items:"
 msgstr ""
 
@@ -56,7 +56,7 @@ msgstr ""
 msgid "Applications"
 msgstr "منوی برنامه‌ها"
 
-#: ../panel-plugin/configuration-dialog.cpp:599
+#: ../panel-plugin/configuration-dialog.cpp:616
 msgid "Background opacit_y:"
 msgstr ""
 
@@ -64,11 +64,11 @@ msgstr ""
 msgid "Browse the file system to choose a custom command."
 msgstr "مرور سیستم‌فایل برای انتخاب‌کردن یک دستور سفارشی."
 
-#: ../panel-plugin/configuration-dialog.cpp:823
+#: ../panel-plugin/configuration-dialog.cpp:840
 msgid "C_ommand:"
 msgstr "د_ستور:"
 
-#: ../panel-plugin/configuration-dialog.cpp:584
+#: ../panel-plugin/configuration-dialog.cpp:601
 msgid "Categ_ory icon size:"
 msgstr "اندازه‌ی آیکان دست_ه:"
 
@@ -80,15 +80,15 @@ msgstr "پاک‌کردن به‌تازگی استفاده شده"
 msgid "Copyright © 2013-2015 Graeme Gott"
 msgstr "کپی‌رایت © 2013-2015 Graeme Gott"
 
-#: ../panel-plugin/configuration-dialog.cpp:794
+#: ../panel-plugin/configuration-dialog.cpp:811
 msgid "Details"
 msgstr "جزئیات"
 
-#: ../panel-plugin/configuration-dialog.cpp:492
+#: ../panel-plugin/configuration-dialog.cpp:509
 msgid "Di_splay:"
 msgstr "نم_ایش:"
 
-#: ../panel-plugin/configuration-dialog.cpp:682
+#: ../panel-plugin/configuration-dialog.cpp:699
 #, fuzzy
 msgid "Display by _default"
 msgstr "نمایش به تازگی _استفاده شده به صورت پیش‌فرض"
@@ -102,7 +102,7 @@ msgstr ""
 msgid "Failed to edit profile."
 msgstr "تغییر کاربر با شکست مواجه شد."
 
-#: ../panel-plugin/launcher.cpp:267 ../panel-plugin/run-action.cpp:41
+#: ../panel-plugin/launcher.cpp:273 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
@@ -128,24 +128,24 @@ msgstr "بازکردن مدیریت تنظیمات با شکست مواجه شد
 msgid "Failed to switch users."
 msgstr "تغییر کاربر با شکست مواجه شد."
 
-#: ../panel-plugin/window.cpp:119
+#: ../panel-plugin/window.cpp:120
 msgid "Favorites"
 msgstr "علاقه‌مندی‌ها"
 
-#: ../panel-plugin/configuration-dialog.cpp:497
+#: ../panel-plugin/configuration-dialog.cpp:514
 msgid "Icon"
 msgstr "آیکان"
 
-#: ../panel-plugin/configuration-dialog.cpp:499
+#: ../panel-plugin/configuration-dialog.cpp:516
 msgid "Icon and title"
 msgstr "آیکان و عنوان"
 
-#: ../panel-plugin/configuration-dialog.cpp:676
+#: ../panel-plugin/configuration-dialog.cpp:693
 #, fuzzy
 msgid "Ignore _favorites"
 msgstr "علاقه‌مندی‌ها"
 
-#: ../panel-plugin/configuration-dialog.cpp:568
+#: ../panel-plugin/configuration-dialog.cpp:585
 msgid "Ite_m icon size:"
 msgstr "اندازه‌ی آیکان آیت_م:"
 
@@ -165,16 +165,16 @@ msgstr "خر_وج"
 msgid "Man Pages"
 msgstr "صفحه‌های راهنما"
 
-#: ../panel-plugin/configuration-dialog.cpp:545
-#: ../panel-plugin/configuration-dialog.cpp:625
+#: ../panel-plugin/configuration-dialog.cpp:562
+#: ../panel-plugin/configuration-dialog.cpp:642
 msgid "Menu"
 msgstr "منو"
 
-#: ../panel-plugin/configuration-dialog.cpp:799
+#: ../panel-plugin/configuration-dialog.cpp:816
 msgid "Nam_e:"
 msgstr "نا_م:"
 
-#: ../panel-plugin/configuration-dialog.cpp:745
+#: ../panel-plugin/configuration-dialog.cpp:762
 msgid "Name"
 msgstr "نام"
 
@@ -190,27 +190,27 @@ msgstr "عادی"
 msgid "Open URI"
 msgstr "بازکردن آدرس"
 
-#: ../panel-plugin/configuration-dialog.cpp:487
+#: ../panel-plugin/configuration-dialog.cpp:504
 msgid "Panel Button"
 msgstr "دکمه‌ی پنل"
 
-#: ../panel-plugin/configuration-dialog.cpp:750
+#: ../panel-plugin/configuration-dialog.cpp:767
 msgid "Pattern"
 msgstr "الگو"
 
-#: ../panel-plugin/configuration-dialog.cpp:636
+#: ../panel-plugin/configuration-dialog.cpp:653
 msgid "Position _search entry next to panel button"
 msgstr "قراردادن ورودی _جست‌و‌جو کنار دکمه‌ی پنل"
 
-#: ../panel-plugin/configuration-dialog.cpp:649
+#: ../panel-plugin/configuration-dialog.cpp:666
 msgid "Position cate_gories next to panel button"
 msgstr "قراردادن دسته‌ها درکنار دکمه‌ی پنل"
 
-#: ../panel-plugin/configuration-dialog.cpp:642
+#: ../panel-plugin/configuration-dialog.cpp:659
 msgid "Position commands next to search _entry"
 msgstr "قراردادن دستورها کنار _ورودی جست‌و‌جو"
 
-#: ../panel-plugin/configuration-dialog.cpp:660 ../panel-plugin/window.cpp:125
+#: ../panel-plugin/configuration-dialog.cpp:677 ../panel-plugin/window.cpp:126
 msgid "Recently Used"
 msgstr "به تازگی استفاده شده"
 
@@ -218,12 +218,12 @@ msgstr "به تازگی استفاده شده"
 msgid "Remove From Favorites"
 msgstr "حذف‌کردن از علاقه‌مندی‌ها"
 
-#: ../panel-plugin/configuration-dialog.cpp:401
+#: ../panel-plugin/configuration-dialog.cpp:406
 #, c-format
 msgid "Remove action \"%s\"?"
 msgstr "حذف عمل \"%s\"؟"
 
-#: ../panel-plugin/configuration-dialog.cpp:774
+#: ../panel-plugin/configuration-dialog.cpp:791
 msgid "Remove selected action"
 msgstr "حذف عمل انتخاب شده"
 
@@ -236,7 +236,7 @@ msgstr "اجرای %s"
 msgid "Run in Terminal"
 msgstr "اجراکردن در ترمینال"
 
-#: ../panel-plugin/configuration-dialog.cpp:81
+#: ../panel-plugin/configuration-dialog.cpp:86
 msgid "Search Actio_ns"
 msgstr "جست‌و‌جوی اعما_ل"
 
@@ -244,7 +244,7 @@ msgstr "جست‌و‌جوی اعما_ل"
 msgid "Search Action"
 msgstr "جست‌و‌جوی اعمال"
 
-#: ../panel-plugin/configuration-dialog.cpp:114
+#: ../panel-plugin/configuration-dialog.cpp:119
 msgid "Select An Icon"
 msgstr "انتخاب یک آیکان"
 
@@ -256,15 +256,15 @@ msgstr "انتخاب دستور"
 msgid "Show a menu to easily access installed applications"
 msgstr "نمایش یک منو برای دسترسی آسان به برنامه‌های نصب‌شده"
 
-#: ../panel-plugin/configuration-dialog.cpp:556
+#: ../panel-plugin/configuration-dialog.cpp:573
 msgid "Show application _descriptions"
 msgstr "نمایش برنامه _توضیحات"
 
-#: ../panel-plugin/configuration-dialog.cpp:550
+#: ../panel-plugin/configuration-dialog.cpp:567
 msgid "Show generic application _names"
 msgstr "نمایش _نام‌های برنامه‌‌ی عمومی"
 
-#: ../panel-plugin/configuration-dialog.cpp:562
+#: ../panel-plugin/configuration-dialog.cpp:579
 msgid "Show menu hie_rarchy"
 msgstr "نمایش سلسله‌_مراتب منو"
 
@@ -288,15 +288,15 @@ msgstr "مرتب‌سازی براساس حروف الفبا ی-الف"
 msgid "Switch _Users"
 msgstr "تغییر _کاربر"
 
-#: ../panel-plugin/configuration-dialog.cpp:630
+#: ../panel-plugin/configuration-dialog.cpp:647
 msgid "Switch categories by _hovering"
 msgstr "تغییر دسته‌ها با _بردن موس روی آن"
 
-#: ../panel-plugin/configuration-dialog.cpp:400
+#: ../panel-plugin/configuration-dialog.cpp:405
 msgid "The action will be deleted permanently."
 msgstr "عمل برای همیشه حذف خواهدشد."
 
-#: ../panel-plugin/configuration-dialog.cpp:498
+#: ../panel-plugin/configuration-dialog.cpp:515
 msgid "Title"
 msgstr "عنوان"
 
@@ -308,7 +308,12 @@ msgstr "ناتوان در اضافه‌کردن لانچر به میزکار."
 msgid "Unable to add launcher to panel."
 msgstr "ناتوان در اضافه‌کردن لانچر به پنل."
 
-#: ../panel-plugin/configuration-dialog.cpp:532
+#: ../panel-plugin/configuration-dialog.cpp:466
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:549
 #, fuzzy
 msgid "Use a single _panel row"
 msgstr "بیرون گذاشتن آیکون در یک ردیف از _پنل"
@@ -330,15 +335,15 @@ msgstr "منوی Whisker"
 msgid "Wikipedia"
 msgstr "ویکی‌پدیا"
 
-#: ../panel-plugin/configuration-dialog.cpp:78
+#: ../panel-plugin/configuration-dialog.cpp:83
 msgid "_Appearance"
 msgstr "_ظاهر"
 
-#: ../panel-plugin/configuration-dialog.cpp:79
+#: ../panel-plugin/configuration-dialog.cpp:84
 msgid "_Behavior"
 msgstr "_رفتار"
 
-#: ../panel-plugin/configuration-dialog.cpp:80
+#: ../panel-plugin/configuration-dialog.cpp:85
 #, fuzzy
 msgid "_Commands"
 msgstr "دستورها"
@@ -347,7 +352,7 @@ msgstr "دستورها"
 msgid "_Edit Applications"
 msgstr "_ویرایش برنامه‌ها"
 
-#: ../panel-plugin/configuration-dialog.cpp:517
+#: ../panel-plugin/configuration-dialog.cpp:534
 msgid "_Icon:"
 msgstr "_آیکان:"
 
@@ -355,15 +360,15 @@ msgstr "_آیکان:"
 msgid "_Lock Screen"
 msgstr "_قفل‌کردن صفحه‌نمایش"
 
-#: ../panel-plugin/configuration-dialog.cpp:811
+#: ../panel-plugin/configuration-dialog.cpp:828
 msgid "_Pattern:"
 msgstr "_الگو:"
 
-#: ../panel-plugin/configuration-dialog.cpp:835
+#: ../panel-plugin/configuration-dialog.cpp:852
 msgid "_Regular expression"
 msgstr "_عبارت منظم"
 
-#: ../panel-plugin/configuration-dialog.cpp:506
+#: ../panel-plugin/configuration-dialog.cpp:523
 msgid "_Title:"
 msgstr "_عنوان:"
 

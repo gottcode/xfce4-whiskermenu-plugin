@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-14 11:32+0000\n"
+"POT-Creation-Date: 2015-02-20 23:57+0000\n"
 "PO-Revision-Date: 2015-02-14 18:12+0000\n"
 "Last-Translator: Tobias Bannert <tobannert@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/configuration-dialog.cpp:765
+#: ../panel-plugin/configuration-dialog.cpp:782
 msgid "Add action"
 msgstr "Aktion hinzufügen"
 
@@ -51,7 +51,7 @@ msgstr "Alle _Einstellungen"
 msgid "Alternate application launcher for Xfce"
 msgstr "Alternativer Anwendungsstarter für Xfce"
 
-#: ../panel-plugin/configuration-dialog.cpp:665
+#: ../panel-plugin/configuration-dialog.cpp:682
 msgid "Amount of _items:"
 msgstr "Anzahl der _Einträge:"
 
@@ -59,7 +59,7 @@ msgstr "Anzahl der _Einträge:"
 msgid "Applications"
 msgstr "Anwendungen"
 
-#: ../panel-plugin/configuration-dialog.cpp:599
+#: ../panel-plugin/configuration-dialog.cpp:616
 msgid "Background opacit_y:"
 msgstr "_Hintergrunddeckkraft:"
 
@@ -67,11 +67,11 @@ msgstr "_Hintergrunddeckkraft:"
 msgid "Browse the file system to choose a custom command."
 msgstr "Das Dateisystem durchsuchen, um einen Befehl auszuwählen."
 
-#: ../panel-plugin/configuration-dialog.cpp:823
+#: ../panel-plugin/configuration-dialog.cpp:840
 msgid "C_ommand:"
 msgstr "B_efehl:"
 
-#: ../panel-plugin/configuration-dialog.cpp:584
+#: ../panel-plugin/configuration-dialog.cpp:601
 msgid "Categ_ory icon size:"
 msgstr "Symbolgröße der _Kategorien:"
 
@@ -83,15 +83,15 @@ msgstr "»Zuletzt verwendet« leeren"
 msgid "Copyright © 2013-2015 Graeme Gott"
 msgstr "Urheberrecht © 2013-2015 Graeme Gott"
 
-#: ../panel-plugin/configuration-dialog.cpp:794
+#: ../panel-plugin/configuration-dialog.cpp:811
 msgid "Details"
 msgstr "Details"
 
-#: ../panel-plugin/configuration-dialog.cpp:492
+#: ../panel-plugin/configuration-dialog.cpp:509
 msgid "Di_splay:"
 msgstr "A_nzeige:"
 
-#: ../panel-plugin/configuration-dialog.cpp:682
+#: ../panel-plugin/configuration-dialog.cpp:699
 msgid "Display by _default"
 msgstr "S_tandardmäßig anzeigen"
 
@@ -103,7 +103,7 @@ msgstr "_Profil bearbeiten"
 msgid "Failed to edit profile."
 msgstr "Bearbeiten des Profils ist fehlgeschlagen."
 
-#: ../panel-plugin/launcher.cpp:267 ../panel-plugin/run-action.cpp:41
+#: ../panel-plugin/launcher.cpp:273 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
@@ -129,23 +129,23 @@ msgstr "Einstellungsverwaltung konnte nicht gestartet werden."
 msgid "Failed to switch users."
 msgstr "Konnte Programm zum Benutzerwechsel nicht ausführen."
 
-#: ../panel-plugin/window.cpp:119
+#: ../panel-plugin/window.cpp:120
 msgid "Favorites"
 msgstr "Favoriten"
 
-#: ../panel-plugin/configuration-dialog.cpp:497
+#: ../panel-plugin/configuration-dialog.cpp:514
 msgid "Icon"
 msgstr "Symbol"
 
-#: ../panel-plugin/configuration-dialog.cpp:499
+#: ../panel-plugin/configuration-dialog.cpp:516
 msgid "Icon and title"
 msgstr "Symbol und Titel"
 
-#: ../panel-plugin/configuration-dialog.cpp:676
+#: ../panel-plugin/configuration-dialog.cpp:693
 msgid "Ignore _favorites"
 msgstr "_Favoriten vernachlässigen"
 
-#: ../panel-plugin/configuration-dialog.cpp:568
+#: ../panel-plugin/configuration-dialog.cpp:585
 msgid "Ite_m icon size:"
 msgstr "Symbolgröße der An_wendungen:"
 
@@ -165,16 +165,16 @@ msgstr "Abme_lden"
 msgid "Man Pages"
 msgstr "Handbuchseiten"
 
-#: ../panel-plugin/configuration-dialog.cpp:545
-#: ../panel-plugin/configuration-dialog.cpp:625
+#: ../panel-plugin/configuration-dialog.cpp:562
+#: ../panel-plugin/configuration-dialog.cpp:642
 msgid "Menu"
 msgstr "Menü"
 
-#: ../panel-plugin/configuration-dialog.cpp:799
+#: ../panel-plugin/configuration-dialog.cpp:816
 msgid "Nam_e:"
 msgstr "_Name:"
 
-#: ../panel-plugin/configuration-dialog.cpp:745
+#: ../panel-plugin/configuration-dialog.cpp:762
 msgid "Name"
 msgstr "Name"
 
@@ -190,27 +190,27 @@ msgstr "Normal"
 msgid "Open URI"
 msgstr "Adresse öffnen"
 
-#: ../panel-plugin/configuration-dialog.cpp:487
+#: ../panel-plugin/configuration-dialog.cpp:504
 msgid "Panel Button"
 msgstr "Leistenknopf"
 
-#: ../panel-plugin/configuration-dialog.cpp:750
+#: ../panel-plugin/configuration-dialog.cpp:767
 msgid "Pattern"
 msgstr "Muster"
 
-#: ../panel-plugin/configuration-dialog.cpp:636
+#: ../panel-plugin/configuration-dialog.cpp:653
 msgid "Position _search entry next to panel button"
 msgstr "S_ucheintrag beim Leistenknopf positionieren"
 
-#: ../panel-plugin/configuration-dialog.cpp:649
+#: ../panel-plugin/configuration-dialog.cpp:666
 msgid "Position cate_gories next to panel button"
 msgstr "_Kategorien beim Leistenknopf positionieren"
 
-#: ../panel-plugin/configuration-dialog.cpp:642
+#: ../panel-plugin/configuration-dialog.cpp:659
 msgid "Position commands next to search _entry"
 msgstr "_Befehle beim Sucheintrag positionieren"
 
-#: ../panel-plugin/configuration-dialog.cpp:660 ../panel-plugin/window.cpp:125
+#: ../panel-plugin/configuration-dialog.cpp:677 ../panel-plugin/window.cpp:126
 msgid "Recently Used"
 msgstr "Zuletzt verwendet"
 
@@ -218,12 +218,12 @@ msgstr "Zuletzt verwendet"
 msgid "Remove From Favorites"
 msgstr "Aus Favoriten entfernen"
 
-#: ../panel-plugin/configuration-dialog.cpp:401
+#: ../panel-plugin/configuration-dialog.cpp:406
 #, c-format
 msgid "Remove action \"%s\"?"
 msgstr "Aktion »%s« entfernen?"
 
-#: ../panel-plugin/configuration-dialog.cpp:774
+#: ../panel-plugin/configuration-dialog.cpp:791
 msgid "Remove selected action"
 msgstr "Ausgewählte Aktion entfernen"
 
@@ -236,7 +236,7 @@ msgstr "%s starten"
 msgid "Run in Terminal"
 msgstr "Im Terminal ausführen"
 
-#: ../panel-plugin/configuration-dialog.cpp:81
+#: ../panel-plugin/configuration-dialog.cpp:86
 msgid "Search Actio_ns"
 msgstr "_Suchbefehle"
 
@@ -244,7 +244,7 @@ msgstr "_Suchbefehle"
 msgid "Search Action"
 msgstr "Suchaktion"
 
-#: ../panel-plugin/configuration-dialog.cpp:114
+#: ../panel-plugin/configuration-dialog.cpp:119
 msgid "Select An Icon"
 msgstr "Ein Symbol wählen"
 
@@ -256,15 +256,15 @@ msgstr "Einen Befehl wählen"
 msgid "Show a menu to easily access installed applications"
 msgstr "Zeigt ein Menü, um einfach auf installierte Anwendungen zuzugreifen"
 
-#: ../panel-plugin/configuration-dialog.cpp:556
+#: ../panel-plugin/configuration-dialog.cpp:573
 msgid "Show application _descriptions"
 msgstr "_Anwendungsbeschreibungen anzeigen"
 
-#: ../panel-plugin/configuration-dialog.cpp:550
+#: ../panel-plugin/configuration-dialog.cpp:567
 msgid "Show generic application _names"
 msgstr "_Allgemeine Anwendungsnamen anzeigen"
 
-#: ../panel-plugin/configuration-dialog.cpp:562
+#: ../panel-plugin/configuration-dialog.cpp:579
 msgid "Show menu hie_rarchy"
 msgstr "_Menühierarchie anzeigen"
 
@@ -288,15 +288,15 @@ msgstr "Alphabetisch sortieren Z-A"
 msgid "Switch _Users"
 msgstr "_Benutzer wechseln"
 
-#: ../panel-plugin/configuration-dialog.cpp:630
+#: ../panel-plugin/configuration-dialog.cpp:647
 msgid "Switch categories by _hovering"
 msgstr "_Kategoriewechsel durch Darüberbewegen"
 
-#: ../panel-plugin/configuration-dialog.cpp:400
+#: ../panel-plugin/configuration-dialog.cpp:405
 msgid "The action will be deleted permanently."
 msgstr "Die Aktion wird unwiderruflich gelöscht."
 
-#: ../panel-plugin/configuration-dialog.cpp:498
+#: ../panel-plugin/configuration-dialog.cpp:515
 msgid "Title"
 msgstr "Titel"
 
@@ -308,7 +308,12 @@ msgstr "Starter konnte nicht zum Schreibtisch hinzufügt werden."
 msgid "Unable to add launcher to panel."
 msgstr "Starter konnte nicht zur Leiste hinzufügt werden."
 
-#: ../panel-plugin/configuration-dialog.cpp:532
+#: ../panel-plugin/configuration-dialog.cpp:466
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:549
 msgid "Use a single _panel row"
 msgstr "_Eine einzelne Leistenreihe benutzen"
 
@@ -329,15 +334,15 @@ msgstr "Whisker-Menü"
 msgid "Wikipedia"
 msgstr "Wikipedia"
 
-#: ../panel-plugin/configuration-dialog.cpp:78
+#: ../panel-plugin/configuration-dialog.cpp:83
 msgid "_Appearance"
 msgstr "_Aussehen"
 
-#: ../panel-plugin/configuration-dialog.cpp:79
+#: ../panel-plugin/configuration-dialog.cpp:84
 msgid "_Behavior"
 msgstr "_Verhalten"
 
-#: ../panel-plugin/configuration-dialog.cpp:80
+#: ../panel-plugin/configuration-dialog.cpp:85
 msgid "_Commands"
 msgstr "_Befehle"
 
@@ -345,7 +350,7 @@ msgstr "_Befehle"
 msgid "_Edit Applications"
 msgstr "_Menü bearbeiten"
 
-#: ../panel-plugin/configuration-dialog.cpp:517
+#: ../panel-plugin/configuration-dialog.cpp:534
 msgid "_Icon:"
 msgstr "S_ymbol:"
 
@@ -353,15 +358,15 @@ msgstr "S_ymbol:"
 msgid "_Lock Screen"
 msgstr "Bildschirm s_perren"
 
-#: ../panel-plugin/configuration-dialog.cpp:811
+#: ../panel-plugin/configuration-dialog.cpp:828
 msgid "_Pattern:"
 msgstr "_Muster:"
 
-#: ../panel-plugin/configuration-dialog.cpp:835
+#: ../panel-plugin/configuration-dialog.cpp:852
 msgid "_Regular expression"
 msgstr "_Regulärer Ausdruck"
 
-#: ../panel-plugin/configuration-dialog.cpp:506
+#: ../panel-plugin/configuration-dialog.cpp:523
 msgid "_Title:"
 msgstr "_Titel:"
 

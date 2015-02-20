@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-14 11:32+0000\n"
+"POT-Creation-Date: 2015-02-20 23:57+0000\n"
 "PO-Revision-Date: 2015-02-19 18:35+0000\n"
 "Last-Translator: starryprabin <mr.prabin@gmail.com>\n"
 "Language-Team: Nepali (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/configuration-dialog.cpp:765
+#: ../panel-plugin/configuration-dialog.cpp:782
 msgid "Add action"
 msgstr "कार्य थप्नुहोस्"
 
@@ -48,7 +48,7 @@ msgstr "समस्त सेटिङ्"
 msgid "Alternate application launcher for Xfce"
 msgstr "Xfce को लागि वैकल्पिक अनुप्रयोग सुरुवातकर्ता"
 
-#: ../panel-plugin/configuration-dialog.cpp:665
+#: ../panel-plugin/configuration-dialog.cpp:682
 msgid "Amount of _items:"
 msgstr "वस्तुको परिमाण:"
 
@@ -56,7 +56,7 @@ msgstr "वस्तुको परिमाण:"
 msgid "Applications"
 msgstr "अनुप्रयोगहरु"
 
-#: ../panel-plugin/configuration-dialog.cpp:599
+#: ../panel-plugin/configuration-dialog.cpp:616
 msgid "Background opacit_y:"
 msgstr "पृष्ठभूमिको अपारदर्शिता:"
 
@@ -64,11 +64,11 @@ msgstr "पृष्ठभूमिको अपारदर्शिता:"
 msgid "Browse the file system to choose a custom command."
 msgstr "एक व्यक्तिगत आदेशको चयन गर्न फाइल प्रणाली ब्राउज गर्नुहोस्"
 
-#: ../panel-plugin/configuration-dialog.cpp:823
+#: ../panel-plugin/configuration-dialog.cpp:840
 msgid "C_ommand:"
 msgstr "आदेश:"
 
-#: ../panel-plugin/configuration-dialog.cpp:584
+#: ../panel-plugin/configuration-dialog.cpp:601
 msgid "Categ_ory icon size:"
 msgstr "वर्गमूर्तिको आकार: "
 
@@ -80,15 +80,15 @@ msgstr "हालसालै प्रयोग भएकालाई सफा
 msgid "Copyright © 2013-2015 Graeme Gott"
 msgstr "प्रतिलिपि अधिकार © २०१३-२०१५ Graeme Gott"
 
-#: ../panel-plugin/configuration-dialog.cpp:794
+#: ../panel-plugin/configuration-dialog.cpp:811
 msgid "Details"
 msgstr "विवरणहरु"
 
-#: ../panel-plugin/configuration-dialog.cpp:492
+#: ../panel-plugin/configuration-dialog.cpp:509
 msgid "Di_splay:"
 msgstr "प्रदर्शन:"
 
-#: ../panel-plugin/configuration-dialog.cpp:682
+#: ../panel-plugin/configuration-dialog.cpp:699
 msgid "Display by _default"
 msgstr "स्व:त प्रदर्शन गर्नुहोस्"
 
@@ -100,7 +100,7 @@ msgstr "पाश्र्वचित्र सम्पादन गर्न�
 msgid "Failed to edit profile."
 msgstr "पाश्र्वचित्र सम्पादन गर्न बिफल"
 
-#: ../panel-plugin/launcher.cpp:267 ../panel-plugin/run-action.cpp:41
+#: ../panel-plugin/launcher.cpp:273 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
@@ -126,23 +126,23 @@ msgstr "प्राथमिकता व्यवस्थापक खोल�
 msgid "Failed to switch users."
 msgstr "प्रयोगकर्ता फेर्न बिफल।"
 
-#: ../panel-plugin/window.cpp:119
+#: ../panel-plugin/window.cpp:120
 msgid "Favorites"
 msgstr "मन पर्ने"
 
-#: ../panel-plugin/configuration-dialog.cpp:497
+#: ../panel-plugin/configuration-dialog.cpp:514
 msgid "Icon"
 msgstr "मूर्ति"
 
-#: ../panel-plugin/configuration-dialog.cpp:499
+#: ../panel-plugin/configuration-dialog.cpp:516
 msgid "Icon and title"
 msgstr "मूर्ति र शीर्षक "
 
-#: ../panel-plugin/configuration-dialog.cpp:676
+#: ../panel-plugin/configuration-dialog.cpp:693
 msgid "Ignore _favorites"
 msgstr "मन पर्नेलाई बेवास्ता गर्नुहोस्"
 
-#: ../panel-plugin/configuration-dialog.cpp:568
+#: ../panel-plugin/configuration-dialog.cpp:585
 msgid "Ite_m icon size:"
 msgstr "वस्तुमूर्तिको आकार: "
 
@@ -162,16 +162,16 @@ msgstr "बाहिर _निस्किनुहोस्"
 msgid "Man Pages"
 msgstr "सहयोग पृष्ठहरु"
 
-#: ../panel-plugin/configuration-dialog.cpp:545
-#: ../panel-plugin/configuration-dialog.cpp:625
+#: ../panel-plugin/configuration-dialog.cpp:562
+#: ../panel-plugin/configuration-dialog.cpp:642
 msgid "Menu"
 msgstr "मेन्यू"
 
-#: ../panel-plugin/configuration-dialog.cpp:799
+#: ../panel-plugin/configuration-dialog.cpp:816
 msgid "Nam_e:"
 msgstr "नाम:"
 
-#: ../panel-plugin/configuration-dialog.cpp:745
+#: ../panel-plugin/configuration-dialog.cpp:762
 msgid "Name"
 msgstr "नाम"
 
@@ -187,27 +187,27 @@ msgstr "साधारण"
 msgid "Open URI"
 msgstr "युआरआइ खोल्नुहोस्"
 
-#: ../panel-plugin/configuration-dialog.cpp:487
+#: ../panel-plugin/configuration-dialog.cpp:504
 msgid "Panel Button"
 msgstr "पट्टीको बटन"
 
-#: ../panel-plugin/configuration-dialog.cpp:750
+#: ../panel-plugin/configuration-dialog.cpp:767
 msgid "Pattern"
 msgstr "ढाँचा"
 
-#: ../panel-plugin/configuration-dialog.cpp:636
+#: ../panel-plugin/configuration-dialog.cpp:653
 msgid "Position _search entry next to panel button"
 msgstr "पट्टीको बटनको नजिक खोजलाई स्थानाङ्कित गर्नुहोस् "
 
-#: ../panel-plugin/configuration-dialog.cpp:649
+#: ../panel-plugin/configuration-dialog.cpp:666
 msgid "Position cate_gories next to panel button"
 msgstr "पट्टीको बटनको नजिक श्रेणीहरुलाई स्थानाङ्कित गर्नुहोस्"
 
-#: ../panel-plugin/configuration-dialog.cpp:642
+#: ../panel-plugin/configuration-dialog.cpp:659
 msgid "Position commands next to search _entry"
 msgstr "खोजको नजिक आदेशहरुलाई स्थानाङ्कित गर्नुहोस् "
 
-#: ../panel-plugin/configuration-dialog.cpp:660 ../panel-plugin/window.cpp:125
+#: ../panel-plugin/configuration-dialog.cpp:677 ../panel-plugin/window.cpp:126
 msgid "Recently Used"
 msgstr "हालसालै प्रयोग भएका "
 
@@ -215,12 +215,12 @@ msgstr "हालसालै प्रयोग भएका "
 msgid "Remove From Favorites"
 msgstr "मन पर्नेबाट हटाउनुहोस् "
 
-#: ../panel-plugin/configuration-dialog.cpp:401
+#: ../panel-plugin/configuration-dialog.cpp:406
 #, c-format
 msgid "Remove action \"%s\"?"
 msgstr "के \"%s\" कार्य हटाउनु हुन्छ?"
 
-#: ../panel-plugin/configuration-dialog.cpp:774
+#: ../panel-plugin/configuration-dialog.cpp:791
 msgid "Remove selected action"
 msgstr "चयन गरेको कार्य हटाउनुहोस्"
 
@@ -233,7 +233,7 @@ msgstr "%s चालु गर्नुहोस्"
 msgid "Run in Terminal"
 msgstr "टर्मिनलमा चालु गर्नुहोस्"
 
-#: ../panel-plugin/configuration-dialog.cpp:81
+#: ../panel-plugin/configuration-dialog.cpp:86
 msgid "Search Actio_ns"
 msgstr "कार्यहरु खोज्नुहोस्"
 
@@ -241,7 +241,7 @@ msgstr "कार्यहरु खोज्नुहोस्"
 msgid "Search Action"
 msgstr "कार्य खोज्नुहोस्"
 
-#: ../panel-plugin/configuration-dialog.cpp:114
+#: ../panel-plugin/configuration-dialog.cpp:119
 msgid "Select An Icon"
 msgstr "मूर्ति चयन गर्नुहोस् "
 
@@ -253,15 +253,15 @@ msgstr "आदेश चयन गर्नुहोस् "
 msgid "Show a menu to easily access installed applications"
 msgstr "स्थापित अनुप्रयोगहरुको सहज पहुचको लागी एक मेन्यू देखाउनुहोस्"
 
-#: ../panel-plugin/configuration-dialog.cpp:556
+#: ../panel-plugin/configuration-dialog.cpp:573
 msgid "Show application _descriptions"
 msgstr "अनुप्रयोगका विवरण देखाउनुहोस् "
 
-#: ../panel-plugin/configuration-dialog.cpp:550
+#: ../panel-plugin/configuration-dialog.cpp:567
 msgid "Show generic application _names"
 msgstr "अनुप्रयोगहरुको समान्य नाम देखाउनुहोस्"
 
-#: ../panel-plugin/configuration-dialog.cpp:562
+#: ../panel-plugin/configuration-dialog.cpp:579
 msgid "Show menu hie_rarchy"
 msgstr "मेन्यू  पदक्रमलाई देखाउनुहोस् "
 
@@ -285,15 +285,15 @@ msgstr "Z-A अनुसार वर्णक्रमीक गर्नुह
 msgid "Switch _Users"
 msgstr "प्रयोगकर्ता फेर्नुहोस्"
 
-#: ../panel-plugin/configuration-dialog.cpp:630
+#: ../panel-plugin/configuration-dialog.cpp:647
 msgid "Switch categories by _hovering"
 msgstr "मण्डराएर वर्गहरुलाई बदल्नुहोस् "
 
-#: ../panel-plugin/configuration-dialog.cpp:400
+#: ../panel-plugin/configuration-dialog.cpp:405
 msgid "The action will be deleted permanently."
 msgstr "कार्य स्थायीरुपमा हटाईनेछ।"
 
-#: ../panel-plugin/configuration-dialog.cpp:498
+#: ../panel-plugin/configuration-dialog.cpp:515
 msgid "Title"
 msgstr "शीर्षक "
 
@@ -305,7 +305,12 @@ msgstr "प्रक्षेपकलाई डेस्कटपमा थप�
 msgid "Unable to add launcher to panel."
 msgstr "प्रक्षेपकलाई पट्टीमा थप्न असमर्थ ।"
 
-#: ../panel-plugin/configuration-dialog.cpp:532
+#: ../panel-plugin/configuration-dialog.cpp:466
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:549
 msgid "Use a single _panel row"
 msgstr "एक पङ्क्ति पट्टीको प्रयोग गर्नुहोस्"
 
@@ -326,15 +331,15 @@ msgstr "विस्कर मेन्यू"
 msgid "Wikipedia"
 msgstr "विकिपीडिया"
 
-#: ../panel-plugin/configuration-dialog.cpp:78
+#: ../panel-plugin/configuration-dialog.cpp:83
 msgid "_Appearance"
 msgstr "रुप"
 
-#: ../panel-plugin/configuration-dialog.cpp:79
+#: ../panel-plugin/configuration-dialog.cpp:84
 msgid "_Behavior"
 msgstr "ब्य॒वहार"
 
-#: ../panel-plugin/configuration-dialog.cpp:80
+#: ../panel-plugin/configuration-dialog.cpp:85
 msgid "_Commands"
 msgstr "आदेशहरू"
 
@@ -342,7 +347,7 @@ msgstr "आदेशहरू"
 msgid "_Edit Applications"
 msgstr "अनुप्रयोगहरु सम्पादन गर्नुहोस्"
 
-#: ../panel-plugin/configuration-dialog.cpp:517
+#: ../panel-plugin/configuration-dialog.cpp:534
 msgid "_Icon:"
 msgstr "मूर्ति:"
 
@@ -350,15 +355,15 @@ msgstr "मूर्ति:"
 msgid "_Lock Screen"
 msgstr "स्क्रिन लक गर्नुहोस्"
 
-#: ../panel-plugin/configuration-dialog.cpp:811
+#: ../panel-plugin/configuration-dialog.cpp:828
 msgid "_Pattern:"
 msgstr "ढाँचा:"
 
-#: ../panel-plugin/configuration-dialog.cpp:835
+#: ../panel-plugin/configuration-dialog.cpp:852
 msgid "_Regular expression"
 msgstr "रेगुलर एक्सप्रेसन"
 
-#: ../panel-plugin/configuration-dialog.cpp:506
+#: ../panel-plugin/configuration-dialog.cpp:523
 msgid "_Title:"
 msgstr "शीर्षक:"
 
