@@ -397,7 +397,7 @@ void Plugin::show_about()
 		"program-name", PACKAGE_NAME,
 		"translator-credits", _("translator-credits"),
 		"version", PACKAGE_VERSION,
-		"website", "http://gottcode.org/xfce4-whiskermenu-plugin/",
+		"website", PLUGIN_WEBSITE,
 		NULL);
 }
 

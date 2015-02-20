@@ -67,7 +67,12 @@ ConfigurationDialog::ConfigurationDialog(Plugin* plugin) :
 	{
 		window = GTK_WINDOW(toplevel);
 	}
-	m_window = xfce_titled_dialog_new_with_buttons(_("Whisker Menu"), window, GTK_DIALOG_NO_SEPARATOR, GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE, NULL);
+	m_window = xfce_titled_dialog_new_with_buttons(_("Whisker Menu"),
+			window,
+			GTK_DIALOG_NO_SEPARATOR,
+			GTK_STOCK_HELP, GTK_RESPONSE_HELP,
+			GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE,
+			NULL);
 	gtk_window_set_icon_name(GTK_WINDOW(m_window), GTK_STOCK_PROPERTIES);
 	gtk_window_set_position(GTK_WINDOW(m_window), GTK_WIN_POS_CENTER);
 	g_signal_connect_slot(m_window, "response", &ConfigurationDialog::response, this);
@@ -452,19 +457,31 @@ void ConfigurationDialog::remove_action(GtkButton* button)
 
 void ConfigurationDialog::response(GtkDialog*, int response_id)
 {
-	if ((m_plugin->get_button_style() == Plugin::ShowText) && m_plugin->get_button_title().empty())
+	if (response_id == GTK_RESPONSE_HELP)
 	{
-		m_plugin->set_button_title(Plugin::get_button_title_default());
-	}
+		bool result = g_spawn_command_line_async("exo-open --launch WebBrowser " PLUGIN_WEBSITE, NULL);
 
-	for (int i = 0; i < Settings::CountCommands; ++i)
-	{
-		wm_settings->command[i]->check();
+		if (G_UNLIKELY(result == false))
+		{
+			g_warning(_("Unable to open the following url: %s"), PLUGIN_WEBSITE);
+		}
 	}
-
-	if (response_id == GTK_RESPONSE_CLOSE)
+	else
 	{
-		gtk_widget_destroy(m_window);
+		if ((m_plugin->get_button_style() == Plugin::ShowText) && m_plugin->get_button_title().empty())
+		{
+			m_plugin->set_button_title(Plugin::get_button_title_default());
+		}
+
+		for (int i = 0; i < Settings::CountCommands; ++i)
+		{
+			wm_settings->command[i]->check();
+		}
+
+		if (response_id == GTK_RESPONSE_CLOSE)
+		{
+			gtk_widget_destroy(m_window);
+		}
 	}
 }
 

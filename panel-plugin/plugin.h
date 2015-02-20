@@ -18,6 +18,8 @@
 #ifndef WHISKERMENU_PLUGIN_H
 #define WHISKERMENU_PLUGIN_H
 
+#define PLUGIN_WEBSITE "http://goodies.xfce.org/projects/panel-plugins/xfce4-whiskermenu-plugin"
+
 #include <string>
 
 #include <gtk/gtk.h>
