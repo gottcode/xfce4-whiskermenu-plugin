@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-14 11:32+0000\n"
-"PO-Revision-Date: 2015-02-15 21:31+0000\n"
+"PO-Revision-Date: 2015-02-20 16:05+0000\n"
 "Last-Translator: Patrik Nilsson <asavartzeth@gmail.com>\n"
 "Language-Team: Swedish (Sweden) (http://www.transifex.com/projects/p/xfce4-"
 "whiskermenu-plugin/language/sv_SE/)\n"
@@ -61,7 +61,7 @@ msgstr "Program"
 
 #: ../panel-plugin/configuration-dialog.cpp:599
 msgid "Background opacit_y:"
-msgstr "Bakgrundens _opacitet:"
+msgstr "Bakgrundens opa_citet:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
@@ -69,11 +69,11 @@ msgstr "Bläddra i filsystemet för att välja ett anpassat kommando."
 
 #: ../panel-plugin/configuration-dialog.cpp:823
 msgid "C_ommand:"
-msgstr "_Kommando:"
+msgstr "K_ommando:"
 
 #: ../panel-plugin/configuration-dialog.cpp:584
 msgid "Categ_ory icon size:"
-msgstr "_Kategori ikonstorlek:"
+msgstr "K_ategori ikonstorlek:"
 
 #: ../panel-plugin/recent-page.cpp:148
 msgid "Clear Recently Used"
@@ -200,15 +200,15 @@ msgstr "Mönster"
 
 #: ../panel-plugin/configuration-dialog.cpp:636
 msgid "Position _search entry next to panel button"
-msgstr "Placera _sökfältet intill panelknappen"
+msgstr "Placera s_ökfältet intill panelknappen"
 
 #: ../panel-plugin/configuration-dialog.cpp:649
 msgid "Position cate_gories next to panel button"
-msgstr "Placera _kategorier intill panelknappen"
+msgstr "Placera k_ategorier intill panelknappen"
 
 #: ../panel-plugin/configuration-dialog.cpp:642
 msgid "Position commands next to search _entry"
-msgstr "Placera kommandon bredvid sök_fältet"
+msgstr "Placera ko_mmandon bredvid sökfältet"
 
 #: ../panel-plugin/configuration-dialog.cpp:660 ../panel-plugin/window.cpp:125
 msgid "Recently Used"
@@ -290,7 +290,7 @@ msgstr "_Växla användare"
 
 #: ../panel-plugin/configuration-dialog.cpp:630
 msgid "Switch categories by _hovering"
-msgstr "Växla _kategorier genom att sväva med muspekaren"
+msgstr "_Växla kategorier med drag av muspekaren"
 
 #: ../panel-plugin/configuration-dialog.cpp:400
 msgid "The action will be deleted permanently."
@@ -310,7 +310,7 @@ msgstr "Kunde inte lägga till programstartare i panelen."
 
 #: ../panel-plugin/configuration-dialog.cpp:532
 msgid "Use a single _panel row"
-msgstr "Använd en enkel _panel rad"
+msgstr "Använd en _enskild panel rad"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
@@ -367,4 +367,4 @@ msgstr "Tite_l:"
 
 #: ../panel-plugin/plugin.cpp:398
 msgid "translator-credits"
-msgstr "kredit till översättare"
+msgstr "Patrik Nilsson <asavartzeth@gmail.com>"
