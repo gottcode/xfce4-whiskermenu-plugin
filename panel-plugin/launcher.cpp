@@ -171,6 +171,7 @@ Launcher::Launcher(GarconMenuItem* item) :
 
 	// Create search text for display name
 	m_search_name = normalize(m_display_name);
+	m_search_generic_name = normalize((m_display_name == name) ? generic_name : name);
 
 	// Create search text for command
 	const gchar* command = garcon_menu_item_get_command(m_item);
@@ -279,11 +280,18 @@ int Launcher::search(const Query& query)
 		return match;
 	}
 
+	match = query.match(m_search_generic_name);
+	if (match != G_MAXINT)
+	{
+		match += 10;
+		return match;
+	}
+
 	// Sort matches in executables after matches in names
 	match = query.match(m_search_command);
 	if (match != G_MAXINT)
 	{
-		match += 10;
+		match += 20;
 		return match;
 	}
 
@@ -291,7 +299,7 @@ int Launcher::search(const Query& query)
 	match = query.match(m_search_comment);
 	if (match != G_MAXINT)
 	{
-		match += 20;
+		match += 30;
 	}
 	return match;
 }
