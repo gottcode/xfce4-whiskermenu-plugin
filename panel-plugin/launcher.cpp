@@ -160,7 +160,7 @@ Launcher::Launcher(GarconMenuItem* item) :
 	if (wm_settings->launcher_show_description)
 	{
 		const gchar* details = garcon_menu_item_get_comment(m_item);
-		if (!wm_settings->launcher_show_name || !details || !g_utf8_validate(details, -1, NULL))
+		if (!details || !g_utf8_validate(details, -1, NULL))
 		{
 			details = generic_name;
 		}
