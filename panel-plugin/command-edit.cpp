@@ -51,7 +51,7 @@ CommandEdit::CommandEdit(Command* command, GtkSizeGroup* label_size_group) :
 	gtk_box_pack_start(GTK_BOX(m_widget), m_browse_button, false, false, 0);
 	gtk_widget_show(m_browse_button);
 
-	GtkWidget* image = gtk_image_new_from_stock(GTK_STOCK_OPEN, GTK_ICON_SIZE_BUTTON);
+	GtkWidget* image = gtk_image_new_from_icon_name("document-open", GTK_ICON_SIZE_BUTTON);
 	gtk_container_add(GTK_CONTAINER(m_browse_button), image);
 	gtk_widget_show(image);
 	g_signal_connect_slot<GtkButton*>(m_browse_button, "clicked", &CommandEdit::browse_clicked, this);

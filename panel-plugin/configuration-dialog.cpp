@@ -73,7 +73,7 @@ ConfigurationDialog::ConfigurationDialog(Plugin* plugin) :
 			GTK_STOCK_HELP, GTK_RESPONSE_HELP,
 			GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE,
 			NULL);
-	gtk_window_set_icon_name(GTK_WINDOW(m_window), GTK_STOCK_PROPERTIES);
+	gtk_window_set_icon_name(GTK_WINDOW(m_window), "document-properties");
 	gtk_window_set_position(GTK_WINDOW(m_window), GTK_WIN_POS_CENTER);
 	g_signal_connect_slot(m_window, "response", &ConfigurationDialog::response, this);
 	g_signal_connect_swapped(m_window, "destroy", G_CALLBACK(whiskermenu_config_dialog_delete), this);
@@ -782,7 +782,7 @@ GtkWidget* ConfigurationDialog::init_search_actions_tab()
 	gtk_widget_set_tooltip_text(m_action_add, _("Add action"));
 	gtk_widget_show(m_action_add);
 
-	GtkWidget* image = gtk_image_new_from_stock(GTK_STOCK_ADD, GTK_ICON_SIZE_BUTTON);
+	GtkWidget* image = gtk_image_new_from_icon_name("list-add", GTK_ICON_SIZE_BUTTON);
 	gtk_container_add(GTK_CONTAINER(m_action_add), image);
 	gtk_widget_show(image);
 	g_signal_connect_slot(m_action_add, "clicked", &ConfigurationDialog::add_action, this);
@@ -791,7 +791,7 @@ GtkWidget* ConfigurationDialog::init_search_actions_tab()
 	gtk_widget_set_tooltip_text(m_action_remove, _("Remove selected action"));
 	gtk_widget_show(m_action_remove);
 
-	image = gtk_image_new_from_stock(GTK_STOCK_REMOVE, GTK_ICON_SIZE_BUTTON);
+	image = gtk_image_new_from_icon_name("list-remove", GTK_ICON_SIZE_BUTTON);
 	gtk_container_add(GTK_CONTAINER(m_action_remove), image);
 	gtk_widget_show(image);
 	g_signal_connect_slot(m_action_remove, "clicked", &ConfigurationDialog::remove_action, this);

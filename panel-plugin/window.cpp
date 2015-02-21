@@ -110,7 +110,7 @@ WhiskerMenu::Window::Window() :
 
 	// Create search entry
 	m_search_entry = GTK_ENTRY(gtk_entry_new());
-	gtk_entry_set_icon_from_stock(m_search_entry, GTK_ENTRY_ICON_SECONDARY, GTK_STOCK_FIND);
+	gtk_entry_set_icon_from_icon_name(m_search_entry, GTK_ENTRY_ICON_SECONDARY, "edit-find");
 	gtk_entry_set_icon_activatable(m_search_entry, GTK_ENTRY_ICON_SECONDARY, false);
 	g_signal_connect_slot<GtkEditable*>(m_search_entry, "changed", &Window::search, this);
 
@@ -917,7 +917,7 @@ void WhiskerMenu::Window::search()
 
 	// Update search entry icon
 	bool visible = text != NULL;
-	gtk_entry_set_icon_from_stock(m_search_entry, GTK_ENTRY_ICON_SECONDARY, !visible ? GTK_STOCK_FIND : GTK_STOCK_CLEAR);
+	gtk_entry_set_icon_from_icon_name(m_search_entry, GTK_ENTRY_ICON_SECONDARY, !visible ? "edit-find" : "edit-clear");
 	gtk_entry_set_icon_activatable(m_search_entry, GTK_ENTRY_ICON_SECONDARY, visible);
 
 	if (visible)

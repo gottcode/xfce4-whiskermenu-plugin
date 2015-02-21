@@ -197,7 +197,7 @@ void Page::create_context_menu(GtkTreeIter* iter, GdkEvent* event)
 	if (!m_window->get_favorites()->contains(launcher))
 	{
 		menuitem = gtk_image_menu_item_new_with_label(_("Add to Favorites"));
-		GtkWidget* image = gtk_image_new_from_icon_name("stock_add-bookmark", GTK_ICON_SIZE_MENU);
+		GtkWidget* image = gtk_image_new_from_icon_name("bookmark-new", GTK_ICON_SIZE_MENU);
 		gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM(menuitem), image);
 		g_signal_connect_slot<GtkMenuItem*>(menuitem, "activate", &Page::add_selected_to_favorites, this);
 		gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
@@ -205,7 +205,7 @@ void Page::create_context_menu(GtkTreeIter* iter, GdkEvent* event)
 	else
 	{
 		menuitem = gtk_image_menu_item_new_with_label(_("Remove From Favorites"));
-		GtkWidget* image = gtk_image_new_from_stock(GTK_STOCK_REMOVE, GTK_ICON_SIZE_MENU);
+		GtkWidget* image = gtk_image_new_from_icon_name("list-remove", GTK_ICON_SIZE_MENU);
 		gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM(menuitem), image);
 		g_signal_connect_slot<GtkMenuItem*>(menuitem, "activate", &Page::remove_selected_from_favorites, this);
 		gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
