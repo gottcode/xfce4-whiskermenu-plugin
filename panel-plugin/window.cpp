@@ -715,28 +715,40 @@ gboolean WhiskerMenu::Window::on_key_press_event(GtkWidget* widget, GdkEvent* ev
 		return true;
 	}
 
-	// Make up and down keys always scroll current list of applications
+	Page* page = NULL;
+	if (gtk_widget_get_visible(m_search_results->get_widget()))
+	{
+		page = m_search_results;
+	}
+	else if (m_favorites_button->get_active())
+	{
+		page = m_favorites;
+	}
+	else if (m_recent_button->get_active())
+	{
+		page = m_recent;
+	}
+	else
+	{
+		page = m_applications;
+	}
+	GtkWidget* view = page->get_view()->get_widget();
+
+	// Allow keyboard navigation out of treeview
+	if ((key_event->keyval == GDK_KEY_Left) || (key_event->keyval == GDK_KEY_Right))
+	{
+		if ((widget == view) || (gtk_window_get_focus(m_window) == view))
+		{
+			gtk_widget_grab_focus(GTK_WIDGET(m_favorites_button->get_button()));
+			page->reset_selection();
+		}
+	}
+
+	// Make up and down keys scroll current list of applications from search
 	if ((key_event->keyval == GDK_KEY_Up) || (key_event->keyval == GDK_KEY_Down))
 	{
-		GtkWidget* view = NULL;
-		if (gtk_widget_get_visible(m_search_results->get_widget()))
-		{
-			view = m_search_results->get_view()->get_widget();
-		}
-		else if (m_favorites_button->get_active())
-		{
-			view = m_favorites->get_view()->get_widget();
-		}
-		else if (m_recent_button->get_active())
-		{
-			view = m_recent->get_view()->get_widget();
-		}
-		else
-		{
-			view = m_applications->get_view()->get_widget();
-		}
-
-		if ((widget != view) && (gtk_window_get_focus(m_window) != view))
+		GtkWidget* search = GTK_WIDGET(m_search_entry);
+		if ((widget == search) || (gtk_window_get_focus(m_window) == search))
 		{
 			gtk_widget_grab_focus(view);
 		}
