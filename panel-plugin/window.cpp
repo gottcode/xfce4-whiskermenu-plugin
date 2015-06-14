@@ -643,17 +643,12 @@ gboolean WhiskerMenu::Window::on_enter_notify_event(GtkWidget*, GdkEvent* event)
 		return false;
 	}
 
-	// Don't grab cursor over menu
-	if ((crossing_event->x_root >= m_geometry.x)
-			&& (crossing_event->x_root < (m_geometry.x + m_geometry.width))
-			&& (crossing_event->y_root >= m_geometry.y)
-			&& (crossing_event->y_root < (m_geometry.y + m_geometry.height)))
-	{
-		if (gdk_pointer_is_grabbed())
-		{
-			gdk_pointer_ungrab(crossing_event->time);
-		}
-	}
+	gdk_pointer_grab(gtk_widget_get_window(GTK_WIDGET(m_window)), true,
+			GdkEventMask(
+				GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK |
+				GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK
+			),
+			NULL, NULL, crossing_event->time);
 
 	return false;
 }
@@ -669,19 +664,12 @@ gboolean WhiskerMenu::Window::on_leave_notify_event(GtkWidget*, GdkEvent* event)
 		return false;
 	}
 
-	// Track mouse clicks outside of menu
-	if ((crossing_event->x_root <= m_geometry.x)
-			|| (crossing_event->x_root >= m_geometry.x + m_geometry.width)
-			|| (crossing_event->y_root <= m_geometry.y)
-			|| (crossing_event->y_root >= m_geometry.y + m_geometry.height))
-	{
-		gdk_pointer_grab(gtk_widget_get_window(GTK_WIDGET(m_window)), true,
-				GdkEventMask(
-					GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK |
-					GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK
-				),
-				NULL, NULL, crossing_event->time);
-	}
+	gdk_pointer_grab(gtk_widget_get_window(GTK_WIDGET(m_window)), true,
+			GdkEventMask(
+				GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK |
+				GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK
+			),
+			NULL, NULL, crossing_event->time);
 
 	return false;
 }
