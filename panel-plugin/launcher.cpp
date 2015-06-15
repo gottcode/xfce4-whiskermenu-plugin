@@ -149,20 +149,18 @@ Launcher::Launcher(GarconMenuItem* item) :
 		generic_name = "";
 	}
 
+	const gchar* details = garcon_menu_item_get_comment(m_item);
+	if (!details || !g_utf8_validate(details, -1, NULL))
+	{
+		details = generic_name;
+	}
+
 	// Create display text
 	const gchar* direction = (gtk_widget_get_default_direction() != GTK_TEXT_DIR_RTL) ? "\342\200\216" : "\342\200\217";
 	m_display_name = (wm_settings->launcher_show_name || exo_str_is_empty(generic_name)) ? name : generic_name;
 	if (wm_settings->launcher_show_description)
 	{
-		const gchar* details = garcon_menu_item_get_comment(m_item);
-		if (!details || !g_utf8_validate(details, -1, NULL))
-		{
-			details = generic_name;
-		}
 		set_text(g_markup_printf_escaped("%s<b>%s</b>\n%s%s", direction, m_display_name, direction, details));
-
-		// Create search text for comment
-		m_search_comment = normalize(details);
 	}
 	else
 	{
@@ -171,6 +169,7 @@ Launcher::Launcher(GarconMenuItem* item) :
 
 	// Create search text for display name
 	m_search_name = normalize(m_display_name);
+	m_search_comment = normalize(details);
 
 	// Create search text for command
 	const gchar* command = garcon_menu_item_get_command(m_item);
