@@ -3,16 +3,19 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
+# halfark <vojtechprecechtel@gmail.com>, 2014
 # Laco Lazelod, 2013
+# Laco Lazelod, 2013
+# Michal Várady <miko.vaji@gmail.com>, 2015
 # halfark <vojtechprecechtel@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 23:57+0000\n"
-"PO-Revision-Date: 2014-06-04 21:32+0000\n"
-"Last-Translator: halfark <vojtechprecechtel@gmail.com>\n"
-"Language-Team: Czech (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
+"PO-Revision-Date: 2015-06-28 20:44+0000\n"
+"Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
+"Language-Team: Czech (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/cs/)\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
@@ -26,15 +29,15 @@ msgstr "Přidat akci"
 
 #: ../panel-plugin/page.cpp:214
 msgid "Add to Desktop"
-msgstr "Přidat na Plochu"
+msgstr "Přidat na plochu"
 
 #: ../panel-plugin/page.cpp:199
 msgid "Add to Favorites"
-msgstr "Přidat k Oblíbeným"
+msgstr "Přidat k oblíbeným"
 
 #: ../panel-plugin/page.cpp:218
 msgid "Add to Panel"
-msgstr "Přidat na Panel"
+msgstr "Přidat na panel"
 
 #: ../panel-plugin/category.cpp:59
 msgid "All"
@@ -50,20 +53,19 @@ msgstr "Alternativní spouštěč aplikací pro Xfce"
 
 #: ../panel-plugin/configuration-dialog.cpp:682
 msgid "Amount of _items:"
-msgstr ""
+msgstr "Množství _položek:"
 
 #: ../panel-plugin/plugin.cpp:217
-#, fuzzy
 msgid "Applications"
-msgstr "Menu Aplikací"
+msgstr "Aplikace"
 
 #: ../panel-plugin/configuration-dialog.cpp:616
 msgid "Background opacit_y:"
-msgstr ""
+msgstr "Neprůhlednost po_zadí:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
-msgstr "Procházet souborový systém a vybrat vlastní příkaz."
+msgstr "Procházet systém souborů a vybrat vlastní příkaz."
 
 #: ../panel-plugin/configuration-dialog.cpp:840
 msgid "C_ommand:"
@@ -75,7 +77,7 @@ msgstr "Velikost ikon kateg_orií:"
 
 #: ../panel-plugin/recent-page.cpp:148
 msgid "Clear Recently Used"
-msgstr "Vyčistit Nedávno Použité"
+msgstr "Vymazat seznam nedávno použitých položek"
 
 #: ../panel-plugin/plugin.cpp:394
 msgid "Copyright © 2013-2015 Graeme Gott"
@@ -83,51 +85,49 @@ msgstr "Copyright © 2013-2015 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:811
 msgid "Details"
-msgstr "Detaily"
+msgstr "Podrobnosti"
 
 #: ../panel-plugin/configuration-dialog.cpp:509
 msgid "Di_splay:"
 msgstr "_Zobrazení:"
 
 #: ../panel-plugin/configuration-dialog.cpp:699
-#, fuzzy
 msgid "Display by _default"
-msgstr "Zob_razovat nedávno použité jako výchozí"
+msgstr "Zob_razit ve výchozím nastavení"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Edit _Profile"
-msgstr ""
+msgstr "Upravit _profil"
 
 #: ../panel-plugin/settings.cpp:122
-#, fuzzy
 msgid "Failed to edit profile."
-msgstr "Selhalo přepnutí uživatelů."
+msgstr "Přepnutí uživatelů se nezdařilo."
 
 #: ../panel-plugin/launcher.cpp:273 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
-msgstr "Nepodařilo se vykonat příkaz \"%s\"."
+msgstr "Spuštění příkazu \"%s\" se nezdařilo"
 
 #: ../panel-plugin/settings.cpp:121
 msgid "Failed to launch menu editor."
-msgstr "Selhalo spuštění editoru menu."
+msgstr "Spuštění editoru nabídky se nezdařilo."
 
 #: ../panel-plugin/settings.cpp:118
 msgid "Failed to lock screen."
-msgstr "Nepodařilo se uzamknout obrazovku."
+msgstr "Uzamknutí obrazovky se nezdařilo."
 
 #: ../panel-plugin/settings.cpp:120
 msgid "Failed to log out."
-msgstr "Nepodařilo se odhlásit."
+msgstr "Odhlášení se nezdařilo."
 
 #: ../panel-plugin/settings.cpp:117
 msgid "Failed to open settings manager."
-msgstr "Nepodařilo se otevřít správce nastavení."
+msgstr "Otevření správce nastavení se nezdařilo."
 
 #: ../panel-plugin/settings.cpp:119
 msgid "Failed to switch users."
-msgstr "Selhalo přepnutí uživatelů."
+msgstr "Přepnutí uživatelů se nedařilo."
 
 #: ../panel-plugin/window.cpp:120
 msgid "Favorites"
@@ -142,9 +142,8 @@ msgid "Icon and title"
 msgstr "Ikona a název"
 
 #: ../panel-plugin/configuration-dialog.cpp:693
-#, fuzzy
 msgid "Ignore _favorites"
-msgstr "Oblíbené"
+msgstr "Ignorovat _oblíbené"
 
 #: ../panel-plugin/configuration-dialog.cpp:585
 msgid "Ite_m icon size:"
@@ -169,7 +168,7 @@ msgstr "Manuál"
 #: ../panel-plugin/configuration-dialog.cpp:562
 #: ../panel-plugin/configuration-dialog.cpp:642
 msgid "Menu"
-msgstr "Menu"
+msgstr "Nabídka"
 
 #: ../panel-plugin/configuration-dialog.cpp:816
 msgid "Nam_e:"
@@ -205,7 +204,7 @@ msgstr "Umístit v_yhledávání vedle tlačítka panelu"
 
 #: ../panel-plugin/configuration-dialog.cpp:666
 msgid "Position cate_gories next to panel button"
-msgstr "Pozice cate_gories vedle tlačítka panelu"
+msgstr "Umístit kate_gorie vedle tlačítka panelu"
 
 #: ../panel-plugin/configuration-dialog.cpp:659
 msgid "Position commands next to search _entry"
@@ -217,7 +216,7 @@ msgstr "Nedávno použité"
 
 #: ../panel-plugin/page.cpp:207
 msgid "Remove From Favorites"
-msgstr "Odebrat z Oblíbených"
+msgstr "Odebrat z oblíbených"
 
 #: ../panel-plugin/configuration-dialog.cpp:406
 #, c-format
@@ -239,11 +238,11 @@ msgstr "Spustit v terminálu"
 
 #: ../panel-plugin/configuration-dialog.cpp:86
 msgid "Search Actio_ns"
-msgstr "Hledat akc_e"
+msgstr "Akce _hledání"
 
 #: ../panel-plugin/search-action.cpp:261
 msgid "Search Action"
-msgstr "Hledání"
+msgstr "Akce hledání"
 
 #: ../panel-plugin/configuration-dialog.cpp:119
 msgid "Select An Icon"
@@ -251,23 +250,23 @@ msgstr "Vyberte Ikonu"
 
 #: ../panel-plugin/command-edit.cpp:64
 msgid "Select Command"
-msgstr "Vybrat příkaz"
+msgstr "Vyberte příkaz"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
-msgstr "Ukázat menu pro lehký přístup k instalovaným aplikacím"
+msgstr "Zobrazit nabídku snadný přístup k nainstalovaným aplikacím"
 
 #: ../panel-plugin/configuration-dialog.cpp:573
 msgid "Show application _descriptions"
-msgstr "Ukázat _popisy aplikací"
+msgstr "Zobrazit popisky _aplikací"
 
 #: ../panel-plugin/configuration-dialog.cpp:567
 msgid "Show generic application _names"
-msgstr "Ukázat původní názvy aplikací"
+msgstr "Zobrazit _obecné názvy aplikací"
 
 #: ../panel-plugin/configuration-dialog.cpp:579
 msgid "Show menu hie_rarchy"
-msgstr "Ukázat strom menu"
+msgstr "Zobrazit hierarchii nabídky"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -279,11 +278,11 @@ msgstr "Menší"
 
 #: ../panel-plugin/favorites-page.cpp:129
 msgid "Sort Alphabetically A-Z"
-msgstr "Seřadit Abecedně A-Z"
+msgstr "Seřadit abecedně A-Z"
 
 #: ../panel-plugin/favorites-page.cpp:135
 msgid "Sort Alphabetically Z-A"
-msgstr "Seřadit Abecedně Z-A"
+msgstr "Seřadit abecedně Z-A"
 
 #: ../panel-plugin/settings.cpp:119
 msgid "Switch _Users"
@@ -295,7 +294,7 @@ msgstr "Přepínat _kategorie najetím kurzoru"
 
 #: ../panel-plugin/configuration-dialog.cpp:405
 msgid "The action will be deleted permanently."
-msgstr "Tato akce bude nenávratně smazána."
+msgstr "Akce se trvale smaže."
 
 #: ../panel-plugin/configuration-dialog.cpp:515
 msgid "Title"
@@ -312,25 +311,24 @@ msgstr "Nelze přidat spouštěč na panel."
 #: ../panel-plugin/configuration-dialog.cpp:466
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "Nelze otevřít umístění URL %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:549
-#, fuzzy
 msgid "Use a single _panel row"
-msgstr "Rozložení ikony na jednom řádku _panel"
+msgstr "Použít jeden řádek _panelu"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
-msgstr "Velmi Velké"
+msgstr "Velmi velké"
 
 #: ../panel-plugin/icon-size.cpp:50
 msgid "Very Small"
-msgstr "Velmi Malé"
+msgstr "Velmi malé"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
 msgid "Whisker Menu"
-msgstr "Whisker Menu"
+msgstr "Nabídka Whisker"
 
 #: ../panel-plugin/settings.cpp:125
 msgid "Wikipedia"
@@ -345,13 +343,12 @@ msgid "_Behavior"
 msgstr "_Chování"
 
 #: ../panel-plugin/configuration-dialog.cpp:85
-#, fuzzy
 msgid "_Commands"
-msgstr "Příkazy"
+msgstr "_Příkazy"
 
 #: ../panel-plugin/settings.cpp:121
 msgid "_Edit Applications"
-msgstr "_Editovat aplikace"
+msgstr "_Upravit aplikace"
 
 #: ../panel-plugin/configuration-dialog.cpp:534
 msgid "_Icon:"
@@ -367,7 +364,7 @@ msgstr "_Vzorec:"
 
 #: ../panel-plugin/configuration-dialog.cpp:852
 msgid "_Regular expression"
-msgstr "_Obvyklý výraz"
+msgstr "_Regulární výraz"
 
 #: ../panel-plugin/configuration-dialog.cpp:523
 msgid "_Title:"
@@ -375,7 +372,4 @@ msgstr "Náz_ev:"
 
 #: ../panel-plugin/plugin.cpp:398
 msgid "translator-credits"
-msgstr "Přeložil halfark"
-
-#~ msgid "Include _favorites in recently used"
-#~ msgstr "Z_ahrnout oblíbené do nedávno použitých"
+msgstr "Přeložili halfark a Michal Várady <miko.vaji@gmail.com>"
