@@ -10,9 +10,9 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 23:57+0000\n"
-"PO-Revision-Date: 2015-02-19 18:35+0000\n"
+"PO-Revision-Date: 2015-02-23 14:57+0000\n"
 "Last-Translator: starryprabin <mr.prabin@gmail.com>\n"
-"Language-Team: Nepali (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
+"Language-Team: Nepali (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ne/)\n"
 "Language: ne\n"
 "MIME-Version: 1.0\n"
@@ -308,7 +308,7 @@ msgstr "प्रक्षेपकलाई पट्टीमा थप्न 
 #: ../panel-plugin/configuration-dialog.cpp:466
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "निम्न युआरएललाई खोल्न बिफल: %s "
 
 #: ../panel-plugin/configuration-dialog.cpp:549
 msgid "Use a single _panel row"
