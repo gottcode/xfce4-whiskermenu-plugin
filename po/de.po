@@ -13,9 +13,9 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 23:57+0000\n"
-"PO-Revision-Date: 2015-02-14 18:12+0000\n"
+"PO-Revision-Date: 2015-02-21 15:12+0000\n"
 "Last-Translator: Tobias Bannert <tobannert@gmail.com>\n"
-"Language-Team: German (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
+"Language-Team: German (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/de/)\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -311,7 +311,7 @@ msgstr "Starter konnte nicht zur Leiste hinzufügt werden."
 #: ../panel-plugin/configuration-dialog.cpp:466
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "Die folgende Adresse kann nicht geöffnet werden: %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:549
 msgid "Use a single _panel row"
