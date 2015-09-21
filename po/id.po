@@ -3,16 +3,17 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Hasan Al Banna, 2014
-# Hasan Al Banna, 2013
+# Mohamad Hasan Al Banna <se7entime@tutanota.com>, 2014
+# Mohamad Hasan Al Banna <se7entime@tutanota.com>, 2013
+# Mohamad Hasan Al Banna <se7entime@tutanota.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 23:57+0000\n"
-"PO-Revision-Date: 2014-07-14 16:11+0000\n"
-"Last-Translator: Hasan Al Banna\n"
-"Language-Team: Indonesian (http://www.transifex.com/projects/p/xfce4-"
+"PO-Revision-Date: 2015-06-17 04:48+0000\n"
+"Last-Translator: Mohamad Hasan Al Banna <se7entime@tutanota.com>\n"
+"Language-Team: Indonesian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/id/)\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
@@ -50,16 +51,15 @@ msgstr "Peluncur aplikasi alternatif untuk Xfce"
 
 #: ../panel-plugin/configuration-dialog.cpp:682
 msgid "Amount of _items:"
-msgstr ""
+msgstr "Jumlah _item:"
 
 #: ../panel-plugin/plugin.cpp:217
-#, fuzzy
 msgid "Applications"
-msgstr "Menu Aplikasi"
+msgstr "Aplikasi"
 
 #: ../panel-plugin/configuration-dialog.cpp:616
 msgid "Background opacit_y:"
-msgstr ""
+msgstr "Keburaman Latar Belakang:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
@@ -79,7 +79,7 @@ msgstr "Bersihkan yang Baru diGunakan"
 
 #: ../panel-plugin/plugin.cpp:394
 msgid "Copyright © 2013-2015 Graeme Gott"
-msgstr "Hak cipta © 2013-2015 Graeme Gott"
+msgstr "Hak Cipta © 2013-2015 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:811
 msgid "Details"
@@ -90,18 +90,16 @@ msgid "Di_splay:"
 msgstr "Ta_mpilan:"
 
 #: ../panel-plugin/configuration-dialog.cpp:699
-#, fuzzy
 msgid "Display by _default"
-msgstr "Tampilkan yang terakhir _dipakai sebagai bawaan"
+msgstr "Penayangan secara _bawaan"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Edit _Profile"
-msgstr ""
+msgstr "Sunting _Profil"
 
 #: ../panel-plugin/settings.cpp:122
-#, fuzzy
 msgid "Failed to edit profile."
-msgstr "Gagal berganti pengguna"
+msgstr "Gagal menyunting profil."
 
 #: ../panel-plugin/launcher.cpp:273 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
@@ -142,9 +140,8 @@ msgid "Icon and title"
 msgstr "Ikon dan judul"
 
 #: ../panel-plugin/configuration-dialog.cpp:693
-#, fuzzy
 msgid "Ignore _favorites"
-msgstr "Favorit"
+msgstr "Biarkan _favorit"
 
 #: ../panel-plugin/configuration-dialog.cpp:585
 msgid "Ite_m icon size:"
@@ -312,12 +309,11 @@ msgstr "Gagal menambahkan peluncur ke panel."
 #: ../panel-plugin/configuration-dialog.cpp:466
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "Tidak dapat membuka url berikut: %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:549
-#, fuzzy
 msgid "Use a single _panel row"
-msgstr "ikon layout di baris _panel single"
+msgstr "Gunakan satu baris panel"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
@@ -345,9 +341,8 @@ msgid "_Behavior"
 msgstr "_Kebiasaan"
 
 #: ../panel-plugin/configuration-dialog.cpp:85
-#, fuzzy
 msgid "_Commands"
-msgstr "Perintah"
+msgstr "_Perintah"
 
 #: ../panel-plugin/settings.cpp:121
 msgid "_Edit Applications"
@@ -376,6 +371,3 @@ msgstr "_Judul:"
 #: ../panel-plugin/plugin.cpp:398
 msgid "translator-credits"
 msgstr "kredit-penerjemah"
-
-#~ msgid "Include _favorites in recently used"
-#~ msgstr "Masukkan _kesukaan di yang terakhir dipakai"
