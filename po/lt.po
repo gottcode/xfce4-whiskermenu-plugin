@@ -9,9 +9,9 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 23:57+0000\n"
-"PO-Revision-Date: 2015-02-14 20:28+0000\n"
+"PO-Revision-Date: 2015-08-07 17:33+0000\n"
 "Last-Translator: Moo\n"
-"Language-Team: Lithuanian (http://www.transifex.com/projects/p/xfce4-"
+"Language-Team: Lithuanian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/lt/)\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr "Pridėti veiksmą"
 
 #: ../panel-plugin/page.cpp:214
 msgid "Add to Desktop"
-msgstr "Pridėti prie Darbastalio"
+msgstr "Pridėti prie Darbalaukio"
 
 #: ../panel-plugin/page.cpp:199
 msgid "Add to Favorites"
@@ -46,7 +46,7 @@ msgstr "Visi _Nustatymai"
 
 #: ../panel-plugin/plugin.cpp:393
 msgid "Alternate application launcher for Xfce"
-msgstr "Alternatyvus programų leistukas Xfce darbastalio aplinkai"
+msgstr "Alternatyvus programų leistukas Xfce darbalaukio aplinkai"
 
 #: ../panel-plugin/configuration-dialog.cpp:682
 msgid "Amount of _items:"
@@ -78,7 +78,7 @@ msgstr "Išvalyti Neseniai Naudotas"
 
 #: ../panel-plugin/plugin.cpp:394
 msgid "Copyright © 2013-2015 Graeme Gott"
-msgstr "Autorinės Teisės © 2013-2015 Graeme Gott"
+msgstr "Autorių Teisės © 2013-2015 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:811
 msgid "Details"
@@ -251,7 +251,7 @@ msgstr "Pasirinkti Komandą"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
-msgstr "Rodyti meniu, kad lengvai pasiekti įdiegtas programas"
+msgstr "Rodyti meniu, siekiant lengvai pasiekti įdiegtas programas"
 
 #: ../panel-plugin/configuration-dialog.cpp:573
 msgid "Show application _descriptions"
@@ -299,7 +299,7 @@ msgstr "Užrašą"
 
 #: ../panel-plugin/page.cpp:317
 msgid "Unable to add launcher to desktop."
-msgstr "Nepavyko pridėti leistuko prie darbastalio."
+msgstr "Nepavyko pridėti leistuko prie darbalaukio."
 
 #: ../panel-plugin/page.cpp:356 ../panel-plugin/page.cpp:365
 msgid "Unable to add launcher to panel."
@@ -308,7 +308,7 @@ msgstr "Nepavyko pridėti leistuko prie skydelio."
 #: ../panel-plugin/configuration-dialog.cpp:466
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "Nepavyko atidaryti sekančio url: %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:549
 msgid "Use a single _panel row"
