@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# abuyop <abuyop@gmail.com>, 2013-2014
+# abuyop <abuyop@gmail.com>, 2013-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 23:57+0000\n"
-"PO-Revision-Date: 2014-06-19 12:34+0000\n"
+"PO-Revision-Date: 2015-03-06 08:33+0000\n"
 "Last-Translator: abuyop <abuyop@gmail.com>\n"
-"Language-Team: Malay (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
+"Language-Team: Malay (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ms/)\n"
 "Language: ms\n"
 "MIME-Version: 1.0\n"
@@ -49,16 +49,15 @@ msgstr "Pelancar aplikasi alternatif untuk Xfce"
 
 #: ../panel-plugin/configuration-dialog.cpp:682
 msgid "Amount of _items:"
-msgstr ""
+msgstr "Amaun _item:"
 
 #: ../panel-plugin/plugin.cpp:217
-#, fuzzy
 msgid "Applications"
-msgstr "Menu Aplikasi"
+msgstr "Aplikasi"
 
 #: ../panel-plugin/configuration-dialog.cpp:616
 msgid "Background opacit_y:"
-msgstr ""
+msgstr "Ke_legapan latar belakang:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
@@ -89,18 +88,16 @@ msgid "Di_splay:"
 msgstr "Papa_ran:"
 
 #: ../panel-plugin/configuration-dialog.cpp:699
-#, fuzzy
 msgid "Display by _default"
-msgstr "Papar dig_una baru-baru ini secara lalai"
+msgstr "Papar secara lala_i"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Edit _Profile"
-msgstr ""
+msgstr "Sunting _Profil"
 
 #: ../panel-plugin/settings.cpp:122
-#, fuzzy
 msgid "Failed to edit profile."
-msgstr "Gagal menukar pengguna."
+msgstr "Gagal menyunting profil."
 
 #: ../panel-plugin/launcher.cpp:273 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
@@ -141,9 +138,8 @@ msgid "Icon and title"
 msgstr "Ikon dan tajuk"
 
 #: ../panel-plugin/configuration-dialog.cpp:693
-#, fuzzy
 msgid "Ignore _favorites"
-msgstr "Kegemaran"
+msgstr "Abai ke_gemaran"
 
 #: ../panel-plugin/configuration-dialog.cpp:585
 msgid "Ite_m icon size:"
@@ -311,12 +307,11 @@ msgstr "Tidak boleh tambah pelancar ke panel."
 #: ../panel-plugin/configuration-dialog.cpp:466
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "Tidak dapat buka url berikut: %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:549
-#, fuzzy
 msgid "Use a single _panel row"
-msgstr "Bentangkan ikon dalam satu baris _panel"
+msgstr "Guna baris _panel tunggal"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
@@ -344,9 +339,8 @@ msgid "_Behavior"
 msgstr "_Kelakuan"
 
 #: ../panel-plugin/configuration-dialog.cpp:85
-#, fuzzy
 msgid "_Commands"
-msgstr "Perintah"
+msgstr "P_erintah"
 
 #: ../panel-plugin/settings.cpp:121
 msgid "_Edit Applications"
@@ -375,6 +369,3 @@ msgstr "_Tajuk:"
 #: ../panel-plugin/plugin.cpp:398
 msgid "translator-credits"
 msgstr "abuyop"
-
-#~ msgid "Include _favorites in recently used"
-#~ msgstr "Sertakan ke_gemaran dalam diguna baru-baru ini"
