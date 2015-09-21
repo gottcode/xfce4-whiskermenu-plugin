@@ -4,16 +4,16 @@
 #
 # Translators:
 # Jens E. Jensen <jens.e.jensen@gmail.com>, 2013
-# Morten Juhl-Johansen Zölde-Fejér <morten@writtenandread.net>, 2013-2014
+# Morten Juhl-Johansen Zölde-Fejér <morten@writtenandread.net>, 2013-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 23:57+0000\n"
-"PO-Revision-Date: 2014-02-10 14:33+0000\n"
+"PO-Revision-Date: 2015-02-21 07:30+0000\n"
 "Last-Translator: Morten Juhl-Johansen Zölde-Fejér <morten@writtenandread."
 "net>\n"
-"Language-Team: Danish (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
+"Language-Team: Danish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/da/)\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
@@ -47,20 +47,19 @@ msgstr "Alle _indstillinger"
 
 #: ../panel-plugin/plugin.cpp:393
 msgid "Alternate application launcher for Xfce"
-msgstr ""
+msgstr "Alternativ programstarter for Xfce"
 
 #: ../panel-plugin/configuration-dialog.cpp:682
 msgid "Amount of _items:"
-msgstr ""
+msgstr "Antal _elementer:"
 
 #: ../panel-plugin/plugin.cpp:217
-#, fuzzy
 msgid "Applications"
-msgstr "Applikationsmenu"
+msgstr "Programmer"
 
 #: ../panel-plugin/configuration-dialog.cpp:616
 msgid "Background opacit_y:"
-msgstr ""
+msgstr "Baggrundens _gennemsigtighed"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
@@ -80,7 +79,7 @@ msgstr "Nulstil senest anvendte"
 
 #: ../panel-plugin/plugin.cpp:394
 msgid "Copyright © 2013-2015 Graeme Gott"
-msgstr ""
+msgstr "Copyright © 2013-2015 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:811
 msgid "Details"
@@ -91,18 +90,16 @@ msgid "Di_splay:"
 msgstr "_skærm"
 
 #: ../panel-plugin/configuration-dialog.cpp:699
-#, fuzzy
 msgid "Display by _default"
-msgstr "Vis _senest anvendte som standard"
+msgstr "Vis som _standard"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Edit _Profile"
-msgstr ""
+msgstr "Rediger _profil"
 
 #: ../panel-plugin/settings.cpp:122
-#, fuzzy
 msgid "Failed to edit profile."
-msgstr "Kunne ikke skifte bruger."
+msgstr "Profilen kunne ikke redigeres."
 
 #: ../panel-plugin/launcher.cpp:273 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
@@ -143,9 +140,8 @@ msgid "Icon and title"
 msgstr "Ikon og titel"
 
 #: ../panel-plugin/configuration-dialog.cpp:693
-#, fuzzy
 msgid "Ignore _favorites"
-msgstr "Favoritter"
+msgstr "Ignorer _favoritter"
 
 #: ../panel-plugin/configuration-dialog.cpp:585
 msgid "Ite_m icon size:"
@@ -205,9 +201,8 @@ msgid "Position _search entry next to panel button"
 msgstr "Placer _søgning ved siden af panelknap"
 
 #: ../panel-plugin/configuration-dialog.cpp:666
-#, fuzzy
 msgid "Position cate_gories next to panel button"
-msgstr "Placer _søgning ved siden af panelknap"
+msgstr "Placer _kategorier ved siden af panelknap"
 
 #: ../panel-plugin/configuration-dialog.cpp:659
 msgid "Position commands next to search _entry"
@@ -314,11 +309,11 @@ msgstr "Kunne ikke tilføje opstartsikon til panelet"
 #: ../panel-plugin/configuration-dialog.cpp:466
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "Kunne ikke åbne følgende URL: %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:549
 msgid "Use a single _panel row"
-msgstr ""
+msgstr "Brug en _enkelt række i panelet"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
@@ -346,9 +341,8 @@ msgid "_Behavior"
 msgstr "_Opførsel"
 
 #: ../panel-plugin/configuration-dialog.cpp:85
-#, fuzzy
 msgid "_Commands"
-msgstr "Kommandoer"
+msgstr "_Kommandoer"
 
 #: ../panel-plugin/settings.cpp:121
 msgid "_Edit Applications"
@@ -376,7 +370,4 @@ msgstr "_Titel:"
 
 #: ../panel-plugin/plugin.cpp:398
 msgid "translator-credits"
-msgstr ""
-
-#~ msgid "Include _favorites in recently used"
-#~ msgstr "Medtag _favoritter blandt senest anvendte"
+msgstr "oversættere"
