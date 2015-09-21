@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2013-2014
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2013-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 23:57+0000\n"
-"PO-Revision-Date: 2014-11-07 05:35+0000\n"
+"PO-Revision-Date: 2015-02-23 04:52+0000\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
-"Language-Team: Kazakh (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
+"Language-Team: Kazakh (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/kk/)\n"
 "Language: kk\n"
 "MIME-Version: 1.0\n"
@@ -49,16 +49,15 @@ msgstr "Xfce үшін қолданбалар жөнелтуші"
 
 #: ../panel-plugin/configuration-dialog.cpp:682
 msgid "Amount of _items:"
-msgstr ""
+msgstr "Нәрселер _саны:"
 
 #: ../panel-plugin/plugin.cpp:217
-#, fuzzy
 msgid "Applications"
-msgstr "Қолданбалар мәзірі"
+msgstr "Қолданбалар"
 
 #: ../panel-plugin/configuration-dialog.cpp:616
 msgid "Background opacit_y:"
-msgstr ""
+msgstr "Фон мөл_дірлілігі:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
@@ -89,18 +88,16 @@ msgid "Di_splay:"
 msgstr "Көр_сету:"
 
 #: ../panel-plugin/configuration-dialog.cpp:699
-#, fuzzy
 msgid "Display by _default"
-msgstr "Жуырда қ_олданғанды үнсіз келісім бойынша іске қосу"
+msgstr "Үн_сіз келісім бойынша көрсету"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Edit _Profile"
-msgstr ""
+msgstr "_Профильді түзету"
 
 #: ../panel-plugin/settings.cpp:122
-#, fuzzy
 msgid "Failed to edit profile."
-msgstr "Пайдаланушыны ауыстыру сәтсіз аяқталды."
+msgstr "Профильді түзету сәтсіз аяқталды."
 
 #: ../panel-plugin/launcher.cpp:273 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
@@ -141,9 +138,8 @@ msgid "Icon and title"
 msgstr "Таңбаша және атауы"
 
 #: ../panel-plugin/configuration-dialog.cpp:693
-#, fuzzy
 msgid "Ignore _favorites"
-msgstr "Таңдамалы"
+msgstr "_Таңдамалыларды елемеу"
 
 #: ../panel-plugin/configuration-dialog.cpp:585
 msgid "Ite_m icon size:"
@@ -311,12 +307,11 @@ msgstr "Жөнелткішті панельге қосу мүмкін емес."
 #: ../panel-plugin/configuration-dialog.cpp:466
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "Келесі сілтемені ашу мүмкін емес: %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:549
-#, fuzzy
 msgid "Use a single _panel row"
-msgstr "Таңбашаны бір _панель жолында орналастыру"
+msgstr "Бір _панель жолын қолдану"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
@@ -344,9 +339,8 @@ msgid "_Behavior"
 msgstr "Мі_нез-құлығы"
 
 #: ../panel-plugin/configuration-dialog.cpp:85
-#, fuzzy
 msgid "_Commands"
-msgstr "Командалар"
+msgstr "_Командалар"
 
 #: ../panel-plugin/settings.cpp:121
 msgid "_Edit Applications"
@@ -375,6 +369,3 @@ msgstr "А_тауы:"
 #: ../panel-plugin/plugin.cpp:398
 msgid "translator-credits"
 msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>"
-
-#~ msgid "Include _favorites in recently used"
-#~ msgstr "Жуырда қолданғандарға _таңдамалыларды қосу"
