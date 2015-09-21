@@ -7,15 +7,17 @@
 # Patrik Nilsson <asavartzeth@gmail.com>, 2014
 # Fredrik Nyqvist <fredrik@nyqvist.biz>, 2013
 # Patrik Nilsson <asavartzeth@gmail.com>, 2014-2015
+# Påvel Nicklasson <pavel@frimix.se>, 2015
+# Påvel Nicklasson <pavel@frimixse>, 2015
 # Tommy Arvidsson <tarvidsson7834@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 23:57+0000\n"
-"PO-Revision-Date: 2015-02-20 16:05+0000\n"
-"Last-Translator: Patrik Nilsson <asavartzeth@gmail.com>\n"
-"Language-Team: Swedish (Sweden) (http://www.transifex.com/projects/p/xfce4-"
+"PO-Revision-Date: 2015-07-19 17:38+0000\n"
+"Last-Translator: Påvel Nicklasson <pavelnicklasson@bahnhof.se>\n"
+"Language-Team: Swedish (Sweden) (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/sv_SE/)\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
@@ -311,7 +313,7 @@ msgstr "Kunde inte lägga till programstartare i panelen."
 #: ../panel-plugin/configuration-dialog.cpp:466
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "Kan inte öppna följande URL: %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:549
 msgid "Use a single _panel row"
