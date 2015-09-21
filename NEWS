@@ -1,3 +1,13 @@
+1.5.1
+=====
+- Fix window being draggable. (bug #11908)
+- Fix not searching descriptions.
+- Translation updates: Asturian, Bulgarian, Chinese (China),
+  Chinese (Taiwan), Croatian, Czech, Danish, Dutch, French, Finnish,
+  German, Indonesian, Japanese, Kazakh, Lithuanian, Malay, Nepali,
+  Norwegian Bokmål, Persian, Polish, Portuguese, Russian, Serbian,
+  Slovak, Slovenian, Spanish, Swedish, Turkish
+
 1.5.0
 =====
 - Fix search activation to allow input methods.
