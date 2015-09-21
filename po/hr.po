@@ -3,16 +3,16 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# ilija.culap14 <ilija.culap14@gmail.com>, 2013-2014
+# Ilija Ćulap <ilija.culap14@gmail.com>, 2013-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 23:57+0000\n"
-"PO-Revision-Date: 2014-01-10 09:51+0000\n"
-"Last-Translator: ilija.culap14 <ilija.culap14@gmail.com>\n"
-"Language-Team: Croatian (http://www.transifex.com/projects/p/xfce4-"
-"whiskermenu-plugin/language/hr/)\n"
+"PO-Revision-Date: 2015-08-31 12:33+0000\n"
+"Last-Translator: Ilija Ćulap <ilija.culap14@gmail.com>\n"
+"Language-Team: Croatian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
+"plugin/language/hr/)\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,20 +46,19 @@ msgstr "Sve _Postavke"
 
 #: ../panel-plugin/plugin.cpp:393
 msgid "Alternate application launcher for Xfce"
-msgstr ""
+msgstr "Alternativni pokretač aplikacija za Xfce"
 
 #: ../panel-plugin/configuration-dialog.cpp:682
 msgid "Amount of _items:"
-msgstr ""
+msgstr "Broj stavki:"
 
 #: ../panel-plugin/plugin.cpp:217
-#, fuzzy
 msgid "Applications"
-msgstr "Izbornik aplikacija"
+msgstr "Aplikacije"
 
 #: ../panel-plugin/configuration-dialog.cpp:616
 msgid "Background opacit_y:"
-msgstr ""
+msgstr "Prozirnost pozadine"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
@@ -79,7 +78,7 @@ msgstr "Očisti kategoriju Najčešće korišteno"
 
 #: ../panel-plugin/plugin.cpp:394
 msgid "Copyright © 2013-2015 Graeme Gott"
-msgstr ""
+msgstr "Copyright © 2013-2015 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:811
 msgid "Details"
@@ -90,18 +89,16 @@ msgid "Di_splay:"
 msgstr "Pri_kaži:"
 
 #: ../panel-plugin/configuration-dialog.cpp:699
-#, fuzzy
 msgid "Display by _default"
-msgstr "Prikaži Najčešće korišteno prema zadanom"
+msgstr "Prema zadanom prikaži"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Edit _Profile"
-msgstr ""
+msgstr "Uredi profil"
 
 #: ../panel-plugin/settings.cpp:122
-#, fuzzy
 msgid "Failed to edit profile."
-msgstr "Nije moguće promijeniti korisnika."
+msgstr "Nije moguće urediti profil."
 
 #: ../panel-plugin/launcher.cpp:273 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
@@ -142,9 +139,8 @@ msgid "Icon and title"
 msgstr "Ikona i ime"
 
 #: ../panel-plugin/configuration-dialog.cpp:693
-#, fuzzy
 msgid "Ignore _favorites"
-msgstr "Omiljeno"
+msgstr "Ignoriraj omiljene"
 
 #: ../panel-plugin/configuration-dialog.cpp:585
 msgid "Ite_m icon size:"
@@ -204,9 +200,8 @@ msgid "Position _search entry next to panel button"
 msgstr "Postavi _pretraživanje kraj dugmeta na ploči"
 
 #: ../panel-plugin/configuration-dialog.cpp:666
-#, fuzzy
 msgid "Position cate_gories next to panel button"
-msgstr "Postavi _pretraživanje kraj dugmeta na ploči"
+msgstr "Postavi kategorije pokraj gumba na ploči"
 
 #: ../panel-plugin/configuration-dialog.cpp:659
 msgid "Position commands next to search _entry"
@@ -313,11 +308,11 @@ msgstr "Nije moguće dodati pokretač na Ploču"
 #: ../panel-plugin/configuration-dialog.cpp:466
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "Nije moguće otvoriti slijedeći URL: %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:549
 msgid "Use a single _panel row"
-msgstr ""
+msgstr "Koristi samo jedan redak ploče"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
@@ -345,9 +340,8 @@ msgid "_Behavior"
 msgstr "Pon_ašanje"
 
 #: ../panel-plugin/configuration-dialog.cpp:85
-#, fuzzy
 msgid "_Commands"
-msgstr "Naredbe"
+msgstr "Komande"
 
 #: ../panel-plugin/settings.cpp:121
 msgid "_Edit Applications"
@@ -375,7 +369,4 @@ msgstr "_Naslov:"
 
 #: ../panel-plugin/plugin.cpp:398
 msgid "translator-credits"
-msgstr ""
-
-#~ msgid "Include _favorites in recently used"
-#~ msgstr "Uključi _Omiljeno u Najčešće korišteno"
+msgstr "Zasluge za prijevod"
