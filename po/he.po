@@ -10,9 +10,9 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 23:57+0000\n"
-"PO-Revision-Date: 2015-02-14 12:43+0000\n"
+"PO-Revision-Date: 2015-02-21 06:59+0000\n"
 "Last-Translator: GenghisKhan <genghiskhan@gmx.ca>\n"
-"Language-Team: Hebrew (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
+"Language-Team: Hebrew (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/he/)\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
@@ -308,7 +308,7 @@ msgstr "לא מסוגל להוסיף משגר לתוך לוח."
 #: ../panel-plugin/configuration-dialog.cpp:466
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "לא מסוגל לפתוח כתובת url להלן: %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:549
 msgid "Use a single _panel row"
