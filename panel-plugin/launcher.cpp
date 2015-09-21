@@ -291,15 +291,15 @@ guint Launcher::search(const Query& query)
 		return match | 0x800;
 	}
 
-	// Sort matches in executables after matches in names
-	match = query.match(m_search_command);
+	// Sort matches in comments next
+	match = query.match(m_search_comment);
 	if (match != G_MAXUINT)
 	{
 		return match | 0x1000;
 	}
 
-	// Sort matches in comments after matches in names
-	match = query.match(m_search_comment);
+	// Sort matches in executables last
+	match = query.match(m_search_command);
 	if (match != G_MAXUINT)
 	{
 		return match | 0x2000;
