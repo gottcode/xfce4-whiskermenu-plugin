@@ -11,10 +11,10 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 23:57+0000\n"
-"PO-Revision-Date: 2015-02-20 00:35+0000\n"
+"PO-Revision-Date: 2015-02-26 14:12+0000\n"
 "Last-Translator: Pasi Lallinaho <pasi@shimmerproject.org>\n"
-"Language-Team: Finnish (http://www.transifex.com/projects/p/xfce4-"
-"whiskermenu-plugin/language/fi/)\n"
+"Language-Team: Finnish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
+"plugin/language/fi/)\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -309,7 +309,7 @@ msgstr "Paneeliin ei voitu luoda käynnistintä."
 #: ../panel-plugin/configuration-dialog.cpp:466
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "Ei voitu avata osoitetta: %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:549
 msgid "Use a single _panel row"
