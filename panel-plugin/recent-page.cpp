@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -58,6 +58,7 @@ void RecentPage::add(Launcher* launcher)
 	{
 		return;
 	}
+	launcher->set_flag(Launcher::RecentFlag, true);
 
 	std::string desktop_id = launcher->get_desktop_id();
 	if (!wm_settings->recent.empty())
@@ -110,6 +111,12 @@ void RecentPage::enforce_item_count()
 	GtkListStore* store = GTK_LIST_STORE(get_view()->get_model());
 	for (size_t i = wm_settings->recent.size() - 1, end = wm_settings->recent_items_max; i >= end; --i)
 	{
+		Launcher* launcher = get_window()->get_applications()->get_application(wm_settings->recent[i]);
+		if (launcher)
+		{
+			launcher->set_flag(Launcher::RecentFlag, false);
+		}
+
 		GtkTreeIter iter;
 		if (gtk_tree_model_iter_nth_child(GTK_TREE_MODEL(store), &iter, NULL, i))
 		{
@@ -123,11 +130,27 @@ void RecentPage::enforce_item_count()
 
 //-----------------------------------------------------------------------------
 
+void RecentPage::flag_items(bool enabled)
+{
+	for (std::vector<std::string>::size_type i = 0, end = wm_settings->recent.size(); i < end; ++i)
+	{
+		Launcher* launcher = get_window()->get_applications()->get_application(wm_settings->recent[i]);
+		if (launcher)
+		{
+			launcher->set_flag(Launcher::RecentFlag, enabled);
+		}
+	}
+}
+
+//-----------------------------------------------------------------------------
+
 void RecentPage::set_menu_items()
 {
 	GtkTreeModel* model = get_window()->get_applications()->create_launcher_model(wm_settings->recent);
 	get_view()->set_model(model);
 	g_object_unref(model);
+
+	flag_items(true);
 }
 
 //-----------------------------------------------------------------------------
@@ -156,6 +179,8 @@ void RecentPage::extend_context_menu(GtkWidget* menu)
 
 void RecentPage::clear_menu()
 {
+	flag_items(false);
+
 	gtk_list_store_clear(GTK_LIST_STORE(get_view()->get_model()));
 	wm_settings->recent.clear();
 	wm_settings->set_modified();

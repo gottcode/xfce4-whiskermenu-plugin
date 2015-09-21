@@ -66,6 +66,13 @@ public:
 
 	guint search(const Query& query);
 
+	enum SearchFlag
+	{
+		RecentFlag = 0x1,
+		FavoriteFlag = 0x2
+	};
+	void set_flag(SearchFlag flag, bool enabled);
+
 private:
 	GarconMenuItem* m_item;
 	const gchar* m_display_name;
@@ -73,6 +80,7 @@ private:
 	std::string m_search_generic_name;
 	std::string m_search_comment;
 	std::string m_search_command;
+	guint m_search_flags;
 };
 
 }

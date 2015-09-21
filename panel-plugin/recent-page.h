@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,6 +31,7 @@ public:
 
 	void add(Launcher* launcher);
 	void enforce_item_count();
+	void flag_items(bool enabled);
 	void set_menu_items();
 	void unset_menu_items();
 

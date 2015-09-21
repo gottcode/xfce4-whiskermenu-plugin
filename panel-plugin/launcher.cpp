@@ -100,7 +100,8 @@ static void replace_with_quoted_string(std::string& command, size_t& index, gcha
 //-----------------------------------------------------------------------------
 
 Launcher::Launcher(GarconMenuItem* item) :
-	m_item(item)
+	m_item(item),
+	m_search_flags(0)
 {
 	// Fetch icon
 	const gchar* icon = garcon_menu_item_get_icon_name(m_item);
@@ -278,34 +279,51 @@ void Launcher::run(GdkScreen* screen) const
 
 guint Launcher::search(const Query& query)
 {
+	// Prioritize matches in favorites and recent, then favories, and then recent
+	const guint flags = 3 - m_search_flags;
+
 	// Sort matches in names first
 	guint match = query.match(m_search_name);
 	if (match != G_MAXUINT)
 	{
-		return match | 0x400;
+		return match | flags | 0x400;
 	}
 
 	match = query.match(m_search_generic_name);
 	if (match != G_MAXUINT)
 	{
-		return match | 0x800;
+		return match | flags | 0x800;
 	}
 
 	// Sort matches in comments next
 	match = query.match(m_search_comment);
 	if (match != G_MAXUINT)
 	{
-		return match | 0x1000;
+		return match | flags | 0x1000;
 	}
 
 	// Sort matches in executables last
 	match = query.match(m_search_command);
 	if (match != G_MAXUINT)
 	{
-		return match | 0x2000;
+		return match | flags | 0x2000;
 	}
 
 	return G_MAXUINT;
+}
+
+//-----------------------------------------------------------------------------
+
+void Launcher::set_flag(SearchFlag flag, bool enabled)
+{
+	if (enabled)
+	{
+		m_search_flags |= flag;
+	}
+	else
+	{
+		m_search_flags &= ~flag;
+	}
 }
 
 //-----------------------------------------------------------------------------
