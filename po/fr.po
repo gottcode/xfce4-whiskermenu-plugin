@@ -4,7 +4,7 @@
 #
 # Translators:
 # Anthony Jorion <pingax@frugalware.org>, 2013
-# jc1 <jc1.quebecos@gmail.com>, 2013
+# jc1 <jc1.quebecos@gmail.com>, 2013,2015
 # Urien Desterres <urien.desterres@gmail.com>, 2014-2015
 # Yannick Le Guen <leguen.yannick@gmail.com>, 2014-2015
 msgid ""
@@ -12,9 +12,9 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 23:57+0000\n"
-"PO-Revision-Date: 2015-02-15 20:35+0000\n"
-"Last-Translator: Yannick Le Guen <leguen.yannick@gmail.com>\n"
-"Language-Team: French (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
+"PO-Revision-Date: 2015-07-31 16:04+0000\n"
+"Last-Translator: Urien Desterres <urien.desterres@gmail.com>\n"
+"Language-Team: French (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/fr/)\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -97,11 +97,11 @@ msgstr "Afficher par _défaut"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Edit _Profile"
-msgstr "Éditer le _profil"
+msgstr "Modifier le _profil"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Failed to edit profile."
-msgstr "Impossible d’éditer le profil."
+msgstr "Impossible de modifier le profil."
 
 #: ../panel-plugin/launcher.cpp:273 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
@@ -238,11 +238,11 @@ msgstr "Exécuter dans un terminal"
 
 #: ../panel-plugin/configuration-dialog.cpp:86
 msgid "Search Actio_ns"
-msgstr "Rechercher des actio_ns"
+msgstr "Actio_ns de recherche"
 
 #: ../panel-plugin/search-action.cpp:261
 msgid "Search Action"
-msgstr "Rechercher une action"
+msgstr "Action de recherche"
 
 #: ../panel-plugin/configuration-dialog.cpp:119
 msgid "Select An Icon"
@@ -290,7 +290,7 @@ msgstr "Changer d’_utilisateur"
 
 #: ../panel-plugin/configuration-dialog.cpp:647
 msgid "Switch categories by _hovering"
-msgstr "C_hanger de catégories en survolant"
+msgstr "C_hanger de catégories au survol"
 
 #: ../panel-plugin/configuration-dialog.cpp:405
 msgid "The action will be deleted permanently."
@@ -311,7 +311,7 @@ msgstr "Impossible d’ajouter le lanceur dans le tableau de bord."
 #: ../panel-plugin/configuration-dialog.cpp:466
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "Impossible d’ouvrir l’URL suivante : %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:549
 msgid "Use a single _panel row"
