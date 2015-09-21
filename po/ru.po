@@ -12,16 +12,17 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 23:57+0000\n"
-"PO-Revision-Date: 2015-02-08 14:00+0000\n"
+"PO-Revision-Date: 2015-02-21 21:52+0000\n"
 "Last-Translator: Sergey Alyoshin <alyoshin.s@gmail.com>\n"
-"Language-Team: Russian (http://www.transifex.com/projects/p/xfce4-"
-"whiskermenu-plugin/language/ru/)\n"
+"Language-Team: Russian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
+"plugin/language/ru/)\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: ../panel-plugin/configuration-dialog.cpp:782
 msgid "Add action"
@@ -53,16 +54,15 @@ msgstr "Альтернативное меню запуска приложени�
 
 #: ../panel-plugin/configuration-dialog.cpp:682
 msgid "Amount of _items:"
-msgstr ""
+msgstr "Количество элементов:"
 
 #: ../panel-plugin/plugin.cpp:217
-#, fuzzy
 msgid "Applications"
-msgstr "Меню приложений"
+msgstr "Приложения"
 
 #: ../panel-plugin/configuration-dialog.cpp:616
 msgid "Background opacit_y:"
-msgstr ""
+msgstr "Прозрачность фона:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
@@ -93,18 +93,16 @@ msgid "Di_splay:"
 msgstr "Показы_вать:"
 
 #: ../panel-plugin/configuration-dialog.cpp:699
-#, fuzzy
 msgid "Display by _default"
-msgstr "По умолчанию показывать «_Недавние»"
+msgstr "Показывать по умолчанию"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Edit _Profile"
-msgstr ""
+msgstr "Изменить профиль"
 
 #: ../panel-plugin/settings.cpp:122
-#, fuzzy
 msgid "Failed to edit profile."
-msgstr "Не удалось сменить пользователя."
+msgstr "Не удалось изменить профиль."
 
 #: ../panel-plugin/launcher.cpp:273 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
@@ -145,9 +143,8 @@ msgid "Icon and title"
 msgstr "Значок и заголовок"
 
 #: ../panel-plugin/configuration-dialog.cpp:693
-#, fuzzy
 msgid "Ignore _favorites"
-msgstr "Избранное"
+msgstr "Игнорировать избранное"
 
 #: ../panel-plugin/configuration-dialog.cpp:585
 msgid "Ite_m icon size:"
@@ -315,12 +312,11 @@ msgstr "Нельзя добавить на панель."
 #: ../panel-plugin/configuration-dialog.cpp:466
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "Невозможно открыть ссылку: %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:549
-#, fuzzy
 msgid "Use a single _panel row"
-msgstr "Зн_ачок в одну строку панели"
+msgstr "Использовать одну строку панели"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
@@ -348,7 +344,6 @@ msgid "_Behavior"
 msgstr "_Поведение"
 
 #: ../panel-plugin/configuration-dialog.cpp:85
-#, fuzzy
 msgid "_Commands"
 msgstr "Команды"
 
@@ -383,6 +378,3 @@ msgstr ""
 "Кирилл Детинов <lazy.kent@opensuse.org>, 2013\n"
 "Сергей Алёшин <alyoshin.s@gmail.com>, 2013, 2014\n"
 "Сергей Шляпугин <shlyapugin@gmail.com>, 2013"
-
-#~ msgid "Include _favorites in recently used"
-#~ msgstr "Включать «_Избранное» в «Недавние»"
