@@ -6,18 +6,20 @@
 # december, 2013
 # december <december0123@gmail.com>, 2013
 # december <december0123@gmail.com>, 2013
+# december <december0123@gmail.com>, 2013
 # Michał Olber <michal.olber@osworld.pl>, 2013-2015
 # M T <michtrz@gmail.com>, 2013-2014
 # Michał Olber <michal.olber@osworld.pl>, 2013
 # Piotr Sokół <psokol@jabster.pl>, 2013-2014
+# Piotr Sokół <psokol@jabster.pl>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 23:57+0000\n"
-"PO-Revision-Date: 2015-02-14 14:10+0000\n"
-"Last-Translator: Michał Olber <michal.olber@osworld.pl>\n"
-"Language-Team: Polish (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
+"PO-Revision-Date: 2015-02-22 07:22+0000\n"
+"Last-Translator: Piotr Sokół <psokol@jabster.pl>\n"
+"Language-Team: Polish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/pl/)\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -28,7 +30,7 @@ msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:782
 msgid "Add action"
-msgstr "Dodaj czynność"
+msgstr "Dodaje czynność"
 
 #: ../panel-plugin/page.cpp:214
 msgid "Add to Desktop"
@@ -48,7 +50,7 @@ msgstr "Wszystkie"
 
 #: ../panel-plugin/settings.cpp:117
 msgid "All _Settings"
-msgstr "Wszystkie u_stawienia"
+msgstr "Wyświetl u_stawienia"
 
 #: ../panel-plugin/plugin.cpp:393
 msgid "Alternate application launcher for Xfce"
@@ -56,19 +58,19 @@ msgstr "Uruchamia programy w środowisku Xfce"
 
 #: ../panel-plugin/configuration-dialog.cpp:682
 msgid "Amount of _items:"
-msgstr "Ilość _wpisów"
+msgstr "Ilość _elementów:"
 
 #: ../panel-plugin/plugin.cpp:217
 msgid "Applications"
-msgstr "Aplikacje"
+msgstr "Programy"
 
 #: ../panel-plugin/configuration-dialog.cpp:616
 msgid "Background opacit_y:"
-msgstr "Przezroczystość tła"
+msgstr "_Przezroczystość tła:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
-msgstr "Przeglądaj system plików, aby wybrać własne polecenie."
+msgstr "Przegląda system plików, aby wybrać własne polecenie"
 
 #: ../panel-plugin/configuration-dialog.cpp:840
 msgid "C_ommand:"
@@ -84,7 +86,7 @@ msgstr "Wyczyść ostatnio używane"
 
 #: ../panel-plugin/plugin.cpp:394
 msgid "Copyright © 2013-2015 Graeme Gott"
-msgstr "Prawa autorskie © 2013-2015 Graeme Gott"
+msgstr "Copyright © 2013-2015 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:811
 msgid "Details"
@@ -96,11 +98,11 @@ msgstr "_Wyświetlanie:"
 
 #: ../panel-plugin/configuration-dialog.cpp:699
 msgid "Display by _default"
-msgstr "Pokaż ostatnio _używane domyślnie"
+msgstr "_Domyślnie wyświetlane"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Edit _Profile"
-msgstr "Edytuj _Profil"
+msgstr "Edytuj p_rofil"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Failed to edit profile."
@@ -146,7 +148,7 @@ msgstr "Ikona i etykieta"
 
 #: ../panel-plugin/configuration-dialog.cpp:693
 msgid "Ignore _favorites"
-msgstr "Pomiń _ulubione."
+msgstr "Pomijanie _ulubionych"
 
 #: ../panel-plugin/configuration-dialog.cpp:585
 msgid "Ite_m icon size:"
@@ -228,7 +230,7 @@ msgstr "Usunąć czynność „%s”?"
 
 #: ../panel-plugin/configuration-dialog.cpp:791
 msgid "Remove selected action"
-msgstr "Usuń wybraną czynność"
+msgstr "Usuwa wybraną czynność"
 
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
@@ -281,11 +283,11 @@ msgstr "Mniejszy"
 
 #: ../panel-plugin/favorites-page.cpp:129
 msgid "Sort Alphabetically A-Z"
-msgstr "Sortuj alfabetycznie A-Z"
+msgstr "Posortuj alfabetycznie A-Z"
 
 #: ../panel-plugin/favorites-page.cpp:135
 msgid "Sort Alphabetically Z-A"
-msgstr "Sortuj alfabetycznie Z-A"
+msgstr "Posortuj alfabetycznie Z-A"
 
 #: ../panel-plugin/settings.cpp:119
 msgid "Switch _Users"
@@ -314,11 +316,11 @@ msgstr "Nie można dodać aktywatora do panelu"
 #: ../panel-plugin/configuration-dialog.cpp:466
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "Nie można otworzyć następującego adresu URL: %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:549
 msgid "Use a single _panel row"
-msgstr "Rozmieszczenie ikon w pojedynczym rzędzie p_anelu"
+msgstr "Umieszczenie ikony w jednym wierszu p_anelu"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
@@ -375,4 +377,4 @@ msgstr "_Nazwa:"
 
 #: ../panel-plugin/plugin.cpp:398
 msgid "translator-credits"
-msgstr "Piotr Sokół <psokol@jabster.pl>, 2013, 2014."
+msgstr "Piotr Sokół <psokol@jabster.pl>, 2013, 2014, 2015."
