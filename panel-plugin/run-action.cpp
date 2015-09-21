@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -45,7 +45,7 @@ void RunAction::run(GdkScreen* screen) const
 
 //-----------------------------------------------------------------------------
 
-int RunAction::search(const Query& query)
+guint RunAction::search(const Query& query)
 {
 	// Check if in PATH
 	bool valid = false;
@@ -61,7 +61,7 @@ int RunAction::search(const Query& query)
 
 	if (!valid)
 	{
-		return G_MAXINT;
+		return G_MAXUINT;
 	}
 
 	m_command_line = query.raw_query();

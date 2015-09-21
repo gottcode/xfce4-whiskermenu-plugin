@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -80,12 +80,12 @@ private:
 
 		static bool invalid(const Match& match)
 		{
-			return match.m_relevancy == G_MAXINT;
+			return match.m_relevancy == G_MAXUINT;
 		}
 
 	private:
 		Element* m_element;
-		int m_relevancy;
+		guint m_relevancy;
 	};
 	std::vector<Match> m_matches;
 };

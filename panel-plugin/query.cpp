@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -55,12 +55,12 @@ Query::~Query()
 
 //-----------------------------------------------------------------------------
 
-int Query::match(const std::string& haystack) const
+unsigned int Query::match(const std::string& haystack) const
 {
 	// Make sure haystack is longer than query
 	if (m_query.empty() || (m_query.length() > haystack.length()))
 	{
-		return INT_MAX;
+		return UINT_MAX;
 	}
 
 	// Check if haystack begins with or is query
@@ -146,7 +146,7 @@ int Query::match(const std::string& haystack) const
 			start_word = false;
 		}
 	}
-	int result = INT_MAX;
+	unsigned int result = UINT_MAX;
 	if (*query_string == 0)
 	{
 		result = characters_start_words ? 6 : 7;

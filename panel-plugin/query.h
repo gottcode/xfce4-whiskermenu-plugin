@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,7 +36,7 @@ public:
 		return m_query.empty();
 	}
 
-	int match(const std::string& haystack) const;
+	unsigned int match(const std::string& haystack) const;
 
 	std::string query() const
 	{

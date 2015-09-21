@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2014 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014, 2015 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -276,10 +276,10 @@ void Launcher::run(GdkScreen* screen) const
 
 //-----------------------------------------------------------------------------
 
-int Launcher::search(const Query& query)
+guint Launcher::search(const Query& query)
 {
-	int match = query.match(m_search_name);
-	if (match != G_MAXINT)
+	guint match = query.match(m_search_name);
+	if (match != G_MAXUINT)
 	{
 		if (match > 5)
 		{
@@ -289,7 +289,7 @@ int Launcher::search(const Query& query)
 	}
 
 	match = query.match(m_search_generic_name);
-	if (match != G_MAXINT)
+	if (match != G_MAXUINT)
 	{
 		match += 10;
 		return match;
@@ -297,7 +297,7 @@ int Launcher::search(const Query& query)
 
 	// Sort matches in executables after matches in names
 	match = query.match(m_search_command);
-	if (match != G_MAXINT)
+	if (match != G_MAXUINT)
 	{
 		match += 20;
 		return match;
@@ -305,7 +305,7 @@ int Launcher::search(const Query& query)
 
 	// Sort matches in comments after matches in names
 	match = query.match(m_search_comment);
-	if (match != G_MAXINT)
+	if (match != G_MAXUINT)
 	{
 		match += 30;
 	}

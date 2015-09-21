@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -61,7 +61,7 @@ SearchAction::~SearchAction()
 
 //-----------------------------------------------------------------------------
 
-int SearchAction::search(const Query& query)
+guint SearchAction::search(const Query& query)
 {
 	if (m_pattern.empty() || m_command.empty())
 	{
@@ -71,9 +71,9 @@ int SearchAction::search(const Query& query)
 	m_expanded_command.clear();
 
 	const gchar* haystack = query.raw_query().c_str();
-	int found = !m_is_regex ? match_prefix(haystack) : match_regex(haystack);
+	guint found = !m_is_regex ? match_prefix(haystack) : match_regex(haystack);
 
-	if (found && (m_show_description != wm_settings->launcher_show_description))
+	if ((found != G_MAXUINT) && (m_show_description != wm_settings->launcher_show_description))
 	{
 		m_show_description = wm_settings->launcher_show_description;
 		update_text();
@@ -84,11 +84,11 @@ int SearchAction::search(const Query& query)
 
 //-----------------------------------------------------------------------------
 
-int SearchAction::match_prefix(const gchar* haystack)
+guint SearchAction::match_prefix(const gchar* haystack)
 {
 	if (!g_str_has_prefix(haystack, m_pattern.c_str()))
 	{
-		return G_MAXINT;
+		return G_MAXUINT;
 	}
 
 	gchar* trimmed = g_strdup(haystack + m_pattern.length());
@@ -145,9 +145,9 @@ int SearchAction::match_prefix(const gchar* haystack)
 
 //-----------------------------------------------------------------------------
 
-int SearchAction::match_regex(const gchar* haystack)
+guint SearchAction::match_regex(const gchar* haystack)
 {
-	int found = G_MAXINT;
+	guint found = G_MAXUINT;
 
 	if (!m_regex)
 	{

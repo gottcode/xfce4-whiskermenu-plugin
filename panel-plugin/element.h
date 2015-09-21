@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -58,9 +58,9 @@ public:
 	{
 	}
 
-	virtual int search(const Query&)
+	virtual guint search(const Query&)
 	{
-		return G_MAXINT;
+		return G_MAXUINT;
 	}
 
 	static bool less_than(const Element* lhs, const Element* rhs)

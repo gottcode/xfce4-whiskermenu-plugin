@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -40,7 +40,7 @@ public:
 	}
 
 	void run(GdkScreen* screen) const;
-	int search(const Query& query);
+	guint search(const Query& query);
 
 private:
 	std::string m_command_line;
