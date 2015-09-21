@@ -67,12 +67,12 @@ unsigned int Query::match(const std::string& haystack) const
 	std::string::size_type pos = haystack.find(m_query);
 	if (pos == 0)
 	{
-		return haystack.length() != m_query.length();
+		return (haystack.length() == m_query.length()) ? 0x4 : 0x8;
 	}
 	// Check if haystack contains query starting at a word boundary
 	else if ((pos != std::string::npos) && is_start_word(haystack, pos))
 	{
-		return 2;
+		return 0x10;
 	}
 
 	if (m_query_words.size() > 1)
@@ -90,7 +90,7 @@ unsigned int Query::match(const std::string& haystack) const
 		}
 		if (search_pos != std::string::npos)
 		{
-			return 3;
+			return 0x20;
 		}
 
 		// Check if haystack contains query as words in any order
@@ -109,14 +109,14 @@ unsigned int Query::match(const std::string& haystack) const
 		}
 		if (found_words == m_query_words.size())
 		{
-			return 4;
+			return 0x40;
 		}
 	}
 
 	// Check if haystack contains query
 	if (pos != std::string::npos)
 	{
-		return 5;
+		return 0x80;
 	}
 
 	// Check if haystack contains query as characters
@@ -149,7 +149,7 @@ unsigned int Query::match(const std::string& haystack) const
 	unsigned int result = UINT_MAX;
 	if (*query_string == 0)
 	{
-		result = characters_start_words ? 6 : 7;
+		result = characters_start_words ? 0x100 : 0x200;
 	}
 
 	return result;

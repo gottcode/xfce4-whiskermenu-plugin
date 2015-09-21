@@ -278,38 +278,34 @@ void Launcher::run(GdkScreen* screen) const
 
 guint Launcher::search(const Query& query)
 {
+	// Sort matches in names first
 	guint match = query.match(m_search_name);
 	if (match != G_MAXUINT)
 	{
-		if (match > 5)
-		{
-			match += 10;
-		}
-		return match;
+		return match | 0x400;
 	}
 
 	match = query.match(m_search_generic_name);
 	if (match != G_MAXUINT)
 	{
-		match += 10;
-		return match;
+		return match | 0x800;
 	}
 
 	// Sort matches in executables after matches in names
 	match = query.match(m_search_command);
 	if (match != G_MAXUINT)
 	{
-		match += 20;
-		return match;
+		return match | 0x1000;
 	}
 
 	// Sort matches in comments after matches in names
 	match = query.match(m_search_comment);
 	if (match != G_MAXUINT)
 	{
-		match += 30;
+		return match | 0x2000;
 	}
-	return match;
+
+	return G_MAXUINT;
 }
 
 //-----------------------------------------------------------------------------
