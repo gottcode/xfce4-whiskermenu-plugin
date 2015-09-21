@@ -9,9 +9,9 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 23:57+0000\n"
-"PO-Revision-Date: 2015-02-14 13:23+0000\n"
+"PO-Revision-Date: 2015-02-25 12:33+0000\n"
 "Last-Translator: Kiril Kirilov <cybercop_montana@abv.bg>\n"
-"Language-Team: Bulgarian (http://www.transifex.com/projects/p/xfce4-"
+"Language-Team: Bulgarian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/bg/)\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
@@ -61,7 +61,7 @@ msgstr "Непрозрачност на фона:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
-msgstr "Преглед на файловата система за избор на потребителска команда"
+msgstr "Преглед на файловата система за избор на потребителска команда."
 
 #: ../panel-plugin/configuration-dialog.cpp:840
 msgid "C_ommand:"
@@ -97,7 +97,7 @@ msgstr "Редактиране на профил"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Failed to edit profile."
-msgstr "Не може да бъде редактиран профила"
+msgstr "Не може да бъде редактиран профила."
 
 #: ../panel-plugin/launcher.cpp:273 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
@@ -307,7 +307,7 @@ msgstr "Неуспешно добавяне на стартер в панела.
 #: ../panel-plugin/configuration-dialog.cpp:466
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "Не може да бъде отворен следния адрес: %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:549
 msgid "Use a single _panel row"
