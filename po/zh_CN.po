@@ -193,7 +193,7 @@ msgstr "面板按钮"
 
 #: ../panel-plugin/configuration-dialog.cpp:767
 msgid "Pattern"
-msgstr "图案"
+msgstr "模式"
 
 #: ../panel-plugin/configuration-dialog.cpp:653
 msgid "Position _search entry next to panel button"
@@ -357,11 +357,11 @@ msgstr "锁定屏幕 (_L)"
 
 #: ../panel-plugin/configuration-dialog.cpp:828
 msgid "_Pattern:"
-msgstr "图案 (_P): "
+msgstr "模式 (_P): "
 
 #: ../panel-plugin/configuration-dialog.cpp:852
 msgid "_Regular expression"
-msgstr "一般表达式 (_R)"
+msgstr "正则表达式 (_R)"
 
 #: ../panel-plugin/configuration-dialog.cpp:523
 msgid "_Title:"
