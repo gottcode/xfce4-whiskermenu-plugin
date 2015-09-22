@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2104 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014, 2015 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -122,6 +122,7 @@ Settings::Settings() :
 	command[CommandProfile] = new Command("avatar-default", _("Edit _Profile"), "mugshot", _("Failed to edit profile."));
 
 	search_actions.push_back(new SearchAction(_("Man Pages"), "#", "exo-open --launch TerminalEmulator man %s", false, true));
+	search_actions.push_back(new SearchAction(_("Web Search"), "?", "exo-open --launch WebBrowser https://duckduckgo.com/?q=%u", false, true));
 	search_actions.push_back(new SearchAction(_("Wikipedia"), "!w", "exo-open --launch WebBrowser https://en.wikipedia.org/wiki/%u", false, true));
 	search_actions.push_back(new SearchAction(_("Run in Terminal"), "!", "exo-open --launch TerminalEmulator %s", false, true));
 	search_actions.push_back(new SearchAction(_("Open URI"), "^(file|http|https):\\/\\/(.*)$", "exo-open \\0", true, true));
