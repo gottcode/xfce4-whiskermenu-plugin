@@ -28,7 +28,7 @@ using namespace WhiskerMenu;
 
 RunAction::RunAction()
 {
-	set_icon("gtk-execute");
+	set_icon("system-run");
 }
 
 //-----------------------------------------------------------------------------
