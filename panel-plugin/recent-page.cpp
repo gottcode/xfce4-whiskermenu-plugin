@@ -54,7 +54,7 @@ RecentPage::~RecentPage()
 
 void RecentPage::add(Launcher* launcher)
 {
-	if (!launcher)
+	if (!wm_settings->recent_items_max || !launcher)
 	{
 		return;
 	}
@@ -109,7 +109,7 @@ void RecentPage::enforce_item_count()
 	}
 
 	GtkListStore* store = GTK_LIST_STORE(get_view()->get_model());
-	for (size_t i = wm_settings->recent.size() - 1, end = wm_settings->recent_items_max; i >= end; --i)
+	for (ssize_t i = wm_settings->recent.size() - 1, end = wm_settings->recent_items_max; i >= end; --i)
 	{
 		Launcher* launcher = get_window()->get_applications()->get_application(wm_settings->recent[i]);
 		if (launcher)

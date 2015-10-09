@@ -561,6 +561,9 @@ void WhiskerMenu::Window::show(GtkWidget* parent, bool horizontal)
 		}
 	}
 
+	// Make sure recent button is only visible when tracked
+	gtk_widget_set_visible(GTK_WIDGET(m_recent_button->get_button()), wm_settings->recent_items_max);
+
 	// Show window
 	gtk_widget_show(GTK_WIDGET(m_window));
 	gtk_window_move(m_window, m_geometry.x, m_geometry.y);

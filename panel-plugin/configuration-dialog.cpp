@@ -250,6 +250,12 @@ void ConfigurationDialog::recent_items_max_changed(GtkSpinButton* button)
 {
 	wm_settings->recent_items_max = gtk_spin_button_get_value_as_int(button);
 	wm_settings->set_modified();
+	const bool active = wm_settings->recent_items_max;
+	gtk_widget_set_sensitive(GTK_WIDGET(m_display_recent), active);
+	if (!active)
+	{
+		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_display_recent), false);
+	}
 }
 
 //-----------------------------------------------------------------------------
@@ -683,7 +689,7 @@ GtkWidget* ConfigurationDialog::init_behavior_tab()
 	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
 	gtk_table_attach(recent_table, label, 0, 1, 0, 1, GTK_FILL, GtkAttachOptions(GTK_EXPAND | GTK_FILL), 0, 0);
 
-	m_recent_items_max = gtk_spin_button_new_with_range(5, 100, 1);
+	m_recent_items_max = gtk_spin_button_new_with_range(0, 100, 1);
 	gtk_table_attach_defaults(recent_table, m_recent_items_max, 1, 2, 0, 1);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_recent_items_max);
 	gtk_spin_button_set_value(GTK_SPIN_BUTTON(m_recent_items_max), wm_settings->recent_items_max);
@@ -699,6 +705,7 @@ GtkWidget* ConfigurationDialog::init_behavior_tab()
 	m_display_recent = gtk_check_button_new_with_mnemonic(_("Display by _default"));
 	gtk_table_attach_defaults(recent_table, m_display_recent, 0, 2, 2, 3);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_display_recent), wm_settings->display_recent);
+	gtk_widget_set_sensitive(GTK_WIDGET(m_display_recent), wm_settings->recent_items_max);
 	g_signal_connect_slot(m_display_recent, "toggled", &ConfigurationDialog::toggle_display_recent, this);
 
 	return page;

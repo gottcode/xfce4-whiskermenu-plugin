@@ -180,9 +180,9 @@ void Settings::load(char* file)
 
 	load_hierarchy = xfce_rc_read_bool_entry(rc, "load-hierarchy", load_hierarchy);
 
-	recent_items_max = std::max(5, xfce_rc_read_int_entry(rc, "recent-items-max", recent_items_max));
+	recent_items_max = std::max(0, xfce_rc_read_int_entry(rc, "recent-items-max", recent_items_max));
 	favorites_in_recent = xfce_rc_read_bool_entry(rc, "favorites-in-recent", favorites_in_recent);
-	display_recent = xfce_rc_read_bool_entry(rc, "display-recent-default", display_recent);
+	display_recent = xfce_rc_read_bool_entry(rc, "display-recent-default", display_recent) && recent_items_max;
 
 	position_search_alternate = xfce_rc_read_bool_entry(rc, "position-search-alternate", position_search_alternate);
 	position_commands_alternate = xfce_rc_read_bool_entry(rc, "position-commands-alternate", position_commands_alternate) && position_search_alternate;
