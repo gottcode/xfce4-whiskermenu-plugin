@@ -80,7 +80,7 @@ guint RunAction::search(const Query& query)
 	g_free(display_name);
 
 	// Sort after matches in names and before matches in executables
-	return 0x801;
+	return 0xFFF;
 }
 
 //-----------------------------------------------------------------------------
