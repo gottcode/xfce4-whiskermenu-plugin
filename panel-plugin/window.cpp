@@ -741,8 +741,13 @@ gboolean WhiskerMenu::Window::on_key_press_event_after(GtkWidget* widget, GdkEve
 	GtkWidget* search_entry = GTK_WIDGET(m_search_entry);
 	if ((widget != search_entry) && (gtk_window_get_focus(m_window) != search_entry))
 	{
+		GdkEventKey* key_event = reinterpret_cast<GdkEventKey*>(event);
+		if (key_event->is_modifier)
+		{
+			return false;
+		}
 		gtk_widget_grab_focus(search_entry);
-		gtk_window_propagate_key_event(m_window, reinterpret_cast<GdkEventKey*>(event));
+		gtk_window_propagate_key_event(m_window, key_event);
 		return true;
 	}
 	return false;
