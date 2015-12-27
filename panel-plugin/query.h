@@ -38,12 +38,12 @@ public:
 
 	unsigned int match(const std::string& haystack) const;
 
-	std::string query() const
+	const std::string& query() const
 	{
 		return m_query;
 	}
 
-	std::string raw_query() const
+	const std::string& raw_query() const
 	{
 		return m_raw_query;
 	}
