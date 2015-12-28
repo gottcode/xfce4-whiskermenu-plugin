@@ -187,8 +187,8 @@ void Settings::load(char* file)
 	position_commands_alternate = xfce_rc_read_bool_entry(rc, "position-commands-alternate", position_commands_alternate) && position_search_alternate;
 	position_categories_alternate = xfce_rc_read_bool_entry(rc, "position-categories-alternate", position_categories_alternate);
 
-	menu_width = std::max(300, xfce_rc_read_int_entry(rc, "menu-width", menu_width));
-	menu_height = std::max(400, xfce_rc_read_int_entry(rc, "menu-height", menu_height));
+	menu_width = std::max(10, xfce_rc_read_int_entry(rc, "menu-width", menu_width));
+	menu_height = std::max(10, xfce_rc_read_int_entry(rc, "menu-height", menu_height));
 	menu_opacity = std::min(100, std::max(0, xfce_rc_read_int_entry(rc, "menu-opacity", menu_height)));
 
 	for (int i = 0; i < CountCommands; ++i)
