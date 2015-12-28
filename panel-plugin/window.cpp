@@ -352,53 +352,35 @@ void WhiskerMenu::Window::show(GtkWidget* parent, bool horizontal)
 	int monitor_num = gdk_screen_get_monitor_at_point(screen, parent_x, parent_y);
 	gdk_screen_get_monitor_geometry(screen, monitor_num, &monitor);
 
-	// Find window position
-	bool layout_left = ((2 * (parent_x - monitor.x)) + parent_w) < monitor.width;
-	if (horizontal)
+	// Prevent window from being larger than screen
+	if (m_geometry.width > monitor.width)
 	{
-		m_geometry.x = layout_left ? parent_x : (parent_x + parent_w - m_geometry.width);
+		m_geometry.width = monitor.width;
+		gtk_window_resize(m_window, m_geometry.width, m_geometry.height);
 	}
-	else
+	if (m_geometry.height > monitor.height)
 	{
-		m_geometry.x = layout_left ? (parent_x + parent_w) : (parent_x - m_geometry.width);
+		m_geometry.height = monitor.height;
+		gtk_window_resize(m_window, m_geometry.width, m_geometry.height);
 	}
 
+	// Find window position
+	bool layout_left = ((2 * (parent_x - monitor.x)) + parent_w) < monitor.width;
 	bool layout_bottom = ((2 * (parent_y - monitor.y)) + (parent_h / 2)) > monitor.height;
 	if (horizontal)
 	{
+		m_geometry.x = layout_left ? parent_x : (parent_x + parent_w - m_geometry.width);
 		m_geometry.y = layout_bottom ? (parent_y - m_geometry.height) : (parent_y + parent_h);
 	}
 	else
 	{
+		m_geometry.x = layout_left ? (parent_x + parent_w) : (parent_x - m_geometry.width);
 		m_geometry.y = layout_bottom ? (parent_y + parent_h - m_geometry.height) : parent_y;
 	}
 
 	// Prevent window from leaving screen
-	int monitor_r = monitor.x + monitor.width;
-	if (m_geometry.x < monitor.x)
-	{
-		m_geometry.width += m_geometry.x - monitor.x;
-		m_geometry.x = monitor.x;
-		gtk_window_resize(GTK_WINDOW(m_window), m_geometry.width, m_geometry.height);
-	}
-	else if ((m_geometry.x + m_geometry.width) > monitor_r)
-	{
-		m_geometry.width = monitor_r - m_geometry.x;
-		gtk_window_resize(GTK_WINDOW(m_window), m_geometry.width, m_geometry.height);
-	}
-
-	int monitor_b = monitor.y + monitor.height;
-	if (m_geometry.y < monitor.y)
-	{
-		m_geometry.height += m_geometry.y - monitor.y;
-		m_geometry.y = monitor.y;
-		gtk_window_resize(GTK_WINDOW(m_window), m_geometry.width, m_geometry.height);
-	}
-	else if ((m_geometry.y + m_geometry.height) > monitor_b)
-	{
-		m_geometry.height = monitor_b - m_geometry.y;
-		gtk_window_resize(GTK_WINDOW(m_window), m_geometry.width, m_geometry.height);
-	}
+	m_geometry.x = CLAMP(m_geometry.x, monitor.x, monitor.x + monitor.width - m_geometry.width);
+	m_geometry.y = CLAMP(m_geometry.y, monitor.y, monitor.y + monitor.height - m_geometry.height);
 
 	// Move window
 	gtk_window_move(m_window, m_geometry.x, m_geometry.y);
