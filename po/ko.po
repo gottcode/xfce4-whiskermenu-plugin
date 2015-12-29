@@ -1,0 +1,370 @@
+# Korean translation of xfce4-whiskermenu-plugin.
+# Copyright (C) 2015 Graeme Gott
+# This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
+#
+# Translators:
+# 박정규(Jung Kyu Park) <bagjunggyu@gmail.com>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: Whisker Menu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-02-20 23:57+0000\n"
+"PO-Revision-Date: 2015-09-29 15:29+0000\n"
+"Last-Translator: 박정규(Jung Kyu Park) <bagjunggyu@gmail.com>\n"
+"Language-Team: Korean (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/ko/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ko\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../panel-plugin/configuration-dialog.cpp:782
+msgid "Add action"
+msgstr "설정 추가"
+
+#: ../panel-plugin/page.cpp:214
+msgid "Add to Desktop"
+msgstr "데스크톱에 추가"
+
+#: ../panel-plugin/page.cpp:199
+msgid "Add to Favorites"
+msgstr "즐겨찾기에 추가"
+
+#: ../panel-plugin/page.cpp:218
+msgid "Add to Panel"
+msgstr "패널에 추가"
+
+#: ../panel-plugin/category.cpp:59
+msgid "All"
+msgstr "모두 보기"
+
+#: ../panel-plugin/settings.cpp:117
+msgid "All _Settings"
+msgstr "전체 설정"
+
+#: ../panel-plugin/plugin.cpp:393
+msgid "Alternate application launcher for Xfce"
+msgstr "Xfce 용 다른 런처 프로그램"
+
+#: ../panel-plugin/configuration-dialog.cpp:682
+msgid "Amount of _items:"
+msgstr "표시할 항목 수"
+
+#: ../panel-plugin/plugin.cpp:217
+msgid "Applications"
+msgstr "프로그램"
+
+#: ../panel-plugin/configuration-dialog.cpp:616
+msgid "Background opacit_y:"
+msgstr "배경 화면 불투명도:"
+
+#: ../panel-plugin/command-edit.cpp:49
+msgid "Browse the file system to choose a custom command."
+msgstr "사용자 지정 명령어를 설정하기 위해 파일 시스템을 둘러봅니다."
+
+#: ../panel-plugin/configuration-dialog.cpp:840
+msgid "C_ommand:"
+msgstr "명령어:"
+
+#: ../panel-plugin/configuration-dialog.cpp:601
+msgid "Categ_ory icon size:"
+msgstr "카테고리 아이콘 크기:"
+
+#: ../panel-plugin/recent-page.cpp:148
+msgid "Clear Recently Used"
+msgstr "최근 사용 기록 지우기"
+
+#: ../panel-plugin/plugin.cpp:394
+msgid "Copyright © 2013-2015 Graeme Gott"
+msgstr "Copyright © 2013-2015 Graeme Gott"
+
+#: ../panel-plugin/configuration-dialog.cpp:811
+msgid "Details"
+msgstr "자세한 내용"
+
+#: ../panel-plugin/configuration-dialog.cpp:509
+msgid "Di_splay:"
+msgstr "보기"
+
+#: ../panel-plugin/configuration-dialog.cpp:699
+msgid "Display by _default"
+msgstr "기본 보기"
+
+#: ../panel-plugin/settings.cpp:122
+msgid "Edit _Profile"
+msgstr "프로필 편집"
+
+#: ../panel-plugin/settings.cpp:122
+msgid "Failed to edit profile."
+msgstr "프로필 편집을 못 했습니다."
+
+#: ../panel-plugin/launcher.cpp:273 ../panel-plugin/run-action.cpp:41
+#: ../panel-plugin/search-action.cpp:188
+#, c-format
+msgid "Failed to execute command \"%s\"."
+msgstr "명령어 \"%s\" 실행을 못 했습니다."
+
+#: ../panel-plugin/settings.cpp:121
+msgid "Failed to launch menu editor."
+msgstr "메뉴 에디터 실행을 못 했습니다."
+
+#: ../panel-plugin/settings.cpp:118
+msgid "Failed to lock screen."
+msgstr "화면 잠그기를 못 했습니다."
+
+#: ../panel-plugin/settings.cpp:120
+msgid "Failed to log out."
+msgstr "로그아웃을 못 했습니다."
+
+#: ../panel-plugin/settings.cpp:117
+msgid "Failed to open settings manager."
+msgstr "설정 관리자를 실행하지 못 했습니다."
+
+#: ../panel-plugin/settings.cpp:119
+msgid "Failed to switch users."
+msgstr "사용자 전환을 못 했습니다."
+
+#: ../panel-plugin/window.cpp:120
+msgid "Favorites"
+msgstr "즐겨찾기"
+
+#: ../panel-plugin/configuration-dialog.cpp:514
+msgid "Icon"
+msgstr "아이콘"
+
+#: ../panel-plugin/configuration-dialog.cpp:516
+msgid "Icon and title"
+msgstr "아이콘과 제목"
+
+#: ../panel-plugin/configuration-dialog.cpp:693
+msgid "Ignore _favorites"
+msgstr "즐겨찾기 생략하기"
+
+#: ../panel-plugin/configuration-dialog.cpp:585
+msgid "Ite_m icon size:"
+msgstr "항목 아이콘 크기:"
+
+#: ../panel-plugin/icon-size.cpp:54
+msgid "Large"
+msgstr "크게"
+
+#: ../panel-plugin/icon-size.cpp:55
+msgid "Larger"
+msgstr "더 크게"
+
+#: ../panel-plugin/settings.cpp:120
+msgid "Log _Out"
+msgstr "로그아웃"
+
+#: ../panel-plugin/settings.cpp:124
+msgid "Man Pages"
+msgstr "사용 설명"
+
+#: ../panel-plugin/configuration-dialog.cpp:562
+#: ../panel-plugin/configuration-dialog.cpp:642
+msgid "Menu"
+msgstr "메뉴"
+
+#: ../panel-plugin/configuration-dialog.cpp:816
+msgid "Nam_e:"
+msgstr "이름:"
+
+#: ../panel-plugin/configuration-dialog.cpp:762
+msgid "Name"
+msgstr "이름"
+
+#: ../panel-plugin/icon-size.cpp:49
+msgid "None"
+msgstr "없음"
+
+#: ../panel-plugin/icon-size.cpp:53
+msgid "Normal"
+msgstr "기본"
+
+#: ../panel-plugin/settings.cpp:127
+msgid "Open URI"
+msgstr "URI 열기"
+
+#: ../panel-plugin/configuration-dialog.cpp:504
+msgid "Panel Button"
+msgstr "패널 버튼"
+
+#: ../panel-plugin/configuration-dialog.cpp:767
+msgid "Pattern"
+msgstr "패턴"
+
+#: ../panel-plugin/configuration-dialog.cpp:653
+msgid "Position _search entry next to panel button"
+msgstr "패널 버튼 옆에 올 검색 창 입력 위치"
+
+#: ../panel-plugin/configuration-dialog.cpp:666
+msgid "Position cate_gories next to panel button"
+msgstr "패널 버튼 옆에 올 카테고리 위치"
+
+#: ../panel-plugin/configuration-dialog.cpp:659
+msgid "Position commands next to search _entry"
+msgstr "검색 창 옆에 올 명령어 위치"
+
+#: ../panel-plugin/configuration-dialog.cpp:677 ../panel-plugin/window.cpp:126
+msgid "Recently Used"
+msgstr "최근 사용 기록"
+
+#: ../panel-plugin/page.cpp:207
+msgid "Remove From Favorites"
+msgstr "즐겨찾기에서 제거"
+
+#: ../panel-plugin/configuration-dialog.cpp:406
+#, c-format
+msgid "Remove action \"%s\"?"
+msgstr "\"%s\" 설정을 제거할까요?"
+
+#: ../panel-plugin/configuration-dialog.cpp:791
+msgid "Remove selected action"
+msgstr "선택한 설정 빼기"
+
+#: ../panel-plugin/run-action.cpp:71
+#, c-format
+msgid "Run %s"
+msgstr "%s 실행"
+
+#: ../panel-plugin/settings.cpp:126
+msgid "Run in Terminal"
+msgstr "터미널에서 실행"
+
+#: ../panel-plugin/configuration-dialog.cpp:86
+msgid "Search Actio_ns"
+msgstr "검색 설정"
+
+#: ../panel-plugin/search-action.cpp:261
+msgid "Search Action"
+msgstr "검색 설정"
+
+#: ../panel-plugin/configuration-dialog.cpp:119
+msgid "Select An Icon"
+msgstr "아이콘 선택"
+
+#: ../panel-plugin/command-edit.cpp:64
+msgid "Select Command"
+msgstr "명령어 선택"
+
+#: ../panel-plugin/whiskermenu.desktop.in.h:2
+msgid "Show a menu to easily access installed applications"
+msgstr "설치된 프로그램에 쉽게 접근하도록 메뉴 보이기"
+
+#: ../panel-plugin/configuration-dialog.cpp:573
+msgid "Show application _descriptions"
+msgstr "프로그램 설명 보이기"
+
+#: ../panel-plugin/configuration-dialog.cpp:567
+msgid "Show generic application _names"
+msgstr "프로그램 전체 이름 보이기"
+
+#: ../panel-plugin/configuration-dialog.cpp:579
+msgid "Show menu hie_rarchy"
+msgstr "메뉴 구성 보이기"
+
+#: ../panel-plugin/icon-size.cpp:52
+msgid "Small"
+msgstr "작게"
+
+#: ../panel-plugin/icon-size.cpp:51
+msgid "Smaller"
+msgstr "더 작게"
+
+#: ../panel-plugin/favorites-page.cpp:129
+msgid "Sort Alphabetically A-Z"
+msgstr "알파벳순으로 정렬 A-Z"
+
+#: ../panel-plugin/favorites-page.cpp:135
+msgid "Sort Alphabetically Z-A"
+msgstr "알파벳순으로 정렬 Z-A"
+
+#: ../panel-plugin/settings.cpp:119
+msgid "Switch _Users"
+msgstr "사용자 전환"
+
+#: ../panel-plugin/configuration-dialog.cpp:647
+msgid "Switch categories by _hovering"
+msgstr "호버링으로 카테고리 바꾸기"
+
+#: ../panel-plugin/configuration-dialog.cpp:405
+msgid "The action will be deleted permanently."
+msgstr "설정값이 완전히 제거됩니다."
+
+#: ../panel-plugin/configuration-dialog.cpp:515
+msgid "Title"
+msgstr "제목"
+
+#: ../panel-plugin/page.cpp:317
+msgid "Unable to add launcher to desktop."
+msgstr "데스크톱에 런처를 더할 수 없습니다."
+
+#: ../panel-plugin/page.cpp:356 ../panel-plugin/page.cpp:365
+msgid "Unable to add launcher to panel."
+msgstr "패널에 런처를 더할 수 없습니다."
+
+#: ../panel-plugin/configuration-dialog.cpp:466
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "다음 주소를 열 수 없습니다: %s"
+
+#: ../panel-plugin/configuration-dialog.cpp:549
+msgid "Use a single _panel row"
+msgstr "한 줄 패널 사용하기"
+
+#: ../panel-plugin/icon-size.cpp:56
+msgid "Very Large"
+msgstr "매우 크게"
+
+#: ../panel-plugin/icon-size.cpp:50
+msgid "Very Small"
+msgstr "매우 작게"
+
+#: ../panel-plugin/configuration-dialog.cpp:70
+#: ../panel-plugin/whiskermenu.desktop.in.h:1
+msgid "Whisker Menu"
+msgstr "휘스커 메뉴"
+
+#: ../panel-plugin/settings.cpp:125
+msgid "Wikipedia"
+msgstr "위키피디아"
+
+#: ../panel-plugin/configuration-dialog.cpp:83
+msgid "_Appearance"
+msgstr "모양"
+
+#: ../panel-plugin/configuration-dialog.cpp:84
+msgid "_Behavior"
+msgstr "동작"
+
+#: ../panel-plugin/configuration-dialog.cpp:85
+msgid "_Commands"
+msgstr "명령어"
+
+#: ../panel-plugin/settings.cpp:121
+msgid "_Edit Applications"
+msgstr "프로그램 편집"
+
+#: ../panel-plugin/configuration-dialog.cpp:534
+msgid "_Icon:"
+msgstr "아이콘"
+
+#: ../panel-plugin/settings.cpp:118
+msgid "_Lock Screen"
+msgstr "화면 잠그기"
+
+#: ../panel-plugin/configuration-dialog.cpp:828
+msgid "_Pattern:"
+msgstr "패턴"
+
+#: ../panel-plugin/configuration-dialog.cpp:852
+msgid "_Regular expression"
+msgstr "일반 표현"
+
+#: ../panel-plugin/configuration-dialog.cpp:523
+msgid "_Title:"
+msgstr "제목"
+
+#: ../panel-plugin/plugin.cpp:398
+msgid "translator-credits"
+msgstr "번역가 정보"
