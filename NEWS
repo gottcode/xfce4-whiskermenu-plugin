@@ -1,3 +1,12 @@
+1.5.2
+=====
+- Fix modifier keys resetting focus to search entry. (bug #12378)
+- Fix limited input length for search actions. (bug #12381)
+- Fix menu shrinking unnecessarily. (bug #12246)
+- Fix minimum window size.
+- Translation updates: Chinese (China), Hungarian, Korean, Lithuanian,
+  Romanian.
+
 1.5.1
 =====
 - Fix window being draggable. (bug #11908)
