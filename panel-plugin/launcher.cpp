@@ -91,7 +91,7 @@ static void replace_with_quoted_string(std::string& command, size_t& index, cons
 
 //-----------------------------------------------------------------------------
 
-static void replace_with_quoted_string(std::string& command, size_t& index, gchar* unquoted)
+static void replace_and_free_with_quoted_string(std::string& command, size_t& index, gchar* unquoted)
 {
 	replace_with_quoted_string(command, index, unquoted);
 	g_free(unquoted);
@@ -227,7 +227,7 @@ void Launcher::run(GdkScreen* screen) const
 				break;
 
 			case 'k':
-				replace_with_quoted_string(command, i, garcon_menu_item_get_uri(m_item));
+				replace_and_free_with_quoted_string(command, i, garcon_menu_item_get_uri(m_item));
 				length = command.length() - 1;
 				break;
 
