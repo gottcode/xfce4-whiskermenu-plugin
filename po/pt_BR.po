@@ -5,6 +5,7 @@
 # Translators:
 # fabioluciano <fabio@naoimporta.com>, 2013
 # holmeslinux <holmes_holmes@live.com>, 2014
+# fabioluciano <fabio@naoimporta.com>, 2016
 # brk0_0, 2013
 msgid ""
 msgstr ""
@@ -27,7 +28,7 @@ msgstr "Adicionar ação"
 
 #: ../panel-plugin/page.cpp:214
 msgid "Add to Desktop"
-msgstr "Adicionar à área de trabalho"
+msgstr "Adicionar à Área de trabalho"
 
 #: ../panel-plugin/page.cpp:199
 msgid "Add to Favorites"
@@ -35,7 +36,7 @@ msgstr "Adicionar aos Favoritos"
 
 #: ../panel-plugin/page.cpp:218
 msgid "Add to Panel"
-msgstr "Adicionar ao painel"
+msgstr "Adicionar ao Painel"
 
 #: ../panel-plugin/category.cpp:59
 msgid "All"
@@ -43,23 +44,23 @@ msgstr "Tudo"
 
 #: ../panel-plugin/settings.cpp:117
 msgid "All _Settings"
-msgstr "Todas _Configurações"
+msgstr "Todas as _Configurações"
 
 #: ../panel-plugin/plugin.cpp:393
-msgid "Alternate application launcher for Xfce"
+msgid "Alternar o lançador de aplicações do Xfce"
 msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:682
-msgid "Amount of _items:"
+msgid "Quantidade de _items:"
 msgstr ""
 
 #: ../panel-plugin/plugin.cpp:217
 #, fuzzy
 msgid "Applications"
-msgstr "Menu de aplicativos"
+msgstr "Aplicações"
 
 #: ../panel-plugin/configuration-dialog.cpp:616
-msgid "Background opacit_y:"
+msgid "Opac_idade do fundo:"
 msgstr ""
 
 #: ../panel-plugin/command-edit.cpp:49
@@ -76,7 +77,7 @@ msgstr "Tamanho do ícone da categ_oria"
 
 #: ../panel-plugin/recent-page.cpp:148
 msgid "Clear Recently Used"
-msgstr "Limpar os usados recentemente"
+msgstr "Limpar os Usados Recentemente"
 
 #: ../panel-plugin/plugin.cpp:394
 msgid "Copyright © 2013-2015 Graeme Gott"
@@ -97,12 +98,12 @@ msgstr "Mostrar recentemente _usados por padrão"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Edit _Profile"
-msgstr ""
+msgstr "Editar _Perfil"
 
 #: ../panel-plugin/settings.cpp:122
 #, fuzzy
 msgid "Failed to edit profile."
-msgstr "Falha ao alternar usuários."
+msgstr "Falha ao atualizar o perfil."
 
 #: ../panel-plugin/launcher.cpp:273 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
@@ -149,7 +150,7 @@ msgstr "Favoritos"
 
 #: ../panel-plugin/configuration-dialog.cpp:585
 msgid "Ite_m icon size:"
-msgstr "Tamanho do Ícone do ítem"
+msgstr "Tamanho do Ícone do item"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Large"
@@ -165,7 +166,7 @@ msgstr "Log_Out"
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Man Pages"
-msgstr "Página principal"
+msgstr "Páginas do Manual"
 
 #: ../panel-plugin/configuration-dialog.cpp:562
 #: ../panel-plugin/configuration-dialog.cpp:642
@@ -249,7 +250,7 @@ msgstr "Pesquisar Ações"
 
 #: ../panel-plugin/configuration-dialog.cpp:119
 msgid "Select An Icon"
-msgstr "Selecione um icone"
+msgstr "Selecione um ícone"
 
 #: ../panel-plugin/command-edit.cpp:64
 msgid "Select Command"
@@ -265,11 +266,11 @@ msgstr "Mostrar descrição do aplicativo"
 
 #: ../panel-plugin/configuration-dialog.cpp:567
 msgid "Show generic application _names"
-msgstr "Mostrar aplicação_ nomes genéricas"
+msgstr "Mostrar nomes genéricos das aplicações_"
 
 #: ../panel-plugin/configuration-dialog.cpp:579
 msgid "Show menu hie_rarchy"
-msgstr "Mostrar hie_rarquia menu"
+msgstr "Mostrar a hie_rarquia do menu"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -314,11 +315,11 @@ msgstr "Impossível adicionar o lançador ao painel"
 #: ../panel-plugin/configuration-dialog.cpp:466
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "Não foi possível abrir a seguinte url: %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:549
 msgid "Use a single _panel row"
-msgstr ""
+msgstr "Utiliza uma linha simples do _painel"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
