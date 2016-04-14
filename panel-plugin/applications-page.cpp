@@ -69,18 +69,6 @@ ApplicationsPage::ApplicationsPage(Window* window) :
 ApplicationsPage::~ApplicationsPage()
 {
 	clear_applications();
-
-	// Free menu
-	if (G_LIKELY(m_garcon_menu))
-	{
-		g_object_unref(m_garcon_menu);
-	}
-
-	// Free settings menu
-	if (G_LIKELY(m_garcon_settings_menu))
-	{
-		g_object_unref(m_garcon_settings_menu);
-	}
 }
 
 //-----------------------------------------------------------------------------
@@ -217,6 +205,20 @@ void ApplicationsPage::clear_applications()
 		delete i->second;
 	}
 	m_items.clear();
+
+	// Free menu
+	if (G_LIKELY(m_garcon_menu))
+	{
+		g_object_unref(m_garcon_menu);
+		m_garcon_menu = NULL;
+	}
+
+	// Free settings menu
+	if (G_LIKELY(m_garcon_settings_menu))
+	{
+		g_object_unref(m_garcon_settings_menu);
+		m_garcon_settings_menu = NULL;
+	}
 }
 
 //-----------------------------------------------------------------------------
@@ -224,46 +226,40 @@ void ApplicationsPage::clear_applications()
 void ApplicationsPage::load_contents()
 {
 	// Create menu
-	if (!m_garcon_menu)
+	if (wm_settings->custom_menu_file.empty())
 	{
-		if (wm_settings->custom_menu_file.empty())
-		{
-			m_garcon_menu = garcon_menu_new_applications();
-		}
-		else
-		{
-			m_garcon_menu = garcon_menu_new_for_path(wm_settings->custom_menu_file.c_str());
-		}
-
-		if (!m_garcon_menu)
-		{
-			m_load_status = STATUS_INVALID;
-			return;
-		}
-
-		g_signal_connect_slot<GarconMenu*>(m_garcon_menu, "reload-required", &ApplicationsPage::invalidate_applications, this);
+		m_garcon_menu = garcon_menu_new_applications();
 	}
-
-	// Create settings menu
-	if (!m_garcon_settings_menu)
+	else
 	{
-		gchar* path = xfce_resource_lookup(XFCE_RESOURCE_CONFIG, "menus/xfce-settings-manager.menu");
-		m_garcon_settings_menu = garcon_menu_new_for_path(path != NULL ? path : SETTINGS_MENUFILE);
-		g_free(path);
-
-		if (m_garcon_settings_menu)
-		{
-			g_signal_connect_slot<GarconMenu*>(m_garcon_settings_menu, "reload-required", &ApplicationsPage::invalidate_applications, this);
-		}
+		m_garcon_menu = garcon_menu_new_for_path(wm_settings->custom_menu_file.c_str());
 	}
 
 	// Load menu
-	if (!garcon_menu_load(m_garcon_menu, NULL, NULL))
+	if (m_garcon_menu && !garcon_menu_load(m_garcon_menu, NULL, NULL))
+	{
+		g_object_unref(m_garcon_menu);
+		m_garcon_menu = NULL;
+	}
+
+	if (!m_garcon_menu)
 	{
 		m_load_status = STATUS_INVALID;
 		return;
 	}
+
+	g_signal_connect_slot<GarconMenu*>(m_garcon_menu, "reload-required", &ApplicationsPage::invalidate_applications, this);
 	load_menu(m_garcon_menu, NULL);
+
+	// Create settings menu
+	gchar* path = xfce_resource_lookup(XFCE_RESOURCE_CONFIG, "menus/xfce-settings-manager.menu");
+	m_garcon_settings_menu = garcon_menu_new_for_path(path != NULL ? path : SETTINGS_MENUFILE);
+	g_free(path);
+
+	if (m_garcon_settings_menu)
+	{
+		g_signal_connect_slot<GarconMenu*>(m_garcon_settings_menu, "reload-required", &ApplicationsPage::invalidate_applications, this);
+	}
 
 	// Load settings menu
 	if (m_garcon_settings_menu && garcon_menu_load(m_garcon_settings_menu, NULL, NULL))
