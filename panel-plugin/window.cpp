@@ -258,6 +258,12 @@ void WhiskerMenu::Window::hide()
 {
 	gdk_pointer_ungrab(gtk_get_current_event_time());
 
+	// Hide command buttons to remove active border
+	for (int i = 0; i < 4; ++i)
+	{
+		gtk_widget_set_visible(m_commands_button[i], false);
+	}
+
 	// Hide window
 	gtk_widget_hide(GTK_WIDGET(m_window));
 
