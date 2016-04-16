@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# aboutafteragain <aboutafteragain@gmail.com>, 2014
+# aboutafteragain <aboutafteragain@gmail.com>, 2014,2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 23:57+0000\n"
-"PO-Revision-Date: 2014-07-31 21:27+0000\n"
+"PO-Revision-Date: 2016-01-24 23:56+0000\n"
 "Last-Translator: aboutafteragain <aboutafteragain@gmail.com>\n"
-"Language-Team: Basque (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
+"Language-Team: Basque (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/eu/)\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:782
 msgid "Add action"
-msgstr ""
+msgstr "Ekintza gehitu"
 
 #: ../panel-plugin/page.cpp:214
 msgid "Add to Desktop"
@@ -138,9 +138,8 @@ msgid "Icon and title"
 msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:693
-#, fuzzy
 msgid "Ignore _favorites"
-msgstr "Gogokoenetara gehitu"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:585
 msgid "Ite_m icon size:"
@@ -316,20 +315,20 @@ msgstr ""
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
-msgstr ""
+msgstr "Oso Handia "
 
 #: ../panel-plugin/icon-size.cpp:50
 msgid "Very Small"
-msgstr ""
+msgstr "Oso Txikia"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
 msgid "Whisker Menu"
-msgstr ""
+msgstr "Whisker Menua"
 
 #: ../panel-plugin/settings.cpp:125
 msgid "Wikipedia"
-msgstr ""
+msgstr "Wikipedia"
 
 #: ../panel-plugin/configuration-dialog.cpp:83
 msgid "_Appearance"
@@ -349,11 +348,11 @@ msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:534
 msgid "_Icon:"
-msgstr ""
+msgstr "_Ikonoa:"
 
 #: ../panel-plugin/settings.cpp:118
 msgid "_Lock Screen"
-msgstr ""
+msgstr "_Blokeatu pantaila"
 
 #: ../panel-plugin/configuration-dialog.cpp:828
 msgid "_Pattern:"
