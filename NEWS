@@ -1,3 +1,10 @@
+1.5.3
+=====
+- Fix stuck button highlight. (bug #12402)
+- Fix losing categories. (bug #12541)
+- Fix warning about infinite recursion. (bug #12398)
+- Translation updates: Amharic, Basque, Dutch, Hebrew, Icelandic.
+
 1.5.2
 =====
 - Fix modifier keys resetting focus to search entry. (bug #12378)
