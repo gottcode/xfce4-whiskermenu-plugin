@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Pjotr <pjotrvertaalt@gmail.com>, 2013-2015
+# Pjotr <pjotrvertaalt@gmail.com>, 2013-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 23:57+0000\n"
-"PO-Revision-Date: 2015-02-22 15:36+0000\n"
+"PO-Revision-Date: 2016-01-12 06:36+0000\n"
 "Last-Translator: Pjotr <pjotrvertaalt@gmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/nl/)\n"
@@ -53,7 +53,7 @@ msgstr "Hoeveelheid elementen:"
 
 #: ../panel-plugin/plugin.cpp:217
 msgid "Applications"
-msgstr "Toepassingen"
+msgstr "Menu"
 
 #: ../panel-plugin/configuration-dialog.cpp:616
 msgid "Background opacit_y:"
