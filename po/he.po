@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# GenghisKhan <genghiskhan@gmx.ca>, 2013-2015
+# Elishai Eliyahu <e1907@mm.st>, 2016
+# GenghisKhan <genghiskhan@gmx.ca>, 2013-2016
 # GenghisKhan <genghiskhan@gmx.ca>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 23:57+0000\n"
-"PO-Revision-Date: 2015-02-21 06:59+0000\n"
-"Last-Translator: GenghisKhan <genghiskhan@gmx.ca>\n"
+"PO-Revision-Date: 2016-03-10 19:11+0000\n"
+"Last-Translator: Elishai Eliyahu <e1907@mm.st>\n"
 "Language-Team: Hebrew (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/he/)\n"
 "Language: he\n"
@@ -46,7 +47,7 @@ msgstr "כל _ההגדרות"
 
 #: ../panel-plugin/plugin.cpp:393
 msgid "Alternate application launcher for Xfce"
-msgstr "משגר יישומים חלופי עבור Xfce"
+msgstr "מפעיל יישום חלופי ל-Xfce "
 
 #: ../panel-plugin/configuration-dialog.cpp:682
 msgid "Amount of _items:"
@@ -54,7 +55,7 @@ msgstr "כמות _פריטים:"
 
 #: ../panel-plugin/plugin.cpp:217
 msgid "Applications"
-msgstr "אפליקציות"
+msgstr "יישומים"
 
 #: ../panel-plugin/configuration-dialog.cpp:616
 msgid "Background opacit_y:"
@@ -62,7 +63,7 @@ msgstr "א_טימות רקע:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
-msgstr "עיין במערכת הקבצים כדי למצוא פקודה מותאמת."
+msgstr "סייר במערכת הקבצים לבחירת פקודה מותאמת אישית."
 
 #: ../panel-plugin/configuration-dialog.cpp:840
 msgid "C_ommand:"
@@ -70,15 +71,15 @@ msgstr "פ_קודה:"
 
 #: ../panel-plugin/configuration-dialog.cpp:601
 msgid "Categ_ory icon size:"
-msgstr "גודל סמל _קטגוריה:"
+msgstr "גודל איקון _קטגוריה:"
 
 #: ../panel-plugin/recent-page.cpp:148
 msgid "Clear Recently Used"
-msgstr "טהר תפריט בשימוש לאחרונה"
+msgstr "נקה תפריט בשימוש לאחרונה"
 
 #: ../panel-plugin/plugin.cpp:394
 msgid "Copyright © 2013-2015 Graeme Gott"
-msgstr ""
+msgstr "זכות יוצרים 2013-2015 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:811
 msgid "Details"
@@ -90,15 +91,15 @@ msgstr "ת_צוגה:"
 
 #: ../panel-plugin/configuration-dialog.cpp:699
 msgid "Display by _default"
-msgstr "הצג באופן _ברירת מחדל"
+msgstr "הצג לפי _ברירת מחדל"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Edit _Profile"
-msgstr "ערוך _דיוקן"
+msgstr "ערוך _פרופיל"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Failed to edit profile."
-msgstr "נכשל לערוך דיוקן."
+msgstr "נכשל לערוך פרופיל."
 
 #: ../panel-plugin/launcher.cpp:273 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
@@ -108,11 +109,11 @@ msgstr "נכשל לבצע פקודה \"%s\"."
 
 #: ../panel-plugin/settings.cpp:121
 msgid "Failed to launch menu editor."
-msgstr "נכשל לשגר עורך תפריט."
+msgstr "נכשל להפעיל עורך תפריט."
 
 #: ../panel-plugin/settings.cpp:118
 msgid "Failed to lock screen."
-msgstr "נכשל לנעול מרקע."
+msgstr "נכשל לנעול מסך."
 
 #: ../panel-plugin/settings.cpp:120
 msgid "Failed to log out."
@@ -124,7 +125,7 @@ msgstr "נכשל לפתוח מנהל הגדרות."
 
 #: ../panel-plugin/settings.cpp:119
 msgid "Failed to switch users."
-msgstr "נכשל להחליף משתמשים."
+msgstr "נכשל להעביר בין משתמשים."
 
 #: ../panel-plugin/window.cpp:120
 msgid "Favorites"
@@ -132,11 +133,11 @@ msgstr "מועדפים"
 
 #: ../panel-plugin/configuration-dialog.cpp:514
 msgid "Icon"
-msgstr "סמל"
+msgstr "איקון"
 
 #: ../panel-plugin/configuration-dialog.cpp:516
 msgid "Icon and title"
-msgstr "סמל וגם כותרת"
+msgstr "איקון וכותרת"
 
 #: ../panel-plugin/configuration-dialog.cpp:693
 msgid "Ignore _favorites"
@@ -144,7 +145,7 @@ msgstr "התעלם מ_מועדפים"
 
 #: ../panel-plugin/configuration-dialog.cpp:585
 msgid "Ite_m icon size:"
-msgstr "גודל סמל _פריט:"
+msgstr "גודל איקון _פריט:"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Large"
@@ -177,7 +178,7 @@ msgstr "שם"
 
 #: ../panel-plugin/icon-size.cpp:49
 msgid "None"
-msgstr "כלום"
+msgstr "אף אחד"
 
 #: ../panel-plugin/icon-size.cpp:53
 msgid "Normal"
@@ -189,23 +190,23 @@ msgstr "פתח URI"
 
 #: ../panel-plugin/configuration-dialog.cpp:504
 msgid "Panel Button"
-msgstr "לחצן לוח"
+msgstr "כפתור לוח"
 
 #: ../panel-plugin/configuration-dialog.cpp:767
 msgid "Pattern"
-msgstr "תבנית"
+msgstr "דפוס"
 
 #: ../panel-plugin/configuration-dialog.cpp:653
 msgid "Position _search entry next to panel button"
-msgstr "מקם שורת _חיפוש ליד לחצן לוח"
+msgstr "מקם ערך _חיפוש ליד כפתור לוח"
 
 #: ../panel-plugin/configuration-dialog.cpp:666
 msgid "Position cate_gories next to panel button"
-msgstr "מקם ק_טגוריות לצד לחצן לוח"
+msgstr "מקם ק_טגוריות לצד כפתור לוח"
 
 #: ../panel-plugin/configuration-dialog.cpp:659
 msgid "Position commands next to search _entry"
-msgstr "מקם פקודות ליד _שורת חיפוש"
+msgstr "מקם פקודות ליד _ערך חיפוש"
 
 #: ../panel-plugin/configuration-dialog.cpp:677 ../panel-plugin/window.cpp:126
 msgid "Recently Used"
@@ -227,11 +228,11 @@ msgstr "הסרת פעולה נבחרת"
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
 msgid "Run %s"
-msgstr "הרץ %s"
+msgstr "הפעל %s"
 
 #: ../panel-plugin/settings.cpp:126
 msgid "Run in Terminal"
-msgstr "הרץ בתוך מסוף"
+msgstr "הפעל בתוך מסוף"
 
 #: ../panel-plugin/configuration-dialog.cpp:86
 msgid "Search Actio_ns"
@@ -243,7 +244,7 @@ msgstr "פעולת חיפוש"
 
 #: ../panel-plugin/configuration-dialog.cpp:119
 msgid "Select An Icon"
-msgstr "בחר סמל"
+msgstr "בחר איקון"
 
 #: ../panel-plugin/command-edit.cpp:64
 msgid "Select Command"
@@ -283,15 +284,15 @@ msgstr "מיין לפי אלף-בית ת-א"
 
 #: ../panel-plugin/settings.cpp:119
 msgid "Switch _Users"
-msgstr "החלף _משתמשים"
+msgstr "העבר בין _משתמשים"
 
 #: ../panel-plugin/configuration-dialog.cpp:647
 msgid "Switch categories by _hovering"
-msgstr "החלף קטגוריות על ידי _מעבר עליהן"
+msgstr "העבר בין קטגוריות על ידי _מיקום עליהן"
 
 #: ../panel-plugin/configuration-dialog.cpp:405
 msgid "The action will be deleted permanently."
-msgstr "הפעולה תימחק לצמיתות."
+msgstr "הפעולה תימחק באופן קבוע."
 
 #: ../panel-plugin/configuration-dialog.cpp:515
 msgid "Title"
@@ -299,16 +300,16 @@ msgstr "כותרת"
 
 #: ../panel-plugin/page.cpp:317
 msgid "Unable to add launcher to desktop."
-msgstr "לא מסוגל להוסיף משגר לתוך שולחן עבודה."
+msgstr "לא יכול להוסיף מפעיל לשולחן עבודה."
 
 #: ../panel-plugin/page.cpp:356 ../panel-plugin/page.cpp:365
 msgid "Unable to add launcher to panel."
-msgstr "לא מסוגל להוסיף משגר לתוך לוח."
+msgstr "לא יכול להוסיף מפעיל ללוח."
 
 #: ../panel-plugin/configuration-dialog.cpp:466
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "לא מסוגל לפתוח כתובת url להלן: %s"
+msgstr "לא יכול לפתוח כתובת url הבאה: %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:549
 msgid "Use a single _panel row"
@@ -325,7 +326,7 @@ msgstr "קטן מאוד"
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
 msgid "Whisker Menu"
-msgstr "תפריט זיף"
+msgstr "תפריט Whisker"
 
 #: ../panel-plugin/settings.cpp:125
 msgid "Wikipedia"
@@ -349,7 +350,7 @@ msgstr "_ערוך יישומים"
 
 #: ../panel-plugin/configuration-dialog.cpp:534
 msgid "_Icon:"
-msgstr "ס_מל:"
+msgstr "אי_קון:"
 
 #: ../panel-plugin/settings.cpp:118
 msgid "_Lock Screen"
@@ -357,7 +358,7 @@ msgstr "_נעל מסך"
 
 #: ../panel-plugin/configuration-dialog.cpp:828
 msgid "_Pattern:"
-msgstr "_תבנית:"
+msgstr "_דפוס:"
 
 #: ../panel-plugin/configuration-dialog.cpp:852
 msgid "_Regular expression"
@@ -369,4 +370,4 @@ msgstr "_כותרת:"
 
 #: ../panel-plugin/plugin.cpp:398
 msgid "translator-credits"
-msgstr "הינכם מוזמנים להצטרף אל קבוצת התרגום העברית של Xfce"
+msgstr "שבחים-מתרגמים"
