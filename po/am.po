@@ -1,0 +1,371 @@
+# Amharic translation of xfce4-whiskermenu-plugin.
+# Copyright (C) 2015 Graeme Gott
+# This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
+#
+# Translators:
+# samson <sambelet@yahoo.com>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: Whisker Menu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-02-20 23:57+0000\n"
+"PO-Revision-Date: 2016-02-27 20:34+0000\n"
+"Last-Translator: samson <sambelet@yahoo.com>\n"
+"Language-Team: Amharic (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
+"plugin/language/am/)\n"
+"Language: am\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../panel-plugin/configuration-dialog.cpp:782
+msgid "Add action"
+msgstr "ተግባር መጨመሪያ"
+
+#: ../panel-plugin/page.cpp:214
+msgid "Add to Desktop"
+msgstr "ወደ ዴስክቶፕ መጨመሪያ"
+
+#: ../panel-plugin/page.cpp:199
+msgid "Add to Favorites"
+msgstr "ወደ የምወደው መጨመሪያ"
+
+#: ../panel-plugin/page.cpp:218
+msgid "Add to Panel"
+msgstr "ወደ ክፍል መጨመሪያ"
+
+#: ../panel-plugin/category.cpp:59
+msgid "All"
+msgstr "ሁሉንም"
+
+#: ../panel-plugin/settings.cpp:117
+msgid "All _Settings"
+msgstr "ሁሉንም _ማሰናጃዎች "
+
+#: ../panel-plugin/plugin.cpp:393
+msgid "Alternate application launcher for Xfce"
+msgstr "አማራጭ መተግበሪያ ማስጀመሪያ ለ Xfce"
+
+#: ../panel-plugin/configuration-dialog.cpp:682
+msgid "Amount of _items:"
+msgstr "የ _እቃዎች መጠን:"
+
+#: ../panel-plugin/plugin.cpp:217
+msgid "Applications"
+msgstr "መተግበሪያዎች"
+
+#: ../panel-plugin/configuration-dialog.cpp:616
+msgid "Background opacit_y:"
+msgstr "የ መደብ ግልጽነ_ት: "
+
+#: ../panel-plugin/command-edit.cpp:49
+msgid "Browse the file system to choose a custom command."
+msgstr "የ ፋይል ስርአት መቃኛ የ ትእዛዝ ማስተካከያ ለ መምረጥ"
+
+#: ../panel-plugin/configuration-dialog.cpp:840
+msgid "C_ommand:"
+msgstr "ት_እዛዝ:"
+
+#: ../panel-plugin/configuration-dialog.cpp:601
+msgid "Categ_ory icon size:"
+msgstr "የ ምድ_ብ ምልክት መጠን:"
+
+#: ../panel-plugin/recent-page.cpp:148
+msgid "Clear Recently Used"
+msgstr "በ ቅርብ የተጠቀሙትን ማጽጃ"
+
+#: ../panel-plugin/plugin.cpp:394
+msgid "Copyright © 2013-2015 Graeme Gott"
+msgstr "Copyright © 2013-2015 Graeme Gott"
+
+#: ../panel-plugin/configuration-dialog.cpp:811
+msgid "Details"
+msgstr "ዝርዝሮች"
+
+#: ../panel-plugin/configuration-dialog.cpp:509
+msgid "Di_splay:"
+msgstr "ማሳ_ያ:"
+
+#: ../panel-plugin/configuration-dialog.cpp:699
+msgid "Display by _default"
+msgstr "በ _ነባር ማሳያ"
+
+#: ../panel-plugin/settings.cpp:122
+msgid "Edit _Profile"
+msgstr "_ገጽታ ማረሚያ"
+
+#: ../panel-plugin/settings.cpp:122
+msgid "Failed to edit profile."
+msgstr "ገጽታ ማረም አልተቻለም"
+
+#: ../panel-plugin/launcher.cpp:273 ../panel-plugin/run-action.cpp:41
+#: ../panel-plugin/search-action.cpp:188
+#, c-format
+msgid "Failed to execute command \"%s\"."
+msgstr "ትእዛዝ መፈጸም አልተቻለም \"%s\"."
+
+#: ../panel-plugin/settings.cpp:121
+msgid "Failed to launch menu editor."
+msgstr "የ ዝርዝር ማረሚያ ማስጀመር አልተቻለም"
+
+#: ../panel-plugin/settings.cpp:118
+msgid "Failed to lock screen."
+msgstr "መመልከቻውን መቆለፍ አልተቻለም"
+
+#: ../panel-plugin/settings.cpp:120
+msgid "Failed to log out."
+msgstr "መውጣት አልተቻለም"
+
+#: ../panel-plugin/settings.cpp:117
+msgid "Failed to open settings manager."
+msgstr "የ ማሰናጃ አስተዳዳሪ መክፈት አልተቻለም"
+
+#: ../panel-plugin/settings.cpp:119
+msgid "Failed to switch users."
+msgstr "ተጠቃሚ መቀየር አልተቻለም"
+
+#: ../panel-plugin/window.cpp:120
+msgid "Favorites"
+msgstr "የምወደቸው"
+
+#: ../panel-plugin/configuration-dialog.cpp:514
+msgid "Icon"
+msgstr "ምልክት"
+
+#: ../panel-plugin/configuration-dialog.cpp:516
+msgid "Icon and title"
+msgstr "ምልክት እና አርእስት"
+
+#: ../panel-plugin/configuration-dialog.cpp:693
+msgid "Ignore _favorites"
+msgstr "_የምወዳቸውን መተው"
+
+#: ../panel-plugin/configuration-dialog.cpp:585
+msgid "Ite_m icon size:"
+msgstr "የ እቃዎ_ች ምልክት መጠን: "
+
+#: ../panel-plugin/icon-size.cpp:54
+msgid "Large"
+msgstr "ትልቅ"
+
+#: ../panel-plugin/icon-size.cpp:55
+msgid "Larger"
+msgstr "በጣም ትልቅ"
+
+#: ../panel-plugin/settings.cpp:120
+msgid "Log _Out"
+msgstr "መው_ጫ"
+
+#: ../panel-plugin/settings.cpp:124
+msgid "Man Pages"
+msgstr "ማን ገጾች"
+
+#: ../panel-plugin/configuration-dialog.cpp:562
+#: ../panel-plugin/configuration-dialog.cpp:642
+msgid "Menu"
+msgstr "ዝርዝር"
+
+#: ../panel-plugin/configuration-dialog.cpp:816
+msgid "Nam_e:"
+msgstr "ስ_ም:"
+
+#: ../panel-plugin/configuration-dialog.cpp:762
+msgid "Name"
+msgstr "ስም"
+
+#: ../panel-plugin/icon-size.cpp:49
+msgid "None"
+msgstr "ምንም"
+
+#: ../panel-plugin/icon-size.cpp:53
+msgid "Normal"
+msgstr "መደበኛ"
+
+#: ../panel-plugin/settings.cpp:127
+msgid "Open URI"
+msgstr "URI መክፈቻ"
+
+#: ../panel-plugin/configuration-dialog.cpp:504
+msgid "Panel Button"
+msgstr "የ ክፍል ቁልፍ"
+
+#: ../panel-plugin/configuration-dialog.cpp:767
+msgid "Pattern"
+msgstr "ድግግሞሽ"
+
+#: ../panel-plugin/configuration-dialog.cpp:653
+msgid "Position _search entry next to panel button"
+msgstr "የ _መፈለጊያ ቦታ ማስገቢያ ከ ክፍል ቁልፍ አጠገብ "
+
+#: ../panel-plugin/configuration-dialog.cpp:666
+msgid "Position cate_gories next to panel button"
+msgstr "የ ምድ_ቦች ቦታ ከ ክፍል ቁልፍ አጠገብ "
+
+#: ../panel-plugin/configuration-dialog.cpp:659
+msgid "Position commands next to search _entry"
+msgstr "የ ትእዛዝ ቦታ ከ መፈለጊያ  አጠገብ _ማስገቢያ"
+
+#: ../panel-plugin/configuration-dialog.cpp:677 ../panel-plugin/window.cpp:126
+msgid "Recently Used"
+msgstr "በቅርብ የተጠቀሙት"
+
+#: ../panel-plugin/page.cpp:207
+msgid "Remove From Favorites"
+msgstr "ከምወዳቸው ውስጥ ማስወገጃ"
+
+#: ../panel-plugin/configuration-dialog.cpp:406
+#, c-format
+msgid "Remove action \"%s\"?"
+msgstr "ተግባር ማስወገጃ \"%s\"?"
+
+#: ../panel-plugin/configuration-dialog.cpp:791
+msgid "Remove selected action"
+msgstr "የ ተመረጠውን ተግባር ማስወገጃ"
+
+#: ../panel-plugin/run-action.cpp:71
+#, c-format
+msgid "Run %s"
+msgstr "ማስኬጃ %s"
+
+#: ../panel-plugin/settings.cpp:126
+msgid "Run in Terminal"
+msgstr "በ ተርሚናል ውስጥ ማስኬጃ"
+
+#: ../panel-plugin/configuration-dialog.cpp:86
+msgid "Search Actio_ns"
+msgstr "ተግባሮች መፈለ_ጊያ"
+
+#: ../panel-plugin/search-action.cpp:261
+msgid "Search Action"
+msgstr "ተግባሮች መፈለጊያ"
+
+#: ../panel-plugin/configuration-dialog.cpp:119
+msgid "Select An Icon"
+msgstr "ምልክት ይምረጡ"
+
+#: ../panel-plugin/command-edit.cpp:64
+msgid "Select Command"
+msgstr "ትእዛዝ ይምረጡ"
+
+#: ../panel-plugin/whiskermenu.desktop.in.h:2
+msgid "Show a menu to easily access installed applications"
+msgstr "የ ተገጠሙ መተግበሪያዎች በ ቀላሉ በ ዝርዝር ውስጥ ማሳያ"
+
+#: ../panel-plugin/configuration-dialog.cpp:573
+msgid "Show application _descriptions"
+msgstr "የ መተግበሪያ _መግለጫዎች ማሳያ"
+
+#: ../panel-plugin/configuration-dialog.cpp:567
+msgid "Show generic application _names"
+msgstr "ባጠቃላይ የ መተገበሪያዎች _ስሞች ማሳያ"
+
+#: ../panel-plugin/configuration-dialog.cpp:579
+msgid "Show menu hie_rarchy"
+msgstr "የ ዝርዝር ቅደም _ተከተል ማሳያ"
+
+#: ../panel-plugin/icon-size.cpp:52
+msgid "Small"
+msgstr "ትንሽ"
+
+#: ../panel-plugin/icon-size.cpp:51
+msgid "Smaller"
+msgstr "በጣም ትንሽ"
+
+#: ../panel-plugin/favorites-page.cpp:129
+msgid "Sort Alphabetically A-Z"
+msgstr "መለያ በ ፊደል ቅደም ተከተል A-Z"
+
+#: ../panel-plugin/favorites-page.cpp:135
+msgid "Sort Alphabetically Z-A"
+msgstr "መለያ በ ፊደል ቅደም ተከተል A-Z"
+
+#: ../panel-plugin/settings.cpp:119
+msgid "Switch _Users"
+msgstr "_ተጠቃሚ መቀየሪያ"
+
+#: ../panel-plugin/configuration-dialog.cpp:647
+msgid "Switch categories by _hovering"
+msgstr "ምድቦች በ _ማንሳፈፍ መቀየሪያ"
+
+#: ../panel-plugin/configuration-dialog.cpp:405
+msgid "The action will be deleted permanently."
+msgstr "ተግባሩ በቋሚነት ይጠፋል"
+
+#: ../panel-plugin/configuration-dialog.cpp:515
+msgid "Title"
+msgstr "አርእስት"
+
+#: ../panel-plugin/page.cpp:317
+msgid "Unable to add launcher to desktop."
+msgstr "ወደ ዴስክቶፕ ማስጀመሪያ መጨመር አልተቻለም"
+
+#: ../panel-plugin/page.cpp:356 ../panel-plugin/page.cpp:365
+msgid "Unable to add launcher to panel."
+msgstr "ወደ ክፍል ማስጀመሪያ መጨመር አልተቻለም"
+
+#: ../panel-plugin/configuration-dialog.cpp:466
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "መክፈት አልተቻለም የሚቀጥለውን url: %s"
+
+#: ../panel-plugin/configuration-dialog.cpp:549
+msgid "Use a single _panel row"
+msgstr "ይጠቀሙ ነጠላ የ _ክፍል ረድፍ"
+
+#: ../panel-plugin/icon-size.cpp:56
+msgid "Very Large"
+msgstr "በጣም ትልቅ"
+
+#: ../panel-plugin/icon-size.cpp:50
+msgid "Very Small"
+msgstr "በጣም ትንሽ"
+
+#: ../panel-plugin/configuration-dialog.cpp:70
+#: ../panel-plugin/whiskermenu.desktop.in.h:1
+msgid "Whisker Menu"
+msgstr "የ ዊስከር ዝርዝር"
+
+#: ../panel-plugin/settings.cpp:125
+msgid "Wikipedia"
+msgstr "ዊኪፒዲያ"
+
+#: ../panel-plugin/configuration-dialog.cpp:83
+msgid "_Appearance"
+msgstr "_አቀራረብ"
+
+#: ../panel-plugin/configuration-dialog.cpp:84
+msgid "_Behavior"
+msgstr "_ባህሪ"
+
+#: ../panel-plugin/configuration-dialog.cpp:85
+msgid "_Commands"
+msgstr "_ትእዛዞች"
+
+#: ../panel-plugin/settings.cpp:121
+msgid "_Edit Applications"
+msgstr "መተግበሪያዎች _ማረሚያ"
+
+#: ../panel-plugin/configuration-dialog.cpp:534
+msgid "_Icon:"
+msgstr "_ምልክት:"
+
+#: ../panel-plugin/settings.cpp:118
+msgid "_Lock Screen"
+msgstr "መመልከቻ መቆለፊያ"
+
+#: ../panel-plugin/configuration-dialog.cpp:828
+msgid "_Pattern:"
+msgstr "_ድግግሞሽ:"
+
+#: ../panel-plugin/configuration-dialog.cpp:852
+msgid "_Regular expression"
+msgstr "_መደበኛ አገላለጽ"
+
+#: ../panel-plugin/configuration-dialog.cpp:523
+msgid "_Title:"
+msgstr "_አርእስት: "
+
+#: ../panel-plugin/plugin.cpp:398
+msgid "translator-credits"
+msgstr "ምስጋና-ለ ተርጓሚዎች"
