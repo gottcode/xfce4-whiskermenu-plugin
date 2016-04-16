@@ -2,6 +2,7 @@
 Type=X-XFCE-PanelPlugin
 Encoding=UTF-8
 Name=Whisker Menu
+Name[am]=የ ዊስከር ዝርዝር
 Name[ar]=قائمة Whisker
 Name[ast]=Menú Whisker
 Name[bg]=Whisker Меню
@@ -47,6 +48,7 @@ Name[vi]=Thực đơn Whisker
 Name[zh_CN]=Whisker 菜单
 Name[zh_TW]=Whisker 選單
 Comment=Show a menu to easily access installed applications
+Comment[am]=የ ተገጠሙ መተግበሪያዎች በ ቀላሉ በ ዝርዝር ውስጥ ማሳያ
 Comment[ar]=إظهار قائمة لولوج إلى التطبيقات المثبتة بسهولة
 Comment[ast]=Amuesa un menú p'acceder cenciellamente a les aplicaciones instalaes
 Comment[bg]=Показване на меню за лесен достъп до инсталираните приложения
