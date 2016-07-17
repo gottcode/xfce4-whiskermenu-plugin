@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2014 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -67,6 +67,7 @@ public:
 
 	bool launcher_show_name;
 	bool launcher_show_description;
+	bool launcher_show_tooltip;
 	IconSize launcher_icon_size;
 
 	bool category_hover_activate;

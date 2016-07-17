@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2014, 2015 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014, 2015, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -287,6 +287,22 @@ void WhiskerMenu::Window::show(GtkWidget* parent, bool horizontal)
 	m_favorites->get_view()->reload_icon_size();
 	m_recent->get_view()->reload_icon_size();
 	m_applications->get_view()->reload_icon_size();
+
+	// Handle showing tooltips
+	if (wm_settings->launcher_show_tooltip)
+	{
+		m_search_results->get_view()->show_tooltips();
+		m_favorites->get_view()->show_tooltips();
+		m_recent->get_view()->show_tooltips();
+		m_applications->get_view()->show_tooltips();
+	}
+	else
+	{
+		m_search_results->get_view()->hide_tooltips();
+		m_favorites->get_view()->hide_tooltips();
+		m_recent->get_view()->hide_tooltips();
+		m_applications->get_view()->hide_tooltips();
+	}
 
 	// Make sure commands are valid and visible
 	for (int i = 0; i < Settings::CountCommands; ++i)

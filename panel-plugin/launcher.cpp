@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2014, 2015 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014, 2015, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -172,6 +172,7 @@ Launcher::Launcher(GarconMenuItem* item) :
 	{
 		set_text(g_markup_printf_escaped("%s%s", direction, m_display_name));
 	}
+	set_tooltip(details);
 
 	// Create search text for display name
 	m_search_name = normalize(m_display_name);

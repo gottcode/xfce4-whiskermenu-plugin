@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -77,6 +77,7 @@ guint RunAction::search(const Query& query)
 	{
 		set_text(g_markup_printf_escaped("%s%s", direction, display_name));
 	}
+	set_tooltip(display_name);
 	g_free(display_name);
 
 	// Sort after matches in names and before matches in executables

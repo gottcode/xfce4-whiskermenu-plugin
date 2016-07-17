@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -80,6 +80,7 @@ GtkTreeModel* ApplicationsPage::create_launcher_model(std::vector<std::string>& 
 			LauncherView::N_COLUMNS,
 			G_TYPE_STRING,
 			G_TYPE_STRING,
+			G_TYPE_STRING,
 			G_TYPE_POINTER);
 
 	// Fetch menu items or remove them from list if missing
@@ -97,6 +98,7 @@ GtkTreeModel* ApplicationsPage::create_launcher_model(std::vector<std::string>& 
 					store, NULL, G_MAXINT,
 					LauncherView::COLUMN_ICON, launcher->get_icon(),
 					LauncherView::COLUMN_TEXT, launcher->get_text(),
+					LauncherView::COLUMN_TOOLTIP, launcher->get_tooltip(),
 					LauncherView::COLUMN_LAUNCHER, launcher,
 					-1);
 		}

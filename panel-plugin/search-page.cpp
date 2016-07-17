@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -111,6 +111,7 @@ void SearchPage::set_filter(const gchar* filter)
 			LauncherView::N_COLUMNS,
 			G_TYPE_STRING,
 			G_TYPE_STRING,
+			G_TYPE_STRING,
 			G_TYPE_POINTER);
 	Element* element;
 	for (std::vector<Match>::size_type i = 0, end = search_action_matches.size(); i < end; ++i)
@@ -120,6 +121,7 @@ void SearchPage::set_filter(const gchar* filter)
 				store, NULL, G_MAXINT,
 				LauncherView::COLUMN_ICON, element->get_icon(),
 				LauncherView::COLUMN_TEXT, element->get_text(),
+				LauncherView::COLUMN_TOOLTIP, element->get_tooltip(),
 				LauncherView::COLUMN_LAUNCHER, element,
 				-1);
 	}
@@ -130,6 +132,7 @@ void SearchPage::set_filter(const gchar* filter)
 				store, NULL, G_MAXINT,
 				LauncherView::COLUMN_ICON, element->get_icon(),
 				LauncherView::COLUMN_TEXT, element->get_text(),
+				LauncherView::COLUMN_TOOLTIP, element->get_tooltip(),
 				LauncherView::COLUMN_LAUNCHER, element,
 				-1);
 	}

@@ -90,6 +90,7 @@ void RecentPage::add(Launcher* launcher)
 			store, NULL, 0,
 			LauncherView::COLUMN_ICON, launcher->get_icon(),
 			LauncherView::COLUMN_TEXT, launcher->get_text(),
+			LauncherView::COLUMN_TOOLTIP, launcher->get_tooltip(),
 			LauncherView::COLUMN_LAUNCHER, launcher,
 			-1);
 	wm_settings->recent.insert(wm_settings->recent.begin(), desktop_id);

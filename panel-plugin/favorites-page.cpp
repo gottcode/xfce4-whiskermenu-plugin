@@ -75,6 +75,7 @@ void FavoritesPage::add(Launcher* launcher)
 			store, NULL, G_MAXINT,
 			LauncherView::COLUMN_ICON, launcher->get_icon(),
 			LauncherView::COLUMN_TEXT, launcher->get_text(),
+			LauncherView::COLUMN_TOOLTIP, launcher->get_tooltip(),
 			LauncherView::COLUMN_LAUNCHER, launcher,
 			-1);
 }

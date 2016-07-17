@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -48,10 +48,12 @@ Category::Category(GarconMenuDirectory* directory) :
 {
 	const gchar* icon = NULL;
 	const gchar* text = NULL;
+	const gchar* tooltip = NULL;
 	if (directory)
 	{
 		icon = garcon_menu_directory_get_icon_name(directory);
 		text = garcon_menu_directory_get_name(directory);
+		tooltip = garcon_menu_directory_get_comment(directory);
 	}
 	else
 	{
@@ -60,6 +62,7 @@ Category::Category(GarconMenuDirectory* directory) :
 	}
 	set_icon(icon ? icon : "");
 	set_text(text ? text : "");
+	set_tooltip(tooltip ? tooltip : "");
 }
 
 //-----------------------------------------------------------------------------
@@ -103,6 +106,7 @@ GtkTreeModel* Category::get_model()
 					LauncherView::N_COLUMNS,
 					G_TYPE_STRING,
 					G_TYPE_STRING,
+					G_TYPE_STRING,
 					G_TYPE_POINTER);
 			insert_items(model, NULL, get_icon());
 			m_model = GTK_TREE_MODEL(model);
@@ -111,6 +115,7 @@ GtkTreeModel* Category::get_model()
 		{
 			GtkListStore* model = gtk_list_store_new(
 					LauncherView::N_COLUMNS,
+					G_TYPE_STRING,
 					G_TYPE_STRING,
 					G_TYPE_STRING,
 					G_TYPE_POINTER);
@@ -194,12 +199,14 @@ void Category::insert_items(GtkTreeStore* model, GtkTreeIter* parent, const gcha
 				icon = fallback_icon;
 			}
 			gchar* text = g_markup_escape_text(category->get_text(), -1);
+			const gchar* tooltip = category->get_tooltip();
 
 			GtkTreeIter iter;
 			gtk_tree_store_insert_with_values(model,
 					&iter, parent, INT_MAX,
 					LauncherView::COLUMN_ICON, icon,
 					LauncherView::COLUMN_TEXT, text,
+					LauncherView::COLUMN_TOOLTIP, tooltip,
 					LauncherView::COLUMN_LAUNCHER, NULL,
 					-1);
 			g_free(text);
@@ -212,6 +219,7 @@ void Category::insert_items(GtkTreeStore* model, GtkTreeIter* parent, const gcha
 					NULL, parent, INT_MAX,
 					LauncherView::COLUMN_ICON, launcher->get_icon(),
 					LauncherView::COLUMN_TEXT, launcher->get_text(),
+					LauncherView::COLUMN_TOOLTIP, launcher->get_tooltip(),
 					LauncherView::COLUMN_LAUNCHER, launcher,
 					-1);
 		}
@@ -221,6 +229,7 @@ void Category::insert_items(GtkTreeStore* model, GtkTreeIter* parent, const gcha
 					NULL, parent, INT_MAX,
 					LauncherView::COLUMN_ICON, NULL,
 					LauncherView::COLUMN_TEXT, NULL,
+					LauncherView::COLUMN_TOOLTIP, NULL,
 					LauncherView::COLUMN_LAUNCHER, NULL,
 					-1);
 		}
@@ -241,6 +250,7 @@ void Category::insert_items(GtkListStore* model)
 					NULL, INT_MAX,
 					LauncherView::COLUMN_ICON, launcher->get_icon(),
 					LauncherView::COLUMN_TEXT, launcher->get_text(),
+					LauncherView::COLUMN_TOOLTIP, launcher->get_tooltip(),
 					LauncherView::COLUMN_LAUNCHER, launcher,
 					-1);
 		}
@@ -250,6 +260,7 @@ void Category::insert_items(GtkListStore* model)
 					NULL, INT_MAX,
 					LauncherView::COLUMN_ICON, NULL,
 					LauncherView::COLUMN_TEXT, NULL,
+					LauncherView::COLUMN_TOOLTIP, NULL,
 					LauncherView::COLUMN_LAUNCHER, NULL,
 					-1);
 		}

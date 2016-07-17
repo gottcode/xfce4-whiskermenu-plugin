@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -194,6 +194,20 @@ void LauncherView::set_selection_mode(GtkSelectionMode mode)
 {
 	GtkTreeSelection* selection = gtk_tree_view_get_selection(m_view);
 	gtk_tree_selection_set_mode(selection, mode);
+}
+
+//-----------------------------------------------------------------------------
+
+void LauncherView::hide_tooltips()
+{
+	gtk_tree_view_set_tooltip_column(m_view, -1);
+}
+
+//-----------------------------------------------------------------------------
+
+void LauncherView::show_tooltips()
+{
+	gtk_tree_view_set_tooltip_column(m_view, LauncherView::COLUMN_TOOLTIP);
 }
 
 //-----------------------------------------------------------------------------

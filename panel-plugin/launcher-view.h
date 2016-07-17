@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -48,6 +48,9 @@ public:
 	void set_reorderable(bool reorderable);
 	void set_selection_mode(GtkSelectionMode mode);
 
+	void hide_tooltips();
+	void show_tooltips();
+
 	void collapse_all();
 
 	GtkTreeModel* get_model() const
@@ -64,6 +67,7 @@ public:
 	{
 		COLUMN_ICON = 0,
 		COLUMN_TEXT,
+		COLUMN_TOOLTIP,
 		COLUMN_LAUNCHER,
 		N_COLUMNS
 	};

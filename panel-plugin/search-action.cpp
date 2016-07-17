@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -256,14 +256,16 @@ void SearchAction::set_is_regex(bool is_regex)
 void SearchAction::update_text()
 {
 	const gchar* direction = (gtk_widget_get_default_direction() != GTK_TEXT_DIR_RTL) ? "\342\200\216" : "\342\200\217";
+	const gchar* description = _("Search Action");
 	if (m_show_description)
 	{
-		set_text(g_markup_printf_escaped("%s<b>%s</b>\n%s%s", direction, m_name.c_str(), direction, _("Search Action")));
+		set_text(g_markup_printf_escaped("%s<b>%s</b>\n%s%s", direction, m_name.c_str(), direction, description));
 	}
 	else
 	{
 		set_text(g_markup_printf_escaped("%s%s", direction, m_name.c_str()));
 	}
+	set_tooltip(description);
 }
 
 //-----------------------------------------------------------------------------

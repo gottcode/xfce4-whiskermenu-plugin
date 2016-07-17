@@ -31,6 +31,7 @@ public:
 	Element() :
 		m_icon(NULL),
 		m_text(NULL),
+		m_tooltip(NULL),
 		m_sort_key(NULL)
 	{
 	}
@@ -39,6 +40,7 @@ public:
 	{
 		g_free(m_icon);
 		g_free(m_text);
+		g_free(m_tooltip);
 		g_free(m_sort_key);
 	}
 
@@ -52,6 +54,11 @@ public:
 	const gchar* get_text() const
 	{
 		return m_text;
+	}
+
+	const gchar* get_tooltip() const
+	{
+		return m_tooltip;
 	}
 
 	virtual void run(GdkScreen*) const
@@ -97,6 +104,12 @@ protected:
 		m_sort_key = g_utf8_collate_key(m_text, -1);
 	}
 
+	void set_tooltip(const gchar* tooltip)
+	{
+		g_free(m_tooltip);
+		m_tooltip = g_markup_escape_text(tooltip, -1);
+	}
+
 private:
 	Element(const Element&);
 	Element& operator=(const Element&);
@@ -104,6 +117,7 @@ private:
 private:
 	gchar* m_icon;
 	gchar* m_text;
+	gchar* m_tooltip;
 	gchar* m_sort_key;
 };
 

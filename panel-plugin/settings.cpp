@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2014, 2015 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014, 2015, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -90,6 +90,7 @@ Settings::Settings() :
 
 	launcher_show_name(true),
 	launcher_show_description(true),
+	launcher_show_tooltip(true),
 	launcher_icon_size(IconSize::Small),
 
 	category_hover_activate(false),
@@ -173,6 +174,7 @@ void Settings::load(char* file)
 
 	launcher_show_name = xfce_rc_read_bool_entry(rc, "launcher-show-name", launcher_show_name);
 	launcher_show_description = xfce_rc_read_bool_entry(rc, "launcher-show-description", launcher_show_description);
+	launcher_show_tooltip = xfce_rc_read_bool_entry(rc, "launcher-show-tooltip", launcher_show_tooltip);
 	launcher_icon_size = xfce_rc_read_int_entry(rc, "item-icon-size", launcher_icon_size);
 
 	category_hover_activate = xfce_rc_read_bool_entry(rc, "hover-switch-category", category_hover_activate);
@@ -269,6 +271,7 @@ void Settings::save(char* file)
 
 	xfce_rc_write_bool_entry(rc, "launcher-show-name", launcher_show_name);
 	xfce_rc_write_bool_entry(rc, "launcher-show-description", launcher_show_description);
+	xfce_rc_write_bool_entry(rc, "launcher-show-tooltip", launcher_show_tooltip);
 	xfce_rc_write_int_entry(rc, "item-icon-size", launcher_icon_size);
 
 	xfce_rc_write_bool_entry(rc, "hover-switch-category", category_hover_activate);
