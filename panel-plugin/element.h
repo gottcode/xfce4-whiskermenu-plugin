@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -71,22 +71,28 @@ public:
 protected:
 	void set_icon(const gchar* icon)
 	{
+		g_free(m_icon);
 		m_icon = g_strdup(icon);
 	}
 
 	void set_icon(gchar* icon)
 	{
+		g_free(m_icon);
 		m_icon = icon;
 	}
 
 	void set_text(const gchar* text)
 	{
+		g_free(m_text);
+		g_free(m_sort_key);
 		m_text = g_strdup(text);
 		m_sort_key = g_utf8_collate_key(m_text, -1);
 	}
 
 	void set_text(gchar* text)
 	{
+		g_free(m_text);
+		g_free(m_sort_key);
 		m_text = text;
 		m_sort_key = g_utf8_collate_key(m_text, -1);
 	}
