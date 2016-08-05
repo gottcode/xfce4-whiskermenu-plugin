@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-05 14:08+0000\n"
-"PO-Revision-Date: 2016-08-05 15:28+0000\n"
+"POT-Creation-Date: 2016-08-05 18:09+0000\n"
+"PO-Revision-Date: 2016-08-05 18:29+0000\n"
 "Last-Translator: Kernc\n"
 "Language-Team: Slovenian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/sl/)\n"
@@ -79,7 +79,7 @@ msgstr "Počisti nedavno uporabljene"
 
 #: ../panel-plugin/plugin.cpp:394
 msgid "Copyright © 2013-2016 Graeme Gott"
-msgstr "Copyright ©2013-2016 Graeme Gott"
+msgstr "Avtorske pravice © 2013-2016 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:832
 msgid "Details"
