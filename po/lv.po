@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 23:57+0000\n"
+"POT-Creation-Date: 2016-08-05 14:08+0000\n"
 "PO-Revision-Date: 2014-02-10 13:41+0000\n"
 "Last-Translator: Gatis Kalniņš <>\n"
 "Language-Team: Latvian (http://www.transifex.com/projects/p/xfce4-"
@@ -20,7 +20,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
-#: ../panel-plugin/configuration-dialog.cpp:782
+#: ../panel-plugin/configuration-dialog.cpp:803
 msgid "Add action"
 msgstr "Pievienot darbību"
 
@@ -36,11 +36,11 @@ msgstr "Pievienot favorītiem"
 msgid "Add to Panel"
 msgstr "Pievienot panelim"
 
-#: ../panel-plugin/category.cpp:59
+#: ../panel-plugin/category.cpp:61
 msgid "All"
 msgstr "Visi"
 
-#: ../panel-plugin/settings.cpp:117
+#: ../panel-plugin/settings.cpp:118
 msgid "All _Settings"
 msgstr "Visi iestatījumi"
 
@@ -48,7 +48,7 @@ msgstr "Visi iestatījumi"
 msgid "Alternate application launcher for Xfce"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:682
+#: ../panel-plugin/configuration-dialog.cpp:702
 msgid "Amount of _items:"
 msgstr ""
 
@@ -57,7 +57,7 @@ msgstr ""
 msgid "Applications"
 msgstr "Programmu izvēlne"
 
-#: ../panel-plugin/configuration-dialog.cpp:616
+#: ../panel-plugin/configuration-dialog.cpp:636
 msgid "Background opacit_y:"
 msgstr ""
 
@@ -65,15 +65,15 @@ msgstr ""
 msgid "Browse the file system to choose a custom command."
 msgstr "Rādīt failsistēmu komandas izvēlei."
 
-#: ../panel-plugin/configuration-dialog.cpp:840
+#: ../panel-plugin/configuration-dialog.cpp:861
 msgid "C_ommand:"
 msgstr "Komanda:"
 
-#: ../panel-plugin/configuration-dialog.cpp:601
+#: ../panel-plugin/configuration-dialog.cpp:621
 msgid "Categ_ory icon size:"
 msgstr "Grupas ikonas izmērs:"
 
-#: ../panel-plugin/recent-page.cpp:148
+#: ../panel-plugin/recent-page.cpp:172
 msgid "Clear Recently Used"
 msgstr "Dzēst nesen lietotos"
 
@@ -81,51 +81,51 @@ msgstr "Dzēst nesen lietotos"
 msgid "Copyright © 2013-2015 Graeme Gott"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:811
+#: ../panel-plugin/configuration-dialog.cpp:832
 msgid "Details"
 msgstr "Sīkāk"
 
-#: ../panel-plugin/configuration-dialog.cpp:509
+#: ../panel-plugin/configuration-dialog.cpp:523
 msgid "Di_splay:"
 msgstr "Rādīt:"
 
-#: ../panel-plugin/configuration-dialog.cpp:699
+#: ../panel-plugin/configuration-dialog.cpp:719
 #, fuzzy
 msgid "Display by _default"
 msgstr "Rādīt nesen lietotos pēc noklusējuma"
 
-#: ../panel-plugin/settings.cpp:122
+#: ../panel-plugin/settings.cpp:123
 msgid "Edit _Profile"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:122
+#: ../panel-plugin/settings.cpp:123
 #, fuzzy
 msgid "Failed to edit profile."
 msgstr "Kļūda pārslēdzot lietotājus."
 
-#: ../panel-plugin/launcher.cpp:273 ../panel-plugin/run-action.cpp:41
+#: ../panel-plugin/launcher.cpp:274 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "Kļūda izpildot komandu \"%s\"."
 
-#: ../panel-plugin/settings.cpp:121
+#: ../panel-plugin/settings.cpp:122
 msgid "Failed to launch menu editor."
 msgstr "Kļūda startējot izvēlnes redaktoru."
 
-#: ../panel-plugin/settings.cpp:118
+#: ../panel-plugin/settings.cpp:119
 msgid "Failed to lock screen."
 msgstr "Kļūda slēdzot ekrānu."
 
-#: ../panel-plugin/settings.cpp:120
+#: ../panel-plugin/settings.cpp:121
 msgid "Failed to log out."
 msgstr "Kļūda izrakstoties."
 
-#: ../panel-plugin/settings.cpp:117
+#: ../panel-plugin/settings.cpp:118
 msgid "Failed to open settings manager."
 msgstr "Kļūda atverot iestatījumus."
 
-#: ../panel-plugin/settings.cpp:119
+#: ../panel-plugin/settings.cpp:120
 msgid "Failed to switch users."
 msgstr "Kļūda pārslēdzot lietotājus."
 
@@ -133,20 +133,20 @@ msgstr "Kļūda pārslēdzot lietotājus."
 msgid "Favorites"
 msgstr "Favorīti"
 
-#: ../panel-plugin/configuration-dialog.cpp:514
+#: ../panel-plugin/configuration-dialog.cpp:528
 msgid "Icon"
 msgstr "Ikona"
 
-#: ../panel-plugin/configuration-dialog.cpp:516
+#: ../panel-plugin/configuration-dialog.cpp:530
 msgid "Icon and title"
 msgstr "Ikona un nosaukums"
 
-#: ../panel-plugin/configuration-dialog.cpp:693
+#: ../panel-plugin/configuration-dialog.cpp:713
 #, fuzzy
 msgid "Ignore _favorites"
 msgstr "Favorīti"
 
-#: ../panel-plugin/configuration-dialog.cpp:585
+#: ../panel-plugin/configuration-dialog.cpp:605
 msgid "Ite_m icon size:"
 msgstr "Vienuma ikonas izmērs:"
 
@@ -158,24 +158,24 @@ msgstr "Liels"
 msgid "Larger"
 msgstr "Lielāks"
 
-#: ../panel-plugin/settings.cpp:120
+#: ../panel-plugin/settings.cpp:121
 msgid "Log _Out"
 msgstr "Izrakstīties"
 
-#: ../panel-plugin/settings.cpp:124
+#: ../panel-plugin/settings.cpp:125
 msgid "Man Pages"
 msgstr "Palīdzība"
 
-#: ../panel-plugin/configuration-dialog.cpp:562
-#: ../panel-plugin/configuration-dialog.cpp:642
+#: ../panel-plugin/configuration-dialog.cpp:576
+#: ../panel-plugin/configuration-dialog.cpp:662
 msgid "Menu"
 msgstr "Izvēlne"
 
-#: ../panel-plugin/configuration-dialog.cpp:816
+#: ../panel-plugin/configuration-dialog.cpp:837
 msgid "Nam_e:"
 msgstr "Nosaukums:"
 
-#: ../panel-plugin/configuration-dialog.cpp:762
+#: ../panel-plugin/configuration-dialog.cpp:783
 msgid "Name"
 msgstr "Nosaukums"
 
@@ -187,32 +187,32 @@ msgstr "Nav"
 msgid "Normal"
 msgstr "Normāls"
 
-#: ../panel-plugin/settings.cpp:127
+#: ../panel-plugin/settings.cpp:129
 msgid "Open URI"
 msgstr "Atvērt URL"
 
-#: ../panel-plugin/configuration-dialog.cpp:504
+#: ../panel-plugin/configuration-dialog.cpp:518
 msgid "Panel Button"
 msgstr "Paneļa poga"
 
-#: ../panel-plugin/configuration-dialog.cpp:767
+#: ../panel-plugin/configuration-dialog.cpp:788
 msgid "Pattern"
 msgstr "Šablons"
 
-#: ../panel-plugin/configuration-dialog.cpp:653
+#: ../panel-plugin/configuration-dialog.cpp:673
 msgid "Position _search entry next to panel button"
 msgstr "Izvietot meklēšanas lauku blakus paneļa pogai"
 
-#: ../panel-plugin/configuration-dialog.cpp:666
+#: ../panel-plugin/configuration-dialog.cpp:686
 #, fuzzy
 msgid "Position cate_gories next to panel button"
 msgstr "Izvietot meklēšanas lauku blakus paneļa pogai"
 
-#: ../panel-plugin/configuration-dialog.cpp:659
+#: ../panel-plugin/configuration-dialog.cpp:679
 msgid "Position commands next to search _entry"
 msgstr "Rādīt komandas blakus meklēšanas laukam"
 
-#: ../panel-plugin/configuration-dialog.cpp:677 ../panel-plugin/window.cpp:126
+#: ../panel-plugin/configuration-dialog.cpp:697 ../panel-plugin/window.cpp:126
 msgid "Recently Used"
 msgstr "Nesen lietotie"
 
@@ -220,12 +220,12 @@ msgstr "Nesen lietotie"
 msgid "Remove From Favorites"
 msgstr "Izņemt no favorītiem"
 
-#: ../panel-plugin/configuration-dialog.cpp:406
+#: ../panel-plugin/configuration-dialog.cpp:420
 #, c-format
 msgid "Remove action \"%s\"?"
 msgstr "Dzēst darbību \"%s\"?"
 
-#: ../panel-plugin/configuration-dialog.cpp:791
+#: ../panel-plugin/configuration-dialog.cpp:812
 msgid "Remove selected action"
 msgstr "Dzēst izvēlēto darbību"
 
@@ -234,7 +234,7 @@ msgstr "Dzēst izvēlēto darbību"
 msgid "Run %s"
 msgstr "Startēt %s"
 
-#: ../panel-plugin/settings.cpp:126
+#: ../panel-plugin/settings.cpp:128
 msgid "Run in Terminal"
 msgstr "Startēt konsolē"
 
@@ -242,7 +242,7 @@ msgstr "Startēt konsolē"
 msgid "Search Actio_ns"
 msgstr "Meklēt darbības"
 
-#: ../panel-plugin/search-action.cpp:261
+#: ../panel-plugin/search-action.cpp:259
 msgid "Search Action"
 msgstr "Meklēt darbību"
 
@@ -258,15 +258,20 @@ msgstr "Izvēlēties komandu"
 msgid "Show a menu to easily access installed applications"
 msgstr "Rādīt izvēlni ērtākai piekļuvei programmām"
 
-#: ../panel-plugin/configuration-dialog.cpp:573
+#: ../panel-plugin/configuration-dialog.cpp:587
 msgid "Show application _descriptions"
 msgstr "Rādīt programmu aprakstus"
 
-#: ../panel-plugin/configuration-dialog.cpp:567
+#: ../panel-plugin/configuration-dialog.cpp:593
+#, fuzzy
+msgid "Show application too_ltips"
+msgstr "Rādīt programmu aprakstus"
+
+#: ../panel-plugin/configuration-dialog.cpp:581
 msgid "Show generic application _names"
 msgstr "Rādīt programmu oriģinālos nosaukumus"
 
-#: ../panel-plugin/configuration-dialog.cpp:579
+#: ../panel-plugin/configuration-dialog.cpp:599
 msgid "Show menu hie_rarchy"
 msgstr "Rādīt izvēlnes hierahiju"
 
@@ -278,27 +283,27 @@ msgstr "Mazs"
 msgid "Smaller"
 msgstr "Mazāks"
 
-#: ../panel-plugin/favorites-page.cpp:129
+#: ../panel-plugin/favorites-page.cpp:146
 msgid "Sort Alphabetically A-Z"
 msgstr "Kārtot pēc alfabēta A-Z"
 
-#: ../panel-plugin/favorites-page.cpp:135
+#: ../panel-plugin/favorites-page.cpp:152
 msgid "Sort Alphabetically Z-A"
 msgstr "Kārtot pēc alfabēta Z-A"
 
-#: ../panel-plugin/settings.cpp:119
+#: ../panel-plugin/settings.cpp:120
 msgid "Switch _Users"
 msgstr "Pārslēgt lietotājus"
 
-#: ../panel-plugin/configuration-dialog.cpp:647
+#: ../panel-plugin/configuration-dialog.cpp:667
 msgid "Switch categories by _hovering"
 msgstr "Pārslēgt grupas pārslīdot kursoram"
 
-#: ../panel-plugin/configuration-dialog.cpp:405
+#: ../panel-plugin/configuration-dialog.cpp:419
 msgid "The action will be deleted permanently."
 msgstr "Darbība tiks dzēsta."
 
-#: ../panel-plugin/configuration-dialog.cpp:515
+#: ../panel-plugin/configuration-dialog.cpp:529
 msgid "Title"
 msgstr "Nosaukums"
 
@@ -310,12 +315,12 @@ msgstr "Nevarēja izvietot uz darbvirsmas."
 msgid "Unable to add launcher to panel."
 msgstr "Nevar pievienot panelim."
 
-#: ../panel-plugin/configuration-dialog.cpp:466
+#: ../panel-plugin/configuration-dialog.cpp:480
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:549
+#: ../panel-plugin/configuration-dialog.cpp:563
 msgid "Use a single _panel row"
 msgstr ""
 
@@ -327,12 +332,16 @@ msgstr "Ļoti liels"
 msgid "Very Small"
 msgstr "Ļoti mazs"
 
+#: ../panel-plugin/settings.cpp:126
+msgid "Web Search"
+msgstr ""
+
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
 msgid "Whisker Menu"
 msgstr "Whisker izvēlne"
 
-#: ../panel-plugin/settings.cpp:125
+#: ../panel-plugin/settings.cpp:127
 msgid "Wikipedia"
 msgstr "Wikipedia"
 
@@ -349,27 +358,27 @@ msgstr "Uzvedība"
 msgid "_Commands"
 msgstr "Komandas"
 
-#: ../panel-plugin/settings.cpp:121
+#: ../panel-plugin/settings.cpp:122
 msgid "_Edit Applications"
 msgstr "Labot programmas"
 
-#: ../panel-plugin/configuration-dialog.cpp:534
+#: ../panel-plugin/configuration-dialog.cpp:548
 msgid "_Icon:"
 msgstr "_Ikona:"
 
-#: ../panel-plugin/settings.cpp:118
+#: ../panel-plugin/settings.cpp:119
 msgid "_Lock Screen"
 msgstr "Slēgt ekrānu"
 
-#: ../panel-plugin/configuration-dialog.cpp:828
+#: ../panel-plugin/configuration-dialog.cpp:849
 msgid "_Pattern:"
 msgstr "Šablons:"
 
-#: ../panel-plugin/configuration-dialog.cpp:852
+#: ../panel-plugin/configuration-dialog.cpp:873
 msgid "_Regular expression"
 msgstr "Regulāra izteiksme"
 
-#: ../panel-plugin/configuration-dialog.cpp:523
+#: ../panel-plugin/configuration-dialog.cpp:537
 msgid "_Title:"
 msgstr "Nosaukums:"
 

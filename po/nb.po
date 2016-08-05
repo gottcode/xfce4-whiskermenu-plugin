@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 23:57+0000\n"
+"POT-Creation-Date: 2016-08-05 14:08+0000\n"
 "PO-Revision-Date: 2015-04-06 22:55+0000\n"
 "Last-Translator: thomas <thomasbjornvold@gmail.com>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/gottcode/xfce4-"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/configuration-dialog.cpp:782
+#: ../panel-plugin/configuration-dialog.cpp:803
 msgid "Add action"
 msgstr "Legg til aktivitet"
 
@@ -35,11 +35,11 @@ msgstr "Legg til i favoritter"
 msgid "Add to Panel"
 msgstr "Legg til på panel"
 
-#: ../panel-plugin/category.cpp:59
+#: ../panel-plugin/category.cpp:61
 msgid "All"
 msgstr "Alle"
 
-#: ../panel-plugin/settings.cpp:117
+#: ../panel-plugin/settings.cpp:118
 msgid "All _Settings"
 msgstr "Alle innstillinger"
 
@@ -47,7 +47,7 @@ msgstr "Alle innstillinger"
 msgid "Alternate application launcher for Xfce"
 msgstr "Alternativ appllikasjonsstarter for Xfce"
 
-#: ../panel-plugin/configuration-dialog.cpp:682
+#: ../panel-plugin/configuration-dialog.cpp:702
 msgid "Amount of _items:"
 msgstr "Antall enheter"
 
@@ -55,7 +55,7 @@ msgstr "Antall enheter"
 msgid "Applications"
 msgstr "Applikasjoner"
 
-#: ../panel-plugin/configuration-dialog.cpp:616
+#: ../panel-plugin/configuration-dialog.cpp:636
 msgid "Background opacit_y:"
 msgstr "Gjennomsiktighet bakgrunn"
 
@@ -63,15 +63,15 @@ msgstr "Gjennomsiktighet bakgrunn"
 msgid "Browse the file system to choose a custom command."
 msgstr "Surf i filsystemet for å velge en tilpasset kommando."
 
-#: ../panel-plugin/configuration-dialog.cpp:840
+#: ../panel-plugin/configuration-dialog.cpp:861
 msgid "C_ommand:"
 msgstr "K_ommando:"
 
-#: ../panel-plugin/configuration-dialog.cpp:601
+#: ../panel-plugin/configuration-dialog.cpp:621
 msgid "Categ_ory icon size:"
 msgstr "Kateg_ori ikonstørrelse:"
 
-#: ../panel-plugin/recent-page.cpp:148
+#: ../panel-plugin/recent-page.cpp:172
 msgid "Clear Recently Used"
 msgstr "Fjern sist brukte"
 
@@ -79,49 +79,49 @@ msgstr "Fjern sist brukte"
 msgid "Copyright © 2013-2015 Graeme Gott"
 msgstr "Copyright © 2013-2015 Graeme Gott"
 
-#: ../panel-plugin/configuration-dialog.cpp:811
+#: ../panel-plugin/configuration-dialog.cpp:832
 msgid "Details"
 msgstr "Detaljer"
 
-#: ../panel-plugin/configuration-dialog.cpp:509
+#: ../panel-plugin/configuration-dialog.cpp:523
 msgid "Di_splay:"
 msgstr "Vi_sning:"
 
-#: ../panel-plugin/configuration-dialog.cpp:699
+#: ../panel-plugin/configuration-dialog.cpp:719
 msgid "Display by _default"
 msgstr "Vis siste_brukte som standard"
 
-#: ../panel-plugin/settings.cpp:122
+#: ../panel-plugin/settings.cpp:123
 msgid "Edit _Profile"
 msgstr "Rediger profil"
 
-#: ../panel-plugin/settings.cpp:122
+#: ../panel-plugin/settings.cpp:123
 msgid "Failed to edit profile."
 msgstr "Misslyktes med å redigere profilen"
 
-#: ../panel-plugin/launcher.cpp:273 ../panel-plugin/run-action.cpp:41
+#: ../panel-plugin/launcher.cpp:274 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "Kunne ikke kjøre kommandoen \"%s\"."
 
-#: ../panel-plugin/settings.cpp:121
+#: ../panel-plugin/settings.cpp:122
 msgid "Failed to launch menu editor."
 msgstr "Kunne ikke starte menyeditoren."
 
-#: ../panel-plugin/settings.cpp:118
+#: ../panel-plugin/settings.cpp:119
 msgid "Failed to lock screen."
 msgstr "Kunne ikke låse skjermen"
 
-#: ../panel-plugin/settings.cpp:120
+#: ../panel-plugin/settings.cpp:121
 msgid "Failed to log out."
 msgstr "Kunne ikke logge ut"
 
-#: ../panel-plugin/settings.cpp:117
+#: ../panel-plugin/settings.cpp:118
 msgid "Failed to open settings manager."
 msgstr "Kunne ikke åpne innstillinger"
 
-#: ../panel-plugin/settings.cpp:119
+#: ../panel-plugin/settings.cpp:120
 msgid "Failed to switch users."
 msgstr "Kunne ikke bytte brukere."
 
@@ -129,19 +129,19 @@ msgstr "Kunne ikke bytte brukere."
 msgid "Favorites"
 msgstr "Favoritter"
 
-#: ../panel-plugin/configuration-dialog.cpp:514
+#: ../panel-plugin/configuration-dialog.cpp:528
 msgid "Icon"
 msgstr "Ikon"
 
-#: ../panel-plugin/configuration-dialog.cpp:516
+#: ../panel-plugin/configuration-dialog.cpp:530
 msgid "Icon and title"
 msgstr "Ikon og tittel"
 
-#: ../panel-plugin/configuration-dialog.cpp:693
+#: ../panel-plugin/configuration-dialog.cpp:713
 msgid "Ignore _favorites"
 msgstr "Ignorer favoritter"
 
-#: ../panel-plugin/configuration-dialog.cpp:585
+#: ../panel-plugin/configuration-dialog.cpp:605
 msgid "Ite_m icon size:"
 msgstr "lkonstørrelse:"
 
@@ -153,24 +153,24 @@ msgstr "Stor"
 msgid "Larger"
 msgstr "Større"
 
-#: ../panel-plugin/settings.cpp:120
+#: ../panel-plugin/settings.cpp:121
 msgid "Log _Out"
 msgstr "Logg ut"
 
-#: ../panel-plugin/settings.cpp:124
+#: ../panel-plugin/settings.cpp:125
 msgid "Man Pages"
 msgstr "Man-sider"
 
-#: ../panel-plugin/configuration-dialog.cpp:562
-#: ../panel-plugin/configuration-dialog.cpp:642
+#: ../panel-plugin/configuration-dialog.cpp:576
+#: ../panel-plugin/configuration-dialog.cpp:662
 msgid "Menu"
 msgstr "Meny"
 
-#: ../panel-plugin/configuration-dialog.cpp:816
+#: ../panel-plugin/configuration-dialog.cpp:837
 msgid "Nam_e:"
 msgstr "Nav_n:"
 
-#: ../panel-plugin/configuration-dialog.cpp:762
+#: ../panel-plugin/configuration-dialog.cpp:783
 msgid "Name"
 msgstr "Navn"
 
@@ -182,31 +182,31 @@ msgstr "Ingen"
 msgid "Normal"
 msgstr "Normal"
 
-#: ../panel-plugin/settings.cpp:127
+#: ../panel-plugin/settings.cpp:129
 msgid "Open URI"
 msgstr "Åpen URl"
 
-#: ../panel-plugin/configuration-dialog.cpp:504
+#: ../panel-plugin/configuration-dialog.cpp:518
 msgid "Panel Button"
 msgstr "Paneltast"
 
-#: ../panel-plugin/configuration-dialog.cpp:767
+#: ../panel-plugin/configuration-dialog.cpp:788
 msgid "Pattern"
 msgstr "Mønster"
 
-#: ../panel-plugin/configuration-dialog.cpp:653
+#: ../panel-plugin/configuration-dialog.cpp:673
 msgid "Position _search entry next to panel button"
 msgstr "Plasser _søket ved siden av paneltasten"
 
-#: ../panel-plugin/configuration-dialog.cpp:666
+#: ../panel-plugin/configuration-dialog.cpp:686
 msgid "Position cate_gories next to panel button"
 msgstr "Plasser kategorier ved siden av paneltasten"
 
-#: ../panel-plugin/configuration-dialog.cpp:659
+#: ../panel-plugin/configuration-dialog.cpp:679
 msgid "Position commands next to search _entry"
 msgstr "Plasser kommandoer ved siden av søket"
 
-#: ../panel-plugin/configuration-dialog.cpp:677 ../panel-plugin/window.cpp:126
+#: ../panel-plugin/configuration-dialog.cpp:697 ../panel-plugin/window.cpp:126
 msgid "Recently Used"
 msgstr "Siste brukte"
 
@@ -214,12 +214,12 @@ msgstr "Siste brukte"
 msgid "Remove From Favorites"
 msgstr "Fjern fra favoritter"
 
-#: ../panel-plugin/configuration-dialog.cpp:406
+#: ../panel-plugin/configuration-dialog.cpp:420
 #, c-format
 msgid "Remove action \"%s\"?"
 msgstr "Fjerne aktivitet \"%s\"?"
 
-#: ../panel-plugin/configuration-dialog.cpp:791
+#: ../panel-plugin/configuration-dialog.cpp:812
 msgid "Remove selected action"
 msgstr "Fjerne valgt aktivitet"
 
@@ -228,7 +228,7 @@ msgstr "Fjerne valgt aktivitet"
 msgid "Run %s"
 msgstr "Kjør %s"
 
-#: ../panel-plugin/settings.cpp:126
+#: ../panel-plugin/settings.cpp:128
 msgid "Run in Terminal"
 msgstr "Kjør i terminal"
 
@@ -236,7 +236,7 @@ msgstr "Kjør i terminal"
 msgid "Search Actio_ns"
 msgstr "Søkeaktiviteter"
 
-#: ../panel-plugin/search-action.cpp:261
+#: ../panel-plugin/search-action.cpp:259
 msgid "Search Action"
 msgstr "Søkeaktivitet"
 
@@ -252,15 +252,20 @@ msgstr "Velg kommando"
 msgid "Show a menu to easily access installed applications"
 msgstr "Vis en meny for enkel tilgang til installerte applikasjoner"
 
-#: ../panel-plugin/configuration-dialog.cpp:573
+#: ../panel-plugin/configuration-dialog.cpp:587
 msgid "Show application _descriptions"
 msgstr "Vis applikasjonsbeskrivelser"
 
-#: ../panel-plugin/configuration-dialog.cpp:567
+#: ../panel-plugin/configuration-dialog.cpp:593
+#, fuzzy
+msgid "Show application too_ltips"
+msgstr "Vis applikasjonsbeskrivelser"
+
+#: ../panel-plugin/configuration-dialog.cpp:581
 msgid "Show generic application _names"
 msgstr "Vis generiske applikasjons_navn"
 
-#: ../panel-plugin/configuration-dialog.cpp:579
+#: ../panel-plugin/configuration-dialog.cpp:599
 msgid "Show menu hie_rarchy"
 msgstr "Vis menystruktur"
 
@@ -272,27 +277,27 @@ msgstr "Liten"
 msgid "Smaller"
 msgstr "Mindre"
 
-#: ../panel-plugin/favorites-page.cpp:129
+#: ../panel-plugin/favorites-page.cpp:146
 msgid "Sort Alphabetically A-Z"
 msgstr "Sorter alfabetisk A-Ø"
 
-#: ../panel-plugin/favorites-page.cpp:135
+#: ../panel-plugin/favorites-page.cpp:152
 msgid "Sort Alphabetically Z-A"
 msgstr "Sorter alfabetisk Ø-A"
 
-#: ../panel-plugin/settings.cpp:119
+#: ../panel-plugin/settings.cpp:120
 msgid "Switch _Users"
 msgstr "Bytt _brukere"
 
-#: ../panel-plugin/configuration-dialog.cpp:647
+#: ../panel-plugin/configuration-dialog.cpp:667
 msgid "Switch categories by _hovering"
 msgstr "Endre kategorier ved mus over"
 
-#: ../panel-plugin/configuration-dialog.cpp:405
+#: ../panel-plugin/configuration-dialog.cpp:419
 msgid "The action will be deleted permanently."
 msgstr "Aktiviteten vill bli slettet for godt."
 
-#: ../panel-plugin/configuration-dialog.cpp:515
+#: ../panel-plugin/configuration-dialog.cpp:529
 msgid "Title"
 msgstr "Tittel"
 
@@ -304,12 +309,12 @@ msgstr "Kunne ikke legge oppstarter til skrivebordet"
 msgid "Unable to add launcher to panel."
 msgstr "Kunne ikke legge oppstarter til panelet"
 
-#: ../panel-plugin/configuration-dialog.cpp:466
+#: ../panel-plugin/configuration-dialog.cpp:480
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Kan ikke åpne følgende url: %s"
 
-#: ../panel-plugin/configuration-dialog.cpp:549
+#: ../panel-plugin/configuration-dialog.cpp:563
 msgid "Use a single _panel row"
 msgstr "Bruk enkel_panel rad"
 
@@ -321,12 +326,16 @@ msgstr "Veldig stor"
 msgid "Very Small"
 msgstr "Veldig liten"
 
+#: ../panel-plugin/settings.cpp:126
+msgid "Web Search"
+msgstr ""
+
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
 msgid "Whisker Menu"
 msgstr "Whisker-meny"
 
-#: ../panel-plugin/settings.cpp:125
+#: ../panel-plugin/settings.cpp:127
 msgid "Wikipedia"
 msgstr "Wikipedia"
 
@@ -342,27 +351,27 @@ msgstr "_Oppførsel"
 msgid "_Commands"
 msgstr "_Kommandoer"
 
-#: ../panel-plugin/settings.cpp:121
+#: ../panel-plugin/settings.cpp:122
 msgid "_Edit Applications"
 msgstr "_Rediger applikasjoner"
 
-#: ../panel-plugin/configuration-dialog.cpp:534
+#: ../panel-plugin/configuration-dialog.cpp:548
 msgid "_Icon:"
 msgstr "_Ikon:"
 
-#: ../panel-plugin/settings.cpp:118
+#: ../panel-plugin/settings.cpp:119
 msgid "_Lock Screen"
 msgstr "_Lås skjermen"
 
-#: ../panel-plugin/configuration-dialog.cpp:828
+#: ../panel-plugin/configuration-dialog.cpp:849
 msgid "_Pattern:"
 msgstr "_Mønster:"
 
-#: ../panel-plugin/configuration-dialog.cpp:852
+#: ../panel-plugin/configuration-dialog.cpp:873
 msgid "_Regular expression"
 msgstr "_Regulært uttrykk"
 
-#: ../panel-plugin/configuration-dialog.cpp:523
+#: ../panel-plugin/configuration-dialog.cpp:537
 msgid "_Title:"
 msgstr "_Tittel"
 
