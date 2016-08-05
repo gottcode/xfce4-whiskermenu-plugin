@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-05 14:08+0000\n"
+"POT-Creation-Date: 2016-08-05 18:09+0000\n"
 "PO-Revision-Date: 2015-02-23 14:57+0000\n"
 "Last-Translator: starryprabin <mr.prabin@gmail.com>\n"
 "Language-Team: Nepali (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -77,7 +77,8 @@ msgid "Clear Recently Used"
 msgstr "हालसालै प्रयोग भएकालाई सफा गर्नुहोस् "
 
 #: ../panel-plugin/plugin.cpp:394
-msgid "Copyright © 2013-2015 Graeme Gott"
+#, fuzzy
+msgid "Copyright © 2013-2016 Graeme Gott"
 msgstr "प्रतिलिपि अधिकार © २०१३-२०१५ Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:832
