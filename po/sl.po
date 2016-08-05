@@ -1,16 +1,17 @@
 # Slovenian translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2015 Graeme Gott
+# Copyright (C) 2016 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# kernc, 2014-2015
+# Kernc, 2014-2015
+# Kernc, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-05 14:08+0000\n"
-"PO-Revision-Date: 2015-02-22 01:27+0000\n"
-"Last-Translator: kernc\n"
+"PO-Revision-Date: 2016-08-05 15:28+0000\n"
+"Last-Translator: Kernc\n"
 "Language-Team: Slovenian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/sl/)\n"
 "Language: sl\n"
@@ -258,9 +259,8 @@ msgid "Show application _descriptions"
 msgstr "Pokaži opise _programov"
 
 #: ../panel-plugin/configuration-dialog.cpp:593
-#, fuzzy
 msgid "Show application too_ltips"
-msgstr "Pokaži opise _programov"
+msgstr "Pokaži orodni _namig programov"
 
 #: ../panel-plugin/configuration-dialog.cpp:581
 msgid "Show generic application _names"
@@ -329,7 +329,7 @@ msgstr "Najmanjša"
 
 #: ../panel-plugin/settings.cpp:126
 msgid "Web Search"
-msgstr ""
+msgstr "Spletno iskanje"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
