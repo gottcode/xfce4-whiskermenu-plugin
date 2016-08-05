@@ -1,19 +1,19 @@
 # Czech translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2015 Graeme Gott
+# Copyright (C) 2016 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # halfark <vojtechprecechtel@gmail.com>, 2014
 # Laco Lazelod, 2013
 # Laco Lazelod, 2013
-# Michal Várady <miko.vaji@gmail.com>, 2015
+# Michal Várady <miko.vaji@gmail.com>, 2015-2016
 # halfark <vojtechprecechtel@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-05 14:08+0000\n"
-"PO-Revision-Date: 2015-06-28 20:44+0000\n"
+"POT-Creation-Date: 2016-08-05 18:09+0000\n"
+"PO-Revision-Date: 2016-08-05 21:30+0000\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/cs/)\n"
@@ -261,9 +261,8 @@ msgid "Show application _descriptions"
 msgstr "Zobrazit popisky _aplikací"
 
 #: ../panel-plugin/configuration-dialog.cpp:593
-#, fuzzy
 msgid "Show application too_ltips"
-msgstr "Zobrazit popisky _aplikací"
+msgstr "Zobrazit tipy _aplikací"
 
 #: ../panel-plugin/configuration-dialog.cpp:581
 msgid "Show generic application _names"
@@ -332,7 +331,7 @@ msgstr "Velmi malé"
 
 #: ../panel-plugin/settings.cpp:126
 msgid "Web Search"
-msgstr ""
+msgstr "Hledání na webu"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
