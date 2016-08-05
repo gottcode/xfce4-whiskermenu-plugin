@@ -1,20 +1,21 @@
 # Spanish translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2015 Graeme Gott
+# Copyright (C) 2016 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Adolfo Jayme Barrientos, 2015
-# Adolfo Jayme Barrientos, 2013
-# Adolfo Jayme Barrientos, 2014
+# Adolfo Jayme-Barrientos, 2016
+# Adolfo Jayme-Barrientos, 2015
+# Adolfo Jayme-Barrientos, 2013
+# Adolfo Jayme-Barrientos, 2014
 # Inti Alonso <intialonso@gmail.com>, 2013
-# Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>, 2013-2015
+# Pablo Roberto “Jristz” Lezaeta Reyes <prflr88@gmail.com>, 2013-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-05 14:08+0000\n"
-"PO-Revision-Date: 2015-02-21 01:43+0000\n"
-"Last-Translator: Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>\n"
+"PO-Revision-Date: 2016-08-05 17:24+0000\n"
+"Last-Translator: Adolfo Jayme-Barrientos\n"
 "Language-Team: Spanish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/es/)\n"
 "Language: es\n"
@@ -81,7 +82,7 @@ msgstr "Limpiar elementos recientes"
 
 #: ../panel-plugin/plugin.cpp:394
 msgid "Copyright © 2013-2015 Graeme Gott"
-msgstr "© 2013-2015 Graeme Gott"
+msgstr "© 2013–2015 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:832
 msgid "Details"
@@ -188,7 +189,7 @@ msgstr "Normal"
 
 #: ../panel-plugin/settings.cpp:129
 msgid "Open URI"
-msgstr "Abrir una dirección URI"
+msgstr "Abrir un URI"
 
 #: ../panel-plugin/configuration-dialog.cpp:518
 msgid "Panel Button"
@@ -261,9 +262,8 @@ msgid "Show application _descriptions"
 msgstr "Mostrar las _descripciones de las aplicaciones"
 
 #: ../panel-plugin/configuration-dialog.cpp:593
-#, fuzzy
 msgid "Show application too_ltips"
-msgstr "Mostrar las _descripciones de las aplicaciones"
+msgstr "Mostrar _información emergente de las aplicaciones"
 
 #: ../panel-plugin/configuration-dialog.cpp:581
 msgid "Show generic application _names"
@@ -295,7 +295,7 @@ msgstr "Cambiar de _usuario"
 
 #: ../panel-plugin/configuration-dialog.cpp:667
 msgid "Switch categories by _hovering"
-msgstr "Cambiar de categoría al a_puntarla con el ratón"
+msgstr "Cambiar de categoría al apun_tarla con el ratón"
 
 #: ../panel-plugin/configuration-dialog.cpp:419
 msgid "The action will be deleted permanently."
@@ -316,7 +316,7 @@ msgstr "No se pudo añadir el lanzador al panel."
 #: ../panel-plugin/configuration-dialog.cpp:480
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "No se pudo abrir la siguiente dirección URL: %s"
+msgstr "No se pudo abrir el URL siguiente: %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
 msgid "Use a single _panel row"
@@ -332,7 +332,7 @@ msgstr "Minúsculo"
 
 #: ../panel-plugin/settings.cpp:126
 msgid "Web Search"
-msgstr ""
+msgstr "Búsqueda en la Web"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
@@ -382,5 +382,5 @@ msgstr "_Título:"
 #: ../panel-plugin/plugin.cpp:398
 msgid "translator-credits"
 msgstr ""
-"Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2013-2015\n"
+"Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2013–2016\n"
 "Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>, 2014"
