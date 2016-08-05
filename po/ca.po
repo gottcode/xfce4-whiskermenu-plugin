@@ -3,19 +3,20 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Adolfo Jayme Barrientos, 2015
-# Adolfo Jayme Barrientos, 2013
-# Adolfo Jayme Barrientos, 2014
+# Adolfo Jayme-Barrientos, 2015
+# Adolfo Jayme-Barrientos, 2013
+# Adolfo Jayme-Barrientos, 2014
 # Oriol Fernandez <oriolfa@ono.com>, 2013
+# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 23:57+0000\n"
-"PO-Revision-Date: 2015-02-14 12:56+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos\n"
-"Language-Team: Catalan (http://www.transifex.com/projects/p/xfce4-"
-"whiskermenu-plugin/language/ca/)\n"
+"PO-Revision-Date: 2016-06-20 18:47+0000\n"
+"Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
+"Language-Team: Catalan (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
+"plugin/language/ca/)\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,15 +29,15 @@ msgstr "Afegeix una acció"
 
 #: ../panel-plugin/page.cpp:214
 msgid "Add to Desktop"
-msgstr "Afegeix a l’escriptori"
+msgstr "Afegeix a l'escriptori"
 
 #: ../panel-plugin/page.cpp:199
 msgid "Add to Favorites"
-msgstr "Afegeix a les favorites"
+msgstr "Afegeix als preferits"
 
 #: ../panel-plugin/page.cpp:218
 msgid "Add to Panel"
-msgstr "Afegeix al panell"
+msgstr "Afegeix al plafó"
 
 #: ../panel-plugin/category.cpp:59
 msgid "All"
@@ -44,15 +45,15 @@ msgstr "Totes"
 
 #: ../panel-plugin/settings.cpp:117
 msgid "All _Settings"
-msgstr "Tots els paràmetre_s"
+msgstr "Tots els ajust_s"
 
 #: ../panel-plugin/plugin.cpp:393
 msgid "Alternate application launcher for Xfce"
-msgstr "Llançador d’aplicacions alternatiu pel Xfce"
+msgstr "Llançador d'aplicacions alternatiu per a Xfce"
 
 #: ../panel-plugin/configuration-dialog.cpp:682
 msgid "Amount of _items:"
-msgstr "_Quantitat d’elements:"
+msgstr "Nombre d'e_lements:"
 
 #: ../panel-plugin/plugin.cpp:217
 msgid "Applications"
@@ -64,7 +65,7 @@ msgstr "Opacitat del _fons:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
-msgstr "Navegueu al sistema de fitxers per triar una ordre personalitzada."
+msgstr "Navegueu pel sistema de fitxers per triar una ordre personalitzada."
 
 #: ../panel-plugin/configuration-dialog.cpp:840
 msgid "C_ommand:"
@@ -72,7 +73,7 @@ msgstr "_Ordre:"
 
 #: ../panel-plugin/configuration-dialog.cpp:601
 msgid "Categ_ory icon size:"
-msgstr "Mida d’icona de la categ_oria:"
+msgstr "Mida de les icones de les categ_ories:"
 
 #: ../panel-plugin/recent-page.cpp:148
 msgid "Clear Recently Used"
@@ -92,7 +93,7 @@ msgstr "Mo_stra:"
 
 #: ../panel-plugin/configuration-dialog.cpp:699
 msgid "Display by _default"
-msgstr "Mostra’ls per _defecte"
+msgstr "Mostra-ho per _defecte"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Edit _Profile"
@@ -100,37 +101,37 @@ msgstr "Edita el _perfil"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Failed to edit profile."
-msgstr "No s’ha pogut editar el perfil."
+msgstr "Ha fallat l'edició del perfil."
 
 #: ../panel-plugin/launcher.cpp:273 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
-msgstr "S’ha produït un error en executar l’ordre «%s»."
+msgstr "Ha fallat l'execució de l'ordre «%s»."
 
 #: ../panel-plugin/settings.cpp:121
 msgid "Failed to launch menu editor."
-msgstr "No s’ha pogut executar l’editor dels menús."
+msgstr "Ha fallat el llançament de l'editor dels menús."
 
 #: ../panel-plugin/settings.cpp:118
 msgid "Failed to lock screen."
-msgstr "S’ha produït un error en blocar la pantalla."
+msgstr "Ha fallat el bloqueig de la pantalla."
 
 #: ../panel-plugin/settings.cpp:120
 msgid "Failed to log out."
-msgstr "S’ha produït un error en tancar la sessió."
+msgstr "Ha fallat el tancament de la sessió."
 
 #: ../panel-plugin/settings.cpp:117
 msgid "Failed to open settings manager."
-msgstr "S’ha produït un error en obrir el gestor de configuració."
+msgstr "Ha fallat l'obriment del gestor d'ajusts."
 
 #: ../panel-plugin/settings.cpp:119
 msgid "Failed to switch users."
-msgstr "No s’ha pogut canviar entre els usuaris."
+msgstr "Ha fallat el canvi d'usuari."
 
 #: ../panel-plugin/window.cpp:120
 msgid "Favorites"
-msgstr "Favorits"
+msgstr "Preferits"
 
 #: ../panel-plugin/configuration-dialog.cpp:514
 msgid "Icon"
@@ -142,11 +143,11 @@ msgstr "Icona i títol"
 
 #: ../panel-plugin/configuration-dialog.cpp:693
 msgid "Ignore _favorites"
-msgstr "Ignora els _favorits"
+msgstr "Ignora els pre_ferits"
 
 #: ../panel-plugin/configuration-dialog.cpp:585
 msgid "Ite_m icon size:"
-msgstr "Mida d’icona de l’ele_ment:"
+msgstr "Mida de les icones dels ele_ments:"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Large"
@@ -158,7 +159,7 @@ msgstr "Més gran"
 
 #: ../panel-plugin/settings.cpp:120
 msgid "Log _Out"
-msgstr "_Finalitza la sessió"
+msgstr "Ta_nca la sessió"
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Man Pages"
@@ -191,7 +192,7 @@ msgstr "Obre un URI"
 
 #: ../panel-plugin/configuration-dialog.cpp:504
 msgid "Panel Button"
-msgstr "Botó del panell"
+msgstr "Botó del plafó"
 
 #: ../panel-plugin/configuration-dialog.cpp:767
 msgid "Pattern"
@@ -199,32 +200,32 @@ msgstr "Patró"
 
 #: ../panel-plugin/configuration-dialog.cpp:653
 msgid "Position _search entry next to panel button"
-msgstr "_Situa el quadre de cerca prop del botó del panell"
+msgstr "_Situa el quadre de cerca al costat del botó del plafó"
 
 #: ../panel-plugin/configuration-dialog.cpp:666
 msgid "Position cate_gories next to panel button"
-msgstr "Posa les cate_gories al costat del botó del panell"
+msgstr "Situa les cate_gories al costat del botó del plafó"
 
 #: ../panel-plugin/configuration-dialog.cpp:659
 msgid "Position commands next to search _entry"
-msgstr "S_itua les ordres prop del quadre de cerca"
+msgstr "S_itua les ordres al costat del quadre de cerca"
 
 #: ../panel-plugin/configuration-dialog.cpp:677 ../panel-plugin/window.cpp:126
 msgid "Recently Used"
-msgstr "Recents"
+msgstr "Utilitzat recentment"
 
 #: ../panel-plugin/page.cpp:207
 msgid "Remove From Favorites"
-msgstr "Suprimeix de les favorites"
+msgstr "Suprimeix dels preferits"
 
 #: ../panel-plugin/configuration-dialog.cpp:406
 #, c-format
 msgid "Remove action \"%s\"?"
-msgstr "Esteu segur que voleu suprimir l’acció «%s»?"
+msgstr "Voleu suprimir l'acció «%s»?"
 
 #: ../panel-plugin/configuration-dialog.cpp:791
 msgid "Remove selected action"
-msgstr "Suprimeix l’acció seleccionada"
+msgstr "Suprimeix l'acció seleccionada"
 
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
@@ -233,23 +234,23 @@ msgstr "Executa «%s»"
 
 #: ../panel-plugin/settings.cpp:126
 msgid "Run in Terminal"
-msgstr "Executa a la consola"
+msgstr "Executa al terminal"
 
 #: ../panel-plugin/configuration-dialog.cpp:86
 msgid "Search Actio_ns"
-msgstr "Cerca accio_ns"
+msgstr "Cerca d'accio_ns"
 
 #: ../panel-plugin/search-action.cpp:261
 msgid "Search Action"
-msgstr "Trieu una acció"
+msgstr "Cerca l'acció"
 
 #: ../panel-plugin/configuration-dialog.cpp:119
 msgid "Select An Icon"
-msgstr "Trieu una icona"
+msgstr "Seleccioneu una icona"
 
 #: ../panel-plugin/command-edit.cpp:64
 msgid "Select Command"
-msgstr "Trieu una ordre"
+msgstr "Seleccioneu una ordre"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
@@ -269,11 +270,11 @@ msgstr "Mostra la je_rarquia del menú"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
-msgstr "Petit"
+msgstr "Petita"
 
 #: ../panel-plugin/icon-size.cpp:51
 msgid "Smaller"
-msgstr "Més petit"
+msgstr "Més petita"
 
 #: ../panel-plugin/favorites-page.cpp:129
 msgid "Sort Alphabetically A-Z"
@@ -285,7 +286,7 @@ msgstr "Ordena alfabèticament Z–A"
 
 #: ../panel-plugin/settings.cpp:119
 msgid "Switch _Users"
-msgstr "Canvia d’_usuari"
+msgstr "Canvia d'_usuari"
 
 #: ../panel-plugin/configuration-dialog.cpp:647
 msgid "Switch categories by _hovering"
@@ -293,7 +294,7 @@ msgstr "Canvia de categoria en a_puntar amb el ratolí"
 
 #: ../panel-plugin/configuration-dialog.cpp:405
 msgid "The action will be deleted permanently."
-msgstr "Se suprimirà l’acció permanentment."
+msgstr "Se suprimirà l'acció permanentment."
 
 #: ../panel-plugin/configuration-dialog.cpp:515
 msgid "Title"
@@ -301,20 +302,20 @@ msgstr "Títol"
 
 #: ../panel-plugin/page.cpp:317
 msgid "Unable to add launcher to desktop."
-msgstr "No s’ha pogut afegir el llançador a l’escriptori."
+msgstr "No s'ha pogut afegir el llançador a l'escriptori."
 
 #: ../panel-plugin/page.cpp:356 ../panel-plugin/page.cpp:365
 msgid "Unable to add launcher to panel."
-msgstr "No s’ha pogut afegir el llançador al panell."
+msgstr "No s'ha pogut afegir el llançador al plafó."
 
 #: ../panel-plugin/configuration-dialog.cpp:466
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "No es pot obrir el següent URL: %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:549
 msgid "Use a single _panel row"
-msgstr "Usa només una filera al _panell"
+msgstr "Utilitza una sola fila del _plafó"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
@@ -322,7 +323,7 @@ msgstr "Molt gran"
 
 #: ../panel-plugin/icon-size.cpp:50
 msgid "Very Small"
-msgstr "Molt petit"
+msgstr "Molt petita"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
@@ -355,7 +356,7 @@ msgstr "_Icona:"
 
 #: ../panel-plugin/settings.cpp:118
 msgid "_Lock Screen"
-msgstr "_Bloca la pantalla"
+msgstr "_Bloqueja la pantalla"
 
 #: ../panel-plugin/configuration-dialog.cpp:828
 msgid "_Pattern:"
@@ -371,4 +372,6 @@ msgstr "_Títol:"
 
 #: ../panel-plugin/plugin.cpp:398
 msgid "translator-credits"
-msgstr "Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2013-2015"
+msgstr ""
+"Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2013-2015\n"
+"Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016"
