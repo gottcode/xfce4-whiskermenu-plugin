@@ -1,5 +1,5 @@
 # Polish translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2015 Graeme Gott
+# Copyright (C) 2016 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -8,17 +8,17 @@
 # december <december0123@gmail.com>, 2013
 # december <december0123@gmail.com>, 2013
 # Michał Olber <michal.olber@osworld.pl>, 2013-2015
-# M T <michtrz@gmail.com>, 2013-2014
+# M T <michtrz@gmail.com>, 2013-2014,2016
 # Michał Olber <michal.olber@osworld.pl>, 2013
-# Piotr Sokół <psokol@jabster.pl>, 2013-2014
-# Piotr Sokół <psokol@jabster.pl>, 2015
+# Piotr Sokół <psokol.l10n@gmail.com>, 2013-2014
+# Piotr Sokół <psokol.l10n@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-05 14:08+0000\n"
-"PO-Revision-Date: 2015-02-22 07:22+0000\n"
-"Last-Translator: Piotr Sokół <psokol@jabster.pl>\n"
+"POT-Creation-Date: 2016-08-05 18:09+0000\n"
+"PO-Revision-Date: 2016-08-06 15:53+0000\n"
+"Last-Translator: M T <michtrz@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/pl/)\n"
 "Language: pl\n"
@@ -266,9 +266,8 @@ msgid "Show application _descriptions"
 msgstr "_Opisy programów"
 
 #: ../panel-plugin/configuration-dialog.cpp:593
-#, fuzzy
 msgid "Show application too_ltips"
-msgstr "_Opisy programów"
+msgstr "Pokaż _podpowiedzi programów"
 
 #: ../panel-plugin/configuration-dialog.cpp:581
 msgid "Show generic application _names"
@@ -337,7 +336,7 @@ msgstr "Najmniejszy"
 
 #: ../panel-plugin/settings.cpp:126
 msgid "Web Search"
-msgstr ""
+msgstr "Wyszukiwarka internetowa"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
