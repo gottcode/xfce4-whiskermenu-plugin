@@ -1,19 +1,19 @@
 # French translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2015 Graeme Gott
+# Copyright (C) 2016 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # Anthony Jorion <pingax@frugalware.org>, 2013
 # jc1 <jc1.quebecos@gmail.com>, 2013,2015
 # Urien Desterres <urien.desterres@gmail.com>, 2014-2015
-# Yannick Le Guen <leguen.yannick@gmail.com>, 2014-2015
+# Yannick Le Guen <leguen.yannick@gmail.com>, 2014-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-05 14:08+0000\n"
-"PO-Revision-Date: 2015-07-31 16:04+0000\n"
-"Last-Translator: Urien Desterres <urien.desterres@gmail.com>\n"
+"POT-Creation-Date: 2016-08-05 18:09+0000\n"
+"PO-Revision-Date: 2016-08-06 13:18+0000\n"
+"Last-Translator: Yannick Le Guen <leguen.yannick@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/fr/)\n"
 "Language: fr\n"
@@ -261,9 +261,8 @@ msgid "Show application _descriptions"
 msgstr "Afficher la _description des applications"
 
 #: ../panel-plugin/configuration-dialog.cpp:593
-#, fuzzy
 msgid "Show application too_ltips"
-msgstr "Afficher la _description des applications"
+msgstr "Afficher les info_bulles des applications"
 
 #: ../panel-plugin/configuration-dialog.cpp:581
 msgid "Show generic application _names"
@@ -332,7 +331,7 @@ msgstr "Très petite"
 
 #: ../panel-plugin/settings.cpp:126
 msgid "Web Search"
-msgstr ""
+msgstr "Recherche web"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
