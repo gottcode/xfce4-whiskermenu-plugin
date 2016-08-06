@@ -1,5 +1,5 @@
 # Hebrew translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2015 Graeme Gott
+# Copyright (C) 2016 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-05 14:08+0000\n"
-"PO-Revision-Date: 2016-03-10 19:11+0000\n"
-"Last-Translator: Elishai Eliyahu <e1907@mm.st>\n"
+"POT-Creation-Date: 2016-08-05 18:09+0000\n"
+"PO-Revision-Date: 2016-08-06 11:00+0000\n"
+"Last-Translator: GenghisKhan <genghiskhan@gmx.ca>\n"
 "Language-Team: Hebrew (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/he/)\n"
 "Language: he\n"
@@ -79,7 +79,7 @@ msgstr "נקה תפריט בשימוש לאחרונה"
 
 #: ../panel-plugin/plugin.cpp:394
 msgid "Copyright © 2013-2016 Graeme Gott"
-msgstr "זכות יוצרים 2013-2016 Graeme Gott"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:832
 msgid "Details"
@@ -259,9 +259,8 @@ msgid "Show application _descriptions"
 msgstr "הצג _תיאורי יישום"
 
 #: ../panel-plugin/configuration-dialog.cpp:593
-#, fuzzy
 msgid "Show application too_ltips"
-msgstr "הצג _תיאורי יישום"
+msgstr "הצג תיבת _עזר יישום"
 
 #: ../panel-plugin/configuration-dialog.cpp:581
 msgid "Show generic application _names"
@@ -330,7 +329,7 @@ msgstr "קטן מאוד"
 
 #: ../panel-plugin/settings.cpp:126
 msgid "Web Search"
-msgstr ""
+msgstr "חיפוש רשת"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
