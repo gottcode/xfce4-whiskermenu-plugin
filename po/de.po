@@ -1,5 +1,5 @@
 # German translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2015 Graeme Gott
+# Copyright (C) 2016 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -7,13 +7,13 @@
 # Harald Judt <h.judt@gmx.at>, 2013
 # philm <philm@manjaro.org>, 2013
 # philm <philm@manjaro.org>, 2013
-# Tobias Bannert <tobannert@gmail.com>, 2014-2015
+# Tobias Bannert <tobannert@gmail.com>, 2014-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-05 14:08+0000\n"
-"PO-Revision-Date: 2015-02-21 15:12+0000\n"
+"POT-Creation-Date: 2016-08-05 18:09+0000\n"
+"PO-Revision-Date: 2016-08-06 11:44+0000\n"
 "Last-Translator: Tobias Bannert <tobannert@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/de/)\n"
@@ -107,7 +107,7 @@ msgstr "Bearbeiten des Profils ist fehlgeschlagen."
 #: ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
-msgstr "Befehl konnte »%s« nicht ausführt werden."
+msgstr "Befehl »%s« konnte nicht ausführt werden."
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Failed to launch menu editor."
@@ -261,9 +261,8 @@ msgid "Show application _descriptions"
 msgstr "_Anwendungsbeschreibungen anzeigen"
 
 #: ../panel-plugin/configuration-dialog.cpp:593
-#, fuzzy
 msgid "Show application too_ltips"
-msgstr "_Anwendungsbeschreibungen anzeigen"
+msgstr "_Anwendungsminihilfe anzeigen"
 
 #: ../panel-plugin/configuration-dialog.cpp:581
 msgid "Show generic application _names"
@@ -332,7 +331,7 @@ msgstr "Sehr klein"
 
 #: ../panel-plugin/settings.cpp:126
 msgid "Web Search"
-msgstr ""
+msgstr "Internetsuche"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
