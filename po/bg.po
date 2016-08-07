@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-05 18:09+0000\n"
-"PO-Revision-Date: 2016-08-06 07:04+0000\n"
+"PO-Revision-Date: 2016-08-06 18:52+0000\n"
 "Last-Translator: Kiril Kirilov <cybercop_montana@abv.bg>\n"
 "Language-Team: Bulgarian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/bg/)\n"
@@ -254,7 +254,7 @@ msgstr "Показване на меню за лесен достъп до ин�
 
 #: ../panel-plugin/configuration-dialog.cpp:587
 msgid "Show application _descriptions"
-msgstr "Показване на програмите по описание"
+msgstr "Показване описания на програмите"
 
 #: ../panel-plugin/configuration-dialog.cpp:593
 msgid "Show application too_ltips"
