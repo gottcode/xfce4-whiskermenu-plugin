@@ -508,9 +508,9 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 
 
 	// Create panel button section
-	GtkTable* panel_table = GTK_TABLE(gtk_table_new(4, 2, false));
-	gtk_table_set_col_spacings(panel_table, 12);
-	gtk_table_set_row_spacings(panel_table, 6);
+	GtkGrid* panel_table = GTK_GRID(gtk_grid_new());
+	gtk_grid_set_column_spacing(panel_table, 12);
+	gtk_grid_set_row_spacing(panel_table, 6);
 
 	GtkWidget* panel_frame = xfce_gtk_frame_box_new_with_content(_("Panel Button"), GTK_WIDGET(panel_table));
 	gtk_box_pack_start(contents_vbox, panel_frame, false, false, 6);
@@ -519,46 +519,47 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	// Add button style selector
 	GtkWidget* label = gtk_label_new_with_mnemonic(_("Di_splay:"));
 	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
-	gtk_table_attach(panel_table, label, 0, 1, 0, 1, GTK_FILL, GtkAttachOptions(GTK_EXPAND | GTK_FILL), 0, 0);
+	gtk_grid_attach(panel_table, label, 0, 0, 1, 1);
 
 	m_button_style = gtk_combo_box_text_new();
 	gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_button_style), _("Icon"));
 	gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_button_style), _("Title"));
 	gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_button_style), _("Icon and title"));
 	gtk_combo_box_set_active(GTK_COMBO_BOX(m_button_style), static_cast<int>(m_plugin->get_button_style()) - 1);
-	gtk_table_attach_defaults(panel_table, m_button_style, 1, 2, 0, 1);
+	gtk_widget_set_hexpand(GTK_WIDGET(m_button_style), true);
+	gtk_grid_attach(panel_table, m_button_style, 1, 0, 1, 1);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_button_style);
 	g_signal_connect_slot(m_button_style, "changed", &ConfigurationDialog::style_changed, this);
 
 	// Add title selector
 	label = gtk_label_new_with_mnemonic(_("_Title:"));
 	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
-	gtk_table_attach(panel_table, label, 0, 1, 1, 2, GTK_FILL, GtkAttachOptions(GTK_EXPAND | GTK_FILL), 0, 0);
+	gtk_grid_attach(panel_table, label, 0, 1, 1, 1);
 
 	m_title = gtk_entry_new();
 	gtk_entry_set_text(GTK_ENTRY(m_title), m_plugin->get_button_title().c_str());
-	gtk_table_attach_defaults(panel_table, m_title, 1, 2, 1, 2);
+	gtk_grid_attach(panel_table, m_title, 1, 1, 1, 1);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_title);
 	g_signal_connect_slot(m_title, "changed", &ConfigurationDialog::title_changed, this);
 
 	// Add icon selector
 	label = gtk_label_new_with_mnemonic(_("_Icon:"));
 	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
-	gtk_table_attach(panel_table, label, 0, 1, 2, 3, GTK_FILL, GtkAttachOptions(GTK_EXPAND | GTK_FILL), 0, 0);
+	gtk_grid_attach(panel_table, label, 0, 2, 1, 1);
 
 	m_icon_button = gtk_button_new();
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_icon_button);
 	g_signal_connect_slot<GtkButton*>(m_icon_button, "clicked", &ConfigurationDialog::choose_icon, this);
 	GtkWidget* icon_alignment = gtk_alignment_new(0, 0, 0, 1);
 	gtk_container_add(GTK_CONTAINER(icon_alignment), m_icon_button);
-	gtk_table_attach_defaults(panel_table, icon_alignment, 1, 2, 2, 3);
+	gtk_grid_attach(panel_table, icon_alignment, 1, 2, 1, 1);
 
 	m_icon = xfce_panel_image_new_from_source(m_plugin->get_button_icon_name().c_str());
 	xfce_panel_image_set_size(XFCE_PANEL_IMAGE(m_icon), 48);
 	gtk_container_add(GTK_CONTAINER(m_icon_button), m_icon);
 
 	m_button_single_row = gtk_check_button_new_with_mnemonic(_("Use a single _panel row"));
-	gtk_table_attach_defaults(panel_table, m_button_single_row, 1, 2, 3, 4);
+	gtk_grid_attach(panel_table, m_button_single_row, 1, 3, 1, 1);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_button_single_row), wm_settings->button_single_row);
 	gtk_widget_set_sensitive(m_button_single_row, gtk_combo_box_get_active(GTK_COMBO_BOX (m_button_style)) == 0);
 	g_signal_connect_slot(m_button_single_row, "toggled", &ConfigurationDialog::toggle_button_single_row, this);
@@ -566,9 +567,9 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 
 
 	// Create menu section
-	GtkTable* menu_table = GTK_TABLE(gtk_table_new(6, 2, false));
-	gtk_table_set_col_spacings(menu_table, 12);
-	gtk_table_set_row_spacings(menu_table, 6);
+	GtkGrid* menu_table = GTK_GRID(gtk_grid_new());
+	gtk_grid_set_column_spacing(menu_table, 12);
+	gtk_grid_set_row_spacing(menu_table, 6);
 
 	GtkWidget* appearance_frame = xfce_gtk_frame_box_new_with_content(_("Menu"), GTK_WIDGET(menu_table));
 	gtk_box_pack_start(contents_vbox, appearance_frame, false, false, 6);
@@ -576,32 +577,32 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 
 	// Add option to use generic names
 	m_show_generic_names = gtk_check_button_new_with_mnemonic(_("Show generic application _names"));
-	gtk_table_attach_defaults(menu_table, m_show_generic_names, 0, 2, 0, 1);
+	gtk_grid_attach(menu_table, m_show_generic_names, 0, 0, 2, 1);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_generic_names), !wm_settings->launcher_show_name);
 	g_signal_connect_slot(m_show_generic_names, "toggled", &ConfigurationDialog::toggle_show_generic_name, this);
 
 	// Add option to hide descriptions
 	m_show_descriptions = gtk_check_button_new_with_mnemonic(_("Show application _descriptions"));
-	gtk_table_attach_defaults(menu_table, m_show_descriptions, 0, 2, 1, 2);
+	gtk_grid_attach(menu_table, m_show_descriptions, 0, 1, 2, 1);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_descriptions), wm_settings->launcher_show_description);
 	g_signal_connect_slot(m_show_descriptions, "toggled", &ConfigurationDialog::toggle_show_description, this);
 
 	// Add option to hide tooltips
 	m_show_tooltips = gtk_check_button_new_with_mnemonic(_("Show application too_ltips"));
-	gtk_table_attach_defaults(menu_table, m_show_tooltips, 0, 2, 2, 3);
+	gtk_grid_attach(menu_table, m_show_tooltips, 0, 2, 3, 1);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_tooltips), wm_settings->launcher_show_tooltip);
 	g_signal_connect_slot(m_show_tooltips, "toggled", &ConfigurationDialog::toggle_show_tooltip, this);
 
 	// Add option to show menu hierarchy
 	m_show_hierarchy = gtk_check_button_new_with_mnemonic(_("Show menu hie_rarchy"));
-	gtk_table_attach_defaults(menu_table, m_show_hierarchy, 0, 2, 3, 4);
+	gtk_grid_attach(menu_table, m_show_hierarchy, 0, 3, 2, 1);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_hierarchy), wm_settings->load_hierarchy);
 	g_signal_connect_slot(m_show_hierarchy, "toggled", &ConfigurationDialog::toggle_show_hierarchy, this);
 
 	// Add item icon size selector
 	label = gtk_label_new_with_mnemonic(_("Ite_m icon size:"));
 	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
-	gtk_table_attach(menu_table, label, 0, 1, 4, 5, GTK_FILL, GtkAttachOptions(GTK_EXPAND | GTK_FILL), 0, 0);
+	gtk_grid_attach(menu_table, label, 0, 4, 1, 1);
 
 	m_item_icon_size = gtk_combo_box_text_new();
 	std::vector<std::string> icon_sizes = IconSize::get_strings();
@@ -610,14 +611,14 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_item_icon_size), i->c_str());
 	}
 	gtk_combo_box_set_active(GTK_COMBO_BOX(m_item_icon_size), wm_settings->launcher_icon_size + 1);
-	gtk_table_attach_defaults(menu_table, m_item_icon_size, 1, 2, 4, 5);
+	gtk_grid_attach(menu_table, m_item_icon_size, 1, 4, 1, 1);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_item_icon_size);
 	g_signal_connect_slot(m_item_icon_size, "changed", &ConfigurationDialog::item_icon_size_changed, this);
 
 	// Add category icon size selector
 	label = gtk_label_new_with_mnemonic(_("Categ_ory icon size:"));
 	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
-	gtk_table_attach(menu_table, label, 0, 1, 5, 6, GTK_FILL, GtkAttachOptions(GTK_EXPAND | GTK_FILL), 0, 0);
+	gtk_grid_attach(menu_table, label, 0, 5, 1, 1);
 
 	m_category_icon_size = gtk_combo_box_text_new();
 	for (std::vector<std::string>::const_iterator i = icon_sizes.begin(), end = icon_sizes.end(); i != end; ++i)
@@ -625,17 +626,18 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_category_icon_size), i->c_str());
 	}
 	gtk_combo_box_set_active(GTK_COMBO_BOX(m_category_icon_size), wm_settings->category_icon_size + 1);
-	gtk_table_attach_defaults(menu_table, m_category_icon_size, 1, 2, 5, 6);
+	gtk_grid_attach(menu_table, m_category_icon_size, 1, 5, 1, 1);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_category_icon_size);
 	g_signal_connect_slot(m_category_icon_size, "changed", &ConfigurationDialog::category_icon_size_changed, this);
 
 	// Add option to control background opacity
 	label = gtk_label_new_with_mnemonic(_("Background opacit_y:"));
 	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
-	gtk_table_attach(menu_table, label, 0, 1, 6, 7, GTK_FILL, GtkAttachOptions(GTK_EXPAND | GTK_FILL), 0, 0);
+	gtk_grid_attach(menu_table, label, 0, 6, 1, 1);
 
 	m_background_opacity = gtk_hscale_new_with_range(0.0, 100.0, 1.0);
-	gtk_table_attach_defaults(menu_table, m_background_opacity, 1, 2, 6, 7);
+	gtk_widget_set_hexpand(GTK_WIDGET(m_background_opacity), true);
+	gtk_grid_attach(menu_table, m_background_opacity, 1, 6, 1, 1);
 	gtk_scale_set_value_pos(GTK_SCALE(m_background_opacity), GTK_POS_RIGHT);
 	gtk_range_set_value(GTK_RANGE(m_background_opacity), wm_settings->menu_opacity);
 	g_signal_connect_slot(m_background_opacity, "value-changed", &ConfigurationDialog::background_opacity_changed, this);
@@ -687,9 +689,9 @@ GtkWidget* ConfigurationDialog::init_behavior_tab()
 
 
 	// Create recently used section
-	GtkTable* recent_table = GTK_TABLE(gtk_table_new(3, 2, false));
-	gtk_table_set_col_spacings(recent_table, 12);
-	gtk_table_set_row_spacings(recent_table, 6);
+	GtkGrid* recent_table = GTK_GRID(gtk_grid_new());
+	gtk_grid_set_column_spacing(recent_table, 12);
+	gtk_grid_set_row_spacing(recent_table, 6);
 
 	GtkWidget* recent_frame = xfce_gtk_frame_box_new_with_content(_("Recently Used"), GTK_WIDGET(recent_table));
 	gtk_box_pack_start(contents_vbox, recent_frame, false, false, 6);
@@ -698,23 +700,23 @@ GtkWidget* ConfigurationDialog::init_behavior_tab()
 	// Add value to change maximum number of recently used entries
 	GtkWidget* label = gtk_label_new_with_mnemonic(_("Amount of _items:"));
 	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
-	gtk_table_attach(recent_table, label, 0, 1, 0, 1, GTK_FILL, GtkAttachOptions(GTK_EXPAND | GTK_FILL), 0, 0);
+	gtk_grid_attach(recent_table, label, 0, 0, 1, 1);
 
 	m_recent_items_max = gtk_spin_button_new_with_range(0, 100, 1);
-	gtk_table_attach_defaults(recent_table, m_recent_items_max, 1, 2, 0, 1);
+	gtk_grid_attach(recent_table, m_recent_items_max, 1, 0, 1, 1);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_recent_items_max);
 	gtk_spin_button_set_value(GTK_SPIN_BUTTON(m_recent_items_max), wm_settings->recent_items_max);
 	g_signal_connect_slot(m_recent_items_max, "value-changed", &ConfigurationDialog::recent_items_max_changed, this);
 
 	// Add option to remember favorites
 	m_remember_favorites = gtk_check_button_new_with_mnemonic(_("Ignore _favorites"));
-	gtk_table_attach_defaults(recent_table, m_remember_favorites, 0, 2, 1, 2);
+	gtk_grid_attach(recent_table, m_remember_favorites, 0, 1, 2, 1);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_remember_favorites), !wm_settings->favorites_in_recent);
 	g_signal_connect_slot(m_remember_favorites, "toggled", &ConfigurationDialog::toggle_remember_favorites, this);
 
 	// Add option to display recently used
 	m_display_recent = gtk_check_button_new_with_mnemonic(_("Display by _default"));
-	gtk_table_attach_defaults(recent_table, m_display_recent, 0, 2, 2, 3);
+	gtk_grid_attach(recent_table, m_display_recent, 0, 2, 2, 1);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_display_recent), wm_settings->display_recent);
 	gtk_widget_set_sensitive(GTK_WIDGET(m_display_recent), wm_settings->recent_items_max);
 	g_signal_connect_slot(m_display_recent, "toggled", &ConfigurationDialog::toggle_display_recent, this);
@@ -751,9 +753,9 @@ GtkWidget* ConfigurationDialog::init_search_actions_tab()
 	// Create search actions page
 	GtkWidget* page = gtk_alignment_new(0, 0, 1, 1);
 	gtk_container_set_border_width(GTK_CONTAINER(page), 8);
-	GtkTable* actions_table = GTK_TABLE(gtk_table_new(3, 2, false));
-	gtk_table_set_col_spacings(actions_table, 6);
-	gtk_table_set_row_spacings(actions_table, 6);
+	GtkGrid* actions_table = GTK_GRID(gtk_grid_new());
+	gtk_grid_set_column_spacing(actions_table, 6);
+	gtk_grid_set_row_spacing(actions_table, 6);
 	gtk_container_add(GTK_CONTAINER(page), GTK_WIDGET(actions_table));
 
 	// Create model
@@ -793,7 +795,9 @@ GtkWidget* ConfigurationDialog::init_search_actions_tab()
 	gtk_scrolled_window_set_policy(GTK_SCROLLED_WINDOW(scrolled_window), GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
 	gtk_scrolled_window_set_shadow_type(GTK_SCROLLED_WINDOW(scrolled_window), GTK_SHADOW_ETCHED_IN);
 	gtk_container_add(GTK_CONTAINER(scrolled_window), GTK_WIDGET(m_actions_view));
-	gtk_table_attach_defaults(actions_table, scrolled_window, 0, 1, 0, 1);
+	gtk_widget_set_hexpand(GTK_WIDGET(scrolled_window), true);
+	gtk_widget_set_vexpand(GTK_WIDGET(scrolled_window), true);
+	gtk_grid_attach(actions_table, scrolled_window, 0, 0, 1, 1);
 
 	// Create buttons
 	m_action_add = gtk_button_new();
@@ -819,57 +823,58 @@ GtkWidget* ConfigurationDialog::init_search_actions_tab()
 	gtk_container_add(GTK_CONTAINER(actions), GTK_WIDGET(actions_box));
 	gtk_box_pack_start(actions_box, m_action_add, false, false, 0);
 	gtk_box_pack_start(actions_box, m_action_remove, false, false, 0);
-	gtk_table_attach(actions_table, actions, 1, 2, 0, 1, GTK_FILL, GtkAttachOptions(GTK_FILL | GTK_EXPAND), 0, 0);
+	gtk_grid_attach(actions_table, actions, 1, 0, 1, 1);
 	gtk_widget_show_all(actions);
 
 	// Create details section
-	GtkTable* details_table = GTK_TABLE(gtk_table_new(4, 3, false));
-	gtk_table_set_col_spacings(details_table, 6);
-	gtk_table_set_row_spacings(details_table, 6);
+	GtkGrid* details_table = GTK_GRID(gtk_grid_new());
+	gtk_grid_set_column_spacing(details_table, 6);
+	gtk_grid_set_row_spacing(details_table, 6);
 	GtkWidget* details_frame = xfce_gtk_frame_box_new_with_content(_("Details"), GTK_WIDGET(details_table));
-	gtk_table_attach(actions_table, details_frame, 0, 2, 2, 3, GtkAttachOptions(GTK_FILL | GTK_EXPAND), GTK_FILL, 0, 0);
+	gtk_grid_attach(actions_table, details_frame, 0, 1, 2, 1);
 	gtk_container_set_border_width(GTK_CONTAINER(details_frame), 0);
 
 	// Create entry for name
 	GtkWidget* label = gtk_label_new_with_mnemonic(_("Nam_e:"));
 	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
 	gtk_widget_show(label);
-	gtk_table_attach(details_table, label, 0, 1, 0, 1, GTK_FILL, GTK_FILL, 0, 0);
+	gtk_grid_attach(details_table, label, 0, 0, 1, 1);
 
 	m_action_name = gtk_entry_new();
 	gtk_widget_show(m_action_name);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_action_name);
-	gtk_table_attach(details_table, m_action_name, 2, 3, 0, 1, GtkAttachOptions(GTK_FILL | GTK_EXPAND), GTK_FILL, 0, 0);
+	gtk_widget_set_hexpand(m_action_name, true);
+	gtk_grid_attach(details_table, m_action_name, 1, 0, 1, 1);
 	g_signal_connect_slot(m_action_name, "changed", &ConfigurationDialog::action_name_changed, this);
 
 	// Create entry for keyword
 	label = gtk_label_new_with_mnemonic(_("_Pattern:"));
 	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
 	gtk_widget_show(label);
-	gtk_table_attach(details_table, label, 0, 1, 1, 2, GTK_FILL, GTK_FILL, 0, 0);
+	gtk_grid_attach(details_table, label, 0, 1, 1, 1);
 
 	m_action_pattern = gtk_entry_new();
 	gtk_widget_show(m_action_pattern);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_action_pattern);
-	gtk_table_attach(details_table, m_action_pattern, 2, 3, 1, 2, GtkAttachOptions(GTK_FILL | GTK_EXPAND), GTK_FILL, 0, 0);
+	gtk_grid_attach(details_table, m_action_pattern, 1, 1, 1, 1);
 	g_signal_connect_slot(m_action_pattern, "changed", &ConfigurationDialog::action_pattern_changed, this);
 
 	// Create entry for command
 	label = gtk_label_new_with_mnemonic(_("C_ommand:"));
 	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
 	gtk_widget_show(label);
-	gtk_table_attach(details_table, label, 0, 1, 2, 3, GTK_FILL, GTK_FILL, 0, 0);
+	gtk_grid_attach(details_table, label, 0, 2, 1, 1);
 
 	m_action_command = gtk_entry_new();
 	gtk_widget_show(m_action_command);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_action_command);
-	gtk_table_attach(details_table, m_action_command, 2, 3, 2, 3, GtkAttachOptions(GTK_FILL | GTK_EXPAND), GTK_FILL, 0, 0);
+	gtk_grid_attach(details_table, m_action_command, 1, 2, 1, 1);
 	g_signal_connect_slot(m_action_command, "changed", &ConfigurationDialog::action_command_changed, this);
 
 	// Create toggle button for regular expressions
 	m_action_regex = gtk_check_button_new_with_mnemonic(_("_Regular expression"));
 	gtk_widget_show(m_action_regex);
-	gtk_table_attach(details_table, m_action_regex, 2, 3, 3, 4, GtkAttachOptions(GTK_FILL | GTK_EXPAND), GTK_FILL, 0, 0);
+	gtk_grid_attach(details_table, m_action_regex, 1, 3, 1, 1);
 	g_signal_connect_slot(m_action_regex, "toggled", &ConfigurationDialog::action_toggle_regex, this);
 
 	// Select first action
