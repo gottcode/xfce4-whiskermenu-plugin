@@ -16,9 +16,9 @@ find_package(GTK2 REQUIRED)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(exo REQUIRED exo-1)
 pkg_check_modules(garcon REQUIRED garcon-1)
-pkg_check_modules(libxfce4panel REQUIRED libxfce4panel-1.0>=4.7)
-pkg_check_modules(libxfce4ui REQUIRED libxfce4ui-1>=4.7)
-pkg_check_modules(libxfce4util REQUIRED libxfce4util-1.0>=4.7)
+pkg_check_modules(libxfce4panel REQUIRED libxfce4panel-1.0>=4.11)
+pkg_check_modules(libxfce4ui REQUIRED libxfce4ui-1>=4.11)
+pkg_check_modules(libxfce4util REQUIRED libxfce4util-1.0>=4.11)
 
 include_directories(
 	${exo_INCLUDE_DIRS}
@@ -56,14 +56,11 @@ if(ENABLE_DEVELOPER_MODE)
 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
 	set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -Wl,-z,defs")
 
-	if(${libxfce4panel_VERSION} VERSION_GREATER "4.9")
-		add_definitions(
-			-DG_DISABLE_DEPRECATED
-			-DGDK_DISABLE_DEPRECATED
-			-DGDK_PIXBUF_DISABLE_DEPRECATED
-			-DGTK_DISABLE_DEPRECATED)
-	endif()
 	add_definitions(
+		-DG_DISABLE_DEPRECATED
+		-DGDK_DISABLE_DEPRECATED
+		-DGDK_PIXBUF_DISABLE_DEPRECATED
+		-DGTK_DISABLE_DEPRECATED
 		-DGDK_DISABLE_SINGLE_INCLUDES
 		-DGDK_PIXBUF_DISABLE_SINGLE_INCLUDES
 		-DGTK_DISABLE_SINGLE_INCLUDES)

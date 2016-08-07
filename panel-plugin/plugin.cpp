@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2014, 2015 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014, 2015, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -153,11 +153,7 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	// Connect plugin signals to functions
 	g_signal_connect(plugin, "free-data", G_CALLBACK(whiskermenu_free), this);
 	g_signal_connect_slot<XfcePanelPlugin*>(plugin, "configure-plugin", &Plugin::configure, this);
-#if (LIBXFCE4PANEL_CHECK_VERSION(4,9,0))
 	g_signal_connect_slot(plugin, "mode-changed", &Plugin::mode_changed, this);
-#else
-	g_signal_connect_slot(plugin, "orientation-changed", &Plugin::orientation_changed, this);
-#endif
 	g_signal_connect_slot(plugin, "remote-event", &Plugin::remote_event, this);
 	g_signal_connect_slot<XfcePanelPlugin*>(plugin, "save", &Plugin::save, this);
 	g_signal_connect_slot<XfcePanelPlugin*>(plugin, "about", &Plugin::show_about, this);
@@ -167,11 +163,7 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	xfce_panel_plugin_menu_show_configure(plugin);
 	xfce_panel_plugin_menu_insert_item(plugin, GTK_MENU_ITEM(wm_settings->command[Settings::CommandMenuEditor]->get_menuitem()));
 
-#if (LIBXFCE4PANEL_CHECK_VERSION(4,9,0))
 	mode_changed(m_plugin, xfce_panel_plugin_get_mode(m_plugin));
-#else
-	orientation_changed(m_plugin, xfce_panel_plugin_get_orientation(m_plugin));
-#endif
 
 	g_signal_connect_slot<GtkWidget*,GtkStyle*>(m_button, "style-set", &Plugin::update_size, this);
 	g_signal_connect_slot<GtkWidget*,GdkScreen*>(m_button, "screen-changed", &Plugin::update_size, this);
@@ -328,19 +320,11 @@ void Plugin::configure()
 
 //-----------------------------------------------------------------------------
 
-#if (LIBXFCE4PANEL_CHECK_VERSION(4,9,0))
 void Plugin::mode_changed(XfcePanelPlugin*, XfcePanelPluginMode mode)
 {
 	gtk_label_set_angle(m_button_label, (mode == XFCE_PANEL_PLUGIN_MODE_VERTICAL) ? 270: 0);
 	update_size();
 }
-#else
-void Plugin::orientation_changed(XfcePanelPlugin*, GtkOrientation orientation)
-{
-	gtk_label_set_angle(m_button_label, (orientation == GTK_ORIENTATION_VERTICAL) ? 270: 0);
-	update_size();
-}
-#endif
 
 //-----------------------------------------------------------------------------
 
@@ -407,12 +391,8 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 {
 	GtkOrientation panel_orientation = xfce_panel_plugin_get_orientation(m_plugin);
 	GtkOrientation orientation = panel_orientation;
-#if (LIBXFCE4PANEL_CHECK_VERSION(4,9,0))
 	gint row_size = size / xfce_panel_plugin_get_nrows(m_plugin);
 	XfcePanelPluginMode mode = xfce_panel_plugin_get_mode(m_plugin);
-#else
-	gint row_size = size;
-#endif
 
 	// Make icon expand to fill button if title is not visible
 	gtk_box_set_child_packing(GTK_BOX(m_button_box), GTK_WIDGET(m_button_icon),
@@ -427,7 +407,6 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 	GdkScreen* screen = gtk_widget_get_screen(GTK_WIDGET(m_plugin));
 	GtkIconTheme* icon_theme = G_LIKELY(screen != NULL) ? gtk_icon_theme_get_for_screen(screen) : NULL;
 
-#if (LIBXFCE4PANEL_CHECK_VERSION(4,9,0))
 	gint icon_width_max = (mode == XFCE_PANEL_PLUGIN_MODE_HORIZONTAL) ?
 			6 * row_size - border :
 			size - border;
@@ -437,12 +416,6 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 			icon_theme,
 			icon_width_max,
 			icon_height_max);
-#else
-	GdkPixbuf* icon = xfce_panel_pixbuf_from_source(
-			wm_settings->button_icon_name.c_str(),
-			icon_theme,
-			row_size - border);
-#endif
 	gint icon_width = 0;
 	if (G_LIKELY(icon != NULL))
 	{
@@ -451,7 +424,6 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 		g_object_unref(G_OBJECT(icon));
 	}
 
-#if (LIBXFCE4PANEL_CHECK_VERSION(4,9,0))
 	if (wm_settings->button_title_visible || !wm_settings->button_single_row)
 	{
 		xfce_panel_plugin_set_small(m_plugin, false);
@@ -471,7 +443,6 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 	{
 		xfce_panel_plugin_set_small(m_plugin, true);
 	}
-#endif
 
 	// Fix alignment in deskbar mode
 	if ((panel_orientation == GTK_ORIENTATION_VERTICAL) && (orientation == GTK_ORIENTATION_HORIZONTAL))
