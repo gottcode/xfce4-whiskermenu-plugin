@@ -126,7 +126,7 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	g_signal_connect_slot(m_button, "toggled", &Plugin::button_toggled, this);
 	gtk_widget_show(m_button);
 
-	m_button_box = GTK_BOX(gtk_hbox_new(false, 2));
+	m_button_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 2));
 	gtk_container_add(GTK_CONTAINER(m_button), GTK_WIDGET(m_button_box));
 	gtk_container_set_border_width(GTK_CONTAINER(m_button_box), 0);
 	gtk_widget_show(GTK_WIDGET(m_button_box));

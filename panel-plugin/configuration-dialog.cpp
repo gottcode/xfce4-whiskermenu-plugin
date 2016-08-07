@@ -86,7 +86,7 @@ ConfigurationDialog::ConfigurationDialog(Plugin* plugin) :
 	gtk_notebook_append_page(notebook, init_search_actions_tab(), gtk_label_new_with_mnemonic(_("Search Actio_ns")));
 
 	// Add tabs to dialog
-	GtkBox* vbox = GTK_BOX(gtk_vbox_new(false, 8));
+	GtkBox* vbox = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 8));
 	gtk_container_set_border_width(GTK_CONTAINER(vbox), 6);
 	gtk_box_pack_start(vbox, GTK_WIDGET(notebook), true, true, 0);
 	GtkBox* contents = GTK_BOX(gtk_dialog_get_content_area(GTK_DIALOG(m_window)));
@@ -503,7 +503,7 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	// Create appearance page
 	GtkWidget* page = gtk_alignment_new(0, 0, 1, 0);
 	gtk_container_set_border_width(GTK_CONTAINER(page), 8);
-	GtkBox* contents_vbox = GTK_BOX(gtk_vbox_new(false, 0));
+	GtkBox* contents_vbox = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 0));
 	gtk_container_add(GTK_CONTAINER(page), GTK_WIDGET(contents_vbox));
 
 
@@ -650,12 +650,12 @@ GtkWidget* ConfigurationDialog::init_behavior_tab()
 	// Create behavior page
 	GtkWidget* page = gtk_alignment_new(0, 0, 1, 0);
 	gtk_container_set_border_width(GTK_CONTAINER(page), 8);
-	GtkBox* contents_vbox = GTK_BOX(gtk_vbox_new(false, 8));
+	GtkBox* contents_vbox = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 8));
 	gtk_container_add(GTK_CONTAINER(page), GTK_WIDGET(contents_vbox));
 
 
 	// Create menu section
-	GtkBox* behavior_vbox = GTK_BOX(gtk_vbox_new(false, 6));
+	GtkBox* behavior_vbox = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 6));
 	GtkWidget* behavior_frame = xfce_gtk_frame_box_new_with_content(_("Menu"), GTK_WIDGET(behavior_vbox));
 	gtk_box_pack_start(contents_vbox, behavior_frame, false, false, 6);
 	gtk_container_set_border_width(GTK_CONTAINER(behavior_frame), 0);
@@ -729,7 +729,7 @@ GtkWidget* ConfigurationDialog::init_commands_tab()
 	// Create commands page
 	GtkWidget* page = gtk_alignment_new(0, 0, 1, 0);
 	gtk_container_set_border_width(GTK_CONTAINER(page), 8);
-	GtkBox* commands_vbox = GTK_BOX(gtk_vbox_new(false, 8));
+	GtkBox* commands_vbox = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 8));
 	gtk_container_add(GTK_CONTAINER(page), GTK_WIDGET(commands_vbox));
 	GtkSizeGroup* label_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
 
@@ -815,7 +815,7 @@ GtkWidget* ConfigurationDialog::init_search_actions_tab()
 	g_signal_connect_slot(m_action_remove, "clicked", &ConfigurationDialog::remove_action, this);
 
 	GtkWidget* actions = gtk_alignment_new(0.5, 0, 0, 0);
-	GtkBox* actions_box = GTK_BOX(gtk_vbox_new(false, 6));
+	GtkBox* actions_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 6));
 	gtk_container_add(GTK_CONTAINER(actions), GTK_WIDGET(actions_box));
 	gtk_box_pack_start(actions_box, m_action_add, false, false, 0);
 	gtk_box_pack_start(actions_box, m_action_remove, false, false, 0);

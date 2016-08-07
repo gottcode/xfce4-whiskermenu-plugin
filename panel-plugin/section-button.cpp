@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -54,7 +54,7 @@ SectionButton::SectionButton(const gchar* icon, const gchar* text) :
 	gtk_button_set_focus_on_click(GTK_BUTTON(m_button), false);
 	g_signal_connect(m_button, "enter-notify-event", G_CALLBACK(on_enter_notify_event), GTK_TOGGLE_BUTTON(m_button));
 
-	GtkBox* box = GTK_BOX(gtk_hbox_new(false, 4));
+	GtkBox* box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 4));
 	gtk_container_add(GTK_CONTAINER(m_button), GTK_WIDGET(box));
 
 	m_icon = xfce_panel_image_new();

@@ -144,13 +144,13 @@ WhiskerMenu::Window::Window() :
 	}
 
 	// Create box for packing children
-	m_vbox = GTK_BOX(gtk_vbox_new(false, 6));
+	m_vbox = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 6));
 	gtk_container_add(GTK_CONTAINER(frame), GTK_WIDGET(m_vbox));
 	gtk_container_set_border_width(GTK_CONTAINER(m_vbox), 2);
 
 	// Create box for packing commands
 	m_commands_align = GTK_ALIGNMENT(gtk_alignment_new(1, 0, 0, 0));
-	m_commands_box = GTK_BOX(gtk_hbox_new(false, 0));
+	m_commands_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0));
 	for (int i = 0; i < 4; ++i)
 	{
 		gtk_box_pack_start(m_commands_box, m_commands_button[i], false, false, 0);
@@ -158,7 +158,7 @@ WhiskerMenu::Window::Window() :
 	gtk_container_add(GTK_CONTAINER(m_commands_align), GTK_WIDGET(m_commands_box));
 
 	// Create box for packing username, commands, and resize widget
-	m_title_box = GTK_BOX(gtk_hbox_new(false, 0));
+	m_title_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0));
 	gtk_box_pack_start(m_vbox, GTK_WIDGET(m_title_box), false, false, 0);
 	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_profilepic->get_widget()), false, false, 0);
 	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_username), true, true, 0);
@@ -166,24 +166,24 @@ WhiskerMenu::Window::Window() :
 	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_resizer->get_widget()), false, false, 0);
 
 	// Add search to layout
-	m_search_box = GTK_BOX(gtk_hbox_new(false, 6));
+	m_search_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 6));
 	gtk_box_pack_start(m_vbox, GTK_WIDGET(m_search_box), false, true, 0);
 	gtk_box_pack_start(m_search_box, GTK_WIDGET(m_search_entry), true, true, 0);
 
 	// Create box for packing launcher pages and sidebar
-	m_contents_box = GTK_BOX(gtk_hbox_new(false, 6));
+	m_contents_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 6));
 	gtk_box_pack_start(m_vbox, GTK_WIDGET(m_contents_box), true, true, 0);
 	gtk_box_pack_start(m_contents_box, m_search_results->get_widget(), true, true, 0);
 
 	// Create box for packing launcher pages
-	m_panels_box = GTK_BOX(gtk_vbox_new(false, 0));
+	m_panels_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 0));
 	gtk_box_pack_start(m_contents_box, GTK_WIDGET(m_panels_box), true, true, 0);
 	gtk_box_pack_start(m_panels_box, m_favorites->get_widget(), true, true, 0);
 	gtk_box_pack_start(m_panels_box, m_recent->get_widget(), true, true, 0);
 	gtk_box_pack_start(m_panels_box, m_applications->get_widget(), true, true, 0);
 
 	// Create box for packing sidebar
-	m_sidebar_buttons = GTK_BOX(gtk_vbox_new(false, 0));
+	m_sidebar_buttons = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 0));
 	gtk_box_pack_start(m_sidebar_buttons, GTK_WIDGET(m_favorites_button->get_button()), false, false, 0);
 	gtk_box_pack_start(m_sidebar_buttons, GTK_WIDGET(m_recent_button->get_button()), false, false, 0);
 	gtk_box_pack_start(m_sidebar_buttons, gtk_hseparator_new(), false, true, 0);

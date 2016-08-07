@@ -29,7 +29,7 @@ using namespace WhiskerMenu;
 CommandEdit::CommandEdit(Command* command, GtkSizeGroup* label_size_group) :
 	m_command(command)
 {
-	m_widget = gtk_hbox_new(false, 6);
+	m_widget = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 6);
 
 	bool active = m_command->get_shown();
 
