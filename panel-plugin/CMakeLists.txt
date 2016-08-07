@@ -12,23 +12,24 @@ if(ENABLE_LINKER_OPTIMIZED_HASH_TABLES)
 	set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -Wl,-O1")
 endif()
 
-find_package(GTK2 REQUIRED)
 find_package(PkgConfig REQUIRED)
-pkg_check_modules(exo REQUIRED exo-1)
+pkg_check_modules(GTK3 REQUIRED gtk+-3.0)
+pkg_check_modules(exo REQUIRED exo-2>=0.11)
 pkg_check_modules(garcon REQUIRED garcon-1)
-pkg_check_modules(libxfce4panel REQUIRED libxfce4panel-1.0>=4.11)
-pkg_check_modules(libxfce4ui REQUIRED libxfce4ui-1>=4.11)
+pkg_check_modules(libxfce4panel REQUIRED libxfce4panel-2.0>=4.11)
+pkg_check_modules(libxfce4ui REQUIRED libxfce4ui-2>=4.11)
 pkg_check_modules(libxfce4util REQUIRED libxfce4util-1.0>=4.11)
 
 include_directories(
+	${GTK3_INCLUDE_DIRS}
 	${exo_INCLUDE_DIRS}
 	${garcon_INCLUDE_DIRS}
 	${libxfce4panel_INCLUDE_DIRS}
 	${libxfce4ui_INCLUDE_DIRS}
-	${libxfce4util_INCLUDE_DIRS}
-	${GTK2_INCLUDE_DIRS})
+	${libxfce4util_INCLUDE_DIRS})
 
 link_directories(
+	${GTK3_LIBRARY_DIRS}
 	${exo_LIBRARY_DIRS}
 	${garcon_LIBRARY_DIRS}
 	${libxfce4panel_LIBRARY_DIRS}
@@ -46,6 +47,7 @@ add_definitions(
 	-DG_LOG_DOMAIN="whiskermenu"
 	-DGSEAL_ENABLE
 	-DGTK_MULTIHEAD_SAFE
+	${GTK3_CFLAGS_OTHER}
 	${exo_CFLAGS_OTHER}
 	${garcon_CFLAGS_OTHER}
 	${libxfce4panel_CFLAGS_OTHER}
@@ -93,12 +95,12 @@ add_library(whiskermenu MODULE
 	window.cpp)
 
 target_link_libraries(whiskermenu
+	${GTK3_LIBRARIES}
 	${exo_LIBRARIES}
 	${garcon_LIBRARIES}
 	${libxfce4panel_LIBRARIES}
 	${libxfce4ui_LIBRARIES}
-	${libxfce4util_LIBRARIES}
-	${GTK2_LIBRARIES})
+	${libxfce4util_LIBRARIES})
 
 string(TOLOWER "${CMAKE_BUILD_TYPE}" CMAKE_BUILD_TYPE_TOLOWER)
 if(CMAKE_BUILD_TYPE_TOLOWER MATCHES "release|minsizerel")

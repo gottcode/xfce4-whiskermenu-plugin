@@ -212,10 +212,8 @@ WhiskerMenu::Window::Window() :
 	gtk_window_set_default_size(m_window, m_geometry.width, m_geometry.height);
 
 	// Handle transparency
-	gtk_widget_set_app_paintable(GTK_WIDGET(m_sidebar_buttons), true);
-	g_signal_connect_slot(m_sidebar_buttons, "expose-event", &Window::on_expose_event, this);
 	gtk_widget_set_app_paintable(GTK_WIDGET(m_window), true);
-	g_signal_connect_slot(m_window, "expose-event", &Window::on_expose_event, this);
+	g_signal_connect_slot(m_window, "draw", &Window::on_draw_event, this);
 	g_signal_connect_slot(m_window, "screen-changed", &Window::on_screen_changed_event, this);
 	on_screen_changed_event(GTK_WIDGET(m_window), NULL);
 
@@ -707,7 +705,7 @@ gboolean WhiskerMenu::Window::on_key_press_event(GtkWidget* widget, GdkEvent* ev
 	GdkEventKey* key_event = reinterpret_cast<GdkEventKey*>(event);
 
 	// Hide if escape is pressed and there is no text in search entry
-	if ( (key_event->keyval == GDK_Escape) && exo_str_is_empty(gtk_entry_get_text(m_search_entry)) )
+	if ( (key_event->keyval == GDK_KEY_Escape) && exo_str_is_empty(gtk_entry_get_text(m_search_entry)) )
 	{
 		hide();
 		return true;
@@ -817,22 +815,22 @@ gboolean WhiskerMenu::Window::on_configure_event(GtkWidget*, GdkEvent* event)
 void WhiskerMenu::Window::on_screen_changed_event(GtkWidget* widget, GdkScreen*)
 {
 	GdkScreen* screen = gtk_widget_get_screen(widget);
-	GdkColormap* colormap = gdk_screen_get_rgba_colormap(screen);
-	if (!colormap || (wm_settings->menu_opacity == 100))
+	GdkVisual* visual = gdk_screen_get_rgba_visual(screen);
+	if (!visual || (wm_settings->menu_opacity == 100))
 	{
-		colormap = gdk_screen_get_system_colormap(screen);
+		visual = gdk_screen_get_system_visual(screen);
 		m_supports_alpha = false;
 	}
 	else
 	{
 		m_supports_alpha = true;
 	}
-	gtk_widget_set_colormap(widget, colormap);
+	gtk_widget_set_visual(widget, visual);
 }
 
 //-----------------------------------------------------------------------------
 
-gboolean WhiskerMenu::Window::on_expose_event(GtkWidget* widget, GdkEventExpose*)
+gboolean WhiskerMenu::Window::on_draw_event(GtkWidget* widget, cairo_t* cr)
 {
 	if (!gtk_widget_get_realized(widget))
 	{
@@ -846,7 +844,6 @@ gboolean WhiskerMenu::Window::on_expose_event(GtkWidget* widget, GdkEventExpose*
 	}
 	GdkColor color = style->bg[GTK_STATE_NORMAL];
 
-	cairo_t* cr = gdk_cairo_create(gtk_widget_get_window(widget));
 	if (m_supports_alpha)
 	{
 		cairo_set_source_rgba(cr, color.red / 65535.0, color.green / 65535.0, color.blue / 65535.0, wm_settings->menu_opacity / 100.0);
@@ -857,7 +854,6 @@ gboolean WhiskerMenu::Window::on_expose_event(GtkWidget* widget, GdkEventExpose*
 	}
 	cairo_set_operator(cr, CAIRO_OPERATOR_SOURCE);
 	cairo_paint(cr);
-	cairo_destroy(cr);
 
 	return false;
 }

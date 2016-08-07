@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -69,9 +69,9 @@ ConfigurationDialog::ConfigurationDialog(Plugin* plugin) :
 	}
 	m_window = xfce_titled_dialog_new_with_buttons(_("Whisker Menu"),
 			window,
-			GTK_DIALOG_NO_SEPARATOR,
-			GTK_STOCK_HELP, GTK_RESPONSE_HELP,
-			GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE,
+			GtkDialogFlags(0),
+			_("_Help"), GTK_RESPONSE_HELP,
+			_("_Close"), GTK_RESPONSE_CLOSE,
 			NULL);
 	gtk_window_set_icon_name(GTK_WINDOW(m_window), "document-properties");
 	gtk_window_set_position(GTK_WINDOW(m_window), GTK_WIN_POS_CENTER);
@@ -118,8 +118,8 @@ void ConfigurationDialog::choose_icon()
 {
 	GtkWidget* chooser = exo_icon_chooser_dialog_new(_("Select An Icon"),
 			GTK_WINDOW(m_window),
-			GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-			GTK_STOCK_OK, GTK_RESPONSE_ACCEPT,
+			_("_Cancel"), GTK_RESPONSE_CANCEL,
+			_("_OK"), GTK_RESPONSE_ACCEPT,
 			NULL);
 
 	gtk_dialog_set_default_response(GTK_DIALOG(chooser), GTK_RESPONSE_ACCEPT);
@@ -415,7 +415,7 @@ void ConfigurationDialog::remove_action(GtkButton* button)
 
 	// Confirm removal
 	if (!xfce_dialog_confirm(GTK_WINDOW(gtk_widget_get_toplevel(GTK_WIDGET(button))),
-			GTK_STOCK_DELETE, NULL,
+			"edit-delete", _("_Delete"),
 			_("The action will be deleted permanently."),
 			_("Remove action \"%s\"?"),
 			action->get_name()))

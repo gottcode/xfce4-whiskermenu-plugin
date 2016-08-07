@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -64,8 +64,8 @@ void CommandEdit::browse_clicked()
 	GtkFileChooser* chooser = GTK_FILE_CHOOSER(gtk_file_chooser_dialog_new(_("Select Command"),
 			GTK_WINDOW(gtk_widget_get_toplevel(m_widget)),
 			GTK_FILE_CHOOSER_ACTION_OPEN,
-			GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-			GTK_STOCK_OK, GTK_RESPONSE_ACCEPT,
+			_("_Cancel"), GTK_RESPONSE_CANCEL,
+			_("_OK"), GTK_RESPONSE_ACCEPT,
 			NULL));
 	gtk_file_chooser_set_local_only(chooser, true);
 	gtk_file_chooser_set_current_folder(chooser, BINDIR);

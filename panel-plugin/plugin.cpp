@@ -315,7 +315,7 @@ void Plugin::menu_hidden()
 void Plugin::configure()
 {
 	ConfigurationDialog* dialog = new ConfigurationDialog(this);
-	g_signal_connect_slot<GtkObject*>(dialog->get_widget(), "destroy", &Plugin::save, this);
+	g_signal_connect_slot<GtkWidget*>(dialog->get_widget(), "destroy", &Plugin::save, this);
 }
 
 //-----------------------------------------------------------------------------

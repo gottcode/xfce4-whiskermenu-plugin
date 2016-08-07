@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -49,8 +49,7 @@ private:
 	gboolean on_button_press_event(GtkWidget*, GdkEvent* event);
 	gboolean on_enter_notify_event(GtkWidget* widget, GdkEvent*);
 	gboolean on_leave_notify_event(GtkWidget* widget, GdkEvent*);
-	void on_screen_changed_event(GtkWidget* widget, GdkScreen* old_screen);
-	gboolean on_expose_event(GtkWidget* widget, GdkEvent*);
+	gboolean on_draw_event(GtkWidget* widget, cairo_t* cr);
 
 private:
 	GtkWindow* m_window;
@@ -59,7 +58,6 @@ private:
 	GdkCursor* m_cursor;
 	GdkWindowEdge m_edge;
 	std::vector<GdkPoint> m_shape;
-	bool m_supports_alpha;
 };
 
 }

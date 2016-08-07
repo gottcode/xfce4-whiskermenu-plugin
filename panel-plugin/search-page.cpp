@@ -213,7 +213,7 @@ void SearchPage::clear_search(GtkEntry* entry, GtkEntryIconPosition icon_pos, Gd
 gboolean SearchPage::cancel_search(GtkWidget* widget, GdkEvent* event)
 {
 	GdkEventKey* key_event = reinterpret_cast<GdkEventKey*>(event);
-	if (key_event->keyval == GDK_Escape)
+	if (key_event->keyval == GDK_KEY_Escape)
 	{
 		GtkEntry* entry = GTK_ENTRY(widget);
 		const gchar* text = gtk_entry_get_text(entry);
