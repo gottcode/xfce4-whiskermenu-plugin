@@ -186,7 +186,7 @@ WhiskerMenu::Window::Window() :
 	m_sidebar_buttons = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 0));
 	gtk_box_pack_start(m_sidebar_buttons, GTK_WIDGET(m_favorites_button->get_button()), false, false, 0);
 	gtk_box_pack_start(m_sidebar_buttons, GTK_WIDGET(m_recent_button->get_button()), false, false, 0);
-	gtk_box_pack_start(m_sidebar_buttons, gtk_hseparator_new(), false, true, 0);
+	gtk_box_pack_start(m_sidebar_buttons, gtk_separator_new(GTK_ORIENTATION_HORIZONTAL), false, false, 0);
 
 	m_sidebar = GTK_SCROLLED_WINDOW(gtk_scrolled_window_new(NULL, NULL));
 	gtk_box_pack_start(m_contents_box, GTK_WIDGET(m_sidebar), false, false, 0);
