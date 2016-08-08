@@ -51,7 +51,7 @@ SectionButton::SectionButton(const gchar* icon, const gchar* text) :
 	m_button = GTK_RADIO_BUTTON(gtk_radio_button_new(NULL));
 	gtk_toggle_button_set_mode(GTK_TOGGLE_BUTTON(m_button), false);
 	gtk_button_set_relief(GTK_BUTTON(m_button), GTK_RELIEF_NONE);
-	gtk_button_set_focus_on_click(GTK_BUTTON(m_button), false);
+	gtk_widget_set_focus_on_click(GTK_WIDGET(m_button), false);
 	g_signal_connect(m_button, "enter-notify-event", G_CALLBACK(on_enter_notify_event), GTK_TOGGLE_BUTTON(m_button));
 
 	GtkBox* box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 4));
