@@ -104,7 +104,7 @@ private:
 	GtkLabel* m_username;
 	ResizerWidget* m_resizer;
 
-	GtkAlignment* m_commands_align;
+	GtkWidget* m_commands_spacer;
 	GtkWidget* m_commands_button[4];
 	gulong m_command_slots[4];
 

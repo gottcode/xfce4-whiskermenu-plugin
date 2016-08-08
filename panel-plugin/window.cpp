@@ -149,20 +149,20 @@ WhiskerMenu::Window::Window() :
 	gtk_container_set_border_width(GTK_CONTAINER(m_vbox), 2);
 
 	// Create box for packing commands
-	m_commands_align = GTK_ALIGNMENT(gtk_alignment_new(1, 0, 0, 0));
 	m_commands_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0));
+	m_commands_spacer = gtk_label_new(NULL);
+	gtk_box_pack_start(m_commands_box, m_commands_spacer, true, true, 0);
 	for (int i = 0; i < 4; ++i)
 	{
 		gtk_box_pack_start(m_commands_box, m_commands_button[i], false, false, 0);
 	}
-	gtk_container_add(GTK_CONTAINER(m_commands_align), GTK_WIDGET(m_commands_box));
 
 	// Create box for packing username, commands, and resize widget
 	m_title_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0));
 	gtk_box_pack_start(m_vbox, GTK_WIDGET(m_title_box), false, false, 0);
 	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_profilepic->get_widget()), false, false, 0);
 	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_username), true, true, 0);
-	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_commands_align), false, false, 0);
+	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_commands_box), false, false, 0);
 	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_resizer->get_widget()), false, false, 0);
 
 	// Add search to layout
@@ -433,28 +433,28 @@ void WhiskerMenu::Window::show(GtkWidget* parent, bool horizontal)
 		m_layout_left = !layout_left;
 		m_layout_commands_alternate = wm_settings->position_commands_alternate;
 
-		g_object_ref(m_commands_align);
+		g_object_ref(m_commands_box);
 		if (m_layout_commands_alternate)
 		{
 			if (!wm_settings->position_categories_alternate)
 			{
 				m_sidebar_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
 				gtk_size_group_add_widget(m_sidebar_size_group, GTK_WIDGET(m_sidebar));
-				gtk_size_group_add_widget(m_sidebar_size_group, GTK_WIDGET(m_commands_align));
+				gtk_size_group_add_widget(m_sidebar_size_group, GTK_WIDGET(m_commands_box));
 			}
 
-			gtk_container_remove(GTK_CONTAINER(m_title_box), GTK_WIDGET(m_commands_align));
-			gtk_box_pack_start(m_search_box, GTK_WIDGET(m_commands_align), false, false, 0);
+			gtk_container_remove(GTK_CONTAINER(m_title_box), GTK_WIDGET(m_commands_box));
+			gtk_box_pack_start(m_search_box, GTK_WIDGET(m_commands_box), false, false, 0);
 		}
 		else
 		{
 			g_object_unref(m_sidebar_size_group);
 			m_sidebar_size_group = NULL;
 
-			gtk_container_remove(GTK_CONTAINER(m_search_box), GTK_WIDGET(m_commands_align));
-			gtk_box_pack_start(m_title_box, GTK_WIDGET(m_commands_align), false, false, 0);
+			gtk_container_remove(GTK_CONTAINER(m_search_box), GTK_WIDGET(m_commands_box));
+			gtk_box_pack_start(m_title_box, GTK_WIDGET(m_commands_box), false, false, 0);
 		}
-		g_object_unref(m_commands_align);
+		g_object_unref(m_commands_box);
 	}
 	if ((layout_left && !wm_settings->position_categories_alternate)
 			|| (!layout_left && wm_settings->position_categories_alternate))
@@ -474,64 +474,64 @@ void WhiskerMenu::Window::show(GtkWidget* parent, bool horizontal)
 		{
 			gtk_widget_set_halign(GTK_WIDGET(m_username), GTK_ALIGN_START);
 
-			gtk_alignment_set(m_commands_align, 1, 0, 0, 0);
 			for (int i = 0; i < 4; ++i)
 			{
 				gtk_box_reorder_child(m_commands_box, m_commands_button[i], i);
 			}
+			gtk_box_reorder_child(m_commands_box, m_commands_spacer, 0);
 
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_profilepic->get_widget()), 0);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 1);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 2);
 
 			gtk_box_reorder_child(m_search_box, GTK_WIDGET(m_search_entry), 0);
-			gtk_box_reorder_child(m_search_box, GTK_WIDGET(m_commands_align), 1);
+			gtk_box_reorder_child(m_search_box, GTK_WIDGET(m_commands_box), 1);
 		}
 		else if (m_layout_commands_alternate)
 		{
 			gtk_widget_set_halign(GTK_WIDGET(m_username), GTK_ALIGN_END);
 
-			gtk_alignment_set(m_commands_align, 0, 0, 0, 0);
 			for (int i = 0; i < 4; ++i)
 			{
 				gtk_box_reorder_child(m_commands_box, m_commands_button[i], 3 - i);
 			}
+			gtk_box_reorder_child(m_commands_box, m_commands_spacer, 4);
 
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_profilepic->get_widget()), 2);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 1);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 0);
 
 			gtk_box_reorder_child(m_search_box, GTK_WIDGET(m_search_entry), 1);
-			gtk_box_reorder_child(m_search_box, GTK_WIDGET(m_commands_align), 0);
+			gtk_box_reorder_child(m_search_box, GTK_WIDGET(m_commands_box), 0);
 		}
 		else if (m_layout_left)
 		{
 			gtk_widget_set_halign(GTK_WIDGET(m_username), GTK_ALIGN_START);
 
-			gtk_alignment_set(m_commands_align, 1, 0, 0, 0);
 			for (int i = 0; i < 4; ++i)
 			{
 				gtk_box_reorder_child(m_commands_box, m_commands_button[i], i);
 			}
+			gtk_box_reorder_child(m_commands_box, m_commands_spacer, 0);
 
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_profilepic->get_widget()), 0);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 1);
-			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_commands_align), 2);
+			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_commands_box), 2);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 3);
 		}
 		else
 		{
 			gtk_widget_set_halign(GTK_WIDGET(m_username), GTK_ALIGN_END);
 
-			gtk_alignment_set(m_commands_align, 0, 0, 0, 0);
 			for (int i = 0; i < 4; ++i)
 			{
 				gtk_box_reorder_child(m_commands_box, m_commands_button[i], 3 - i);
 			}
+			gtk_box_reorder_child(m_commands_box, m_commands_spacer, 4);
 
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_profilepic->get_widget()), 3);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 2);
-			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_commands_align), 1);
+			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_commands_box), 1);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 0);
 		}
 	}
