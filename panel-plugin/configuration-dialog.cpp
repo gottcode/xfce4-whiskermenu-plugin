@@ -632,7 +632,7 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	gtk_widget_set_halign(label, GTK_ALIGN_START);
 	gtk_grid_attach(menu_table, label, 0, 6, 1, 1);
 
-	m_background_opacity = gtk_hscale_new_with_range(0.0, 100.0, 1.0);
+	m_background_opacity = gtk_scale_new_with_range(GTK_ORIENTATION_HORIZONTAL, 0.0, 100.0, 1.0);
 	gtk_widget_set_hexpand(GTK_WIDGET(m_background_opacity), true);
 	gtk_grid_attach(menu_table, m_background_opacity, 1, 6, 1, 1);
 	gtk_scale_set_value_pos(GTK_SCALE(m_background_opacity), GTK_POS_RIGHT);
