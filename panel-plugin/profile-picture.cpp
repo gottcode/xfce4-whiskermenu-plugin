@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2014, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,11 +33,16 @@ ProfilePicture::ProfilePicture(Window* window) :
 {
 	m_image = xfce_panel_image_new();
 
-	GtkWidget* eventbox = gtk_event_box_new();
-	gtk_event_box_set_visible_window(GTK_EVENT_BOX(eventbox), false);
-	gtk_widget_add_events(eventbox, GDK_BUTTON_PRESS_MASK);
-	g_signal_connect_slot<GtkWidget*, GdkEvent*>(eventbox, "button-press-event", &ProfilePicture::on_button_press_event, this);
-	gtk_container_add(GTK_CONTAINER(eventbox), m_image);
+	gtk_widget_set_halign(m_image, GTK_ALIGN_CENTER);
+	gtk_widget_set_valign(m_image, GTK_ALIGN_CENTER);
+	gtk_widget_set_margin_start(m_image, 10);
+	gtk_widget_set_margin_end(m_image, 10);
+
+	m_container = gtk_event_box_new();
+	gtk_event_box_set_visible_window(GTK_EVENT_BOX(m_container), false);
+	gtk_widget_add_events(m_container, GDK_BUTTON_PRESS_MASK);
+	g_signal_connect_slot<GtkWidget*, GdkEvent*>(m_container, "button-press-event", &ProfilePicture::on_button_press_event, this);
+	gtk_container_add(GTK_CONTAINER(m_container), m_image);
 
 	gchar* path = g_build_filename(g_get_home_dir(), ".face", NULL);
 	GFile* file = g_file_new_for_path(path);
@@ -48,10 +53,6 @@ ProfilePicture::ProfilePicture(Window* window) :
 	on_file_changed(m_file_monitor, file, NULL, G_FILE_MONITOR_EVENT_CHANGED);
 
 	g_object_unref(file);
-
-	m_alignment = gtk_alignment_new(0.5, 0.5, 0, 0);
-	gtk_alignment_set_padding(GTK_ALIGNMENT(m_alignment), 0, 0, 10, 10);
-	gtk_container_add(GTK_CONTAINER(m_alignment), eventbox);
 }
 
 //-----------------------------------------------------------------------------

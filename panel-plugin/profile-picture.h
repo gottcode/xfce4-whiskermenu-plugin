@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2014, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@ public:
 
 	GtkWidget* get_widget() const
 	{
-		return m_alignment;
+		return m_container;
 	}
 
 private:
@@ -42,7 +42,7 @@ private:
 
 private:
 	Window* m_window;
-	GtkWidget* m_alignment;
+	GtkWidget* m_container;
 	GtkWidget* m_image;
 	GFileMonitor* m_file_monitor;
 };
