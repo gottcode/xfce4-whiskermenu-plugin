@@ -139,10 +139,10 @@ gboolean ResizerWidget::on_leave_notify_event(GtkWidget* widget, GdkEvent*)
 
 gboolean ResizerWidget::on_draw_event(GtkWidget* widget, cairo_t* cr)
 {
-	GtkStyle* style = gtk_widget_get_style(widget);
-
-	const GdkColor& color = style->text_aa[gtk_widget_get_state(widget)];
-	cairo_set_source_rgb(cr, color.red / 65535.0, color.green / 65535.0, color.blue / 65535.0);
+	GdkRGBA color;
+	GtkStyleContext* context = gtk_widget_get_style_context(widget);
+	gtk_style_context_get_color(context, gtk_style_context_get_state(context), &color);
+	gdk_cairo_set_source_rgba(cr, &color);
 
 	cairo_move_to(cr, m_shape.back().x, m_shape.back().y);
 	for (std::vector<GdkPoint>::const_iterator point = m_shape.begin(), end = m_shape.end(); point != end; ++point)
