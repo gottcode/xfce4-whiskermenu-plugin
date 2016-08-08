@@ -27,7 +27,7 @@ using namespace WhiskerMenu;
 
 static gboolean hover_timeout(GtkToggleButton* button)
 {
-	if (gtk_widget_get_state(GTK_WIDGET(button)) == GTK_STATE_PRELIGHT)
+	if (gtk_widget_get_state_flags(GTK_WIDGET(button)) & GTK_STATE_FLAG_PRELIGHT)
 	{
 		gtk_toggle_button_set_active(button, true);
 	}

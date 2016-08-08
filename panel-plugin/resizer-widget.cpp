@@ -118,7 +118,6 @@ gboolean ResizerWidget::on_button_press_event(GtkWidget*, GdkEvent* event)
 
 gboolean ResizerWidget::on_enter_notify_event(GtkWidget* widget, GdkEvent*)
 {
-	gtk_widget_set_state(widget, GTK_STATE_PRELIGHT);
 	GdkWindow* window = gtk_widget_get_window(widget);
 	gdk_window_set_cursor(window, m_cursor);
 	return false;
@@ -128,7 +127,6 @@ gboolean ResizerWidget::on_enter_notify_event(GtkWidget* widget, GdkEvent*)
 
 gboolean ResizerWidget::on_leave_notify_event(GtkWidget* widget, GdkEvent*)
 {
-	gtk_widget_set_state(widget, GTK_STATE_NORMAL);
 	GdkWindow* window = gtk_widget_get_window(widget);
 	gdk_window_set_cursor(window, NULL);
 	return false;
