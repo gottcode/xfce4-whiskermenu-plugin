@@ -91,7 +91,7 @@ WhiskerMenu::Window::Window() :
 	gchar* username = g_markup_printf_escaped("<b><big>%s</big></b>", name);
 	m_username = GTK_LABEL(gtk_label_new(NULL));
 	gtk_label_set_markup(m_username, username);
-	gtk_misc_set_alignment(GTK_MISC(m_username), 0.0f, 0.5f);
+	gtk_widget_set_halign(GTK_WIDGET(m_username), GTK_ALIGN_START);
 	g_free(username);
 
 	// Create action buttons
@@ -472,7 +472,7 @@ void WhiskerMenu::Window::show(GtkWidget* parent, bool horizontal)
 		m_layout_left = layout_left;
 		if (m_layout_left && m_layout_commands_alternate)
 		{
-			gtk_misc_set_alignment(GTK_MISC(m_username), 0.0f, 0.5f);
+			gtk_widget_set_halign(GTK_WIDGET(m_username), GTK_ALIGN_START);
 
 			gtk_alignment_set(m_commands_align, 1, 0, 0, 0);
 			for (int i = 0; i < 4; ++i)
@@ -489,7 +489,7 @@ void WhiskerMenu::Window::show(GtkWidget* parent, bool horizontal)
 		}
 		else if (m_layout_commands_alternate)
 		{
-			gtk_misc_set_alignment(GTK_MISC(m_username), 1.0f, 0.5f);
+			gtk_widget_set_halign(GTK_WIDGET(m_username), GTK_ALIGN_END);
 
 			gtk_alignment_set(m_commands_align, 0, 0, 0, 0);
 			for (int i = 0; i < 4; ++i)
@@ -506,7 +506,7 @@ void WhiskerMenu::Window::show(GtkWidget* parent, bool horizontal)
 		}
 		else if (m_layout_left)
 		{
-			gtk_misc_set_alignment(GTK_MISC(m_username), 0.0f, 0.5f);
+			gtk_widget_set_halign(GTK_WIDGET(m_username), GTK_ALIGN_START);
 
 			gtk_alignment_set(m_commands_align, 1, 0, 0, 0);
 			for (int i = 0; i < 4; ++i)
@@ -521,7 +521,7 @@ void WhiskerMenu::Window::show(GtkWidget* parent, bool horizontal)
 		}
 		else
 		{
-			gtk_misc_set_alignment(GTK_MISC(m_username), 1.0f, 0.5f);
+			gtk_widget_set_halign(GTK_WIDGET(m_username), GTK_ALIGN_END);
 
 			gtk_alignment_set(m_commands_align, 0, 0, 0, 0);
 			for (int i = 0; i < 4; ++i)

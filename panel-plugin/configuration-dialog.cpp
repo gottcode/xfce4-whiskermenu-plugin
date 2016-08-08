@@ -518,7 +518,7 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 
 	// Add button style selector
 	GtkWidget* label = gtk_label_new_with_mnemonic(_("Di_splay:"));
-	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+	gtk_widget_set_halign(label, GTK_ALIGN_START);
 	gtk_grid_attach(panel_table, label, 0, 0, 1, 1);
 
 	m_button_style = gtk_combo_box_text_new();
@@ -533,7 +533,7 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 
 	// Add title selector
 	label = gtk_label_new_with_mnemonic(_("_Title:"));
-	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+	gtk_widget_set_halign(label, GTK_ALIGN_START);
 	gtk_grid_attach(panel_table, label, 0, 1, 1, 1);
 
 	m_title = gtk_entry_new();
@@ -544,7 +544,7 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 
 	// Add icon selector
 	label = gtk_label_new_with_mnemonic(_("_Icon:"));
-	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+	gtk_widget_set_halign(label, GTK_ALIGN_START);
 	gtk_grid_attach(panel_table, label, 0, 2, 1, 1);
 
 	m_icon_button = gtk_button_new();
@@ -601,7 +601,7 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 
 	// Add item icon size selector
 	label = gtk_label_new_with_mnemonic(_("Ite_m icon size:"));
-	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+	gtk_widget_set_halign(label, GTK_ALIGN_START);
 	gtk_grid_attach(menu_table, label, 0, 4, 1, 1);
 
 	m_item_icon_size = gtk_combo_box_text_new();
@@ -617,7 +617,7 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 
 	// Add category icon size selector
 	label = gtk_label_new_with_mnemonic(_("Categ_ory icon size:"));
-	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+	gtk_widget_set_halign(label, GTK_ALIGN_START);
 	gtk_grid_attach(menu_table, label, 0, 5, 1, 1);
 
 	m_category_icon_size = gtk_combo_box_text_new();
@@ -632,7 +632,7 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 
 	// Add option to control background opacity
 	label = gtk_label_new_with_mnemonic(_("Background opacit_y:"));
-	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+	gtk_widget_set_halign(label, GTK_ALIGN_START);
 	gtk_grid_attach(menu_table, label, 0, 6, 1, 1);
 
 	m_background_opacity = gtk_hscale_new_with_range(0.0, 100.0, 1.0);
@@ -699,7 +699,7 @@ GtkWidget* ConfigurationDialog::init_behavior_tab()
 
 	// Add value to change maximum number of recently used entries
 	GtkWidget* label = gtk_label_new_with_mnemonic(_("Amount of _items:"));
-	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+	gtk_widget_set_halign(label, GTK_ALIGN_START);
 	gtk_grid_attach(recent_table, label, 0, 0, 1, 1);
 
 	m_recent_items_max = gtk_spin_button_new_with_range(0, 100, 1);
@@ -836,7 +836,7 @@ GtkWidget* ConfigurationDialog::init_search_actions_tab()
 
 	// Create entry for name
 	GtkWidget* label = gtk_label_new_with_mnemonic(_("Nam_e:"));
-	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+	gtk_widget_set_halign(label, GTK_ALIGN_START);
 	gtk_widget_show(label);
 	gtk_grid_attach(details_table, label, 0, 0, 1, 1);
 
@@ -849,7 +849,7 @@ GtkWidget* ConfigurationDialog::init_search_actions_tab()
 
 	// Create entry for keyword
 	label = gtk_label_new_with_mnemonic(_("_Pattern:"));
-	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+	gtk_widget_set_halign(label, GTK_ALIGN_START);
 	gtk_widget_show(label);
 	gtk_grid_attach(details_table, label, 0, 1, 1, 1);
 
@@ -861,7 +861,7 @@ GtkWidget* ConfigurationDialog::init_search_actions_tab()
 
 	// Create entry for command
 	label = gtk_label_new_with_mnemonic(_("C_ommand:"));
-	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+	gtk_widget_set_halign(label, GTK_ALIGN_START);
 	gtk_widget_show(label);
 	gtk_grid_attach(details_table, label, 0, 2, 1, 1);
 
