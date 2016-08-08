@@ -501,10 +501,8 @@ void ConfigurationDialog::response(GtkDialog*, int response_id)
 GtkWidget* ConfigurationDialog::init_appearance_tab()
 {
 	// Create appearance page
-	GtkWidget* page = gtk_alignment_new(0, 0, 1, 0);
+	GtkBox* page = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 0));
 	gtk_container_set_border_width(GTK_CONTAINER(page), 8);
-	GtkBox* contents_vbox = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 0));
-	gtk_container_add(GTK_CONTAINER(page), GTK_WIDGET(contents_vbox));
 
 
 	// Create panel button section
@@ -513,7 +511,7 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	gtk_grid_set_row_spacing(panel_table, 6);
 
 	GtkWidget* panel_frame = xfce_gtk_frame_box_new_with_content(_("Panel Button"), GTK_WIDGET(panel_table));
-	gtk_box_pack_start(contents_vbox, panel_frame, false, false, 6);
+	gtk_box_pack_start(page, panel_frame, false, false, 6);
 	gtk_container_set_border_width(GTK_CONTAINER(panel_frame), 0);
 
 	// Add button style selector
@@ -548,11 +546,10 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	gtk_grid_attach(panel_table, label, 0, 2, 1, 1);
 
 	m_icon_button = gtk_button_new();
+	gtk_widget_set_halign(m_icon_button, GTK_ALIGN_START);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_icon_button);
 	g_signal_connect_slot<GtkButton*>(m_icon_button, "clicked", &ConfigurationDialog::choose_icon, this);
-	GtkWidget* icon_alignment = gtk_alignment_new(0, 0, 0, 1);
-	gtk_container_add(GTK_CONTAINER(icon_alignment), m_icon_button);
-	gtk_grid_attach(panel_table, icon_alignment, 1, 2, 1, 1);
+	gtk_grid_attach(panel_table, m_icon_button, 1, 2, 1, 1);
 
 	m_icon = xfce_panel_image_new_from_source(m_plugin->get_button_icon_name().c_str());
 	xfce_panel_image_set_size(XFCE_PANEL_IMAGE(m_icon), 48);
@@ -572,7 +569,7 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	gtk_grid_set_row_spacing(menu_table, 6);
 
 	GtkWidget* appearance_frame = xfce_gtk_frame_box_new_with_content(_("Menu"), GTK_WIDGET(menu_table));
-	gtk_box_pack_start(contents_vbox, appearance_frame, false, false, 6);
+	gtk_box_pack_start(page, appearance_frame, false, false, 6);
 	gtk_container_set_border_width(GTK_CONTAINER(appearance_frame), 0);
 
 	// Add option to use generic names
@@ -642,7 +639,7 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	gtk_range_set_value(GTK_RANGE(m_background_opacity), wm_settings->menu_opacity);
 	g_signal_connect_slot(m_background_opacity, "value-changed", &ConfigurationDialog::background_opacity_changed, this);
 
-	return page;
+	return GTK_WIDGET(page);
 }
 
 //-----------------------------------------------------------------------------
@@ -650,16 +647,14 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 GtkWidget* ConfigurationDialog::init_behavior_tab()
 {
 	// Create behavior page
-	GtkWidget* page = gtk_alignment_new(0, 0, 1, 0);
+	GtkBox* page = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 8));
 	gtk_container_set_border_width(GTK_CONTAINER(page), 8);
-	GtkBox* contents_vbox = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 8));
-	gtk_container_add(GTK_CONTAINER(page), GTK_WIDGET(contents_vbox));
 
 
 	// Create menu section
 	GtkBox* behavior_vbox = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 6));
 	GtkWidget* behavior_frame = xfce_gtk_frame_box_new_with_content(_("Menu"), GTK_WIDGET(behavior_vbox));
-	gtk_box_pack_start(contents_vbox, behavior_frame, false, false, 6);
+	gtk_box_pack_start(page, behavior_frame, false, false, 6);
 	gtk_container_set_border_width(GTK_CONTAINER(behavior_frame), 0);
 
 	// Add option to switch categories by hovering
@@ -694,7 +689,7 @@ GtkWidget* ConfigurationDialog::init_behavior_tab()
 	gtk_grid_set_row_spacing(recent_table, 6);
 
 	GtkWidget* recent_frame = xfce_gtk_frame_box_new_with_content(_("Recently Used"), GTK_WIDGET(recent_table));
-	gtk_box_pack_start(contents_vbox, recent_frame, false, false, 6);
+	gtk_box_pack_start(page, recent_frame, false, false, 6);
 	gtk_container_set_border_width(GTK_CONTAINER(recent_frame), 0);
 
 	// Add value to change maximum number of recently used entries
@@ -721,7 +716,7 @@ GtkWidget* ConfigurationDialog::init_behavior_tab()
 	gtk_widget_set_sensitive(GTK_WIDGET(m_display_recent), wm_settings->recent_items_max);
 	g_signal_connect_slot(m_display_recent, "toggled", &ConfigurationDialog::toggle_display_recent, this);
 
-	return page;
+	return GTK_WIDGET(page);
 }
 
 //-----------------------------------------------------------------------------
@@ -729,21 +724,19 @@ GtkWidget* ConfigurationDialog::init_behavior_tab()
 GtkWidget* ConfigurationDialog::init_commands_tab()
 {
 	// Create commands page
-	GtkWidget* page = gtk_alignment_new(0, 0, 1, 0);
+	GtkBox* page = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 8));
 	gtk_container_set_border_width(GTK_CONTAINER(page), 8);
-	GtkBox* commands_vbox = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 8));
-	gtk_container_add(GTK_CONTAINER(page), GTK_WIDGET(commands_vbox));
 	GtkSizeGroup* label_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
 
 	// Add command entries
 	for (int i = 0; i < Settings::CountCommands; ++i)
 	{
 		CommandEdit* command_edit = new CommandEdit(wm_settings->command[i], label_size_group);
-		gtk_box_pack_start(commands_vbox, command_edit->get_widget(), false, false, 0);
+		gtk_box_pack_start(page, command_edit->get_widget(), false, false, 0);
 		m_commands.push_back(command_edit);
 	}
 
-	return page;
+	return GTK_WIDGET(page);
 }
 
 //-----------------------------------------------------------------------------
@@ -751,12 +744,10 @@ GtkWidget* ConfigurationDialog::init_commands_tab()
 GtkWidget* ConfigurationDialog::init_search_actions_tab()
 {
 	// Create search actions page
-	GtkWidget* page = gtk_alignment_new(0, 0, 1, 1);
+	GtkGrid* page = GTK_GRID(gtk_grid_new());
 	gtk_container_set_border_width(GTK_CONTAINER(page), 8);
-	GtkGrid* actions_table = GTK_GRID(gtk_grid_new());
-	gtk_grid_set_column_spacing(actions_table, 6);
-	gtk_grid_set_row_spacing(actions_table, 6);
-	gtk_container_add(GTK_CONTAINER(page), GTK_WIDGET(actions_table));
+	gtk_grid_set_column_spacing(page, 6);
+	gtk_grid_set_row_spacing(page, 6);
 
 	// Create model
 	m_actions_model = gtk_list_store_new(N_COLUMNS,
@@ -797,7 +788,7 @@ GtkWidget* ConfigurationDialog::init_search_actions_tab()
 	gtk_container_add(GTK_CONTAINER(scrolled_window), GTK_WIDGET(m_actions_view));
 	gtk_widget_set_hexpand(GTK_WIDGET(scrolled_window), true);
 	gtk_widget_set_vexpand(GTK_WIDGET(scrolled_window), true);
-	gtk_grid_attach(actions_table, scrolled_window, 0, 0, 1, 1);
+	gtk_grid_attach(page, scrolled_window, 0, 0, 1, 1);
 
 	// Create buttons
 	m_action_add = gtk_button_new();
@@ -818,20 +809,19 @@ GtkWidget* ConfigurationDialog::init_search_actions_tab()
 	gtk_widget_show(image);
 	g_signal_connect_slot(m_action_remove, "clicked", &ConfigurationDialog::remove_action, this);
 
-	GtkWidget* actions = gtk_alignment_new(0.5, 0, 0, 0);
 	GtkBox* actions_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 6));
-	gtk_container_add(GTK_CONTAINER(actions), GTK_WIDGET(actions_box));
+	gtk_widget_set_halign(GTK_WIDGET(actions_box), GTK_ALIGN_START);
 	gtk_box_pack_start(actions_box, m_action_add, false, false, 0);
 	gtk_box_pack_start(actions_box, m_action_remove, false, false, 0);
-	gtk_grid_attach(actions_table, actions, 1, 0, 1, 1);
-	gtk_widget_show_all(actions);
+	gtk_grid_attach(page, GTK_WIDGET(actions_box), 1, 0, 1, 1);
+	gtk_widget_show_all(GTK_WIDGET(actions_box));
 
 	// Create details section
 	GtkGrid* details_table = GTK_GRID(gtk_grid_new());
 	gtk_grid_set_column_spacing(details_table, 6);
 	gtk_grid_set_row_spacing(details_table, 6);
 	GtkWidget* details_frame = xfce_gtk_frame_box_new_with_content(_("Details"), GTK_WIDGET(details_table));
-	gtk_grid_attach(actions_table, details_frame, 0, 1, 2, 1);
+	gtk_grid_attach(page, details_frame, 0, 1, 2, 1);
 	gtk_container_set_border_width(GTK_CONTAINER(details_frame), 0);
 
 	// Create entry for name
@@ -893,7 +883,7 @@ GtkWidget* ConfigurationDialog::init_search_actions_tab()
 		gtk_widget_set_sensitive(m_action_regex, false);
 	}
 
-	return page;
+	return GTK_WIDGET(page);
 }
 
 //-----------------------------------------------------------------------------
