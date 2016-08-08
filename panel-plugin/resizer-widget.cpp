@@ -29,12 +29,11 @@ ResizerWidget::ResizerWidget(GtkWindow* window) :
 	m_cursor(NULL),
 	m_shape(3)
 {
-	m_alignment = GTK_ALIGNMENT(gtk_alignment_new(1,0,0,0));
-
 	m_drawing = gtk_drawing_area_new();
+	gtk_widget_set_halign(m_drawing, GTK_ALIGN_END);
+	gtk_widget_set_valign(m_drawing, GTK_ALIGN_START);
 	gtk_widget_set_size_request(m_drawing, 10, 10);
 	gtk_widget_add_events(m_drawing, GDK_BUTTON_PRESS_MASK | GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK);
-	gtk_container_add(GTK_CONTAINER(m_alignment), m_drawing);
 
 	g_signal_connect_slot(m_drawing, "button-press-event", &ResizerWidget::on_button_press_event, this);
 	g_signal_connect_slot(m_drawing, "enter-notify-event", &ResizerWidget::on_enter_notify_event, this);
@@ -67,26 +66,30 @@ void ResizerWidget::set_corner(Corner corner)
 	switch (corner)
 	{
 	case BottomLeft:
-		gtk_alignment_set(m_alignment, 0,1,0,0);
+		gtk_widget_set_halign(m_drawing, GTK_ALIGN_START);
+		gtk_widget_set_valign(m_drawing, GTK_ALIGN_END);
 		m_shape.assign(bottomleft, bottomleft + 3);
 		m_edge = GDK_WINDOW_EDGE_SOUTH_WEST;
 		type = GDK_BOTTOM_LEFT_CORNER;
 		break;
 	case TopLeft:
-		gtk_alignment_set(m_alignment, 0,0,0,0);
+		gtk_widget_set_halign(m_drawing, GTK_ALIGN_START);
+		gtk_widget_set_valign(m_drawing, GTK_ALIGN_START);
 		m_shape.assign(topleft, topleft + 3);
 		m_edge = GDK_WINDOW_EDGE_NORTH_WEST;
 		type = GDK_TOP_LEFT_CORNER;
 		break;
 	case BottomRight:
-		gtk_alignment_set(m_alignment, 1,1,0,0);
+		gtk_widget_set_halign(m_drawing, GTK_ALIGN_END);
+		gtk_widget_set_valign(m_drawing, GTK_ALIGN_END);
 		m_shape.assign(bottomright, bottomright + 3);
 		m_edge = GDK_WINDOW_EDGE_SOUTH_EAST;
 		type = GDK_BOTTOM_RIGHT_CORNER;
 		break;
 	case TopRight:
 	default:
-		gtk_alignment_set(m_alignment, 1,0,0,0);
+		gtk_widget_set_halign(m_drawing, GTK_ALIGN_END);
+		gtk_widget_set_valign(m_drawing, GTK_ALIGN_START);
 		m_shape.assign(topright, topright + 3);
 		m_edge = GDK_WINDOW_EDGE_NORTH_EAST;
 		type = GDK_TOP_RIGHT_CORNER;
@@ -97,7 +100,7 @@ void ResizerWidget::set_corner(Corner corner)
 	{
 		gdk_cursor_unref(m_cursor);
 	}
-	m_cursor = gdk_cursor_new_for_display(gtk_widget_get_display(GTK_WIDGET(m_alignment)), type);
+	m_cursor = gdk_cursor_new_for_display(gtk_widget_get_display(GTK_WIDGET(m_drawing)), type);
 }
 
 //-----------------------------------------------------------------------------

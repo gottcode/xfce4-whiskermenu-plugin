@@ -33,7 +33,7 @@ public:
 
 	GtkWidget* get_widget() const
 	{
-		return GTK_WIDGET(m_alignment);
+		return m_drawing;
 	}
 
 	enum Corner
@@ -53,7 +53,6 @@ private:
 
 private:
 	GtkWindow* m_window;
-	GtkAlignment* m_alignment;
 	GtkWidget* m_drawing;
 	GdkCursor* m_cursor;
 	GdkWindowEdge m_edge;
