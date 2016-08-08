@@ -54,7 +54,6 @@ LauncherView::LauncherView(Window* window) :
 	m_view = GTK_TREE_VIEW(exo_tree_view_new());
 	gtk_tree_view_set_headers_visible(m_view, false);
 	gtk_tree_view_set_enable_tree_lines(m_view, false);
-	gtk_tree_view_set_rules_hint(m_view, false);
 	gtk_tree_view_set_hover_selection(m_view, true);
 	gtk_tree_view_set_enable_search(m_view, false);
 	gtk_tree_view_set_fixed_height_mode(m_view, true);

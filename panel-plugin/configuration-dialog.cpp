@@ -123,9 +123,6 @@ void ConfigurationDialog::choose_icon()
 			NULL);
 
 	gtk_dialog_set_default_response(GTK_DIALOG(chooser), GTK_RESPONSE_ACCEPT);
-	gtk_dialog_set_alternative_button_order(GTK_DIALOG(chooser),
-			GTK_RESPONSE_ACCEPT,
-			GTK_RESPONSE_CANCEL, -1);
 	exo_icon_chooser_dialog_set_icon(EXO_ICON_CHOOSER_DIALOG(chooser), m_plugin->get_button_icon_name().c_str());
 
 	if (gtk_dialog_run(GTK_DIALOG (chooser)) == GTK_RESPONSE_ACCEPT)
