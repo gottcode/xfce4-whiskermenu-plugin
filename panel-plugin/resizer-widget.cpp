@@ -49,7 +49,7 @@ ResizerWidget::~ResizerWidget()
 {
 	if (m_cursor)
 	{
-		gdk_cursor_unref(m_cursor);
+		g_object_unref(G_OBJECT(m_cursor));
 	}
 }
 
@@ -98,7 +98,7 @@ void ResizerWidget::set_corner(Corner corner)
 
 	if (m_cursor)
 	{
-		gdk_cursor_unref(m_cursor);
+		g_object_unref(G_OBJECT(m_cursor));
 	}
 	m_cursor = gdk_cursor_new_for_display(gtk_widget_get_display(GTK_WIDGET(m_drawing)), type);
 }
