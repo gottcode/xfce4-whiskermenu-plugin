@@ -358,7 +358,14 @@ void WhiskerMenu::Window::show(GtkWidget* parent, bool horizontal)
 	else
 	{
 		GdkDisplay* display = gdk_display_get_default();
-		gdk_display_get_pointer(display, &screen, &parent_x, &parent_y, NULL);
+#if GTK_CHECK_VERSION(3,20,0)
+		GdkSeat* seat = gdk_display_get_default_seat(display);
+		GdkDevice* device = gdk_seat_get_pointer(seat);
+#else
+		GdkDeviceManager* device_manager = gdk_display_get_device_manager(display);
+		GdkDevice* device = gdk_device_manager_get_client_pointer(device_manager);
+#endif
+		gdk_device_get_position(device, &screen, &parent_x, &parent_y);
 	}
 
 	// Fetch screen geomtry
