@@ -39,6 +39,49 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
+#if GTK_CHECK_VERSION(3,20,0)
+
+static void grab_pointer(GdkWindow* window, guint32)
+{
+	GdkDisplay* display = gdk_display_get_default();
+	GdkSeat* seat = gdk_display_get_default_seat(display);
+	gdk_seat_grab(seat, window, GDK_SEAT_CAPABILITY_ALL_POINTING, true, NULL, NULL, NULL, NULL);
+}
+
+static void ungrab_pointer()
+{
+	GdkDisplay* display = gdk_display_get_default();
+	GdkSeat* seat = gdk_display_get_default_seat(display);
+	gdk_seat_ungrab(seat);
+}
+
+#else
+
+static void grab_pointer(GdkWindow* window, guint32 time)
+{
+	GdkDisplay* display = gdk_display_get_default();
+	GdkDeviceManager* device_manager = gdk_display_get_device_manager(display);
+	GdkDevice* device = gdk_device_manager_get_client_pointer(device_manager);
+	gdk_device_grab(device, window, GDK_OWNERSHIP_NONE, true,
+		GdkEventMask(
+			GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK |
+			GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK
+		),
+		NULL, time);
+}
+
+static void ungrab_pointer()
+{
+	GdkDisplay* display = gdk_display_get_default();
+	GdkDeviceManager* device_manager = gdk_display_get_device_manager(display);
+	GdkDevice* device = gdk_device_manager_get_client_pointer(device_manager);
+	gdk_device_ungrab(device, gtk_get_current_event_time());
+}
+
+#endif
+
+//-----------------------------------------------------------------------------
+
 WhiskerMenu::Window::Window() :
 	m_window(NULL),
 	m_sidebar_size_group(NULL),
@@ -248,7 +291,7 @@ WhiskerMenu::Window::~Window()
 
 void WhiskerMenu::Window::hide()
 {
-	gdk_pointer_ungrab(gtk_get_current_event_time());
+	ungrab_pointer();
 
 	// Hide command buttons to remove active border
 	for (int i = 0; i < 4; ++i)
@@ -601,12 +644,7 @@ void WhiskerMenu::Window::save()
 
 void WhiskerMenu::Window::on_context_menu_destroyed()
 {
-	gdk_pointer_grab(gtk_widget_get_window(GTK_WIDGET(m_window)), true,
-			GdkEventMask(
-				GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK |
-				GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK
-			),
-			NULL, NULL, gtk_get_current_event_time());
+	grab_pointer(gtk_widget_get_window(GTK_WIDGET(m_window)), gtk_get_current_event_time());
 }
 
 //-----------------------------------------------------------------------------
@@ -658,12 +696,7 @@ gboolean WhiskerMenu::Window::on_enter_notify_event(GtkWidget*, GdkEvent* event)
 		return false;
 	}
 
-	gdk_pointer_grab(gtk_widget_get_window(GTK_WIDGET(m_window)), true,
-			GdkEventMask(
-				GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK |
-				GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK
-			),
-			NULL, NULL, crossing_event->time);
+	grab_pointer(gtk_widget_get_window(GTK_WIDGET(m_window)), crossing_event->time);
 
 	return false;
 }
@@ -679,12 +712,7 @@ gboolean WhiskerMenu::Window::on_leave_notify_event(GtkWidget*, GdkEvent* event)
 		return false;
 	}
 
-	gdk_pointer_grab(gtk_widget_get_window(GTK_WIDGET(m_window)), true,
-			GdkEventMask(
-				GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK |
-				GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK
-			),
-			NULL, NULL, crossing_event->time);
+	grab_pointer(gtk_widget_get_window(GTK_WIDGET(m_window)), crossing_event->time);
 
 	return false;
 }
@@ -789,12 +817,7 @@ gboolean WhiskerMenu::Window::on_map_event(GtkWidget*, GdkEvent*)
 	gtk_window_set_keep_above(m_window, true);
 
 	// Track mouse clicks outside of menu
-	gdk_pointer_grab(gtk_widget_get_window(GTK_WIDGET(m_window)), true,
-			GdkEventMask(
-				GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK |
-				GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK
-			),
-			NULL, NULL, gtk_get_current_event_time());
+	grab_pointer(gtk_widget_get_window(GTK_WIDGET(m_window)), gtk_get_current_event_time());
 
 	// Focus search entry
 	gtk_widget_grab_focus(GTK_WIDGET(m_search_entry));

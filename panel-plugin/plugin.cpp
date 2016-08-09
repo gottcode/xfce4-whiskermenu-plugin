@@ -51,19 +51,48 @@ static bool panel_utils_grab_available()
 {
 	bool grab_succeed = false;
 
-	// Don't try to get the grab for longer then 1/4 second
 	GdkWindow* root = gdk_screen_get_root_window(xfce_gdk_screen_get_active(NULL));
+	GdkDisplay* display = gdk_display_get_default();
+#if GTK_CHECK_VERSION(3,20,0)
+	GdkSeat* seat = gdk_display_get_default_seat(display);
+
+	// Don't try to get the grab for longer then 1/4 second
+	for (guint i = 0; i < (G_USEC_PER_SEC / 400); ++i)
+	{
+		if (gdk_seat_grab(seat, root, GDK_SEAT_CAPABILITY_ALL, true, NULL, NULL, NULL, NULL))
+		{
+			gdk_seat_ungrab(seat);
+			grab_succeed = true;
+			break;
+		}
+		g_usleep(100);
+	}
+#else
+	GdkDeviceManager* device_manager = gdk_display_get_device_manager(display);
+	GdkDevice* pointer = gdk_device_manager_get_client_pointer(device_manager);
+	GdkDevice* keyboard = gdk_device_get_associated_device(pointer);
+
+	// Don't try to get the grab for longer then 1/4 second
 	GdkGrabStatus grab_pointer = GDK_GRAB_FROZEN;
 	GdkGrabStatus grab_keyboard = GDK_GRAB_FROZEN;
-	for (guint i = 0; i < (G_USEC_PER_SEC / 4 / 100); ++i)
+	for (guint i = 0; i < (G_USEC_PER_SEC / 400); ++i)
 	{
-		grab_keyboard = gdk_keyboard_grab(root, true, GDK_CURRENT_TIME);
+		grab_keyboard = gdk_device_grab(keyboard,
+				root,
+				GDK_OWNERSHIP_NONE,
+				true,
+				GDK_ALL_EVENTS_MASK,
+				NULL,
+				GDK_CURRENT_TIME);
 		if (grab_keyboard == GDK_GRAB_SUCCESS)
 		{
-			const GdkEventMask pointer_mask = static_cast<GdkEventMask>(GDK_BUTTON_PRESS_MASK
-					| GDK_BUTTON_RELEASE_MASK | GDK_ENTER_NOTIFY_MASK
-					| GDK_LEAVE_NOTIFY_MASK | GDK_POINTER_MOTION_MASK);
-			grab_pointer = gdk_pointer_grab(root, true, pointer_mask, NULL, NULL, GDK_CURRENT_TIME);
+			grab_pointer = gdk_device_grab(pointer,
+					root,
+					GDK_OWNERSHIP_NONE,
+					true,
+					GDK_ALL_EVENTS_MASK,
+					NULL,
+					GDK_CURRENT_TIME);
 			if (grab_pointer == GDK_GRAB_SUCCESS)
 			{
 				grab_succeed = true;
@@ -76,12 +105,13 @@ static bool panel_utils_grab_available()
 	// Release the grab so the menu window can take it
 	if (grab_pointer == GDK_GRAB_SUCCESS)
 	{
-		gdk_pointer_ungrab(GDK_CURRENT_TIME);
+		gdk_device_ungrab(pointer, GDK_CURRENT_TIME);
 	}
 	if (grab_keyboard == GDK_GRAB_SUCCESS)
 	{
-		gdk_keyboard_ungrab(GDK_CURRENT_TIME);
+		gdk_device_ungrab(keyboard, GDK_CURRENT_TIME);
 	}
+#endif
 
 	if (!grab_succeed)
 	{
