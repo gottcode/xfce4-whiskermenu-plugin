@@ -837,23 +837,28 @@ gboolean WhiskerMenu::Window::on_draw_event(GtkWidget* widget, cairo_t* cr)
 		gtk_widget_realize(widget);
 	}
 
-	GtkStyle* style = gtk_widget_get_style(widget);
-	if (style == NULL)
-	{
-		return false;
-	}
-	GdkColor color = style->bg[GTK_STATE_NORMAL];
+	GtkStyleContext* context = gtk_widget_get_style_context(widget);
+	const double width = gtk_widget_get_allocated_width(widget);
+	const double height = gtk_widget_get_allocated_height(widget);
 
 	if (m_supports_alpha)
 	{
-		cairo_set_source_rgba(cr, color.red / 65535.0, color.green / 65535.0, color.blue / 65535.0, wm_settings->menu_opacity / 100.0);
+		cairo_surface_t* background = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, width, height);
+		cairo_t* cr_background = cairo_create(background);
+		cairo_set_operator(cr_background, CAIRO_OPERATOR_SOURCE);
+		gtk_render_background(context, cr_background, 0.0, 0.0, width, height);
+		cairo_destroy(cr_background);
+
+		cairo_set_source_surface(cr, background, 0.0, 0.0);
+		cairo_set_operator(cr, CAIRO_OPERATOR_SOURCE);
+		cairo_paint_with_alpha(cr, wm_settings->menu_opacity / 100.0);
+
+		cairo_surface_destroy(background);
 	}
 	else
 	{
-		cairo_set_source_rgb(cr, color.red / 65535.0, color.green / 65535.0, color.blue / 65535.0);
+		gtk_render_background(context, cr, 0.0, 0.0, width, height);
 	}
-	cairo_set_operator(cr, CAIRO_OPERATOR_SOURCE);
-	cairo_paint(cr);
 
 	return false;
 }
