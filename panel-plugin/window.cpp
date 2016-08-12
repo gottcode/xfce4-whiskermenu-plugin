@@ -73,13 +73,10 @@ WhiskerMenu::Window::Window() :
 	g_signal_connect_slot(m_window, "configure-event", &Window::on_configure_event, this);
 	g_signal_connect(m_window, "delete_event", G_CALLBACK(gtk_widget_hide_on_delete), NULL);
 
-	m_window_box = GTK_BOX(gtk_vbox_new(false, 0));
-	gtk_container_add(GTK_CONTAINER(m_window), GTK_WIDGET(m_window_box));
-
 	// Create the border of the window
-	m_window_contents = gtk_frame_new(NULL);
-	gtk_frame_set_shadow_type(GTK_FRAME(m_window_contents), GTK_SHADOW_OUT);
-	gtk_box_pack_start(m_window_box, m_window_contents, true, true, 0);
+	GtkWidget* frame = gtk_frame_new(NULL);
+	gtk_frame_set_shadow_type(GTK_FRAME(frame), GTK_SHADOW_OUT);
+	gtk_container_add(GTK_CONTAINER(m_window), frame);
 
 	// Create the profile picture
 	m_profilepic = new ProfilePicture(this);
@@ -147,7 +144,7 @@ WhiskerMenu::Window::Window() :
 
 	// Create box for packing children
 	m_vbox = GTK_BOX(gtk_vbox_new(false, 6));
-	gtk_container_add(GTK_CONTAINER(m_window_contents), GTK_WIDGET(m_vbox));
+	gtk_container_add(GTK_CONTAINER(frame), GTK_WIDGET(m_vbox));
 	gtk_container_set_border_width(GTK_CONTAINER(m_vbox), 2);
 
 	// Create box for packing commands
@@ -206,13 +203,13 @@ WhiskerMenu::Window::Window() :
 	gtk_size_group_add_widget(sidebar_size_group, GTK_WIDGET(m_commands_align));
 
 	// Show widgets
-	gtk_widget_show_all(GTK_WIDGET(m_window_box));
+	gtk_widget_show_all(frame);
 	gtk_widget_hide(m_favorites->get_widget());
 	gtk_widget_hide(m_recent->get_widget());
 	gtk_widget_hide(m_applications->get_widget());
 	gtk_widget_hide(m_search_results->get_widget());
 	m_default_button->set_active(true);
-	gtk_widget_show(m_window_contents);
+	gtk_widget_show(frame);
 
 	// Resize to last known size
 	gtk_window_set_default_size(m_window, m_geometry.width, m_geometry.height);

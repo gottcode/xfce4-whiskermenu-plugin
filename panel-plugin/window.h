@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2014, 2015 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014, 2015, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -92,9 +92,6 @@ private:
 
 private:
 	GtkWindow* m_window;
-
-	GtkBox* m_window_box;
-	GtkWidget* m_window_contents;
 
 	GtkBox* m_vbox;
 	GtkBox* m_title_box;
