@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2014, 2015 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014, 2015, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -194,6 +194,7 @@ void Page::create_context_menu(GtkTreeIter* iter, GdkEvent* event)
 	menuitem = gtk_separator_menu_item_new();
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 	if (!m_window->get_favorites()->contains(launcher))
 	{
 		menuitem = gtk_image_menu_item_new_with_label(_("Add to Favorites"));
@@ -210,6 +211,7 @@ void Page::create_context_menu(GtkTreeIter* iter, GdkEvent* event)
 		g_signal_connect_slot<GtkMenuItem*>(menuitem, "activate", &Page::remove_selected_from_favorites, this);
 		gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 	}
+G_GNUC_END_IGNORE_DEPRECATIONS
 
 	menuitem = gtk_menu_item_new_with_label(_("Add to Desktop"));
 	g_signal_connect_slot<GtkMenuItem*>(menuitem, "activate", &Page::add_selected_to_desktop, this);
