@@ -41,6 +41,7 @@ using namespace WhiskerMenu;
 
 WhiskerMenu::Window::Window() :
 	m_window(NULL),
+	m_sidebar_size_group(NULL),
 	m_layout_left(true),
 	m_layout_bottom(true),
 	m_layout_search_alternate(false),
@@ -197,10 +198,6 @@ WhiskerMenu::Window::Window() :
 	gtk_viewport_set_shadow_type(GTK_VIEWPORT(viewport), GTK_SHADOW_NONE);
 	gtk_container_add(GTK_CONTAINER(m_sidebar), viewport);
 	gtk_container_add(GTK_CONTAINER(viewport), GTK_WIDGET(m_sidebar_buttons));
-
-	GtkSizeGroup* sidebar_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
-	gtk_size_group_add_widget(sidebar_size_group, GTK_WIDGET(m_sidebar));
-	gtk_size_group_add_widget(sidebar_size_group, GTK_WIDGET(m_commands_align));
 
 	// Show widgets
 	gtk_widget_show_all(frame);
@@ -437,20 +434,29 @@ void WhiskerMenu::Window::show(GtkWidget* parent, bool horizontal)
 	{
 		m_layout_left = !layout_left;
 		m_layout_commands_alternate = wm_settings->position_commands_alternate;
+
+		g_object_ref(m_commands_align);
 		if (m_layout_commands_alternate)
 		{
-			g_object_ref(m_commands_align);
+			if (!wm_settings->position_categories_alternate)
+			{
+				m_sidebar_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
+				gtk_size_group_add_widget(m_sidebar_size_group, GTK_WIDGET(m_sidebar));
+				gtk_size_group_add_widget(m_sidebar_size_group, GTK_WIDGET(m_commands_align));
+			}
+
 			gtk_container_remove(GTK_CONTAINER(m_title_box), GTK_WIDGET(m_commands_align));
 			gtk_box_pack_start(m_search_box, GTK_WIDGET(m_commands_align), false, false, 0);
-			g_object_unref(m_commands_align);
 		}
 		else
 		{
-			g_object_ref(m_commands_align);
+			g_object_unref(m_sidebar_size_group);
+			m_sidebar_size_group = NULL;
+
 			gtk_container_remove(GTK_CONTAINER(m_search_box), GTK_WIDGET(m_commands_align));
 			gtk_box_pack_start(m_title_box, GTK_WIDGET(m_commands_align), false, false, 0);
-			g_object_unref(m_commands_align);
 		}
+		g_object_unref(m_commands_align);
 	}
 	if ((layout_left && !wm_settings->position_categories_alternate)
 			|| (!layout_left && wm_settings->position_categories_alternate))

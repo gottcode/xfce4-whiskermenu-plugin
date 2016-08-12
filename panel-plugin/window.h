@@ -121,6 +121,7 @@ private:
 	SectionButton* m_favorites_button;
 	SectionButton* m_recent_button;
 	SectionButton* m_default_button;
+	GtkSizeGroup* m_sidebar_size_group;
 
 	GdkRectangle m_geometry;
 	bool m_layout_left;
