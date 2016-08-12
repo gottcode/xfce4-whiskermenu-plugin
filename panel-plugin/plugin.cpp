@@ -431,16 +431,21 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 			0, GTK_PACK_START);
 
 	// Load icon
-	GtkStyle* style = gtk_widget_get_style(m_button);
-	gint border = (2 * std::max(style->xthickness, style->ythickness)) + 2;
+	GtkBorder border, padding;
+	GtkStyleContext* context = gtk_widget_get_style_context(m_button);
+	GtkStateFlags state = gtk_style_context_get_state(context);
+	gtk_style_context_get_border(context, state, &border);
+	gtk_style_context_get_padding(context, state, &padding);
+	gint margin_x = border.left + border.right + padding.left + padding.right;
+	gint margin_y = border.top + border.bottom + padding.top + padding.bottom;
 
 	GdkScreen* screen = gtk_widget_get_screen(GTK_WIDGET(m_plugin));
 	GtkIconTheme* icon_theme = G_LIKELY(screen != NULL) ? gtk_icon_theme_get_for_screen(screen) : NULL;
 
 	gint icon_width_max = (mode == XFCE_PANEL_PLUGIN_MODE_HORIZONTAL) ?
-			6 * row_size - border :
-			size - border;
-	gint icon_height_max = row_size - border;
+			6 * row_size - margin_x :
+			size - margin_x;
+	gint icon_height_max = row_size - margin_y;
 	GdkPixbuf* icon = xfce_panel_pixbuf_from_source_at_size(
 			wm_settings->button_icon_name.c_str(),
 			icon_theme,
@@ -464,7 +469,7 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 		if (mode == XFCE_PANEL_PLUGIN_MODE_DESKBAR &&
 				wm_settings->button_title_visible &&
 				wm_settings->button_icon_visible &&
-				label_size.width <= (size - border - icon_width))
+				label_size.width <= (size - margin_x - icon_width))
 		{
 			orientation = GTK_ORIENTATION_HORIZONTAL;
 		}
