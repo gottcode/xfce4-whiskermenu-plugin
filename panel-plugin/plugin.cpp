@@ -460,7 +460,7 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 
 		// Put title next to icon if panel is wide enough
 		GtkRequisition label_size;
-		gtk_widget_size_request(GTK_WIDGET(m_button_label), &label_size);
+		gtk_widget_get_preferred_size(GTK_WIDGET(m_button_label), NULL, &label_size);
 		if (mode == XFCE_PANEL_PLUGIN_MODE_DESKBAR &&
 				wm_settings->button_title_visible &&
 				wm_settings->button_icon_visible &&
