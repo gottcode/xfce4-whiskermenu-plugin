@@ -99,7 +99,6 @@ private:
 	GtkBox* m_search_box;
 	GtkBox* m_contents_box;
 	GtkBox* m_panels_box;
-	GtkBox* m_sidebar_box;
 
 	ProfilePicture* m_profilepic;
 	GtkLabel* m_username;
@@ -118,6 +117,7 @@ private:
 	Page* m_default_page;
 
 	GtkScrolledWindow* m_sidebar;
+	GtkBox* m_sidebar_buttons;
 	SectionButton* m_favorites_button;
 	SectionButton* m_recent_button;
 	SectionButton* m_default_button;

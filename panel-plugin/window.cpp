@@ -182,10 +182,10 @@ WhiskerMenu::Window::Window() :
 	gtk_box_pack_start(m_panels_box, m_applications->get_widget(), true, true, 0);
 
 	// Create box for packing sidebar
-	m_sidebar_box = GTK_BOX(gtk_vbox_new(false, 0));
-	gtk_box_pack_start(m_sidebar_box, GTK_WIDGET(m_favorites_button->get_button()), false, false, 0);
-	gtk_box_pack_start(m_sidebar_box, GTK_WIDGET(m_recent_button->get_button()), false, false, 0);
-	gtk_box_pack_start(m_sidebar_box, gtk_hseparator_new(), false, true, 0);
+	m_sidebar_buttons = GTK_BOX(gtk_vbox_new(false, 0));
+	gtk_box_pack_start(m_sidebar_buttons, GTK_WIDGET(m_favorites_button->get_button()), false, false, 0);
+	gtk_box_pack_start(m_sidebar_buttons, GTK_WIDGET(m_recent_button->get_button()), false, false, 0);
+	gtk_box_pack_start(m_sidebar_buttons, gtk_hseparator_new(), false, true, 0);
 
 	m_sidebar = GTK_SCROLLED_WINDOW(gtk_scrolled_window_new(NULL, NULL));
 	gtk_box_pack_start(m_contents_box, GTK_WIDGET(m_sidebar), false, false, 0);
@@ -196,7 +196,7 @@ WhiskerMenu::Window::Window() :
 		gtk_scrolled_window_get_vadjustment(m_sidebar));
 	gtk_viewport_set_shadow_type(GTK_VIEWPORT(viewport), GTK_SHADOW_NONE);
 	gtk_container_add(GTK_CONTAINER(m_sidebar), viewport);
-	gtk_container_add(GTK_CONTAINER(viewport), GTK_WIDGET(m_sidebar_box));
+	gtk_container_add(GTK_CONTAINER(viewport), GTK_WIDGET(m_sidebar_buttons));
 
 	GtkSizeGroup* sidebar_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
 	gtk_size_group_add_widget(sidebar_size_group, GTK_WIDGET(m_sidebar));
@@ -215,8 +215,8 @@ WhiskerMenu::Window::Window() :
 	gtk_window_set_default_size(m_window, m_geometry.width, m_geometry.height);
 
 	// Handle transparency
-	gtk_widget_set_app_paintable(GTK_WIDGET(m_sidebar_box), true);
-	g_signal_connect_slot(m_sidebar_box, "expose-event", &Window::on_expose_event, this);
+	gtk_widget_set_app_paintable(GTK_WIDGET(m_sidebar_buttons), true);
+	g_signal_connect_slot(m_sidebar_buttons, "expose-event", &Window::on_expose_event, this);
 	gtk_widget_set_app_paintable(GTK_WIDGET(m_window), true);
 	g_signal_connect_slot(m_window, "expose-event", &Window::on_expose_event, this);
 	g_signal_connect_slot(m_window, "screen-changed", &Window::on_screen_changed_event, this);
@@ -605,10 +605,10 @@ void WhiskerMenu::Window::set_categories(const std::vector<SectionButton*>& cate
 	for (std::vector<SectionButton*>::const_iterator i = categories.begin(), end = categories.end(); i != end; ++i)
 	{
 		(*i)->set_group(m_recent_button->get_group());
-		gtk_box_pack_start(m_sidebar_box, GTK_WIDGET((*i)->get_button()), false, false, 0);
+		gtk_box_pack_start(m_sidebar_buttons, GTK_WIDGET((*i)->get_button()), false, false, 0);
 		g_signal_connect_slot<GtkToggleButton*>((*i)->get_button(), "toggled", &Window::category_toggled, this);
 	}
-	gtk_widget_show_all(GTK_WIDGET(m_sidebar_box));
+	gtk_widget_show_all(GTK_WIDGET(m_sidebar_buttons));
 
 	show_default_page();
 }
