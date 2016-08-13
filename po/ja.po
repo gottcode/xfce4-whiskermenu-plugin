@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-05 14:08+0000\n"
+"POT-Creation-Date: 2016-08-13 17:21+0000\n"
 "PO-Revision-Date: 2015-02-21 14:31+0000\n"
 "Last-Translator: Masato HASHIMOTO <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -19,19 +19,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../panel-plugin/configuration-dialog.cpp:803
+#: ../panel-plugin/configuration-dialog.cpp:795
 msgid "Add action"
 msgstr "アクションの追加"
 
-#: ../panel-plugin/page.cpp:214
+#: ../panel-plugin/page.cpp:216
 msgid "Add to Desktop"
 msgstr "デスクトップに追加"
 
-#: ../panel-plugin/page.cpp:199
+#: ../panel-plugin/page.cpp:200
 msgid "Add to Favorites"
 msgstr "お気に入りに追加"
 
-#: ../panel-plugin/page.cpp:218
+#: ../panel-plugin/page.cpp:220
 msgid "Add to Panel"
 msgstr "パネルに追加"
 
@@ -43,19 +43,19 @@ msgstr "すべて"
 msgid "All _Settings"
 msgstr "設定マネージャー(_S)"
 
-#: ../panel-plugin/plugin.cpp:393
+#: ../panel-plugin/plugin.cpp:407
 msgid "Alternate application launcher for Xfce"
 msgstr "Xfce 用のオルタナティブなアプリケーションランチャーです"
 
-#: ../panel-plugin/configuration-dialog.cpp:702
+#: ../panel-plugin/configuration-dialog.cpp:696
 msgid "Amount of _items:"
 msgstr "最大アイテム数(_I):"
 
-#: ../panel-plugin/plugin.cpp:217
+#: ../panel-plugin/plugin.cpp:239
 msgid "Applications"
 msgstr "アプリケーション"
 
-#: ../panel-plugin/configuration-dialog.cpp:636
+#: ../panel-plugin/configuration-dialog.cpp:631
 msgid "Background opacit_y:"
 msgstr "背景の不透明度(_Y):"
 
@@ -63,31 +63,31 @@ msgstr "背景の不透明度(_Y):"
 msgid "Browse the file system to choose a custom command."
 msgstr "カスタムコマンドを選択するためにファイルシステムを参照します。"
 
-#: ../panel-plugin/configuration-dialog.cpp:861
+#: ../panel-plugin/configuration-dialog.cpp:853
 msgid "C_ommand:"
 msgstr "コマンド(_O):"
 
-#: ../panel-plugin/configuration-dialog.cpp:621
+#: ../panel-plugin/configuration-dialog.cpp:616
 msgid "Categ_ory icon size:"
 msgstr "カテゴリのアイコンサイズ(_O):"
 
-#: ../panel-plugin/recent-page.cpp:172
+#: ../panel-plugin/recent-page.cpp:173
 msgid "Clear Recently Used"
 msgstr "最近使ったものをクリア"
 
-#: ../panel-plugin/plugin.cpp:394
+#: ../panel-plugin/plugin.cpp:408
 msgid "Copyright © 2013-2016 Graeme Gott"
 msgstr "Copyright © 2013-2016 Graeme Gott"
 
-#: ../panel-plugin/configuration-dialog.cpp:832
+#: ../panel-plugin/configuration-dialog.cpp:823
 msgid "Details"
 msgstr "詳細"
 
-#: ../panel-plugin/configuration-dialog.cpp:523
+#: ../panel-plugin/configuration-dialog.cpp:518
 msgid "Di_splay:"
 msgstr "表示(_S):"
 
-#: ../panel-plugin/configuration-dialog.cpp:719
+#: ../panel-plugin/configuration-dialog.cpp:713
 msgid "Display by _default"
 msgstr "デフォルトで表示する(_D)"
 
@@ -125,23 +125,23 @@ msgstr "設定マネージャーを開くことに失敗しました。"
 msgid "Failed to switch users."
 msgstr "ユーザーの切り替えに失敗しました。"
 
-#: ../panel-plugin/window.cpp:120
+#: ../panel-plugin/window.cpp:161
 msgid "Favorites"
 msgstr "お気に入り"
 
-#: ../panel-plugin/configuration-dialog.cpp:528
+#: ../panel-plugin/configuration-dialog.cpp:523
 msgid "Icon"
 msgstr "アイコン"
 
-#: ../panel-plugin/configuration-dialog.cpp:530
+#: ../panel-plugin/configuration-dialog.cpp:525
 msgid "Icon and title"
 msgstr "アイコンとタイトル"
 
-#: ../panel-plugin/configuration-dialog.cpp:713
+#: ../panel-plugin/configuration-dialog.cpp:707
 msgid "Ignore _favorites"
 msgstr "お気に入りを無視する(_F)"
 
-#: ../panel-plugin/configuration-dialog.cpp:605
+#: ../panel-plugin/configuration-dialog.cpp:600
 msgid "Ite_m icon size:"
 msgstr "アイテムのアイコンサイズ(_M):"
 
@@ -161,16 +161,16 @@ msgstr "ログアウト(_O)"
 msgid "Man Pages"
 msgstr "Man ページ"
 
-#: ../panel-plugin/configuration-dialog.cpp:576
-#: ../panel-plugin/configuration-dialog.cpp:662
+#: ../panel-plugin/configuration-dialog.cpp:571
+#: ../panel-plugin/configuration-dialog.cpp:656
 msgid "Menu"
 msgstr "メニュー"
 
-#: ../panel-plugin/configuration-dialog.cpp:837
+#: ../panel-plugin/configuration-dialog.cpp:828
 msgid "Nam_e:"
 msgstr "名前(_E):"
 
-#: ../panel-plugin/configuration-dialog.cpp:783
+#: ../panel-plugin/configuration-dialog.cpp:773
 msgid "Name"
 msgstr "名前"
 
@@ -186,40 +186,40 @@ msgstr "普通"
 msgid "Open URI"
 msgstr "URI を開く"
 
-#: ../panel-plugin/configuration-dialog.cpp:518
+#: ../panel-plugin/configuration-dialog.cpp:513
 msgid "Panel Button"
 msgstr "パネルボタン"
 
-#: ../panel-plugin/configuration-dialog.cpp:788
+#: ../panel-plugin/configuration-dialog.cpp:778
 msgid "Pattern"
 msgstr "パターン"
 
-#: ../panel-plugin/configuration-dialog.cpp:673
+#: ../panel-plugin/configuration-dialog.cpp:667
 msgid "Position _search entry next to panel button"
 msgstr "検索フィールドをパネルボタンの後に置く(_S)"
 
-#: ../panel-plugin/configuration-dialog.cpp:686
+#: ../panel-plugin/configuration-dialog.cpp:680
 msgid "Position cate_gories next to panel button"
 msgstr "カテゴリを左に表示する(_G)"
 
-#: ../panel-plugin/configuration-dialog.cpp:679
+#: ../panel-plugin/configuration-dialog.cpp:673
 msgid "Position commands next to search _entry"
 msgstr "コマンドを検索フィールドの後に置く(_E)"
 
-#: ../panel-plugin/configuration-dialog.cpp:697 ../panel-plugin/window.cpp:126
+#: ../panel-plugin/configuration-dialog.cpp:691 ../panel-plugin/window.cpp:167
 msgid "Recently Used"
 msgstr "最近使ったもの"
 
-#: ../panel-plugin/page.cpp:207
+#: ../panel-plugin/page.cpp:208
 msgid "Remove From Favorites"
 msgstr "お気に入りから削除"
 
-#: ../panel-plugin/configuration-dialog.cpp:420
+#: ../panel-plugin/configuration-dialog.cpp:417
 #, c-format
 msgid "Remove action \"%s\"?"
 msgstr "アクション \"%s\" を削除しますか?"
 
-#: ../panel-plugin/configuration-dialog.cpp:812
+#: ../panel-plugin/configuration-dialog.cpp:804
 msgid "Remove selected action"
 msgstr "選択したアクションの削除"
 
@@ -254,20 +254,20 @@ msgstr ""
 "インストールされているアプリケーションに簡単にアクセスできるメニューを表示し"
 "ます"
 
-#: ../panel-plugin/configuration-dialog.cpp:587
+#: ../panel-plugin/configuration-dialog.cpp:582
 msgid "Show application _descriptions"
 msgstr "アプリケーションの説明を表示する(_D)"
 
-#: ../panel-plugin/configuration-dialog.cpp:593
+#: ../panel-plugin/configuration-dialog.cpp:588
 #, fuzzy
 msgid "Show application too_ltips"
 msgstr "アプリケーションの説明を表示する(_D)"
 
-#: ../panel-plugin/configuration-dialog.cpp:581
+#: ../panel-plugin/configuration-dialog.cpp:576
 msgid "Show generic application _names"
 msgstr "アプリケーションを一般名で表示する(_N)"
 
-#: ../panel-plugin/configuration-dialog.cpp:599
+#: ../panel-plugin/configuration-dialog.cpp:594
 msgid "Show menu hie_rarchy"
 msgstr "メニュー階層を表示する(_R)"
 
@@ -279,11 +279,11 @@ msgstr "少し小さい"
 msgid "Smaller"
 msgstr "小さい"
 
-#: ../panel-plugin/favorites-page.cpp:146
+#: ../panel-plugin/favorites-page.cpp:147
 msgid "Sort Alphabetically A-Z"
 msgstr "アルファベット順 (A-Z) で並び替え"
 
-#: ../panel-plugin/favorites-page.cpp:152
+#: ../panel-plugin/favorites-page.cpp:153
 msgid "Sort Alphabetically Z-A"
 msgstr "アルファベットの逆順 (Z-A) で並び替え"
 
@@ -291,32 +291,32 @@ msgstr "アルファベットの逆順 (Z-A) で並び替え"
 msgid "Switch _Users"
 msgstr "ユーザーの切り替え(_U)"
 
-#: ../panel-plugin/configuration-dialog.cpp:667
+#: ../panel-plugin/configuration-dialog.cpp:661
 msgid "Switch categories by _hovering"
 msgstr "ホバーでカテゴリを切り替える(_H)"
 
-#: ../panel-plugin/configuration-dialog.cpp:419
+#: ../panel-plugin/configuration-dialog.cpp:416
 msgid "The action will be deleted permanently."
 msgstr "アクションは完全に削除されます。"
 
-#: ../panel-plugin/configuration-dialog.cpp:529
+#: ../panel-plugin/configuration-dialog.cpp:524
 msgid "Title"
 msgstr "タイトル"
 
-#: ../panel-plugin/page.cpp:317
+#: ../panel-plugin/page.cpp:319
 msgid "Unable to add launcher to desktop."
 msgstr "デスクトップにランチャーを追加できません。"
 
-#: ../panel-plugin/page.cpp:356 ../panel-plugin/page.cpp:365
+#: ../panel-plugin/page.cpp:358 ../panel-plugin/page.cpp:367
 msgid "Unable to add launcher to panel."
 msgstr "パネルにランチャーを追加できません。"
 
-#: ../panel-plugin/configuration-dialog.cpp:480
+#: ../panel-plugin/configuration-dialog.cpp:477
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "次の URL を開くことができません: %s"
 
-#: ../panel-plugin/configuration-dialog.cpp:563
+#: ../panel-plugin/configuration-dialog.cpp:558
 msgid "Use a single _panel row"
 msgstr "アイコンをパネルの 1 行内に配置する(_P)"
 
@@ -349,15 +349,32 @@ msgstr "外観(_A)"
 msgid "_Behavior"
 msgstr "振る舞い(_B)"
 
+#: ../panel-plugin/command-edit.cpp:67
+#: ../panel-plugin/configuration-dialog.cpp:121
+msgid "_Cancel"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:74
+msgid "_Close"
+msgstr ""
+
 #: ../panel-plugin/configuration-dialog.cpp:85
 msgid "_Commands"
 msgstr "コマンド(_C)"
+
+#: ../panel-plugin/configuration-dialog.cpp:415
+msgid "_Delete"
+msgstr ""
 
 #: ../panel-plugin/settings.cpp:122
 msgid "_Edit Applications"
 msgstr "アプリケーションの編集(_E)"
 
-#: ../panel-plugin/configuration-dialog.cpp:548
+#: ../panel-plugin/configuration-dialog.cpp:73
+msgid "_Help"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:544
 msgid "_Icon:"
 msgstr "アイコン(_I):"
 
@@ -365,18 +382,23 @@ msgstr "アイコン(_I):"
 msgid "_Lock Screen"
 msgstr "スクリーンのロック(_L)"
 
-#: ../panel-plugin/configuration-dialog.cpp:849
+#: ../panel-plugin/command-edit.cpp:68
+#: ../panel-plugin/configuration-dialog.cpp:122
+msgid "_OK"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:841
 msgid "_Pattern:"
 msgstr "パターン(_P):"
 
-#: ../panel-plugin/configuration-dialog.cpp:873
+#: ../panel-plugin/configuration-dialog.cpp:865
 msgid "_Regular expression"
 msgstr "正規表現(_R)"
 
-#: ../panel-plugin/configuration-dialog.cpp:537
+#: ../panel-plugin/configuration-dialog.cpp:533
 msgid "_Title:"
 msgstr "タイトル(_T):"
 
-#: ../panel-plugin/plugin.cpp:398
+#: ../panel-plugin/plugin.cpp:412
 msgid "translator-credits"
 msgstr "Masato HASHIMOTO <cabezon.hashimoto@gmail.com>, 2013-2014."
