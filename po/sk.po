@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-13 17:21+0000\n"
-"PO-Revision-Date: 2016-08-05 19:28+0000\n"
+"PO-Revision-Date: 2016-08-13 18:13+0000\n"
 "Last-Translator: Slavko <linux@slavino.sk>\n"
 "Language-Team: Slovak (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/sk/)\n"
@@ -349,11 +349,11 @@ msgstr "_Správanie"
 #: ../panel-plugin/command-edit.cpp:67
 #: ../panel-plugin/configuration-dialog.cpp:121
 msgid "_Cancel"
-msgstr ""
+msgstr "_Zrušiť"
 
 #: ../panel-plugin/configuration-dialog.cpp:74
 msgid "_Close"
-msgstr ""
+msgstr "_Zatvoriť"
 
 #: ../panel-plugin/configuration-dialog.cpp:85
 msgid "_Commands"
@@ -361,7 +361,7 @@ msgstr "Príka_zy"
 
 #: ../panel-plugin/configuration-dialog.cpp:415
 msgid "_Delete"
-msgstr ""
+msgstr "__Odstrániť"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "_Edit Applications"
@@ -369,7 +369,7 @@ msgstr "Upraviť aplikáci_e"
 
 #: ../panel-plugin/configuration-dialog.cpp:73
 msgid "_Help"
-msgstr ""
+msgstr "_Pomocník"
 
 #: ../panel-plugin/configuration-dialog.cpp:544
 msgid "_Icon:"
@@ -382,7 +382,7 @@ msgstr "_Zamknúť obrazovku"
 #: ../panel-plugin/command-edit.cpp:68
 #: ../panel-plugin/configuration-dialog.cpp:122
 msgid "_OK"
-msgstr ""
+msgstr "_OK"
 
 #: ../panel-plugin/configuration-dialog.cpp:841
 msgid "_Pattern:"
