@@ -356,11 +356,11 @@ msgstr "Uzvedība"
 #: ../panel-plugin/command-edit.cpp:67
 #: ../panel-plugin/configuration-dialog.cpp:121
 msgid "_Cancel"
-msgstr ""
+msgstr "At_celt"
 
 #: ../panel-plugin/configuration-dialog.cpp:74
 msgid "_Close"
-msgstr ""
+msgstr "_Aizvērt"
 
 #: ../panel-plugin/configuration-dialog.cpp:85
 #, fuzzy
@@ -369,7 +369,7 @@ msgstr "Komandas"
 
 #: ../panel-plugin/configuration-dialog.cpp:415
 msgid "_Delete"
-msgstr ""
+msgstr "_Dzēst"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "_Edit Applications"
@@ -377,7 +377,7 @@ msgstr "Labot programmas"
 
 #: ../panel-plugin/configuration-dialog.cpp:73
 msgid "_Help"
-msgstr ""
+msgstr "_Palīdzība"
 
 #: ../panel-plugin/configuration-dialog.cpp:544
 msgid "_Icon:"
@@ -390,7 +390,7 @@ msgstr "Slēgt ekrānu"
 #: ../panel-plugin/command-edit.cpp:68
 #: ../panel-plugin/configuration-dialog.cpp:122
 msgid "_OK"
-msgstr ""
+msgstr "_Labi"
 
 #: ../panel-plugin/configuration-dialog.cpp:841
 msgid "_Pattern:"

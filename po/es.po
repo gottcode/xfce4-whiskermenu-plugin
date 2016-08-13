@@ -354,11 +354,11 @@ msgstr "_Comportamiento"
 #: ../panel-plugin/command-edit.cpp:67
 #: ../panel-plugin/configuration-dialog.cpp:121
 msgid "_Cancel"
-msgstr ""
+msgstr "_Cancelar"
 
 #: ../panel-plugin/configuration-dialog.cpp:74
 msgid "_Close"
-msgstr ""
+msgstr "_Cerrar"
 
 #: ../panel-plugin/configuration-dialog.cpp:85
 msgid "_Commands"
@@ -366,7 +366,7 @@ msgstr "Ó_rdenes"
 
 #: ../panel-plugin/configuration-dialog.cpp:415
 msgid "_Delete"
-msgstr ""
+msgstr "_Eliminar"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "_Edit Applications"
@@ -374,7 +374,7 @@ msgstr "_Editar aplicaciones"
 
 #: ../panel-plugin/configuration-dialog.cpp:73
 msgid "_Help"
-msgstr ""
+msgstr "Ay_uda"
 
 #: ../panel-plugin/configuration-dialog.cpp:544
 msgid "_Icon:"
@@ -387,7 +387,7 @@ msgstr "_Bloquear la pantalla"
 #: ../panel-plugin/command-edit.cpp:68
 #: ../panel-plugin/configuration-dialog.cpp:122
 msgid "_OK"
-msgstr ""
+msgstr "_Aceptar"
 
 #: ../panel-plugin/configuration-dialog.cpp:841
 msgid "_Pattern:"

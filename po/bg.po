@@ -349,11 +349,11 @@ msgstr "Поведение"
 #: ../panel-plugin/command-edit.cpp:67
 #: ../panel-plugin/configuration-dialog.cpp:121
 msgid "_Cancel"
-msgstr ""
+msgstr "_Отказ"
 
 #: ../panel-plugin/configuration-dialog.cpp:74
 msgid "_Close"
-msgstr ""
+msgstr "Зат_варяне"
 
 #: ../panel-plugin/configuration-dialog.cpp:85
 msgid "_Commands"
@@ -361,7 +361,7 @@ msgstr "_Команди"
 
 #: ../panel-plugin/configuration-dialog.cpp:415
 msgid "_Delete"
-msgstr ""
+msgstr "_Изтриване"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "_Edit Applications"
@@ -369,7 +369,7 @@ msgstr "Редактиране на програмите"
 
 #: ../panel-plugin/configuration-dialog.cpp:73
 msgid "_Help"
-msgstr ""
+msgstr "Помо_щ"
 
 #: ../panel-plugin/configuration-dialog.cpp:544
 msgid "_Icon:"
@@ -382,7 +382,7 @@ msgstr "Заключване на екрана"
 #: ../panel-plugin/command-edit.cpp:68
 #: ../panel-plugin/configuration-dialog.cpp:122
 msgid "_OK"
-msgstr ""
+msgstr "_Добре"
 
 #: ../panel-plugin/configuration-dialog.cpp:841
 msgid "_Pattern:"

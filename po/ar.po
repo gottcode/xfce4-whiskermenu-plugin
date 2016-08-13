@@ -356,11 +356,11 @@ msgstr "س_لوك"
 #: ../panel-plugin/command-edit.cpp:67
 #: ../panel-plugin/configuration-dialog.cpp:121
 msgid "_Cancel"
-msgstr ""
+msgstr "أ_لغِ"
 
 #: ../panel-plugin/configuration-dialog.cpp:74
 msgid "_Close"
-msgstr ""
+msgstr "أ_غلق"
 
 #: ../panel-plugin/configuration-dialog.cpp:85
 #, fuzzy
@@ -369,7 +369,7 @@ msgstr "أوامر"
 
 #: ../panel-plugin/configuration-dialog.cpp:415
 msgid "_Delete"
-msgstr ""
+msgstr "ا_حذف"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "_Edit Applications"
@@ -377,7 +377,7 @@ msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:73
 msgid "_Help"
-msgstr ""
+msgstr "م_ساعدة"
 
 #: ../panel-plugin/configuration-dialog.cpp:544
 msgid "_Icon:"
@@ -390,7 +390,7 @@ msgstr ""
 #: ../panel-plugin/command-edit.cpp:68
 #: ../panel-plugin/configuration-dialog.cpp:122
 msgid "_OK"
-msgstr ""
+msgstr "_نعم"
 
 #: ../panel-plugin/configuration-dialog.cpp:841
 msgid "_Pattern:"

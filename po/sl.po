@@ -351,11 +351,11 @@ msgstr "O_bnašanje"
 #: ../panel-plugin/command-edit.cpp:67
 #: ../panel-plugin/configuration-dialog.cpp:121
 msgid "_Cancel"
-msgstr ""
+msgstr "_Prekliči"
 
 #: ../panel-plugin/configuration-dialog.cpp:74
 msgid "_Close"
-msgstr ""
+msgstr "_Zapri"
 
 #: ../panel-plugin/configuration-dialog.cpp:85
 msgid "_Commands"
@@ -363,7 +363,7 @@ msgstr "_Ukazi"
 
 #: ../panel-plugin/configuration-dialog.cpp:415
 msgid "_Delete"
-msgstr ""
+msgstr "_Izbriši"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "_Edit Applications"
@@ -371,7 +371,7 @@ msgstr "Uredi programe"
 
 #: ../panel-plugin/configuration-dialog.cpp:73
 msgid "_Help"
-msgstr ""
+msgstr "Pomo_č"
 
 #: ../panel-plugin/configuration-dialog.cpp:544
 msgid "_Icon:"
@@ -384,7 +384,7 @@ msgstr "Zak_leni zaslon"
 #: ../panel-plugin/command-edit.cpp:68
 #: ../panel-plugin/configuration-dialog.cpp:122
 msgid "_OK"
-msgstr ""
+msgstr "_V redu"
 
 #: ../panel-plugin/configuration-dialog.cpp:841
 msgid "_Pattern:"

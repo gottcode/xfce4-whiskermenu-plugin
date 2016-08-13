@@ -352,11 +352,11 @@ msgstr "振る舞い(_B)"
 #: ../panel-plugin/command-edit.cpp:67
 #: ../panel-plugin/configuration-dialog.cpp:121
 msgid "_Cancel"
-msgstr ""
+msgstr "キャンセル(_C)"
 
 #: ../panel-plugin/configuration-dialog.cpp:74
 msgid "_Close"
-msgstr ""
+msgstr "閉じる(_C)"
 
 #: ../panel-plugin/configuration-dialog.cpp:85
 msgid "_Commands"
@@ -364,7 +364,7 @@ msgstr "コマンド(_C)"
 
 #: ../panel-plugin/configuration-dialog.cpp:415
 msgid "_Delete"
-msgstr ""
+msgstr "削除(_D)"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "_Edit Applications"
@@ -372,7 +372,7 @@ msgstr "アプリケーションの編集(_E)"
 
 #: ../panel-plugin/configuration-dialog.cpp:73
 msgid "_Help"
-msgstr ""
+msgstr "ヘルプ(_H)"
 
 #: ../panel-plugin/configuration-dialog.cpp:544
 msgid "_Icon:"
@@ -385,7 +385,7 @@ msgstr "スクリーンのロック(_L)"
 #: ../panel-plugin/command-edit.cpp:68
 #: ../panel-plugin/configuration-dialog.cpp:122
 msgid "_OK"
-msgstr ""
+msgstr "OK(_O)"
 
 #: ../panel-plugin/configuration-dialog.cpp:841
 msgid "_Pattern:"

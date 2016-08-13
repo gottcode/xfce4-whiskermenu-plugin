@@ -31,8 +31,11 @@ echo ' DONE'
 echo -n 'Merging translations...'
 for POFILE in *.po;
 do
-	echo -n " $POFILE"
-	msgmerge --quiet --update --backup=none $POFILE xfce4-whiskermenu-plugin.pot
+	POLANG="${POFILE%%.*}"
+	echo -n " $POLANG"
+	msgunfmt "/usr/share/locale/$POLANG/LC_MESSAGES/gtk30.mo" > "gtk30-$POFILE"
+	msgmerge --quiet --update --backup=none --compendium="gtk30-$POFILE" $POFILE xfce4-whiskermenu-plugin.pot
+	rm -f "gtk30-$POFILE"
 done
 echo ' DONE'
 

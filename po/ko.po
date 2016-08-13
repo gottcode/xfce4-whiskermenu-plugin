@@ -350,11 +350,11 @@ msgstr "동작"
 #: ../panel-plugin/command-edit.cpp:67
 #: ../panel-plugin/configuration-dialog.cpp:121
 msgid "_Cancel"
-msgstr ""
+msgstr "취소(_C)"
 
 #: ../panel-plugin/configuration-dialog.cpp:74
 msgid "_Close"
-msgstr ""
+msgstr "닫기(_C)"
 
 #: ../panel-plugin/configuration-dialog.cpp:85
 msgid "_Commands"
@@ -362,7 +362,7 @@ msgstr "명령어"
 
 #: ../panel-plugin/configuration-dialog.cpp:415
 msgid "_Delete"
-msgstr ""
+msgstr "삭제(_D)"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "_Edit Applications"
@@ -370,7 +370,7 @@ msgstr "프로그램 편집"
 
 #: ../panel-plugin/configuration-dialog.cpp:73
 msgid "_Help"
-msgstr ""
+msgstr "도움말(_H)"
 
 #: ../panel-plugin/configuration-dialog.cpp:544
 msgid "_Icon:"
@@ -383,7 +383,7 @@ msgstr "화면 잠그기"
 #: ../panel-plugin/command-edit.cpp:68
 #: ../panel-plugin/configuration-dialog.cpp:122
 msgid "_OK"
-msgstr ""
+msgstr "확인(_O)"
 
 #: ../panel-plugin/configuration-dialog.cpp:841
 msgid "_Pattern:"

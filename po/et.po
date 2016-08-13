@@ -175,11 +175,11 @@ msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:773
 msgid "Name"
-msgstr ""
+msgstr "Nimi"
 
 #: ../panel-plugin/icon-size.cpp:49
 msgid "None"
-msgstr ""
+msgstr "Puudub"
 
 #: ../panel-plugin/icon-size.cpp:53
 msgid "Normal"

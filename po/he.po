@@ -351,11 +351,11 @@ msgstr "הת_נהגות"
 #: ../panel-plugin/command-edit.cpp:67
 #: ../panel-plugin/configuration-dialog.cpp:121
 msgid "_Cancel"
-msgstr ""
+msgstr "_ביטול"
 
 #: ../panel-plugin/configuration-dialog.cpp:74
 msgid "_Close"
-msgstr ""
+msgstr "_סגירה"
 
 #: ../panel-plugin/configuration-dialog.cpp:85
 msgid "_Commands"
@@ -363,7 +363,7 @@ msgstr "_פקודות"
 
 #: ../panel-plugin/configuration-dialog.cpp:415
 msgid "_Delete"
-msgstr ""
+msgstr "מ_חיקה"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "_Edit Applications"
@@ -371,7 +371,7 @@ msgstr "_ערוך יישומים"
 
 #: ../panel-plugin/configuration-dialog.cpp:73
 msgid "_Help"
-msgstr ""
+msgstr "ע_זרה"
 
 #: ../panel-plugin/configuration-dialog.cpp:544
 msgid "_Icon:"
@@ -384,7 +384,7 @@ msgstr "_נעל מסך"
 #: ../panel-plugin/command-edit.cpp:68
 #: ../panel-plugin/configuration-dialog.cpp:122
 msgid "_OK"
-msgstr ""
+msgstr "_אישור"
 
 #: ../panel-plugin/configuration-dialog.cpp:841
 msgid "_Pattern:"
