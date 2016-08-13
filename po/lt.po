@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-13 17:21+0000\n"
-"PO-Revision-Date: 2016-08-05 20:06+0000\n"
+"PO-Revision-Date: 2016-08-13 19:39+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/lt/)\n"
@@ -350,11 +350,11 @@ msgstr "_Elgsena"
 #: ../panel-plugin/command-edit.cpp:67
 #: ../panel-plugin/configuration-dialog.cpp:121
 msgid "_Cancel"
-msgstr ""
+msgstr "_Atsisakyti"
 
 #: ../panel-plugin/configuration-dialog.cpp:74
 msgid "_Close"
-msgstr ""
+msgstr "_Užverti"
 
 #: ../panel-plugin/configuration-dialog.cpp:85
 msgid "_Commands"
@@ -362,7 +362,7 @@ msgstr "_Komandos"
 
 #: ../panel-plugin/configuration-dialog.cpp:415
 msgid "_Delete"
-msgstr ""
+msgstr "_Ištrinti"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "_Edit Applications"
@@ -370,7 +370,7 @@ msgstr "Keisti p_rogramas"
 
 #: ../panel-plugin/configuration-dialog.cpp:73
 msgid "_Help"
-msgstr ""
+msgstr "Ži_nynas"
 
 #: ../panel-plugin/configuration-dialog.cpp:544
 msgid "_Icon:"
@@ -383,7 +383,7 @@ msgstr "_Užrakinti ekraną"
 #: ../panel-plugin/command-edit.cpp:68
 #: ../panel-plugin/configuration-dialog.cpp:122
 msgid "_OK"
-msgstr ""
+msgstr "_Gerai"
 
 #: ../panel-plugin/configuration-dialog.cpp:841
 msgid "_Pattern:"
