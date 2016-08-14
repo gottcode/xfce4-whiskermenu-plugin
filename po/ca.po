@@ -374,7 +374,7 @@ msgstr "_Edita les aplicacions"
 
 #: ../panel-plugin/configuration-dialog.cpp:73
 msgid "_Help"
-msgstr "A_juda"
+msgstr "_Ajuda"
 
 #: ../panel-plugin/configuration-dialog.cpp:544
 msgid "_Icon:"
@@ -387,7 +387,7 @@ msgstr "_Bloqueja la pantalla"
 #: ../panel-plugin/command-edit.cpp:68
 #: ../panel-plugin/configuration-dialog.cpp:122
 msgid "_OK"
-msgstr "_D'acord"
+msgstr "_D’acord"
 
 #: ../panel-plugin/configuration-dialog.cpp:841
 msgid "_Pattern:"
