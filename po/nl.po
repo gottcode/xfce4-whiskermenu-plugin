@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-05 18:09+0000\n"
-"PO-Revision-Date: 2016-08-05 18:56+0000\n"
+"PO-Revision-Date: 2016-08-14 18:33+0000\n"
 "Last-Translator: Pjotr <pjotrvertaalt@gmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/nl/)\n"
@@ -155,7 +155,7 @@ msgstr "Groter"
 
 #: ../panel-plugin/settings.cpp:121
 msgid "Log _Out"
-msgstr "A_fmelden"
+msgstr "Af_melden"
 
 #: ../panel-plugin/settings.cpp:125
 msgid "Man Pages"
@@ -348,7 +348,7 @@ msgstr "_Gedrag"
 
 #: ../panel-plugin/configuration-dialog.cpp:85
 msgid "_Commands"
-msgstr "Opdrachten"
+msgstr "_Opdrachten"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "_Edit Applications"
