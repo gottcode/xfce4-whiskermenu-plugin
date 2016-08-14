@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-05 18:09+0000\n"
-"PO-Revision-Date: 2016-08-06 18:52+0000\n"
+"PO-Revision-Date: 2016-08-14 10:57+0000\n"
 "Last-Translator: Kiril Kirilov <cybercop_montana@abv.bg>\n"
 "Language-Team: Bulgarian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/bg/)\n"
@@ -25,7 +25,7 @@ msgstr "Добавяне на действие"
 
 #: ../panel-plugin/page.cpp:214
 msgid "Add to Desktop"
-msgstr "Добавяне към Работният плот"
+msgstr "Добавяне към Работния плот"
 
 #: ../panel-plugin/page.cpp:199
 msgid "Add to Favorites"
@@ -348,7 +348,7 @@ msgstr "Поведение"
 
 #: ../panel-plugin/configuration-dialog.cpp:85
 msgid "_Commands"
-msgstr "Команди"
+msgstr "_Команди"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "_Edit Applications"
