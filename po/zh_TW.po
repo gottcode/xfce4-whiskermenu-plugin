@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-13 17:21+0000\n"
-"PO-Revision-Date: 2016-08-08 07:28+0000\n"
+"PO-Revision-Date: 2016-08-14 01:30+0000\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/zh_TW/)\n"
@@ -371,7 +371,7 @@ msgstr "編輯應用程式(_E)"
 
 #: ../panel-plugin/configuration-dialog.cpp:73
 msgid "_Help"
-msgstr "求助(_H)"
+msgstr "說明(_H)"
 
 #: ../panel-plugin/configuration-dialog.cpp:544
 msgid "_Icon:"
