@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-13 17:21+0000\n"
-"PO-Revision-Date: 2016-08-05 18:29+0000\n"
+"PO-Revision-Date: 2016-08-14 14:03+0000\n"
 "Last-Translator: Kernc\n"
 "Language-Team: Slovenian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/sl/)\n"
@@ -363,7 +363,7 @@ msgstr "_Ukazi"
 
 #: ../panel-plugin/configuration-dialog.cpp:415
 msgid "_Delete"
-msgstr "_Izbriši"
+msgstr "I_zbriši"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "_Edit Applications"
@@ -371,7 +371,7 @@ msgstr "Uredi programe"
 
 #: ../panel-plugin/configuration-dialog.cpp:73
 msgid "_Help"
-msgstr "Pomo_č"
+msgstr "_Pomoč"
 
 #: ../panel-plugin/configuration-dialog.cpp:544
 msgid "_Icon:"
