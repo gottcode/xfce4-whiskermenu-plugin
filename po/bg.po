@@ -353,7 +353,7 @@ msgstr "_Отказ"
 
 #: ../panel-plugin/configuration-dialog.cpp:74
 msgid "_Close"
-msgstr "Зат_варяне"
+msgstr "_Затваряне"
 
 #: ../panel-plugin/configuration-dialog.cpp:85
 msgid "_Commands"
@@ -369,7 +369,7 @@ msgstr "Редактиране на програмите"
 
 #: ../panel-plugin/configuration-dialog.cpp:73
 msgid "_Help"
-msgstr "Помо_щ"
+msgstr "_Помощ"
 
 #: ../panel-plugin/configuration-dialog.cpp:544
 msgid "_Icon:"
@@ -382,7 +382,7 @@ msgstr "Заключване на екрана"
 #: ../panel-plugin/command-edit.cpp:68
 #: ../panel-plugin/configuration-dialog.cpp:122
 msgid "_OK"
-msgstr "_Добре"
+msgstr "OK"
 
 #: ../panel-plugin/configuration-dialog.cpp:841
 msgid "_Pattern:"
