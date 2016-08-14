@@ -353,7 +353,7 @@ msgstr "_Annuleren"
 
 #: ../panel-plugin/configuration-dialog.cpp:74
 msgid "_Close"
-msgstr "Sl_uiten"
+msgstr "_Sluiten"
 
 #: ../panel-plugin/configuration-dialog.cpp:85
 msgid "_Commands"
@@ -361,7 +361,7 @@ msgstr "_Opdrachten"
 
 #: ../panel-plugin/configuration-dialog.cpp:415
 msgid "_Delete"
-msgstr "_Verwijderen"
+msgstr "_Wissen"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "_Edit Applications"
@@ -382,7 +382,7 @@ msgstr "Scherm _vergrendelen"
 #: ../panel-plugin/command-edit.cpp:68
 #: ../panel-plugin/configuration-dialog.cpp:122
 msgid "_OK"
-msgstr "_Ok"
+msgstr "_OK"
 
 #: ../panel-plugin/configuration-dialog.cpp:841
 msgid "_Pattern:"
