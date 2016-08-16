@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-13 17:21+0000\n"
-"PO-Revision-Date: 2016-08-06 15:53+0000\n"
+"PO-Revision-Date: 2016-08-15 09:49+0000\n"
 "Last-Translator: M T <michtrz@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/pl/)\n"
@@ -362,7 +362,7 @@ msgstr "_Anuluj"
 
 #: ../panel-plugin/configuration-dialog.cpp:74
 msgid "_Close"
-msgstr "Za_mknij"
+msgstr "_Zamknij"
 
 #: ../panel-plugin/configuration-dialog.cpp:85
 msgid "_Commands"
@@ -378,7 +378,7 @@ msgstr "_Edytuj programy"
 
 #: ../panel-plugin/configuration-dialog.cpp:73
 msgid "_Help"
-msgstr "Pomo_c"
+msgstr "_Pomoc"
 
 #: ../panel-plugin/configuration-dialog.cpp:544
 msgid "_Icon:"
