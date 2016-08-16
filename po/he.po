@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-13 17:21+0000\n"
-"PO-Revision-Date: 2016-08-06 11:00+0000\n"
+"PO-Revision-Date: 2016-08-16 09:30+0000\n"
 "Last-Translator: GenghisKhan <genghiskhan@gmx.ca>\n"
 "Language-Team: Hebrew (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/he/)\n"
@@ -355,7 +355,7 @@ msgstr "_ביטול"
 
 #: ../panel-plugin/configuration-dialog.cpp:74
 msgid "_Close"
-msgstr "_סגירה"
+msgstr "_סגור"
 
 #: ../panel-plugin/configuration-dialog.cpp:85
 msgid "_Commands"
@@ -363,7 +363,7 @@ msgstr "_פקודות"
 
 #: ../panel-plugin/configuration-dialog.cpp:415
 msgid "_Delete"
-msgstr "מ_חיקה"
+msgstr "_מחק"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "_Edit Applications"
@@ -371,7 +371,7 @@ msgstr "_ערוך יישומים"
 
 #: ../panel-plugin/configuration-dialog.cpp:73
 msgid "_Help"
-msgstr "ע_זרה"
+msgstr "_עזרה"
 
 #: ../panel-plugin/configuration-dialog.cpp:544
 msgid "_Icon:"
