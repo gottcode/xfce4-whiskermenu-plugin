@@ -352,11 +352,11 @@ msgstr "_Viselkedés"
 #: ../panel-plugin/command-edit.cpp:67
 #: ../panel-plugin/configuration-dialog.cpp:121
 msgid "_Cancel"
-msgstr "Mé_gse"
+msgstr "Mégse"
 
 #: ../panel-plugin/configuration-dialog.cpp:74
 msgid "_Close"
-msgstr "_Bezárás"
+msgstr "Bezárás"
 
 #: ../panel-plugin/configuration-dialog.cpp:85
 msgid "_Commands"
@@ -364,7 +364,7 @@ msgstr "_Parancsok"
 
 #: ../panel-plugin/configuration-dialog.cpp:415
 msgid "_Delete"
-msgstr "_Törlés"
+msgstr "Törlés"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "_Edit Applications"
@@ -372,7 +372,7 @@ msgstr "_Alkalmazások szerkesztése"
 
 #: ../panel-plugin/configuration-dialog.cpp:73
 msgid "_Help"
-msgstr "_Súgó"
+msgstr "Súgó"
 
 #: ../panel-plugin/configuration-dialog.cpp:544
 msgid "_Icon:"
@@ -385,7 +385,7 @@ msgstr "_Képernyő lezárása"
 #: ../panel-plugin/command-edit.cpp:68
 #: ../panel-plugin/configuration-dialog.cpp:122
 msgid "_OK"
-msgstr "_OK"
+msgstr "OK"
 
 #: ../panel-plugin/configuration-dialog.cpp:841
 msgid "_Pattern:"
