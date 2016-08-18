@@ -1,18 +1,19 @@
 # Hungarian translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2015 Graeme Gott
+# Copyright (C) 2016 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Gábor Horváth <xazax.hun@gmail.com>, 2013
-# Bendegúz Gyönki <gyonkibendeguz@gmail.com>, 2013
+# Gábor Horváth <xazax.hun@gmail.com>, 2013,2016
+# gyeben <gyonkibendeguz@gmail.com>, 2013
+# Kisbenedek Márton <kmarton815@gmail.com>, 2016
 # Rezső Páder <rezso@rezso.net>, 2014-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-05 14:08+0000\n"
-"PO-Revision-Date: 2015-10-11 16:16+0000\n"
-"Last-Translator: Rezső Páder <rezso@rezso.net>\n"
+"POT-Creation-Date: 2016-08-05 18:09+0000\n"
+"PO-Revision-Date: 2016-08-18 14:19+0000\n"
+"Last-Translator: Kisbenedek Márton <kmarton815@gmail.com>\n"
 "Language-Team: Hungarian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/hu/)\n"
 "Language: hu\n"
@@ -51,7 +52,7 @@ msgstr "Alternatív alkalmazásindító az Xfce-hez"
 
 #: ../panel-plugin/configuration-dialog.cpp:702
 msgid "Amount of _items:"
-msgstr ""
+msgstr "Elemek száma:"
 
 #: ../panel-plugin/plugin.cpp:217
 msgid "Applications"
@@ -59,7 +60,7 @@ msgstr "Alkalmazások"
 
 #: ../panel-plugin/configuration-dialog.cpp:636
 msgid "Background opacit_y:"
-msgstr ""
+msgstr "Háttér átlátszósága:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
@@ -91,15 +92,15 @@ msgstr "M_egjelenítés:"
 
 #: ../panel-plugin/configuration-dialog.cpp:719
 msgid "Display by _default"
-msgstr ""
+msgstr "Alapértelmezetten megjelenített"
 
 #: ../panel-plugin/settings.cpp:123
 msgid "Edit _Profile"
-msgstr ""
+msgstr "Profil szerkesztése"
 
 #: ../panel-plugin/settings.cpp:123
 msgid "Failed to edit profile."
-msgstr ""
+msgstr "Profil szerkesztése sikertelen"
 
 #: ../panel-plugin/launcher.cpp:274 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
@@ -198,15 +199,15 @@ msgstr "Minta"
 
 #: ../panel-plugin/configuration-dialog.cpp:673
 msgid "Position _search entry next to panel button"
-msgstr ""
+msgstr "A _keresőmező elhelyezése a panel gomb mellé"
 
 #: ../panel-plugin/configuration-dialog.cpp:686
 msgid "Position cate_gories next to panel button"
-msgstr ""
+msgstr "Kate_góriák elhelyezése a panel gomb mellé"
 
 #: ../panel-plugin/configuration-dialog.cpp:679
 msgid "Position commands next to search _entry"
-msgstr ""
+msgstr "Parancsok elhelyezése a kereső_mező mellé"
 
 #: ../panel-plugin/configuration-dialog.cpp:697 ../panel-plugin/window.cpp:126
 msgid "Recently Used"
@@ -259,9 +260,8 @@ msgid "Show application _descriptions"
 msgstr " _Leírás szerinti megjelenítés"
 
 #: ../panel-plugin/configuration-dialog.cpp:593
-#, fuzzy
 msgid "Show application too_ltips"
-msgstr " _Leírás szerinti megjelenítés"
+msgstr "Alkalmazás eszköz_tippek megjelenítése"
 
 #: ../panel-plugin/configuration-dialog.cpp:581
 msgid "Show generic application _names"
@@ -314,7 +314,7 @@ msgstr "Nem lehet az ikont kirakni a tálcára."
 #: ../panel-plugin/configuration-dialog.cpp:480
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "Nem lehetséges megnyitni a következő url-t: %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:563
 msgid "Use a single _panel row"
@@ -330,7 +330,7 @@ msgstr "Nagyon Kicsi"
 
 #: ../panel-plugin/settings.cpp:126
 msgid "Web Search"
-msgstr ""
+msgstr "Web keresés"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
