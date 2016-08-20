@@ -1,3 +1,16 @@
+1.6.0
+=====
+- Add keyboard navigation for categories. (bug #11550)
+- Add tooltips for program descriptions. (bug #12379)
+- Add web search action.
+- Hide recent items when maximum is set to zero.
+- Prevent memory leak when changing element text.
+- Search favorites and recent first.
+- Switch to icon names from GtkStock.
+- Translation updates: Bulgarian, Catalan, Chinese (Taiwan), Czech,
+  Dutch, German, French, Hebrew, Hungarian, Lithuanian, Polish, Slovak,
+  Slovenian, Serbian, Spanish.
+
 1.5.3
 =====
 - Fix stuck button highlight. (bug #12402)
