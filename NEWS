@@ -1,3 +1,10 @@
+2.0.0
+=====
+- Port to GTK+ 3. (bug #11549)
+- Translation updates: Bulgarian, Catalan, Chinese (Taiwan), Czech,
+  Dutch, French, Hebrew, Hungarian, Lithuanian, Polish, Slovak,
+  Slovenian, Spanish.
+
 1.6.0
 =====
 - Add keyboard navigation for categories. (bug #11550)
