@@ -152,7 +152,11 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	m_button = xfce_panel_create_toggle_button();
 	gtk_widget_set_name(m_button, "whiskermenu-button");
 	gtk_button_set_relief(GTK_BUTTON(m_button), GTK_RELIEF_NONE);
+#if GTK_CHECK_VERSION(3,20,0)
 	gtk_widget_set_focus_on_click(GTK_WIDGET(m_button), false);
+#else
+	gtk_button_set_focus_on_click(GTK_BUTTON(m_button), false);
+#endif
 	g_signal_connect_slot(m_button, "toggled", &Plugin::button_toggled, this);
 	gtk_widget_show(m_button);
 
