@@ -1,3 +1,7 @@
+2.0.1
+=====
+- Support minimum of GTK+ 3.12.
+
 2.0.0
 =====
 - Port to GTK+ 3. (bug #11549)
