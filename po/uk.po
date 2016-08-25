@@ -1,5 +1,5 @@
 # Ukrainian translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2015 Graeme Gott
+# Copyright (C) 2016 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-05 14:08+0000\n"
-"PO-Revision-Date: 2016-07-24 08:36+0000\n"
+"POT-Creation-Date: 2016-08-05 18:09+0000\n"
+"PO-Revision-Date: 2016-08-24 16:34+0000\n"
 "Last-Translator: zubr139\n"
 "Language-Team: Ukrainian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/uk/)\n"
@@ -79,7 +79,7 @@ msgstr "Очистити історію"
 
 #: ../panel-plugin/plugin.cpp:394
 msgid "Copyright © 2013-2016 Graeme Gott"
-msgstr "Всі права застережено © 2013-2016 Graeme Gott"
+msgstr "Авторське право © 2013-2016 Ґраєм Ґотт"
 
 #: ../panel-plugin/configuration-dialog.cpp:832
 msgid "Details"
@@ -259,9 +259,8 @@ msgid "Show application _descriptions"
 msgstr "Показувати _опис програм"
 
 #: ../panel-plugin/configuration-dialog.cpp:593
-#, fuzzy
 msgid "Show application too_ltips"
-msgstr "Показувати _опис програм"
+msgstr "Показувати виринаючі підказки додатків"
 
 #: ../panel-plugin/configuration-dialog.cpp:581
 msgid "Show generic application _names"
@@ -330,7 +329,7 @@ msgstr "Крихітний"
 
 #: ../panel-plugin/settings.cpp:126
 msgid "Web Search"
-msgstr ""
+msgstr "Веб-пошук"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
