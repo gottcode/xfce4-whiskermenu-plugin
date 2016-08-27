@@ -1,17 +1,17 @@
 # Turkish translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2015 Graeme Gott
+# Copyright (C) 2016 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # reis33 <bahadiroglu33@gmail.com>, 2013
-# Demiray Muhterem <mdemiray@msn.com>, 2013-2015
+# Demiray Muhterem <mdemiray@msn.com>, 2013-2016
 # Yusuf Faruk DOĞAN <yfdogan@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-05 14:08+0000\n"
-"PO-Revision-Date: 2015-04-18 22:53+0000\n"
+"PO-Revision-Date: 2016-08-26 19:14+0000\n"
 "Last-Translator: Demiray Muhterem <mdemiray@msn.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/tr/)\n"
@@ -259,9 +259,8 @@ msgid "Show application _descriptions"
 msgstr "Uygulama _tanımlarını göster"
 
 #: ../panel-plugin/configuration-dialog.cpp:593
-#, fuzzy
 msgid "Show application too_ltips"
-msgstr "Uygulama _tanımlarını göster"
+msgstr "Uygulama ip_uçlarını göster"
 
 #: ../panel-plugin/configuration-dialog.cpp:581
 msgid "Show generic application _names"
@@ -330,7 +329,7 @@ msgstr "Çok küçük"
 
 #: ../panel-plugin/settings.cpp:126
 msgid "Web Search"
-msgstr ""
+msgstr "İnternette Ara"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
