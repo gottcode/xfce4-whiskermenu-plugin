@@ -1,15 +1,15 @@
 # Kazakh translation for xfce4-whiskermenu-plugin.
-# Copyright (C) 2015 Graeme Gott
+# Copyright (C) 2016 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2013-2015
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2013-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-13 17:21+0000\n"
-"PO-Revision-Date: 2015-02-23 04:52+0000\n"
+"PO-Revision-Date: 2016-09-20 09:00+0000\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/kk/)\n"
@@ -257,9 +257,8 @@ msgid "Show application _descriptions"
 msgstr "Қолданбалар с_ипаттамаларын көрсету"
 
 #: ../panel-plugin/configuration-dialog.cpp:588
-#, fuzzy
 msgid "Show application too_ltips"
-msgstr "Қолданбалар с_ипаттамаларын көрсету"
+msgstr "Қолданбалар қ_алқымалы кеңестерін көрсету"
 
 #: ../panel-plugin/configuration-dialog.cpp:576
 msgid "Show generic application _names"
@@ -328,7 +327,7 @@ msgstr "Өте кішкентай"
 
 #: ../panel-plugin/settings.cpp:126
 msgid "Web Search"
-msgstr ""
+msgstr "Веб іздеуі"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
@@ -370,7 +369,7 @@ msgstr "Қолданбаларды түз_ету"
 
 #: ../panel-plugin/configuration-dialog.cpp:73
 msgid "_Help"
-msgstr "Кө_мек"
+msgstr "_Көмек"
 
 #: ../panel-plugin/configuration-dialog.cpp:544
 msgid "_Icon:"
@@ -383,7 +382,7 @@ msgstr "Экранды б_локтау"
 #: ../panel-plugin/command-edit.cpp:68
 #: ../panel-plugin/configuration-dialog.cpp:122
 msgid "_OK"
-msgstr "О_К"
+msgstr "_ОК"
 
 #: ../panel-plugin/configuration-dialog.cpp:841
 msgid "_Pattern:"
