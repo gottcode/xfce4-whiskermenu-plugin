@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-13 17:21+0000\n"
-"PO-Revision-Date: 2016-08-13 19:39+0000\n"
+"PO-Revision-Date: 2016-09-13 19:53+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/lt/)\n"
@@ -94,11 +94,11 @@ msgstr "Rodyti pagal _numatymą"
 
 #: ../panel-plugin/settings.cpp:123
 msgid "Edit _Profile"
-msgstr "Keisti pr_ofilį"
+msgstr "Redaguoti pr_ofilį"
 
 #: ../panel-plugin/settings.cpp:123
 msgid "Failed to edit profile."
-msgstr "Nepavyko keisti profilio."
+msgstr "Nepavyko redaguoti profilį."
 
 #: ../panel-plugin/launcher.cpp:274 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
@@ -124,7 +124,7 @@ msgstr "Nepavyko atverti nustatymų tvarkytuvės."
 
 #: ../panel-plugin/settings.cpp:120
 msgid "Failed to switch users."
-msgstr "Nepavyko keisti naudotojo."
+msgstr "Nepavyko perjungti naudotojo."
 
 #: ../panel-plugin/window.cpp:161
 msgid "Favorites"
@@ -291,7 +291,7 @@ msgstr "Kei_sti naudotojus"
 
 #: ../panel-plugin/configuration-dialog.cpp:661
 msgid "Switch categories by _hovering"
-msgstr "_Keisti kategorijas, užvedant pelės rodyklę"
+msgstr "_Perjungti kategorijas, užvedant pelės rodyklę"
 
 #: ../panel-plugin/configuration-dialog.cpp:416
 msgid "The action will be deleted permanently."
@@ -366,7 +366,7 @@ msgstr "_Ištrinti"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "_Edit Applications"
-msgstr "Keisti p_rogramas"
+msgstr "Taisyti p_rogramas"
 
 #: ../panel-plugin/configuration-dialog.cpp:73
 msgid "_Help"
