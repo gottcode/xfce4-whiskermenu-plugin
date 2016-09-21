@@ -1,16 +1,17 @@
 # Basque translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2015 Graeme Gott
+# Copyright (C) 2016 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# aboutafteragain <aboutafteragain@gmail.com>, 2014,2016
+# John Smith <aboutafteragain@gmail.com>, 2014,2016
+# John Smith <aboutafteragain@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-13 17:21+0000\n"
-"PO-Revision-Date: 2016-01-24 23:56+0000\n"
-"Last-Translator: aboutafteragain <aboutafteragain@gmail.com>\n"
+"PO-Revision-Date: 2016-09-16 02:21+0000\n"
+"Last-Translator: John Smith <aboutafteragain@gmail.com>\n"
 "Language-Team: Basque (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/eu/)\n"
 "Language: eu\n"
@@ -45,7 +46,7 @@ msgstr "Ezarpen_guztiak"
 
 #: ../panel-plugin/plugin.cpp:407
 msgid "Alternate application launcher for Xfce"
-msgstr ""
+msgstr "XFCErentzako ordezko aplikazio abiarazlea"
 
 #: ../panel-plugin/configuration-dialog.cpp:696
 msgid "Amount of _items:"
@@ -53,7 +54,7 @@ msgstr ""
 
 #: ../panel-plugin/plugin.cpp:239
 msgid "Applications"
-msgstr ""
+msgstr "Aplikazioak"
 
 #: ../panel-plugin/configuration-dialog.cpp:631
 msgid "Background opacit_y:"
@@ -81,7 +82,7 @@ msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:823
 msgid "Details"
-msgstr ""
+msgstr "Xehetasunak"
 
 #: ../panel-plugin/configuration-dialog.cpp:518
 msgid "Di_splay:"
@@ -127,15 +128,15 @@ msgstr ""
 
 #: ../panel-plugin/window.cpp:161
 msgid "Favorites"
-msgstr ""
+msgstr "Gogokoenak"
 
 #: ../panel-plugin/configuration-dialog.cpp:523
 msgid "Icon"
-msgstr ""
+msgstr "Ikonoa"
 
 #: ../panel-plugin/configuration-dialog.cpp:525
 msgid "Icon and title"
-msgstr ""
+msgstr "Ikono eta izenburua"
 
 #: ../panel-plugin/configuration-dialog.cpp:707
 msgid "Ignore _favorites"
@@ -147,11 +148,11 @@ msgstr ""
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Large"
-msgstr ""
+msgstr "Handia"
 
 #: ../panel-plugin/icon-size.cpp:55
 msgid "Larger"
-msgstr ""
+msgstr "Handiagoa"
 
 #: ../panel-plugin/settings.cpp:121
 msgid "Log _Out"
@@ -176,11 +177,11 @@ msgstr "Izena"
 
 #: ../panel-plugin/icon-size.cpp:49
 msgid "None"
-msgstr ""
+msgstr "Bat ere ez"
 
 #: ../panel-plugin/icon-size.cpp:53
 msgid "Normal"
-msgstr ""
+msgstr "Normala"
 
 #: ../panel-plugin/settings.cpp:129
 msgid "Open URI"
@@ -230,7 +231,7 @@ msgstr ""
 
 #: ../panel-plugin/settings.cpp:128
 msgid "Run in Terminal"
-msgstr ""
+msgstr "Terminalean abiarazi"
 
 #: ../panel-plugin/configuration-dialog.cpp:86
 msgid "Search Actio_ns"
@@ -242,7 +243,7 @@ msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:119
 msgid "Select An Icon"
-msgstr ""
+msgstr "Ikono bat aukeratu"
 
 #: ../panel-plugin/command-edit.cpp:64
 msgid "Select Command"
@@ -270,19 +271,19 @@ msgstr ""
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
-msgstr ""
+msgstr "Txikia"
 
 #: ../panel-plugin/icon-size.cpp:51
 msgid "Smaller"
-msgstr ""
+msgstr "Txikiagoa"
 
 #: ../panel-plugin/favorites-page.cpp:147
 msgid "Sort Alphabetically A-Z"
-msgstr ""
+msgstr "Alfabetikoki Sailkatu A-Z"
 
 #: ../panel-plugin/favorites-page.cpp:153
 msgid "Sort Alphabetically Z-A"
-msgstr ""
+msgstr "Alfabetikoki Sailkatu Z-A"
 
 #: ../panel-plugin/settings.cpp:120
 msgid "Switch _Users"
@@ -298,7 +299,7 @@ msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:524
 msgid "Title"
-msgstr ""
+msgstr "Izenburua"
 
 #: ../panel-plugin/page.cpp:319
 msgid "Unable to add launcher to desktop."
@@ -327,7 +328,7 @@ msgstr "Oso Txikia"
 
 #: ../panel-plugin/settings.cpp:126
 msgid "Web Search"
-msgstr ""
+msgstr "Web-an Bilatu"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
@@ -340,20 +341,20 @@ msgstr "Wikipedia"
 
 #: ../panel-plugin/configuration-dialog.cpp:83
 msgid "_Appearance"
-msgstr ""
+msgstr "_Itxura"
 
 #: ../panel-plugin/configuration-dialog.cpp:84
 msgid "_Behavior"
-msgstr ""
+msgstr "_Portaera"
 
 #: ../panel-plugin/command-edit.cpp:67
 #: ../panel-plugin/configuration-dialog.cpp:121
 msgid "_Cancel"
-msgstr "_Utzi"
+msgstr "_Ezeztatu"
 
 #: ../panel-plugin/configuration-dialog.cpp:74
 msgid "_Close"
-msgstr "It_xi"
+msgstr "_Itxi"
 
 #: ../panel-plugin/configuration-dialog.cpp:85
 msgid "_Commands"
@@ -361,11 +362,11 @@ msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:415
 msgid "_Delete"
-msgstr "E_zabatu"
+msgstr "_Ezabatu"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "_Edit Applications"
-msgstr ""
+msgstr "_Aplikazioak Editatu"
 
 #: ../panel-plugin/configuration-dialog.cpp:73
 msgid "_Help"
