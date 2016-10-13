@@ -1,19 +1,19 @@
 # Russian translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2015 Graeme Gott
+# Copyright (C) 2016 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # sorrymak <dearalcher@gmail.com>, 2013
-# Kyrill Detinov <lazy.kent@opensuse.org>, 2013
+# Kyrill Detinov <lazy.kent@opensuse.org>, 2013,2016
 # Sergey Alyoshin <alyoshin.s@gmail.com>, 2013-2015
 # Sergey Shlyapugin <shlyapugin@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-05 14:08+0000\n"
-"PO-Revision-Date: 2015-02-21 21:52+0000\n"
-"Last-Translator: Sergey Alyoshin <alyoshin.s@gmail.com>\n"
+"POT-Creation-Date: 2016-08-05 18:09+0000\n"
+"PO-Revision-Date: 2016-10-11 21:26+0000\n"
+"Last-Translator: Kyrill Detinov <lazy.kent@opensuse.org>\n"
 "Language-Team: Russian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ru/)\n"
 "Language: ru\n"
@@ -82,7 +82,7 @@ msgstr "Очистить историю"
 
 #: ../panel-plugin/plugin.cpp:394
 msgid "Copyright © 2013-2016 Graeme Gott"
-msgstr "Copyright © 2013—2016 Graeme Gott"
+msgstr "Copyright © 2013-2016 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:832
 msgid "Details"
@@ -262,9 +262,8 @@ msgid "Show application _descriptions"
 msgstr "Показывать _описания приложений"
 
 #: ../panel-plugin/configuration-dialog.cpp:593
-#, fuzzy
 msgid "Show application too_ltips"
-msgstr "Показывать _описания приложений"
+msgstr "Пока_зывать всплывающие комментарии к приложениям"
 
 #: ../panel-plugin/configuration-dialog.cpp:581
 msgid "Show generic application _names"
@@ -333,7 +332,7 @@ msgstr "Крошечный"
 
 #: ../panel-plugin/settings.cpp:126
 msgid "Web Search"
-msgstr ""
+msgstr "Web-поиск"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
@@ -384,6 +383,6 @@ msgstr "За_головок:"
 msgid "translator-credits"
 msgstr ""
 "Артём Демаков <dearalcher@gmail.com>, 2013\n"
-"Кирилл Детинов <lazy.kent@opensuse.org>, 2013\n"
+"Кирилл Детинов <lazy.kent@opensuse.org>, 2013-2016\n"
 "Сергей Алёшин <alyoshin.s@gmail.com>, 2013, 2014\n"
 "Сергей Шляпугин <shlyapugin@gmail.com>, 2013"
