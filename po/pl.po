@@ -12,13 +12,14 @@
 # Michał Olber <michal.olber@osworld.pl>, 2013
 # Piotr Sokół <psokol.l10n@gmail.com>, 2013-2014
 # Piotr Sokół <psokol.l10n@gmail.com>, 2015
+# Piotr Sokół <psokol.l10n@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-05 18:09+0000\n"
-"PO-Revision-Date: 2016-08-06 15:53+0000\n"
-"Last-Translator: M T <michtrz@gmail.com>\n"
+"PO-Revision-Date: 2016-10-07 22:59+0000\n"
+"Last-Translator: Piotr Sokół <psokol.l10n@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/pl/)\n"
 "Language: pl\n"
@@ -34,7 +35,7 @@ msgstr "Dodaje czynność"
 
 #: ../panel-plugin/page.cpp:214
 msgid "Add to Desktop"
-msgstr "Dodaj na pulpit"
+msgstr "Dodaj do pulpitu"
 
 #: ../panel-plugin/page.cpp:199
 msgid "Add to Favorites"
