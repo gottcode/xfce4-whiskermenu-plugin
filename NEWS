@@ -1,3 +1,9 @@
+2.0.2
+=====
+- Translation updates: Asturian, Basque, Catalan (Valencian),
+  Chinese (China), Kazakh, Lithuanian, Polish, Russian, Turkish,
+  Ukrainian.
+
 2.0.1
 =====
 - Support minimum of GTK+ 3.12.
@@ -8,6 +14,12 @@
 - Translation updates: Bulgarian, Catalan, Chinese (Taiwan), Czech,
   Dutch, French, Hebrew, Hungarian, Lithuanian, Polish, Slovak,
   Slovenian, Spanish.
+
+1.6.1
+=====
+- Translation updates: Asturian, Basque, Catalan (Valencian),
+  Chinese (China), Kazakh, Lithuanian, Polish, Russian, Turkish,
+  Ukrainian.
 
 1.6.0
 =====
