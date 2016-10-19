@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -58,7 +58,9 @@ public:
 
 private:
 	GtkRadioButton* m_button;
+	GtkBox* m_box;
 	GtkWidget* m_icon;
+	GtkWidget* m_label;
 	gchar* m_icon_name;
 };
 

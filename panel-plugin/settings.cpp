@@ -94,6 +94,7 @@ Settings::Settings() :
 	launcher_icon_size(IconSize::Small),
 
 	category_hover_activate(false),
+	category_show_name(true),
 	category_icon_size(IconSize::Smaller),
 
 	load_hierarchy(false),
@@ -179,6 +180,7 @@ void Settings::load(char* file)
 
 	category_hover_activate = xfce_rc_read_bool_entry(rc, "hover-switch-category", category_hover_activate);
 	category_icon_size = xfce_rc_read_int_entry(rc, "category-icon-size", category_icon_size);
+	category_show_name = xfce_rc_read_bool_entry(rc, "category-show-name", category_show_name) && (category_icon_size != -1);
 
 	load_hierarchy = xfce_rc_read_bool_entry(rc, "load-hierarchy", load_hierarchy);
 
@@ -275,6 +277,7 @@ void Settings::save(char* file)
 	xfce_rc_write_int_entry(rc, "item-icon-size", launcher_icon_size);
 
 	xfce_rc_write_bool_entry(rc, "hover-switch-category", category_hover_activate);
+	xfce_rc_write_bool_entry(rc, "category-show-name", category_show_name);
 	xfce_rc_write_int_entry(rc, "category-icon-size", category_icon_size);
 
 	xfce_rc_write_bool_entry(rc, "load-hierarchy", load_hierarchy);
