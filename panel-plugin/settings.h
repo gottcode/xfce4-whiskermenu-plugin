@@ -71,6 +71,7 @@ public:
 	IconSize launcher_icon_size;
 
 	bool category_hover_activate;
+	bool category_show_name;
 	IconSize category_icon_size;
 
 	bool load_hierarchy;

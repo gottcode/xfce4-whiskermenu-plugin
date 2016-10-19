@@ -145,6 +145,13 @@ void ConfigurationDialog::category_icon_size_changed(GtkComboBox* combo)
 {
 	wm_settings->category_icon_size = gtk_combo_box_get_active(combo) - 1;
 	wm_settings->set_modified();
+
+	bool active = wm_settings->category_icon_size != -1;
+	gtk_widget_set_sensitive(m_show_category_names, active);
+	if (!active)
+	{
+		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_category_names), true);
+	}
 }
 
 //-----------------------------------------------------------------------------
@@ -192,6 +199,15 @@ void ConfigurationDialog::toggle_hover_switch_category(GtkToggleButton* button)
 void ConfigurationDialog::toggle_show_generic_name(GtkToggleButton* button)
 {
 	wm_settings->launcher_show_name = !gtk_toggle_button_get_active(button);
+	wm_settings->set_modified();
+	m_plugin->reload();
+}
+
+//-----------------------------------------------------------------------------
+
+void ConfigurationDialog::toggle_show_category_name(GtkToggleButton* button)
+{
+	wm_settings->category_show_name = gtk_toggle_button_get_active(button);
 	wm_settings->set_modified();
 	m_plugin->reload();
 }
@@ -583,28 +599,34 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_generic_names), !wm_settings->launcher_show_name);
 	g_signal_connect_slot(m_show_generic_names, "toggled", &ConfigurationDialog::toggle_show_generic_name, this);
 
+	// Add option to hide category names
+	m_show_category_names = gtk_check_button_new_with_mnemonic(_("Show cate_gory names"));
+	gtk_table_attach_defaults(menu_table, m_show_category_names, 0, 2, 1, 2);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_category_names), wm_settings->category_show_name);
+	g_signal_connect_slot(m_show_category_names, "toggled", &ConfigurationDialog::toggle_show_category_name, this);
+
 	// Add option to hide descriptions
 	m_show_descriptions = gtk_check_button_new_with_mnemonic(_("Show application _descriptions"));
-	gtk_table_attach_defaults(menu_table, m_show_descriptions, 0, 2, 1, 2);
+	gtk_table_attach_defaults(menu_table, m_show_descriptions, 0, 2, 2, 3);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_descriptions), wm_settings->launcher_show_description);
 	g_signal_connect_slot(m_show_descriptions, "toggled", &ConfigurationDialog::toggle_show_description, this);
 
 	// Add option to hide tooltips
 	m_show_tooltips = gtk_check_button_new_with_mnemonic(_("Show application too_ltips"));
-	gtk_table_attach_defaults(menu_table, m_show_tooltips, 0, 2, 2, 3);
+	gtk_table_attach_defaults(menu_table, m_show_tooltips, 0, 2, 3, 4);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_tooltips), wm_settings->launcher_show_tooltip);
 	g_signal_connect_slot(m_show_tooltips, "toggled", &ConfigurationDialog::toggle_show_tooltip, this);
 
 	// Add option to show menu hierarchy
 	m_show_hierarchy = gtk_check_button_new_with_mnemonic(_("Show menu hie_rarchy"));
-	gtk_table_attach_defaults(menu_table, m_show_hierarchy, 0, 2, 3, 4);
+	gtk_table_attach_defaults(menu_table, m_show_hierarchy, 0, 2, 4, 5);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_hierarchy), wm_settings->load_hierarchy);
 	g_signal_connect_slot(m_show_hierarchy, "toggled", &ConfigurationDialog::toggle_show_hierarchy, this);
 
 	// Add item icon size selector
 	label = gtk_label_new_with_mnemonic(_("Ite_m icon size:"));
 	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
-	gtk_table_attach(menu_table, label, 0, 1, 4, 5, GTK_FILL, GtkAttachOptions(GTK_EXPAND | GTK_FILL), 0, 0);
+	gtk_table_attach(menu_table, label, 0, 1, 5, 6, GTK_FILL, GtkAttachOptions(GTK_EXPAND | GTK_FILL), 0, 0);
 
 	m_item_icon_size = gtk_combo_box_text_new();
 	std::vector<std::string> icon_sizes = IconSize::get_strings();
@@ -613,14 +635,14 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_item_icon_size), i->c_str());
 	}
 	gtk_combo_box_set_active(GTK_COMBO_BOX(m_item_icon_size), wm_settings->launcher_icon_size + 1);
-	gtk_table_attach_defaults(menu_table, m_item_icon_size, 1, 2, 4, 5);
+	gtk_table_attach_defaults(menu_table, m_item_icon_size, 1, 2, 5, 6);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_item_icon_size);
 	g_signal_connect_slot(m_item_icon_size, "changed", &ConfigurationDialog::item_icon_size_changed, this);
 
 	// Add category icon size selector
 	label = gtk_label_new_with_mnemonic(_("Categ_ory icon size:"));
 	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
-	gtk_table_attach(menu_table, label, 0, 1, 5, 6, GTK_FILL, GtkAttachOptions(GTK_EXPAND | GTK_FILL), 0, 0);
+	gtk_table_attach(menu_table, label, 0, 1, 6, 7, GTK_FILL, GtkAttachOptions(GTK_EXPAND | GTK_FILL), 0, 0);
 
 	m_category_icon_size = gtk_combo_box_text_new();
 	for (std::vector<std::string>::const_iterator i = icon_sizes.begin(), end = icon_sizes.end(); i != end; ++i)
@@ -628,17 +650,17 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_category_icon_size), i->c_str());
 	}
 	gtk_combo_box_set_active(GTK_COMBO_BOX(m_category_icon_size), wm_settings->category_icon_size + 1);
-	gtk_table_attach_defaults(menu_table, m_category_icon_size, 1, 2, 5, 6);
+	gtk_table_attach_defaults(menu_table, m_category_icon_size, 1, 2, 6, 7);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_category_icon_size);
 	g_signal_connect_slot(m_category_icon_size, "changed", &ConfigurationDialog::category_icon_size_changed, this);
 
 	// Add option to control background opacity
 	label = gtk_label_new_with_mnemonic(_("Background opacit_y:"));
 	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
-	gtk_table_attach(menu_table, label, 0, 1, 6, 7, GTK_FILL, GtkAttachOptions(GTK_EXPAND | GTK_FILL), 0, 0);
+	gtk_table_attach(menu_table, label, 0, 1, 7, 8, GTK_FILL, GtkAttachOptions(GTK_EXPAND | GTK_FILL), 0, 0);
 
 	m_background_opacity = gtk_hscale_new_with_range(0.0, 100.0, 1.0);
-	gtk_table_attach_defaults(menu_table, m_background_opacity, 1, 2, 6, 7);
+	gtk_table_attach_defaults(menu_table, m_background_opacity, 1, 2, 7, 8);
 	gtk_scale_set_value_pos(GTK_SCALE(m_background_opacity), GTK_POS_RIGHT);
 	gtk_range_set_value(GTK_RANGE(m_background_opacity), wm_settings->menu_opacity);
 	g_signal_connect_slot(m_background_opacity, "value-changed", &ConfigurationDialog::background_opacity_changed, this);

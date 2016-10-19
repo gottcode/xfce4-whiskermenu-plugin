@@ -272,16 +272,6 @@ void WhiskerMenu::Window::hide()
 
 void WhiskerMenu::Window::show(GtkWidget* parent, bool horizontal)
 {
-	// Make sure icon sizes are correct
-	m_favorites_button->reload_icon_size();
-	m_recent_button->reload_icon_size();
-	m_applications->reload_category_icon_size();
-
-	m_search_results->get_view()->reload_icon_size();
-	m_favorites->get_view()->reload_icon_size();
-	m_recent->get_view()->reload_icon_size();
-	m_applications->get_view()->reload_icon_size();
-
 	// Handle showing tooltips
 	if (wm_settings->launcher_show_tooltip)
 	{
@@ -328,6 +318,16 @@ void WhiskerMenu::Window::show(GtkWidget* parent, bool horizontal)
 		m_default_page = m_favorites;
 	}
 	show_default_page();
+
+	// Make sure icon sizes are correct
+	m_favorites_button->reload_icon_size();
+	m_recent_button->reload_icon_size();
+	m_applications->reload_category_icon_size();
+
+	m_search_results->get_view()->reload_icon_size();
+	m_favorites->get_view()->reload_icon_size();
+	m_recent->get_view()->reload_icon_size();
+	m_applications->get_view()->reload_icon_size();
 
 	GdkScreen* screen = NULL;
 	int parent_x = 0, parent_y = 0, parent_w = 0, parent_h = 0;

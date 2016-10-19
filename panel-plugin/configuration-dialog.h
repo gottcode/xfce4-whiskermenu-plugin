@@ -42,6 +42,7 @@ public:
 
 private:
 	void toggle_show_generic_name(GtkToggleButton* button);
+	void toggle_show_category_name(GtkToggleButton* button);
 	void toggle_show_description(GtkToggleButton* button);
 	void toggle_show_tooltip(GtkToggleButton* button);
 	void toggle_show_hierarchy(GtkToggleButton* button);
@@ -85,6 +86,7 @@ private:
 
 	GtkWidget* m_button_single_row;
 	GtkWidget* m_show_generic_names;
+	GtkWidget* m_show_category_names;
 	GtkWidget* m_show_descriptions;
 	GtkWidget* m_show_tooltips;
 	GtkWidget* m_show_hierarchy;

@@ -51,18 +51,20 @@ SectionButton::SectionButton(const gchar* icon, const gchar* text) :
 	m_button = GTK_RADIO_BUTTON(gtk_radio_button_new(NULL));
 	gtk_toggle_button_set_mode(GTK_TOGGLE_BUTTON(m_button), false);
 	gtk_button_set_relief(GTK_BUTTON(m_button), GTK_RELIEF_NONE);
+	gtk_widget_set_tooltip_text(GTK_WIDGET(m_button), text);
 	gtk_button_set_focus_on_click(GTK_BUTTON(m_button), false);
 	g_signal_connect(m_button, "enter-notify-event", G_CALLBACK(on_enter_notify_event), GTK_TOGGLE_BUTTON(m_button));
 
-	GtkBox* box = GTK_BOX(gtk_hbox_new(false, 4));
-	gtk_container_add(GTK_CONTAINER(m_button), GTK_WIDGET(box));
+	m_box = GTK_BOX(gtk_hbox_new(false, 4));
+	gtk_container_add(GTK_CONTAINER(m_button), GTK_WIDGET(m_box));
 
 	m_icon = xfce_panel_image_new();
-	reload_icon_size();
-	gtk_box_pack_start(box, m_icon, false, false, 0);
+	gtk_box_pack_start(m_box, m_icon, false, false, 0);
 
-	GtkWidget* label = gtk_label_new(text);
-	gtk_box_pack_start(box, label, false, true, 0);
+	m_label = gtk_label_new(text);
+	gtk_box_pack_start(m_box, m_label, false, true, 0);
+
+	reload_icon_size();
 }
 
 //-----------------------------------------------------------------------------
@@ -83,6 +85,19 @@ void SectionButton::reload_icon_size()
 	if (size > 1)
 	{
 		xfce_panel_image_set_from_source(XFCE_PANEL_IMAGE(m_icon), m_icon_name);
+	}
+
+	if (wm_settings->category_show_name)
+	{
+		gtk_widget_set_has_tooltip(GTK_WIDGET(m_button), false);
+		gtk_box_set_child_packing(m_box, m_icon, false, false, 0, GTK_PACK_START);
+		gtk_widget_show(m_label);
+	}
+	else
+	{
+		gtk_widget_set_has_tooltip(GTK_WIDGET(m_button), true);
+		gtk_widget_hide(m_label);
+		gtk_box_set_child_packing(m_box, m_icon, true, true, 0, GTK_PACK_START);
 	}
 }
 
