@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-05 18:09+0000\n"
+"POT-Creation-Date: 2016-10-23 12:16+0000\n"
 "PO-Revision-Date: 2016-08-14 17:40+0000\n"
 "Last-Translator: Adolfo Jayme-Barrientos\n"
 "Language-Team: Catalan (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/configuration-dialog.cpp:803
+#: ../panel-plugin/configuration-dialog.cpp:825
 msgid "Add action"
 msgstr "Afegeix una acció"
 
@@ -44,7 +44,7 @@ msgstr "Afegeix al plafó"
 msgid "All"
 msgstr "Totes"
 
-#: ../panel-plugin/settings.cpp:118
+#: ../panel-plugin/settings.cpp:119
 msgid "All _Settings"
 msgstr "Tots els ajust_s"
 
@@ -52,7 +52,7 @@ msgstr "Tots els ajust_s"
 msgid "Alternate application launcher for Xfce"
 msgstr "Llançador d’aplicacions alternatiu per a Xfce"
 
-#: ../panel-plugin/configuration-dialog.cpp:702
+#: ../panel-plugin/configuration-dialog.cpp:724
 msgid "Amount of _items:"
 msgstr "Nombre d’e_lements:"
 
@@ -60,7 +60,7 @@ msgstr "Nombre d’e_lements:"
 msgid "Applications"
 msgstr "Aplicacions"
 
-#: ../panel-plugin/configuration-dialog.cpp:636
+#: ../panel-plugin/configuration-dialog.cpp:658
 msgid "Background opacit_y:"
 msgstr "Opacitat del _fons:"
 
@@ -68,11 +68,11 @@ msgstr "Opacitat del _fons:"
 msgid "Browse the file system to choose a custom command."
 msgstr "Navegueu pel sistema de fitxers per triar una ordre personalitzada."
 
-#: ../panel-plugin/configuration-dialog.cpp:861
+#: ../panel-plugin/configuration-dialog.cpp:883
 msgid "C_ommand:"
 msgstr "_Ordre:"
 
-#: ../panel-plugin/configuration-dialog.cpp:621
+#: ../panel-plugin/configuration-dialog.cpp:643
 msgid "Categ_ory icon size:"
 msgstr "Mida de les icones de les categ_ories:"
 
@@ -84,23 +84,23 @@ msgstr "Neteja els elements recents"
 msgid "Copyright © 2013-2016 Graeme Gott"
 msgstr "Drets d’autor 2013–2016 Graeme Gott"
 
-#: ../panel-plugin/configuration-dialog.cpp:832
+#: ../panel-plugin/configuration-dialog.cpp:854
 msgid "Details"
 msgstr "Detalls"
 
-#: ../panel-plugin/configuration-dialog.cpp:523
+#: ../panel-plugin/configuration-dialog.cpp:539
 msgid "Di_splay:"
 msgstr "Mo_stra:"
 
-#: ../panel-plugin/configuration-dialog.cpp:719
+#: ../panel-plugin/configuration-dialog.cpp:741
 msgid "Display by _default"
 msgstr "Mostra-ho per _defecte"
 
-#: ../panel-plugin/settings.cpp:123
+#: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
 msgstr "Edita el _perfil"
 
-#: ../panel-plugin/settings.cpp:123
+#: ../panel-plugin/settings.cpp:124
 msgid "Failed to edit profile."
 msgstr "Ha fallat l'edició del perfil."
 
@@ -110,43 +110,43 @@ msgstr "Ha fallat l'edició del perfil."
 msgid "Failed to execute command \"%s\"."
 msgstr "Ha fallat l'execució de l'ordre «%s»."
 
-#: ../panel-plugin/settings.cpp:122
+#: ../panel-plugin/settings.cpp:123
 msgid "Failed to launch menu editor."
 msgstr "Ha fallat el llançament de l'editor dels menús."
 
-#: ../panel-plugin/settings.cpp:119
+#: ../panel-plugin/settings.cpp:120
 msgid "Failed to lock screen."
 msgstr "Ha fallat el bloqueig de la pantalla."
 
-#: ../panel-plugin/settings.cpp:121
+#: ../panel-plugin/settings.cpp:122
 msgid "Failed to log out."
 msgstr "Ha fallat el tancament de la sessió."
 
-#: ../panel-plugin/settings.cpp:118
+#: ../panel-plugin/settings.cpp:119
 msgid "Failed to open settings manager."
 msgstr "Ha fallat l'obriment del gestor d'ajusts."
 
-#: ../panel-plugin/settings.cpp:120
+#: ../panel-plugin/settings.cpp:121
 msgid "Failed to switch users."
 msgstr "Ha fallat el canvi d'usuari."
 
-#: ../panel-plugin/window.cpp:120
+#: ../panel-plugin/window.cpp:118
 msgid "Favorites"
 msgstr "Preferits"
 
-#: ../panel-plugin/configuration-dialog.cpp:528
+#: ../panel-plugin/configuration-dialog.cpp:544
 msgid "Icon"
 msgstr "Icona"
 
-#: ../panel-plugin/configuration-dialog.cpp:530
+#: ../panel-plugin/configuration-dialog.cpp:546
 msgid "Icon and title"
 msgstr "Icona i títol"
 
-#: ../panel-plugin/configuration-dialog.cpp:713
+#: ../panel-plugin/configuration-dialog.cpp:735
 msgid "Ignore _favorites"
 msgstr "Ignora els pre_ferits"
 
-#: ../panel-plugin/configuration-dialog.cpp:605
+#: ../panel-plugin/configuration-dialog.cpp:627
 msgid "Ite_m icon size:"
 msgstr "Mida de les icones dels ele_ments:"
 
@@ -158,24 +158,24 @@ msgstr "Gran"
 msgid "Larger"
 msgstr "Més gran"
 
-#: ../panel-plugin/settings.cpp:121
+#: ../panel-plugin/settings.cpp:122
 msgid "Log _Out"
 msgstr "Ta_nca la sessió"
 
-#: ../panel-plugin/settings.cpp:125
+#: ../panel-plugin/settings.cpp:126
 msgid "Man Pages"
 msgstr "Pàgines del man"
 
-#: ../panel-plugin/configuration-dialog.cpp:576
-#: ../panel-plugin/configuration-dialog.cpp:662
+#: ../panel-plugin/configuration-dialog.cpp:592
+#: ../panel-plugin/configuration-dialog.cpp:684
 msgid "Menu"
 msgstr "Menú"
 
-#: ../panel-plugin/configuration-dialog.cpp:837
+#: ../panel-plugin/configuration-dialog.cpp:859
 msgid "Nam_e:"
 msgstr "N_om:"
 
-#: ../panel-plugin/configuration-dialog.cpp:783
+#: ../panel-plugin/configuration-dialog.cpp:805
 msgid "Name"
 msgstr "Nom"
 
@@ -187,31 +187,31 @@ msgstr "Cap"
 msgid "Normal"
 msgstr "Normal"
 
-#: ../panel-plugin/settings.cpp:129
+#: ../panel-plugin/settings.cpp:130
 msgid "Open URI"
 msgstr "Obre un URI"
 
-#: ../panel-plugin/configuration-dialog.cpp:518
+#: ../panel-plugin/configuration-dialog.cpp:534
 msgid "Panel Button"
 msgstr "Botó del plafó"
 
-#: ../panel-plugin/configuration-dialog.cpp:788
+#: ../panel-plugin/configuration-dialog.cpp:810
 msgid "Pattern"
 msgstr "Patró"
 
-#: ../panel-plugin/configuration-dialog.cpp:673
+#: ../panel-plugin/configuration-dialog.cpp:695
 msgid "Position _search entry next to panel button"
 msgstr "_Situa el quadre de cerca al costat del botó del plafó"
 
-#: ../panel-plugin/configuration-dialog.cpp:686
+#: ../panel-plugin/configuration-dialog.cpp:708
 msgid "Position cate_gories next to panel button"
 msgstr "Situa les cate_gories al costat del botó del plafó"
 
-#: ../panel-plugin/configuration-dialog.cpp:679
+#: ../panel-plugin/configuration-dialog.cpp:701
 msgid "Position commands next to search _entry"
 msgstr "S_itua les ordres al costat del quadre de cerca"
 
-#: ../panel-plugin/configuration-dialog.cpp:697 ../panel-plugin/window.cpp:126
+#: ../panel-plugin/configuration-dialog.cpp:719 ../panel-plugin/window.cpp:124
 msgid "Recently Used"
 msgstr "Utilitzades recentment"
 
@@ -219,12 +219,12 @@ msgstr "Utilitzades recentment"
 msgid "Remove From Favorites"
 msgstr "Suprimeix dels preferits"
 
-#: ../panel-plugin/configuration-dialog.cpp:420
+#: ../panel-plugin/configuration-dialog.cpp:436
 #, c-format
 msgid "Remove action \"%s\"?"
 msgstr "Voleu suprimir l’acció «%s»?"
 
-#: ../panel-plugin/configuration-dialog.cpp:812
+#: ../panel-plugin/configuration-dialog.cpp:834
 msgid "Remove selected action"
 msgstr "Suprimeix l’acció seleccionada"
 
@@ -233,7 +233,7 @@ msgstr "Suprimeix l’acció seleccionada"
 msgid "Run %s"
 msgstr "Executa «%s»"
 
-#: ../panel-plugin/settings.cpp:128
+#: ../panel-plugin/settings.cpp:129
 msgid "Run in Terminal"
 msgstr "Executa al terminal"
 
@@ -257,19 +257,23 @@ msgstr "Seleccioneu una ordre"
 msgid "Show a menu to easily access installed applications"
 msgstr "Mostra un menú per accedir fàcilment a les aplicacions instal·lades"
 
-#: ../panel-plugin/configuration-dialog.cpp:587
+#: ../panel-plugin/configuration-dialog.cpp:609
 msgid "Show application _descriptions"
 msgstr "Mostra la _descripció de les aplicacions"
 
-#: ../panel-plugin/configuration-dialog.cpp:593
+#: ../panel-plugin/configuration-dialog.cpp:615
 msgid "Show application too_ltips"
 msgstr "Mostra els _indicadors de funcions de les aplicacions"
 
-#: ../panel-plugin/configuration-dialog.cpp:581
+#: ../panel-plugin/configuration-dialog.cpp:603
+msgid "Show cate_gory names"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:597
 msgid "Show generic application _names"
 msgstr "Mostra els _noms genèrics de les aplicacions"
 
-#: ../panel-plugin/configuration-dialog.cpp:599
+#: ../panel-plugin/configuration-dialog.cpp:621
 msgid "Show menu hie_rarchy"
 msgstr "Mostra la je_rarquia del menú"
 
@@ -289,19 +293,19 @@ msgstr "Ordena alfabèticament A–Z"
 msgid "Sort Alphabetically Z-A"
 msgstr "Ordena alfabèticament Z–A"
 
-#: ../panel-plugin/settings.cpp:120
+#: ../panel-plugin/settings.cpp:121
 msgid "Switch _Users"
 msgstr "Canvia d’_usuari"
 
-#: ../panel-plugin/configuration-dialog.cpp:667
+#: ../panel-plugin/configuration-dialog.cpp:689
 msgid "Switch categories by _hovering"
 msgstr "Canvia de categoria en a_puntar amb el ratolí"
 
-#: ../panel-plugin/configuration-dialog.cpp:419
+#: ../panel-plugin/configuration-dialog.cpp:435
 msgid "The action will be deleted permanently."
 msgstr "Se suprimirà l’acció permanentment."
 
-#: ../panel-plugin/configuration-dialog.cpp:529
+#: ../panel-plugin/configuration-dialog.cpp:545
 msgid "Title"
 msgstr "Títol"
 
@@ -313,12 +317,12 @@ msgstr "No s’ha pogut afegir el llançador a l'escriptori."
 msgid "Unable to add launcher to panel."
 msgstr "No s’ha pogut afegir el llançador al plafó."
 
-#: ../panel-plugin/configuration-dialog.cpp:480
+#: ../panel-plugin/configuration-dialog.cpp:496
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "No es pot obrir el següent URL: %s"
 
-#: ../panel-plugin/configuration-dialog.cpp:563
+#: ../panel-plugin/configuration-dialog.cpp:579
 msgid "Use a single _panel row"
 msgstr "Utilitza una sola fila del _plafó"
 
@@ -330,7 +334,7 @@ msgstr "Molt gran"
 msgid "Very Small"
 msgstr "Molt petita"
 
-#: ../panel-plugin/settings.cpp:126
+#: ../panel-plugin/settings.cpp:127
 msgid "Web Search"
 msgstr "Cerca al Web"
 
@@ -339,7 +343,7 @@ msgstr "Cerca al Web"
 msgid "Whisker Menu"
 msgstr "Menú Whisker"
 
-#: ../panel-plugin/settings.cpp:127
+#: ../panel-plugin/settings.cpp:128
 msgid "Wikipedia"
 msgstr "Viquipèdia"
 
@@ -355,27 +359,27 @@ msgstr "_Comportament"
 msgid "_Commands"
 msgstr "_Ordres"
 
-#: ../panel-plugin/settings.cpp:122
+#: ../panel-plugin/settings.cpp:123
 msgid "_Edit Applications"
 msgstr "_Edita les aplicacions"
 
-#: ../panel-plugin/configuration-dialog.cpp:548
+#: ../panel-plugin/configuration-dialog.cpp:564
 msgid "_Icon:"
 msgstr "_Icona:"
 
-#: ../panel-plugin/settings.cpp:119
+#: ../panel-plugin/settings.cpp:120
 msgid "_Lock Screen"
 msgstr "_Bloqueja la pantalla"
 
-#: ../panel-plugin/configuration-dialog.cpp:849
+#: ../panel-plugin/configuration-dialog.cpp:871
 msgid "_Pattern:"
 msgstr "_Patró:"
 
-#: ../panel-plugin/configuration-dialog.cpp:873
+#: ../panel-plugin/configuration-dialog.cpp:895
 msgid "_Regular expression"
 msgstr "Expressió _regular"
 
-#: ../panel-plugin/configuration-dialog.cpp:537
+#: ../panel-plugin/configuration-dialog.cpp:553
 msgid "_Title:"
 msgstr "_Títol:"
 
