@@ -23,6 +23,7 @@
 namespace WhiskerMenu
 {
 
+class DesktopAction;
 class Launcher;
 class LauncherView;
 class Window;
@@ -54,6 +55,7 @@ protected:
 private:
 	virtual bool remember_launcher(Launcher* launcher);
 	void item_activated(GtkTreeView* view, GtkTreePath* path, GtkTreeViewColumn*);
+	void item_action_activated(GtkMenuItem* menuitem, DesktopAction* action);
 	gboolean view_button_press_event(GtkWidget* view, GdkEvent* event);
 	gboolean view_popup_menu_event(GtkWidget* view);
 	void on_unmap();
