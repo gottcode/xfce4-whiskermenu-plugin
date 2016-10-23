@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,11 +21,61 @@
 #include "element.h"
 
 #include <string>
+#include <vector>
 
 #include <garcon/garcon.h>
 
 namespace WhiskerMenu
 {
+
+struct DesktopAction
+{
+#ifdef GARCON_TYPE_MENU_ITEM_ACTION
+
+public:
+	DesktopAction(GarconMenuItemAction* action) :
+		m_action(action)
+	{
+	}
+
+	const gchar* get_name() const
+	{
+		return garcon_menu_item_action_get_name(m_action);
+	}
+
+	const gchar* get_icon() const
+	{
+		return garcon_menu_item_action_get_icon_name(m_action);
+	}
+
+	const gchar* get_command() const
+	{
+		return garcon_menu_item_action_get_command(m_action);
+	}
+
+private:
+	GarconMenuItemAction* m_action;
+
+#else
+
+public:
+	const gchar* get_name() const
+	{
+		return NULL;
+	}
+
+	const gchar* get_icon() const
+	{
+		return NULL;
+	}
+
+	const gchar* get_command() const
+	{
+		return NULL;
+	}
+
+#endif
+};
 
 class Launcher : public Element
 {
@@ -40,6 +90,11 @@ public:
 	int get_type() const
 	{
 		return Type;
+	}
+
+	std::vector<DesktopAction*> get_actions() const
+	{
+		return m_actions;
 	}
 
 	const gchar* get_display_name() const
@@ -64,6 +119,8 @@ public:
 
 	void run(GdkScreen* screen) const;
 
+	void run(GdkScreen* screen, DesktopAction* action) const;
+
 	guint search(const Query& query);
 
 	enum SearchFlag
@@ -81,6 +138,7 @@ private:
 	std::string m_search_comment;
 	std::string m_search_command;
 	guint m_search_flags;
+	std::vector<DesktopAction*> m_actions;
 };
 
 }

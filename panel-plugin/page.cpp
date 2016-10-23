@@ -139,6 +139,29 @@ void Page::item_activated(GtkTreeView* view, GtkTreePath* path, GtkTreeViewColum
 
 //-----------------------------------------------------------------------------
 
+void Page::item_action_activated(GtkMenuItem* menuitem, DesktopAction* action)
+{
+	Launcher* launcher = get_selected_launcher();
+	if (!launcher)
+	{
+		return;
+	}
+
+	// Add to recent
+	if (remember_launcher(launcher))
+	{
+		m_window->get_recent()->add(launcher);
+	}
+
+	// Hide window
+	m_window->hide();
+
+	// Execute app
+	launcher->run(gtk_widget_get_screen(GTK_WIDGET(menuitem)), action);
+}
+
+//-----------------------------------------------------------------------------
+
 gboolean Page::view_button_press_event(GtkWidget* view, GdkEvent* event)
 {
 	GdkEventButton* event_button = reinterpret_cast<GdkEventButton*>(event);
@@ -193,6 +216,25 @@ void Page::create_context_menu(GtkTreeIter* iter, GdkEvent* event)
 
 	menuitem = gtk_separator_menu_item_new();
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+
+	const std::vector<DesktopAction*> actions = launcher->get_actions();
+	if (!actions.empty())
+	{
+		for (std::vector<DesktopAction*>::size_type i = 0, end = actions.size(); i < end; ++i)
+		{
+			DesktopAction* action = actions[i];
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+			menuitem = gtk_image_menu_item_new_with_label(action->get_name());
+			GtkWidget* image = gtk_image_new_from_icon_name(action->get_icon(), GTK_ICON_SIZE_MENU);
+			gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM(menuitem), image);
+G_GNUC_END_IGNORE_DEPRECATIONS
+			g_signal_connect_slot(menuitem, "activate", &Page::item_action_activated, this, action);
+			gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+		}
+
+		menuitem = gtk_separator_menu_item_new();
+		gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+	}
 
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 	if (!m_window->get_favorites()->contains(launcher))
