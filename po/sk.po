@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-13 17:21+0000\n"
+"POT-Creation-Date: 2016-10-23 12:12+0000\n"
 "PO-Revision-Date: 2016-08-13 18:13+0000\n"
 "Last-Translator: Slavko <linux@slavino.sk>\n"
 "Language-Team: Slovak (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: ../panel-plugin/configuration-dialog.cpp:795
+#: ../panel-plugin/configuration-dialog.cpp:816
 msgid "Add action"
 msgstr "Pridať akciu"
 
@@ -39,23 +39,23 @@ msgstr "Pridať do panela"
 msgid "All"
 msgstr "Všetky"
 
-#: ../panel-plugin/settings.cpp:118
+#: ../panel-plugin/settings.cpp:119
 msgid "All _Settings"
 msgstr "Všetky _nastavenia"
 
-#: ../panel-plugin/plugin.cpp:407
+#: ../panel-plugin/plugin.cpp:411
 msgid "Alternate application launcher for Xfce"
 msgstr "Alternatívny spúšťač aplikácií pre XFCE"
 
-#: ../panel-plugin/configuration-dialog.cpp:696
+#: ../panel-plugin/configuration-dialog.cpp:717
 msgid "Amount of _items:"
 msgstr "Počet polož_iek:"
 
-#: ../panel-plugin/plugin.cpp:239
+#: ../panel-plugin/plugin.cpp:243
 msgid "Applications"
 msgstr "Aplikácie"
 
-#: ../panel-plugin/configuration-dialog.cpp:631
+#: ../panel-plugin/configuration-dialog.cpp:652
 msgid "Background opacit_y:"
 msgstr "Neprie_hľadnosť pozadia"
 
@@ -63,11 +63,11 @@ msgstr "Neprie_hľadnosť pozadia"
 msgid "Browse the file system to choose a custom command."
 msgstr "Prezrieť súborový systém a zvoliť vlastný príkaz."
 
-#: ../panel-plugin/configuration-dialog.cpp:853
+#: ../panel-plugin/configuration-dialog.cpp:874
 msgid "C_ommand:"
 msgstr "P_ríkaz:"
 
-#: ../panel-plugin/configuration-dialog.cpp:616
+#: ../panel-plugin/configuration-dialog.cpp:637
 msgid "Categ_ory icon size:"
 msgstr "Veľkosť ikony _kategorie"
 
@@ -75,27 +75,27 @@ msgstr "Veľkosť ikony _kategorie"
 msgid "Clear Recently Used"
 msgstr "Vymazať nedávne"
 
-#: ../panel-plugin/plugin.cpp:408
+#: ../panel-plugin/plugin.cpp:412
 msgid "Copyright © 2013-2016 Graeme Gott"
 msgstr "Copyright © 2013-2016 Graeme Gott"
 
-#: ../panel-plugin/configuration-dialog.cpp:823
+#: ../panel-plugin/configuration-dialog.cpp:844
 msgid "Details"
 msgstr "Podrobnosti"
 
-#: ../panel-plugin/configuration-dialog.cpp:518
+#: ../panel-plugin/configuration-dialog.cpp:533
 msgid "Di_splay:"
 msgstr "_Zobraziť:"
 
-#: ../panel-plugin/configuration-dialog.cpp:713
+#: ../panel-plugin/configuration-dialog.cpp:734
 msgid "Display by _default"
 msgstr "Pre_dvolene zobraziť"
 
-#: ../panel-plugin/settings.cpp:123
+#: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
 msgstr "Upraviť _profil"
 
-#: ../panel-plugin/settings.cpp:123
+#: ../panel-plugin/settings.cpp:124
 msgid "Failed to edit profile."
 msgstr "Úprava profilu zlyhala."
 
@@ -105,23 +105,23 @@ msgstr "Úprava profilu zlyhala."
 msgid "Failed to execute command \"%s\"."
 msgstr "Zlyhalo vykonanie príkazu „%s”."
 
-#: ../panel-plugin/settings.cpp:122
+#: ../panel-plugin/settings.cpp:123
 msgid "Failed to launch menu editor."
 msgstr "Zlyhalo spustenie editora menu."
 
-#: ../panel-plugin/settings.cpp:119
+#: ../panel-plugin/settings.cpp:120
 msgid "Failed to lock screen."
 msgstr "Zlyhalo zamknutie obrazovky."
 
-#: ../panel-plugin/settings.cpp:121
+#: ../panel-plugin/settings.cpp:122
 msgid "Failed to log out."
 msgstr "Zlyhalo odhlásenie."
 
-#: ../panel-plugin/settings.cpp:118
+#: ../panel-plugin/settings.cpp:119
 msgid "Failed to open settings manager."
 msgstr "Zlyhalo otvorenie správcu nastavení."
 
-#: ../panel-plugin/settings.cpp:120
+#: ../panel-plugin/settings.cpp:121
 msgid "Failed to switch users."
 msgstr "Zlyhalo prepnutie používateľa."
 
@@ -129,19 +129,19 @@ msgstr "Zlyhalo prepnutie používateľa."
 msgid "Favorites"
 msgstr "Obľúbené"
 
-#: ../panel-plugin/configuration-dialog.cpp:523
+#: ../panel-plugin/configuration-dialog.cpp:538
 msgid "Icon"
 msgstr "Ikona"
 
-#: ../panel-plugin/configuration-dialog.cpp:525
+#: ../panel-plugin/configuration-dialog.cpp:540
 msgid "Icon and title"
 msgstr "Ikona a názov"
 
-#: ../panel-plugin/configuration-dialog.cpp:707
+#: ../panel-plugin/configuration-dialog.cpp:728
 msgid "Ignore _favorites"
 msgstr "Ignorovať o_bľúbené"
 
-#: ../panel-plugin/configuration-dialog.cpp:600
+#: ../panel-plugin/configuration-dialog.cpp:621
 msgid "Ite_m icon size:"
 msgstr "Veľkosť ikony _položky"
 
@@ -153,24 +153,24 @@ msgstr "Veľké"
 msgid "Larger"
 msgstr "Väčšie"
 
-#: ../panel-plugin/settings.cpp:121
+#: ../panel-plugin/settings.cpp:122
 msgid "Log _Out"
 msgstr "_Odhlásiť"
 
-#: ../panel-plugin/settings.cpp:125
+#: ../panel-plugin/settings.cpp:126
 msgid "Man Pages"
 msgstr "Manuálové stránky"
 
-#: ../panel-plugin/configuration-dialog.cpp:571
-#: ../panel-plugin/configuration-dialog.cpp:656
+#: ../panel-plugin/configuration-dialog.cpp:586
+#: ../panel-plugin/configuration-dialog.cpp:677
 msgid "Menu"
 msgstr "Menu"
 
-#: ../panel-plugin/configuration-dialog.cpp:828
+#: ../panel-plugin/configuration-dialog.cpp:849
 msgid "Nam_e:"
 msgstr "M_eno:"
 
-#: ../panel-plugin/configuration-dialog.cpp:773
+#: ../panel-plugin/configuration-dialog.cpp:794
 msgid "Name"
 msgstr "Meno"
 
@@ -182,31 +182,31 @@ msgstr "Žiadne"
 msgid "Normal"
 msgstr "Normálne"
 
-#: ../panel-plugin/settings.cpp:129
+#: ../panel-plugin/settings.cpp:130
 msgid "Open URI"
 msgstr "Otvoriť URI"
 
-#: ../panel-plugin/configuration-dialog.cpp:513
+#: ../panel-plugin/configuration-dialog.cpp:528
 msgid "Panel Button"
 msgstr "Tlačidlo panela"
 
-#: ../panel-plugin/configuration-dialog.cpp:778
+#: ../panel-plugin/configuration-dialog.cpp:799
 msgid "Pattern"
 msgstr "Vzor"
 
-#: ../panel-plugin/configuration-dialog.cpp:667
+#: ../panel-plugin/configuration-dialog.cpp:688
 msgid "Position _search entry next to panel button"
 msgstr "Umiestniť položku hľadať vedľa tlačidla panela"
 
-#: ../panel-plugin/configuration-dialog.cpp:680
+#: ../panel-plugin/configuration-dialog.cpp:701
 msgid "Position cate_gories next to panel button"
 msgstr "Pozícia kate_górií vedľa panela tlačidiel"
 
-#: ../panel-plugin/configuration-dialog.cpp:673
+#: ../panel-plugin/configuration-dialog.cpp:694
 msgid "Position commands next to search _entry"
 msgstr "Umiestniť príkazy _vedľa položky hľadať"
 
-#: ../panel-plugin/configuration-dialog.cpp:691 ../panel-plugin/window.cpp:167
+#: ../panel-plugin/configuration-dialog.cpp:712 ../panel-plugin/window.cpp:167
 msgid "Recently Used"
 msgstr "Nedávne"
 
@@ -214,12 +214,12 @@ msgstr "Nedávne"
 msgid "Remove From Favorites"
 msgstr "Odstrániť z obľúbených"
 
-#: ../panel-plugin/configuration-dialog.cpp:417
+#: ../panel-plugin/configuration-dialog.cpp:432
 #, c-format
 msgid "Remove action \"%s\"?"
 msgstr "Odstrániť akciu „%s”?"
 
-#: ../panel-plugin/configuration-dialog.cpp:804
+#: ../panel-plugin/configuration-dialog.cpp:825
 msgid "Remove selected action"
 msgstr "Odstrániť zvolenú akciu"
 
@@ -228,7 +228,7 @@ msgstr "Odstrániť zvolenú akciu"
 msgid "Run %s"
 msgstr "Spustiť %s"
 
-#: ../panel-plugin/settings.cpp:128
+#: ../panel-plugin/settings.cpp:129
 msgid "Run in Terminal"
 msgstr "Spustiť v termináli"
 
@@ -252,19 +252,23 @@ msgstr "Zvoľte príkaz"
 msgid "Show a menu to easily access installed applications"
 msgstr "Zobrazí menu ja jednoduché prechádzanie nainštalovanými aplikáciami"
 
-#: ../panel-plugin/configuration-dialog.cpp:582
+#: ../panel-plugin/configuration-dialog.cpp:603
 msgid "Show application _descriptions"
 msgstr "Zobraziť _popis aplikácie"
 
-#: ../panel-plugin/configuration-dialog.cpp:588
+#: ../panel-plugin/configuration-dialog.cpp:609
 msgid "Show application too_ltips"
 msgstr "Zobraziť nástrojové tipy aplikácie"
 
-#: ../panel-plugin/configuration-dialog.cpp:576
+#: ../panel-plugin/configuration-dialog.cpp:597
+msgid "Show cate_gory names"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:591
 msgid "Show generic application _names"
 msgstr "Zobraziť všeobecné mená aplikácií"
 
-#: ../panel-plugin/configuration-dialog.cpp:594
+#: ../panel-plugin/configuration-dialog.cpp:615
 msgid "Show menu hie_rarchy"
 msgstr "Zobraziť hierarchiu menu"
 
@@ -284,19 +288,19 @@ msgstr "Zoradiť abecedne A-Z"
 msgid "Sort Alphabetically Z-A"
 msgstr "Zoradiť abecedne Z-A"
 
-#: ../panel-plugin/settings.cpp:120
+#: ../panel-plugin/settings.cpp:121
 msgid "Switch _Users"
 msgstr "Prepnúť po_užívateľov"
 
-#: ../panel-plugin/configuration-dialog.cpp:661
+#: ../panel-plugin/configuration-dialog.cpp:682
 msgid "Switch categories by _hovering"
 msgstr "Nasledovať kategóriu po_d myšou"
 
-#: ../panel-plugin/configuration-dialog.cpp:416
+#: ../panel-plugin/configuration-dialog.cpp:431
 msgid "The action will be deleted permanently."
 msgstr "Akcia bude odstránená natrvalo"
 
-#: ../panel-plugin/configuration-dialog.cpp:524
+#: ../panel-plugin/configuration-dialog.cpp:539
 msgid "Title"
 msgstr "Názov"
 
@@ -308,12 +312,12 @@ msgstr "Nemožno pridať spúšťač na plochu"
 msgid "Unable to add launcher to panel."
 msgstr "Nemožno pridať spúšťač do panela"
 
-#: ../panel-plugin/configuration-dialog.cpp:477
+#: ../panel-plugin/configuration-dialog.cpp:492
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Nemožno otvoriť URL: %s"
 
-#: ../panel-plugin/configuration-dialog.cpp:558
+#: ../panel-plugin/configuration-dialog.cpp:573
 msgid "Use a single _panel row"
 msgstr "_Panel v jednom riadku"
 
@@ -325,7 +329,7 @@ msgstr "Celkom veľké"
 msgid "Very Small"
 msgstr "Celkom malé"
 
-#: ../panel-plugin/settings.cpp:126
+#: ../panel-plugin/settings.cpp:127
 msgid "Web Search"
 msgstr "Webové hľadanie"
 
@@ -334,7 +338,7 @@ msgstr "Webové hľadanie"
 msgid "Whisker Menu"
 msgstr "Whisker Menu"
 
-#: ../panel-plugin/settings.cpp:127
+#: ../panel-plugin/settings.cpp:128
 msgid "Wikipedia"
 msgstr "Wikipédia"
 
@@ -359,11 +363,11 @@ msgstr "_Zatvoriť"
 msgid "_Commands"
 msgstr "Príka_zy"
 
-#: ../panel-plugin/configuration-dialog.cpp:415
+#: ../panel-plugin/configuration-dialog.cpp:430
 msgid "_Delete"
 msgstr "__Odstrániť"
 
-#: ../panel-plugin/settings.cpp:122
+#: ../panel-plugin/settings.cpp:123
 msgid "_Edit Applications"
 msgstr "Upraviť aplikáci_e"
 
@@ -371,11 +375,11 @@ msgstr "Upraviť aplikáci_e"
 msgid "_Help"
 msgstr "_Pomocník"
 
-#: ../panel-plugin/configuration-dialog.cpp:544
+#: ../panel-plugin/configuration-dialog.cpp:559
 msgid "_Icon:"
 msgstr "_Ikona:"
 
-#: ../panel-plugin/settings.cpp:119
+#: ../panel-plugin/settings.cpp:120
 msgid "_Lock Screen"
 msgstr "_Zamknúť obrazovku"
 
@@ -384,18 +388,18 @@ msgstr "_Zamknúť obrazovku"
 msgid "_OK"
 msgstr "_OK"
 
-#: ../panel-plugin/configuration-dialog.cpp:841
+#: ../panel-plugin/configuration-dialog.cpp:862
 msgid "_Pattern:"
 msgstr "_Vzor:"
 
-#: ../panel-plugin/configuration-dialog.cpp:865
+#: ../panel-plugin/configuration-dialog.cpp:886
 msgid "_Regular expression"
 msgstr "_Regulárny výraz"
 
-#: ../panel-plugin/configuration-dialog.cpp:533
+#: ../panel-plugin/configuration-dialog.cpp:548
 msgid "_Title:"
 msgstr "_Názov:"
 
-#: ../panel-plugin/plugin.cpp:412
+#: ../panel-plugin/plugin.cpp:416
 msgid "translator-credits"
 msgstr "Slavko <linux@slavino.sk>"
