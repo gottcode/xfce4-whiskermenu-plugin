@@ -219,22 +219,18 @@ void Launcher::run(GdkScreen* screen) const
 			{
 			case 'i':
 				replace_with_quoted_string(command, i, "--icon ", garcon_menu_item_get_icon_name(m_item));
-				length = command.length() - 1;
 				break;
 
 			case 'c':
 				replace_with_quoted_string(command, i, garcon_menu_item_get_name(m_item));
-				length = command.length() - 1;
 				break;
 
 			case 'k':
 				replace_and_free_with_quoted_string(command, i, garcon_menu_item_get_uri(m_item));
-				length = command.length() - 1;
 				break;
 
 			case '%':
 				command.erase(i, 1);
-				length = command.length() - 1;
 				break;
 
 			case 'f':
@@ -247,9 +243,9 @@ void Launcher::run(GdkScreen* screen) const
 				// unsupported, pass in a list of URLs dropped on launcher
 			default:
 				command.erase(i, 2);
-				length = command.length() - 1;
 				break;
 			}
+			length = command.length() - 1;
 		}
 	}
 
