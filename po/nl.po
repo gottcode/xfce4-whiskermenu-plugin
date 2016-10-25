@@ -262,7 +262,7 @@ msgstr "Toon gereedschapstips voor toepassingen"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "Show cate_gory names"
-msgstr ""
+msgstr "Toon namen van categorieën"
 
 #: ../panel-plugin/configuration-dialog.cpp:597
 msgid "Show generic application _names"
