@@ -197,7 +197,6 @@ gboolean Page::view_popup_menu_event(GtkWidget* view)
 
 void Page::create_context_menu(GtkTreeIter* iter, GdkEvent* event)
 {
-	GdkEventButton* event_button = reinterpret_cast<GdkEventButton*>(event);
 	m_selected_path = gtk_tree_model_get_path(m_view->get_model(), iter);
 	Launcher* launcher = get_selected_launcher();
 	if (!launcher)
@@ -268,11 +267,17 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 	gtk_widget_show_all(menu);
 
 	// Show context menu
+	gtk_tree_view_set_hover_selection(GTK_TREE_VIEW(m_view->get_widget()), false);
+	gtk_menu_attach_to_widget(GTK_MENU(menu), m_view->get_widget(), NULL);
+#if GTK_CHECK_VERSION(3,22,0)
+	gtk_menu_popup_at_pointer(GTK_MENU(menu), event);
+#else
 	int button = 0;
 	int event_time;
 	GtkMenuPositionFunc position_func = NULL;
 	if (event)
 	{
+		GdkEventButton* event_button = reinterpret_cast<GdkEventButton*>(event);
 		button = event_button->button;
 		event_time = event_button->time;
 	}
@@ -282,9 +287,8 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 		event_time = gtk_get_current_event_time ();
 	}
 
-	gtk_tree_view_set_hover_selection(GTK_TREE_VIEW(m_view->get_widget()), false);
-	gtk_menu_attach_to_widget(GTK_MENU(menu), m_view->get_widget(), NULL);
 	gtk_menu_popup(GTK_MENU(menu), NULL, NULL, position_func, this, button, event_time);
+#endif
 }
 
 //-----------------------------------------------------------------------------
