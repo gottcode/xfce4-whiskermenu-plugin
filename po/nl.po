@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-23 12:12+0000\n"
-"PO-Revision-Date: 2016-08-14 18:33+0000\n"
+"POT-Creation-Date: 2016-10-23 12:14+0000\n"
+"PO-Revision-Date: 2016-10-24 11:11+0000\n"
 "Last-Translator: Pjotr <pjotrvertaalt@gmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/nl/)\n"
@@ -41,7 +41,7 @@ msgstr "Alle"
 
 #: ../panel-plugin/settings.cpp:119
 msgid "All _Settings"
-msgstr "Alle instellingen"
+msgstr "Alle _instellingen"
 
 #: ../panel-plugin/plugin.cpp:411
 msgid "Alternate application launcher for Xfce"
@@ -49,7 +49,7 @@ msgstr "Alternatieve toepassingenstarter voor Xfce"
 
 #: ../panel-plugin/configuration-dialog.cpp:717
 msgid "Amount of _items:"
-msgstr "Hoeveelheid elementen:"
+msgstr "Hoeveelheid _elementen:"
 
 #: ../panel-plugin/plugin.cpp:243
 msgid "Applications"
@@ -65,7 +65,7 @@ msgstr "Blader door het bestandssysteem om een aangepaste opdracht te kiezen."
 
 #: ../panel-plugin/configuration-dialog.cpp:874
 msgid "C_ommand:"
-msgstr "Opdracht:"
+msgstr "_Opdracht:"
 
 #: ../panel-plugin/configuration-dialog.cpp:637
 msgid "Categ_ory icon size:"
@@ -85,7 +85,7 @@ msgstr "Bijzonderheden"
 
 #: ../panel-plugin/configuration-dialog.cpp:533
 msgid "Di_splay:"
-msgstr "Tonen:"
+msgstr "_Tonen:"
 
 #: ../panel-plugin/configuration-dialog.cpp:734
 msgid "Display by _default"
@@ -93,7 +93,7 @@ msgstr "Standaard tonen"
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
-msgstr "Profiel bewerken"
+msgstr "_Profiel bewerken"
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Failed to edit profile."
@@ -168,7 +168,7 @@ msgstr "Menu"
 
 #: ../panel-plugin/configuration-dialog.cpp:849
 msgid "Nam_e:"
-msgstr "Naam:"
+msgstr "_Naam:"
 
 #: ../panel-plugin/configuration-dialog.cpp:794
 msgid "Name"
@@ -221,7 +221,7 @@ msgstr "Actie '%s' verwijderen?"
 
 #: ../panel-plugin/configuration-dialog.cpp:825
 msgid "Remove selected action"
-msgstr "Gekozen actie verwijderen"
+msgstr "Verwijder gekozen actie"
 
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
@@ -262,7 +262,7 @@ msgstr "Toon gereedschapstips voor toepassingen"
 
 #: ../panel-plugin/configuration-dialog.cpp:597
 msgid "Show cate_gory names"
-msgstr ""
+msgstr "Toon namen van categorieën"
 
 #: ../panel-plugin/configuration-dialog.cpp:591
 msgid "Show generic application _names"
@@ -353,7 +353,7 @@ msgstr "_Gedrag"
 #: ../panel-plugin/command-edit.cpp:67
 #: ../panel-plugin/configuration-dialog.cpp:121
 msgid "_Cancel"
-msgstr "_Annuleren"
+msgstr "_Afbreken"
 
 #: ../panel-plugin/configuration-dialog.cpp:74
 msgid "_Close"
@@ -361,7 +361,7 @@ msgstr "_Sluiten"
 
 #: ../panel-plugin/configuration-dialog.cpp:85
 msgid "_Commands"
-msgstr "_Opdrachten"
+msgstr "Op_drachten"
 
 #: ../panel-plugin/configuration-dialog.cpp:430
 msgid "_Delete"
