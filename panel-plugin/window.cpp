@@ -413,8 +413,13 @@ void WhiskerMenu::Window::show(GtkWidget* parent, bool horizontal)
 
 	// Fetch screen geomtry
 	GdkRectangle monitor;
+#if GTK_CHECK_VERSION(3,22,0)
+	GdkMonitor* monitor_gdk = gdk_display_get_monitor_at_point(gdk_display_get_default(), parent_x, parent_y);
+	gdk_monitor_get_geometry(monitor_gdk, &monitor);
+#else
 	int monitor_num = gdk_screen_get_monitor_at_point(screen, parent_x, parent_y);
 	gdk_screen_get_monitor_geometry(screen, monitor_num, &monitor);
+#endif
 
 	// Prevent window from being larger than screen
 	if (m_geometry.width > monitor.width)
