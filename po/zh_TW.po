@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-10-23 12:16+0000\n"
-"PO-Revision-Date: 2016-08-08 07:28+0000\n"
+"PO-Revision-Date: 2016-10-27 00:58+0000\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/zh_TW/)\n"
@@ -264,7 +264,7 @@ msgstr "顯示應用程式工具提示(_L)"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "Show cate_gory names"
-msgstr ""
+msgstr "顯示分類名稱(_G)"
 
 #: ../panel-plugin/configuration-dialog.cpp:597
 msgid "Show generic application _names"
