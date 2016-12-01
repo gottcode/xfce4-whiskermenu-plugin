@@ -1,16 +1,17 @@
 # Korean translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2015 Graeme Gott
+# Copyright (C) 2016 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# 박정규(Jung Kyu Park) <bagjunggyu@gmail.com>, 2015
+# 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2015
+# 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-23 12:12+0000\n"
-"PO-Revision-Date: 2015-09-29 15:29+0000\n"
-"Last-Translator: 박정규(Jung Kyu Park) <bagjunggyu@gmail.com>\n"
+"POT-Creation-Date: 2016-10-23 12:14+0000\n"
+"PO-Revision-Date: 2016-10-30 10:33+0000\n"
+"Last-Translator: 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ko/)\n"
 "Language: ko\n"
@@ -257,13 +258,12 @@ msgid "Show application _descriptions"
 msgstr "프로그램 설명 보이기"
 
 #: ../panel-plugin/configuration-dialog.cpp:609
-#, fuzzy
 msgid "Show application too_ltips"
-msgstr "프로그램 설명 보이기"
+msgstr "애플리케이션 툴팁 보이기"
 
 #: ../panel-plugin/configuration-dialog.cpp:597
 msgid "Show cate_gory names"
-msgstr ""
+msgstr "카테고리 보이기"
 
 #: ../panel-plugin/configuration-dialog.cpp:591
 msgid "Show generic application _names"
@@ -332,7 +332,7 @@ msgstr "매우 작게"
 
 #: ../panel-plugin/settings.cpp:127
 msgid "Web Search"
-msgstr ""
+msgstr "웹 검색"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
@@ -354,11 +354,11 @@ msgstr "동작"
 #: ../panel-plugin/command-edit.cpp:67
 #: ../panel-plugin/configuration-dialog.cpp:121
 msgid "_Cancel"
-msgstr "취소(_C)"
+msgstr "취소"
 
 #: ../panel-plugin/configuration-dialog.cpp:74
 msgid "_Close"
-msgstr "닫기(_C)"
+msgstr "닫기"
 
 #: ../panel-plugin/configuration-dialog.cpp:85
 msgid "_Commands"
@@ -366,7 +366,7 @@ msgstr "명령어"
 
 #: ../panel-plugin/configuration-dialog.cpp:430
 msgid "_Delete"
-msgstr "삭제(_D)"
+msgstr "지우기"
 
 #: ../panel-plugin/settings.cpp:123
 msgid "_Edit Applications"
@@ -374,7 +374,7 @@ msgstr "프로그램 편집"
 
 #: ../panel-plugin/configuration-dialog.cpp:73
 msgid "_Help"
-msgstr "도움말(_H)"
+msgstr "도움말"
 
 #: ../panel-plugin/configuration-dialog.cpp:559
 msgid "_Icon:"
@@ -387,7 +387,7 @@ msgstr "화면 잠그기"
 #: ../panel-plugin/command-edit.cpp:68
 #: ../panel-plugin/configuration-dialog.cpp:122
 msgid "_OK"
-msgstr "확인(_O)"
+msgstr "확인"
 
 #: ../panel-plugin/configuration-dialog.cpp:862
 msgid "_Pattern:"
