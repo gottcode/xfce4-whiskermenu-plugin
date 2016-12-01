@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-13 17:21+0000\n"
-"PO-Revision-Date: 2016-08-05 20:02+0000\n"
+"PO-Revision-Date: 2016-11-16 17:42+0000\n"
 "Last-Translator: Саша Петровић <salepetronije@gmail.com>\n"
 "Language-Team: Serbian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/sr/)\n"
@@ -366,7 +366,7 @@ msgstr "_Наредбе"
 
 #: ../panel-plugin/configuration-dialog.cpp:415
 msgid "_Delete"
-msgstr "_Обриши"
+msgstr "_Избриши"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "_Edit Applications"
@@ -374,7 +374,7 @@ msgstr "_Уреди програме"
 
 #: ../panel-plugin/configuration-dialog.cpp:73
 msgid "_Help"
-msgstr "По_моћ"
+msgstr "_Помоћ"
 
 #: ../panel-plugin/configuration-dialog.cpp:544
 msgid "_Icon:"
@@ -387,7 +387,7 @@ msgstr "_Закључај екран"
 #: ../panel-plugin/command-edit.cpp:68
 #: ../panel-plugin/configuration-dialog.cpp:122
 msgid "_OK"
-msgstr "У _реду"
+msgstr "_У реду"
 
 #: ../panel-plugin/configuration-dialog.cpp:841
 msgid "_Pattern:"
