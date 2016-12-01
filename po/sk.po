@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-23 12:12+0000\n"
-"PO-Revision-Date: 2016-08-13 18:13+0000\n"
+"POT-Creation-Date: 2016-10-23 12:14+0000\n"
+"PO-Revision-Date: 2016-11-18 14:24+0000\n"
 "Last-Translator: Slavko <linux@slavino.sk>\n"
 "Language-Team: Slovak (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/sk/)\n"
@@ -258,11 +258,11 @@ msgstr "Zobraziť _popis aplikácie"
 
 #: ../panel-plugin/configuration-dialog.cpp:609
 msgid "Show application too_ltips"
-msgstr "Zobraziť nástrojové tipy aplikácie"
+msgstr "Zobraziť nástrojové tipy ap_likácie"
 
 #: ../panel-plugin/configuration-dialog.cpp:597
 msgid "Show cate_gory names"
-msgstr ""
+msgstr "Zobraziť názvy kate_górií"
 
 #: ../panel-plugin/configuration-dialog.cpp:591
 msgid "Show generic application _names"
