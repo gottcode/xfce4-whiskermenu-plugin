@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-10-23 12:16+0000\n"
-"PO-Revision-Date: 2016-08-05 20:02+0000\n"
+"PO-Revision-Date: 2016-11-16 17:42+0000\n"
 "Last-Translator: Саша Петровић <salepetronije@gmail.com>\n"
 "Language-Team: Serbian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/sr/)\n"
@@ -267,7 +267,7 @@ msgstr "Приказуј програмске напомене"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "Show cate_gory names"
-msgstr ""
+msgstr "Прикажи имена врста_"
 
 #: ../panel-plugin/configuration-dialog.cpp:597
 msgid "Show generic application _names"
