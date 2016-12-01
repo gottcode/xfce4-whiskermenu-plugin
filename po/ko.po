@@ -1,16 +1,17 @@
 # Korean translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2015 Graeme Gott
+# Copyright (C) 2016 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# 박정규(Jung Kyu Park) <bagjunggyu@gmail.com>, 2015
+# 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2015
+# 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-05 14:08+0000\n"
-"PO-Revision-Date: 2015-09-29 15:29+0000\n"
-"Last-Translator: 박정규(Jung Kyu Park) <bagjunggyu@gmail.com>\n"
+"POT-Creation-Date: 2016-08-05 18:09+0000\n"
+"PO-Revision-Date: 2016-10-30 10:33+0000\n"
+"Last-Translator: 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ko/)\n"
 "Language: ko\n"
@@ -257,9 +258,8 @@ msgid "Show application _descriptions"
 msgstr "프로그램 설명 보이기"
 
 #: ../panel-plugin/configuration-dialog.cpp:593
-#, fuzzy
 msgid "Show application too_ltips"
-msgstr "프로그램 설명 보이기"
+msgstr "애플리케이션 툴팁 보이기"
 
 #: ../panel-plugin/configuration-dialog.cpp:581
 msgid "Show generic application _names"
@@ -328,7 +328,7 @@ msgstr "매우 작게"
 
 #: ../panel-plugin/settings.cpp:126
 msgid "Web Search"
-msgstr ""
+msgstr "웹 검색"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
