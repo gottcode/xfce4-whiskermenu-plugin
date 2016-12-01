@@ -1,16 +1,16 @@
 # Nepali translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2015 Graeme Gott
+# Copyright (C) 2016 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# starryprabin <mr.prabin@gmail.com>, 2013-2015
+# starryprabin <mr.prabin@gmail.com>, 2013-2016
 # Prabin Gautam <PRABINGAUTAM@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-13 17:21+0000\n"
-"PO-Revision-Date: 2015-02-23 14:57+0000\n"
+"PO-Revision-Date: 2016-11-11 13:35+0000\n"
 "Last-Translator: starryprabin <mr.prabin@gmail.com>\n"
 "Language-Team: Nepali (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ne/)\n"
@@ -77,9 +77,8 @@ msgid "Clear Recently Used"
 msgstr "हालसालै प्रयोग भएकालाई सफा गर्नुहोस् "
 
 #: ../panel-plugin/plugin.cpp:408
-#, fuzzy
 msgid "Copyright © 2013-2016 Graeme Gott"
-msgstr "प्रतिलिपि अधिकार © २०१३-२०१५ Graeme Gott"
+msgstr "प्रतिलिपि अधिकार © 2013-2016 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:823
 msgid "Details"
@@ -259,9 +258,8 @@ msgid "Show application _descriptions"
 msgstr "अनुप्रयोगका विवरण देखाउनुहोस् "
 
 #: ../panel-plugin/configuration-dialog.cpp:588
-#, fuzzy
 msgid "Show application too_ltips"
-msgstr "अनुप्रयोगका विवरण देखाउनुहोस् "
+msgstr "अनुप्रयोगका सुझाव देखाउनुहोस्"
 
 #: ../panel-plugin/configuration-dialog.cpp:576
 msgid "Show generic application _names"
@@ -330,7 +328,7 @@ msgstr "अत्यन्त सानो "
 
 #: ../panel-plugin/settings.cpp:126
 msgid "Web Search"
-msgstr ""
+msgstr "वेब खोज"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
@@ -352,11 +350,11 @@ msgstr "ब्य॒वहार"
 #: ../panel-plugin/command-edit.cpp:67
 #: ../panel-plugin/configuration-dialog.cpp:121
 msgid "_Cancel"
-msgstr ""
+msgstr "रद्द"
 
 #: ../panel-plugin/configuration-dialog.cpp:74
 msgid "_Close"
-msgstr ""
+msgstr "बन्द"
 
 #: ../panel-plugin/configuration-dialog.cpp:85
 msgid "_Commands"
@@ -364,7 +362,7 @@ msgstr "आदेशहरू"
 
 #: ../panel-plugin/configuration-dialog.cpp:415
 msgid "_Delete"
-msgstr ""
+msgstr "मेटाउनुहोस्"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "_Edit Applications"
@@ -372,7 +370,7 @@ msgstr "अनुप्रयोगहरु सम्पादन गर्न�
 
 #: ../panel-plugin/configuration-dialog.cpp:73
 msgid "_Help"
-msgstr ""
+msgstr "मद्दत"
 
 #: ../panel-plugin/configuration-dialog.cpp:544
 msgid "_Icon:"
@@ -385,7 +383,7 @@ msgstr "स्क्रिन लक गर्नुहोस्"
 #: ../panel-plugin/command-edit.cpp:68
 #: ../panel-plugin/configuration-dialog.cpp:122
 msgid "_OK"
-msgstr ""
+msgstr "ठीक"
 
 #: ../panel-plugin/configuration-dialog.cpp:841
 msgid "_Pattern:"
