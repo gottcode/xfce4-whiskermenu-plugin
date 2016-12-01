@@ -263,7 +263,7 @@ msgstr "애플리케이션 툴팁 보이기"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "Show cate_gory names"
-msgstr ""
+msgstr "카테고리 보이기"
 
 #: ../panel-plugin/configuration-dialog.cpp:597
 msgid "Show generic application _names"
