@@ -262,7 +262,7 @@ msgstr "Zobraziť nástrojové tipy ap_likácie"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "Show cate_gory names"
-msgstr ""
+msgstr "Zobraziť názvy kate_górií"
 
 #: ../panel-plugin/configuration-dialog.cpp:597
 msgid "Show generic application _names"
