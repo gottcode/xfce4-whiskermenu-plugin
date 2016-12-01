@@ -7,6 +7,7 @@
 # december <december0123@gmail.com>, 2013
 # december <december0123@gmail.com>, 2013
 # december <december0123@gmail.com>, 2013
+# Marcin <m4sk1n@o2.pl>, 2016
 # Michał Olber <michal.olber@osworld.pl>, 2013-2015
 # M T <michtrz@gmail.com>, 2013-2014,2016
 # Michał Olber <michal.olber@osworld.pl>, 2013
@@ -17,9 +18,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-23 12:12+0000\n"
-"PO-Revision-Date: 2016-10-07 22:59+0000\n"
-"Last-Translator: Piotr Sokół <psokol.l10n@gmail.com>\n"
+"POT-Creation-Date: 2016-10-23 12:14+0000\n"
+"PO-Revision-Date: 2016-10-29 14:56+0000\n"
+"Last-Translator: Marcin <m4sk1n@o2.pl>\n"
 "Language-Team: Polish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/pl/)\n"
 "Language: pl\n"
@@ -272,7 +273,7 @@ msgstr "Pokaż _podpowiedzi programów"
 
 #: ../panel-plugin/configuration-dialog.cpp:597
 msgid "Show cate_gory names"
-msgstr ""
+msgstr "Pokazuj nazwy kate_gorii"
 
 #: ../panel-plugin/configuration-dialog.cpp:591
 msgid "Show generic application _names"
