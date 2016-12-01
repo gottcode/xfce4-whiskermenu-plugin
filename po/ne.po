@@ -263,7 +263,7 @@ msgstr "अनुप्रयोगका सुझाव देखाउनु�
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "Show cate_gory names"
-msgstr ""
+msgstr "वर्गका नामहरू देखाउनुहोस्"
 
 #: ../panel-plugin/configuration-dialog.cpp:597
 msgid "Show generic application _names"
