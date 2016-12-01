@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-23 12:12+0000\n"
-"PO-Revision-Date: 2016-08-26 19:14+0000\n"
+"POT-Creation-Date: 2016-10-23 12:14+0000\n"
+"PO-Revision-Date: 2016-11-06 20:38+0000\n"
 "Last-Translator: Demiray Muhterem <mdemiray@msn.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/tr/)\n"
@@ -264,7 +264,7 @@ msgstr "Uygulama ip_uçlarını göster"
 
 #: ../panel-plugin/configuration-dialog.cpp:597
 msgid "Show cate_gory names"
-msgstr ""
+msgstr "Kate_gori isimlerini göster"
 
 #: ../panel-plugin/configuration-dialog.cpp:591
 msgid "Show generic application _names"
