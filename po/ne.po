@@ -1,16 +1,16 @@
 # Nepali translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2015 Graeme Gott
+# Copyright (C) 2016 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# starryprabin <mr.prabin@gmail.com>, 2013-2015
+# starryprabin <mr.prabin@gmail.com>, 2013-2016
 # Prabin Gautam <PRABINGAUTAM@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-05 18:09+0000\n"
-"PO-Revision-Date: 2015-02-23 14:57+0000\n"
+"PO-Revision-Date: 2016-11-11 13:35+0000\n"
 "Last-Translator: starryprabin <mr.prabin@gmail.com>\n"
 "Language-Team: Nepali (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ne/)\n"
@@ -77,9 +77,8 @@ msgid "Clear Recently Used"
 msgstr "हालसालै प्रयोग भएकालाई सफा गर्नुहोस् "
 
 #: ../panel-plugin/plugin.cpp:394
-#, fuzzy
 msgid "Copyright © 2013-2016 Graeme Gott"
-msgstr "प्रतिलिपि अधिकार © २०१३-२०१५ Graeme Gott"
+msgstr "प्रतिलिपि अधिकार © 2013-2016 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:832
 msgid "Details"
@@ -259,9 +258,8 @@ msgid "Show application _descriptions"
 msgstr "अनुप्रयोगका विवरण देखाउनुहोस् "
 
 #: ../panel-plugin/configuration-dialog.cpp:593
-#, fuzzy
 msgid "Show application too_ltips"
-msgstr "अनुप्रयोगका विवरण देखाउनुहोस् "
+msgstr "अनुप्रयोगका सुझाव देखाउनुहोस्"
 
 #: ../panel-plugin/configuration-dialog.cpp:581
 msgid "Show generic application _names"
@@ -330,7 +328,7 @@ msgstr "अत्यन्त सानो "
 
 #: ../panel-plugin/settings.cpp:126
 msgid "Web Search"
-msgstr ""
+msgstr "वेब खोज"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
