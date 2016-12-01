@@ -1,15 +1,15 @@
 # Norwegian Bokmål translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2015 Graeme Gott
+# Copyright (C) 2016 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# thomas <thomasbjornvold@gmail.com>, 2013-2015
+# thomas <thomasbjornvold@gmail.com>, 2013-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-13 17:21+0000\n"
-"PO-Revision-Date: 2015-04-06 22:55+0000\n"
+"PO-Revision-Date: 2016-11-05 15:18+0000\n"
 "Last-Translator: thomas <thomasbjornvold@gmail.com>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/nb/)\n"
@@ -257,9 +257,8 @@ msgid "Show application _descriptions"
 msgstr "Vis applikasjonsbeskrivelser"
 
 #: ../panel-plugin/configuration-dialog.cpp:588
-#, fuzzy
 msgid "Show application too_ltips"
-msgstr "Vis applikasjonsbeskrivelser"
+msgstr "Vis applikasjons-verktøytips"
 
 #: ../panel-plugin/configuration-dialog.cpp:576
 msgid "Show generic application _names"
@@ -328,7 +327,7 @@ msgstr "Veldig liten"
 
 #: ../panel-plugin/settings.cpp:126
 msgid "Web Search"
-msgstr ""
+msgstr "Websøk"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
