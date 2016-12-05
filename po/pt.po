@@ -1,17 +1,18 @@
 # Portuguese translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2015 Graeme Gott
+# Copyright (C) 2016 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # fabioluciano <fabio@naoimporta.com>, 2013
+# José Vieira <jvieira33@sapo.pt>, 2016
 # Sérgio Marques <smarquespt@gmail.com>, 2013-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-13 17:21+0000\n"
-"PO-Revision-Date: 2015-02-23 10:09+0000\n"
-"Last-Translator: Sérgio Marques <smarquespt@gmail.com>\n"
+"PO-Revision-Date: 2016-12-01 14:44+0000\n"
+"Last-Translator: José Vieira <jvieira33@sapo.pt>\n"
 "Language-Team: Portuguese (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/pt/)\n"
 "Language: pt\n"
@@ -22,7 +23,7 @@ msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:795
 msgid "Add action"
-msgstr "Adicionar ação"
+msgstr "Adicionar acção"
 
 #: ../panel-plugin/page.cpp:216
 msgid "Add to Desktop"
@@ -46,11 +47,11 @@ msgstr "Todas as definiçõe_s"
 
 #: ../panel-plugin/plugin.cpp:407
 msgid "Alternate application launcher for Xfce"
-msgstr "Lançador de aplicações para o Xfce"
+msgstr "Lançador de aplicações alternativo para o Xfce"
 
 #: ../panel-plugin/configuration-dialog.cpp:696
 msgid "Amount of _items:"
-msgstr "Número de _itens:"
+msgstr "Número de ite_ns:"
 
 #: ../panel-plugin/plugin.cpp:239
 msgid "Applications"
@@ -78,7 +79,7 @@ msgstr "Limpar itens recentes"
 
 #: ../panel-plugin/plugin.cpp:408
 msgid "Copyright © 2013-2016 Graeme Gott"
-msgstr "Direitos de autor © 2013-2016 Graeme Gott"
+msgstr "Copyright © 2013-2016 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:823
 msgid "Details"
@@ -90,7 +91,7 @@ msgstr "E_xibição:"
 
 #: ../panel-plugin/configuration-dialog.cpp:713
 msgid "Display by _default"
-msgstr "Mostrar por _definição"
+msgstr "Mostrar por pré-_definição"
 
 #: ../panel-plugin/settings.cpp:123
 msgid "Edit _Profile"
@@ -132,15 +133,15 @@ msgstr "Favoritos"
 
 #: ../panel-plugin/configuration-dialog.cpp:523
 msgid "Icon"
-msgstr "Icone"
+msgstr "Ícone"
 
 #: ../panel-plugin/configuration-dialog.cpp:525
 msgid "Icon and title"
-msgstr "Icone e título"
+msgstr "Ícone e título"
 
 #: ../panel-plugin/configuration-dialog.cpp:707
 msgid "Ignore _favorites"
-msgstr "Ignorar _favoritos"
+msgstr "Ignorar f_avoritos"
 
 #: ../panel-plugin/configuration-dialog.cpp:600
 msgid "Ite_m icon size:"
@@ -235,15 +236,15 @@ msgstr "Executar no terminal"
 
 #: ../panel-plugin/configuration-dialog.cpp:86
 msgid "Search Actio_ns"
-msgstr "Procurar a_ções"
+msgstr "Procurar a_cções"
 
 #: ../panel-plugin/search-action.cpp:259
 msgid "Search Action"
-msgstr "Procurar ação"
+msgstr "Procurar acção"
 
 #: ../panel-plugin/configuration-dialog.cpp:119
 msgid "Select An Icon"
-msgstr "Escolha um icone"
+msgstr "Escolher um icone"
 
 #: ../panel-plugin/command-edit.cpp:64
 msgid "Select Command"
@@ -258,9 +259,8 @@ msgid "Show application _descriptions"
 msgstr "Mostrar _descrição das aplicações"
 
 #: ../panel-plugin/configuration-dialog.cpp:588
-#, fuzzy
 msgid "Show application too_ltips"
-msgstr "Mostrar _descrição das aplicações"
+msgstr "Mostrar dicas de conte_xto das aplicações"
 
 #: ../panel-plugin/configuration-dialog.cpp:576
 msgid "Show generic application _names"
@@ -268,7 +268,7 @@ msgstr "Mostrar _nome genérico da aplicação"
 
 #: ../panel-plugin/configuration-dialog.cpp:594
 msgid "Show menu hie_rarchy"
-msgstr "Mostrar hie_rarquia no menu"
+msgstr "Mostrar _hierarquia no menu"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -292,7 +292,7 @@ msgstr "Trocar de _utilizador"
 
 #: ../panel-plugin/configuration-dialog.cpp:661
 msgid "Switch categories by _hovering"
-msgstr "Trocar categorias ao _passar com o rato"
+msgstr "Trocar categorias ao passar com o r_ato"
 
 #: ../panel-plugin/configuration-dialog.cpp:416
 msgid "The action will be deleted permanently."
@@ -317,7 +317,7 @@ msgstr "Não foi possível abrir o URL: %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:558
 msgid "Use a single _panel row"
-msgstr "Utilizar _painel com uma linha"
+msgstr "Utilizar p_ainel de uma única linha"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
@@ -329,7 +329,7 @@ msgstr "Minúsculo"
 
 #: ../panel-plugin/settings.cpp:126
 msgid "Web Search"
-msgstr ""
+msgstr "Pesquisa web"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
@@ -351,11 +351,11 @@ msgstr "C_omportamento"
 #: ../panel-plugin/command-edit.cpp:67
 #: ../panel-plugin/configuration-dialog.cpp:121
 msgid "_Cancel"
-msgstr "_Cancelar"
+msgstr "Ca_ncelar"
 
 #: ../panel-plugin/configuration-dialog.cpp:74
 msgid "_Close"
-msgstr "_Fechar"
+msgstr "F_echar"
 
 #: ../panel-plugin/configuration-dialog.cpp:85
 msgid "_Commands"
@@ -363,7 +363,7 @@ msgstr "_Comandos"
 
 #: ../panel-plugin/configuration-dialog.cpp:415
 msgid "_Delete"
-msgstr "_Eliminar"
+msgstr "Eli_minar"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "_Edit Applications"
@@ -371,7 +371,7 @@ msgstr "_Editar aplicações"
 
 #: ../panel-plugin/configuration-dialog.cpp:73
 msgid "_Help"
-msgstr "A_juda"
+msgstr "Aj_uda"
 
 #: ../panel-plugin/configuration-dialog.cpp:544
 msgid "_Icon:"
@@ -379,24 +379,24 @@ msgstr "Í_cone:"
 
 #: ../panel-plugin/settings.cpp:119
 msgid "_Lock Screen"
-msgstr "B_loquear ecrã"
+msgstr "_Bloquear ecrã"
 
 #: ../panel-plugin/command-edit.cpp:68
 #: ../panel-plugin/configuration-dialog.cpp:122
 msgid "_OK"
-msgstr "_Aceitar"
+msgstr "_OK"
 
 #: ../panel-plugin/configuration-dialog.cpp:841
 msgid "_Pattern:"
-msgstr "_Padrão:"
+msgstr "Pa_drão:"
 
 #: ../panel-plugin/configuration-dialog.cpp:865
 msgid "_Regular expression"
-msgstr "Expressão _regular"
+msgstr "Expressão r_egular"
 
 #: ../panel-plugin/configuration-dialog.cpp:533
 msgid "_Title:"
-msgstr "_Título:"
+msgstr "Tít_ulo:"
 
 #: ../panel-plugin/plugin.cpp:412
 msgid "translator-credits"
