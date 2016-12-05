@@ -1,16 +1,17 @@
 # Croatian translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2015 Graeme Gott
+# Copyright (C) 2016 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
+# Ante Grubišić Čabo <ante.gc@gmail.com>, 2016
 # Ilija Ćulap <ilija.culap14@gmail.com>, 2013-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-05 14:08+0000\n"
-"PO-Revision-Date: 2015-08-31 12:33+0000\n"
-"Last-Translator: Ilija Ćulap <ilija.culap14@gmail.com>\n"
+"POT-Creation-Date: 2016-08-05 18:09+0000\n"
+"PO-Revision-Date: 2016-12-01 14:12+0000\n"
+"Last-Translator: Ante Grubišić Čabo <ante.gc@gmail.com>\n"
 "Language-Team: Croatian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/hr/)\n"
 "Language: hr\n"
@@ -78,7 +79,7 @@ msgstr "Očisti kategoriju Najčešće korišteno"
 
 #: ../panel-plugin/plugin.cpp:394
 msgid "Copyright © 2013-2016 Graeme Gott"
-msgstr "Copyright © 2013-2016 Graeme Gott"
+msgstr "Autorska prava © 2013-2016 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:832
 msgid "Details"
@@ -258,9 +259,8 @@ msgid "Show application _descriptions"
 msgstr "Prikazi _opis aplikacije"
 
 #: ../panel-plugin/configuration-dialog.cpp:593
-#, fuzzy
 msgid "Show application too_ltips"
-msgstr "Prikazi _opis aplikacije"
+msgstr "Prikazati savjete za korištenje aplikacije"
 
 #: ../panel-plugin/configuration-dialog.cpp:581
 msgid "Show generic application _names"
@@ -329,7 +329,7 @@ msgstr "Jako malo"
 
 #: ../panel-plugin/settings.cpp:126
 msgid "Web Search"
-msgstr ""
+msgstr "Internet pretraga"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
