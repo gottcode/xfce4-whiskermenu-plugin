@@ -1,20 +1,21 @@
 # Portuguese (Brazil) translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2015 Graeme Gott
+# Copyright (C) 2016 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # fabioluciano <fabio@naoimporta.com>, 2013
-# holmeslinux <holmes_holmes@live.com>, 2014
-# brk0_0, 2013
+# Holmes <holmes_holmes@live.com>, 2014
+# José Vieira <jvieira33@sapo.pt>, 2016
+# Paulo Castro, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-23 12:12+0000\n"
-"PO-Revision-Date: 2014-01-25 00:17+0000\n"
-"Last-Translator: holmeslinux <holmes_holmes@live.com>\n"
-"Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/"
-"xfce4-whiskermenu-plugin/language/pt_BR/)\n"
+"POT-Creation-Date: 2016-10-23 12:14+0000\n"
+"PO-Revision-Date: 2016-12-01 15:10+0000\n"
+"Last-Translator: José Vieira <jvieira33@sapo.pt>\n"
+"Language-Team: Portuguese (Brazil) (http://www.transifex.com/gottcode/xfce4-"
+"whiskermenu-plugin/language/pt_BR/)\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -47,20 +48,19 @@ msgstr "Todas _Configurações"
 
 #: ../panel-plugin/plugin.cpp:411
 msgid "Alternate application launcher for Xfce"
-msgstr ""
+msgstr "Lançador de aplicações alternativo para o Xfce"
 
 #: ../panel-plugin/configuration-dialog.cpp:717
 msgid "Amount of _items:"
-msgstr ""
+msgstr "Número de íte_ns"
 
 #: ../panel-plugin/plugin.cpp:243
-#, fuzzy
 msgid "Applications"
-msgstr "Menu de aplicativos"
+msgstr "Aplicações"
 
 #: ../panel-plugin/configuration-dialog.cpp:652
 msgid "Background opacit_y:"
-msgstr ""
+msgstr "_Opacidade do fundo"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
@@ -80,7 +80,7 @@ msgstr "Limpar os usados recentemente"
 
 #: ../panel-plugin/plugin.cpp:412
 msgid "Copyright © 2013-2016 Graeme Gott"
-msgstr ""
+msgstr "Copyright © 2013-2016 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:844
 msgid "Details"
@@ -91,18 +91,16 @@ msgid "Di_splay:"
 msgstr "Mo_strar:"
 
 #: ../panel-plugin/configuration-dialog.cpp:734
-#, fuzzy
 msgid "Display by _default"
-msgstr "Mostrar recentemente _usados por padrão"
+msgstr "Mostrar por pré-_definição"
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
-msgstr ""
+msgstr "Editar P_erfil"
 
 #: ../panel-plugin/settings.cpp:124
-#, fuzzy
 msgid "Failed to edit profile."
-msgstr "Falha ao alternar usuários."
+msgstr "Falha ao editar perfil."
 
 #: ../panel-plugin/launcher.cpp:274 ../panel-plugin/run-action.cpp:41
 #: ../panel-plugin/search-action.cpp:188
@@ -143,9 +141,8 @@ msgid "Icon and title"
 msgstr "Ícone e título"
 
 #: ../panel-plugin/configuration-dialog.cpp:728
-#, fuzzy
 msgid "Ignore _favorites"
-msgstr "Favoritos"
+msgstr "Ig_norar favoritos"
 
 #: ../panel-plugin/configuration-dialog.cpp:621
 msgid "Ite_m icon size:"
@@ -205,9 +202,8 @@ msgid "Position _search entry next to panel button"
 msgstr "Posicionar entrada de _busca ao lado do botão do painel"
 
 #: ../panel-plugin/configuration-dialog.cpp:701
-#, fuzzy
 msgid "Position cate_gories next to panel button"
-msgstr "Posicionar entrada de _busca ao lado do botão do painel"
+msgstr "P_osicionar categorias junto do botão do painel"
 
 #: ../panel-plugin/configuration-dialog.cpp:694
 msgid "Position commands next to search _entry"
@@ -264,13 +260,12 @@ msgid "Show application _descriptions"
 msgstr "Mostrar descrição do aplicativo"
 
 #: ../panel-plugin/configuration-dialog.cpp:609
-#, fuzzy
 msgid "Show application too_ltips"
-msgstr "Mostrar descrição do aplicativo"
+msgstr "Mostrar _dicas de contexto das aplicações"
 
 #: ../panel-plugin/configuration-dialog.cpp:597
 msgid "Show cate_gory names"
-msgstr ""
+msgstr "Mostrar nomes das cat_egorias"
 
 #: ../panel-plugin/configuration-dialog.cpp:591
 msgid "Show generic application _names"
@@ -323,11 +318,11 @@ msgstr "Impossível adicionar o lançador ao painel"
 #: ../panel-plugin/configuration-dialog.cpp:492
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "Não foi possível abrir o seguinte url: %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:573
 msgid "Use a single _panel row"
-msgstr ""
+msgstr "Usar painel de _uma única linha"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
@@ -339,7 +334,7 @@ msgstr "Minúsculo"
 
 #: ../panel-plugin/settings.cpp:127
 msgid "Web Search"
-msgstr ""
+msgstr "Pesquisar na web"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
@@ -361,20 +356,19 @@ msgstr "_Comportamento"
 #: ../panel-plugin/command-edit.cpp:67
 #: ../panel-plugin/configuration-dialog.cpp:121
 msgid "_Cancel"
-msgstr "_Cancelar"
+msgstr "Ca_ncelar"
 
 #: ../panel-plugin/configuration-dialog.cpp:74
 msgid "_Close"
-msgstr "_Fechar"
+msgstr "F_echar"
 
 #: ../panel-plugin/configuration-dialog.cpp:85
-#, fuzzy
 msgid "_Commands"
-msgstr "Comandos"
+msgstr "Co_mandos"
 
 #: ../panel-plugin/configuration-dialog.cpp:430
 msgid "_Delete"
-msgstr "E_xcluir"
+msgstr "_Eliminar"
 
 #: ../panel-plugin/settings.cpp:123
 msgid "_Edit Applications"
@@ -411,7 +405,4 @@ msgstr "_Título:"
 
 #: ../panel-plugin/plugin.cpp:416
 msgid "translator-credits"
-msgstr ""
-
-#~ msgid "Include _favorites in recently used"
-#~ msgstr "Incluir os _favoritos nos recentemente usados"
+msgstr "créditos de tradução"
