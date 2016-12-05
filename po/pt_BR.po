@@ -265,7 +265,7 @@ msgstr "Mostrar _dicas de contexto das aplicações"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "Show cate_gory names"
-msgstr ""
+msgstr "Mostrar nomes das cat_egorias"
 
 #: ../panel-plugin/configuration-dialog.cpp:597
 msgid "Show generic application _names"
