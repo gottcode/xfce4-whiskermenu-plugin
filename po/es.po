@@ -8,14 +8,15 @@
 # Adolfo Jayme-Barrientos, 2013
 # Adolfo Jayme-Barrientos, 2014
 # Inti Alonso <intialonso@gmail.com>, 2013
+# Noe Moreno <NOE.MORENO@gmail.com>, 2016
 # Pablo Roberto “Jristz” Lezaeta Reyes <prflr88@gmail.com>, 2013-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-10-23 12:16+0000\n"
-"PO-Revision-Date: 2016-08-05 22:23+0000\n"
-"Last-Translator: Adolfo Jayme-Barrientos\n"
+"PO-Revision-Date: 2016-12-02 00:15+0000\n"
+"Last-Translator: Noe Moreno <NOE.MORENO@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/es/)\n"
 "Language: es\n"
@@ -267,7 +268,7 @@ msgstr "Mostrar _información emergente de las aplicaciones"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "Show cate_gory names"
-msgstr ""
+msgstr "Mostrar los nombres de cate_goría"
 
 #: ../panel-plugin/configuration-dialog.cpp:597
 msgid "Show generic application _names"
