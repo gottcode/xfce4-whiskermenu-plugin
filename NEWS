@@ -17,6 +17,11 @@
   Dutch, German, French, Hebrew, Hungarian, Lithuanian, Polish, Slovak,
   Slovenian, Serbian, Spanish.
 
+1.6.2
+=====
+- Translation updates: Croatian, Dutch, Greek, Korean, Nepali,
+  Norwegian Bokmål, Portuguese, Portuguese (Brazil), Slovak.
+
 1.5.3
 =====
 - Fix stuck button highlight. (bug #12402)
