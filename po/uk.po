@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-23 12:14+0000\n"
+"POT-Creation-Date: 2017-01-01 14:48+0000\n"
 "PO-Revision-Date: 2016-10-30 20:02+0000\n"
 "Last-Translator: Yarema aka Knedlyk <yupadmin@gmail.com>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/gottcode/xfce4-"
@@ -25,15 +25,15 @@ msgstr ""
 msgid "Add action"
 msgstr "Додати дію"
 
-#: ../panel-plugin/page.cpp:216
+#: ../panel-plugin/page.cpp:257
 msgid "Add to Desktop"
 msgstr "Додати до стільниці"
 
-#: ../panel-plugin/page.cpp:200
+#: ../panel-plugin/page.cpp:241
 msgid "Add to Favorites"
 msgstr "Додати до обраного"
 
-#: ../panel-plugin/page.cpp:220
+#: ../panel-plugin/page.cpp:261
 msgid "Add to Panel"
 msgstr "Додати на панель"
 
@@ -78,8 +78,8 @@ msgid "Clear Recently Used"
 msgstr "Очистити історію"
 
 #: ../panel-plugin/plugin.cpp:412
-msgid "Copyright © 2013-2016 Graeme Gott"
-msgstr "Авторське право © 2013-2016 Ґраєм Ґотт"
+msgid "Copyright © 2013-2017 Graeme Gott"
+msgstr "Авторське право © 2013-2017 Ґраєм Ґотт"
 
 #: ../panel-plugin/configuration-dialog.cpp:844
 msgid "Details"
@@ -101,8 +101,8 @@ msgstr "Редагувати_Профіль"
 msgid "Failed to edit profile."
 msgstr "Не вдалося змінити профіль."
 
-#: ../panel-plugin/launcher.cpp:274 ../panel-plugin/run-action.cpp:41
-#: ../panel-plugin/search-action.cpp:188
+#: ../panel-plugin/launcher.cpp:288 ../panel-plugin/launcher.cpp:361
+#: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "Не вдалося виконати команду \"%s\"."
@@ -212,7 +212,7 @@ msgstr "Помістити кнопки команд біля р_ядка пош
 msgid "Recently Used"
 msgstr "Нещодавно використані"
 
-#: ../panel-plugin/page.cpp:208
+#: ../panel-plugin/page.cpp:249
 msgid "Remove From Favorites"
 msgstr "Видалити з обраного"
 
@@ -306,11 +306,11 @@ msgstr "Дію буде вилучено назавжди."
 msgid "Title"
 msgstr "Назва"
 
-#: ../panel-plugin/page.cpp:319
+#: ../panel-plugin/page.cpp:365
 msgid "Unable to add launcher to desktop."
 msgstr "Неможливо додати запускач до стільниці."
 
-#: ../panel-plugin/page.cpp:358 ../panel-plugin/page.cpp:367
+#: ../panel-plugin/page.cpp:404 ../panel-plugin/page.cpp:413
 msgid "Unable to add launcher to panel."
 msgstr "Неможливо додати запускач на панель."
 

@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-23 12:12+0000\n"
+"POT-Creation-Date: 2017-01-01 14:48+0000\n"
 "PO-Revision-Date: 2015-07-19 17:38+0000\n"
 "Last-Translator: Påvel Nicklasson <pavelnicklasson@bahnhof.se>\n"
 "Language-Team: Swedish (Sweden) (http://www.transifex.com/gottcode/xfce4-"
@@ -29,15 +29,15 @@ msgstr ""
 msgid "Add action"
 msgstr "Lägg till åtgärd"
 
-#: ../panel-plugin/page.cpp:216
+#: ../panel-plugin/page.cpp:257
 msgid "Add to Desktop"
 msgstr "Lägg till på skrivbordet"
 
-#: ../panel-plugin/page.cpp:200
+#: ../panel-plugin/page.cpp:241
 msgid "Add to Favorites"
 msgstr "Lägg till i favoriter"
 
-#: ../panel-plugin/page.cpp:220
+#: ../panel-plugin/page.cpp:261
 msgid "Add to Panel"
 msgstr "Lägg till i panelen"
 
@@ -82,8 +82,8 @@ msgid "Clear Recently Used"
 msgstr "Rensa senast använda"
 
 #: ../panel-plugin/plugin.cpp:412
-msgid "Copyright © 2013-2016 Graeme Gott"
-msgstr "Upphovsrätt © 2013-2016 Graeme Gott"
+msgid "Copyright © 2013-2017 Graeme Gott"
+msgstr "Upphovsrätt © 2013-2017 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:844
 msgid "Details"
@@ -105,8 +105,8 @@ msgstr "Redigera _profil"
 msgid "Failed to edit profile."
 msgstr "Misslyckades med att redigera profil."
 
-#: ../panel-plugin/launcher.cpp:274 ../panel-plugin/run-action.cpp:41
-#: ../panel-plugin/search-action.cpp:188
+#: ../panel-plugin/launcher.cpp:288 ../panel-plugin/launcher.cpp:361
+#: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "Misslyckades med att utföra kommando \"%s\"."
@@ -216,7 +216,7 @@ msgstr "Placera ko_mmandon bredvid sökfältet"
 msgid "Recently Used"
 msgstr "Senast använda"
 
-#: ../panel-plugin/page.cpp:208
+#: ../panel-plugin/page.cpp:249
 msgid "Remove From Favorites"
 msgstr "Ta bort från favoriter"
 
@@ -311,11 +311,11 @@ msgstr "Åtgärden kommer att tas bort permanent."
 msgid "Title"
 msgstr "Titel"
 
-#: ../panel-plugin/page.cpp:319
+#: ../panel-plugin/page.cpp:365
 msgid "Unable to add launcher to desktop."
 msgstr "Kunde inte skapa skrivbordsgenväg."
 
-#: ../panel-plugin/page.cpp:358 ../panel-plugin/page.cpp:367
+#: ../panel-plugin/page.cpp:404 ../panel-plugin/page.cpp:413
 msgid "Unable to add launcher to panel."
 msgstr "Kunde inte lägga till programstartare i panelen."
 

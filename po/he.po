@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-23 12:12+0000\n"
+"POT-Creation-Date: 2017-01-01 14:48+0000\n"
 "PO-Revision-Date: 2016-08-16 09:30+0000\n"
 "Last-Translator: GenghisKhan <genghiskhan@gmx.ca>\n"
 "Language-Team: Hebrew (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -25,15 +25,15 @@ msgstr ""
 msgid "Add action"
 msgstr "הוספת פעולה"
 
-#: ../panel-plugin/page.cpp:216
+#: ../panel-plugin/page.cpp:257
 msgid "Add to Desktop"
 msgstr "הוסף לתוך שולחן עבודה"
 
-#: ../panel-plugin/page.cpp:200
+#: ../panel-plugin/page.cpp:241
 msgid "Add to Favorites"
 msgstr "הוסף לתוך מועדפים"
 
-#: ../panel-plugin/page.cpp:220
+#: ../panel-plugin/page.cpp:261
 msgid "Add to Panel"
 msgstr "הוסף לתוך לוח"
 
@@ -78,7 +78,7 @@ msgid "Clear Recently Used"
 msgstr "נקה תפריט בשימוש לאחרונה"
 
 #: ../panel-plugin/plugin.cpp:412
-msgid "Copyright © 2013-2016 Graeme Gott"
+msgid "Copyright © 2013-2017 Graeme Gott"
 msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:844
@@ -101,8 +101,8 @@ msgstr "ערוך _פרופיל"
 msgid "Failed to edit profile."
 msgstr "נכשל לערוך פרופיל."
 
-#: ../panel-plugin/launcher.cpp:274 ../panel-plugin/run-action.cpp:41
-#: ../panel-plugin/search-action.cpp:188
+#: ../panel-plugin/launcher.cpp:288 ../panel-plugin/launcher.cpp:361
+#: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "נכשל לבצע פקודה \"%s\"."
@@ -212,7 +212,7 @@ msgstr "מקם פקודות ליד _ערך חיפוש"
 msgid "Recently Used"
 msgstr "בשימוש לאחרונה"
 
-#: ../panel-plugin/page.cpp:208
+#: ../panel-plugin/page.cpp:249
 msgid "Remove From Favorites"
 msgstr "הסר מתוך מועדפים"
 
@@ -306,11 +306,11 @@ msgstr "הפעולה תימחק באופן קבוע."
 msgid "Title"
 msgstr "כותרת"
 
-#: ../panel-plugin/page.cpp:319
+#: ../panel-plugin/page.cpp:365
 msgid "Unable to add launcher to desktop."
 msgstr "לא יכול להוסיף מפעיל לשולחן עבודה."
 
-#: ../panel-plugin/page.cpp:358 ../panel-plugin/page.cpp:367
+#: ../panel-plugin/page.cpp:404 ../panel-plugin/page.cpp:413
 msgid "Unable to add launcher to panel."
 msgstr "לא יכול להוסיף מפעיל ללוח."
 

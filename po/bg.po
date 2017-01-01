@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-23 12:14+0000\n"
+"POT-Creation-Date: 2017-01-01 14:48+0000\n"
 "PO-Revision-Date: 2016-10-27 10:26+0000\n"
 "Last-Translator: Kiril Kirilov <cybercop_montana@abv.bg>\n"
 "Language-Team: Bulgarian (http://www.transifex.com/gottcode/xfce4-"
@@ -23,15 +23,15 @@ msgstr ""
 msgid "Add action"
 msgstr "Добавяне на действие"
 
-#: ../panel-plugin/page.cpp:216
+#: ../panel-plugin/page.cpp:257
 msgid "Add to Desktop"
 msgstr "Добавяне към Работния плот"
 
-#: ../panel-plugin/page.cpp:200
+#: ../panel-plugin/page.cpp:241
 msgid "Add to Favorites"
 msgstr "Добавяне към Любими"
 
-#: ../panel-plugin/page.cpp:220
+#: ../panel-plugin/page.cpp:261
 msgid "Add to Panel"
 msgstr "Добавяне в панела"
 
@@ -76,8 +76,8 @@ msgid "Clear Recently Used"
 msgstr "Изчисти последно използваните"
 
 #: ../panel-plugin/plugin.cpp:412
-msgid "Copyright © 2013-2016 Graeme Gott"
-msgstr "Авторски права © 2013-2016 Graeme Gott"
+msgid "Copyright © 2013-2017 Graeme Gott"
+msgstr "Авторски права © 2013-2017 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:844
 msgid "Details"
@@ -99,8 +99,8 @@ msgstr "Редактиране на профил"
 msgid "Failed to edit profile."
 msgstr "Не може да бъде редактиран профила."
 
-#: ../panel-plugin/launcher.cpp:274 ../panel-plugin/run-action.cpp:41
-#: ../panel-plugin/search-action.cpp:188
+#: ../panel-plugin/launcher.cpp:288 ../panel-plugin/launcher.cpp:361
+#: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "Неуспешно изпълнение на команда \"%s\"."
@@ -210,7 +210,7 @@ msgstr "Командите да се намират след полето за �
 msgid "Recently Used"
 msgstr "Последно използвани"
 
-#: ../panel-plugin/page.cpp:208
+#: ../panel-plugin/page.cpp:249
 msgid "Remove From Favorites"
 msgstr "Премахване от Любими"
 
@@ -304,11 +304,11 @@ msgstr "Действието ще бъде премахнато завинаги
 msgid "Title"
 msgstr "Заглавие"
 
-#: ../panel-plugin/page.cpp:319
+#: ../panel-plugin/page.cpp:365
 msgid "Unable to add launcher to desktop."
 msgstr "Неуспешно добавяне на стартер върху работния плот."
 
-#: ../panel-plugin/page.cpp:358 ../panel-plugin/page.cpp:367
+#: ../panel-plugin/page.cpp:404 ../panel-plugin/page.cpp:413
 msgid "Unable to add launcher to panel."
 msgstr "Неуспешно добавяне на стартер в панела."
 

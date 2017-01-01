@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-23 12:12+0000\n"
+"POT-Creation-Date: 2017-01-01 14:48+0000\n"
 "PO-Revision-Date: 2013-12-08 23:43+0000\n"
 "Last-Translator: Graeme Gott <graeme@gottcode.org>\n"
 "Language-Team: English (United Kingdom) (http://www.transifex.com/projects/p/"
@@ -23,15 +23,15 @@ msgstr ""
 msgid "Add action"
 msgstr "Add action"
 
-#: ../panel-plugin/page.cpp:216
+#: ../panel-plugin/page.cpp:257
 msgid "Add to Desktop"
 msgstr "Add to Desktop"
 
-#: ../panel-plugin/page.cpp:200
+#: ../panel-plugin/page.cpp:241
 msgid "Add to Favorites"
 msgstr "Add to Favourites"
 
-#: ../panel-plugin/page.cpp:220
+#: ../panel-plugin/page.cpp:261
 msgid "Add to Panel"
 msgstr "Add to Panel"
 
@@ -77,7 +77,7 @@ msgid "Clear Recently Used"
 msgstr "Clear Recently Used"
 
 #: ../panel-plugin/plugin.cpp:412
-msgid "Copyright © 2013-2016 Graeme Gott"
+msgid "Copyright © 2013-2017 Graeme Gott"
 msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:844
@@ -102,8 +102,8 @@ msgstr ""
 msgid "Failed to edit profile."
 msgstr "Failed to switch users."
 
-#: ../panel-plugin/launcher.cpp:274 ../panel-plugin/run-action.cpp:41
-#: ../panel-plugin/search-action.cpp:188
+#: ../panel-plugin/launcher.cpp:288 ../panel-plugin/launcher.cpp:361
+#: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "Failed to execute command \"%s\"."
@@ -215,7 +215,7 @@ msgstr "Position commands next to search _entry"
 msgid "Recently Used"
 msgstr "Recently Used"
 
-#: ../panel-plugin/page.cpp:208
+#: ../panel-plugin/page.cpp:249
 msgid "Remove From Favorites"
 msgstr "Remove From Favourites"
 
@@ -310,11 +310,11 @@ msgstr "The action will be deleted permanently."
 msgid "Title"
 msgstr "Title"
 
-#: ../panel-plugin/page.cpp:319
+#: ../panel-plugin/page.cpp:365
 msgid "Unable to add launcher to desktop."
 msgstr "Unable to add launcher to desktop."
 
-#: ../panel-plugin/page.cpp:358 ../panel-plugin/page.cpp:367
+#: ../panel-plugin/page.cpp:404 ../panel-plugin/page.cpp:413
 msgid "Unable to add launcher to panel."
 msgstr "Unable to add launcher to panel."
 

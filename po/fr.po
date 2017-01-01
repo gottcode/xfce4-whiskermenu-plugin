@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-23 12:14+0000\n"
+"POT-Creation-Date: 2017-01-01 14:48+0000\n"
 "PO-Revision-Date: 2016-11-01 13:47+0000\n"
 "Last-Translator: jc1 <jc1.quebecos@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -26,15 +26,15 @@ msgstr ""
 msgid "Add action"
 msgstr "Ajouter une action"
 
-#: ../panel-plugin/page.cpp:216
+#: ../panel-plugin/page.cpp:257
 msgid "Add to Desktop"
 msgstr "Ajouter au bureau"
 
-#: ../panel-plugin/page.cpp:200
+#: ../panel-plugin/page.cpp:241
 msgid "Add to Favorites"
 msgstr "Ajouter aux favoris"
 
-#: ../panel-plugin/page.cpp:220
+#: ../panel-plugin/page.cpp:261
 msgid "Add to Panel"
 msgstr "Ajouter au tableau de bord"
 
@@ -80,8 +80,8 @@ msgid "Clear Recently Used"
 msgstr "Effacer les applications récemment utilisées"
 
 #: ../panel-plugin/plugin.cpp:412
-msgid "Copyright © 2013-2016 Graeme Gott"
-msgstr "Copyright © 2013-2016 Graeme Gott"
+msgid "Copyright © 2013-2017 Graeme Gott"
+msgstr "Copyright © 2013-2017 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:844
 msgid "Details"
@@ -103,8 +103,8 @@ msgstr "Modifier le _profil"
 msgid "Failed to edit profile."
 msgstr "Impossible de modifier le profil."
 
-#: ../panel-plugin/launcher.cpp:274 ../panel-plugin/run-action.cpp:41
-#: ../panel-plugin/search-action.cpp:188
+#: ../panel-plugin/launcher.cpp:288 ../panel-plugin/launcher.cpp:361
+#: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "Impossible d’exécuter la commande « %s »."
@@ -214,7 +214,7 @@ msgstr "Positionner les commandes à côté du _champ de recherche"
 msgid "Recently Used"
 msgstr "Récemment utilisées"
 
-#: ../panel-plugin/page.cpp:208
+#: ../panel-plugin/page.cpp:249
 msgid "Remove From Favorites"
 msgstr "Retirer des favoris"
 
@@ -308,11 +308,11 @@ msgstr "Cette action sera définitivement supprimée."
 msgid "Title"
 msgstr "Titre"
 
-#: ../panel-plugin/page.cpp:319
+#: ../panel-plugin/page.cpp:365
 msgid "Unable to add launcher to desktop."
 msgstr "Impossible d’ajouter le lanceur sur le bureau."
 
-#: ../panel-plugin/page.cpp:358 ../panel-plugin/page.cpp:367
+#: ../panel-plugin/page.cpp:404 ../panel-plugin/page.cpp:413
 msgid "Unable to add launcher to panel."
 msgstr "Impossible d’ajouter le lanceur dans le tableau de bord."
 
