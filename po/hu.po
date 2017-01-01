@@ -6,14 +6,15 @@
 # Gábor Horváth <xazax.hun@gmail.com>, 2013,2016
 # gyeben <gyonkibendeguz@gmail.com>, 2013
 # Kisbenedek Márton <kmarton815@gmail.com>, 2016
+# user14 <nleknh@gmail.com>, 2016
 # Rezső Páder <rezso@rezso.net>, 2014-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-23 12:12+0000\n"
-"PO-Revision-Date: 2016-08-18 14:19+0000\n"
-"Last-Translator: Kisbenedek Márton <kmarton815@gmail.com>\n"
+"POT-Creation-Date: 2016-10-23 12:14+0000\n"
+"PO-Revision-Date: 2016-12-12 19:33+0000\n"
+"Last-Translator: user14 <nleknh@gmail.com>\n"
 "Language-Team: Hungarian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/hu/)\n"
 "Language: hu\n"
@@ -142,7 +143,7 @@ msgstr "Ikon és cím"
 
 #: ../panel-plugin/configuration-dialog.cpp:728
 msgid "Ignore _favorites"
-msgstr ""
+msgstr "Figyelmen kívül hagyás _favorites"
 
 #: ../panel-plugin/configuration-dialog.cpp:621
 msgid "Ite_m icon size:"
@@ -265,7 +266,7 @@ msgstr "Alkalmazás eszköz_tippek megjelenítése"
 
 #: ../panel-plugin/configuration-dialog.cpp:597
 msgid "Show cate_gory names"
-msgstr ""
+msgstr "cate_gory nevek mutatása"
 
 #: ../panel-plugin/configuration-dialog.cpp:591
 msgid "Show generic application _names"
@@ -322,7 +323,7 @@ msgstr "Nem lehetséges megnyitni a következő url-t: %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:573
 msgid "Use a single _panel row"
-msgstr ""
+msgstr "Egy sor _panel használata"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
@@ -405,4 +406,4 @@ msgstr "_Cím:"
 
 #: ../panel-plugin/plugin.cpp:416
 msgid "translator-credits"
-msgstr ""
+msgstr "fordítás-érdemek"
