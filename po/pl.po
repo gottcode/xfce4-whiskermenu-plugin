@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-01 14:48+0000\n"
+"POT-Creation-Date: 2017-01-13 22:55+0000\n"
 "PO-Revision-Date: 2016-10-29 14:56+0000\n"
 "Last-Translator: Marcin <m4sk1n@o2.pl>\n"
 "Language-Team: Polish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -101,6 +101,11 @@ msgstr "_Wyświetlanie:"
 #: ../panel-plugin/configuration-dialog.cpp:734
 msgid "Display by _default"
 msgstr "_Domyślnie wyświetlane"
+
+#: ../panel-plugin/page.cpp:268
+#, fuzzy
+msgid "Edit Application..."
+msgstr "_Edytuj programy"
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -315,12 +320,17 @@ msgstr "Czynność zostanie nieodwracalnie usunięta."
 msgid "Title"
 msgstr "Etykieta"
 
-#: ../panel-plugin/page.cpp:365
+#: ../panel-plugin/page.cpp:372
 msgid "Unable to add launcher to desktop."
 msgstr "Nie można dodać aktywatora na pulpicie"
 
-#: ../panel-plugin/page.cpp:404 ../panel-plugin/page.cpp:413
+#: ../panel-plugin/page.cpp:411 ../panel-plugin/page.cpp:420
 msgid "Unable to add launcher to panel."
+msgstr "Nie można dodać aktywatora do panelu"
+
+#: ../panel-plugin/page.cpp:447
+#, fuzzy
+msgid "Unable to edit launcher."
 msgstr "Nie można dodać aktywatora do panelu"
 
 #: ../panel-plugin/configuration-dialog.cpp:492

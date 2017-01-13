@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-01 14:48+0000\n"
+"POT-Creation-Date: 2017-01-13 22:55+0000\n"
 "PO-Revision-Date: 2015-06-04 14:31+0000\n"
 "Last-Translator: Reza Gharibi <reza.gharibi.rg@gmail.com>\n"
 "Language-Team: Persian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -90,6 +90,11 @@ msgstr "نم_ایش:"
 #: ../panel-plugin/configuration-dialog.cpp:734
 msgid "Display by _default"
 msgstr "نمایش براساس _پیش‌فرض"
+
+#: ../panel-plugin/page.cpp:268
+#, fuzzy
+msgid "Edit Application..."
+msgstr "_ویرایش برنامه‌ها"
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -305,12 +310,17 @@ msgstr "عمل برای همیشه حذف خواهدشد."
 msgid "Title"
 msgstr "عنوان"
 
-#: ../panel-plugin/page.cpp:365
+#: ../panel-plugin/page.cpp:372
 msgid "Unable to add launcher to desktop."
 msgstr "ناتوان در اضافه‌کردن لانچر به میزکار."
 
-#: ../panel-plugin/page.cpp:404 ../panel-plugin/page.cpp:413
+#: ../panel-plugin/page.cpp:411 ../panel-plugin/page.cpp:420
 msgid "Unable to add launcher to panel."
+msgstr "ناتوان در اضافه‌کردن لانچر به پنل."
+
+#: ../panel-plugin/page.cpp:447
+#, fuzzy
+msgid "Unable to edit launcher."
 msgstr "ناتوان در اضافه‌کردن لانچر به پنل."
 
 #: ../panel-plugin/configuration-dialog.cpp:492

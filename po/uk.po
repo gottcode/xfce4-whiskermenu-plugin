@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-01 14:48+0000\n"
+"POT-Creation-Date: 2017-01-13 22:55+0000\n"
 "PO-Revision-Date: 2016-10-30 20:02+0000\n"
 "Last-Translator: Yarema aka Knedlyk <yupadmin@gmail.com>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/gottcode/xfce4-"
@@ -92,6 +92,11 @@ msgstr "По_казувати:"
 #: ../panel-plugin/configuration-dialog.cpp:734
 msgid "Display by _default"
 msgstr "_Типовий дисплей"
+
+#: ../panel-plugin/page.cpp:268
+#, fuzzy
+msgid "Edit Application..."
+msgstr "_Редагувати програми"
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -306,12 +311,17 @@ msgstr "Дію буде вилучено назавжди."
 msgid "Title"
 msgstr "Назва"
 
-#: ../panel-plugin/page.cpp:365
+#: ../panel-plugin/page.cpp:372
 msgid "Unable to add launcher to desktop."
 msgstr "Неможливо додати запускач до стільниці."
 
-#: ../panel-plugin/page.cpp:404 ../panel-plugin/page.cpp:413
+#: ../panel-plugin/page.cpp:411 ../panel-plugin/page.cpp:420
 msgid "Unable to add launcher to panel."
+msgstr "Неможливо додати запускач на панель."
+
+#: ../panel-plugin/page.cpp:447
+#, fuzzy
+msgid "Unable to edit launcher."
 msgstr "Неможливо додати запускач на панель."
 
 #: ../panel-plugin/configuration-dialog.cpp:492

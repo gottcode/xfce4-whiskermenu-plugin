@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-01 14:48+0000\n"
+"POT-Creation-Date: 2017-01-13 22:55+0000\n"
 "PO-Revision-Date: 2016-11-05 15:18+0000\n"
 "Last-Translator: thomas <thomasbjornvold@gmail.com>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/gottcode/xfce4-"
@@ -90,6 +90,11 @@ msgstr "Vi_sning:"
 #: ../panel-plugin/configuration-dialog.cpp:734
 msgid "Display by _default"
 msgstr "Vis siste_brukte som standard"
+
+#: ../panel-plugin/page.cpp:268
+#, fuzzy
+msgid "Edit Application..."
+msgstr "_Rediger applikasjoner"
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -304,12 +309,17 @@ msgstr "Aktiviteten vill bli slettet for godt."
 msgid "Title"
 msgstr "Tittel"
 
-#: ../panel-plugin/page.cpp:365
+#: ../panel-plugin/page.cpp:372
 msgid "Unable to add launcher to desktop."
 msgstr "Kunne ikke legge oppstarter til skrivebordet"
 
-#: ../panel-plugin/page.cpp:404 ../panel-plugin/page.cpp:413
+#: ../panel-plugin/page.cpp:411 ../panel-plugin/page.cpp:420
 msgid "Unable to add launcher to panel."
+msgstr "Kunne ikke legge oppstarter til panelet"
+
+#: ../panel-plugin/page.cpp:447
+#, fuzzy
+msgid "Unable to edit launcher."
 msgstr "Kunne ikke legge oppstarter til panelet"
 
 #: ../panel-plugin/configuration-dialog.cpp:492

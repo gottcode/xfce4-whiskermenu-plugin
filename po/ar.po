@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-01 14:48+0000\n"
+"POT-Creation-Date: 2017-01-13 22:55+0000\n"
 "PO-Revision-Date: 2014-01-27 17:43+0000\n"
 "Last-Translator: Karim Oulad Chalha <herr.linux88@gmail.com>\n"
 "Language-Team: Arabic (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
@@ -93,6 +93,11 @@ msgstr "عر_ض:"
 #, fuzzy
 msgid "Display by _default"
 msgstr "إظهار المستعملة حد_يثا  إفتراضيا"
+
+#: ../panel-plugin/page.cpp:268
+#, fuzzy
+msgid "Edit Application..."
+msgstr "تطبيق"
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -311,12 +316,17 @@ msgstr ""
 msgid "Title"
 msgstr "عنوان"
 
-#: ../panel-plugin/page.cpp:365
+#: ../panel-plugin/page.cpp:372
 msgid "Unable to add launcher to desktop."
 msgstr "عاجز عن إضافة المطلقة إلى سطح المكتب."
 
-#: ../panel-plugin/page.cpp:404 ../panel-plugin/page.cpp:413
+#: ../panel-plugin/page.cpp:411 ../panel-plugin/page.cpp:420
 msgid "Unable to add launcher to panel."
+msgstr "عاجز عن إضافة المطلقة إلى الشريط."
+
+#: ../panel-plugin/page.cpp:447
+#, fuzzy
+msgid "Unable to edit launcher."
 msgstr "عاجز عن إضافة المطلقة إلى الشريط."
 
 #: ../panel-plugin/configuration-dialog.cpp:492

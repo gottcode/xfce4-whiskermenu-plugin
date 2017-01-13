@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-01 14:48+0000\n"
+"POT-Creation-Date: 2017-01-13 22:55+0000\n"
 "PO-Revision-Date: 2016-11-11 13:35+0000\n"
 "Last-Translator: starryprabin <mr.prabin@gmail.com>\n"
 "Language-Team: Nepali (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -91,6 +91,11 @@ msgstr "प्रदर्शन:"
 #: ../panel-plugin/configuration-dialog.cpp:734
 msgid "Display by _default"
 msgstr "स्व:त प्रदर्शन गर्नुहोस्"
+
+#: ../panel-plugin/page.cpp:268
+#, fuzzy
+msgid "Edit Application..."
+msgstr "अनुप्रयोगहरु सम्पादन गर्नुहोस्"
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -305,12 +310,17 @@ msgstr "कार्य स्थायीरुपमा हटाईनेछ�
 msgid "Title"
 msgstr "शीर्षक "
 
-#: ../panel-plugin/page.cpp:365
+#: ../panel-plugin/page.cpp:372
 msgid "Unable to add launcher to desktop."
 msgstr "प्रक्षेपकलाई डेस्कटपमा थप्न असमर्थ ।"
 
-#: ../panel-plugin/page.cpp:404 ../panel-plugin/page.cpp:413
+#: ../panel-plugin/page.cpp:411 ../panel-plugin/page.cpp:420
 msgid "Unable to add launcher to panel."
+msgstr "प्रक्षेपकलाई पट्टीमा थप्न असमर्थ ।"
+
+#: ../panel-plugin/page.cpp:447
+#, fuzzy
+msgid "Unable to edit launcher."
 msgstr "प्रक्षेपकलाई पट्टीमा थप्न असमर्थ ।"
 
 #: ../panel-plugin/configuration-dialog.cpp:492

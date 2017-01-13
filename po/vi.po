@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-01 14:48+0000\n"
+"POT-Creation-Date: 2017-01-13 22:55+0000\n"
 "PO-Revision-Date: 2014-05-05 02:44+0000\n"
 "Last-Translator: Duy Truong Nguyen <truongap.ars@gmail.com>\n"
 "Language-Team: Vietnamese (http://www.transifex.com/projects/p/xfce4-"
@@ -93,6 +93,11 @@ msgstr "H_iển thị:"
 #, fuzzy
 msgid "Display by _default"
 msgstr "Hiển thị mặc định mục vừa sử dụng"
+
+#: ../panel-plugin/page.cpp:268
+#, fuzzy
+msgid "Edit Application..."
+msgstr "_Sửa Ứng dụng"
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -311,12 +316,17 @@ msgstr "Hành động sẽ bị xóa vĩnh viễn"
 msgid "Title"
 msgstr "Tiêu đề"
 
-#: ../panel-plugin/page.cpp:365
+#: ../panel-plugin/page.cpp:372
 msgid "Unable to add launcher to desktop."
 msgstr "Không thể thêm vào thanh truy cập nhanh ở desktop."
 
-#: ../panel-plugin/page.cpp:404 ../panel-plugin/page.cpp:413
+#: ../panel-plugin/page.cpp:411 ../panel-plugin/page.cpp:420
 msgid "Unable to add launcher to panel."
+msgstr "Không thể thêm vào thanh truy cập nhanh hay khung."
+
+#: ../panel-plugin/page.cpp:447
+#, fuzzy
+msgid "Unable to edit launcher."
 msgstr "Không thể thêm vào thanh truy cập nhanh hay khung."
 
 #: ../panel-plugin/configuration-dialog.cpp:492

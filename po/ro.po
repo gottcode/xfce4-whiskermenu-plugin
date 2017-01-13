@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-01 14:48+0000\n"
+"POT-Creation-Date: 2017-01-13 22:55+0000\n"
 "PO-Revision-Date: 2015-12-06 22:22+0000\n"
 "Last-Translator: Alexandru Ianu <alexandru.ianu@gmail.com>\n"
 "Language-Team: Romanian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -91,6 +91,11 @@ msgstr "Afi_șaj:"
 #: ../panel-plugin/configuration-dialog.cpp:734
 msgid "Display by _default"
 msgstr "Arată după stare i_mplicită"
+
+#: ../panel-plugin/page.cpp:268
+#, fuzzy
+msgid "Edit Application..."
+msgstr "_Editează aplicații"
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -306,12 +311,17 @@ msgstr "Această acțiune va fi ștearsă permanent"
 msgid "Title"
 msgstr "Titlu"
 
-#: ../panel-plugin/page.cpp:365
+#: ../panel-plugin/page.cpp:372
 msgid "Unable to add launcher to desktop."
 msgstr "Nu s-a putut adăuga lansator la desktop."
 
-#: ../panel-plugin/page.cpp:404 ../panel-plugin/page.cpp:413
+#: ../panel-plugin/page.cpp:411 ../panel-plugin/page.cpp:420
 msgid "Unable to add launcher to panel."
+msgstr "Nu s-a putut adăuga lansator la panou."
+
+#: ../panel-plugin/page.cpp:447
+#, fuzzy
+msgid "Unable to edit launcher."
 msgstr "Nu s-a putut adăuga lansator la panou."
 
 #: ../panel-plugin/configuration-dialog.cpp:492

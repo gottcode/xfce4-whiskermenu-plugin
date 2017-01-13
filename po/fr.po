@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-01 14:48+0000\n"
+"POT-Creation-Date: 2017-01-13 22:55+0000\n"
 "PO-Revision-Date: 2016-11-01 13:47+0000\n"
 "Last-Translator: jc1 <jc1.quebecos@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -94,6 +94,11 @@ msgstr "Affic_hage :"
 #: ../panel-plugin/configuration-dialog.cpp:734
 msgid "Display by _default"
 msgstr "Afficher par _défaut"
+
+#: ../panel-plugin/page.cpp:268
+#, fuzzy
+msgid "Edit Application..."
+msgstr "_Modifier les applications"
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -308,12 +313,17 @@ msgstr "Cette action sera définitivement supprimée."
 msgid "Title"
 msgstr "Titre"
 
-#: ../panel-plugin/page.cpp:365
+#: ../panel-plugin/page.cpp:372
 msgid "Unable to add launcher to desktop."
 msgstr "Impossible d’ajouter le lanceur sur le bureau."
 
-#: ../panel-plugin/page.cpp:404 ../panel-plugin/page.cpp:413
+#: ../panel-plugin/page.cpp:411 ../panel-plugin/page.cpp:420
 msgid "Unable to add launcher to panel."
+msgstr "Impossible d’ajouter le lanceur dans le tableau de bord."
+
+#: ../panel-plugin/page.cpp:447
+#, fuzzy
+msgid "Unable to edit launcher."
 msgstr "Impossible d’ajouter le lanceur dans le tableau de bord."
 
 #: ../panel-plugin/configuration-dialog.cpp:492
