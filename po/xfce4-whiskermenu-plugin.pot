@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-01 14:48+0000\n"
+"POT-Creation-Date: 2017-01-13 22:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,6 +87,10 @@ msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:734
 msgid "Display by _default"
+msgstr ""
+
+#: ../panel-plugin/page.cpp:268
+msgid "Edit Application..."
 msgstr ""
 
 #: ../panel-plugin/settings.cpp:124
@@ -302,12 +306,16 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: ../panel-plugin/page.cpp:365
+#: ../panel-plugin/page.cpp:372
 msgid "Unable to add launcher to desktop."
 msgstr ""
 
-#: ../panel-plugin/page.cpp:404 ../panel-plugin/page.cpp:413
+#: ../panel-plugin/page.cpp:411 ../panel-plugin/page.cpp:420
 msgid "Unable to add launcher to panel."
+msgstr ""
+
+#: ../panel-plugin/page.cpp:447
+msgid "Unable to edit launcher."
 msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:492

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-01 14:48+0000\n"
+"POT-Creation-Date: 2017-01-13 22:55+0000\n"
 "PO-Revision-Date: 2014-08-18 12:06+0000\n"
 "Last-Translator: Umid Almasov <u.almasov@gmail.com>\n"
 "Language-Team: Uzbek (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
@@ -93,6 +93,11 @@ msgstr "_Ko'rsatish:"
 #, fuzzy
 msgid "Display by _default"
 msgstr "Yaqinda _foydalanilganlarni sukut bo'yicha ko'rsatish"
+
+#: ../panel-plugin/page.cpp:268
+#, fuzzy
+msgid "Edit Application..."
+msgstr "Dasturlarni _tahrirlash"
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -310,12 +315,17 @@ msgstr "Harakat butunlay o'chiriladi."
 msgid "Title"
 msgstr "Sarlavha"
 
-#: ../panel-plugin/page.cpp:365
+#: ../panel-plugin/page.cpp:372
 msgid "Unable to add launcher to desktop."
 msgstr "Ishga tushiruvchini ishchi stolga qo'shib bo'lmadi."
 
-#: ../panel-plugin/page.cpp:404 ../panel-plugin/page.cpp:413
+#: ../panel-plugin/page.cpp:411 ../panel-plugin/page.cpp:420
 msgid "Unable to add launcher to panel."
+msgstr "Ishga tushiruvchini panelga qo'shib bo'lmadi."
+
+#: ../panel-plugin/page.cpp:447
+#, fuzzy
+msgid "Unable to edit launcher."
 msgstr "Ishga tushiruvchini panelga qo'shib bo'lmadi."
 
 #: ../panel-plugin/configuration-dialog.cpp:492

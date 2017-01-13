@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-01 14:48+0000\n"
+"POT-Creation-Date: 2017-01-13 22:55+0000\n"
 "PO-Revision-Date: 2016-12-01 14:12+0000\n"
 "Last-Translator: Ante Grubišić Čabo <ante.gc@gmail.com>\n"
 "Language-Team: Croatian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -92,6 +92,11 @@ msgstr "Pri_kaži:"
 #: ../panel-plugin/configuration-dialog.cpp:734
 msgid "Display by _default"
 msgstr "Prema zadanom prikaži"
+
+#: ../panel-plugin/page.cpp:268
+#, fuzzy
+msgid "Edit Application..."
+msgstr "_Uredi Aplikacije"
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -306,12 +311,17 @@ msgstr "Akcija će biti trajno uklonjena."
 msgid "Title"
 msgstr "Ime"
 
-#: ../panel-plugin/page.cpp:365
+#: ../panel-plugin/page.cpp:372
 msgid "Unable to add launcher to desktop."
 msgstr "Nije moguće dodati pokretač na Radnu površinu."
 
-#: ../panel-plugin/page.cpp:404 ../panel-plugin/page.cpp:413
+#: ../panel-plugin/page.cpp:411 ../panel-plugin/page.cpp:420
 msgid "Unable to add launcher to panel."
+msgstr "Nije moguće dodati pokretač na Ploču"
+
+#: ../panel-plugin/page.cpp:447
+#, fuzzy
+msgid "Unable to edit launcher."
 msgstr "Nije moguće dodati pokretač na Ploču"
 
 #: ../panel-plugin/configuration-dialog.cpp:492

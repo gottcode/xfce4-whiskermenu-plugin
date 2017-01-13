@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-01 14:48+0000\n"
+"POT-Creation-Date: 2017-01-13 22:55+0000\n"
 "PO-Revision-Date: 2016-03-16 01:23+0000\n"
 "Last-Translator: Kristján Magnússon\n"
 "Language-Team: Icelandic (http://www.transifex.com/gottcode/xfce4-"
@@ -90,6 +90,11 @@ msgstr "Sk_jár:"
 #: ../panel-plugin/configuration-dialog.cpp:734
 msgid "Display by _default"
 msgstr "Skjár _Sjálfgefinn"
+
+#: ../panel-plugin/page.cpp:268
+#, fuzzy
+msgid "Edit Application..."
+msgstr "_Breyta Umsóknum"
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -304,13 +309,18 @@ msgstr "Aðgerðin verður eytt varanlega."
 msgid "Title"
 msgstr "Titill"
 
-#: ../panel-plugin/page.cpp:365
+#: ../panel-plugin/page.cpp:372
 msgid "Unable to add launcher to desktop."
 msgstr ""
 
-#: ../panel-plugin/page.cpp:404 ../panel-plugin/page.cpp:413
+#: ../panel-plugin/page.cpp:411 ../panel-plugin/page.cpp:420
 msgid "Unable to add launcher to panel."
 msgstr ""
+
+#: ../panel-plugin/page.cpp:447
+#, fuzzy
+msgid "Unable to edit launcher."
+msgstr "Tókst ekki að ljúka ferli"
 
 #: ../panel-plugin/configuration-dialog.cpp:492
 #, c-format

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-01 14:48+0000\n"
+"POT-Creation-Date: 2017-01-13 22:55+0000\n"
 "PO-Revision-Date: 2016-12-15 16:24+0000\n"
 "Last-Translator: Ioannis LM\n"
 "Language-Team: Greek (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -94,6 +94,11 @@ msgstr "Εμ_φάνιση:"
 #: ../panel-plugin/configuration-dialog.cpp:734
 msgid "Display by _default"
 msgstr "Προεπιλεγμένη ε_μφάνιση"
+
+#: ../panel-plugin/page.cpp:268
+#, fuzzy
+msgid "Edit Application..."
+msgstr "Ε_πεξεργασία εφαρμογών"
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -308,12 +313,17 @@ msgstr "Η δράση αυτή θα διαγραφεί μόνιμα"
 msgid "Title"
 msgstr "Τίτλος"
 
-#: ../panel-plugin/page.cpp:365
+#: ../panel-plugin/page.cpp:372
 msgid "Unable to add launcher to desktop."
 msgstr "Απέτυχε η προσθήκη εκκινητή στην επιφάνεια εργασίας."
 
-#: ../panel-plugin/page.cpp:404 ../panel-plugin/page.cpp:413
+#: ../panel-plugin/page.cpp:411 ../panel-plugin/page.cpp:420
 msgid "Unable to add launcher to panel."
+msgstr "Απέτυχε η προσθήκη εκκινητή στο ταμπλό."
+
+#: ../panel-plugin/page.cpp:447
+#, fuzzy
+msgid "Unable to edit launcher."
 msgstr "Απέτυχε η προσθήκη εκκινητή στο ταμπλό."
 
 #: ../panel-plugin/configuration-dialog.cpp:492
