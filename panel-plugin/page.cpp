@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2014, 2015, 2016 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014, 2015, 2016, 2017 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -262,6 +262,13 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 	g_signal_connect_slot<GtkMenuItem*>(menuitem, "activate", &Page::add_selected_to_panel, this);
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
+	menuitem = gtk_separator_menu_item_new();
+	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+
+	menuitem = gtk_menu_item_new_with_label(_("Edit Application..."));
+	g_signal_connect_slot<GtkMenuItem*>(menuitem, "activate", &Page::edit_selected, this);
+	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+
 	extend_context_menu(menu);
 
 	gtk_widget_show_all(menu);
@@ -422,6 +429,25 @@ void Page::add_selected_to_favorites()
 	Launcher* launcher = get_selected_launcher();
 	g_assert(launcher != NULL);
 	m_window->get_favorites()->add(launcher);
+}
+
+//-----------------------------------------------------------------------------
+
+void Page::edit_selected()
+{
+	Launcher* launcher = get_selected_launcher();
+	g_assert(launcher != NULL);
+
+	m_window->hide();
+
+	GError* error = NULL;
+	gchar* command = g_strconcat("exo-desktop-item-edit ", launcher->get_uri(), NULL);
+	if (g_spawn_command_line_async(command, &error) == false)
+	{
+		xfce_dialog_show_error(NULL, error, _("Unable to edit launcher."));
+		g_error_free(error);
+	}
+	g_free(command);
 }
 
 //-----------------------------------------------------------------------------
