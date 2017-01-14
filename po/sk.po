@@ -1,15 +1,15 @@
 # Slovak translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2016 Graeme Gott
+# Copyright (C) 2017 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Slavko <linux@slavino.sk>, 2013-2016
+# Slavko <linux@slavino.sk>, 2013-2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2016-11-18 14:24+0000\n"
+"PO-Revision-Date: 2017-01-14 06:20+0000\n"
 "Last-Translator: Slavko <linux@slavino.sk>\n"
 "Language-Team: Slovak (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/sk/)\n"
@@ -92,9 +92,8 @@ msgid "Display by _default"
 msgstr "Pre_dvolene zobraziť"
 
 #: ../panel-plugin/page.cpp:268
-#, fuzzy
 msgid "Edit Application..."
-msgstr "Upraviť aplikáci_e"
+msgstr "Upraviť aplikáciu..."
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -318,9 +317,8 @@ msgid "Unable to add launcher to panel."
 msgstr "Nemožno pridať spúšťač do panela"
 
 #: ../panel-plugin/page.cpp:447
-#, fuzzy
 msgid "Unable to edit launcher."
-msgstr "Nemožno pridať spúšťač do panela"
+msgstr "Nemožno upraviť spúšťač"
 
 #: ../panel-plugin/configuration-dialog.cpp:492
 #, c-format
