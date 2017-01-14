@@ -1,19 +1,19 @@
 # Czech translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2016 Graeme Gott
+# Copyright (C) 2017 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # halfark <vojtechprecechtel@gmail.com>, 2014
 # Laco Lazelod, 2013
 # Laco Lazelod, 2013
-# Michal Várady <miko.vaji@gmail.com>, 2015-2016
+# Michal Várady <miko.vaji@gmail.com>, 2015-2017
 # halfark <vojtechprecechtel@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2016-08-05 21:30+0000\n"
+"PO-Revision-Date: 2017-01-14 06:56+0000\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/cs/)\n"
@@ -96,9 +96,8 @@ msgid "Display by _default"
 msgstr "Zob_razit ve výchozím nastavení"
 
 #: ../panel-plugin/page.cpp:268
-#, fuzzy
 msgid "Edit Application..."
-msgstr "_Upravit aplikace"
+msgstr "Upravit aplikaci..."
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -271,7 +270,7 @@ msgstr "Zobrazit tipy _aplikací"
 
 #: ../panel-plugin/configuration-dialog.cpp:597
 msgid "Show cate_gory names"
-msgstr ""
+msgstr "Zobrazit názvy kate_gorií"
 
 #: ../panel-plugin/configuration-dialog.cpp:591
 msgid "Show generic application _names"
@@ -322,9 +321,8 @@ msgid "Unable to add launcher to panel."
 msgstr "Nelze přidat spouštěč na panel."
 
 #: ../panel-plugin/page.cpp:447
-#, fuzzy
 msgid "Unable to edit launcher."
-msgstr "Nelze přidat spouštěč na panel."
+msgstr "Nelze upravit spouštěč."
 
 #: ../panel-plugin/configuration-dialog.cpp:492
 #, c-format
