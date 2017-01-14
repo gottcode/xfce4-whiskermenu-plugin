@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2014, 2015, 2016 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014, 2015, 2016, 2017 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -259,6 +259,9 @@ WhiskerMenu::Window::Window() :
 	g_signal_connect_slot(m_window, "draw", &Window::on_draw_event, this);
 	g_signal_connect_slot(m_window, "screen-changed", &Window::on_screen_changed_event, this);
 	on_screen_changed_event(GTK_WIDGET(m_window), NULL);
+
+	// Load applications
+	m_applications->load_applications();
 
 	g_object_ref_sink(m_window);
 }
