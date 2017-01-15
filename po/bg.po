@@ -1,15 +1,15 @@
 # Bulgarian translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2016 Graeme Gott
+# Copyright (C) 2017 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Kiril Kirilov <cybercop_montana@abv.bg>, 2013-2016
+# Kiril Kirilov <cybercop_montana@abv.bg>, 2013-2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2016-10-27 10:26+0000\n"
+"PO-Revision-Date: 2017-01-14 20:55+0000\n"
 "Last-Translator: Kiril Kirilov <cybercop_montana@abv.bg>\n"
 "Language-Team: Bulgarian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/bg/)\n"
@@ -92,9 +92,8 @@ msgid "Display by _default"
 msgstr "Стандартен изглед"
 
 #: ../panel-plugin/page.cpp:268
-#, fuzzy
 msgid "Edit Application..."
-msgstr "Редактиране на програмите"
+msgstr "Редактиране на програма..."
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -318,9 +317,8 @@ msgid "Unable to add launcher to panel."
 msgstr "Неуспешно добавяне на стартер в панела."
 
 #: ../panel-plugin/page.cpp:447
-#, fuzzy
 msgid "Unable to edit launcher."
-msgstr "Неуспешно добавяне на стартер в панела."
+msgstr "Стартера не може да бъде редактиран."
 
 #: ../panel-plugin/configuration-dialog.cpp:492
 #, c-format
