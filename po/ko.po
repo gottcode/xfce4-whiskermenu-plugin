@@ -1,16 +1,16 @@
 # Korean translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2016 Graeme Gott
+# Copyright (C) 2017 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2015
-# 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2016
+# 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2016-2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2016-10-30 10:33+0000\n"
+"PO-Revision-Date: 2017-01-15 05:11+0000\n"
 "Last-Translator: 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ko/)\n"
@@ -93,9 +93,8 @@ msgid "Display by _default"
 msgstr "기본 보기"
 
 #: ../panel-plugin/page.cpp:268
-#, fuzzy
 msgid "Edit Application..."
-msgstr "프로그램 편집"
+msgstr "애플리케이션 편집..."
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -319,9 +318,8 @@ msgid "Unable to add launcher to panel."
 msgstr "패널에 런처를 더할 수 없습니다."
 
 #: ../panel-plugin/page.cpp:447
-#, fuzzy
 msgid "Unable to edit launcher."
-msgstr "패널에 런처를 더할 수 없습니다."
+msgstr "런처를 편집할 수 없습니다."
 
 #: ../panel-plugin/configuration-dialog.cpp:492
 #, c-format
