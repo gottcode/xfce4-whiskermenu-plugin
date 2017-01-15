@@ -1,17 +1,18 @@
 # Slovenian translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2016 Graeme Gott
+# Copyright (C) 2017 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Kernc, 2014-2015
-# Kernc, 2016
+# Ta Kernc, 2014-2015
+# Ta Kernc, 2016
+# Ta Kernc, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2016-08-05 18:29+0000\n"
-"Last-Translator: Kernc\n"
+"PO-Revision-Date: 2017-01-14 16:37+0000\n"
+"Last-Translator: Ta Kernc\n"
 "Language-Team: Slovenian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/sl/)\n"
 "Language: sl\n"
@@ -94,9 +95,8 @@ msgid "Display by _default"
 msgstr "Privzeto pri_kaži"
 
 #: ../panel-plugin/page.cpp:268
-#, fuzzy
 msgid "Edit Application..."
-msgstr "Uredi programe"
+msgstr "Uredi program ..."
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -269,7 +269,7 @@ msgstr "Pokaži orodni _namig programov"
 
 #: ../panel-plugin/configuration-dialog.cpp:597
 msgid "Show cate_gory names"
-msgstr ""
+msgstr "Pokaži imena kate_gorij"
 
 #: ../panel-plugin/configuration-dialog.cpp:591
 msgid "Show generic application _names"
@@ -320,9 +320,8 @@ msgid "Unable to add launcher to panel."
 msgstr "Zaganjalnika ni bilo mogoče dodati v pult."
 
 #: ../panel-plugin/page.cpp:447
-#, fuzzy
 msgid "Unable to edit launcher."
-msgstr "Zaganjalnika ni bilo mogoče dodati v pult."
+msgstr "Zaganjalnika ni mogoče urediti."
 
 #: ../panel-plugin/configuration-dialog.cpp:492
 #, c-format
