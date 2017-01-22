@@ -1,10 +1,11 @@
 # Greek translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2016 Graeme Gott
+# Copyright (C) 2017 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # angel_solomos, 2013
 # Ioannis LM, 2016
+# Thanos Apostolou <thanosapostolou@outlook.com>, 2017
 # gapan <vlahavas@gmail.com>, 2014
 # Γιάννης Ανθυμίδης, 2013
 # Πέτρος Σαμαράς <psamaras1@gmail.com>, 2016
@@ -13,8 +14,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2016-12-15 16:24+0000\n"
-"Last-Translator: Ioannis LM\n"
+"PO-Revision-Date: 2017-01-21 13:31+0000\n"
+"Last-Translator: Thanos Apostolou <thanosapostolou@outlook.com>\n"
 "Language-Team: Greek (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/el/)\n"
 "Language: el\n"
@@ -96,9 +97,8 @@ msgid "Display by _default"
 msgstr "Προεπιλεγμένη ε_μφάνιση"
 
 #: ../panel-plugin/page.cpp:268
-#, fuzzy
 msgid "Edit Application..."
-msgstr "Ε_πεξεργασία εφαρμογών"
+msgstr "Επεξεργασία Εφαρμογής..."
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -322,9 +322,8 @@ msgid "Unable to add launcher to panel."
 msgstr "Απέτυχε η προσθήκη εκκινητή στο ταμπλό."
 
 #: ../panel-plugin/page.cpp:447
-#, fuzzy
 msgid "Unable to edit launcher."
-msgstr "Απέτυχε η προσθήκη εκκινητή στο ταμπλό."
+msgstr "Απέτυχε η επεξεργασία εκκινητή."
 
 #: ../panel-plugin/configuration-dialog.cpp:492
 #, c-format
