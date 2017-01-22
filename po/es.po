@@ -1,5 +1,5 @@
 # Spanish translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2016 Graeme Gott
+# Copyright (C) 2017 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -10,13 +10,14 @@
 # Inti Alonso <intialonso@gmail.com>, 2013
 # Noe Moreno <NOE.MORENO@gmail.com>, 2016
 # Pablo Roberto “Jristz” Lezaeta Reyes <prflr88@gmail.com>, 2013-2015
+# Pablo Roberto “Jristz” Lezaeta Reyes <prflr88@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2016-12-02 00:15+0000\n"
-"Last-Translator: Noe Moreno <NOE.MORENO@gmail.com>\n"
+"PO-Revision-Date: 2017-01-22 04:34+0000\n"
+"Last-Translator: Pablo Roberto “Jristz” Lezaeta Reyes <prflr88@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/es/)\n"
 "Language: es\n"
@@ -83,7 +84,7 @@ msgstr "Limpiar elementos recientes"
 
 #: ../panel-plugin/plugin.cpp:412
 msgid "Copyright © 2013-2017 Graeme Gott"
-msgstr "© 2013–2017 Graeme Gott"
+msgstr "Derechos de autor © 2013-2017 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:844
 msgid "Details"
@@ -98,9 +99,8 @@ msgid "Display by _default"
 msgstr "Mostrar de forma predetermina_da"
 
 #: ../panel-plugin/page.cpp:268
-#, fuzzy
 msgid "Edit Application..."
-msgstr "_Editar aplicaciones"
+msgstr "Editar aplicación..."
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -324,9 +324,8 @@ msgid "Unable to add launcher to panel."
 msgstr "No se pudo añadir el lanzador al panel."
 
 #: ../panel-plugin/page.cpp:447
-#, fuzzy
 msgid "Unable to edit launcher."
-msgstr "No se pudo añadir el lanzador al panel."
+msgstr "No se pudo editar el lanzador."
 
 #: ../panel-plugin/configuration-dialog.cpp:492
 #, c-format
