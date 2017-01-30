@@ -1,19 +1,20 @@
 # French translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2016 Graeme Gott
+# Copyright (C) 2017 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # Anthony Jorion <pingax@frugalware.org>, 2013
 # jc1 <jc1.quebecos@gmail.com>, 2013,2015-2016
+# Lysio J-C <lysio.jc@outlook.fr>, 2017
 # Urien Desterres <urien.desterres@gmail.com>, 2014-2015
-# Yannick Le Guen <leguen.yannick@gmail.com>, 2014-2016
+# Yannick Le Guen <leguen.yannick@gmail.com>, 2014-2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2016-11-01 13:47+0000\n"
-"Last-Translator: jc1 <jc1.quebecos@gmail.com>\n"
+"PO-Revision-Date: 2017-01-29 19:58+0000\n"
+"Last-Translator: Lysio J-C <lysio.jc@outlook.fr>\n"
 "Language-Team: French (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/fr/)\n"
 "Language: fr\n"
@@ -96,9 +97,8 @@ msgid "Display by _default"
 msgstr "Afficher par _défaut"
 
 #: ../panel-plugin/page.cpp:268
-#, fuzzy
 msgid "Edit Application..."
-msgstr "_Modifier les applications"
+msgstr "Modifier l'application..."
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -322,9 +322,8 @@ msgid "Unable to add launcher to panel."
 msgstr "Impossible d’ajouter le lanceur dans le tableau de bord."
 
 #: ../panel-plugin/page.cpp:447
-#, fuzzy
 msgid "Unable to edit launcher."
-msgstr "Impossible d’ajouter le lanceur dans le tableau de bord."
+msgstr "Impossible de modifier le lanceur."
 
 #: ../panel-plugin/configuration-dialog.cpp:492
 #, c-format
