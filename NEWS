@@ -20,6 +20,17 @@
   Dutch, French, Hebrew, Hungarian, Lithuanian, Polish, Slovak,
   Slovenian, Spanish.
 
+1.7.0
+=====
+- Add editing launchers from context menu. (bug #13290)
+- Add support for desktop actions. (bug #11787)
+- Add option to hide category names. (bug #12895)
+- Load applications immediately.
+- Translation updates: Bulgarian, Chinese (Taiwan), Croatian, Czech,
+  Dutch, French, German, Greek, Hungarian, Korean, Kazakh, Lithuanian,
+  Nepali, Norwegian Bokmål, Polish, Portuguese, Portuguese (Brazil),
+  Serbian, Slovak, Slovenian, Spanish, Turkish, Ukrainian.
+
 1.6.2
 =====
 - Translation updates: Croatian, Dutch, Greek, Korean, Nepali,
