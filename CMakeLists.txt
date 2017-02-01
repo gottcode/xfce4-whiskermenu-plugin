@@ -4,8 +4,8 @@ project(whiskermenu)
 
 # version number
 set(whiskermenu_version_major "1")
-set(whiskermenu_version_minor "6")
-set(whiskermenu_version_micro "2")
+set(whiskermenu_version_minor "7")
+set(whiskermenu_version_micro "0")
 set(whiskermenu_version_tag "")
 set(whiskermenu_version "${whiskermenu_version_major}.${whiskermenu_version_minor}.${whiskermenu_version_micro}")
 if(${whiskermenu_version_tag} MATCHES "git")
