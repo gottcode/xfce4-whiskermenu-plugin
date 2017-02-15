@@ -1,5 +1,5 @@
 # Catalan translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2016 Graeme Gott
+# Copyright (C) 2017 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -8,14 +8,15 @@
 # Adolfo Jayme-Barrientos, 2013
 # Adolfo Jayme-Barrientos, 2014
 # Oriol Fernandez <oriolfa@ono.com>, 2013
+# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2017
 # Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2016-08-14 17:40+0000\n"
-"Last-Translator: Adolfo Jayme-Barrientos\n"
+"PO-Revision-Date: 2017-02-14 07:23+0000\n"
+"Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ca/)\n"
 "Language: ca\n"
@@ -34,7 +35,7 @@ msgstr "Afegeix a l’escriptori"
 
 #: ../panel-plugin/page.cpp:241
 msgid "Add to Favorites"
-msgstr "Afegeix als preferits"
+msgstr "Afegeix a les preferides"
 
 #: ../panel-plugin/page.cpp:261
 msgid "Add to Panel"
@@ -82,7 +83,7 @@ msgstr "Neteja els elements recents"
 
 #: ../panel-plugin/plugin.cpp:412
 msgid "Copyright © 2013-2017 Graeme Gott"
-msgstr "Drets d’autor 2013–2017 Graeme Gott"
+msgstr "Copyright © 2013-2017 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:844
 msgid "Details"
@@ -94,12 +95,11 @@ msgstr "Mo_stra:"
 
 #: ../panel-plugin/configuration-dialog.cpp:734
 msgid "Display by _default"
-msgstr "Mostra-ho per _defecte"
+msgstr "Apareixen per _defecte"
 
 #: ../panel-plugin/page.cpp:268
-#, fuzzy
 msgid "Edit Application..."
-msgstr "_Edita les aplicacions"
+msgstr "Edita l'aplicació..."
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -137,7 +137,7 @@ msgstr "Ha fallat el canvi d'usuari."
 
 #: ../panel-plugin/window.cpp:161
 msgid "Favorites"
-msgstr "Preferits"
+msgstr "Preferides"
 
 #: ../panel-plugin/configuration-dialog.cpp:538
 msgid "Icon"
@@ -149,7 +149,7 @@ msgstr "Icona i títol"
 
 #: ../panel-plugin/configuration-dialog.cpp:728
 msgid "Ignore _favorites"
-msgstr "Ignora els pre_ferits"
+msgstr "Ignora les pre_ferides"
 
 #: ../panel-plugin/configuration-dialog.cpp:621
 msgid "Ite_m icon size:"
@@ -222,7 +222,7 @@ msgstr "Utilitzades recentment"
 
 #: ../panel-plugin/page.cpp:249
 msgid "Remove From Favorites"
-msgstr "Suprimeix dels preferits"
+msgstr "Suprimeix de les preferides"
 
 #: ../panel-plugin/configuration-dialog.cpp:432
 #, c-format
@@ -268,15 +268,15 @@ msgstr "Mostra la _descripció de les aplicacions"
 
 #: ../panel-plugin/configuration-dialog.cpp:609
 msgid "Show application too_ltips"
-msgstr "Mostra els _indicadors de funcions de les aplicacions"
+msgstr "Mostra l'indicador de funció de les ap_licacions"
 
 #: ../panel-plugin/configuration-dialog.cpp:597
 msgid "Show cate_gory names"
-msgstr ""
+msgstr "Mostra el nom de les cate_gories"
 
 #: ../panel-plugin/configuration-dialog.cpp:591
 msgid "Show generic application _names"
-msgstr "Mostra els _noms genèrics de les aplicacions"
+msgstr "Mostra el _nom genèric de les aplicacions"
 
 #: ../panel-plugin/configuration-dialog.cpp:615
 msgid "Show menu hie_rarchy"
@@ -323,9 +323,8 @@ msgid "Unable to add launcher to panel."
 msgstr "No s’ha pogut afegir el llançador al plafó."
 
 #: ../panel-plugin/page.cpp:447
-#, fuzzy
 msgid "Unable to edit launcher."
-msgstr "No s’ha pogut afegir el llançador al plafó."
+msgstr "No s’ha pogut editar el llançador."
 
 #: ../panel-plugin/configuration-dialog.cpp:492
 #, c-format
@@ -419,5 +418,5 @@ msgstr "_Títol:"
 msgid "translator-credits"
 msgstr ""
 "Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2013–2016\n"
-"Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016\n"
+"Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016-2017\n"
 "Oriol Fernandez, 2013"
