@@ -1,20 +1,21 @@
 # Serbian (Latin) translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2015 Graeme Gott
+# Copyright (C) 2017 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # kakonema <kakonema@gmail.com>, 2013
-# salepetronije <salepetronije@gmail.com>, 2013
-# Vladimir Rujević <vladimir.rujevic95@gmail.com>, 2013
-# salepetronije <salepetronije@gmail.com>, 2013
+# Саша Петровић <salepetronije@gmail.com>, 2013
+# srdjan srdjan <acrvena@gmail.com>, 2017
+# Vladimir Rujević <inactive+vladimir.r@transifex.com>, 2013
+# Саша Петровић <salepetronije@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2013-12-14 10:42+0000\n"
-"Last-Translator: salepetronije <salepetronije@gmail.com>\n"
-"Language-Team: Serbian (Latin) (http://www.transifex.com/projects/p/xfce4-"
+"PO-Revision-Date: 2017-02-16 08:48+0000\n"
+"Last-Translator: srdjan srdjan <acrvena@gmail.com>\n"
+"Language-Team: Serbian (Latin) (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/sr@latin/)\n"
 "Language: sr@latin\n"
 "MIME-Version: 1.0\n"
@@ -49,20 +50,19 @@ msgstr "Sve _postavke"
 
 #: ../panel-plugin/plugin.cpp:411
 msgid "Alternate application launcher for Xfce"
-msgstr ""
+msgstr "alternativni pokretac aplikacije za Xfce"
 
 #: ../panel-plugin/configuration-dialog.cpp:717
 msgid "Amount of _items:"
-msgstr ""
+msgstr "Kolicina stvari:"
 
 #: ../panel-plugin/plugin.cpp:243
-#, fuzzy
 msgid "Applications"
-msgstr "Izbornik programa"
+msgstr "Aplikacije"
 
 #: ../panel-plugin/configuration-dialog.cpp:652
 msgid "Background opacit_y:"
-msgstr ""
+msgstr "Pozadinska prozirnost:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
@@ -82,7 +82,7 @@ msgstr "Očisti nedavno korišćeno"
 
 #: ../panel-plugin/plugin.cpp:412
 msgid "Copyright © 2013-2017 Graeme Gott"
-msgstr ""
+msgstr "Autorska prava © 2013-2017 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:844
 msgid "Details"
@@ -93,23 +93,20 @@ msgid "Di_splay:"
 msgstr "Prikaz:"
 
 #: ../panel-plugin/configuration-dialog.cpp:734
-#, fuzzy
 msgid "Display by _default"
-msgstr "Podrazumevano prikazuj nedavno korišćene"
+msgstr "Podrazumjevani prikaz"
 
 #: ../panel-plugin/page.cpp:268
-#, fuzzy
 msgid "Edit Application..."
-msgstr "_Uredi programe"
+msgstr "Urediti aplikaciju"
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
-msgstr ""
+msgstr "Urediti profil"
 
 #: ../panel-plugin/settings.cpp:124
-#, fuzzy
 msgid "Failed to edit profile."
-msgstr "Nisam uspeo da promenim korisnika."
+msgstr "Neuspjeh izmjene profila"
 
 #: ../panel-plugin/launcher.cpp:288 ../panel-plugin/launcher.cpp:361
 #: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:188
@@ -150,9 +147,8 @@ msgid "Icon and title"
 msgstr "Ikonica i naslov"
 
 #: ../panel-plugin/configuration-dialog.cpp:728
-#, fuzzy
 msgid "Ignore _favorites"
-msgstr "Omiljeno"
+msgstr "Zanemari_omiljene"
 
 #: ../panel-plugin/configuration-dialog.cpp:621
 msgid "Ite_m icon size:"
@@ -212,9 +208,8 @@ msgid "Position _search entry next to panel button"
 msgstr "Položaj kućice za unos pretrage u odnosu na dugme police"
 
 #: ../panel-plugin/configuration-dialog.cpp:701
-#, fuzzy
 msgid "Position cate_gories next to panel button"
-msgstr "Položaj kućice za unos pretrage u odnosu na dugme police"
+msgstr "Polozaj kate_gorija do izbornika police"
 
 #: ../panel-plugin/configuration-dialog.cpp:694
 msgid "Position commands next to search _entry"
@@ -271,13 +266,12 @@ msgid "Show application _descriptions"
 msgstr "Prikazuj _opise programa"
 
 #: ../panel-plugin/configuration-dialog.cpp:609
-#, fuzzy
 msgid "Show application too_ltips"
-msgstr "Prikazuj _opise programa"
+msgstr "Pokazi aplikacijske napomene"
 
 #: ../panel-plugin/configuration-dialog.cpp:597
 msgid "Show cate_gory names"
-msgstr ""
+msgstr "Pokazi imena kategorija"
 
 #: ../panel-plugin/configuration-dialog.cpp:591
 msgid "Show generic application _names"
@@ -328,18 +322,17 @@ msgid "Unable to add launcher to panel."
 msgstr "Nisam uspeo da dodam pokretač na policu."
 
 #: ../panel-plugin/page.cpp:447
-#, fuzzy
 msgid "Unable to edit launcher."
-msgstr "Nisam uspeo da dodam pokretač na policu."
+msgstr "Nisam uspjeo da izmjenim pokretac"
 
 #: ../panel-plugin/configuration-dialog.cpp:492
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "Nisam uspjeo da otvorim sljedeci url: %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:573
 msgid "Use a single _panel row"
-msgstr ""
+msgstr "Koristi jedan red police "
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
@@ -351,7 +344,7 @@ msgstr "Vrlo male"
 
 #: ../panel-plugin/settings.cpp:127
 msgid "Web Search"
-msgstr ""
+msgstr "Mrezna pretraga"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
@@ -373,20 +366,19 @@ msgstr "_Ponašanje"
 #: ../panel-plugin/command-edit.cpp:67
 #: ../panel-plugin/configuration-dialog.cpp:121
 msgid "_Cancel"
-msgstr "_Otkaži"
+msgstr "_Obustavi"
 
 #: ../panel-plugin/configuration-dialog.cpp:74
 msgid "_Close"
 msgstr "_Zatvori"
 
 #: ../panel-plugin/configuration-dialog.cpp:85
-#, fuzzy
 msgid "_Commands"
-msgstr "Naredbe"
+msgstr "_Komande"
 
 #: ../panel-plugin/configuration-dialog.cpp:430
 msgid "_Delete"
-msgstr "_Obriši"
+msgstr "_Obrisi"
 
 #: ../panel-plugin/settings.cpp:123
 msgid "_Edit Applications"
@@ -394,7 +386,7 @@ msgstr "_Uredi programe"
 
 #: ../panel-plugin/configuration-dialog.cpp:73
 msgid "_Help"
-msgstr "Po_moć"
+msgstr "_Pomoc"
 
 #: ../panel-plugin/configuration-dialog.cpp:559
 msgid "_Icon:"
@@ -407,7 +399,7 @@ msgstr "_Zaključaj ekran"
 #: ../panel-plugin/command-edit.cpp:68
 #: ../panel-plugin/configuration-dialog.cpp:122
 msgid "_OK"
-msgstr "U _redu"
+msgstr "_U redu"
 
 #: ../panel-plugin/configuration-dialog.cpp:862
 msgid "_Pattern:"
@@ -423,7 +415,4 @@ msgstr "_Naslov:"
 
 #: ../panel-plugin/plugin.cpp:416
 msgid "translator-credits"
-msgstr ""
-
-#~ msgid "Include _favorites in recently used"
-#~ msgstr "Uključi _omiljeno u nedavno korišćenim"
+msgstr "zasluge -prevodioca"
