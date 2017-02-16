@@ -100,4 +100,3 @@ Comment[zh_TW]=顯示選單以方便開啟已安裝的應用程式
 Icon=xfce4-whiskermenu
 X-XFCE-Module=whiskermenu
 X-XFCE-Internal=false
-X-XFCE-API=2.0
