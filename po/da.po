@@ -1,18 +1,18 @@
 # Danish translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2015 Graeme Gott
+# Copyright (C) 2017 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Jens E. Jensen <jens.e.jensen@gmail.com>, 2013
+# Jens E. Jensen <jens.e.jensen@gmail.com>, 2013,2017
 # Morten Juhl-Johansen Zölde-Fejér <morten@writtenandread.net>, 2013-2015
+# scootergrisen, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2015-02-21 07:30+0000\n"
-"Last-Translator: Morten Juhl-Johansen Zölde-Fejér <morten@writtenandread."
-"net>\n"
+"PO-Revision-Date: 2017-02-16 13:25+0000\n"
+"Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/da/)\n"
 "Language: da\n"
@@ -27,15 +27,15 @@ msgstr "Tilføj handling"
 
 #: ../panel-plugin/page.cpp:257
 msgid "Add to Desktop"
-msgstr "Tilføj til skrivebord"
+msgstr "Føj til skrivebord"
 
 #: ../panel-plugin/page.cpp:241
 msgid "Add to Favorites"
-msgstr "Tilføj til favoritter"
+msgstr "Føj til favoritter"
 
 #: ../panel-plugin/page.cpp:261
 msgid "Add to Panel"
-msgstr "Tilføj til panel"
+msgstr "Føj til panel"
 
 #: ../panel-plugin/category.cpp:61
 msgid "All"
@@ -47,7 +47,7 @@ msgstr "Alle _indstillinger"
 
 #: ../panel-plugin/plugin.cpp:411
 msgid "Alternate application launcher for Xfce"
-msgstr "Alternativ programstarter for Xfce"
+msgstr "Alternativ programopstarter for Xfce"
 
 #: ../panel-plugin/configuration-dialog.cpp:717
 msgid "Amount of _items:"
@@ -59,7 +59,7 @@ msgstr "Programmer"
 
 #: ../panel-plugin/configuration-dialog.cpp:652
 msgid "Background opacit_y:"
-msgstr "Baggrundens _gennemsigtighed"
+msgstr "Baggrundens _opacitet:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
@@ -71,7 +71,7 @@ msgstr "K_ommando:"
 
 #: ../panel-plugin/configuration-dialog.cpp:637
 msgid "Categ_ory icon size:"
-msgstr "Kateg_ori ikonstørrelse"
+msgstr "Kateg_ori ikonstørrelse:"
 
 #: ../panel-plugin/recent-page.cpp:173
 msgid "Clear Recently Used"
@@ -79,7 +79,7 @@ msgstr "Nulstil senest anvendte"
 
 #: ../panel-plugin/plugin.cpp:412
 msgid "Copyright © 2013-2017 Graeme Gott"
-msgstr "Copyright © 2013-2017 Graeme Gott"
+msgstr "Ophavsret © 2013-2017 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:844
 msgid "Details"
@@ -87,16 +87,15 @@ msgstr "Detaljer"
 
 #: ../panel-plugin/configuration-dialog.cpp:533
 msgid "Di_splay:"
-msgstr "_skærm"
+msgstr "_Skærm:"
 
 #: ../panel-plugin/configuration-dialog.cpp:734
 msgid "Display by _default"
 msgstr "Vis som _standard"
 
 #: ../panel-plugin/page.cpp:268
-#, fuzzy
 msgid "Edit Application..."
-msgstr "_Rediger applikationer"
+msgstr "Rediger program..."
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -122,11 +121,11 @@ msgstr "Kunne ikke låse skærmen."
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Failed to log out."
-msgstr "Kunne ikke logge ud"
+msgstr "Kunne ikke logge ud."
 
 #: ../panel-plugin/settings.cpp:119
 msgid "Failed to open settings manager."
-msgstr "Kunne ikke åbne indstillings-håndtering"
+msgstr "Kunne ikke åbne indstillingshåndtering."
 
 #: ../panel-plugin/settings.cpp:121
 msgid "Failed to switch users."
@@ -150,7 +149,7 @@ msgstr "Ignorer _favoritter"
 
 #: ../panel-plugin/configuration-dialog.cpp:621
 msgid "Ite_m icon size:"
-msgstr "Valg_mulighed ikonstørrelse"
+msgstr "Ele_ment ikonstørrelse:"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Large"
@@ -162,7 +161,7 @@ msgstr "Større"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Log _Out"
-msgstr "Log _ud:"
+msgstr "Log _ud"
 
 #: ../panel-plugin/settings.cpp:126
 msgid "Man Pages"
@@ -199,7 +198,7 @@ msgstr "Panelknap"
 
 #: ../panel-plugin/configuration-dialog.cpp:799
 msgid "Pattern"
-msgstr "Ømster"
+msgstr "Mønster"
 
 #: ../panel-plugin/configuration-dialog.cpp:688
 msgid "Position _search entry next to panel button"
@@ -257,24 +256,23 @@ msgstr "Vælg kommando"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
-msgstr "Vis en menu for hurtig adgang til applikationer"
+msgstr "Vis en menu for hurtig adgang til installerede programmer"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "Show application _descriptions"
-msgstr "Vis applikationers _beskrivelser"
+msgstr "Vis program_beskrivelser"
 
 #: ../panel-plugin/configuration-dialog.cpp:609
-#, fuzzy
 msgid "Show application too_ltips"
-msgstr "Vis applikationers _beskrivelser"
+msgstr "Vis program_værktøjstips"
 
 #: ../panel-plugin/configuration-dialog.cpp:597
 msgid "Show cate_gory names"
-msgstr ""
+msgstr "Vis kate_gorinavne"
 
 #: ../panel-plugin/configuration-dialog.cpp:591
 msgid "Show generic application _names"
-msgstr "Hvis applikationernes standardnavne"
+msgstr "Vis programmers standard_navne"
 
 #: ../panel-plugin/configuration-dialog.cpp:615
 msgid "Show menu hie_rarchy"
@@ -290,11 +288,11 @@ msgstr "Mindre"
 
 #: ../panel-plugin/favorites-page.cpp:147
 msgid "Sort Alphabetically A-Z"
-msgstr "Sorter alfabetisk A-Å"
+msgstr "Sortér alfabetisk A-Å"
 
 #: ../panel-plugin/favorites-page.cpp:153
 msgid "Sort Alphabetically Z-A"
-msgstr "Sort alfabetisk Å-A"
+msgstr "Sortér alfabetisk Å-A"
 
 #: ../panel-plugin/settings.cpp:121
 msgid "Switch _Users"
@@ -302,11 +300,11 @@ msgstr "Skift _brugere"
 
 #: ../panel-plugin/configuration-dialog.cpp:682
 msgid "Switch categories by _hovering"
-msgstr "Skift kategori ved at flytte musemarkør"
+msgstr "Skift kategorier ved at flytte musemarkør"
 
 #: ../panel-plugin/configuration-dialog.cpp:431
 msgid "The action will be deleted permanently."
-msgstr "Denne handling vil blive slettet permanent."
+msgstr "Handlingen vil blive slettet permanent."
 
 #: ../panel-plugin/configuration-dialog.cpp:539
 msgid "Title"
@@ -314,16 +312,15 @@ msgstr "Titel"
 
 #: ../panel-plugin/page.cpp:372
 msgid "Unable to add launcher to desktop."
-msgstr "Kunne ikke tilføje opstartsikon til skrivebordet."
+msgstr "Kunne ikke føje opstarter til skrivebordet."
 
 #: ../panel-plugin/page.cpp:411 ../panel-plugin/page.cpp:420
 msgid "Unable to add launcher to panel."
-msgstr "Kunne ikke tilføje opstartsikon til panelet"
+msgstr "Kunne ikke føje opstarter til panelet."
 
 #: ../panel-plugin/page.cpp:447
-#, fuzzy
 msgid "Unable to edit launcher."
-msgstr "Kunne ikke tilføje opstartsikon til panelet"
+msgstr "Kunne ikke redigere opstarter."
 
 #: ../panel-plugin/configuration-dialog.cpp:492
 #, c-format
@@ -344,12 +341,12 @@ msgstr "Meget lille"
 
 #: ../panel-plugin/settings.cpp:127
 msgid "Web Search"
-msgstr ""
+msgstr "Websøgning"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
 msgid "Whisker Menu"
-msgstr "Whisker Menu"
+msgstr "Whiskermenu"
 
 #: ../panel-plugin/settings.cpp:128
 msgid "Wikipedia"
@@ -366,7 +363,7 @@ msgstr "_Opførsel"
 #: ../panel-plugin/command-edit.cpp:67
 #: ../panel-plugin/configuration-dialog.cpp:121
 msgid "_Cancel"
-msgstr "_Annullér"
+msgstr "_Annuller"
 
 #: ../panel-plugin/configuration-dialog.cpp:74
 msgid "_Close"
@@ -382,7 +379,7 @@ msgstr "_Slet"
 
 #: ../panel-plugin/settings.cpp:123
 msgid "_Edit Applications"
-msgstr "_Rediger applikationer"
+msgstr "_Rediger programmer"
 
 #: ../panel-plugin/configuration-dialog.cpp:73
 msgid "_Help"
@@ -394,7 +391,7 @@ msgstr "_Ikon:"
 
 #: ../panel-plugin/settings.cpp:120
 msgid "_Lock Screen"
-msgstr "Lås skærm"
+msgstr "_Lås skærm"
 
 #: ../panel-plugin/command-edit.cpp:68
 #: ../panel-plugin/configuration-dialog.cpp:122
@@ -403,7 +400,7 @@ msgstr "_OK"
 
 #: ../panel-plugin/configuration-dialog.cpp:862
 msgid "_Pattern:"
-msgstr "_Mønsker:"
+msgstr "_Mønster:"
 
 #: ../panel-plugin/configuration-dialog.cpp:886
 msgid "_Regular expression"
@@ -415,4 +412,4 @@ msgstr "_Titel:"
 
 #: ../panel-plugin/plugin.cpp:416
 msgid "translator-credits"
-msgstr "oversættere"
+msgstr "scootergrisen"
