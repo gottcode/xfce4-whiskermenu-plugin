@@ -433,7 +433,9 @@ void Page::edit_selected()
 	m_window->hide();
 
 	GError* error = NULL;
-	gchar* command = g_strconcat("exo-desktop-item-edit ", launcher->get_uri(), NULL);
+	gchar* uri = launcher->get_uri();
+	gchar* command = g_strconcat("exo-desktop-item-edit ", uri, NULL);
+	g_free(uri);
 	if (g_spawn_command_line_async(command, &error) == false)
 	{
 		xfce_dialog_show_error(NULL, error, _("Unable to edit launcher."));
