@@ -1,19 +1,19 @@
 # Russian translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2016 Graeme Gott
+# Copyright (C) 2017 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # sorrymak <dearalcher@gmail.com>, 2013
 # Kyrill Detinov <lazy.kent@opensuse.org>, 2013,2016
-# Sergey Alyoshin <alyoshin.s@gmail.com>, 2013-2015
+# Sergey Alyoshin <alyoshin.s@gmail.com>, 2013-2015,2017
 # Sergey Shlyapugin <shlyapugin@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2016-10-11 21:26+0000\n"
-"Last-Translator: Kyrill Detinov <lazy.kent@opensuse.org>\n"
+"PO-Revision-Date: 2017-02-27 06:39+0000\n"
+"Last-Translator: Sergey Alyoshin <alyoshin.s@gmail.com>\n"
 "Language-Team: Russian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ru/)\n"
 "Language: ru\n"
@@ -82,7 +82,7 @@ msgstr "Очистить историю"
 
 #: ../panel-plugin/plugin.cpp:412
 msgid "Copyright © 2013-2017 Graeme Gott"
-msgstr "Copyright © 2013-2017 Graeme Gott"
+msgstr "Copyright © 2013—2017 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:844
 msgid "Details"
@@ -97,9 +97,8 @@ msgid "Display by _default"
 msgstr "Показывать по умолчанию"
 
 #: ../panel-plugin/page.cpp:268
-#, fuzzy
 msgid "Edit Application..."
-msgstr "Изменить п_риложения"
+msgstr "Изменить приложение..."
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -272,7 +271,7 @@ msgstr "Пока_зывать всплывающие комментарии к �
 
 #: ../panel-plugin/configuration-dialog.cpp:597
 msgid "Show cate_gory names"
-msgstr ""
+msgstr "Показывать имена _категорий"
 
 #: ../panel-plugin/configuration-dialog.cpp:591
 msgid "Show generic application _names"
@@ -323,9 +322,8 @@ msgid "Unable to add launcher to panel."
 msgstr "Нельзя добавить на панель."
 
 #: ../panel-plugin/page.cpp:447
-#, fuzzy
 msgid "Unable to edit launcher."
-msgstr "Нельзя добавить на панель."
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:492
 #, c-format
