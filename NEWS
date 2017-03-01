@@ -1,3 +1,9 @@
+2.1.1
+=====
+- Fixed memory leak when editing launcher.
+- Translation updates: Catalan, Danish, German, Portuguese,
+  Portuguese (Brazil), Russian, Serbian, Serbian (Latin).
+
 2.1.0
 =====
 - Add editing launchers from context menu. (bug #13290)
@@ -30,6 +36,12 @@
 - Translation updates: Bulgarian, Catalan, Chinese (Taiwan), Czech,
   Dutch, French, Hebrew, Hungarian, Lithuanian, Polish, Slovak,
   Slovenian, Spanish.
+
+1.7.1
+=====
+- Fixed memory leak when editing launcher.
+- Translation updates: Catalan, Danish, German, Portuguese,
+  Portuguese (Brazil), Russian, Serbian, Serbian (Latin).
 
 1.7.0
 =====
