@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015, 2016 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015, 2016, 2017 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -597,6 +597,7 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	m_show_category_names = gtk_check_button_new_with_mnemonic(_("Show cate_gory names"));
 	gtk_grid_attach(menu_table, m_show_category_names, 0, 1, 2, 1);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_category_names), wm_settings->category_show_name);
+	gtk_widget_set_sensitive(m_show_category_names, wm_settings->category_icon_size != -1);
 	g_signal_connect_slot(m_show_category_names, "toggled", &ConfigurationDialog::toggle_show_category_name, this);
 
 	// Add option to hide descriptions
