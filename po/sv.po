@@ -1,5 +1,5 @@
 # Swedish translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2015 Graeme Gott
+# Copyright (C) 2017 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -15,8 +15,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2015-07-19 17:38+0000\n"
-"Last-Translator: Påvel Nicklasson <pavelnicklasson@bahnhof.se>\n"
+"PO-Revision-Date: 2017-03-30 12:02+0000\n"
+"Last-Translator: Påvel Nicklasson <pavel2@frimix.se>\n"
 "Language-Team: Swedish (Sweden) (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/sv_SE/)\n"
 "Language: sv\n"
@@ -83,7 +83,7 @@ msgstr "Rensa senast använda"
 
 #: ../panel-plugin/plugin.cpp:412
 msgid "Copyright © 2013-2017 Graeme Gott"
-msgstr "Upphovsrätt © 2013-2017 Graeme Gott"
+msgstr "Copyright © 2013-2017 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:844
 msgid "Details"
@@ -98,9 +98,8 @@ msgid "Display by _default"
 msgstr "Visa som _standard"
 
 #: ../panel-plugin/page.cpp:268
-#, fuzzy
 msgid "Edit Application..."
-msgstr "_Redigera program"
+msgstr "Redigera program..."
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -268,13 +267,12 @@ msgid "Show application _descriptions"
 msgstr "Visa _programbeskrivningar"
 
 #: ../panel-plugin/configuration-dialog.cpp:609
-#, fuzzy
 msgid "Show application too_ltips"
-msgstr "Visa _programbeskrivningar"
+msgstr "Visa _verktygstips _för program"
 
 #: ../panel-plugin/configuration-dialog.cpp:597
 msgid "Show cate_gory names"
-msgstr ""
+msgstr "Visa kate_gorinamn"
 
 #: ../panel-plugin/configuration-dialog.cpp:591
 msgid "Show generic application _names"
@@ -325,9 +323,8 @@ msgid "Unable to add launcher to panel."
 msgstr "Kunde inte lägga till programstartare i panelen."
 
 #: ../panel-plugin/page.cpp:447
-#, fuzzy
 msgid "Unable to edit launcher."
-msgstr "Kunde inte lägga till programstartare i panelen."
+msgstr "Det gick inte att redigera programstartare."
 
 #: ../panel-plugin/configuration-dialog.cpp:492
 #, c-format
@@ -348,7 +345,7 @@ msgstr "Mycket liten"
 
 #: ../panel-plugin/settings.cpp:127
 msgid "Web Search"
-msgstr ""
+msgstr "Webbsökning"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
