@@ -1,3 +1,9 @@
+1.7.2
+=====
+- Fixed category names checkbox incorrectly enabled when opening dialog.
+- Fixed category names turning off at login. (bug #13422)
+- Translation updates: Arabic, Icelandic, Swedish.
+
 1.7.1
 =====
 - Fixed memory leak when editing launcher.
