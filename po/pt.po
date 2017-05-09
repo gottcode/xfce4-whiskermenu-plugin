@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2017-02-01 13:54+0000\n"
-"Last-Translator: Carlos Reis <reiscarlos1976@gmail.com>\n"
+"PO-Revision-Date: 2017-04-24 16:44+0000\n"
+"Last-Translator: José Vieira <jvieira33@sapo.pt>\n"
 "Language-Team: Portuguese (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/pt/)\n"
 "Language: pt\n"
@@ -44,7 +44,7 @@ msgstr "Todas"
 
 #: ../panel-plugin/settings.cpp:119
 msgid "All _Settings"
-msgstr "Todas as definiçõe_s"
+msgstr "Toda_s as definições"
 
 #: ../panel-plugin/plugin.cpp:411
 msgid "Alternate application launcher for Xfce"
@@ -96,11 +96,11 @@ msgstr "Mostrar por pré-_definição"
 
 #: ../panel-plugin/page.cpp:268
 msgid "Edit Application..."
-msgstr "Editar Aplicação"
+msgstr "Editar Aplicação..."
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
-msgstr "Editar _perfil"
+msgstr "Editar _Perfil"
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Failed to edit profile."
@@ -150,7 +150,7 @@ msgstr "Ignorar f_avoritos"
 
 #: ../panel-plugin/configuration-dialog.cpp:621
 msgid "Ite_m icon size:"
-msgstr "Tamanho do ícone do ite_m:"
+msgstr "Ta_manho do ícone do item:"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Large"
@@ -207,7 +207,7 @@ msgstr "Po_sicionar pesquisa junto ao botão do painel"
 
 #: ../panel-plugin/configuration-dialog.cpp:701
 msgid "Position cate_gories next to panel button"
-msgstr "Posicionar cate_gorias junto ao botão do painel"
+msgstr "Posicionar categ_orias junto ao botão do painel"
 
 #: ../panel-plugin/configuration-dialog.cpp:694
 msgid "Position commands next to search _entry"
@@ -257,7 +257,7 @@ msgstr "Selecionar comando"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
-msgstr "Mostrar menu para fácil acesso às aplicações instaladas"
+msgstr "Mostrar um menu de fácil acesso às aplicações instaladas"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "Show application _descriptions"
@@ -269,7 +269,7 @@ msgstr "Mostrar dicas de conte_xto das aplicações"
 
 #: ../panel-plugin/configuration-dialog.cpp:597
 msgid "Show cate_gory names"
-msgstr "Mostrar nomes das _categorias"
+msgstr "Mostrar nomes das categ_orias"
 
 #: ../panel-plugin/configuration-dialog.cpp:591
 msgid "Show generic application _names"
@@ -297,7 +297,7 @@ msgstr "Ordem alfabética Z-A"
 
 #: ../panel-plugin/settings.cpp:121
 msgid "Switch _Users"
-msgstr "Trocar de _utilizador"
+msgstr "Mudar de _utilizador"
 
 #: ../panel-plugin/configuration-dialog.cpp:682
 msgid "Switch categories by _hovering"
@@ -313,11 +313,11 @@ msgstr "Título"
 
 #: ../panel-plugin/page.cpp:372
 msgid "Unable to add launcher to desktop."
-msgstr "Não foi possível adicionar lançador à área de trabalho."
+msgstr "Não foi possível adicionar o lançador à área de trabalho."
 
 #: ../panel-plugin/page.cpp:411 ../panel-plugin/page.cpp:420
 msgid "Unable to add launcher to panel."
-msgstr "Não foi possível adicionar lançador ao painel."
+msgstr "Não foi possível adicionar o lançador ao painel."
 
 #: ../panel-plugin/page.cpp:447
 msgid "Unable to edit launcher."
