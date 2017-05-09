@@ -373,6 +373,10 @@ void Page::add_selected_to_desktop()
 		g_error_free(error);
 	}
 
+	gchar* command_line = g_strdup_printf("chmod a+rx %s", g_file_get_path(destination_file));
+	xfce_spawn_command_line_on_screen (NULL, command_line, FALSE, FALSE, NULL);
+	g_free (command_line);
+
 	g_object_unref(destination_file);
 	g_object_unref(source_file);
 	g_object_unref(desktop_folder);
