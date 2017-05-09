@@ -128,6 +128,7 @@ Settings::Settings() :
 	search_actions.push_back(new SearchAction(_("Wikipedia"), "!w", "exo-open --launch WebBrowser https://en.wikipedia.org/wiki/%u", false, true));
 	search_actions.push_back(new SearchAction(_("Run in Terminal"), "!", "exo-open --launch TerminalEmulator %s", false, true));
 	search_actions.push_back(new SearchAction(_("Open URI"), "^(file|http|https):\\/\\/(.*)$", "exo-open \\0", true, true));
+	search_actions.push_back(new SearchAction(_("Search for file"), "/", "catfish --hidden --path=/ --method=locate %s", false, true));
 }
 
 //-----------------------------------------------------------------------------
