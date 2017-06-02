@@ -319,6 +319,7 @@ void Launcher::run(GdkScreen* screen, DesktopAction* action) const
 
 			case 'k':
 				replace_and_free_with_quoted_string(command, i, garcon_menu_item_get_uri(m_item));
+				break;
 
 			case '%':
 				command.erase(i, 1);
