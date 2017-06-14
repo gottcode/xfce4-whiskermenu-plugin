@@ -4,7 +4,7 @@
 #
 # Translators:
 # fabioluciano <fabio@naoimporta.com>, 2013
-# Gabriel Henrique <gabrielmmoderno@gmail.com>, 2017
+# Gabriel Henrique <inactive+DarkSkull@transifex.com>, 2017
 # Holmes <holmes_holmes@live.com>, 2014
 # José Vieira <jvieira33@sapo.pt>, 2016-2017
 # Paulo Castro, 2013
@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2017-02-16 17:07+0000\n"
-"Last-Translator: Gabriel Henrique <gabrielmmoderno@gmail.com>\n"
+"PO-Revision-Date: 2017-06-13 19:57+0000\n"
+"Last-Translator: Gabriel Henrique <inactive+DarkSkull@transifex.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/pt_BR/)\n"
 "Language: pt_BR\n"
@@ -29,7 +29,7 @@ msgstr "Adicionar ação"
 
 #: ../panel-plugin/page.cpp:257
 msgid "Add to Desktop"
-msgstr "Adicionar à área de trabalho"
+msgstr "Adicionar à Área de Trabalho"
 
 #: ../panel-plugin/page.cpp:241
 msgid "Add to Favorites"
@@ -37,7 +37,7 @@ msgstr "Adicionar aos Favoritos"
 
 #: ../panel-plugin/page.cpp:261
 msgid "Add to Panel"
-msgstr "Adicionar ao painel"
+msgstr "Adicionar ao Painel"
 
 #: ../panel-plugin/category.cpp:61
 msgid "All"
@@ -45,7 +45,7 @@ msgstr "Tudo"
 
 #: ../panel-plugin/settings.cpp:119
 msgid "All _Settings"
-msgstr "Todas _Configurações"
+msgstr "Todas as _Configurações"
 
 #: ../panel-plugin/plugin.cpp:411
 msgid "Alternate application launcher for Xfce"
@@ -53,7 +53,7 @@ msgstr "Lançador de aplicações alternativo para o Xfce"
 
 #: ../panel-plugin/configuration-dialog.cpp:717
 msgid "Amount of _items:"
-msgstr "Número de íte_ns"
+msgstr "Número de ite_ns:"
 
 #: ../panel-plugin/plugin.cpp:243
 msgid "Applications"
@@ -61,7 +61,7 @@ msgstr "Aplicações"
 
 #: ../panel-plugin/configuration-dialog.cpp:652
 msgid "Background opacit_y:"
-msgstr "_Opacidade do fundo"
+msgstr "_Opacidade do fundo:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
@@ -73,15 +73,15 @@ msgstr "C_omando:"
 
 #: ../panel-plugin/configuration-dialog.cpp:637
 msgid "Categ_ory icon size:"
-msgstr "Tamanho do ícone da categ_oria"
+msgstr "Tamanho do ícone da categ_oria:"
 
 #: ../panel-plugin/recent-page.cpp:173
 msgid "Clear Recently Used"
-msgstr "Limpar os usados recentemente"
+msgstr "Limpar os Usados Recentemente"
 
 #: ../panel-plugin/plugin.cpp:412
 msgid "Copyright © 2013-2017 Graeme Gott"
-msgstr "Direitos de autor: Copyright © 2013-2017 Graeme Gott"
+msgstr "Direitos autorais: Copyright © 2013-2017 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:844
 msgid "Details"
@@ -93,7 +93,7 @@ msgstr "Mo_strar:"
 
 #: ../panel-plugin/configuration-dialog.cpp:734
 msgid "Display by _default"
-msgstr "Mostrar por pré-_definição"
+msgstr "Mostrar por p_adrão"
 
 #: ../panel-plugin/page.cpp:268
 msgid "Edit Application..."
@@ -111,7 +111,7 @@ msgstr "Falha ao editar perfil."
 #: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
-msgstr "Falhou ao executar o comando \"%s\"."
+msgstr "Falha ao executar o comando \"%s\"."
 
 #: ../panel-plugin/settings.cpp:123
 msgid "Failed to launch menu editor."
@@ -119,19 +119,19 @@ msgstr "Falha ao iniciar o editor de menu."
 
 #: ../panel-plugin/settings.cpp:120
 msgid "Failed to lock screen."
-msgstr "Falhou ao bloquear a tela"
+msgstr "Falha ao bloquear a tela."
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Failed to log out."
-msgstr "Falhou ao sair"
+msgstr "Falha ao sair."
 
 #: ../panel-plugin/settings.cpp:119
 msgid "Failed to open settings manager."
-msgstr "Falhou ao abrir o gerenciador de configurações"
+msgstr "Falha ao abrir o gerenciador de configurações."
 
 #: ../panel-plugin/settings.cpp:121
 msgid "Failed to switch users."
-msgstr "Falha ao alternar usuários."
+msgstr "Falha ao trocar usuários."
 
 #: ../panel-plugin/window.cpp:161
 msgid "Favorites"
@@ -151,7 +151,7 @@ msgstr "Ig_norar favoritos"
 
 #: ../panel-plugin/configuration-dialog.cpp:621
 msgid "Ite_m icon size:"
-msgstr "Tamanho do Ícone do ítem"
+msgstr "Tamanho do ícone do item:"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Large"
@@ -159,15 +159,15 @@ msgstr "Grande"
 
 #: ../panel-plugin/icon-size.cpp:55
 msgid "Larger"
-msgstr "Muito Grande"
+msgstr "Muito grande"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Log _Out"
-msgstr "Log_Out"
+msgstr "_Sair"
 
 #: ../panel-plugin/settings.cpp:126
 msgid "Man Pages"
-msgstr "Página principal"
+msgstr "Página de Instrução"
 
 #: ../panel-plugin/configuration-dialog.cpp:586
 #: ../panel-plugin/configuration-dialog.cpp:677
@@ -196,7 +196,7 @@ msgstr "Abrir URI"
 
 #: ../panel-plugin/configuration-dialog.cpp:528
 msgid "Panel Button"
-msgstr "Botão do painel"
+msgstr "Botão do Painel"
 
 #: ../panel-plugin/configuration-dialog.cpp:799
 msgid "Pattern"
@@ -234,7 +234,7 @@ msgstr "Remover ação selecionada"
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
 msgid "Run %s"
-msgstr "Execução %s"
+msgstr "Executar %s"
 
 #: ../panel-plugin/settings.cpp:129
 msgid "Run in Terminal"
@@ -250,7 +250,7 @@ msgstr "Pesquisar Ações"
 
 #: ../panel-plugin/configuration-dialog.cpp:119
 msgid "Select An Icon"
-msgstr "Selecione um icone"
+msgstr "Selecione um ícone"
 
 #: ../panel-plugin/command-edit.cpp:64
 msgid "Select Command"
@@ -266,7 +266,7 @@ msgstr "Mostrar descrição do aplicativo"
 
 #: ../panel-plugin/configuration-dialog.cpp:609
 msgid "Show application too_ltips"
-msgstr "Mostrar _dicas de contexto das aplicações"
+msgstr "Mostrar _dicas de ferramentas do aplicativo"
 
 #: ../panel-plugin/configuration-dialog.cpp:597
 msgid "Show cate_gory names"
@@ -298,7 +298,7 @@ msgstr "Organizar alfabeticamente Z-A"
 
 #: ../panel-plugin/settings.cpp:121
 msgid "Switch _Users"
-msgstr "Mudar_Usuários"
+msgstr "Trocar _Usuários"
 
 #: ../panel-plugin/configuration-dialog.cpp:682
 msgid "Switch categories by _hovering"
@@ -327,7 +327,7 @@ msgstr "Impossível editar o lançador."
 #: ../panel-plugin/configuration-dialog.cpp:492
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "Não foi possível abrir o seguinte url: %s"
+msgstr "Impossível abrir o seguinte url: %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:573
 msgid "Use a single _panel row"
@@ -343,7 +343,7 @@ msgstr "Minúsculo"
 
 #: ../panel-plugin/settings.cpp:127
 msgid "Web Search"
-msgstr "Pesquisar na web"
+msgstr "Pesquisar na Web"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
@@ -376,7 +376,7 @@ msgstr "_Ícone:"
 
 #: ../panel-plugin/settings.cpp:120
 msgid "_Lock Screen"
-msgstr "_Bloquear a tela"
+msgstr "_Bloquear a Tela"
 
 #: ../panel-plugin/configuration-dialog.cpp:862
 msgid "_Pattern:"
