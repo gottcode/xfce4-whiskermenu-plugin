@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# reis33 <bahadiroglu33@gmail.com>, 2013
+# Ercan PEKER <bahadiroglu33@gmail.com>, 2013,2017
 # Demiray Muhterem <mdemiray@msn.com>, 2013-2017
 # Yusuf Faruk DOĞAN <yfdogan@gmail.com>, 2013
 msgid ""
@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2017-01-21 09:57+0000\n"
-"Last-Translator: Demiray Muhterem <mdemiray@msn.com>\n"
+"PO-Revision-Date: 2017-06-03 07:24+0000\n"
+"Last-Translator: Ercan PEKER <bahadiroglu33@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/tr/)\n"
 "Language: tr\n"
@@ -31,7 +31,7 @@ msgstr "Masaüstüne Ekle"
 
 #: ../panel-plugin/page.cpp:241
 msgid "Add to Favorites"
-msgstr "Favorilere Ekle"
+msgstr "Sık kullanılanlara ekle"
 
 #: ../panel-plugin/page.cpp:261
 msgid "Add to Panel"
@@ -59,7 +59,7 @@ msgstr "Uygulamalar"
 
 #: ../panel-plugin/configuration-dialog.cpp:652
 msgid "Background opacit_y:"
-msgstr "Arkaplan matlı_k:"
+msgstr "Arkaplan şeffaflı_k:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
@@ -133,7 +133,7 @@ msgstr "Kullanıcı geçişi başarısız oldu."
 
 #: ../panel-plugin/window.cpp:161
 msgid "Favorites"
-msgstr "Favoriler"
+msgstr "Sık kullanılanlar"
 
 #: ../panel-plugin/configuration-dialog.cpp:538
 msgid "Icon"
@@ -145,7 +145,7 @@ msgstr "Başlık ve Simge"
 
 #: ../panel-plugin/configuration-dialog.cpp:728
 msgid "Ignore _favorites"
-msgstr "Favorileri _gözardı et"
+msgstr "Sık kullanılanları _gözardı et"
 
 #: ../panel-plugin/configuration-dialog.cpp:621
 msgid "Ite_m icon size:"
@@ -190,7 +190,7 @@ msgstr "Normal"
 
 #: ../panel-plugin/settings.cpp:130
 msgid "Open URI"
-msgstr "URL aktif"
+msgstr "URI aç"
 
 #: ../panel-plugin/configuration-dialog.cpp:528
 msgid "Panel Button"
@@ -218,7 +218,7 @@ msgstr "Son Kullanılanlar"
 
 #: ../panel-plugin/page.cpp:249
 msgid "Remove From Favorites"
-msgstr "Favorilerden Kaldır"
+msgstr "Sık kullanılanlardan kaldır"
 
 #: ../panel-plugin/configuration-dialog.cpp:432
 #, c-format
@@ -236,7 +236,7 @@ msgstr "Çalıştır %s"
 
 #: ../panel-plugin/settings.cpp:129
 msgid "Run in Terminal"
-msgstr "Konsolda Çalıştır"
+msgstr "Uçbirimde Çalıştır"
 
 #: ../panel-plugin/configuration-dialog.cpp:86
 msgid "Search Actio_ns"
@@ -391,6 +391,8 @@ msgstr "_Başlık:"
 #: ../panel-plugin/plugin.cpp:416
 msgid "translator-credits"
 msgstr ""
-"Demiray Muhterem-tulliana\n"
 "Yusuf Faruk Doğan-yfdogan\n"
-"Reis33"
+"Mekanın cennet olsun Yusuf Abim\n"
+"---\n"
+"Demiray Muhterem-tulliana\n"
+"Ercan PEKER-Reis33"
