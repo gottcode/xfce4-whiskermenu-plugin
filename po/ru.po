@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2017-02-27 06:39+0000\n"
+"PO-Revision-Date: 2017-06-15 13:56+0000\n"
 "Last-Translator: Sergey Alyoshin <alyoshin.s@gmail.com>\n"
 "Language-Team: Russian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ru/)\n"
@@ -315,15 +315,15 @@ msgstr "Заголовок"
 
 #: ../panel-plugin/page.cpp:372
 msgid "Unable to add launcher to desktop."
-msgstr "Нельзя добавить на «Рабочий стол»."
+msgstr "Невозможно добавить значок запуска на «Рабочий стол»."
 
 #: ../panel-plugin/page.cpp:411 ../panel-plugin/page.cpp:420
 msgid "Unable to add launcher to panel."
-msgstr "Нельзя добавить на панель."
+msgstr "Невозможно добавить значок запуска на панель."
 
 #: ../panel-plugin/page.cpp:447
 msgid "Unable to edit launcher."
-msgstr ""
+msgstr "Невозможно изменить значок запуска."
 
 #: ../panel-plugin/configuration-dialog.cpp:492
 #, c-format
