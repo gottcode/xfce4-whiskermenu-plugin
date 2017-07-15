@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2017-01-14 19:49+0000\n"
+"PO-Revision-Date: 2017-07-01 10:57+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/lt/)\n"
@@ -295,7 +295,7 @@ msgstr "Surikiuoti pagal abėcėlę Ž-A"
 
 #: ../panel-plugin/settings.cpp:121
 msgid "Switch _Users"
-msgstr "Kei_sti naudotojus"
+msgstr "Perj_ungti naudotojus"
 
 #: ../panel-plugin/configuration-dialog.cpp:682
 msgid "Switch categories by _hovering"
