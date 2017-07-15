@@ -7,6 +7,7 @@
 # Adolfo Jayme-Barrientos, 2015
 # Adolfo Jayme-Barrientos, 2013
 # Adolfo Jayme-Barrientos, 2014
+# Davidmp <medipas@gmail.com>, 2017
 # Oriol Fernandez <oriolfa@ono.com>, 2013
 # Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2017
 # Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016
@@ -15,8 +16,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2017-02-14 07:23+0000\n"
-"Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
+"PO-Revision-Date: 2017-07-14 08:01+0000\n"
+"Last-Translator: Davidmp <medipas@gmail.com>\n"
 "Language-Team: Catalan (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ca/)\n"
 "Language: ca\n"
@@ -129,7 +130,7 @@ msgstr "Ha fallat el tancament de la sessió."
 
 #: ../panel-plugin/settings.cpp:119
 msgid "Failed to open settings manager."
-msgstr "Ha fallat l'obriment del gestor d'ajusts."
+msgstr "Ha fallat obrir el gestor d'ajusts."
 
 #: ../panel-plugin/settings.cpp:121
 msgid "Failed to switch users."
@@ -169,7 +170,7 @@ msgstr "Ta_nca la sessió"
 
 #: ../panel-plugin/settings.cpp:126
 msgid "Man Pages"
-msgstr "Pàgines del man"
+msgstr "Pàgines del manual"
 
 #: ../panel-plugin/configuration-dialog.cpp:586
 #: ../panel-plugin/configuration-dialog.cpp:677
@@ -240,7 +241,7 @@ msgstr "Executa «%s»"
 
 #: ../panel-plugin/settings.cpp:129
 msgid "Run in Terminal"
-msgstr "Executa al terminal"
+msgstr "Executa en un terminal"
 
 #: ../panel-plugin/configuration-dialog.cpp:86
 msgid "Search Actio_ns"
@@ -304,7 +305,7 @@ msgstr "Canvia d’_usuari"
 
 #: ../panel-plugin/configuration-dialog.cpp:682
 msgid "Switch categories by _hovering"
-msgstr "Canvia de categoria en a_puntar amb el ratolí"
+msgstr "Canvia de categoria en _passar-hi el ratolí"
 
 #: ../panel-plugin/configuration-dialog.cpp:431
 msgid "The action will be deleted permanently."
@@ -329,11 +330,11 @@ msgstr "No s’ha pogut editar el llançador."
 #: ../panel-plugin/configuration-dialog.cpp:492
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "No es pot obrir el següent URL: %s"
+msgstr "No es pot obrir l'URL següent: %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:573
 msgid "Use a single _panel row"
-msgstr "Utilitza una sola fila del _plafó"
+msgstr "Utilitza un _plafó d'una sola fila "
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
