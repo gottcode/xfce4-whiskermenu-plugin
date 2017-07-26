@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2017-01-22 04:34+0000\n"
+"PO-Revision-Date: 2017-07-16 15:53+0000\n"
 "Last-Translator: Pablo Roberto “Jristz” Lezaeta Reyes <prflr88@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/es/)\n"
@@ -72,11 +72,11 @@ msgstr "Examine el sistema de archivos para elegir una orden personalizada."
 
 #: ../panel-plugin/configuration-dialog.cpp:874
 msgid "C_ommand:"
-msgstr "_Orden:"
+msgstr "Orde_n:"
 
 #: ../panel-plugin/configuration-dialog.cpp:637
 msgid "Categ_ory icon size:"
-msgstr "Tamaño del icono de las categ_orías:"
+msgstr "Tamaño del icono de las cate_gorías:"
 
 #: ../panel-plugin/recent-page.cpp:173
 msgid "Clear Recently Used"
@@ -150,7 +150,7 @@ msgstr "Icono y título"
 
 #: ../panel-plugin/configuration-dialog.cpp:728
 msgid "Ignore _favorites"
-msgstr "Ignorar los _favoritos"
+msgstr "Ignorar los fa_voritos"
 
 #: ../panel-plugin/configuration-dialog.cpp:621
 msgid "Ite_m icon size:"
@@ -207,15 +207,15 @@ msgstr "Patrón"
 
 #: ../panel-plugin/configuration-dialog.cpp:688
 msgid "Position _search entry next to panel button"
-msgstr "Posicionar el cuadro de _búsqueda junto al botón del panel"
+msgstr "Posicionar el cuadro de bús_queda junto al botón del panel"
 
 #: ../panel-plugin/configuration-dialog.cpp:701
 msgid "Position cate_gories next to panel button"
-msgstr "Colocar cate_gorías al lado del botón del panel"
+msgstr "Colocar categorí_as al lado del botón del panel"
 
 #: ../panel-plugin/configuration-dialog.cpp:694
 msgid "Position commands next to search _entry"
-msgstr "Posicionar las órdenes junto al _cuadro de búsqueda"
+msgstr "Posicionar las órdenes junto al cuadr_o de búsqueda"
 
 #: ../panel-plugin/configuration-dialog.cpp:712 ../panel-plugin/window.cpp:167
 msgid "Recently Used"
@@ -265,7 +265,7 @@ msgstr "Mostrar un menú para acceder fácilmente a las aplicaciones instaladas"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "Show application _descriptions"
-msgstr "Mostrar las _descripciones de las aplicaciones"
+msgstr "Mostrar las de_scripciones de las aplicaciones"
 
 #: ../panel-plugin/configuration-dialog.cpp:609
 msgid "Show application too_ltips"
@@ -273,15 +273,15 @@ msgstr "Mostrar _información emergente de las aplicaciones"
 
 #: ../panel-plugin/configuration-dialog.cpp:597
 msgid "Show cate_gory names"
-msgstr "Mostrar los nombres de cate_goría"
+msgstr "Mostrar los nombres de ca_tegoría"
 
 #: ../panel-plugin/configuration-dialog.cpp:591
 msgid "Show generic application _names"
-msgstr "Mostrar nombres _genéricos de las aplicaciones"
+msgstr "Mostrar nombres gené_ricos de las aplicaciones"
 
 #: ../panel-plugin/configuration-dialog.cpp:615
 msgid "Show menu hie_rarchy"
-msgstr "Mostrar je_rarquía del menú"
+msgstr "Mostrar _jerarquía del menú"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -305,7 +305,7 @@ msgstr "Cambiar de _usuario"
 
 #: ../panel-plugin/configuration-dialog.cpp:682
 msgid "Switch categories by _hovering"
-msgstr "Cambiar de categoría al apun_tarla con el ratón"
+msgstr "Cambiar de categoría al apuntar_la con el ratón"
 
 #: ../panel-plugin/configuration-dialog.cpp:431
 msgid "The action will be deleted permanently."
@@ -380,7 +380,7 @@ msgstr "Ó_rdenes"
 
 #: ../panel-plugin/configuration-dialog.cpp:430
 msgid "_Delete"
-msgstr "_Eliminar"
+msgstr "E_liminar"
 
 #: ../panel-plugin/settings.cpp:123
 msgid "_Edit Applications"
@@ -409,7 +409,7 @@ msgstr "_Patrón:"
 
 #: ../panel-plugin/configuration-dialog.cpp:886
 msgid "_Regular expression"
-msgstr "Expresión _regular"
+msgstr "E_xpresión regular"
 
 #: ../panel-plugin/configuration-dialog.cpp:548
 msgid "_Title:"
@@ -419,4 +419,4 @@ msgstr "_Título:"
 msgid "translator-credits"
 msgstr ""
 "Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2013–2016\n"
-"Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>, 2014"
+"Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>, 2014, 2017"
