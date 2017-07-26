@@ -1,16 +1,16 @@
 # Nepali translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2016 Graeme Gott
+# Copyright (C) 2017 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# starryprabin <mr.prabin@gmail.com>, 2013-2016
+# starryprabin <mr.prabin@gmail.com>, 2013-2017
 # Prabin Gautam <PRABINGAUTAM@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2016-11-11 13:35+0000\n"
+"PO-Revision-Date: 2017-07-18 18:35+0000\n"
 "Last-Translator: starryprabin <mr.prabin@gmail.com>\n"
 "Language-Team: Nepali (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ne/)\n"
@@ -93,9 +93,8 @@ msgid "Display by _default"
 msgstr "स्व:त प्रदर्शन गर्नुहोस्"
 
 #: ../panel-plugin/page.cpp:268
-#, fuzzy
 msgid "Edit Application..."
-msgstr "अनुप्रयोगहरु सम्पादन गर्नुहोस्"
+msgstr "अनुप्रयोगलाई सम्पादन गर्नुहोस् ..."
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -312,16 +311,15 @@ msgstr "शीर्षक "
 
 #: ../panel-plugin/page.cpp:372
 msgid "Unable to add launcher to desktop."
-msgstr "प्रक्षेपकलाई डेस्कटपमा थप्न असमर्थ ।"
+msgstr "प्रक्षेपकलाई डेस्कटपमा थप्न असमर्थ।"
 
 #: ../panel-plugin/page.cpp:411 ../panel-plugin/page.cpp:420
 msgid "Unable to add launcher to panel."
-msgstr "प्रक्षेपकलाई पट्टीमा थप्न असमर्थ ।"
+msgstr "प्रक्षेपकलाई पट्टीमा थप्न असमर्थ।"
 
 #: ../panel-plugin/page.cpp:447
-#, fuzzy
 msgid "Unable to edit launcher."
-msgstr "प्रक्षेपकलाई पट्टीमा थप्न असमर्थ ।"
+msgstr "प्रक्षेपकलाई सम्पादन गर्न असमर्थ।"
 
 #: ../panel-plugin/configuration-dialog.cpp:492
 #, c-format
