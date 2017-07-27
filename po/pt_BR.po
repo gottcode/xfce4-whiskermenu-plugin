@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2017-07-14 19:34+0000\n"
+"PO-Revision-Date: 2017-07-26 20:44+0000\n"
 "Last-Translator: Gabriel Henrique\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/pt_BR/)\n"
@@ -259,7 +259,7 @@ msgstr "Selecionar comando"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
-msgstr "Mostrar um menu de fácil acesso às aplicações instaladas"
+msgstr "Mostrar um menu para acessar facilmente os aplicativos instalados"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "Show application _descriptions"
@@ -394,7 +394,8 @@ msgstr "Tít_ulo:"
 #: ../panel-plugin/plugin.cpp:416
 msgid "translator-credits"
 msgstr ""
-"fabioluciano <fabio@naoimporta.com>, 2013\n"
+"Carlos Reis <reiscarlos1976@gmail.com>, 2017\n"
+"Fábio Luciano de Góis <fabio@naoimporta.com>, 2013\n"
 "Gabriel Henrique, 2017\n"
 "Holmes <holmes_holmes@live.com>, 2014\n"
 "José Vieira <jvieira33@sapo.pt>, 2016-2017\n"
