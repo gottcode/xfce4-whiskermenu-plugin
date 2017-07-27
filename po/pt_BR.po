@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2017-07-26 20:44+0000\n"
+"PO-Revision-Date: 2017-07-27 20:40+0000\n"
 "Last-Translator: Gabriel Henrique\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/pt_BR/)\n"
@@ -50,7 +50,7 @@ msgstr "Toda_s as configurações"
 
 #: ../panel-plugin/plugin.cpp:411
 msgid "Alternate application launcher for Xfce"
-msgstr "Lançador de aplicações alternativo para o Xfce"
+msgstr "Lançador de aplicativos alternativo para o Xfce"
 
 #: ../panel-plugin/configuration-dialog.cpp:717
 msgid "Amount of _items:"
@@ -58,7 +58,7 @@ msgstr "Número de ite_ns:"
 
 #: ../panel-plugin/plugin.cpp:243
 msgid "Applications"
-msgstr "Aplicações"
+msgstr "Aplicativos"
 
 #: ../panel-plugin/configuration-dialog.cpp:652
 msgid "Background opacit_y:"
@@ -263,11 +263,11 @@ msgstr "Mostrar um menu para acessar facilmente os aplicativos instalados"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "Show application _descriptions"
-msgstr "Mostrar _descrição das aplicações"
+msgstr "Mostrar _descrição dos aplicativos"
 
 #: ../panel-plugin/configuration-dialog.cpp:609
 msgid "Show application too_ltips"
-msgstr "Mostrar dicas de conte_xto das aplicações"
+msgstr "Mostrar dicas de conte_xto dos aplicativos"
 
 #: ../panel-plugin/configuration-dialog.cpp:597
 msgid "Show cate_gory names"
@@ -275,7 +275,7 @@ msgstr "Mostrar nomes das categ_orias"
 
 #: ../panel-plugin/configuration-dialog.cpp:591
 msgid "Show generic application _names"
-msgstr "Mostrar _nome genérico das aplicações"
+msgstr "Mostrar _nome genérico dos aplicativos"
 
 #: ../panel-plugin/configuration-dialog.cpp:615
 msgid "Show menu hie_rarchy"
@@ -382,7 +382,7 @@ msgstr "A_pagar"
 
 #: ../panel-plugin/settings.cpp:123
 msgid "_Edit Applications"
-msgstr "_Editar aplicações"
+msgstr "_Editar aplicativos"
 
 #: ../panel-plugin/configuration-dialog.cpp:73
 msgid "_Help"
