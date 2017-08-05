@@ -1,3 +1,9 @@
+1.7.3
+=====
+- Fixed desktop action incorrectly parsing escaped k.
+- Translation updates: Catalan, Chinese (China), German, Italian, Nepali,
+  Portuguese, Portuguese (Brazil), Russian, Spanish, Turkish.
+
 1.7.2
 =====
 - Fixed category names checkbox incorrectly enabled when opening dialog.
