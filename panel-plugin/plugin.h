@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2014, 2015, 2016 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014, 2015, 2016, 2017 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -63,6 +63,7 @@ private:
 	void button_toggled(GtkToggleButton* button);
 	void menu_hidden();
 	void configure();
+	void icon_changed(const gchar* icon);
 	void mode_changed(XfcePanelPlugin*, XfcePanelPluginMode mode);
 	gboolean remote_event(XfcePanelPlugin*, gchar* name, GValue* value);
 	void save();

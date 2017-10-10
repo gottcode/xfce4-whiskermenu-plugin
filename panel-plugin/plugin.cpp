@@ -166,6 +166,7 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	gtk_widget_show(GTK_WIDGET(m_button_box));
 
 	m_button_icon = GTK_IMAGE(gtk_image_new());
+	icon_changed(wm_settings->button_icon_name.c_str());
 	gtk_box_pack_start(m_button_box, GTK_WIDGET(m_button_icon), true, false, 0);
 	if (wm_settings->button_icon_visible)
 	{
@@ -303,6 +304,7 @@ void Plugin::set_button_icon_name(const std::string& icon)
 {
 	wm_settings->button_icon_name = icon;
 	wm_settings->set_modified();
+	icon_changed(icon.c_str());
 	size_changed(m_plugin, xfce_panel_plugin_get_size(m_plugin));
 }
 
@@ -350,6 +352,24 @@ void Plugin::configure()
 {
 	ConfigurationDialog* dialog = new ConfigurationDialog(this);
 	g_signal_connect_slot<GtkWidget*>(dialog->get_widget(), "destroy", &Plugin::save, this);
+}
+
+//-----------------------------------------------------------------------------
+
+void Plugin::icon_changed(const gchar* icon)
+{
+	if (!g_path_is_absolute(icon))
+	{
+		gtk_image_set_from_icon_name(m_button_icon, icon, GTK_ICON_SIZE_BUTTON);
+	}
+	else
+	{
+		GFile* file = g_file_new_for_path(icon);
+		GIcon* gicon = g_file_icon_new(file);
+		gtk_image_set_from_gicon(m_button_icon, gicon, GTK_ICON_SIZE_BUTTON);
+		g_object_unref(gicon);
+		g_object_unref(file);
+	}
 }
 
 //-----------------------------------------------------------------------------
@@ -425,7 +445,6 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 {
 	GtkOrientation panel_orientation = xfce_panel_plugin_get_orientation(m_plugin);
 	GtkOrientation orientation = panel_orientation;
-	gint row_size = size / xfce_panel_plugin_get_nrows(m_plugin);
 	XfcePanelPluginMode mode = xfce_panel_plugin_get_mode(m_plugin);
 
 	// Make icon expand to fill button if title is not visible
@@ -434,34 +453,26 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 			!wm_settings->button_title_visible,
 			0, GTK_PACK_START);
 
-	// Load icon
-	GtkBorder border, padding;
-	GtkStyleContext* context = gtk_widget_get_style_context(m_button);
-	GtkStateFlags state = gtk_style_context_get_state(context);
-	gtk_style_context_get_border(context, state, &border);
-	gtk_style_context_get_padding(context, state, &padding);
-	gint margin_x = border.left + border.right + padding.left + padding.right;
-	gint margin_y = border.top + border.bottom + padding.top + padding.bottom;
-
-	GdkScreen* screen = gtk_widget_get_screen(GTK_WIDGET(m_plugin));
-	GtkIconTheme* icon_theme = G_LIKELY(screen != NULL) ? gtk_icon_theme_get_for_screen(screen) : NULL;
-
-	gint icon_width_max = (mode == XFCE_PANEL_PLUGIN_MODE_HORIZONTAL) ?
-			6 * row_size - margin_x :
-			size - margin_x;
-	gint icon_height_max = row_size - margin_y;
-	GdkPixbuf* icon = xfce_panel_pixbuf_from_source_at_size(
-			wm_settings->button_icon_name.c_str(),
-			icon_theme,
-			icon_width_max,
-			icon_height_max);
-	gint icon_width = 0;
-	if (G_LIKELY(icon != NULL))
+	// Resize icon
+#if (LIBXFCE4PANEL_CHECK_VERSION(4,13,0))
+	gint icon_size = xfce_panel_plugin_get_icon_size(m_plugin);
+#else
+	gint icon_size = size / xfce_panel_plugin_get_nrows(m_plugin);
+	icon_size -= 4;
+	if (icon_size < 24)
 	{
-		gtk_image_set_from_pixbuf(m_button_icon, icon);
-		icon_width = gdk_pixbuf_get_width(icon);
-		g_object_unref(G_OBJECT(icon));
+		icon_size = 16;
 	}
+	else if (icon_size < 32)
+	{
+		icon_size = 24;
+	}
+	else if (icon_size < 36)
+	{
+		icon_size = 32;
+	}
+#endif
+	gtk_image_set_pixel_size(m_button_icon, icon_size);
 
 	if (wm_settings->button_title_visible || !wm_settings->button_single_row)
 	{
@@ -473,7 +484,7 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 		if (mode == XFCE_PANEL_PLUGIN_MODE_DESKBAR &&
 				wm_settings->button_title_visible &&
 				wm_settings->button_icon_visible &&
-				label_size.width <= (size - margin_x - icon_width))
+				label_size.width <= (size - icon_size - 4))
 		{
 			orientation = GTK_ORIENTATION_HORIZONTAL;
 		}
