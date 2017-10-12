@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2016 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2016, 2017 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -62,7 +62,18 @@ SectionButton::SectionButton(const gchar* icon, const gchar* text) :
 	m_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 4));
 	gtk_container_add(GTK_CONTAINER(m_button), GTK_WIDGET(m_box));
 
-	m_icon = xfce_panel_image_new();
+	if (!g_path_is_absolute(icon))
+	{
+		m_icon = gtk_image_new_from_icon_name(icon, GTK_ICON_SIZE_BUTTON);
+	}
+	else
+	{
+		GFile* file = g_file_new_for_path(icon);
+		GIcon* gicon = g_file_icon_new(file);
+		m_icon = gtk_image_new_from_gicon(gicon, GTK_ICON_SIZE_BUTTON);
+		g_object_unref(gicon);
+		g_object_unref(file);
+	}
 	gtk_box_pack_start(m_box, m_icon, false, false, 0);
 
 	m_label = gtk_label_new(text);
@@ -83,13 +94,9 @@ SectionButton::~SectionButton()
 
 void SectionButton::reload_icon_size()
 {
-	xfce_panel_image_clear(XFCE_PANEL_IMAGE(m_icon));
 	int size = wm_settings->category_icon_size.get_size();
-	xfce_panel_image_set_size(XFCE_PANEL_IMAGE(m_icon), size);
-	if (size > 1)
-	{
-		xfce_panel_image_set_from_source(XFCE_PANEL_IMAGE(m_icon), m_icon_name);
-	}
+	gtk_image_set_pixel_size(GTK_IMAGE(m_icon), size);
+	gtk_widget_set_visible(m_icon, size > 1);
 
 	if (wm_settings->category_show_name)
 	{
