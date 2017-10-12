@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014, 2016 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2014, 2016, 2017 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@ using namespace WhiskerMenu;
 ProfilePicture::ProfilePicture(Window* window) :
 	m_window(window)
 {
-	m_image = xfce_panel_image_new();
+	m_image = gtk_image_new();
 
 	gtk_widget_set_halign(m_image, GTK_ALIGN_CENTER);
 	gtk_widget_set_valign(m_image, GTK_ALIGN_CENTER);
@@ -67,24 +67,15 @@ ProfilePicture::~ProfilePicture()
 
 void ProfilePicture::on_file_changed(GFileMonitor*, GFile* file, GFile*, GFileMonitorEvent)
 {
-	gint width = 32, height = 32;
-	gtk_icon_size_lookup(GTK_ICON_SIZE_DND, &width, &height);
-
-	gchar* path = g_file_get_path(file);
-	GdkPixbuf* face = gdk_pixbuf_new_from_file_at_size(path, width, height, NULL);
-	g_free(path);
-
-	XfcePanelImage* image = XFCE_PANEL_IMAGE(m_image);
-	if (face)
+	if (g_file_query_exists(file, NULL))
 	{
-		xfce_panel_image_set_size(image, -1);
-		xfce_panel_image_set_from_pixbuf(image, face);
-		g_object_unref(face);
+		GIcon* icon = g_file_icon_new(file);
+		gtk_image_set_from_gicon(GTK_IMAGE(m_image), icon, GTK_ICON_SIZE_DND);
+		g_object_unref(icon);
 	}
 	else
 	{
-		xfce_panel_image_set_size(image, height);
-		xfce_panel_image_set_from_source(image, "avatar-default");
+		gtk_image_set_from_icon_name(GTK_IMAGE(m_image), "avatar-default", GTK_ICON_SIZE_DND);
 	}
 }
 
