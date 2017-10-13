@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2017-02-17 08:55+0000\n"
-"Last-Translator: Jens E. Jensen <jens.e.jensen@gmail.com>\n"
+"PO-Revision-Date: 2017-09-30 20:35+0000\n"
+"Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/da/)\n"
 "Language: da\n"
@@ -312,20 +312,20 @@ msgstr "Titel"
 
 #: ../panel-plugin/page.cpp:372
 msgid "Unable to add launcher to desktop."
-msgstr "Kunne ikke føje opstarter til skrivebordet."
+msgstr "Kan ikke føje opstarter til skrivebordet."
 
 #: ../panel-plugin/page.cpp:411 ../panel-plugin/page.cpp:420
 msgid "Unable to add launcher to panel."
-msgstr "Kunne ikke føje opstarter til panelet."
+msgstr "Kan ikke føje opstarter til panelet."
 
 #: ../panel-plugin/page.cpp:447
 msgid "Unable to edit launcher."
-msgstr "Kunne ikke redigere opstarter."
+msgstr "Kan ikke redigere opstarter."
 
 #: ../panel-plugin/configuration-dialog.cpp:492
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "Kunne ikke åbne følgende URL: %s"
+msgstr "Kan ikke åbne følgende URL: %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:573
 msgid "Use a single _panel row"
