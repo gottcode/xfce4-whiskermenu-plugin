@@ -6,7 +6,7 @@
 # Andreas Gustafsson <addegsson@gmail.com>, 2013
 # Patrik Nilsson <asavartzeth@gmail.com>, 2014
 # Fredrik Nyqvist <fredrik@nyqvist.biz>, 2013
-# Patrik Nilsson <asavartzeth@gmail.com>, 2014-2015
+# Patrik Nilsson <asavartzeth@gmail.com>, 2014-2015,2017
 # Påvel Nicklasson <pavel@frimix.se>, 2015
 # Påvel Nicklasson <pavel@frimixse>, 2015
 # Tommy Arvidsson <tarvidsson7834@gmail.com>, 2013
@@ -15,8 +15,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2017-03-30 12:02+0000\n"
-"Last-Translator: Påvel Nicklasson <pavel2@frimix.se>\n"
+"PO-Revision-Date: 2017-09-14 13:14+0000\n"
+"Last-Translator: Patrik Nilsson <asavartzeth@gmail.com>\n"
 "Language-Team: Swedish (Sweden) (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/sv_SE/)\n"
 "Language: sv\n"
@@ -394,4 +394,4 @@ msgstr "Tite_l:"
 
 #: ../panel-plugin/plugin.cpp:416
 msgid "translator-credits"
-msgstr "Patrik Nilsson <asavartzeth@gmail.com>"
+msgstr "Patrik Nilsson <translation@hembas.se>"
