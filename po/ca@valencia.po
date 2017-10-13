@@ -1,15 +1,16 @@
-# (Valencian) translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2016 Graeme Gott
+# Catalan (Valencian) translation of xfce4-whiskermenu-plugin.
+# Copyright (C) 2017 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
+# Jose Alfredo Murcia Andrés <joamuran@gmail.com>, 2017
 # Pilar Embid Giner <embid_mar@gva.es>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2016-09-19 07:48+0000\n"
+"PO-Revision-Date: 2017-09-23 02:38+0000\n"
 "Last-Translator: Jose Alfredo Murcia Andrés <joamuran@gmail.com>\n"
 "Language-Team: Catalan (Valencian) (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/ca@valencia/)\n"
@@ -92,9 +93,8 @@ msgid "Display by _default"
 msgstr "Mostra-ho per _defecte"
 
 #: ../panel-plugin/page.cpp:268
-#, fuzzy
 msgid "Edit Application..."
-msgstr "_Edita les aplicacions"
+msgstr "Edita l'aplicació..."
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -267,7 +267,7 @@ msgstr "Mostra els _indicadors de funció de les aplicacions"
 
 #: ../panel-plugin/configuration-dialog.cpp:597
 msgid "Show cate_gory names"
-msgstr ""
+msgstr "Mostra el nom de les cate_gories"
 
 #: ../panel-plugin/configuration-dialog.cpp:591
 msgid "Show generic application _names"
@@ -318,9 +318,8 @@ msgid "Unable to add launcher to panel."
 msgstr "No s’ha pogut afegir al quadre l'accés directe."
 
 #: ../panel-plugin/page.cpp:447
-#, fuzzy
 msgid "Unable to edit launcher."
-msgstr "No s’ha pogut afegir al quadre l'accés directe."
+msgstr "No s'ha pogut editar el carregador"
 
 #: ../panel-plugin/configuration-dialog.cpp:492
 #, c-format
