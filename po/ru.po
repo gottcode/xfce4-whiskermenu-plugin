@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2017-06-15 13:56+0000\n"
+"PO-Revision-Date: 2017-09-28 05:12+0000\n"
 "Last-Translator: Sergey Alyoshin <alyoshin.s@gmail.com>\n"
 "Language-Team: Russian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ru/)\n"
@@ -271,7 +271,7 @@ msgstr "Пока_зывать всплывающие комментарии к �
 
 #: ../panel-plugin/configuration-dialog.cpp:597
 msgid "Show cate_gory names"
-msgstr "Показывать имена _категорий"
+msgstr "Показывать названия _категорий"
 
 #: ../panel-plugin/configuration-dialog.cpp:591
 msgid "Show generic application _names"
