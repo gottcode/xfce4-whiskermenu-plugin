@@ -1,5 +1,5 @@
 # Hungarian translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2016 Graeme Gott
+# Copyright (C) 2017 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -7,14 +7,14 @@
 # gyeben <gyonkibendeguz@gmail.com>, 2013
 # Kisbenedek Márton <kmarton815@gmail.com>, 2016
 # user14 <nleknh@gmail.com>, 2016
-# Rezső Páder <rezso@rezso.net>, 2014-2015
+# Rezső Páder <rezso@rezso.net>, 2014-2015,2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2016-12-12 19:33+0000\n"
-"Last-Translator: user14 <nleknh@gmail.com>\n"
+"PO-Revision-Date: 2017-09-23 19:05+0000\n"
+"Last-Translator: Rezső Páder <rezso@rezso.net>\n"
 "Language-Team: Hungarian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/hu/)\n"
 "Language: hu\n"
@@ -96,9 +96,8 @@ msgid "Display by _default"
 msgstr "Alapértelmezetten megjelenített"
 
 #: ../panel-plugin/page.cpp:268
-#, fuzzy
 msgid "Edit Application..."
-msgstr "_Alkalmazások szerkesztése"
+msgstr "Alkalmazás szerkesztése..."
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -322,9 +321,8 @@ msgid "Unable to add launcher to panel."
 msgstr "Nem lehet az ikont kirakni a tálcára."
 
 #: ../panel-plugin/page.cpp:447
-#, fuzzy
 msgid "Unable to edit launcher."
-msgstr "Nem lehet az ikont kirakni a tálcára."
+msgstr "Az indító nem szerkeszthető."
 
 #: ../panel-plugin/configuration-dialog.cpp:492
 #, c-format
