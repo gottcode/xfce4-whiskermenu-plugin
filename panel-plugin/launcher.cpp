@@ -105,7 +105,7 @@ Launcher::Launcher(GarconMenuItem* item) :
 {
 	// Fetch icon
 	const gchar* icon = garcon_menu_item_get_icon_name(m_item);
-	set_icon(icon);
+	set_icon(icon ? icon : "application-x-executable");
 
 	// Fetch text
 	const gchar* name = garcon_menu_item_get_name(m_item);

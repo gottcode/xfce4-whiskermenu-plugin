@@ -17,6 +17,7 @@
 
 #include "launcher-icon-view.h"
 
+#include "icon-renderer.h"
 #include "settings.h"
 #include "slot.h"
 
@@ -33,15 +34,14 @@ LauncherIconView::LauncherIconView() :
 	// Create the view
 	m_view = GTK_ICON_VIEW(gtk_icon_view_new());
 
-	m_icon_renderer = exo_cell_renderer_icon_new();
+	m_icon_renderer = whiskermenu_icon_renderer_new();
 	g_object_set(m_icon_renderer,
-			"follow-state", false,
 			"xalign", 0.5,
 			"yalign", 1.0,
 			NULL);
 	GtkCellLayout* cell_layout = GTK_CELL_LAYOUT(m_view);
 	gtk_cell_layout_pack_start(cell_layout, m_icon_renderer, false);
-	gtk_cell_layout_set_attributes(cell_layout, m_icon_renderer, "gicon", COLUMN_ICON, NULL);
+	gtk_cell_layout_set_attributes(cell_layout, m_icon_renderer, "gicon", COLUMN_ICON, "launcher", COLUMN_LAUNCHER, NULL);
 
 	gtk_icon_view_set_markup_column(m_view, COLUMN_TEXT);
 
