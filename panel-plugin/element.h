@@ -77,17 +77,7 @@ public:
 	}
 
 protected:
-	void set_icon(const gchar* icon)
-	{
-		g_free(m_icon);
-		m_icon = g_strdup(icon);
-	}
-
-	void set_icon(gchar* icon)
-	{
-		g_free(m_icon);
-		m_icon = icon;
-	}
+	void set_icon(const gchar* icon);
 
 	void set_text(const gchar* text)
 	{

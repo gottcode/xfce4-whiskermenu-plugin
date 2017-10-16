@@ -74,7 +74,7 @@ add_library(whiskermenu MODULE
 	command.cpp
 	command-edit.cpp
 	configuration-dialog.cpp
-	element.h
+	element.cpp
 	favorites-page.cpp
 	icon-size.cpp
 	launcher.cpp

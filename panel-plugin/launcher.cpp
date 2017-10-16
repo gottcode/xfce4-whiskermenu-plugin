@@ -105,37 +105,7 @@ Launcher::Launcher(GarconMenuItem* item) :
 {
 	// Fetch icon
 	const gchar* icon = garcon_menu_item_get_icon_name(m_item);
-	if (G_LIKELY(icon))
-	{
-		if (!g_path_is_absolute(icon))
-		{
-			gchar* pos = g_strrstr(icon, ".");
-			if (!pos)
-			{
-				set_icon(icon);
-			}
-			else
-			{
-				gchar* suffix = g_utf8_casefold(pos, -1);
-				if ((strcmp(suffix, ".png") == 0)
-						|| (strcmp(suffix, ".xpm") == 0)
-						|| (strcmp(suffix, ".svg") == 0)
-						|| (strcmp(suffix, ".svgz") == 0))
-				{
-					set_icon(g_strndup(icon, pos - icon));
-				}
-				else
-				{
-					set_icon(icon);
-				}
-				g_free(suffix);
-			}
-		}
-		else
-		{
-			set_icon(icon);
-		}
-	}
+	set_icon(icon);
 
 	// Fetch text
 	const gchar* name = garcon_menu_item_get_name(m_item);
