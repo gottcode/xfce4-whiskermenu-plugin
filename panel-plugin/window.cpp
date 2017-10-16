@@ -125,6 +125,16 @@ WhiskerMenu::Window::Window() :
 	gtk_frame_set_shadow_type(GTK_FRAME(frame), GTK_SHADOW_OUT);
 	gtk_container_add(GTK_CONTAINER(m_window), frame);
 
+	// Create window contents stack
+	m_window_stack = GTK_STACK(gtk_stack_new());
+	gtk_container_add(GTK_CONTAINER(frame), GTK_WIDGET(m_window_stack));
+
+	// Create loading message
+	m_window_load_spinner = GTK_SPINNER(gtk_spinner_new());
+	gtk_widget_set_halign(GTK_WIDGET(m_window_load_spinner), GTK_ALIGN_CENTER);
+	gtk_widget_set_valign(GTK_WIDGET(m_window_load_spinner), GTK_ALIGN_CENTER);
+	gtk_stack_add_named(m_window_stack, GTK_WIDGET(m_window_load_spinner), "load");
+
 	// Create the profile picture
 	m_profilepic = new ProfilePicture(this);
 
@@ -191,8 +201,8 @@ WhiskerMenu::Window::Window() :
 
 	// Create box for packing children
 	m_vbox = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 6));
-	gtk_container_add(GTK_CONTAINER(frame), GTK_WIDGET(m_vbox));
 	gtk_container_set_border_width(GTK_CONTAINER(m_vbox), 2);
+	gtk_stack_add_named(m_window_stack, GTK_WIDGET(m_vbox), "contents");
 
 	// Create box for packing commands
 	m_commands_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0));
@@ -339,10 +349,15 @@ void WhiskerMenu::Window::show(GtkWidget* parent, bool horizontal)
 	m_recent->enforce_item_count();
 
 	// Make sure applications list is current; does nothing unless list has changed
-	m_applications->load_applications();
-
-	// Focus search entry
-	gtk_widget_grab_focus(GTK_WIDGET(m_search_entry));
+	if (m_applications->load_applications())
+	{
+		set_loaded();
+	}
+	else
+	{
+		gtk_stack_set_visible_child_name(m_window_stack, "load");
+		gtk_spinner_start(m_window_load_spinner);
+	}
 
 	// Update default page
 	if (wm_settings->display_recent && (m_default_page == m_favorites))
@@ -686,6 +701,18 @@ void WhiskerMenu::Window::set_items()
 	// Handle switching to favorites are added
 	GtkTreeModel* favorites_model = m_favorites->get_view()->get_model();
 	g_signal_connect_slot<GtkTreeModel*, GtkTreePath*, GtkTreeIter*>(favorites_model, "row-inserted", &Window::show_favorites, this);
+}
+
+//-----------------------------------------------------------------------------
+
+void WhiskerMenu::Window::set_loaded()
+{
+	// Hide loading spinner
+	gtk_spinner_stop(m_window_load_spinner);
+	gtk_stack_set_visible_child_full(m_window_stack, "contents", GTK_STACK_TRANSITION_TYPE_CROSSFADE);
+
+	// Focus search entry
+	gtk_widget_grab_focus(GTK_WIDGET(m_search_entry));
 }
 
 //-----------------------------------------------------------------------------

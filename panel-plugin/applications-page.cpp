@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015, 2016 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015, 2016, 2017 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -49,6 +49,7 @@ ApplicationsPage::ApplicationsPage(Window* window) :
 	Page(window),
 	m_garcon_menu(NULL),
 	m_garcon_settings_menu(NULL),
+	m_load_thread(NULL),
 	m_load_status(STATUS_INVALID)
 {
 	// Set desktop environment for applications
@@ -161,20 +162,36 @@ void ApplicationsPage::invalidate_applications()
 
 //-----------------------------------------------------------------------------
 
-void ApplicationsPage::load_applications()
+bool ApplicationsPage::load_applications()
 {
 	// Check if already loaded
 	if (m_load_status == STATUS_LOADED)
 	{
-		return;
+		return true;
+	}
+	// Check if currently loading
+	else if (m_load_status == STATUS_LOADING)
+	{
+		return false;
+	}
+	// Check if loading garcon
+	else if (m_load_thread)
+	{
+		return false;
 	}
 	m_load_status = STATUS_LOADING;
 
 	// Load menu
 	clear_applications();
-	load_contents();
 
-	return;
+	// Load contents in thread if possible
+	m_load_thread = g_thread_try_new(NULL, &ApplicationsPage::load_garcon_menu_slot, this, NULL);
+	if (!m_load_thread)
+	{
+		load_garcon_menu();
+	}
+
+	return false;
 }
 
 //-----------------------------------------------------------------------------
@@ -225,7 +242,7 @@ void ApplicationsPage::clear_applications()
 
 //-----------------------------------------------------------------------------
 
-void ApplicationsPage::load_contents()
+void ApplicationsPage::load_garcon_menu()
 {
 	// Create menu
 	if (wm_settings->custom_menu_file.empty())
@@ -288,9 +305,26 @@ void ApplicationsPage::load_contents()
 	category->sort();
 	m_categories.insert(m_categories.begin(), category);
 
+	g_idle_add(&ApplicationsPage::load_contents_slot, this);
+}
+
+//-----------------------------------------------------------------------------
+
+void ApplicationsPage::load_contents()
+{
+	if (!m_garcon_menu)
+	{
+		get_window()->set_loaded();
+
+		m_load_status = STATUS_INVALID;
+		m_load_thread = NULL;
+
+		return;
+	}
+
 	// Set all applications category
 	get_view()->set_fixed_height_mode(true);
-	get_view()->set_model(category->get_model());
+	get_view()->set_model(m_categories.front()->get_model());
 
 	// Add buttons for categories
 	std::vector<SectionButton*> category_buttons;
@@ -306,8 +340,10 @@ void ApplicationsPage::load_contents()
 
 	// Update menu items of other panels
 	get_window()->set_items();
+	get_window()->set_loaded();
 
 	m_load_status = STATUS_LOADED;
+	m_load_thread = NULL;
 }
 
 //-----------------------------------------------------------------------------

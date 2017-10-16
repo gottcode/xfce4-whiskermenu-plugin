@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015, 2017 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -43,7 +43,7 @@ public:
 	Launcher* get_application(const std::string& desktop_id) const;
 
 	void invalidate_applications();
-	void load_applications();
+	bool load_applications();
 	void reload_category_icon_size();
 
 private:
@@ -54,11 +54,24 @@ private:
 	void load_menu(GarconMenu* menu, Category* parent_category);
 	void load_menu_item(GarconMenuItem* menu_item, Category* category);
 
+	static gpointer load_garcon_menu_slot(gpointer obj)
+	{
+		reinterpret_cast<ApplicationsPage*>(obj)->load_garcon_menu();
+		return NULL;
+	}
+
+	static gboolean load_contents_slot(gpointer obj)
+	{
+		reinterpret_cast<ApplicationsPage*>(obj)->load_contents();
+		return G_SOURCE_REMOVE;
+	}
+
 private:
 	GarconMenu* m_garcon_menu;
 	GarconMenu* m_garcon_settings_menu;
 	std::vector<Category*> m_categories;
 	std::map<std::string, Launcher*> m_items;
+	GThread* m_load_thread;
 	int m_load_status;
 };
 

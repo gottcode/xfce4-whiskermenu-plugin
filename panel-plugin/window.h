@@ -71,6 +71,7 @@ public:
 	void on_context_menu_destroyed();
 	void set_categories(const std::vector<SectionButton*>& categories);
 	void set_items();
+	void set_loaded();
 	void unset_items();
 
 private:
@@ -93,6 +94,9 @@ private:
 
 private:
 	GtkWindow* m_window;
+
+	GtkStack* m_window_stack;
+	GtkSpinner* m_window_load_spinner;
 
 	GtkBox* m_vbox;
 	GtkBox* m_title_box;
