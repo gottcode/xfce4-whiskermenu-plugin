@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2017 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -69,7 +69,7 @@ public:
 	void sort();
 
 private:
-	void insert_items(GtkTreeStore* model, GtkTreeIter* parent, const gchar* fallback_icon);
+	void insert_items(GtkTreeStore* model, GtkTreeIter* parent);
 	void insert_items(GtkListStore* model);
 	void merge();
 	void unset_model();

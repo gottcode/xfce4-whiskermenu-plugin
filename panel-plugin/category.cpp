@@ -22,6 +22,7 @@
 
 #include <algorithm>
 
+#include <exo/exo.h>
 #include <glib/gi18n-lib.h>
 
 using namespace WhiskerMenu;
@@ -57,10 +58,9 @@ Category::Category(GarconMenuDirectory* directory) :
 	}
 	else
 	{
-		icon = "applications-other";
 		text = _("All Applications");
 	}
-	set_icon(icon ? icon : "");
+	set_icon(!exo_str_is_empty(icon) ? icon : "applications-other");
 	set_text(text ? text : "");
 	set_tooltip(tooltip ? tooltip : "");
 }
@@ -108,7 +108,7 @@ GtkTreeModel* Category::get_model()
 					G_TYPE_STRING,
 					G_TYPE_STRING,
 					G_TYPE_POINTER);
-			insert_items(model, NULL, get_icon());
+			insert_items(model, NULL);
 			m_model = GTK_TREE_MODEL(model);
 		}
 		else
@@ -180,7 +180,7 @@ void Category::sort()
 
 //-----------------------------------------------------------------------------
 
-void Category::insert_items(GtkTreeStore* model, GtkTreeIter* parent, const gchar* fallback_icon)
+void Category::insert_items(GtkTreeStore* model, GtkTreeIter* parent)
 {
 	for (std::vector<Element*>::size_type i = 0, end = m_items.size(); i < end; ++i)
 	{
@@ -193,24 +193,19 @@ void Category::insert_items(GtkTreeStore* model, GtkTreeIter* parent, const gcha
 				continue;
 			}
 
-			const gchar* icon = category->get_icon();
-			if (!gtk_icon_theme_has_icon(gtk_icon_theme_get_default(), icon))
-			{
-				icon = fallback_icon;
-			}
 			gchar* text = g_markup_escape_text(category->get_text(), -1);
 			const gchar* tooltip = category->get_tooltip();
 
 			GtkTreeIter iter;
 			gtk_tree_store_insert_with_values(model,
 					&iter, parent, INT_MAX,
-					LauncherView::COLUMN_ICON, icon,
+					LauncherView::COLUMN_ICON, category->get_icon(),
 					LauncherView::COLUMN_TEXT, text,
 					LauncherView::COLUMN_TOOLTIP, tooltip,
 					LauncherView::COLUMN_LAUNCHER, NULL,
 					-1);
 			g_free(text);
-			category->insert_items(model, &iter, icon);
+			category->insert_items(model, &iter);
 		}
 		else if (element)
 		{
