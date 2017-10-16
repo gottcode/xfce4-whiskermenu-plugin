@@ -39,7 +39,10 @@ public:
 
 	virtual ~Element()
 	{
-		g_free(m_icon);
+		if (m_icon)
+		{
+			g_object_unref(m_icon);
+		}
 		g_free(m_text);
 		g_free(m_tooltip);
 		g_free(m_sort_key);
@@ -47,7 +50,7 @@ public:
 
 	virtual int get_type() const = 0;
 
-	const gchar* get_icon() const
+	GIcon* get_icon() const
 	{
 		return m_icon;
 	}
@@ -106,7 +109,7 @@ private:
 	Element& operator=(const Element&);
 
 private:
-	gchar* m_icon;
+	GIcon* m_icon;
 	gchar* m_text;
 	gchar* m_tooltip;
 	gchar* m_sort_key;

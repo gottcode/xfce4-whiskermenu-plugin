@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2016 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2016, 2017 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@ namespace WhiskerMenu
 class SectionButton
 {
 public:
-	SectionButton(const gchar* icon, const gchar* text);
+	SectionButton(GIcon* icon, const gchar* text);
 	~SectionButton();
 
 	GtkRadioButton* get_button() const
@@ -61,7 +61,6 @@ private:
 	GtkBox* m_box;
 	GtkWidget* m_icon;
 	GtkWidget* m_label;
-	gchar* m_icon_name;
 };
 
 }

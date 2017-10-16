@@ -109,7 +109,7 @@ void SearchPage::set_filter(const gchar* filter)
 	// Show search results
 	GtkListStore* store = gtk_list_store_new(
 			LauncherView::N_COLUMNS,
-			G_TYPE_STRING,
+			G_TYPE_ICON,
 			G_TYPE_STRING,
 			G_TYPE_STRING,
 			G_TYPE_POINTER);

@@ -254,10 +254,9 @@ void LauncherTreeView::create_column()
 	if (m_icon_size > 1)
 	{
 		GtkCellRenderer* icon_renderer = exo_cell_renderer_icon_new();
-		g_object_set(icon_renderer, "follow-state", false, NULL);
-		g_object_set(icon_renderer, "size", m_icon_size, NULL);
+		g_object_set(icon_renderer, "follow-state", false, "size", m_icon_size, NULL);
 		gtk_tree_view_column_pack_start(m_column, icon_renderer, false);
-		gtk_tree_view_column_add_attribute(m_column, icon_renderer, "icon", COLUMN_ICON);
+		gtk_tree_view_column_add_attribute(m_column, icon_renderer, "gicon", COLUMN_ICON);
 	}
 
 	GtkCellRenderer* text_renderer = gtk_cell_renderer_text_new();

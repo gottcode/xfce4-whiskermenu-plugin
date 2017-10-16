@@ -79,7 +79,7 @@ GtkTreeModel* ApplicationsPage::create_launcher_model(std::vector<std::string>& 
 	// Create new model for treeview
 	GtkListStore* store = gtk_list_store_new(
 			LauncherView::N_COLUMNS,
-			G_TYPE_STRING,
+			G_TYPE_ICON,
 			G_TYPE_STRING,
 			G_TYPE_STRING,
 			G_TYPE_POINTER);

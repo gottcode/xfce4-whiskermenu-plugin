@@ -104,7 +104,7 @@ GtkTreeModel* Category::get_model()
 		{
 			GtkTreeStore* model = gtk_tree_store_new(
 					LauncherView::N_COLUMNS,
-					G_TYPE_STRING,
+					G_TYPE_ICON,
 					G_TYPE_STRING,
 					G_TYPE_STRING,
 					G_TYPE_POINTER);
@@ -115,7 +115,7 @@ GtkTreeModel* Category::get_model()
 		{
 			GtkListStore* model = gtk_list_store_new(
 					LauncherView::N_COLUMNS,
-					G_TYPE_STRING,
+					G_TYPE_ICON,
 					G_TYPE_STRING,
 					G_TYPE_STRING,
 					G_TYPE_POINTER);

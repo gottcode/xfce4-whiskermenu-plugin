@@ -45,8 +45,7 @@ static gboolean on_enter_notify_event(GtkWidget*, GdkEventCrossing*, GtkToggleBu
 
 //-----------------------------------------------------------------------------
 
-SectionButton::SectionButton(const gchar* icon, const gchar* text) :
-	m_icon_name(g_strdup(icon))
+SectionButton::SectionButton(GIcon* icon, const gchar* text)
 {
 	m_button = GTK_RADIO_BUTTON(gtk_radio_button_new(NULL));
 	gtk_toggle_button_set_mode(GTK_TOGGLE_BUTTON(m_button), false);
@@ -58,18 +57,7 @@ SectionButton::SectionButton(const gchar* icon, const gchar* text) :
 	m_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 4));
 	gtk_container_add(GTK_CONTAINER(m_button), GTK_WIDGET(m_box));
 
-	if (!g_path_is_absolute(icon))
-	{
-		m_icon = gtk_image_new_from_icon_name(icon, GTK_ICON_SIZE_BUTTON);
-	}
-	else
-	{
-		GFile* file = g_file_new_for_path(icon);
-		GIcon* gicon = g_file_icon_new(file);
-		m_icon = gtk_image_new_from_gicon(gicon, GTK_ICON_SIZE_BUTTON);
-		g_object_unref(gicon);
-		g_object_unref(file);
-	}
+	m_icon = gtk_image_new_from_gicon(icon, GTK_ICON_SIZE_BUTTON);
 	gtk_box_pack_start(m_box, m_icon, false, false, 0);
 
 	m_label = gtk_label_new(text);
@@ -84,7 +72,6 @@ SectionButton::SectionButton(const gchar* icon, const gchar* text) :
 
 SectionButton::~SectionButton()
 {
-	g_free(m_icon_name);
 	gtk_widget_destroy(GTK_WIDGET(m_button));
 }
 

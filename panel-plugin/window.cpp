@@ -155,13 +155,17 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	// Create favorites
 	m_favorites = new FavoritesPage(this);
 
-	m_favorites_button = new SectionButton("user-bookmarks", _("Favorites"));
+	GIcon* icon = g_themed_icon_new("user-bookmarks");
+	m_favorites_button = new SectionButton(icon, _("Favorites"));
+	g_object_unref(icon);
 	g_signal_connect_slot<GtkToggleButton*>(m_favorites_button->get_button(), "toggled", &Window::favorites_toggled, this);
 
 	// Create recent
 	m_recent = new RecentPage(this);
 
-	m_recent_button = new SectionButton("document-open-recent", _("Recently Used"));
+	icon = g_themed_icon_new("document-open-recent");
+	m_recent_button = new SectionButton(icon, _("Recently Used"));
+	g_object_unref(icon);
 	m_recent_button->set_group(m_favorites_button->get_group());
 	g_signal_connect_slot<GtkToggleButton*>(m_recent_button->get_button(), "toggled", &Window::recent_toggled, this);
 

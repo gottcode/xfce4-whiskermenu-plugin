@@ -41,7 +41,7 @@ LauncherIconView::LauncherIconView() :
 			NULL);
 	GtkCellLayout* cell_layout = GTK_CELL_LAYOUT(m_view);
 	gtk_cell_layout_pack_start(cell_layout, m_icon_renderer, false);
-	gtk_cell_layout_set_attributes(cell_layout, m_icon_renderer, "icon", COLUMN_ICON, NULL);
+	gtk_cell_layout_set_attributes(cell_layout, m_icon_renderer, "gicon", COLUMN_ICON, NULL);
 
 	gtk_icon_view_set_markup_column(m_view, COLUMN_TEXT);
 

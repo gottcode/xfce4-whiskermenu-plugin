@@ -25,7 +25,7 @@ void Element::set_icon(const gchar* icon)
 {
 	if (m_icon)
 	{
-		g_free(m_icon);
+		g_object_unref(m_icon);
 		m_icon = NULL;
 	}
 
@@ -39,7 +39,7 @@ void Element::set_icon(const gchar* icon)
 		const gchar* pos = g_strrstr(icon, ".");
 		if (!pos)
 		{
-			m_icon = g_strdup(icon);
+			m_icon = g_themed_icon_new_with_default_fallbacks(icon);
 		}
 		else
 		{
@@ -49,18 +49,22 @@ void Element::set_icon(const gchar* icon)
 					|| (g_strcmp0(suffix, ".svg") == 0)
 					|| (g_strcmp0(suffix, ".svgz") == 0))
 			{
-				m_icon = g_strndup(icon, pos - icon);
+				gchar* name = g_strndup(icon, pos - icon);
+				m_icon = g_themed_icon_new_with_default_fallbacks(name);
+				g_free(name);
 			}
 			else
 			{
-				m_icon = g_strdup(icon);
+				m_icon = g_themed_icon_new_with_default_fallbacks(icon);
 			}
 			g_free(suffix);
 		}
 	}
 	else
 	{
-		m_icon = g_strdup(icon);
+		GFile* file = g_file_new_for_path(icon);
+		m_icon = g_file_icon_new(file);
+		g_object_unref(file);
 	}
 }
 
