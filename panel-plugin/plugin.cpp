@@ -121,6 +121,16 @@ static bool panel_utils_grab_available()
 	return grab_succeed;
 }
 
+static void widget_add_css(GtkWidget* widget, const gchar* css)
+{
+	GtkCssProvider* provider = gtk_css_provider_new();
+	gtk_css_provider_load_from_data(provider, css, -1, NULL);
+	gtk_style_context_add_provider(gtk_widget_get_style_context(widget),
+			GTK_STYLE_PROVIDER(provider),
+			GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+	g_object_unref(provider);
+}
+
 //-----------------------------------------------------------------------------
 
 Plugin::Plugin(XfcePanelPlugin* plugin) :
@@ -151,11 +161,14 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	// Create toggle button
 	m_button = xfce_panel_create_toggle_button();
 	gtk_widget_set_name(m_button, "whiskermenu-button");
+#if !LIBXFCE4PANEL_CHECK_VERSION(4,13,0)
+	widget_add_css(m_button, ".xfce4-panel button { padding: 1px; }");
 	gtk_button_set_relief(GTK_BUTTON(m_button), GTK_RELIEF_NONE);
 #if GTK_CHECK_VERSION(3,20,0)
 	gtk_widget_set_focus_on_click(GTK_WIDGET(m_button), false);
 #else
 	gtk_button_set_focus_on_click(GTK_BUTTON(m_button), false);
+#endif
 #endif
 	g_signal_connect_slot(m_button, "toggled", &Plugin::button_toggled, this);
 	gtk_widget_show(m_button);
@@ -166,6 +179,7 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	gtk_widget_show(GTK_WIDGET(m_button_box));
 
 	m_button_icon = GTK_IMAGE(gtk_image_new());
+	widget_add_css(GTK_WIDGET(m_button_icon), "image { padding: 3px; }");
 	icon_changed(wm_settings->button_icon_name.c_str());
 	gtk_box_pack_start(m_button_box, GTK_WIDGET(m_button_icon), true, false, 0);
 	if (wm_settings->button_icon_visible)
@@ -454,20 +468,19 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 			0, GTK_PACK_START);
 
 	// Resize icon
-#if (LIBXFCE4PANEL_CHECK_VERSION(4,13,0))
+#if LIBXFCE4PANEL_CHECK_VERSION(4,13,0)
 	gint icon_size = xfce_panel_plugin_get_icon_size(m_plugin);
 #else
 	gint icon_size = size / xfce_panel_plugin_get_nrows(m_plugin);
-	icon_size -= 4;
-	if (icon_size < 24)
+	if (icon_size <= 27)
 	{
 		icon_size = 16;
 	}
-	else if (icon_size < 32)
+	else if (icon_size < 34)
 	{
 		icon_size = 24;
 	}
-	else if (icon_size < 36)
+	else if (icon_size < 40)
 	{
 		icon_size = 32;
 	}
