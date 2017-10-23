@@ -28,6 +28,7 @@ namespace WhiskerMenu
 class ApplicationsPage;
 class FavoritesPage;
 class Page;
+class Plugin;
 class ProfilePicture;
 class ResizerWidget;
 class RecentPage;
@@ -37,7 +38,7 @@ class SectionButton;
 class Window
 {
 public:
-	explicit Window();
+	explicit Window(Plugin* plugin);
 	~Window();
 
 	GtkWidget* get_widget() const
@@ -93,6 +94,8 @@ private:
 	void search();
 
 private:
+	Plugin* m_plugin;
+
 	GtkWindow* m_window;
 
 	GtkStack* m_window_stack;

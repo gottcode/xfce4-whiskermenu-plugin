@@ -58,6 +58,7 @@ public:
 	void set_button_title(const std::string& title);
 	void set_button_icon_name(const std::string& icon);
 	void set_configure_enabled(bool enabled);
+	void set_loaded(bool loaded);
 
 private:
 	void button_toggled(GtkToggleButton* button);

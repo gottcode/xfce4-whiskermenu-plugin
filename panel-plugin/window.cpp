@@ -21,6 +21,7 @@
 #include "command.h"
 #include "favorites-page.h"
 #include "launcher-view.h"
+#include "plugin.h"
 #include "profile-picture.h"
 #include "recent-page.h"
 #include "resizer-widget.h"
@@ -82,7 +83,8 @@ static void ungrab_pointer()
 
 //-----------------------------------------------------------------------------
 
-WhiskerMenu::Window::Window() :
+WhiskerMenu::Window::Window(Plugin* plugin) :
+	m_plugin(plugin),
 	m_window(NULL),
 	m_search_cover(GTK_STACK_TRANSITION_TYPE_OVER_DOWN),
 	m_search_uncover(GTK_STACK_TRANSITION_TYPE_UNDER_UP),
@@ -355,6 +357,7 @@ void WhiskerMenu::Window::show(GtkWidget* parent, bool horizontal)
 	}
 	else
 	{
+		m_plugin->set_loaded(false);
 		gtk_stack_set_visible_child_name(m_window_stack, "load");
 		gtk_spinner_start(m_window_load_spinner);
 	}
@@ -713,6 +716,9 @@ void WhiskerMenu::Window::set_loaded()
 
 	// Focus search entry
 	gtk_widget_grab_focus(GTK_WIDGET(m_search_entry));
+
+	// Show panel button
+	m_plugin->set_loaded(true);
 }
 
 //-----------------------------------------------------------------------------

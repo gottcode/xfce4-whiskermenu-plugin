@@ -186,6 +186,7 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	{
 		gtk_widget_show(GTK_WIDGET(m_button_icon));
 	}
+	gtk_widget_set_sensitive(GTK_WIDGET(m_button_icon), false);
 
 	m_button_label = GTK_LABEL(gtk_label_new(NULL));
 	gtk_label_set_markup(m_button_label, wm_settings->button_title.c_str());
@@ -194,6 +195,7 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	{
 		gtk_widget_show(GTK_WIDGET(m_button_label));
 	}
+	gtk_widget_set_sensitive(GTK_WIDGET(m_button_label), false);
 
 	// Add plugin to panel
 	gtk_container_add(GTK_CONTAINER(plugin), m_button);
@@ -218,7 +220,7 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	g_signal_connect_slot<GtkWidget*,GdkScreen*>(m_button, "screen-changed", &Plugin::update_size, this);
 
 	// Create menu window
-	m_window = new Window;
+	m_window = new Window(this);
 	g_signal_connect_slot<GtkWidget*>(m_window->get_widget(), "unmap", &Plugin::menu_hidden, this);
 }
 
@@ -334,6 +336,14 @@ void Plugin::set_configure_enabled(bool enabled)
 	{
 		xfce_panel_plugin_block_menu(m_plugin);
 	}
+}
+
+//-----------------------------------------------------------------------------
+
+void Plugin::set_loaded(bool loaded)
+{
+	gtk_widget_set_sensitive(GTK_WIDGET(m_button_icon), loaded);
+	gtk_widget_set_sensitive(GTK_WIDGET(m_button_label), loaded);
 }
 
 //-----------------------------------------------------------------------------
@@ -539,7 +549,7 @@ void Plugin::show_menu(GtkWidget* parent, bool horizontal)
 		if ((m_opacity == 100) || (wm_settings->menu_opacity == 100))
 		{
 			delete m_window;
-			m_window = new Window;
+			m_window = new Window(this);
 			g_signal_connect_slot<GtkWidget*>(m_window->get_widget(), "unmap", &Plugin::menu_hidden, this);
 		}
 		m_opacity = wm_settings->menu_opacity;
