@@ -98,8 +98,12 @@ private:
 	GtkBox* m_title_box;
 	GtkBox* m_commands_box;
 	GtkBox* m_search_box;
+	GtkStack* m_contents_stack;
 	GtkBox* m_contents_box;
 	GtkStack* m_panels_stack;
+
+	GtkStackTransitionType m_search_cover;
+	GtkStackTransitionType m_search_uncover;
 
 	ProfilePicture* m_profilepic;
 	GtkLabel* m_username;

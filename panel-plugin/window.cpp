@@ -84,6 +84,8 @@ static void ungrab_pointer()
 
 WhiskerMenu::Window::Window() :
 	m_window(NULL),
+	m_search_cover(GTK_STACK_TRANSITION_TYPE_OVER_DOWN),
+	m_search_uncover(GTK_STACK_TRANSITION_TYPE_UNDER_UP),
 	m_sidebar_size_group(NULL),
 	m_layout_left(true),
 	m_layout_bottom(true),
@@ -215,9 +217,11 @@ WhiskerMenu::Window::Window() :
 	gtk_box_pack_start(m_search_box, GTK_WIDGET(m_search_entry), true, true, 0);
 
 	// Create box for packing launcher pages and sidebar
+	m_contents_stack = GTK_STACK(gtk_stack_new());
 	m_contents_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 6));
-	gtk_box_pack_start(m_vbox, GTK_WIDGET(m_contents_box), true, true, 0);
-	gtk_box_pack_start(m_contents_box, m_search_results->get_widget(), true, true, 0);
+	gtk_stack_add_named(m_contents_stack, GTK_WIDGET(m_contents_box), "contents");
+	gtk_stack_add_named(m_contents_stack, m_search_results->get_widget(), "search");
+	gtk_box_pack_start(m_vbox, GTK_WIDGET(m_contents_stack), true, true, 0);
 
 	// Create box for packing launcher pages
 	m_panels_stack = GTK_STACK(gtk_stack_new());
@@ -245,9 +249,7 @@ WhiskerMenu::Window::Window() :
 
 	// Show widgets
 	gtk_widget_show_all(frame);
-	gtk_widget_hide(m_search_results->get_widget());
 	m_default_button->set_active(true);
-	gtk_widget_show(frame);
 
 	// Resize to last known size
 	gtk_window_set_default_size(m_window, m_geometry.width, m_geometry.height);
@@ -593,26 +595,38 @@ void WhiskerMenu::Window::show(GtkWidget* parent, bool horizontal)
 		if (m_layout_bottom && m_layout_search_alternate)
 		{
 			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_title_box), 0);
-			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_contents_box), 1);
+			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_contents_stack), 1);
 			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_search_box), 2);
+
+			m_search_cover = GTK_STACK_TRANSITION_TYPE_OVER_UP;
+			m_search_uncover = GTK_STACK_TRANSITION_TYPE_UNDER_DOWN;
 		}
 		else if (m_layout_search_alternate)
 		{
 			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_title_box), 2);
-			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_contents_box), 1);
+			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_contents_stack), 1);
 			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_search_box), 0);
+
+			m_search_cover = GTK_STACK_TRANSITION_TYPE_OVER_DOWN;
+			m_search_uncover = GTK_STACK_TRANSITION_TYPE_UNDER_UP;
 		}
 		else if (m_layout_bottom)
 		{
 			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_title_box), 0);
 			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_search_box), 1);
-			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_contents_box), 2);
+			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_contents_stack), 2);
+
+			m_search_cover = GTK_STACK_TRANSITION_TYPE_OVER_DOWN;
+			m_search_uncover = GTK_STACK_TRANSITION_TYPE_UNDER_UP;
 		}
 		else
 		{
 			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_title_box), 2);
 			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_search_box), 1);
-			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_contents_box), 0);
+			gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_contents_stack), 0);
+
+			m_search_cover = GTK_STACK_TRANSITION_TYPE_OVER_UP;
+			m_search_uncover = GTK_STACK_TRANSITION_TYPE_UNDER_DOWN;
 		}
 	}
 
@@ -746,7 +760,7 @@ gboolean WhiskerMenu::Window::on_key_press_event(GtkWidget* widget, GdkEvent* ev
 	}
 
 	Page* page = NULL;
-	if (gtk_widget_get_visible(m_search_results->get_widget()))
+	if (gtk_stack_get_visible_child(m_contents_stack) == m_search_results->get_widget())
 	{
 		page = m_search_results;
 	}
@@ -975,16 +989,12 @@ void WhiskerMenu::Window::search()
 	if (visible)
 	{
 		// Show search results
-		gtk_widget_hide(GTK_WIDGET(m_sidebar));
-		gtk_widget_hide(GTK_WIDGET(m_panels_stack));
-		gtk_widget_show(m_search_results->get_widget());
+		gtk_stack_set_visible_child_full(m_contents_stack, "search", m_search_cover);
 	}
 	else
 	{
 		// Show active panel
-		gtk_widget_hide(m_search_results->get_widget());
-		gtk_widget_show(GTK_WIDGET(m_panels_stack));
-		gtk_widget_show(GTK_WIDGET(m_sidebar));
+		gtk_stack_set_visible_child_full(m_contents_stack, "contents", m_search_uncover);
 	}
 
 	// Apply filter
