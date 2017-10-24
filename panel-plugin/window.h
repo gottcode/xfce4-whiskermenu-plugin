@@ -99,7 +99,7 @@ private:
 	GtkBox* m_commands_box;
 	GtkBox* m_search_box;
 	GtkBox* m_contents_box;
-	GtkBox* m_panels_box;
+	GtkStack* m_panels_stack;
 
 	ProfilePicture* m_profilepic;
 	GtkLabel* m_username;

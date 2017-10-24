@@ -220,11 +220,11 @@ WhiskerMenu::Window::Window() :
 	gtk_box_pack_start(m_contents_box, m_search_results->get_widget(), true, true, 0);
 
 	// Create box for packing launcher pages
-	m_panels_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 0));
-	gtk_box_pack_start(m_contents_box, GTK_WIDGET(m_panels_box), true, true, 0);
-	gtk_box_pack_start(m_panels_box, m_favorites->get_widget(), true, true, 0);
-	gtk_box_pack_start(m_panels_box, m_recent->get_widget(), true, true, 0);
-	gtk_box_pack_start(m_panels_box, m_applications->get_widget(), true, true, 0);
+	m_panels_stack = GTK_STACK(gtk_stack_new());
+	gtk_box_pack_start(m_contents_box, GTK_WIDGET(m_panels_stack), true, true, 0);
+	gtk_stack_add_named(m_panels_stack, m_favorites->get_widget(), "favorites");
+	gtk_stack_add_named(m_panels_stack, m_recent->get_widget(), "recent");
+	gtk_stack_add_named(m_panels_stack, m_applications->get_widget(), "applications");
 
 	// Create box for packing sidebar
 	m_sidebar_buttons = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 0));
@@ -245,9 +245,6 @@ WhiskerMenu::Window::Window() :
 
 	// Show widgets
 	gtk_widget_show_all(frame);
-	gtk_widget_hide(m_favorites->get_widget());
-	gtk_widget_hide(m_recent->get_widget());
-	gtk_widget_hide(m_applications->get_widget());
 	gtk_widget_hide(m_search_results->get_widget());
 	m_default_button->set_active(true);
 	gtk_widget_show(frame);
@@ -306,9 +303,6 @@ void WhiskerMenu::Window::hide()
 	// Hide window
 	gtk_widget_hide(GTK_WIDGET(m_window));
 
-	// Reset mouse cursor by forcing default page to hide
-	gtk_widget_hide(m_default_page->get_widget());
-
 	// Switch back to default page
 	show_default_page();
 }
@@ -347,9 +341,6 @@ void WhiskerMenu::Window::show(GtkWidget* parent, bool horizontal)
 
 	// Focus search entry
 	gtk_widget_grab_focus(GTK_WIDGET(m_search_entry));
-
-	// Reset mouse cursor by forcing default page to hide
-	gtk_widget_show(m_default_page->get_widget());
 
 	// Update default page
 	if (wm_settings->display_recent && (m_default_page == m_favorites))
@@ -518,12 +509,12 @@ void WhiskerMenu::Window::show(GtkWidget* parent, bool horizontal)
 	if ((layout_left && !wm_settings->position_categories_alternate)
 			|| (!layout_left && wm_settings->position_categories_alternate))
 	{
-		gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_panels_box), 1);
+		gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_panels_stack), 1);
 		gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_sidebar), 2);
 	}
 	else
 	{
-		gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_panels_box), 2);
+		gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_panels_stack), 2);
 		gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_sidebar), 1);
 	}
 	if (layout_left != m_layout_left)
@@ -919,9 +910,7 @@ gboolean WhiskerMenu::Window::on_draw_event(GtkWidget* widget, cairo_t* cr)
 void WhiskerMenu::Window::favorites_toggled()
 {
 	m_favorites->reset_selection();
-	gtk_widget_hide(m_recent->get_widget());
-	gtk_widget_hide(m_applications->get_widget());
-	gtk_widget_show_all(m_favorites->get_widget());
+	gtk_stack_set_visible_child_name(m_panels_stack, "favorites");
 	gtk_widget_grab_focus(GTK_WIDGET(m_search_entry));
 }
 
@@ -930,9 +919,7 @@ void WhiskerMenu::Window::favorites_toggled()
 void WhiskerMenu::Window::recent_toggled()
 {
 	m_recent->reset_selection();
-	gtk_widget_hide(m_favorites->get_widget());
-	gtk_widget_hide(m_applications->get_widget());
-	gtk_widget_show_all(m_recent->get_widget());
+	gtk_stack_set_visible_child_name(m_panels_stack, "recent");
 	gtk_widget_grab_focus(GTK_WIDGET(m_search_entry));
 }
 
@@ -941,9 +928,7 @@ void WhiskerMenu::Window::recent_toggled()
 void WhiskerMenu::Window::category_toggled()
 {
 	m_applications->reset_selection();
-	gtk_widget_hide(m_favorites->get_widget());
-	gtk_widget_hide(m_recent->get_widget());
-	gtk_widget_show_all(m_applications->get_widget());
+	gtk_stack_set_visible_child_name(m_panels_stack, "applications");
 	gtk_widget_grab_focus(GTK_WIDGET(m_search_entry));
 }
 
@@ -991,14 +976,14 @@ void WhiskerMenu::Window::search()
 	{
 		// Show search results
 		gtk_widget_hide(GTK_WIDGET(m_sidebar));
-		gtk_widget_hide(GTK_WIDGET(m_panels_box));
+		gtk_widget_hide(GTK_WIDGET(m_panels_stack));
 		gtk_widget_show(m_search_results->get_widget());
 	}
 	else
 	{
 		// Show active panel
 		gtk_widget_hide(m_search_results->get_widget());
-		gtk_widget_show(GTK_WIDGET(m_panels_box));
+		gtk_widget_show(GTK_WIDGET(m_panels_stack));
 		gtk_widget_show(GTK_WIDGET(m_sidebar));
 	}
 
