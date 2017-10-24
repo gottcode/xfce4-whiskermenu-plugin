@@ -79,6 +79,8 @@ SectionButton::SectionButton(const gchar* icon, const gchar* text) :
 	m_label = gtk_label_new(text);
 	gtk_box_pack_start(m_box, m_label, false, true, 0);
 
+	gtk_widget_show_all(GTK_WIDGET(m_button));
+
 	reload_icon_size();
 }
 

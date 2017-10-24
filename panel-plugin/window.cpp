@@ -666,7 +666,6 @@ void WhiskerMenu::Window::set_categories(const std::vector<SectionButton*>& cate
 		gtk_box_pack_start(m_sidebar_buttons, GTK_WIDGET((*i)->get_button()), false, false, 0);
 		g_signal_connect_slot<GtkToggleButton*>((*i)->get_button(), "toggled", &Window::category_toggled, this);
 	}
-	gtk_widget_show_all(GTK_WIDGET(m_sidebar_buttons));
 
 	show_default_page();
 }
