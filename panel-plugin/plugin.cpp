@@ -472,7 +472,19 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 	gint icon_size = xfce_panel_plugin_get_icon_size(m_plugin);
 #else
 	gint icon_size = size / xfce_panel_plugin_get_nrows(m_plugin);
-	icon_size -= 8;
+	icon_size -= 4;
+	if (icon_size < 24)
+	{
+		icon_size = 16;
+	}
+	else if (icon_size < 32)
+	{
+		icon_size = 24;
+	}
+	else if (icon_size < 36)
+	{
+		icon_size = 32;
+	}
 #endif
 	gtk_image_set_pixel_size(m_button_icon, icon_size);
 
