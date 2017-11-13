@@ -28,7 +28,7 @@
 namespace WhiskerMenu
 {
 
-struct DesktopAction
+class DesktopAction
 {
 #ifdef GARCON_TYPE_MENU_ITEM_ACTION
 
