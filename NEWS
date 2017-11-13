@@ -1,3 +1,8 @@
+1.7.4
+=====
+- Translation updates: Catalan (Valencian), Danish, Hebrew, Hungarian,
+  Lithuanian, Norwegian Bokmål, Portuguese (Brazil), Russian, Swedish.
+
 1.7.3
 =====
 - Fixed desktop action incorrectly parsing escaped k.
