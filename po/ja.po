@@ -1,15 +1,15 @@
 # Japanese translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2015 Graeme Gott
+# Copyright (C) 2017 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Masato HASHIMOTO <cabezon.hashimoto@gmail.com>, 2013
+# Masato HASHIMOTO <cabezon.hashimoto@gmail.com>, 2013,2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2015-02-21 14:31+0000\n"
+"PO-Revision-Date: 2017-11-29 08:52+0000\n"
 "Last-Translator: Masato HASHIMOTO <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ja/)\n"
@@ -92,9 +92,8 @@ msgid "Display by _default"
 msgstr "デフォルトで表示する(_D)"
 
 #: ../panel-plugin/page.cpp:268
-#, fuzzy
 msgid "Edit Application..."
-msgstr "アプリケーションの編集(_E)"
+msgstr "アプリケーションの編集..."
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -264,13 +263,12 @@ msgid "Show application _descriptions"
 msgstr "アプリケーションの説明を表示する(_D)"
 
 #: ../panel-plugin/configuration-dialog.cpp:609
-#, fuzzy
 msgid "Show application too_ltips"
-msgstr "アプリケーションの説明を表示する(_D)"
+msgstr "アプリケーションにツールチップを表示する(_L)"
 
 #: ../panel-plugin/configuration-dialog.cpp:597
 msgid "Show cate_gory names"
-msgstr ""
+msgstr "カテゴリ名を表示する(_G)"
 
 #: ../panel-plugin/configuration-dialog.cpp:591
 msgid "Show generic application _names"
@@ -321,9 +319,8 @@ msgid "Unable to add launcher to panel."
 msgstr "パネルにランチャーを追加できません。"
 
 #: ../panel-plugin/page.cpp:447
-#, fuzzy
 msgid "Unable to edit launcher."
-msgstr "パネルにランチャーを追加できません。"
+msgstr "ランチャーを編集できません。"
 
 #: ../panel-plugin/configuration-dialog.cpp:492
 #, c-format
@@ -344,7 +341,7 @@ msgstr "とても小さい"
 
 #: ../panel-plugin/settings.cpp:127
 msgid "Web Search"
-msgstr ""
+msgstr "ウェブ検索"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
@@ -415,4 +412,4 @@ msgstr "タイトル(_T):"
 
 #: ../panel-plugin/plugin.cpp:416
 msgid "translator-credits"
-msgstr "Masato HASHIMOTO <cabezon.hashimoto@gmail.com>, 2013-2014."
+msgstr "Masato HASHIMOTO <cabezon.hashimoto@gmail.com>, 2013-2017."
