@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2017-11-01 14:25+0000\n"
+"PO-Revision-Date: 2017-11-17 14:36+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/da/)\n"
@@ -71,7 +71,7 @@ msgstr "K_ommando:"
 
 #: ../panel-plugin/configuration-dialog.cpp:637
 msgid "Categ_ory icon size:"
-msgstr "Ikonstørrelse for kateg_ori:"
+msgstr "Ikonstørrelse for _kategori:"
 
 #: ../panel-plugin/recent-page.cpp:173
 msgid "Clear Recently Used"
@@ -149,7 +149,7 @@ msgstr "Ignorer _favoritter"
 
 #: ../panel-plugin/configuration-dialog.cpp:621
 msgid "Ite_m icon size:"
-msgstr "Ikonstørrelse for ele_ment:"
+msgstr "Ikonstørrelse for _element:"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Large"
@@ -272,7 +272,7 @@ msgstr "Vis kate_gorinavne"
 
 #: ../panel-plugin/configuration-dialog.cpp:591
 msgid "Show generic application _names"
-msgstr "Vis programmers standard_navne"
+msgstr "Vis generiske program_navne"
 
 #: ../panel-plugin/configuration-dialog.cpp:615
 msgid "Show menu hie_rarchy"
