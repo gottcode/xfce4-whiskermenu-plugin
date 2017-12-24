@@ -1,15 +1,15 @@
 # Malay translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2015 Graeme Gott
+# Copyright (C) 2017 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# abuyop <abuyop@gmail.com>, 2013-2015
+# abuyop <abuyop@gmail.com>, 2013-2015,2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2015-03-06 08:33+0000\n"
+"PO-Revision-Date: 2017-12-01 09:53+0000\n"
 "Last-Translator: abuyop <abuyop@gmail.com>\n"
 "Language-Team: Malay (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ms/)\n"
@@ -92,9 +92,8 @@ msgid "Display by _default"
 msgstr "Papar secara lala_i"
 
 #: ../panel-plugin/page.cpp:268
-#, fuzzy
 msgid "Edit Application..."
-msgstr "_Sunting Aplikasi"
+msgstr "Sunting Aplikasi..."
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -262,13 +261,12 @@ msgid "Show application _descriptions"
 msgstr "Tunjuk _keterangan aplikasi"
 
 #: ../panel-plugin/configuration-dialog.cpp:609
-#, fuzzy
 msgid "Show application too_ltips"
-msgstr "Tunjuk _keterangan aplikasi"
+msgstr "Tunjuk pet_ua alat aplikasi"
 
 #: ../panel-plugin/configuration-dialog.cpp:597
 msgid "Show cate_gory names"
-msgstr ""
+msgstr "Tunjuk nama kate_gori"
 
 #: ../panel-plugin/configuration-dialog.cpp:591
 msgid "Show generic application _names"
@@ -319,9 +317,8 @@ msgid "Unable to add launcher to panel."
 msgstr "Tidak boleh tambah pelancar ke panel."
 
 #: ../panel-plugin/page.cpp:447
-#, fuzzy
 msgid "Unable to edit launcher."
-msgstr "Tidak boleh tambah pelancar ke panel."
+msgstr "Tidak boleh sunting pelancar."
 
 #: ../panel-plugin/configuration-dialog.cpp:492
 #, c-format
@@ -342,7 +339,7 @@ msgstr "Sangat Kecil"
 
 #: ../panel-plugin/settings.cpp:127
 msgid "Web Search"
-msgstr ""
+msgstr "Gelintar Sesawang"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
