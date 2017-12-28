@@ -1,3 +1,8 @@
+2.1.5
+=====
+- Fix typo. (bug #14001)
+- Translation updates: Amharic, Danish, Japanese, Malay, Romanian.
+
 2.1.4
 =====
 - Fix excessive padding on panel button. (bug #13611)
@@ -57,6 +62,11 @@
 - Translation updates: Bulgarian, Catalan, Chinese (Taiwan), Czech,
   Dutch, French, Hebrew, Hungarian, Lithuanian, Polish, Slovak,
   Slovenian, Spanish.
+
+1.7.5
+=====
+- Fix typo. (bug #14001)
+- Translation updates: Amharic, Danish, Japanese, Malay, Romanian.
 
 1.7.4
 =====
