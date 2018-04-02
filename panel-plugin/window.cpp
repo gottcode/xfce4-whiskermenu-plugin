@@ -114,6 +114,7 @@ WhiskerMenu::Window::Window() :
 	g_signal_connect_slot(m_window, "key-press-event", &Window::on_key_press_event, this);
 	g_signal_connect_slot(m_window, "key-press-event", &Window::on_key_press_event_after, this, true);
 	g_signal_connect_slot(m_window, "map-event", &Window::on_map_event, this);
+	g_signal_connect_slot(m_window, "state-flags-changed", &Window::on_state_flags_changed_event, this);
 	g_signal_connect_slot(m_window, "configure-event", &Window::on_configure_event, this);
 	g_signal_connect(m_window, "delete_event", G_CALLBACK(gtk_widget_hide_on_delete), NULL);
 
@@ -829,6 +830,19 @@ gboolean WhiskerMenu::Window::on_map_event(GtkWidget*, GdkEvent*)
 
 	// Focus search entry
 	gtk_widget_grab_focus(GTK_WIDGET(m_search_entry));
+
+	return false;
+}
+
+//-----------------------------------------------------------------------------
+
+gboolean WhiskerMenu::Window::on_state_flags_changed_event(GtkWidget* widget, GtkStateFlags)
+{
+	// Refocus and raise window if visible
+	if (gtk_widget_get_visible(widget))
+	{
+		gtk_window_present(m_window);
+	}
 
 	return false;
 }
