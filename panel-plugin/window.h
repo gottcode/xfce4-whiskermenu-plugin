@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2014, 2015, 2016 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014, 2015, 2016, 2018 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -80,6 +80,7 @@ private:
 	gboolean on_key_press_event(GtkWidget* widget, GdkEvent* event);
 	gboolean on_key_press_event_after(GtkWidget* widget, GdkEvent* event);
 	gboolean on_map_event(GtkWidget*, GdkEvent*);
+	gboolean on_state_flags_changed_event(GtkWidget*widget, GtkStateFlags);
 	gboolean on_configure_event(GtkWidget*, GdkEvent* event);
 	void on_screen_changed_event(GtkWidget* widget, GdkScreen* old_screen);
 	gboolean on_draw_event(GtkWidget* widget, cairo_t* cr);
