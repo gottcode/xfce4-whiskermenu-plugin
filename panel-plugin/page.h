@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2017 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2017, 2018 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -68,7 +68,6 @@ private:
 	Launcher* get_selected_launcher() const;
 	void create_context_menu(GtkTreeIter* iter, GdkEvent* event);
 	virtual void extend_context_menu(GtkWidget* menu);
-	static void position_context_menu(GtkMenu*, gint* x, gint* y, gboolean* push_in, Page* page);
 
 private:
 	Window* m_window;

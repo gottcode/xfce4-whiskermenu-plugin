@@ -53,7 +53,6 @@ static bool panel_utils_grab_available()
 
 	GdkWindow* root = gdk_screen_get_root_window(xfce_gdk_screen_get_active(NULL));
 	GdkDisplay* display = gdk_display_get_default();
-#if GTK_CHECK_VERSION(3,20,0)
 	GdkSeat* seat = gdk_display_get_default_seat(display);
 
 	// Don't try to get the grab for longer then 1/4 second
@@ -67,51 +66,6 @@ static bool panel_utils_grab_available()
 		}
 		g_usleep(100);
 	}
-#else
-	GdkDeviceManager* device_manager = gdk_display_get_device_manager(display);
-	GdkDevice* pointer = gdk_device_manager_get_client_pointer(device_manager);
-	GdkDevice* keyboard = gdk_device_get_associated_device(pointer);
-
-	// Don't try to get the grab for longer then 1/4 second
-	GdkGrabStatus grab_pointer = GDK_GRAB_FROZEN;
-	GdkGrabStatus grab_keyboard = GDK_GRAB_FROZEN;
-	for (guint i = 0; i < (G_USEC_PER_SEC / 400); ++i)
-	{
-		grab_keyboard = gdk_device_grab(keyboard,
-				root,
-				GDK_OWNERSHIP_NONE,
-				true,
-				GDK_ALL_EVENTS_MASK,
-				NULL,
-				GDK_CURRENT_TIME);
-		if (grab_keyboard == GDK_GRAB_SUCCESS)
-		{
-			grab_pointer = gdk_device_grab(pointer,
-					root,
-					GDK_OWNERSHIP_NONE,
-					true,
-					GDK_ALL_EVENTS_MASK,
-					NULL,
-					GDK_CURRENT_TIME);
-			if (grab_pointer == GDK_GRAB_SUCCESS)
-			{
-				grab_succeed = true;
-				break;
-			}
-		}
-		g_usleep(100);
-	}
-
-	// Release the grab so the menu window can take it
-	if (grab_pointer == GDK_GRAB_SUCCESS)
-	{
-		gdk_device_ungrab(pointer, GDK_CURRENT_TIME);
-	}
-	if (grab_keyboard == GDK_GRAB_SUCCESS)
-	{
-		gdk_device_ungrab(keyboard, GDK_CURRENT_TIME);
-	}
-#endif
 
 	if (!grab_succeed)
 	{
@@ -164,11 +118,7 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 #if !LIBXFCE4PANEL_CHECK_VERSION(4,13,0)
 	widget_add_css(m_button, ".xfce4-panel button { padding: 1px; }");
 	gtk_button_set_relief(GTK_BUTTON(m_button), GTK_RELIEF_NONE);
-#if GTK_CHECK_VERSION(3,20,0)
 	gtk_widget_set_focus_on_click(GTK_WIDGET(m_button), false);
-#else
-	gtk_button_set_focus_on_click(GTK_BUTTON(m_button), false);
-#endif
 #endif
 	g_signal_connect_slot(m_button, "toggled", &Plugin::button_toggled, this);
 	gtk_widget_show(m_button);

@@ -13,7 +13,7 @@ if(ENABLE_LINKER_OPTIMIZED_HASH_TABLES)
 endif()
 
 find_package(PkgConfig REQUIRED)
-pkg_check_modules(GTK3 REQUIRED gtk+-3.0>=3.12)
+pkg_check_modules(GTK3 REQUIRED gtk+-3.0>=3.22)
 pkg_check_modules(exo REQUIRED exo-2>=0.11)
 pkg_check_modules(garcon REQUIRED garcon-1)
 pkg_check_modules(libxfce4panel REQUIRED libxfce4panel-2.0>=4.11)

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2016, 2017 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2016, 2017, 2018 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -52,11 +52,7 @@ SectionButton::SectionButton(const gchar* icon, const gchar* text) :
 	gtk_toggle_button_set_mode(GTK_TOGGLE_BUTTON(m_button), false);
 	gtk_button_set_relief(GTK_BUTTON(m_button), GTK_RELIEF_NONE);
 	gtk_widget_set_tooltip_text(GTK_WIDGET(m_button), text);
-#if GTK_CHECK_VERSION(3,20,0)
 	gtk_widget_set_focus_on_click(GTK_WIDGET(m_button), false);
-#else
-	gtk_button_set_focus_on_click(GTK_BUTTON(m_button), false);
-#endif
 	g_signal_connect(m_button, "enter-notify-event", G_CALLBACK(on_enter_notify_event), GTK_TOGGLE_BUTTON(m_button));
 
 	m_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 4));
