@@ -40,33 +40,6 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-static void grab_pointer(GtkWidget* widget)
-{
-	if (wm_settings->stay_on_focus_out)
-	{
-		return;
-	}
-
-	GdkDisplay* display = gdk_display_get_default();
-	GdkSeat* seat = gdk_display_get_default_seat(display);
-	GdkWindow* window = gtk_widget_get_window(widget);
-	gdk_seat_grab(seat, window, GDK_SEAT_CAPABILITY_ALL_POINTING, true, nullptr, nullptr, nullptr, nullptr);
-}
-
-static void ungrab_pointer()
-{
-	if (wm_settings->stay_on_focus_out)
-	{
-		return;
-	}
-
-	GdkDisplay* display = gdk_display_get_default();
-	GdkSeat* seat = gdk_display_get_default_seat(display);
-	gdk_seat_ungrab(seat);
-}
-
-//-----------------------------------------------------------------------------
-
 WhiskerMenu::Window::Window(Plugin* plugin) :
 	m_plugin(plugin),
 	m_window(nullptr),
@@ -79,7 +52,8 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	m_layout_categories_alternate(false),
 	m_layout_search_alternate(false),
 	m_layout_commands_alternate(false),
-	m_supports_alpha(false)
+	m_supports_alpha(false),
+	m_child_has_focus(false)
 {
 	// Create the window
 	m_window = GTK_WINDOW(gtk_window_new(GTK_WINDOW_TOPLEVEL));
@@ -92,11 +66,10 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	gtk_window_set_skip_pager_hint(m_window, true);
 	gtk_window_set_type_hint(m_window, GDK_WINDOW_TYPE_HINT_POPUP_MENU);
 	gtk_window_stick(m_window);
-	gtk_widget_add_events(GTK_WIDGET(m_window), GDK_BUTTON_PRESS_MASK | GDK_LEAVE_NOTIFY_MASK | GDK_STRUCTURE_MASK);
-	g_signal_connect_slot(m_window, "enter-notify-event", &Window::on_enter_notify_event, this);
-	g_signal_connect_slot(m_window, "leave-notify-event", &Window::on_leave_notify_event, this);
-	g_signal_connect_slot(m_window, "button-press-event", &Window::on_button_press_event, this);
-	g_signal_connect_slot(m_window, "button-release-event", &Window::on_button_release_event, this);
+	gtk_widget_add_events(GTK_WIDGET(m_window), GDK_FOCUS_CHANGE_MASK | GDK_STRUCTURE_MASK);
+	g_signal_connect_slot(m_window, "enter-notify-event", &Window::on_focus_in_event, this);
+	g_signal_connect_slot(m_window, "focus-in-event", &Window::on_focus_in_event, this);
+	g_signal_connect_slot(m_window, "focus-out-event", &Window::on_focus_out_event, this);
 	g_signal_connect_slot(m_window, "key-press-event", &Window::on_key_press_event, this);
 	g_signal_connect_slot(m_window, "key-press-event", &Window::on_key_press_event_after, this, true);
 	g_signal_connect_slot(m_window, "map-event", &Window::on_map_event, this);
@@ -146,6 +119,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	// Create search entry
 	m_search_entry = GTK_ENTRY(gtk_search_entry_new());
 	g_signal_connect_slot<GtkSearchEntry*>(m_search_entry, "changed", &Window::search, this);
+	g_signal_connect_slot<GtkEntry*,GtkWidget*>(m_search_entry, "populate-popup", &Window::set_child_has_focus, this);
 
 	// Create favorites
 	m_favorites = new FavoritesPage(this);
@@ -283,14 +257,9 @@ WhiskerMenu::Window::~Window()
 
 void WhiskerMenu::Window::hide()
 {
-	ungrab_pointer();
-
 	// Scroll categories to top
 	GtkAdjustment* adjustment = gtk_scrolled_window_get_vadjustment(m_sidebar);
 	gtk_adjustment_set_value(adjustment, gtk_adjustment_get_lower(adjustment));
-
-	// Reset any pressed category buttons
-	unset_pressed_category();
 
 	// Hide command buttons to remove active border
 	for (auto command : m_commands_button)
@@ -535,9 +504,9 @@ void WhiskerMenu::Window::save()
 
 //-----------------------------------------------------------------------------
 
-void WhiskerMenu::Window::on_context_menu_destroyed()
+void WhiskerMenu::Window::set_child_has_focus()
 {
-	grab_pointer(GTK_WIDGET(m_window));
+	m_child_has_focus = true;
 }
 
 //-----------------------------------------------------------------------------
@@ -604,63 +573,26 @@ void WhiskerMenu::Window::unset_items()
 
 //-----------------------------------------------------------------------------
 
-gboolean WhiskerMenu::Window::on_enter_notify_event(GtkWidget*, GdkEvent* event)
+gboolean WhiskerMenu::Window::on_focus_in_event(GtkWidget*, GdkEvent*)
 {
-	GdkEventCrossing* crossing_event = reinterpret_cast<GdkEventCrossing*>(event);
-	if ((crossing_event->detail == GDK_NOTIFY_INFERIOR)
-			|| (crossing_event->mode == GDK_CROSSING_GRAB)
-			|| (crossing_event->mode == GDK_CROSSING_GTK_GRAB))
-	{
-		return GDK_EVENT_PROPAGATE;
-	}
-
-	grab_pointer(GTK_WIDGET(m_window));
-
+	m_child_has_focus = false;
 	return GDK_EVENT_PROPAGATE;
 }
 
 //-----------------------------------------------------------------------------
 
-gboolean WhiskerMenu::Window::on_leave_notify_event(GtkWidget*, GdkEvent* event)
-{
-	GdkEventCrossing* crossing_event = reinterpret_cast<GdkEventCrossing*>(event);
-	if ((crossing_event->detail == GDK_NOTIFY_INFERIOR)
-			|| (crossing_event->mode != GDK_CROSSING_NORMAL))
-	{
-		return GDK_EVENT_PROPAGATE;
-	}
-
-	grab_pointer(GTK_WIDGET(m_window));
-
-	return GDK_EVENT_PROPAGATE;
-}
-
-//-----------------------------------------------------------------------------
-
-gboolean WhiskerMenu::Window::on_button_press_event(GtkWidget*, GdkEvent* event)
+gboolean WhiskerMenu::Window::on_focus_out_event(GtkWidget* widget, GdkEvent*)
 {
 	if (wm_settings->stay_on_focus_out)
 	{
 		return GDK_EVENT_PROPAGATE;
 	}
 
-	// Hide menu if user clicks outside
-	GdkEventButton* button_event = reinterpret_cast<GdkEventButton*>(event);
-	if ((button_event->x_root <= m_geometry.x)
-			|| (button_event->x_root >= m_geometry.x + m_geometry.width)
-			|| (button_event->y_root <= m_geometry.y)
-			|| (button_event->y_root >= m_geometry.y + m_geometry.height))
+	if (!m_child_has_focus && gtk_widget_get_visible(widget))
 	{
 		hide();
 	}
-	return GDK_EVENT_PROPAGATE;
-}
 
-//-----------------------------------------------------------------------------
-
-gboolean WhiskerMenu::Window::on_button_release_event(GtkWidget*, GdkEvent*)
-{
-	unset_pressed_category();
 	return GDK_EVENT_PROPAGATE;
 }
 
@@ -759,9 +691,6 @@ gboolean WhiskerMenu::Window::on_map_event(GtkWidget*, GdkEvent*)
 	m_favorites->reset_selection();
 
 	gtk_window_set_keep_above(m_window, true);
-
-	// Track mouse clicks outside of menu
-	grab_pointer(GTK_WIDGET(m_window));
 
 	// Focus search entry
 	gtk_widget_grab_focus(GTK_WIDGET(m_search_entry));
@@ -948,15 +877,6 @@ void WhiskerMenu::Window::search()
 
 	// Apply filter
 	m_search_results->set_filter(text);
-}
-
-//-----------------------------------------------------------------------------
-
-void WhiskerMenu::Window::unset_pressed_category()
-{
-	// Force a state change on sidebar buttons
-	gtk_widget_set_sensitive(GTK_WIDGET(m_sidebar_buttons), false);
-	gtk_widget_set_sensitive(GTK_WIDGET(m_sidebar_buttons), true);
 }
 
 //-----------------------------------------------------------------------------

@@ -81,17 +81,15 @@ public:
 	void hide();
 	void show(const Position position);
 	void save();
-	void on_context_menu_destroyed();
+	void set_child_has_focus();
 	void set_categories(const std::vector<CategoryButton*>& categories);
 	void set_items();
 	void set_loaded();
 	void unset_items();
 
 private:
-	gboolean on_enter_notify_event(GtkWidget*, GdkEvent* event);
-	gboolean on_leave_notify_event(GtkWidget*, GdkEvent* event);
-	gboolean on_button_press_event(GtkWidget*, GdkEvent* event);
-	gboolean on_button_release_event(GtkWidget*, GdkEvent* event);
+	gboolean on_focus_in_event(GtkWidget*, GdkEvent*);
+	gboolean on_focus_out_event(GtkWidget* widget, GdkEvent* event);
 	gboolean on_key_press_event(GtkWidget* widget, GdkEvent* event);
 	gboolean on_key_press_event_after(GtkWidget* widget, GdkEvent* event);
 	gboolean on_map_event(GtkWidget*, GdkEvent*);
@@ -106,7 +104,6 @@ private:
 	void show_favorites();
 	void show_default_page();
 	void search();
-	void unset_pressed_category();
 	void update_layout();
 
 private:
@@ -158,6 +155,7 @@ private:
 	bool m_layout_search_alternate;
 	bool m_layout_commands_alternate;
 	bool m_supports_alpha;
+	bool m_child_has_focus;
 };
 
 }

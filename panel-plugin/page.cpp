@@ -277,6 +277,8 @@ gboolean Page::view_button_press_event(GtkWidget*, GdkEvent* event)
 		set_reorderable(m_reorderable);
 	}
 
+	m_window->set_child_has_focus();
+
 	return GDK_EVENT_PROPAGATE;
 }
 
@@ -423,6 +425,7 @@ void Page::create_context_menu(GtkTreePath* path, GdkEvent* event)
 	gtk_widget_show_all(menu);
 
 	// Show context menu
+	m_window->set_child_has_focus();
 	gtk_menu_attach_to_widget(GTK_MENU(menu), m_view->get_widget(), nullptr);
 	gtk_menu_popup_at_pointer(GTK_MENU(menu), event);
 
@@ -438,8 +441,6 @@ void Page::destroy_context_menu(GtkMenuShell* menu)
 	m_selected_launcher = nullptr;
 
 	gtk_widget_destroy(GTK_WIDGET(menu));
-
-	m_window->on_context_menu_destroyed();
 }
 
 //-----------------------------------------------------------------------------
