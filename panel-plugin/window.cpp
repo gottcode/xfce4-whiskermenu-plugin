@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2014, 2015, 2016, 2017 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2018 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -105,7 +105,7 @@ WhiskerMenu::Window::Window() :
 	gtk_window_set_decorated(m_window, false);
 	gtk_window_set_skip_taskbar_hint(m_window, true);
 	gtk_window_set_skip_pager_hint(m_window, true);
-	gtk_window_set_type_hint(m_window, GDK_WINDOW_TYPE_HINT_DIALOG);
+	gtk_window_set_type_hint(m_window, GDK_WINDOW_TYPE_HINT_POPUP_MENU);
 	gtk_window_stick(m_window);
 	gtk_widget_add_events(GTK_WIDGET(m_window), GDK_BUTTON_PRESS_MASK | GDK_LEAVE_NOTIFY_MASK | GDK_STRUCTURE_MASK);
 	g_signal_connect_slot(m_window, "enter-notify-event", &Window::on_enter_notify_event, this);
