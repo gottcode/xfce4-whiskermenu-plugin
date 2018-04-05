@@ -42,6 +42,11 @@ using namespace WhiskerMenu;
 
 static void grab_pointer(GtkWidget* widget)
 {
+	if (wm_settings->stay_on_focus_out)
+	{
+		return;
+	}
+
 	GdkDisplay* display = gdk_display_get_default();
 	GdkSeat* seat = gdk_display_get_default_seat(display);
 	GdkWindow* window = gtk_widget_get_window(widget);
@@ -50,6 +55,11 @@ static void grab_pointer(GtkWidget* widget)
 
 static void ungrab_pointer()
 {
+	if (wm_settings->stay_on_focus_out)
+	{
+		return;
+	}
+
 	GdkDisplay* display = gdk_display_get_default();
 	GdkSeat* seat = gdk_display_get_default_seat(display);
 	gdk_seat_ungrab(seat);
@@ -737,6 +747,11 @@ gboolean WhiskerMenu::Window::on_leave_notify_event(GtkWidget*, GdkEvent* event)
 
 gboolean WhiskerMenu::Window::on_button_press_event(GtkWidget*, GdkEvent* event)
 {
+	if (wm_settings->stay_on_focus_out)
+	{
+		return false;
+	}
+
 	// Hide menu if user clicks outside
 	GdkEventButton* button_event = reinterpret_cast<GdkEventButton*>(event);
 	if ((button_event->x_root <= m_geometry.x)

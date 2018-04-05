@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2014, 2015, 2016, 2017 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2018 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -106,6 +106,7 @@ Settings::Settings() :
 	position_search_alternate(false),
 	position_commands_alternate(false),
 	position_categories_alternate(false),
+	stay_on_focus_out(false),
 
 	menu_width(400),
 	menu_height(500),
@@ -191,6 +192,7 @@ void Settings::load(char* file)
 	position_search_alternate = xfce_rc_read_bool_entry(rc, "position-search-alternate", position_search_alternate);
 	position_commands_alternate = xfce_rc_read_bool_entry(rc, "position-commands-alternate", position_commands_alternate) && position_search_alternate;
 	position_categories_alternate = xfce_rc_read_bool_entry(rc, "position-categories-alternate", position_categories_alternate);
+	stay_on_focus_out = xfce_rc_read_bool_entry(rc, "stay-on-focus-out", stay_on_focus_out);
 
 	menu_width = std::max(10, xfce_rc_read_int_entry(rc, "menu-width", menu_width));
 	menu_height = std::max(10, xfce_rc_read_int_entry(rc, "menu-height", menu_height));
@@ -289,6 +291,7 @@ void Settings::save(char* file)
 	xfce_rc_write_bool_entry(rc, "position-search-alternate", position_search_alternate);
 	xfce_rc_write_bool_entry(rc, "position-commands-alternate", position_commands_alternate);
 	xfce_rc_write_bool_entry(rc, "position-categories-alternate", position_categories_alternate);
+	xfce_rc_write_bool_entry(rc, "stay-on-focus-out", stay_on_focus_out);
 
 	xfce_rc_write_int_entry(rc, "menu-width", menu_width);
 	xfce_rc_write_int_entry(rc, "menu-height", menu_height);

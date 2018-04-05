@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2014, 2016 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014, 2016, 2018 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -83,6 +83,7 @@ public:
 	bool position_search_alternate;
 	bool position_commands_alternate;
 	bool position_categories_alternate;
+	bool stay_on_focus_out;
 
 	enum Commands
 	{

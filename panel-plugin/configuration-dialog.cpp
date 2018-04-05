@@ -266,6 +266,14 @@ void ConfigurationDialog::toggle_position_categories_alternate(GtkToggleButton* 
 
 //-----------------------------------------------------------------------------
 
+void ConfigurationDialog::toggle_stay_on_focus_out(GtkToggleButton* button)
+{
+	wm_settings->stay_on_focus_out = gtk_toggle_button_get_active(button);
+	wm_settings->set_modified();
+}
+
+//-----------------------------------------------------------------------------
+
 void ConfigurationDialog::recent_items_max_changed(GtkSpinButton* button)
 {
 	wm_settings->recent_items_max = gtk_spin_button_get_value_as_int(button);
@@ -709,6 +717,12 @@ GtkWidget* ConfigurationDialog::init_behavior_tab()
 	gtk_box_pack_start(behavior_vbox, m_position_categories_alternate, true, true, 0);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_categories_alternate), wm_settings->position_categories_alternate);
 	g_signal_connect_slot(m_position_categories_alternate, "toggled", &ConfigurationDialog::toggle_position_categories_alternate, this);
+
+	// Add option to stay when menu loses focus
+	m_stay_on_focus_out = gtk_check_button_new_with_mnemonic(_("Stay _visible when focus is lost"));
+	gtk_box_pack_start(behavior_vbox, m_stay_on_focus_out, true, true, 0);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_stay_on_focus_out), wm_settings->stay_on_focus_out);
+	g_signal_connect_slot(m_stay_on_focus_out, "toggled", &ConfigurationDialog::toggle_stay_on_focus_out, this);
 
 
 	// Create recently used section

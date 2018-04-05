@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015, 2016 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015, 2016, 2018 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -49,6 +49,7 @@ private:
 	void toggle_position_search_alternate(GtkToggleButton* button);
 	void toggle_position_commands_alternate(GtkToggleButton* button);
 	void toggle_position_categories_alternate(GtkToggleButton* button);
+	void toggle_stay_on_focus_out(GtkToggleButton* button);
 	void category_icon_size_changed(GtkComboBox* combo);
 	void item_icon_size_changed(GtkComboBox* combo);
 
@@ -93,6 +94,7 @@ private:
 	GtkWidget* m_position_search_alternate;
 	GtkWidget* m_position_commands_alternate;
 	GtkWidget* m_position_categories_alternate;
+	GtkWidget* m_stay_on_focus_out;
 	GtkWidget* m_category_icon_size;
 	GtkWidget* m_item_icon_size;
 	GtkWidget* m_background_opacity;
