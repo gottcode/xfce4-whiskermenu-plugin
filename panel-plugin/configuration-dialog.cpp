@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015, 2016, 2017 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015, 2016, 2017, 2018 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -327,6 +327,7 @@ SearchAction* ConfigurationDialog::get_selected_action(GtkTreeIter* iter) const
 void ConfigurationDialog::action_selected(GtkTreeView*)
 {
 	SearchAction* action = get_selected_action();
+	if (action)
 	{
 		gtk_entry_set_text(GTK_ENTRY(m_action_name), action->get_name());
 		gtk_entry_set_text(GTK_ENTRY(m_action_pattern), action->get_pattern());
