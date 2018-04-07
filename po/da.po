@@ -5,13 +5,13 @@
 # Translators:
 # Jens E. Jensen <jens.e.jensen@gmail.com>, 2013,2017
 # Morten Juhl-Johansen Zölde-Fejér <morten@writtenandread.net>, 2013-2015
-# scootergrisen, 2017
+# scootergrisen, 2017-2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2017-11-17 14:36+0000\n"
+"PO-Revision-Date: 2018-03-08 15:32+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/da/)\n"
@@ -27,15 +27,15 @@ msgstr "Tilføj handling"
 
 #: ../panel-plugin/page.cpp:257
 msgid "Add to Desktop"
-msgstr "Føj til skrivebord"
+msgstr "Tilføj til skrivebord"
 
 #: ../panel-plugin/page.cpp:241
 msgid "Add to Favorites"
-msgstr "Føj til favoritter"
+msgstr "Tilføj til favoritter"
 
 #: ../panel-plugin/page.cpp:261
 msgid "Add to Panel"
-msgstr "Føj til panel"
+msgstr "Tilføj til panel"
 
 #: ../panel-plugin/category.cpp:61
 msgid "All"
@@ -312,11 +312,11 @@ msgstr "Titel"
 
 #: ../panel-plugin/page.cpp:372
 msgid "Unable to add launcher to desktop."
-msgstr "Kan ikke føje opstarter til skrivebordet."
+msgstr "Kan ikke tilføje opstarter til skrivebordet."
 
 #: ../panel-plugin/page.cpp:411 ../panel-plugin/page.cpp:420
 msgid "Unable to add launcher to panel."
-msgstr "Kan ikke føje opstarter til panelet."
+msgstr "Kan ikke tilføje opstarter til panelet."
 
 #: ../panel-plugin/page.cpp:447
 msgid "Unable to edit launcher."
