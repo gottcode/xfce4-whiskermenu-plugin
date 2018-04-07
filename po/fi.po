@@ -1,18 +1,19 @@
 # Finnish translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2015 Graeme Gott
+# Copyright (C) 2017 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # Pasi Lallinaho <pasi@shimmerproject.org>, 2014-2015
 # Sami Korkalainen, 2014
+# Assalat3 <assalat3@gmail.com>, 2018
 # Sami Korkalainen, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2015-02-26 14:12+0000\n"
-"Last-Translator: Pasi Lallinaho <pasi@shimmerproject.org>\n"
+"PO-Revision-Date: 2018-01-02 16:56+0000\n"
+"Last-Translator: Assalat3 <assalat3@gmail.com>\n"
 "Language-Team: Finnish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/fi/)\n"
 "Language: fi\n"
@@ -94,9 +95,8 @@ msgid "Display by _default"
 msgstr "Näytä _oletuksena"
 
 #: ../panel-plugin/page.cpp:268
-#, fuzzy
 msgid "Edit Application..."
-msgstr "Muokkaa sov_elluksia"
+msgstr ""
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -264,9 +264,8 @@ msgid "Show application _descriptions"
 msgstr "Näytä sovelluksien _kuvaukset"
 
 #: ../panel-plugin/configuration-dialog.cpp:609
-#, fuzzy
 msgid "Show application too_ltips"
-msgstr "Näytä sovelluksien _kuvaukset"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:597
 msgid "Show cate_gory names"
@@ -321,9 +320,8 @@ msgid "Unable to add launcher to panel."
 msgstr "Paneeliin ei voitu luoda käynnistintä."
 
 #: ../panel-plugin/page.cpp:447
-#, fuzzy
 msgid "Unable to edit launcher."
-msgstr "Paneeliin ei voitu luoda käynnistintä."
+msgstr "Käynnistintä ei voitu muokata."
 
 #: ../panel-plugin/configuration-dialog.cpp:492
 #, c-format
@@ -344,7 +342,7 @@ msgstr "Erittäin pieni"
 
 #: ../panel-plugin/settings.cpp:127
 msgid "Web Search"
-msgstr ""
+msgstr "Internethaku"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
 #: ../panel-plugin/whiskermenu.desktop.in.h:1
