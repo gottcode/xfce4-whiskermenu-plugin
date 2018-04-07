@@ -3,20 +3,20 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Adolfo Jayme Barrientos, 2016
-# Adolfo Jayme Barrientos, 2015
-# Adolfo Jayme Barrientos, 2013
-# Adolfo Jayme Barrientos, 2014
+# Adolfo Jayme-Barrientos, 2016
+# Adolfo Jayme-Barrientos, 2015
+# Adolfo Jayme-Barrientos, 2013
+# Adolfo Jayme-Barrientos, 2014
 # Davidmp <medipas@gmail.com>, 2017
 # Oriol Fernandez <oriolfa@ono.com>, 2013
-# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2017
+# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2017-2018
 # Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 22:55+0000\n"
-"PO-Revision-Date: 2017-08-05 08:55+0000\n"
+"PO-Revision-Date: 2018-02-10 22:01+0000\n"
 "Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ca/)\n"
@@ -130,7 +130,7 @@ msgstr "Ha fallat el tancament de la sessió."
 
 #: ../panel-plugin/settings.cpp:119
 msgid "Failed to open settings manager."
-msgstr "Ha fallat obrir el gestor d'ajusts."
+msgstr "Ha fallat l'obriment del gestor d'ajusts."
 
 #: ../panel-plugin/settings.cpp:121
 msgid "Failed to switch users."
@@ -245,11 +245,11 @@ msgstr "Executa en un terminal"
 
 #: ../panel-plugin/configuration-dialog.cpp:86
 msgid "Search Actio_ns"
-msgstr "Cerca d’accio_ns"
+msgstr "Accio_ns sistemàtiques"
 
 #: ../panel-plugin/search-action.cpp:259
 msgid "Search Action"
-msgstr "Cerca l’acció"
+msgstr "Acció sistemàtica"
 
 #: ../panel-plugin/configuration-dialog.cpp:119
 msgid "Select An Icon"
