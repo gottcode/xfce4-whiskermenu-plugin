@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-13 22:55+0000\n"
+"POT-Creation-Date: 2018-04-07 08:16-0400\n"
 "PO-Revision-Date: 2017-09-14 13:14+0000\n"
 "Last-Translator: Patrik Nilsson <asavartzeth@gmail.com>\n"
 "Language-Team: Swedish (Sweden) (http://www.transifex.com/gottcode/xfce4-"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/configuration-dialog.cpp:816
+#: ../panel-plugin/configuration-dialog.cpp:818
 msgid "Add action"
 msgstr "Lägg till åtgärd"
 
@@ -49,19 +49,19 @@ msgstr "Alla"
 msgid "All _Settings"
 msgstr "Alla _inställningar"
 
-#: ../panel-plugin/plugin.cpp:411
+#: ../panel-plugin/plugin.cpp:445
 msgid "Alternate application launcher for Xfce"
 msgstr "Alternativ programstartare för Xfce"
 
-#: ../panel-plugin/configuration-dialog.cpp:717
+#: ../panel-plugin/configuration-dialog.cpp:719
 msgid "Amount of _items:"
 msgstr "Antal _objekt:"
 
-#: ../panel-plugin/plugin.cpp:243
+#: ../panel-plugin/plugin.cpp:258
 msgid "Applications"
 msgstr "Program"
 
-#: ../panel-plugin/configuration-dialog.cpp:652
+#: ../panel-plugin/configuration-dialog.cpp:654
 msgid "Background opacit_y:"
 msgstr "Bakgrundens opa_citet:"
 
@@ -69,11 +69,11 @@ msgstr "Bakgrundens opa_citet:"
 msgid "Browse the file system to choose a custom command."
 msgstr "Bläddra i filsystemet för att välja ett anpassat kommando."
 
-#: ../panel-plugin/configuration-dialog.cpp:874
+#: ../panel-plugin/configuration-dialog.cpp:876
 msgid "C_ommand:"
 msgstr "K_ommando:"
 
-#: ../panel-plugin/configuration-dialog.cpp:637
+#: ../panel-plugin/configuration-dialog.cpp:639
 msgid "Categ_ory icon size:"
 msgstr "K_ategori ikonstorlek:"
 
@@ -81,19 +81,19 @@ msgstr "K_ategori ikonstorlek:"
 msgid "Clear Recently Used"
 msgstr "Rensa senast använda"
 
-#: ../panel-plugin/plugin.cpp:412
-msgid "Copyright © 2013-2017 Graeme Gott"
-msgstr "Copyright © 2013-2017 Graeme Gott"
+#: ../panel-plugin/plugin.cpp:446
+msgid "Copyright © 2013-2018 Graeme Gott"
+msgstr "Copyright © 2013-2018 Graeme Gott"
 
-#: ../panel-plugin/configuration-dialog.cpp:844
+#: ../panel-plugin/configuration-dialog.cpp:846
 msgid "Details"
 msgstr "Detaljer"
 
-#: ../panel-plugin/configuration-dialog.cpp:533
+#: ../panel-plugin/configuration-dialog.cpp:534
 msgid "Di_splay:"
 msgstr "_Visa:"
 
-#: ../panel-plugin/configuration-dialog.cpp:734
+#: ../panel-plugin/configuration-dialog.cpp:736
 msgid "Display by _default"
 msgstr "Visa som _standard"
 
@@ -109,7 +109,7 @@ msgstr "Redigera _profil"
 msgid "Failed to edit profile."
 msgstr "Misslyckades med att redigera profil."
 
-#: ../panel-plugin/launcher.cpp:288 ../panel-plugin/launcher.cpp:361
+#: ../panel-plugin/launcher.cpp:288 ../panel-plugin/launcher.cpp:362
 #: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
@@ -135,23 +135,23 @@ msgstr "Misslyckades med att öppna inställningshanteraren."
 msgid "Failed to switch users."
 msgstr "Misslyckades med att växla användare."
 
-#: ../panel-plugin/window.cpp:161
+#: ../panel-plugin/window.cpp:162
 msgid "Favorites"
 msgstr "Favoriter"
 
-#: ../panel-plugin/configuration-dialog.cpp:538
+#: ../panel-plugin/configuration-dialog.cpp:539
 msgid "Icon"
 msgstr "Ikon"
 
-#: ../panel-plugin/configuration-dialog.cpp:540
+#: ../panel-plugin/configuration-dialog.cpp:541
 msgid "Icon and title"
 msgstr "Ikon och titel"
 
-#: ../panel-plugin/configuration-dialog.cpp:728
+#: ../panel-plugin/configuration-dialog.cpp:730
 msgid "Ignore _favorites"
 msgstr "Ignorera _favoriter"
 
-#: ../panel-plugin/configuration-dialog.cpp:621
+#: ../panel-plugin/configuration-dialog.cpp:623
 msgid "Ite_m icon size:"
 msgstr "_Objekt ikonstorlek:"
 
@@ -171,16 +171,16 @@ msgstr "L_ogga ut"
 msgid "Man Pages"
 msgstr "Manualsidor"
 
-#: ../panel-plugin/configuration-dialog.cpp:586
-#: ../panel-plugin/configuration-dialog.cpp:677
+#: ../panel-plugin/configuration-dialog.cpp:587
+#: ../panel-plugin/configuration-dialog.cpp:679
 msgid "Menu"
 msgstr "Meny"
 
-#: ../panel-plugin/configuration-dialog.cpp:849
+#: ../panel-plugin/configuration-dialog.cpp:851
 msgid "Nam_e:"
 msgstr "_Namn:"
 
-#: ../panel-plugin/configuration-dialog.cpp:794
+#: ../panel-plugin/configuration-dialog.cpp:796
 msgid "Name"
 msgstr "Namn"
 
@@ -196,27 +196,27 @@ msgstr "Normal"
 msgid "Open URI"
 msgstr "Öppna URI"
 
-#: ../panel-plugin/configuration-dialog.cpp:528
+#: ../panel-plugin/configuration-dialog.cpp:529
 msgid "Panel Button"
 msgstr "Panelknapp"
 
-#: ../panel-plugin/configuration-dialog.cpp:799
+#: ../panel-plugin/configuration-dialog.cpp:801
 msgid "Pattern"
 msgstr "Mönster"
 
-#: ../panel-plugin/configuration-dialog.cpp:688
+#: ../panel-plugin/configuration-dialog.cpp:690
 msgid "Position _search entry next to panel button"
 msgstr "Placera s_ökfältet intill panelknappen"
 
-#: ../panel-plugin/configuration-dialog.cpp:701
+#: ../panel-plugin/configuration-dialog.cpp:703
 msgid "Position cate_gories next to panel button"
 msgstr "Placera k_ategorier intill panelknappen"
 
-#: ../panel-plugin/configuration-dialog.cpp:694
+#: ../panel-plugin/configuration-dialog.cpp:696
 msgid "Position commands next to search _entry"
 msgstr "Placera ko_mmandon bredvid sökfältet"
 
-#: ../panel-plugin/configuration-dialog.cpp:712 ../panel-plugin/window.cpp:167
+#: ../panel-plugin/configuration-dialog.cpp:714 ../panel-plugin/window.cpp:168
 msgid "Recently Used"
 msgstr "Senast använda"
 
@@ -224,12 +224,12 @@ msgstr "Senast använda"
 msgid "Remove From Favorites"
 msgstr "Ta bort från favoriter"
 
-#: ../panel-plugin/configuration-dialog.cpp:432
+#: ../panel-plugin/configuration-dialog.cpp:433
 #, c-format
 msgid "Remove action \"%s\"?"
 msgstr "Ta bort åtgärd \"%s\"?"
 
-#: ../panel-plugin/configuration-dialog.cpp:825
+#: ../panel-plugin/configuration-dialog.cpp:827
 msgid "Remove selected action"
 msgstr "Ta bort markerad åtgärd"
 
@@ -262,23 +262,23 @@ msgstr "Välj kommando"
 msgid "Show a menu to easily access installed applications"
 msgstr "Visa en meny för att enkelt komma åt installerade program"
 
-#: ../panel-plugin/configuration-dialog.cpp:603
+#: ../panel-plugin/configuration-dialog.cpp:605
 msgid "Show application _descriptions"
 msgstr "Visa _programbeskrivningar"
 
-#: ../panel-plugin/configuration-dialog.cpp:609
+#: ../panel-plugin/configuration-dialog.cpp:611
 msgid "Show application too_ltips"
 msgstr "Visa _verktygstips _för program"
 
-#: ../panel-plugin/configuration-dialog.cpp:597
+#: ../panel-plugin/configuration-dialog.cpp:598
 msgid "Show cate_gory names"
 msgstr "Visa kate_gorinamn"
 
-#: ../panel-plugin/configuration-dialog.cpp:591
+#: ../panel-plugin/configuration-dialog.cpp:592
 msgid "Show generic application _names"
 msgstr "Visa allmänna program_namn"
 
-#: ../panel-plugin/configuration-dialog.cpp:615
+#: ../panel-plugin/configuration-dialog.cpp:617
 msgid "Show menu hie_rarchy"
 msgstr "Visa _hierarkisk meny"
 
@@ -302,15 +302,15 @@ msgstr "Sortera alfabetiskt Ö-A"
 msgid "Switch _Users"
 msgstr "_Växla användare"
 
-#: ../panel-plugin/configuration-dialog.cpp:682
+#: ../panel-plugin/configuration-dialog.cpp:684
 msgid "Switch categories by _hovering"
 msgstr "_Växla kategorier med drag av muspekaren"
 
-#: ../panel-plugin/configuration-dialog.cpp:431
+#: ../panel-plugin/configuration-dialog.cpp:432
 msgid "The action will be deleted permanently."
 msgstr "Åtgärden kommer att tas bort permanent."
 
-#: ../panel-plugin/configuration-dialog.cpp:539
+#: ../panel-plugin/configuration-dialog.cpp:540
 msgid "Title"
 msgstr "Titel"
 
@@ -322,16 +322,16 @@ msgstr "Kunde inte skapa skrivbordsgenväg."
 msgid "Unable to add launcher to panel."
 msgstr "Kunde inte lägga till programstartare i panelen."
 
-#: ../panel-plugin/page.cpp:447
+#: ../panel-plugin/page.cpp:449
 msgid "Unable to edit launcher."
 msgstr "Det gick inte att redigera programstartare."
 
-#: ../panel-plugin/configuration-dialog.cpp:492
+#: ../panel-plugin/configuration-dialog.cpp:493
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Kan inte öppna följande URL: %s"
 
-#: ../panel-plugin/configuration-dialog.cpp:573
+#: ../panel-plugin/configuration-dialog.cpp:574
 msgid "Use a single _panel row"
 msgstr "Använd en _enskild panel rad"
 
@@ -377,7 +377,7 @@ msgstr "_Stäng"
 msgid "_Commands"
 msgstr "_Kommandon"
 
-#: ../panel-plugin/configuration-dialog.cpp:430
+#: ../panel-plugin/configuration-dialog.cpp:431
 msgid "_Delete"
 msgstr "Ta bort"
 
@@ -389,7 +389,7 @@ msgstr "_Redigera program"
 msgid "_Help"
 msgstr "_Hjälp"
 
-#: ../panel-plugin/configuration-dialog.cpp:559
+#: ../panel-plugin/configuration-dialog.cpp:560
 msgid "_Icon:"
 msgstr "_Ikon:"
 
@@ -402,18 +402,18 @@ msgstr "_Lås skärm"
 msgid "_OK"
 msgstr "_OK"
 
-#: ../panel-plugin/configuration-dialog.cpp:862
+#: ../panel-plugin/configuration-dialog.cpp:864
 msgid "_Pattern:"
 msgstr "_Mönster:"
 
-#: ../panel-plugin/configuration-dialog.cpp:886
+#: ../panel-plugin/configuration-dialog.cpp:888
 msgid "_Regular expression"
 msgstr "_Reguljära uttryck"
 
-#: ../panel-plugin/configuration-dialog.cpp:548
+#: ../panel-plugin/configuration-dialog.cpp:549
 msgid "_Title:"
 msgstr "Tite_l:"
 
-#: ../panel-plugin/plugin.cpp:416
+#: ../panel-plugin/plugin.cpp:450
 msgid "translator-credits"
 msgstr "Patrik Nilsson <translation@hembas.se>"

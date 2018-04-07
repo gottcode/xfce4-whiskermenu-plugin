@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-13 22:55+0000\n"
+"POT-Creation-Date: 2018-04-07 08:16-0400\n"
 "PO-Revision-Date: 2017-01-21 13:31+0000\n"
 "Last-Translator: Thanos Apostolou <thanosapostolou@outlook.com>\n"
 "Language-Team: Greek (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/configuration-dialog.cpp:816
+#: ../panel-plugin/configuration-dialog.cpp:818
 msgid "Add action"
 msgstr "Προσθήκη δράσης"
 
@@ -48,19 +48,19 @@ msgstr "Όλα"
 msgid "All _Settings"
 msgstr "Όλες οι _ρυθμίσεις"
 
-#: ../panel-plugin/plugin.cpp:411
+#: ../panel-plugin/plugin.cpp:445
 msgid "Alternate application launcher for Xfce"
 msgstr "Εναλλακτικός εκκινητής εφαρμογών για το Xfce"
 
-#: ../panel-plugin/configuration-dialog.cpp:717
+#: ../panel-plugin/configuration-dialog.cpp:719
 msgid "Amount of _items:"
 msgstr "Σύνολο _αντικειμένων:"
 
-#: ../panel-plugin/plugin.cpp:243
+#: ../panel-plugin/plugin.cpp:258
 msgid "Applications"
 msgstr "Εφαρμογές"
 
-#: ../panel-plugin/configuration-dialog.cpp:652
+#: ../panel-plugin/configuration-dialog.cpp:654
 msgid "Background opacit_y:"
 msgstr "Αδιαφάνεια παρασκη_νίου:"
 
@@ -68,11 +68,11 @@ msgstr "Αδιαφάνεια παρασκη_νίου:"
 msgid "Browse the file system to choose a custom command."
 msgstr "Περιήγηση του συστήματος αρχείων για την επιλογή μιας εντολής."
 
-#: ../panel-plugin/configuration-dialog.cpp:874
+#: ../panel-plugin/configuration-dialog.cpp:876
 msgid "C_ommand:"
 msgstr "_Εντολή:"
 
-#: ../panel-plugin/configuration-dialog.cpp:637
+#: ../panel-plugin/configuration-dialog.cpp:639
 msgid "Categ_ory icon size:"
 msgstr "Μέγεθος εικονιδίων _κατηγοριών:"
 
@@ -80,19 +80,19 @@ msgstr "Μέγεθος εικονιδίων _κατηγοριών:"
 msgid "Clear Recently Used"
 msgstr "Εκκαθάριση Πρόσφατα Χρησιμοποιημένων"
 
-#: ../panel-plugin/plugin.cpp:412
-msgid "Copyright © 2013-2017 Graeme Gott"
-msgstr "Copyright © 2013-2017 Graeme Gott"
+#: ../panel-plugin/plugin.cpp:446
+msgid "Copyright © 2013-2018 Graeme Gott"
+msgstr "Copyright © 2013-2018 Graeme Gott"
 
-#: ../panel-plugin/configuration-dialog.cpp:844
+#: ../panel-plugin/configuration-dialog.cpp:846
 msgid "Details"
 msgstr "Λεπτομέρειες"
 
-#: ../panel-plugin/configuration-dialog.cpp:533
+#: ../panel-plugin/configuration-dialog.cpp:534
 msgid "Di_splay:"
 msgstr "Εμ_φάνιση:"
 
-#: ../panel-plugin/configuration-dialog.cpp:734
+#: ../panel-plugin/configuration-dialog.cpp:736
 msgid "Display by _default"
 msgstr "Προεπιλεγμένη ε_μφάνιση"
 
@@ -108,7 +108,7 @@ msgstr "Επε_ξεργασία προφίλ"
 msgid "Failed to edit profile."
 msgstr "Η επεξεργασία του προφίλ απέτυχε."
 
-#: ../panel-plugin/launcher.cpp:288 ../panel-plugin/launcher.cpp:361
+#: ../panel-plugin/launcher.cpp:288 ../panel-plugin/launcher.cpp:362
 #: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
@@ -134,23 +134,23 @@ msgstr "Αποτυχία εκκίνησης του διαχειριστή ρυθ
 msgid "Failed to switch users."
 msgstr "Αποτυχία εναλλαγής χρηστών."
 
-#: ../panel-plugin/window.cpp:161
+#: ../panel-plugin/window.cpp:162
 msgid "Favorites"
 msgstr "Αγαπημένα"
 
-#: ../panel-plugin/configuration-dialog.cpp:538
+#: ../panel-plugin/configuration-dialog.cpp:539
 msgid "Icon"
 msgstr "Εικονίδιο"
 
-#: ../panel-plugin/configuration-dialog.cpp:540
+#: ../panel-plugin/configuration-dialog.cpp:541
 msgid "Icon and title"
 msgstr "Εικονίδιο και τίτλος"
 
-#: ../panel-plugin/configuration-dialog.cpp:728
+#: ../panel-plugin/configuration-dialog.cpp:730
 msgid "Ignore _favorites"
 msgstr "Ε_ξαίρεση αγαπημένων"
 
-#: ../panel-plugin/configuration-dialog.cpp:621
+#: ../panel-plugin/configuration-dialog.cpp:623
 msgid "Ite_m icon size:"
 msgstr "Μέγεθος εικονιδίων _αντικειμένων:"
 
@@ -170,16 +170,16 @@ msgstr "_Αποσύνδεση"
 msgid "Man Pages"
 msgstr "Σελίδες εγχειριδίων"
 
-#: ../panel-plugin/configuration-dialog.cpp:586
-#: ../panel-plugin/configuration-dialog.cpp:677
+#: ../panel-plugin/configuration-dialog.cpp:587
+#: ../panel-plugin/configuration-dialog.cpp:679
 msgid "Menu"
 msgstr "Μενού"
 
-#: ../panel-plugin/configuration-dialog.cpp:849
+#: ../panel-plugin/configuration-dialog.cpp:851
 msgid "Nam_e:"
 msgstr "Ό_νομα:"
 
-#: ../panel-plugin/configuration-dialog.cpp:794
+#: ../panel-plugin/configuration-dialog.cpp:796
 msgid "Name"
 msgstr "Όνομα"
 
@@ -195,27 +195,27 @@ msgstr "Κανονικά"
 msgid "Open URI"
 msgstr "Άνοιγμα URI"
 
-#: ../panel-plugin/configuration-dialog.cpp:528
+#: ../panel-plugin/configuration-dialog.cpp:529
 msgid "Panel Button"
 msgstr "Κουμπί ταμπλό"
 
-#: ../panel-plugin/configuration-dialog.cpp:799
+#: ../panel-plugin/configuration-dialog.cpp:801
 msgid "Pattern"
 msgstr "Σχέδιο"
 
-#: ../panel-plugin/configuration-dialog.cpp:688
+#: ../panel-plugin/configuration-dialog.cpp:690
 msgid "Position _search entry next to panel button"
 msgstr "Τοποθέτηση του πεδίου εύ_ρεσης δίπλα στο κουμπί του ταμπλό"
 
-#: ../panel-plugin/configuration-dialog.cpp:701
+#: ../panel-plugin/configuration-dialog.cpp:703
 msgid "Position cate_gories next to panel button"
 msgstr "Τοποθέτηση των κατη_γοριών δίπλα στο κουμπί του ταμπλό"
 
-#: ../panel-plugin/configuration-dialog.cpp:694
+#: ../panel-plugin/configuration-dialog.cpp:696
 msgid "Position commands next to search _entry"
 msgstr "Τοποθέτηση των εντολών δίπ_λα στο πεδίο εύρεσης"
 
-#: ../panel-plugin/configuration-dialog.cpp:712 ../panel-plugin/window.cpp:167
+#: ../panel-plugin/configuration-dialog.cpp:714 ../panel-plugin/window.cpp:168
 msgid "Recently Used"
 msgstr "Πρόσφατα"
 
@@ -223,12 +223,12 @@ msgstr "Πρόσφατα"
 msgid "Remove From Favorites"
 msgstr "Αφαίρεση από τα Αγαπημένα"
 
-#: ../panel-plugin/configuration-dialog.cpp:432
+#: ../panel-plugin/configuration-dialog.cpp:433
 #, c-format
 msgid "Remove action \"%s\"?"
 msgstr "Αφαίρεση της δράσης \"%s\";"
 
-#: ../panel-plugin/configuration-dialog.cpp:825
+#: ../panel-plugin/configuration-dialog.cpp:827
 msgid "Remove selected action"
 msgstr "Αφαίρεση της επιλεγμένης δράσης"
 
@@ -261,23 +261,23 @@ msgstr "Επιλογή εντολής"
 msgid "Show a menu to easily access installed applications"
 msgstr "Εμφανίζει ένα μενού για εύκολη πρόσβαση στις εγκατεστημένες εφαρμογές"
 
-#: ../panel-plugin/configuration-dialog.cpp:603
+#: ../panel-plugin/configuration-dialog.cpp:605
 msgid "Show application _descriptions"
 msgstr "Εμφάνιση _περιγραφής εφαρμογών"
 
-#: ../panel-plugin/configuration-dialog.cpp:609
+#: ../panel-plugin/configuration-dialog.cpp:611
 msgid "Show application too_ltips"
 msgstr "Εμφάνιση αναδυόμενης συμ_βουλής εφαρμογών"
 
-#: ../panel-plugin/configuration-dialog.cpp:597
+#: ../panel-plugin/configuration-dialog.cpp:598
 msgid "Show cate_gory names"
 msgstr "Εμφάνιση ονομάτων _κατηγοριών"
 
-#: ../panel-plugin/configuration-dialog.cpp:591
+#: ../panel-plugin/configuration-dialog.cpp:592
 msgid "Show generic application _names"
 msgstr "Εμφάνιση γενικών _ονομάτων εφαρμογών"
 
-#: ../panel-plugin/configuration-dialog.cpp:615
+#: ../panel-plugin/configuration-dialog.cpp:617
 msgid "Show menu hie_rarchy"
 msgstr "Εμφάνιση ιεραρχίας _μενού"
 
@@ -301,15 +301,15 @@ msgstr "Αλφαβητική Ταξινόμηση Ω-Α"
 msgid "Switch _Users"
 msgstr "Εναλλαγή _χρηστών"
 
-#: ../panel-plugin/configuration-dialog.cpp:682
+#: ../panel-plugin/configuration-dialog.cpp:684
 msgid "Switch categories by _hovering"
 msgstr "Αλλαγή κατηγοριών στο _πέρασμα του ποντικιού"
 
-#: ../panel-plugin/configuration-dialog.cpp:431
+#: ../panel-plugin/configuration-dialog.cpp:432
 msgid "The action will be deleted permanently."
 msgstr "Η δράση αυτή θα διαγραφεί μόνιμα"
 
-#: ../panel-plugin/configuration-dialog.cpp:539
+#: ../panel-plugin/configuration-dialog.cpp:540
 msgid "Title"
 msgstr "Τίτλος"
 
@@ -321,16 +321,16 @@ msgstr "Απέτυχε η προσθήκη εκκινητή στην επιφά�
 msgid "Unable to add launcher to panel."
 msgstr "Απέτυχε η προσθήκη εκκινητή στο ταμπλό."
 
-#: ../panel-plugin/page.cpp:447
+#: ../panel-plugin/page.cpp:449
 msgid "Unable to edit launcher."
 msgstr "Απέτυχε η επεξεργασία εκκινητή."
 
-#: ../panel-plugin/configuration-dialog.cpp:492
+#: ../panel-plugin/configuration-dialog.cpp:493
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Αδύνατο να ανοίξει ο ακόλουθος σύνδεσμος: %s"
 
-#: ../panel-plugin/configuration-dialog.cpp:573
+#: ../panel-plugin/configuration-dialog.cpp:574
 msgid "Use a single _panel row"
 msgstr "Χρήση μόνο μιας _γραμμής στο ταμπλό"
 
@@ -376,7 +376,7 @@ msgstr "_Κλείσιμο"
 msgid "_Commands"
 msgstr "Ε_ντολές"
 
-#: ../panel-plugin/configuration-dialog.cpp:430
+#: ../panel-plugin/configuration-dialog.cpp:431
 msgid "_Delete"
 msgstr "_Διαγραφή"
 
@@ -388,7 +388,7 @@ msgstr "Ε_πεξεργασία εφαρμογών"
 msgid "_Help"
 msgstr "_Βοήθεια"
 
-#: ../panel-plugin/configuration-dialog.cpp:559
+#: ../panel-plugin/configuration-dialog.cpp:560
 msgid "_Icon:"
 msgstr "_Εικονίδιο:"
 
@@ -401,18 +401,18 @@ msgstr "Κ_λείδωμα οθόνης"
 msgid "_OK"
 msgstr "_Εντάξει"
 
-#: ../panel-plugin/configuration-dialog.cpp:862
+#: ../panel-plugin/configuration-dialog.cpp:864
 msgid "_Pattern:"
 msgstr "Σ_χέδιο:"
 
-#: ../panel-plugin/configuration-dialog.cpp:886
+#: ../panel-plugin/configuration-dialog.cpp:888
 msgid "_Regular expression"
 msgstr "_Κανονική έκφραση"
 
-#: ../panel-plugin/configuration-dialog.cpp:548
+#: ../panel-plugin/configuration-dialog.cpp:549
 msgid "_Title:"
 msgstr "_Τίτλος:"
 
-#: ../panel-plugin/plugin.cpp:416
+#: ../panel-plugin/plugin.cpp:450
 msgid "translator-credits"
 msgstr "Γιώργος Βλαχάβας <vlahavas~at~gmail~dot~com>"

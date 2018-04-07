@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-13 22:55+0000\n"
+"POT-Creation-Date: 2018-04-07 08:16-0400\n"
 "PO-Revision-Date: 2017-09-23 19:01+0000\n"
 "Last-Translator: Eli Shleifer <eligator@gmail.com>\n"
 "Language-Team: Hebrew (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/configuration-dialog.cpp:816
+#: ../panel-plugin/configuration-dialog.cpp:818
 msgid "Add action"
 msgstr "הוספת פעולה"
 
@@ -46,19 +46,19 @@ msgstr "כולם"
 msgid "All _Settings"
 msgstr "כל _ההגדרות"
 
-#: ../panel-plugin/plugin.cpp:411
+#: ../panel-plugin/plugin.cpp:445
 msgid "Alternate application launcher for Xfce"
 msgstr "מפעיל יישום חלופי ל-Xfce "
 
-#: ../panel-plugin/configuration-dialog.cpp:717
+#: ../panel-plugin/configuration-dialog.cpp:719
 msgid "Amount of _items:"
 msgstr "כמות _פריטים:"
 
-#: ../panel-plugin/plugin.cpp:243
+#: ../panel-plugin/plugin.cpp:258
 msgid "Applications"
 msgstr "יישומים"
 
-#: ../panel-plugin/configuration-dialog.cpp:652
+#: ../panel-plugin/configuration-dialog.cpp:654
 msgid "Background opacit_y:"
 msgstr "א_טימות רקע:"
 
@@ -66,11 +66,11 @@ msgstr "א_טימות רקע:"
 msgid "Browse the file system to choose a custom command."
 msgstr "סייר במערכת הקבצים לבחירת פקודה מותאמת אישית."
 
-#: ../panel-plugin/configuration-dialog.cpp:874
+#: ../panel-plugin/configuration-dialog.cpp:876
 msgid "C_ommand:"
 msgstr "פ_קודה:"
 
-#: ../panel-plugin/configuration-dialog.cpp:637
+#: ../panel-plugin/configuration-dialog.cpp:639
 msgid "Categ_ory icon size:"
 msgstr "גודל איקון _קטגוריה:"
 
@@ -78,19 +78,19 @@ msgstr "גודל איקון _קטגוריה:"
 msgid "Clear Recently Used"
 msgstr "נקה תפריט בשימוש לאחרונה"
 
-#: ../panel-plugin/plugin.cpp:412
-msgid "Copyright © 2013-2017 Graeme Gott"
-msgstr "זכויות יוצרים © 2013-2017 Graeme Gott"
+#: ../panel-plugin/plugin.cpp:446
+msgid "Copyright © 2013-2018 Graeme Gott"
+msgstr "זכויות יוצרים © 2013-2018 Graeme Gott"
 
-#: ../panel-plugin/configuration-dialog.cpp:844
+#: ../panel-plugin/configuration-dialog.cpp:846
 msgid "Details"
 msgstr "פרטים"
 
-#: ../panel-plugin/configuration-dialog.cpp:533
+#: ../panel-plugin/configuration-dialog.cpp:534
 msgid "Di_splay:"
 msgstr "ת_צוגה:"
 
-#: ../panel-plugin/configuration-dialog.cpp:734
+#: ../panel-plugin/configuration-dialog.cpp:736
 msgid "Display by _default"
 msgstr "הצג לפי _ברירת מחדל"
 
@@ -106,7 +106,7 @@ msgstr "ערוך _פרופיל"
 msgid "Failed to edit profile."
 msgstr "נכשל לערוך פרופיל."
 
-#: ../panel-plugin/launcher.cpp:288 ../panel-plugin/launcher.cpp:361
+#: ../panel-plugin/launcher.cpp:288 ../panel-plugin/launcher.cpp:362
 #: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
@@ -132,23 +132,23 @@ msgstr "נכשל לפתוח מנהל הגדרות."
 msgid "Failed to switch users."
 msgstr "נכשל להעביר בין משתמשים."
 
-#: ../panel-plugin/window.cpp:161
+#: ../panel-plugin/window.cpp:162
 msgid "Favorites"
 msgstr "מועדפים"
 
-#: ../panel-plugin/configuration-dialog.cpp:538
+#: ../panel-plugin/configuration-dialog.cpp:539
 msgid "Icon"
 msgstr "איקון"
 
-#: ../panel-plugin/configuration-dialog.cpp:540
+#: ../panel-plugin/configuration-dialog.cpp:541
 msgid "Icon and title"
 msgstr "איקון וכותרת"
 
-#: ../panel-plugin/configuration-dialog.cpp:728
+#: ../panel-plugin/configuration-dialog.cpp:730
 msgid "Ignore _favorites"
 msgstr "התעלם מ_מועדפים"
 
-#: ../panel-plugin/configuration-dialog.cpp:621
+#: ../panel-plugin/configuration-dialog.cpp:623
 msgid "Ite_m icon size:"
 msgstr "גודל איקון _פריט:"
 
@@ -168,16 +168,16 @@ msgstr "הת_נתק"
 msgid "Man Pages"
 msgstr "עמודי Man"
 
-#: ../panel-plugin/configuration-dialog.cpp:586
-#: ../panel-plugin/configuration-dialog.cpp:677
+#: ../panel-plugin/configuration-dialog.cpp:587
+#: ../panel-plugin/configuration-dialog.cpp:679
 msgid "Menu"
 msgstr "תפריט"
 
-#: ../panel-plugin/configuration-dialog.cpp:849
+#: ../panel-plugin/configuration-dialog.cpp:851
 msgid "Nam_e:"
 msgstr "_שם:"
 
-#: ../panel-plugin/configuration-dialog.cpp:794
+#: ../panel-plugin/configuration-dialog.cpp:796
 msgid "Name"
 msgstr "שם"
 
@@ -193,27 +193,27 @@ msgstr "רגיל"
 msgid "Open URI"
 msgstr "פתח URI"
 
-#: ../panel-plugin/configuration-dialog.cpp:528
+#: ../panel-plugin/configuration-dialog.cpp:529
 msgid "Panel Button"
 msgstr "כפתור לוח"
 
-#: ../panel-plugin/configuration-dialog.cpp:799
+#: ../panel-plugin/configuration-dialog.cpp:801
 msgid "Pattern"
 msgstr "דפוס"
 
-#: ../panel-plugin/configuration-dialog.cpp:688
+#: ../panel-plugin/configuration-dialog.cpp:690
 msgid "Position _search entry next to panel button"
 msgstr "מקם ערך _חיפוש ליד כפתור לוח"
 
-#: ../panel-plugin/configuration-dialog.cpp:701
+#: ../panel-plugin/configuration-dialog.cpp:703
 msgid "Position cate_gories next to panel button"
 msgstr "מקם ק_טגוריות לצד כפתור לוח"
 
-#: ../panel-plugin/configuration-dialog.cpp:694
+#: ../panel-plugin/configuration-dialog.cpp:696
 msgid "Position commands next to search _entry"
 msgstr "מקם פקודות ליד _ערך חיפוש"
 
-#: ../panel-plugin/configuration-dialog.cpp:712 ../panel-plugin/window.cpp:167
+#: ../panel-plugin/configuration-dialog.cpp:714 ../panel-plugin/window.cpp:168
 msgid "Recently Used"
 msgstr "בשימוש לאחרונה"
 
@@ -221,12 +221,12 @@ msgstr "בשימוש לאחרונה"
 msgid "Remove From Favorites"
 msgstr "הסר מתוך מועדפים"
 
-#: ../panel-plugin/configuration-dialog.cpp:432
+#: ../panel-plugin/configuration-dialog.cpp:433
 #, c-format
 msgid "Remove action \"%s\"?"
 msgstr "להסיר את פעולה \"%s\"?"
 
-#: ../panel-plugin/configuration-dialog.cpp:825
+#: ../panel-plugin/configuration-dialog.cpp:827
 msgid "Remove selected action"
 msgstr "הסרת פעולה נבחרת"
 
@@ -259,23 +259,23 @@ msgstr "בחירת פקודה"
 msgid "Show a menu to easily access installed applications"
 msgstr "הצג תפריט כדי לגשת בקלות אל יישומים מותקנים"
 
-#: ../panel-plugin/configuration-dialog.cpp:603
+#: ../panel-plugin/configuration-dialog.cpp:605
 msgid "Show application _descriptions"
 msgstr "הצג _תיאורי יישום"
 
-#: ../panel-plugin/configuration-dialog.cpp:609
+#: ../panel-plugin/configuration-dialog.cpp:611
 msgid "Show application too_ltips"
 msgstr "הצג תיבת _עזר יישום"
 
-#: ../panel-plugin/configuration-dialog.cpp:597
+#: ../panel-plugin/configuration-dialog.cpp:598
 msgid "Show cate_gory names"
 msgstr "הצג שמות_קטגוריה"
 
-#: ../panel-plugin/configuration-dialog.cpp:591
+#: ../panel-plugin/configuration-dialog.cpp:592
 msgid "Show generic application _names"
 msgstr "הצג שמות יישום _כלליים"
 
-#: ../panel-plugin/configuration-dialog.cpp:615
+#: ../panel-plugin/configuration-dialog.cpp:617
 msgid "Show menu hie_rarchy"
 msgstr "הצג מ_דרג תפריט"
 
@@ -299,15 +299,15 @@ msgstr "מיין לפי אלף-בית ת-א"
 msgid "Switch _Users"
 msgstr "העבר בין _משתמשים"
 
-#: ../panel-plugin/configuration-dialog.cpp:682
+#: ../panel-plugin/configuration-dialog.cpp:684
 msgid "Switch categories by _hovering"
 msgstr "העבר בין קטגוריות על ידי _מיקום עליהן"
 
-#: ../panel-plugin/configuration-dialog.cpp:431
+#: ../panel-plugin/configuration-dialog.cpp:432
 msgid "The action will be deleted permanently."
 msgstr "הפעולה תימחק באופן קבוע."
 
-#: ../panel-plugin/configuration-dialog.cpp:539
+#: ../panel-plugin/configuration-dialog.cpp:540
 msgid "Title"
 msgstr "כותרת"
 
@@ -319,16 +319,16 @@ msgstr "לא יכול להוסיף מפעיל לשולחן עבודה."
 msgid "Unable to add launcher to panel."
 msgstr "לא יכול להוסיף מפעיל ללוח."
 
-#: ../panel-plugin/page.cpp:447
+#: ../panel-plugin/page.cpp:449
 msgid "Unable to edit launcher."
 msgstr "לא ניתן לערוך את המפעיל."
 
-#: ../panel-plugin/configuration-dialog.cpp:492
+#: ../panel-plugin/configuration-dialog.cpp:493
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "לא יכול לפתוח כתובת url הבאה: %s"
 
-#: ../panel-plugin/configuration-dialog.cpp:573
+#: ../panel-plugin/configuration-dialog.cpp:574
 msgid "Use a single _panel row"
 msgstr "השתמש בשורת _לוח בודדת"
 
@@ -374,7 +374,7 @@ msgstr "_סגור"
 msgid "_Commands"
 msgstr "_פקודות"
 
-#: ../panel-plugin/configuration-dialog.cpp:430
+#: ../panel-plugin/configuration-dialog.cpp:431
 msgid "_Delete"
 msgstr "_מחק"
 
@@ -386,7 +386,7 @@ msgstr "_ערוך יישומים"
 msgid "_Help"
 msgstr "_עזרה"
 
-#: ../panel-plugin/configuration-dialog.cpp:559
+#: ../panel-plugin/configuration-dialog.cpp:560
 msgid "_Icon:"
 msgstr "אי_קון:"
 
@@ -399,18 +399,18 @@ msgstr "_נעל מסך"
 msgid "_OK"
 msgstr "_אישור"
 
-#: ../panel-plugin/configuration-dialog.cpp:862
+#: ../panel-plugin/configuration-dialog.cpp:864
 msgid "_Pattern:"
 msgstr "_דפוס:"
 
-#: ../panel-plugin/configuration-dialog.cpp:886
+#: ../panel-plugin/configuration-dialog.cpp:888
 msgid "_Regular expression"
 msgstr "_ביטוי רגולרי"
 
-#: ../panel-plugin/configuration-dialog.cpp:548
+#: ../panel-plugin/configuration-dialog.cpp:549
 msgid "_Title:"
 msgstr "_כותרת:"
 
-#: ../panel-plugin/plugin.cpp:416
+#: ../panel-plugin/plugin.cpp:450
 msgid "translator-credits"
 msgstr "שבחים-מתרגמים"
