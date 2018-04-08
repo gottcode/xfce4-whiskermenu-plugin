@@ -323,7 +323,7 @@ void WhiskerMenu::Window::hide()
 
 //-----------------------------------------------------------------------------
 
-void WhiskerMenu::Window::show(GtkWidget* parent, bool horizontal)
+void WhiskerMenu::Window::show(const Position position)
 {
 	// Handle showing tooltips
 	if (wm_settings->launcher_show_tooltip)
@@ -387,10 +387,11 @@ void WhiskerMenu::Window::show(GtkWidget* parent, bool horizontal)
 
 	GdkScreen* screen = NULL;
 	int parent_x = 0, parent_y = 0, parent_w = 0, parent_h = 0;
-	if (parent != NULL)
+	if (position != PositionAtCursor)
 	{
 		// Wait up to half a second for auto-hidden panels to be shown
 		clock_t end = clock() + (CLOCKS_PER_SEC / 2);
+		GtkWidget* parent = m_plugin->get_button();
 		GtkWindow* parent_window = GTK_WINDOW(gtk_widget_get_toplevel(parent));
 		gtk_window_get_position(parent_window, &parent_x, &parent_y);
 		while ((parent_x == -9999) && (parent_y == -9999) && (clock() < end))
@@ -451,7 +452,7 @@ void WhiskerMenu::Window::show(GtkWidget* parent, bool horizontal)
 	// Find window position
 	bool layout_left = ((2 * (parent_x - monitor.x)) + parent_w) < monitor.width;
 	bool layout_bottom = ((2 * (parent_y - monitor.y)) + (parent_h / 2)) > monitor.height;
-	if (horizontal)
+	if (position != PositionVertical)
 	{
 		m_geometry.x = layout_left ? parent_x : (parent_x + parent_w - m_geometry.width);
 		m_geometry.y = layout_bottom ? (parent_y - m_geometry.height) : (parent_y + parent_h);

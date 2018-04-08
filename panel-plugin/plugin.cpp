@@ -358,7 +358,7 @@ void Plugin::button_toggled(GtkToggleButton* button)
 	else
 	{
 		xfce_panel_plugin_block_autohide(m_plugin, true);
-		show_menu(m_button, xfce_panel_plugin_get_orientation(m_plugin) == GTK_ORIENTATION_HORIZONTAL);
+		show_menu(false);
 	}
 }
 
@@ -419,7 +419,7 @@ gboolean Plugin::remote_event(XfcePanelPlugin*, gchar* name, GValue* value)
 	}
 	else if (value && G_VALUE_HOLDS_BOOLEAN(value) && g_value_get_boolean(value))
 	{
-		show_menu(NULL, true);
+		show_menu(true);
 	}
 	else
 	{
@@ -542,7 +542,7 @@ void Plugin::update_size()
 
 //-----------------------------------------------------------------------------
 
-void Plugin::show_menu(GtkWidget* parent, bool horizontal)
+void Plugin::show_menu(bool at_cursor)
 {
 	if (wm_settings->menu_opacity != m_opacity)
 	{
@@ -554,7 +554,7 @@ void Plugin::show_menu(GtkWidget* parent, bool horizontal)
 		}
 		m_opacity = wm_settings->menu_opacity;
 	}
-	m_window->show(parent, horizontal);
+	m_window->show(at_cursor ? Window::PositionAtCursor : Window::Position(xfce_panel_plugin_get_orientation(m_plugin)));
 }
 
 //-----------------------------------------------------------------------------

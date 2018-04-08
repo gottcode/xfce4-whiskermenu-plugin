@@ -41,6 +41,13 @@ public:
 	explicit Window(Plugin* plugin);
 	~Window();
 
+	enum Position
+	{
+		PositionHorizontal = GTK_ORIENTATION_HORIZONTAL,
+		PositionVertical = GTK_ORIENTATION_VERTICAL,
+		PositionAtCursor
+	};
+
 	GtkWidget* get_widget() const
 	{
 		return GTK_WIDGET(m_window);
@@ -67,7 +74,7 @@ public:
 	}
 
 	void hide();
-	void show(GtkWidget* parent, bool horizontal);
+	void show(const Position position);
 	void save();
 	void on_context_menu_destroyed();
 	void set_categories(const std::vector<SectionButton*>& categories);
