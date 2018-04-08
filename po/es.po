@@ -1,23 +1,23 @@
 # Spanish translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2017 Graeme Gott
+# Copyright (C) 2018 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Adolfo Jayme-Barrientos, 2016
+# Adolfo Jayme-Barrientos, 2016,2018
 # Adolfo Jayme-Barrientos, 2015
 # Adolfo Jayme-Barrientos, 2013
 # Adolfo Jayme-Barrientos, 2014
 # Inti Alonso <intialonso@gmail.com>, 2013
 # Noe Moreno <NOE.MORENO@gmail.com>, 2016
-# Pablo Roberto “Jristz” Lezaeta Reyes <prflr88@gmail.com>, 2013-2015
-# Pablo Roberto “Jristz” Lezaeta Reyes <prflr88@gmail.com>, 2017
+# Pablo Lezaeta Reyes [pˈaβ̞lo lˌe̞θaˈeta rˈejɛ] <prflr88@gmail.com>, 2013-2015
+# Pablo Lezaeta Reyes [pˈaβ̞lo lˌe̞θaˈeta rˈejɛ] <prflr88@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-07 08:16-0400\n"
-"PO-Revision-Date: 2017-07-16 15:53+0000\n"
-"Last-Translator: Pablo Roberto “Jristz” Lezaeta Reyes <prflr88@gmail.com>\n"
+"PO-Revision-Date: 2018-04-08 03:48+0000\n"
+"Last-Translator: Adolfo Jayme-Barrientos\n"
 "Language-Team: Spanish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/es/)\n"
 "Language: es\n"
@@ -84,7 +84,7 @@ msgstr "Limpiar elementos recientes"
 
 #: ../panel-plugin/plugin.cpp:446
 msgid "Copyright © 2013-2018 Graeme Gott"
-msgstr "Derechos de autor © 2013-2018 Graeme Gott"
+msgstr "© 2013-2018 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:846
 msgid "Details"
