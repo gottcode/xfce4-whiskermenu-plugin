@@ -1,5 +1,5 @@
 # Polish translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2017 Graeme Gott
+# Copyright (C) 2018 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -7,10 +7,10 @@
 # december <december0123@gmail.com>, 2013
 # december <december0123@gmail.com>, 2013
 # december <december0123@gmail.com>, 2013
-# m4sk1n <m4sk1n@o2.pl>, 2016
-# Michał Olber <michal.olber@osworld.pl>, 2013-2015
-# M T <michtrz@gmail.com>, 2013-2014,2016-2017
-# Michał Olber <michal.olber@osworld.pl>, 2013
+# Marcin Mikołajczak <m4sk1n@vivaldi.net>, 2016
+# Michał Olber <michal@olber.pl>, 2013-2015
+# M T <michtrz@gmail.com>, 2013-2014,2016-2018
+# Michał Olber <michal@olber.pl>, 2013
 # Piotr Sokół <psokol.l10n@gmail.com>, 2013-2014
 # Piotr Sokół <psokol.l10n@gmail.com>, 2015
 # Piotr Sokół <psokol.l10n@gmail.com>, 2016
@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-07 08:16-0400\n"
-"PO-Revision-Date: 2017-01-16 12:01+0000\n"
+"PO-Revision-Date: 2018-04-07 22:44+0000\n"
 "Last-Translator: M T <michtrz@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/pl/)\n"
@@ -27,8 +27,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n"
+"%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
+"%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 #: ../panel-plugin/configuration-dialog.cpp:818
 msgid "Add action"
