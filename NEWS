@@ -1,3 +1,11 @@
+2.1.6
+=====
+- Fix losing search focus. (bug #14209)
+- Fix crash when last search action is deleted.
+- Fix menu shown in alt-tab.
+- Translation updates: Bulgarian, Catalan, Chinese (Taiwan), Czech,
+  Danish, Finnish, German, Lithuanian, Polish, Portuguese, Spanish.
+
 2.1.5
 =====
 - Fix typo. (bug #14001)
