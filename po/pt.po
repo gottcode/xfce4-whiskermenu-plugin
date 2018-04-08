@@ -1,18 +1,18 @@
 # Portuguese translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2017 Graeme Gott
+# Copyright (C) 2018 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # Carlos Reis <reiscarlos1976@gmail.com>, 2017
 # fabioluciano <fabio@naoimporta.com>, 2013
-# José Vieira <jvieira33@sapo.pt>, 2016-2017
+# José Vieira <jvieira33@sapo.pt>, 2016-2018
 # Sérgio Marques <smarquespt@gmail.com>, 2013-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-07 08:16-0400\n"
-"PO-Revision-Date: 2017-04-24 16:44+0000\n"
+"PO-Revision-Date: 2018-04-07 23:22+0000\n"
 "Last-Translator: José Vieira <jvieira33@sapo.pt>\n"
 "Language-Team: Portuguese (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/pt/)\n"
@@ -80,7 +80,7 @@ msgstr "Limpar itens recentes"
 
 #: ../panel-plugin/plugin.cpp:446
 msgid "Copyright © 2013-2018 Graeme Gott"
-msgstr "Direitos de autor: Copyright © 2013-2018 Graeme Gott"
+msgstr "Copyright © 2013-2018 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:846
 msgid "Details"
