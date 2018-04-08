@@ -1,15 +1,15 @@
 # Bulgarian translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2017 Graeme Gott
+# Copyright (C) 2018 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Kiril Kirilov <cybercop_montana@abv.bg>, 2013-2017
+# Kiril Kirilov <cybercop_montana@abv.bg>, 2013-2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-07 08:16-0400\n"
-"PO-Revision-Date: 2017-01-14 20:55+0000\n"
+"PO-Revision-Date: 2018-04-07 16:58+0000\n"
 "Last-Translator: Kiril Kirilov <cybercop_montana@abv.bg>\n"
 "Language-Team: Bulgarian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/bg/)\n"
