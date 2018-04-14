@@ -1,9 +1,10 @@
 # French translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2017 Graeme Gott
+# Copyright (C) 2018 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # Anthony Jorion <pingax@frugalware.org>, 2013
+# Charles Monzat <superboa@hotmail.fr>, 2018
 # jc1 <jc1.quebecos@gmail.com>, 2013,2015-2016
 # Lysio J-C <lysio.jc@outlook.fr>, 2017
 # Urien Desterres <urien.desterres@gmail.com>, 2014-2015
@@ -13,8 +14,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-07 08:16-0400\n"
-"PO-Revision-Date: 2017-01-29 19:58+0000\n"
-"Last-Translator: Lysio J-C <lysio.jc@outlook.fr>\n"
+"PO-Revision-Date: 2018-04-12 10:03+0000\n"
+"Last-Translator: Charles Monzat <superboa@hotmail.fr>\n"
 "Language-Team: French (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/fr/)\n"
 "Language: fr\n"
@@ -53,7 +54,7 @@ msgstr "Lanceur d’application alternatif pour Xfce"
 
 #: ../panel-plugin/configuration-dialog.cpp:719
 msgid "Amount of _items:"
-msgstr "Nombre d’élé_ments :"
+msgstr "Nombre d’élé_ments :"
 
 #: ../panel-plugin/plugin.cpp:258
 msgid "Applications"
@@ -61,7 +62,7 @@ msgstr "Applications"
 
 #: ../panel-plugin/configuration-dialog.cpp:654
 msgid "Background opacit_y:"
-msgstr "Opacité de l’_arrière-plan :"
+msgstr "Opacité de l’_arrière-plan :"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
@@ -70,11 +71,11 @@ msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:876
 msgid "C_ommand:"
-msgstr "C_ommande : "
+msgstr "C_ommande : "
 
 #: ../panel-plugin/configuration-dialog.cpp:639
 msgid "Categ_ory icon size:"
-msgstr "Taille des icônes des caté_gories :"
+msgstr "Taille des icônes des caté_gories :"
 
 #: ../panel-plugin/recent-page.cpp:173
 msgid "Clear Recently Used"
@@ -90,7 +91,7 @@ msgstr "Détails"
 
 #: ../panel-plugin/configuration-dialog.cpp:534
 msgid "Di_splay:"
-msgstr "Affic_hage :"
+msgstr "Affic_hage :"
 
 #: ../panel-plugin/configuration-dialog.cpp:736
 msgid "Display by _default"
@@ -98,7 +99,7 @@ msgstr "Afficher par _défaut"
 
 #: ../panel-plugin/page.cpp:268
 msgid "Edit Application..."
-msgstr "Modifier l'application..."
+msgstr "Modifier l’application…"
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -112,7 +113,7 @@ msgstr "Impossible de modifier le profil."
 #: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
-msgstr "Impossible d’exécuter la commande « %s »."
+msgstr "Impossible d’exécuter la commande « %s »."
 
 #: ../panel-plugin/settings.cpp:123
 msgid "Failed to launch menu editor."
@@ -152,7 +153,7 @@ msgstr "Ignorer les _favoris"
 
 #: ../panel-plugin/configuration-dialog.cpp:623
 msgid "Ite_m icon size:"
-msgstr "Taille des icônes des élé_ments :"
+msgstr "Taille des icônes des élé_ments :"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Large"
@@ -177,7 +178,7 @@ msgstr "Menu"
 
 #: ../panel-plugin/configuration-dialog.cpp:851
 msgid "Nam_e:"
-msgstr "No_m : "
+msgstr "No_m : "
 
 #: ../panel-plugin/configuration-dialog.cpp:796
 msgid "Name"
@@ -226,7 +227,7 @@ msgstr "Retirer des favoris"
 #: ../panel-plugin/configuration-dialog.cpp:433
 #, c-format
 msgid "Remove action \"%s\"?"
-msgstr "Supprimer l’action « %s » ?"
+msgstr "Supprimer l’action « %s » ?"
 
 #: ../panel-plugin/configuration-dialog.cpp:827
 msgid "Remove selected action"
@@ -259,7 +260,7 @@ msgstr "Sélection d’une commande"
 
 #: ../panel-plugin/whiskermenu.desktop.in.h:2
 msgid "Show a menu to easily access installed applications"
-msgstr "Afficher un menu pour accéder facilement aux application installées"
+msgstr "Afficher un menu pour accéder facilement aux applications installées"
 
 #: ../panel-plugin/configuration-dialog.cpp:605
 msgid "Show application _descriptions"
@@ -267,11 +268,11 @@ msgstr "Afficher la _description des applications"
 
 #: ../panel-plugin/configuration-dialog.cpp:611
 msgid "Show application too_ltips"
-msgstr "Afficher les info_bulles des applications"
+msgstr "Afficher les info-_bulles des applications"
 
 #: ../panel-plugin/configuration-dialog.cpp:598
 msgid "Show cate_gory names"
-msgstr "Voir les noms de caté_gories"
+msgstr "Afficher les noms de caté_gories"
 
 #: ../panel-plugin/configuration-dialog.cpp:592
 msgid "Show generic application _names"
@@ -328,7 +329,7 @@ msgstr "Impossible de modifier le lanceur."
 #: ../panel-plugin/configuration-dialog.cpp:493
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "Impossible d’ouvrir l’URL suivante : %s"
+msgstr "Impossible d’ouvrir l’URL suivant : %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:574
 msgid "Use a single _panel row"
@@ -390,7 +391,7 @@ msgstr "_Aide"
 
 #: ../panel-plugin/configuration-dialog.cpp:560
 msgid "_Icon:"
-msgstr "_Icône :"
+msgstr "_Icône :"
 
 #: ../panel-plugin/settings.cpp:120
 msgid "_Lock Screen"
@@ -403,7 +404,7 @@ msgstr "_Ok"
 
 #: ../panel-plugin/configuration-dialog.cpp:864
 msgid "_Pattern:"
-msgstr "_Motifs :"
+msgstr "_Motifs :"
 
 #: ../panel-plugin/configuration-dialog.cpp:888
 msgid "_Regular expression"
@@ -411,7 +412,7 @@ msgstr "_Expression régulière"
 
 #: ../panel-plugin/configuration-dialog.cpp:549
 msgid "_Title:"
-msgstr "_Titre :"
+msgstr "_Titre :"
 
 #: ../panel-plugin/plugin.cpp:450
 msgid "translator-credits"
