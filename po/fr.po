@@ -7,15 +7,15 @@
 # Charles Monzat <superboa@hotmail.fr>, 2018
 # jc1 <jc1.quebecos@gmail.com>, 2013,2015-2016
 # Lysio J-C <lysio.jc@outlook.fr>, 2017
-# Urien Desterres <urien.desterres@gmail.com>, 2014-2015
+# Urien Desterres <urien.desterres@gmail.com>, 2014-2015,2018
 # Yannick Le Guen <leguen.yannick@gmail.com>, 2014-2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-15 08:22-0400\n"
-"PO-Revision-Date: 2018-04-12 10:03+0000\n"
-"Last-Translator: Charles Monzat <superboa@hotmail.fr>\n"
+"PO-Revision-Date: 2018-04-15 14:17+0000\n"
+"Last-Translator: Urien Desterres <urien.desterres@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/fr/)\n"
 "Language: fr\n"
@@ -148,9 +148,8 @@ msgid "Icon and title"
 msgstr "Icône et texte"
 
 #: ../panel-plugin/configuration-dialog.cpp:730
-#, fuzzy
 msgid "Include _favorites"
-msgstr "Ignorer les _favoris"
+msgstr "Inclure les f_avoris"
 
 #: ../panel-plugin/configuration-dialog.cpp:623
 msgid "Ite_m icon size:"
