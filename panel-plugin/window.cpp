@@ -677,7 +677,7 @@ void WhiskerMenu::Window::set_loaded()
 {
 	// Hide loading spinner
 	gtk_spinner_stop(m_window_load_spinner);
-	gtk_stack_set_visible_child_full(m_window_stack, "contents", GTK_STACK_TRANSITION_TYPE_CROSSFADE);
+	gtk_stack_set_visible_child_name(m_window_stack, "contents");
 
 	// Focus search entry
 	gtk_widget_grab_focus(GTK_WIDGET(m_search_entry));
