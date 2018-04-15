@@ -1,15 +1,15 @@
 # Slovak translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2017 Graeme Gott
+# Copyright (C) 2018 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Slavko <linux@slavino.sk>, 2013-2017
+# Slavko <linux@slavino.sk>, 2013-2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-15 08:22-0400\n"
-"PO-Revision-Date: 2017-01-14 06:20+0000\n"
+"PO-Revision-Date: 2018-04-15 15:02+0000\n"
 "Last-Translator: Slavko <linux@slavino.sk>\n"
 "Language-Team: Slovak (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/sk/)\n"
@@ -142,9 +142,8 @@ msgid "Icon and title"
 msgstr "Ikona a názov"
 
 #: ../panel-plugin/configuration-dialog.cpp:730
-#, fuzzy
 msgid "Include _favorites"
-msgstr "Ignorovať o_bľúbené"
+msgstr "Zahrnúť obľúbené"
 
 #: ../panel-plugin/configuration-dialog.cpp:623
 msgid "Ite_m icon size:"
