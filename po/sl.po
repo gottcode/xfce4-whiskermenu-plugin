@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-07 08:16-0400\n"
+"POT-Creation-Date: 2018-04-15 08:22-0400\n"
 "PO-Revision-Date: 2017-01-14 16:37+0000\n"
 "Last-Translator: Ta Kernc\n"
 "Language-Team: Slovenian (http://www.transifex.com/gottcode/xfce4-"
@@ -46,7 +46,7 @@ msgstr "Vsi programi"
 msgid "All _Settings"
 msgstr "Vse na_stavitve"
 
-#: ../panel-plugin/plugin.cpp:445
+#: ../panel-plugin/plugin.cpp:405
 msgid "Alternate application launcher for Xfce"
 msgstr "Alternativni zaganjalnik programov za Xfce"
 
@@ -54,7 +54,7 @@ msgstr "Alternativni zaganjalnik programov za Xfce"
 msgid "Amount of _items:"
 msgstr "Štev_ilo predmetov:"
 
-#: ../panel-plugin/plugin.cpp:258
+#: ../panel-plugin/plugin.cpp:210
 msgid "Applications"
 msgstr "Programi"
 
@@ -78,7 +78,7 @@ msgstr "Velikost ikon kateg_orij"
 msgid "Clear Recently Used"
 msgstr "Počisti nedavno uporabljene"
 
-#: ../panel-plugin/plugin.cpp:446
+#: ../panel-plugin/plugin.cpp:406
 msgid "Copyright © 2013-2018 Graeme Gott"
 msgstr "Avtorske pravice © 2013-2018 Graeme Gott"
 
@@ -132,7 +132,7 @@ msgstr "Ni mogoče zagnati upravljalnika nastavitev."
 msgid "Failed to switch users."
 msgstr "Ni mogoče zamenjati uporabnika."
 
-#: ../panel-plugin/window.cpp:162
+#: ../panel-plugin/window.cpp:150
 msgid "Favorites"
 msgstr "Priljubljene"
 
@@ -145,7 +145,8 @@ msgid "Icon and title"
 msgstr "Ikono in naziv"
 
 #: ../panel-plugin/configuration-dialog.cpp:730
-msgid "Ignore _favorites"
+#, fuzzy
+msgid "Include _favorites"
 msgstr "Prezri priljubljene"
 
 #: ../panel-plugin/configuration-dialog.cpp:623
@@ -213,7 +214,7 @@ msgstr "Postavi kate_gorije poleg gumba v pultu"
 msgid "Position commands next to search _entry"
 msgstr "Postavi d_ejanja ob iskalno polje"
 
-#: ../panel-plugin/configuration-dialog.cpp:714 ../panel-plugin/window.cpp:168
+#: ../panel-plugin/configuration-dialog.cpp:714 ../panel-plugin/window.cpp:156
 msgid "Recently Used"
 msgstr "Nedavno uporabljeno"
 
@@ -311,15 +312,15 @@ msgstr "Dejanje bo trajno izbrisano."
 msgid "Title"
 msgstr "Naziv"
 
-#: ../panel-plugin/page.cpp:372
+#: ../panel-plugin/page.cpp:333
 msgid "Unable to add launcher to desktop."
 msgstr "Zaganjalnika ni bilo mogoče dodati na namizje."
 
-#: ../panel-plugin/page.cpp:411 ../panel-plugin/page.cpp:420
+#: ../panel-plugin/page.cpp:372 ../panel-plugin/page.cpp:381
 msgid "Unable to add launcher to panel."
 msgstr "Zaganjalnika ni bilo mogoče dodati v pult."
 
-#: ../panel-plugin/page.cpp:449
+#: ../panel-plugin/page.cpp:410
 msgid "Unable to edit launcher."
 msgstr "Zaganjalnika ni mogoče urediti."
 
@@ -411,6 +412,6 @@ msgstr "_Regularni izraz"
 msgid "_Title:"
 msgstr "_Naziv:"
 
-#: ../panel-plugin/plugin.cpp:450
+#: ../panel-plugin/plugin.cpp:410
 msgid "translator-credits"
 msgstr "seznam-prevajalcev"

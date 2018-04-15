@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-07 08:16-0400\n"
+"POT-Creation-Date: 2018-04-15 08:22-0400\n"
 "PO-Revision-Date: 2017-05-03 04:36+0000\n"
 "Last-Translator: 玉堂白鹤 <yjwork@qq.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/gottcode/xfce4-"
@@ -45,7 +45,7 @@ msgstr "所有"
 msgid "All _Settings"
 msgstr "所有设置 (_S)"
 
-#: ../panel-plugin/plugin.cpp:445
+#: ../panel-plugin/plugin.cpp:405
 msgid "Alternate application launcher for Xfce"
 msgstr "Xfce 应用程序启动器替代品"
 
@@ -53,7 +53,7 @@ msgstr "Xfce 应用程序启动器替代品"
 msgid "Amount of _items:"
 msgstr "项目合计(_I):"
 
-#: ../panel-plugin/plugin.cpp:258
+#: ../panel-plugin/plugin.cpp:210
 msgid "Applications"
 msgstr "应用程序"
 
@@ -77,7 +77,7 @@ msgstr "类目图标大小 (_O): "
 msgid "Clear Recently Used"
 msgstr "清除最近使用项"
 
-#: ../panel-plugin/plugin.cpp:446
+#: ../panel-plugin/plugin.cpp:406
 msgid "Copyright © 2013-2018 Graeme Gott"
 msgstr "版权所有© 2013-2018 Graeme Gott"
 
@@ -131,7 +131,7 @@ msgstr "打开设置管理器失败。"
 msgid "Failed to switch users."
 msgstr "切换用户失败。"
 
-#: ../panel-plugin/window.cpp:162
+#: ../panel-plugin/window.cpp:150
 msgid "Favorites"
 msgstr "收藏夹"
 
@@ -144,7 +144,8 @@ msgid "Icon and title"
 msgstr "图标和标题"
 
 #: ../panel-plugin/configuration-dialog.cpp:730
-msgid "Ignore _favorites"
+#, fuzzy
+msgid "Include _favorites"
 msgstr "忽略收藏夹(_F)"
 
 #: ../panel-plugin/configuration-dialog.cpp:623
@@ -212,7 +213,7 @@ msgstr "在面板按钮旁放置类目(_G)"
 msgid "Position commands next to search _entry"
 msgstr "在搜索框旁放置命令列表 (_E)"
 
-#: ../panel-plugin/configuration-dialog.cpp:714 ../panel-plugin/window.cpp:168
+#: ../panel-plugin/configuration-dialog.cpp:714 ../panel-plugin/window.cpp:156
 msgid "Recently Used"
 msgstr "最近使用"
 
@@ -310,15 +311,15 @@ msgstr "此动作将被永久删除。"
 msgid "Title"
 msgstr "标题"
 
-#: ../panel-plugin/page.cpp:372
+#: ../panel-plugin/page.cpp:333
 msgid "Unable to add launcher to desktop."
 msgstr "无法添加启动器到桌面。"
 
-#: ../panel-plugin/page.cpp:411 ../panel-plugin/page.cpp:420
+#: ../panel-plugin/page.cpp:372 ../panel-plugin/page.cpp:381
 msgid "Unable to add launcher to panel."
 msgstr "无法添加启动器到面板/"
 
-#: ../panel-plugin/page.cpp:449
+#: ../panel-plugin/page.cpp:410
 msgid "Unable to edit launcher."
 msgstr "无法编辑启动器。"
 
@@ -410,7 +411,7 @@ msgstr "正则表达式 (_R)"
 msgid "_Title:"
 msgstr "标题 (_T): "
 
-#: ../panel-plugin/plugin.cpp:450
+#: ../panel-plugin/plugin.cpp:410
 msgid "translator-credits"
 msgstr ""
 "白铭骢 <jeffbaichina@members.fsf.org>, 2014\\n\n"

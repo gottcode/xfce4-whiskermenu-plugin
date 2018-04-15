@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-07 08:16-0400\n"
+"POT-Creation-Date: 2018-04-15 08:22-0400\n"
 "PO-Revision-Date: 2016-12-01 14:12+0000\n"
 "Last-Translator: Ante Grubišić Čabo <ante.gc@gmail.com>\n"
 "Language-Team: Croatian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -45,7 +45,7 @@ msgstr "Sve"
 msgid "All _Settings"
 msgstr "Sve _Postavke"
 
-#: ../panel-plugin/plugin.cpp:445
+#: ../panel-plugin/plugin.cpp:405
 msgid "Alternate application launcher for Xfce"
 msgstr "Alternativni pokretač aplikacija za Xfce"
 
@@ -53,7 +53,7 @@ msgstr "Alternativni pokretač aplikacija za Xfce"
 msgid "Amount of _items:"
 msgstr "Broj stavki:"
 
-#: ../panel-plugin/plugin.cpp:258
+#: ../panel-plugin/plugin.cpp:210
 msgid "Applications"
 msgstr "Aplikacije"
 
@@ -77,7 +77,7 @@ msgstr "Veličin_a ikone kategorije:"
 msgid "Clear Recently Used"
 msgstr "Očisti kategoriju Najčešće korišteno"
 
-#: ../panel-plugin/plugin.cpp:446
+#: ../panel-plugin/plugin.cpp:406
 msgid "Copyright © 2013-2018 Graeme Gott"
 msgstr "Autorska prava © 2013-2018 Graeme Gott"
 
@@ -132,7 +132,7 @@ msgstr "Nije moguće otvoriti Upravitelja Postavki."
 msgid "Failed to switch users."
 msgstr "Nije moguće promijeniti korisnika."
 
-#: ../panel-plugin/window.cpp:162
+#: ../panel-plugin/window.cpp:150
 msgid "Favorites"
 msgstr "Omiljeno"
 
@@ -145,7 +145,8 @@ msgid "Icon and title"
 msgstr "Ikona i ime"
 
 #: ../panel-plugin/configuration-dialog.cpp:730
-msgid "Ignore _favorites"
+#, fuzzy
+msgid "Include _favorites"
 msgstr "Ignoriraj omiljene"
 
 #: ../panel-plugin/configuration-dialog.cpp:623
@@ -213,7 +214,7 @@ msgstr "Postavi kategorije pokraj gumba na ploči"
 msgid "Position commands next to search _entry"
 msgstr "Postavi komande kraj pret_raživanja"
 
-#: ../panel-plugin/configuration-dialog.cpp:714 ../panel-plugin/window.cpp:168
+#: ../panel-plugin/configuration-dialog.cpp:714 ../panel-plugin/window.cpp:156
 msgid "Recently Used"
 msgstr "Najčešće korišteno"
 
@@ -311,15 +312,15 @@ msgstr "Akcija će biti trajno uklonjena."
 msgid "Title"
 msgstr "Ime"
 
-#: ../panel-plugin/page.cpp:372
+#: ../panel-plugin/page.cpp:333
 msgid "Unable to add launcher to desktop."
 msgstr "Nije moguće dodati pokretač na Radnu površinu."
 
-#: ../panel-plugin/page.cpp:411 ../panel-plugin/page.cpp:420
+#: ../panel-plugin/page.cpp:372 ../panel-plugin/page.cpp:381
 msgid "Unable to add launcher to panel."
 msgstr "Nije moguće dodati pokretač na Ploču"
 
-#: ../panel-plugin/page.cpp:449
+#: ../panel-plugin/page.cpp:410
 #, fuzzy
 msgid "Unable to edit launcher."
 msgstr "Nije moguće dodati pokretač na Ploču"
@@ -412,6 +413,6 @@ msgstr "_Normalan izraz"
 msgid "_Title:"
 msgstr "_Naslov:"
 
-#: ../panel-plugin/plugin.cpp:450
+#: ../panel-plugin/plugin.cpp:410
 msgid "translator-credits"
 msgstr "Zasluge za prijevod"

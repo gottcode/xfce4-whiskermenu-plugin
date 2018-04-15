@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-07 08:16-0400\n"
+"POT-Creation-Date: 2018-04-15 08:22-0400\n"
 "PO-Revision-Date: 2018-04-07 14:31+0000\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -47,7 +47,7 @@ msgstr "Vše"
 msgid "All _Settings"
 msgstr "Všechna _nastavení"
 
-#: ../panel-plugin/plugin.cpp:445
+#: ../panel-plugin/plugin.cpp:405
 msgid "Alternate application launcher for Xfce"
 msgstr "Alternativní spouštěč aplikací pro Xfce"
 
@@ -55,7 +55,7 @@ msgstr "Alternativní spouštěč aplikací pro Xfce"
 msgid "Amount of _items:"
 msgstr "Množství _položek:"
 
-#: ../panel-plugin/plugin.cpp:258
+#: ../panel-plugin/plugin.cpp:210
 msgid "Applications"
 msgstr "Aplikace"
 
@@ -79,7 +79,7 @@ msgstr "Velikost ikon kateg_orií:"
 msgid "Clear Recently Used"
 msgstr "Vymazat seznam nedávno použitých položek"
 
-#: ../panel-plugin/plugin.cpp:446
+#: ../panel-plugin/plugin.cpp:406
 msgid "Copyright © 2013-2018 Graeme Gott"
 msgstr "Copyright © 2013-2018 Graeme Gott"
 
@@ -133,7 +133,7 @@ msgstr "Otevření správce nastavení se nezdařilo."
 msgid "Failed to switch users."
 msgstr "Přepnutí uživatelů se nedařilo."
 
-#: ../panel-plugin/window.cpp:162
+#: ../panel-plugin/window.cpp:150
 msgid "Favorites"
 msgstr "Oblíbené"
 
@@ -146,7 +146,8 @@ msgid "Icon and title"
 msgstr "Ikona a název"
 
 #: ../panel-plugin/configuration-dialog.cpp:730
-msgid "Ignore _favorites"
+#, fuzzy
+msgid "Include _favorites"
 msgstr "Ignorovat _oblíbené"
 
 #: ../panel-plugin/configuration-dialog.cpp:623
@@ -214,7 +215,7 @@ msgstr "Umístit kate_gorie vedle tlačítka panelu"
 msgid "Position commands next to search _entry"
 msgstr "U_místit příkazy vedle pole vyhledávání"
 
-#: ../panel-plugin/configuration-dialog.cpp:714 ../panel-plugin/window.cpp:168
+#: ../panel-plugin/configuration-dialog.cpp:714 ../panel-plugin/window.cpp:156
 msgid "Recently Used"
 msgstr "Nedávno použité"
 
@@ -312,15 +313,15 @@ msgstr "Akce se trvale smaže."
 msgid "Title"
 msgstr "Název"
 
-#: ../panel-plugin/page.cpp:372
+#: ../panel-plugin/page.cpp:333
 msgid "Unable to add launcher to desktop."
 msgstr "Nelze přidat spouštěč na plochu."
 
-#: ../panel-plugin/page.cpp:411 ../panel-plugin/page.cpp:420
+#: ../panel-plugin/page.cpp:372 ../panel-plugin/page.cpp:381
 msgid "Unable to add launcher to panel."
 msgstr "Nelze přidat spouštěč na panel."
 
-#: ../panel-plugin/page.cpp:449
+#: ../panel-plugin/page.cpp:410
 msgid "Unable to edit launcher."
 msgstr "Nelze upravit spouštěč."
 
@@ -412,6 +413,6 @@ msgstr "_Regulární výraz"
 msgid "_Title:"
 msgstr "Náz_ev:"
 
-#: ../panel-plugin/plugin.cpp:450
+#: ../panel-plugin/plugin.cpp:410
 msgid "translator-credits"
 msgstr "Přeložili halfark a Michal Várady <miko.vaji@gmail.com>"

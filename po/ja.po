@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-07 08:16-0400\n"
+"POT-Creation-Date: 2018-04-15 08:22-0400\n"
 "PO-Revision-Date: 2017-11-29 08:52+0000\n"
 "Last-Translator: Masato HASHIMOTO <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -43,7 +43,7 @@ msgstr "すべて"
 msgid "All _Settings"
 msgstr "設定マネージャー(_S)"
 
-#: ../panel-plugin/plugin.cpp:445
+#: ../panel-plugin/plugin.cpp:405
 msgid "Alternate application launcher for Xfce"
 msgstr "Xfce 用のオルタナティブなアプリケーションランチャーです"
 
@@ -51,7 +51,7 @@ msgstr "Xfce 用のオルタナティブなアプリケーションランチャ�
 msgid "Amount of _items:"
 msgstr "最大アイテム数(_I):"
 
-#: ../panel-plugin/plugin.cpp:258
+#: ../panel-plugin/plugin.cpp:210
 msgid "Applications"
 msgstr "アプリケーション"
 
@@ -75,7 +75,7 @@ msgstr "カテゴリのアイコンサイズ(_O):"
 msgid "Clear Recently Used"
 msgstr "最近使ったものをクリア"
 
-#: ../panel-plugin/plugin.cpp:446
+#: ../panel-plugin/plugin.cpp:406
 msgid "Copyright © 2013-2018 Graeme Gott"
 msgstr "Copyright © 2013-2018 Graeme Gott"
 
@@ -129,7 +129,7 @@ msgstr "設定マネージャーを開くことに失敗しました。"
 msgid "Failed to switch users."
 msgstr "ユーザーの切り替えに失敗しました。"
 
-#: ../panel-plugin/window.cpp:162
+#: ../panel-plugin/window.cpp:150
 msgid "Favorites"
 msgstr "お気に入り"
 
@@ -142,7 +142,8 @@ msgid "Icon and title"
 msgstr "アイコンとタイトル"
 
 #: ../panel-plugin/configuration-dialog.cpp:730
-msgid "Ignore _favorites"
+#, fuzzy
+msgid "Include _favorites"
 msgstr "お気に入りを無視する(_F)"
 
 #: ../panel-plugin/configuration-dialog.cpp:623
@@ -210,7 +211,7 @@ msgstr "カテゴリを左に表示する(_G)"
 msgid "Position commands next to search _entry"
 msgstr "コマンドを検索フィールドの後に置く(_E)"
 
-#: ../panel-plugin/configuration-dialog.cpp:714 ../panel-plugin/window.cpp:168
+#: ../panel-plugin/configuration-dialog.cpp:714 ../panel-plugin/window.cpp:156
 msgid "Recently Used"
 msgstr "最近使ったもの"
 
@@ -310,15 +311,15 @@ msgstr "アクションは完全に削除されます。"
 msgid "Title"
 msgstr "タイトル"
 
-#: ../panel-plugin/page.cpp:372
+#: ../panel-plugin/page.cpp:333
 msgid "Unable to add launcher to desktop."
 msgstr "デスクトップにランチャーを追加できません。"
 
-#: ../panel-plugin/page.cpp:411 ../panel-plugin/page.cpp:420
+#: ../panel-plugin/page.cpp:372 ../panel-plugin/page.cpp:381
 msgid "Unable to add launcher to panel."
 msgstr "パネルにランチャーを追加できません。"
 
-#: ../panel-plugin/page.cpp:449
+#: ../panel-plugin/page.cpp:410
 msgid "Unable to edit launcher."
 msgstr "ランチャーを編集できません。"
 
@@ -410,6 +411,6 @@ msgstr "正規表現(_R)"
 msgid "_Title:"
 msgstr "タイトル(_T):"
 
-#: ../panel-plugin/plugin.cpp:450
+#: ../panel-plugin/plugin.cpp:410
 msgid "translator-credits"
 msgstr "Masato HASHIMOTO <cabezon.hashimoto@gmail.com>, 2013-2017."

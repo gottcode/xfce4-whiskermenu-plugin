@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-07 08:16-0400\n"
+"POT-Creation-Date: 2018-04-15 08:22-0400\n"
 "PO-Revision-Date: 2017-08-09 18:47+0000\n"
 "Last-Translator: Gabriel Henrique\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/gottcode/xfce4-"
@@ -48,7 +48,7 @@ msgstr "Todas"
 msgid "All _Settings"
 msgstr "Toda_s as configurações"
 
-#: ../panel-plugin/plugin.cpp:445
+#: ../panel-plugin/plugin.cpp:405
 msgid "Alternate application launcher for Xfce"
 msgstr "Lançador de aplicações alternativo para o Xfce"
 
@@ -56,7 +56,7 @@ msgstr "Lançador de aplicações alternativo para o Xfce"
 msgid "Amount of _items:"
 msgstr "Número de ite_ns:"
 
-#: ../panel-plugin/plugin.cpp:258
+#: ../panel-plugin/plugin.cpp:210
 msgid "Applications"
 msgstr "Aplicações"
 
@@ -80,7 +80,7 @@ msgstr "Tamanho do ícone da categ_oria:"
 msgid "Clear Recently Used"
 msgstr "Limpar usados recentemente"
 
-#: ../panel-plugin/plugin.cpp:446
+#: ../panel-plugin/plugin.cpp:406
 msgid "Copyright © 2013-2018 Graeme Gott"
 msgstr "Direitos autorais: Copyright © 2013-2018 Graeme Gott"
 
@@ -134,7 +134,7 @@ msgstr "Falha ao abrir o gerenciador de configurações."
 msgid "Failed to switch users."
 msgstr "Falha ao trocar de usuário."
 
-#: ../panel-plugin/window.cpp:162
+#: ../panel-plugin/window.cpp:150
 msgid "Favorites"
 msgstr "Favoritos"
 
@@ -147,7 +147,8 @@ msgid "Icon and title"
 msgstr "Ícone e título"
 
 #: ../panel-plugin/configuration-dialog.cpp:730
-msgid "Ignore _favorites"
+#, fuzzy
+msgid "Include _favorites"
 msgstr "Ignorar f_avoritos"
 
 #: ../panel-plugin/configuration-dialog.cpp:623
@@ -215,7 +216,7 @@ msgstr "Posicionar categ_orias junto ao botão do painel"
 msgid "Position commands next to search _entry"
 msgstr "Posicionar comandos junto à _entrada de pesquisa"
 
-#: ../panel-plugin/configuration-dialog.cpp:714 ../panel-plugin/window.cpp:168
+#: ../panel-plugin/configuration-dialog.cpp:714 ../panel-plugin/window.cpp:156
 msgid "Recently Used"
 msgstr "Usados recentemente"
 
@@ -313,15 +314,15 @@ msgstr "Esta ação será eliminada permanentemente."
 msgid "Title"
 msgstr "Título"
 
-#: ../panel-plugin/page.cpp:372
+#: ../panel-plugin/page.cpp:333
 msgid "Unable to add launcher to desktop."
 msgstr "Não foi possível adicionar o lançador à área de trabalho."
 
-#: ../panel-plugin/page.cpp:411 ../panel-plugin/page.cpp:420
+#: ../panel-plugin/page.cpp:372 ../panel-plugin/page.cpp:381
 msgid "Unable to add launcher to panel."
 msgstr "Não foi possível adicionar o lançador ao painel."
 
-#: ../panel-plugin/page.cpp:449
+#: ../panel-plugin/page.cpp:410
 msgid "Unable to edit launcher."
 msgstr "Não foi possível editar o lançador."
 
@@ -413,7 +414,7 @@ msgstr "Expressão r_egular"
 msgid "_Title:"
 msgstr "Tít_ulo:"
 
-#: ../panel-plugin/plugin.cpp:450
+#: ../panel-plugin/plugin.cpp:410
 msgid "translator-credits"
 msgstr ""
 "Carlos Reis <reiscarlos1976@gmail.com>, 2017\n"

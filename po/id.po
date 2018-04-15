@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-07 08:16-0400\n"
+"POT-Creation-Date: 2018-04-15 08:22-0400\n"
 "PO-Revision-Date: 2015-06-17 04:48+0000\n"
 "Last-Translator: Mohamad Hasan Al Banna <se7entime@tutanota.com>\n"
 "Language-Team: Indonesian (http://www.transifex.com/gottcode/xfce4-"
@@ -45,7 +45,7 @@ msgstr "Semua"
 msgid "All _Settings"
 msgstr "Semua _Pengaturan"
 
-#: ../panel-plugin/plugin.cpp:445
+#: ../panel-plugin/plugin.cpp:405
 msgid "Alternate application launcher for Xfce"
 msgstr "Peluncur aplikasi alternatif untuk Xfce"
 
@@ -53,7 +53,7 @@ msgstr "Peluncur aplikasi alternatif untuk Xfce"
 msgid "Amount of _items:"
 msgstr "Jumlah _item:"
 
-#: ../panel-plugin/plugin.cpp:258
+#: ../panel-plugin/plugin.cpp:210
 msgid "Applications"
 msgstr "Aplikasi"
 
@@ -77,7 +77,7 @@ msgstr "ukuran ikon Kateg_ory:"
 msgid "Clear Recently Used"
 msgstr "Bersihkan yang Baru diGunakan"
 
-#: ../panel-plugin/plugin.cpp:446
+#: ../panel-plugin/plugin.cpp:406
 msgid "Copyright © 2013-2018 Graeme Gott"
 msgstr "Hak Cipta © 2013-2018 Graeme Gott"
 
@@ -132,7 +132,7 @@ msgstr "Gagal membuka menejer pengaturan."
 msgid "Failed to switch users."
 msgstr "Gagal berganti pengguna"
 
-#: ../panel-plugin/window.cpp:162
+#: ../panel-plugin/window.cpp:150
 msgid "Favorites"
 msgstr "Favorit"
 
@@ -145,7 +145,8 @@ msgid "Icon and title"
 msgstr "Ikon dan judul"
 
 #: ../panel-plugin/configuration-dialog.cpp:730
-msgid "Ignore _favorites"
+#, fuzzy
+msgid "Include _favorites"
 msgstr "Biarkan _favorit"
 
 #: ../panel-plugin/configuration-dialog.cpp:623
@@ -213,7 +214,7 @@ msgstr "Posisi _categories selanjutnya ke tombol panel"
 msgid "Position commands next to search _entry"
 msgstr "Posisi perintah setelah _entri cari"
 
-#: ../panel-plugin/configuration-dialog.cpp:714 ../panel-plugin/window.cpp:168
+#: ../panel-plugin/configuration-dialog.cpp:714 ../panel-plugin/window.cpp:156
 msgid "Recently Used"
 msgstr "Terakhir diGunakan"
 
@@ -312,15 +313,15 @@ msgstr "Aksi akan dihapus secara permanen."
 msgid "Title"
 msgstr "Judul"
 
-#: ../panel-plugin/page.cpp:372
+#: ../panel-plugin/page.cpp:333
 msgid "Unable to add launcher to desktop."
 msgstr "Gagal menambahkan peluncur ke desktop."
 
-#: ../panel-plugin/page.cpp:411 ../panel-plugin/page.cpp:420
+#: ../panel-plugin/page.cpp:372 ../panel-plugin/page.cpp:381
 msgid "Unable to add launcher to panel."
 msgstr "Gagal menambahkan peluncur ke panel."
 
-#: ../panel-plugin/page.cpp:449
+#: ../panel-plugin/page.cpp:410
 #, fuzzy
 msgid "Unable to edit launcher."
 msgstr "Gagal menambahkan peluncur ke panel."
@@ -413,6 +414,6 @@ msgstr "Ekspresi _umum"
 msgid "_Title:"
 msgstr "_Judul:"
 
-#: ../panel-plugin/plugin.cpp:450
+#: ../panel-plugin/plugin.cpp:410
 msgid "translator-credits"
 msgstr "kredit-penerjemah"

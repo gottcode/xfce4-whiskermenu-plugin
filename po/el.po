@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-07 08:16-0400\n"
+"POT-Creation-Date: 2018-04-15 08:22-0400\n"
 "PO-Revision-Date: 2017-01-21 13:31+0000\n"
 "Last-Translator: Thanos Apostolou <thanosapostolou@outlook.com>\n"
 "Language-Team: Greek (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -48,7 +48,7 @@ msgstr "Όλα"
 msgid "All _Settings"
 msgstr "Όλες οι _ρυθμίσεις"
 
-#: ../panel-plugin/plugin.cpp:445
+#: ../panel-plugin/plugin.cpp:405
 msgid "Alternate application launcher for Xfce"
 msgstr "Εναλλακτικός εκκινητής εφαρμογών για το Xfce"
 
@@ -56,7 +56,7 @@ msgstr "Εναλλακτικός εκκινητής εφαρμογών για τ
 msgid "Amount of _items:"
 msgstr "Σύνολο _αντικειμένων:"
 
-#: ../panel-plugin/plugin.cpp:258
+#: ../panel-plugin/plugin.cpp:210
 msgid "Applications"
 msgstr "Εφαρμογές"
 
@@ -80,7 +80,7 @@ msgstr "Μέγεθος εικονιδίων _κατηγοριών:"
 msgid "Clear Recently Used"
 msgstr "Εκκαθάριση Πρόσφατα Χρησιμοποιημένων"
 
-#: ../panel-plugin/plugin.cpp:446
+#: ../panel-plugin/plugin.cpp:406
 msgid "Copyright © 2013-2018 Graeme Gott"
 msgstr "Copyright © 2013-2018 Graeme Gott"
 
@@ -134,7 +134,7 @@ msgstr "Αποτυχία εκκίνησης του διαχειριστή ρυθ
 msgid "Failed to switch users."
 msgstr "Αποτυχία εναλλαγής χρηστών."
 
-#: ../panel-plugin/window.cpp:162
+#: ../panel-plugin/window.cpp:150
 msgid "Favorites"
 msgstr "Αγαπημένα"
 
@@ -147,7 +147,8 @@ msgid "Icon and title"
 msgstr "Εικονίδιο και τίτλος"
 
 #: ../panel-plugin/configuration-dialog.cpp:730
-msgid "Ignore _favorites"
+#, fuzzy
+msgid "Include _favorites"
 msgstr "Ε_ξαίρεση αγαπημένων"
 
 #: ../panel-plugin/configuration-dialog.cpp:623
@@ -215,7 +216,7 @@ msgstr "Τοποθέτηση των κατη_γοριών δίπλα στο κο
 msgid "Position commands next to search _entry"
 msgstr "Τοποθέτηση των εντολών δίπ_λα στο πεδίο εύρεσης"
 
-#: ../panel-plugin/configuration-dialog.cpp:714 ../panel-plugin/window.cpp:168
+#: ../panel-plugin/configuration-dialog.cpp:714 ../panel-plugin/window.cpp:156
 msgid "Recently Used"
 msgstr "Πρόσφατα"
 
@@ -313,15 +314,15 @@ msgstr "Η δράση αυτή θα διαγραφεί μόνιμα"
 msgid "Title"
 msgstr "Τίτλος"
 
-#: ../panel-plugin/page.cpp:372
+#: ../panel-plugin/page.cpp:333
 msgid "Unable to add launcher to desktop."
 msgstr "Απέτυχε η προσθήκη εκκινητή στην επιφάνεια εργασίας."
 
-#: ../panel-plugin/page.cpp:411 ../panel-plugin/page.cpp:420
+#: ../panel-plugin/page.cpp:372 ../panel-plugin/page.cpp:381
 msgid "Unable to add launcher to panel."
 msgstr "Απέτυχε η προσθήκη εκκινητή στο ταμπλό."
 
-#: ../panel-plugin/page.cpp:449
+#: ../panel-plugin/page.cpp:410
 msgid "Unable to edit launcher."
 msgstr "Απέτυχε η επεξεργασία εκκινητή."
 
@@ -413,6 +414,6 @@ msgstr "_Κανονική έκφραση"
 msgid "_Title:"
 msgstr "_Τίτλος:"
 
-#: ../panel-plugin/plugin.cpp:450
+#: ../panel-plugin/plugin.cpp:410
 msgid "translator-credits"
 msgstr "Γιώργος Βλαχάβας <vlahavas~at~gmail~dot~com>"

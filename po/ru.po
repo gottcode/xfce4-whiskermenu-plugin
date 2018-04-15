@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-07 08:16-0400\n"
+"POT-Creation-Date: 2018-04-15 08:22-0400\n"
 "PO-Revision-Date: 2017-09-28 05:12+0000\n"
 "Last-Translator: Sergey Alyoshin <alyoshin.s@gmail.com>\n"
 "Language-Team: Russian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -48,7 +48,7 @@ msgstr "Все"
 msgid "All _Settings"
 msgstr "Все _настройки"
 
-#: ../panel-plugin/plugin.cpp:445
+#: ../panel-plugin/plugin.cpp:405
 msgid "Alternate application launcher for Xfce"
 msgstr "Альтернативное меню запуска приложений для Xfce"
 
@@ -56,7 +56,7 @@ msgstr "Альтернативное меню запуска приложени�
 msgid "Amount of _items:"
 msgstr "Количество элементов:"
 
-#: ../panel-plugin/plugin.cpp:258
+#: ../panel-plugin/plugin.cpp:210
 msgid "Applications"
 msgstr "Приложения"
 
@@ -80,7 +80,7 @@ msgstr "Размер значка _категории:"
 msgid "Clear Recently Used"
 msgstr "Очистить историю"
 
-#: ../panel-plugin/plugin.cpp:446
+#: ../panel-plugin/plugin.cpp:406
 msgid "Copyright © 2013-2018 Graeme Gott"
 msgstr "Copyright © 2013—2018 Graeme Gott"
 
@@ -134,7 +134,7 @@ msgstr "Не удалось открыть диспетчер настроек."
 msgid "Failed to switch users."
 msgstr "Не удалось сменить пользователя."
 
-#: ../panel-plugin/window.cpp:162
+#: ../panel-plugin/window.cpp:150
 msgid "Favorites"
 msgstr "Избранное"
 
@@ -147,7 +147,8 @@ msgid "Icon and title"
 msgstr "Значок и заголовок"
 
 #: ../panel-plugin/configuration-dialog.cpp:730
-msgid "Ignore _favorites"
+#, fuzzy
+msgid "Include _favorites"
 msgstr "Игнорировать избранное"
 
 #: ../panel-plugin/configuration-dialog.cpp:623
@@ -215,7 +216,7 @@ msgstr "Ка_тегории после кнопок панели"
 msgid "Position commands next to search _entry"
 msgstr "Кнопки _команд рядом со строкой поиска"
 
-#: ../panel-plugin/configuration-dialog.cpp:714 ../panel-plugin/window.cpp:168
+#: ../panel-plugin/configuration-dialog.cpp:714 ../panel-plugin/window.cpp:156
 msgid "Recently Used"
 msgstr "Недавние"
 
@@ -313,15 +314,15 @@ msgstr "Действие буден навсегда удалено."
 msgid "Title"
 msgstr "Заголовок"
 
-#: ../panel-plugin/page.cpp:372
+#: ../panel-plugin/page.cpp:333
 msgid "Unable to add launcher to desktop."
 msgstr "Невозможно добавить значок запуска на «Рабочий стол»."
 
-#: ../panel-plugin/page.cpp:411 ../panel-plugin/page.cpp:420
+#: ../panel-plugin/page.cpp:372 ../panel-plugin/page.cpp:381
 msgid "Unable to add launcher to panel."
 msgstr "Невозможно добавить значок запуска на панель."
 
-#: ../panel-plugin/page.cpp:449
+#: ../panel-plugin/page.cpp:410
 msgid "Unable to edit launcher."
 msgstr "Невозможно изменить значок запуска."
 
@@ -413,7 +414,7 @@ msgstr "_Регулярное выражение"
 msgid "_Title:"
 msgstr "За_головок:"
 
-#: ../panel-plugin/plugin.cpp:450
+#: ../panel-plugin/plugin.cpp:410
 msgid "translator-credits"
 msgstr ""
 "Артём Демаков <dearalcher@gmail.com>, 2013\n"
