@@ -319,14 +319,6 @@ void ApplicationsPage::load_contents()
 		return;
 	}
 
-	// Reload if necessary
-	if (m_load_status == STATUS_LOADING_RELOAD)
-	{
-		m_load_status = STATUS_INVALID;
-		load_applications();
-		return;
-	}
-
 	// Set all applications category
 	get_view()->set_fixed_height_mode(true);
 	get_view()->set_model(m_categories.front()->get_model());
@@ -347,7 +339,7 @@ void ApplicationsPage::load_contents()
 	get_window()->set_items();
 	get_window()->set_loaded();
 
-	m_load_status = STATUS_LOADED;
+	m_load_status = (m_load_status == STATUS_LOADING) ? STATUS_LOADED : STATUS_INVALID;
 }
 
 //-----------------------------------------------------------------------------
