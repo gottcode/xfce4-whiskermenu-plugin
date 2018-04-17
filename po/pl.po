@@ -7,7 +7,7 @@
 # december <december0123@gmail.com>, 2013
 # december <december0123@gmail.com>, 2013
 # december <december0123@gmail.com>, 2013
-# Marcin Mikołajczak <m4sk1n@vivaldi.net>, 2016
+# Marcin Mikołajczak <me@m4sk.in>, 2016
 # Michał Olber <michal@olber.pl>, 2013-2015
 # M T <michtrz@gmail.com>, 2013-2014,2016-2018
 # Michał Olber <michal@olber.pl>, 2013
@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-15 08:22-0400\n"
-"PO-Revision-Date: 2018-04-07 22:44+0000\n"
+"PO-Revision-Date: 2018-04-16 23:16+0000\n"
 "Last-Translator: M T <michtrz@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/pl/)\n"
@@ -154,9 +154,8 @@ msgid "Icon and title"
 msgstr "Ikona i etykieta"
 
 #: ../panel-plugin/configuration-dialog.cpp:730
-#, fuzzy
 msgid "Include _favorites"
-msgstr "Pomijanie _ulubionych"
+msgstr "Dołączenie _ulubionych"
 
 #: ../panel-plugin/configuration-dialog.cpp:623
 msgid "Ite_m icon size:"
