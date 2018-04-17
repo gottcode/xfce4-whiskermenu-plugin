@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015, 2017 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015, 2017, 2018 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -54,16 +54,15 @@ private:
 	void load_menu(GarconMenu* menu, Category* parent_category);
 	void load_menu_item(GarconMenuItem* menu_item, Category* category);
 
-	static gpointer load_garcon_menu_slot(gpointer obj)
+	static void load_garcon_menu_slot(GTask* task, gpointer, gpointer task_data, GCancellable*)
 	{
-		reinterpret_cast<ApplicationsPage*>(obj)->load_garcon_menu();
-		return NULL;
+		reinterpret_cast<ApplicationsPage*>(task_data)->load_garcon_menu();
+		g_task_return_boolean(task, true);
 	}
 
-	static gboolean load_contents_slot(gpointer obj)
+	static void load_contents_slot(GObject*, GAsyncResult*, gpointer user_data)
 	{
-		reinterpret_cast<ApplicationsPage*>(obj)->load_contents();
-		return G_SOURCE_REMOVE;
+		reinterpret_cast<ApplicationsPage*>(user_data)->load_contents();
 	}
 
 private:
@@ -71,7 +70,6 @@ private:
 	GarconMenu* m_garcon_settings_menu;
 	std::vector<Category*> m_categories;
 	std::map<std::string, Launcher*> m_items;
-	GThread* m_load_thread;
 	int m_load_status;
 };
 

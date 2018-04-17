@@ -50,7 +50,6 @@ ApplicationsPage::ApplicationsPage(Window* window) :
 	Page(window),
 	m_garcon_menu(NULL),
 	m_garcon_settings_menu(NULL),
-	m_load_thread(NULL),
 	m_load_status(STATUS_INVALID)
 {
 	// Set desktop environment for applications
@@ -182,22 +181,16 @@ bool ApplicationsPage::load_applications()
 	{
 		return false;
 	}
-	// Check if loading garcon
-	else if (m_load_thread)
-	{
-		return false;
-	}
 	m_load_status = STATUS_LOADING;
 
 	// Load menu
 	clear_applications();
 
 	// Load contents in thread if possible
-	m_load_thread = g_thread_try_new(NULL, &ApplicationsPage::load_garcon_menu_slot, this, NULL);
-	if (!m_load_thread)
-	{
-		load_garcon_menu();
-	}
+	GTask* task = g_task_new(NULL, NULL, &ApplicationsPage::load_contents_slot, this);
+	g_task_set_task_data(task, this, NULL);
+	g_task_run_in_thread(task, &ApplicationsPage::load_garcon_menu_slot);
+	g_object_unref(task);
 
 	return false;
 }
@@ -271,7 +264,6 @@ void ApplicationsPage::load_garcon_menu()
 
 	if (!m_garcon_menu)
 	{
-		m_load_status = STATUS_INVALID;
 		return;
 	}
 
@@ -312,8 +304,6 @@ void ApplicationsPage::load_garcon_menu()
 	}
 	category->sort();
 	m_categories.insert(m_categories.begin(), category);
-
-	g_idle_add(&ApplicationsPage::load_contents_slot, this);
 }
 
 //-----------------------------------------------------------------------------
@@ -325,7 +315,6 @@ void ApplicationsPage::load_contents()
 		get_window()->set_loaded();
 
 		m_load_status = STATUS_INVALID;
-		m_load_thread = NULL;
 
 		return;
 	}
@@ -359,7 +348,6 @@ void ApplicationsPage::load_contents()
 	get_window()->set_loaded();
 
 	m_load_status = STATUS_LOADED;
-	m_load_thread = NULL;
 }
 
 //-----------------------------------------------------------------------------
