@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2016 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2016, 2018 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -56,10 +56,12 @@ Command::~Command()
 {
 	if (m_button)
 	{
+		gtk_widget_destroy(m_button);
 		g_object_unref(m_button);
 	}
 	if (m_menuitem)
 	{
+		gtk_widget_destroy(m_menuitem);
 		g_object_unref(m_menuitem);
 	}
 

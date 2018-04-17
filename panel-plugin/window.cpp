@@ -288,6 +288,7 @@ WhiskerMenu::Window::~Window()
 	delete m_favorites_button;
 	delete m_recent_button;
 
+	gtk_widget_destroy(GTK_WIDGET(m_window));
 	g_object_unref(m_window);
 }
 
