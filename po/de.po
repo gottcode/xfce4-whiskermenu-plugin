@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-15 08:22-0400\n"
-"PO-Revision-Date: 2018-04-07 22:44+0000\n"
+"PO-Revision-Date: 2018-04-16 23:17+0000\n"
 "Last-Translator: M T <michtrz@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/de/)\n"
@@ -147,9 +147,8 @@ msgid "Icon and title"
 msgstr "Symbol und Titel"
 
 #: ../panel-plugin/configuration-dialog.cpp:730
-#, fuzzy
 msgid "Include _favorites"
-msgstr "_Favoriten vernachlässigen"
+msgstr "_Favoriten einbeziehen"
 
 #: ../panel-plugin/configuration-dialog.cpp:623
 msgid "Ite_m icon size:"
