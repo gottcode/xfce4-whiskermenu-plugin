@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015, 2016, 2017 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015, 2016, 2017, 2018 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -40,6 +40,7 @@ enum
 {
 	STATUS_INVALID,
 	STATUS_LOADING,
+	STATUS_LOADING_RELOAD,
 	STATUS_LOADED
 };
 
@@ -157,7 +158,14 @@ void ApplicationsPage::apply_filter(GtkToggleButton* togglebutton)
 
 void ApplicationsPage::invalidate_applications()
 {
-	m_load_status = STATUS_INVALID;
+	if (m_load_status == STATUS_LOADED)
+	{
+		m_load_status = STATUS_INVALID;
+	}
+	else if (m_load_status == STATUS_LOADING)
+	{
+		m_load_status = STATUS_LOADING_RELOAD;
+	}
 }
 
 //-----------------------------------------------------------------------------
@@ -170,7 +178,7 @@ bool ApplicationsPage::load_applications()
 		return true;
 	}
 	// Check if currently loading
-	else if (m_load_status == STATUS_LOADING)
+	else if ((m_load_status == STATUS_LOADING) || (m_load_status == STATUS_LOADING_RELOAD))
 	{
 		return false;
 	}
@@ -319,6 +327,14 @@ void ApplicationsPage::load_contents()
 		m_load_status = STATUS_INVALID;
 		m_load_thread = NULL;
 
+		return;
+	}
+
+	// Reload if necessary
+	if (m_load_status == STATUS_LOADING_RELOAD)
+	{
+		m_load_status = STATUS_INVALID;
+		load_applications();
 		return;
 	}
 
