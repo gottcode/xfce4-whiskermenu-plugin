@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2014, 2015, 2016, 2017 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2018 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,7 +18,7 @@
 #ifndef WHISKERMENU_PLUGIN_H
 #define WHISKERMENU_PLUGIN_H
 
-#define PLUGIN_WEBSITE "http://goodies.xfce.org/projects/panel-plugins/xfce4-whiskermenu-plugin"
+#define PLUGIN_WEBSITE "https://goodies.xfce.org/projects/panel-plugins/xfce4-whiskermenu-plugin"
 
 #include <string>
 
