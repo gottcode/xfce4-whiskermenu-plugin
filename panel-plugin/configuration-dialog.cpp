@@ -662,6 +662,11 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	gtk_range_set_value(GTK_RANGE(m_background_opacity), wm_settings->menu_opacity);
 	g_signal_connect_slot(m_background_opacity, "value-changed", &ConfigurationDialog::background_opacity_changed, this);
 
+	GdkScreen* screen = gtk_widget_get_screen(m_window);
+	const bool enabled = gdk_screen_is_composited(screen);
+	gtk_widget_set_sensitive(label, enabled);
+	gtk_widget_set_sensitive(GTK_WIDGET(m_background_opacity), enabled);
+
 	return GTK_WIDGET(page);
 }
 
