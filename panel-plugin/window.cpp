@@ -495,13 +495,13 @@ void WhiskerMenu::Window::show(const Position position)
 	if ((layout_left && !wm_settings->position_categories_alternate)
 			|| (!layout_left && wm_settings->position_categories_alternate))
 	{
-		gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_panels_stack), 1);
-		gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_sidebar), 2);
+		gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_panels_stack), 0);
+		gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_sidebar), 1);
 	}
 	else
 	{
-		gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_panels_stack), 2);
-		gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_sidebar), 1);
+		gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_panels_stack), 1);
+		gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_sidebar), 0);
 	}
 	if (layout_left != m_layout_left)
 	{
