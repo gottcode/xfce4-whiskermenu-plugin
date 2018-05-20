@@ -117,8 +117,6 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	gtk_widget_set_name(m_button, "whiskermenu-button");
 #if !LIBXFCE4PANEL_CHECK_VERSION(4,13,0)
 	widget_add_css(m_button, ".xfce4-panel button { padding: 1px; }");
-	gtk_button_set_relief(GTK_BUTTON(m_button), GTK_RELIEF_NONE);
-	gtk_widget_set_focus_on_click(GTK_WIDGET(m_button), false);
 #endif
 	g_signal_connect_slot(m_button, "toggled", &Plugin::button_toggled, this);
 	gtk_widget_show(m_button);
@@ -129,7 +127,6 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	gtk_widget_show(GTK_WIDGET(m_button_box));
 
 	m_button_icon = GTK_IMAGE(gtk_image_new());
-	widget_add_css(GTK_WIDGET(m_button_icon), "image { padding: 3px; }");
 	icon_changed(wm_settings->button_icon_name.c_str());
 	gtk_box_pack_start(m_button_box, GTK_WIDGET(m_button_icon), true, false, 0);
 	if (wm_settings->button_icon_visible)
@@ -428,25 +425,32 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 			0, GTK_PACK_START);
 
 	// Resize icon
+	if (wm_settings->button_single_row)
+	{
+		size /= xfce_panel_plugin_get_nrows(m_plugin);
+	}
 #if LIBXFCE4PANEL_CHECK_VERSION(4,13,0)
 	gint icon_size = xfce_panel_plugin_get_icon_size(m_plugin);
 #else
-	gint icon_size = size / xfce_panel_plugin_get_nrows(m_plugin);
-	icon_size -= 4;
-	if (icon_size < 24)
-	{
-		icon_size = 16;
-	}
-	else if (icon_size < 32)
-	{
-		icon_size = 24;
-	}
-	else if (icon_size < 36)
-	{
-		icon_size = 32;
-	}
+	GtkBorder padding, border;
+	GtkStyleContext* context = gtk_widget_get_style_context(m_button);
+	GtkStateFlags flags = gtk_widget_get_state_flags(m_button);
+	gtk_style_context_get_padding(context, flags, &padding);
+	gtk_style_context_get_border(context, flags, &border);
+	gint xthickness = padding.left + padding.right + border.left + border.right;
+	gint ythickness = padding.top + padding.bottom + border.top + border.bottom;
+	gint icon_size = size - 2 * std::max(xthickness, ythickness);
 #endif
 	gtk_image_set_pixel_size(m_button_icon, icon_size);
+
+	if (wm_settings->button_title_visible)
+	{
+		gtk_widget_set_size_request(m_button, -1, -1);
+	}
+	else
+	{
+		gtk_widget_set_size_request(m_button, size, size);
+	}
 
 	if (wm_settings->button_title_visible || !wm_settings->button_single_row)
 	{
