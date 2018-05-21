@@ -1,0 +1,415 @@
+# Belarusian translation of xfce4-whiskermenu-plugin.
+# Copyright (C) 2018 Graeme Gott
+# This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
+#
+# Translators:
+# Zmicer Turok <zmicerturok@gmail.com>, 2018
+msgid ""
+msgstr ""
+"Project-Id-Version: Whisker Menu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-15 08:22-0400\n"
+"PO-Revision-Date: 2018-05-21 10:04+0000\n"
+"Last-Translator: Zmicer Turok <zmicerturok@gmail.com>\n"
+"Language-Team: Belarusian (http://www.transifex.com/gottcode/xfce4-"
+"whiskermenu-plugin/language/be/)\n"
+"Language: be\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: ../panel-plugin/configuration-dialog.cpp:818
+msgid "Add action"
+msgstr "Дадаць дзеянне"
+
+#: ../panel-plugin/page.cpp:257
+msgid "Add to Desktop"
+msgstr "Дадаць на працоўны стол"
+
+#: ../panel-plugin/page.cpp:241
+msgid "Add to Favorites"
+msgstr "Дадаць ва ўпадабанае"
+
+#: ../panel-plugin/page.cpp:261
+msgid "Add to Panel"
+msgstr "Дадаць на панэль"
+
+#: ../panel-plugin/category.cpp:61
+msgid "All"
+msgstr "Усе"
+
+#: ../panel-plugin/settings.cpp:119
+msgid "All _Settings"
+msgstr "Усе _налады"
+
+#: ../panel-plugin/plugin.cpp:405
+msgid "Alternate application launcher for Xfce"
+msgstr "Альтэрнатыўнае меню запуску праграм для Xfce"
+
+#: ../panel-plugin/configuration-dialog.cpp:719
+msgid "Amount of _items:"
+msgstr "Колькасць _элементаў:"
+
+#: ../panel-plugin/plugin.cpp:210
+msgid "Applications"
+msgstr "Праграмы"
+
+#: ../panel-plugin/configuration-dialog.cpp:654
+msgid "Background opacit_y:"
+msgstr "Празрыстасць фону"
+
+#: ../panel-plugin/command-edit.cpp:49
+msgid "Browse the file system to choose a custom command."
+msgstr "Аглядзець файлавую сістэму для выбару адвольнага загаду."
+
+#: ../panel-plugin/configuration-dialog.cpp:876
+msgid "C_ommand:"
+msgstr "За_гад:"
+
+#: ../panel-plugin/configuration-dialog.cpp:639
+msgid "Categ_ory icon size:"
+msgstr "Памер значка _катэгорыі:"
+
+#: ../panel-plugin/recent-page.cpp:173
+msgid "Clear Recently Used"
+msgstr "Ачысціць гісторыю"
+
+#: ../panel-plugin/plugin.cpp:406
+msgid "Copyright © 2013-2018 Graeme Gott"
+msgstr "Copyright © 2013-2018 Graeme Gott"
+
+#: ../panel-plugin/configuration-dialog.cpp:846
+msgid "Details"
+msgstr "Падрабязнасці"
+
+#: ../panel-plugin/configuration-dialog.cpp:534
+msgid "Di_splay:"
+msgstr "Ад_люстроўваць:"
+
+#: ../panel-plugin/configuration-dialog.cpp:736
+msgid "Display by _default"
+msgstr "Прадвызначана _адлюстроўваць"
+
+#: ../panel-plugin/page.cpp:268
+msgid "Edit Application..."
+msgstr "Рэдагаваць праграму..."
+
+#: ../panel-plugin/settings.cpp:124
+msgid "Edit _Profile"
+msgstr "Рэдагаваць _профіль"
+
+#: ../panel-plugin/settings.cpp:124
+msgid "Failed to edit profile."
+msgstr "Адрэдагаваць профіль не атрымалася."
+
+#: ../panel-plugin/launcher.cpp:288 ../panel-plugin/launcher.cpp:362
+#: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:188
+#, c-format
+msgid "Failed to execute command \"%s\"."
+msgstr "Не атрымалася запусціць загад \"%s\"."
+
+#: ../panel-plugin/settings.cpp:123
+msgid "Failed to launch menu editor."
+msgstr "Не атрымалася запусціць рэдактар меню."
+
+#: ../panel-plugin/settings.cpp:120
+msgid "Failed to lock screen."
+msgstr "Не атрымалася заблакаваць экран."
+
+#: ../panel-plugin/settings.cpp:122
+msgid "Failed to log out."
+msgstr "Не атрымалася выйсці."
+
+#: ../panel-plugin/settings.cpp:119
+msgid "Failed to open settings manager."
+msgstr "Не атрымалася адкрыць кіраўніка налад."
+
+#: ../panel-plugin/settings.cpp:121
+msgid "Failed to switch users."
+msgstr "Не атрымалася змяніць карыстальніка."
+
+#: ../panel-plugin/window.cpp:150
+msgid "Favorites"
+msgstr "Упадабанае"
+
+#: ../panel-plugin/configuration-dialog.cpp:539
+msgid "Icon"
+msgstr "Значок"
+
+#: ../panel-plugin/configuration-dialog.cpp:541
+msgid "Icon and title"
+msgstr "Значок і загаловак"
+
+#: ../panel-plugin/configuration-dialog.cpp:730
+msgid "Include _favorites"
+msgstr "Уключаць _упадабанае"
+
+#: ../panel-plugin/configuration-dialog.cpp:623
+msgid "Ite_m icon size:"
+msgstr "Па_мер значка элемента:"
+
+#: ../panel-plugin/icon-size.cpp:54
+msgid "Large"
+msgstr "Буйны"
+
+#: ../panel-plugin/icon-size.cpp:55
+msgid "Larger"
+msgstr "Вялікі"
+
+#: ../panel-plugin/settings.cpp:122
+msgid "Log _Out"
+msgstr "Выйсці"
+
+#: ../panel-plugin/settings.cpp:126
+msgid "Man Pages"
+msgstr "Старонкі man"
+
+#: ../panel-plugin/configuration-dialog.cpp:587
+#: ../panel-plugin/configuration-dialog.cpp:679
+msgid "Menu"
+msgstr "Меню"
+
+#: ../panel-plugin/configuration-dialog.cpp:851
+msgid "Nam_e:"
+msgstr "Наз_ва:"
+
+#: ../panel-plugin/configuration-dialog.cpp:796
+msgid "Name"
+msgstr "Назва"
+
+#: ../panel-plugin/icon-size.cpp:49
+msgid "None"
+msgstr "Няма"
+
+#: ../panel-plugin/icon-size.cpp:53
+msgid "Normal"
+msgstr "Звычайны"
+
+#: ../panel-plugin/settings.cpp:130
+msgid "Open URI"
+msgstr "Адкрыць URI"
+
+#: ../panel-plugin/configuration-dialog.cpp:529
+msgid "Panel Button"
+msgstr "Кнопка на панэлі"
+
+#: ../panel-plugin/configuration-dialog.cpp:801
+msgid "Pattern"
+msgstr "Шаблон"
+
+#: ../panel-plugin/configuration-dialog.cpp:690
+msgid "Position _search entry next to panel button"
+msgstr "Радок по_шуку каля панэлі"
+
+#: ../panel-plugin/configuration-dialog.cpp:703
+msgid "Position cate_gories next to panel button"
+msgstr "Катэгорыя пасля кнопак панэлі"
+
+#: ../panel-plugin/configuration-dialog.cpp:696
+msgid "Position commands next to search _entry"
+msgstr "Кнопкі загадаў побач з радком пошуку"
+
+#: ../panel-plugin/configuration-dialog.cpp:714 ../panel-plugin/window.cpp:156
+msgid "Recently Used"
+msgstr "Нядаўнія"
+
+#: ../panel-plugin/page.cpp:249
+msgid "Remove From Favorites"
+msgstr "Выдаліць з упадабанага"
+
+#: ../panel-plugin/configuration-dialog.cpp:433
+#, c-format
+msgid "Remove action \"%s\"?"
+msgstr "Выдаліць дзеянне \"%s\"?"
+
+#: ../panel-plugin/configuration-dialog.cpp:827
+msgid "Remove selected action"
+msgstr "Выдаліць абранае дзеянне"
+
+#: ../panel-plugin/run-action.cpp:71
+#, c-format
+msgid "Run %s"
+msgstr "Запусціць %s"
+
+#: ../panel-plugin/settings.cpp:129
+msgid "Run in Terminal"
+msgstr "Запусціць у тэрмінале"
+
+#: ../panel-plugin/configuration-dialog.cpp:86
+msgid "Search Actio_ns"
+msgstr "Дзея_нні пошуку"
+
+#: ../panel-plugin/search-action.cpp:259
+msgid "Search Action"
+msgstr "Дзеянне пошуку"
+
+#: ../panel-plugin/configuration-dialog.cpp:119
+msgid "Select An Icon"
+msgstr "Абраць значок"
+
+#: ../panel-plugin/command-edit.cpp:64
+msgid "Select Command"
+msgstr "Абраць загад"
+
+#: ../panel-plugin/whiskermenu.desktop.in.h:2
+msgid "Show a menu to easily access installed applications"
+msgstr "Адлюстроўвае меню для зручнага доступу да ўсталяваных праграм"
+
+#: ../panel-plugin/configuration-dialog.cpp:605
+msgid "Show application _descriptions"
+msgstr "Адлюстроўваць апісанне праграм"
+
+#: ../panel-plugin/configuration-dialog.cpp:611
+msgid "Show application too_ltips"
+msgstr "Адлюстроўваць выплыўныя апавяшчэнні для прагам"
+
+#: ../panel-plugin/configuration-dialog.cpp:598
+msgid "Show cate_gory names"
+msgstr "Адлюстроўваць назвы катэ_горый"
+
+#: ../panel-plugin/configuration-dialog.cpp:592
+msgid "Show generic application _names"
+msgstr "Адлюстроўваць агульныя назвы _прагам"
+
+#: ../panel-plugin/configuration-dialog.cpp:617
+msgid "Show menu hie_rarchy"
+msgstr "Адлюстроўваць іерархію меню"
+
+#: ../panel-plugin/icon-size.cpp:52
+msgid "Small"
+msgstr "Маленькі"
+
+#: ../panel-plugin/icon-size.cpp:51
+msgid "Smaller"
+msgstr "Вельмі маленькі"
+
+#: ../panel-plugin/favorites-page.cpp:147
+msgid "Sort Alphabetically A-Z"
+msgstr "Упарадкаванне па алфавіце А-Я"
+
+#: ../panel-plugin/favorites-page.cpp:153
+msgid "Sort Alphabetically Z-A"
+msgstr "Упарадкаванне па алфавіце Я-А"
+
+#: ../panel-plugin/settings.cpp:121
+msgid "Switch _Users"
+msgstr "Змяніць _карыстальніка"
+
+#: ../panel-plugin/configuration-dialog.cpp:684
+msgid "Switch categories by _hovering"
+msgstr "Пераключаць катэгорыі пры навядзенні курсора мышы"
+
+#: ../panel-plugin/configuration-dialog.cpp:432
+msgid "The action will be deleted permanently."
+msgstr "Дзеянне будзе назаўсёды выдалена."
+
+#: ../panel-plugin/configuration-dialog.cpp:540
+msgid "Title"
+msgstr "Загаловак"
+
+#: ../panel-plugin/page.cpp:333
+msgid "Unable to add launcher to desktop."
+msgstr "Немагчыма дадаць запускальнік на працоўны стол."
+
+#: ../panel-plugin/page.cpp:372 ../panel-plugin/page.cpp:381
+msgid "Unable to add launcher to panel."
+msgstr "Немагчыма дадаць запускальнік на панэль."
+
+#: ../panel-plugin/page.cpp:410
+msgid "Unable to edit launcher."
+msgstr "Немагчыма змяніць запускальнік."
+
+#: ../panel-plugin/configuration-dialog.cpp:493
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Немагчыма адкрыць спасылку: %s"
+
+#: ../panel-plugin/configuration-dialog.cpp:574
+msgid "Use a single _panel row"
+msgstr "Выкарыстоўваць адзін _радок на панэлі:"
+
+#: ../panel-plugin/icon-size.cpp:56
+msgid "Very Large"
+msgstr "Вельмі вялікі"
+
+#: ../panel-plugin/icon-size.cpp:50
+msgid "Very Small"
+msgstr "Вельмі малы"
+
+#: ../panel-plugin/settings.cpp:127
+msgid "Web Search"
+msgstr "Пошук у сеціве"
+
+#: ../panel-plugin/configuration-dialog.cpp:70
+#: ../panel-plugin/whiskermenu.desktop.in.h:1
+msgid "Whisker Menu"
+msgstr "Меню Whisker"
+
+#: ../panel-plugin/settings.cpp:128
+msgid "Wikipedia"
+msgstr "Вікіпедыя"
+
+#: ../panel-plugin/configuration-dialog.cpp:83
+msgid "_Appearance"
+msgstr "_Выгляд"
+
+#: ../panel-plugin/configuration-dialog.cpp:84
+msgid "_Behavior"
+msgstr "_Паводзіны"
+
+#: ../panel-plugin/command-edit.cpp:67
+#: ../panel-plugin/configuration-dialog.cpp:121
+msgid "_Cancel"
+msgstr "_Скасаваць"
+
+#: ../panel-plugin/configuration-dialog.cpp:74
+msgid "_Close"
+msgstr "_Закрыць"
+
+#: ../panel-plugin/configuration-dialog.cpp:85
+msgid "_Commands"
+msgstr "_Загады"
+
+#: ../panel-plugin/configuration-dialog.cpp:431
+msgid "_Delete"
+msgstr "_Выдаліць"
+
+#: ../panel-plugin/settings.cpp:123
+msgid "_Edit Applications"
+msgstr "_Рэдагаваць праграмы"
+
+#: ../panel-plugin/configuration-dialog.cpp:73
+msgid "_Help"
+msgstr "_Даведка"
+
+#: ../panel-plugin/configuration-dialog.cpp:560
+msgid "_Icon:"
+msgstr "_Значок"
+
+#: ../panel-plugin/settings.cpp:120
+msgid "_Lock Screen"
+msgstr "_Заблакаваць экран"
+
+#: ../panel-plugin/command-edit.cpp:68
+#: ../panel-plugin/configuration-dialog.cpp:122
+msgid "_OK"
+msgstr "_Добра"
+
+#: ../panel-plugin/configuration-dialog.cpp:864
+msgid "_Pattern:"
+msgstr "_Шаблон:"
+
+#: ../panel-plugin/configuration-dialog.cpp:888
+msgid "_Regular expression"
+msgstr "_Рэгулярны выраз"
+
+#: ../panel-plugin/configuration-dialog.cpp:549
+msgid "_Title:"
+msgstr "_Загаловак:"
+
+#: ../panel-plugin/plugin.cpp:410
+msgid "translator-credits"
+msgstr "Zmicer Turok <zmicerturok@gmail.com>"
