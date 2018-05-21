@@ -1,3 +1,16 @@
+2.2.0
+=====
+- Fix panel icon size not following theme.
+- Disable opacity option when non-composited.
+- Rename option for including favorites in recent.
+- Load applications in a thread. (bug #12903)
+- Slide out search results.
+- Require GTK+ version 3.22.
+- Translation updates: Amharic, Belarusian, Bulgarian, Catalan,
+  Chinese (China), Chinese (Taiwan), Croatian, Czech, Danish, Dutch,
+  Esperanto, French, German, Lithuanian, Nepali, Polish, Portuguese,
+  Portuguese (Brazil), Romanian, Russian, Slovak, Slovenian, Turkish.
+
 2.1.7
 =====
 - Fix memory leak when recreating window.
