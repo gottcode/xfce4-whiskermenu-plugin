@@ -1,0 +1,413 @@
+# Esperanto translation of xfce4-whiskermenu-plugin.
+# Copyright (C) 2018 Graeme Gott
+# This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
+#
+# Translators:
+# Kurt Ankh Phoenix <kurtphoenix@tuta.io>, 2018
+msgid ""
+msgstr ""
+"Project-Id-Version: Whisker Menu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-15 08:22-0400\n"
+"PO-Revision-Date: 2018-05-09 13:11+0000\n"
+"Last-Translator: Kurt Ankh Phoenix <kurtphoenix@tuta.io>\n"
+"Language-Team: Esperanto (http://www.transifex.com/gottcode/xfce4-"
+"whiskermenu-plugin/language/eo/)\n"
+"Language: eo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../panel-plugin/configuration-dialog.cpp:818
+msgid "Add action"
+msgstr ""
+
+#: ../panel-plugin/page.cpp:257
+msgid "Add to Desktop"
+msgstr "Aldoni al Labortablo"
+
+#: ../panel-plugin/page.cpp:241
+msgid "Add to Favorites"
+msgstr "Aldoni al Favoratoj"
+
+#: ../panel-plugin/page.cpp:261
+msgid "Add to Panel"
+msgstr ""
+
+#: ../panel-plugin/category.cpp:61
+msgid "All"
+msgstr "Ĉiom"
+
+#: ../panel-plugin/settings.cpp:119
+msgid "All _Settings"
+msgstr "Ĉiom _Settings"
+
+#: ../panel-plugin/plugin.cpp:405
+msgid "Alternate application launcher for Xfce"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:719
+msgid "Amount of _items:"
+msgstr ""
+
+#: ../panel-plugin/plugin.cpp:210
+msgid "Applications"
+msgstr "Aplikaĵoj"
+
+#: ../panel-plugin/configuration-dialog.cpp:654
+msgid "Background opacit_y:"
+msgstr ""
+
+#: ../panel-plugin/command-edit.cpp:49
+msgid "Browse the file system to choose a custom command."
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:876
+msgid "C_ommand:"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:639
+msgid "Categ_ory icon size:"
+msgstr ""
+
+#: ../panel-plugin/recent-page.cpp:173
+msgid "Clear Recently Used"
+msgstr ""
+
+#: ../panel-plugin/plugin.cpp:406
+msgid "Copyright © 2013-2018 Graeme Gott"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:846
+msgid "Details"
+msgstr "Detaloj"
+
+#: ../panel-plugin/configuration-dialog.cpp:534
+msgid "Di_splay:"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:736
+msgid "Display by _default"
+msgstr ""
+
+#: ../panel-plugin/page.cpp:268
+msgid "Edit Application..."
+msgstr "Redakti Aplikaĵo..."
+
+#: ../panel-plugin/settings.cpp:124
+msgid "Edit _Profile"
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:124
+msgid "Failed to edit profile."
+msgstr ""
+
+#: ../panel-plugin/launcher.cpp:288 ../panel-plugin/launcher.cpp:362
+#: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:188
+#, c-format
+msgid "Failed to execute command \"%s\"."
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:123
+msgid "Failed to launch menu editor."
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:120
+msgid "Failed to lock screen."
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:122
+msgid "Failed to log out."
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:119
+msgid "Failed to open settings manager."
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:121
+msgid "Failed to switch users."
+msgstr ""
+
+#: ../panel-plugin/window.cpp:150
+msgid "Favorites"
+msgstr "Favoratoj"
+
+#: ../panel-plugin/configuration-dialog.cpp:539
+msgid "Icon"
+msgstr "Bildsimbolo"
+
+#: ../panel-plugin/configuration-dialog.cpp:541
+msgid "Icon and title"
+msgstr "Bildsimbolo kaj titolo"
+
+#: ../panel-plugin/configuration-dialog.cpp:730
+msgid "Include _favorites"
+msgstr "Inkluzivi _favoratoj"
+
+#: ../panel-plugin/configuration-dialog.cpp:623
+msgid "Ite_m icon size:"
+msgstr ""
+
+#: ../panel-plugin/icon-size.cpp:54
+msgid "Large"
+msgstr "Granda"
+
+#: ../panel-plugin/icon-size.cpp:55
+msgid "Larger"
+msgstr "Pli Granda"
+
+#: ../panel-plugin/settings.cpp:122
+msgid "Log _Out"
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:126
+msgid "Man Pages"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:587
+#: ../panel-plugin/configuration-dialog.cpp:679
+msgid "Menu"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:851
+msgid "Nam_e:"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:796
+msgid "Name"
+msgstr "Nomo"
+
+#: ../panel-plugin/icon-size.cpp:49
+msgid "None"
+msgstr "Neniom"
+
+#: ../panel-plugin/icon-size.cpp:53
+msgid "Normal"
+msgstr "Normala"
+
+#: ../panel-plugin/settings.cpp:130
+msgid "Open URI"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:529
+msgid "Panel Button"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:801
+msgid "Pattern"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:690
+msgid "Position _search entry next to panel button"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:703
+msgid "Position cate_gories next to panel button"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:696
+msgid "Position commands next to search _entry"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:714 ../panel-plugin/window.cpp:156
+msgid "Recently Used"
+msgstr ""
+
+#: ../panel-plugin/page.cpp:249
+msgid "Remove From Favorites"
+msgstr "Forigi El Favoratoj"
+
+#: ../panel-plugin/configuration-dialog.cpp:433
+#, c-format
+msgid "Remove action \"%s\"?"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:827
+msgid "Remove selected action"
+msgstr ""
+
+#: ../panel-plugin/run-action.cpp:71
+#, c-format
+msgid "Run %s"
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:129
+msgid "Run in Terminal"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:86
+msgid "Search Actio_ns"
+msgstr ""
+
+#: ../panel-plugin/search-action.cpp:259
+msgid "Search Action"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:119
+msgid "Select An Icon"
+msgstr ""
+
+#: ../panel-plugin/command-edit.cpp:64
+msgid "Select Command"
+msgstr ""
+
+#: ../panel-plugin/whiskermenu.desktop.in.h:2
+msgid "Show a menu to easily access installed applications"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:605
+msgid "Show application _descriptions"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:611
+msgid "Show application too_ltips"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:598
+msgid "Show cate_gory names"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:592
+msgid "Show generic application _names"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:617
+msgid "Show menu hie_rarchy"
+msgstr ""
+
+#: ../panel-plugin/icon-size.cpp:52
+msgid "Small"
+msgstr "Malgranda"
+
+#: ../panel-plugin/icon-size.cpp:51
+msgid "Smaller"
+msgstr "Pli Malgranda"
+
+#: ../panel-plugin/favorites-page.cpp:147
+msgid "Sort Alphabetically A-Z"
+msgstr ""
+
+#: ../panel-plugin/favorites-page.cpp:153
+msgid "Sort Alphabetically Z-A"
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:121
+msgid "Switch _Users"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:684
+msgid "Switch categories by _hovering"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:432
+msgid "The action will be deleted permanently."
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:540
+msgid "Title"
+msgstr "Titolo"
+
+#: ../panel-plugin/page.cpp:333
+msgid "Unable to add launcher to desktop."
+msgstr ""
+
+#: ../panel-plugin/page.cpp:372 ../panel-plugin/page.cpp:381
+msgid "Unable to add launcher to panel."
+msgstr ""
+
+#: ../panel-plugin/page.cpp:410
+msgid "Unable to edit launcher."
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:493
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:574
+msgid "Use a single _panel row"
+msgstr ""
+
+#: ../panel-plugin/icon-size.cpp:56
+msgid "Very Large"
+msgstr "Tre Granda"
+
+#: ../panel-plugin/icon-size.cpp:50
+msgid "Very Small"
+msgstr "Tre Malgranda"
+
+#: ../panel-plugin/settings.cpp:127
+msgid "Web Search"
+msgstr "Reta Serĉo"
+
+#: ../panel-plugin/configuration-dialog.cpp:70
+#: ../panel-plugin/whiskermenu.desktop.in.h:1
+msgid "Whisker Menu"
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:128
+msgid "Wikipedia"
+msgstr "Vikipedio"
+
+#: ../panel-plugin/configuration-dialog.cpp:83
+msgid "_Appearance"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:84
+msgid "_Behavior"
+msgstr ""
+
+#: ../panel-plugin/command-edit.cpp:67
+#: ../panel-plugin/configuration-dialog.cpp:121
+msgid "_Cancel"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:74
+msgid "_Close"
+msgstr "_Fermi"
+
+#: ../panel-plugin/configuration-dialog.cpp:85
+msgid "_Commands"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:431
+msgid "_Delete"
+msgstr "_Forigi"
+
+#: ../panel-plugin/settings.cpp:123
+msgid "_Edit Applications"
+msgstr "_Redakti Aplikaĵoj"
+
+#: ../panel-plugin/configuration-dialog.cpp:73
+msgid "_Help"
+msgstr "_Helpi"
+
+#: ../panel-plugin/configuration-dialog.cpp:560
+msgid "_Icon:"
+msgstr "_Bildsimbolo:"
+
+#: ../panel-plugin/settings.cpp:120
+msgid "_Lock Screen"
+msgstr ""
+
+#: ../panel-plugin/command-edit.cpp:68
+#: ../panel-plugin/configuration-dialog.cpp:122
+msgid "_OK"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:864
+msgid "_Pattern:"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:888
+msgid "_Regular expression"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:549
+msgid "_Title:"
+msgstr "_Titolo:"
+
+#: ../panel-plugin/plugin.cpp:410
+msgid "translator-credits"
+msgstr ""
