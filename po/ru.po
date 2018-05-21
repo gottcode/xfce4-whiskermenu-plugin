@@ -1,18 +1,18 @@
 # Russian translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2017 Graeme Gott
+# Copyright (C) 2018 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # sorrymak <dearalcher@gmail.com>, 2013
 # Kyrill Detinov <lazy.kent@opensuse.org>, 2013,2016
-# Sergey Alyoshin <alyoshin.s@gmail.com>, 2013-2015,2017
+# Sergey Alyoshin <alyoshin.s@gmail.com>, 2013-2015,2017-2018
 # Sergey Shlyapugin <shlyapugin@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-15 08:22-0400\n"
-"PO-Revision-Date: 2017-09-28 05:12+0000\n"
+"PO-Revision-Date: 2018-05-11 20:32+0000\n"
 "Last-Translator: Sergey Alyoshin <alyoshin.s@gmail.com>\n"
 "Language-Team: Russian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ru/)\n"
@@ -147,9 +147,8 @@ msgid "Icon and title"
 msgstr "Значок и заголовок"
 
 #: ../panel-plugin/configuration-dialog.cpp:730
-#, fuzzy
 msgid "Include _favorites"
-msgstr "Игнорировать избранное"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:623
 msgid "Ite_m icon size:"
@@ -418,6 +417,6 @@ msgstr "За_головок:"
 msgid "translator-credits"
 msgstr ""
 "Артём Демаков <dearalcher@gmail.com>, 2013\n"
-"Кирилл Детинов <lazy.kent@opensuse.org>, 2013-2016\n"
+"Кирилл Детинов <lazy.kent@opensuse.org>, 2013—2016\n"
 "Сергей Алёшин <alyoshin.s@gmail.com>, 2013, 2014\n"
 "Сергей Шляпугин <shlyapugin@gmail.com>, 2013"
