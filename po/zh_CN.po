@@ -1,17 +1,17 @@
 # Chinese (China) translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2017 Graeme Gott
+# Copyright (C) 2018 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # Mingcong Bai <jeffbai@aosc.xyz>, 2014
 # Tao Lin <lintao51@gmail.com>, 2015
-# 玉堂白鹤 <yjwork@qq.com>, 2015-2017
+# 玉堂白鹤 <yjwork@qq.com>, 2015-2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-15 08:22-0400\n"
-"PO-Revision-Date: 2017-05-03 04:36+0000\n"
+"PO-Revision-Date: 2018-04-26 01:18+0000\n"
 "Last-Translator: 玉堂白鹤 <yjwork@qq.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/zh_CN/)\n"
@@ -144,9 +144,8 @@ msgid "Icon and title"
 msgstr "图标和标题"
 
 #: ../panel-plugin/configuration-dialog.cpp:730
-#, fuzzy
 msgid "Include _favorites"
-msgstr "忽略收藏夹(_F)"
+msgstr "包含收藏夹(_F)"
 
 #: ../panel-plugin/configuration-dialog.cpp:623
 msgid "Ite_m icon size:"
