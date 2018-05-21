@@ -1,16 +1,16 @@
 # Nepali translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2017 Graeme Gott
+# Copyright (C) 2018 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# starryprabin <mr.prabin@gmail.com>, 2013-2017
+# starryprabin <mr.prabin@gmail.com>, 2013-2018
 # Prabin Gautam <PRABINGAUTAM@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-15 08:22-0400\n"
-"PO-Revision-Date: 2017-07-18 18:35+0000\n"
+"PO-Revision-Date: 2018-05-07 13:52+0000\n"
 "Last-Translator: starryprabin <mr.prabin@gmail.com>\n"
 "Language-Team: Nepali (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ne/)\n"
@@ -143,9 +143,8 @@ msgid "Icon and title"
 msgstr "मूर्ति र शीर्षक "
 
 #: ../panel-plugin/configuration-dialog.cpp:730
-#, fuzzy
 msgid "Include _favorites"
-msgstr "मन पर्नेलाई बेवास्ता गर्नुहोस्"
+msgstr "मनपर्ने समावेश गर्नुहोस्"
 
 #: ../panel-plugin/configuration-dialog.cpp:623
 msgid "Ite_m icon size:"
