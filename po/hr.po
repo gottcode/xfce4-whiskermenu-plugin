@@ -1,17 +1,18 @@
 # Croatian translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2016 Graeme Gott
+# Copyright (C) 2018 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # Ante Grubišić Čabo <ante.gc@gmail.com>, 2016
-# Ilija Ćulap <ilija.culap14@gmail.com>, 2013-2015
+# dmanthing <dmanthing@gmail.com>, 2018
+# Ilija Ćulap <ilija.culap14@gmail.com>, 2013-2015,2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-15 08:22-0400\n"
-"PO-Revision-Date: 2016-12-01 14:12+0000\n"
-"Last-Translator: Ante Grubišić Čabo <ante.gc@gmail.com>\n"
+"PO-Revision-Date: 2018-05-19 08:37+0000\n"
+"Last-Translator: dmanthing <dmanthing@gmail.com>\n"
 "Language-Team: Croatian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/hr/)\n"
 "Language: hr\n"
@@ -94,9 +95,8 @@ msgid "Display by _default"
 msgstr "Prema zadanom prikaži"
 
 #: ../panel-plugin/page.cpp:268
-#, fuzzy
 msgid "Edit Application..."
-msgstr "_Uredi Aplikacije"
+msgstr "Uredi aplikaciju"
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Edit _Profile"
@@ -145,9 +145,8 @@ msgid "Icon and title"
 msgstr "Ikona i ime"
 
 #: ../panel-plugin/configuration-dialog.cpp:730
-#, fuzzy
 msgid "Include _favorites"
-msgstr "Ignoriraj omiljene"
+msgstr "Uključi omiljene"
 
 #: ../panel-plugin/configuration-dialog.cpp:623
 msgid "Ite_m icon size:"
@@ -321,9 +320,8 @@ msgid "Unable to add launcher to panel."
 msgstr "Nije moguće dodati pokretač na Ploču"
 
 #: ../panel-plugin/page.cpp:410
-#, fuzzy
 msgid "Unable to edit launcher."
-msgstr "Nije moguće dodati pokretač na Ploču"
+msgstr "Nije moće urediti pokretač"
 
 #: ../panel-plugin/configuration-dialog.cpp:493
 #, c-format
