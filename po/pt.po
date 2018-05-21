@@ -6,14 +6,15 @@
 # Carlos Reis <reiscarlos1976@gmail.com>, 2017
 # fabioluciano <fabio@naoimporta.com>, 2013
 # José Vieira <jvieira33@sapo.pt>, 2016-2018
+# Rui <xymarior@yandex.com>, 2018
 # Sérgio Marques <smarquespt@gmail.com>, 2013-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-15 08:22-0400\n"
-"PO-Revision-Date: 2018-04-21 22:48+0000\n"
-"Last-Translator: José Vieira <jvieira33@sapo.pt>\n"
+"PO-Revision-Date: 2018-04-25 22:58+0000\n"
+"Last-Translator: Rui <xymarior@yandex.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/pt/)\n"
 "Language: pt\n"
@@ -24,7 +25,7 @@ msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:818
 msgid "Add action"
-msgstr "Adicionar acção"
+msgstr "Adicionar ação"
 
 #: ../panel-plugin/page.cpp:257
 msgid "Add to Desktop"
@@ -80,7 +81,7 @@ msgstr "Limpar itens recentes"
 
 #: ../panel-plugin/plugin.cpp:406
 msgid "Copyright © 2013-2018 Graeme Gott"
-msgstr "Copyright © 2013-2018 Graeme Gott"
+msgstr "Direitos de Autor © 2013-2018 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:846
 msgid "Details"
@@ -92,7 +93,7 @@ msgstr "E_xibição:"
 
 #: ../panel-plugin/configuration-dialog.cpp:736
 msgid "Display by _default"
-msgstr "Mostrar por pré-_definição"
+msgstr "Mostrar por pre_definição"
 
 #: ../panel-plugin/page.cpp:268
 msgid "Edit Application..."
@@ -118,11 +119,11 @@ msgstr "Falha ao iniciar o editor de menu."
 
 #: ../panel-plugin/settings.cpp:120
 msgid "Failed to lock screen."
-msgstr "Falha ao bloquear ecrã."
+msgstr "Falha ao bloquear o ecrã."
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Failed to log out."
-msgstr "Falha ao sair."
+msgstr "Falha ao sair da conta."
 
 #: ../panel-plugin/settings.cpp:119
 msgid "Failed to open settings manager."
@@ -245,11 +246,11 @@ msgstr "Procurar a_cções"
 
 #: ../panel-plugin/search-action.cpp:259
 msgid "Search Action"
-msgstr "Procurar acção"
+msgstr "Procurar ação"
 
 #: ../panel-plugin/configuration-dialog.cpp:119
 msgid "Select An Icon"
-msgstr "Escolher um icone"
+msgstr "Escolher um ícone"
 
 #: ../panel-plugin/command-edit.cpp:64
 msgid "Select Command"
@@ -273,7 +274,7 @@ msgstr "Mostrar nomes das categ_orias"
 
 #: ../panel-plugin/configuration-dialog.cpp:592
 msgid "Show generic application _names"
-msgstr "Mostrar _nome genérico da aplicação"
+msgstr "Mostrar _nomes genéricos da aplicação"
 
 #: ../panel-plugin/configuration-dialog.cpp:617
 msgid "Show menu hie_rarchy"
@@ -321,7 +322,7 @@ msgstr "Não foi possível adicionar o lançador ao painel."
 
 #: ../panel-plugin/page.cpp:410
 msgid "Unable to edit launcher."
-msgstr "Impossível alterar o lançador"
+msgstr "Não é possível editar o lançador"
 
 #: ../panel-plugin/configuration-dialog.cpp:493
 #, c-format
@@ -351,7 +352,7 @@ msgstr "Menu Whisker"
 
 #: ../panel-plugin/settings.cpp:128
 msgid "Wikipedia"
-msgstr "Wikipedia"
+msgstr "Wikipédia"
 
 #: ../panel-plugin/configuration-dialog.cpp:83
 msgid "_Appearance"
