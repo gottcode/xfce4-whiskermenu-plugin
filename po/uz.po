@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-15 08:22-0400\n"
+"POT-Creation-Date: 2018-05-21 07:22-0400\n"
 "PO-Revision-Date: 2014-08-18 12:06+0000\n"
 "Last-Translator: Umid Almasov <u.almasov@gmail.com>\n"
 "Language-Team: Uzbek (http://www.transifex.com/projects/p/xfce4-whiskermenu-"
@@ -20,19 +20,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../panel-plugin/configuration-dialog.cpp:818
+#: ../panel-plugin/configuration-dialog.cpp:823
 msgid "Add action"
 msgstr "Harakatni qo'shish"
 
-#: ../panel-plugin/page.cpp:257
+#: ../panel-plugin/page.cpp:258
 msgid "Add to Desktop"
 msgstr "Ishchi stolga qo'shish"
 
-#: ../panel-plugin/page.cpp:241
+#: ../panel-plugin/page.cpp:242
 msgid "Add to Favorites"
 msgstr "Tanlanganlarga qo'shish"
 
-#: ../panel-plugin/page.cpp:261
+#: ../panel-plugin/page.cpp:262
 msgid "Add to Panel"
 msgstr "Panelga qo'shish"
 
@@ -44,15 +44,15 @@ msgstr "Hammasi"
 msgid "All _Settings"
 msgstr "Hamma _sozlamalar"
 
-#: ../panel-plugin/plugin.cpp:405
+#: ../panel-plugin/plugin.cpp:402
 msgid "Alternate application launcher for Xfce"
 msgstr "Xfce uchun muqobil dasturlarni ishga tushiruvchi"
 
-#: ../panel-plugin/configuration-dialog.cpp:719
+#: ../panel-plugin/configuration-dialog.cpp:724
 msgid "Amount of _items:"
 msgstr ""
 
-#: ../panel-plugin/plugin.cpp:210
+#: ../panel-plugin/plugin.cpp:207
 #, fuzzy
 msgid "Applications"
 msgstr "Dasturlar menyusi"
@@ -65,7 +65,7 @@ msgstr ""
 msgid "Browse the file system to choose a custom command."
 msgstr "Ixtiyoriy buyruqni tanlash uchun fayl tizimini ko'rib chiqish."
 
-#: ../panel-plugin/configuration-dialog.cpp:876
+#: ../panel-plugin/configuration-dialog.cpp:881
 msgid "C_ommand:"
 msgstr "_Buyruq:"
 
@@ -77,11 +77,11 @@ msgstr "_Toifa nishonchasinig o'lchami:"
 msgid "Clear Recently Used"
 msgstr "Yaqinda foydalanilganlarni tozalash"
 
-#: ../panel-plugin/plugin.cpp:406
+#: ../panel-plugin/plugin.cpp:403
 msgid "Copyright © 2013-2018 Graeme Gott"
 msgstr "Copyright © 2013-2018 Graeme Gott"
 
-#: ../panel-plugin/configuration-dialog.cpp:846
+#: ../panel-plugin/configuration-dialog.cpp:851
 msgid "Details"
 msgstr "Tafsilotlar"
 
@@ -89,12 +89,12 @@ msgstr "Tafsilotlar"
 msgid "Di_splay:"
 msgstr "_Ko'rsatish:"
 
-#: ../panel-plugin/configuration-dialog.cpp:736
+#: ../panel-plugin/configuration-dialog.cpp:741
 #, fuzzy
 msgid "Display by _default"
 msgstr "Yaqinda _foydalanilganlarni sukut bo'yicha ko'rsatish"
 
-#: ../panel-plugin/page.cpp:268
+#: ../panel-plugin/page.cpp:269
 #, fuzzy
 msgid "Edit Application..."
 msgstr "Dasturlarni _tahrirlash"
@@ -146,7 +146,7 @@ msgstr "Nishoncha"
 msgid "Icon and title"
 msgstr "Nishoncha va sarlavha"
 
-#: ../panel-plugin/configuration-dialog.cpp:730
+#: ../panel-plugin/configuration-dialog.cpp:735
 #, fuzzy
 msgid "Include _favorites"
 msgstr "Tanlanganlar"
@@ -172,15 +172,15 @@ msgid "Man Pages"
 msgstr "Qo'llanma sahifalari"
 
 #: ../panel-plugin/configuration-dialog.cpp:587
-#: ../panel-plugin/configuration-dialog.cpp:679
+#: ../panel-plugin/configuration-dialog.cpp:684
 msgid "Menu"
 msgstr "Menyu"
 
-#: ../panel-plugin/configuration-dialog.cpp:851
+#: ../panel-plugin/configuration-dialog.cpp:856
 msgid "Nam_e:"
 msgstr "_Nomi:"
 
-#: ../panel-plugin/configuration-dialog.cpp:796
+#: ../panel-plugin/configuration-dialog.cpp:801
 msgid "Name"
 msgstr "Nomi"
 
@@ -200,27 +200,27 @@ msgstr "URI ochish"
 msgid "Panel Button"
 msgstr "Panel tugmasi"
 
-#: ../panel-plugin/configuration-dialog.cpp:801
+#: ../panel-plugin/configuration-dialog.cpp:806
 msgid "Pattern"
 msgstr "Andaza"
 
-#: ../panel-plugin/configuration-dialog.cpp:690
+#: ../panel-plugin/configuration-dialog.cpp:695
 msgid "Position _search entry next to panel button"
 msgstr "_Qidirish elementini panel tugmasidan keyin joylashtirish"
 
-#: ../panel-plugin/configuration-dialog.cpp:703
+#: ../panel-plugin/configuration-dialog.cpp:708
 msgid "Position cate_gories next to panel button"
 msgstr "_Turkumlarni panel tugmasidan keyin joylashtirish"
 
-#: ../panel-plugin/configuration-dialog.cpp:696
+#: ../panel-plugin/configuration-dialog.cpp:701
 msgid "Position commands next to search _entry"
 msgstr "_Buyruqlarni qidirish elementidan keyin joylashtirish"
 
-#: ../panel-plugin/configuration-dialog.cpp:714 ../panel-plugin/window.cpp:156
+#: ../panel-plugin/configuration-dialog.cpp:719 ../panel-plugin/window.cpp:156
 msgid "Recently Used"
 msgstr "Yaqinda foydalanilganlar"
 
-#: ../panel-plugin/page.cpp:249
+#: ../panel-plugin/page.cpp:250
 msgid "Remove From Favorites"
 msgstr "Tanlanganlardan olib tashlash"
 
@@ -229,7 +229,7 @@ msgstr "Tanlanganlardan olib tashlash"
 msgid "Remove action \"%s\"?"
 msgstr "\"%s\" harakati olib tashlansinmi?"
 
-#: ../panel-plugin/configuration-dialog.cpp:827
+#: ../panel-plugin/configuration-dialog.cpp:832
 msgid "Remove selected action"
 msgstr "Tanlangan harakatni olib tashlash"
 
@@ -303,7 +303,7 @@ msgstr "Alifbo bo'yicha saralash Z-A"
 msgid "Switch _Users"
 msgstr "_Foydalanuvchilarni almashtirish"
 
-#: ../panel-plugin/configuration-dialog.cpp:684
+#: ../panel-plugin/configuration-dialog.cpp:689
 msgid "Switch categories by _hovering"
 msgstr "Toifalarni sichqoncha ustiga borganda o'zgartirish"
 
@@ -315,15 +315,15 @@ msgstr "Harakat butunlay o'chiriladi."
 msgid "Title"
 msgstr "Sarlavha"
 
-#: ../panel-plugin/page.cpp:333
+#: ../panel-plugin/page.cpp:334
 msgid "Unable to add launcher to desktop."
 msgstr "Ishga tushiruvchini ishchi stolga qo'shib bo'lmadi."
 
-#: ../panel-plugin/page.cpp:372 ../panel-plugin/page.cpp:381
+#: ../panel-plugin/page.cpp:373 ../panel-plugin/page.cpp:382
 msgid "Unable to add launcher to panel."
 msgstr "Ishga tushiruvchini panelga qo'shib bo'lmadi."
 
-#: ../panel-plugin/page.cpp:410
+#: ../panel-plugin/page.cpp:411
 #, fuzzy
 msgid "Unable to edit launcher."
 msgstr "Ishga tushiruvchini panelga qo'shib bo'lmadi."
@@ -406,11 +406,11 @@ msgstr "Ekranni _bloklash"
 msgid "_OK"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:864
+#: ../panel-plugin/configuration-dialog.cpp:869
 msgid "_Pattern:"
 msgstr "_Andaza:"
 
-#: ../panel-plugin/configuration-dialog.cpp:888
+#: ../panel-plugin/configuration-dialog.cpp:893
 msgid "_Regular expression"
 msgstr "_Oddiy ifodalar"
 
@@ -418,7 +418,7 @@ msgstr "_Oddiy ifodalar"
 msgid "_Title:"
 msgstr "_Sarlavha"
 
-#: ../panel-plugin/plugin.cpp:410
+#: ../panel-plugin/plugin.cpp:407
 msgid "translator-credits"
 msgstr "Umid Almasov <u.almasov@gmail.com>, 2014"
 

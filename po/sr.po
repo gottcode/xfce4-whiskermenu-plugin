@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-15 08:22-0400\n"
+"POT-Creation-Date: 2018-05-21 07:22-0400\n"
 "PO-Revision-Date: 2017-02-04 19:52+0000\n"
 "Last-Translator: Саша Петровић <salepetronije@gmail.com>\n"
 "Language-Team: Serbian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -24,19 +24,19 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../panel-plugin/configuration-dialog.cpp:818
+#: ../panel-plugin/configuration-dialog.cpp:823
 msgid "Add action"
 msgstr "Додај радњу"
 
-#: ../panel-plugin/page.cpp:257
+#: ../panel-plugin/page.cpp:258
 msgid "Add to Desktop"
 msgstr "Додај на површ"
 
-#: ../panel-plugin/page.cpp:241
+#: ../panel-plugin/page.cpp:242
 msgid "Add to Favorites"
 msgstr "Додај у омиљене"
 
-#: ../panel-plugin/page.cpp:261
+#: ../panel-plugin/page.cpp:262
 msgid "Add to Panel"
 msgstr "Додај на полицу"
 
@@ -48,15 +48,15 @@ msgstr "Све"
 msgid "All _Settings"
 msgstr "Све _поставке"
 
-#: ../panel-plugin/plugin.cpp:405
+#: ../panel-plugin/plugin.cpp:402
 msgid "Alternate application launcher for Xfce"
 msgstr "Заменски покретач програма за Иксфце"
 
-#: ../panel-plugin/configuration-dialog.cpp:719
+#: ../panel-plugin/configuration-dialog.cpp:724
 msgid "Amount of _items:"
 msgstr "Количина _ставки:"
 
-#: ../panel-plugin/plugin.cpp:210
+#: ../panel-plugin/plugin.cpp:207
 msgid "Applications"
 msgstr "Програми"
 
@@ -68,7 +68,7 @@ msgstr "Прозирност позадине_:"
 msgid "Browse the file system to choose a custom command."
 msgstr "Разгледај систем датотека ради одабира произвољне наредбе."
 
-#: ../panel-plugin/configuration-dialog.cpp:876
+#: ../panel-plugin/configuration-dialog.cpp:881
 msgid "C_ommand:"
 msgstr "Н_аредба:"
 
@@ -80,11 +80,11 @@ msgstr "Величина иконица _врста:"
 msgid "Clear Recently Used"
 msgstr "Очисти недавно коришћено"
 
-#: ../panel-plugin/plugin.cpp:406
+#: ../panel-plugin/plugin.cpp:403
 msgid "Copyright © 2013-2018 Graeme Gott"
 msgstr "Права умножавања © 2013-2018 Graeme Gott - Грејем гот"
 
-#: ../panel-plugin/configuration-dialog.cpp:846
+#: ../panel-plugin/configuration-dialog.cpp:851
 msgid "Details"
 msgstr "Појединости"
 
@@ -92,11 +92,11 @@ msgstr "Појединости"
 msgid "Di_splay:"
 msgstr "Пр_иказ:"
 
-#: ../panel-plugin/configuration-dialog.cpp:736
+#: ../panel-plugin/configuration-dialog.cpp:741
 msgid "Display by _default"
 msgstr "Подразумевани приказ"
 
-#: ../panel-plugin/page.cpp:268
+#: ../panel-plugin/page.cpp:269
 msgid "Edit Application..."
 msgstr "Уреди програм..."
 
@@ -146,7 +146,7 @@ msgstr "Иконица"
 msgid "Icon and title"
 msgstr "Иконица и наслов"
 
-#: ../panel-plugin/configuration-dialog.cpp:730
+#: ../panel-plugin/configuration-dialog.cpp:735
 #, fuzzy
 msgid "Include _favorites"
 msgstr "Занемари _омиљене"
@@ -172,15 +172,15 @@ msgid "Man Pages"
 msgstr "Упутне странице"
 
 #: ../panel-plugin/configuration-dialog.cpp:587
-#: ../panel-plugin/configuration-dialog.cpp:679
+#: ../panel-plugin/configuration-dialog.cpp:684
 msgid "Menu"
 msgstr "Изборник"
 
-#: ../panel-plugin/configuration-dialog.cpp:851
+#: ../panel-plugin/configuration-dialog.cpp:856
 msgid "Nam_e:"
 msgstr "И_ме:"
 
-#: ../panel-plugin/configuration-dialog.cpp:796
+#: ../panel-plugin/configuration-dialog.cpp:801
 msgid "Name"
 msgstr "Име"
 
@@ -200,27 +200,27 @@ msgstr "Отвори адресу"
 msgid "Panel Button"
 msgstr "Дугме полице"
 
-#: ../panel-plugin/configuration-dialog.cpp:801
+#: ../panel-plugin/configuration-dialog.cpp:806
 msgid "Pattern"
 msgstr "Образац"
 
-#: ../panel-plugin/configuration-dialog.cpp:690
+#: ../panel-plugin/configuration-dialog.cpp:695
 msgid "Position _search entry next to panel button"
 msgstr "Постави кућицу за унос до дугмета на полици"
 
-#: ../panel-plugin/configuration-dialog.cpp:703
+#: ../panel-plugin/configuration-dialog.cpp:708
 msgid "Position cate_gories next to panel button"
 msgstr "Постави врсте до дугмета на полици"
 
-#: ../panel-plugin/configuration-dialog.cpp:696
+#: ../panel-plugin/configuration-dialog.cpp:701
 msgid "Position commands next to search _entry"
 msgstr "Постави наредбе до кућице претраге"
 
-#: ../panel-plugin/configuration-dialog.cpp:714 ../panel-plugin/window.cpp:156
+#: ../panel-plugin/configuration-dialog.cpp:719 ../panel-plugin/window.cpp:156
 msgid "Recently Used"
 msgstr "Недавно коришћено"
 
-#: ../panel-plugin/page.cpp:249
+#: ../panel-plugin/page.cpp:250
 msgid "Remove From Favorites"
 msgstr "Уклони из омиљених"
 
@@ -229,7 +229,7 @@ msgstr "Уклони из омиљених"
 msgid "Remove action \"%s\"?"
 msgstr "Да ли да уклоним радњу „%s“?"
 
-#: ../panel-plugin/configuration-dialog.cpp:827
+#: ../panel-plugin/configuration-dialog.cpp:832
 msgid "Remove selected action"
 msgstr "Уклони означену радњу"
 
@@ -302,7 +302,7 @@ msgstr "Поређај азбучно Ш-А"
 msgid "Switch _Users"
 msgstr "Промени _корисника"
 
-#: ../panel-plugin/configuration-dialog.cpp:684
+#: ../panel-plugin/configuration-dialog.cpp:689
 msgid "Switch categories by _hovering"
 msgstr "Мењај врсте _надношењем миша"
 
@@ -314,15 +314,15 @@ msgstr "Радња ће бити трајно избрисана."
 msgid "Title"
 msgstr "Наслов"
 
-#: ../panel-plugin/page.cpp:333
+#: ../panel-plugin/page.cpp:334
 msgid "Unable to add launcher to desktop."
 msgstr "Нисам успео да додам покретач на радну површ."
 
-#: ../panel-plugin/page.cpp:372 ../panel-plugin/page.cpp:381
+#: ../panel-plugin/page.cpp:373 ../panel-plugin/page.cpp:382
 msgid "Unable to add launcher to panel."
 msgstr "Нисам успео да додам покретач на полицу."
 
-#: ../panel-plugin/page.cpp:410
+#: ../panel-plugin/page.cpp:411
 msgid "Unable to edit launcher."
 msgstr "Нисам успео да уредим покретач."
 
@@ -402,11 +402,11 @@ msgstr "_Закључај екран"
 msgid "_OK"
 msgstr "_У реду"
 
-#: ../panel-plugin/configuration-dialog.cpp:864
+#: ../panel-plugin/configuration-dialog.cpp:869
 msgid "_Pattern:"
 msgstr "_Образац:"
 
-#: ../panel-plugin/configuration-dialog.cpp:888
+#: ../panel-plugin/configuration-dialog.cpp:893
 msgid "_Regular expression"
 msgstr "Општи из_раз"
 
@@ -414,6 +414,6 @@ msgstr "Општи из_раз"
 msgid "_Title:"
 msgstr "_Наслов:"
 
-#: ../panel-plugin/plugin.cpp:410
+#: ../panel-plugin/plugin.cpp:407
 msgid "translator-credits"
 msgstr "Саша Петровић <salepetronije@gmail.com>"

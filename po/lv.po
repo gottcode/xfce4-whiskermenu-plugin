@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-15 08:22-0400\n"
+"POT-Creation-Date: 2018-05-21 07:22-0400\n"
 "PO-Revision-Date: 2014-02-10 13:41+0000\n"
 "Last-Translator: Gatis Kalniņš <>\n"
 "Language-Team: Latvian (http://www.transifex.com/projects/p/xfce4-"
@@ -20,19 +20,19 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
-#: ../panel-plugin/configuration-dialog.cpp:818
+#: ../panel-plugin/configuration-dialog.cpp:823
 msgid "Add action"
 msgstr "Pievienot darbību"
 
-#: ../panel-plugin/page.cpp:257
+#: ../panel-plugin/page.cpp:258
 msgid "Add to Desktop"
 msgstr "Izvietot uz darbvirsmas"
 
-#: ../panel-plugin/page.cpp:241
+#: ../panel-plugin/page.cpp:242
 msgid "Add to Favorites"
 msgstr "Pievienot favorītiem"
 
-#: ../panel-plugin/page.cpp:261
+#: ../panel-plugin/page.cpp:262
 msgid "Add to Panel"
 msgstr "Pievienot panelim"
 
@@ -44,15 +44,15 @@ msgstr "Visi"
 msgid "All _Settings"
 msgstr "Visi iestatījumi"
 
-#: ../panel-plugin/plugin.cpp:405
+#: ../panel-plugin/plugin.cpp:402
 msgid "Alternate application launcher for Xfce"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:719
+#: ../panel-plugin/configuration-dialog.cpp:724
 msgid "Amount of _items:"
 msgstr ""
 
-#: ../panel-plugin/plugin.cpp:210
+#: ../panel-plugin/plugin.cpp:207
 #, fuzzy
 msgid "Applications"
 msgstr "Programmu izvēlne"
@@ -65,7 +65,7 @@ msgstr ""
 msgid "Browse the file system to choose a custom command."
 msgstr "Rādīt failsistēmu komandas izvēlei."
 
-#: ../panel-plugin/configuration-dialog.cpp:876
+#: ../panel-plugin/configuration-dialog.cpp:881
 msgid "C_ommand:"
 msgstr "Komanda:"
 
@@ -77,11 +77,11 @@ msgstr "Grupas ikonas izmērs:"
 msgid "Clear Recently Used"
 msgstr "Dzēst nesen lietotos"
 
-#: ../panel-plugin/plugin.cpp:406
+#: ../panel-plugin/plugin.cpp:403
 msgid "Copyright © 2013-2018 Graeme Gott"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:846
+#: ../panel-plugin/configuration-dialog.cpp:851
 msgid "Details"
 msgstr "Sīkāk"
 
@@ -89,12 +89,12 @@ msgstr "Sīkāk"
 msgid "Di_splay:"
 msgstr "Rādīt:"
 
-#: ../panel-plugin/configuration-dialog.cpp:736
+#: ../panel-plugin/configuration-dialog.cpp:741
 #, fuzzy
 msgid "Display by _default"
 msgstr "Rādīt nesen lietotos pēc noklusējuma"
 
-#: ../panel-plugin/page.cpp:268
+#: ../panel-plugin/page.cpp:269
 #, fuzzy
 msgid "Edit Application..."
 msgstr "Labot programmas"
@@ -146,7 +146,7 @@ msgstr "Ikona"
 msgid "Icon and title"
 msgstr "Ikona un nosaukums"
 
-#: ../panel-plugin/configuration-dialog.cpp:730
+#: ../panel-plugin/configuration-dialog.cpp:735
 #, fuzzy
 msgid "Include _favorites"
 msgstr "Favorīti"
@@ -172,15 +172,15 @@ msgid "Man Pages"
 msgstr "Palīdzība"
 
 #: ../panel-plugin/configuration-dialog.cpp:587
-#: ../panel-plugin/configuration-dialog.cpp:679
+#: ../panel-plugin/configuration-dialog.cpp:684
 msgid "Menu"
 msgstr "Izvēlne"
 
-#: ../panel-plugin/configuration-dialog.cpp:851
+#: ../panel-plugin/configuration-dialog.cpp:856
 msgid "Nam_e:"
 msgstr "Nosaukums:"
 
-#: ../panel-plugin/configuration-dialog.cpp:796
+#: ../panel-plugin/configuration-dialog.cpp:801
 msgid "Name"
 msgstr "Nosaukums"
 
@@ -200,28 +200,28 @@ msgstr "Atvērt URL"
 msgid "Panel Button"
 msgstr "Paneļa poga"
 
-#: ../panel-plugin/configuration-dialog.cpp:801
+#: ../panel-plugin/configuration-dialog.cpp:806
 msgid "Pattern"
 msgstr "Šablons"
 
-#: ../panel-plugin/configuration-dialog.cpp:690
+#: ../panel-plugin/configuration-dialog.cpp:695
 msgid "Position _search entry next to panel button"
 msgstr "Izvietot meklēšanas lauku blakus paneļa pogai"
 
-#: ../panel-plugin/configuration-dialog.cpp:703
+#: ../panel-plugin/configuration-dialog.cpp:708
 #, fuzzy
 msgid "Position cate_gories next to panel button"
 msgstr "Izvietot meklēšanas lauku blakus paneļa pogai"
 
-#: ../panel-plugin/configuration-dialog.cpp:696
+#: ../panel-plugin/configuration-dialog.cpp:701
 msgid "Position commands next to search _entry"
 msgstr "Rādīt komandas blakus meklēšanas laukam"
 
-#: ../panel-plugin/configuration-dialog.cpp:714 ../panel-plugin/window.cpp:156
+#: ../panel-plugin/configuration-dialog.cpp:719 ../panel-plugin/window.cpp:156
 msgid "Recently Used"
 msgstr "Nesen lietotie"
 
-#: ../panel-plugin/page.cpp:249
+#: ../panel-plugin/page.cpp:250
 msgid "Remove From Favorites"
 msgstr "Izņemt no favorītiem"
 
@@ -230,7 +230,7 @@ msgstr "Izņemt no favorītiem"
 msgid "Remove action \"%s\"?"
 msgstr "Dzēst darbību \"%s\"?"
 
-#: ../panel-plugin/configuration-dialog.cpp:827
+#: ../panel-plugin/configuration-dialog.cpp:832
 msgid "Remove selected action"
 msgstr "Dzēst izvēlēto darbību"
 
@@ -304,7 +304,7 @@ msgstr "Kārtot pēc alfabēta Z-A"
 msgid "Switch _Users"
 msgstr "Pārslēgt lietotājus"
 
-#: ../panel-plugin/configuration-dialog.cpp:684
+#: ../panel-plugin/configuration-dialog.cpp:689
 msgid "Switch categories by _hovering"
 msgstr "Pārslēgt grupas pārslīdot kursoram"
 
@@ -316,15 +316,15 @@ msgstr "Darbība tiks dzēsta."
 msgid "Title"
 msgstr "Nosaukums"
 
-#: ../panel-plugin/page.cpp:333
+#: ../panel-plugin/page.cpp:334
 msgid "Unable to add launcher to desktop."
 msgstr "Nevarēja izvietot uz darbvirsmas."
 
-#: ../panel-plugin/page.cpp:372 ../panel-plugin/page.cpp:381
+#: ../panel-plugin/page.cpp:373 ../panel-plugin/page.cpp:382
 msgid "Unable to add launcher to panel."
 msgstr "Nevar pievienot panelim."
 
-#: ../panel-plugin/page.cpp:410
+#: ../panel-plugin/page.cpp:411
 #, fuzzy
 msgid "Unable to edit launcher."
 msgstr "Nevar pievienot panelim."
@@ -406,11 +406,11 @@ msgstr "Slēgt ekrānu"
 msgid "_OK"
 msgstr "_Labi"
 
-#: ../panel-plugin/configuration-dialog.cpp:864
+#: ../panel-plugin/configuration-dialog.cpp:869
 msgid "_Pattern:"
 msgstr "Šablons:"
 
-#: ../panel-plugin/configuration-dialog.cpp:888
+#: ../panel-plugin/configuration-dialog.cpp:893
 msgid "_Regular expression"
 msgstr "Regulāra izteiksme"
 
@@ -418,7 +418,7 @@ msgstr "Regulāra izteiksme"
 msgid "_Title:"
 msgstr "Nosaukums:"
 
-#: ../panel-plugin/plugin.cpp:410
+#: ../panel-plugin/plugin.cpp:407
 msgid "translator-credits"
 msgstr ""
 

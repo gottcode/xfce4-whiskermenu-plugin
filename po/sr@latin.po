@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-15 08:22-0400\n"
+"POT-Creation-Date: 2018-05-21 07:22-0400\n"
 "PO-Revision-Date: 2017-02-16 08:48+0000\n"
 "Last-Translator: srdjan srdjan <acrvena@gmail.com>\n"
 "Language-Team: Serbian (Latin) (http://www.transifex.com/gottcode/xfce4-"
@@ -24,19 +24,19 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../panel-plugin/configuration-dialog.cpp:818
+#: ../panel-plugin/configuration-dialog.cpp:823
 msgid "Add action"
 msgstr "Dodaj radnju"
 
-#: ../panel-plugin/page.cpp:257
+#: ../panel-plugin/page.cpp:258
 msgid "Add to Desktop"
 msgstr "Dodaj na radnu površ"
 
-#: ../panel-plugin/page.cpp:241
+#: ../panel-plugin/page.cpp:242
 msgid "Add to Favorites"
 msgstr "Dodaj u omiljene"
 
-#: ../panel-plugin/page.cpp:261
+#: ../panel-plugin/page.cpp:262
 msgid "Add to Panel"
 msgstr "Dodaj na policu"
 
@@ -48,15 +48,15 @@ msgstr "Sve"
 msgid "All _Settings"
 msgstr "Sve _postavke"
 
-#: ../panel-plugin/plugin.cpp:405
+#: ../panel-plugin/plugin.cpp:402
 msgid "Alternate application launcher for Xfce"
 msgstr "alternativni pokretac aplikacije za Xfce"
 
-#: ../panel-plugin/configuration-dialog.cpp:719
+#: ../panel-plugin/configuration-dialog.cpp:724
 msgid "Amount of _items:"
 msgstr "Kolicina stvari:"
 
-#: ../panel-plugin/plugin.cpp:210
+#: ../panel-plugin/plugin.cpp:207
 msgid "Applications"
 msgstr "Aplikacije"
 
@@ -68,7 +68,7 @@ msgstr "Pozadinska prozirnost:"
 msgid "Browse the file system to choose a custom command."
 msgstr "Razgledaj sistem datoteka radi odabira proizvoljne naredbe."
 
-#: ../panel-plugin/configuration-dialog.cpp:876
+#: ../panel-plugin/configuration-dialog.cpp:881
 msgid "C_ommand:"
 msgstr "Naredba"
 
@@ -80,11 +80,11 @@ msgstr "Veličina ikonica _vrsta:"
 msgid "Clear Recently Used"
 msgstr "Očisti nedavno korišćeno"
 
-#: ../panel-plugin/plugin.cpp:406
+#: ../panel-plugin/plugin.cpp:403
 msgid "Copyright © 2013-2018 Graeme Gott"
 msgstr "Autorska prava © 2013-2018 Graeme Gott"
 
-#: ../panel-plugin/configuration-dialog.cpp:846
+#: ../panel-plugin/configuration-dialog.cpp:851
 msgid "Details"
 msgstr "Pojedinosti"
 
@@ -92,11 +92,11 @@ msgstr "Pojedinosti"
 msgid "Di_splay:"
 msgstr "Prikaz:"
 
-#: ../panel-plugin/configuration-dialog.cpp:736
+#: ../panel-plugin/configuration-dialog.cpp:741
 msgid "Display by _default"
 msgstr "Podrazumjevani prikaz"
 
-#: ../panel-plugin/page.cpp:268
+#: ../panel-plugin/page.cpp:269
 msgid "Edit Application..."
 msgstr "Urediti aplikaciju"
 
@@ -146,7 +146,7 @@ msgstr "Ikonica"
 msgid "Icon and title"
 msgstr "Ikonica i naslov"
 
-#: ../panel-plugin/configuration-dialog.cpp:730
+#: ../panel-plugin/configuration-dialog.cpp:735
 #, fuzzy
 msgid "Include _favorites"
 msgstr "Zanemari_omiljene"
@@ -172,15 +172,15 @@ msgid "Man Pages"
 msgstr "Uputne stranice"
 
 #: ../panel-plugin/configuration-dialog.cpp:587
-#: ../panel-plugin/configuration-dialog.cpp:679
+#: ../panel-plugin/configuration-dialog.cpp:684
 msgid "Menu"
 msgstr "Izbornik"
 
-#: ../panel-plugin/configuration-dialog.cpp:851
+#: ../panel-plugin/configuration-dialog.cpp:856
 msgid "Nam_e:"
 msgstr "I_me:"
 
-#: ../panel-plugin/configuration-dialog.cpp:796
+#: ../panel-plugin/configuration-dialog.cpp:801
 msgid "Name"
 msgstr "Ime"
 
@@ -200,27 +200,27 @@ msgstr "Otvori adresu"
 msgid "Panel Button"
 msgstr "Dugme police"
 
-#: ../panel-plugin/configuration-dialog.cpp:801
+#: ../panel-plugin/configuration-dialog.cpp:806
 msgid "Pattern"
 msgstr "Obrazac"
 
-#: ../panel-plugin/configuration-dialog.cpp:690
+#: ../panel-plugin/configuration-dialog.cpp:695
 msgid "Position _search entry next to panel button"
 msgstr "Položaj kućice za unos pretrage u odnosu na dugme police"
 
-#: ../panel-plugin/configuration-dialog.cpp:703
+#: ../panel-plugin/configuration-dialog.cpp:708
 msgid "Position cate_gories next to panel button"
 msgstr "Polozaj kate_gorija do izbornika police"
 
-#: ../panel-plugin/configuration-dialog.cpp:696
+#: ../panel-plugin/configuration-dialog.cpp:701
 msgid "Position commands next to search _entry"
 msgstr "Položaj kućice za naredbe u odnosu na kućicu pretrage"
 
-#: ../panel-plugin/configuration-dialog.cpp:714 ../panel-plugin/window.cpp:156
+#: ../panel-plugin/configuration-dialog.cpp:719 ../panel-plugin/window.cpp:156
 msgid "Recently Used"
 msgstr "Nedavno korišćeno"
 
-#: ../panel-plugin/page.cpp:249
+#: ../panel-plugin/page.cpp:250
 msgid "Remove From Favorites"
 msgstr "Ukloni iz omiljenih"
 
@@ -229,7 +229,7 @@ msgstr "Ukloni iz omiljenih"
 msgid "Remove action \"%s\"?"
 msgstr "Da li da uklonim radnju „%s“?"
 
-#: ../panel-plugin/configuration-dialog.cpp:827
+#: ../panel-plugin/configuration-dialog.cpp:832
 msgid "Remove selected action"
 msgstr "Ukloni označenu radnju"
 
@@ -302,7 +302,7 @@ msgstr "Poređaj abecedno Š-A"
 msgid "Switch _Users"
 msgstr "Promeni _korisnika"
 
-#: ../panel-plugin/configuration-dialog.cpp:684
+#: ../panel-plugin/configuration-dialog.cpp:689
 msgid "Switch categories by _hovering"
 msgstr "Menjaj vrste _nadnošenjem miša"
 
@@ -314,15 +314,15 @@ msgstr "Radnja će biti trajno izbrisana."
 msgid "Title"
 msgstr "Naslov"
 
-#: ../panel-plugin/page.cpp:333
+#: ../panel-plugin/page.cpp:334
 msgid "Unable to add launcher to desktop."
 msgstr "Nisam uspeo da dodam pokretač na radnu površ."
 
-#: ../panel-plugin/page.cpp:372 ../panel-plugin/page.cpp:381
+#: ../panel-plugin/page.cpp:373 ../panel-plugin/page.cpp:382
 msgid "Unable to add launcher to panel."
 msgstr "Nisam uspeo da dodam pokretač na policu."
 
-#: ../panel-plugin/page.cpp:410
+#: ../panel-plugin/page.cpp:411
 msgid "Unable to edit launcher."
 msgstr "Nisam uspjeo da izmjenim pokretac"
 
@@ -402,11 +402,11 @@ msgstr "_Zaključaj ekran"
 msgid "_OK"
 msgstr "_U redu"
 
-#: ../panel-plugin/configuration-dialog.cpp:864
+#: ../panel-plugin/configuration-dialog.cpp:869
 msgid "_Pattern:"
 msgstr "_Obrazac:"
 
-#: ../panel-plugin/configuration-dialog.cpp:888
+#: ../panel-plugin/configuration-dialog.cpp:893
 msgid "_Regular expression"
 msgstr "Opšti iz_raz"
 
@@ -414,6 +414,6 @@ msgstr "Opšti iz_raz"
 msgid "_Title:"
 msgstr "_Naslov:"
 
-#: ../panel-plugin/plugin.cpp:410
+#: ../panel-plugin/plugin.cpp:407
 msgid "translator-credits"
 msgstr "zasluge -prevodioca"

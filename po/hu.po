@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-15 08:22-0400\n"
+"POT-Creation-Date: 2018-05-21 07:22-0400\n"
 "PO-Revision-Date: 2017-09-23 19:05+0000\n"
 "Last-Translator: Rezső Páder <rezso@rezso.net>\n"
 "Language-Team: Hungarian (http://www.transifex.com/gottcode/xfce4-"
@@ -23,19 +23,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/configuration-dialog.cpp:818
+#: ../panel-plugin/configuration-dialog.cpp:823
 msgid "Add action"
 msgstr "Művelet hozzáadása"
 
-#: ../panel-plugin/page.cpp:257
+#: ../panel-plugin/page.cpp:258
 msgid "Add to Desktop"
 msgstr "Ikon hozzáadása az Asztalhoz"
 
-#: ../panel-plugin/page.cpp:241
+#: ../panel-plugin/page.cpp:242
 msgid "Add to Favorites"
 msgstr "Hozzáadás a kedvencekhez"
 
-#: ../panel-plugin/page.cpp:261
+#: ../panel-plugin/page.cpp:262
 msgid "Add to Panel"
 msgstr "Ikon hozzáadása a tálcához"
 
@@ -47,15 +47,15 @@ msgstr "Összes"
 msgid "All _Settings"
 msgstr "Összes _beállítás"
 
-#: ../panel-plugin/plugin.cpp:405
+#: ../panel-plugin/plugin.cpp:402
 msgid "Alternate application launcher for Xfce"
 msgstr "Alternatív alkalmazásindító az Xfce-hez"
 
-#: ../panel-plugin/configuration-dialog.cpp:719
+#: ../panel-plugin/configuration-dialog.cpp:724
 msgid "Amount of _items:"
 msgstr "Elemek száma:"
 
-#: ../panel-plugin/plugin.cpp:210
+#: ../panel-plugin/plugin.cpp:207
 msgid "Applications"
 msgstr "Alkalmazások"
 
@@ -67,7 +67,7 @@ msgstr "Háttér átlátszósága:"
 msgid "Browse the file system to choose a custom command."
 msgstr "Egyéni parancs kiválasztása a fájlrendszer böngészésével."
 
-#: ../panel-plugin/configuration-dialog.cpp:876
+#: ../panel-plugin/configuration-dialog.cpp:881
 msgid "C_ommand:"
 msgstr "P_arancs:"
 
@@ -79,11 +79,11 @@ msgstr "_Kategória ikon méret:"
 msgid "Clear Recently Used"
 msgstr "Előzmények törlése"
 
-#: ../panel-plugin/plugin.cpp:406
+#: ../panel-plugin/plugin.cpp:403
 msgid "Copyright © 2013-2018 Graeme Gott"
 msgstr "Copyright © 2013-2018 Graeme Gott"
 
-#: ../panel-plugin/configuration-dialog.cpp:846
+#: ../panel-plugin/configuration-dialog.cpp:851
 msgid "Details"
 msgstr "Részletek"
 
@@ -91,11 +91,11 @@ msgstr "Részletek"
 msgid "Di_splay:"
 msgstr "M_egjelenítés:"
 
-#: ../panel-plugin/configuration-dialog.cpp:736
+#: ../panel-plugin/configuration-dialog.cpp:741
 msgid "Display by _default"
 msgstr "Alapértelmezetten megjelenített"
 
-#: ../panel-plugin/page.cpp:268
+#: ../panel-plugin/page.cpp:269
 msgid "Edit Application..."
 msgstr "Alkalmazás szerkesztése..."
 
@@ -145,7 +145,7 @@ msgstr "Ikon"
 msgid "Icon and title"
 msgstr "Ikon és cím"
 
-#: ../panel-plugin/configuration-dialog.cpp:730
+#: ../panel-plugin/configuration-dialog.cpp:735
 #, fuzzy
 msgid "Include _favorites"
 msgstr "Figyelmen kívül hagyás _favorites"
@@ -171,15 +171,15 @@ msgid "Man Pages"
 msgstr "Kézikönyv oldalak"
 
 #: ../panel-plugin/configuration-dialog.cpp:587
-#: ../panel-plugin/configuration-dialog.cpp:679
+#: ../panel-plugin/configuration-dialog.cpp:684
 msgid "Menu"
 msgstr "Menü"
 
-#: ../panel-plugin/configuration-dialog.cpp:851
+#: ../panel-plugin/configuration-dialog.cpp:856
 msgid "Nam_e:"
 msgstr "Né_v:"
 
-#: ../panel-plugin/configuration-dialog.cpp:796
+#: ../panel-plugin/configuration-dialog.cpp:801
 msgid "Name"
 msgstr "Név"
 
@@ -199,27 +199,27 @@ msgstr "URI megnyitása"
 msgid "Panel Button"
 msgstr "Panel gomb"
 
-#: ../panel-plugin/configuration-dialog.cpp:801
+#: ../panel-plugin/configuration-dialog.cpp:806
 msgid "Pattern"
 msgstr "Minta"
 
-#: ../panel-plugin/configuration-dialog.cpp:690
+#: ../panel-plugin/configuration-dialog.cpp:695
 msgid "Position _search entry next to panel button"
 msgstr "A _keresőmező elhelyezése a panel gomb mellé"
 
-#: ../panel-plugin/configuration-dialog.cpp:703
+#: ../panel-plugin/configuration-dialog.cpp:708
 msgid "Position cate_gories next to panel button"
 msgstr "Kate_góriák elhelyezése a panel gomb mellé"
 
-#: ../panel-plugin/configuration-dialog.cpp:696
+#: ../panel-plugin/configuration-dialog.cpp:701
 msgid "Position commands next to search _entry"
 msgstr "Parancsok elhelyezése a kereső_mező mellé"
 
-#: ../panel-plugin/configuration-dialog.cpp:714 ../panel-plugin/window.cpp:156
+#: ../panel-plugin/configuration-dialog.cpp:719 ../panel-plugin/window.cpp:156
 msgid "Recently Used"
 msgstr "Előzmények"
 
-#: ../panel-plugin/page.cpp:249
+#: ../panel-plugin/page.cpp:250
 msgid "Remove From Favorites"
 msgstr "Eltávolítás a kedvencekből"
 
@@ -228,7 +228,7 @@ msgstr "Eltávolítás a kedvencekből"
 msgid "Remove action \"%s\"?"
 msgstr "\"%s\" művelet eltávolítása?"
 
-#: ../panel-plugin/configuration-dialog.cpp:827
+#: ../panel-plugin/configuration-dialog.cpp:832
 msgid "Remove selected action"
 msgstr "Kijelölt művelet eltávolítása"
 
@@ -301,7 +301,7 @@ msgstr "Rendezés ABC rendben csökkenően"
 msgid "Switch _Users"
 msgstr "_Felhasználóváltás"
 
-#: ../panel-plugin/configuration-dialog.cpp:684
+#: ../panel-plugin/configuration-dialog.cpp:689
 msgid "Switch categories by _hovering"
 msgstr "Kategóriák váltása _fókusszal."
 
@@ -313,15 +313,15 @@ msgstr "A művelet véglegesen törölve lesz."
 msgid "Title"
 msgstr "Cím"
 
-#: ../panel-plugin/page.cpp:333
+#: ../panel-plugin/page.cpp:334
 msgid "Unable to add launcher to desktop."
 msgstr "Nem lehet az ikont kirakni az asztalra."
 
-#: ../panel-plugin/page.cpp:372 ../panel-plugin/page.cpp:381
+#: ../panel-plugin/page.cpp:373 ../panel-plugin/page.cpp:382
 msgid "Unable to add launcher to panel."
 msgstr "Nem lehet az ikont kirakni a tálcára."
 
-#: ../panel-plugin/page.cpp:410
+#: ../panel-plugin/page.cpp:411
 msgid "Unable to edit launcher."
 msgstr "Az indító nem szerkeszthető."
 
@@ -401,11 +401,11 @@ msgstr "_Képernyő lezárása"
 msgid "_OK"
 msgstr "OK"
 
-#: ../panel-plugin/configuration-dialog.cpp:864
+#: ../panel-plugin/configuration-dialog.cpp:869
 msgid "_Pattern:"
 msgstr "_Minta:"
 
-#: ../panel-plugin/configuration-dialog.cpp:888
+#: ../panel-plugin/configuration-dialog.cpp:893
 msgid "_Regular expression"
 msgstr "_Reguláris kifejezés"
 
@@ -413,6 +413,6 @@ msgstr "_Reguláris kifejezés"
 msgid "_Title:"
 msgstr "_Cím:"
 
-#: ../panel-plugin/plugin.cpp:410
+#: ../panel-plugin/plugin.cpp:407
 msgid "translator-credits"
 msgstr "fordítás-érdemek"

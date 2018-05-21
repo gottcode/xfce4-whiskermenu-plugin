@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-15 08:22-0400\n"
+"POT-Creation-Date: 2018-05-21 07:22-0400\n"
 "PO-Revision-Date: 2018-04-20 21:11+0000\n"
 "Last-Translator: Sebastian Brici <bricisebastian@gmail.com>\n"
 "Language-Team: Romanian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -22,19 +22,19 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
 "2:1));\n"
 
-#: ../panel-plugin/configuration-dialog.cpp:818
+#: ../panel-plugin/configuration-dialog.cpp:823
 msgid "Add action"
 msgstr "Adaugă acțiune"
 
-#: ../panel-plugin/page.cpp:257
+#: ../panel-plugin/page.cpp:258
 msgid "Add to Desktop"
 msgstr "Adaugă la desktop"
 
-#: ../panel-plugin/page.cpp:241
+#: ../panel-plugin/page.cpp:242
 msgid "Add to Favorites"
 msgstr "Adaugă la favorite"
 
-#: ../panel-plugin/page.cpp:261
+#: ../panel-plugin/page.cpp:262
 msgid "Add to Panel"
 msgstr "Adaugă la panou"
 
@@ -46,15 +46,15 @@ msgstr "Toate"
 msgid "All _Settings"
 msgstr "Toate _setările"
 
-#: ../panel-plugin/plugin.cpp:405
+#: ../panel-plugin/plugin.cpp:402
 msgid "Alternate application launcher for Xfce"
 msgstr "Lansator de aplicații alternativ pt. Xfce"
 
-#: ../panel-plugin/configuration-dialog.cpp:719
+#: ../panel-plugin/configuration-dialog.cpp:724
 msgid "Amount of _items:"
 msgstr "Număr de _elemente"
 
-#: ../panel-plugin/plugin.cpp:210
+#: ../panel-plugin/plugin.cpp:207
 msgid "Applications"
 msgstr "Aplicații"
 
@@ -66,7 +66,7 @@ msgstr "Opac_itatea fondului:"
 msgid "Browse the file system to choose a custom command."
 msgstr "Caută sistemul de fișiere pentru a găsi o comandă personalizată."
 
-#: ../panel-plugin/configuration-dialog.cpp:876
+#: ../panel-plugin/configuration-dialog.cpp:881
 msgid "C_ommand:"
 msgstr "C_omandă"
 
@@ -78,11 +78,11 @@ msgstr "Mărimea iconiței categ_oriei:"
 msgid "Clear Recently Used"
 msgstr "Șterge recent folositele"
 
-#: ../panel-plugin/plugin.cpp:406
+#: ../panel-plugin/plugin.cpp:403
 msgid "Copyright © 2013-2018 Graeme Gott"
 msgstr "Copyright © 2013-2018 Graeme Gott"
 
-#: ../panel-plugin/configuration-dialog.cpp:846
+#: ../panel-plugin/configuration-dialog.cpp:851
 msgid "Details"
 msgstr "Detalii"
 
@@ -90,11 +90,11 @@ msgstr "Detalii"
 msgid "Di_splay:"
 msgstr "Afi_șaj:"
 
-#: ../panel-plugin/configuration-dialog.cpp:736
+#: ../panel-plugin/configuration-dialog.cpp:741
 msgid "Display by _default"
 msgstr "Arată după stare i_mplicită"
 
-#: ../panel-plugin/page.cpp:268
+#: ../panel-plugin/page.cpp:269
 msgid "Edit Application..."
 msgstr "Editează aplicația..."
 
@@ -144,7 +144,7 @@ msgstr "Iconiță"
 msgid "Icon and title"
 msgstr "Iconiță și titlu"
 
-#: ../panel-plugin/configuration-dialog.cpp:730
+#: ../panel-plugin/configuration-dialog.cpp:735
 msgid "Include _favorites"
 msgstr "Include _favorite"
 
@@ -169,15 +169,15 @@ msgid "Man Pages"
 msgstr "Pagini Man"
 
 #: ../panel-plugin/configuration-dialog.cpp:587
-#: ../panel-plugin/configuration-dialog.cpp:679
+#: ../panel-plugin/configuration-dialog.cpp:684
 msgid "Menu"
 msgstr "Meniu"
 
-#: ../panel-plugin/configuration-dialog.cpp:851
+#: ../panel-plugin/configuration-dialog.cpp:856
 msgid "Nam_e:"
 msgstr "Num_e"
 
-#: ../panel-plugin/configuration-dialog.cpp:796
+#: ../panel-plugin/configuration-dialog.cpp:801
 msgid "Name"
 msgstr "Nume"
 
@@ -197,27 +197,27 @@ msgstr "Deschide URL"
 msgid "Panel Button"
 msgstr "Buton panou"
 
-#: ../panel-plugin/configuration-dialog.cpp:801
+#: ../panel-plugin/configuration-dialog.cpp:806
 msgid "Pattern"
 msgstr "Tipar"
 
-#: ../panel-plugin/configuration-dialog.cpp:690
+#: ../panel-plugin/configuration-dialog.cpp:695
 msgid "Position _search entry next to panel button"
 msgstr "Poziționează căsuța de căutare _lângă butonul de panou"
 
-#: ../panel-plugin/configuration-dialog.cpp:703
+#: ../panel-plugin/configuration-dialog.cpp:708
 msgid "Position cate_gories next to panel button"
 msgstr "Poziționează cate_goriile lângă butonul de panou"
 
-#: ../panel-plugin/configuration-dialog.cpp:696
+#: ../panel-plugin/configuration-dialog.cpp:701
 msgid "Position commands next to search _entry"
 msgstr "Poziționează comen_zi lângă căsuța de căutare"
 
-#: ../panel-plugin/configuration-dialog.cpp:714 ../panel-plugin/window.cpp:156
+#: ../panel-plugin/configuration-dialog.cpp:719 ../panel-plugin/window.cpp:156
 msgid "Recently Used"
 msgstr "Folosite recent"
 
-#: ../panel-plugin/page.cpp:249
+#: ../panel-plugin/page.cpp:250
 msgid "Remove From Favorites"
 msgstr "Șterge din favorite"
 
@@ -226,7 +226,7 @@ msgstr "Șterge din favorite"
 msgid "Remove action \"%s\"?"
 msgstr "Reliminați acțiunea „%s”?"
 
-#: ../panel-plugin/configuration-dialog.cpp:827
+#: ../panel-plugin/configuration-dialog.cpp:832
 msgid "Remove selected action"
 msgstr "Elimină acțiunea selectată"
 
@@ -299,7 +299,7 @@ msgstr "Sortează alfabetic Z-A"
 msgid "Switch _Users"
 msgstr "Schimbă _utilizatorii"
 
-#: ../panel-plugin/configuration-dialog.cpp:684
+#: ../panel-plugin/configuration-dialog.cpp:689
 msgid "Switch categories by _hovering"
 msgstr "Schimbă categoriile _planând cursorul"
 
@@ -311,15 +311,15 @@ msgstr "Această acțiune va fi ștearsă permanent"
 msgid "Title"
 msgstr "Titlu"
 
-#: ../panel-plugin/page.cpp:333
+#: ../panel-plugin/page.cpp:334
 msgid "Unable to add launcher to desktop."
 msgstr "Nu s-a putut adăuga lansator la desktop."
 
-#: ../panel-plugin/page.cpp:372 ../panel-plugin/page.cpp:381
+#: ../panel-plugin/page.cpp:373 ../panel-plugin/page.cpp:382
 msgid "Unable to add launcher to panel."
 msgstr "Nu s-a putut adăuga lansator la panou."
 
-#: ../panel-plugin/page.cpp:410
+#: ../panel-plugin/page.cpp:411
 msgid "Unable to edit launcher."
 msgstr "Eșec la editarea lansatorului."
 
@@ -399,11 +399,11 @@ msgstr "B_lochează ecranul"
 msgid "_OK"
 msgstr "_OK"
 
-#: ../panel-plugin/configuration-dialog.cpp:864
+#: ../panel-plugin/configuration-dialog.cpp:869
 msgid "_Pattern:"
 msgstr "Ti_par:"
 
-#: ../panel-plugin/configuration-dialog.cpp:888
+#: ../panel-plugin/configuration-dialog.cpp:893
 msgid "_Regular expression"
 msgstr "Expresie _regulată"
 
@@ -411,6 +411,6 @@ msgstr "Expresie _regulată"
 msgid "_Title:"
 msgstr "_Titlu"
 
-#: ../panel-plugin/plugin.cpp:410
+#: ../panel-plugin/plugin.cpp:407
 msgid "translator-credits"
 msgstr "autori-traduceri"
