@@ -77,6 +77,16 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	// Create the window
 	m_window = GTK_WINDOW(gtk_window_new(GTK_WINDOW_TOPLEVEL));
 	gtk_widget_set_name(GTK_WIDGET(m_window), "whiskermenu-window");
+
+	// Add CSS provider
+	provider = gtk_css_provider_new();
+	context = gtk_widget_get_style_context(GTK_WIDGET(m_window));
+	gtk_style_context_add_provider(context, GTK_STYLE_PROVIDER(provider), GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+	g_object_unref(provider);
+
+	// Use panel theme by default
+	gtk_style_context_add_class(context, "xfce4-panel");
+
 	// Untranslated window title to allow window managers to identify it; not visible to users.
 	gtk_window_set_title(m_window, "Whisker Menu");
 	gtk_window_set_modal(m_window, true);
