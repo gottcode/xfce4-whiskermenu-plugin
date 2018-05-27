@@ -105,6 +105,9 @@ private:
 
 	GtkWindow* m_window;
 
+	GtkStyleContext* context;
+	GtkCssProvider* provider;
+
 	GtkStack* m_window_stack;
 	GtkSpinner* m_window_load_spinner;
 
