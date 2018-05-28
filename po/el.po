@@ -258,7 +258,7 @@ msgstr "Επιλογή Εικονιδίου"
 msgid "Select Command"
 msgstr "Επιλογή εντολής"
 
-#: ../panel-plugin/whiskermenu.desktop.in.h:2
+#: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
 msgstr "Εμφανίζει ένα μενού για εύκολη πρόσβαση στις εγκατεστημένες εφαρμογές"
 
@@ -348,7 +348,7 @@ msgid "Web Search"
 msgstr "Αναζήτηση στο διαδίκτυο"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
-#: ../panel-plugin/whiskermenu.desktop.in.h:1
+#: ../panel-plugin/whiskermenu.desktop.in:5
 msgid "Whisker Menu"
 msgstr "Μενού Whisker"
 

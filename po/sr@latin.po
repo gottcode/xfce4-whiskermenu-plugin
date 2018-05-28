@@ -258,7 +258,7 @@ msgstr "Izaberite ikonicu"
 msgid "Select Command"
 msgstr "Izaberite naredbu"
 
-#: ../panel-plugin/whiskermenu.desktop.in.h:2
+#: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
 msgstr "Prikazuj izbornik za brzi pristup ugrađenim programima"
 
@@ -348,7 +348,7 @@ msgid "Web Search"
 msgstr "Mrezna pretraga"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
-#: ../panel-plugin/whiskermenu.desktop.in.h:1
+#: ../panel-plugin/whiskermenu.desktop.in:5
 msgid "Whisker Menu"
 msgstr "Brkin izbornik"
 

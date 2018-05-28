@@ -254,7 +254,7 @@ msgstr "选择一个图标"
 msgid "Select Command"
 msgstr "选择命令"
 
-#: ../panel-plugin/whiskermenu.desktop.in.h:2
+#: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
 msgstr "显示一个易于访问已安装程序的菜单"
 
@@ -344,7 +344,7 @@ msgid "Web Search"
 msgstr "网页搜索"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
-#: ../panel-plugin/whiskermenu.desktop.in.h:1
+#: ../panel-plugin/whiskermenu.desktop.in:5
 msgid "Whisker Menu"
 msgstr "Whisker 菜单"
 

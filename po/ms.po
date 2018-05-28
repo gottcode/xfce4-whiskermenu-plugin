@@ -253,7 +253,7 @@ msgstr "Pilih Satu Ikon"
 msgid "Select Command"
 msgstr "Pilih Perintah"
 
-#: ../panel-plugin/whiskermenu.desktop.in.h:2
+#: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
 msgstr "Tunjuk menu untuk capai aplikasi terpasang dengan mudah"
 
@@ -343,7 +343,7 @@ msgid "Web Search"
 msgstr "Gelintar Sesawang"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
-#: ../panel-plugin/whiskermenu.desktop.in.h:1
+#: ../panel-plugin/whiskermenu.desktop.in:5
 msgid "Whisker Menu"
 msgstr "Menu Whisker"
 

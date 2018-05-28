@@ -252,7 +252,7 @@ msgstr "Избор на икона"
 msgid "Select Command"
 msgstr "Избор на команда"
 
-#: ../panel-plugin/whiskermenu.desktop.in.h:2
+#: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
 msgstr "Показване на меню за лесен достъп до инсталираните приложения"
 
@@ -342,7 +342,7 @@ msgid "Web Search"
 msgstr "Уеб търсене"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
-#: ../panel-plugin/whiskermenu.desktop.in.h:1
+#: ../panel-plugin/whiskermenu.desktop.in:5
 msgid "Whisker Menu"
 msgstr "Whisker Меню"
 

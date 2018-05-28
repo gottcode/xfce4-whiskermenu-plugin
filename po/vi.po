@@ -259,7 +259,7 @@ msgstr "Chọn biểu tượng"
 msgid "Select Command"
 msgstr "Lựa chọn lệnh"
 
-#: ../panel-plugin/whiskermenu.desktop.in.h:2
+#: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
 msgstr "Hiển thị thực đơn để chạy ứng dụng dễ dàng"
 
@@ -351,7 +351,7 @@ msgid "Web Search"
 msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:70
-#: ../panel-plugin/whiskermenu.desktop.in.h:1
+#: ../panel-plugin/whiskermenu.desktop.in:5
 msgid "Whisker Menu"
 msgstr "Thực đơn Whisker"
 
