@@ -253,7 +253,7 @@ msgstr ""
 msgid "Select Command"
 msgstr "Veldu skipun"
 
-#: ../panel-plugin/whiskermenu.desktop.in.h:2
+#: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
 msgstr "Sýna valmynd til auðveldan aðgang að uppsettum forritum"
 
@@ -343,7 +343,7 @@ msgid "Web Search"
 msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:70
-#: ../panel-plugin/whiskermenu.desktop.in.h:1
+#: ../panel-plugin/whiskermenu.desktop.in:5
 msgid "Whisker Menu"
 msgstr "Whisker valmynd"
 

@@ -252,7 +252,7 @@ msgstr "Vyberte ikonu"
 msgid "Select Command"
 msgstr "Zvoľte príkaz"
 
-#: ../panel-plugin/whiskermenu.desktop.in.h:2
+#: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
 msgstr "Zobrazí menu ja jednoduché prechádzanie nainštalovanými aplikáciami"
 
@@ -342,7 +342,7 @@ msgid "Web Search"
 msgstr "Webové hľadanie"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
-#: ../panel-plugin/whiskermenu.desktop.in.h:1
+#: ../panel-plugin/whiskermenu.desktop.in:5
 msgid "Whisker Menu"
 msgstr "Whisker Menu"
 

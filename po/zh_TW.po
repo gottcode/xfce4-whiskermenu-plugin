@@ -254,7 +254,7 @@ msgstr "選取圖示"
 msgid "Select Command"
 msgstr "選取指令"
 
-#: ../panel-plugin/whiskermenu.desktop.in.h:2
+#: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
 msgstr "顯示選單以方便開啟已安裝的應用程式"
 
@@ -344,7 +344,7 @@ msgid "Web Search"
 msgstr "網路搜尋"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
-#: ../panel-plugin/whiskermenu.desktop.in.h:1
+#: ../panel-plugin/whiskermenu.desktop.in:5
 msgid "Whisker Menu"
 msgstr "Whisker 選單"
 

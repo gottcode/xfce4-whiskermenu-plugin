@@ -254,7 +254,7 @@ msgstr "Абраць значок"
 msgid "Select Command"
 msgstr "Абраць загад"
 
-#: ../panel-plugin/whiskermenu.desktop.in.h:2
+#: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
 msgstr "Адлюстроўвае меню для зручнага доступу да ўсталяваных праграм"
 
@@ -344,7 +344,7 @@ msgid "Web Search"
 msgstr "Пошук у сеціве"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
-#: ../panel-plugin/whiskermenu.desktop.in.h:1
+#: ../panel-plugin/whiskermenu.desktop.in:5
 msgid "Whisker Menu"
 msgstr "Меню Whisker"
 

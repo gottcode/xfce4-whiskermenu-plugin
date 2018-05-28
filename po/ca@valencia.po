@@ -254,7 +254,7 @@ msgstr "Seleccioneu una icona"
 msgid "Select Command"
 msgstr "Seleccioneu una ordre"
 
-#: ../panel-plugin/whiskermenu.desktop.in.h:2
+#: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
 msgstr "Mostra un menú per a accedir fàcilment a les aplicacions instal·lades"
 
@@ -344,7 +344,7 @@ msgid "Web Search"
 msgstr "Busca al Web"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
-#: ../panel-plugin/whiskermenu.desktop.in.h:1
+#: ../panel-plugin/whiskermenu.desktop.in:5
 msgid "Whisker Menu"
 msgstr "Menú Whisker"
 

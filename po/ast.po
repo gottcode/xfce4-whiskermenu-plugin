@@ -256,7 +256,7 @@ msgstr "Esbilla un iconu"
 msgid "Select Command"
 msgstr "Esbillar comandu"
 
-#: ../panel-plugin/whiskermenu.desktop.in.h:2
+#: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
 msgstr "Amuesa un menú p'acceder cenciellamente a les aplicaciones instalaes"
 
@@ -347,7 +347,7 @@ msgid "Web Search"
 msgstr "Gueta web"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
-#: ../panel-plugin/whiskermenu.desktop.in.h:1
+#: ../panel-plugin/whiskermenu.desktop.in:5
 msgid "Whisker Menu"
 msgstr "Menú Whisker"
 

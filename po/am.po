@@ -252,7 +252,7 @@ msgstr "ምልክት ይምረጡ"
 msgid "Select Command"
 msgstr "ትእዛዝ ይምረጡ"
 
-#: ../panel-plugin/whiskermenu.desktop.in.h:2
+#: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
 msgstr "የ ተገጠሙ መተግበሪያዎች በ ቀላሉ በ ዝርዝር ውስጥ ማሳያ"
 
@@ -342,7 +342,7 @@ msgid "Web Search"
 msgstr "በ ዌብ ውስጥ መፈለጊያ"
 
 #: ../panel-plugin/configuration-dialog.cpp:70
-#: ../panel-plugin/whiskermenu.desktop.in.h:1
+#: ../panel-plugin/whiskermenu.desktop.in:5
 msgid "Whisker Menu"
 msgstr "የ ዊስከር ዝርዝር"
 
