@@ -224,6 +224,17 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	// Handle default page
 	reset_default_button();
 
+	// Add CSS classes
+	gtk_style_context_add_class(gtk_widget_get_style_context(GTK_WIDGET(m_window)), "whiskermenu");
+	gtk_style_context_add_class(gtk_widget_get_style_context(GTK_WIDGET(m_search_box)), "search-area");
+	gtk_style_context_add_class(gtk_widget_get_style_context(GTK_WIDGET(m_title_box)), "title-area");
+	gtk_style_context_add_class(gtk_widget_get_style_context(GTK_WIDGET(m_commands_box)), "commands-area");
+	gtk_style_context_add_class(gtk_widget_get_style_context(GTK_WIDGET(m_contents_stack)), "contents");
+
+	GtkStyleContext* context = gtk_widget_get_style_context(GTK_WIDGET(m_category_buttons));
+	gtk_style_context_add_class(context, "categories");
+	gtk_style_context_add_class(context, "right");
+
 	// Show widgets
 	gtk_widget_show_all(frame);
 	m_default_button->set_active(true);
@@ -1076,17 +1087,39 @@ void WhiskerMenu::Window::update_layout()
 	g_object_ref(m_panels_stack);
 	g_object_ref(m_sidebar);
 
+	GtkStyleContext* context = gtk_widget_get_style_context(GTK_WIDGET(m_category_buttons));
+	if (gtk_style_context_has_class(context, "left"))
+	{
+		gtk_style_context_remove_class(context, "left");
+	}
+	else if (gtk_style_context_has_class(context, "right"))
+	{
+		gtk_style_context_remove_class(context, "right");
+	}
+	else if (gtk_style_context_has_class(context, "top"))
+	{
+		gtk_style_context_remove_class(context, "top");
+	}
+	else if (gtk_style_context_has_class(context, "bottom"))
+	{
+		gtk_style_context_remove_class(context, "bottom");
+	}
+
 	gtk_grid_remove_row(m_contents_box, 1);
 	gtk_grid_remove_row(m_contents_box, 0);
 	if (m_layout_categories_horizontal)
 	{
 		gtk_grid_set_column_spacing(m_contents_box, 0);
 		gtk_grid_set_row_spacing(m_contents_box, 6);
+
+		gtk_style_context_add_class(context, (m_layout_bottom == m_layout_categories_alternate) ? "bottom" : "top");
 	}
 	else
 	{
 		gtk_grid_set_column_spacing(m_contents_box, 6);
 		gtk_grid_set_row_spacing(m_contents_box, 0);
+
+		gtk_style_context_add_class(context, (m_layout_left == m_layout_categories_alternate) ? "left" : "right");
 	}
 
 	if (m_layout_left != m_layout_categories_alternate)

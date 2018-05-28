@@ -110,6 +110,8 @@ GtkWidget* Command::get_button()
 	GtkWidget* image = gtk_image_new_from_icon_name(m_icon, GTK_ICON_SIZE_LARGE_TOOLBAR);
 	gtk_container_add(GTK_CONTAINER(m_button), GTK_WIDGET(image));
 
+	gtk_style_context_add_class(gtk_widget_get_style_context(m_button), "command-button");
+
 	gtk_widget_set_visible(m_button, m_shown);
 	gtk_widget_set_sensitive(m_button, m_status == CommandStatus::Valid);
 

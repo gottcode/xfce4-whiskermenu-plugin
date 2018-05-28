@@ -60,6 +60,8 @@ LauncherTreeView::LauncherTreeView() :
 
 	g_object_ref_sink(m_view);
 
+	gtk_style_context_add_class(gtk_widget_get_style_context(GTK_WIDGET(m_view)), "launchers");
+
 	// Handle drag-and-drop
 	g_signal_connect_slot(m_view, "row-activated", &LauncherTreeView::on_row_activated, this);
 }

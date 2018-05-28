@@ -56,6 +56,8 @@ LauncherIconView::LauncherIconView() :
 
 	g_object_ref_sink(m_view);
 
+	gtk_style_context_add_class(gtk_widget_get_style_context(GTK_WIDGET(m_view)), "launchers");
+
 	// Handle hover selection
 	gtk_widget_add_events(GTK_WIDGET(m_view), GDK_SCROLL_MASK);
 	g_signal_connect_slot(m_view, "leave-notify-event", &LauncherIconView::on_leave_notify_event, this);

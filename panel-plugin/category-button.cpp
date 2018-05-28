@@ -77,6 +77,8 @@ CategoryButton::CategoryButton(GIcon* icon, const gchar* text)
 	m_label = gtk_label_new(text);
 	gtk_box_pack_start(m_box, m_label, false, true, 0);
 
+	gtk_style_context_add_class(gtk_widget_get_style_context(GTK_WIDGET(m_button)), "category-button");
+
 	gtk_widget_show_all(GTK_WIDGET(m_button));
 
 	reload_icon_size();

@@ -37,6 +37,8 @@ Profile::Profile(Window* window) :
 {
 	m_image = gtk_image_new();
 
+	gtk_style_context_add_class(gtk_widget_get_style_context(m_image), "profile-picture");
+
 	gtk_widget_set_halign(m_image, GTK_ALIGN_CENTER);
 	gtk_widget_set_valign(m_image, GTK_ALIGN_CENTER);
 
@@ -51,6 +53,8 @@ Profile::Profile(Window* window) :
 
 	m_username = gtk_label_new(nullptr);
 	gtk_widget_set_halign(m_username, GTK_ALIGN_START);
+
+	gtk_style_context_add_class(gtk_widget_get_style_context(m_username), "profile-username");
 
 #ifdef HAS_ACCOUNTSERVICE
 	m_act_user = nullptr;

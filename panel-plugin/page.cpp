@@ -61,6 +61,8 @@ Page::Page(Window* window, const gchar* icon, const gchar* text) :
 	gtk_scrolled_window_set_shadow_type(GTK_SCROLLED_WINDOW(m_widget), GTK_SHADOW_ETCHED_IN);
 	gtk_container_add(GTK_CONTAINER(m_widget), m_view->get_widget());
 	g_object_ref_sink(m_widget);
+
+	gtk_style_context_add_class(gtk_widget_get_style_context(m_widget), "launchers-pane");
 }
 
 //-----------------------------------------------------------------------------
