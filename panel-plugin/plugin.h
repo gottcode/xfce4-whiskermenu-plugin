@@ -83,6 +83,7 @@ private:
 	GtkImage* m_button_icon;
 
 	int m_opacity;
+	bool m_file_icon;
 };
 
 }

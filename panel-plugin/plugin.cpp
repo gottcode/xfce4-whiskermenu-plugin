@@ -90,7 +90,8 @@ static void widget_add_css(GtkWidget* widget, const gchar* css)
 Plugin::Plugin(XfcePanelPlugin* plugin) :
 	m_plugin(plugin),
 	m_window(NULL),
-	m_opacity(100)
+	m_opacity(100),
+	m_file_icon(false)
 {
 	// Load settings
 	wm_settings = new Settings;
@@ -332,14 +333,12 @@ void Plugin::icon_changed(const gchar* icon)
 	if (!g_path_is_absolute(icon))
 	{
 		gtk_image_set_from_icon_name(m_button_icon, icon, GTK_ICON_SIZE_BUTTON);
+		m_file_icon = false;
 	}
 	else
 	{
-		GFile* file = g_file_new_for_path(icon);
-		GIcon* gicon = g_file_icon_new(file);
-		gtk_image_set_from_gicon(m_button_icon, gicon, GTK_ICON_SIZE_BUTTON);
-		g_object_unref(gicon);
-		g_object_unref(file);
+		gtk_image_clear(m_button_icon);
+		m_file_icon = true;
 	}
 }
 
@@ -442,6 +441,32 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 	gint icon_size = size - 2 * std::max(xthickness, ythickness);
 #endif
 	gtk_image_set_pixel_size(m_button_icon, icon_size);
+
+	// Load icon from absolute path
+	if (m_file_icon)
+	{
+		const gint scale = gtk_widget_get_scale_factor(m_button);
+		gint max_width = icon_size * scale;
+		gint max_height = icon_size * scale;
+		if (mode == XFCE_PANEL_PLUGIN_MODE_HORIZONTAL)
+		{
+			max_width *= 6;
+		}
+		else
+		{
+			max_height *= 6;
+		}
+
+		GdkPixbuf* pixbuf = gdk_pixbuf_new_from_file_at_size(wm_settings->button_icon_name.c_str(), max_width, max_height, NULL);
+		if (pixbuf)
+		{
+			// Handle high dpi
+			cairo_surface_t* surface = gdk_cairo_surface_create_from_pixbuf(pixbuf, scale, NULL);
+			gtk_image_set_from_surface(m_button_icon, surface);
+			cairo_surface_destroy(surface);
+			g_object_unref(pixbuf);
+		}
+	}
 
 	if (wm_settings->button_title_visible)
 	{
