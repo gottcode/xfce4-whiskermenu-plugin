@@ -1,0 +1,413 @@
+# Georgian translation of xfce4-whiskermenu-plugin.
+# Copyright (C) 2018 Graeme Gott
+# This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
+#
+# Translators:
+# zura davitashvili <rouchage@gmail.com>, 2018
+msgid ""
+msgstr ""
+"Project-Id-Version: Whisker Menu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-21 07:22-0400\n"
+"PO-Revision-Date: 2018-07-04 06:18+0000\n"
+"Last-Translator: zura davitashvili <rouchage@gmail.com>\n"
+"Language-Team: Georgian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
+"plugin/language/ka/)\n"
+"Language: ka\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: ../panel-plugin/configuration-dialog.cpp:823
+msgid "Add action"
+msgstr "მოქმედების დამატება"
+
+#: ../panel-plugin/page.cpp:258
+msgid "Add to Desktop"
+msgstr "სამუშაო მაგიდაზე დამატება"
+
+#: ../panel-plugin/page.cpp:242
+msgid "Add to Favorites"
+msgstr "რჩეულებში დამატება"
+
+#: ../panel-plugin/page.cpp:262
+msgid "Add to Panel"
+msgstr "პანელზე დამატება"
+
+#: ../panel-plugin/category.cpp:61
+msgid "All"
+msgstr "ყველა"
+
+#: ../panel-plugin/settings.cpp:119
+msgid "All _Settings"
+msgstr "ყველა პარამეტრი"
+
+#: ../panel-plugin/plugin.cpp:402
+msgid "Alternate application launcher for Xfce"
+msgstr "ალტერნატიული პროგრამების გამშვები Xfce-სთვის"
+
+#: ../panel-plugin/configuration-dialog.cpp:724
+msgid "Amount of _items:"
+msgstr "პუნქტების რაოდენობა:"
+
+#: ../panel-plugin/plugin.cpp:207
+msgid "Applications"
+msgstr "პროგრამები"
+
+#: ../panel-plugin/configuration-dialog.cpp:654
+msgid "Background opacit_y:"
+msgstr "ფონის გამჭვირვალობა:"
+
+#: ../panel-plugin/command-edit.cpp:49
+msgid "Browse the file system to choose a custom command."
+msgstr "დაათვალიერეთ ფაილური სისტემა, რათა აირჩიოთ სხვა ბრძანება."
+
+#: ../panel-plugin/configuration-dialog.cpp:881
+msgid "C_ommand:"
+msgstr "ბრძანება"
+
+#: ../panel-plugin/configuration-dialog.cpp:639
+msgid "Categ_ory icon size:"
+msgstr "კატეგორიის ხატულას ზომა:"
+
+#: ../panel-plugin/recent-page.cpp:173
+msgid "Clear Recently Used"
+msgstr "ახლახანს გამოყენებულების გასუფთავება"
+
+#: ../panel-plugin/plugin.cpp:403
+msgid "Copyright © 2013-2018 Graeme Gott"
+msgstr "ყველა უფლება დაცულია © 2013-2018"
+
+#: ../panel-plugin/configuration-dialog.cpp:851
+msgid "Details"
+msgstr "დეტალები"
+
+#: ../panel-plugin/configuration-dialog.cpp:534
+msgid "Di_splay:"
+msgstr "ჩვენება:"
+
+#: ../panel-plugin/configuration-dialog.cpp:741
+msgid "Display by _default"
+msgstr "ნაგულისხმევის მიხედვით ჩვენება"
+
+#: ../panel-plugin/page.cpp:269
+msgid "Edit Application..."
+msgstr "პროგრამის რედაქტირება..."
+
+#: ../panel-plugin/settings.cpp:124
+msgid "Edit _Profile"
+msgstr "პროფილის რედაქტირება"
+
+#: ../panel-plugin/settings.cpp:124
+msgid "Failed to edit profile."
+msgstr "პროფილის რედაქტირება ვერ მოხერხდა."
+
+#: ../panel-plugin/launcher.cpp:288 ../panel-plugin/launcher.cpp:362
+#: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:188
+#, c-format
+msgid "Failed to execute command \"%s\"."
+msgstr "ვერ მოხერხდა შემდეგი ბრძანების გაშვება \"%s\"."
+
+#: ../panel-plugin/settings.cpp:123
+msgid "Failed to launch menu editor."
+msgstr "მენიუს შემცვლელის გაშვება ვერ მოხერხდა."
+
+#: ../panel-plugin/settings.cpp:120
+msgid "Failed to lock screen."
+msgstr "ეკრანის დაბლოკვა ვერ მოხერხდა."
+
+#: ../panel-plugin/settings.cpp:122
+msgid "Failed to log out."
+msgstr "გამოსვლა ვერ მოხერხდა."
+
+#: ../panel-plugin/settings.cpp:119
+msgid "Failed to open settings manager."
+msgstr "პარამეტრების მენეჯერის გახსნა ვერ მოხერხდა."
+
+#: ../panel-plugin/settings.cpp:121
+msgid "Failed to switch users."
+msgstr "მომხმარებლის გადართვა ვერ მოხერხდა."
+
+#: ../panel-plugin/window.cpp:150
+msgid "Favorites"
+msgstr "რჩეულები"
+
+#: ../panel-plugin/configuration-dialog.cpp:539
+msgid "Icon"
+msgstr "ხატულა"
+
+#: ../panel-plugin/configuration-dialog.cpp:541
+msgid "Icon and title"
+msgstr "ხატულა და სათაური"
+
+#: ../panel-plugin/configuration-dialog.cpp:735
+msgid "Include _favorites"
+msgstr "რჩეულების ჩათვლით"
+
+#: ../panel-plugin/configuration-dialog.cpp:623
+msgid "Ite_m icon size:"
+msgstr "პუნქტის ხატულის ზომა:"
+
+#: ../panel-plugin/icon-size.cpp:54
+msgid "Large"
+msgstr "დიდი"
+
+#: ../panel-plugin/icon-size.cpp:55
+msgid "Larger"
+msgstr "უფრო დიდი"
+
+#: ../panel-plugin/settings.cpp:122
+msgid "Log _Out"
+msgstr "გამოსვლა"
+
+#: ../panel-plugin/settings.cpp:126
+msgid "Man Pages"
+msgstr "მომხმარებლის სახელმძღვანელო"
+
+#: ../panel-plugin/configuration-dialog.cpp:587
+#: ../panel-plugin/configuration-dialog.cpp:684
+msgid "Menu"
+msgstr "მენიუ"
+
+#: ../panel-plugin/configuration-dialog.cpp:856
+msgid "Nam_e:"
+msgstr "სახელი"
+
+#: ../panel-plugin/configuration-dialog.cpp:801
+msgid "Name"
+msgstr "სახელი"
+
+#: ../panel-plugin/icon-size.cpp:49
+msgid "None"
+msgstr "არცერთი"
+
+#: ../panel-plugin/icon-size.cpp:53
+msgid "Normal"
+msgstr "ნორმალური"
+
+#: ../panel-plugin/settings.cpp:130
+msgid "Open URI"
+msgstr "ლინკის გახსნა"
+
+#: ../panel-plugin/configuration-dialog.cpp:529
+msgid "Panel Button"
+msgstr "პანელის ღილაკი"
+
+#: ../panel-plugin/configuration-dialog.cpp:806
+msgid "Pattern"
+msgstr "ნიმუში"
+
+#: ../panel-plugin/configuration-dialog.cpp:695
+msgid "Position _search entry next to panel button"
+msgstr "საძიებო გრაფის განთავსება პანელის ღილაკის გვერდით"
+
+#: ../panel-plugin/configuration-dialog.cpp:708
+msgid "Position cate_gories next to panel button"
+msgstr "კატეგორიების განთავსება პანელის ღილაკის გვერდით"
+
+#: ../panel-plugin/configuration-dialog.cpp:701
+msgid "Position commands next to search _entry"
+msgstr "ბრძანებების განთავსება საძიებო გრაფის გვერდით"
+
+#: ../panel-plugin/configuration-dialog.cpp:719 ../panel-plugin/window.cpp:156
+msgid "Recently Used"
+msgstr "ახლახანს გამოყენებული"
+
+#: ../panel-plugin/page.cpp:250
+msgid "Remove From Favorites"
+msgstr "რჩეულებიდან წაშლა"
+
+#: ../panel-plugin/configuration-dialog.cpp:433
+#, c-format
+msgid "Remove action \"%s\"?"
+msgstr "წავშალო მოქმედება \"%s\"?"
+
+#: ../panel-plugin/configuration-dialog.cpp:832
+msgid "Remove selected action"
+msgstr "არჩეული მოქმედების წაშლა"
+
+#: ../panel-plugin/run-action.cpp:71
+#, c-format
+msgid "Run %s"
+msgstr "გახსენი %s"
+
+#: ../panel-plugin/settings.cpp:129
+msgid "Run in Terminal"
+msgstr "ტერმინალში გაშვება"
+
+#: ../panel-plugin/configuration-dialog.cpp:86
+msgid "Search Actio_ns"
+msgstr "ქმედებების ძიება"
+
+#: ../panel-plugin/search-action.cpp:259
+msgid "Search Action"
+msgstr "მოქმედების ძებნა"
+
+#: ../panel-plugin/configuration-dialog.cpp:119
+msgid "Select An Icon"
+msgstr "ხატულის არჩევა"
+
+#: ../panel-plugin/command-edit.cpp:64
+msgid "Select Command"
+msgstr "აირჩიეთ ბრძანება"
+
+#: ../panel-plugin/whiskermenu.desktop.in:6
+msgid "Show a menu to easily access installed applications"
+msgstr "დაინსტალირებული პროგრამების ადვილად მისაწვდომად მაჩვენე მენიუ"
+
+#: ../panel-plugin/configuration-dialog.cpp:605
+msgid "Show application _descriptions"
+msgstr "პროგრამების აღწერის ჩვენება"
+
+#: ../panel-plugin/configuration-dialog.cpp:611
+msgid "Show application too_ltips"
+msgstr "პროგრამების მინიშნებების ჩვენება"
+
+#: ../panel-plugin/configuration-dialog.cpp:598
+msgid "Show cate_gory names"
+msgstr "კატეგორიების სახელის ჩვენება"
+
+#: ../panel-plugin/configuration-dialog.cpp:592
+msgid "Show generic application _names"
+msgstr "პროგრამების ზოგადი სახელების ჩვენება"
+
+#: ../panel-plugin/configuration-dialog.cpp:617
+msgid "Show menu hie_rarchy"
+msgstr "მენიუს იერარქიის ჩვენება"
+
+#: ../panel-plugin/icon-size.cpp:52
+msgid "Small"
+msgstr "პატარა"
+
+#: ../panel-plugin/icon-size.cpp:51
+msgid "Smaller"
+msgstr "უფრო პატარა"
+
+#: ../panel-plugin/favorites-page.cpp:147
+msgid "Sort Alphabetically A-Z"
+msgstr "დალაგება ანბანის მიხედვით A-Z"
+
+#: ../panel-plugin/favorites-page.cpp:153
+msgid "Sort Alphabetically Z-A"
+msgstr "დალაგება ანბანის მიხედვით Z-A"
+
+#: ../panel-plugin/settings.cpp:121
+msgid "Switch _Users"
+msgstr "მომხმარებლების გადართვა"
+
+#: ../panel-plugin/configuration-dialog.cpp:689
+msgid "Switch categories by _hovering"
+msgstr "კატეგორიების გადართვა მაუსის მიახლოვებით"
+
+#: ../panel-plugin/configuration-dialog.cpp:432
+msgid "The action will be deleted permanently."
+msgstr "ეს მოქმედება სამუდამოდ წაიშლება."
+
+#: ../panel-plugin/configuration-dialog.cpp:540
+msgid "Title"
+msgstr "სათაური"
+
+#: ../panel-plugin/page.cpp:334
+msgid "Unable to add launcher to desktop."
+msgstr "გამშვების დამატება სამუშაო მაგიდაზე შეუძლებელია."
+
+#: ../panel-plugin/page.cpp:373 ../panel-plugin/page.cpp:382
+msgid "Unable to add launcher to panel."
+msgstr "გამშვების დამატება პანელზე შეუძლებელია."
+
+#: ../panel-plugin/page.cpp:411
+msgid "Unable to edit launcher."
+msgstr "გამშვების რედაქტირება შეუძლებელია."
+
+#: ../panel-plugin/configuration-dialog.cpp:493
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "ვერ მოხერხდა შემდეგი მისამართის გახსნა: %s"
+
+#: ../panel-plugin/configuration-dialog.cpp:574
+msgid "Use a single _panel row"
+msgstr "პანელის ერთი რიგის გამოყენება"
+
+#: ../panel-plugin/icon-size.cpp:56
+msgid "Very Large"
+msgstr "ძალიან დიდი"
+
+#: ../panel-plugin/icon-size.cpp:50
+msgid "Very Small"
+msgstr "ძალიან პატარა"
+
+#: ../panel-plugin/settings.cpp:127
+msgid "Web Search"
+msgstr "ვებ ძიება"
+
+#: ../panel-plugin/configuration-dialog.cpp:70
+#: ../panel-plugin/whiskermenu.desktop.in:5
+msgid "Whisker Menu"
+msgstr "ვისკერ მენიუ"
+
+#: ../panel-plugin/settings.cpp:128
+msgid "Wikipedia"
+msgstr "ვიკიპედია"
+
+#: ../panel-plugin/configuration-dialog.cpp:83
+msgid "_Appearance"
+msgstr "გარეგნობა"
+
+#: ../panel-plugin/configuration-dialog.cpp:84
+msgid "_Behavior"
+msgstr "ქცევა"
+
+#: ../panel-plugin/command-edit.cpp:67
+#: ../panel-plugin/configuration-dialog.cpp:121
+msgid "_Cancel"
+msgstr "გაუქმება"
+
+#: ../panel-plugin/configuration-dialog.cpp:74
+msgid "_Close"
+msgstr "დახურვა"
+
+#: ../panel-plugin/configuration-dialog.cpp:85
+msgid "_Commands"
+msgstr "ბრძანებები"
+
+#: ../panel-plugin/configuration-dialog.cpp:431
+msgid "_Delete"
+msgstr "წაშლა"
+
+#: ../panel-plugin/settings.cpp:123
+msgid "_Edit Applications"
+msgstr "პროგრამების რედაქტირება"
+
+#: ../panel-plugin/configuration-dialog.cpp:73
+msgid "_Help"
+msgstr "დახმარება"
+
+#: ../panel-plugin/configuration-dialog.cpp:560
+msgid "_Icon:"
+msgstr "ხატულა:"
+
+#: ../panel-plugin/settings.cpp:120
+msgid "_Lock Screen"
+msgstr "ეკრანის დაბლოკვა"
+
+#: ../panel-plugin/command-edit.cpp:68
+#: ../panel-plugin/configuration-dialog.cpp:122
+msgid "_OK"
+msgstr "კაი"
+
+#: ../panel-plugin/configuration-dialog.cpp:869
+msgid "_Pattern:"
+msgstr "ნიმუში:"
+
+#: ../panel-plugin/configuration-dialog.cpp:893
+msgid "_Regular expression"
+msgstr "რეგულარული გამოხატვა"
+
+#: ../panel-plugin/configuration-dialog.cpp:549
+msgid "_Title:"
+msgstr "სათაური"
+
+#: ../panel-plugin/plugin.cpp:407
+msgid "translator-credits"
+msgstr "ინფორმაცია მთარგმნელზე"
