@@ -89,6 +89,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	g_signal_connect_slot(m_window, "enter-notify-event", &Window::on_enter_notify_event, this);
 	g_signal_connect_slot(m_window, "leave-notify-event", &Window::on_leave_notify_event, this);
 	g_signal_connect_slot(m_window, "button-press-event", &Window::on_button_press_event, this);
+	g_signal_connect_slot(m_window, "button-release-event", &Window::on_button_release_event, this);
 	g_signal_connect_slot(m_window, "key-press-event", &Window::on_key_press_event, this);
 	g_signal_connect_slot(m_window, "key-press-event", &Window::on_key_press_event_after, this, true);
 	g_signal_connect_slot(m_window, "map-event", &Window::on_map_event, this);
@@ -282,6 +283,9 @@ WhiskerMenu::Window::~Window()
 void WhiskerMenu::Window::hide()
 {
 	ungrab_pointer();
+
+	// Reset any pressed category buttons
+	unset_pressed_category();
 
 	// Hide command buttons to remove active border
 	for (int i = 0; i < 4; ++i)
@@ -747,6 +751,14 @@ gboolean WhiskerMenu::Window::on_button_press_event(GtkWidget*, GdkEvent* event)
 
 //-----------------------------------------------------------------------------
 
+gboolean WhiskerMenu::Window::on_button_release_event(GtkWidget*, GdkEvent*)
+{
+	unset_pressed_category();
+	return false;
+}
+
+//-----------------------------------------------------------------------------
+
 gboolean WhiskerMenu::Window::on_key_press_event(GtkWidget* widget, GdkEvent* event)
 {
 	GdkEventKey* key_event = reinterpret_cast<GdkEventKey*>(event);
@@ -998,6 +1010,15 @@ void WhiskerMenu::Window::search()
 
 	// Apply filter
 	m_search_results->set_filter(text);
+}
+
+//-----------------------------------------------------------------------------
+
+void WhiskerMenu::Window::unset_pressed_category()
+{
+	// Force a state change on sidebar buttons
+	gtk_widget_set_sensitive(GTK_WIDGET(m_sidebar_buttons), false);
+	gtk_widget_set_sensitive(GTK_WIDGET(m_sidebar_buttons), true);
 }
 
 //-----------------------------------------------------------------------------

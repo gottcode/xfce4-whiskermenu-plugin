@@ -86,6 +86,7 @@ private:
 	gboolean on_enter_notify_event(GtkWidget*, GdkEvent* event);
 	gboolean on_leave_notify_event(GtkWidget*, GdkEvent* event);
 	gboolean on_button_press_event(GtkWidget*, GdkEvent* event);
+	gboolean on_button_release_event(GtkWidget*, GdkEvent* event);
 	gboolean on_key_press_event(GtkWidget* widget, GdkEvent* event);
 	gboolean on_key_press_event_after(GtkWidget* widget, GdkEvent* event);
 	gboolean on_map_event(GtkWidget*, GdkEvent*);
@@ -99,6 +100,7 @@ private:
 	void show_favorites();
 	void show_default_page();
 	void search();
+	void unset_pressed_category();
 
 private:
 	Plugin* m_plugin;
