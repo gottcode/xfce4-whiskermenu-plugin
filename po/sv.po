@@ -1,5 +1,5 @@
 # Swedish translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2017 Graeme Gott
+# Copyright (C) 2018 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -7,6 +7,7 @@
 # Patrik Nilsson <asavartzeth@gmail.com>, 2014
 # Fredrik Nyqvist <fredrik@nyqvist.biz>, 2013
 # Patrik Nilsson <asavartzeth@gmail.com>, 2014-2015,2017
+# Påvel Nicklasson <pavel2@frimixse>, 2015,2018
 # Påvel Nicklasson <pavel@frimix.se>, 2015
 # Påvel Nicklasson <pavel@frimixse>, 2015
 # Tommy Arvidsson <tarvidsson7834@gmail.com>, 2013
@@ -15,8 +16,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-21 07:22-0400\n"
-"PO-Revision-Date: 2017-09-14 13:14+0000\n"
-"Last-Translator: Patrik Nilsson <asavartzeth@gmail.com>\n"
+"PO-Revision-Date: 2018-07-02 13:20+0000\n"
+"Last-Translator: Påvel Nicklasson <pavel2@frimix.se>\n"
 "Language-Team: Swedish (Sweden) (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/sv_SE/)\n"
 "Language: sv\n"
@@ -148,9 +149,8 @@ msgid "Icon and title"
 msgstr "Ikon och titel"
 
 #: ../panel-plugin/configuration-dialog.cpp:735
-#, fuzzy
 msgid "Include _favorites"
-msgstr "Ignorera _favoriter"
+msgstr "Inkludera _favoriter"
 
 #: ../panel-plugin/configuration-dialog.cpp:623
 msgid "Ite_m icon size:"
