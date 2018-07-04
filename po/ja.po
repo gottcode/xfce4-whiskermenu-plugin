@@ -1,15 +1,15 @@
 # Japanese translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2017 Graeme Gott
+# Copyright (C) 2018 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Masato HASHIMOTO <cabezon.hashimoto@gmail.com>, 2013,2017
+# Masato HASHIMOTO <cabezon.hashimoto@gmail.com>, 2013,2017-2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-21 07:22-0400\n"
-"PO-Revision-Date: 2017-11-29 08:52+0000\n"
+"PO-Revision-Date: 2018-05-28 10:33+0000\n"
 "Last-Translator: Masato HASHIMOTO <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ja/)\n"
@@ -142,9 +142,8 @@ msgid "Icon and title"
 msgstr "アイコンとタイトル"
 
 #: ../panel-plugin/configuration-dialog.cpp:735
-#, fuzzy
 msgid "Include _favorites"
-msgstr "お気に入りを無視する(_F)"
+msgstr "お気に入りを含める(_F)"
 
 #: ../panel-plugin/configuration-dialog.cpp:623
 msgid "Ite_m icon size:"
