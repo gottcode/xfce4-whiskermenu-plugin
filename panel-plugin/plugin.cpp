@@ -300,7 +300,10 @@ void Plugin::button_toggled(GtkToggleButton* button)
 {
 	if (gtk_toggle_button_get_active(button) == false)
 	{
-		m_window->hide();
+		if (gtk_widget_get_visible(m_window->get_widget()))
+		{
+			m_window->hide();
+		}
 		xfce_panel_plugin_block_autohide(m_plugin, false);
 	}
 	else
