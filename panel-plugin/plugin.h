@@ -58,6 +58,11 @@ public:
 	static std::string get_button_title_default();
 	std::string get_button_icon_name() const;
 
+	void focus_lost()
+	{
+		m_focus_out_time = g_get_monotonic_time();
+	}
+
 	void reload();
 	void set_button_style(ButtonStyle style);
 	void set_button_title(const std::string& title);
@@ -89,6 +94,7 @@ private:
 
 	int m_opacity;
 	bool m_file_icon;
+	gint64 m_focus_out_time;
 };
 
 }
