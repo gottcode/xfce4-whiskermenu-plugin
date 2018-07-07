@@ -114,7 +114,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 		m_command_slots[i] = g_signal_connect_slot<GtkButton*>(m_commands_button[i], "clicked", &Window::hide, this);
 	}
 
-	m_resizer = new ResizeGrip(m_window);
+	m_resizer = new ResizeGrip(this);
 
 	// Create search entry
 	m_search_entry = GTK_ENTRY(gtk_search_entry_new());

@@ -25,10 +25,12 @@
 namespace WhiskerMenu
 {
 
+class Window;
+
 class ResizeGrip
 {
 public:
-	explicit ResizeGrip(GtkWindow* window);
+	explicit ResizeGrip(Window* window);
 	~ResizeGrip();
 
 	ResizeGrip(const ResizeGrip&) = delete;
@@ -57,7 +59,7 @@ private:
 	gboolean on_draw_event(GtkWidget* widget, cairo_t* cr);
 
 private:
-	GtkWindow* m_window;
+	Window* m_window;
 	GtkWidget* m_drawing;
 	GdkCursor* m_cursor;
 	GdkWindowEdge m_edge;

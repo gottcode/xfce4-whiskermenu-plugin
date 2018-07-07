@@ -19,12 +19,13 @@
 
 #include "settings.h"
 #include "slot.h"
+#include "window.h"
 
 using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-ResizeGrip::ResizeGrip(GtkWindow* window) :
+ResizeGrip::ResizeGrip(Window* window) :
 	m_window(window),
 	m_cursor(nullptr),
 	m_shape(3)
@@ -102,8 +103,12 @@ void ResizeGrip::set_corner(Corner corner)
 
 gboolean ResizeGrip::on_button_press_event(GtkWidget*, GdkEvent* event)
 {
+	m_window->set_child_has_focus();
+
+	GtkWindow* window = GTK_WINDOW(m_window->get_widget());
+
 	GdkEventButton* event_button = reinterpret_cast<GdkEventButton*>(event);
-	gtk_window_begin_resize_drag(m_window,
+	gtk_window_begin_resize_drag(window,
 			m_edge,
 			event_button->button,
 			event_button->x_root,
