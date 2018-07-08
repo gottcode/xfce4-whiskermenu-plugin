@@ -1,19 +1,19 @@
 # Serbian translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2017 Graeme Gott
+# Copyright (C) 2018 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # Мирослав Николић <miroslavnikolic@rocketmail.com>, 2012
 # Саша Петровић <salepetronije@gmail.com>, 2013
 # Мирослав Николић <miroslavnikolic@rocketmail.com>, 2012
-# Саша Петровић <salepetronije@gmail.com>, 2013-2014,2016-2017
+# Саша Петровић <salepetronije@gmail.com>, 2013-2014,2016-2018
 # Саша Петровић <salepetronije@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-08 05:15-0400\n"
-"PO-Revision-Date: 2017-02-04 19:52+0000\n"
+"PO-Revision-Date: 2018-07-08 15:30+0000\n"
 "Last-Translator: Саша Петровић <salepetronije@gmail.com>\n"
 "Language-Team: Serbian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/sr/)\n"
@@ -82,7 +82,7 @@ msgstr "Очисти недавно коришћено"
 
 #: ../panel-plugin/plugin.cpp:405
 msgid "Copyright © 2013-2018 Graeme Gott"
-msgstr "Права умножавања © 2013-2018 Graeme Gott - Грејем гот"
+msgstr "Права умножавања © 2013-2018 Грејем Гот (Graeme Gott)"
 
 #: ../panel-plugin/configuration-dialog.cpp:865
 msgid "Details"
@@ -147,9 +147,8 @@ msgid "Icon and title"
 msgstr "Иконица и наслов"
 
 #: ../panel-plugin/configuration-dialog.cpp:749
-#, fuzzy
 msgid "Include _favorites"
-msgstr "Занемари _омиљене"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:631
 msgid "Ite_m icon size:"
