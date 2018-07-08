@@ -3,17 +3,17 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Kerncツ, 2014-2015
-# Kerncツ, 2016
-# Kerncツ, 2018
-# Kerncツ, 2017
+# Kernc, 2014-2015
+# Kernc, 2016,2018
+# Kernc, 2018
+# Kernc, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-21 07:22-0400\n"
-"PO-Revision-Date: 2018-04-15 14:29+0000\n"
-"Last-Translator: Kerncツ\n"
+"PO-Revision-Date: 2018-07-08 17:43+0000\n"
+"Last-Translator: Kernc\n"
 "Language-Team: Slovenian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/sl/)\n"
 "Language: sl\n"
@@ -81,7 +81,7 @@ msgstr "Počisti nedavno uporabljene"
 
 #: ../panel-plugin/plugin.cpp:403
 msgid "Copyright © 2013-2018 Graeme Gott"
-msgstr ""
+msgstr "Avtorske pravice © 2013-2018 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:851
 msgid "Details"
