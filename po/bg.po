@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-08 05:15-0400\n"
-"PO-Revision-Date: 2018-04-16 11:44+0000\n"
+"PO-Revision-Date: 2018-07-08 11:20+0000\n"
 "Last-Translator: Kiril Kirilov <cybercop_montana@abv.bg>\n"
 "Language-Team: Bulgarian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/bg/)\n"
@@ -294,7 +294,7 @@ msgstr "Сортиране по азбучен ред от Я-А"
 
 #: ../panel-plugin/configuration-dialog.cpp:722
 msgid "Stay _visible when focus is lost"
-msgstr ""
+msgstr "Да се вижда при изгубване на фокуса"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Switch _Users"
