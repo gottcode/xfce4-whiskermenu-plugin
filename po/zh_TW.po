@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-08 05:15-0400\n"
-"PO-Revision-Date: 2018-04-15 23:05+0000\n"
+"PO-Revision-Date: 2018-07-08 13:27+0000\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/zh_TW/)\n"
@@ -296,7 +296,7 @@ msgstr "依字母遞減順序排列"
 
 #: ../panel-plugin/configuration-dialog.cpp:722
 msgid "Stay _visible when focus is lost"
-msgstr ""
+msgstr "在失去焦點時保持可見(_V)"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Switch _Users"
