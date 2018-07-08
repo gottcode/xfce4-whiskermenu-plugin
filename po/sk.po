@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-08 05:15-0400\n"
-"PO-Revision-Date: 2018-05-21 17:32+0000\n"
+"PO-Revision-Date: 2018-07-08 12:06+0000\n"
 "Last-Translator: Slavko <linux@slavino.sk>\n"
 "Language-Team: Slovak (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/sk/)\n"
@@ -295,7 +295,7 @@ msgstr "Zoradiť abecedne Z-A"
 
 #: ../panel-plugin/configuration-dialog.cpp:722
 msgid "Stay _visible when focus is lost"
-msgstr ""
+msgstr "Ponechať _zobrazené po strate zamerania"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Switch _Users"
