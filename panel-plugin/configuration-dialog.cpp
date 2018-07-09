@@ -238,14 +238,8 @@ void ConfigurationDialog::toggle_show_hierarchy(GtkToggleButton* button)
 
 void ConfigurationDialog::toggle_position_search_alternate(GtkToggleButton* button)
 {
-	bool active = gtk_toggle_button_get_active(button);
 	wm_settings->position_search_alternate = gtk_toggle_button_get_active(button);
 	wm_settings->set_modified();
-	gtk_widget_set_sensitive(GTK_WIDGET(m_position_commands_alternate), active);
-	if (!active)
-	{
-		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_commands_alternate), false);
-	}
 }
 
 //-----------------------------------------------------------------------------
@@ -709,7 +703,6 @@ GtkWidget* ConfigurationDialog::init_behavior_tab()
 	m_position_commands_alternate = gtk_check_button_new_with_mnemonic(_("Position commands next to search _entry"));
 	gtk_box_pack_start(behavior_vbox, m_position_commands_alternate, true, true, 0);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_commands_alternate), wm_settings->position_commands_alternate);
-	gtk_widget_set_sensitive(GTK_WIDGET(m_position_commands_alternate), wm_settings->position_search_alternate);
 	g_signal_connect_slot(m_position_commands_alternate, "toggled", &ConfigurationDialog::toggle_position_commands_alternate, this);
 
 	// Add option to use alternate categories position

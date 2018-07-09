@@ -190,7 +190,7 @@ void Settings::load(char* file)
 	display_recent = xfce_rc_read_bool_entry(rc, "display-recent-default", display_recent) && recent_items_max;
 
 	position_search_alternate = xfce_rc_read_bool_entry(rc, "position-search-alternate", position_search_alternate);
-	position_commands_alternate = xfce_rc_read_bool_entry(rc, "position-commands-alternate", position_commands_alternate) && position_search_alternate;
+	position_commands_alternate = xfce_rc_read_bool_entry(rc, "position-commands-alternate", position_commands_alternate);
 	position_categories_alternate = xfce_rc_read_bool_entry(rc, "position-categories-alternate", position_categories_alternate);
 	stay_on_focus_out = xfce_rc_read_bool_entry(rc, "stay-on-focus-out", stay_on_focus_out);
 
