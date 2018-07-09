@@ -506,17 +506,31 @@ void WhiskerMenu::Window::show(const Position position)
 		}
 		g_object_unref(m_commands_box);
 	}
+
 	if ((layout_left && !wm_settings->position_categories_alternate)
 			|| (!layout_left && wm_settings->position_categories_alternate))
 	{
 		gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_panels_stack), 0);
 		gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_sidebar), 1);
+
+		if (m_layout_commands_alternate)
+		{
+			gtk_box_reorder_child(m_search_box, GTK_WIDGET(m_search_entry), 0);
+			gtk_box_reorder_child(m_search_box, GTK_WIDGET(m_commands_box), 1);
+		}
 	}
 	else
 	{
 		gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_panels_stack), 1);
 		gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_sidebar), 0);
+
+		if (m_layout_commands_alternate)
+		{
+			gtk_box_reorder_child(m_search_box, GTK_WIDGET(m_search_entry), 1);
+			gtk_box_reorder_child(m_search_box, GTK_WIDGET(m_commands_box), 0);
+		}
 	}
+
 	if (layout_left != m_layout_left)
 	{
 		m_layout_left = layout_left;
@@ -533,9 +547,6 @@ void WhiskerMenu::Window::show(const Position position)
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_profilepic->get_widget()), 0);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 1);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 2);
-
-			gtk_box_reorder_child(m_search_box, GTK_WIDGET(m_search_entry), 0);
-			gtk_box_reorder_child(m_search_box, GTK_WIDGET(m_commands_box), 1);
 		}
 		else if (m_layout_commands_alternate)
 		{
@@ -550,9 +561,6 @@ void WhiskerMenu::Window::show(const Position position)
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_profilepic->get_widget()), 2);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 1);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 0);
-
-			gtk_box_reorder_child(m_search_box, GTK_WIDGET(m_search_entry), 1);
-			gtk_box_reorder_child(m_search_box, GTK_WIDGET(m_commands_box), 0);
 		}
 		else if (m_layout_left)
 		{
