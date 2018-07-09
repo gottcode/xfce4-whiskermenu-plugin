@@ -486,7 +486,7 @@ void WhiskerMenu::Window::show(const Position position)
 		g_object_ref(m_commands_box);
 		if (m_layout_commands_alternate)
 		{
-			if (!wm_settings->position_categories_alternate)
+			if (!m_sidebar_size_group)
 			{
 				m_sidebar_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
 				gtk_size_group_add_widget(m_sidebar_size_group, GTK_WIDGET(m_sidebar));
@@ -498,8 +498,13 @@ void WhiskerMenu::Window::show(const Position position)
 		}
 		else
 		{
-			g_object_unref(m_sidebar_size_group);
-			m_sidebar_size_group = NULL;
+			if (m_sidebar_size_group)
+			{
+				gtk_size_group_remove_widget(m_sidebar_size_group, GTK_WIDGET(m_sidebar));
+				gtk_size_group_remove_widget(m_sidebar_size_group, GTK_WIDGET(m_commands_box));
+				g_object_unref(m_sidebar_size_group);
+				m_sidebar_size_group = NULL;
+			}
 
 			gtk_container_remove(GTK_CONTAINER(m_search_box), GTK_WIDGET(m_commands_box));
 			gtk_box_pack_start(m_title_box, GTK_WIDGET(m_commands_box), false, false, 0);
