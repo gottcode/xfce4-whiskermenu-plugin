@@ -1,3 +1,13 @@
+2.2.1
+=====
+- Fix category button staying active when dragged. (bug #14419)
+- Fix regression of non-square panel image support. (bug #14506)
+- Fix redundant hiding of menu.
+- Fix sidebar buttons retaining incorrect width.
+- Fix commands not following sidebar.
+- Translation updates: English (United Kingdom), Georgian, Japanese,
+  Serbian, Slovak, Slovenian, Spanish, Swedish.
+
 2.2.0
 =====
 - Fix panel icon size not following theme.
