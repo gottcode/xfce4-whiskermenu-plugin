@@ -1,0 +1,419 @@
+# Welsh translation of xfce4-whiskermenu-plugin.
+# Copyright (C) 2018 Graeme Gott
+# This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
+#
+# Translators:
+# ciaran < >, 2018
+# ciaran, 2018
+msgid ""
+msgstr ""
+"Project-Id-Version: Whisker Menu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-08 05:15-0400\n"
+"PO-Revision-Date: 2018-07-16 19:17+0000\n"
+"Last-Translator: ciaran\n"
+"Language-Team: Welsh (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
+"plugin/language/cy/)\n"
+"Language: cy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1) ? 0 : (n==2) ? 1 : (n != 8 && n != "
+"11) ? 2 : 3;\n"
+
+#: ../panel-plugin/configuration-dialog.cpp:837
+msgid "Add action"
+msgstr "Ychwanegu gweithred"
+
+#: ../panel-plugin/page.cpp:258
+msgid "Add to Desktop"
+msgstr "Ychwanegu i'r bwrdd gwaith"
+
+#: ../panel-plugin/page.cpp:242
+msgid "Add to Favorites"
+msgstr "Ychwanegu i ffefrynnau"
+
+#: ../panel-plugin/page.cpp:262
+msgid "Add to Panel"
+msgstr "Ychwanegu i banel"
+
+#: ../panel-plugin/category.cpp:61
+msgid "All"
+msgstr "Popeth"
+
+#: ../panel-plugin/settings.cpp:120
+msgid "All _Settings"
+msgstr "Pob gosodiad"
+
+#: ../panel-plugin/plugin.cpp:404
+msgid "Alternate application launcher for Xfce"
+msgstr "Lansiwr rhaglenni amgen i Xfce"
+
+#: ../panel-plugin/configuration-dialog.cpp:738
+msgid "Amount of _items:"
+msgstr "Nifer yr eitemau:"
+
+#: ../panel-plugin/plugin.cpp:208
+msgid "Applications"
+msgstr "Rhaglenni"
+
+#: ../panel-plugin/configuration-dialog.cpp:662
+msgid "Background opacit_y:"
+msgstr "Gwelededd y cefndir:"
+
+#: ../panel-plugin/command-edit.cpp:49
+msgid "Browse the file system to choose a custom command."
+msgstr "Pori i ddewis gorchymyn addasedig"
+
+#: ../panel-plugin/configuration-dialog.cpp:895
+msgid "C_ommand:"
+msgstr "Gorchymyn:"
+
+#: ../panel-plugin/configuration-dialog.cpp:647
+msgid "Categ_ory icon size:"
+msgstr "Maint eiconau categorïau"
+
+#: ../panel-plugin/recent-page.cpp:173
+msgid "Clear Recently Used"
+msgstr "Clirio'r eitemau diweddar"
+
+#: ../panel-plugin/plugin.cpp:405
+msgid "Copyright © 2013-2018 Graeme Gott"
+msgstr "Hawlfraint © 2013-2018 Graeme Gott"
+
+#: ../panel-plugin/configuration-dialog.cpp:865
+msgid "Details"
+msgstr "Manylion"
+
+#: ../panel-plugin/configuration-dialog.cpp:542
+msgid "Di_splay:"
+msgstr "Dangos:"
+
+#: ../panel-plugin/configuration-dialog.cpp:755
+msgid "Display by _default"
+msgstr "Dangos yn ddiofyn"
+
+#: ../panel-plugin/page.cpp:269
+msgid "Edit Application..."
+msgstr "Golygu'r rhaglen..."
+
+#: ../panel-plugin/settings.cpp:125
+msgid "Edit _Profile"
+msgstr "Golygu eich proffil"
+
+#: ../panel-plugin/settings.cpp:125
+msgid "Failed to edit profile."
+msgstr "Methu golygu'r proffil."
+
+#: ../panel-plugin/launcher.cpp:288 ../panel-plugin/launcher.cpp:362
+#: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:188
+#, c-format
+msgid "Failed to execute command \"%s\"."
+msgstr "Methu rhedeg y gorchymyn \"%s\"."
+
+#: ../panel-plugin/settings.cpp:124
+msgid "Failed to launch menu editor."
+msgstr "Methu lansio golygydd y ddewislen."
+
+#: ../panel-plugin/settings.cpp:121
+msgid "Failed to lock screen."
+msgstr "Methu cloi'r sgrin."
+
+#: ../panel-plugin/settings.cpp:123
+msgid "Failed to log out."
+msgstr "Methu allgofnodi."
+
+#: ../panel-plugin/settings.cpp:120
+msgid "Failed to open settings manager."
+msgstr "Methu agor y rheolydd gosodiadau."
+
+#: ../panel-plugin/settings.cpp:122
+msgid "Failed to switch users."
+msgstr "Methu newid defnyddwyr"
+
+#: ../panel-plugin/window.cpp:161
+msgid "Favorites"
+msgstr "Ffefrynnau"
+
+#: ../panel-plugin/configuration-dialog.cpp:547
+msgid "Icon"
+msgstr "Eicon"
+
+#: ../panel-plugin/configuration-dialog.cpp:549
+msgid "Icon and title"
+msgstr "Eicon a theitl"
+
+#: ../panel-plugin/configuration-dialog.cpp:749
+msgid "Include _favorites"
+msgstr "Cynnwys ffefrynnau"
+
+#: ../panel-plugin/configuration-dialog.cpp:631
+msgid "Ite_m icon size:"
+msgstr "Maint eiconau eitemau:"
+
+#: ../panel-plugin/icon-size.cpp:54
+msgid "Large"
+msgstr "Mawr"
+
+#: ../panel-plugin/icon-size.cpp:55
+msgid "Larger"
+msgstr "Mawr iawn"
+
+#: ../panel-plugin/settings.cpp:123
+msgid "Log _Out"
+msgstr "Allgofnodi"
+
+#: ../panel-plugin/settings.cpp:127
+msgid "Man Pages"
+msgstr "Canllawiau"
+
+#: ../panel-plugin/configuration-dialog.cpp:595
+#: ../panel-plugin/configuration-dialog.cpp:692
+msgid "Menu"
+msgstr "Dewislen"
+
+#: ../panel-plugin/configuration-dialog.cpp:870
+msgid "Nam_e:"
+msgstr "Enw:"
+
+#: ../panel-plugin/configuration-dialog.cpp:815
+msgid "Name"
+msgstr "Enw"
+
+#: ../panel-plugin/icon-size.cpp:49
+msgid "None"
+msgstr "Dim"
+
+#: ../panel-plugin/icon-size.cpp:53
+msgid "Normal"
+msgstr "Canolig"
+
+#: ../panel-plugin/settings.cpp:131
+msgid "Open URI"
+msgstr "Agor URI"
+
+#: ../panel-plugin/configuration-dialog.cpp:537
+msgid "Panel Button"
+msgstr "Botwm y panel"
+
+#: ../panel-plugin/configuration-dialog.cpp:820
+msgid "Pattern"
+msgstr "Patrwm"
+
+#: ../panel-plugin/configuration-dialog.cpp:703
+msgid "Position _search entry next to panel button"
+msgstr "Lleoli chwiliadau wrth ymyl botwm y panel"
+
+#: ../panel-plugin/configuration-dialog.cpp:716
+msgid "Position cate_gories next to panel button"
+msgstr "Lleoli categorïau wrth ymyl botwm y panel"
+
+#: ../panel-plugin/configuration-dialog.cpp:709
+msgid "Position commands next to search _entry"
+msgstr "Lleoli gorchmynion wrth ymyl chwiliadau"
+
+#: ../panel-plugin/configuration-dialog.cpp:733 ../panel-plugin/window.cpp:167
+msgid "Recently Used"
+msgstr "Eitemau diweddar"
+
+#: ../panel-plugin/page.cpp:250
+msgid "Remove From Favorites"
+msgstr "Tynnu o'r ffefrynnau"
+
+#: ../panel-plugin/configuration-dialog.cpp:441
+#, c-format
+msgid "Remove action \"%s\"?"
+msgstr "Tynnu'r weithred \"%s\"?"
+
+#: ../panel-plugin/configuration-dialog.cpp:846
+msgid "Remove selected action"
+msgstr "Tynnu'r weithred hon"
+
+#: ../panel-plugin/run-action.cpp:71
+#, c-format
+msgid "Run %s"
+msgstr "Rhedeg %s"
+
+#: ../panel-plugin/settings.cpp:130
+msgid "Run in Terminal"
+msgstr "Rhedeg mewn terfynell"
+
+#: ../panel-plugin/configuration-dialog.cpp:86
+msgid "Search Actio_ns"
+msgstr "Gweithredoedd chwilio"
+
+#: ../panel-plugin/search-action.cpp:259
+msgid "Search Action"
+msgstr "Gweithredoedd chwilio"
+
+#: ../panel-plugin/configuration-dialog.cpp:119
+msgid "Select An Icon"
+msgstr "Dewiswch eicon"
+
+#: ../panel-plugin/command-edit.cpp:64
+msgid "Select Command"
+msgstr "Dewiswch orchymyn"
+
+#: ../panel-plugin/whiskermenu.desktop.in:6
+msgid "Show a menu to easily access installed applications"
+msgstr "Dewislen i gael hyd at eich rhaglenni yn hawdd"
+
+#: ../panel-plugin/configuration-dialog.cpp:613
+msgid "Show application _descriptions"
+msgstr "Dangos disgrifiadau rhaglenni"
+
+#: ../panel-plugin/configuration-dialog.cpp:619
+msgid "Show application too_ltips"
+msgstr "Dangos trosolygon rhaglenni"
+
+#: ../panel-plugin/configuration-dialog.cpp:606
+msgid "Show cate_gory names"
+msgstr "Dangos enwau categorïau"
+
+#: ../panel-plugin/configuration-dialog.cpp:600
+msgid "Show generic application _names"
+msgstr "Dangos enwau cyffredinol rhaglenni"
+
+#: ../panel-plugin/configuration-dialog.cpp:625
+msgid "Show menu hie_rarchy"
+msgstr "Dangos hierarchaethau"
+
+#: ../panel-plugin/icon-size.cpp:52
+msgid "Small"
+msgstr "Bach"
+
+#: ../panel-plugin/icon-size.cpp:51
+msgid "Smaller"
+msgstr "Bach iawn"
+
+#: ../panel-plugin/favorites-page.cpp:147
+msgid "Sort Alphabetically A-Z"
+msgstr "Trefnu o A i Y"
+
+#: ../panel-plugin/favorites-page.cpp:153
+msgid "Sort Alphabetically Z-A"
+msgstr "Trefnu o Y i A"
+
+#: ../panel-plugin/configuration-dialog.cpp:722
+msgid "Stay _visible when focus is lost"
+msgstr "Cadw'n weladwy pan gollir y ffocws"
+
+#: ../panel-plugin/settings.cpp:122
+msgid "Switch _Users"
+msgstr "Newid defnyddwyr"
+
+#: ../panel-plugin/configuration-dialog.cpp:697
+msgid "Switch categories by _hovering"
+msgstr "Newid categorïau drwy hofran y llygoden"
+
+#: ../panel-plugin/configuration-dialog.cpp:440
+msgid "The action will be deleted permanently."
+msgstr "Caiff y gorchymyn ei ddileu'n barhaol."
+
+#: ../panel-plugin/configuration-dialog.cpp:548
+msgid "Title"
+msgstr "Teitl"
+
+#: ../panel-plugin/page.cpp:334
+msgid "Unable to add launcher to desktop."
+msgstr "Methu ychwanegu'r lansiw i'r bwrdd gwaith."
+
+#: ../panel-plugin/page.cpp:373 ../panel-plugin/page.cpp:382
+msgid "Unable to add launcher to panel."
+msgstr "Methu ychwanegu'r lansiwr i'r panel."
+
+#: ../panel-plugin/page.cpp:411
+msgid "Unable to edit launcher."
+msgstr "Methu golygu'r lansiwr."
+
+#: ../panel-plugin/configuration-dialog.cpp:501
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Methu agor yr URL canlynol: %s"
+
+#: ../panel-plugin/configuration-dialog.cpp:582
+msgid "Use a single _panel row"
+msgstr "Defnyddio ond un rhes o'r panel"
+
+#: ../panel-plugin/icon-size.cpp:56
+msgid "Very Large"
+msgstr "Enfawr"
+
+#: ../panel-plugin/icon-size.cpp:50
+msgid "Very Small"
+msgstr "Pitw"
+
+#: ../panel-plugin/settings.cpp:128
+msgid "Web Search"
+msgstr "Chwilio'r we"
+
+#: ../panel-plugin/configuration-dialog.cpp:70
+#: ../panel-plugin/whiskermenu.desktop.in:5
+msgid "Whisker Menu"
+msgstr "Dewislen Whisker"
+
+#: ../panel-plugin/settings.cpp:129
+msgid "Wikipedia"
+msgstr "Wicipedia"
+
+#: ../panel-plugin/configuration-dialog.cpp:83
+msgid "_Appearance"
+msgstr "Golwg"
+
+#: ../panel-plugin/configuration-dialog.cpp:84
+msgid "_Behavior"
+msgstr "Ymddygiad"
+
+#: ../panel-plugin/command-edit.cpp:67
+#: ../panel-plugin/configuration-dialog.cpp:121
+msgid "_Cancel"
+msgstr "Diddymu"
+
+#: ../panel-plugin/configuration-dialog.cpp:74
+msgid "_Close"
+msgstr "Cau"
+
+#: ../panel-plugin/configuration-dialog.cpp:85
+msgid "_Commands"
+msgstr "Gorchmynion"
+
+#: ../panel-plugin/configuration-dialog.cpp:439
+msgid "_Delete"
+msgstr "Dileu"
+
+#: ../panel-plugin/settings.cpp:124
+msgid "_Edit Applications"
+msgstr "Golygu rhaglenni"
+
+#: ../panel-plugin/configuration-dialog.cpp:73
+msgid "_Help"
+msgstr "Cymorth"
+
+#: ../panel-plugin/configuration-dialog.cpp:568
+msgid "_Icon:"
+msgstr "Eicon:"
+
+#: ../panel-plugin/settings.cpp:121
+msgid "_Lock Screen"
+msgstr "Cloi'r sgrin"
+
+#: ../panel-plugin/command-edit.cpp:68
+#: ../panel-plugin/configuration-dialog.cpp:122
+msgid "_OK"
+msgstr "Iawn"
+
+#: ../panel-plugin/configuration-dialog.cpp:883
+msgid "_Pattern:"
+msgstr "Patrwm:"
+
+#: ../panel-plugin/configuration-dialog.cpp:907
+msgid "_Regular expression"
+msgstr "RegEx"
+
+#: ../panel-plugin/configuration-dialog.cpp:557
+msgid "_Title:"
+msgstr "Teitl:"
+
+#: ../panel-plugin/plugin.cpp:409
+msgid "translator-credits"
+msgstr "Cyfieithwyd gan ."
