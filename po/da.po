@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-08 05:15-0400\n"
-"PO-Revision-Date: 2018-04-21 20:13+0000\n"
+"PO-Revision-Date: 2018-07-18 00:31+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/da/)\n"
@@ -296,7 +296,7 @@ msgstr "Sortér alfabetisk Å-A"
 
 #: ../panel-plugin/configuration-dialog.cpp:722
 msgid "Stay _visible when focus is lost"
-msgstr ""
+msgstr "Forbliv _synlig når fokus mistes"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Switch _Users"
