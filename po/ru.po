@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-08 05:15-0400\n"
-"PO-Revision-Date: 2018-05-11 20:32+0000\n"
+"PO-Revision-Date: 2018-07-22 07:04+0000\n"
 "Last-Translator: Sergey Alyoshin <alyoshin.s@gmail.com>\n"
 "Language-Team: Russian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ru/)\n"
@@ -148,7 +148,7 @@ msgstr "Значок и заголовок"
 
 #: ../panel-plugin/configuration-dialog.cpp:749
 msgid "Include _favorites"
-msgstr ""
+msgstr "Включая _избранное"
 
 #: ../panel-plugin/configuration-dialog.cpp:631
 msgid "Ite_m icon size:"
@@ -267,7 +267,7 @@ msgstr "Показывать _описания приложений"
 
 #: ../panel-plugin/configuration-dialog.cpp:619
 msgid "Show application too_ltips"
-msgstr "Пока_зывать всплывающие комментарии к приложениям"
+msgstr "Показывать всплывающие ко_мментарии к приложениям"
 
 #: ../panel-plugin/configuration-dialog.cpp:606
 msgid "Show cate_gory names"
@@ -299,7 +299,7 @@ msgstr "Сортировать по алфавиту от Я до А"
 
 #: ../panel-plugin/configuration-dialog.cpp:722
 msgid "Stay _visible when focus is lost"
-msgstr ""
+msgstr "Оставлять _видимым при потери фокуса"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Switch _Users"
@@ -336,7 +336,7 @@ msgstr "Невозможно открыть ссылку: %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:582
 msgid "Use a single _panel row"
-msgstr "Использовать одну строку панели"
+msgstr "Использовать _одну строку панели"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
