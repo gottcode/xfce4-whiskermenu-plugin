@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-08 05:15-0400\n"
-"PO-Revision-Date: 2018-05-07 13:52+0000\n"
+"PO-Revision-Date: 2018-07-29 07:26+0000\n"
 "Last-Translator: starryprabin <mr.prabin@gmail.com>\n"
 "Language-Team: Nepali (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ne/)\n"
@@ -295,7 +295,7 @@ msgstr "Z-A अनुसार वर्णक्रमीक गर्नुह
 
 #: ../panel-plugin/configuration-dialog.cpp:722
 msgid "Stay _visible when focus is lost"
-msgstr ""
+msgstr " ध्यान हराउँदा दृश्यात्मक रहनुहोस् "
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Switch _Users"
