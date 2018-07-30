@@ -4,7 +4,8 @@
 #
 # Translators:
 # Anthony Jorion <pingax@frugalware.org>, 2013
-# Charles Monzat <superboa@hotmail.fr>, 2018
+# Charles Monzat <c.monzat@laposte.net>, 2018
+# Charles Monzat <c.monzat@laposte.net>, 2018
 # jc1 <jc1.quebecos@gmail.com>, 2013,2015-2016
 # Lysio J-C <lysio.jc@outlook.fr>, 2017
 # Urien Desterres <urien.desterres@gmail.com>, 2014-2015,2018
@@ -14,8 +15,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-08 05:15-0400\n"
-"PO-Revision-Date: 2018-04-15 14:17+0000\n"
-"Last-Translator: Urien Desterres <urien.desterres@gmail.com>\n"
+"PO-Revision-Date: 2018-07-30 08:25+0000\n"
+"Last-Translator: Charles Monzat <c.monzat@laposte.net>\n"
 "Language-Team: French (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/fr/)\n"
 "Language: fr\n"
@@ -300,7 +301,7 @@ msgstr "Classement alphabétique décroissant"
 
 #: ../panel-plugin/configuration-dialog.cpp:722
 msgid "Stay _visible when focus is lost"
-msgstr ""
+msgstr "Rester _visible lorsque le focus est perdu"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Switch _Users"
