@@ -7,14 +7,15 @@
 # Laco Lazelod, 2013
 # Laco Lazelod, 2013
 # Michal Várady <miko.vaji@gmail.com>, 2015-2018
+# Pavel Borecki <pavel.borecki@gmail.com>, 2018
 # halfark <vojtechprecechtel@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-08 05:15-0400\n"
-"PO-Revision-Date: 2018-07-08 15:27+0000\n"
-"Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
+"PO-Revision-Date: 2018-08-03 05:53+0000\n"
+"Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/cs/)\n"
 "Language: cs\n"
@@ -46,7 +47,7 @@ msgstr "Vše"
 
 #: ../panel-plugin/settings.cpp:120
 msgid "All _Settings"
-msgstr "Všechna _nastavení"
+msgstr "Všechna na_stavení"
 
 #: ../panel-plugin/plugin.cpp:404
 msgid "Alternate application launcher for Xfce"
@@ -66,7 +67,7 @@ msgstr "Neprůhlednost po_zadí:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
-msgstr "Procházet systém souborů a vybrat vlastní příkaz."
+msgstr "Procházet souborový systém a vybrat vlastní příkaz."
 
 #: ../panel-plugin/configuration-dialog.cpp:895
 msgid "C_ommand:"
@@ -98,7 +99,7 @@ msgstr "Zob_razit ve výchozím nastavení"
 
 #: ../panel-plugin/page.cpp:269
 msgid "Edit Application..."
-msgstr "Upravit aplikaci..."
+msgstr "Upravit aplikaci…"
 
 #: ../panel-plugin/settings.cpp:125
 msgid "Edit _Profile"
@@ -106,7 +107,7 @@ msgstr "Upravit _profil"
 
 #: ../panel-plugin/settings.cpp:125
 msgid "Failed to edit profile."
-msgstr "Přepnutí uživatelů se nezdařilo."
+msgstr "Úprava profilu se nezdařila."
 
 #: ../panel-plugin/launcher.cpp:288 ../panel-plugin/launcher.cpp:362
 #: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:188
@@ -148,7 +149,7 @@ msgstr "Ikona a název"
 
 #: ../panel-plugin/configuration-dialog.cpp:749
 msgid "Include _favorites"
-msgstr "Zahrnout _ oblíbené"
+msgstr "Zahrnout _oblíbené"
 
 #: ../panel-plugin/configuration-dialog.cpp:631
 msgid "Ite_m icon size:"
@@ -164,11 +165,11 @@ msgstr "Větší"
 
 #: ../panel-plugin/settings.cpp:123
 msgid "Log _Out"
-msgstr "Odhlásit _se"
+msgstr "_Odhlásit se"
 
 #: ../panel-plugin/settings.cpp:127
 msgid "Man Pages"
-msgstr "Manuál"
+msgstr "Manuálové stránky"
 
 #: ../panel-plugin/configuration-dialog.cpp:595
 #: ../panel-plugin/configuration-dialog.cpp:692
@@ -177,7 +178,7 @@ msgstr "Nabídka"
 
 #: ../panel-plugin/configuration-dialog.cpp:870
 msgid "Nam_e:"
-msgstr "Náze_v:"
+msgstr "Náz_ev:"
 
 #: ../panel-plugin/configuration-dialog.cpp:815
 msgid "Name"
@@ -205,7 +206,7 @@ msgstr "Vzorec"
 
 #: ../panel-plugin/configuration-dialog.cpp:703
 msgid "Position _search entry next to panel button"
-msgstr "Umístit v_yhledávání vedle tlačítka panelu"
+msgstr "Umí_stit vyhledávání vedle tlačítka panelu"
 
 #: ../panel-plugin/configuration-dialog.cpp:716
 msgid "Position cate_gories next to panel button"
@@ -213,7 +214,7 @@ msgstr "Umístit kate_gorie vedle tlačítka panelu"
 
 #: ../panel-plugin/configuration-dialog.cpp:709
 msgid "Position commands next to search _entry"
-msgstr "U_místit příkazy vedle pole vyhledávání"
+msgstr "Umístit příkazy v_edle pole vyhledávání"
 
 #: ../panel-plugin/configuration-dialog.cpp:733 ../panel-plugin/window.cpp:167
 msgid "Recently Used"
@@ -226,7 +227,7 @@ msgstr "Odebrat z oblíbených"
 #: ../panel-plugin/configuration-dialog.cpp:441
 #, c-format
 msgid "Remove action \"%s\"?"
-msgstr "Odebrat akci \"%s\"?"
+msgstr "Odebrat akci „%s“?"
 
 #: ../panel-plugin/configuration-dialog.cpp:846
 msgid "Remove selected action"
@@ -243,7 +244,7 @@ msgstr "Spustit v terminálu"
 
 #: ../panel-plugin/configuration-dialog.cpp:86
 msgid "Search Actio_ns"
-msgstr "Akce _hledání"
+msgstr "Akce hledá_ní"
 
 #: ../panel-plugin/search-action.cpp:259
 msgid "Search Action"
@@ -259,7 +260,7 @@ msgstr "Vyberte příkaz"
 
 #: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
-msgstr "Zobrazit nabídku snadný přístup k nainstalovaným aplikacím"
+msgstr "Zobrazit nabídku snadného přístupu k nainstalovaným aplikacím"
 
 #: ../panel-plugin/configuration-dialog.cpp:613
 msgid "Show application _descriptions"
@@ -267,7 +268,7 @@ msgstr "Zobrazit popisky _aplikací"
 
 #: ../panel-plugin/configuration-dialog.cpp:619
 msgid "Show application too_ltips"
-msgstr "Zobrazit tipy _aplikací"
+msgstr "Zobrazovat bublinové nápovědy ap_likací"
 
 #: ../panel-plugin/configuration-dialog.cpp:606
 msgid "Show cate_gory names"
@@ -275,11 +276,11 @@ msgstr "Zobrazit názvy kate_gorií"
 
 #: ../panel-plugin/configuration-dialog.cpp:600
 msgid "Show generic application _names"
-msgstr "Zobrazit _obecné názvy aplikací"
+msgstr "Zobrazit obecné _názvy aplikací"
 
 #: ../panel-plugin/configuration-dialog.cpp:625
 msgid "Show menu hie_rarchy"
-msgstr "Zobrazit hierarchii nabídky"
+msgstr "Zob_razit hierarchii nabídky"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -311,7 +312,7 @@ msgstr "Přepínat _kategorie najetím kurzoru"
 
 #: ../panel-plugin/configuration-dialog.cpp:440
 msgid "The action will be deleted permanently."
-msgstr "Akce se trvale smaže."
+msgstr "Akce bude nenávratně smazána."
 
 #: ../panel-plugin/configuration-dialog.cpp:548
 msgid "Title"
@@ -327,12 +328,12 @@ msgstr "Nelze přidat spouštěč na panel."
 
 #: ../panel-plugin/page.cpp:411
 msgid "Unable to edit launcher."
-msgstr "Nelze upravit spouštěč."
+msgstr "Spouštěč se nedaří upravit."
 
 #: ../panel-plugin/configuration-dialog.cpp:501
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "Nelze otevřít umístění URL %s"
+msgstr "Nedaří se otevřít umístění URL adresy: %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:582
 msgid "Use a single _panel row"
@@ -370,7 +371,7 @@ msgstr "_Chování"
 #: ../panel-plugin/command-edit.cpp:67
 #: ../panel-plugin/configuration-dialog.cpp:121
 msgid "_Cancel"
-msgstr "_Zrušit"
+msgstr "_Storno"
 
 #: ../panel-plugin/configuration-dialog.cpp:74
 msgid "_Close"
@@ -386,7 +387,7 @@ msgstr "_Smazat"
 
 #: ../panel-plugin/settings.cpp:124
 msgid "_Edit Applications"
-msgstr "_Upravit aplikace"
+msgstr "Upravit aplikac_e"
 
 #: ../panel-plugin/configuration-dialog.cpp:73
 msgid "_Help"
