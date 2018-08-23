@@ -10,13 +10,14 @@
 # José Vieira <jvieira33@sapo.pt>, 2016-2017
 # Lorhan Sohaky, 2018
 # Paulo Castro, 2013
+# Thiago Albuquerque Soares <tasbrjob@gmail.com>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-08 05:15-0400\n"
-"PO-Revision-Date: 2018-05-21 03:45+0000\n"
-"Last-Translator: Lorhan Sohaky\n"
+"PO-Revision-Date: 2018-08-23 02:26+0000\n"
+"Last-Translator: Thiago Albuquerque Soares <tasbrjob@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/pt_BR/)\n"
 "Language: pt_BR\n"
@@ -149,7 +150,7 @@ msgstr "Ícone e título"
 
 #: ../panel-plugin/configuration-dialog.cpp:749
 msgid "Include _favorites"
-msgstr "Incluir _favorites"
+msgstr "Incluir _favoritos"
 
 #: ../panel-plugin/configuration-dialog.cpp:631
 msgid "Ite_m icon size:"
@@ -300,7 +301,7 @@ msgstr "Ordem alfabética Z-A"
 
 #: ../panel-plugin/configuration-dialog.cpp:722
 msgid "Stay _visible when focus is lost"
-msgstr ""
+msgstr "Permanecer _visível quando o foco é perdido"
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Switch _Users"
