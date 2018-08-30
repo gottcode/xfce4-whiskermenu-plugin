@@ -37,6 +37,8 @@ static const char* const settings_command[Settings::CountCommands][2] = {
 	{ "command-lockscreen", "show-command-lockscreen" },
 	{ "command-switchuser", "show-command-switchuser" },
 	{ "command-logout",     "show-command-logout"     },
+	{ "command-shutdown",   "show-command-shutdown"   },
+	{ "command-restart",    "show-command-restart"    },
 	{ "command-menueditor", "show-command-menueditor" },
 	{ "command-profile",    "show-command-profile"    }
 };
@@ -121,6 +123,8 @@ Settings::Settings() :
 	command[CommandLockScreen] = new Command("system-lock-screen", _("_Lock Screen"), "xflock4", _("Failed to lock screen."));
 	command[CommandSwitchUser] = new Command("system-users", _("Switch _Users"), "gdmflexiserver", _("Failed to switch users."));
 	command[CommandLogOut] = new Command("system-log-out", _("Log _Out"), "xfce4-session-logout", _("Failed to log out."));
+	command[CommandShutdown] = new Command("system-shutdown", _("Shut _Down"), "xfce4-session-logout -h", _("Failed to shut down."));
+	command[CommandRestart] = new Command("system-restart", _("_Restart"), "xfce4-session-logout -r", _("Failed to restart."));
 	command[CommandMenuEditor] = new Command("xfce4-menueditor", _("_Edit Applications"), "menulibre", _("Failed to launch menu editor."));
 	command[CommandProfile] = new Command("avatar-default", _("Edit _Profile"), "mugshot", _("Failed to edit profile."));
 

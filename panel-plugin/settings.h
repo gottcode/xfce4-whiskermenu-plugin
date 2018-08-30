@@ -91,6 +91,8 @@ public:
 		CommandLockScreen,
 		CommandSwitchUser,
 		CommandLogOut,
+		CommandShutdown,
+		CommandRestart,
 		CommandMenuEditor,
 		CommandProfile,
 		CountCommands

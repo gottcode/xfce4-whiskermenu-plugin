@@ -126,8 +126,8 @@ private:
 	ResizerWidget* m_resizer;
 
 	GtkWidget* m_commands_spacer;
-	GtkWidget* m_commands_button[4];
-	gulong m_command_slots[4];
+	GtkWidget* m_commands_button[6];
+	gulong m_command_slots[6];
 
 	GtkEntry* m_search_entry;
 
