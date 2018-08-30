@@ -16,8 +16,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-08 05:15-0400\n"
-"PO-Revision-Date: 2018-08-22 13:37+0000\n"
-"Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
+"PO-Revision-Date: 2018-08-25 13:22+0000\n"
+"Last-Translator: Davidmp <medipas@gmail.com>\n"
 "Language-Team: Catalan (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ca/)\n"
 "Language: ca\n"
@@ -84,7 +84,7 @@ msgstr "Neteja els elements recents"
 
 #: ../panel-plugin/plugin.cpp:405
 msgid "Copyright © 2013-2018 Graeme Gott"
-msgstr "© 2013-2018 Graeme Gott"
+msgstr "Copyright © 2013-2018 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:865
 msgid "Details"
@@ -96,7 +96,7 @@ msgstr "Mo_stra:"
 
 #: ../panel-plugin/configuration-dialog.cpp:755
 msgid "Display by _default"
-msgstr "Apareixen per _defecte"
+msgstr "Es mostren per _defecte"
 
 #: ../panel-plugin/page.cpp:269
 msgid "Edit Application..."
@@ -108,33 +108,33 @@ msgstr "Edita el _perfil"
 
 #: ../panel-plugin/settings.cpp:125
 msgid "Failed to edit profile."
-msgstr "Ha fallat l'edició del perfil."
+msgstr "Ha fallat editar el perfil."
 
 #: ../panel-plugin/launcher.cpp:288 ../panel-plugin/launcher.cpp:362
 #: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
-msgstr "Ha fallat l'execució de l'ordre «%s»."
+msgstr "Ha fallat executar l'ordre «%s»."
 
 #: ../panel-plugin/settings.cpp:124
 msgid "Failed to launch menu editor."
-msgstr "Ha fallat el llançament de l'editor del menú."
+msgstr "Ha fallat obir l'editor del menú."
 
 #: ../panel-plugin/settings.cpp:121
 msgid "Failed to lock screen."
-msgstr "Ha fallat el bloqueig de la pantalla."
+msgstr "Ha fallat bloquejar la pantalla."
 
 #: ../panel-plugin/settings.cpp:123
 msgid "Failed to log out."
-msgstr "Ha fallat el tancament de la sessió."
+msgstr "Ha fallat tancar la sessió."
 
 #: ../panel-plugin/settings.cpp:120
 msgid "Failed to open settings manager."
-msgstr "Ha fallat l'obriment del gestor d'ajusts."
+msgstr "Ha fallat obrir el gestor d'ajusts."
 
 #: ../panel-plugin/settings.cpp:122
 msgid "Failed to switch users."
-msgstr "Ha fallat el canvi d'usuari."
+msgstr "Ha fallat canviar d'usuari."
 
 #: ../panel-plugin/window.cpp:161
 msgid "Favorites"
@@ -158,11 +158,11 @@ msgstr "Mida de les icones dels ele_ments:"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Large"
-msgstr "Gran"
+msgstr "Grossa"
 
 #: ../panel-plugin/icon-size.cpp:55
 msgid "Larger"
-msgstr "Més gran"
+msgstr "Més grossa"
 
 #: ../panel-plugin/settings.cpp:123
 msgid "Log _Out"
@@ -245,11 +245,11 @@ msgstr "Executa en un terminal"
 
 #: ../panel-plugin/configuration-dialog.cpp:86
 msgid "Search Actio_ns"
-msgstr "Accio_ns sistemàtiques"
+msgstr "Accio_ns del cercador"
 
 #: ../panel-plugin/search-action.cpp:259
 msgid "Search Action"
-msgstr "Acció sistemàtica"
+msgstr "Acció del cercador"
 
 #: ../panel-plugin/configuration-dialog.cpp:119
 msgid "Select An Icon"
@@ -269,7 +269,7 @@ msgstr "Mostra la _descripció de les aplicacions"
 
 #: ../panel-plugin/configuration-dialog.cpp:619
 msgid "Show application too_ltips"
-msgstr "Mostra l'indicador de funció de les ap_licacions"
+msgstr "Mostra els indicadors de funció de les ap_licacions"
 
 #: ../panel-plugin/configuration-dialog.cpp:606
 msgid "Show cate_gory names"
@@ -293,11 +293,11 @@ msgstr "Més petita"
 
 #: ../panel-plugin/favorites-page.cpp:147
 msgid "Sort Alphabetically A-Z"
-msgstr "Ordena alfabèticament A–Z"
+msgstr "Ordena alfabèticament: A–Z"
 
 #: ../panel-plugin/favorites-page.cpp:153
 msgid "Sort Alphabetically Z-A"
-msgstr "Ordena alfabèticament Z–A"
+msgstr "Ordena alfabèticament: Z–A"
 
 #: ../panel-plugin/configuration-dialog.cpp:722
 msgid "Stay _visible when focus is lost"
@@ -313,7 +313,7 @@ msgstr "Canvia de categoria en _passar-hi el ratolí"
 
 #: ../panel-plugin/configuration-dialog.cpp:440
 msgid "The action will be deleted permanently."
-msgstr "Se suprimirà l’acció permanentment."
+msgstr "L'acció se suprimirà permanentment."
 
 #: ../panel-plugin/configuration-dialog.cpp:548
 msgid "Title"
@@ -342,7 +342,7 @@ msgstr "Utilitza un _plafó d'una sola fila"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
-msgstr "Molt gran"
+msgstr "Molt grossa"
 
 #: ../panel-plugin/icon-size.cpp:50
 msgid "Very Small"
