@@ -37,16 +37,29 @@ enum
 
 //-----------------------------------------------------------------------------
 
-Command::Command(const gchar* icon, const gchar* text, const gchar* command, const gchar* error_text) :
+Command::Command(const gchar* icon, const gchar* text, const gchar* command, const gchar* error_text, const gchar* confirm_question, const gchar* confirm_status) :
 	m_button(NULL),
 	m_menuitem(NULL),
 	m_icon(g_strdup(icon)),
-	m_text(g_strdup(text)),
+	m_mnemonic(g_strdup(text)),
 	m_command(g_strdup(command)),
 	m_error_text(g_strdup(error_text)),
 	m_status(WHISKERMENU_COMMAND_UNCHECKED),
-	m_shown(true)
+	m_shown(true),
+	m_timeout_details({NULL, g_strdup(confirm_question), g_strdup(confirm_status), 0})
 {
+	std::string mnemonic(text ? text : "");
+	for (std::string::size_type i = 0, length = mnemonic.length(); i < length; ++i)
+	{
+		if (mnemonic[i] == '_')
+		{
+			mnemonic.erase(i, 1);
+			--length;
+			--i;
+		}
+	}
+	m_text = g_strdup(mnemonic.c_str());
+
 	check();
 }
 
@@ -66,9 +79,12 @@ Command::~Command()
 	}
 
 	g_free(m_icon);
+	g_free(m_mnemonic);
 	g_free(m_text);
 	g_free(m_command);
 	g_free(m_error_text);
+	g_free(m_timeout_details.question);
+	g_free(m_timeout_details.status);
 }
 
 //-----------------------------------------------------------------------------
@@ -80,21 +96,10 @@ GtkWidget* Command::get_button()
 		return m_button;
 	}
 
-	std::string tooltip(m_text ? m_text : "");
-	for (std::string::size_type i = 0, length = tooltip.length(); i < length; ++i)
-	{
-		if (tooltip[i] == '_')
-		{
-			tooltip.erase(i, 1);
-			--length;
-			--i;
-		}
-	}
-
 	m_button = gtk_button_new();
 	gtk_button_set_relief(GTK_BUTTON(m_button), GTK_RELIEF_NONE);
-	gtk_widget_set_tooltip_text(m_button, tooltip.c_str());
-	g_signal_connect_slot<GtkButton*>(m_button, "clicked", &Command::activate, this);
+	gtk_widget_set_tooltip_text(m_button, m_text);
+	g_signal_connect_slot<GtkButton*>(m_button, "clicked", &Command::activate, this, true);
 
 	GtkWidget* image = gtk_image_new_from_icon_name(m_icon, GTK_ICON_SIZE_LARGE_TOOLBAR);
 	gtk_container_add(GTK_CONTAINER(m_button), GTK_WIDGET(image));
@@ -117,7 +122,7 @@ GtkWidget* Command::get_menuitem()
 	}
 
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-	m_menuitem = gtk_image_menu_item_new_with_mnemonic(m_text);
+	m_menuitem = gtk_image_menu_item_new_with_mnemonic(m_mnemonic);
 	GtkWidget* image = gtk_image_new_from_icon_name(m_icon, GTK_ICON_SIZE_MENU);
 	gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM(m_menuitem), image);
 	g_signal_connect_slot<GtkMenuItem*>(m_menuitem, "activate", &Command::activate, this);
@@ -204,12 +209,81 @@ void Command::check()
 
 void Command::activate()
 {
+	if (wm_settings->confirm_session_command
+			&& m_timeout_details.question
+			&& m_timeout_details.status
+			&& !confirm())
+	{
+		return;
+	}
+
 	GError* error = NULL;
 	if (g_spawn_command_line_async(m_command, &error) == false)
 	{
 		xfce_dialog_show_error(NULL, error, m_error_text, NULL);
 		g_error_free(error);
 	}
+}
+
+//-----------------------------------------------------------------------------
+
+// Adapted from https://git.xfce.org/xfce/xfce4-panel/tree/plugins/actions/actions.c
+bool Command::confirm()
+{
+	// Create dialog
+	m_timeout_details.dialog = gtk_message_dialog_new(NULL, GtkDialogFlags(0),
+			GTK_MESSAGE_QUESTION, GTK_BUTTONS_CANCEL,
+			"%s", m_timeout_details.question);
+	GtkDialog* dialog = GTK_DIALOG(m_timeout_details.dialog);
+
+	GtkWindow* window = GTK_WINDOW(m_timeout_details.dialog);
+	gtk_window_set_keep_above(window, true);
+	gtk_window_stick(window);
+	gtk_window_set_skip_taskbar_hint(window, true);
+	gtk_window_set_title(window, m_text);
+
+	// Add icon
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+	GtkWidget* image = gtk_image_new_from_icon_name(m_icon, GTK_ICON_SIZE_DIALOG);
+	gtk_widget_show(image);
+	gtk_message_dialog_set_image(GTK_MESSAGE_DIALOG(dialog), image);
+G_GNUC_END_IGNORE_DEPRECATIONS
+
+	// Create accept button
+	gtk_dialog_add_button(dialog, m_mnemonic, GTK_RESPONSE_ACCEPT);
+	gtk_dialog_set_default_response(dialog, GTK_RESPONSE_ACCEPT);
+
+	// Run dialog
+	m_timeout_details.time_left = 60;
+	guint timeout_id = g_timeout_add(1000, &Command::confirm_countdown, &m_timeout_details);
+	confirm_countdown(&m_timeout_details);
+
+	gint result = gtk_dialog_run(dialog);
+
+	g_source_remove(timeout_id);
+	gtk_widget_destroy(m_timeout_details.dialog);
+	m_timeout_details.dialog = NULL;
+
+	return result == GTK_RESPONSE_ACCEPT;
+}
+
+//-----------------------------------------------------------------------------
+
+gboolean Command::confirm_countdown(gpointer data)
+{
+	TimeoutDetails* details = static_cast<TimeoutDetails*>(data);
+
+	if (details->time_left == 0)
+	{
+		gtk_dialog_response(GTK_DIALOG(details->dialog), GTK_RESPONSE_ACCEPT);
+	}
+	else
+	{
+		gtk_message_dialog_format_secondary_text(GTK_MESSAGE_DIALOG(details->dialog),
+				details->status, details->time_left);
+	}
+
+	return --details->time_left >= 0;
 }
 
 //-----------------------------------------------------------------------------

@@ -50,6 +50,7 @@ private:
 	void toggle_position_commands_alternate(GtkToggleButton* button);
 	void toggle_position_categories_alternate(GtkToggleButton* button);
 	void toggle_stay_on_focus_out(GtkToggleButton* button);
+	void toggle_confirm_session_command(GtkToggleButton* button);
 	void category_icon_size_changed(GtkComboBox* combo);
 	void item_icon_size_changed(GtkComboBox* combo);
 
@@ -95,6 +96,7 @@ private:
 	GtkWidget* m_position_commands_alternate;
 	GtkWidget* m_position_categories_alternate;
 	GtkWidget* m_stay_on_focus_out;
+	GtkWidget* m_confirm_session_command;
 	GtkWidget* m_category_icon_size;
 	GtkWidget* m_item_icon_size;
 	GtkWidget* m_background_opacity;

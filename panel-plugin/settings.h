@@ -101,6 +101,7 @@ public:
 		CountCommands
 	};
 	Command* command[CountCommands];
+	bool confirm_session_command;
 
 	std::vector<SearchAction*> search_actions;
 

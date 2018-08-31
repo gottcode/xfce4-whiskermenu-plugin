@@ -284,6 +284,14 @@ void ConfigurationDialog::toggle_stay_on_focus_out(GtkToggleButton* button)
 
 //-----------------------------------------------------------------------------
 
+void ConfigurationDialog::toggle_confirm_session_command(GtkToggleButton* button)
+{
+	wm_settings->confirm_session_command = gtk_toggle_button_get_active(button);
+	wm_settings->set_modified();
+}
+
+//-----------------------------------------------------------------------------
+
 void ConfigurationDialog::recent_items_max_changed(GtkSpinButton* button)
 {
 	wm_settings->recent_items_max = gtk_spin_button_get_value_as_int(button);
@@ -762,6 +770,18 @@ GtkWidget* ConfigurationDialog::init_behavior_tab()
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_display_recent), wm_settings->display_recent);
 	gtk_widget_set_sensitive(GTK_WIDGET(m_display_recent), wm_settings->recent_items_max);
 	g_signal_connect_slot(m_display_recent, "toggled", &ConfigurationDialog::toggle_display_recent, this);
+
+
+	// Create command buttons section
+	GtkBox* command_vbox = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 6));
+	GtkWidget* command_frame = make_aligned_frame(_("Session Commands"), GTK_WIDGET(command_vbox));
+	gtk_box_pack_start(page, command_frame, false, false, 0);
+
+	// Add option to show confirmation dialogs
+	m_confirm_session_command = gtk_check_button_new_with_mnemonic(_("Show c_onfirmation dialog"));
+	gtk_box_pack_start(command_vbox, m_confirm_session_command, true, true, 0);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_confirm_session_command), wm_settings->confirm_session_command);
+	g_signal_connect_slot(m_confirm_session_command, "toggled", &ConfigurationDialog::toggle_confirm_session_command, this);
 
 	return GTK_WIDGET(page);
 }

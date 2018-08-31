@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2018 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@ namespace WhiskerMenu
 class Command
 {
 public:
-	Command(const gchar* icon, const gchar* text, const gchar* command, const gchar* error_text);
+	Command(const gchar* icon, const gchar* text, const gchar* command, const gchar* error_text, const gchar* confirm_question = NULL, const gchar* confirm_status = NULL);
 	~Command();
 
 	GtkWidget* get_button();
@@ -44,7 +44,7 @@ public:
 
 	const gchar* get_text() const
 	{
-		return m_text;
+		return m_mnemonic;
 	}
 
 	void set(const gchar* command);
@@ -56,14 +56,28 @@ public:
 	void activate();
 
 private:
+	bool confirm();
+	static gboolean confirm_countdown(gpointer data);
+
+private:
 	GtkWidget* m_button;
 	GtkWidget* m_menuitem;
 	gchar* m_icon;
+	gchar* m_mnemonic;
 	gchar* m_text;
 	gchar* m_command;
 	gchar* m_error_text;
 	int m_status;
 	bool m_shown;
+
+	struct TimeoutDetails
+	{
+		GtkWidget* dialog;
+		gchar* question;
+		gchar* status;
+		gint time_left;
+	}
+	m_timeout_details;
 };
 
 }

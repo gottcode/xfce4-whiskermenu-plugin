@@ -113,6 +113,8 @@ Settings::Settings() :
 	position_categories_alternate(false),
 	stay_on_focus_out(false),
 
+	confirm_session_command(true),
+
 	menu_width(400),
 	menu_height(500),
 	menu_opacity(100)
@@ -137,23 +139,33 @@ Settings::Settings() :
 	command[CommandLogOutUser] = new Command("system-log-out",
 			_("Log _Out"),
 			"xfce4-session-logout --logout --fast",
-			_("Failed to log out."));
+			_("Failed to log out."),
+			_("Are you sure you want to log out?"),
+			_("Logging out in %d seconds."));
 	command[CommandRestart] = new Command("system-reboot",
 			_("_Restart"),
 			"xfce4-session-logout --reboot --fast",
-			_("Failed to restart."));
+			_("Failed to restart."),
+			_("Are you sure you want to restart?"),
+			_("Restarting computer in %d seconds."));
 	command[CommandShutDown] = new Command("system-shutdown",
 			_("Shut _Down"),
 			"xfce4-session-logout --halt --fast",
-			_("Failed to shut down."));
+			_("Failed to shut down."),
+			_("Are you sure you want to shut down?"),
+			_("Turning off computer in %d seconds."));
 	command[CommandSuspend] = new Command("system-suspend",
 			_("Suspe_nd"),
 			"xfce4-session-logout --suspend",
-			_("Failed to suspend."));
+			_("Failed to suspend."),
+			_("Do you want to suspend to RAM?"),
+			_("Suspending computer in %d seconds."));
 	command[CommandHibernate] = new Command("system-hibernate",
 			_("_Hibernate"),
 			"xfce4-session-logout --hibernate",
-			_("Failed to hibernate."));
+			_("Failed to hibernate."),
+			_("Do you want to suspend to disk?"),
+			_("Hibernating computer in %d seconds."));
 	command[CommandLogOut] = new Command("system-log-out",
 			_("Log Ou_t..."),
 			"xfce4-session-logout",
@@ -236,6 +248,8 @@ void Settings::load(char* file)
 	position_commands_alternate = xfce_rc_read_bool_entry(rc, "position-commands-alternate", position_commands_alternate);
 	position_categories_alternate = xfce_rc_read_bool_entry(rc, "position-categories-alternate", position_categories_alternate);
 	stay_on_focus_out = xfce_rc_read_bool_entry(rc, "stay-on-focus-out", stay_on_focus_out);
+
+	confirm_session_command = xfce_rc_read_bool_entry(rc, "confirm-session-command", confirm_session_command);
 
 	menu_width = std::max(10, xfce_rc_read_int_entry(rc, "menu-width", menu_width));
 	menu_height = std::max(10, xfce_rc_read_int_entry(rc, "menu-height", menu_height));
@@ -335,6 +349,8 @@ void Settings::save(char* file)
 	xfce_rc_write_bool_entry(rc, "position-commands-alternate", position_commands_alternate);
 	xfce_rc_write_bool_entry(rc, "position-categories-alternate", position_categories_alternate);
 	xfce_rc_write_bool_entry(rc, "stay-on-focus-out", stay_on_focus_out);
+
+	xfce_rc_write_bool_entry(rc, "confirm-session-command", confirm_session_command);
 
 	xfce_rc_write_int_entry(rc, "menu-width", menu_width);
 	xfce_rc_write_int_entry(rc, "menu-height", menu_height);
