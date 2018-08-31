@@ -36,9 +36,12 @@ static const char* const settings_command[Settings::CountCommands][2] = {
 	{ "command-settings",   "show-command-settings"   },
 	{ "command-lockscreen", "show-command-lockscreen" },
 	{ "command-switchuser", "show-command-switchuser" },
-	{ "command-logout",     "show-command-logout"     },
-	{ "command-shutdown",   "show-command-shutdown"   },
+	{ "command-logoutuser", "show-command-logoutuser" },
 	{ "command-restart",    "show-command-restart"    },
+	{ "command-shutdown",   "show-command-shutdown"   },
+	{ "command-suspend",    "show-command-suspend"    },
+	{ "command-hibernate",  "show-command-hibernate"  },
+	{ "command-logout",     "show-command-logout"     },
 	{ "command-menueditor", "show-command-menueditor" },
 	{ "command-profile",    "show-command-profile"    }
 };
@@ -119,14 +122,50 @@ Settings::Settings() :
 	favorites.push_back("exo-mail-reader.desktop");
 	favorites.push_back("exo-web-browser.desktop");
 
-	command[CommandSettings] = new Command("preferences-desktop", _("All _Settings"), "xfce4-settings-manager", _("Failed to open settings manager."));
-	command[CommandLockScreen] = new Command("system-lock-screen", _("_Lock Screen"), "xflock4", _("Failed to lock screen."));
-	command[CommandSwitchUser] = new Command("system-users", _("Switch _Users"), "gdmflexiserver", _("Failed to switch users."));
-	command[CommandLogOut] = new Command("system-log-out", _("Log _Out"), "xfce4-session-logout", _("Failed to log out."));
-	command[CommandShutdown] = new Command("system-shutdown", _("Shut _Down"), "xfce4-session-logout -h", _("Failed to shut down."));
-	command[CommandRestart] = new Command("system-restart", _("_Restart"), "xfce4-session-logout -r", _("Failed to restart."));
-	command[CommandMenuEditor] = new Command("xfce4-menueditor", _("_Edit Applications"), "menulibre", _("Failed to launch menu editor."));
-	command[CommandProfile] = new Command("avatar-default", _("Edit _Profile"), "mugshot", _("Failed to edit profile."));
+	command[CommandSettings] = new Command("preferences-desktop",
+			_("All _Settings"),
+			"xfce4-settings-manager",
+			_("Failed to open settings manager."));
+	command[CommandLockScreen] = new Command("system-lock-screen",
+			_("_Lock Screen"),
+			"xflock4",
+			_("Failed to lock screen."));
+	command[CommandSwitchUser] = new Command("system-users",
+			_("Switch _Users"),
+			"gdmflexiserver",
+			_("Failed to switch users."));
+	command[CommandLogOutUser] = new Command("system-log-out",
+			_("Log _Out"),
+			"xfce4-session-logout --logout --fast",
+			_("Failed to log out."));
+	command[CommandRestart] = new Command("system-reboot",
+			_("_Restart"),
+			"xfce4-session-logout --reboot --fast",
+			_("Failed to restart."));
+	command[CommandShutDown] = new Command("system-shutdown",
+			_("Shut _Down"),
+			"xfce4-session-logout --halt --fast",
+			_("Failed to shut down."));
+	command[CommandSuspend] = new Command("system-suspend",
+			_("Suspe_nd"),
+			"xfce4-session-logout --suspend",
+			_("Failed to suspend."));
+	command[CommandHibernate] = new Command("system-hibernate",
+			_("_Hibernate"),
+			"xfce4-session-logout --hibernate",
+			_("Failed to hibernate."));
+	command[CommandLogOut] = new Command("system-log-out",
+			_("Log Ou_t..."),
+			"xfce4-session-logout",
+			_("Failed to log out."));
+	command[CommandMenuEditor] = new Command("xfce4-menueditor",
+			_("_Edit Applications"),
+			"menulibre",
+			_("Failed to launch menu editor."));
+	command[CommandProfile] = new Command("avatar-default",
+			_("Edit _Profile"),
+			"mugshot",
+			_("Failed to edit profile."));
 
 	search_actions.push_back(new SearchAction(_("Man Pages"), "#", "exo-open --launch TerminalEmulator man %s", false, true));
 	search_actions.push_back(new SearchAction(_("Web Search"), "?", "exo-open --launch WebBrowser https://duckduckgo.com/?q=%u", false, true));

@@ -138,14 +138,9 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	g_free(username);
 
 	// Create action buttons
-	m_commands_button[0] = wm_settings->command[Settings::CommandSettings]->get_button();
-	m_commands_button[1] = wm_settings->command[Settings::CommandLockScreen]->get_button();
-	m_commands_button[2] = wm_settings->command[Settings::CommandSwitchUser]->get_button();
-	m_commands_button[3] = wm_settings->command[Settings::CommandLogOut]->get_button();
-	m_commands_button[4] = wm_settings->command[Settings::CommandShutdown]->get_button();
-	m_commands_button[5] = wm_settings->command[Settings::CommandRestart]->get_button();
-	for (int i = 0; i < 6; ++i)
+	for (int i = 0; i < 9; ++i)
 	{
+		m_commands_button[i] = wm_settings->command[i]->get_button();
 		m_command_slots[i] = g_signal_connect_slot<GtkButton*>(m_commands_button[i], "clicked", &Window::hide, this);
 	}
 
@@ -197,7 +192,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	m_commands_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0));
 	m_commands_spacer = gtk_label_new(NULL);
 	gtk_box_pack_start(m_commands_box, m_commands_spacer, true, true, 0);
-	for (int i = 0; i < 6; ++i)
+	for (int i = 0; i < 9; ++i)
 	{
 		gtk_box_pack_start(m_commands_box, m_commands_button[i], false, false, 0);
 	}
@@ -269,7 +264,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 
 WhiskerMenu::Window::~Window()
 {
-	for (int i = 0; i < 6; ++i)
+	for (int i = 0; i < 9; ++i)
 	{
 		g_signal_handler_disconnect(m_commands_button[i], m_command_slots[i]);
 		gtk_container_remove(GTK_CONTAINER(m_commands_box), m_commands_button[i]);
@@ -300,7 +295,7 @@ void WhiskerMenu::Window::hide()
 	unset_pressed_category();
 
 	// Hide command buttons to remove active border
-	for (int i = 0; i < 6; ++i)
+	for (int i = 0; i < 9; ++i)
 	{
 		gtk_widget_set_visible(m_commands_button[i], false);
 	}
@@ -545,7 +540,7 @@ void WhiskerMenu::Window::show(const Position position)
 		{
 			gtk_widget_set_halign(GTK_WIDGET(m_username), GTK_ALIGN_START);
 
-			for (int i = 0; i < 6; ++i)
+			for (int i = 0; i < 9; ++i)
 			{
 				gtk_box_reorder_child(m_commands_box, m_commands_button[i], i);
 			}
@@ -559,9 +554,9 @@ void WhiskerMenu::Window::show(const Position position)
 		{
 			gtk_widget_set_halign(GTK_WIDGET(m_username), GTK_ALIGN_END);
 
-			for (int i = 0; i < 6; ++i)
+			for (int i = 0; i < 9; ++i)
 			{
-				gtk_box_reorder_child(m_commands_box, m_commands_button[i], 5 - i);
+				gtk_box_reorder_child(m_commands_box, m_commands_button[i], 8 - i);
 			}
 			gtk_box_reorder_child(m_commands_box, m_commands_spacer, 4);
 
@@ -573,7 +568,7 @@ void WhiskerMenu::Window::show(const Position position)
 		{
 			gtk_widget_set_halign(GTK_WIDGET(m_username), GTK_ALIGN_START);
 
-			for (int i = 0; i < 6; ++i)
+			for (int i = 0; i < 9; ++i)
 			{
 				gtk_box_reorder_child(m_commands_box, m_commands_button[i], i);
 			}
@@ -588,9 +583,9 @@ void WhiskerMenu::Window::show(const Position position)
 		{
 			gtk_widget_set_halign(GTK_WIDGET(m_username), GTK_ALIGN_END);
 
-			for (int i = 0; i < 6; ++i)
+			for (int i = 0; i < 9; ++i)
 			{
-				gtk_box_reorder_child(m_commands_box, m_commands_button[i], 5 - i);
+				gtk_box_reorder_child(m_commands_box, m_commands_button[i], 8 - i);
 			}
 			gtk_box_reorder_child(m_commands_box, m_commands_spacer, 4);
 
