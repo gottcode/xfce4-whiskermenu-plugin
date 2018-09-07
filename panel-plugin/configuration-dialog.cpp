@@ -57,6 +57,22 @@ static void whiskermenu_config_dialog_delete(ConfigurationDialog* dialog)
 
 //-----------------------------------------------------------------------------
 
+static GtkWidget* make_aligned_frame(const gchar* label, GtkWidget* content)
+{
+	GtkWidget* alignment;
+	GtkWidget* frame;
+
+	frame = xfce_gtk_frame_box_new(label, &alignment);
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+	gtk_alignment_set_padding(GTK_ALIGNMENT(alignment), 6, 0, 12, 0);
+G_GNUC_END_IGNORE_DEPRECATIONS
+	gtk_container_add(GTK_CONTAINER(alignment), GTK_WIDGET(content));
+
+	return frame;
+}
+
+//-----------------------------------------------------------------------------
+
 ConfigurationDialog::ConfigurationDialog(Plugin* plugin) :
 	m_plugin(plugin)
 {
@@ -519,8 +535,8 @@ void ConfigurationDialog::response(GtkDialog*, int response_id)
 GtkWidget* ConfigurationDialog::init_appearance_tab()
 {
 	// Create appearance page
-	GtkBox* page = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 0));
-	gtk_container_set_border_width(GTK_CONTAINER(page), 8);
+	GtkBox* page = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 18));
+	gtk_container_set_border_width(GTK_CONTAINER(page), 12);
 
 
 	// Create panel button section
@@ -528,9 +544,8 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	gtk_grid_set_column_spacing(panel_table, 12);
 	gtk_grid_set_row_spacing(panel_table, 6);
 
-	GtkWidget* panel_frame = xfce_gtk_frame_box_new_with_content(_("Panel Button"), GTK_WIDGET(panel_table));
-	gtk_box_pack_start(page, panel_frame, false, false, 6);
-	gtk_container_set_border_width(GTK_CONTAINER(panel_frame), 0);
+	GtkWidget* panel_frame = make_aligned_frame(_("Panel Button"), GTK_WIDGET(panel_table));
+	gtk_box_pack_start(page, panel_frame, false, false, 0);
 
 	// Add button style selector
 	GtkWidget* label = gtk_label_new_with_mnemonic(_("Di_splay:"));
@@ -586,9 +601,8 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	gtk_grid_set_column_spacing(menu_table, 12);
 	gtk_grid_set_row_spacing(menu_table, 6);
 
-	GtkWidget* appearance_frame = xfce_gtk_frame_box_new_with_content(_("Menu"), GTK_WIDGET(menu_table));
-	gtk_box_pack_start(page, appearance_frame, false, false, 6);
-	gtk_container_set_border_width(GTK_CONTAINER(appearance_frame), 0);
+	GtkWidget* appearance_frame = make_aligned_frame(_("Menu"), GTK_WIDGET(menu_table));
+	gtk_box_pack_start(page, appearance_frame, false, false, 0);
 
 	// Add option to use generic names
 	m_show_generic_names = gtk_check_button_new_with_mnemonic(_("Show generic application _names"));
@@ -611,7 +625,7 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 
 	// Add option to hide tooltips
 	m_show_tooltips = gtk_check_button_new_with_mnemonic(_("Show application too_ltips"));
-	gtk_grid_attach(menu_table, m_show_tooltips, 0, 3, 3, 1);
+	gtk_grid_attach(menu_table, m_show_tooltips, 0, 3, 2, 1);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_tooltips), wm_settings->launcher_show_tooltip);
 	g_signal_connect_slot(m_show_tooltips, "toggled", &ConfigurationDialog::toggle_show_tooltip, this);
 
@@ -677,15 +691,14 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 GtkWidget* ConfigurationDialog::init_behavior_tab()
 {
 	// Create behavior page
-	GtkBox* page = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 8));
-	gtk_container_set_border_width(GTK_CONTAINER(page), 8);
+	GtkBox* page = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 18));
+	gtk_container_set_border_width(GTK_CONTAINER(page), 12);
 
 
 	// Create menu section
 	GtkBox* behavior_vbox = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 6));
-	GtkWidget* behavior_frame = xfce_gtk_frame_box_new_with_content(_("Menu"), GTK_WIDGET(behavior_vbox));
-	gtk_box_pack_start(page, behavior_frame, false, false, 6);
-	gtk_container_set_border_width(GTK_CONTAINER(behavior_frame), 0);
+	GtkWidget* behavior_frame = make_aligned_frame(_("Menu"), GTK_WIDGET(behavior_vbox));
+	gtk_box_pack_start(page, behavior_frame, false, false, 0);
 
 	// Add option to switch categories by hovering
 	m_hover_switch_category = gtk_check_button_new_with_mnemonic(_("Switch categories by _hovering"));
@@ -723,9 +736,8 @@ GtkWidget* ConfigurationDialog::init_behavior_tab()
 	gtk_grid_set_column_spacing(recent_table, 12);
 	gtk_grid_set_row_spacing(recent_table, 6);
 
-	GtkWidget* recent_frame = xfce_gtk_frame_box_new_with_content(_("Recently Used"), GTK_WIDGET(recent_table));
-	gtk_box_pack_start(page, recent_frame, false, false, 6);
-	gtk_container_set_border_width(GTK_CONTAINER(recent_frame), 0);
+	GtkWidget* recent_frame = make_aligned_frame(_("Recently Used"), GTK_WIDGET(recent_table));
+	gtk_box_pack_start(page, recent_frame, false, false, 0);
 
 	// Add value to change maximum number of recently used entries
 	GtkWidget* label = gtk_label_new_with_mnemonic(_("Amount of _items:"));
@@ -759,8 +771,8 @@ GtkWidget* ConfigurationDialog::init_behavior_tab()
 GtkWidget* ConfigurationDialog::init_commands_tab()
 {
 	// Create commands page
-	GtkBox* page = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 8));
-	gtk_container_set_border_width(GTK_CONTAINER(page), 8);
+	GtkBox* page = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 6));
+	gtk_container_set_border_width(GTK_CONTAINER(page), 12);
 	GtkSizeGroup* label_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
 
 	// Add command entries
@@ -780,7 +792,7 @@ GtkWidget* ConfigurationDialog::init_search_actions_tab()
 {
 	// Create search actions page
 	GtkGrid* page = GTK_GRID(gtk_grid_new());
-	gtk_container_set_border_width(GTK_CONTAINER(page), 8);
+	gtk_container_set_border_width(GTK_CONTAINER(page), 12);
 	gtk_grid_set_column_spacing(page, 6);
 	gtk_grid_set_row_spacing(page, 6);
 
@@ -853,11 +865,10 @@ GtkWidget* ConfigurationDialog::init_search_actions_tab()
 
 	// Create details section
 	GtkGrid* details_table = GTK_GRID(gtk_grid_new());
-	gtk_grid_set_column_spacing(details_table, 6);
+	gtk_grid_set_column_spacing(details_table, 12);
 	gtk_grid_set_row_spacing(details_table, 6);
-	GtkWidget* details_frame = xfce_gtk_frame_box_new_with_content(_("Details"), GTK_WIDGET(details_table));
+	GtkWidget* details_frame = make_aligned_frame(_("Details"), GTK_WIDGET(details_table));
 	gtk_grid_attach(page, details_frame, 0, 1, 2, 1);
-	gtk_container_set_border_width(GTK_CONTAINER(details_frame), 0);
 
 	// Create entry for name
 	GtkWidget* label = gtk_label_new_with_mnemonic(_("Nam_e:"));
