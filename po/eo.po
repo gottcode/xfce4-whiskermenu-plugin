@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-08 05:15-0400\n"
+"POT-Creation-Date: 2018-09-08 11:45-0400\n"
 "PO-Revision-Date: 2018-05-09 13:11+0000\n"
 "Last-Translator: Kurt Ankh Phoenix <kurtphoenix@tuta.io>\n"
 "Language-Team: Esperanto (http://www.transifex.com/gottcode/xfce4-"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/configuration-dialog.cpp:837
+#: ../panel-plugin/configuration-dialog.cpp:862
 msgid "Add action"
 msgstr ""
 
@@ -39,23 +39,35 @@ msgstr ""
 msgid "All"
 msgstr "Ĉiom"
 
-#: ../panel-plugin/settings.cpp:120
+#: ../panel-plugin/settings.cpp:128
 msgid "All _Settings"
 msgstr "Ĉiom _Settings"
 
-#: ../panel-plugin/plugin.cpp:404
+#: ../panel-plugin/plugin.cpp:408
 msgid "Alternate application launcher for Xfce"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:738
+#: ../panel-plugin/configuration-dialog.cpp:751
 msgid "Amount of _items:"
 msgstr ""
 
-#: ../panel-plugin/plugin.cpp:208
+#: ../panel-plugin/plugin.cpp:212
 msgid "Applications"
 msgstr "Aplikaĵoj"
 
-#: ../panel-plugin/configuration-dialog.cpp:662
+#: ../panel-plugin/settings.cpp:143
+msgid "Are you sure you want to log out?"
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:149
+msgid "Are you sure you want to restart?"
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:155
+msgid "Are you sure you want to shut down?"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:678
 msgid "Background opacit_y:"
 msgstr ""
 
@@ -63,11 +75,11 @@ msgstr ""
 msgid "Browse the file system to choose a custom command."
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:895
+#: ../panel-plugin/configuration-dialog.cpp:919
 msgid "C_ommand:"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:647
+#: ../panel-plugin/configuration-dialog.cpp:663
 msgid "Categ_ory icon size:"
 msgstr ""
 
@@ -75,31 +87,39 @@ msgstr ""
 msgid "Clear Recently Used"
 msgstr ""
 
-#: ../panel-plugin/plugin.cpp:405
+#: ../panel-plugin/plugin.cpp:409
 msgid "Copyright © 2013-2018 Graeme Gott"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:865
+#: ../panel-plugin/configuration-dialog.cpp:890
 msgid "Details"
 msgstr "Detaloj"
 
-#: ../panel-plugin/configuration-dialog.cpp:542
+#: ../panel-plugin/configuration-dialog.cpp:559
 msgid "Di_splay:"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:755
+#: ../panel-plugin/configuration-dialog.cpp:768
 msgid "Display by _default"
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:161
+msgid "Do you want to suspend to RAM?"
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:167
+msgid "Do you want to suspend to disk?"
 msgstr ""
 
 #: ../panel-plugin/page.cpp:269
 msgid "Edit Application..."
 msgstr "Redakti Aplikaĵo..."
 
-#: ../panel-plugin/settings.cpp:125
+#: ../panel-plugin/settings.cpp:178
 msgid "Edit _Profile"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:125
+#: ../panel-plugin/settings.cpp:180
 msgid "Failed to edit profile."
 msgstr ""
 
@@ -109,43 +129,64 @@ msgstr ""
 msgid "Failed to execute command \"%s\"."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:124
+#: ../panel-plugin/settings.cpp:166
+msgid "Failed to hibernate."
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:176
 msgid "Failed to launch menu editor."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:121
+#: ../panel-plugin/settings.cpp:134
 msgid "Failed to lock screen."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:123
+#: ../panel-plugin/settings.cpp:142 ../panel-plugin/settings.cpp:172
 msgid "Failed to log out."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:120
+#: ../panel-plugin/settings.cpp:130
 msgid "Failed to open settings manager."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:122
+#: ../panel-plugin/settings.cpp:148
+msgid "Failed to restart."
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:154
+msgid "Failed to shut down."
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:160
+msgid "Failed to suspend."
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:138
 msgid "Failed to switch users."
 msgstr ""
 
-#: ../panel-plugin/window.cpp:161
+#: ../panel-plugin/window.cpp:158
 msgid "Favorites"
 msgstr "Favoratoj"
 
-#: ../panel-plugin/configuration-dialog.cpp:547
+#: ../panel-plugin/settings.cpp:168
+#, c-format
+msgid "Hibernating computer in %d seconds."
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:564
 msgid "Icon"
 msgstr "Bildsimbolo"
 
-#: ../panel-plugin/configuration-dialog.cpp:549
+#: ../panel-plugin/configuration-dialog.cpp:566
 msgid "Icon and title"
 msgstr "Bildsimbolo kaj titolo"
 
-#: ../panel-plugin/configuration-dialog.cpp:749
+#: ../panel-plugin/configuration-dialog.cpp:762
 msgid "Include _favorites"
 msgstr "Inkluzivi _favoratoj"
 
-#: ../panel-plugin/configuration-dialog.cpp:631
+#: ../panel-plugin/configuration-dialog.cpp:647
 msgid "Ite_m icon size:"
 msgstr ""
 
@@ -157,24 +198,33 @@ msgstr "Granda"
 msgid "Larger"
 msgstr "Pli Granda"
 
-#: ../panel-plugin/settings.cpp:123
+#: ../panel-plugin/settings.cpp:170
+msgid "Log Ou_t..."
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:140
 msgid "Log _Out"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:127
+#: ../panel-plugin/settings.cpp:144
+#, c-format
+msgid "Logging out in %d seconds."
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:182
 msgid "Man Pages"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:595
-#: ../panel-plugin/configuration-dialog.cpp:692
+#: ../panel-plugin/configuration-dialog.cpp:612
+#: ../panel-plugin/configuration-dialog.cpp:708
 msgid "Menu"
 msgstr "Menuo"
 
-#: ../panel-plugin/configuration-dialog.cpp:870
+#: ../panel-plugin/configuration-dialog.cpp:894
 msgid "Nam_e:"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:815
+#: ../panel-plugin/configuration-dialog.cpp:840
 msgid "Name"
 msgstr "Nomo"
 
@@ -186,31 +236,31 @@ msgstr "Neniom"
 msgid "Normal"
 msgstr "Normala"
 
-#: ../panel-plugin/settings.cpp:131
+#: ../panel-plugin/settings.cpp:186
 msgid "Open URI"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:537
+#: ../panel-plugin/configuration-dialog.cpp:555
 msgid "Panel Button"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:820
+#: ../panel-plugin/configuration-dialog.cpp:845
 msgid "Pattern"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:703
+#: ../panel-plugin/configuration-dialog.cpp:718
 msgid "Position _search entry next to panel button"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:716
+#: ../panel-plugin/configuration-dialog.cpp:730
 msgid "Position cate_gories next to panel button"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:709
+#: ../panel-plugin/configuration-dialog.cpp:724
 msgid "Position commands next to search _entry"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:733 ../panel-plugin/window.cpp:167
+#: ../panel-plugin/configuration-dialog.cpp:747 ../panel-plugin/window.cpp:164
 msgid "Recently Used"
 msgstr ""
 
@@ -218,13 +268,18 @@ msgstr ""
 msgid "Remove From Favorites"
 msgstr "Forigi El Favoratoj"
 
-#: ../panel-plugin/configuration-dialog.cpp:441
+#: ../panel-plugin/configuration-dialog.cpp:459
 #, c-format
 msgid "Remove action \"%s\"?"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:846
+#: ../panel-plugin/configuration-dialog.cpp:871
 msgid "Remove selected action"
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:150
+#, c-format
+msgid "Restarting computer in %d seconds."
 msgstr ""
 
 #: ../panel-plugin/run-action.cpp:71
@@ -232,11 +287,11 @@ msgstr ""
 msgid "Run %s"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:130
+#: ../panel-plugin/settings.cpp:185
 msgid "Run in Terminal"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:86
+#: ../panel-plugin/configuration-dialog.cpp:102
 msgid "Search Actio_ns"
 msgstr ""
 
@@ -244,7 +299,7 @@ msgstr ""
 msgid "Search Action"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:119
+#: ../panel-plugin/configuration-dialog.cpp:135
 msgid "Select An Icon"
 msgstr ""
 
@@ -252,28 +307,40 @@ msgstr ""
 msgid "Select Command"
 msgstr ""
 
+#: ../panel-plugin/configuration-dialog.cpp:777
+msgid "Session Commands"
+msgstr ""
+
 #: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:613
+#: ../panel-plugin/configuration-dialog.cpp:629
 msgid "Show application _descriptions"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:619
+#: ../panel-plugin/configuration-dialog.cpp:635
 msgid "Show application too_ltips"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:606
+#: ../panel-plugin/configuration-dialog.cpp:781
+msgid "Show c_onfirmation dialog"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:622
 msgid "Show cate_gory names"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:600
+#: ../panel-plugin/configuration-dialog.cpp:616
 msgid "Show generic application _names"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:625
+#: ../panel-plugin/configuration-dialog.cpp:641
 msgid "Show menu hie_rarchy"
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:152
+msgid "Shut _Down"
 msgstr ""
 
 #: ../panel-plugin/icon-size.cpp:52
@@ -292,25 +359,39 @@ msgstr ""
 msgid "Sort Alphabetically Z-A"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:722
+#: ../panel-plugin/configuration-dialog.cpp:736
 msgid "Stay _visible when focus is lost"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:122
+#: ../panel-plugin/settings.cpp:158
+msgid "Suspe_nd"
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:162
+#, c-format
+msgid "Suspending computer in %d seconds."
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:136
 msgid "Switch _Users"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:697
+#: ../panel-plugin/configuration-dialog.cpp:712
 msgid "Switch categories by _hovering"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:440
+#: ../panel-plugin/configuration-dialog.cpp:458
 msgid "The action will be deleted permanently."
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:548
+#: ../panel-plugin/configuration-dialog.cpp:565
 msgid "Title"
 msgstr "Titolo"
+
+#: ../panel-plugin/settings.cpp:156
+#, c-format
+msgid "Turning off computer in %d seconds."
+msgstr ""
 
 #: ../panel-plugin/page.cpp:334
 msgid "Unable to add launcher to desktop."
@@ -324,12 +405,12 @@ msgstr ""
 msgid "Unable to edit launcher."
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:501
+#: ../panel-plugin/configuration-dialog.cpp:519
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:582
+#: ../panel-plugin/configuration-dialog.cpp:599
 msgid "Use a single _panel row"
 msgstr ""
 
@@ -341,77 +422,85 @@ msgstr "Tre Granda"
 msgid "Very Small"
 msgstr "Tre Malgranda"
 
-#: ../panel-plugin/settings.cpp:128
+#: ../panel-plugin/settings.cpp:183
 msgid "Web Search"
 msgstr "Reta Serĉo"
 
-#: ../panel-plugin/configuration-dialog.cpp:70
+#: ../panel-plugin/configuration-dialog.cpp:86
 #: ../panel-plugin/whiskermenu.desktop.in:5
 msgid "Whisker Menu"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:129
+#: ../panel-plugin/settings.cpp:184
 msgid "Wikipedia"
 msgstr "Vikipedio"
 
-#: ../panel-plugin/configuration-dialog.cpp:83
+#: ../panel-plugin/configuration-dialog.cpp:99
 msgid "_Appearance"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:84
+#: ../panel-plugin/configuration-dialog.cpp:100
 msgid "_Behavior"
 msgstr ""
 
 #: ../panel-plugin/command-edit.cpp:67
-#: ../panel-plugin/configuration-dialog.cpp:121
+#: ../panel-plugin/configuration-dialog.cpp:137
 msgid "_Cancel"
 msgstr "_Nuligi"
 
-#: ../panel-plugin/configuration-dialog.cpp:74
+#: ../panel-plugin/configuration-dialog.cpp:90
 msgid "_Close"
 msgstr "_Fermi"
 
-#: ../panel-plugin/configuration-dialog.cpp:85
+#: ../panel-plugin/configuration-dialog.cpp:101
 msgid "_Commands"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:439
+#: ../panel-plugin/configuration-dialog.cpp:457
 msgid "_Delete"
 msgstr "_Forigi"
 
-#: ../panel-plugin/settings.cpp:124
+#: ../panel-plugin/settings.cpp:174
 msgid "_Edit Applications"
 msgstr "_Redakti Aplikaĵoj"
 
-#: ../panel-plugin/configuration-dialog.cpp:73
+#: ../panel-plugin/configuration-dialog.cpp:89
 msgid "_Help"
 msgstr "_Helpi"
 
-#: ../panel-plugin/configuration-dialog.cpp:568
+#: ../panel-plugin/settings.cpp:164
+msgid "_Hibernate"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:585
 msgid "_Icon:"
 msgstr "_Bildsimbolo:"
 
-#: ../panel-plugin/settings.cpp:121
+#: ../panel-plugin/settings.cpp:132
 msgid "_Lock Screen"
 msgstr ""
 
 #: ../panel-plugin/command-edit.cpp:68
-#: ../panel-plugin/configuration-dialog.cpp:122
+#: ../panel-plugin/configuration-dialog.cpp:138
 msgid "_OK"
 msgstr "_Bone"
 
-#: ../panel-plugin/configuration-dialog.cpp:883
+#: ../panel-plugin/configuration-dialog.cpp:907
 msgid "_Pattern:"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:907
+#: ../panel-plugin/configuration-dialog.cpp:931
 msgid "_Regular expression"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:557
+#: ../panel-plugin/settings.cpp:146
+msgid "_Restart"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:574
 msgid "_Title:"
 msgstr "_Titolo:"
 
-#: ../panel-plugin/plugin.cpp:409
+#: ../panel-plugin/plugin.cpp:413
 msgid "translator-credits"
 msgstr ""
