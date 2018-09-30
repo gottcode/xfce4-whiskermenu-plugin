@@ -1,3 +1,15 @@
+2.3.0
+=====
+- Fix sidebar wider than iconless categories.
+- Add buttons for individual logout commands. (bug #14639)
+- Add option to stay visible when focus is lost. (bug #12240)
+- Always allow positioning commands next to search.
+- Improve preferences spacing. (bug #14683)
+- Translation updates: Bulgarian, Catalan, Chinese (China),
+  Chinese (Taiwan), Czech, Danish, Dutch, French, German, Greek,
+  Lithuanian, Nepali, Polish, Portuguese, Portuguese (Brazil),
+  Russian, Serbian, Slovak, Slovenian, Turkish, Welsh.
+
 2.2.1
 =====
 - Fix category button staying active when dragged. (bug #14419)
