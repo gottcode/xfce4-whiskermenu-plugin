@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-08 11:45-0400\n"
-"PO-Revision-Date: 2018-09-23 10:11+0000\n"
+"PO-Revision-Date: 2018-10-11 16:03+0000\n"
 "Last-Translator: Ioannis LM\n"
 "Language-Team: Greek (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/el/)\n"
@@ -26,7 +26,7 @@ msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:862
 msgid "Add action"
-msgstr "Προσθήκη δράσης"
+msgstr "Προσθήκη ενέργειας"
 
 #: ../panel-plugin/page.cpp:258
 msgid "Add to Desktop"
@@ -94,7 +94,7 @@ msgstr "Εκκαθάριση Πρόσφατα χρησιμοποιημένων"
 
 #: ../panel-plugin/plugin.cpp:409
 msgid "Copyright © 2013-2018 Graeme Gott"
-msgstr ""
+msgstr "Πνευματικά δικαιώματα © 2013-2018 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:890
 msgid "Details"
@@ -132,7 +132,7 @@ msgstr "Η επεξεργασία του προφίλ απέτυχε."
 #: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
-msgstr "Αποτυχία εκτέλεσης της εντολής «%s»."
+msgstr "Αποτυχία εκτέλεσης της εντολής \"%s\"."
 
 #: ../panel-plugin/settings.cpp:166
 msgid "Failed to hibernate."
@@ -276,11 +276,11 @@ msgstr "Αφαίρεση από τα αγαπημένα"
 #: ../panel-plugin/configuration-dialog.cpp:459
 #, c-format
 msgid "Remove action \"%s\"?"
-msgstr "Αφαίρεση της δράσης \"%s\";"
+msgstr "Αφαίρεση της ενέργειας \"%s\";"
 
 #: ../panel-plugin/configuration-dialog.cpp:871
 msgid "Remove selected action"
-msgstr "Αφαίρεση της επιλεγμένης δράσης"
+msgstr "Αφαίρεση της επιλεγμένης ενέργειας"
 
 #: ../panel-plugin/settings.cpp:150
 #, c-format
@@ -298,11 +298,11 @@ msgstr "Εκτέλεση σε τερματικό"
 
 #: ../panel-plugin/configuration-dialog.cpp:102
 msgid "Search Actio_ns"
-msgstr "Αναζήτηση _δράσεων"
+msgstr "Ενέργειες ανα_ζήτησης"
 
 #: ../panel-plugin/search-action.cpp:259
 msgid "Search Action"
-msgstr "Αναζήτηση δράσης"
+msgstr "Αναζήτηση ενέργειας"
 
 #: ../panel-plugin/configuration-dialog.cpp:135
 msgid "Select An Icon"
@@ -314,11 +314,11 @@ msgstr "Επιλογή εντολής"
 
 #: ../panel-plugin/configuration-dialog.cpp:777
 msgid "Session Commands"
-msgstr ""
+msgstr "Εντολές συνεδρίας"
 
 #: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
-msgstr "Εμφανίζει ένα μενού για εύκολη πρόσβαση στις εγκατεστημένες εφαρμογές"
+msgstr "Εμφάνιση μενού για εύκολη πρόσβαση στις εγκατεστημένες εφαρμογές"
 
 #: ../panel-plugin/configuration-dialog.cpp:629
 msgid "Show application _descriptions"
@@ -387,7 +387,7 @@ msgstr "Αλλαγή κατηγοριών στο _πέρασμα του ποντ
 
 #: ../panel-plugin/configuration-dialog.cpp:458
 msgid "The action will be deleted permanently."
-msgstr "Η δράση αυτή θα διαγραφεί μόνιμα"
+msgstr "Αυτή η ενέργεια θα διαγραφεί μόνιμα"
 
 #: ../panel-plugin/configuration-dialog.cpp:565
 msgid "Title"
