@@ -7,13 +7,14 @@
 # Kyrill Detinov <lazy.kent@opensuse.org>, 2013,2016
 # Sergey Alyoshin <alyoshin.s@gmail.com>, 2013-2015,2017-2018
 # Sergey Shlyapugin <shlyapugin@gmail.com>, 2013
+# Владимир Пенчиков <vladi105@yandex.ru>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-08 11:45-0400\n"
-"PO-Revision-Date: 2018-07-22 07:04+0000\n"
-"Last-Translator: Sergey Alyoshin <alyoshin.s@gmail.com>\n"
+"PO-Revision-Date: 2018-10-13 05:08+0000\n"
+"Last-Translator: Владимир Пенчиков <vladi105@yandex.ru>\n"
 "Language-Team: Russian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ru/)\n"
 "Language: ru\n"
@@ -54,7 +55,7 @@ msgstr "Альтернативное меню запуска приложени�
 
 #: ../panel-plugin/configuration-dialog.cpp:751
 msgid "Amount of _items:"
-msgstr "Количество элементов:"
+msgstr "_Количество элементов:"
 
 #: ../panel-plugin/plugin.cpp:212
 msgid "Applications"
@@ -62,19 +63,19 @@ msgstr "Приложения"
 
 #: ../panel-plugin/settings.cpp:143
 msgid "Are you sure you want to log out?"
-msgstr ""
+msgstr "Действительно выйти?"
 
 #: ../panel-plugin/settings.cpp:149
 msgid "Are you sure you want to restart?"
-msgstr ""
+msgstr "Действительно перезагрузить?"
 
 #: ../panel-plugin/settings.cpp:155
 msgid "Are you sure you want to shut down?"
-msgstr ""
+msgstr "Действительно выключить?"
 
 #: ../panel-plugin/configuration-dialog.cpp:678
 msgid "Background opacit_y:"
-msgstr "Прозрачность фона:"
+msgstr "Прозрачность _фона:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
@@ -106,15 +107,15 @@ msgstr "Показы_вать:"
 
 #: ../panel-plugin/configuration-dialog.cpp:768
 msgid "Display by _default"
-msgstr "Показывать по умолчанию"
+msgstr "Показывать по у_молчанию"
 
 #: ../panel-plugin/settings.cpp:161
 msgid "Do you want to suspend to RAM?"
-msgstr ""
+msgstr "Сохранить сессию в RAM?"
 
 #: ../panel-plugin/settings.cpp:167
 msgid "Do you want to suspend to disk?"
-msgstr ""
+msgstr "Сохранить сессию на диск?"
 
 #: ../panel-plugin/page.cpp:269
 msgid "Edit Application..."
@@ -122,7 +123,7 @@ msgstr "Изменить приложение..."
 
 #: ../panel-plugin/settings.cpp:178
 msgid "Edit _Profile"
-msgstr "Изменить профиль"
+msgstr "Изменить _профиль"
 
 #: ../panel-plugin/settings.cpp:180
 msgid "Failed to edit profile."
@@ -136,7 +137,7 @@ msgstr "Ошибка выполнения команды «%s»."
 
 #: ../panel-plugin/settings.cpp:166
 msgid "Failed to hibernate."
-msgstr ""
+msgstr "Ошибка включения режима гибернации"
 
 #: ../panel-plugin/settings.cpp:176
 msgid "Failed to launch menu editor."
@@ -156,15 +157,15 @@ msgstr "Не удалось открыть диспетчер настроек."
 
 #: ../panel-plugin/settings.cpp:148
 msgid "Failed to restart."
-msgstr ""
+msgstr "Ошибка при перезагрузке."
 
 #: ../panel-plugin/settings.cpp:154
 msgid "Failed to shut down."
-msgstr ""
+msgstr "Ошибка при выключении."
 
 #: ../panel-plugin/settings.cpp:160
 msgid "Failed to suspend."
-msgstr ""
+msgstr "Ошибка включения режима сна"
 
 #: ../panel-plugin/settings.cpp:138
 msgid "Failed to switch users."
@@ -177,7 +178,7 @@ msgstr "Избранное"
 #: ../panel-plugin/settings.cpp:168
 #, c-format
 msgid "Hibernating computer in %d seconds."
-msgstr ""
+msgstr "Включение режима гибернации через %d секунд."
 
 #: ../panel-plugin/configuration-dialog.cpp:564
 msgid "Icon"
@@ -205,7 +206,7 @@ msgstr "Большой"
 
 #: ../panel-plugin/settings.cpp:170
 msgid "Log Ou_t..."
-msgstr ""
+msgstr "_Выйти"
 
 #: ../panel-plugin/settings.cpp:140
 msgid "Log _Out"
@@ -214,7 +215,7 @@ msgstr "_Выйти"
 #: ../panel-plugin/settings.cpp:144
 #, c-format
 msgid "Logging out in %d seconds."
-msgstr ""
+msgstr "Выход через %d с"
 
 #: ../panel-plugin/settings.cpp:182
 msgid "Man Pages"
@@ -285,7 +286,7 @@ msgstr "Удалить выбранное действие"
 #: ../panel-plugin/settings.cpp:150
 #, c-format
 msgid "Restarting computer in %d seconds."
-msgstr ""
+msgstr "Перезагрузка компьютера через %d с"
 
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
@@ -314,7 +315,7 @@ msgstr "Выбор команды"
 
 #: ../panel-plugin/configuration-dialog.cpp:777
 msgid "Session Commands"
-msgstr ""
+msgstr "Команды выхода"
 
 #: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
@@ -330,7 +331,7 @@ msgstr "Показывать всплывающие ко_мментарии к �
 
 #: ../panel-plugin/configuration-dialog.cpp:781
 msgid "Show c_onfirmation dialog"
-msgstr ""
+msgstr "Показывать диалог _подтверждения"
 
 #: ../panel-plugin/configuration-dialog.cpp:622
 msgid "Show cate_gory names"
@@ -346,7 +347,7 @@ msgstr "Показывать иерархию _меню"
 
 #: ../panel-plugin/settings.cpp:152
 msgid "Shut _Down"
-msgstr ""
+msgstr "Вы_ключить"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -370,12 +371,12 @@ msgstr "Оставлять _видимым при потери фокуса"
 
 #: ../panel-plugin/settings.cpp:158
 msgid "Suspe_nd"
-msgstr ""
+msgstr "Сон"
 
 #: ../panel-plugin/settings.cpp:162
 #, c-format
 msgid "Suspending computer in %d seconds."
-msgstr ""
+msgstr "Переход в режим сна через %d секунд."
 
 #: ../panel-plugin/settings.cpp:136
 msgid "Switch _Users"
@@ -396,7 +397,7 @@ msgstr "Заголовок"
 #: ../panel-plugin/settings.cpp:156
 #, c-format
 msgid "Turning off computer in %d seconds."
-msgstr ""
+msgstr "Выключение компьютера через %d с"
 
 #: ../panel-plugin/page.cpp:334
 msgid "Unable to add launcher to desktop."
@@ -429,7 +430,7 @@ msgstr "Крошечный"
 
 #: ../panel-plugin/settings.cpp:183
 msgid "Web Search"
-msgstr "Web-поиск"
+msgstr "Поиск в Веб"
 
 #: ../panel-plugin/configuration-dialog.cpp:86
 #: ../panel-plugin/whiskermenu.desktop.in:5
@@ -459,7 +460,7 @@ msgstr "_Закрыть"
 
 #: ../panel-plugin/configuration-dialog.cpp:101
 msgid "_Commands"
-msgstr "Команды"
+msgstr "_Команды"
 
 #: ../panel-plugin/configuration-dialog.cpp:457
 msgid "_Delete"
@@ -475,7 +476,7 @@ msgstr "_Справка"
 
 #: ../panel-plugin/settings.cpp:164
 msgid "_Hibernate"
-msgstr ""
+msgstr "_Гибернация"
 
 #: ../panel-plugin/configuration-dialog.cpp:585
 msgid "_Icon:"
@@ -500,7 +501,7 @@ msgstr "_Регулярное выражение"
 
 #: ../panel-plugin/settings.cpp:146
 msgid "_Restart"
-msgstr ""
+msgstr "_Перезагрузить"
 
 #: ../panel-plugin/configuration-dialog.cpp:574
 msgid "_Title:"
@@ -512,4 +513,5 @@ msgstr ""
 "Артём Демаков <dearalcher@gmail.com>, 2013\n"
 "Кирилл Детинов <lazy.kent@opensuse.org>, 2013—2016\n"
 "Сергей Алёшин <alyoshin.s@gmail.com>, 2013, 2014\n"
-"Сергей Шляпугин <shlyapugin@gmail.com>, 2013"
+"Сергей Шляпугин <shlyapugin@gmail.com>, 2013\n"
+"Владимир Пенчиков<vladi105@yandex.ru>,2018"
