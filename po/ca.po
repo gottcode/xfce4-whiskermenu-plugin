@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-08 11:45-0400\n"
-"PO-Revision-Date: 2018-09-18 18:29+0000\n"
+"PO-Revision-Date: 2018-10-10 16:49+0000\n"
 "Last-Translator: Davidmp <medipas@gmail.com>\n"
 "Language-Team: Catalan (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ca/)\n"
@@ -64,15 +64,15 @@ msgstr "Aplicacions"
 
 #: ../panel-plugin/settings.cpp:143
 msgid "Are you sure you want to log out?"
-msgstr "Esteu segur que voleu tancar la sessió?"
+msgstr "Segur que voleu tancar la sessió?"
 
 #: ../panel-plugin/settings.cpp:149
 msgid "Are you sure you want to restart?"
-msgstr "Esteu segur que voleu reiniciar?"
+msgstr "Segur que voleu reiniciar?"
 
 #: ../panel-plugin/settings.cpp:155
 msgid "Are you sure you want to shut down?"
-msgstr "Esteu segur que voleu apagar?"
+msgstr "Segur que voleu apagar?"
 
 #: ../panel-plugin/configuration-dialog.cpp:678
 msgid "Background opacit_y:"
