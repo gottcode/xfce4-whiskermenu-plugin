@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-08 11:45-0400\n"
-"PO-Revision-Date: 2018-05-28 10:33+0000\n"
+"PO-Revision-Date: 2018-10-28 05:24+0000\n"
 "Last-Translator: Masato HASHIMOTO <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ja/)\n"
@@ -57,15 +57,15 @@ msgstr "アプリケーション"
 
 #: ../panel-plugin/settings.cpp:143
 msgid "Are you sure you want to log out?"
-msgstr ""
+msgstr "ログアウトしてもよろしいですか?"
 
 #: ../panel-plugin/settings.cpp:149
 msgid "Are you sure you want to restart?"
-msgstr ""
+msgstr "再起動してもよろしいですか?"
 
 #: ../panel-plugin/settings.cpp:155
 msgid "Are you sure you want to shut down?"
-msgstr ""
+msgstr "シャットダウンしてもよろしいですか?"
 
 #: ../panel-plugin/configuration-dialog.cpp:678
 msgid "Background opacit_y:"
@@ -105,11 +105,11 @@ msgstr "デフォルトで表示する(_D)"
 
 #: ../panel-plugin/settings.cpp:161
 msgid "Do you want to suspend to RAM?"
-msgstr ""
+msgstr "サスペンドしますか?"
 
 #: ../panel-plugin/settings.cpp:167
 msgid "Do you want to suspend to disk?"
-msgstr ""
+msgstr "ハイバネートしますか?"
 
 #: ../panel-plugin/page.cpp:269
 msgid "Edit Application..."
@@ -131,7 +131,7 @@ msgstr "コマンド \"%s\" の実行に失敗しました。"
 
 #: ../panel-plugin/settings.cpp:166
 msgid "Failed to hibernate."
-msgstr ""
+msgstr "ハイバネートに失敗しました。"
 
 #: ../panel-plugin/settings.cpp:176
 msgid "Failed to launch menu editor."
@@ -151,15 +151,15 @@ msgstr "設定マネージャーを開くことに失敗しました。"
 
 #: ../panel-plugin/settings.cpp:148
 msgid "Failed to restart."
-msgstr ""
+msgstr "再起動に失敗しました。"
 
 #: ../panel-plugin/settings.cpp:154
 msgid "Failed to shut down."
-msgstr ""
+msgstr "シャットダウンに失敗しました。"
 
 #: ../panel-plugin/settings.cpp:160
 msgid "Failed to suspend."
-msgstr ""
+msgstr "サスペンドに失敗しました。"
 
 #: ../panel-plugin/settings.cpp:138
 msgid "Failed to switch users."
@@ -172,7 +172,7 @@ msgstr "お気に入り"
 #: ../panel-plugin/settings.cpp:168
 #, c-format
 msgid "Hibernating computer in %d seconds."
-msgstr ""
+msgstr "%d 秒後にハイバネートします。"
 
 #: ../panel-plugin/configuration-dialog.cpp:564
 msgid "Icon"
@@ -200,7 +200,7 @@ msgstr "大きい"
 
 #: ../panel-plugin/settings.cpp:170
 msgid "Log Ou_t..."
-msgstr ""
+msgstr "ログアウト(_T)..."
 
 #: ../panel-plugin/settings.cpp:140
 msgid "Log _Out"
@@ -209,7 +209,7 @@ msgstr "ログアウト(_O)"
 #: ../panel-plugin/settings.cpp:144
 #, c-format
 msgid "Logging out in %d seconds."
-msgstr ""
+msgstr "%d 秒後にログアウトします。"
 
 #: ../panel-plugin/settings.cpp:182
 msgid "Man Pages"
@@ -280,7 +280,7 @@ msgstr "選択したアクションの削除"
 #: ../panel-plugin/settings.cpp:150
 #, c-format
 msgid "Restarting computer in %d seconds."
-msgstr ""
+msgstr "%d 秒後に再起動します。"
 
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
@@ -309,7 +309,7 @@ msgstr "コマンドの選択"
 
 #: ../panel-plugin/configuration-dialog.cpp:777
 msgid "Session Commands"
-msgstr ""
+msgstr "セッションコマンド"
 
 #: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
@@ -327,7 +327,7 @@ msgstr "アプリケーションにツールチップを表示する(_L)"
 
 #: ../panel-plugin/configuration-dialog.cpp:781
 msgid "Show c_onfirmation dialog"
-msgstr ""
+msgstr "確認ダイアログを表示する(_O)"
 
 #: ../panel-plugin/configuration-dialog.cpp:622
 msgid "Show cate_gory names"
@@ -343,7 +343,7 @@ msgstr "メニュー階層を表示する(_R)"
 
 #: ../panel-plugin/settings.cpp:152
 msgid "Shut _Down"
-msgstr ""
+msgstr "シャットダウン(_D)"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -363,16 +363,16 @@ msgstr "アルファベットの逆順 (Z-A) で並び替え"
 
 #: ../panel-plugin/configuration-dialog.cpp:736
 msgid "Stay _visible when focus is lost"
-msgstr ""
+msgstr "フォーカスが外れたときも表示したままにする(_V)"
 
 #: ../panel-plugin/settings.cpp:158
 msgid "Suspe_nd"
-msgstr ""
+msgstr "サスペンド(_N)"
 
 #: ../panel-plugin/settings.cpp:162
 #, c-format
 msgid "Suspending computer in %d seconds."
-msgstr ""
+msgstr "%d 秒後にサスペンドします。"
 
 #: ../panel-plugin/settings.cpp:136
 msgid "Switch _Users"
@@ -393,7 +393,7 @@ msgstr "タイトル"
 #: ../panel-plugin/settings.cpp:156
 #, c-format
 msgid "Turning off computer in %d seconds."
-msgstr ""
+msgstr "%d 秒後にコンピューターを停止します。"
 
 #: ../panel-plugin/page.cpp:334
 msgid "Unable to add launcher to desktop."
@@ -472,7 +472,7 @@ msgstr "ヘルプ(_H)"
 
 #: ../panel-plugin/settings.cpp:164
 msgid "_Hibernate"
-msgstr ""
+msgstr "ハイバネート(_H)"
 
 #: ../panel-plugin/configuration-dialog.cpp:585
 msgid "_Icon:"
@@ -497,7 +497,7 @@ msgstr "正規表現(_R)"
 
 #: ../panel-plugin/settings.cpp:146
 msgid "_Restart"
-msgstr ""
+msgstr "再起動(_R)"
 
 #: ../panel-plugin/configuration-dialog.cpp:574
 msgid "_Title:"
@@ -505,4 +505,4 @@ msgstr "タイトル(_T):"
 
 #: ../panel-plugin/plugin.cpp:413
 msgid "translator-credits"
-msgstr "Masato HASHIMOTO <cabezon.hashimoto@gmail.com>, 2013-2017."
+msgstr "Masato HASHIMOTO <cabezon.hashimoto@gmail.com>, 2013-2018."
