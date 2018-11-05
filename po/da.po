@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-08 11:45-0400\n"
-"PO-Revision-Date: 2018-09-28 15:19+0000\n"
+"PO-Revision-Date: 2018-11-04 20:30+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/da/)\n"
@@ -67,7 +67,7 @@ msgstr "Er du sikker på, at du vil genstarte?"
 
 #: ../panel-plugin/settings.cpp:155
 msgid "Are you sure you want to shut down?"
-msgstr "Er du sikker på, lukke ned?"
+msgstr "Er du sikker på, at du vil lukke ned?"
 
 #: ../panel-plugin/configuration-dialog.cpp:678
 msgid "Background opacit_y:"
@@ -327,7 +327,7 @@ msgstr "Vis program_værktøjstips"
 
 #: ../panel-plugin/configuration-dialog.cpp:781
 msgid "Show c_onfirmation dialog"
-msgstr "Vis _konfigurationsdialog"
+msgstr "Vis _bekræftelsesdialog"
 
 #: ../panel-plugin/configuration-dialog.cpp:622
 msgid "Show cate_gory names"
