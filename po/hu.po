@@ -1,9 +1,9 @@
 # Hungarian translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2017 Graeme Gott
+# Copyright (C) 2018 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Gábor Horváth <xazax.hun@gmail.com>, 2013,2016
+# Gábor Horváth <xazax.hun@gmail.com>, 2013,2016,2018
 # gyeben <gyonkibendeguz@gmail.com>, 2013
 # Kisbenedek Márton <kmarton815@gmail.com>, 2016
 # user14 <nleknh@gmail.com>, 2016
@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-08 11:45-0400\n"
-"PO-Revision-Date: 2017-09-23 19:05+0000\n"
-"Last-Translator: Rezső Páder <rezso@rezso.net>\n"
+"PO-Revision-Date: 2018-11-11 18:12+0000\n"
+"Last-Translator: Gábor Horváth <xazax.hun@gmail.com>\n"
 "Language-Team: Hungarian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/hu/)\n"
 "Language: hu\n"
@@ -61,15 +61,15 @@ msgstr "Alkalmazások"
 
 #: ../panel-plugin/settings.cpp:143
 msgid "Are you sure you want to log out?"
-msgstr ""
+msgstr "Biztos ki akar jelentkezni?"
 
 #: ../panel-plugin/settings.cpp:149
 msgid "Are you sure you want to restart?"
-msgstr ""
+msgstr "Biztos újra akarja indítani a gépét?"
 
 #: ../panel-plugin/settings.cpp:155
 msgid "Are you sure you want to shut down?"
-msgstr ""
+msgstr "Biztos ki akarja kapcsolni a gépét?"
 
 #: ../panel-plugin/configuration-dialog.cpp:678
 msgid "Background opacit_y:"
@@ -93,7 +93,7 @@ msgstr "Előzmények törlése"
 
 #: ../panel-plugin/plugin.cpp:409
 msgid "Copyright © 2013-2018 Graeme Gott"
-msgstr "Copyright © 2013-2018 Graeme Gott"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:890
 msgid "Details"
@@ -135,7 +135,7 @@ msgstr "Nem sikerült végrehajtani a \"%s\" parancsot."
 
 #: ../panel-plugin/settings.cpp:166
 msgid "Failed to hibernate."
-msgstr ""
+msgstr "Sikertelen hibernálás."
 
 #: ../panel-plugin/settings.cpp:176
 msgid "Failed to launch menu editor."
@@ -155,11 +155,11 @@ msgstr "A beállítások megnyitása sikertelen."
 
 #: ../panel-plugin/settings.cpp:148
 msgid "Failed to restart."
-msgstr ""
+msgstr "Sikertelen újraindítás."
 
 #: ../panel-plugin/settings.cpp:154
 msgid "Failed to shut down."
-msgstr ""
+msgstr "Sikertelen leállítás."
 
 #: ../panel-plugin/settings.cpp:160
 msgid "Failed to suspend."
@@ -187,9 +187,8 @@ msgid "Icon and title"
 msgstr "Ikon és cím"
 
 #: ../panel-plugin/configuration-dialog.cpp:762
-#, fuzzy
 msgid "Include _favorites"
-msgstr "Figyelmen kívül hagyás _favorites"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:647
 msgid "Ite_m icon size:"
@@ -475,7 +474,7 @@ msgstr "Súgó"
 
 #: ../panel-plugin/settings.cpp:164
 msgid "_Hibernate"
-msgstr ""
+msgstr "_Hibernálás"
 
 #: ../panel-plugin/configuration-dialog.cpp:585
 msgid "_Icon:"
@@ -500,7 +499,7 @@ msgstr "_Reguláris kifejezés"
 
 #: ../panel-plugin/settings.cpp:146
 msgid "_Restart"
-msgstr ""
+msgstr "Új_raindítás"
 
 #: ../panel-plugin/configuration-dialog.cpp:574
 msgid "_Title:"
