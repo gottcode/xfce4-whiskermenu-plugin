@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-08 11:45-0400\n"
-"PO-Revision-Date: 2018-10-14 18:27+0000\n"
+"PO-Revision-Date: 2018-12-03 04:57+0000\n"
 "Last-Translator: Ammuu5\n"
 "Language-Team: Finnish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/fi/)\n"
@@ -61,15 +61,15 @@ msgstr "Sovellukset"
 
 #: ../panel-plugin/settings.cpp:143
 msgid "Are you sure you want to log out?"
-msgstr ""
+msgstr "Haluatko varmasti kirjautua ulos?"
 
 #: ../panel-plugin/settings.cpp:149
 msgid "Are you sure you want to restart?"
-msgstr ""
+msgstr "Haluatko varmasti käynnistää uudelleen?"
 
 #: ../panel-plugin/settings.cpp:155
 msgid "Are you sure you want to shut down?"
-msgstr ""
+msgstr "Haluatko varmasti sammuttaa?"
 
 #: ../panel-plugin/configuration-dialog.cpp:678
 msgid "Background opacit_y:"
@@ -93,7 +93,7 @@ msgstr "Pyyhi viimeksi käytetyt"
 
 #: ../panel-plugin/plugin.cpp:409
 msgid "Copyright © 2013-2018 Graeme Gott"
-msgstr ""
+msgstr "Tekijänoikeudet © 2013-2018 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:890
 msgid "Details"
@@ -109,15 +109,15 @@ msgstr "Näytä _oletuksena"
 
 #: ../panel-plugin/settings.cpp:161
 msgid "Do you want to suspend to RAM?"
-msgstr ""
+msgstr "Haluatko siirtyä RAM-pohjaiseen keskeytystilaan?"
 
 #: ../panel-plugin/settings.cpp:167
 msgid "Do you want to suspend to disk?"
-msgstr ""
+msgstr "Haluatko siirtyä levypohjaiseen lepotilaan?"
 
 #: ../panel-plugin/page.cpp:269
 msgid "Edit Application..."
-msgstr ""
+msgstr "Muokkaa sovellusta..."
 
 #: ../panel-plugin/settings.cpp:178
 msgid "Edit _Profile"
@@ -135,7 +135,7 @@ msgstr "Komennon \"%s\" suorittaminen epäonnistui."
 
 #: ../panel-plugin/settings.cpp:166
 msgid "Failed to hibernate."
-msgstr ""
+msgstr "Lepotilaan siirtyminen epäonnistui."
 
 #: ../panel-plugin/settings.cpp:176
 msgid "Failed to launch menu editor."
@@ -155,15 +155,15 @@ msgstr "Asetustenhallinnan avaaminen epäonnistui."
 
 #: ../panel-plugin/settings.cpp:148
 msgid "Failed to restart."
-msgstr ""
+msgstr "Uudelleen käynnistäminen epäonnistui."
 
 #: ../panel-plugin/settings.cpp:154
 msgid "Failed to shut down."
-msgstr ""
+msgstr "Sammuttaminen epäonnistui."
 
 #: ../panel-plugin/settings.cpp:160
 msgid "Failed to suspend."
-msgstr ""
+msgstr "Keskeytystilaan siirtyminen epäonnistui."
 
 #: ../panel-plugin/settings.cpp:138
 msgid "Failed to switch users."
@@ -176,7 +176,7 @@ msgstr "Suosikit"
 #: ../panel-plugin/settings.cpp:168
 #, c-format
 msgid "Hibernating computer in %d seconds."
-msgstr ""
+msgstr "Siirrytään lepotilaan %d sekunnin kuluttua."
 
 #: ../panel-plugin/configuration-dialog.cpp:564
 msgid "Icon"
@@ -204,7 +204,7 @@ msgstr "Suurempi"
 
 #: ../panel-plugin/settings.cpp:170
 msgid "Log Ou_t..."
-msgstr ""
+msgstr "Kirjaudu ul_os..."
 
 #: ../panel-plugin/settings.cpp:140
 msgid "Log _Out"
@@ -213,7 +213,7 @@ msgstr "Kirjaudu ul_os"
 #: ../panel-plugin/settings.cpp:144
 #, c-format
 msgid "Logging out in %d seconds."
-msgstr ""
+msgstr "Kirjaudutaan ulos %d sekunnin kuluttua."
 
 #: ../panel-plugin/settings.cpp:182
 msgid "Man Pages"
@@ -284,7 +284,7 @@ msgstr "Poista valittu toiminto"
 #: ../panel-plugin/settings.cpp:150
 #, c-format
 msgid "Restarting computer in %d seconds."
-msgstr ""
+msgstr "Tietokone käynnistetään uudelleen %d sekunnin kuluttua."
 
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
@@ -313,7 +313,7 @@ msgstr "Valitse komento"
 
 #: ../panel-plugin/configuration-dialog.cpp:777
 msgid "Session Commands"
-msgstr ""
+msgstr "Istunnon komennot"
 
 #: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
@@ -325,11 +325,11 @@ msgstr "Näytä sovelluksien _kuvaukset"
 
 #: ../panel-plugin/configuration-dialog.cpp:635
 msgid "Show application too_ltips"
-msgstr ""
+msgstr "Näytä sovelluksien työka_luvihjeet"
 
 #: ../panel-plugin/configuration-dialog.cpp:781
 msgid "Show c_onfirmation dialog"
-msgstr ""
+msgstr "Näytä _vahvistusikkuna"
 
 #: ../panel-plugin/configuration-dialog.cpp:622
 msgid "Show cate_gory names"
@@ -345,7 +345,7 @@ msgstr "Näytä valikkohie_rarkia"
 
 #: ../panel-plugin/settings.cpp:152
 msgid "Shut _Down"
-msgstr ""
+msgstr "_Sammuta"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -365,16 +365,16 @@ msgstr "Järjestä aakkosten mukaan Ö-A"
 
 #: ../panel-plugin/configuration-dialog.cpp:736
 msgid "Stay _visible when focus is lost"
-msgstr ""
+msgstr "Pidä _näkyvissä, kun valikko ei ole enää aktiivisena"
 
 #: ../panel-plugin/settings.cpp:158
 msgid "Suspe_nd"
-msgstr ""
+msgstr "_Keskeytystila"
 
 #: ../panel-plugin/settings.cpp:162
 #, c-format
 msgid "Suspending computer in %d seconds."
-msgstr ""
+msgstr "Siirrytään keskeytystilaan %d sekunnin kuluttua."
 
 #: ../panel-plugin/settings.cpp:136
 msgid "Switch _Users"
@@ -395,7 +395,7 @@ msgstr "Otsikko"
 #: ../panel-plugin/settings.cpp:156
 #, c-format
 msgid "Turning off computer in %d seconds."
-msgstr ""
+msgstr "Tietokone sammutetaan %d sekunnin kuluttua."
 
 #: ../panel-plugin/page.cpp:334
 msgid "Unable to add launcher to desktop."
@@ -470,11 +470,11 @@ msgstr "Muokkaa sov_elluksia"
 
 #: ../panel-plugin/configuration-dialog.cpp:89
 msgid "_Help"
-msgstr "_Ohje"
+msgstr "_Apua"
 
 #: ../panel-plugin/settings.cpp:164
 msgid "_Hibernate"
-msgstr ""
+msgstr "_Lepotila"
 
 #: ../panel-plugin/configuration-dialog.cpp:585
 msgid "_Icon:"
@@ -499,7 +499,7 @@ msgstr "Säännöllinen lauseke (_regex)"
 
 #: ../panel-plugin/settings.cpp:146
 msgid "_Restart"
-msgstr ""
+msgstr "_Käynnistä uudelleen"
 
 #: ../panel-plugin/configuration-dialog.cpp:574
 msgid "_Title:"
