@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
+# Jose Riha <jose1711@gmail.com>, 2018-2019
 # Slavko <linux@slavino.sk>, 2013-2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-08 11:45-0400\n"
-"PO-Revision-Date: 2018-09-09 14:29+0000\n"
-"Last-Translator: Slavko <linux@slavino.sk>\n"
+"PO-Revision-Date: 2019-01-03 12:35+0000\n"
+"Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/sk/)\n"
 "Language: sk\n"
@@ -62,11 +63,11 @@ msgstr "Naozaj sa chcete odhlásiť?"
 
 #: ../panel-plugin/settings.cpp:149
 msgid "Are you sure you want to restart?"
-msgstr "Naozaj sa chcete reštartovať?"
+msgstr "Naozaj chcete reštartovať počítač?"
 
 #: ../panel-plugin/settings.cpp:155
 msgid "Are you sure you want to shut down?"
-msgstr "Naozaj sa chcete vypnúť?"
+msgstr "Naozaj chcete vypnúť počítač?"
 
 #: ../panel-plugin/configuration-dialog.cpp:678
 msgid "Background opacit_y:"
@@ -106,11 +107,11 @@ msgstr "Pre_dvolene zobraziť"
 
 #: ../panel-plugin/settings.cpp:161
 msgid "Do you want to suspend to RAM?"
-msgstr "Naozaj sa chcete uspať do RAM?"
+msgstr "Naozaj chcete systém uspať do RAM?"
 
 #: ../panel-plugin/settings.cpp:167
 msgid "Do you want to suspend to disk?"
-msgstr "Naozaj sa chcete uspať na disk?"
+msgstr "Naozaj chcete systém uspať na disk?"
 
 #: ../panel-plugin/page.cpp:269
 msgid "Edit Application..."
@@ -314,7 +315,7 @@ msgstr "Príkazy relácie"
 
 #: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
-msgstr "Zobrazí menu ja jednoduché prechádzanie nainštalovanými aplikáciami"
+msgstr "Zobrazí menu na jednoduché prechádzanie nainštalovanými aplikáciami"
 
 #: ../panel-plugin/configuration-dialog.cpp:629
 msgid "Show application _descriptions"
