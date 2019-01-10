@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-08 11:45-0400\n"
-"PO-Revision-Date: 2018-09-12 08:19+0000\n"
+"PO-Revision-Date: 2018-11-29 10:05+0000\n"
 "Last-Translator: Pjotr <pjotrvertaalt@gmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/nl/)\n"
@@ -213,7 +213,7 @@ msgstr "U wordt over %d seconden afgemeld."
 
 #: ../panel-plugin/settings.cpp:182
 msgid "Man Pages"
-msgstr "Handleidingpagina's"
+msgstr "Handleiding"
 
 #: ../panel-plugin/configuration-dialog.cpp:612
 #: ../panel-plugin/configuration-dialog.cpp:708
@@ -250,7 +250,7 @@ msgstr "Patroon"
 
 #: ../panel-plugin/configuration-dialog.cpp:718
 msgid "Position _search entry next to panel button"
-msgstr "Plaats zoekopdracht naast werkbalkknop"
+msgstr "Plaats zoekvak naast werkbalkknop"
 
 #: ../panel-plugin/configuration-dialog.cpp:730
 msgid "Position cate_gories next to panel button"
@@ -258,7 +258,7 @@ msgstr "Plaats categorieën naast werkbalkknop"
 
 #: ../panel-plugin/configuration-dialog.cpp:724
 msgid "Position commands next to search _entry"
-msgstr "Plaats opdrachten naast zoekopdracht"
+msgstr "Plaats opdrachten naast zoekvak"
 
 #: ../panel-plugin/configuration-dialog.cpp:747 ../panel-plugin/window.cpp:164
 msgid "Recently Used"
@@ -301,7 +301,7 @@ msgstr "Zoekactie"
 
 #: ../panel-plugin/configuration-dialog.cpp:135
 msgid "Select An Icon"
-msgstr "Kies een pictogram"
+msgstr "Pictogram kiezen"
 
 #: ../panel-plugin/command-edit.cpp:64
 msgid "Select Command"
@@ -353,11 +353,11 @@ msgstr "Kleiner"
 
 #: ../panel-plugin/favorites-page.cpp:147
 msgid "Sort Alphabetically A-Z"
-msgstr "Sorteer alfabetisch van A-Z"
+msgstr "Rangschik alfabetisch van A-Z"
 
 #: ../panel-plugin/favorites-page.cpp:153
 msgid "Sort Alphabetically Z-A"
-msgstr "Sorteer alfabetisch van Z-A"
+msgstr "Rangschik alfabetisch van Z-A"
 
 #: ../panel-plugin/configuration-dialog.cpp:736
 msgid "Stay _visible when focus is lost"
@@ -403,7 +403,7 @@ msgstr "Kon starter niet toevoegen aan werkbalk."
 
 #: ../panel-plugin/page.cpp:411
 msgid "Unable to edit launcher."
-msgstr "Kan starter niet bewerken."
+msgstr "Kon starter niet bewerken."
 
 #: ../panel-plugin/configuration-dialog.cpp:519
 #, c-format
