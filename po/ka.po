@@ -88,8 +88,8 @@ msgid "Clear Recently Used"
 msgstr "ახლახანს გამოყენებულების გასუფთავება"
 
 #: ../panel-plugin/plugin.cpp:409
-msgid "Copyright © 2013-2018 Graeme Gott"
-msgstr "ყველა უფლება დაცულია © 2013-2018"
+msgid "Copyright © 2013-2019 Graeme Gott"
+msgstr "ყველა უფლება დაცულია © 2013-2019"
 
 #: ../panel-plugin/configuration-dialog.cpp:890
 msgid "Details"

@@ -90,7 +90,7 @@ msgid "Clear Recently Used"
 msgstr "Dọn danh sách được dùng gần đây"
 
 #: ../panel-plugin/plugin.cpp:409
-msgid "Copyright © 2013-2018 Graeme Gott"
+msgid "Copyright © 2013-2019 Graeme Gott"
 msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:890
