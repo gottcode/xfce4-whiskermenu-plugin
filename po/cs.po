@@ -1,5 +1,5 @@
 # Czech translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2018 Graeme Gott
+# Copyright (C) 2019 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -7,14 +7,14 @@
 # Laco Lazelod, 2013
 # Laco Lazelod, 2013
 # Michal Várady <miko.vaji@gmail.com>, 2015-2018
-# Pavel Borecki <pavel.borecki@gmail.com>, 2018
+# Pavel Borecki <pavel.borecki@gmail.com>, 2018-2019
 # halfark <vojtechprecechtel@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-08 11:45-0400\n"
-"PO-Revision-Date: 2018-09-10 11:18+0000\n"
+"POT-Creation-Date: 2019-01-10 07:56-0500\n"
+"PO-Revision-Date: 2019-01-11 05:36+0000\n"
 "Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/cs/)\n"
@@ -67,11 +67,11 @@ msgstr "Opravdu se chcete odhlásit?"
 
 #: ../panel-plugin/settings.cpp:149
 msgid "Are you sure you want to restart?"
-msgstr "Opravdu chcete restartovat systém?"
+msgstr "Opravdu chcete počítač restartovat?"
 
 #: ../panel-plugin/settings.cpp:155
 msgid "Are you sure you want to shut down?"
-msgstr "Opravdu chcete vypnout systém?"
+msgstr "Opravdu chcete počítač vypnout?"
 
 #: ../panel-plugin/configuration-dialog.cpp:678
 msgid "Background opacit_y:"
@@ -95,7 +95,7 @@ msgstr "Vymazat seznam nedávno použitých položek"
 
 #: ../panel-plugin/plugin.cpp:409
 msgid "Copyright © 2013-2019 Graeme Gott"
-msgstr "Copyright © 2013-2019 Graeme Gott"
+msgstr "Autorská práva © 2013-2019 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:890
 msgid "Details"
@@ -111,7 +111,7 @@ msgstr "Zob_razit ve výchozím nastavení"
 
 #: ../panel-plugin/settings.cpp:161
 msgid "Do you want to suspend to RAM?"
-msgstr "Chcete uspat do RAM"
+msgstr "Chcete uspat do operační paměti"
 
 #: ../panel-plugin/settings.cpp:167
 msgid "Do you want to suspend to disk?"
@@ -137,7 +137,7 @@ msgstr "Spuštění příkazu \"%s\" se nezdařilo"
 
 #: ../panel-plugin/settings.cpp:166
 msgid "Failed to hibernate."
-msgstr "Nepodařilo se hibernovat."
+msgstr "Nepodařilo se uspat na disk."
 
 #: ../panel-plugin/settings.cpp:176
 msgid "Failed to launch menu editor."
@@ -165,7 +165,7 @@ msgstr "Nepodařilo se vypnout."
 
 #: ../panel-plugin/settings.cpp:160
 msgid "Failed to suspend."
-msgstr "Nepodařilo se uspat."
+msgstr "Nepodařilo se uspat do paměti."
 
 #: ../panel-plugin/settings.cpp:138
 msgid "Failed to switch users."
@@ -178,7 +178,7 @@ msgstr "Oblíbené"
 #: ../panel-plugin/settings.cpp:168
 #, c-format
 msgid "Hibernating computer in %d seconds."
-msgstr "Hibernace počítače za %d sekund."
+msgstr "Uspání počítače na disk za %d sekund."
 
 #: ../panel-plugin/configuration-dialog.cpp:564
 msgid "Icon"
@@ -264,7 +264,7 @@ msgstr "Umístit kate_gorie vedle tlačítka panelu"
 
 #: ../panel-plugin/configuration-dialog.cpp:724
 msgid "Position commands next to search _entry"
-msgstr "Umístit příkazy v_edle pole vyhledávání"
+msgstr "Umístit příkazy v_edle kolonky vyhledávání"
 
 #: ../panel-plugin/configuration-dialog.cpp:747 ../panel-plugin/window.cpp:164
 msgid "Recently Used"
@@ -319,7 +319,7 @@ msgstr "Povely relace"
 
 #: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
-msgstr "Zobrazit nabídku snadného přístupu k nainstalovaným aplikacím"
+msgstr "Zobrazovat nabídku pro snadný přístup k nainstalovaným aplikacím"
 
 #: ../panel-plugin/configuration-dialog.cpp:629
 msgid "Show application _descriptions"
@@ -335,15 +335,15 @@ msgstr "Zobrazovat p_otvrzovací dialog"
 
 #: ../panel-plugin/configuration-dialog.cpp:622
 msgid "Show cate_gory names"
-msgstr "Zobrazit názvy kate_gorií"
+msgstr "Zobrazovat názvy kate_gorií"
 
 #: ../panel-plugin/configuration-dialog.cpp:616
 msgid "Show generic application _names"
-msgstr "Zobrazit obecné _názvy aplikací"
+msgstr "Zobrazovat obecné _názvy aplikací"
 
 #: ../panel-plugin/configuration-dialog.cpp:641
 msgid "Show menu hie_rarchy"
-msgstr "Zob_razit hierarchii nabídky"
+msgstr "Zob_razit strukturu nabídky"
 
 #: ../panel-plugin/settings.cpp:152
 msgid "Shut _Down"
@@ -367,16 +367,16 @@ msgstr "Seřadit abecedně Z-A"
 
 #: ../panel-plugin/configuration-dialog.cpp:736
 msgid "Stay _visible when focus is lost"
-msgstr "Po ztrátě zaměření zůstat _viditelný"
+msgstr "Po ztrátě zaměření ukazatele myši zůstat _viditelný"
 
 #: ../panel-plugin/settings.cpp:158
 msgid "Suspe_nd"
-msgstr "_Uspat"
+msgstr "_Uspat do paměti"
 
 #: ../panel-plugin/settings.cpp:162
 #, c-format
 msgid "Suspending computer in %d seconds."
-msgstr "Uspání počítače za %d sekund."
+msgstr "Uspání počítače do paměti za %d sekund."
 
 #: ../panel-plugin/settings.cpp:136
 msgid "Switch _Users"
@@ -476,7 +476,7 @@ msgstr "_Nápověda"
 
 #: ../panel-plugin/settings.cpp:164
 msgid "_Hibernate"
-msgstr "_Hibernovat"
+msgstr "_Uspat na disk"
 
 #: ../panel-plugin/configuration-dialog.cpp:585
 msgid "_Icon:"
@@ -509,4 +509,5 @@ msgstr "Náz_ev:"
 
 #: ../panel-plugin/plugin.cpp:413
 msgid "translator-credits"
-msgstr "Přeložili halfark a Michal Várady <miko.vaji@gmail.com>"
+msgstr ""
+"Přeložili halfark, Michal Várady <miko.vaji@gmail.com> a Pavel Borecki "
