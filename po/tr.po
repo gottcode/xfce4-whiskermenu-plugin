@@ -1,18 +1,18 @@
 # Turkish translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2018 Graeme Gott
+# Copyright (C) 2019 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # Ercan PEKER <bahadiroglu33@gmail.com>, 2013,2017
-# Demiray Muhterem <mdemiray@msn.com>, 2013-2018
+# Demiray Muhterem <mdemiray@msn.com>, 2013-2019
 # Demiray Muhterem <mdemiray@msn.com>, 2018
 # Yusuf Faruk DOĞAN <yfdogan@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-08 11:45-0400\n"
-"PO-Revision-Date: 2018-09-10 11:35+0000\n"
+"POT-Creation-Date: 2019-01-10 07:56-0500\n"
+"PO-Revision-Date: 2019-01-10 20:07+0000\n"
 "Last-Translator: Demiray Muhterem <mdemiray@msn.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/tr/)\n"
@@ -92,7 +92,7 @@ msgstr "Yakında Kullanılanları Temizle"
 
 #: ../panel-plugin/plugin.cpp:409
 msgid "Copyright © 2013-2019 Graeme Gott"
-msgstr "Telif Hakkı © 2013-2019 Graeme Gott"
+msgstr "Telif hakkı © 2013-2019 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:890
 msgid "Details"
