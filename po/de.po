@@ -1,8 +1,9 @@
 # German translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2018 Graeme Gott
+# Copyright (C) 2019 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
+# Andreas Eitel, 2019
 # Harald Judt <h.judt@gmx.at>, 2013-2014
 # Harald Judt <h.judt@gmx.at>, 2013
 # philm <philm@manjaro.org>, 2013
@@ -15,9 +16,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-08 11:45-0400\n"
-"PO-Revision-Date: 2018-09-25 22:47+0000\n"
-"Last-Translator: Michał Trzebiatowski <michtrz@gmail.com>\n"
+"POT-Creation-Date: 2019-01-10 07:56-0500\n"
+"PO-Revision-Date: 2019-01-10 13:11+0000\n"
+"Last-Translator: Andreas Eitel\n"
 "Language-Team: German (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/de/)\n"
 "Language: de\n"
