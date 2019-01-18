@@ -1,5 +1,5 @@
 # Spanish translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2018 Graeme Gott
+# Copyright (C) 2019 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -10,6 +10,7 @@
 # Graeme Gott <graeme@gottcode.org>, 2013
 # Inti Alonso <intialonso@gmail.com>, 2013
 # Jason Collins <JasonPCollins@protonmail.com>, 2018
+# Logan 8192 <wsses11000@gmail.com>, 2019
 # Noe Moreno <NOE.MORENO@gmail.com>, 2016
 # Pablo Lezaeta Reyes [pˈaβ̞lo lˌe̞θaˈeta rˈejɛ] <prflr88@gmail.com>, 2013-2015
 # Pablo Lezaeta Reyes [pˈaβ̞lo lˌe̞θaˈeta rˈejɛ] <prflr88@gmail.com>, 2017
@@ -17,9 +18,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-08 11:45-0400\n"
-"PO-Revision-Date: 2018-06-28 18:03+0000\n"
-"Last-Translator: Jason Collins <JasonPCollins@protonmail.com>\n"
+"POT-Creation-Date: 2019-01-10 07:56-0500\n"
+"PO-Revision-Date: 2019-01-18 03:00+0000\n"
+"Last-Translator: Logan 8192 <wsses11000@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/es/)\n"
 "Language: es\n"
@@ -66,15 +67,15 @@ msgstr "Aplicaciones"
 
 #: ../panel-plugin/settings.cpp:143
 msgid "Are you sure you want to log out?"
-msgstr ""
+msgstr "¿Está seguro que desea cerrar la sesión?"
 
 #: ../panel-plugin/settings.cpp:149
 msgid "Are you sure you want to restart?"
-msgstr ""
+msgstr "¿Está seguro que desea reiniciar el equipo?"
 
 #: ../panel-plugin/settings.cpp:155
 msgid "Are you sure you want to shut down?"
-msgstr ""
+msgstr "¿Está seguro que desea apagar el equipo?"
 
 #: ../panel-plugin/configuration-dialog.cpp:678
 msgid "Background opacit_y:"
@@ -98,7 +99,7 @@ msgstr "Limpiar elementos recientes"
 
 #: ../panel-plugin/plugin.cpp:409
 msgid "Copyright © 2013-2019 Graeme Gott"
-msgstr "© 2013-2019 Graeme Gott"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:890
 msgid "Details"
