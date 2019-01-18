@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2014, 2015, 2016 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014, 2015, 2016, 2019 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -178,6 +178,19 @@ Launcher::Launcher(GarconMenuItem* item) :
 	m_search_name = normalize(m_display_name);
 	m_search_generic_name = normalize(generic_name);
 	m_search_comment = normalize(details);
+
+	// Create search text for keywords
+#if GARCON_CHECK_VERSION(0,6,2)
+	GList* keywords = garcon_menu_item_get_keywords(m_item);
+	for (GList* i = keywords; i != NULL; i = i->next)
+	{
+		const gchar* keyword = reinterpret_cast<gchar*>(i->data);
+		if (!exo_str_is_empty(keyword) && g_utf8_validate(keyword, -1, NULL))
+		{
+			m_search_keywords.push_back(normalize(keyword));
+		}
+	}
+#endif
 
 	// Create search text for command
 	const gchar* command = garcon_menu_item_get_command(m_item);
@@ -391,11 +404,21 @@ guint Launcher::search(const Query& query)
 		return match | flags | 0x1000;
 	}
 
+	// Sort matches in keywords next
+	for (std::vector<std::string>::size_type i = 0, end = m_search_keywords.size(); i < end; ++i)
+	{
+		match = query.match(m_search_keywords[i]);
+		if (match != G_MAXUINT)
+		{
+			return match | flags | 0x2000;
+		}
+	}
+
 	// Sort matches in executables last
 	match = query.match(m_search_command);
 	if (match != G_MAXUINT)
 	{
-		return match | flags | 0x2000;
+		return match | flags | 0x4000;
 	}
 
 	return G_MAXUINT;

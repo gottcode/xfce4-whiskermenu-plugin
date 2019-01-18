@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015, 2016 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015, 2016, 2019 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -137,6 +137,7 @@ private:
 	std::string m_search_generic_name;
 	std::string m_search_comment;
 	std::string m_search_command;
+	std::vector<std::string> m_search_keywords;
 	guint m_search_flags;
 	std::vector<DesktopAction*> m_actions;
 };
