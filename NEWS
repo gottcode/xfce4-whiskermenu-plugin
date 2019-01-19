@@ -1,3 +1,9 @@
+2.3.1
+=====
+- Fix crash when reload is required.
+- Translation updates: Catalan, Czech, Danish, Greek, Spanish, Finnish,
+  Japanese, Korean, Malay, Dutch, Polish, Russian, Slovak.
+
 2.3.0
 =====
 - Fix sidebar wider than iconless categories.
