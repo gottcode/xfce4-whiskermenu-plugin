@@ -3,10 +3,11 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Adolfo Jayme-Barrientos, 2016,2018
-# Adolfo Jayme-Barrientos, 2015
-# Adolfo Jayme-Barrientos, 2013
-# Adolfo Jayme-Barrientos, 2014
+# Adolfo Jayme Barrientos, 2019
+# Adolfo Jayme Barrientos, 2016,2018
+# Adolfo Jayme Barrientos, 2015
+# Adolfo Jayme Barrientos, 2013
+# Adolfo Jayme Barrientos, 2014
 # Graeme Gott <graeme@gottcode.org>, 2013
 # Inti Alonso <intialonso@gmail.com>, 2013
 # Jason Collins <JasonPCollins@protonmail.com>, 2018
@@ -19,8 +20,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-10 07:56-0500\n"
-"PO-Revision-Date: 2019-01-18 03:00+0000\n"
-"Last-Translator: Logan 8192 <wsses11000@gmail.com>\n"
+"PO-Revision-Date: 2019-01-21 17:25+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos\n"
 "Language-Team: Spanish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/es/)\n"
 "Language: es\n"
@@ -67,15 +68,15 @@ msgstr "Aplicaciones"
 
 #: ../panel-plugin/settings.cpp:143
 msgid "Are you sure you want to log out?"
-msgstr "¿Está seguro que desea cerrar la sesión?"
+msgstr "¿Confirma que quiere finalizar la sesión?"
 
 #: ../panel-plugin/settings.cpp:149
 msgid "Are you sure you want to restart?"
-msgstr "¿Está seguro que desea reiniciar el equipo?"
+msgstr "¿Confirma que quiere reiniciar el equipo?"
 
 #: ../panel-plugin/settings.cpp:155
 msgid "Are you sure you want to shut down?"
-msgstr "¿Está seguro que desea apagar el equipo?"
+msgstr "¿Confirma que quiere apagar el equipo?"
 
 #: ../panel-plugin/configuration-dialog.cpp:678
 msgid "Background opacit_y:"
@@ -99,7 +100,7 @@ msgstr "Limpiar elementos recientes"
 
 #: ../panel-plugin/plugin.cpp:409
 msgid "Copyright © 2013-2019 Graeme Gott"
-msgstr ""
+msgstr "Derechos de autor © 2013-2019 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:890
 msgid "Details"
@@ -115,11 +116,11 @@ msgstr "Mostrar de forma predetermina_da"
 
 #: ../panel-plugin/settings.cpp:161
 msgid "Do you want to suspend to RAM?"
-msgstr ""
+msgstr "¿Quiere suspender a la RAM?"
 
 #: ../panel-plugin/settings.cpp:167
 msgid "Do you want to suspend to disk?"
-msgstr ""
+msgstr "¿Quiere suspender al disco?"
 
 #: ../panel-plugin/page.cpp:269
 msgid "Edit Application..."
@@ -141,7 +142,7 @@ msgstr "No se pudo ejecutar la orden «%s»."
 
 #: ../panel-plugin/settings.cpp:166
 msgid "Failed to hibernate."
-msgstr ""
+msgstr "Fallo al hibernar."
 
 #: ../panel-plugin/settings.cpp:176
 msgid "Failed to launch menu editor."
@@ -161,15 +162,15 @@ msgstr "No se pudo ejecutar el gestor de configuración."
 
 #: ../panel-plugin/settings.cpp:148
 msgid "Failed to restart."
-msgstr ""
+msgstr "No se pudo reiniciar."
 
 #: ../panel-plugin/settings.cpp:154
 msgid "Failed to shut down."
-msgstr ""
+msgstr "No se pudo apagar."
 
 #: ../panel-plugin/settings.cpp:160
 msgid "Failed to suspend."
-msgstr ""
+msgstr "No se pudo suspender."
 
 #: ../panel-plugin/settings.cpp:138
 msgid "Failed to switch users."
@@ -182,7 +183,7 @@ msgstr "Favoritas"
 #: ../panel-plugin/settings.cpp:168
 #, c-format
 msgid "Hibernating computer in %d seconds."
-msgstr ""
+msgstr "El equipo hibernará en %d segundos."
 
 #: ../panel-plugin/configuration-dialog.cpp:564
 msgid "Icon"
@@ -210,16 +211,16 @@ msgstr "Muy grande"
 
 #: ../panel-plugin/settings.cpp:170
 msgid "Log Ou_t..."
-msgstr ""
+msgstr "Finali_zar la sesión..."
 
 #: ../panel-plugin/settings.cpp:140
 msgid "Log _Out"
-msgstr "_Cerrar la sesión"
+msgstr "_Finalizar la sesión"
 
 #: ../panel-plugin/settings.cpp:144
 #, c-format
 msgid "Logging out in %d seconds."
-msgstr ""
+msgstr "La sesión finalizará en %d segundos."
 
 #: ../panel-plugin/settings.cpp:182
 msgid "Man Pages"
@@ -290,7 +291,7 @@ msgstr "Quitar la acción seleccionada"
 #: ../panel-plugin/settings.cpp:150
 #, c-format
 msgid "Restarting computer in %d seconds."
-msgstr ""
+msgstr "El equipo se reiniciará en %d segundos."
 
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
@@ -319,7 +320,7 @@ msgstr "Seleccione una orden"
 
 #: ../panel-plugin/configuration-dialog.cpp:777
 msgid "Session Commands"
-msgstr ""
+msgstr "Órdenes de la sesión"
 
 #: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
@@ -335,7 +336,7 @@ msgstr "Mostrar _información emergente de las aplicaciones"
 
 #: ../panel-plugin/configuration-dialog.cpp:781
 msgid "Show c_onfirmation dialog"
-msgstr ""
+msgstr "Mostrar un diálogo de c_onfirmación"
 
 #: ../panel-plugin/configuration-dialog.cpp:622
 msgid "Show cate_gory names"
@@ -351,7 +352,7 @@ msgstr "Mostrar _jerarquía del menú"
 
 #: ../panel-plugin/settings.cpp:152
 msgid "Shut _Down"
-msgstr ""
+msgstr "_Apagar"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -371,16 +372,16 @@ msgstr "Ordenar de Z a A"
 
 #: ../panel-plugin/configuration-dialog.cpp:736
 msgid "Stay _visible when focus is lost"
-msgstr ""
+msgstr "Permanecer _visible al perder el foco"
 
 #: ../panel-plugin/settings.cpp:158
 msgid "Suspe_nd"
-msgstr ""
+msgstr "Suspe_nder"
 
 #: ../panel-plugin/settings.cpp:162
 #, c-format
 msgid "Suspending computer in %d seconds."
-msgstr ""
+msgstr "El equipo se suspenderá en %d segundos."
 
 #: ../panel-plugin/settings.cpp:136
 msgid "Switch _Users"
@@ -401,7 +402,7 @@ msgstr "Título"
 #: ../panel-plugin/settings.cpp:156
 #, c-format
 msgid "Turning off computer in %d seconds."
-msgstr ""
+msgstr "El equipo se apagará en %d segundos."
 
 #: ../panel-plugin/page.cpp:334
 msgid "Unable to add launcher to desktop."
@@ -480,7 +481,7 @@ msgstr "Ay_uda"
 
 #: ../panel-plugin/settings.cpp:164
 msgid "_Hibernate"
-msgstr ""
+msgstr "_Hibernar"
 
 #: ../panel-plugin/configuration-dialog.cpp:585
 msgid "_Icon:"
@@ -505,7 +506,7 @@ msgstr "E_xpresión regular"
 
 #: ../panel-plugin/settings.cpp:146
 msgid "_Restart"
-msgstr ""
+msgstr "_Reiniciar"
 
 #: ../panel-plugin/configuration-dialog.cpp:574
 msgid "_Title:"
@@ -514,5 +515,5 @@ msgstr "_Título:"
 #: ../panel-plugin/plugin.cpp:413
 msgid "translator-credits"
 msgstr ""
-"Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2013–2016\n"
+"Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2013–2016, 2019\n"
 "Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>, 2014, 2017"
