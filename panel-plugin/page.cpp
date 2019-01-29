@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2018 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2018, 2019 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -404,8 +404,10 @@ void Page::edit_selected()
 
 	GError* error = NULL;
 	gchar* uri = launcher->get_uri();
-	gchar* command = g_strconcat("exo-desktop-item-edit ", uri, NULL);
+	gchar* quoted_uri = g_shell_quote(uri);
+	gchar* command = g_strconcat("exo-desktop-item-edit ", quoted_uri, NULL);
 	g_free(uri);
+	g_free(quoted_uri);
 	if (g_spawn_command_line_async(command, &error) == false)
 	{
 		xfce_dialog_show_error(NULL, error, _("Unable to edit launcher."));
