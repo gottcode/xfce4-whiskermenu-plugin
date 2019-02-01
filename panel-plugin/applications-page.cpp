@@ -278,8 +278,8 @@ void ApplicationsPage::load_garcon_menu()
 		{
 			category->sort();
 		}
-		std::sort(m_categories.begin(), m_categories.end(), &Element::less_than);
 	}
+	std::sort(m_categories.begin(), m_categories.end(), &Element::less_than);
 
 	// Create all items category
 	Category* category = new Category(nullptr);
