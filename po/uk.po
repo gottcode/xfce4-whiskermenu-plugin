@@ -1,18 +1,18 @@
 # Ukrainian translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2018 Graeme Gott
+# Copyright (C) 2019 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # GrayWolf82 <mr.graywolf82@gmail.com>, 2018
 # Yarema aka Knedlyk <yupadmin@gmail.com>, 2013-2014,2016
-# zubr139, 2013,2016
+# zubr139, 2013,2016,2019
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-08 11:45-0400\n"
-"PO-Revision-Date: 2018-11-15 14:07+0000\n"
-"Last-Translator: GrayWolf82 <mr.graywolf82@gmail.com>\n"
+"POT-Creation-Date: 2019-01-10 07:56-0500\n"
+"PO-Revision-Date: 2019-02-07 17:05+0000\n"
+"Last-Translator: zubr139\n"
 "Language-Team: Ukrainian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/uk/)\n"
 "Language: uk\n"
@@ -94,7 +94,7 @@ msgstr "Очистити історію"
 
 #: ../panel-plugin/plugin.cpp:409
 msgid "Copyright © 2013-2019 Graeme Gott"
-msgstr "Всі права застережено © 2013-2019 Graeme Gott"
+msgstr "Авторське право © 2013-2019 Ґрем Ґотт"
 
 #: ../panel-plugin/configuration-dialog.cpp:890
 msgid "Details"
@@ -110,11 +110,11 @@ msgstr "_Типовий дисплей"
 
 #: ../panel-plugin/settings.cpp:161
 msgid "Do you want to suspend to RAM?"
-msgstr ""
+msgstr "Хочете призупинити дію ОЗП?"
 
 #: ../panel-plugin/settings.cpp:167
 msgid "Do you want to suspend to disk?"
-msgstr ""
+msgstr "Хочете призупинити роботу на диску?"
 
 #: ../panel-plugin/page.cpp:269
 msgid "Edit Application..."
@@ -136,7 +136,7 @@ msgstr "Не вдалося виконати команду \"%s\"."
 
 #: ../panel-plugin/settings.cpp:166
 msgid "Failed to hibernate."
-msgstr ""
+msgstr "Не вдалося перейти в сплячий режим."
 
 #: ../panel-plugin/settings.cpp:176
 msgid "Failed to launch menu editor."
@@ -156,15 +156,15 @@ msgstr "Не вдалося відкрити менеджер налаштува
 
 #: ../panel-plugin/settings.cpp:148
 msgid "Failed to restart."
-msgstr ""
+msgstr "Не вдалося перезавантажити."
 
 #: ../panel-plugin/settings.cpp:154
 msgid "Failed to shut down."
-msgstr ""
+msgstr "Не вдалося завершити роботу."
 
 #: ../panel-plugin/settings.cpp:160
 msgid "Failed to suspend."
-msgstr ""
+msgstr "Не вдалося призупинити."
 
 #: ../panel-plugin/settings.cpp:138
 msgid "Failed to switch users."
@@ -177,7 +177,7 @@ msgstr "Обране"
 #: ../panel-plugin/settings.cpp:168
 #, c-format
 msgid "Hibernating computer in %d seconds."
-msgstr ""
+msgstr "Глибокий сон через %d секунд."
 
 #: ../panel-plugin/configuration-dialog.cpp:564
 msgid "Icon"
@@ -189,7 +189,7 @@ msgstr "Піктограма і назва"
 
 #: ../panel-plugin/configuration-dialog.cpp:762
 msgid "Include _favorites"
-msgstr ""
+msgstr "Увімкнути _обране"
 
 #: ../panel-plugin/configuration-dialog.cpp:647
 msgid "Ite_m icon size:"
@@ -205,7 +205,7 @@ msgstr "Дуже великий"
 
 #: ../panel-plugin/settings.cpp:170
 msgid "Log Ou_t..."
-msgstr ""
+msgstr "_Вийти..."
 
 #: ../panel-plugin/settings.cpp:140
 msgid "Log _Out"
@@ -214,7 +214,7 @@ msgstr "Вий_ти"
 #: ../panel-plugin/settings.cpp:144
 #, c-format
 msgid "Logging out in %d seconds."
-msgstr ""
+msgstr "Вихід через %d секунд."
 
 #: ../panel-plugin/settings.cpp:182
 msgid "Man Pages"
@@ -285,7 +285,7 @@ msgstr "Вилучити вибрану дію"
 #: ../panel-plugin/settings.cpp:150
 #, c-format
 msgid "Restarting computer in %d seconds."
-msgstr ""
+msgstr "Перезавантаження комп'ютера через %d секунд."
 
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
@@ -314,7 +314,7 @@ msgstr "Вибрати команду"
 
 #: ../panel-plugin/configuration-dialog.cpp:777
 msgid "Session Commands"
-msgstr ""
+msgstr "Команди сеансу"
 
 #: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
@@ -330,7 +330,7 @@ msgstr "Показувати виринаючі підказки додаткі�
 
 #: ../panel-plugin/configuration-dialog.cpp:781
 msgid "Show c_onfirmation dialog"
-msgstr ""
+msgstr "П_оказати діалогове вікно підтвердження"
 
 #: ../panel-plugin/configuration-dialog.cpp:622
 msgid "Show cate_gory names"
@@ -366,16 +366,16 @@ msgstr "Сортувати за алфавітом: Я-А"
 
 #: ../panel-plugin/configuration-dialog.cpp:736
 msgid "Stay _visible when focus is lost"
-msgstr ""
+msgstr "_Залишайтеся видимими, коли фокус втрачено"
 
 #: ../panel-plugin/settings.cpp:158
 msgid "Suspe_nd"
-msgstr ""
+msgstr "П_ризупинити"
 
 #: ../panel-plugin/settings.cpp:162
 #, c-format
 msgid "Suspending computer in %d seconds."
-msgstr ""
+msgstr "Призупинення роботи комп'ютера за %d секунд."
 
 #: ../panel-plugin/settings.cpp:136
 msgid "Switch _Users"
@@ -396,7 +396,7 @@ msgstr "Назва"
 #: ../panel-plugin/settings.cpp:156
 #, c-format
 msgid "Turning off computer in %d seconds."
-msgstr ""
+msgstr "Вимикання комп'ютера за %d секунд."
 
 #: ../panel-plugin/page.cpp:334
 msgid "Unable to add launcher to desktop."
@@ -408,7 +408,7 @@ msgstr "Неможливо додати запускач на панель."
 
 #: ../panel-plugin/page.cpp:411
 msgid "Unable to edit launcher."
-msgstr ""
+msgstr "Неможливо змінити лауечер."
 
 #: ../panel-plugin/configuration-dialog.cpp:519
 #, c-format
@@ -475,7 +475,7 @@ msgstr "_Довідка"
 
 #: ../panel-plugin/settings.cpp:164
 msgid "_Hibernate"
-msgstr ""
+msgstr "_Сплячий режим"
 
 #: ../panel-plugin/configuration-dialog.cpp:585
 msgid "_Icon:"
@@ -500,7 +500,7 @@ msgstr "_Регулярний вираз"
 
 #: ../panel-plugin/settings.cpp:146
 msgid "_Restart"
-msgstr ""
+msgstr "_Перезапустити"
 
 #: ../panel-plugin/configuration-dialog.cpp:574
 msgid "_Title:"
