@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015, 2016 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015, 2016, 2019 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,6 +18,7 @@
 #ifndef WHISKERMENU_ELEMENT_H
 #define WHISKERMENU_ELEMENT_H
 
+#include <exo/exo.h>
 #include <gdk/gdk.h>
 
 namespace WhiskerMenu
@@ -107,7 +108,7 @@ protected:
 	void set_tooltip(const gchar* tooltip)
 	{
 		g_free(m_tooltip);
-		m_tooltip = g_markup_escape_text(tooltip, -1);
+		m_tooltip = !exo_str_is_empty(tooltip) ? g_markup_escape_text(tooltip, -1) : NULL;
 	}
 
 private:
