@@ -1,10 +1,10 @@
 # Finnish translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2018 Graeme Gott
+# Copyright (C) 2019 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # Ammuu5, 2018
-# Pasi Lallinaho <pasi@shimmerproject.org>, 2014-2015
+# Pasi Lallinaho <pasi@shimmerproject.org>, 2014-2015,2019
 # Sami Korkalainen, 2014
 # Assalat3 <assalat3@gmail.com>, 2018
 # Sami Korkalainen, 2013
@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-08 11:45-0400\n"
-"PO-Revision-Date: 2018-12-03 04:57+0000\n"
-"Last-Translator: Ammuu5\n"
+"POT-Creation-Date: 2019-01-10 07:56-0500\n"
+"PO-Revision-Date: 2019-02-19 07:08+0000\n"
+"Last-Translator: Pasi Lallinaho <pasi@shimmerproject.org>\n"
 "Language-Team: Finnish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/fi/)\n"
 "Language: fi\n"
