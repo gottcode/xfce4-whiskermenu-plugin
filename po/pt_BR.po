@@ -1,11 +1,11 @@
 # Portuguese (Brazil) translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2018 Graeme Gott
+# Copyright (C) 2019 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # Carlos Reis <reiscarlos1976@gmail.com>, 2017
 # Fábio Luciano de Góis <fabio@naoimporta.com>, 2013
-# Gabriel Henrique <gabrielddev@gmail.com>, 2018
+# Gabriel Henrique <gabrielddev@gmail.com>, 2018-2019
 # Gabriel Henrique <gabrielddev@gmail.com>, 2017-2018
 # Holmes <holmes_holmes@live.com>, 2014
 # José Vieira <jvieira33@sapo.pt>, 2016-2017
@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-08 11:45-0400\n"
-"PO-Revision-Date: 2018-11-23 04:38+0000\n"
+"POT-Creation-Date: 2019-01-10 07:56-0500\n"
+"PO-Revision-Date: 2019-03-02 16:37+0000\n"
 "Last-Translator: Gabriel Henrique <gabrielddev@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/pt_BR/)\n"
@@ -97,7 +97,7 @@ msgstr "Limpar usados recentemente"
 
 #: ../panel-plugin/plugin.cpp:409
 msgid "Copyright © 2013-2019 Graeme Gott"
-msgstr "Copyright © 2013-2019 Graeme Gott"
+msgstr "Direito Autoral © 2013-2019 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:890
 msgid "Details"
@@ -514,9 +514,10 @@ msgid "translator-credits"
 msgstr ""
 "Carlos Reis <reiscarlos1976@gmail.com>, 2017\n"
 "Fábio Luciano de Góis <fabio@naoimporta.com>, 2013\n"
-"Gabriel Henrique <gabrielddev@gmail.com>, 2017-2018\n"
+"Gabriel Henrique <gabrielddev@gmail.com>, 2018-2019\n"
+"Graeme Gott <graeme@gottcode.org>, 2013\n"
 "Holmes <holmes_holmes@live.com>, 2014\n"
 "José Vieira <jvieira33@sapo.pt>, 2016-2017\n"
-"Paulo Castro, 2013\n"
 "Lorhan Sohaky, 2018\n"
+"Paulo Castro, 2013\n"
 "Thiago Albuquerque Soares <tasbrjob@gmail.com>, 2018"
