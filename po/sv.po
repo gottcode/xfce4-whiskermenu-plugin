@@ -1,10 +1,11 @@
 # Swedish translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2018 Graeme Gott
+# Copyright (C) 2019 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # Andreas Gustafsson <addegsson@gmail.com>, 2013
 # Patrik Nilsson <asavartzeth@gmail.com>, 2014
+# Carlos Dz <cls567@tuta.io>, 2019
 # Fredrik Nyqvist <fredrik@nyqvist.biz>, 2013
 # Patrik Nilsson <asavartzeth@gmail.com>, 2014-2015,2017
 # Påvel Nicklasson <pavel2@frimixse>, 2015,2018
@@ -15,9 +16,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-08 11:45-0400\n"
-"PO-Revision-Date: 2018-07-02 13:20+0000\n"
-"Last-Translator: Påvel Nicklasson <pavel2@frimix.se>\n"
+"POT-Creation-Date: 2019-01-10 07:56-0500\n"
+"PO-Revision-Date: 2019-03-13 07:02+0000\n"
+"Last-Translator: Carlos Dz <cls567@tuta.io>\n"
 "Language-Team: Swedish (Sweden) (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/sv_SE/)\n"
 "Language: sv\n"
@@ -64,15 +65,15 @@ msgstr "Program"
 
 #: ../panel-plugin/settings.cpp:143
 msgid "Are you sure you want to log out?"
-msgstr ""
+msgstr "Är du säker på att du vill logga ut?"
 
 #: ../panel-plugin/settings.cpp:149
 msgid "Are you sure you want to restart?"
-msgstr ""
+msgstr "Är du säker på att du vill starta om?"
 
 #: ../panel-plugin/settings.cpp:155
 msgid "Are you sure you want to shut down?"
-msgstr ""
+msgstr "Är du säker på att du vill stänga av?"
 
 #: ../panel-plugin/configuration-dialog.cpp:678
 msgid "Background opacit_y:"
