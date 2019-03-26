@@ -1,3 +1,9 @@
+2.3.2
+=====
+- Fix editing menu items containting a single quote. (bug #15091)
+- Fix displaying empty tooltips. (bug #15137)
+- Translation updates: Dutch, Galician, Spanish, Swedish, Ukrainian.
+
 2.3.1
 =====
 - Fix crash when reload is required.
