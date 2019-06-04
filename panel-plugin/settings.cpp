@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2018 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2018, 2019 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -133,9 +133,9 @@ Settings::Settings() :
 			"xflock4",
 			_("Failed to lock screen."));
 	command[CommandSwitchUser] = new Command("system-users",
-			_("Switch _Users"),
+			_("Switch _User"),
 			"gdmflexiserver",
-			_("Failed to switch users."));
+			_("Failed to switch user."));
 	command[CommandLogOutUser] = new Command("system-log-out",
 			_("Log _Out"),
 			"xfce4-session-logout --logout --fast",
