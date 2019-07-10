@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015, 2016, 2017, 2018, 2019 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015, 2016, 2017, 2018 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -160,7 +160,6 @@ void ApplicationsPage::invalidate_applications()
 	if (m_load_status == STATUS_LOADED)
 	{
 		m_load_status = STATUS_INVALID;
-		clear_applications();
 	}
 	else if (m_load_status == STATUS_LOADING)
 	{
@@ -340,15 +339,7 @@ void ApplicationsPage::load_contents()
 	get_window()->set_items();
 	get_window()->set_loaded();
 
-	if (m_load_status == STATUS_LOADING)
-	{
-		m_load_status = STATUS_LOADED;
-	}
-	else
-	{
-		m_load_status = STATUS_INVALID;
-		clear_applications();
-	}
+	m_load_status = (m_load_status == STATUS_LOADING) ? STATUS_LOADED : STATUS_INVALID;
 }
 
 //-----------------------------------------------------------------------------
