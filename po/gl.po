@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-10 07:56-0500\n"
-"PO-Revision-Date: 2019-03-20 20:37+0000\n"
+"PO-Revision-Date: 2019-06-10 09:31+0000\n"
 "Last-Translator: Daniel Muñiz Fontoira <dani@damufo.com>\n"
 "Language-Team: Galician (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/gl/)\n"
@@ -196,7 +196,7 @@ msgstr "Grande"
 
 #: ../panel-plugin/icon-size.cpp:55
 msgid "Larger"
-msgstr "Moi grande"
+msgstr "Maior"
 
 #: ../panel-plugin/settings.cpp:170
 msgid "Log Ou_t..."
@@ -349,7 +349,7 @@ msgstr "Pequeno"
 
 #: ../panel-plugin/icon-size.cpp:51
 msgid "Smaller"
-msgstr "Moi pequeno"
+msgstr "Menor"
 
 #: ../panel-plugin/favorites-page.cpp:147
 msgid "Sort Alphabetically A-Z"
