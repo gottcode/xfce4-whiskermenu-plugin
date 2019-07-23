@@ -117,6 +117,8 @@ public:
 		return garcon_menu_item_get_uri(m_item);
 	}
 
+	void hide();
+
 	void run(GdkScreen* screen) const;
 
 	void run(GdkScreen* screen, DesktopAction* action) const;

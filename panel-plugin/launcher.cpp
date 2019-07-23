@@ -226,6 +226,53 @@ Launcher::~Launcher()
 
 //-----------------------------------------------------------------------------
 
+// Adapted from https://git.xfce.org/xfce/xfce4-appfinder/tree/src/appfinder-window.c#n945
+void Launcher::hide()
+{
+	// Look up the correct relative path
+	const gchar* relpath = NULL;
+	gchar* uri = get_uri();
+	if (uri)
+	{
+		gchar** dirs = xfce_resource_lookup_all(XFCE_RESOURCE_DATA, "applications/");
+		for (guint i = 0; dirs[i] != NULL; i++)
+		{
+			if (g_str_has_prefix(uri + 7, dirs[i]))
+			{
+				relpath = uri + 7 + strlen(dirs[i]) - 13;
+				break;
+			}
+		}
+		g_strfreev(dirs);
+	}
+	if (!relpath)
+	{
+		g_free(uri);
+		return;
+	}
+
+	gchar* path = xfce_resource_save_location(XFCE_RESOURCE_DATA, relpath, false);
+	// I18N: the first %s will be replaced with desktop file path, the second with Hidden=true
+	gchar* message = g_strdup_printf(_("To unhide it you have to manually "
+			"remove the file \"%s\" or open the file and "
+			"remove the line \"%s\"."), path, "Hidden=true");
+	g_free(path);
+
+	if (xfce_dialog_confirm(NULL, NULL, _("Hide Application"), message,
+		_("Are you sure you want to hide \"%s\"?"), m_display_name))
+	{
+		XfceRc* rc = xfce_rc_config_open(XFCE_RESOURCE_DATA, relpath, false);
+		xfce_rc_set_group(rc, G_KEY_FILE_DESKTOP_GROUP);
+		xfce_rc_write_bool_entry(rc, G_KEY_FILE_DESKTOP_KEY_HIDDEN, true);
+		xfce_rc_close(rc);
+	}
+
+	g_free(message);
+	g_free(uri);
+}
+
+//-----------------------------------------------------------------------------
+
 void Launcher::run(GdkScreen* screen) const
 {
 	const gchar* string = garcon_menu_item_get_command(m_item);

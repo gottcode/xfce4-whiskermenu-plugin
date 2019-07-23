@@ -75,6 +75,7 @@ private:
 	void add_selected_to_panel();
 	void add_selected_to_favorites();
 	void edit_selected();
+	void hide_selected();
 	void remove_selected_from_favorites();
 	void create_context_menu(GtkTreePath* path, GdkEvent* event);
 	virtual void extend_context_menu(GtkWidget* menu);

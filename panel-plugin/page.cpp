@@ -416,6 +416,10 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 	g_signal_connect_slot<GtkMenuItem*>(menuitem, "activate", &Page::edit_selected, this);
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
+	menuitem = gtk_menu_item_new_with_label(_("Hide Application"));
+	g_signal_connect_slot<GtkMenuItem*>(menuitem, "activate", &Page::hide_selected, this);
+	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+
 	extend_context_menu(menu);
 
 	gtk_widget_show_all(menu);
@@ -554,6 +558,17 @@ void Page::edit_selected()
 		g_error_free(error);
 	}
 	g_free(command);
+}
+
+//-----------------------------------------------------------------------------
+
+void Page::hide_selected()
+{
+	g_assert(m_selected_launcher != NULL);
+
+	m_window->hide();
+
+	m_selected_launcher->hide();
 }
 
 //-----------------------------------------------------------------------------
