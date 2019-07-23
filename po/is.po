@@ -1,16 +1,17 @@
 # Icelandic translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2017 Graeme Gott
+# Copyright (C) 2019 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # Kristján Magnússon, 2016-2017
+# Sveinn í Felli <sv1@fellsnet.is>, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-08 11:45-0400\n"
-"PO-Revision-Date: 2017-03-05 11:42+0000\n"
-"Last-Translator: Kristján Magnússon\n"
+"POT-Creation-Date: 2019-01-10 07:56-0500\n"
+"PO-Revision-Date: 2019-05-17 18:03+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/is/)\n"
 "Language: is\n"
@@ -29,11 +30,11 @@ msgstr "Bæta við gluggakerfið"
 
 #: ../panel-plugin/page.cpp:242
 msgid "Add to Favorites"
-msgstr "Bæta við uppáhalds"
+msgstr "Bæta við í eftirlæti"
 
 #: ../panel-plugin/page.cpp:262
 msgid "Add to Panel"
-msgstr "Bæta við spjaldið"
+msgstr "Bæta við skjátstiku"
 
 #: ../panel-plugin/category.cpp:61
 msgid "All"
@@ -41,39 +42,39 @@ msgstr "Allt"
 
 #: ../panel-plugin/settings.cpp:128
 msgid "All _Settings"
-msgstr "Allar_Stillingar"
+msgstr "Allar _stillingar"
 
 #: ../panel-plugin/plugin.cpp:408
 msgid "Alternate application launcher for Xfce"
-msgstr ""
+msgstr "Annar forritaræsari fyrir XFCE"
 
 #: ../panel-plugin/configuration-dialog.cpp:751
 msgid "Amount of _items:"
-msgstr "Magn af _hlutum:"
+msgstr "Fjöldi _atriða:"
 
 #: ../panel-plugin/plugin.cpp:212
 msgid "Applications"
-msgstr "Umsóknir"
+msgstr "Forrit"
 
 #: ../panel-plugin/settings.cpp:143
 msgid "Are you sure you want to log out?"
-msgstr ""
+msgstr "Ertu viss að þú viljir skrá þig út?"
 
 #: ../panel-plugin/settings.cpp:149
 msgid "Are you sure you want to restart?"
-msgstr ""
+msgstr "Ertu viss um að þú viljir endurræsa?"
 
 #: ../panel-plugin/settings.cpp:155
 msgid "Are you sure you want to shut down?"
-msgstr ""
+msgstr "Ertu viss að þú vil slökkva á tölvunni?"
 
 #: ../panel-plugin/configuration-dialog.cpp:678
 msgid "Background opacit_y:"
-msgstr "Bakgrunns ógagnsæ_i:"
+msgstr "Ógegnsæi bak_grunns:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
-msgstr "Skoða skrá kerfi til að velja sérsniðna skipun."
+msgstr "Flakka um skráakerfið til að velja sérsniðna skipun."
 
 #: ../panel-plugin/configuration-dialog.cpp:919
 msgid "C_ommand:"
@@ -81,7 +82,7 @@ msgstr "S_kipun:"
 
 #: ../panel-plugin/configuration-dialog.cpp:663
 msgid "Categ_ory icon size:"
-msgstr ""
+msgstr "Stærð táknmynda fyrir fl_okk:"
 
 #: ../panel-plugin/recent-page.cpp:173
 msgid "Clear Recently Used"
@@ -101,37 +102,37 @@ msgstr "Sk_jár:"
 
 #: ../panel-plugin/configuration-dialog.cpp:768
 msgid "Display by _default"
-msgstr "Skjár _Sjálfgefinn"
+msgstr "_Birta sjálfgefið"
 
 #: ../panel-plugin/settings.cpp:161
 msgid "Do you want to suspend to RAM?"
-msgstr ""
+msgstr "Viltu setja í bið í vinnsluminni?"
 
 #: ../panel-plugin/settings.cpp:167
 msgid "Do you want to suspend to disk?"
-msgstr ""
+msgstr "Viltu setja í bið á disk?"
 
 #: ../panel-plugin/page.cpp:269
 msgid "Edit Application..."
-msgstr "Breyta Umsóknum..."
+msgstr "Breyta forriti..."
 
 #: ../panel-plugin/settings.cpp:178
 msgid "Edit _Profile"
-msgstr "Breyta _Prófíll"
+msgstr "_Breyta sniði"
 
 #: ../panel-plugin/settings.cpp:180
 msgid "Failed to edit profile."
-msgstr "Mistókst að breyta snið."
+msgstr "Mistókst að breyta sniði."
 
 #: ../panel-plugin/launcher.cpp:288 ../panel-plugin/launcher.cpp:362
 #: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
-msgstr "Mistókst að framkvæma skipun \"%s\"."
+msgstr "Mistókst að keyra skipunina \"%s\"."
 
 #: ../panel-plugin/settings.cpp:166
 msgid "Failed to hibernate."
-msgstr ""
+msgstr "Mistókst að leggja tölvu í dvala."
 
 #: ../panel-plugin/settings.cpp:176
 msgid "Failed to launch menu editor."
@@ -143,36 +144,36 @@ msgstr "Mistókst að læsa skjánum."
 
 #: ../panel-plugin/settings.cpp:142 ../panel-plugin/settings.cpp:172
 msgid "Failed to log out."
-msgstr "Mistókst að skrá þig út."
+msgstr "Mistókst að skrá út."
 
 #: ../panel-plugin/settings.cpp:130
 msgid "Failed to open settings manager."
-msgstr "Mistókst að opna stillinga framkvæmdastjóra."
+msgstr "Mistókst að opna stillingastjóra."
 
 #: ../panel-plugin/settings.cpp:148
 msgid "Failed to restart."
-msgstr ""
+msgstr "Mistókst að endurræsa."
 
 #: ../panel-plugin/settings.cpp:154
 msgid "Failed to shut down."
-msgstr ""
+msgstr "Mistókst að slökkva."
 
 #: ../panel-plugin/settings.cpp:160
 msgid "Failed to suspend."
-msgstr ""
+msgstr "Mistókst að setja tölvu í bið."
 
 #: ../panel-plugin/settings.cpp:138
 msgid "Failed to switch users."
-msgstr "Mistókst að skipta notendur."
+msgstr "Mistókst að skipta um notendur."
 
 #: ../panel-plugin/window.cpp:158
 msgid "Favorites"
-msgstr "Uppáhalds"
+msgstr "Eftirlæti"
 
 #: ../panel-plugin/settings.cpp:168
 #, c-format
 msgid "Hibernating computer in %d seconds."
-msgstr ""
+msgstr "Legg tölvu í dvala eftir %d sekúndur."
 
 #: ../panel-plugin/configuration-dialog.cpp:564
 msgid "Icon"
@@ -180,28 +181,27 @@ msgstr "Táknmynd"
 
 #: ../panel-plugin/configuration-dialog.cpp:566
 msgid "Icon and title"
-msgstr ""
+msgstr "Táknmynd og titill"
 
 #: ../panel-plugin/configuration-dialog.cpp:762
-#, fuzzy
 msgid "Include _favorites"
-msgstr "Hunsa _uppáhalds"
+msgstr "Hafa með e_ftirlæti"
 
 #: ../panel-plugin/configuration-dialog.cpp:647
 msgid "Ite_m icon size:"
-msgstr ""
+msgstr "Stærð tákn_mynda fyrir atriði:"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Large"
-msgstr "Stórt"
+msgstr "Stór"
 
 #: ../panel-plugin/icon-size.cpp:55
 msgid "Larger"
-msgstr "Stærra"
+msgstr "Stærri"
 
 #: ../panel-plugin/settings.cpp:170
 msgid "Log Ou_t..."
-msgstr ""
+msgstr "Skrá _út..."
 
 #: ../panel-plugin/settings.cpp:140
 msgid "Log _Out"
@@ -210,11 +210,11 @@ msgstr "Skrá _út"
 #: ../panel-plugin/settings.cpp:144
 #, c-format
 msgid "Logging out in %d seconds."
-msgstr ""
+msgstr "Útskráning eftir %d sekúndur."
 
 #: ../panel-plugin/settings.cpp:182
 msgid "Man Pages"
-msgstr ""
+msgstr "Man-hjálparsíður"
 
 #: ../panel-plugin/configuration-dialog.cpp:612
 #: ../panel-plugin/configuration-dialog.cpp:708
@@ -239,11 +239,11 @@ msgstr "Venjulegt"
 
 #: ../panel-plugin/settings.cpp:186
 msgid "Open URI"
-msgstr "Opna URI"
+msgstr "Opna URI-slóð"
 
 #: ../panel-plugin/configuration-dialog.cpp:555
 msgid "Panel Button"
-msgstr ""
+msgstr "Skjástikuhnappur"
 
 #: ../panel-plugin/configuration-dialog.cpp:845
 msgid "Pattern"
@@ -251,15 +251,15 @@ msgstr "Mynstur"
 
 #: ../panel-plugin/configuration-dialog.cpp:718
 msgid "Position _search entry next to panel button"
-msgstr ""
+msgstr "_Staðsetja leitarfærslu við hlið skjástikuhnapps"
 
 #: ../panel-plugin/configuration-dialog.cpp:730
 msgid "Position cate_gories next to panel button"
-msgstr ""
+msgstr "Staðsetja _flokka við hlið skjástikuhnapps"
 
 #: ../panel-plugin/configuration-dialog.cpp:724
 msgid "Position commands next to search _entry"
-msgstr ""
+msgstr "Staðs_etja skipanir við hlið leitarfærslu"
 
 #: ../panel-plugin/configuration-dialog.cpp:747 ../panel-plugin/window.cpp:164
 msgid "Recently Used"
@@ -267,21 +267,21 @@ msgstr "Nýlega notað"
 
 #: ../panel-plugin/page.cpp:250
 msgid "Remove From Favorites"
-msgstr "Fjarlægja frá uppáhalds"
+msgstr "Fjarlægja úr eftirlætum"
 
 #: ../panel-plugin/configuration-dialog.cpp:459
 #, c-format
 msgid "Remove action \"%s\"?"
-msgstr "Fjarlægja aðgerð \"%s\"?"
+msgstr "Fjarlægja aðgerðina \"%s\"?"
 
 #: ../panel-plugin/configuration-dialog.cpp:871
 msgid "Remove selected action"
-msgstr "Fjarlægja valdna aðgerð"
+msgstr "Fjarlægja valda aðgerð"
 
 #: ../panel-plugin/settings.cpp:150
 #, c-format
 msgid "Restarting computer in %d seconds."
-msgstr ""
+msgstr "Endurræsi tölvu eftir %d sekúndur."
 
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
@@ -294,7 +294,7 @@ msgstr "Keyra í skjáhermi"
 
 #: ../panel-plugin/configuration-dialog.cpp:102
 msgid "Search Actio_ns"
-msgstr "Leitar aðgerð_ir"
+msgstr "Leitaraðgerð_ir"
 
 #: ../panel-plugin/search-action.cpp:259
 msgid "Search Action"
@@ -302,7 +302,7 @@ msgstr "Leitaraðgerð"
 
 #: ../panel-plugin/configuration-dialog.cpp:135
 msgid "Select An Icon"
-msgstr ""
+msgstr "Veldu táknmynd"
 
 #: ../panel-plugin/command-edit.cpp:64
 msgid "Select Command"
@@ -310,47 +310,47 @@ msgstr "Veldu skipun"
 
 #: ../panel-plugin/configuration-dialog.cpp:777
 msgid "Session Commands"
-msgstr ""
+msgstr "Skipanir í setu"
 
 #: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
-msgstr "Sýna valmynd til auðveldan aðgang að uppsettum forritum"
+msgstr "Sýna valmynd til að auðvelda aðgang að uppsettum forritum"
 
 #: ../panel-plugin/configuration-dialog.cpp:629
 msgid "Show application _descriptions"
-msgstr ""
+msgstr "Birta lýsin_gar á forritum"
 
 #: ../panel-plugin/configuration-dialog.cpp:635
 msgid "Show application too_ltips"
-msgstr ""
+msgstr "Birta _vísbendingar forrita"
 
 #: ../panel-plugin/configuration-dialog.cpp:781
 msgid "Show c_onfirmation dialog"
-msgstr ""
+msgstr "Birta _staðfestingaglugga"
 
 #: ../panel-plugin/configuration-dialog.cpp:622
 msgid "Show cate_gory names"
-msgstr ""
+msgstr "Birta _heiti flokka"
 
 #: ../panel-plugin/configuration-dialog.cpp:616
 msgid "Show generic application _names"
-msgstr ""
+msgstr "Birta alme_nn heiti forrita"
 
 #: ../panel-plugin/configuration-dialog.cpp:641
 msgid "Show menu hie_rarchy"
-msgstr ""
+msgstr "Sýna stigskipun í valmynd"
 
 #: ../panel-plugin/settings.cpp:152
 msgid "Shut _Down"
-msgstr ""
+msgstr "S_lökkva"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
-msgstr "Lítið"
+msgstr "Lítil"
 
 #: ../panel-plugin/icon-size.cpp:51
 msgid "Smaller"
-msgstr "Minna"
+msgstr "Minni"
 
 #: ../panel-plugin/favorites-page.cpp:147
 msgid "Sort Alphabetically A-Z"
@@ -362,28 +362,28 @@ msgstr "Raða eftir stafrófsröð Z-A"
 
 #: ../panel-plugin/configuration-dialog.cpp:736
 msgid "Stay _visible when focus is lost"
-msgstr ""
+msgstr "Haldast sýnilegt þegar virkni fer annað"
 
 #: ../panel-plugin/settings.cpp:158
 msgid "Suspe_nd"
-msgstr ""
+msgstr "Setja í _bið"
 
 #: ../panel-plugin/settings.cpp:162
 #, c-format
 msgid "Suspending computer in %d seconds."
-msgstr ""
+msgstr "Set tölvu í bið eftir %d sekúndur."
 
 #: ../panel-plugin/settings.cpp:136
 msgid "Switch _Users"
-msgstr "Skipta um _Notanda"
+msgstr "Skipta _um notanda"
 
 #: ../panel-plugin/configuration-dialog.cpp:712
 msgid "Switch categories by _hovering"
-msgstr ""
+msgstr "Skipta um _flokk við yfirsvif"
 
 #: ../panel-plugin/configuration-dialog.cpp:458
 msgid "The action will be deleted permanently."
-msgstr "Aðgerðin verður eytt varanlega."
+msgstr "Aðgerðinni verður eytt varanlega."
 
 #: ../panel-plugin/configuration-dialog.cpp:565
 msgid "Title"
@@ -392,45 +392,45 @@ msgstr "Titill"
 #: ../panel-plugin/settings.cpp:156
 #, c-format
 msgid "Turning off computer in %d seconds."
-msgstr ""
+msgstr "Slekk á tölvu eftir %d sekúndur."
 
 #: ../panel-plugin/page.cpp:334
 msgid "Unable to add launcher to desktop."
-msgstr ""
+msgstr "Tókst ekki að bæta þessum ræsi við skjáborðið."
 
 #: ../panel-plugin/page.cpp:373 ../panel-plugin/page.cpp:382
 msgid "Unable to add launcher to panel."
-msgstr ""
+msgstr "Tókst ekki að bæta þessum ræsi við stikuna."
 
 #: ../panel-plugin/page.cpp:411
 msgid "Unable to edit launcher."
-msgstr ""
+msgstr "Tókst ekki að breyta ræsinum."
 
 #: ../panel-plugin/configuration-dialog.cpp:519
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "Næ ekki að opna slóð: %s"
+msgstr "Get ekki opnað eftirfarandi slóð: %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:599
 msgid "Use a single _panel row"
-msgstr ""
+msgstr "_Nota aðeins eina röð í stiku"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
-msgstr "Mjög stórt"
+msgstr "Mjög stór"
 
 #: ../panel-plugin/icon-size.cpp:50
 msgid "Very Small"
-msgstr "Mjög lítið"
+msgstr "Mjög lítil"
 
 #: ../panel-plugin/settings.cpp:183
 msgid "Web Search"
-msgstr ""
+msgstr "Leit á vef"
 
 #: ../panel-plugin/configuration-dialog.cpp:86
 #: ../panel-plugin/whiskermenu.desktop.in:5
 msgid "Whisker Menu"
-msgstr "Whisker valmynd"
+msgstr "Whisker-valmynd"
 
 #: ../panel-plugin/settings.cpp:184
 msgid "Wikipedia"
@@ -438,16 +438,16 @@ msgstr "Wikipedia"
 
 #: ../panel-plugin/configuration-dialog.cpp:99
 msgid "_Appearance"
-msgstr "_Útlit"
+msgstr "Útl_it"
 
 #: ../panel-plugin/configuration-dialog.cpp:100
 msgid "_Behavior"
-msgstr "_Hegðun"
+msgstr "He_gðun"
 
 #: ../panel-plugin/command-edit.cpp:67
 #: ../panel-plugin/configuration-dialog.cpp:137
 msgid "_Cancel"
-msgstr "_Hætta við"
+msgstr "Hætt_a við"
 
 #: ../panel-plugin/configuration-dialog.cpp:90
 msgid "_Close"
@@ -455,7 +455,7 @@ msgstr "_Loka"
 
 #: ../panel-plugin/configuration-dialog.cpp:101
 msgid "_Commands"
-msgstr "_Skipanir"
+msgstr "S_kipanir"
 
 #: ../panel-plugin/configuration-dialog.cpp:457
 msgid "_Delete"
@@ -463,7 +463,7 @@ msgstr "_Eyða"
 
 #: ../panel-plugin/settings.cpp:174
 msgid "_Edit Applications"
-msgstr "_Breyta Umsóknum"
+msgstr "_Breyta forritum"
 
 #: ../panel-plugin/configuration-dialog.cpp:89
 msgid "_Help"
@@ -471,11 +471,11 @@ msgstr "_Hjálp"
 
 #: ../panel-plugin/settings.cpp:164
 msgid "_Hibernate"
-msgstr ""
+msgstr "Le_ggja í dvala"
 
 #: ../panel-plugin/configuration-dialog.cpp:585
 msgid "_Icon:"
-msgstr ""
+msgstr "Táknm_ynd:"
 
 #: ../panel-plugin/settings.cpp:132
 msgid "_Lock Screen"
@@ -492,11 +492,11 @@ msgstr "_Mynstur:"
 
 #: ../panel-plugin/configuration-dialog.cpp:931
 msgid "_Regular expression"
-msgstr "_Venjulegt orðatiltæki"
+msgstr "_Regluleg segð"
 
 #: ../panel-plugin/settings.cpp:146
 msgid "_Restart"
-msgstr ""
+msgstr "Endu_rræsa"
 
 #: ../panel-plugin/configuration-dialog.cpp:574
 msgid "_Title:"
@@ -504,4 +504,4 @@ msgstr "_Titill:"
 
 #: ../panel-plugin/plugin.cpp:413
 msgid "translator-credits"
-msgstr ""
+msgstr "Kristján Magnússon, 2016-2017. Sveinn í Felli (sv1@fellsnet.is), 2019."
