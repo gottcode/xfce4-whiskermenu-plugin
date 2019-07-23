@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-10 07:56-0500\n"
+"POT-Creation-Date: 2019-07-23 06:09-0400\n"
 "PO-Revision-Date: 2019-01-10 13:11+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/gottcode/xfce4-"
@@ -164,7 +164,8 @@ msgid "Failed to suspend."
 msgstr "Nepavyko pristabdyti."
 
 #: ../panel-plugin/settings.cpp:138
-msgid "Failed to switch users."
+#, fuzzy
+msgid "Failed to switch user."
 msgstr "Nepavyko perjungti naudotojo."
 
 #: ../panel-plugin/window.cpp:158
@@ -375,7 +376,8 @@ msgid "Suspending computer in %d seconds."
 msgstr "Kompiuteris pristabdomas po %d sekundžių."
 
 #: ../panel-plugin/settings.cpp:136
-msgid "Switch _Users"
+#, fuzzy
+msgid "Switch _User"
 msgstr "Perj_ungti naudotojus"
 
 #: ../panel-plugin/configuration-dialog.cpp:712
@@ -403,7 +405,7 @@ msgstr "Nepavyko pridėti leistuko į darbalaukį."
 msgid "Unable to add launcher to panel."
 msgstr "Nepavyko pridėti leistuko į skydelį."
 
-#: ../panel-plugin/page.cpp:411
+#: ../panel-plugin/page.cpp:413
 msgid "Unable to edit launcher."
 msgstr "Nepavyko redaguoti leistuko."
 

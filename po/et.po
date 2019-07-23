@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-08 11:45-0400\n"
+"POT-Creation-Date: 2019-07-23 06:09-0400\n"
 "PO-Revision-Date: 2013-12-07 12:58+0000\n"
 "Last-Translator: Graeme Gott <graeme@gottcode.org>\n"
 "Language-Team: Estonian (http://www.transifex.com/projects/p/xfce4-"
@@ -165,8 +165,9 @@ msgid "Failed to suspend."
 msgstr ""
 
 #: ../panel-plugin/settings.cpp:138
-msgid "Failed to switch users."
-msgstr ""
+#, fuzzy
+msgid "Failed to switch user."
+msgstr "Tõrge päise kirjutamisel\n"
 
 #: ../panel-plugin/window.cpp:158
 msgid "Favorites"
@@ -378,7 +379,7 @@ msgid "Suspending computer in %d seconds."
 msgstr ""
 
 #: ../panel-plugin/settings.cpp:136
-msgid "Switch _Users"
+msgid "Switch _User"
 msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:712
@@ -406,7 +407,7 @@ msgstr ""
 msgid "Unable to add launcher to panel."
 msgstr ""
 
-#: ../panel-plugin/page.cpp:411
+#: ../panel-plugin/page.cpp:413
 #, fuzzy
 msgid "Unable to edit launcher."
 msgstr "Protsessi pole võimalik lõpetada"

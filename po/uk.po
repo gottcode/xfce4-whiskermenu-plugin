@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-10 07:56-0500\n"
+"POT-Creation-Date: 2019-07-23 06:09-0400\n"
 "PO-Revision-Date: 2019-02-07 17:05+0000\n"
 "Last-Translator: zubr139\n"
 "Language-Team: Ukrainian (http://www.transifex.com/gottcode/xfce4-"
@@ -167,7 +167,8 @@ msgid "Failed to suspend."
 msgstr "Не вдалося призупинити."
 
 #: ../panel-plugin/settings.cpp:138
-msgid "Failed to switch users."
+#, fuzzy
+msgid "Failed to switch user."
 msgstr "Неможливо поміняти користувачів."
 
 #: ../panel-plugin/window.cpp:158
@@ -378,7 +379,8 @@ msgid "Suspending computer in %d seconds."
 msgstr "Призупинення роботи комп'ютера за %d секунд."
 
 #: ../panel-plugin/settings.cpp:136
-msgid "Switch _Users"
+#, fuzzy
+msgid "Switch _User"
 msgstr "Поміняти _користувачів"
 
 #: ../panel-plugin/configuration-dialog.cpp:712
@@ -406,7 +408,7 @@ msgstr "Неможливо додати запускач до стільниці
 msgid "Unable to add launcher to panel."
 msgstr "Неможливо додати запускач на панель."
 
-#: ../panel-plugin/page.cpp:411
+#: ../panel-plugin/page.cpp:413
 msgid "Unable to edit launcher."
 msgstr "Неможливо змінити лауечер."
 

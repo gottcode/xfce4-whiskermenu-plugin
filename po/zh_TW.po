@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-10 07:56-0500\n"
+"POT-Creation-Date: 2019-07-23 06:09-0400\n"
 "PO-Revision-Date: 2019-01-11 03:15+0000\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/gottcode/xfce4-"
@@ -164,7 +164,8 @@ msgid "Failed to suspend."
 msgstr "暫停失敗。"
 
 #: ../panel-plugin/settings.cpp:138
-msgid "Failed to switch users."
+#, fuzzy
+msgid "Failed to switch user."
 msgstr "未能切換使用者。"
 
 #: ../panel-plugin/window.cpp:158
@@ -375,7 +376,8 @@ msgid "Suspending computer in %d seconds."
 msgstr "在 %d 秒內暫停。"
 
 #: ../panel-plugin/settings.cpp:136
-msgid "Switch _Users"
+#, fuzzy
+msgid "Switch _User"
 msgstr "切換使用者(_U)"
 
 #: ../panel-plugin/configuration-dialog.cpp:712
@@ -403,7 +405,7 @@ msgstr "無法在桌面上新增啟動器。"
 msgid "Unable to add launcher to panel."
 msgstr "無法在面板上新增啟動器。"
 
-#: ../panel-plugin/page.cpp:411
+#: ../panel-plugin/page.cpp:413
 msgid "Unable to edit launcher."
 msgstr "無法編輯啟動器。"
 

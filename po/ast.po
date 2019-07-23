@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-08 11:45-0400\n"
+"POT-Creation-Date: 2019-07-23 06:09-0400\n"
 "PO-Revision-Date: 2016-09-20 23:37+0000\n"
 "Last-Translator: enolp <enolp@softastur.org>\n"
 "Language-Team: Asturian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -165,7 +165,8 @@ msgid "Failed to suspend."
 msgstr ""
 
 #: ../panel-plugin/settings.cpp:138
-msgid "Failed to switch users."
+#, fuzzy
+msgid "Failed to switch user."
 msgstr "Fallu al cambear d'usuarios."
 
 #: ../panel-plugin/window.cpp:158
@@ -377,7 +378,8 @@ msgid "Suspending computer in %d seconds."
 msgstr ""
 
 #: ../panel-plugin/settings.cpp:136
-msgid "Switch _Users"
+#, fuzzy
+msgid "Switch _User"
 msgstr "Cambear _usuarios"
 
 #: ../panel-plugin/configuration-dialog.cpp:712
@@ -405,7 +407,7 @@ msgstr "Nun pue amestase'l llanzador al escritoriu."
 msgid "Unable to add launcher to panel."
 msgstr "Nun pue amestase'l llanzador al panel."
 
-#: ../panel-plugin/page.cpp:411
+#: ../panel-plugin/page.cpp:413
 #, fuzzy
 msgid "Unable to edit launcher."
 msgstr "Nun pue amestase'l llanzador al panel."

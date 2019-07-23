@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-08 11:45-0400\n"
+"POT-Creation-Date: 2019-07-23 06:09-0400\n"
 "PO-Revision-Date: 2018-04-20 21:11+0000\n"
 "Last-Translator: Sebastian Brici <bricisebastian@gmail.com>\n"
 "Language-Team: Romanian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -165,7 +165,8 @@ msgid "Failed to suspend."
 msgstr ""
 
 #: ../panel-plugin/settings.cpp:138
-msgid "Failed to switch users."
+#, fuzzy
+msgid "Failed to switch user."
 msgstr "Nu se pot schimba utilizatorii"
 
 #: ../panel-plugin/window.cpp:158
@@ -376,7 +377,8 @@ msgid "Suspending computer in %d seconds."
 msgstr ""
 
 #: ../panel-plugin/settings.cpp:136
-msgid "Switch _Users"
+#, fuzzy
+msgid "Switch _User"
 msgstr "Schimbă _utilizatorii"
 
 #: ../panel-plugin/configuration-dialog.cpp:712
@@ -404,7 +406,7 @@ msgstr "Nu s-a putut adăuga lansator la desktop."
 msgid "Unable to add launcher to panel."
 msgstr "Nu s-a putut adăuga lansator la panou."
 
-#: ../panel-plugin/page.cpp:411
+#: ../panel-plugin/page.cpp:413
 msgid "Unable to edit launcher."
 msgstr "Eșec la editarea lansatorului."
 

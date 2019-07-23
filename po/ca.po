@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-10 07:56-0500\n"
+"POT-Creation-Date: 2019-07-23 06:09-0400\n"
 "PO-Revision-Date: 2019-01-10 18:46+0000\n"
 "Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -169,7 +169,8 @@ msgid "Failed to suspend."
 msgstr "Ha fallat la suspensió."
 
 #: ../panel-plugin/settings.cpp:138
-msgid "Failed to switch users."
+#, fuzzy
+msgid "Failed to switch user."
 msgstr "Ha fallat canviar d'usuari."
 
 #: ../panel-plugin/window.cpp:158
@@ -380,7 +381,8 @@ msgid "Suspending computer in %d seconds."
 msgstr "Se suspendrà l'ordinador d'aquí a %d segons."
 
 #: ../panel-plugin/settings.cpp:136
-msgid "Switch _Users"
+#, fuzzy
+msgid "Switch _User"
 msgstr "Canvia d’_usuari"
 
 #: ../panel-plugin/configuration-dialog.cpp:712
@@ -408,7 +410,7 @@ msgstr "No es pot afegir el llançador a l'escriptori."
 msgid "Unable to add launcher to panel."
 msgstr "No es pot afegir el llançador al plafó."
 
-#: ../panel-plugin/page.cpp:411
+#: ../panel-plugin/page.cpp:413
 msgid "Unable to edit launcher."
 msgstr "No es pot editar el llançador."
 

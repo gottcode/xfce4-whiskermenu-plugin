@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-10 07:56-0500\n"
+"POT-Creation-Date: 2019-07-23 06:09-0400\n"
 "PO-Revision-Date: 2019-05-28 15:49+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -164,7 +164,8 @@ msgid "Failed to suspend."
 msgstr "Kunne ikke suspendere."
 
 #: ../panel-plugin/settings.cpp:138
-msgid "Failed to switch users."
+#, fuzzy
+msgid "Failed to switch user."
 msgstr "Kunne ikke skifte bruger."
 
 #: ../panel-plugin/window.cpp:158
@@ -375,7 +376,8 @@ msgid "Suspending computer in %d seconds."
 msgstr "Computeren suspenderes om %d sekunder."
 
 #: ../panel-plugin/settings.cpp:136
-msgid "Switch _Users"
+#, fuzzy
+msgid "Switch _User"
 msgstr "Skift _bruger"
 
 #: ../panel-plugin/configuration-dialog.cpp:712
@@ -403,7 +405,7 @@ msgstr "Kan ikke tilføje opstarter til skrivebordet."
 msgid "Unable to add launcher to panel."
 msgstr "Kan ikke tilføje opstarter til panelet."
 
-#: ../panel-plugin/page.cpp:411
+#: ../panel-plugin/page.cpp:413
 msgid "Unable to edit launcher."
 msgstr "Kan ikke redigere opstarter."
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-10 07:56-0500\n"
+"POT-Creation-Date: 2019-07-23 06:09-0400\n"
 "PO-Revision-Date: 2019-05-17 18:03+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic (http://www.transifex.com/gottcode/xfce4-"
@@ -163,7 +163,8 @@ msgid "Failed to suspend."
 msgstr "Mistókst að setja tölvu í bið."
 
 #: ../panel-plugin/settings.cpp:138
-msgid "Failed to switch users."
+#, fuzzy
+msgid "Failed to switch user."
 msgstr "Mistókst að skipta um notendur."
 
 #: ../panel-plugin/window.cpp:158
@@ -374,7 +375,8 @@ msgid "Suspending computer in %d seconds."
 msgstr "Set tölvu í bið eftir %d sekúndur."
 
 #: ../panel-plugin/settings.cpp:136
-msgid "Switch _Users"
+#, fuzzy
+msgid "Switch _User"
 msgstr "Skipta _um notanda"
 
 #: ../panel-plugin/configuration-dialog.cpp:712
@@ -402,7 +404,7 @@ msgstr "Tókst ekki að bæta þessum ræsi við skjáborðið."
 msgid "Unable to add launcher to panel."
 msgstr "Tókst ekki að bæta þessum ræsi við stikuna."
 
-#: ../panel-plugin/page.cpp:411
+#: ../panel-plugin/page.cpp:413
 msgid "Unable to edit launcher."
 msgstr "Tókst ekki að breyta ræsinum."
 
