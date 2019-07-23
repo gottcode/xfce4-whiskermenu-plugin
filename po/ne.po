@@ -1,16 +1,16 @@
 # Nepali translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2018 Graeme Gott
+# Copyright (C) 2019 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# starryprabin <mr.prabin@gmail.com>, 2013-2018
+# starryprabin <mr.prabin@gmail.com>, 2013-2019
 # Prabin Gautam <PRABINGAUTAM@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-08 11:45-0400\n"
-"PO-Revision-Date: 2018-07-29 07:26+0000\n"
+"POT-Creation-Date: 2019-01-10 07:56-0500\n"
+"PO-Revision-Date: 2019-05-18 08:12+0000\n"
 "Last-Translator: starryprabin <mr.prabin@gmail.com>\n"
 "Language-Team: Nepali (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ne/)\n"
@@ -90,7 +90,7 @@ msgstr "हालसालै प्रयोग भएकालाई सफा
 
 #: ../panel-plugin/plugin.cpp:409
 msgid "Copyright © 2013-2019 Graeme Gott"
-msgstr "प्रतिलिपि अधिकार © 2013-2019 Graeme Gott"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:890
 msgid "Details"
@@ -492,7 +492,7 @@ msgstr "ढाँचा:"
 
 #: ../panel-plugin/configuration-dialog.cpp:931
 msgid "_Regular expression"
-msgstr "रेगुलर एक्सप्रेसन"
+msgstr "रेगुलर एक्सप्रेशन"
 
 #: ../panel-plugin/settings.cpp:146
 msgid "_Restart"
