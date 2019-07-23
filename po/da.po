@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-10 07:56-0500\n"
-"PO-Revision-Date: 2019-01-12 23:33+0000\n"
+"PO-Revision-Date: 2019-05-28 15:49+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/da/)\n"
@@ -39,7 +39,7 @@ msgstr "Tilføj til panel"
 
 #: ../panel-plugin/category.cpp:61
 msgid "All"
-msgstr "Alt"
+msgstr "Alle"
 
 #: ../panel-plugin/settings.cpp:128
 msgid "All _Settings"
@@ -47,7 +47,7 @@ msgstr "Alle _indstillinger"
 
 #: ../panel-plugin/plugin.cpp:408
 msgid "Alternate application launcher for Xfce"
-msgstr "Alternativ programopstarter for Xfce"
+msgstr "Alternativ programopstarter til Xfce"
 
 #: ../panel-plugin/configuration-dialog.cpp:751
 msgid "Amount of _items:"
@@ -99,7 +99,7 @@ msgstr "Detaljer"
 
 #: ../panel-plugin/configuration-dialog.cpp:559
 msgid "Di_splay:"
-msgstr "_Skærm:"
+msgstr "_Vis:"
 
 #: ../panel-plugin/configuration-dialog.cpp:768
 msgid "Display by _default"
@@ -115,7 +115,7 @@ msgstr "Vil du suspendere til disk?"
 
 #: ../panel-plugin/page.cpp:269
 msgid "Edit Application..."
-msgstr "Rediger program..."
+msgstr "Rediger program ..."
 
 #: ../panel-plugin/settings.cpp:178
 msgid "Edit _Profile"
@@ -202,7 +202,7 @@ msgstr "Større"
 
 #: ../panel-plugin/settings.cpp:170
 msgid "Log Ou_t..."
-msgstr "Log _ud..."
+msgstr "Log _ud ..."
 
 #: ../panel-plugin/settings.cpp:140
 msgid "Log _Out"
@@ -252,7 +252,7 @@ msgstr "Mønster"
 
 #: ../panel-plugin/configuration-dialog.cpp:718
 msgid "Position _search entry next to panel button"
-msgstr "Placer _søgning ved siden af panelknap"
+msgstr "Placer _søgeindtastning ved siden af panelknap"
 
 #: ../panel-plugin/configuration-dialog.cpp:730
 msgid "Position cate_gories next to panel button"
@@ -260,11 +260,11 @@ msgstr "Placer _kategorier ved siden af panelknap"
 
 #: ../panel-plugin/configuration-dialog.cpp:724
 msgid "Position commands next to search _entry"
-msgstr "Placer kommandoer ved siden af søgning"
+msgstr "Placer kommandoer ved siden af søge_indtastning"
 
 #: ../panel-plugin/configuration-dialog.cpp:747 ../panel-plugin/window.cpp:164
 msgid "Recently Used"
-msgstr "Senest anvendt"
+msgstr "Senest anvendte"
 
 #: ../panel-plugin/page.cpp:250
 msgid "Remove From Favorites"
@@ -295,11 +295,11 @@ msgstr "Kør i terminal"
 
 #: ../panel-plugin/configuration-dialog.cpp:102
 msgid "Search Actio_ns"
-msgstr "Søg ha_ndlinger"
+msgstr "Søgeha_ndlinger"
 
 #: ../panel-plugin/search-action.cpp:259
 msgid "Search Action"
-msgstr "Søg handling"
+msgstr "Søgehandling"
 
 #: ../panel-plugin/configuration-dialog.cpp:135
 msgid "Select An Icon"
@@ -339,7 +339,7 @@ msgstr "Vis generiske program_navne"
 
 #: ../panel-plugin/configuration-dialog.cpp:641
 msgid "Show menu hie_rarchy"
-msgstr "Indlæs menuers hie_rarki"
+msgstr "Vis menuhie_rarki"
 
 #: ../panel-plugin/settings.cpp:152
 msgid "Shut _Down"
@@ -367,7 +367,7 @@ msgstr "Forbliv _synlig når fokus mistes"
 
 #: ../panel-plugin/settings.cpp:158
 msgid "Suspe_nd"
-msgstr "_Suspender"
+msgstr "_Hvile"
 
 #: ../panel-plugin/settings.cpp:162
 #, c-format
@@ -376,7 +376,7 @@ msgstr "Computeren suspenderes om %d sekunder."
 
 #: ../panel-plugin/settings.cpp:136
 msgid "Switch _Users"
-msgstr "Skift _brugere"
+msgstr "Skift _bruger"
 
 #: ../panel-plugin/configuration-dialog.cpp:712
 msgid "Switch categories by _hovering"
@@ -414,7 +414,7 @@ msgstr "Kan ikke åbne den følgende URL: %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:599
 msgid "Use a single _panel row"
-msgstr "Brug en _enkelt række i panelet"
+msgstr "Brug én række i _panelet"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
