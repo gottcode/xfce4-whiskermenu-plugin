@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-10 07:56-0500\n"
-"PO-Revision-Date: 2019-01-14 09:19+0000\n"
+"PO-Revision-Date: 2019-04-26 15:51+0000\n"
 "Last-Translator: Kiril Kirilov <cybercop_montana@abv.bg>\n"
 "Language-Team: Bulgarian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/bg/)\n"
@@ -49,7 +49,7 @@ msgstr "Алтернативно меню на програмите за Xfce"
 
 #: ../panel-plugin/configuration-dialog.cpp:751
 msgid "Amount of _items:"
-msgstr "Размер на елементите:"
+msgstr "Брой на елементите:"
 
 #: ../panel-plugin/plugin.cpp:212
 msgid "Applications"
