@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-07-23 06:09-0400\n"
-"PO-Revision-Date: 2019-04-26 15:51+0000\n"
+"PO-Revision-Date: 2019-07-23 16:46+0000\n"
 "Last-Translator: Kiril Kirilov <cybercop_montana@abv.bg>\n"
 "Language-Team: Bulgarian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/bg/)\n"
@@ -162,7 +162,6 @@ msgid "Failed to suspend."
 msgstr "Неуспешно приспиване."
 
 #: ../panel-plugin/settings.cpp:138
-#, fuzzy
 msgid "Failed to switch user."
 msgstr "Неуспешна смяна на потребител."
 
@@ -374,9 +373,8 @@ msgid "Suspending computer in %d seconds."
 msgstr "Приспиване на компютъра след %d секунди."
 
 #: ../panel-plugin/settings.cpp:136
-#, fuzzy
 msgid "Switch _User"
-msgstr "Смяна на потребител"
+msgstr "Смяна на потребител."
 
 #: ../panel-plugin/configuration-dialog.cpp:712
 msgid "Switch categories by _hovering"
