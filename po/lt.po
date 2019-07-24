@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-07-23 06:09-0400\n"
-"PO-Revision-Date: 2019-01-10 13:11+0000\n"
+"PO-Revision-Date: 2019-07-23 10:56+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/lt/)\n"
@@ -164,7 +164,6 @@ msgid "Failed to suspend."
 msgstr "Nepavyko pristabdyti."
 
 #: ../panel-plugin/settings.cpp:138
-#, fuzzy
 msgid "Failed to switch user."
 msgstr "Nepavyko perjungti naudotojo."
 
@@ -376,9 +375,8 @@ msgid "Suspending computer in %d seconds."
 msgstr "Kompiuteris pristabdomas po %d sekundžių."
 
 #: ../panel-plugin/settings.cpp:136
-#, fuzzy
 msgid "Switch _User"
-msgstr "Perj_ungti naudotojus"
+msgstr "Perj_ungti naudotoją"
 
 #: ../panel-plugin/configuration-dialog.cpp:712
 msgid "Switch categories by _hovering"
