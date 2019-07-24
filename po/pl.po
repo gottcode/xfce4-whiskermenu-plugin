@@ -7,7 +7,7 @@
 # december <december0123@gmail.com>, 2013
 # december <december0123@gmail.com>, 2013
 # december <december0123@gmail.com>, 2013
-# Marcin Mikołajczak <me@m4sk.in>, 2016
+# Marcin Mikołajczak <me@mkljczk.pl>, 2016
 # Michał Olber <michal@olber.pl>, 2013-2015
 # Michał Trzebiatowski <michtrz@gmail.com>, 2018-2019
 # Michał Trzebiatowski <michtrz@gmail.com>, 2013-2014,2016-2018
@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-07-23 06:09-0400\n"
-"PO-Revision-Date: 2019-01-15 18:30+0000\n"
+"PO-Revision-Date: 2019-07-23 18:03+0000\n"
 "Last-Translator: Michał Trzebiatowski <michtrz@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/pl/)\n"
@@ -176,7 +176,6 @@ msgid "Failed to suspend."
 msgstr "Nie udało się wstrzymać."
 
 #: ../panel-plugin/settings.cpp:138
-#, fuzzy
 msgid "Failed to switch user."
 msgstr "Nie udało się przełączyć użytkownika."
 
@@ -388,7 +387,6 @@ msgid "Suspending computer in %d seconds."
 msgstr "Działanie komputera zostanie wstrzymane za %d sekund."
 
 #: ../panel-plugin/settings.cpp:136
-#, fuzzy
 msgid "Switch _User"
 msgstr "Przełącz uży_tkownika"
 
