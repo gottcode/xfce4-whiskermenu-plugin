@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-07-23 06:09-0400\n"
-"PO-Revision-Date: 2019-03-24 18:55+0000\n"
+"PO-Revision-Date: 2019-07-24 10:34+0000\n"
 "Last-Translator: Pjotr <pjotrvertaalt@gmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/nl/)\n"
@@ -162,9 +162,8 @@ msgid "Failed to suspend."
 msgstr "Kon pauzestand niet inschakelen."
 
 #: ../panel-plugin/settings.cpp:138
-#, fuzzy
 msgid "Failed to switch user."
-msgstr "Kon niet van gebruiker wisselen."
+msgstr "Kon gebruiker niet wisselen."
 
 #: ../panel-plugin/window.cpp:158
 msgid "Favorites"
@@ -374,9 +373,8 @@ msgid "Suspending computer in %d seconds."
 msgstr "De computer wordt over %d seconden in pauzestand gebracht."
 
 #: ../panel-plugin/settings.cpp:136
-#, fuzzy
 msgid "Switch _User"
-msgstr "Gebruikers _wisselen"
+msgstr "Gebruiker _wisselen"
 
 #: ../panel-plugin/configuration-dialog.cpp:712
 msgid "Switch categories by _hovering"
