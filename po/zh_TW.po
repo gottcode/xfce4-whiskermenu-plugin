@@ -3,16 +3,17 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Jeff Huang <s8321414@gmail.com>, 2014-2019
+# 黃柏諺 <s8321414@gmail.com>, 2014-2019
 # Walter Cheuk <wwycheuk@gmail.com>, 2013
-# Jeff Huang <s8321414@gmail.com>, 2013-2014
+# 黃柏諺 <s8321414@gmail.com>, 2013-2014
+# 黃柏諺 <s8321414@gmail.com>, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-07-23 06:09-0400\n"
-"PO-Revision-Date: 2019-01-11 03:15+0000\n"
-"Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
+"PO-Revision-Date: 2019-07-23 13:58+0000\n"
+"Last-Translator: 黃柏諺 <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/zh_TW/)\n"
 "Language: zh_TW\n"
@@ -164,9 +165,8 @@ msgid "Failed to suspend."
 msgstr "暫停失敗。"
 
 #: ../panel-plugin/settings.cpp:138
-#, fuzzy
 msgid "Failed to switch user."
-msgstr "未能切換使用者。"
+msgstr "切換使用者失敗。"
 
 #: ../panel-plugin/window.cpp:158
 msgid "Favorites"
@@ -376,7 +376,6 @@ msgid "Suspending computer in %d seconds."
 msgstr "在 %d 秒內暫停。"
 
 #: ../panel-plugin/settings.cpp:136
-#, fuzzy
 msgid "Switch _User"
 msgstr "切換使用者(_U)"
 
