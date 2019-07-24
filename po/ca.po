@@ -3,11 +3,11 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Adolfo Jayme-Barrientos, 2016,2018
-# Adolfo Jayme-Barrientos, 2015
-# Adolfo Jayme-Barrientos, 2013
-# Adolfo Jayme-Barrientos, 2014
-# Davidmp <medipas@gmail.com>, 2017-2018
+# Fito JB, 2016,2018
+# Fito JB, 2015
+# Fito JB, 2013
+# Fito JB, 2014
+# Davidmp <medipas@gmail.com>, 2017-2019
 # Oriol Fernandez <oriolfa@ono.com>, 2013
 # Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2017-2019
 # Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016
@@ -16,8 +16,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-07-23 06:09-0400\n"
-"PO-Revision-Date: 2019-01-10 18:46+0000\n"
-"Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
+"PO-Revision-Date: 2019-07-24 06:53+0000\n"
+"Last-Translator: Davidmp <medipas@gmail.com>\n"
 "Language-Team: Catalan (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ca/)\n"
 "Language: ca\n"
@@ -169,7 +169,6 @@ msgid "Failed to suspend."
 msgstr "Ha fallat la suspensió."
 
 #: ../panel-plugin/settings.cpp:138
-#, fuzzy
 msgid "Failed to switch user."
 msgstr "Ha fallat canviar d'usuari."
 
@@ -381,9 +380,8 @@ msgid "Suspending computer in %d seconds."
 msgstr "Se suspendrà l'ordinador d'aquí a %d segons."
 
 #: ../panel-plugin/settings.cpp:136
-#, fuzzy
 msgid "Switch _User"
-msgstr "Canvia d’_usuari"
+msgstr "Canvia d'_usuari"
 
 #: ../panel-plugin/configuration-dialog.cpp:712
 msgid "Switch categories by _hovering"
