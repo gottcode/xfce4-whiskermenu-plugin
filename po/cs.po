@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-10 07:56-0500\n"
-"PO-Revision-Date: 2019-01-11 05:36+0000\n"
+"PO-Revision-Date: 2019-08-01 19:41+0000\n"
 "Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/cs/)\n"
@@ -111,11 +111,11 @@ msgstr "Zob_razit ve výchozím nastavení"
 
 #: ../panel-plugin/settings.cpp:161
 msgid "Do you want to suspend to RAM?"
-msgstr "Chcete uspat do operační paměti"
+msgstr "Chcete počítač uspat do operační paměti"
 
 #: ../panel-plugin/settings.cpp:167
 msgid "Do you want to suspend to disk?"
-msgstr "Chcete uspat na disk?"
+msgstr "Chcete počítač uspat na disk?"
 
 #: ../panel-plugin/page.cpp:269
 msgid "Edit Application..."
