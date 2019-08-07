@@ -7,6 +7,7 @@
 # Fábio Luciano de Góis <fabio@naoimporta.com>, 2013
 # Gabriel Henrique <gabrielddev@gmail.com>, 2018-2019
 # Gabriel Henrique <gabrielddev@gmail.com>, 2017-2018
+# Graeme Gott <graeme@gottcode.org>, 2013
 # Holmes <holmes_holmes@live.com>, 2014
 # José Vieira <jvieira33@sapo.pt>, 2016-2017
 # Lorhan Sohaky, 2018
@@ -17,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-07-23 06:09-0400\n"
-"PO-Revision-Date: 2019-03-02 16:37+0000\n"
+"PO-Revision-Date: 2019-08-05 22:11+0000\n"
 "Last-Translator: Gabriel Henrique <gabrielddev@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/pt_BR/)\n"
@@ -170,7 +171,6 @@ msgid "Failed to suspend."
 msgstr "Falha ao suspender."
 
 #: ../panel-plugin/settings.cpp:138
-#, fuzzy
 msgid "Failed to switch user."
 msgstr "Falha ao trocar de usuário."
 
@@ -382,9 +382,8 @@ msgid "Suspending computer in %d seconds."
 msgstr "Suspendendo o computador em %d segundos."
 
 #: ../panel-plugin/settings.cpp:136
-#, fuzzy
 msgid "Switch _User"
-msgstr "Trocar de _usuário"
+msgstr "Trocar usu_ário"
 
 #: ../panel-plugin/configuration-dialog.cpp:712
 msgid "Switch categories by _hovering"
