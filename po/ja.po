@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-07-23 06:09-0400\n"
-"PO-Revision-Date: 2019-01-22 10:29+0000\n"
+"PO-Revision-Date: 2019-08-06 12:55+0000\n"
 "Last-Translator: Masato HASHIMOTO <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ja/)\n"
@@ -162,9 +162,8 @@ msgid "Failed to suspend."
 msgstr "サスペンドに失敗しました。"
 
 #: ../panel-plugin/settings.cpp:138
-#, fuzzy
 msgid "Failed to switch user."
-msgstr "ユーザーの切り替えに失敗しました。"
+msgstr "ユーザーの切り換えに失敗しました。"
 
 #: ../panel-plugin/window.cpp:158
 msgid "Favorites"
@@ -376,9 +375,8 @@ msgid "Suspending computer in %d seconds."
 msgstr "%d 秒後にサスペンドします。"
 
 #: ../panel-plugin/settings.cpp:136
-#, fuzzy
 msgid "Switch _User"
-msgstr "ユーザーの切り替え(_U)"
+msgstr "ユーザーの切り換え(_U)"
 
 #: ../panel-plugin/configuration-dialog.cpp:712
 msgid "Switch categories by _hovering"
