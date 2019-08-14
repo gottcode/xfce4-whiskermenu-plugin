@@ -75,6 +75,7 @@ static bool panel_utils_grab_available()
 	return grab_succeed;
 }
 
+#if !LIBXFCE4PANEL_CHECK_VERSION(4,13,0)
 static void widget_add_css(GtkWidget* widget, const gchar* css)
 {
 	GtkCssProvider* provider = gtk_css_provider_new();
@@ -84,6 +85,7 @@ static void widget_add_css(GtkWidget* widget, const gchar* css)
 			GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 	g_object_unref(provider);
 }
+#endif
 
 //-----------------------------------------------------------------------------
 
