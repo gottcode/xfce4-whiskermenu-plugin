@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-10 07:56-0500\n"
-"PO-Revision-Date: 2019-03-24 18:55+0000\n"
+"PO-Revision-Date: 2019-09-05 10:25+0000\n"
 "Last-Translator: Pjotr <pjotrvertaalt@gmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/nl/)\n"
@@ -101,7 +101,7 @@ msgstr "_Tonen:"
 
 #: ../panel-plugin/configuration-dialog.cpp:768
 msgid "Display by _default"
-msgstr "Standaard tonen"
+msgstr "_Standaard tonen"
 
 #: ../panel-plugin/settings.cpp:161
 msgid "Do you want to suspend to RAM?"
@@ -266,7 +266,7 @@ msgstr "Onlangs gebruikt"
 
 #: ../panel-plugin/page.cpp:250
 msgid "Remove From Favorites"
-msgstr "Verwijder uit favorieten"
+msgstr "Verwijderen uit favorieten"
 
 #: ../panel-plugin/configuration-dialog.cpp:459
 #, c-format
@@ -321,7 +321,7 @@ msgstr "Toon _beschrijvingen van toepassingen"
 
 #: ../panel-plugin/configuration-dialog.cpp:635
 msgid "Show application too_ltips"
-msgstr "Toon gereedschapstips voor toepassingen"
+msgstr "Toon zweeftips voor toepassingen"
 
 #: ../panel-plugin/configuration-dialog.cpp:781
 msgid "Show c_onfirmation dialog"
@@ -412,7 +412,7 @@ msgstr "Kon het volgende webadres niet openen: %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:599
 msgid "Use a single _panel row"
-msgstr "Gebruik een enkele paneelrij"
+msgstr "Gebruik een enkele werkbalkrij"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
