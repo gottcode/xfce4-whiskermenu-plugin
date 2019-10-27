@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-07-23 06:09-0400\n"
-"PO-Revision-Date: 2019-08-05 22:11+0000\n"
+"PO-Revision-Date: 2019-08-07 17:51+0000\n"
 "Last-Translator: Gabriel Henrique <gabrielddev@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/pt_BR/)\n"
@@ -383,7 +383,7 @@ msgstr "Suspendendo o computador em %d segundos."
 
 #: ../panel-plugin/settings.cpp:136
 msgid "Switch _User"
-msgstr "Trocar usu_ário"
+msgstr "Trocar de _usuário"
 
 #: ../panel-plugin/configuration-dialog.cpp:712
 msgid "Switch categories by _hovering"
