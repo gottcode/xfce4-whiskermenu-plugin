@@ -1,15 +1,15 @@
 # Georgian translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2018 Graeme Gott
+# Copyright (C) 2019 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# zura davitashvili <rouchage@gmail.com>, 2018
+# zura davitashvili <rouchage@gmail.com>, 2018-2019
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-08 11:45-0400\n"
-"PO-Revision-Date: 2018-07-04 06:18+0000\n"
+"PO-Revision-Date: 2019-10-25 18:01+0000\n"
 "Last-Translator: zura davitashvili <rouchage@gmail.com>\n"
 "Language-Team: Georgian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ka/)\n"
@@ -57,19 +57,19 @@ msgstr "პროგრამები"
 
 #: ../panel-plugin/settings.cpp:143
 msgid "Are you sure you want to log out?"
-msgstr ""
+msgstr "დარწმუნებული ხართ, რომ გსურთ გამოსვლა?"
 
 #: ../panel-plugin/settings.cpp:149
 msgid "Are you sure you want to restart?"
-msgstr ""
+msgstr "დარწმუნებული ხართ, რომ გსურთ გადატვირთვა?"
 
 #: ../panel-plugin/settings.cpp:155
 msgid "Are you sure you want to shut down?"
-msgstr ""
+msgstr "დარწმუნებული ხართ, რომ გსურთ გამორთვა?"
 
 #: ../panel-plugin/configuration-dialog.cpp:678
 msgid "Background opacit_y:"
-msgstr "ფონის გამჭვირვალობა:"
+msgstr "ფონის გაუმჭვირვალობა:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
@@ -89,7 +89,7 @@ msgstr "ახლახანს გამოყენებულების �
 
 #: ../panel-plugin/plugin.cpp:409
 msgid "Copyright © 2013-2019 Graeme Gott"
-msgstr "ყველა უფლება დაცულია © 2013-2019"
+msgstr "საავტორო უფლებები © 2013-2019 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:890
 msgid "Details"
@@ -105,11 +105,11 @@ msgstr "ნაგულისხმევის მიხედვით ჩვ�
 
 #: ../panel-plugin/settings.cpp:161
 msgid "Do you want to suspend to RAM?"
-msgstr ""
+msgstr "გსურთ შეჩერება მოხდეს ოპერატიულ მეხსიერებაზე?"
 
 #: ../panel-plugin/settings.cpp:167
 msgid "Do you want to suspend to disk?"
-msgstr ""
+msgstr "გსურთ შეჩერება მოხდეს დისკზე?"
 
 #: ../panel-plugin/page.cpp:269
 msgid "Edit Application..."
@@ -131,7 +131,7 @@ msgstr "ვერ მოხერხდა შემდეგი ბრძან
 
 #: ../panel-plugin/settings.cpp:166
 msgid "Failed to hibernate."
-msgstr ""
+msgstr "ჰიბერნაცია ვერ მოხერხდა."
 
 #: ../panel-plugin/settings.cpp:176
 msgid "Failed to launch menu editor."
@@ -151,15 +151,15 @@ msgstr "პარამეტრების მენეჯერის გა�
 
 #: ../panel-plugin/settings.cpp:148
 msgid "Failed to restart."
-msgstr ""
+msgstr "გადატვირთვა ვერ მოხერხდა."
 
 #: ../panel-plugin/settings.cpp:154
 msgid "Failed to shut down."
-msgstr ""
+msgstr "გამორთვა ვერ მოხერხდა."
 
 #: ../panel-plugin/settings.cpp:160
 msgid "Failed to suspend."
-msgstr ""
+msgstr "შეჩერება ვერ მოხერხდა."
 
 #: ../panel-plugin/settings.cpp:138
 msgid "Failed to switch users."
@@ -172,7 +172,7 @@ msgstr "რჩეულები"
 #: ../panel-plugin/settings.cpp:168
 #, c-format
 msgid "Hibernating computer in %d seconds."
-msgstr ""
+msgstr "კომპიუტერის ჰიბერნაცია %d წამში."
 
 #: ../panel-plugin/configuration-dialog.cpp:564
 msgid "Icon"
@@ -200,7 +200,7 @@ msgstr "უფრო დიდი"
 
 #: ../panel-plugin/settings.cpp:170
 msgid "Log Ou_t..."
-msgstr ""
+msgstr "გამოსვლა..."
 
 #: ../panel-plugin/settings.cpp:140
 msgid "Log _Out"
@@ -209,7 +209,7 @@ msgstr "გამოსვლა"
 #: ../panel-plugin/settings.cpp:144
 #, c-format
 msgid "Logging out in %d seconds."
-msgstr ""
+msgstr "გამოსვლა  %d წამში."
 
 #: ../panel-plugin/settings.cpp:182
 msgid "Man Pages"
@@ -280,7 +280,7 @@ msgstr "არჩეული მოქმედების წაშლა"
 #: ../panel-plugin/settings.cpp:150
 #, c-format
 msgid "Restarting computer in %d seconds."
-msgstr ""
+msgstr "კომპიუტერის გადატვირთვა დაიწყება %d წამში."
 
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
@@ -309,7 +309,7 @@ msgstr "აირჩიეთ ბრძანება"
 
 #: ../panel-plugin/configuration-dialog.cpp:777
 msgid "Session Commands"
-msgstr ""
+msgstr "სესიის ბრძანებები"
 
 #: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
@@ -325,11 +325,11 @@ msgstr "პროგრამების მინიშნებების �
 
 #: ../panel-plugin/configuration-dialog.cpp:781
 msgid "Show c_onfirmation dialog"
-msgstr ""
+msgstr "დადასტურების დიალოგის ჩვენება"
 
 #: ../panel-plugin/configuration-dialog.cpp:622
 msgid "Show cate_gory names"
-msgstr "კატეგორიების სახელის ჩვენება"
+msgstr "კატეგორიების სახელების ჩვენება"
 
 #: ../panel-plugin/configuration-dialog.cpp:616
 msgid "Show generic application _names"
@@ -341,7 +341,7 @@ msgstr "მენიუს იერარქიის ჩვენება"
 
 #: ../panel-plugin/settings.cpp:152
 msgid "Shut _Down"
-msgstr ""
+msgstr "გამორთვა"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -361,16 +361,16 @@ msgstr "დალაგება ანბანის მიხედვით 
 
 #: ../panel-plugin/configuration-dialog.cpp:736
 msgid "Stay _visible when focus is lost"
-msgstr ""
+msgstr "დარჩი ხილული ფოკუსის დაკარგვის შემდეგაც"
 
 #: ../panel-plugin/settings.cpp:158
 msgid "Suspe_nd"
-msgstr ""
+msgstr "შეჩერება"
 
 #: ../panel-plugin/settings.cpp:162
 #, c-format
 msgid "Suspending computer in %d seconds."
-msgstr ""
+msgstr "კომპიუტერი შეჩერდება %d წამში."
 
 #: ../panel-plugin/settings.cpp:136
 msgid "Switch _Users"
@@ -391,7 +391,7 @@ msgstr "სათაური"
 #: ../panel-plugin/settings.cpp:156
 #, c-format
 msgid "Turning off computer in %d seconds."
-msgstr ""
+msgstr "კომპიუტერი გაითიშება %d წამში."
 
 #: ../panel-plugin/page.cpp:334
 msgid "Unable to add launcher to desktop."
@@ -470,7 +470,7 @@ msgstr "დახმარება"
 
 #: ../panel-plugin/settings.cpp:164
 msgid "_Hibernate"
-msgstr ""
+msgstr "ჰიბერნაცია"
 
 #: ../panel-plugin/configuration-dialog.cpp:585
 msgid "_Icon:"
@@ -483,7 +483,7 @@ msgstr "ეკრანის დაბლოკვა"
 #: ../panel-plugin/command-edit.cpp:68
 #: ../panel-plugin/configuration-dialog.cpp:138
 msgid "_OK"
-msgstr "კაი"
+msgstr "კარგი"
 
 #: ../panel-plugin/configuration-dialog.cpp:907
 msgid "_Pattern:"
@@ -495,7 +495,7 @@ msgstr "რეგულარული გამოხატვა"
 
 #: ../panel-plugin/settings.cpp:146
 msgid "_Restart"
-msgstr ""
+msgstr "გადატვირთვა"
 
 #: ../panel-plugin/configuration-dialog.cpp:574
 msgid "_Title:"
