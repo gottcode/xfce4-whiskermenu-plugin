@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-07-23 06:09-0400\n"
-"PO-Revision-Date: 2019-07-24 07:20+0000\n"
+"PO-Revision-Date: 2019-08-21 20:13+0000\n"
 "Last-Translator: Daniel Muñiz Fontoira <dani@damufo.com>\n"
 "Language-Team: Galician (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/gl/)\n"
@@ -45,7 +45,7 @@ msgstr "Todas as _opcións"
 
 #: ../panel-plugin/plugin.cpp:408
 msgid "Alternate application launcher for Xfce"
-msgstr "Iniciador de aplicativos alternativo para o Xfce"
+msgstr "Iniciador de aplicacións alternativo para o Xfce"
 
 #: ../panel-plugin/configuration-dialog.cpp:751
 msgid "Amount of _items:"
@@ -53,7 +53,7 @@ msgstr "Cantidade de _elementos:"
 
 #: ../panel-plugin/plugin.cpp:212
 msgid "Applications"
-msgstr "Aplicativos"
+msgstr "Aplicacións"
 
 #: ../panel-plugin/settings.cpp:143
 msgid "Are you sure you want to log out?"
@@ -113,7 +113,7 @@ msgstr "Quere suspender ao disco?"
 
 #: ../panel-plugin/page.cpp:269
 msgid "Edit Application..."
-msgstr "Modificar o aplicativo..."
+msgstr "Modificar a aplicación..."
 
 #: ../panel-plugin/settings.cpp:178
 msgid "Edit _Profile"
@@ -313,15 +313,15 @@ msgstr "Ordes da sesión"
 
 #: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
-msgstr "Amosar un menú para acceder doadamente aos aplicativos instalados"
+msgstr "Amosar un menú para acceder doadamente as aplicacións instaladas"
 
 #: ../panel-plugin/configuration-dialog.cpp:629
 msgid "Show application _descriptions"
-msgstr "Amosar as _descricións dos aplicativos"
+msgstr "Amosar as _descricións das aplicacións"
 
 #: ../panel-plugin/configuration-dialog.cpp:635
 msgid "Show application too_ltips"
-msgstr "Amosar as indicacións dos aplicativos"
+msgstr "Amosar as indicacións das aplicacións"
 
 #: ../panel-plugin/configuration-dialog.cpp:781
 msgid "Show c_onfirmation dialog"
@@ -333,7 +333,7 @@ msgstr "Amosar os nomes da cate_gorías"
 
 #: ../panel-plugin/configuration-dialog.cpp:616
 msgid "Show generic application _names"
-msgstr "Amosar os _nomes xenéricos dos aplicativos"
+msgstr "Amosar os _nomes xenéricos das aplicacións"
 
 #: ../panel-plugin/configuration-dialog.cpp:641
 msgid "Show menu hie_rarchy"
@@ -462,7 +462,7 @@ msgstr "_Eliminar"
 
 #: ../panel-plugin/settings.cpp:174
 msgid "_Edit Applications"
-msgstr "_Modificar os aplicativos"
+msgstr "_Modificar as aplicacións"
 
 #: ../panel-plugin/configuration-dialog.cpp:89
 msgid "_Help"
