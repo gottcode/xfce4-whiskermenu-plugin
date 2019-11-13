@@ -1,3 +1,9 @@
+Website
+=======
+
+https://docs.xfce.org/panel-plugins/xfce4-whiskermenu-plugin
+
+
 About
 =====
 
@@ -40,3 +46,14 @@ focus prevention. Open the focus prevention of the compiz settings
 manager [ccsm -> 'General Settings' -> 'Focus Prevention'].
 Add (title="Whisker Menu") to the exclude pattern to make compiz ignore
 Whisker Menu and allow it to focus when shown.
+
+
+How to report bugs?
+===================
+
+You can report bugs and feature requests at http://bugzilla.xfce.org.
+Choose the product Panel Plugins and the component xfce4-whiskermenu-plugin.
+You will need to create an account for yourself.
+
+You can also join the Xfce development mailing-list:
+https://mail.xfce.org/mailman/listinfo/xfce4-dev

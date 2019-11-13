@@ -18,7 +18,7 @@
 #ifndef WHISKERMENU_PLUGIN_H
 #define WHISKERMENU_PLUGIN_H
 
-#define PLUGIN_WEBSITE "https://goodies.xfce.org/projects/panel-plugins/xfce4-whiskermenu-plugin"
+#define PLUGIN_WEBSITE "https://docs.xfce.org/panel-plugins/xfce4-whiskermenu-plugin"
 
 #include <string>
 
