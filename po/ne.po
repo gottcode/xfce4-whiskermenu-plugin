@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-07-23 06:09-0400\n"
-"PO-Revision-Date: 2019-05-18 08:12+0000\n"
+"PO-Revision-Date: 2019-11-27 16:05+0000\n"
 "Last-Translator: starryprabin <mr.prabin@gmail.com>\n"
 "Language-Team: Nepali (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ne/)\n"
@@ -58,15 +58,15 @@ msgstr "अनुप्रयोगहरु"
 
 #: ../panel-plugin/settings.cpp:143
 msgid "Are you sure you want to log out?"
-msgstr ""
+msgstr "के तपाईँ पक्का बाहिर निस्कन चाहनुहुन्छ?"
 
 #: ../panel-plugin/settings.cpp:149
 msgid "Are you sure you want to restart?"
-msgstr ""
+msgstr "के तपाइँ पक्का पुन: शुरू गर्न चाहानुहुन्छ?"
 
 #: ../panel-plugin/settings.cpp:155
 msgid "Are you sure you want to shut down?"
-msgstr ""
+msgstr "के तपाइँ पक्का बन्द गर्न चाहानुहुन्छ?"
 
 #: ../panel-plugin/configuration-dialog.cpp:678
 msgid "Background opacit_y:"
@@ -90,7 +90,7 @@ msgstr "हालसालै प्रयोग भएकालाई सफा
 
 #: ../panel-plugin/plugin.cpp:409
 msgid "Copyright © 2013-2019 Graeme Gott"
-msgstr ""
+msgstr "प्रतिलिपि अधिकार © 2013-2019 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:890
 msgid "Details"
@@ -106,11 +106,11 @@ msgstr "स्व:त प्रदर्शन गर्नुहोस्"
 
 #: ../panel-plugin/settings.cpp:161
 msgid "Do you want to suspend to RAM?"
-msgstr ""
+msgstr "के तपाईँ RAM मा स्थगन गर्न चाहनुहुन्छ?"
 
 #: ../panel-plugin/settings.cpp:167
 msgid "Do you want to suspend to disk?"
-msgstr ""
+msgstr "के तपाईँ डिस्कमा स्थगन गर्न चाहनुहुन्छ?"
 
 #: ../panel-plugin/page.cpp:269
 msgid "Edit Application..."
@@ -132,11 +132,11 @@ msgstr "\"%s\" आदेशलाई कार्यान्वयन गर्
 
 #: ../panel-plugin/settings.cpp:166
 msgid "Failed to hibernate."
-msgstr ""
+msgstr "सीतनिद्रामा जान बिफल।"
 
 #: ../panel-plugin/settings.cpp:176
 msgid "Failed to launch menu editor."
-msgstr "मेनु सम्पादक सुरु गर्न बिफल।"
+msgstr "मेनु सम्पादक शुरू गर्न बिफल।"
 
 #: ../panel-plugin/settings.cpp:134
 msgid "Failed to lock screen."
@@ -152,20 +152,19 @@ msgstr "प्राथमिकता व्यवस्थापक खोल�
 
 #: ../panel-plugin/settings.cpp:148
 msgid "Failed to restart."
-msgstr ""
+msgstr " पुन: शुरू गर्न बिफल।"
 
 #: ../panel-plugin/settings.cpp:154
 msgid "Failed to shut down."
-msgstr ""
+msgstr "बन्द गर्न बिफल।"
 
 #: ../panel-plugin/settings.cpp:160
 msgid "Failed to suspend."
-msgstr ""
+msgstr " स्थगन गर्न बिफल।"
 
 #: ../panel-plugin/settings.cpp:138
-#, fuzzy
 msgid "Failed to switch user."
-msgstr "प्रयोगकर्ता फेर्न बिफल।"
+msgstr "प्रयोगकर्ता बदल्न गर्न बिफल।"
 
 #: ../panel-plugin/window.cpp:158
 msgid "Favorites"
@@ -174,7 +173,7 @@ msgstr "मन पर्ने"
 #: ../panel-plugin/settings.cpp:168
 #, c-format
 msgid "Hibernating computer in %d seconds."
-msgstr ""
+msgstr "%dसेकेण्डमा सीतनिद्रामा जाँदै।"
 
 #: ../panel-plugin/configuration-dialog.cpp:564
 msgid "Icon"
@@ -202,16 +201,16 @@ msgstr "अझ ठूलो"
 
 #: ../panel-plugin/settings.cpp:170
 msgid "Log Ou_t..."
-msgstr ""
+msgstr "बाहिर निस्कनुहोस्"
 
 #: ../panel-plugin/settings.cpp:140
 msgid "Log _Out"
-msgstr "बाहिर _निस्किनुहोस्"
+msgstr "बाहिर _निस्कनुहोस्"
 
 #: ../panel-plugin/settings.cpp:144
 #, c-format
 msgid "Logging out in %d seconds."
-msgstr ""
+msgstr "%dसेकेण्डमा बाहिर निस्कदै।"
 
 #: ../panel-plugin/settings.cpp:182
 msgid "Man Pages"
@@ -282,7 +281,7 @@ msgstr "चयन गरेको कार्य हटाउनुहोस्
 #: ../panel-plugin/settings.cpp:150
 #, c-format
 msgid "Restarting computer in %d seconds."
-msgstr ""
+msgstr "%dसेकेण्डमा कम्प्युटर पुनःशुरू गर्दै।"
 
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
@@ -311,7 +310,7 @@ msgstr "आदेश चयन गर्नुहोस् "
 
 #: ../panel-plugin/configuration-dialog.cpp:777
 msgid "Session Commands"
-msgstr ""
+msgstr "सत्र आदेशहरू"
 
 #: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
@@ -327,7 +326,7 @@ msgstr "अनुप्रयोगका सुझाव देखाउनु�
 
 #: ../panel-plugin/configuration-dialog.cpp:781
 msgid "Show c_onfirmation dialog"
-msgstr ""
+msgstr "पुष्टिकरण संवाद देखाउनुहोस्"
 
 #: ../panel-plugin/configuration-dialog.cpp:622
 msgid "Show cate_gory names"
@@ -343,7 +342,7 @@ msgstr "मेन्यू  पदक्रमलाई देखाउनुह
 
 #: ../panel-plugin/settings.cpp:152
 msgid "Shut _Down"
-msgstr ""
+msgstr "बन्द गर्नुहोस्"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -367,17 +366,16 @@ msgstr " ध्यान हराउँदा दृश्यात्मक �
 
 #: ../panel-plugin/settings.cpp:158
 msgid "Suspe_nd"
-msgstr ""
+msgstr "स्थगन गर्नुहोस्"
 
 #: ../panel-plugin/settings.cpp:162
 #, c-format
 msgid "Suspending computer in %d seconds."
-msgstr ""
+msgstr "%d सेकेणडमा कम्प्युटर स्थगन गर्दै।"
 
 #: ../panel-plugin/settings.cpp:136
-#, fuzzy
 msgid "Switch _User"
-msgstr "प्रयोगकर्ता फेर्नुहोस्"
+msgstr "प्रयोगकर्ता बदल्नुहोस्"
 
 #: ../panel-plugin/configuration-dialog.cpp:712
 msgid "Switch categories by _hovering"
@@ -394,7 +392,7 @@ msgstr "शीर्षक "
 #: ../panel-plugin/settings.cpp:156
 #, c-format
 msgid "Turning off computer in %d seconds."
-msgstr ""
+msgstr "%d सेकेणडमा कम्प्युटर बन्द गर्दै।"
 
 #: ../panel-plugin/page.cpp:334
 msgid "Unable to add launcher to desktop."
@@ -473,7 +471,7 @@ msgstr "मद्दत"
 
 #: ../panel-plugin/settings.cpp:164
 msgid "_Hibernate"
-msgstr ""
+msgstr "सीतनिद्रामा पठाउनुहोस्।"
 
 #: ../panel-plugin/configuration-dialog.cpp:585
 msgid "_Icon:"
@@ -498,7 +496,7 @@ msgstr "रेगुलर एक्सप्रेशन"
 
 #: ../panel-plugin/settings.cpp:146
 msgid "_Restart"
-msgstr ""
+msgstr "पुन: शुरू गर्नुहोस्"
 
 #: ../panel-plugin/configuration-dialog.cpp:574
 msgid "_Title:"
