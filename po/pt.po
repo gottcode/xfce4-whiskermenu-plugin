@@ -5,7 +5,7 @@
 # Translators:
 # Carlos Reis <reiscarlos1976@gmail.com>, 2017
 # fabioluciano <fabio@naoimporta.com>, 2013
-# José Vieira <jvieira33@sapo.pt>, 2016-2018
+# José Vieira <jvieira33@sapo.pt>, 2016-2019
 # Rui <xymarior@yandex.com>, 2018-2019
 # Sérgio Marques <smarquespt@gmail.com>, 2013-2015
 msgid ""
@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-07-23 06:09-0400\n"
-"PO-Revision-Date: 2019-01-10 16:21+0000\n"
-"Last-Translator: Rui <xymarior@yandex.com>\n"
+"PO-Revision-Date: 2019-11-14 11:52+0000\n"
+"Last-Translator: José Vieira <jvieira33@sapo.pt>\n"
 "Language-Team: Portuguese (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/pt/)\n"
 "Language: pt\n"
@@ -166,9 +166,8 @@ msgid "Failed to suspend."
 msgstr "A suspensão falhou."
 
 #: ../panel-plugin/settings.cpp:138
-#, fuzzy
 msgid "Failed to switch user."
-msgstr "Falha ao trocar de utilizador."
+msgstr "Falha ao mudar de utilizador."
 
 #: ../panel-plugin/window.cpp:158
 msgid "Favorites"
@@ -378,9 +377,8 @@ msgid "Suspending computer in %d seconds."
 msgstr "A suspender o computador em %d segundos."
 
 #: ../panel-plugin/settings.cpp:136
-#, fuzzy
 msgid "Switch _User"
-msgstr "Mudar de _utilizador"
+msgstr "Mudar de _Utilizador"
 
 #: ../panel-plugin/configuration-dialog.cpp:712
 msgid "Switch categories by _hovering"
