@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# zura davitashvili <rouchage@gmail.com>, 2018-2019
+# zura davitashvili <zdavitashvili0@gmail.com>, 2018-2019
+# zura davitashvili <zdavitashvili0@gmail.com>, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-07-23 06:09-0400\n"
-"PO-Revision-Date: 2019-10-25 18:01+0000\n"
-"Last-Translator: zura davitashvili <rouchage@gmail.com>\n"
+"PO-Revision-Date: 2019-11-23 19:53+0000\n"
+"Last-Translator: zura davitashvili <zdavitashvili0@gmail.com>\n"
 "Language-Team: Georgian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ka/)\n"
 "Language: ka\n"
@@ -313,7 +314,7 @@ msgstr "სესიის ბრძანებები"
 
 #: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
-msgstr "დაინსტალირებული პროგრამების ადვილად მისაწვდომად მაჩვენე მენიუ"
+msgstr "გამოაჩინეთ მენიუ, დაინსტალირებული პროგრამების ადვილად მისაწვდომად"
 
 #: ../panel-plugin/configuration-dialog.cpp:629
 msgid "Show application _descriptions"
@@ -349,7 +350,7 @@ msgstr "პატარა"
 
 #: ../panel-plugin/icon-size.cpp:51
 msgid "Smaller"
-msgstr "უფრო პატარა"
+msgstr "უფრო პატარa"
 
 #: ../panel-plugin/favorites-page.cpp:147
 msgid "Sort Alphabetically A-Z"
