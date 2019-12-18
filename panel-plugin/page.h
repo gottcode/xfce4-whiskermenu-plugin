@@ -78,6 +78,11 @@ private:
 	void create_context_menu(GtkTreePath* path, GdkEvent* event);
 	virtual void extend_context_menu(GtkWidget* menu);
 
+	static void item_activated_slot(GtkIconView*, GtkTreePath* path, gpointer user_data)
+	{
+		reinterpret_cast<Page*>(user_data)->launcher_activated(path);
+	}
+
 	static void row_activated_slot(GtkTreeView*, GtkTreePath* path, GtkTreeViewColumn*, gpointer user_data)
 	{
 		reinterpret_cast<Page*>(user_data)->launcher_activated(path);

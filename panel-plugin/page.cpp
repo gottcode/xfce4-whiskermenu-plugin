@@ -19,6 +19,7 @@
 
 #include "favorites-page.h"
 #include "launcher.h"
+#include "launcher-icon-view.h"
 #include "launcher-tree-view.h"
 #include "recent-page.h"
 #include "slot.h"
