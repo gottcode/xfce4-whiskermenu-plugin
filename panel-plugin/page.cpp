@@ -19,7 +19,7 @@
 
 #include "favorites-page.h"
 #include "launcher.h"
-#include "launcher-view.h"
+#include "launcher-tree-view.h"
 #include "recent-page.h"
 #include "slot.h"
 #include "window.h"
@@ -40,14 +40,7 @@ Page::Page(Window* window) :
 	m_reorderable(false)
 {
 	// Create view
-	m_view = new LauncherView();
-	g_signal_connect_slot(m_view->get_widget(), "button-press-event", &Page::view_button_press_event, this);
-	g_signal_connect_slot(m_view->get_widget(), "button-release-event", &Page::view_button_release_event, this);
-	g_signal_connect_slot(m_view->get_widget(), "drag-data-get", &Page::view_drag_data_get, this);
-	g_signal_connect_slot(m_view->get_widget(), "drag-end", &Page::view_drag_end, this);
-	g_signal_connect_slot(m_view->get_widget(), "popup-menu", &Page::view_popup_menu_event, this);
-	g_signal_connect_slot(m_view->get_widget(), "row-activated", &Page::item_activated, this);
-	g_signal_connect_swapped(m_view->get_widget(), "start-interactive-search", G_CALLBACK(gtk_widget_grab_focus), m_window->get_search_entry());
+	create_view();
 
 	// Add scrolling to view
 	m_widget = gtk_scrolled_window_new(NULL, NULL);
@@ -124,6 +117,21 @@ void Page::set_reorderable(bool reorderable)
 
 //-----------------------------------------------------------------------------
 
+void Page::create_view()
+{
+	m_view = new LauncherTreeView();
+	g_signal_connect(m_view->get_widget(), "row-activated", G_CALLBACK(&Page::row_activated_slot), this);
+	g_signal_connect_swapped(m_view->get_widget(), "start-interactive-search", G_CALLBACK(gtk_widget_grab_focus), m_window->get_search_entry());
+	g_signal_connect_slot(m_view->get_widget(), "button-press-event", &Page::view_button_press_event, this);
+	g_signal_connect_slot(m_view->get_widget(), "button-release-event", &Page::view_button_release_event, this);
+	g_signal_connect_slot(m_view->get_widget(), "drag-data-get", &Page::view_drag_data_get, this);
+	g_signal_connect_slot(m_view->get_widget(), "drag-end", &Page::view_drag_end, this);
+	g_signal_connect_slot(m_view->get_widget(), "popup-menu", &Page::view_popup_menu_event, this);
+	set_reorderable(m_reorderable);
+}
+
+//-----------------------------------------------------------------------------
+
 bool Page::remember_launcher(Launcher*)
 {
 	return true;
@@ -131,10 +139,10 @@ bool Page::remember_launcher(Launcher*)
 
 //-----------------------------------------------------------------------------
 
-void Page::item_activated(GtkTreeView* view, GtkTreePath* path, GtkTreeViewColumn*)
+void Page::launcher_activated(GtkTreePath* path)
 {
 	GtkTreeIter iter;
-	GtkTreeModel* model = gtk_tree_view_get_model(view);
+	GtkTreeModel* model = m_view->get_model();
 	gtk_tree_model_get_iter(model, &iter, path);
 
 	// Find element
@@ -159,12 +167,12 @@ void Page::item_activated(GtkTreeView* view, GtkTreePath* path, GtkTreeViewColum
 	m_window->hide();
 
 	// Execute app
-	element->run(gtk_widget_get_screen(GTK_WIDGET(view)));
+	element->run(gtk_widget_get_screen(m_widget));
 }
 
 //-----------------------------------------------------------------------------
 
-void Page::item_action_activated(GtkMenuItem* menuitem, DesktopAction* action)
+void Page::launcher_action_activated(GtkMenuItem* menuitem, DesktopAction* action)
 {
 	g_assert(m_selected_launcher != NULL);
 
@@ -330,7 +338,7 @@ G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 			GtkWidget* image = gtk_image_new_from_icon_name(action->get_icon(), GTK_ICON_SIZE_MENU);
 			gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM(menuitem), image);
 G_GNUC_END_IGNORE_DEPRECATIONS
-			g_signal_connect_slot(menuitem, "activate", &Page::item_action_activated, this, action);
+			g_signal_connect_slot(menuitem, "activate", &Page::launcher_action_activated, this, action);
 			gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 		}
 
@@ -377,7 +385,6 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 	gtk_widget_show_all(menu);
 
 	// Show context menu
-	gtk_tree_view_set_hover_selection(GTK_TREE_VIEW(m_view->get_widget()), false);
 	gtk_menu_attach_to_widget(GTK_MENU(menu), m_view->get_widget(), NULL);
 	gtk_menu_popup_at_pointer(GTK_MENU(menu), event);
 }
@@ -387,8 +394,6 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 void Page::destroy_context_menu(GtkMenuShell* menu)
 {
 	m_selected_launcher = NULL;
-
-	gtk_tree_view_set_hover_selection(GTK_TREE_VIEW(m_view->get_widget()), true);
 
 	gtk_widget_destroy(GTK_WIDGET(menu));
 

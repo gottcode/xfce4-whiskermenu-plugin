@@ -52,12 +52,17 @@ protected:
 		return m_window;
 	}
 
+	virtual void view_created()
+	{
+	}
+
 	void set_reorderable(bool reorderable);
 
 private:
+	void create_view();
 	virtual bool remember_launcher(Launcher* launcher);
-	void item_activated(GtkTreeView* view, GtkTreePath* path, GtkTreeViewColumn*);
-	void item_action_activated(GtkMenuItem* menuitem, DesktopAction* action);
+	void launcher_activated(GtkTreePath* path);
+	void launcher_action_activated(GtkMenuItem* menuitem, DesktopAction* action);
 	gboolean view_button_press_event(GtkWidget* view, GdkEvent* event);
 	gboolean view_button_release_event(GtkWidget*, GdkEvent* event);
 	void view_drag_data_get(GtkWidget*, GdkDragContext*, GtkSelectionData* data, guint info, guint);
@@ -72,6 +77,11 @@ private:
 	void remove_selected_from_favorites();
 	void create_context_menu(GtkTreePath* path, GdkEvent* event);
 	virtual void extend_context_menu(GtkWidget* menu);
+
+	static void row_activated_slot(GtkTreeView*, GtkTreePath* path, GtkTreeViewColumn*, gpointer user_data)
+	{
+		reinterpret_cast<Page*>(user_data)->launcher_activated(path);
+	}
 
 private:
 	Window* m_window;

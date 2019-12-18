@@ -15,7 +15,7 @@
  * along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "launcher-view.h"
+#include "launcher-tree-view.h"
 
 #include "category.h"
 #include "settings.h"
@@ -37,8 +37,7 @@ static gboolean is_separator(GtkTreeModel* model, GtkTreeIter* iter, gpointer)
 
 //-----------------------------------------------------------------------------
 
-LauncherView::LauncherView() :
-	m_model(NULL),
+LauncherTreeView::LauncherTreeView() :
 	m_icon_size(0),
 	m_row_activated(false)
 {
@@ -51,8 +50,8 @@ LauncherView::LauncherView() :
 	gtk_tree_view_set_fixed_height_mode(m_view, true);
 	gtk_tree_view_set_row_separator_func(m_view, &is_separator, NULL, NULL);
 	create_column();
-	g_signal_connect_slot(m_view, "key-press-event", &LauncherView::on_key_press_event, this);
-	g_signal_connect_slot(m_view, "key-release-event", &LauncherView::on_key_release_event, this);
+	g_signal_connect_slot(m_view, "key-press-event", &LauncherTreeView::on_key_press_event, this);
+	g_signal_connect_slot(m_view, "key-release-event", &LauncherTreeView::on_key_release_event, this);
 
 	// Use single clicks to activate items
 	exo_tree_view_set_single_click(EXO_TREE_VIEW(m_view), true);
@@ -64,25 +63,23 @@ LauncherView::LauncherView() :
 	g_object_ref_sink(m_view);
 
 	// Handle drag-and-drop
-	g_signal_connect_slot(m_view, "button-press-event", &LauncherView::on_button_press_event, this);
-	g_signal_connect_slot(m_view, "row-activated", &LauncherView::on_row_activated, this);
-	g_signal_connect_slot<GtkTreeView*,GtkTreeIter*,GtkTreePath*>(m_view, "test-collapse-row", &LauncherView::test_row_toggle, this);
-	g_signal_connect_slot<GtkTreeView*,GtkTreeIter*,GtkTreePath*>(m_view, "test-expand-row", &LauncherView::test_row_toggle, this);
+	g_signal_connect_slot(m_view, "button-press-event", &LauncherTreeView::on_button_press_event, this);
+	g_signal_connect_slot(m_view, "row-activated", &LauncherTreeView::on_row_activated, this);
+	g_signal_connect_slot<GtkTreeView*,GtkTreeIter*,GtkTreePath*>(m_view, "test-collapse-row", &LauncherTreeView::test_row_toggle, this);
+	g_signal_connect_slot<GtkTreeView*,GtkTreeIter*,GtkTreePath*>(m_view, "test-expand-row", &LauncherTreeView::test_row_toggle, this);
 }
 
 //-----------------------------------------------------------------------------
 
-LauncherView::~LauncherView()
+LauncherTreeView::~LauncherTreeView()
 {
-	m_model = NULL;
-
 	gtk_widget_destroy(GTK_WIDGET(m_view));
 	g_object_unref(m_view);
 }
 
 //-----------------------------------------------------------------------------
 
-GtkTreePath* LauncherView::get_cursor() const
+GtkTreePath* LauncherTreeView::get_cursor() const
 {
 	GtkTreePath* path = NULL;
 	gtk_tree_view_get_cursor(m_view, &path, NULL);
@@ -91,7 +88,7 @@ GtkTreePath* LauncherView::get_cursor() const
 
 //-----------------------------------------------------------------------------
 
-GtkTreePath* LauncherView::get_path_at_pos(int x, int y) const
+GtkTreePath* LauncherTreeView::get_path_at_pos(int x, int y) const
 {
 	GtkTreePath* path = NULL;
 	gtk_tree_view_get_path_at_pos(m_view, x, y, &path, NULL, NULL, NULL);
@@ -100,7 +97,7 @@ GtkTreePath* LauncherView::get_path_at_pos(int x, int y) const
 
 //-----------------------------------------------------------------------------
 
-GtkTreePath* LauncherView::get_selected_path() const
+GtkTreePath* LauncherTreeView::get_selected_path() const
 {
 	GtkTreePath* path = NULL;
 	GtkTreeSelection* selection = gtk_tree_view_get_selection(m_view);
@@ -114,7 +111,7 @@ GtkTreePath* LauncherView::get_selected_path() const
 
 //-----------------------------------------------------------------------------
 
-void LauncherView::activate_path(GtkTreePath* path)
+void LauncherTreeView::activate_path(GtkTreePath* path)
 {
 	GtkTreeViewColumn* column = gtk_tree_view_get_column(m_view, 0);
 	gtk_tree_view_row_activated(m_view, path, column);
@@ -122,14 +119,14 @@ void LauncherView::activate_path(GtkTreePath* path)
 
 //-----------------------------------------------------------------------------
 
-void LauncherView::scroll_to_path(GtkTreePath* path)
+void LauncherTreeView::scroll_to_path(GtkTreePath* path)
 {
 	gtk_tree_view_scroll_to_cell(m_view, path, NULL, true, 0.5f, 0.5f);
 }
 
 //-----------------------------------------------------------------------------
 
-void LauncherView::select_path(GtkTreePath* path)
+void LauncherTreeView::select_path(GtkTreePath* path)
 {
 	GtkTreeSelection* selection = gtk_tree_view_get_selection(m_view);
 	gtk_tree_selection_select_path(selection, path);
@@ -137,7 +134,7 @@ void LauncherView::select_path(GtkTreePath* path)
 
 //-----------------------------------------------------------------------------
 
-void LauncherView::set_cursor(GtkTreePath* path)
+void LauncherTreeView::set_cursor(GtkTreePath* path)
 {
 	GtkTreeSelection* selection = gtk_tree_view_get_selection(m_view);
 	GtkSelectionMode mode = gtk_tree_selection_get_mode(selection);
@@ -148,14 +145,14 @@ void LauncherView::set_cursor(GtkTreePath* path)
 
 //-----------------------------------------------------------------------------
 
-void LauncherView::set_fixed_height_mode(bool fixed_height)
+void LauncherTreeView::set_fixed_height_mode(bool fixed_height)
 {
 	gtk_tree_view_set_fixed_height_mode(m_view, fixed_height);
 }
 
 //-----------------------------------------------------------------------------
 
-void LauncherView::set_selection_mode(GtkSelectionMode mode)
+void LauncherTreeView::set_selection_mode(GtkSelectionMode mode)
 {
 	GtkTreeSelection* selection = gtk_tree_view_get_selection(m_view);
 	gtk_tree_selection_set_mode(selection, mode);
@@ -163,28 +160,36 @@ void LauncherView::set_selection_mode(GtkSelectionMode mode)
 
 //-----------------------------------------------------------------------------
 
-void LauncherView::hide_tooltips()
+void LauncherTreeView::hide_tooltips()
 {
 	gtk_tree_view_set_tooltip_column(m_view, -1);
 }
 
 //-----------------------------------------------------------------------------
 
-void LauncherView::show_tooltips()
+void LauncherTreeView::show_tooltips()
 {
-	gtk_tree_view_set_tooltip_column(m_view, LauncherView::COLUMN_TOOLTIP);
+	gtk_tree_view_set_tooltip_column(m_view, COLUMN_TOOLTIP);
 }
 
 //-----------------------------------------------------------------------------
 
-void LauncherView::collapse_all()
+void LauncherTreeView::clear_selection()
+{
+	GtkTreeSelection* selection = gtk_tree_view_get_selection(m_view);
+	gtk_tree_selection_unselect_all(selection);
+}
+
+//-----------------------------------------------------------------------------
+
+void LauncherTreeView::collapse_all()
 {
 	gtk_tree_view_collapse_all(m_view);
 }
 
 //-----------------------------------------------------------------------------
 
-void LauncherView::set_model(GtkTreeModel* model)
+void LauncherTreeView::set_model(GtkTreeModel* model)
 {
 	m_model = model;
 	gtk_tree_view_set_model(m_view, model);
@@ -192,7 +197,7 @@ void LauncherView::set_model(GtkTreeModel* model)
 
 //-----------------------------------------------------------------------------
 
-void LauncherView::unset_model()
+void LauncherTreeView::unset_model()
 {
 	m_model = NULL;
 	gtk_tree_view_set_model(m_view, NULL);
@@ -200,35 +205,35 @@ void LauncherView::unset_model()
 
 //-----------------------------------------------------------------------------
 
-void LauncherView::set_drag_source(GdkModifierType start_button_mask, const GtkTargetEntry* targets, gint n_targets, GdkDragAction actions)
+void LauncherTreeView::set_drag_source(GdkModifierType start_button_mask, const GtkTargetEntry* targets, gint n_targets, GdkDragAction actions)
 {
 	gtk_tree_view_enable_model_drag_source(m_view, start_button_mask, targets, n_targets, actions);
 }
 
 //-----------------------------------------------------------------------------
 
-void LauncherView::set_drag_dest(const GtkTargetEntry* targets, gint n_targets, GdkDragAction actions)
+void LauncherTreeView::set_drag_dest(const GtkTargetEntry* targets, gint n_targets, GdkDragAction actions)
 {
 	gtk_tree_view_enable_model_drag_dest(m_view, targets, n_targets, actions);
 }
 
 //-----------------------------------------------------------------------------
 
-void LauncherView::unset_drag_source()
+void LauncherTreeView::unset_drag_source()
 {
 	gtk_tree_view_unset_rows_drag_source(m_view);
 }
 
 //-----------------------------------------------------------------------------
 
-void LauncherView::unset_drag_dest()
+void LauncherTreeView::unset_drag_dest()
 {
 	gtk_tree_view_unset_rows_drag_dest(m_view);
 }
 
 //-----------------------------------------------------------------------------
 
-void LauncherView::reload_icon_size()
+void LauncherTreeView::reload_icon_size()
 {
 	// Force exo to reload SVG icons
 	if (m_icon_size != wm_settings->launcher_icon_size.get_size())
@@ -240,7 +245,7 @@ void LauncherView::reload_icon_size()
 
 //-----------------------------------------------------------------------------
 
-void LauncherView::create_column()
+void LauncherTreeView::create_column()
 {
 	m_icon_size = wm_settings->launcher_icon_size.get_size();
 
@@ -254,13 +259,13 @@ void LauncherView::create_column()
 		g_object_set(icon_renderer, "follow-state", false, NULL);
 		g_object_set(icon_renderer, "size", m_icon_size, NULL);
 		gtk_tree_view_column_pack_start(m_column, icon_renderer, false);
-		gtk_tree_view_column_add_attribute(m_column, icon_renderer, "icon", LauncherView::COLUMN_ICON);
+		gtk_tree_view_column_add_attribute(m_column, icon_renderer, "icon", COLUMN_ICON);
 	}
 
 	GtkCellRenderer* text_renderer = gtk_cell_renderer_text_new();
 	g_object_set(text_renderer, "ellipsize", PANGO_ELLIPSIZE_END, NULL);
 	gtk_tree_view_column_pack_start(m_column, text_renderer, true);
-	gtk_tree_view_column_add_attribute(m_column, text_renderer, "markup", LauncherView::COLUMN_TEXT);
+	gtk_tree_view_column_add_attribute(m_column, text_renderer, "markup", COLUMN_TEXT);
 
 	gtk_tree_view_column_set_sizing(m_column, GTK_TREE_VIEW_COLUMN_FIXED);
 
@@ -269,7 +274,7 @@ void LauncherView::create_column()
 
 //-----------------------------------------------------------------------------
 
-gboolean LauncherView::on_key_press_event(GtkWidget*, GdkEvent* event)
+gboolean LauncherTreeView::on_key_press_event(GtkWidget*, GdkEvent* event)
 {
 	GdkEventKey* key_event = reinterpret_cast<GdkEventKey*>(event);
 	if ((key_event->keyval == GDK_KEY_Up) || (key_event->keyval == GDK_KEY_Down))
@@ -281,7 +286,7 @@ gboolean LauncherView::on_key_press_event(GtkWidget*, GdkEvent* event)
 
 //-----------------------------------------------------------------------------
 
-gboolean LauncherView::on_key_release_event(GtkWidget*, GdkEvent* event)
+gboolean LauncherTreeView::on_key_release_event(GtkWidget*, GdkEvent* event)
 {
 	GdkEventKey* key_event = reinterpret_cast<GdkEventKey*>(event);
 	if ((key_event->keyval == GDK_KEY_Up) || (key_event->keyval == GDK_KEY_Down))
@@ -293,7 +298,7 @@ gboolean LauncherView::on_key_release_event(GtkWidget*, GdkEvent* event)
 
 //-----------------------------------------------------------------------------
 
-gboolean LauncherView::on_button_press_event(GtkWidget*, GdkEvent*)
+gboolean LauncherTreeView::on_button_press_event(GtkWidget*, GdkEvent*)
 {
 	m_row_activated = false;
 
@@ -302,7 +307,7 @@ gboolean LauncherView::on_button_press_event(GtkWidget*, GdkEvent*)
 
 //-----------------------------------------------------------------------------
 
-void LauncherView::on_row_activated(GtkTreeView* tree_view, GtkTreePath* path, GtkTreeViewColumn*)
+void LauncherTreeView::on_row_activated(GtkTreeView* tree_view, GtkTreePath* path, GtkTreeViewColumn*)
 {
 	Element* element = NULL;
 	GtkTreeIter iter;
@@ -327,7 +332,7 @@ void LauncherView::on_row_activated(GtkTreeView* tree_view, GtkTreePath* path, G
 
 //-----------------------------------------------------------------------------
 
-gboolean LauncherView::test_row_toggle()
+gboolean LauncherTreeView::test_row_toggle()
 {
 	bool allow = !m_row_activated;
 	m_row_activated = false;

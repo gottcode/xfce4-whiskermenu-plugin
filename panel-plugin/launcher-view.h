@@ -26,44 +26,48 @@ namespace WhiskerMenu
 class LauncherView
 {
 public:
-	LauncherView();
-	~LauncherView();
-
-	GtkWidget* get_widget() const
+	LauncherView() :
+		m_model(NULL)
 	{
-		return GTK_WIDGET(m_view);
 	}
 
-	GtkTreePath* get_cursor() const;
-	GtkTreePath* get_path_at_pos(int x, int y) const;
-	GtkTreePath* get_selected_path() const;
-	void activate_path(GtkTreePath* path);
-	void scroll_to_path(GtkTreePath* path);
-	void select_path(GtkTreePath* path);
-	void set_cursor(GtkTreePath* path);
+	virtual ~LauncherView()
+	{
+	}
 
-	void set_fixed_height_mode(bool fixed_height);
-	void set_selection_mode(GtkSelectionMode mode);
+	virtual GtkWidget* get_widget() const=0;
 
-	void hide_tooltips();
-	void show_tooltips();
+	virtual GtkTreePath* get_cursor() const=0;
+	virtual GtkTreePath* get_path_at_pos(int x, int y) const=0;
+	virtual GtkTreePath* get_selected_path() const=0;
+	virtual void activate_path(GtkTreePath* path)=0;
+	virtual void scroll_to_path(GtkTreePath* path)=0;
+	virtual void select_path(GtkTreePath* path)=0;
+	virtual void set_cursor(GtkTreePath* path)=0;
 
-	void collapse_all();
+	virtual void set_fixed_height_mode(bool fixed_height)=0;
+	virtual void set_selection_mode(GtkSelectionMode mode)=0;
+
+	virtual void hide_tooltips()=0;
+	virtual void show_tooltips()=0;
+
+	virtual void clear_selection()=0;
+	virtual void collapse_all()=0;
 
 	GtkTreeModel* get_model() const
 	{
 		return m_model;
 	}
 
-	void set_model(GtkTreeModel* model);
-	void unset_model();
+	virtual void set_model(GtkTreeModel* model)=0;
+	virtual void unset_model()=0;
 
-	void set_drag_source(GdkModifierType start_button_mask, const GtkTargetEntry* targets, gint n_targets, GdkDragAction actions);
-	void set_drag_dest(const GtkTargetEntry* targets, gint n_targets, GdkDragAction actions);
-	void unset_drag_source();
-	void unset_drag_dest();
+	virtual void set_drag_source(GdkModifierType start_button_mask, const GtkTargetEntry* targets, gint n_targets, GdkDragAction actions)=0;
+	virtual void set_drag_dest(const GtkTargetEntry* targets, gint n_targets, GdkDragAction actions)=0;
+	virtual void unset_drag_source()=0;
+	virtual void unset_drag_dest()=0;
 
-	void reload_icon_size();
+	virtual void reload_icon_size()=0;
 
 	enum Columns
 	{
@@ -74,20 +78,8 @@ public:
 		N_COLUMNS
 	};
 
-private:
-	void create_column();
-	gboolean on_key_press_event(GtkWidget*, GdkEvent* event);
-	gboolean on_key_release_event(GtkWidget*, GdkEvent* event);
-	gboolean on_button_press_event(GtkWidget*, GdkEvent* event);
-	void on_row_activated(GtkTreeView* tree_view, GtkTreePath* path, GtkTreeViewColumn* column);
-	gboolean test_row_toggle();
-
-private:
+protected:
 	GtkTreeModel* m_model;
-	GtkTreeView* m_view;
-	GtkTreeViewColumn* m_column;
-	int m_icon_size;
-	bool m_row_activated;
 };
 
 }

@@ -35,7 +35,7 @@ using namespace WhiskerMenu;
 FavoritesPage::FavoritesPage(Window* window) :
 	Page(window)
 {
-	set_reorderable(true);
+	view_created();
 }
 
 //-----------------------------------------------------------------------------
@@ -272,6 +272,13 @@ void FavoritesPage::sort_descending()
 	wm_settings->favorites = desktop_ids;
 	wm_settings->set_modified();
 	set_menu_items();
+}
+
+//-----------------------------------------------------------------------------
+
+void FavoritesPage::view_created()
+{
+	set_reorderable(true);
 }
 
 //-----------------------------------------------------------------------------

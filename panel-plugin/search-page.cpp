@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2016 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2016, 2019 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -35,7 +35,7 @@ using namespace WhiskerMenu;
 SearchPage::SearchPage(Window* window) :
 	Page(window)
 {
-	get_view()->set_selection_mode(GTK_SELECTION_BROWSE);
+	view_created();
 
 	g_signal_connect_slot(window->get_search_entry(), "icon-release", &SearchPage::clear_search, this);
 	g_signal_connect_slot(window->get_search_entry(), "key-press-event", &SearchPage::cancel_search, this);
@@ -229,6 +229,13 @@ gboolean SearchPage::cancel_search(GtkWidget* widget, GdkEvent* event)
 	}
 
 	return false;
+}
+
+//-----------------------------------------------------------------------------
+
+void SearchPage::view_created()
+{
+	get_view()->set_selection_mode(GTK_SELECTION_BROWSE);
 }
 
 //-----------------------------------------------------------------------------
