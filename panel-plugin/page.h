@@ -45,6 +45,7 @@ public:
 	}
 
 	void reset_selection();
+	void update_view();
 
 protected:
 	Window* get_window() const

@@ -311,6 +311,12 @@ void WhiskerMenu::Window::hide()
 
 void WhiskerMenu::Window::show(const Position position)
 {
+	// Handle switching view types
+	m_search_results->update_view();
+	m_favorites->update_view();
+	m_recent->update_view();
+	m_applications->update_view();
+
 	// Handle showing tooltips
 	if (wm_settings->launcher_show_tooltip)
 	{

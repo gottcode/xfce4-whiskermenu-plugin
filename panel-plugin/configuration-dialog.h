@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015, 2016, 2018 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015, 2016, 2018, 2019 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -46,6 +46,7 @@ private:
 	void toggle_show_description(GtkToggleButton* button);
 	void toggle_show_tooltip(GtkToggleButton* button);
 	void toggle_show_hierarchy(GtkToggleButton* button);
+	void toggle_show_as_icons(GtkToggleButton* button);
 	void toggle_position_search_alternate(GtkToggleButton* button);
 	void toggle_position_commands_alternate(GtkToggleButton* button);
 	void toggle_position_categories_alternate(GtkToggleButton* button);
@@ -92,6 +93,7 @@ private:
 	GtkWidget* m_show_descriptions;
 	GtkWidget* m_show_tooltips;
 	GtkWidget* m_show_hierarchy;
+	GtkWidget* m_show_as_icons;
 	GtkWidget* m_position_search_alternate;
 	GtkWidget* m_position_commands_alternate;
 	GtkWidget* m_position_categories_alternate;

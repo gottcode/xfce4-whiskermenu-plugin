@@ -22,6 +22,7 @@
 #include "launcher-icon-view.h"
 #include "launcher-tree-view.h"
 #include "recent-page.h"
+#include "settings.h"
 #include "slot.h"
 #include "window.h"
 
@@ -80,6 +81,26 @@ void Page::reset_selection()
 
 //-----------------------------------------------------------------------------
 
+void Page::update_view()
+{
+	if ((dynamic_cast<LauncherIconView*>(m_view) != 0) == wm_settings->view_as_icons)
+	{
+		return;
+	}
+
+	LauncherView* view = m_view;
+	create_view();
+	m_view->set_model(view->get_model());
+	delete view;
+
+	gtk_container_add(GTK_CONTAINER(m_widget), m_view->get_widget());
+	gtk_widget_show_all(m_widget);
+
+	view_created();
+}
+
+//-----------------------------------------------------------------------------
+
 void Page::set_reorderable(bool reorderable)
 {
 	m_reorderable = reorderable;
@@ -120,9 +141,17 @@ void Page::set_reorderable(bool reorderable)
 
 void Page::create_view()
 {
-	m_view = new LauncherTreeView();
-	g_signal_connect(m_view->get_widget(), "row-activated", G_CALLBACK(&Page::row_activated_slot), this);
-	g_signal_connect_swapped(m_view->get_widget(), "start-interactive-search", G_CALLBACK(gtk_widget_grab_focus), m_window->get_search_entry());
+	if (wm_settings->view_as_icons)
+	{
+		m_view = new LauncherIconView();
+		g_signal_connect(m_view->get_widget(), "item-activated", G_CALLBACK(&Page::item_activated_slot), this);
+	}
+	else
+	{
+		m_view = new LauncherTreeView();
+		g_signal_connect(m_view->get_widget(), "row-activated", G_CALLBACK(&Page::row_activated_slot), this);
+		g_signal_connect_swapped(m_view->get_widget(), "start-interactive-search", G_CALLBACK(gtk_widget_grab_focus), m_window->get_search_entry());
+	}
 	g_signal_connect_slot(m_view->get_widget(), "button-press-event", &Page::view_button_press_event, this);
 	g_signal_connect_slot(m_view->get_widget(), "button-release-event", &Page::view_button_release_event, this);
 	g_signal_connect_slot(m_view->get_widget(), "drag-data-get", &Page::view_drag_data_get, this);

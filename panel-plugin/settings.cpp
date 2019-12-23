@@ -103,6 +103,7 @@ Settings::Settings() :
 	category_icon_size(IconSize::Smaller),
 
 	load_hierarchy(false),
+	view_as_icons(false),
 
 	recent_items_max(10),
 	favorites_in_recent(true),
@@ -239,6 +240,7 @@ void Settings::load(char* file)
 	category_show_name = xfce_rc_read_bool_entry(rc, "category-show-name", category_show_name) || (category_icon_size == -1);
 
 	load_hierarchy = xfce_rc_read_bool_entry(rc, "load-hierarchy", load_hierarchy);
+	view_as_icons = xfce_rc_read_bool_entry(rc, "view-as-icons", view_as_icons) && !launcher_show_description && !load_hierarchy;
 
 	recent_items_max = std::max(0, xfce_rc_read_int_entry(rc, "recent-items-max", recent_items_max));
 	favorites_in_recent = xfce_rc_read_bool_entry(rc, "favorites-in-recent", favorites_in_recent);
@@ -340,6 +342,7 @@ void Settings::save(char* file)
 	xfce_rc_write_int_entry(rc, "category-icon-size", category_icon_size);
 
 	xfce_rc_write_bool_entry(rc, "load-hierarchy", load_hierarchy);
+	xfce_rc_write_bool_entry(rc, "view-as-icons", view_as_icons);
 
 	xfce_rc_write_int_entry(rc, "recent-items-max", recent_items_max);
 	xfce_rc_write_bool_entry(rc, "favorites-in-recent", favorites_in_recent);

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2014, 2016, 2018 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014, 2016, 2018, 2019 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -75,6 +75,7 @@ public:
 	IconSize category_icon_size;
 
 	bool load_hierarchy;
+	bool view_as_icons;
 
 	unsigned int recent_items_max;
 	bool favorites_in_recent;
