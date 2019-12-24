@@ -54,6 +54,12 @@ LauncherIconView::LauncherIconView() :
 	gtk_icon_view_set_selection_mode(m_view, GTK_SELECTION_SINGLE);
 
 	g_object_ref_sink(m_view);
+
+	// Handle hover selection
+	gtk_widget_add_events(GTK_WIDGET(m_view), GDK_SCROLL_MASK);
+	g_signal_connect_slot(m_view, "leave-notify-event", &LauncherIconView::on_leave_notify_event, this);
+	g_signal_connect_slot(m_view, "motion-notify-event", &LauncherIconView::on_motion_notify_event, this);
+	g_signal_connect_slot(m_view, "scroll-event", &LauncherIconView::on_scroll_event, this);
 }
 
 //-----------------------------------------------------------------------------
@@ -272,6 +278,48 @@ void LauncherIconView::reload_icon_size()
 	}
 	gtk_icon_view_set_item_padding(m_view, padding);
 	gtk_icon_view_set_item_width(m_view, width);
+}
+
+//-----------------------------------------------------------------------------
+
+gboolean LauncherIconView::on_leave_notify_event(GtkWidget*, GdkEvent*)
+{
+	clear_selection();
+	return false;
+}
+
+//-----------------------------------------------------------------------------
+
+gboolean LauncherIconView::on_motion_notify_event(GtkWidget*, GdkEvent* event)
+{
+	GdkEventMotion* motion_event = reinterpret_cast<GdkEventMotion*>(event);
+	select_path_at_pos(motion_event->x, motion_event->y);
+	return false;
+}
+
+//-----------------------------------------------------------------------------
+
+gboolean LauncherIconView::on_scroll_event(GtkWidget*, GdkEvent* event)
+{
+	GdkEventScroll* scroll_event = reinterpret_cast<GdkEventScroll*>(event);
+	select_path_at_pos(scroll_event->x, scroll_event->y);
+	return false;
+}
+
+//-----------------------------------------------------------------------------
+
+void LauncherIconView::select_path_at_pos(int x, int y)
+{
+	GtkTreePath* path = get_path_at_pos(x, y);
+	if (!path)
+	{
+		clear_selection();
+	}
+	else if (!gtk_icon_view_path_is_selected(m_view, path))
+	{
+		select_path(path);
+	}
+	gtk_tree_path_free(path);
 }
 
 //-----------------------------------------------------------------------------

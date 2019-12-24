@@ -62,6 +62,12 @@ public:
 	void reload_icon_size();
 
 private:
+	gboolean on_leave_notify_event(GtkWidget*, GdkEvent*);
+	gboolean on_motion_notify_event(GtkWidget*, GdkEvent* event);
+	gboolean on_scroll_event(GtkWidget*, GdkEvent* event);
+	void select_path_at_pos(int x, int y);
+
+private:
 	GtkIconView* m_view;
 	GtkCellRenderer* m_icon_renderer;
 	int m_icon_size;
