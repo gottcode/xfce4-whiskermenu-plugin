@@ -833,7 +833,7 @@ gboolean WhiskerMenu::Window::on_key_press_event(GtkWidget* widget, GdkEvent* ev
 	// Allow keyboard navigation out of treeview
 	if ((key_event->keyval == GDK_KEY_Left) || (key_event->keyval == GDK_KEY_Right))
 	{
-		if ((widget == view) || (gtk_window_get_focus(m_window) == view))
+		if (GTK_IS_TREE_VIEW(view) && ((widget == view) || (gtk_window_get_focus(m_window) == view)))
 		{
 			gtk_widget_grab_focus(GTK_WIDGET(m_favorites_button->get_button()));
 			page->reset_selection();
