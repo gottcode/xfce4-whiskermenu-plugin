@@ -67,16 +67,22 @@ void Page::reset_selection()
 {
 	m_view->collapse_all();
 
-	// Clear selection and scroll to top
+	// Set keyboard focus on first item
 	GtkTreeModel* model = m_view->get_model();
 	GtkTreeIter iter;
 	if (model && gtk_tree_model_get_iter_first(model, &iter))
 	{
 		GtkTreePath* path = gtk_tree_model_get_path(model, &iter);
-		get_view()->scroll_to_path(path);
-		get_view()->set_cursor(path);
+		m_view->set_cursor(path);
 		gtk_tree_path_free(path);
 	}
+
+	// Scroll to top
+	GtkAdjustment* adjustment = gtk_scrollable_get_vadjustment(GTK_SCROLLABLE(m_view->get_widget()));
+	gtk_adjustment_set_value(adjustment, gtk_adjustment_get_lower(adjustment));
+
+	// Clear selection
+	m_view->clear_selection();
 }
 
 //-----------------------------------------------------------------------------
