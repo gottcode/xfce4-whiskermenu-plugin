@@ -343,11 +343,11 @@ void Page::create_context_menu(GtkTreePath* path, GdkEvent* event)
 	GtkTreeModel* model = m_view->get_model();
 	GtkTreeIter iter;
 	gtk_tree_model_get_iter(model, &iter, path);
-	gtk_tree_path_free(path);
 	gtk_tree_model_get(model, &iter, LauncherView::COLUMN_LAUNCHER, &m_selected_launcher, -1);
 	if (!m_selected_launcher || (m_selected_launcher->get_type() != Launcher::Type))
 	{
 		m_selected_launcher = NULL;
+		gtk_tree_path_free(path);
 		return;
 	}
 
@@ -423,6 +423,10 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 	// Show context menu
 	gtk_menu_attach_to_widget(GTK_MENU(menu), m_view->get_widget(), NULL);
 	gtk_menu_popup_at_pointer(GTK_MENU(menu), event);
+
+	// Keep selection
+	m_view->select_path(path);
+	gtk_tree_path_free(path);
 }
 
 //-----------------------------------------------------------------------------
