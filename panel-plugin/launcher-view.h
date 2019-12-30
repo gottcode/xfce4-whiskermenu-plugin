@@ -23,14 +23,10 @@
 namespace WhiskerMenu
 {
 
-class IconSize;
-class Launcher;
-class Window;
-
 class LauncherView
 {
 public:
-	LauncherView(Window* window);
+	LauncherView();
 	~LauncherView();
 
 	GtkWidget* get_widget() const
@@ -47,7 +43,6 @@ public:
 	void set_cursor(GtkTreePath* path);
 
 	void set_fixed_height_mode(bool fixed_height);
-	void set_reorderable(bool reorderable);
 	void set_selection_mode(GtkSelectionMode mode);
 
 	void hide_tooltips();
@@ -62,6 +57,11 @@ public:
 
 	void set_model(GtkTreeModel* model);
 	void unset_model();
+
+	void set_drag_source(GdkModifierType start_button_mask, const GtkTargetEntry* targets, gint n_targets, GdkDragAction actions);
+	void set_drag_dest(const GtkTargetEntry* targets, gint n_targets, GdkDragAction actions);
+	void unset_drag_source();
+	void unset_drag_dest();
 
 	void reload_icon_size();
 
@@ -79,25 +79,15 @@ private:
 	gboolean on_key_press_event(GtkWidget*, GdkEvent* event);
 	gboolean on_key_release_event(GtkWidget*, GdkEvent* event);
 	gboolean on_button_press_event(GtkWidget*, GdkEvent* event);
-	gboolean on_button_release_event(GtkWidget*, GdkEvent* event);
-	void on_drag_data_get(GtkWidget*, GdkDragContext*, GtkSelectionData* data, guint info, guint);
-	void on_drag_end(GtkWidget*, GdkDragContext*);
 	void on_row_activated(GtkTreeView* tree_view, GtkTreePath* path, GtkTreeViewColumn* column);
 	gboolean test_row_toggle();
 
 private:
-	Window* m_window;
-
 	GtkTreeModel* m_model;
 	GtkTreeView* m_view;
 	GtkTreeViewColumn* m_column;
 	int m_icon_size;
-
-	Launcher* m_pressed_launcher;
-	bool m_drag_enabled;
-	bool m_launcher_dragged;
 	bool m_row_activated;
-	bool m_reorderable;
 };
 
 }

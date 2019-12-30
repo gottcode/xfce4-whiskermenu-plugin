@@ -34,11 +34,17 @@ using namespace WhiskerMenu;
 
 Page::Page(Window* window) :
 	m_window(window),
-	m_selected_launcher(NULL)
+	m_selected_launcher(NULL),
+	m_drag_enabled(true),
+	m_launcher_dragged(false),
+	m_reorderable(false)
 {
 	// Create view
-	m_view = new LauncherView(window);
+	m_view = new LauncherView();
 	g_signal_connect_slot(m_view->get_widget(), "button-press-event", &Page::view_button_press_event, this);
+	g_signal_connect_slot(m_view->get_widget(), "button-release-event", &Page::view_button_release_event, this);
+	g_signal_connect_slot(m_view->get_widget(), "drag-data-get", &Page::view_drag_data_get, this);
+	g_signal_connect_slot(m_view->get_widget(), "drag-end", &Page::view_drag_end, this);
 	g_signal_connect_slot(m_view->get_widget(), "popup-menu", &Page::view_popup_menu_event, this);
 	g_signal_connect_slot(m_view->get_widget(), "row-activated", &Page::item_activated, this);
 	g_signal_connect_swapped(m_view->get_widget(), "start-interactive-search", G_CALLBACK(gtk_widget_grab_focus), m_window->get_search_entry());
@@ -75,6 +81,44 @@ void Page::reset_selection()
 		get_view()->scroll_to_path(path);
 		get_view()->set_cursor(path);
 		gtk_tree_path_free(path);
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void Page::set_reorderable(bool reorderable)
+{
+	m_reorderable = reorderable;
+	if (m_reorderable)
+	{
+		const GtkTargetEntry row_targets[] = {
+			{ g_strdup("GTK_TREE_MODEL_ROW"), GTK_TARGET_SAME_WIDGET, 0 },
+			{ g_strdup("text/uri-list"), GTK_TARGET_OTHER_APP, 1 }
+		};
+
+		m_view->set_drag_source(GDK_BUTTON1_MASK,
+				row_targets, 2,
+				GdkDragAction(GDK_ACTION_MOVE | GDK_ACTION_COPY));
+
+		m_view->set_drag_dest(row_targets, 1,
+				GDK_ACTION_MOVE);
+
+		g_free(row_targets[0].target);
+		g_free(row_targets[1].target);
+	}
+	else
+	{
+		const GtkTargetEntry row_targets[] = {
+			{ g_strdup("text/uri-list"), GTK_TARGET_OTHER_APP, 1 }
+		};
+
+		m_view->set_drag_source(GDK_BUTTON1_MASK,
+				row_targets, 1,
+				GDK_ACTION_COPY);
+
+		m_view->unset_drag_dest();
+
+		g_free(row_targets[0].target);
 	}
 }
 
@@ -142,10 +186,8 @@ void Page::item_action_activated(GtkMenuItem* menuitem, DesktopAction* action)
 gboolean Page::view_button_press_event(GtkWidget*, GdkEvent* event)
 {
 	GdkEventButton* button_event = reinterpret_cast<GdkEventButton*>(event);
-	if (button_event->button != 3)
-	{
-		return false;
-	}
+
+	m_launcher_dragged = false;
 
 	GtkTreePath* path = m_view->get_path_at_pos(button_event->x, button_event->y);
 	if (!path)
@@ -153,9 +195,85 @@ gboolean Page::view_button_press_event(GtkWidget*, GdkEvent* event)
 		return false;
 	}
 
-	create_context_menu(path, event);
+	if (button_event->button == 3)
+	{
+		create_context_menu(path, event);
+		return true;
+	}
+	else if (button_event->button != 1)
+	{
+		gtk_tree_path_free(path);
+		return false;
+	}
 
-	return true;
+	GtkTreeModel* model = m_view->get_model();
+	GtkTreeIter iter;
+	gtk_tree_model_get_iter(model, &iter, path);
+	gtk_tree_path_free(path);
+	gtk_tree_model_get(model, &iter, LauncherView::COLUMN_LAUNCHER, &m_selected_launcher, -1);
+	if (!m_selected_launcher || (m_selected_launcher->get_type() != Launcher::Type))
+	{
+		m_selected_launcher = NULL;
+		m_drag_enabled = false;
+		m_view->unset_drag_source();
+		m_view->unset_drag_dest();
+	}
+	else if (!m_drag_enabled)
+	{
+		m_drag_enabled = true;
+		set_reorderable(m_reorderable);
+	}
+
+	return false;
+}
+
+//-----------------------------------------------------------------------------
+
+gboolean Page::view_button_release_event(GtkWidget*, GdkEvent* event)
+{
+	GdkEventButton* button_event = reinterpret_cast<GdkEventButton*>(event);
+	if (button_event->button != 1)
+	{
+		return false;
+	}
+
+	if (m_launcher_dragged)
+	{
+		m_window->hide();
+		m_launcher_dragged = false;
+	}
+
+	return false;
+}
+
+//-----------------------------------------------------------------------------
+
+void Page::view_drag_data_get(GtkWidget*, GdkDragContext*, GtkSelectionData* data, guint info, guint)
+{
+	if ((info != 1) || !m_selected_launcher)
+	{
+		return;
+	}
+
+	gchar* uris[2] = { m_selected_launcher->get_uri(), NULL };
+	if (uris[0] != NULL)
+	{
+		gtk_selection_data_set_uris(data, uris);
+		g_free(uris[0]);
+	}
+
+	m_launcher_dragged = true;
+}
+
+//-----------------------------------------------------------------------------
+
+void Page::view_drag_end(GtkWidget*, GdkDragContext*)
+{
+	if (m_launcher_dragged)
+	{
+		m_window->hide();
+		m_launcher_dragged = false;
+	}
 }
 
 //-----------------------------------------------------------------------------

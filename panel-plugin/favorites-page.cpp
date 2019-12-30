@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015, 2016 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015, 2016, 2019 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -35,7 +35,7 @@ using namespace WhiskerMenu;
 FavoritesPage::FavoritesPage(Window* window) :
 	Page(window)
 {
-	get_view()->set_reorderable(true);
+	set_reorderable(true);
 }
 
 //-----------------------------------------------------------------------------

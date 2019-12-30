@@ -52,11 +52,16 @@ protected:
 		return m_window;
 	}
 
+	void set_reorderable(bool reorderable);
+
 private:
 	virtual bool remember_launcher(Launcher* launcher);
 	void item_activated(GtkTreeView* view, GtkTreePath* path, GtkTreeViewColumn*);
 	void item_action_activated(GtkMenuItem* menuitem, DesktopAction* action);
 	gboolean view_button_press_event(GtkWidget* view, GdkEvent* event);
+	gboolean view_button_release_event(GtkWidget*, GdkEvent* event);
+	void view_drag_data_get(GtkWidget*, GdkDragContext*, GtkSelectionData* data, guint info, guint);
+	void view_drag_end(GtkWidget*, GdkDragContext*);
 	gboolean view_popup_menu_event(GtkWidget* view);
 	void on_unmap();
 	void destroy_context_menu(GtkMenuShell* menu);
@@ -73,6 +78,9 @@ private:
 	GtkWidget* m_widget;
 	LauncherView* m_view;
 	Launcher* m_selected_launcher;
+	bool m_drag_enabled;
+	bool m_launcher_dragged;
+	bool m_reorderable;
 };
 
 }
