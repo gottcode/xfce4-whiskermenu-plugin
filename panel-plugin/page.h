@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2017, 2018 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2017, 2018, 2019 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -65,15 +65,14 @@ private:
 	void add_selected_to_favorites();
 	void edit_selected();
 	void remove_selected_from_favorites();
-	Launcher* get_selected_launcher() const;
-	void create_context_menu(GtkTreeIter* iter, GdkEvent* event);
+	void create_context_menu(GtkTreePath* path, GdkEvent* event);
 	virtual void extend_context_menu(GtkWidget* menu);
 
 private:
 	Window* m_window;
 	GtkWidget* m_widget;
 	LauncherView* m_view;
-	GtkTreePath* m_selected_path;
+	Launcher* m_selected_launcher;
 };
 
 }

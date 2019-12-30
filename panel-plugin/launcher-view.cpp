@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2016, 2018 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2016, 2018, 2019 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -90,6 +90,24 @@ LauncherView::~LauncherView()
 
 	gtk_widget_destroy(GTK_WIDGET(m_view));
 	g_object_unref(m_view);
+}
+
+//-----------------------------------------------------------------------------
+
+GtkTreePath* LauncherView::get_cursor() const
+{
+	GtkTreePath* path = NULL;
+	gtk_tree_view_get_cursor(m_view, &path, NULL);
+	return path;
+}
+
+//-----------------------------------------------------------------------------
+
+GtkTreePath* LauncherView::get_path_at_pos(int x, int y) const
+{
+	GtkTreePath* path = NULL;
+	gtk_tree_view_get_path_at_pos(m_view, x, y, &path, NULL, NULL, NULL);
+	return path;
 }
 
 //-----------------------------------------------------------------------------

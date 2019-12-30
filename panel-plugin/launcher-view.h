@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2016 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2016, 2019 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -38,6 +38,8 @@ public:
 		return GTK_WIDGET(m_view);
 	}
 
+	GtkTreePath* get_cursor() const;
+	GtkTreePath* get_path_at_pos(int x, int y) const;
 	GtkTreePath* get_selected_path() const;
 	void activate_path(GtkTreePath* path);
 	void scroll_to_path(GtkTreePath* path);
