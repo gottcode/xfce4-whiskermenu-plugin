@@ -89,7 +89,7 @@ msgid "Clear Recently Used"
 msgstr "Puhasta hiljuti kasutatud"
 
 #: ../panel-plugin/plugin.cpp:409
-msgid "Copyright © 2013-2019 Graeme Gott"
+msgid "Copyright © 2013-2020 Graeme Gott"
 msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:890

@@ -94,8 +94,8 @@ msgid "Clear Recently Used"
 msgstr "Vymazat seznam nedávno použitých položek"
 
 #: ../panel-plugin/plugin.cpp:409
-msgid "Copyright © 2013-2019 Graeme Gott"
-msgstr "Autorská práva © 2013-2019 Graeme Gott"
+msgid "Copyright © 2013-2020 Graeme Gott"
+msgstr "Autorská práva © 2013-2020 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:890
 msgid "Details"
