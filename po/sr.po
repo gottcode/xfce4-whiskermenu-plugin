@@ -94,8 +94,8 @@ msgid "Clear Recently Used"
 msgstr "Очисти недавно коришћено"
 
 #: ../panel-plugin/plugin.cpp:409
-msgid "Copyright © 2013-2019 Graeme Gott"
-msgstr "Права умножавања © 2013-2019 Грејем Гот (Graeme Gott)"
+msgid "Copyright © 2013-2020 Graeme Gott"
+msgstr "Права умножавања © 2013-2020 Грејем Гот (Graeme Gott)"
 
 #: ../panel-plugin/configuration-dialog.cpp:890
 msgid "Details"

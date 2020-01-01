@@ -99,8 +99,8 @@ msgid "Clear Recently Used"
 msgstr "Limpiar elementos recientes"
 
 #: ../panel-plugin/plugin.cpp:409
-msgid "Copyright © 2013-2019 Graeme Gott"
-msgstr "Derechos de autor © 2013-2019 Graeme Gott"
+msgid "Copyright © 2013-2020 Graeme Gott"
+msgstr "Derechos de autor © 2013-2020 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:890
 msgid "Details"

@@ -89,8 +89,8 @@ msgid "Clear Recently Used"
 msgstr "हालसालै प्रयोग भएकालाई सफा गर्नुहोस् "
 
 #: ../panel-plugin/plugin.cpp:409
-msgid "Copyright © 2013-2019 Graeme Gott"
-msgstr ""
+msgid "Copyright © 2013-2020 Graeme Gott"
+msgstr "प्रतिलिपि अधिकार © 2013-2020 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:890
 msgid "Details"
