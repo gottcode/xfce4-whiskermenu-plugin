@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-23 06:09-0400\n"
+"POT-Creation-Date: 2020-01-01 05:41-0500\n"
 "PO-Revision-Date: 2019-07-24 06:53+0000\n"
 "Last-Translator: Davidmp <medipas@gmail.com>\n"
 "Language-Team: Catalan (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -26,19 +26,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/configuration-dialog.cpp:862
+#: ../panel-plugin/configuration-dialog.cpp:899
 msgid "Add action"
 msgstr "Afegeix una acció"
 
-#: ../panel-plugin/page.cpp:258
+#: ../panel-plugin/page.cpp:404
 msgid "Add to Desktop"
 msgstr "Afegeix a l’escriptori"
 
-#: ../panel-plugin/page.cpp:242
+#: ../panel-plugin/page.cpp:388
 msgid "Add to Favorites"
 msgstr "Afegeix a les preferides"
 
-#: ../panel-plugin/page.cpp:262
+#: ../panel-plugin/page.cpp:408
 msgid "Add to Panel"
 msgstr "Afegeix al plafó"
 
@@ -46,35 +46,35 @@ msgstr "Afegeix al plafó"
 msgid "All"
 msgstr "Totes"
 
-#: ../panel-plugin/settings.cpp:128
+#: ../panel-plugin/settings.cpp:129
 msgid "All _Settings"
 msgstr "Tots els ajust_s"
 
-#: ../panel-plugin/plugin.cpp:408
+#: ../panel-plugin/plugin.cpp:410
 msgid "Alternate application launcher for Xfce"
 msgstr "Llançador d’aplicacions alternatiu per a Xfce"
 
-#: ../panel-plugin/configuration-dialog.cpp:751
+#: ../panel-plugin/configuration-dialog.cpp:788
 msgid "Amount of _items:"
 msgstr "Nombre d’e_lements:"
 
-#: ../panel-plugin/plugin.cpp:212
+#: ../panel-plugin/plugin.cpp:214
 msgid "Applications"
 msgstr "Aplicacions"
 
-#: ../panel-plugin/settings.cpp:143
+#: ../panel-plugin/settings.cpp:144
 msgid "Are you sure you want to log out?"
 msgstr "Segur que voleu tancar la sessió?"
 
-#: ../panel-plugin/settings.cpp:149
+#: ../panel-plugin/settings.cpp:150
 msgid "Are you sure you want to restart?"
 msgstr "Segur que voleu reiniciar?"
 
-#: ../panel-plugin/settings.cpp:155
+#: ../panel-plugin/settings.cpp:156
 msgid "Are you sure you want to shut down?"
 msgstr "Segur que voleu apagar?"
 
-#: ../panel-plugin/configuration-dialog.cpp:678
+#: ../panel-plugin/configuration-dialog.cpp:715
 msgid "Background opacit_y:"
 msgstr "Opacitat del _fons:"
 
@@ -82,11 +82,11 @@ msgstr "Opacitat del _fons:"
 msgid "Browse the file system to choose a custom command."
 msgstr "Navegueu pel sistema de fitxers per triar una ordre personalitzada."
 
-#: ../panel-plugin/configuration-dialog.cpp:919
+#: ../panel-plugin/configuration-dialog.cpp:956
 msgid "C_ommand:"
 msgstr "_Ordre:"
 
-#: ../panel-plugin/configuration-dialog.cpp:663
+#: ../panel-plugin/configuration-dialog.cpp:700
 msgid "Categ_ory icon size:"
 msgstr "Mida de les icones de les categ_ories:"
 
@@ -94,81 +94,81 @@ msgstr "Mida de les icones de les categ_ories:"
 msgid "Clear Recently Used"
 msgstr "Neteja els elements recents"
 
-#: ../panel-plugin/plugin.cpp:409
+#: ../panel-plugin/plugin.cpp:411
 msgid "Copyright © 2013-2020 Graeme Gott"
 msgstr "Drets d’autor © 2013-2020 Graeme Gott"
 
-#: ../panel-plugin/configuration-dialog.cpp:890
+#: ../panel-plugin/configuration-dialog.cpp:927
 msgid "Details"
 msgstr "Detalls"
 
-#: ../panel-plugin/configuration-dialog.cpp:559
+#: ../panel-plugin/configuration-dialog.cpp:588
 msgid "Di_splay:"
 msgstr "Mo_stra:"
 
-#: ../panel-plugin/configuration-dialog.cpp:768
+#: ../panel-plugin/configuration-dialog.cpp:805
 msgid "Display by _default"
 msgstr "Es mostren per _defecte"
 
-#: ../panel-plugin/settings.cpp:161
+#: ../panel-plugin/settings.cpp:162
 msgid "Do you want to suspend to RAM?"
 msgstr "Voleu suspendre a la RAM?"
 
-#: ../panel-plugin/settings.cpp:167
+#: ../panel-plugin/settings.cpp:168
 msgid "Do you want to suspend to disk?"
 msgstr "Voleu suspendre al disc?"
 
-#: ../panel-plugin/page.cpp:269
+#: ../panel-plugin/page.cpp:415
 msgid "Edit Application..."
 msgstr "Edita l'aplicació..."
 
-#: ../panel-plugin/settings.cpp:178
+#: ../panel-plugin/settings.cpp:179
 msgid "Edit _Profile"
 msgstr "Edita el _perfil"
 
-#: ../panel-plugin/settings.cpp:180
+#: ../panel-plugin/settings.cpp:181
 msgid "Failed to edit profile."
 msgstr "Ha fallat editar el perfil."
 
-#: ../panel-plugin/launcher.cpp:288 ../panel-plugin/launcher.cpp:362
+#: ../panel-plugin/launcher.cpp:301 ../panel-plugin/launcher.cpp:375
 #: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "Ha fallat executar l'ordre «%s»."
 
-#: ../panel-plugin/settings.cpp:166
+#: ../panel-plugin/settings.cpp:167
 msgid "Failed to hibernate."
 msgstr "Ha fallat la hibernació."
 
-#: ../panel-plugin/settings.cpp:176
+#: ../panel-plugin/settings.cpp:177
 msgid "Failed to launch menu editor."
 msgstr "Ha fallat obrir l'editor del menú."
 
-#: ../panel-plugin/settings.cpp:134
+#: ../panel-plugin/settings.cpp:135
 msgid "Failed to lock screen."
 msgstr "Ha fallat bloquejar la pantalla."
 
-#: ../panel-plugin/settings.cpp:142 ../panel-plugin/settings.cpp:172
+#: ../panel-plugin/settings.cpp:143 ../panel-plugin/settings.cpp:173
 msgid "Failed to log out."
 msgstr "Ha fallat tancar la sessió."
 
-#: ../panel-plugin/settings.cpp:130
+#: ../panel-plugin/settings.cpp:131
 msgid "Failed to open settings manager."
 msgstr "Ha fallat obrir el gestor d'ajusts."
 
-#: ../panel-plugin/settings.cpp:148
+#: ../panel-plugin/settings.cpp:149
 msgid "Failed to restart."
 msgstr "Ha fallat el reinici."
 
-#: ../panel-plugin/settings.cpp:154
+#: ../panel-plugin/settings.cpp:155
 msgid "Failed to shut down."
 msgstr "Ha fallat l'aturada."
 
-#: ../panel-plugin/settings.cpp:160
+#: ../panel-plugin/settings.cpp:161
 msgid "Failed to suspend."
 msgstr "Ha fallat la suspensió."
 
-#: ../panel-plugin/settings.cpp:138
+#: ../panel-plugin/settings.cpp:139
 msgid "Failed to switch user."
 msgstr "Ha fallat canviar d'usuari."
 
@@ -176,24 +176,24 @@ msgstr "Ha fallat canviar d'usuari."
 msgid "Favorites"
 msgstr "Preferides"
 
-#: ../panel-plugin/settings.cpp:168
+#: ../panel-plugin/settings.cpp:169
 #, c-format
 msgid "Hibernating computer in %d seconds."
 msgstr "S'hibernarà l'ordinador d'aquí a %d segons."
 
-#: ../panel-plugin/configuration-dialog.cpp:564
+#: ../panel-plugin/configuration-dialog.cpp:593
 msgid "Icon"
 msgstr "Icona"
 
-#: ../panel-plugin/configuration-dialog.cpp:566
+#: ../panel-plugin/configuration-dialog.cpp:595
 msgid "Icon and title"
 msgstr "Icona i títol"
 
-#: ../panel-plugin/configuration-dialog.cpp:762
+#: ../panel-plugin/configuration-dialog.cpp:799
 msgid "Include _favorites"
 msgstr "Inclou les pre_ferides"
 
-#: ../panel-plugin/configuration-dialog.cpp:647
+#: ../panel-plugin/configuration-dialog.cpp:684
 msgid "Ite_m icon size:"
 msgstr "Mida de les icones dels ele_ments:"
 
@@ -205,33 +205,33 @@ msgstr "Grossa"
 msgid "Larger"
 msgstr "Més grossa"
 
-#: ../panel-plugin/settings.cpp:170
+#: ../panel-plugin/settings.cpp:171
 msgid "Log Ou_t..."
 msgstr "_Tanca la sessió..."
 
-#: ../panel-plugin/settings.cpp:140
+#: ../panel-plugin/settings.cpp:141
 msgid "Log _Out"
 msgstr "Ta_nca la sessió"
 
-#: ../panel-plugin/settings.cpp:144
+#: ../panel-plugin/settings.cpp:145
 #, c-format
 msgid "Logging out in %d seconds."
 msgstr "Es tancarà la sessió d'aquí a %d segons."
 
-#: ../panel-plugin/settings.cpp:182
+#: ../panel-plugin/settings.cpp:183
 msgid "Man Pages"
 msgstr "Pàgines del manual"
 
-#: ../panel-plugin/configuration-dialog.cpp:612
-#: ../panel-plugin/configuration-dialog.cpp:708
+#: ../panel-plugin/configuration-dialog.cpp:641
+#: ../panel-plugin/configuration-dialog.cpp:745
 msgid "Menu"
 msgstr "Menú"
 
-#: ../panel-plugin/configuration-dialog.cpp:894
+#: ../panel-plugin/configuration-dialog.cpp:931
 msgid "Nam_e:"
 msgstr "N_om:"
 
-#: ../panel-plugin/configuration-dialog.cpp:840
+#: ../panel-plugin/configuration-dialog.cpp:877
 msgid "Name"
 msgstr "Nom"
 
@@ -243,48 +243,48 @@ msgstr "Cap"
 msgid "Normal"
 msgstr "Normal"
 
-#: ../panel-plugin/settings.cpp:186
+#: ../panel-plugin/settings.cpp:187
 msgid "Open URI"
 msgstr "Obre un URI"
 
-#: ../panel-plugin/configuration-dialog.cpp:555
+#: ../panel-plugin/configuration-dialog.cpp:584
 msgid "Panel Button"
 msgstr "Botó del plafó"
 
-#: ../panel-plugin/configuration-dialog.cpp:845
+#: ../panel-plugin/configuration-dialog.cpp:882
 msgid "Pattern"
 msgstr "Patró"
 
-#: ../panel-plugin/configuration-dialog.cpp:718
+#: ../panel-plugin/configuration-dialog.cpp:755
 msgid "Position _search entry next to panel button"
 msgstr "_Situa el quadre de cerca al costat del botó del plafó"
 
-#: ../panel-plugin/configuration-dialog.cpp:730
+#: ../panel-plugin/configuration-dialog.cpp:767
 msgid "Position cate_gories next to panel button"
 msgstr "Situa les cate_gories al costat del botó del plafó"
 
-#: ../panel-plugin/configuration-dialog.cpp:724
+#: ../panel-plugin/configuration-dialog.cpp:761
 msgid "Position commands next to search _entry"
 msgstr "S_itua les ordres al costat del quadre de cerca"
 
-#: ../panel-plugin/configuration-dialog.cpp:747 ../panel-plugin/window.cpp:164
+#: ../panel-plugin/configuration-dialog.cpp:784 ../panel-plugin/window.cpp:164
 msgid "Recently Used"
 msgstr "Utilitzades recentment"
 
-#: ../panel-plugin/page.cpp:250
+#: ../panel-plugin/page.cpp:396
 msgid "Remove From Favorites"
 msgstr "Suprimeix de les preferides"
 
-#: ../panel-plugin/configuration-dialog.cpp:459
+#: ../panel-plugin/configuration-dialog.cpp:488
 #, c-format
 msgid "Remove action \"%s\"?"
 msgstr "Voleu suprimir l’acció «%s»?"
 
-#: ../panel-plugin/configuration-dialog.cpp:871
+#: ../panel-plugin/configuration-dialog.cpp:908
 msgid "Remove selected action"
 msgstr "Suprimeix l’acció seleccionada"
 
-#: ../panel-plugin/settings.cpp:150
+#: ../panel-plugin/settings.cpp:151
 #, c-format
 msgid "Restarting computer in %d seconds."
 msgstr "Es reiniciarà l'ordinador d'aquí a %d segons."
@@ -294,7 +294,7 @@ msgstr "Es reiniciarà l'ordinador d'aquí a %d segons."
 msgid "Run %s"
 msgstr "Executa «%s»"
 
-#: ../panel-plugin/settings.cpp:185
+#: ../panel-plugin/settings.cpp:186
 msgid "Run in Terminal"
 msgstr "Executa en un terminal"
 
@@ -314,7 +314,7 @@ msgstr "Seleccioneu una icona"
 msgid "Select Command"
 msgstr "Seleccioneu una ordre"
 
-#: ../panel-plugin/configuration-dialog.cpp:777
+#: ../panel-plugin/configuration-dialog.cpp:814
 msgid "Session Commands"
 msgstr "Ordres de la sessió"
 
@@ -322,31 +322,35 @@ msgstr "Ordres de la sessió"
 msgid "Show a menu to easily access installed applications"
 msgstr "Mostra un menú per accedir fàcilment a les aplicacions instal·lades"
 
-#: ../panel-plugin/configuration-dialog.cpp:629
+#: ../panel-plugin/configuration-dialog.cpp:658
 msgid "Show application _descriptions"
 msgstr "Mostra la _descripció de les aplicacions"
 
-#: ../panel-plugin/configuration-dialog.cpp:635
+#: ../panel-plugin/configuration-dialog.cpp:665
 msgid "Show application too_ltips"
 msgstr "Mostra els indicadors de funció de les ap_licacions"
 
-#: ../panel-plugin/configuration-dialog.cpp:781
+#: ../panel-plugin/configuration-dialog.cpp:678
+msgid "Show as _icons"
+msgstr ""
+
+#: ../panel-plugin/configuration-dialog.cpp:818
 msgid "Show c_onfirmation dialog"
 msgstr "Mostra el diàleg de c_onfirmació"
 
-#: ../panel-plugin/configuration-dialog.cpp:622
+#: ../panel-plugin/configuration-dialog.cpp:651
 msgid "Show cate_gory names"
 msgstr "Mostra el nom de les cate_gories"
 
-#: ../panel-plugin/configuration-dialog.cpp:616
+#: ../panel-plugin/configuration-dialog.cpp:645
 msgid "Show generic application _names"
 msgstr "Mostra el _nom genèric de les aplicacions"
 
-#: ../panel-plugin/configuration-dialog.cpp:641
+#: ../panel-plugin/configuration-dialog.cpp:671
 msgid "Show menu hie_rarchy"
 msgstr "Mostra la je_rarquia del menú"
 
-#: ../panel-plugin/settings.cpp:152
+#: ../panel-plugin/settings.cpp:153
 msgid "Shut _Down"
 msgstr "A_paga"
 
@@ -366,58 +370,58 @@ msgstr "Ordena alfabèticament: A–Z"
 msgid "Sort Alphabetically Z-A"
 msgstr "Ordena alfabèticament: Z–A"
 
-#: ../panel-plugin/configuration-dialog.cpp:736
+#: ../panel-plugin/configuration-dialog.cpp:773
 msgid "Stay _visible when focus is lost"
 msgstr "Continua _visible quan se'n perdi el focus"
 
-#: ../panel-plugin/settings.cpp:158
+#: ../panel-plugin/settings.cpp:159
 msgid "Suspe_nd"
 msgstr "Suspè_n"
 
-#: ../panel-plugin/settings.cpp:162
+#: ../panel-plugin/settings.cpp:163
 #, c-format
 msgid "Suspending computer in %d seconds."
 msgstr "Se suspendrà l'ordinador d'aquí a %d segons."
 
-#: ../panel-plugin/settings.cpp:136
+#: ../panel-plugin/settings.cpp:137
 msgid "Switch _User"
 msgstr "Canvia d'_usuari"
 
-#: ../panel-plugin/configuration-dialog.cpp:712
+#: ../panel-plugin/configuration-dialog.cpp:749
 msgid "Switch categories by _hovering"
 msgstr "Canvia de categoria en _passar-hi el ratolí"
 
-#: ../panel-plugin/configuration-dialog.cpp:458
+#: ../panel-plugin/configuration-dialog.cpp:487
 msgid "The action will be deleted permanently."
 msgstr "L'acció se suprimirà permanentment."
 
-#: ../panel-plugin/configuration-dialog.cpp:565
+#: ../panel-plugin/configuration-dialog.cpp:594
 msgid "Title"
 msgstr "Títol"
 
-#: ../panel-plugin/settings.cpp:156
+#: ../panel-plugin/settings.cpp:157
 #, c-format
 msgid "Turning off computer in %d seconds."
 msgstr "S'apagarà l'ordinador d'aquí a %d segons."
 
-#: ../panel-plugin/page.cpp:334
+#: ../panel-plugin/page.cpp:477
 msgid "Unable to add launcher to desktop."
 msgstr "No es pot afegir el llançador a l'escriptori."
 
-#: ../panel-plugin/page.cpp:373 ../panel-plugin/page.cpp:382
+#: ../panel-plugin/page.cpp:515 ../panel-plugin/page.cpp:524
 msgid "Unable to add launcher to panel."
 msgstr "No es pot afegir el llançador al plafó."
 
-#: ../panel-plugin/page.cpp:413
+#: ../panel-plugin/page.cpp:553
 msgid "Unable to edit launcher."
 msgstr "No es pot editar el llançador."
 
-#: ../panel-plugin/configuration-dialog.cpp:519
+#: ../panel-plugin/configuration-dialog.cpp:548
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "No es pot obrir l'URL següent: %s"
 
-#: ../panel-plugin/configuration-dialog.cpp:599
+#: ../panel-plugin/configuration-dialog.cpp:628
 msgid "Use a single _panel row"
 msgstr "Utilitza un _plafó d'una sola fila"
 
@@ -429,7 +433,7 @@ msgstr "Molt grossa"
 msgid "Very Small"
 msgstr "Molt petita"
 
-#: ../panel-plugin/settings.cpp:183
+#: ../panel-plugin/settings.cpp:184
 msgid "Web Search"
 msgstr "Cerca al Web"
 
@@ -438,7 +442,7 @@ msgstr "Cerca al Web"
 msgid "Whisker Menu"
 msgstr "Menú Whisker"
 
-#: ../panel-plugin/settings.cpp:184
+#: ../panel-plugin/settings.cpp:185
 msgid "Wikipedia"
 msgstr "Viquipèdia"
 
@@ -463,11 +467,11 @@ msgstr "_Tanca"
 msgid "_Commands"
 msgstr "_Ordres"
 
-#: ../panel-plugin/configuration-dialog.cpp:457
+#: ../panel-plugin/configuration-dialog.cpp:486
 msgid "_Delete"
 msgstr "_Suprimeix"
 
-#: ../panel-plugin/settings.cpp:174
+#: ../panel-plugin/settings.cpp:175
 msgid "_Edit Applications"
 msgstr "_Edita les aplicacions"
 
@@ -475,15 +479,15 @@ msgstr "_Edita les aplicacions"
 msgid "_Help"
 msgstr "_Ajuda"
 
-#: ../panel-plugin/settings.cpp:164
+#: ../panel-plugin/settings.cpp:165
 msgid "_Hibernate"
 msgstr "_Hiberna"
 
-#: ../panel-plugin/configuration-dialog.cpp:585
+#: ../panel-plugin/configuration-dialog.cpp:614
 msgid "_Icon:"
 msgstr "_Icona:"
 
-#: ../panel-plugin/settings.cpp:132
+#: ../panel-plugin/settings.cpp:133
 msgid "_Lock Screen"
 msgstr "_Bloqueja la pantalla"
 
@@ -492,23 +496,23 @@ msgstr "_Bloqueja la pantalla"
 msgid "_OK"
 msgstr "_D’acord"
 
-#: ../panel-plugin/configuration-dialog.cpp:907
+#: ../panel-plugin/configuration-dialog.cpp:944
 msgid "_Pattern:"
 msgstr "_Patró:"
 
-#: ../panel-plugin/configuration-dialog.cpp:931
+#: ../panel-plugin/configuration-dialog.cpp:968
 msgid "_Regular expression"
 msgstr "Expressió _regular"
 
-#: ../panel-plugin/settings.cpp:146
+#: ../panel-plugin/settings.cpp:147
 msgid "_Restart"
 msgstr "_Reinicia"
 
-#: ../panel-plugin/configuration-dialog.cpp:574
+#: ../panel-plugin/configuration-dialog.cpp:603
 msgid "_Title:"
 msgstr "_Títol:"
 
-#: ../panel-plugin/plugin.cpp:413
+#: ../panel-plugin/plugin.cpp:415
 msgid "translator-credits"
 msgstr ""
 "Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2013–2016\n"
