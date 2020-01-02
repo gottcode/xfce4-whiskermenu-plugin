@@ -1,0 +1,510 @@
+# Interlingue translation of xfce4-whiskermenu-plugin.
+# Copyright (C) 2020 Graeme Gott
+# This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
+#
+# Translators:
+# Caarmi, 2020
+msgid ""
+msgstr ""
+"Project-Id-Version: Whisker Menu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-01-01 05:41-0500\n"
+"PO-Revision-Date: 2020-01-01 15:41+0000\n"
+"Last-Translator: Caarmi\n"
+"Language-Team: Interlingue (http://www.transifex.com/gottcode/xfce4-"
+"whiskermenu-plugin/language/ie/)\n"
+"Language: ie\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../panel-plugin/configuration-dialog.cpp:899
+msgid "Add action"
+msgstr "Adjunter un action"
+
+#: ../panel-plugin/page.cpp:404
+msgid "Add to Desktop"
+msgstr "Adjunter al Pupitre"
+
+#: ../panel-plugin/page.cpp:388
+msgid "Add to Favorites"
+msgstr "Adjunter al preferat"
+
+#: ../panel-plugin/page.cpp:408
+msgid "Add to Panel"
+msgstr "Adjuncter al panel"
+
+#: ../panel-plugin/category.cpp:61
+msgid "All"
+msgstr "Omni"
+
+#: ../panel-plugin/settings.cpp:129
+msgid "All _Settings"
+msgstr "Omni _parametres"
+
+#: ../panel-plugin/plugin.cpp:410
+msgid "Alternate application launcher for Xfce"
+msgstr "Alternativ lansator de applicationes por Xfce"
+
+#: ../panel-plugin/configuration-dialog.cpp:788
+msgid "Amount of _items:"
+msgstr "Númere de _elementes:"
+
+#: ../panel-plugin/plugin.cpp:214
+msgid "Applications"
+msgstr "Applicationes"
+
+#: ../panel-plugin/settings.cpp:144
+msgid "Are you sure you want to log out?"
+msgstr "Esque vu vole cluder vor session?"
+
+#: ../panel-plugin/settings.cpp:150
+msgid "Are you sure you want to restart?"
+msgstr "Esque vu vole restartar?"
+
+#: ../panel-plugin/settings.cpp:156
+msgid "Are you sure you want to shut down?"
+msgstr "Esque vu vole extinter li computator?"
+
+#: ../panel-plugin/configuration-dialog.cpp:715
+msgid "Background opacit_y:"
+msgstr "Opac_itá de funde:"
+
+#: ../panel-plugin/command-edit.cpp:49
+msgid "Browse the file system to choose a custom command."
+msgstr "Navigar li sistema de files por trovar un personal comande."
+
+#: ../panel-plugin/configuration-dialog.cpp:956
+msgid "C_ommand:"
+msgstr "C_omande:"
+
+#: ../panel-plugin/configuration-dialog.cpp:700
+msgid "Categ_ory icon size:"
+msgstr "Ic_ones de categorie:"
+
+#: ../panel-plugin/recent-page.cpp:173
+msgid "Clear Recently Used"
+msgstr "Efaciar recentmen usat"
+
+#: ../panel-plugin/plugin.cpp:411
+msgid "Copyright © 2013-2020 Graeme Gott"
+msgstr "Copyright © 2013-2020 Graeme Gott"
+
+#: ../panel-plugin/configuration-dialog.cpp:927
+msgid "Details"
+msgstr "Detallies"
+
+#: ../panel-plugin/configuration-dialog.cpp:588
+msgid "Di_splay:"
+msgstr "Mon_strar:"
+
+#: ../panel-plugin/configuration-dialog.cpp:805
+msgid "Display by _default"
+msgstr "Mo_nstrar al inicie"
+
+#: ../panel-plugin/settings.cpp:162
+msgid "Do you want to suspend to RAM?"
+msgstr "Esque vu vole suspender a RAM?"
+
+#: ../panel-plugin/settings.cpp:168
+msgid "Do you want to suspend to disk?"
+msgstr "Esque vu vole suspender a disco?"
+
+#: ../panel-plugin/page.cpp:415
+msgid "Edit Application..."
+msgstr "Modificar li application..."
+
+#: ../panel-plugin/settings.cpp:179
+msgid "Edit _Profile"
+msgstr "Modificar _profil"
+
+#: ../panel-plugin/settings.cpp:181
+msgid "Failed to edit profile."
+msgstr "Ne successat modificar li profil."
+
+#: ../panel-plugin/launcher.cpp:301 ../panel-plugin/launcher.cpp:375
+#: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:188
+#, c-format
+msgid "Failed to execute command \"%s\"."
+msgstr "Ne successat executer li comande «%s»."
+
+#: ../panel-plugin/settings.cpp:167
+msgid "Failed to hibernate."
+msgstr "Ne successat hivernar."
+
+#: ../panel-plugin/settings.cpp:177
+msgid "Failed to launch menu editor."
+msgstr "Ne successat lansar li redactor de menú."
+
+#: ../panel-plugin/settings.cpp:135
+msgid "Failed to lock screen."
+msgstr "Ne successat serrar li ecran."
+
+#: ../panel-plugin/settings.cpp:143 ../panel-plugin/settings.cpp:173
+msgid "Failed to log out."
+msgstr "Ne successat cluder li session."
+
+#: ../panel-plugin/settings.cpp:131
+msgid "Failed to open settings manager."
+msgstr "Ne successat aperter li gerente de configuration."
+
+#: ../panel-plugin/settings.cpp:149
+msgid "Failed to restart."
+msgstr "Ne successat restartar."
+
+#: ../panel-plugin/settings.cpp:155
+msgid "Failed to shut down."
+msgstr "Ne successat extinter li computator."
+
+#: ../panel-plugin/settings.cpp:161
+msgid "Failed to suspend."
+msgstr "Ne successat suspender."
+
+#: ../panel-plugin/settings.cpp:139
+msgid "Failed to switch user."
+msgstr "Ne successat cambiar li usator."
+
+#: ../panel-plugin/window.cpp:158
+msgid "Favorites"
+msgstr "Preferat"
+
+#: ../panel-plugin/settings.cpp:169
+#, c-format
+msgid "Hibernating computer in %d seconds."
+msgstr "Hivernante li computator pos %d secondes."
+
+#: ../panel-plugin/configuration-dialog.cpp:593
+msgid "Icon"
+msgstr "Icone"
+
+#: ../panel-plugin/configuration-dialog.cpp:595
+msgid "Icon and title"
+msgstr "Icone e titul"
+
+#: ../panel-plugin/configuration-dialog.cpp:799
+msgid "Include _favorites"
+msgstr "Includer li pre_feret"
+
+#: ../panel-plugin/configuration-dialog.cpp:684
+msgid "Ite_m icon size:"
+msgstr "Icones de ele_mentes:"
+
+#: ../panel-plugin/icon-size.cpp:54
+msgid "Large"
+msgstr "Grand"
+
+#: ../panel-plugin/icon-size.cpp:55
+msgid "Larger"
+msgstr "Plu grand"
+
+#: ../panel-plugin/settings.cpp:171
+msgid "Log Ou_t..."
+msgstr "_Cluder li session"
+
+#: ../panel-plugin/settings.cpp:141
+msgid "Log _Out"
+msgstr "C_luder li session"
+
+#: ../panel-plugin/settings.cpp:145
+#, c-format
+msgid "Logging out in %d seconds."
+msgstr "Cludente li session pos %d secondes."
+
+#: ../panel-plugin/settings.cpp:183
+msgid "Man Pages"
+msgstr "Págines man"
+
+#: ../panel-plugin/configuration-dialog.cpp:641
+#: ../panel-plugin/configuration-dialog.cpp:745
+msgid "Menu"
+msgstr "Menú"
+
+#: ../panel-plugin/configuration-dialog.cpp:931
+msgid "Nam_e:"
+msgstr "Nómin_e:"
+
+#: ../panel-plugin/configuration-dialog.cpp:877
+msgid "Name"
+msgstr "Nómine"
+
+#: ../panel-plugin/icon-size.cpp:49
+msgid "None"
+msgstr "Null"
+
+#: ../panel-plugin/icon-size.cpp:53
+msgid "Normal"
+msgstr "Normal"
+
+#: ../panel-plugin/settings.cpp:187
+msgid "Open URI"
+msgstr "Aperter un URI"
+
+#: ../panel-plugin/configuration-dialog.cpp:584
+msgid "Panel Button"
+msgstr "Buton de panel"
+
+#: ../panel-plugin/configuration-dialog.cpp:882
+msgid "Pattern"
+msgstr "Mustre"
+
+#: ../panel-plugin/configuration-dialog.cpp:755
+msgid "Position _search entry next to panel button"
+msgstr "Camp de _sercha apu li buton de panel"
+
+#: ../panel-plugin/configuration-dialog.cpp:767
+msgid "Position cate_gories next to panel button"
+msgstr "Cate_gories apu li buton de panel"
+
+#: ../panel-plugin/configuration-dialog.cpp:761
+msgid "Position commands next to search _entry"
+msgstr "Comandes apu li camp de s_ercha"
+
+#: ../panel-plugin/configuration-dialog.cpp:784 ../panel-plugin/window.cpp:164
+msgid "Recently Used"
+msgstr "Recent"
+
+#: ../panel-plugin/page.cpp:396
+msgid "Remove From Favorites"
+msgstr "Remover ex li preferat"
+
+#: ../panel-plugin/configuration-dialog.cpp:488
+#, c-format
+msgid "Remove action \"%s\"?"
+msgstr "Remover li action «%s»?"
+
+#: ../panel-plugin/configuration-dialog.cpp:908
+msgid "Remove selected action"
+msgstr "Remover li selectet action"
+
+#: ../panel-plugin/settings.cpp:151
+#, c-format
+msgid "Restarting computer in %d seconds."
+msgstr "Restartante li computator pos %d secondes."
+
+#: ../panel-plugin/run-action.cpp:71
+#, c-format
+msgid "Run %s"
+msgstr "Lansar %s"
+
+#: ../panel-plugin/settings.cpp:186
+msgid "Run in Terminal"
+msgstr "Lansar in li terminal"
+
+#: ../panel-plugin/configuration-dialog.cpp:102
+msgid "Search Actio_ns"
+msgstr "Actio_nes de sercha"
+
+#: ../panel-plugin/search-action.cpp:259
+msgid "Search Action"
+msgstr "Un action de sercha"
+
+#: ../panel-plugin/configuration-dialog.cpp:135
+msgid "Select An Icon"
+msgstr "Selecte un icone"
+
+#: ../panel-plugin/command-edit.cpp:64
+msgid "Select Command"
+msgstr "Selecte un comande"
+
+#: ../panel-plugin/configuration-dialog.cpp:814
+msgid "Session Commands"
+msgstr "Comandes de session"
+
+#: ../panel-plugin/whiskermenu.desktop.in:6
+msgid "Show a menu to easily access installed applications"
+msgstr "Monstrar un menú por facil accesse al installat applicationes"
+
+#: ../panel-plugin/configuration-dialog.cpp:658
+msgid "Show application _descriptions"
+msgstr "_Descritiones de applicationes"
+
+#: ../panel-plugin/configuration-dialog.cpp:665
+msgid "Show application too_ltips"
+msgstr "Monstrar _infopanels"
+
+#: ../panel-plugin/configuration-dialog.cpp:678
+msgid "Show as _icons"
+msgstr "Monstrar quam _icones"
+
+#: ../panel-plugin/configuration-dialog.cpp:818
+msgid "Show c_onfirmation dialog"
+msgstr "Monstrar un dialog de c_onfirmation"
+
+#: ../panel-plugin/configuration-dialog.cpp:651
+msgid "Show cate_gory names"
+msgstr "Nómines de cate_gories"
+
+#: ../panel-plugin/configuration-dialog.cpp:645
+msgid "Show generic application _names"
+msgstr "Géneric _nómines de applicationes"
+
+#: ../panel-plugin/configuration-dialog.cpp:671
+msgid "Show menu hie_rarchy"
+msgstr "Hie_rarchic menú"
+
+#: ../panel-plugin/settings.cpp:153
+msgid "Shut _Down"
+msgstr "E_xtinter"
+
+#: ../panel-plugin/icon-size.cpp:52
+msgid "Small"
+msgstr "Micri"
+
+#: ../panel-plugin/icon-size.cpp:51
+msgid "Smaller"
+msgstr "Plu micri"
+
+#: ../panel-plugin/favorites-page.cpp:147
+msgid "Sort Alphabetically A-Z"
+msgstr "Ordinar A→Z"
+
+#: ../panel-plugin/favorites-page.cpp:153
+msgid "Sort Alphabetically Z-A"
+msgstr "Ordinar Z→A"
+
+#: ../panel-plugin/configuration-dialog.cpp:773
+msgid "Stay _visible when focus is lost"
+msgstr "_Visibil pos perde del focus"
+
+#: ../panel-plugin/settings.cpp:159
+msgid "Suspe_nd"
+msgstr "Suspe_nder"
+
+#: ../panel-plugin/settings.cpp:163
+#, c-format
+msgid "Suspending computer in %d seconds."
+msgstr "Suspendente li computator pos %d secondes."
+
+#: ../panel-plugin/settings.cpp:137
+msgid "Switch _User"
+msgstr "Cambiar li _usator"
+
+#: ../panel-plugin/configuration-dialog.cpp:749
+msgid "Switch categories by _hovering"
+msgstr "Alterar categories per _apuntar"
+
+#: ../panel-plugin/configuration-dialog.cpp:487
+msgid "The action will be deleted permanently."
+msgstr "Li action va esser perdit irrevocabilmen."
+
+#: ../panel-plugin/configuration-dialog.cpp:594
+msgid "Title"
+msgstr "Titul"
+
+#: ../panel-plugin/settings.cpp:157
+#, c-format
+msgid "Turning off computer in %d seconds."
+msgstr "Va extinter li computator pos %d secondes."
+
+#: ../panel-plugin/page.cpp:477
+msgid "Unable to add launcher to desktop."
+msgstr "Ne successat adjunter un lansator al Pupitre."
+
+#: ../panel-plugin/page.cpp:515 ../panel-plugin/page.cpp:524
+msgid "Unable to add launcher to panel."
+msgstr "Ne successat adjunter un lansator al panel."
+
+#: ../panel-plugin/page.cpp:553
+msgid "Unable to edit launcher."
+msgstr "Ne successat modificar un lansator."
+
+#: ../panel-plugin/configuration-dialog.cpp:548
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Ne successat aperter li sequent URL: %s"
+
+#: ../panel-plugin/configuration-dialog.cpp:628
+msgid "Use a single _panel row"
+msgstr "Ocupar un singul range del _panel"
+
+#: ../panel-plugin/icon-size.cpp:56
+msgid "Very Large"
+msgstr "Grandissim"
+
+#: ../panel-plugin/icon-size.cpp:50
+msgid "Very Small"
+msgstr "Micrissim"
+
+#: ../panel-plugin/settings.cpp:184
+msgid "Web Search"
+msgstr "Sercha web"
+
+#: ../panel-plugin/configuration-dialog.cpp:86
+#: ../panel-plugin/whiskermenu.desktop.in:5
+msgid "Whisker Menu"
+msgstr "Menú Whisker"
+
+#: ../panel-plugin/settings.cpp:185
+msgid "Wikipedia"
+msgstr "Wikipedia"
+
+#: ../panel-plugin/configuration-dialog.cpp:99
+msgid "_Appearance"
+msgstr "_Aspecte"
+
+#: ../panel-plugin/configuration-dialog.cpp:100
+msgid "_Behavior"
+msgstr "C_onduida"
+
+#: ../panel-plugin/command-edit.cpp:67
+#: ../panel-plugin/configuration-dialog.cpp:137
+msgid "_Cancel"
+msgstr "_Anullar"
+
+#: ../panel-plugin/configuration-dialog.cpp:90
+msgid "_Close"
+msgstr "_Cluder"
+
+#: ../panel-plugin/configuration-dialog.cpp:101
+msgid "_Commands"
+msgstr "_Comandes"
+
+#: ../panel-plugin/configuration-dialog.cpp:486
+msgid "_Delete"
+msgstr "_Deleter"
+
+#: ../panel-plugin/settings.cpp:175
+msgid "_Edit Applications"
+msgstr "_Modificar applicationes"
+
+#: ../panel-plugin/configuration-dialog.cpp:89
+msgid "_Help"
+msgstr "Au_xilie"
+
+#: ../panel-plugin/settings.cpp:165
+msgid "_Hibernate"
+msgstr "_Hivernar"
+
+#: ../panel-plugin/configuration-dialog.cpp:614
+msgid "_Icon:"
+msgstr "_Icone:"
+
+#: ../panel-plugin/settings.cpp:133
+msgid "_Lock Screen"
+msgstr "S_errar li ecran"
+
+#: ../panel-plugin/command-edit.cpp:68
+#: ../panel-plugin/configuration-dialog.cpp:138
+msgid "_OK"
+msgstr "_OK"
+
+#: ../panel-plugin/configuration-dialog.cpp:944
+msgid "_Pattern:"
+msgstr "_Mustre:"
+
+#: ../panel-plugin/configuration-dialog.cpp:968
+msgid "_Regular expression"
+msgstr "_Expression regulari"
+
+#: ../panel-plugin/settings.cpp:147
+msgid "_Restart"
+msgstr "_Restartar"
+
+#: ../panel-plugin/configuration-dialog.cpp:603
+msgid "_Title:"
+msgstr "_Titul:"
+
+#: ../panel-plugin/plugin.cpp:415
+msgid "translator-credits"
+msgstr "OIS <mistresssilvara@hotmail.com>, 2019"
