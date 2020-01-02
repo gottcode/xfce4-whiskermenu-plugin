@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2018, 2019 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -94,29 +94,29 @@ Settings::Settings() :
 	button_single_row(false),
 
 	launcher_show_name(true),
-	launcher_show_description(true),
+	launcher_show_description(false),
 	launcher_show_tooltip(true),
-	launcher_icon_size(IconSize::Small),
+	launcher_icon_size(IconSize::Normal),
 
 	category_hover_activate(false),
 	category_show_name(true),
 	category_icon_size(IconSize::Smaller),
 
 	load_hierarchy(false),
-	view_as_icons(false),
+	view_as_icons(true),
 
 	recent_items_max(10),
 	favorites_in_recent(true),
 	display_recent(false),
 
-	position_search_alternate(false),
+	position_search_alternate(true),
 	position_commands_alternate(false),
-	position_categories_alternate(false),
+	position_categories_alternate(true),
 	stay_on_focus_out(false),
 
 	confirm_session_command(true),
 
-	menu_width(400),
+	menu_width(550),
 	menu_height(500),
 	menu_opacity(100)
 {
