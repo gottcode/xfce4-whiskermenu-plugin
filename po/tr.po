@@ -1,10 +1,10 @@
 # Turkish translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2019 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # Ercan PEKER <bahadiroglu33@gmail.com>, 2013,2017
-# Demiray Muhterem <mdemiray@msn.com>, 2013-2019
+# Demiray Muhterem <mdemiray@msn.com>, 2013-2020
 # Demiray Muhterem <mdemiray@msn.com>, 2018
 # Yusuf Faruk DOĞAN <yfdogan@gmail.com>, 2013
 msgid ""
@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-01 05:41-0500\n"
-"PO-Revision-Date: 2019-07-24 13:23+0000\n"
+"PO-Revision-Date: 2020-01-01 22:16+0000\n"
 "Last-Translator: Demiray Muhterem <mdemiray@msn.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/tr/)\n"
@@ -92,7 +92,7 @@ msgstr "Yakında Kullanılanları Temizle"
 
 #: ../panel-plugin/plugin.cpp:411
 msgid "Copyright © 2013-2020 Graeme Gott"
-msgstr "Telif hakkı © 2013-2020 Graeme Gott"
+msgstr "Telif Hakkı © 2013-2020 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:927
 msgid "Details"
@@ -328,7 +328,7 @@ msgstr "Uygulama ip_uçlarını göster"
 
 #: ../panel-plugin/configuration-dialog.cpp:678
 msgid "Show as _icons"
-msgstr ""
+msgstr "_Simgeler olarak göster"
 
 #: ../panel-plugin/configuration-dialog.cpp:818
 msgid "Show c_onfirmation dialog"
