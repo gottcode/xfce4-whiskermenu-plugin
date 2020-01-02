@@ -1,5 +1,5 @@
 # Czech translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2019 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -7,14 +7,14 @@
 # Laco Lazelod, 2013
 # Laco Lazelod, 2013
 # Michal Várady <miko.vaji@gmail.com>, 2015-2019
-# Pavel Borecki <pavel.borecki@gmail.com>, 2018-2019
+# Pavel Borecki <pavel.borecki@gmail.com>, 2018-2020
 # halfark <vojtechprecechtel@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-01 05:41-0500\n"
-"PO-Revision-Date: 2019-08-01 19:41+0000\n"
+"PO-Revision-Date: 2020-01-01 22:21+0000\n"
 "Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/cs/)\n"
@@ -331,7 +331,7 @@ msgstr "Zobrazovat bublinové nápovědy ap_likací"
 
 #: ../panel-plugin/configuration-dialog.cpp:678
 msgid "Show as _icons"
-msgstr ""
+msgstr "Zobrazit jako _ikony"
 
 #: ../panel-plugin/configuration-dialog.cpp:818
 msgid "Show c_onfirmation dialog"
