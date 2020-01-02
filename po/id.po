@@ -1,18 +1,19 @@
 # Indonesian translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2015 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Mohamad Hasan Al Banna <se7entime@tutanota.com>, 2014
-# Mohamad Hasan Al Banna <se7entime@tutanota.com>, 2013
-# Mohamad Hasan Al Banna <se7entime@tutanota.com>, 2015
+# Andreas Bayu <kaze_abbey@outlook.com>, 2020
+# se7entime <se7entime@disroot.org>, 2014
+# se7entime <se7entime@disroot.org>, 2013
+# se7entime <se7entime@disroot.org>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-01 05:41-0500\n"
-"PO-Revision-Date: 2015-06-17 04:48+0000\n"
-"Last-Translator: Mohamad Hasan Al Banna <se7entime@tutanota.com>\n"
+"PO-Revision-Date: 2020-01-01 15:51+0000\n"
+"Last-Translator: Andreas Bayu <kaze_abbey@outlook.com>\n"
 "Language-Team: Indonesian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/id/)\n"
 "Language: id\n"
@@ -59,15 +60,15 @@ msgstr "Aplikasi"
 
 #: ../panel-plugin/settings.cpp:144
 msgid "Are you sure you want to log out?"
-msgstr ""
+msgstr "Anda yakin akan keluar?"
 
 #: ../panel-plugin/settings.cpp:150
 msgid "Are you sure you want to restart?"
-msgstr ""
+msgstr "Anda yakin akan start ulang?"
 
 #: ../panel-plugin/settings.cpp:156
 msgid "Are you sure you want to shut down?"
-msgstr ""
+msgstr "Anda yakin akan mematikan?"
 
 #: ../panel-plugin/configuration-dialog.cpp:715
 msgid "Background opacit_y:"
@@ -91,7 +92,7 @@ msgstr "Bersihkan yang Baru diGunakan"
 
 #: ../panel-plugin/plugin.cpp:411
 msgid "Copyright © 2013-2020 Graeme Gott"
-msgstr "Hak Cipta © 2013-2020 Graeme Gott"
+msgstr "Hak cipta © 2013-2020 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:927
 msgid "Details"
@@ -107,16 +108,15 @@ msgstr "Penayangan secara _bawaan"
 
 #: ../panel-plugin/settings.cpp:162
 msgid "Do you want to suspend to RAM?"
-msgstr ""
+msgstr "Anda yakin akan suspen ke RAM?"
 
 #: ../panel-plugin/settings.cpp:168
 msgid "Do you want to suspend to disk?"
-msgstr ""
+msgstr "Anda yakin akan suspen ke dalam cakram?"
 
 #: ../panel-plugin/page.cpp:415
-#, fuzzy
 msgid "Edit Application..."
-msgstr "_Sunting Aplikasi"
+msgstr "Sunting Aplikasi...."
 
 #: ../panel-plugin/settings.cpp:179
 msgid "Edit _Profile"
@@ -134,7 +134,7 @@ msgstr "Gagak mengeksekusi perintah \"%s\"."
 
 #: ../panel-plugin/settings.cpp:167
 msgid "Failed to hibernate."
-msgstr ""
+msgstr "Gagal hibernasi."
 
 #: ../panel-plugin/settings.cpp:177
 msgid "Failed to launch menu editor."
@@ -154,20 +154,19 @@ msgstr "Gagal membuka menejer pengaturan."
 
 #: ../panel-plugin/settings.cpp:149
 msgid "Failed to restart."
-msgstr ""
+msgstr "Gagal memulai ulang."
 
 #: ../panel-plugin/settings.cpp:155
 msgid "Failed to shut down."
-msgstr ""
+msgstr "Gagal mematikan."
 
 #: ../panel-plugin/settings.cpp:161
 msgid "Failed to suspend."
-msgstr ""
+msgstr "Gagal suspen."
 
 #: ../panel-plugin/settings.cpp:139
-#, fuzzy
 msgid "Failed to switch user."
-msgstr "Gagal berganti pengguna"
+msgstr "Gagal mengganti pengguna."
 
 #: ../panel-plugin/window.cpp:158
 msgid "Favorites"
@@ -176,7 +175,7 @@ msgstr "Favorit"
 #: ../panel-plugin/settings.cpp:169
 #, c-format
 msgid "Hibernating computer in %d seconds."
-msgstr ""
+msgstr "Komputer akan hibernasi dalam %d detik."
 
 #: ../panel-plugin/configuration-dialog.cpp:593
 msgid "Icon"
@@ -187,9 +186,8 @@ msgid "Icon and title"
 msgstr "Ikon dan judul"
 
 #: ../panel-plugin/configuration-dialog.cpp:799
-#, fuzzy
 msgid "Include _favorites"
-msgstr "Biarkan _favorit"
+msgstr "Sertakan _favorit"
 
 #: ../panel-plugin/configuration-dialog.cpp:684
 msgid "Ite_m icon size:"
@@ -205,7 +203,7 @@ msgstr "Lebih Besar"
 
 #: ../panel-plugin/settings.cpp:171
 msgid "Log Ou_t..."
-msgstr ""
+msgstr "Kelua_r..."
 
 #: ../panel-plugin/settings.cpp:141
 msgid "Log _Out"
@@ -214,7 +212,7 @@ msgstr "Keluar _Log"
 #: ../panel-plugin/settings.cpp:145
 #, c-format
 msgid "Logging out in %d seconds."
-msgstr ""
+msgstr "Keluar dalam %d detik."
 
 #: ../panel-plugin/settings.cpp:183
 msgid "Man Pages"
@@ -285,7 +283,7 @@ msgstr "Hapus aksi yang dipilih"
 #: ../panel-plugin/settings.cpp:151
 #, c-format
 msgid "Restarting computer in %d seconds."
-msgstr ""
+msgstr "Menyalakan ulang komputer dalam %d detik."
 
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
@@ -314,7 +312,7 @@ msgstr "Pilih Perintah"
 
 #: ../panel-plugin/configuration-dialog.cpp:814
 msgid "Session Commands"
-msgstr ""
+msgstr "Perintah Sesi"
 
 #: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
@@ -325,21 +323,20 @@ msgid "Show application _descriptions"
 msgstr "Tampilkan _deskripsi aplikasi"
 
 #: ../panel-plugin/configuration-dialog.cpp:665
-#, fuzzy
 msgid "Show application too_ltips"
-msgstr "Tampilkan _deskripsi aplikasi"
+msgstr "Tampilkan tip al_at aplikasi"
 
 #: ../panel-plugin/configuration-dialog.cpp:678
 msgid "Show as _icons"
-msgstr ""
+msgstr "Tampilkan sebagai _ikon"
 
 #: ../panel-plugin/configuration-dialog.cpp:818
 msgid "Show c_onfirmation dialog"
-msgstr ""
+msgstr "Tampilkan dialog k_onfirmasi"
 
 #: ../panel-plugin/configuration-dialog.cpp:651
 msgid "Show cate_gory names"
-msgstr ""
+msgstr "Tampilkan nama kate_gori"
 
 #: ../panel-plugin/configuration-dialog.cpp:645
 msgid "Show generic application _names"
@@ -351,7 +348,7 @@ msgstr "Tampilkan menu _hirarki"
 
 #: ../panel-plugin/settings.cpp:153
 msgid "Shut _Down"
-msgstr ""
+msgstr "Mati _kan"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -371,19 +368,18 @@ msgstr "Urutan Alfabet Z-A"
 
 #: ../panel-plugin/configuration-dialog.cpp:773
 msgid "Stay _visible when focus is lost"
-msgstr ""
+msgstr "Tetap _tampak ketika fokus hilang"
 
 #: ../panel-plugin/settings.cpp:159
 msgid "Suspe_nd"
-msgstr ""
+msgstr "Suspe_n"
 
 #: ../panel-plugin/settings.cpp:163
 #, c-format
 msgid "Suspending computer in %d seconds."
-msgstr ""
+msgstr "Suspen komputer dalam %d detik."
 
 #: ../panel-plugin/settings.cpp:137
-#, fuzzy
 msgid "Switch _User"
 msgstr "Ganti _Pengguna"
 
@@ -402,7 +398,7 @@ msgstr "Judul"
 #: ../panel-plugin/settings.cpp:157
 #, c-format
 msgid "Turning off computer in %d seconds."
-msgstr ""
+msgstr "Mematikan komputer dalam %d detik."
 
 #: ../panel-plugin/page.cpp:477
 msgid "Unable to add launcher to desktop."
@@ -413,9 +409,8 @@ msgid "Unable to add launcher to panel."
 msgstr "Gagal menambahkan peluncur ke panel."
 
 #: ../panel-plugin/page.cpp:553
-#, fuzzy
 msgid "Unable to edit launcher."
-msgstr "Gagal menambahkan peluncur ke panel."
+msgstr "Tidak dapat mengubah peluncur."
 
 #: ../panel-plugin/configuration-dialog.cpp:548
 #, c-format
@@ -436,7 +431,7 @@ msgstr "Sangat Kecil"
 
 #: ../panel-plugin/settings.cpp:184
 msgid "Web Search"
-msgstr ""
+msgstr "Pencarian Web"
 
 #: ../panel-plugin/configuration-dialog.cpp:86
 #: ../panel-plugin/whiskermenu.desktop.in:5
@@ -458,7 +453,7 @@ msgstr "_Kebiasaan"
 #: ../panel-plugin/command-edit.cpp:67
 #: ../panel-plugin/configuration-dialog.cpp:137
 msgid "_Cancel"
-msgstr "Ba_tal"
+msgstr "_Batal"
 
 #: ../panel-plugin/configuration-dialog.cpp:90
 msgid "_Close"
@@ -478,11 +473,11 @@ msgstr "_Sunting Aplikasi"
 
 #: ../panel-plugin/configuration-dialog.cpp:89
 msgid "_Help"
-msgstr "Ba_ntuan"
+msgstr "_Bantuan"
 
 #: ../panel-plugin/settings.cpp:165
 msgid "_Hibernate"
-msgstr ""
+msgstr "_Hibernasi"
 
 #: ../panel-plugin/configuration-dialog.cpp:614
 msgid "_Icon:"
@@ -495,7 +490,7 @@ msgstr "_Kunci Layar"
 #: ../panel-plugin/command-edit.cpp:68
 #: ../panel-plugin/configuration-dialog.cpp:138
 msgid "_OK"
-msgstr "_Ok"
+msgstr "_OK"
 
 #: ../panel-plugin/configuration-dialog.cpp:944
 msgid "_Pattern:"
@@ -507,7 +502,7 @@ msgstr "Ekspresi _umum"
 
 #: ../panel-plugin/settings.cpp:147
 msgid "_Restart"
-msgstr ""
+msgstr "_Start Ulang"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "_Title:"
