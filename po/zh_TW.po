@@ -1,18 +1,18 @@
 # Chinese (Taiwan) translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2019 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # 黃柏諺 <s8321414@gmail.com>, 2014-2019
 # Walter Cheuk <wwycheuk@gmail.com>, 2013
 # 黃柏諺 <s8321414@gmail.com>, 2013-2014
-# 黃柏諺 <s8321414@gmail.com>, 2019
+# 黃柏諺 <s8321414@gmail.com>, 2019-2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-01 05:41-0500\n"
-"PO-Revision-Date: 2019-07-23 13:58+0000\n"
+"PO-Revision-Date: 2020-01-03 01:34+0000\n"
 "Last-Translator: 黃柏諺 <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/zh_TW/)\n"
@@ -328,7 +328,7 @@ msgstr "顯示應用程式工具提示(_L)"
 
 #: ../panel-plugin/configuration-dialog.cpp:678
 msgid "Show as _icons"
-msgstr ""
+msgstr "以圖示顯示 (_I)"
 
 #: ../panel-plugin/configuration-dialog.cpp:818
 msgid "Show c_onfirmation dialog"
