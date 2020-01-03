@@ -1,16 +1,16 @@
 # Slovak translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2019 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # Jose Riha <jose1711@gmail.com>, 2018-2019
-# Slavko <linux@slavino.sk>, 2013-2019
+# Slavko <linux@slavino.sk>, 2013-2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-01 05:41-0500\n"
-"PO-Revision-Date: 2019-07-23 12:35+0000\n"
+"PO-Revision-Date: 2020-01-02 12:35+0000\n"
 "Last-Translator: Slavko <linux@slavino.sk>\n"
 "Language-Team: Slovak (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/sk/)\n"
@@ -327,7 +327,7 @@ msgstr "Zobraziť nástrojové tipy ap_likácie"
 
 #: ../panel-plugin/configuration-dialog.cpp:678
 msgid "Show as _icons"
-msgstr ""
+msgstr "Zobraziť ako _ikony"
 
 #: ../panel-plugin/configuration-dialog.cpp:818
 msgid "Show c_onfirmation dialog"
