@@ -1,23 +1,23 @@
 # Catalan translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2019 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Fito JB, 2016,2018
-# Fito JB, 2015
-# Fito JB, 2013
-# Fito JB, 2014
+# Adolfo Jayme-Barrientos, 2016,2018
+# Adolfo Jayme-Barrientos, 2015
+# Adolfo Jayme-Barrientos, 2013
+# Adolfo Jayme-Barrientos, 2014
 # Davidmp <medipas@gmail.com>, 2017-2019
 # Oriol Fernandez <oriolfa@ono.com>, 2013
-# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2017-2019
+# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2017-2020
 # Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-01 05:41-0500\n"
-"PO-Revision-Date: 2019-07-24 06:53+0000\n"
-"Last-Translator: Davidmp <medipas@gmail.com>\n"
+"PO-Revision-Date: 2020-01-02 21:07+0000\n"
+"Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ca/)\n"
 "Language: ca\n"
@@ -332,7 +332,7 @@ msgstr "Mostra els indicadors de funció de les ap_licacions"
 
 #: ../panel-plugin/configuration-dialog.cpp:678
 msgid "Show as _icons"
-msgstr ""
+msgstr "Mostra com _icones"
 
 #: ../panel-plugin/configuration-dialog.cpp:818
 msgid "Show c_onfirmation dialog"
