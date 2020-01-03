@@ -1,5 +1,5 @@
 # German translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2019 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -7,7 +7,7 @@
 # Harald Judt <h.judt@gmx.at>, 2013-2014
 # Harald Judt <h.judt@gmx.at>, 2013
 # philm <philm@manjaro.org>, 2013
-# Michał Trzebiatowski <michtrz@gmail.com>, 2018-2019
+# Michał Trzebiatowski <michtrz@gmail.com>, 2018-2020
 # Michał Trzebiatowski <michtrz@gmail.com>, 2017-2018
 # Peter Feichtinger <shippo@gmx.at>, 2018
 # philm <philm@manjaro.org>, 2013
@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-01 05:41-0500\n"
-"PO-Revision-Date: 2019-07-23 18:03+0000\n"
+"PO-Revision-Date: 2020-01-02 19:20+0000\n"
 "Last-Translator: Michał Trzebiatowski <michtrz@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/de/)\n"
@@ -333,7 +333,7 @@ msgstr "_Anwendungsminihilfe anzeigen"
 
 #: ../panel-plugin/configuration-dialog.cpp:678
 msgid "Show as _icons"
-msgstr ""
+msgstr "Als _Symbole anzeigen"
 
 #: ../panel-plugin/configuration-dialog.cpp:818
 msgid "Show c_onfirmation dialog"
