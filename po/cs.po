@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-04 08:44-0500\n"
-"PO-Revision-Date: 2020-01-01 22:21+0000\n"
+"PO-Revision-Date: 2020-01-04 18:19+0000\n"
 "Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/cs/)\n"
@@ -64,7 +64,7 @@ msgstr "Aplikace"
 #: ../panel-plugin/launcher.cpp:262
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
-msgstr ""
+msgstr "Opravdu chcete „%s“ skrýt?"
 
 #: ../panel-plugin/settings.cpp:144
 msgid "Are you sure you want to log out?"
@@ -187,7 +187,7 @@ msgstr "Uspání počítače na disk za %d sekund."
 
 #: ../panel-plugin/launcher.cpp:261 ../panel-plugin/page.cpp:419
 msgid "Hide Application"
-msgstr ""
+msgstr "Skrýt aplikaci"
 
 #: ../panel-plugin/configuration-dialog.cpp:593
 msgid "Icon"
@@ -413,6 +413,8 @@ msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
 msgstr ""
+"Pro zrušení skrytí je třeba ručně odebrat soubor „%s“ nebo ho otevřít a "
+"odebrat řádek „%s“."
 
 #: ../panel-plugin/settings.cpp:157
 #, c-format
