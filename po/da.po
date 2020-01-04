@@ -1,17 +1,17 @@
 # Danish translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2019 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # Jens E. Jensen <jens.e.jensen@gmail.com>, 2013,2017
 # Morten Juhl-Johansen Zölde-Fejér <morten@writtenandread.net>, 2013-2015
-# scootergrisen, 2017-2019
+# scootergrisen, 2017-2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-01 05:41-0500\n"
-"PO-Revision-Date: 2019-08-06 22:31+0000\n"
+"PO-Revision-Date: 2020-01-03 12:14+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/da/)\n"
@@ -327,7 +327,7 @@ msgstr "Vis program_værktøjstips"
 
 #: ../panel-plugin/configuration-dialog.cpp:678
 msgid "Show as _icons"
-msgstr ""
+msgstr "Vis som _ikoner"
 
 #: ../panel-plugin/configuration-dialog.cpp:818
 msgid "Show c_onfirmation dialog"
