@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-01 05:41-0500\n"
+"POT-Creation-Date: 2020-01-04 08:44-0500\n"
 "PO-Revision-Date: 2019-10-01 03:06+0000\n"
 "Last-Translator: abuyop <abuyop@gmail.com>\n"
 "Language-Team: Malay (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -54,6 +54,11 @@ msgstr "Amaun _item:"
 #: ../panel-plugin/plugin.cpp:214
 msgid "Applications"
 msgstr "Aplikasi"
+
+#: ../panel-plugin/launcher.cpp:262
+#, c-format
+msgid "Are you sure you want to hide \"%s\"?"
+msgstr ""
 
 #: ../panel-plugin/settings.cpp:144
 msgid "Are you sure you want to log out?"
@@ -123,7 +128,7 @@ msgstr "Sunting _Profil"
 msgid "Failed to edit profile."
 msgstr "Gagal menyunting profil."
 
-#: ../panel-plugin/launcher.cpp:301 ../panel-plugin/launcher.cpp:375
+#: ../panel-plugin/launcher.cpp:348 ../panel-plugin/launcher.cpp:422
 #: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
@@ -173,6 +178,10 @@ msgstr "Kegemaran"
 #, c-format
 msgid "Hibernating computer in %d seconds."
 msgstr "Menghibernasikan komputer dalam tempoh %d saat."
+
+#: ../panel-plugin/launcher.cpp:261 ../panel-plugin/page.cpp:419
+msgid "Hide Application"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:593
 msgid "Icon"
@@ -392,20 +401,27 @@ msgstr "Tindakan akan dipadam secara kekal."
 msgid "Title"
 msgstr "Tajuk"
 
+#: ../panel-plugin/launcher.cpp:256
+#, c-format
+msgid ""
+"To unhide it you have to manually remove the file \"%s\" or open the file "
+"and remove the line \"%s\"."
+msgstr ""
+
 #: ../panel-plugin/settings.cpp:157
 #, c-format
 msgid "Turning off computer in %d seconds."
 msgstr "Mematikan komputer dalam tempoh %d saat."
 
-#: ../panel-plugin/page.cpp:477
+#: ../panel-plugin/page.cpp:481
 msgid "Unable to add launcher to desktop."
 msgstr "Tidak boleh tambah pelancar ke desktop."
 
-#: ../panel-plugin/page.cpp:515 ../panel-plugin/page.cpp:524
+#: ../panel-plugin/page.cpp:519 ../panel-plugin/page.cpp:528
 msgid "Unable to add launcher to panel."
 msgstr "Tidak boleh tambah pelancar ke panel."
 
-#: ../panel-plugin/page.cpp:553
+#: ../panel-plugin/page.cpp:557
 msgid "Unable to edit launcher."
 msgstr "Tidak boleh sunting pelancar."
 

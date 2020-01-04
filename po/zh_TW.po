@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-01 05:41-0500\n"
+"POT-Creation-Date: 2020-01-04 08:44-0500\n"
 "PO-Revision-Date: 2020-01-03 01:34+0000\n"
 "Last-Translator: 黃柏諺 <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/gottcode/xfce4-"
@@ -57,6 +57,11 @@ msgstr "項目數量(_I)："
 #: ../panel-plugin/plugin.cpp:214
 msgid "Applications"
 msgstr "應用程式"
+
+#: ../panel-plugin/launcher.cpp:262
+#, c-format
+msgid "Are you sure you want to hide \"%s\"?"
+msgstr ""
 
 #: ../panel-plugin/settings.cpp:144
 msgid "Are you sure you want to log out?"
@@ -126,7 +131,7 @@ msgstr "編輯設定檔(_P)"
 msgid "Failed to edit profile."
 msgstr "編輯設定檔失敗。"
 
-#: ../panel-plugin/launcher.cpp:301 ../panel-plugin/launcher.cpp:375
+#: ../panel-plugin/launcher.cpp:348 ../panel-plugin/launcher.cpp:422
 #: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
@@ -176,6 +181,10 @@ msgstr "最愛"
 #, c-format
 msgid "Hibernating computer in %d seconds."
 msgstr "在 %d 秒內冬眠。"
+
+#: ../panel-plugin/launcher.cpp:261 ../panel-plugin/page.cpp:419
+msgid "Hide Application"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:593
 msgid "Icon"
@@ -395,20 +404,27 @@ msgstr "會永久刪除該動作。"
 msgid "Title"
 msgstr "標題"
 
+#: ../panel-plugin/launcher.cpp:256
+#, c-format
+msgid ""
+"To unhide it you have to manually remove the file \"%s\" or open the file "
+"and remove the line \"%s\"."
+msgstr ""
+
 #: ../panel-plugin/settings.cpp:157
 #, c-format
 msgid "Turning off computer in %d seconds."
 msgstr "在 %d 秒內關機。"
 
-#: ../panel-plugin/page.cpp:477
+#: ../panel-plugin/page.cpp:481
 msgid "Unable to add launcher to desktop."
 msgstr "無法在桌面上新增啟動器。"
 
-#: ../panel-plugin/page.cpp:515 ../panel-plugin/page.cpp:524
+#: ../panel-plugin/page.cpp:519 ../panel-plugin/page.cpp:528
 msgid "Unable to add launcher to panel."
 msgstr "無法在面板上新增啟動器。"
 
-#: ../panel-plugin/page.cpp:553
+#: ../panel-plugin/page.cpp:557
 msgid "Unable to edit launcher."
 msgstr "無法編輯啟動器。"
 

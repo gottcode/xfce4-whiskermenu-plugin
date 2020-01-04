@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-01 05:41-0500\n"
+"POT-Creation-Date: 2020-01-04 08:44-0500\n"
 "PO-Revision-Date: 2014-02-10 13:41+0000\n"
 "Last-Translator: Gatis Kalniņš <>\n"
 "Language-Team: Latvian (http://www.transifex.com/projects/p/xfce4-"
@@ -56,6 +56,11 @@ msgstr ""
 #, fuzzy
 msgid "Applications"
 msgstr "Programmu izvēlne"
+
+#: ../panel-plugin/launcher.cpp:262
+#, c-format
+msgid "Are you sure you want to hide \"%s\"?"
+msgstr ""
 
 #: ../panel-plugin/settings.cpp:144
 msgid "Are you sure you want to log out?"
@@ -128,7 +133,7 @@ msgstr ""
 msgid "Failed to edit profile."
 msgstr "Kļūda pārslēdzot lietotājus."
 
-#: ../panel-plugin/launcher.cpp:301 ../panel-plugin/launcher.cpp:375
+#: ../panel-plugin/launcher.cpp:348 ../panel-plugin/launcher.cpp:422
 #: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
@@ -178,6 +183,10 @@ msgstr "Favorīti"
 #: ../panel-plugin/settings.cpp:169
 #, c-format
 msgid "Hibernating computer in %d seconds."
+msgstr ""
+
+#: ../panel-plugin/launcher.cpp:261 ../panel-plugin/page.cpp:419
+msgid "Hide Application"
 msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:593
@@ -402,20 +411,27 @@ msgstr "Darbība tiks dzēsta."
 msgid "Title"
 msgstr "Nosaukums"
 
+#: ../panel-plugin/launcher.cpp:256
+#, c-format
+msgid ""
+"To unhide it you have to manually remove the file \"%s\" or open the file "
+"and remove the line \"%s\"."
+msgstr ""
+
 #: ../panel-plugin/settings.cpp:157
 #, c-format
 msgid "Turning off computer in %d seconds."
 msgstr ""
 
-#: ../panel-plugin/page.cpp:477
+#: ../panel-plugin/page.cpp:481
 msgid "Unable to add launcher to desktop."
 msgstr "Nevarēja izvietot uz darbvirsmas."
 
-#: ../panel-plugin/page.cpp:515 ../panel-plugin/page.cpp:524
+#: ../panel-plugin/page.cpp:519 ../panel-plugin/page.cpp:528
 msgid "Unable to add launcher to panel."
 msgstr "Nevar pievienot panelim."
 
-#: ../panel-plugin/page.cpp:553
+#: ../panel-plugin/page.cpp:557
 #, fuzzy
 msgid "Unable to edit launcher."
 msgstr "Nevar pievienot panelim."

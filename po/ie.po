@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-01 05:41-0500\n"
+"POT-Creation-Date: 2020-01-04 08:44-0500\n"
 "PO-Revision-Date: 2020-01-01 15:41+0000\n"
 "Last-Translator: Caarmi\n"
 "Language-Team: Interlingue (http://www.transifex.com/gottcode/xfce4-"
@@ -54,6 +54,11 @@ msgstr "Númere de _elementes:"
 #: ../panel-plugin/plugin.cpp:214
 msgid "Applications"
 msgstr "Applicationes"
+
+#: ../panel-plugin/launcher.cpp:262
+#, c-format
+msgid "Are you sure you want to hide \"%s\"?"
+msgstr ""
 
 #: ../panel-plugin/settings.cpp:144
 msgid "Are you sure you want to log out?"
@@ -123,7 +128,7 @@ msgstr "Modificar _profil"
 msgid "Failed to edit profile."
 msgstr "Ne successat modificar li profil."
 
-#: ../panel-plugin/launcher.cpp:301 ../panel-plugin/launcher.cpp:375
+#: ../panel-plugin/launcher.cpp:348 ../panel-plugin/launcher.cpp:422
 #: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:188
 #, c-format
 msgid "Failed to execute command \"%s\"."
@@ -173,6 +178,10 @@ msgstr "Preferat"
 #, c-format
 msgid "Hibernating computer in %d seconds."
 msgstr "Hivernante li computator pos %d secondes."
+
+#: ../panel-plugin/launcher.cpp:261 ../panel-plugin/page.cpp:419
+msgid "Hide Application"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:593
 msgid "Icon"
@@ -392,20 +401,27 @@ msgstr "Li action va esser perdit irrevocabilmen."
 msgid "Title"
 msgstr "Titul"
 
+#: ../panel-plugin/launcher.cpp:256
+#, c-format
+msgid ""
+"To unhide it you have to manually remove the file \"%s\" or open the file "
+"and remove the line \"%s\"."
+msgstr ""
+
 #: ../panel-plugin/settings.cpp:157
 #, c-format
 msgid "Turning off computer in %d seconds."
 msgstr "Va extinter li computator pos %d secondes."
 
-#: ../panel-plugin/page.cpp:477
+#: ../panel-plugin/page.cpp:481
 msgid "Unable to add launcher to desktop."
 msgstr "Ne successat adjunter un lansator al Pupitre."
 
-#: ../panel-plugin/page.cpp:515 ../panel-plugin/page.cpp:524
+#: ../panel-plugin/page.cpp:519 ../panel-plugin/page.cpp:528
 msgid "Unable to add launcher to panel."
 msgstr "Ne successat adjunter un lansator al panel."
 
-#: ../panel-plugin/page.cpp:553
+#: ../panel-plugin/page.cpp:557
 msgid "Unable to edit launcher."
 msgstr "Ne successat modificar un lansator."
 
