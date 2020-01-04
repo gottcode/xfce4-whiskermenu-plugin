@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014, 2016, 2017 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2014, 2016, 2017, 2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -44,6 +44,9 @@ ProfilePicture::ProfilePicture(Window* window) :
 	g_signal_connect_slot<GtkWidget*, GdkEvent*>(m_container, "button-press-event", &ProfilePicture::on_button_press_event, this);
 	gtk_container_add(GTK_CONTAINER(m_container), m_image);
 
+	Command* command = wm_settings->command[Settings::CommandProfile];
+	gtk_widget_set_tooltip_text(m_container, command->get_tooltip());
+
 	gchar* path = g_build_filename(g_get_home_dir(), ".face", NULL);
 	GFile* file = g_file_new_for_path(path);
 	g_free(path);
@@ -61,6 +64,14 @@ ProfilePicture::~ProfilePicture()
 {
 	g_file_monitor_cancel(m_file_monitor);
 	g_object_unref(m_file_monitor);
+}
+
+//-----------------------------------------------------------------------------
+
+void ProfilePicture::reset_tooltip()
+{
+	Command* command = wm_settings->command[Settings::CommandProfile];
+	gtk_widget_set_has_tooltip(m_container, command->get_shown());
 }
 
 //-----------------------------------------------------------------------------

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2018 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2018, 2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -332,6 +332,7 @@ void WhiskerMenu::Window::show(const Position position)
 		m_recent->get_view()->hide_tooltips();
 		m_applications->get_view()->hide_tooltips();
 	}
+	m_profilepic->reset_tooltip();
 
 	// Make sure commands are valid and visible
 	for (int i = 0; i < Settings::CountCommands; ++i)
