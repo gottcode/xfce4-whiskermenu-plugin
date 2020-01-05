@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-04 08:44-0500\n"
-"PO-Revision-Date: 2020-01-03 07:20+0000\n"
+"PO-Revision-Date: 2020-01-05 07:32+0000\n"
 "Last-Translator: Kiril Kirilov <cybercop_montana@abv.bg>\n"
 "Language-Team: Bulgarian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/bg/)\n"
@@ -58,7 +58,7 @@ msgstr "Приложения"
 #: ../panel-plugin/launcher.cpp:262
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
-msgstr ""
+msgstr "Сигурни ли сте, че искате да скриете \"%s\"?"
 
 #: ../panel-plugin/settings.cpp:144
 msgid "Are you sure you want to log out?"
@@ -181,7 +181,7 @@ msgstr "Привеждане на компютъра в хибернация с�
 
 #: ../panel-plugin/launcher.cpp:261 ../panel-plugin/page.cpp:419
 msgid "Hide Application"
-msgstr ""
+msgstr "Скриване на програма"
 
 #: ../panel-plugin/configuration-dialog.cpp:593
 msgid "Icon"
@@ -407,6 +407,8 @@ msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
 msgstr ""
+"За да се покаже, трябва ръчно да премахнете файла \"%s\" или да отворите "
+"файла и да премахнете реда \"%s\"."
 
 #: ../panel-plugin/settings.cpp:157
 #, c-format
