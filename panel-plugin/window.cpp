@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2018 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2018, 2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -909,6 +909,9 @@ gboolean WhiskerMenu::Window::on_configure_event(GtkWidget*, GdkEvent* event)
 		m_geometry.width = configure_event->width;
 		m_geometry.height = configure_event->height;
 	}
+
+	check_scrollbar_needed();
+
 	return false;
 }
 
@@ -963,6 +966,26 @@ gboolean WhiskerMenu::Window::on_draw_event(GtkWidget* widget, cairo_t* cr)
 	}
 
 	return false;
+}
+
+//-----------------------------------------------------------------------------
+
+void WhiskerMenu::Window::check_scrollbar_needed()
+{
+	// Find height of sidebar buttons
+	int height = 0;
+	gtk_widget_get_preferred_height(GTK_WIDGET(m_sidebar_buttons), NULL, &height);
+
+	// Always show scrollbar if sidebar is shorter than buttons
+	int allocated = gtk_widget_get_allocated_height(GTK_WIDGET(m_sidebar));
+	if ((allocated > height) || (allocated == 1))
+	{
+		gtk_scrolled_window_set_policy(m_sidebar, GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
+	}
+	else
+	{
+		gtk_scrolled_window_set_policy(m_sidebar, GTK_POLICY_NEVER, GTK_POLICY_ALWAYS);
+	}
 }
 
 //-----------------------------------------------------------------------------

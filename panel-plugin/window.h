@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2014, 2015, 2016, 2018 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014, 2015, 2016, 2018, 2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -94,6 +94,7 @@ private:
 	gboolean on_configure_event(GtkWidget*, GdkEvent* event);
 	void on_screen_changed_event(GtkWidget* widget, GdkScreen* old_screen);
 	gboolean on_draw_event(GtkWidget* widget, cairo_t* cr);
+	void check_scrollbar_needed();
 	void favorites_toggled();
 	void recent_toggled();
 	void category_toggled();
