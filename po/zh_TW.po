@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-04 08:44-0500\n"
-"PO-Revision-Date: 2020-01-03 01:34+0000\n"
+"PO-Revision-Date: 2020-01-06 07:07+0000\n"
 "Last-Translator: 黃柏諺 <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/zh_TW/)\n"
@@ -61,7 +61,7 @@ msgstr "應用程式"
 #: ../panel-plugin/launcher.cpp:262
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
-msgstr ""
+msgstr "您確定您想要隱藏「%s」嗎？"
 
 #: ../panel-plugin/settings.cpp:144
 msgid "Are you sure you want to log out?"
@@ -184,7 +184,7 @@ msgstr "在 %d 秒內冬眠。"
 
 #: ../panel-plugin/launcher.cpp:261 ../panel-plugin/page.cpp:419
 msgid "Hide Application"
-msgstr ""
+msgstr "隱藏應用程式"
 
 #: ../panel-plugin/configuration-dialog.cpp:593
 msgid "Icon"
@@ -409,7 +409,7 @@ msgstr "標題"
 msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
-msgstr ""
+msgstr "要取消隱藏，您必須手動移除檔案「%s」或開啟檔案並移除「%s」ㄧ行。"
 
 #: ../panel-plugin/settings.cpp:157
 #, c-format
