@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-04 08:44-0500\n"
-"PO-Revision-Date: 2020-01-02 19:21+0000\n"
+"PO-Revision-Date: 2020-01-05 20:09+0000\n"
 "Last-Translator: Michał Trzebiatowski <michtrz@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/pl/)\n"
@@ -72,7 +72,7 @@ msgstr "Programy"
 #: ../panel-plugin/launcher.cpp:262
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
-msgstr ""
+msgstr "Czy na pewno chcesz ukryć \"%s\"?"
 
 #: ../panel-plugin/settings.cpp:144
 msgid "Are you sure you want to log out?"
@@ -195,7 +195,7 @@ msgstr "Działanie komputera zostanie zahibernowane za %d sekund."
 
 #: ../panel-plugin/launcher.cpp:261 ../panel-plugin/page.cpp:419
 msgid "Hide Application"
-msgstr ""
+msgstr "Ukryj aplikację"
 
 #: ../panel-plugin/configuration-dialog.cpp:593
 msgid "Icon"
@@ -421,6 +421,8 @@ msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
 msgstr ""
+"Aby ją odkryć, musisz ręcznie usunąć plik \"%s\" lub otworzyć ten plik i "
+"usunąć wiersz \"%s\"."
 
 #: ../panel-plugin/settings.cpp:157
 #, c-format
