@@ -234,12 +234,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	gtk_box_pack_start(m_contents_box, GTK_WIDGET(m_sidebar), false, false, 0);
 	gtk_scrolled_window_set_shadow_type(m_sidebar, GTK_SHADOW_NONE);
 	gtk_scrolled_window_set_policy(m_sidebar, GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
-
-	GtkWidget* viewport = gtk_viewport_new(gtk_scrolled_window_get_hadjustment(m_sidebar),
-		gtk_scrolled_window_get_vadjustment(m_sidebar));
-	gtk_viewport_set_shadow_type(GTK_VIEWPORT(viewport), GTK_SHADOW_NONE);
-	gtk_container_add(GTK_CONTAINER(m_sidebar), viewport);
-	gtk_container_add(GTK_CONTAINER(viewport), GTK_WIDGET(m_sidebar_buttons));
+	gtk_container_add(GTK_CONTAINER(m_sidebar), GTK_WIDGET(m_sidebar_buttons));
 
 	// Show widgets
 	gtk_widget_show_all(frame);
