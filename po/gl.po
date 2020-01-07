@@ -1,15 +1,15 @@
 # Galician translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2019 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Daniel Muñiz Fontoira <dani@damufo.com>, 2019
+# Daniel Muñiz Fontoira <dani@damufo.com>, 2019-2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-04 08:44-0500\n"
-"PO-Revision-Date: 2019-08-21 20:13+0000\n"
+"PO-Revision-Date: 2020-01-07 06:31+0000\n"
 "Last-Translator: Daniel Muñiz Fontoira <dani@damufo.com>\n"
 "Language-Team: Galician (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/gl/)\n"
@@ -58,7 +58,7 @@ msgstr "Aplicacións"
 #: ../panel-plugin/launcher.cpp:262
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
-msgstr ""
+msgstr "Ten a certeza de que quere agochar «%s»?"
 
 #: ../panel-plugin/settings.cpp:144
 msgid "Are you sure you want to log out?"
@@ -181,7 +181,7 @@ msgstr "A computadora hibernarase en %d segundos."
 
 #: ../panel-plugin/launcher.cpp:261 ../panel-plugin/page.cpp:419
 msgid "Hide Application"
-msgstr ""
+msgstr "Agochar a aplicación"
 
 #: ../panel-plugin/configuration-dialog.cpp:593
 msgid "Icon"
@@ -334,7 +334,7 @@ msgstr "Amosar as indicacións das aplicacións"
 
 #: ../panel-plugin/configuration-dialog.cpp:678
 msgid "Show as _icons"
-msgstr ""
+msgstr "Amosar as _iconas"
 
 #: ../panel-plugin/configuration-dialog.cpp:818
 msgid "Show c_onfirmation dialog"
@@ -407,6 +407,8 @@ msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
 msgstr ""
+"Para desagochar ten que eliminar manualmente o ficheiro «%s» ou abrir o "
+"ficheiro e eliminar a liña «%s»."
 
 #: ../panel-plugin/settings.cpp:157
 #, c-format
