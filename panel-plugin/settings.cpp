@@ -120,10 +120,10 @@ Settings::Settings() :
 	menu_height(500),
 	menu_opacity(100)
 {
-	favorites.push_back("exo-terminal-emulator.desktop");
-	favorites.push_back("exo-file-manager.desktop");
-	favorites.push_back("exo-mail-reader.desktop");
 	favorites.push_back("exo-web-browser.desktop");
+	favorites.push_back("exo-mail-reader.desktop");
+	favorites.push_back("exo-file-manager.desktop");
+	favorites.push_back("exo-terminal-emulator.desktop");
 
 	command[CommandSettings] = new Command("preferences-desktop",
 			_("All _Settings"),
