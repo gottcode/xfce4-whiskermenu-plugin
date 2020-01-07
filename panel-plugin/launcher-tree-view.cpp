@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2016, 2018, 2019 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2016, 2018, 2019, 2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -42,7 +42,8 @@ LauncherTreeView::LauncherTreeView() :
 	m_row_activated(false)
 {
 	// Create the view
-	m_view = GTK_TREE_VIEW(exo_tree_view_new());
+	m_view = GTK_TREE_VIEW(gtk_tree_view_new());
+	gtk_tree_view_set_activate_on_single_click(m_view, true);
 	gtk_tree_view_set_headers_visible(m_view, false);
 	gtk_tree_view_set_enable_tree_lines(m_view, false);
 	gtk_tree_view_set_hover_selection(m_view, true);
@@ -52,9 +53,6 @@ LauncherTreeView::LauncherTreeView() :
 	create_column();
 	g_signal_connect_slot(m_view, "key-press-event", &LauncherTreeView::on_key_press_event, this);
 	g_signal_connect_slot(m_view, "key-release-event", &LauncherTreeView::on_key_release_event, this);
-
-	// Use single clicks to activate items
-	exo_tree_view_set_single_click(EXO_TREE_VIEW(m_view), true);
 
 	// Only allow up to one selected item
 	GtkTreeSelection* selection = gtk_tree_view_get_selection(m_view);
