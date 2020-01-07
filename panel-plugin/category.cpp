@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2016 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2016, 2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -58,7 +58,7 @@ Category::Category(GarconMenuDirectory* directory) :
 	else
 	{
 		icon = "applications-other";
-		text = _("All");
+		text = _("All Applications");
 	}
 	set_icon(icon ? icon : "");
 	set_text(text ? text : "");
