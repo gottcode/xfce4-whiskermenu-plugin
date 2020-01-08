@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-04 08:44-0500\n"
+"POT-Creation-Date: 2020-01-08 13:48-0500\n"
 "PO-Revision-Date: 2020-01-02 21:07+0000\n"
 "Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -43,12 +43,8 @@ msgid "Add to Panel"
 msgstr "Afegeix al plafó"
 
 #: ../panel-plugin/category.cpp:61
-msgid "All"
-msgstr "Totes"
-
-#: ../panel-plugin/settings.cpp:129
-msgid "All _Settings"
-msgstr "Tots els ajust_s"
+msgid "All Applications"
+msgstr "Totes les aplicacions"
 
 #: ../panel-plugin/plugin.cpp:410
 msgid "Alternate application launcher for Xfce"
@@ -65,7 +61,7 @@ msgstr "Aplicacions"
 #: ../panel-plugin/launcher.cpp:262
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
-msgstr ""
+msgstr "Esteu segur que voleu ocultar «%s»?"
 
 #: ../panel-plugin/settings.cpp:144
 msgid "Are you sure you want to log out?"
@@ -523,6 +519,10 @@ msgstr "Expressió _regular"
 #: ../panel-plugin/settings.cpp:147
 msgid "_Restart"
 msgstr "_Reinicia"
+
+#: ../panel-plugin/settings.cpp:129
+msgid "_Settings Manager"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "_Title:"

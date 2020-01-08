@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-04 08:44-0500\n"
+"POT-Creation-Date: 2020-01-08 13:48-0500\n"
 "PO-Revision-Date: 2020-01-03 12:14+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -38,12 +38,8 @@ msgid "Add to Panel"
 msgstr "Tilføj til panel"
 
 #: ../panel-plugin/category.cpp:61
-msgid "All"
-msgstr "Alle"
-
-#: ../panel-plugin/settings.cpp:129
-msgid "All _Settings"
-msgstr "Alle _indstillinger"
+msgid "All Applications"
+msgstr "Alle programmer"
 
 #: ../panel-plugin/plugin.cpp:410
 msgid "Alternate application launcher for Xfce"
@@ -60,7 +56,7 @@ msgstr "Programmer"
 #: ../panel-plugin/launcher.cpp:262
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
-msgstr ""
+msgstr "Er du sikker på, at du vil skjule \"%s\"?"
 
 #: ../panel-plugin/settings.cpp:144
 msgid "Are you sure you want to log out?"
@@ -518,6 +514,10 @@ msgstr "_Regulært udtryk"
 #: ../panel-plugin/settings.cpp:147
 msgid "_Restart"
 msgstr "_Genstart"
+
+#: ../panel-plugin/settings.cpp:129
+msgid "_Settings Manager"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "_Title:"

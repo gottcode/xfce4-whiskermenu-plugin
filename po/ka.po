@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-04 08:44-0500\n"
+"POT-Creation-Date: 2020-01-08 13:48-0500\n"
 "PO-Revision-Date: 2020-01-05 16:51+0000\n"
 "Last-Translator: zura davitashvili <zdavitashvili0@gmail.com>\n"
 "Language-Team: Georgian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -37,12 +37,8 @@ msgid "Add to Panel"
 msgstr "პანელზე დამატება"
 
 #: ../panel-plugin/category.cpp:61
-msgid "All"
-msgstr "ყველა"
-
-#: ../panel-plugin/settings.cpp:129
-msgid "All _Settings"
-msgstr "ყველა პარამეტრი"
+msgid "All Applications"
+msgstr ""
 
 #: ../panel-plugin/plugin.cpp:410
 msgid "Alternate application launcher for Xfce"
@@ -519,6 +515,10 @@ msgstr "ჩვეულებრივი გამოხატულება"
 #: ../panel-plugin/settings.cpp:147
 msgid "_Restart"
 msgstr "გადატვირთვა"
+
+#: ../panel-plugin/settings.cpp:129
+msgid "_Settings Manager"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "_Title:"

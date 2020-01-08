@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-04 08:44-0500\n"
+"POT-Creation-Date: 2020-01-08 13:48-0500\n"
 "PO-Revision-Date: 2018-05-09 13:11+0000\n"
 "Last-Translator: Kurt Ankh Phoenix <kurtphoenix@tuta.io>\n"
 "Language-Team: Esperanto (http://www.transifex.com/gottcode/xfce4-"
@@ -36,12 +36,8 @@ msgid "Add to Panel"
 msgstr ""
 
 #: ../panel-plugin/category.cpp:61
-msgid "All"
-msgstr "Ĉiom"
-
-#: ../panel-plugin/settings.cpp:129
-msgid "All _Settings"
-msgstr "Ĉiom _Settings"
+msgid "All Applications"
+msgstr ""
 
 #: ../panel-plugin/plugin.cpp:410
 msgid "Alternate application launcher for Xfce"
@@ -516,6 +512,10 @@ msgstr ""
 
 #: ../panel-plugin/settings.cpp:147
 msgid "_Restart"
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:129
+msgid "_Settings Manager"
 msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:603

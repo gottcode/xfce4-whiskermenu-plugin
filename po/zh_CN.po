@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-04 08:44-0500\n"
+"POT-Creation-Date: 2020-01-08 13:48-0500\n"
 "PO-Revision-Date: 2019-04-02 06:50+0000\n"
 "Last-Translator: 玉堂白鹤 <yjwork@qq.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/gottcode/xfce4-"
@@ -38,12 +38,8 @@ msgid "Add to Panel"
 msgstr "添加到面板"
 
 #: ../panel-plugin/category.cpp:61
-msgid "All"
-msgstr "所有"
-
-#: ../panel-plugin/settings.cpp:129
-msgid "All _Settings"
-msgstr "所有设置 (_S)"
+msgid "All Applications"
+msgstr "所有应用程序"
 
 #: ../panel-plugin/plugin.cpp:410
 msgid "Alternate application launcher for Xfce"
@@ -60,7 +56,7 @@ msgstr "应用程序"
 #: ../panel-plugin/launcher.cpp:262
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
-msgstr ""
+msgstr "您确定要隐藏 “%s” 吗？"
 
 #: ../panel-plugin/settings.cpp:144
 msgid "Are you sure you want to log out?"
@@ -520,6 +516,10 @@ msgstr "正则表达式 (_R)"
 #: ../panel-plugin/settings.cpp:147
 msgid "_Restart"
 msgstr "重启(_R)"
+
+#: ../panel-plugin/settings.cpp:129
+msgid "_Settings Manager"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "_Title:"

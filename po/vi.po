@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-04 08:44-0500\n"
+"POT-Creation-Date: 2020-01-08 13:48-0500\n"
 "PO-Revision-Date: 2014-05-05 02:44+0000\n"
 "Last-Translator: Duy Truong Nguyen <truongap.ars@gmail.com>\n"
 "Language-Team: Vietnamese (http://www.transifex.com/projects/p/xfce4-"
@@ -37,12 +37,8 @@ msgid "Add to Panel"
 msgstr "Thêm và Khung"
 
 #: ../panel-plugin/category.cpp:61
-msgid "All"
-msgstr "Tất cả"
-
-#: ../panel-plugin/settings.cpp:129
-msgid "All _Settings"
-msgstr "Tất cả cài đặt"
+msgid "All Applications"
+msgstr "Tất cả ứng dụng"
 
 #: ../panel-plugin/plugin.cpp:410
 msgid "Alternate application launcher for Xfce"
@@ -60,7 +56,7 @@ msgstr "Thực đơn ứng dụng"
 #: ../panel-plugin/launcher.cpp:262
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
-msgstr ""
+msgstr "Bạn có chắc là muốn ẩn \"%s\"?"
 
 #: ../panel-plugin/settings.cpp:144
 msgid "Are you sure you want to log out?"
@@ -527,6 +523,10 @@ msgstr "_Quy tắc thể hiện"
 
 #: ../panel-plugin/settings.cpp:147
 msgid "_Restart"
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:129
+msgid "_Settings Manager"
 msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:603

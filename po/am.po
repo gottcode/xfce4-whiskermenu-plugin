@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-04 08:44-0500\n"
+"POT-Creation-Date: 2020-01-08 13:48-0500\n"
 "PO-Revision-Date: 2018-05-01 14:33+0000\n"
 "Last-Translator: samson <sambelet@yahoo.com>\n"
 "Language-Team: Amharic (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -36,12 +36,8 @@ msgid "Add to Panel"
 msgstr "ወደ ክፍል መጨመሪያ"
 
 #: ../panel-plugin/category.cpp:61
-msgid "All"
-msgstr "ሁሉንም"
-
-#: ../panel-plugin/settings.cpp:129
-msgid "All _Settings"
-msgstr "ሁሉንም _ማሰናጃዎች "
+msgid "All Applications"
+msgstr "ሁሉም ፕሮግራሞች"
 
 #: ../panel-plugin/plugin.cpp:410
 msgid "Alternate application launcher for Xfce"
@@ -58,7 +54,7 @@ msgstr "መተግበሪያዎች"
 #: ../panel-plugin/launcher.cpp:262
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
-msgstr ""
+msgstr "በ እርግጥ መደበቅ ይፈልጋሉ \"%s\"?"
 
 #: ../panel-plugin/settings.cpp:144
 msgid "Are you sure you want to log out?"
@@ -517,6 +513,10 @@ msgstr "_መደበኛ አገላለጽ"
 
 #: ../panel-plugin/settings.cpp:147
 msgid "_Restart"
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:129
+msgid "_Settings Manager"
 msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:603

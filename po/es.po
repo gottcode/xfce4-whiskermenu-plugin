@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-04 08:44-0500\n"
+"POT-Creation-Date: 2020-01-08 13:48-0500\n"
 "PO-Revision-Date: 2019-01-21 17:25+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos\n"
 "Language-Team: Spanish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -47,12 +47,8 @@ msgid "Add to Panel"
 msgstr "Añadir al panel"
 
 #: ../panel-plugin/category.cpp:61
-msgid "All"
-msgstr "Todas"
-
-#: ../panel-plugin/settings.cpp:129
-msgid "All _Settings"
-msgstr "_Toda la configuración"
+msgid "All Applications"
+msgstr "Todas las aplicaciones"
 
 #: ../panel-plugin/plugin.cpp:410
 msgid "Alternate application launcher for Xfce"
@@ -69,7 +65,7 @@ msgstr "Aplicaciones"
 #: ../panel-plugin/launcher.cpp:262
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
-msgstr ""
+msgstr "¿Está seguro de que quiere ocultar «%s»?"
 
 #: ../panel-plugin/settings.cpp:144
 msgid "Are you sure you want to log out?"
@@ -529,6 +525,10 @@ msgstr "E_xpresión regular"
 #: ../panel-plugin/settings.cpp:147
 msgid "_Restart"
 msgstr "_Reiniciar"
+
+#: ../panel-plugin/settings.cpp:129
+msgid "_Settings Manager"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "_Title:"

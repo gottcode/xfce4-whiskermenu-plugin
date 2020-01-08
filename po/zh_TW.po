@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-04 08:44-0500\n"
+"POT-Creation-Date: 2020-01-08 13:48-0500\n"
 "PO-Revision-Date: 2020-01-06 07:07+0000\n"
 "Last-Translator: 黃柏諺 <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/gottcode/xfce4-"
@@ -39,12 +39,8 @@ msgid "Add to Panel"
 msgstr "新增到面板上"
 
 #: ../panel-plugin/category.cpp:61
-msgid "All"
-msgstr "全部"
-
-#: ../panel-plugin/settings.cpp:129
-msgid "All _Settings"
-msgstr "所有設定(_S)"
+msgid "All Applications"
+msgstr "所有應用程式"
 
 #: ../panel-plugin/plugin.cpp:410
 msgid "Alternate application launcher for Xfce"
@@ -519,6 +515,10 @@ msgstr "正規表達式(_R)"
 #: ../panel-plugin/settings.cpp:147
 msgid "_Restart"
 msgstr "重新啟動(_R)"
+
+#: ../panel-plugin/settings.cpp:129
+msgid "_Settings Manager"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "_Title:"

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-04 08:44-0500\n"
+"POT-Creation-Date: 2020-01-08 13:48-0500\n"
 "PO-Revision-Date: 2018-07-09 07:55+0000\n"
 "Last-Translator: Саша Петровић <salepetronije@gmail.com>\n"
 "Language-Team: Serbian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -42,12 +42,8 @@ msgid "Add to Panel"
 msgstr "Додај на полицу"
 
 #: ../panel-plugin/category.cpp:61
-msgid "All"
-msgstr "Све"
-
-#: ../panel-plugin/settings.cpp:129
-msgid "All _Settings"
-msgstr "Све _поставке"
+msgid "All Applications"
+msgstr "Сви програми"
 
 #: ../panel-plugin/plugin.cpp:410
 msgid "Alternate application launcher for Xfce"
@@ -64,7 +60,7 @@ msgstr "Програми"
 #: ../panel-plugin/launcher.cpp:262
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
-msgstr ""
+msgstr "Да ли сте сигурни да желите да сакријете „%s“?"
 
 #: ../panel-plugin/settings.cpp:144
 msgid "Are you sure you want to log out?"
@@ -523,6 +519,10 @@ msgstr "Општи из_раз"
 
 #: ../panel-plugin/settings.cpp:147
 msgid "_Restart"
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:129
+msgid "_Settings Manager"
 msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:603

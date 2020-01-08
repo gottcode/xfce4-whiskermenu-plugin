@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-04 08:44-0500\n"
+"POT-Creation-Date: 2020-01-08 13:48-0500\n"
 "PO-Revision-Date: 2020-01-05 16:10+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/gottcode/xfce4-"
@@ -38,12 +38,8 @@ msgid "Add to Panel"
 msgstr "Pridėti į skydelį"
 
 #: ../panel-plugin/category.cpp:61
-msgid "All"
-msgstr "Visos"
-
-#: ../panel-plugin/settings.cpp:129
-msgid "All _Settings"
-msgstr "Visi _nustatymai"
+msgid "All Applications"
+msgstr "Visos programos"
 
 #: ../panel-plugin/plugin.cpp:410
 msgid "Alternate application launcher for Xfce"
@@ -520,6 +516,10 @@ msgstr "_Reguliarusis reiškinys"
 #: ../panel-plugin/settings.cpp:147
 msgid "_Restart"
 msgstr "Pa_leisti iš naujo"
+
+#: ../panel-plugin/settings.cpp:129
+msgid "_Settings Manager"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "_Title:"

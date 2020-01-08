@@ -23,9 +23,22 @@ for POFILE in *.po;
 do
 	POLANG="${POFILE%%.*}"
 	echo -n " $POLANG"
-	msgunfmt "/usr/share/locale/$POLANG/LC_MESSAGES/gtk30.mo" > "gtk30-$POFILE"
-	msgmerge --quiet --update --backup=none --compendium="gtk30-$POFILE" $POFILE xfce4-whiskermenu-plugin.pot
-	rm -f "gtk30-$POFILE"
+
+	if [ -f "/usr/share/locale/$POLANG/LC_MESSAGES/xfce4-appfinder.mo" ]; then
+		msgunfmt "/usr/share/locale/$POLANG/LC_MESSAGES/xfce4-appfinder.mo" > "appfinder-$POFILE"
+	else
+		touch "appfinder-$POFILE"
+	fi
+
+	if [ -f "/usr/share/locale/$POLANG/LC_MESSAGES/gtk30.mo" ]; then
+		msgunfmt "/usr/share/locale/$POLANG/LC_MESSAGES/gtk30.mo" > "gtk30-$POFILE"
+	else
+		touch "gtk30-$POFILE"
+	fi
+
+	msgmerge --quiet --update --backup=none --compendium="appfinder-$POFILE" --compendium="gtk30-$POFILE" $POFILE xfce4-whiskermenu-plugin.pot
+
+	rm -f "appfinder-$POFILE" "gtk30-$POFILE"
 done
 echo ' DONE'
 

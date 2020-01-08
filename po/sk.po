@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-04 08:44-0500\n"
+"POT-Creation-Date: 2020-01-08 13:48-0500\n"
 "PO-Revision-Date: 2020-01-04 16:49+0000\n"
 "Last-Translator: Slavko <linux@slavino.sk>\n"
 "Language-Team: Slovak (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -38,12 +38,8 @@ msgid "Add to Panel"
 msgstr "Pridať do panela"
 
 #: ../panel-plugin/category.cpp:61
-msgid "All"
-msgstr "Všetky"
-
-#: ../panel-plugin/settings.cpp:129
-msgid "All _Settings"
-msgstr "Všetky _nastavenia"
+msgid "All Applications"
+msgstr "Všetky aplikácie"
 
 #: ../panel-plugin/plugin.cpp:410
 msgid "Alternate application launcher for Xfce"
@@ -520,6 +516,10 @@ msgstr "_Regulárny výraz"
 #: ../panel-plugin/settings.cpp:147
 msgid "_Restart"
 msgstr "_Reštartovať"
+
+#: ../panel-plugin/settings.cpp:129
+msgid "_Settings Manager"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "_Title:"
