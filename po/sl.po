@@ -1,10 +1,10 @@
 # Slovenian translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2019 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # Kernc, 2014-2015
-# Kernc, 2016,2018-2019
+# Kernc, 2016,2018-2020
 # Kernc, 2018
 # Kernc, 2017
 msgid ""
@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-08 13:48-0500\n"
-"PO-Revision-Date: 2019-01-11 16:42+0000\n"
+"PO-Revision-Date: 2020-01-08 21:42+0000\n"
 "Last-Translator: Kernc\n"
 "Language-Team: Slovenian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/sl/)\n"
@@ -94,7 +94,7 @@ msgstr "Počisti nedavno uporabljene"
 
 #: ../panel-plugin/plugin.cpp:411
 msgid "Copyright © 2013-2020 Graeme Gott"
-msgstr "Copyright © 2013-2020 Graeme Gott"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:927
 msgid "Details"
@@ -168,9 +168,8 @@ msgid "Failed to suspend."
 msgstr "Sistema ni bilo mogoče preklopiti v stanje pripravljenosti."
 
 #: ../panel-plugin/settings.cpp:139
-#, fuzzy
 msgid "Failed to switch user."
-msgstr "Ni mogoče zamenjati uporabnika."
+msgstr "Zamenjava uporabnika ni uspela."
 
 #: ../panel-plugin/window.cpp:158
 msgid "Favorites"
@@ -183,7 +182,7 @@ msgstr "Preklapljanje v stanje pripravljenosti v %dsekundah."
 
 #: ../panel-plugin/launcher.cpp:261 ../panel-plugin/page.cpp:419
 msgid "Hide Application"
-msgstr ""
+msgstr "Skrij program"
 
 #: ../panel-plugin/configuration-dialog.cpp:593
 msgid "Icon"
@@ -336,7 +335,7 @@ msgstr "Pokaži orodni _namig programov"
 
 #: ../panel-plugin/configuration-dialog.cpp:678
 msgid "Show as _icons"
-msgstr ""
+msgstr "Prikaži kot _ikone"
 
 #: ../panel-plugin/configuration-dialog.cpp:818
 msgid "Show c_onfirmation dialog"
@@ -388,9 +387,8 @@ msgid "Suspending computer in %d seconds."
 msgstr "Preklapljanje v stanje pripravljenosti v %dsekundah."
 
 #: ../panel-plugin/settings.cpp:137
-#, fuzzy
 msgid "Switch _User"
-msgstr "Preklopi _uporabnika"
+msgstr "Zamenjaj _uporabnika"
 
 #: ../panel-plugin/configuration-dialog.cpp:749
 msgid "Switch categories by _hovering"
@@ -410,6 +408,8 @@ msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
 msgstr ""
+"Za ponoven prikaz morate ročno odstraniti datoteko \"%s\" oz. odpreti to "
+"datoteko in odstraniti vrstico \"%s\"."
 
 #: ../panel-plugin/settings.cpp:157
 #, c-format
@@ -522,7 +522,7 @@ msgstr "_Ponovni zagon"
 
 #: ../panel-plugin/settings.cpp:129
 msgid "_Settings Manager"
-msgstr ""
+msgstr "Nastavitve"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "_Title:"
