@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-08 13:48-0500\n"
-"PO-Revision-Date: 2020-01-03 12:14+0000\n"
+"PO-Revision-Date: 2020-01-08 19:52+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/da/)\n"
@@ -179,7 +179,7 @@ msgstr "Computeren går i dvale om %d sekunder."
 
 #: ../panel-plugin/launcher.cpp:261 ../panel-plugin/page.cpp:419
 msgid "Hide Application"
-msgstr ""
+msgstr "Skjul program"
 
 #: ../panel-plugin/configuration-dialog.cpp:593
 msgid "Icon"
@@ -405,6 +405,8 @@ msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
 msgstr ""
+"For at vise det skal du fjern filen \"%s\" manuelt eller åbne filen og "
+"fjerne linjen \"%s\"."
 
 #: ../panel-plugin/settings.cpp:157
 #, c-format
@@ -517,7 +519,7 @@ msgstr "_Genstart"
 
 #: ../panel-plugin/settings.cpp:129
 msgid "_Settings Manager"
-msgstr ""
+msgstr "_Indstillingshåndtering"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "_Title:"
