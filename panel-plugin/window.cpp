@@ -696,6 +696,12 @@ void WhiskerMenu::Window::set_categories(const std::vector<SectionButton*>& cate
 		g_signal_connect_slot<GtkToggleButton*>((*i)->get_button(), "toggled", &Window::category_toggled, this);
 	}
 
+	// Position "All Applications" above divider
+	if (!categories.empty())
+	{
+		gtk_box_reorder_child(m_sidebar_buttons, GTK_WIDGET(categories[0]->get_button()), 2);
+	}
+
 	show_default_page();
 
 	check_scrollbar_needed();
