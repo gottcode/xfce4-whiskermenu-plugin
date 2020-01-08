@@ -291,6 +291,10 @@ void WhiskerMenu::Window::hide()
 {
 	ungrab_pointer();
 
+	// Scroll categories to top
+	GtkAdjustment* adjustment = gtk_scrolled_window_get_vadjustment(m_sidebar);
+	gtk_adjustment_set_value(adjustment, gtk_adjustment_get_lower(adjustment));
+
 	// Reset any pressed category buttons
 	unset_pressed_category();
 
