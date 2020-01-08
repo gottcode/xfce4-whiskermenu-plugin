@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-04 08:44-0500\n"
-"PO-Revision-Date: 2020-01-01 22:16+0000\n"
+"PO-Revision-Date: 2020-01-08 12:11+0000\n"
 "Last-Translator: Demiray Muhterem <mdemiray@msn.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/tr/)\n"
@@ -61,7 +61,7 @@ msgstr "Uygulamalar"
 #: ../panel-plugin/launcher.cpp:262
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
-msgstr ""
+msgstr "\"%s\" Gizlemek istediğinizden emin misiniz?"
 
 #: ../panel-plugin/settings.cpp:144
 msgid "Are you sure you want to log out?"
@@ -184,7 +184,7 @@ msgstr "Bilgisayar %d saniyede hazır duruma geçiyor."
 
 #: ../panel-plugin/launcher.cpp:261 ../panel-plugin/page.cpp:419
 msgid "Hide Application"
-msgstr ""
+msgstr "Uygulamayı Gizle"
 
 #: ../panel-plugin/configuration-dialog.cpp:593
 msgid "Icon"
@@ -410,6 +410,8 @@ msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
 msgstr ""
+"Uygulamayı göstermek için \"%s\" dosyasını manuel olarak kaldırmanız veya "
+"dosyayı açıp \"%s\" satırını silmeniz gerekir."
 
 #: ../panel-plugin/settings.cpp:157
 #, c-format
