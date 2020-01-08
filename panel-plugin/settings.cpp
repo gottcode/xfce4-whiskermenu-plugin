@@ -126,7 +126,7 @@ Settings::Settings() :
 	favorites.push_back("exo-terminal-emulator.desktop");
 
 	command[CommandSettings] = new Command("preferences-desktop",
-			_("All _Settings"),
+			_("_Settings Manager"),
 			"xfce4-settings-manager",
 			_("Failed to open settings manager."));
 	command[CommandLockScreen] = new Command("system-lock-screen",
