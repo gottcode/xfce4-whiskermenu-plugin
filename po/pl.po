@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-08 13:48-0500\n"
-"PO-Revision-Date: 2020-01-05 20:09+0000\n"
+"PO-Revision-Date: 2020-01-08 21:55+0000\n"
 "Last-Translator: Michał Trzebiatowski <michtrz@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/pl/)\n"
@@ -191,7 +191,7 @@ msgstr "Działanie komputera zostanie zahibernowane za %d sekund."
 
 #: ../panel-plugin/launcher.cpp:261 ../panel-plugin/page.cpp:419
 msgid "Hide Application"
-msgstr "Ukryj aplikację"
+msgstr "Ukryj program"
 
 #: ../panel-plugin/configuration-dialog.cpp:593
 msgid "Icon"
@@ -531,7 +531,7 @@ msgstr "_Uruchom ponownie"
 
 #: ../panel-plugin/settings.cpp:129
 msgid "_Settings Manager"
-msgstr ""
+msgstr "Menedżer _ustawień"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "_Title:"
