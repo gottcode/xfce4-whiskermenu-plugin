@@ -572,7 +572,7 @@ void WhiskerMenu::Window::show(const Position position)
 			{
 				gtk_box_reorder_child(m_commands_box, m_commands_button[i], 8 - i);
 			}
-			gtk_box_reorder_child(m_commands_box, m_commands_spacer, 4);
+			gtk_box_reorder_child(m_commands_box, m_commands_spacer, 9);
 
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_profilepic->get_widget()), 2);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 1);
@@ -601,7 +601,7 @@ void WhiskerMenu::Window::show(const Position position)
 			{
 				gtk_box_reorder_child(m_commands_box, m_commands_button[i], 8 - i);
 			}
-			gtk_box_reorder_child(m_commands_box, m_commands_spacer, 4);
+			gtk_box_reorder_child(m_commands_box, m_commands_spacer, 9);
 
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_profilepic->get_widget()), 3);
 			gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 2);
