@@ -914,6 +914,8 @@ gboolean WhiskerMenu::Window::on_state_flags_changed_event(GtkWidget* widget, Gt
 		gtk_window_present(m_window);
 	}
 
+	check_scrollbar_needed();
+
 	return false;
 }
 
