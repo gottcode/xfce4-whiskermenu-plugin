@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-08 13:48-0500\n"
-"PO-Revision-Date: 2020-01-06 07:07+0000\n"
+"PO-Revision-Date: 2020-01-09 03:11+0000\n"
 "Last-Translator: 黃柏諺 <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/zh_TW/)\n"
@@ -518,7 +518,7 @@ msgstr "重新啟動(_R)"
 
 #: ../panel-plugin/settings.cpp:129
 msgid "_Settings Manager"
-msgstr ""
+msgstr "設定管理員(_S)"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "_Title:"
