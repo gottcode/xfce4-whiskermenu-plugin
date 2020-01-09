@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-08 13:48-0500\n"
-"PO-Revision-Date: 2020-01-07 06:31+0000\n"
+"PO-Revision-Date: 2020-01-09 06:14+0000\n"
 "Last-Translator: Daniel Muñiz Fontoira <dani@damufo.com>\n"
 "Language-Team: Galician (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/gl/)\n"
@@ -37,7 +37,7 @@ msgstr "Engadir ao panel"
 
 #: ../panel-plugin/category.cpp:61
 msgid "All Applications"
-msgstr "Todos os aplicativos"
+msgstr "Todas as aplicacións"
 
 #: ../panel-plugin/plugin.cpp:410
 msgid "Alternate application launcher for Xfce"
@@ -517,7 +517,7 @@ msgstr "_Reiniciar"
 
 #: ../panel-plugin/settings.cpp:129
 msgid "_Settings Manager"
-msgstr ""
+msgstr "Xestor _da configuración"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "_Title:"
