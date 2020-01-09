@@ -253,7 +253,7 @@ void Settings::load(char* file)
 
 	menu_width = std::max(10, xfce_rc_read_int_entry(rc, "menu-width", menu_width));
 	menu_height = std::max(10, xfce_rc_read_int_entry(rc, "menu-height", menu_height));
-	menu_opacity = std::min(100, std::max(0, xfce_rc_read_int_entry(rc, "menu-opacity", menu_height)));
+	menu_opacity = std::min(100, std::max(0, xfce_rc_read_int_entry(rc, "menu-opacity", menu_opacity)));
 
 	for (int i = 0; i < CountCommands; ++i)
 	{
