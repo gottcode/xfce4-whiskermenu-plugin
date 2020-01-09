@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-08 13:48-0500\n"
-"PO-Revision-Date: 2020-01-05 16:10+0000\n"
+"PO-Revision-Date: 2020-01-08 23:11+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/lt/)\n"
@@ -519,7 +519,7 @@ msgstr "Pa_leisti iš naujo"
 
 #: ../panel-plugin/settings.cpp:129
 msgid "_Settings Manager"
-msgstr ""
+msgstr "Nu_statymų tvarkytuvė"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "_Title:"
