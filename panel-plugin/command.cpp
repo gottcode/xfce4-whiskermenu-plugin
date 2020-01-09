@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2016, 2018 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2016, 2018, 2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -140,7 +140,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 
 void Command::set(const gchar* command)
 {
-	if (command == m_command)
+	if (g_strcmp0(command, m_command) == 0)
 	{
 		return;
 	}
