@@ -64,15 +64,15 @@ msgstr "Да ли сте сигурни да желите да сакријет�
 
 #: ../panel-plugin/settings.cpp:144
 msgid "Are you sure you want to log out?"
-msgstr ""
+msgstr "Да ли сигурно желите да се одјавите?"
 
 #: ../panel-plugin/settings.cpp:150
 msgid "Are you sure you want to restart?"
-msgstr ""
+msgstr "Да ли сте сигурни да желите поново да покренете рачунар?"
 
 #: ../panel-plugin/settings.cpp:156
 msgid "Are you sure you want to shut down?"
-msgstr ""
+msgstr "Да ли сте сигурни да желите да искључите рачунар?"
 
 #: ../panel-plugin/configuration-dialog.cpp:715
 msgid "Background opacit_y:"
@@ -112,11 +112,11 @@ msgstr "Подразумевани приказ"
 
 #: ../panel-plugin/settings.cpp:162
 msgid "Do you want to suspend to RAM?"
-msgstr ""
+msgstr "Да ли желите да обуставите у РАМ?"
 
 #: ../panel-plugin/settings.cpp:168
 msgid "Do you want to suspend to disk?"
-msgstr ""
+msgstr "Да ли желите да обуставите на диску?"
 
 #: ../panel-plugin/page.cpp:415
 msgid "Edit Application..."
@@ -180,7 +180,7 @@ msgstr "Омиљено"
 #: ../panel-plugin/settings.cpp:169
 #, c-format
 msgid "Hibernating computer in %d seconds."
-msgstr ""
+msgstr "Замрзавам рачунар за %d секунде."
 
 #: ../panel-plugin/launcher.cpp:261 ../panel-plugin/page.cpp:419
 msgid "Hide Application"
@@ -221,7 +221,7 @@ msgstr "Одја_ва"
 #: ../panel-plugin/settings.cpp:145
 #, c-format
 msgid "Logging out in %d seconds."
-msgstr ""
+msgstr "Одјављујем се кроз %d секунде."
 
 #: ../panel-plugin/settings.cpp:183
 msgid "Man Pages"
@@ -292,7 +292,7 @@ msgstr "Уклони означену радњу"
 #: ../panel-plugin/settings.cpp:151
 #, c-format
 msgid "Restarting computer in %d seconds."
-msgstr ""
+msgstr "Поново ћу покренути за %d секунде."
 
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
@@ -357,7 +357,7 @@ msgstr "Приказуј гранање изборника"
 
 #: ../panel-plugin/settings.cpp:153
 msgid "Shut _Down"
-msgstr ""
+msgstr "_Искључи"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -386,7 +386,7 @@ msgstr ""
 #: ../panel-plugin/settings.cpp:163
 #, c-format
 msgid "Suspending computer in %d seconds."
-msgstr ""
+msgstr "Обустављам рачунар за %d секунде."
 
 #: ../panel-plugin/settings.cpp:137
 #, fuzzy
@@ -415,7 +415,7 @@ msgstr ""
 #: ../panel-plugin/settings.cpp:157
 #, c-format
 msgid "Turning off computer in %d seconds."
-msgstr ""
+msgstr "Искључићу рачунар за %d секунде."
 
 #: ../panel-plugin/page.cpp:481
 msgid "Unable to add launcher to desktop."
@@ -494,7 +494,7 @@ msgstr "_Помоћ"
 
 #: ../panel-plugin/settings.cpp:165
 msgid "_Hibernate"
-msgstr ""
+msgstr "_Замрзни"
 
 #: ../panel-plugin/configuration-dialog.cpp:614
 msgid "_Icon:"
@@ -519,7 +519,7 @@ msgstr "Општи из_раз"
 
 #: ../panel-plugin/settings.cpp:147
 msgid "_Restart"
-msgstr ""
+msgstr "_Поново покрени"
 
 #: ../panel-plugin/settings.cpp:129
 msgid "_Settings Manager"

@@ -58,15 +58,15 @@ msgstr "\"%s\" жасыруды шынымен қалайсыз ба?"
 
 #: ../panel-plugin/settings.cpp:144
 msgid "Are you sure you want to log out?"
-msgstr ""
+msgstr "Жүйеден шығуды шынымен қалайсыз ба?"
 
 #: ../panel-plugin/settings.cpp:150
 msgid "Are you sure you want to restart?"
-msgstr ""
+msgstr "Қайта қосуды шынымен қалайсыз ба?"
 
 #: ../panel-plugin/settings.cpp:156
 msgid "Are you sure you want to shut down?"
-msgstr ""
+msgstr "Сөндіруді шынымен қалайсыз ба?"
 
 #: ../panel-plugin/configuration-dialog.cpp:715
 msgid "Background opacit_y:"
@@ -106,11 +106,11 @@ msgstr "Үн_сіз келісім бойынша көрсету"
 
 #: ../panel-plugin/settings.cpp:162
 msgid "Do you want to suspend to RAM?"
-msgstr ""
+msgstr "Жадыға ұйықтатуды қалайсыз ба?"
 
 #: ../panel-plugin/settings.cpp:168
 msgid "Do you want to suspend to disk?"
-msgstr ""
+msgstr "Дискіге ұйықтатуды қалайсыз ба?"
 
 #: ../panel-plugin/page.cpp:415
 #, fuzzy
@@ -175,7 +175,7 @@ msgstr "Таңдамалы"
 #: ../panel-plugin/settings.cpp:169
 #, c-format
 msgid "Hibernating computer in %d seconds."
-msgstr ""
+msgstr "Компьютер %d секундтан кейін гибернацияланады."
 
 #: ../panel-plugin/launcher.cpp:261 ../panel-plugin/page.cpp:419
 msgid "Hide Application"
@@ -217,7 +217,7 @@ msgstr "Ш_ығу"
 #: ../panel-plugin/settings.cpp:145
 #, c-format
 msgid "Logging out in %d seconds."
-msgstr ""
+msgstr "%d секундтан кейін шығу."
 
 #: ../panel-plugin/settings.cpp:183
 msgid "Man Pages"
@@ -288,7 +288,7 @@ msgstr "Таңдалған әрекетті өшіру"
 #: ../panel-plugin/settings.cpp:151
 #, c-format
 msgid "Restarting computer in %d seconds."
-msgstr ""
+msgstr "Компьютер %d секундтан кейін қайта қосылады."
 
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
@@ -353,7 +353,7 @@ msgstr "Мәзір и_ерархиясын көрсету"
 
 #: ../panel-plugin/settings.cpp:153
 msgid "Shut _Down"
-msgstr ""
+msgstr "Сө_ндіру"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -382,7 +382,7 @@ msgstr ""
 #: ../panel-plugin/settings.cpp:163
 #, c-format
 msgid "Suspending computer in %d seconds."
-msgstr ""
+msgstr "Компьютер %d секундтан кейін ұйықтатылады."
 
 #: ../panel-plugin/settings.cpp:137
 #, fuzzy
@@ -411,7 +411,7 @@ msgstr ""
 #: ../panel-plugin/settings.cpp:157
 #, c-format
 msgid "Turning off computer in %d seconds."
-msgstr ""
+msgstr "Компьютер %d секундтан кейін сөндіріледі."
 
 #: ../panel-plugin/page.cpp:481
 msgid "Unable to add launcher to desktop."
@@ -491,7 +491,7 @@ msgstr "_Көмек"
 
 #: ../panel-plugin/settings.cpp:165
 msgid "_Hibernate"
-msgstr ""
+msgstr "Г_ибернация"
 
 #: ../panel-plugin/configuration-dialog.cpp:614
 msgid "_Icon:"
@@ -516,7 +516,7 @@ msgstr "Тұ_рақты өрнек"
 
 #: ../panel-plugin/settings.cpp:147
 msgid "_Restart"
-msgstr ""
+msgstr "Қа_йта қосу"
 
 #: ../panel-plugin/settings.cpp:129
 msgid "_Settings Manager"

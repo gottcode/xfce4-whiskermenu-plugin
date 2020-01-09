@@ -18,16 +18,22 @@ cd ${WDIR}
 echo ' DONE'
 
 
-echo -n 'Updating translations...'
+echo -n 'Updating translations... '
 for POFILE in *.po;
 do
 	POLANG="${POFILE%%.*}"
-	echo -n " $POLANG"
+	echo -n "$POLANG "
 
 	if [ -f "/usr/share/locale/$POLANG/LC_MESSAGES/xfce4-appfinder.mo" ]; then
 		msgunfmt "/usr/share/locale/$POLANG/LC_MESSAGES/xfce4-appfinder.mo" > "appfinder-$POFILE"
 	else
 		touch "appfinder-$POFILE"
+	fi
+
+	if [ -f "/usr/share/locale/$POLANG/LC_MESSAGES/xfce4-panel.mo" ]; then
+		msgunfmt "/usr/share/locale/$POLANG/LC_MESSAGES/xfce4-panel.mo" > "panel-$POFILE"
+	else
+		touch "panel-$POFILE"
 	fi
 
 	if [ -f "/usr/share/locale/$POLANG/LC_MESSAGES/gtk30.mo" ]; then
@@ -36,11 +42,15 @@ do
 		touch "gtk30-$POFILE"
 	fi
 
-	msgmerge --quiet --update --backup=none --compendium="appfinder-$POFILE" --compendium="gtk30-$POFILE" $POFILE xfce4-whiskermenu-plugin.pot
+	msgmerge --quiet --update --backup=none \
+		--compendium="appfinder-$POFILE" \
+		--compendium="panel-$POFILE" \
+		--compendium="gtk30-$POFILE" \
+		$POFILE xfce4-whiskermenu-plugin.pot
 
-	rm -f "appfinder-$POFILE" "gtk30-$POFILE"
+	rm -f "appfinder-$POFILE" "panel-$POFILE" "gtk30-$POFILE"
 done
-echo ' DONE'
+echo 'DONE'
 
 
 echo -n 'Merging desktop file translations...'

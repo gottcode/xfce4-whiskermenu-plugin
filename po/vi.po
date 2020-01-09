@@ -60,15 +60,15 @@ msgstr "Bạn có chắc là muốn ẩn \"%s\"?"
 
 #: ../panel-plugin/settings.cpp:144
 msgid "Are you sure you want to log out?"
-msgstr ""
+msgstr "Bạn có chắc là muốn đăng xuất?"
 
 #: ../panel-plugin/settings.cpp:150
 msgid "Are you sure you want to restart?"
-msgstr ""
+msgstr "Bạn có muốn khởi động lại?"
 
 #: ../panel-plugin/settings.cpp:156
 msgid "Are you sure you want to shut down?"
-msgstr ""
+msgstr "Bạn có thực sự muốn tắt máy?"
 
 #: ../panel-plugin/configuration-dialog.cpp:715
 msgid "Background opacit_y:"
@@ -109,11 +109,11 @@ msgstr "Hiển thị mặc định mục vừa sử dụng"
 
 #: ../panel-plugin/settings.cpp:162
 msgid "Do you want to suspend to RAM?"
-msgstr ""
+msgstr "Bạn có muốn tạm dừng vào RAM?"
 
 #: ../panel-plugin/settings.cpp:168
 msgid "Do you want to suspend to disk?"
-msgstr ""
+msgstr "Bạn có muốn tạm dừng ổ đĩa?"
 
 #: ../panel-plugin/page.cpp:415
 #, fuzzy
@@ -179,7 +179,7 @@ msgstr "Ưa Thích"
 #: ../panel-plugin/settings.cpp:169
 #, c-format
 msgid "Hibernating computer in %d seconds."
-msgstr ""
+msgstr "Chuẩn bị ngủ đông trong khoảng %d giây."
 
 #: ../panel-plugin/launcher.cpp:261 ../panel-plugin/page.cpp:419
 msgid "Hide Application"
@@ -221,7 +221,7 @@ msgstr "Đăng xuất"
 #: ../panel-plugin/settings.cpp:145
 #, c-format
 msgid "Logging out in %d seconds."
-msgstr ""
+msgstr "Chuẩn đăng xuất trong vòng %d giây."
 
 #: ../panel-plugin/settings.cpp:183
 msgid "Man Pages"
@@ -293,7 +293,7 @@ msgstr "Hủy bỏ "
 #: ../panel-plugin/settings.cpp:151
 #, c-format
 msgid "Restarting computer in %d seconds."
-msgstr ""
+msgstr "Chuẩn bị khởi động lại trong vòng %d giây."
 
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
@@ -359,7 +359,7 @@ msgstr "Hiểu thị thực đơn theo thứ tự ưu tiên"
 
 #: ../panel-plugin/settings.cpp:153
 msgid "Shut _Down"
-msgstr ""
+msgstr "Tắt _máy"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -388,7 +388,7 @@ msgstr ""
 #: ../panel-plugin/settings.cpp:163
 #, c-format
 msgid "Suspending computer in %d seconds."
-msgstr ""
+msgstr "Chuẩn bị tạm dừng máy tính trong vòng %d giây."
 
 #: ../panel-plugin/settings.cpp:137
 #, fuzzy
@@ -417,7 +417,7 @@ msgstr ""
 #: ../panel-plugin/settings.cpp:157
 #, c-format
 msgid "Turning off computer in %d seconds."
-msgstr ""
+msgstr "Chuẩn bị tắt máy trong vòng %d giây."
 
 #: ../panel-plugin/page.cpp:481
 msgid "Unable to add launcher to desktop."
@@ -498,7 +498,7 @@ msgstr "Trợ g_iúp"
 
 #: ../panel-plugin/settings.cpp:165
 msgid "_Hibernate"
-msgstr ""
+msgstr "N_gủ đông"
 
 #: ../panel-plugin/configuration-dialog.cpp:614
 msgid "_Icon:"
@@ -523,7 +523,7 @@ msgstr "_Quy tắc thể hiện"
 
 #: ../panel-plugin/settings.cpp:147
 msgid "_Restart"
-msgstr ""
+msgstr "Khởi động _lại"
 
 #: ../panel-plugin/settings.cpp:129
 msgid "_Settings Manager"
@@ -535,7 +535,7 @@ msgstr "_Tiêu đề:"
 
 #: ../panel-plugin/plugin.cpp:415
 msgid "translator-credits"
-msgstr ""
+msgstr "Giới thiệu-Người dịch"
 
 #~ msgid "Include _favorites in recently used"
 #~ msgstr "Kèm mục ưa thích vào mục vừa sử dụng"

@@ -512,7 +512,7 @@ msgstr ""
 
 #: ../panel-plugin/settings.cpp:147
 msgid "_Restart"
-msgstr ""
+msgstr "_Restartigu"
 
 #: ../panel-plugin/settings.cpp:129
 msgid "_Settings Manager"
