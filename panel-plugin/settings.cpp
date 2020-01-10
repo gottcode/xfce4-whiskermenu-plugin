@@ -18,6 +18,7 @@
 #include "settings.h"
 
 #include "command.h"
+#include "plugin.h"
 #include "search-action.h"
 
 #include <algorithm>
@@ -88,6 +89,7 @@ static void write_vector_entry(XfceRc* rc, const char* key, const std::vector<st
 Settings::Settings() :
 	m_modified(false),
 
+	button_title(Plugin::get_button_title_default()),
 	button_icon_name("xfce4-whiskermenu"),
 	button_title_visible(false),
 	button_icon_visible(true),
@@ -324,7 +326,10 @@ void Settings::save(char* file)
 		xfce_rc_write_entry(rc, "custom-menu-file", custom_menu_file.c_str());
 	}
 
-	xfce_rc_write_entry(rc, "button-title", button_title.c_str());
+	if (button_title != Plugin::get_button_title_default())
+	{
+		xfce_rc_write_entry(rc, "button-title", button_title.c_str());
+	}
 	xfce_rc_write_entry(rc, "button-icon", button_icon_name.c_str());
 	xfce_rc_write_bool_entry(rc, "button-single-row", button_single_row);
 	xfce_rc_write_bool_entry(rc, "show-button-title", button_title_visible);
