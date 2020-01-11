@@ -1,5 +1,5 @@
 # French translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2019 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -10,14 +10,14 @@
 # Lysio J-C <lysio.jc@outlook.fr>, 2017
 # Rox fr <roxfr@outlook.fr>, 2019
 # Urien Desterres <urien.desterres@gmail.com>, 2014-2015,2018
-# Yannick Le Guen <leguen.yannick@gmail.com>, 2014-2017
+# Yannick Le Guen <leguen.yannick@gmail.com>, 2014-2017,2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-08 13:48-0500\n"
-"PO-Revision-Date: 2019-08-22 08:41+0000\n"
-"Last-Translator: Rox fr <roxfr@outlook.fr>\n"
+"PO-Revision-Date: 2020-01-11 11:44+0000\n"
+"Last-Translator: Yannick Le Guen <leguen.yannick@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/fr/)\n"
 "Language: fr\n"
@@ -185,7 +185,7 @@ msgstr "Mise en veille prolongée de l’ordinateur dans %d secondes."
 
 #: ../panel-plugin/launcher.cpp:261 ../panel-plugin/page.cpp:419
 msgid "Hide Application"
-msgstr ""
+msgstr "Masquer l’application"
 
 #: ../panel-plugin/configuration-dialog.cpp:593
 msgid "Icon"
@@ -338,7 +338,7 @@ msgstr "Afficher les info-_bulles des applications"
 
 #: ../panel-plugin/configuration-dialog.cpp:678
 msgid "Show as _icons"
-msgstr ""
+msgstr "Afficher sous forme d’_icônes"
 
 #: ../panel-plugin/configuration-dialog.cpp:818
 msgid "Show c_onfirmation dialog"
@@ -411,6 +411,8 @@ msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
 msgstr ""
+"Pour l’afficher à nouveau, vous devez supprimer manuellement le fichier "
+"« %s » ou ouvrir le fichier et supprimer la ligne « %s »."
 
 #: ../panel-plugin/settings.cpp:157
 #, c-format
@@ -523,7 +525,7 @@ msgstr "_Redémarrer"
 
 #: ../panel-plugin/settings.cpp:129
 msgid "_Settings Manager"
-msgstr ""
+msgstr "Gestionnaire de _paramètres"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "_Title:"
