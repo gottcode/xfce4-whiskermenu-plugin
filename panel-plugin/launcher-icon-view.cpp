@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2019, 2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -94,7 +94,7 @@ GtkTreePath* LauncherIconView::get_selected_path() const
 	GList* selection = gtk_icon_view_get_selected_items(m_view);
 	if (selection != NULL)
 	{
-		path = gtk_tree_path_copy(reinterpret_cast<GtkTreePath*>(selection->data));
+		path = gtk_tree_path_copy(static_cast<GtkTreePath*>(selection->data));
 	}
 	g_list_free_full(selection, (GDestroyNotify)gtk_tree_path_free);
 	return path;

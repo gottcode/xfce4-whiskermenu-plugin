@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015, 2017, 2018 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015, 2017, 2018, 2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -56,13 +56,13 @@ private:
 
 	static void load_garcon_menu_slot(GTask* task, gpointer, gpointer task_data, GCancellable*)
 	{
-		reinterpret_cast<ApplicationsPage*>(task_data)->load_garcon_menu();
+		static_cast<ApplicationsPage*>(task_data)->load_garcon_menu();
 		g_task_return_boolean(task, true);
 	}
 
 	static void load_contents_slot(GObject*, GAsyncResult*, gpointer user_data)
 	{
-		reinterpret_cast<ApplicationsPage*>(user_data)->load_contents();
+		static_cast<ApplicationsPage*>(user_data)->load_contents();
 	}
 
 private:

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2014, 2015, 2016, 2019 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014, 2015, 2016, 2019, 2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -154,7 +154,7 @@ Launcher::Launcher(GarconMenuItem* item) :
 	GList* keywords = garcon_menu_item_get_keywords(m_item);
 	for (GList* i = keywords; i != NULL; i = i->next)
 	{
-		const gchar* keyword = reinterpret_cast<gchar*>(i->data);
+		const gchar* keyword = static_cast<gchar*>(i->data);
 		if (!exo_str_is_empty(keyword) && g_utf8_validate(keyword, -1, NULL))
 		{
 			m_search_keywords.push_back(normalize(keyword));
@@ -174,7 +174,7 @@ Launcher::Launcher(GarconMenuItem* item) :
 	GList* actions = garcon_menu_item_get_actions(m_item);
 	for (GList* i = actions; i != NULL; i = i->next)
 	{
-		GarconMenuItemAction* action = garcon_menu_item_get_action(m_item, reinterpret_cast<gchar*>(i->data));
+		GarconMenuItemAction* action = garcon_menu_item_get_action(m_item, static_cast<gchar*>(i->data));
 		if (action)
 		{
 			m_actions.push_back(new DesktopAction(action));
