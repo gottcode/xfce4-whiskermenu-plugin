@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-08 13:48-0500\n"
-"PO-Revision-Date: 2020-01-01 15:41+0000\n"
+"PO-Revision-Date: 2020-01-12 09:05+0000\n"
 "Last-Translator: Caarmi\n"
 "Language-Team: Interlingue (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/ie/)\n"
@@ -177,7 +177,7 @@ msgstr "Hivernante li computator pos %d secondes."
 
 #: ../panel-plugin/launcher.cpp:261 ../panel-plugin/page.cpp:419
 msgid "Hide Application"
-msgstr ""
+msgstr "Celar li application"
 
 #: ../panel-plugin/configuration-dialog.cpp:593
 msgid "Icon"
@@ -403,6 +403,8 @@ msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
 msgstr ""
+"Por revelar it, vu deve remover manualmen li file «%s», o aperter ta-ci file "
+"e remover li linea «%s»."
 
 #: ../panel-plugin/settings.cpp:157
 #, c-format
@@ -515,7 +517,7 @@ msgstr "_Restartar"
 
 #: ../panel-plugin/settings.cpp:129
 msgid "_Settings Manager"
-msgstr ""
+msgstr "_Gerente de parametres"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "_Title:"
