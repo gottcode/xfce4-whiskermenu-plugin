@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-08 13:48-0500\n"
-"PO-Revision-Date: 2020-01-08 12:11+0000\n"
+"PO-Revision-Date: 2020-01-13 21:01+0000\n"
 "Last-Translator: Demiray Muhterem <mdemiray@msn.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/tr/)\n"
@@ -40,7 +40,7 @@ msgstr "Panele Ekle"
 
 #: ../panel-plugin/category.cpp:61
 msgid "All Applications"
-msgstr "Bütün Uygulamalar"
+msgstr "Tüm Uygulamalar"
 
 #: ../panel-plugin/plugin.cpp:410
 msgid "Alternate application launcher for Xfce"
@@ -520,7 +520,7 @@ msgstr "_Yeniden Başlat"
 
 #: ../panel-plugin/settings.cpp:129
 msgid "_Settings Manager"
-msgstr ""
+msgstr "_Ayar Yöneticisi"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "_Title:"
