@@ -257,7 +257,7 @@ static void whiskermenu_icon_renderer_class_init(WhiskerMenuIconRendererClass* k
 
 //-----------------------------------------------------------------------------
 
-static void whiskermenu_icon_renderer_init(G_GNUC_UNUSED WhiskerMenuIconRenderer* icon_renderer)
+static void whiskermenu_icon_renderer_init(WhiskerMenuIconRenderer*)
 {
 }
 
@@ -265,7 +265,7 @@ static void whiskermenu_icon_renderer_init(G_GNUC_UNUSED WhiskerMenuIconRenderer
 
 GtkCellRenderer* whiskermenu_icon_renderer_new()
 {
-	return static_cast<GtkCellRenderer*>(g_object_new(WHISKERMENU_TYPE_ICON_RENDERER, NULL));
+	return GTK_CELL_RENDERER(g_object_new(WHISKERMENU_TYPE_ICON_RENDERER, NULL));
 }
 
 //-----------------------------------------------------------------------------
