@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015, 2016, 2017, 2018 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015, 2016, 2017, 2018, 2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -136,7 +136,7 @@ void ApplicationsPage::apply_filter(GtkToggleButton* togglebutton)
 	Category* category = NULL;
 	for (std::vector<Category*>::const_iterator i = m_categories.begin(), end = m_categories.end(); i != end; ++i)
 	{
-		if (GTK_TOGGLE_BUTTON((*i)->get_button()->get_button()) == togglebutton)
+		if (GTK_TOGGLE_BUTTON((*i)->get_button()->get_widget()) == togglebutton)
 		{
 			category = *i;
 			break;
@@ -328,7 +328,7 @@ void ApplicationsPage::load_contents()
 	for (std::vector<Category*>::const_iterator i = m_categories.begin(), end = m_categories.end(); i != end; ++i)
 	{
 		SectionButton* category_button = (*i)->get_button();
-		g_signal_connect_slot(category_button->get_button(), "toggled", &ApplicationsPage::apply_filter, this);
+		g_signal_connect_slot(category_button->get_widget(), "toggled", &ApplicationsPage::apply_filter, this);
 		category_buttons.push_back(category_button);
 	}
 

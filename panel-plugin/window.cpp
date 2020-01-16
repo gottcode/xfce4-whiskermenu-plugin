@@ -158,7 +158,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	GIcon* icon = g_themed_icon_new("user-bookmarks");
 	m_favorites_button = new SectionButton(icon, _("Favorites"));
 	g_object_unref(icon);
-	g_signal_connect_slot<GtkToggleButton*>(m_favorites_button->get_button(), "toggled", &Window::favorites_toggled, this);
+	g_signal_connect_slot<GtkToggleButton*>(m_favorites_button->get_widget(), "toggled", &Window::favorites_toggled, this);
 
 	// Create recent
 	m_recent = new RecentPage(this);
@@ -166,8 +166,8 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	icon = g_themed_icon_new("document-open-recent");
 	m_recent_button = new SectionButton(icon, _("Recently Used"));
 	g_object_unref(icon);
-	m_recent_button->set_group(m_favorites_button->get_group());
-	g_signal_connect_slot<GtkToggleButton*>(m_recent_button->get_button(), "toggled", &Window::recent_toggled, this);
+	m_recent_button->join_group(m_favorites_button);
+	g_signal_connect_slot<GtkToggleButton*>(m_recent_button->get_widget(), "toggled", &Window::recent_toggled, this);
 
 	// Create applications
 	m_applications = new ApplicationsPage(this);
@@ -230,8 +230,8 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 
 	// Create box for packing sidebar
 	m_sidebar_buttons = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 0));
-	gtk_box_pack_start(m_sidebar_buttons, GTK_WIDGET(m_favorites_button->get_button()), false, false, 0);
-	gtk_box_pack_start(m_sidebar_buttons, GTK_WIDGET(m_recent_button->get_button()), false, false, 0);
+	gtk_box_pack_start(m_sidebar_buttons, m_favorites_button->get_widget(), false, false, 0);
+	gtk_box_pack_start(m_sidebar_buttons, m_recent_button->get_widget(), false, false, 0);
 	gtk_box_pack_start(m_sidebar_buttons, gtk_separator_new(GTK_ORIENTATION_HORIZONTAL), false, false, 4);
 
 	m_sidebar = GTK_SCROLLED_WINDOW(gtk_scrolled_window_new(NULL, NULL));
@@ -659,7 +659,7 @@ void WhiskerMenu::Window::show(const Position position)
 	}
 
 	// Make sure recent button is only visible when tracked
-	gtk_widget_set_visible(GTK_WIDGET(m_recent_button->get_button()), wm_settings->recent_items_max);
+	gtk_widget_set_visible(m_recent_button->get_widget(), wm_settings->recent_items_max);
 
 	// Show window
 	gtk_widget_show(GTK_WIDGET(m_window));
@@ -693,17 +693,19 @@ void WhiskerMenu::Window::on_context_menu_destroyed()
 
 void WhiskerMenu::Window::set_categories(const std::vector<SectionButton*>& categories)
 {
+	SectionButton* button = m_recent_button;
 	for (std::vector<SectionButton*>::const_iterator i = categories.begin(), end = categories.end(); i != end; ++i)
 	{
-		(*i)->set_group(m_recent_button->get_group());
-		gtk_box_pack_start(m_sidebar_buttons, GTK_WIDGET((*i)->get_button()), false, false, 0);
-		g_signal_connect_slot<GtkToggleButton*>((*i)->get_button(), "toggled", &Window::category_toggled, this);
+		(*i)->join_group(button);
+		button = *i;
+		gtk_box_pack_start(m_sidebar_buttons, button->get_widget(), false, false, 0);
+		g_signal_connect_slot<GtkToggleButton*>(button->get_widget(), "toggled", &Window::category_toggled, this);
 	}
 
 	// Position "All Applications" above divider
 	if (!categories.empty())
 	{
-		gtk_box_reorder_child(m_sidebar_buttons, GTK_WIDGET(categories[0]->get_button()), 2);
+		gtk_box_reorder_child(m_sidebar_buttons, categories.front()->get_widget(), 2);
 	}
 
 	show_default_page();
@@ -847,7 +849,7 @@ gboolean WhiskerMenu::Window::on_key_press_event(GtkWidget* widget, GdkEvent* ev
 	{
 		if (GTK_IS_TREE_VIEW(view) && ((widget == view) || (gtk_window_get_focus(m_window) == view)))
 		{
-			gtk_widget_grab_focus(GTK_WIDGET(m_favorites_button->get_button()));
+			gtk_widget_grab_focus(m_favorites_button->get_widget());
 			page->reset_selection();
 		}
 	}

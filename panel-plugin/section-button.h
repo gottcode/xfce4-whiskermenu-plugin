@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2016, 2017 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2016, 2017, 2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,9 +29,9 @@ public:
 	SectionButton(GIcon* icon, const gchar* text);
 	~SectionButton();
 
-	GtkRadioButton* get_button() const
+	GtkWidget* get_widget() const
 	{
-		return m_button;
+		return GTK_WIDGET(m_button);
 	}
 
 	bool get_active() const
@@ -44,14 +44,9 @@ public:
 		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_button), active);
 	}
 
-	GSList* get_group() const
+	void join_group(SectionButton* button)
 	{
-		return gtk_radio_button_get_group(m_button);
-	}
-
-	void set_group(GSList* group)
-	{
-		gtk_radio_button_set_group(m_button, group);
+		gtk_radio_button_join_group(m_button, button->m_button);
 	}
 
 	void reload_icon_size();
