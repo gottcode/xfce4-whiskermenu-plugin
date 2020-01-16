@@ -709,8 +709,6 @@ void WhiskerMenu::Window::set_categories(const std::vector<SectionButton*>& cate
 	}
 
 	show_default_page();
-
-	check_scrollbar_needed();
 }
 
 //-----------------------------------------------------------------------------
@@ -920,8 +918,6 @@ gboolean WhiskerMenu::Window::on_state_flags_changed_event(GtkWidget* widget, Gt
 		gtk_window_present(m_window);
 	}
 
-	check_scrollbar_needed();
-
 	return false;
 }
 
@@ -1000,10 +996,13 @@ gboolean WhiskerMenu::Window::on_draw_event(GtkWidget* widget, cairo_t* cr)
 
 void WhiskerMenu::Window::check_scrollbar_needed()
 {
+	// Find height of sidebar buttons
 	int height = 0;
 	gtk_widget_get_preferred_height(GTK_WIDGET(m_sidebar_buttons), NULL, &height);
 
-	if (gtk_widget_get_allocated_height(GTK_WIDGET(m_sidebar)) > height)
+	// Always show scrollbar if sidebar is shorter than buttons
+	int allocated = gtk_widget_get_allocated_height(GTK_WIDGET(m_sidebar));
+	if ((allocated > height) || (allocated == 1))
 	{
 		gtk_scrolled_window_set_policy(m_sidebar, GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
 	}
