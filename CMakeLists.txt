@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.9)
 
 project(whiskermenu)
 
@@ -23,6 +23,7 @@ endif()
 option(ENABLE_VISIBILITY "Enable ELF visibility attributes" ON)
 option(ENABLE_AS_NEEDED "Enable -Wl,--as-needed for the linker" ON)
 option(ENABLE_LINKER_OPTIMIZED_HASH_TABLES "Enable -Wl,-O1 for the linker" ON)
+option(ENABLE_LINK_TIME_OPTIMIZATION "Enable link time optimization" ON)
 option(ENABLE_DEVELOPER_MODE "Enable strict checks to help with development" OFF)
 
 include(GNUInstallDirs)

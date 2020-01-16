@@ -81,6 +81,9 @@ More CMake Options
 -DENABLE_LINKER_OPTIMIZED_HASH_TABLES=[ON]
     Pass -Wl,-O1 to the linker to optimize hash tables in plugin.
 
+-DENABLE_LINK_TIME_OPTIMIZATION=[ON]
+    Reduce size by optimizing entire plugin at link time.
+
 -DENABLE_DEVELOPER_MODE=[OFF]
     Enable strict checks which are not needed by users of the plugin
     but are useful for development.

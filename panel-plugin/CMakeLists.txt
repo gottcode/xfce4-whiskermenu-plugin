@@ -105,8 +105,16 @@ target_link_libraries(whiskermenu
 	${libxfce4util_LIBRARIES})
 
 string(TOLOWER "${CMAKE_BUILD_TYPE}" CMAKE_BUILD_TYPE_TOLOWER)
-if(CMAKE_BUILD_TYPE_TOLOWER MATCHES "release|minsizerel")
-	add_definitions(-DNDEBUG -DG_DISABLE_CAST_CHECKS -DG_DISABLE_ASSERT)
+if(CMAKE_BUILD_TYPE_TOLOWER MATCHES "release|minsizerel|relwithdebinfo")
+	if(ENABLE_LINK_TIME_OPTIMIZATION)
+		include(CheckIPOSupported)
+		check_ipo_supported(RESULT result)
+		if(result)
+			set_property(TARGET whiskermenu PROPERTY INTERPROCEDURAL_OPTIMIZATION TRUE)
+		endif()
+	endif()
+
+	add_definitions(-DG_DISABLE_CAST_CHECKS -DG_DISABLE_ASSERT)
 	add_custom_command(TARGET whiskermenu
 		POST_BUILD COMMAND ${CMAKE_STRIP} $<TARGET_FILE:whiskermenu>)
 endif()
