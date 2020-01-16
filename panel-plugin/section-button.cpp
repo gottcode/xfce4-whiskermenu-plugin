@@ -38,7 +38,7 @@ static gboolean on_enter_notify_event(GtkWidget*, GdkEventCrossing*, GtkToggleBu
 {
 	if (wm_settings->category_hover_activate && !gtk_toggle_button_get_active(button))
 	{
-		g_timeout_add(150, (GSourceFunc)hover_timeout, button);
+		g_timeout_add(150, reinterpret_cast<GSourceFunc>(hover_timeout), button);
 	}
 	return false;
 }
