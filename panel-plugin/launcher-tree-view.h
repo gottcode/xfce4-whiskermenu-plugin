@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2016, 2019 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2016, 2019, 2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -65,15 +65,12 @@ private:
 	void create_column();
 	gboolean on_key_press_event(GtkWidget*, GdkEvent* event);
 	gboolean on_key_release_event(GtkWidget*, GdkEvent* event);
-	gboolean on_button_press_event(GtkWidget*, GdkEvent* event);
 	void on_row_activated(GtkTreeView* tree_view, GtkTreePath* path, GtkTreeViewColumn* column);
-	gboolean test_row_toggle();
 
 private:
 	GtkTreeView* m_view;
 	GtkTreeViewColumn* m_column;
 	int m_icon_size;
-	bool m_row_activated;
 };
 
 }

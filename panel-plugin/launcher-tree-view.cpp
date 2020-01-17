@@ -39,8 +39,7 @@ static gboolean is_separator(GtkTreeModel* model, GtkTreeIter* iter, gpointer)
 //-----------------------------------------------------------------------------
 
 LauncherTreeView::LauncherTreeView() :
-	m_icon_size(0),
-	m_row_activated(false)
+	m_icon_size(0)
 {
 	// Create the view
 	m_view = GTK_TREE_VIEW(gtk_tree_view_new());
@@ -62,10 +61,7 @@ LauncherTreeView::LauncherTreeView() :
 	g_object_ref_sink(m_view);
 
 	// Handle drag-and-drop
-	g_signal_connect_slot(m_view, "button-press-event", &LauncherTreeView::on_button_press_event, this);
 	g_signal_connect_slot(m_view, "row-activated", &LauncherTreeView::on_row_activated, this);
-	g_signal_connect_slot<GtkTreeView*,GtkTreeIter*,GtkTreePath*>(m_view, "test-collapse-row", &LauncherTreeView::test_row_toggle, this);
-	g_signal_connect_slot<GtkTreeView*,GtkTreeIter*,GtkTreePath*>(m_view, "test-expand-row", &LauncherTreeView::test_row_toggle, this);
 }
 
 //-----------------------------------------------------------------------------
@@ -296,15 +292,6 @@ gboolean LauncherTreeView::on_key_release_event(GtkWidget*, GdkEvent* event)
 
 //-----------------------------------------------------------------------------
 
-gboolean LauncherTreeView::on_button_press_event(GtkWidget*, GdkEvent*)
-{
-	m_row_activated = false;
-
-	return false;
-}
-
-//-----------------------------------------------------------------------------
-
 void LauncherTreeView::on_row_activated(GtkTreeView* tree_view, GtkTreePath* path, GtkTreeViewColumn*)
 {
 	Element* element = NULL;
@@ -316,8 +303,6 @@ void LauncherTreeView::on_row_activated(GtkTreeView* tree_view, GtkTreePath* pat
 		return;
 	}
 
-	m_row_activated = true;
-
 	if (gtk_tree_view_row_expanded(tree_view, path))
 	{
 		gtk_tree_view_collapse_row(tree_view, path);
@@ -326,15 +311,6 @@ void LauncherTreeView::on_row_activated(GtkTreeView* tree_view, GtkTreePath* pat
 	{
 		gtk_tree_view_expand_row(tree_view, path, false);
 	}
-}
-
-//-----------------------------------------------------------------------------
-
-gboolean LauncherTreeView::test_row_toggle()
-{
-	bool allow = !m_row_activated;
-	m_row_activated = false;
-	return allow;
 }
 
 //-----------------------------------------------------------------------------
