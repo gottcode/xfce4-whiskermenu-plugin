@@ -1,3 +1,13 @@
+2.3.5
+=====
+- Fix saving unchanged plugin title. (bug #15403)
+- Fix sidebar scrollbar covering buttons. (bug #14730)
+- Fix categories remaining scrolled when hidden.
+- Fix incorrect alignment of commands next to search.
+- Fix incorrect fallback value for menu opacity.
+- Fix incorrect check when setting command.
+- Update documentation URL. (bug #16183)
+
 2.3.4
 =====
 - Fix building against xfce4-panel 4.15.0
