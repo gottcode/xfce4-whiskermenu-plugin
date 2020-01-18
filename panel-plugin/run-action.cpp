@@ -69,7 +69,7 @@ guint RunAction::search(const Query& query)
 	// Set item text
 	const gchar* direction = (gtk_widget_get_default_direction() != GTK_TEXT_DIR_RTL) ? "\342\200\216" : "\342\200\217";
 	gchar* display_name = g_strdup_printf(_("Run %s"), m_command_line.c_str());
-	if (wm_settings->launcher_show_description)
+	if (wm_settings->launcher_show_description && !wm_settings->view_as_icons)
 	{
 		set_text(g_markup_printf_escaped("%s<b>%s</b>\n", direction, display_name));
 	}

@@ -96,7 +96,7 @@ Settings::Settings() :
 	button_single_row(false),
 
 	launcher_show_name(true),
-	launcher_show_description(false),
+	launcher_show_description(true),
 	launcher_show_tooltip(true),
 	launcher_icon_size(IconSize::Normal),
 
@@ -242,7 +242,7 @@ void Settings::load(char* file)
 	category_show_name = xfce_rc_read_bool_entry(rc, "category-show-name", category_show_name) || (category_icon_size == -1);
 
 	load_hierarchy = xfce_rc_read_bool_entry(rc, "load-hierarchy", load_hierarchy);
-	view_as_icons = xfce_rc_read_bool_entry(rc, "view-as-icons", view_as_icons) && !launcher_show_description && !load_hierarchy;
+	view_as_icons = xfce_rc_read_bool_entry(rc, "view-as-icons", view_as_icons) && !load_hierarchy;
 
 	recent_items_max = std::max(0, xfce_rc_read_int_entry(rc, "recent-items-max", recent_items_max));
 	favorites_in_recent = xfce_rc_read_bool_entry(rc, "favorites-in-recent", favorites_in_recent);

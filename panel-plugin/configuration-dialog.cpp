@@ -231,12 +231,6 @@ void ConfigurationDialog::toggle_show_description(GtkToggleButton* button)
 	wm_settings->launcher_show_description = gtk_toggle_button_get_active(button);
 	wm_settings->set_modified();
 	m_plugin->reload();
-
-	const bool active = wm_settings->launcher_show_description;
-	if (active)
-	{
-		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_as_icons), false);
-	}
 }
 
 //-----------------------------------------------------------------------------
@@ -268,13 +262,13 @@ void ConfigurationDialog::toggle_show_as_icons(GtkToggleButton *button)
 {
 	wm_settings->view_as_icons = gtk_toggle_button_get_active(button);
 	wm_settings->set_modified();
+	m_plugin->reload();
 
 	const bool active = wm_settings->view_as_icons;
 	gtk_widget_set_sensitive(GTK_WIDGET(m_show_descriptions), !active);
 	gtk_widget_set_sensitive(GTK_WIDGET(m_show_hierarchy), !active);
 	if (active)
 	{
-		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_descriptions), false);
 		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_hierarchy), false);
 	}
 }

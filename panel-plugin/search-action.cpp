@@ -73,9 +73,10 @@ guint SearchAction::search(const Query& query)
 	const gchar* haystack = query.raw_query().c_str();
 	guint found = !m_is_regex ? match_prefix(haystack) : match_regex(haystack);
 
-	if ((found != G_MAXUINT) && (m_show_description != wm_settings->launcher_show_description))
+	const bool show_description = wm_settings->launcher_show_description && !wm_settings->view_as_icons;
+	if ((found != G_MAXUINT) && (m_show_description != show_description))
 	{
-		m_show_description = wm_settings->launcher_show_description;
+		m_show_description = show_description;
 		update_text();
 	}
 
@@ -202,7 +203,7 @@ void SearchAction::set_name(const gchar* name)
 	m_name = name;
 	wm_settings->set_modified();
 
-	m_show_description = wm_settings->launcher_show_description;
+	m_show_description = wm_settings->launcher_show_description && !wm_settings->view_as_icons;
 	update_text();
 }
 
