@@ -102,6 +102,7 @@ private:
 	void show_default_page();
 	void search();
 	void unset_pressed_category();
+	void update_layout();
 
 private:
 	Plugin* m_plugin;
@@ -148,6 +149,7 @@ private:
 	GdkRectangle m_geometry;
 	bool m_layout_left;
 	bool m_layout_bottom;
+	bool m_layout_categories_alternate;
 	bool m_layout_search_alternate;
 	bool m_layout_commands_alternate;
 	bool m_supports_alpha;
