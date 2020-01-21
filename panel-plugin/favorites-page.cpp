@@ -203,7 +203,7 @@ void FavoritesPage::on_row_inserted(GtkTreeModel* model, GtkTreePath* path, GtkT
 		wm_settings->favorites.push_back(desktop_id);
 		wm_settings->set_modified();
 	}
-	else if (wm_settings->favorites.at(pos) != desktop_id)
+	else if (wm_settings->favorites[pos] != desktop_id)
 	{
 		wm_settings->favorites.insert(wm_settings->favorites.begin() + pos, desktop_id);
 		wm_settings->set_modified();

@@ -180,7 +180,7 @@ void Category::insert_items(GtkTreeStore* model, GtkTreeIter* parent)
 {
 	for (std::vector<Element*>::size_type i = 0, end = m_items.size(); i < end; ++i)
 	{
-		Element* element = m_items.at(i);
+		Element* element = m_items[i];
 		if (Category* category = dynamic_cast<Category*>(element))
 		{
 			if (category->empty())
@@ -231,7 +231,7 @@ void Category::insert_items(GtkListStore* model)
 {
 	for (std::vector<Element*>::size_type i = 0, end = m_items.size(); i < end; ++i)
 	{
-		Element* element = m_items.at(i);
+		Element* element = m_items[i];
 		if (Launcher* launcher = dynamic_cast<Launcher*>(element))
 		{
 			gtk_list_store_insert_with_values(model,
@@ -279,7 +279,7 @@ void Category::merge()
 	std::vector<Element*>::size_type count = m_items.size();
 	for (std::vector<Category*>::size_type i = 0; i < categories.size(); ++i)
 	{
-		Category* category = categories.at(i);
+		Category* category = categories[i];
 		count += category->m_items.size();
 
 		for (std::vector<Element*>::const_iterator j = category->m_items.begin(), end = category->m_items.end(); j != end; ++j)
@@ -310,7 +310,7 @@ void Category::merge()
 	// Delete direct subcategories; they will recursively delete their subcategories
 	for (std::vector<Category*>::size_type i = 0; i < last_direct; ++i)
 	{
-		delete categories.at(i);
+		delete categories[i];
 	}
 
 	m_has_subcategories = false;
