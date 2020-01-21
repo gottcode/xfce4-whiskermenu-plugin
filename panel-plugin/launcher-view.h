@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2016, 2019 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@ class LauncherView
 {
 public:
 	LauncherView() :
-		m_model(NULL)
+		m_model(nullptr)
 	{
 	}
 

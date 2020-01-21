@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -51,14 +51,14 @@ static bool panel_utils_grab_available()
 {
 	bool grab_succeed = false;
 
-	GdkWindow* root = gdk_screen_get_root_window(xfce_gdk_screen_get_active(NULL));
+	GdkWindow* root = gdk_screen_get_root_window(xfce_gdk_screen_get_active(nullptr));
 	GdkDisplay* display = gdk_display_get_default();
 	GdkSeat* seat = gdk_display_get_default_seat(display);
 
 	// Don't try to get the grab for longer then 1/4 second
 	for (guint i = 0; i < (G_USEC_PER_SEC / 400); ++i)
 	{
-		if (gdk_seat_grab(seat, root, GDK_SEAT_CAPABILITY_ALL, true, NULL, NULL, NULL, NULL))
+		if (gdk_seat_grab(seat, root, GDK_SEAT_CAPABILITY_ALL, true, nullptr, nullptr, nullptr, nullptr))
 		{
 			gdk_seat_ungrab(seat);
 			grab_succeed = true;
@@ -79,7 +79,7 @@ static bool panel_utils_grab_available()
 static void widget_add_css(GtkWidget* widget, const gchar* css)
 {
 	GtkCssProvider* provider = gtk_css_provider_new();
-	gtk_css_provider_load_from_data(provider, css, -1, NULL);
+	gtk_css_provider_load_from_data(provider, css, -1, nullptr);
 	gtk_style_context_add_provider(gtk_widget_get_style_context(widget),
 			GTK_STYLE_PROVIDER(provider),
 			GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
@@ -91,7 +91,7 @@ static void widget_add_css(GtkWidget* widget, const gchar* css)
 
 Plugin::Plugin(XfcePanelPlugin* plugin) :
 	m_plugin(plugin),
-	m_window(NULL),
+	m_window(nullptr),
 	m_opacity(100),
 	m_file_icon(false)
 {
@@ -141,7 +141,7 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	}
 	gtk_widget_set_sensitive(GTK_WIDGET(m_button_icon), false);
 
-	m_button_label = GTK_LABEL(gtk_label_new(NULL));
+	m_button_label = GTK_LABEL(gtk_label_new(nullptr));
 	gtk_label_set_markup(m_button_label, wm_settings->button_title.c_str());
 	gtk_box_pack_start(m_button_box, GTK_WIDGET(m_button_label), true, true, 0);
 	if (wm_settings->button_title_visible)
@@ -184,12 +184,12 @@ Plugin::~Plugin()
 	save();
 
 	delete m_window;
-	m_window = NULL;
+	m_window = nullptr;
 
 	gtk_widget_destroy(m_button);
 
 	delete wm_settings;
-	wm_settings = NULL;
+	wm_settings = nullptr;
 }
 
 //-----------------------------------------------------------------------------
@@ -401,10 +401,10 @@ void Plugin::show_about()
 {
 	const gchar* authors[] = {
 		"Graeme Gott <graeme@gottcode.org>",
-		NULL };
+		nullptr };
 
 	gtk_show_about_dialog
-		(NULL,
+		(nullptr,
 		"authors", authors,
 		"comments", _("Alternate application launcher for Xfce"),
 		"copyright", _("Copyright \302\251 2013-2020 Graeme Gott"),
@@ -414,7 +414,7 @@ void Plugin::show_about()
 		"translator-credits", _("translator-credits"),
 		"version", PACKAGE_VERSION,
 		"website", PLUGIN_WEBSITE,
-		NULL);
+		nullptr);
 }
 
 //-----------------------------------------------------------------------------
@@ -465,11 +465,11 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 			max_height *= 6;
 		}
 
-		GdkPixbuf* pixbuf = gdk_pixbuf_new_from_file_at_size(wm_settings->button_icon_name.c_str(), max_width, max_height, NULL);
+		GdkPixbuf* pixbuf = gdk_pixbuf_new_from_file_at_size(wm_settings->button_icon_name.c_str(), max_width, max_height, nullptr);
 		if (pixbuf)
 		{
 			// Handle high dpi
-			cairo_surface_t* surface = gdk_cairo_surface_create_from_pixbuf(pixbuf, scale, NULL);
+			cairo_surface_t* surface = gdk_cairo_surface_create_from_pixbuf(pixbuf, scale, nullptr);
 			gtk_image_set_from_surface(m_button_icon, surface);
 			cairo_surface_destroy(surface);
 			g_object_unref(pixbuf);
@@ -491,7 +491,7 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 
 		// Put title next to icon if panel is wide enough
 		GtkRequisition label_size;
-		gtk_widget_get_preferred_size(GTK_WIDGET(m_button_label), NULL, &label_size);
+		gtk_widget_get_preferred_size(GTK_WIDGET(m_button_label), nullptr, &label_size);
 		if (mode == XFCE_PANEL_PLUGIN_MODE_DESKBAR &&
 				wm_settings->button_title_visible &&
 				wm_settings->button_icon_visible &&

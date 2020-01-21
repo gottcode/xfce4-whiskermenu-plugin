@@ -48,8 +48,8 @@ enum
 
 ApplicationsPage::ApplicationsPage(Window* window) :
 	Page(window),
-	m_garcon_menu(NULL),
-	m_garcon_settings_menu(NULL),
+	m_garcon_menu(nullptr),
+	m_garcon_settings_menu(nullptr),
 	m_load_status(STATUS_INVALID)
 {
 	// Set desktop environment for applications
@@ -60,7 +60,7 @@ ApplicationsPage::ApplicationsPage(Window* window) :
 	}
 	else if (*desktop == '\0')
 	{
-		desktop = NULL;
+		desktop = nullptr;
 	}
 	garcon_set_environment(desktop);
 }
@@ -96,7 +96,7 @@ GtkTreeModel* ApplicationsPage::create_launcher_model(std::vector<std::string>& 
 		if (launcher)
 		{
 			gtk_list_store_insert_with_values(
-					store, NULL, G_MAXINT,
+					store, nullptr, G_MAXINT,
 					LauncherView::COLUMN_ICON, launcher->get_icon(),
 					LauncherView::COLUMN_TEXT, launcher->get_text(),
 					LauncherView::COLUMN_TOOLTIP, launcher->get_tooltip(),
@@ -119,7 +119,7 @@ GtkTreeModel* ApplicationsPage::create_launcher_model(std::vector<std::string>& 
 Launcher* ApplicationsPage::get_application(const std::string& desktop_id) const
 {
 	std::map<std::string, Launcher*>::const_iterator i = m_items.find(desktop_id);
-	return (i != m_items.end()) ? i->second : NULL;
+	return (i != m_items.end()) ? i->second : nullptr;
 }
 
 //-----------------------------------------------------------------------------
@@ -133,7 +133,7 @@ void ApplicationsPage::apply_filter(GtkToggleButton* togglebutton)
 	}
 
 	// Find category matching button
-	Category* category = NULL;
+	Category* category = nullptr;
 	for (auto test_category : m_categories)
 	{
 		if (GTK_TOGGLE_BUTTON(test_category->get_button()->get_widget()) == togglebutton)
@@ -187,8 +187,8 @@ bool ApplicationsPage::load_applications()
 	clear_applications();
 
 	// Load contents in thread if possible
-	GTask* task = g_task_new(NULL, NULL, &ApplicationsPage::load_contents_slot, this);
-	g_task_set_task_data(task, this, NULL);
+	GTask* task = g_task_new(nullptr, nullptr, &ApplicationsPage::load_contents_slot, this);
+	g_task_set_task_data(task, this, nullptr);
 	g_task_run_in_thread(task, &ApplicationsPage::load_garcon_menu_slot);
 	g_object_unref(task);
 
@@ -230,14 +230,14 @@ void ApplicationsPage::clear_applications()
 	if (G_LIKELY(m_garcon_menu))
 	{
 		g_object_unref(m_garcon_menu);
-		m_garcon_menu = NULL;
+		m_garcon_menu = nullptr;
 	}
 
 	// Free settings menu
 	if (G_LIKELY(m_garcon_settings_menu))
 	{
 		g_object_unref(m_garcon_settings_menu);
-		m_garcon_settings_menu = NULL;
+		m_garcon_settings_menu = nullptr;
 	}
 }
 
@@ -256,10 +256,10 @@ void ApplicationsPage::load_garcon_menu()
 	}
 
 	// Load menu
-	if (m_garcon_menu && !garcon_menu_load(m_garcon_menu, NULL, NULL))
+	if (m_garcon_menu && !garcon_menu_load(m_garcon_menu, nullptr, nullptr))
 	{
 		g_object_unref(m_garcon_menu);
-		m_garcon_menu = NULL;
+		m_garcon_menu = nullptr;
 	}
 
 	if (!m_garcon_menu)
@@ -268,11 +268,11 @@ void ApplicationsPage::load_garcon_menu()
 	}
 
 	g_signal_connect_slot<GarconMenu*>(m_garcon_menu, "reload-required", &ApplicationsPage::invalidate_applications, this);
-	load_menu(m_garcon_menu, NULL);
+	load_menu(m_garcon_menu, nullptr);
 
 	// Create settings menu
 	gchar* path = xfce_resource_lookup(XFCE_RESOURCE_CONFIG, "menus/xfce-settings-manager.menu");
-	m_garcon_settings_menu = garcon_menu_new_for_path(path != NULL ? path : SETTINGS_MENUFILE);
+	m_garcon_settings_menu = garcon_menu_new_for_path(path ? path : SETTINGS_MENUFILE);
 	g_free(path);
 
 	if (m_garcon_settings_menu)
@@ -281,9 +281,9 @@ void ApplicationsPage::load_garcon_menu()
 	}
 
 	// Load settings menu
-	if (m_garcon_settings_menu && garcon_menu_load(m_garcon_settings_menu, NULL, NULL))
+	if (m_garcon_settings_menu && garcon_menu_load(m_garcon_settings_menu, nullptr, nullptr))
 	{
-		load_menu(m_garcon_settings_menu, NULL);
+		load_menu(m_garcon_settings_menu, nullptr);
 	}
 
 	// Sort items and categories
@@ -297,7 +297,7 @@ void ApplicationsPage::load_garcon_menu()
 	}
 
 	// Create all items category
-	Category* category = new Category(NULL);
+	Category* category = new Category(nullptr);
 	for (const auto& i : m_items)
 	{
 		category->append_item(i.second);
@@ -356,7 +356,7 @@ void ApplicationsPage::load_menu(GarconMenu* menu, Category* parent_category)
 
 	// Track categories
 	bool first_level = directory && (garcon_menu_get_parent(menu) == m_garcon_menu);
-	Category* category = NULL;
+	Category* category = nullptr;
 	if (directory)
 	{
 		if (first_level)
@@ -376,7 +376,7 @@ void ApplicationsPage::load_menu(GarconMenu* menu, Category* parent_category)
 
 	// Add menu elements
 	GList* elements = garcon_menu_get_elements(menu);
-	for (GList* li = elements; li != NULL; li = li->next)
+	for (GList* li = elements; li; li = li->next)
 	{
 		if (GARCON_IS_MENU_ITEM(li->data))
 		{
@@ -398,7 +398,7 @@ void ApplicationsPage::load_menu(GarconMenu* menu, Category* parent_category)
 	{
 		m_categories.erase(std::find(m_categories.begin(), m_categories.end(), category));
 		delete category;
-		category = NULL;
+		category = nullptr;
 	}
 
 	// Listen for menu changes

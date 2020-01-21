@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2016, 2018, 2019, 2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -49,7 +49,7 @@ LauncherTreeView::LauncherTreeView() :
 	gtk_tree_view_set_hover_selection(m_view, true);
 	gtk_tree_view_set_enable_search(m_view, false);
 	gtk_tree_view_set_fixed_height_mode(m_view, true);
-	gtk_tree_view_set_row_separator_func(m_view, &is_separator, NULL, NULL);
+	gtk_tree_view_set_row_separator_func(m_view, &is_separator, nullptr, nullptr);
 	create_column();
 	g_signal_connect_slot(m_view, "key-press-event", &LauncherTreeView::on_key_press_event, this);
 	g_signal_connect_slot(m_view, "key-release-event", &LauncherTreeView::on_key_release_event, this);
@@ -76,8 +76,8 @@ LauncherTreeView::~LauncherTreeView()
 
 GtkTreePath* LauncherTreeView::get_cursor() const
 {
-	GtkTreePath* path = NULL;
-	gtk_tree_view_get_cursor(m_view, &path, NULL);
+	GtkTreePath* path = nullptr;
+	gtk_tree_view_get_cursor(m_view, &path, nullptr);
 	return path;
 }
 
@@ -85,8 +85,8 @@ GtkTreePath* LauncherTreeView::get_cursor() const
 
 GtkTreePath* LauncherTreeView::get_path_at_pos(int x, int y) const
 {
-	GtkTreePath* path = NULL;
-	gtk_tree_view_get_path_at_pos(m_view, x, y, &path, NULL, NULL, NULL);
+	GtkTreePath* path = nullptr;
+	gtk_tree_view_get_path_at_pos(m_view, x, y, &path, nullptr, nullptr, nullptr);
 	return path;
 }
 
@@ -94,10 +94,10 @@ GtkTreePath* LauncherTreeView::get_path_at_pos(int x, int y) const
 
 GtkTreePath* LauncherTreeView::get_selected_path() const
 {
-	GtkTreePath* path = NULL;
+	GtkTreePath* path = nullptr;
 	GtkTreeSelection* selection = gtk_tree_view_get_selection(m_view);
 	GtkTreeIter iter;
-	if (gtk_tree_selection_get_selected(selection, NULL, &iter))
+	if (gtk_tree_selection_get_selected(selection, nullptr, &iter))
 	{
 		path = gtk_tree_model_get_path(m_model, &iter);
 	}
@@ -116,7 +116,7 @@ void LauncherTreeView::activate_path(GtkTreePath* path)
 
 void LauncherTreeView::scroll_to_path(GtkTreePath* path)
 {
-	gtk_tree_view_scroll_to_cell(m_view, path, NULL, true, 0.5f, 0.5f);
+	gtk_tree_view_scroll_to_cell(m_view, path, nullptr, true, 0.5f, 0.5f);
 }
 
 //-----------------------------------------------------------------------------
@@ -134,7 +134,7 @@ void LauncherTreeView::set_cursor(GtkTreePath* path)
 	GtkTreeSelection* selection = gtk_tree_view_get_selection(m_view);
 	GtkSelectionMode mode = gtk_tree_selection_get_mode(selection);
 	gtk_tree_selection_set_mode(selection, GTK_SELECTION_NONE);
-	gtk_tree_view_set_cursor(m_view, path, NULL, false);
+	gtk_tree_view_set_cursor(m_view, path, nullptr, false);
 	gtk_tree_selection_set_mode(selection, mode);
 }
 
@@ -194,8 +194,8 @@ void LauncherTreeView::set_model(GtkTreeModel* model)
 
 void LauncherTreeView::unset_model()
 {
-	m_model = NULL;
-	gtk_tree_view_set_model(m_view, NULL);
+	m_model = nullptr;
+	gtk_tree_view_set_model(m_view, nullptr);
 }
 
 //-----------------------------------------------------------------------------
@@ -251,13 +251,13 @@ void LauncherTreeView::create_column()
 	if (m_icon_size > 1)
 	{
 		GtkCellRenderer* icon_renderer = whiskermenu_icon_renderer_new();
-		g_object_set(icon_renderer, "size", m_icon_size, NULL);
+		g_object_set(icon_renderer, "size", m_icon_size, nullptr);
 		gtk_tree_view_column_pack_start(m_column, icon_renderer, false);
-		gtk_tree_view_column_set_attributes(m_column, icon_renderer, "gicon", COLUMN_ICON, "launcher", COLUMN_LAUNCHER, NULL);
+		gtk_tree_view_column_set_attributes(m_column, icon_renderer, "gicon", COLUMN_ICON, "launcher", COLUMN_LAUNCHER, nullptr);
 	}
 
 	GtkCellRenderer* text_renderer = gtk_cell_renderer_text_new();
-	g_object_set(text_renderer, "ellipsize", PANGO_ELLIPSIZE_END, NULL);
+	g_object_set(text_renderer, "ellipsize", PANGO_ELLIPSIZE_END, nullptr);
 	gtk_tree_view_column_pack_start(m_column, text_renderer, true);
 	gtk_tree_view_column_add_attribute(m_column, text_renderer, "markup", COLUMN_TEXT);
 
@@ -294,7 +294,7 @@ gboolean LauncherTreeView::on_key_release_event(GtkWidget*, GdkEvent* event)
 
 void LauncherTreeView::on_row_activated(GtkTreeView* tree_view, GtkTreePath* path, GtkTreeViewColumn*)
 {
-	Element* element = NULL;
+	Element* element = nullptr;
 	GtkTreeIter iter;
 	gtk_tree_model_get_iter(m_model, &iter, path);
 	gtk_tree_model_get(m_model, &iter, COLUMN_LAUNCHER, &element, -1);

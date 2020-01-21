@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2017-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@ void Element::set_icon(const gchar* icon)
 	if (m_icon)
 	{
 		g_object_unref(m_icon);
-		m_icon = NULL;
+		m_icon = nullptr;
 	}
 
 	if (G_UNLIKELY(!icon))

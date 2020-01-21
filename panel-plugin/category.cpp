@@ -30,14 +30,14 @@ using namespace WhiskerMenu;
 //-----------------------------------------------------------------------------
 
 Category::Category(GarconMenuDirectory* directory) :
-	m_button(NULL),
-	m_model(NULL),
+	m_button(nullptr),
+	m_model(nullptr),
 	m_has_separators(false),
 	m_has_subcategories(false)
 {
-	const gchar* icon = NULL;
-	const gchar* text = NULL;
-	const gchar* tooltip = NULL;
+	const gchar* icon = nullptr;
+	const gchar* text = nullptr;
+	const gchar* tooltip = nullptr;
 	if (directory)
 	{
 		icon = garcon_menu_directory_get_icon_name(directory);
@@ -96,7 +96,7 @@ GtkTreeModel* Category::get_model()
 					G_TYPE_STRING,
 					G_TYPE_STRING,
 					G_TYPE_POINTER);
-			insert_items(model, NULL);
+			insert_items(model, nullptr);
 			m_model = GTK_TREE_MODEL(model);
 		}
 		else
@@ -149,7 +149,7 @@ void Category::append_separator()
 	if (!m_items.empty() && m_items.back())
 	{
 		unset_model();
-		m_items.push_back(NULL);
+		m_items.push_back(nullptr);
 		m_has_separators = true;
 	}
 }
@@ -189,7 +189,7 @@ void Category::insert_items(GtkTreeStore* model, GtkTreeIter* parent)
 					LauncherView::COLUMN_ICON, category->get_icon(),
 					LauncherView::COLUMN_TEXT, text,
 					LauncherView::COLUMN_TOOLTIP, tooltip,
-					LauncherView::COLUMN_LAUNCHER, NULL,
+					LauncherView::COLUMN_LAUNCHER, nullptr,
 					-1);
 			g_free(text);
 			category->insert_items(model, &iter);
@@ -197,7 +197,7 @@ void Category::insert_items(GtkTreeStore* model, GtkTreeIter* parent)
 		else if (Launcher* launcher = dynamic_cast<Launcher*>(element))
 		{
 			gtk_tree_store_insert_with_values(model,
-					NULL, parent, INT_MAX,
+					nullptr, parent, INT_MAX,
 					LauncherView::COLUMN_ICON, launcher->get_icon(),
 					LauncherView::COLUMN_TEXT, launcher->get_text(),
 					LauncherView::COLUMN_TOOLTIP, launcher->get_tooltip(),
@@ -207,11 +207,11 @@ void Category::insert_items(GtkTreeStore* model, GtkTreeIter* parent)
 		else
 		{
 			gtk_tree_store_insert_with_values(model,
-					NULL, parent, INT_MAX,
-					LauncherView::COLUMN_ICON, NULL,
-					LauncherView::COLUMN_TEXT, NULL,
-					LauncherView::COLUMN_TOOLTIP, NULL,
-					LauncherView::COLUMN_LAUNCHER, NULL,
+					nullptr, parent, INT_MAX,
+					LauncherView::COLUMN_ICON, nullptr,
+					LauncherView::COLUMN_TEXT, nullptr,
+					LauncherView::COLUMN_TOOLTIP, nullptr,
+					LauncherView::COLUMN_LAUNCHER, nullptr,
 					-1);
 		}
 	}
@@ -231,7 +231,7 @@ void Category::insert_items(GtkListStore* model)
 		if (Launcher* launcher = dynamic_cast<Launcher*>(element))
 		{
 			gtk_list_store_insert_with_values(model,
-					NULL, INT_MAX,
+					nullptr, INT_MAX,
 					LauncherView::COLUMN_ICON, launcher->get_icon(),
 					LauncherView::COLUMN_TEXT, launcher->get_text(),
 					LauncherView::COLUMN_TOOLTIP, launcher->get_tooltip(),
@@ -241,11 +241,11 @@ void Category::insert_items(GtkListStore* model)
 		else
 		{
 			gtk_list_store_insert_with_values(model,
-					NULL, INT_MAX,
-					LauncherView::COLUMN_ICON, NULL,
-					LauncherView::COLUMN_TEXT, NULL,
-					LauncherView::COLUMN_TOOLTIP, NULL,
-					LauncherView::COLUMN_LAUNCHER, NULL,
+					nullptr, INT_MAX,
+					LauncherView::COLUMN_ICON, nullptr,
+					LauncherView::COLUMN_TEXT, nullptr,
+					LauncherView::COLUMN_TOOLTIP, nullptr,
+					LauncherView::COLUMN_LAUNCHER, nullptr,
 					-1);
 		}
 	}
@@ -258,7 +258,7 @@ void Category::unset_model()
 	if (m_model)
 	{
 		g_object_unref(m_model);
-		m_model = NULL;
+		m_model = nullptr;
 	}
 }
 

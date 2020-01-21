@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015, 2016 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -35,10 +35,10 @@ RunAction::RunAction()
 
 void RunAction::run(GdkScreen* screen) const
 {
-	GError* error = NULL;
+	GError* error = nullptr;
 	if (!xfce_spawn_command_line_on_screen(screen, m_command_line.c_str(), false, false, &error))
 	{
-		xfce_dialog_show_error(NULL, error, _("Failed to execute command \"%s\"."), m_command_line.c_str());
+		xfce_dialog_show_error(nullptr, error, _("Failed to execute command \"%s\"."), m_command_line.c_str());
 		g_error_free(error);
 	}
 }
@@ -51,10 +51,10 @@ guint RunAction::search(const Query& query)
 	bool valid = false;
 
 	gchar** argv;
-	if (g_shell_parse_argv(query.raw_query().c_str(), NULL, &argv, NULL))
+	if (g_shell_parse_argv(query.raw_query().c_str(), nullptr, &argv, nullptr))
 	{
 		gchar* path = g_find_program_in_path(argv[0]);
-		valid = path != NULL;
+		valid = path;
 		g_free(path);
 		g_strfreev(argv);
 	}

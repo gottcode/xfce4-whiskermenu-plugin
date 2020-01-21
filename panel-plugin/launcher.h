@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015, 2016, 2019, 2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -61,17 +61,17 @@ private:
 public:
 	const gchar* get_name() const
 	{
-		return NULL;
+		return nullptr;
 	}
 
 	const gchar* get_icon() const
 	{
-		return NULL;
+		return nullptr;
 	}
 
 	const gchar* get_command() const
 	{
-		return NULL;
+		return nullptr;
 	}
 
 #endif

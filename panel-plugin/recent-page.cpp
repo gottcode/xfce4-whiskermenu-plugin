@@ -76,8 +76,8 @@ void RecentPage::add(Launcher* launcher)
 		{
 			GtkTreeModel* model = get_view()->get_model();
 			GtkTreeIter iter;
-			gtk_tree_model_iter_nth_child(model, &iter, NULL, std::distance(wm_settings->recent.begin(), i));
-			gtk_list_store_move_after(GTK_LIST_STORE(model), &iter, NULL);
+			gtk_tree_model_iter_nth_child(model, &iter, nullptr, std::distance(wm_settings->recent.begin(), i));
+			gtk_list_store_move_after(GTK_LIST_STORE(model), &iter, nullptr);
 			wm_settings->recent.erase(i);
 			wm_settings->recent.insert(wm_settings->recent.begin(), desktop_id);
 			wm_settings->set_modified();
@@ -88,7 +88,7 @@ void RecentPage::add(Launcher* launcher)
 	// Prepend to list of items
 	GtkListStore* store = GTK_LIST_STORE(get_view()->get_model());
 	gtk_list_store_insert_with_values(
-			store, NULL, 0,
+			store, nullptr, 0,
 			LauncherView::COLUMN_ICON, launcher->get_icon(),
 			LauncherView::COLUMN_TEXT, launcher->get_text(),
 			LauncherView::COLUMN_TOOLTIP, launcher->get_tooltip(),
@@ -120,7 +120,7 @@ void RecentPage::enforce_item_count()
 		}
 
 		GtkTreeIter iter;
-		if (gtk_tree_model_iter_nth_child(GTK_TREE_MODEL(store), &iter, NULL, i))
+		if (gtk_tree_model_iter_nth_child(GTK_TREE_MODEL(store), &iter, nullptr, i))
 		{
 			gtk_list_store_remove(store, &iter);
 		}

@@ -61,12 +61,12 @@ static GtkWidget* make_aligned_frame(const gchar* text, GtkWidget* content)
 {
 	// Create bold label
 	gchar* markup = g_markup_printf_escaped("<b>%s</b>", text);
-	GtkWidget* label = gtk_label_new(NULL);
+	GtkWidget* label = gtk_label_new(nullptr);
 	gtk_label_set_markup(GTK_LABEL(label), markup);
 	g_free(markup);
 
 	// Create frame
-	GtkWidget* frame = gtk_frame_new(NULL);
+	GtkWidget* frame = gtk_frame_new(nullptr);
 	gtk_frame_set_label_widget(GTK_FRAME(frame), label);
 	gtk_frame_set_shadow_type(GTK_FRAME(frame), GTK_SHADOW_NONE);
 
@@ -84,7 +84,7 @@ ConfigurationDialog::ConfigurationDialog(Plugin* plugin) :
 	m_plugin(plugin)
 {
 	// Create dialog window
-	GtkWindow* window = NULL;
+	GtkWindow* window = nullptr;
 	GtkWidget* toplevel = gtk_widget_get_toplevel(m_plugin->get_button());
 	if (gtk_widget_is_toplevel(toplevel))
 	{
@@ -96,14 +96,14 @@ ConfigurationDialog::ConfigurationDialog(Plugin* plugin) :
 			GtkDialogFlags(0),
 			"help-browser", _("_Help"), GTK_RESPONSE_HELP,
 			"window-close", _("_Close"), GTK_RESPONSE_CLOSE,
-			NULL);
+			nullptr);
 #else
 	m_window = xfce_titled_dialog_new_with_buttons(_("Whisker Menu"),
 			window,
 			GtkDialogFlags(0),
 			_("_Help"), GTK_RESPONSE_HELP,
 			_("_Close"), GTK_RESPONSE_CLOSE,
-			NULL);
+			nullptr);
 #endif
 	gtk_window_set_icon_name(GTK_WINDOW(m_window), "xfce4-whiskermenu");
 	gtk_window_set_position(GTK_WINDOW(m_window), GTK_WIN_POS_CENTER);
@@ -303,7 +303,7 @@ void ConfigurationDialog::choose_icon()
 			GTK_WINDOW(m_window),
 			_("_Cancel"), GTK_RESPONSE_CANCEL,
 			_("_OK"), GTK_RESPONSE_ACCEPT,
-			NULL);
+			nullptr);
 
 	gtk_dialog_set_default_response(GTK_DIALOG(chooser), GTK_RESPONSE_ACCEPT);
 	exo_icon_chooser_dialog_set_icon(EXO_ICON_CHOOSER_DIALOG(chooser), m_plugin->get_button_icon_name().c_str());
@@ -391,9 +391,9 @@ SearchAction* ConfigurationDialog::get_selected_action(GtkTreeIter* iter) const
 		iter = &selected_iter;
 	}
 
-	SearchAction* action = NULL;
+	SearchAction* action = nullptr;
 	GtkTreeSelection* selection = gtk_tree_view_get_selection(m_actions_view);
-	GtkTreeModel* model = NULL;
+	GtkTreeModel* model = nullptr;
 	if (gtk_tree_selection_get_selected(selection, &model, iter))
 	{
 		gtk_tree_model_get(model, iter, COLUMN_ACTION, &action, -1);
@@ -482,7 +482,7 @@ void ConfigurationDialog::add_action(GtkButton*)
 			COLUMN_ACTION, action,
 			-1);
 	GtkTreePath* path = gtk_tree_model_get_path(GTK_TREE_MODEL(m_actions_model), &iter);
-	gtk_tree_view_set_cursor(m_actions_view, path, NULL, false);
+	gtk_tree_view_set_cursor(m_actions_view, path, nullptr, false);
 	gtk_tree_path_free(path);
 
 	// Make sure editing is allowed
@@ -520,7 +520,7 @@ void ConfigurationDialog::remove_action(GtkButton* button)
 	if (!gtk_tree_path_prev(path))
 	{
 		gtk_tree_path_free(path);
-		path = NULL;
+		path = nullptr;
 	}
 
 	// Remove from model
@@ -541,7 +541,7 @@ void ConfigurationDialog::remove_action(GtkButton* button)
 	// Select next action
 	if (path)
 	{
-		gtk_tree_view_set_cursor(m_actions_view, path, NULL, false);
+		gtk_tree_view_set_cursor(m_actions_view, path, nullptr, false);
 		gtk_tree_path_free(path);
 	}
 	else
@@ -565,7 +565,7 @@ void ConfigurationDialog::response(GtkDialog*, int response_id)
 {
 	if (response_id == GTK_RESPONSE_HELP)
 	{
-		bool result = g_spawn_command_line_async("exo-open --launch WebBrowser " PLUGIN_WEBSITE, NULL);
+		bool result = g_spawn_command_line_async("exo-open --launch WebBrowser " PLUGIN_WEBSITE, nullptr);
 
 		if (G_UNLIKELY(!result))
 		{
@@ -610,12 +610,12 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	gtk_grid_attach(page, GTK_WIDGET(display_box), 0, 0, 2, 1);
 
 	// Add option to show as icons
-	m_show_as_icons = gtk_radio_button_new_with_mnemonic(NULL, _("Show as _icons"));
+	m_show_as_icons = gtk_radio_button_new_with_mnemonic(nullptr, _("Show as _icons"));
 	{
 		gchar* icons[] = {
 			g_strdup("view-list-icons"),
 			g_strdup("view-grid"),
-			NULL
+			nullptr
 		};
 		GIcon* gicon = g_themed_icon_new_from_names(icons, -1);
 		gtk_button_set_image(GTK_BUTTON(m_show_as_icons), gtk_image_new_from_gicon(gicon, GTK_ICON_SIZE_DND));
@@ -633,7 +633,7 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 			g_strdup("view-list-compact"),
 			g_strdup("view-list-details"),
 			g_strdup("view-list"),
-			NULL
+			nullptr
 		};
 		GIcon* gicon = g_themed_icon_new_from_names(icons, -1);
 		gtk_button_set_image(GTK_BUTTON(m_show_as_list), gtk_image_new_from_gicon(gicon, GTK_ICON_SIZE_DND));
@@ -651,7 +651,7 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 			g_strdup("view-list-tree"),
 			g_strdup("view-list-details"),
 			g_strdup("pan-end"),
-			NULL
+			nullptr
 		};
 		GIcon* gicon = g_themed_icon_new_from_names(icons, -1);
 		gtk_button_set_image(GTK_BUTTON(m_show_as_tree), gtk_image_new_from_gicon(gicon, GTK_ICON_SIZE_DND));
@@ -968,7 +968,7 @@ GtkWidget* ConfigurationDialog::init_search_actions_tab()
 	for (auto action : wm_settings->search_actions)
 	{
 		gtk_list_store_insert_with_values(m_actions_model,
-				NULL, G_MAXINT,
+				nullptr, G_MAXINT,
 				COLUMN_NAME, action->get_name(),
 				COLUMN_PATTERN, action->get_pattern(),
 				COLUMN_ACTION, action,
@@ -981,18 +981,18 @@ GtkWidget* ConfigurationDialog::init_search_actions_tab()
 
 	GtkCellRenderer* renderer = gtk_cell_renderer_text_new();
 	GtkTreeViewColumn* column = gtk_tree_view_column_new_with_attributes(_("Name"),
-			renderer, "text", COLUMN_NAME, NULL);
+			renderer, "text", COLUMN_NAME, nullptr);
 	gtk_tree_view_append_column(m_actions_view, column);
 
 	renderer = gtk_cell_renderer_text_new();
 	column = gtk_tree_view_column_new_with_attributes(_("Pattern"),
-			renderer, "text", COLUMN_PATTERN, NULL);
+			renderer, "text", COLUMN_PATTERN, nullptr);
 	gtk_tree_view_append_column(m_actions_view, column);
 
 	GtkTreeSelection* selection = gtk_tree_view_get_selection(m_actions_view);
 	gtk_tree_selection_set_mode(selection, GTK_SELECTION_BROWSE);
 
-	GtkWidget* scrolled_window = gtk_scrolled_window_new(NULL, NULL);
+	GtkWidget* scrolled_window = gtk_scrolled_window_new(nullptr, nullptr);
 	gtk_scrolled_window_set_policy(GTK_SCROLLED_WINDOW(scrolled_window), GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
 	gtk_scrolled_window_set_shadow_type(GTK_SCROLLED_WINDOW(scrolled_window), GTK_SHADOW_ETCHED_IN);
 	gtk_container_add(GTK_CONTAINER(scrolled_window), GTK_WIDGET(m_actions_view));
@@ -1080,7 +1080,7 @@ GtkWidget* ConfigurationDialog::init_search_actions_tab()
 	if (!wm_settings->search_actions.empty())
 	{
 		GtkTreePath* path = gtk_tree_path_new_first();
-		gtk_tree_view_set_cursor(m_actions_view, path, NULL, false);
+		gtk_tree_view_set_cursor(m_actions_view, path, nullptr, false);
 		gtk_tree_path_free(path);
 	}
 	else

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2018, 2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@ namespace WhiskerMenu
 class Command
 {
 public:
-	Command(const gchar* icon, const gchar* text, const gchar* command, const gchar* error_text, const gchar* confirm_question = NULL, const gchar* confirm_status = NULL);
+	Command(const gchar* icon, const gchar* text, const gchar* command, const gchar* error_text, const gchar* confirm_question = nullptr, const gchar* confirm_status = nullptr);
 	~Command();
 
 	GtkWidget* get_button();

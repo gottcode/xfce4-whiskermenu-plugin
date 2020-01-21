@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014, 2016, 2017, 2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2014-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -47,13 +47,13 @@ ProfilePicture::ProfilePicture(Window* window) :
 	Command* command = wm_settings->command[Settings::CommandProfile];
 	gtk_widget_set_tooltip_text(m_container, command->get_tooltip());
 
-	gchar* path = g_build_filename(g_get_home_dir(), ".face", NULL);
+	gchar* path = g_build_filename(g_get_home_dir(), ".face", nullptr);
 	GFile* file = g_file_new_for_path(path);
 	g_free(path);
 
-	m_file_monitor = g_file_monitor_file(file, G_FILE_MONITOR_NONE, NULL, NULL);
+	m_file_monitor = g_file_monitor_file(file, G_FILE_MONITOR_NONE, nullptr, nullptr);
 	g_signal_connect_slot(m_file_monitor, "changed", &ProfilePicture::on_file_changed, this);
-	on_file_changed(m_file_monitor, file, NULL, G_FILE_MONITOR_EVENT_CHANGED);
+	on_file_changed(m_file_monitor, file, nullptr, G_FILE_MONITOR_EVENT_CHANGED);
 
 	g_object_unref(file);
 }
@@ -78,7 +78,7 @@ void ProfilePicture::reset_tooltip()
 
 void ProfilePicture::on_file_changed(GFileMonitor*, GFile* file, GFile*, GFileMonitorEvent)
 {
-	if (g_file_query_exists(file, NULL))
+	if (g_file_query_exists(file, nullptr))
 	{
 		GIcon* icon = g_file_icon_new(file);
 		gtk_image_set_from_gicon(GTK_IMAGE(m_image), icon, GTK_ICON_SIZE_DND);

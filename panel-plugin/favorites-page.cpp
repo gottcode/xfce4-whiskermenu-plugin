@@ -73,7 +73,7 @@ void FavoritesPage::add(Launcher* launcher)
 	// Append to list of items
 	GtkListStore* store = GTK_LIST_STORE(get_view()->get_model());
 	gtk_list_store_insert_with_values(
-			store, NULL, G_MAXINT,
+			store, nullptr, G_MAXINT,
 			LauncherView::COLUMN_ICON, launcher->get_icon(),
 			LauncherView::COLUMN_TEXT, launcher->get_text(),
 			LauncherView::COLUMN_TOOLTIP, launcher->get_tooltip(),
@@ -93,7 +93,7 @@ void FavoritesPage::remove(Launcher* launcher)
 	GtkTreeModel* model = GTK_TREE_MODEL(get_view()->get_model());
 	GtkListStore* store = GTK_LIST_STORE(model);
 	GtkTreeIter iter;
-	Launcher* test_launcher = NULL;
+	Launcher* test_launcher = nullptr;
 
 	bool valid = gtk_tree_model_get_iter_first(model, &iter);
 	while (valid)
@@ -170,7 +170,7 @@ void FavoritesPage::on_row_changed(GtkTreeModel* model, GtkTreePath* path, GtkTr
 		return;
 	}
 
-	Element* element = NULL;
+	Element* element = nullptr;
 	gtk_tree_model_get(model, iter, LauncherView::COLUMN_LAUNCHER, &element, -1);
 	if (Launcher* launcher = dynamic_cast<Launcher*>(element))
 	{
@@ -186,7 +186,7 @@ void FavoritesPage::on_row_inserted(GtkTreeModel* model, GtkTreePath* path, GtkT
 	size_t pos = gtk_tree_path_get_indices(path)[0];
 
 	std::string desktop_id;
-	Element* element = NULL;
+	Element* element = nullptr;
 	gtk_tree_model_get(model, iter, LauncherView::COLUMN_LAUNCHER, &element, -1);
 	if (Launcher* launcher = dynamic_cast<Launcher*>(element))
 	{

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2016, 2017, 2018, 2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -60,7 +60,7 @@ static gboolean on_focus_in_event(GtkWidget* widget, GdkEvent*, gpointer)
 
 SectionButton::SectionButton(GIcon* icon, const gchar* text)
 {
-	m_button = GTK_RADIO_BUTTON(gtk_radio_button_new(NULL));
+	m_button = GTK_RADIO_BUTTON(gtk_radio_button_new(nullptr));
 	gtk_toggle_button_set_mode(GTK_TOGGLE_BUTTON(m_button), false);
 	gtk_button_set_relief(GTK_BUTTON(m_button), GTK_RELIEF_NONE);
 	gtk_widget_set_tooltip_text(GTK_WIDGET(m_button), text);

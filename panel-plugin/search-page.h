@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015, 2019, 2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -51,7 +51,7 @@ private:
 	class Match
 	{
 	public:
-		Match(Element* element = NULL) :
+		Match(Element* element = nullptr) :
 			m_element(element),
 			m_relevancy(G_MAXINT)
 		{
@@ -74,7 +74,7 @@ private:
 
 		void update(const Query& query)
 		{
-			g_assert(m_element != NULL);
+			g_assert(m_element);
 			m_relevancy = m_element->search(query);
 		}
 

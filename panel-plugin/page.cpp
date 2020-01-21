@@ -37,7 +37,7 @@ using namespace WhiskerMenu;
 
 Page::Page(Window* window) :
 	m_window(window),
-	m_selected_launcher(NULL),
+	m_selected_launcher(nullptr),
 	m_drag_enabled(true),
 	m_launcher_dragged(false),
 	m_reorderable(false)
@@ -46,7 +46,7 @@ Page::Page(Window* window) :
 	create_view();
 
 	// Add scrolling to view
-	m_widget = gtk_scrolled_window_new(NULL, NULL);
+	m_widget = gtk_scrolled_window_new(nullptr, nullptr);
 	gtk_scrolled_window_set_policy(GTK_SCROLLED_WINDOW(m_widget), GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
 	gtk_scrolled_window_set_shadow_type(GTK_SCROLLED_WINDOW(m_widget), GTK_SHADOW_ETCHED_IN);
 	gtk_container_add(GTK_CONTAINER(m_widget), m_view->get_widget());
@@ -183,7 +183,7 @@ void Page::launcher_activated(GtkTreePath* path)
 	gtk_tree_model_get_iter(model, &iter, path);
 
 	// Find element
-	Element* element = NULL;
+	Element* element = nullptr;
 	gtk_tree_model_get(model, &iter, LauncherView::COLUMN_LAUNCHER, &element, -1);
 	if (!element)
 	{
@@ -210,7 +210,7 @@ void Page::launcher_activated(GtkTreePath* path)
 
 void Page::launcher_action_activated(GtkMenuItem* menuitem, DesktopAction* action)
 {
-	g_assert(m_selected_launcher != NULL);
+	g_assert(m_selected_launcher);
 
 	// Add to recent
 	if (remember_launcher(m_selected_launcher))
@@ -250,7 +250,7 @@ gboolean Page::view_button_press_event(GtkWidget*, GdkEvent* event)
 		return false;
 	}
 
-	Element* element = NULL;
+	Element* element = nullptr;
 	GtkTreeModel* model = m_view->get_model();
 	GtkTreeIter iter;
 	gtk_tree_model_get_iter(model, &iter, path);
@@ -299,8 +299,8 @@ void Page::view_drag_data_get(GtkWidget*, GdkDragContext*, GtkSelectionData* dat
 		return;
 	}
 
-	gchar* uris[2] = { m_selected_launcher->get_uri(), NULL };
-	if (uris[0] != NULL)
+	gchar* uris[2] = { m_selected_launcher->get_uri(), nullptr };
+	if (uris[0])
 	{
 		gtk_selection_data_set_uris(data, uris);
 		g_free(uris[0]);
@@ -330,7 +330,7 @@ gboolean Page::view_popup_menu_event(GtkWidget*)
 		return false;
 	}
 
-	create_context_menu(path, NULL);
+	create_context_menu(path, nullptr);
 
 	return true;
 }
@@ -340,7 +340,7 @@ gboolean Page::view_popup_menu_event(GtkWidget*)
 void Page::create_context_menu(GtkTreePath* path, GdkEvent* event)
 {
 	// Get selected launcher
-	Element* element = NULL;
+	Element* element = nullptr;
 	GtkTreeModel* model = m_view->get_model();
 	GtkTreeIter iter;
 	gtk_tree_model_get_iter(model, &iter, path);
@@ -414,7 +414,7 @@ void Page::create_context_menu(GtkTreePath* path, GdkEvent* event)
 	gtk_widget_show_all(menu);
 
 	// Show context menu
-	gtk_menu_attach_to_widget(GTK_MENU(menu), m_view->get_widget(), NULL);
+	gtk_menu_attach_to_widget(GTK_MENU(menu), m_view->get_widget(), nullptr);
 	gtk_menu_popup_at_pointer(GTK_MENU(menu), event);
 
 	// Keep selection
@@ -426,7 +426,7 @@ void Page::create_context_menu(GtkTreePath* path, GdkEvent* event)
 
 void Page::destroy_context_menu(GtkMenuShell* menu)
 {
-	m_selected_launcher = NULL;
+	m_selected_launcher = nullptr;
 
 	gtk_widget_destroy(GTK_WIDGET(menu));
 
@@ -448,7 +448,7 @@ void Page::add_selected_to_desktop()
 	GFile* desktop_folder = g_file_new_for_path(desktop_path);
 
 	// Fetch launcher source
-	g_assert(m_selected_launcher != NULL);
+	g_assert(m_selected_launcher);
 	GFile* source_file = m_selected_launcher->get_file();
 
 	// Fetch launcher destination
@@ -457,8 +457,8 @@ void Page::add_selected_to_desktop()
 	g_free(basename);
 
 	// Copy launcher to desktop folder
-	GError* error = NULL;
-	if (g_file_copy(source_file, destination_file, G_FILE_COPY_NONE, NULL, NULL, NULL, &error))
+	GError* error = nullptr;
+	if (g_file_copy(source_file, destination_file, G_FILE_COPY_NONE, nullptr, nullptr, nullptr, &error))
 	{
 		// Make launcher executable
 		gchar* path = g_file_get_path(destination_file);
@@ -467,7 +467,7 @@ void Page::add_selected_to_desktop()
 	}
 	else
 	{
-		xfce_dialog_show_error(NULL, error, _("Unable to add launcher to desktop."));
+		xfce_dialog_show_error(nullptr, error, _("Unable to add launcher to desktop."));
 		g_error_free(error);
 	}
 
@@ -481,20 +481,20 @@ void Page::add_selected_to_desktop()
 void Page::add_selected_to_panel()
 {
 	// Connect to Xfce panel through D-Bus
-	GError* error = NULL;
+	GError* error = nullptr;
 	GDBusProxy* proxy = g_dbus_proxy_new_for_bus_sync(G_BUS_TYPE_SESSION,
 			G_DBUS_PROXY_FLAGS_NONE,
-			NULL,
+			nullptr,
 			"org.xfce.Panel",
 			"/org/xfce/Panel",
 			"org.xfce.Panel",
-			NULL,
+			nullptr,
 			&error);
 	if (proxy)
 	{
 		// Fetch launcher desktop ID
-		g_assert(m_selected_launcher != NULL);
-		const gchar* parameters[] = { m_selected_launcher->get_desktop_id(), NULL };
+		g_assert(m_selected_launcher);
+		const gchar* parameters[] = { m_selected_launcher->get_desktop_id(), nullptr };
 
 		// Tell panel to add item
 		if (!g_dbus_proxy_call_sync(proxy,
@@ -502,10 +502,10 @@ void Page::add_selected_to_panel()
 				g_variant_new("(s^as)", "launcher", parameters),
 				G_DBUS_CALL_FLAGS_NONE,
 				-1,
-				NULL,
+				nullptr,
 				&error))
 		{
-			xfce_dialog_show_error(NULL, error, _("Unable to add launcher to panel."));
+			xfce_dialog_show_error(nullptr, error, _("Unable to add launcher to panel."));
 			g_error_free(error);
 		}
 
@@ -514,7 +514,7 @@ void Page::add_selected_to_panel()
 	}
 	else
 	{
-		xfce_dialog_show_error(NULL, error, _("Unable to add launcher to panel."));
+		xfce_dialog_show_error(nullptr, error, _("Unable to add launcher to panel."));
 		g_error_free(error);
 	}
 }
@@ -523,7 +523,7 @@ void Page::add_selected_to_panel()
 
 void Page::add_selected_to_favorites()
 {
-	g_assert(m_selected_launcher != NULL);
+	g_assert(m_selected_launcher);
 	m_window->get_favorites()->add(m_selected_launcher);
 }
 
@@ -531,19 +531,19 @@ void Page::add_selected_to_favorites()
 
 void Page::edit_selected()
 {
-	g_assert(m_selected_launcher != NULL);
+	g_assert(m_selected_launcher);
 
 	m_window->hide();
 
-	GError* error = NULL;
+	GError* error = nullptr;
 	gchar* uri = m_selected_launcher->get_uri();
 	gchar* quoted_uri = g_shell_quote(uri);
-	gchar* command = g_strconcat("exo-desktop-item-edit ", quoted_uri, NULL);
+	gchar* command = g_strconcat("exo-desktop-item-edit ", quoted_uri, nullptr);
 	g_free(uri);
 	g_free(quoted_uri);
 	if (!g_spawn_command_line_async(command, &error))
 	{
-		xfce_dialog_show_error(NULL, error, _("Unable to edit launcher."));
+		xfce_dialog_show_error(nullptr, error, _("Unable to edit launcher."));
 		g_error_free(error);
 	}
 	g_free(command);
@@ -553,7 +553,7 @@ void Page::edit_selected()
 
 void Page::hide_selected()
 {
-	g_assert(m_selected_launcher != NULL);
+	g_assert(m_selected_launcher);
 
 	m_window->hide();
 
@@ -564,7 +564,7 @@ void Page::hide_selected()
 
 void Page::remove_selected_from_favorites()
 {
-	g_assert(m_selected_launcher != NULL);
+	g_assert(m_selected_launcher);
 	m_window->get_favorites()->remove(m_selected_launcher);
 }
 

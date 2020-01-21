@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2016 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -66,19 +66,19 @@ void CommandEdit::browse_clicked()
 			GTK_FILE_CHOOSER_ACTION_OPEN,
 			_("_Cancel"), GTK_RESPONSE_CANCEL,
 			_("_OK"), GTK_RESPONSE_ACCEPT,
-			NULL));
+			nullptr));
 	gtk_file_chooser_set_local_only(chooser, true);
 	gtk_file_chooser_set_current_folder(chooser, BINDIR);
 
 	// Select current command
 	gchar* filename = g_strdup(m_command->get());
-	if (filename != NULL)
+	if (filename)
 	{
 		// Make sure command is absolute path
 		if (!g_path_is_absolute(filename))
 		{
 			gchar* absolute_path = g_find_program_in_path(filename);
-			if (absolute_path != NULL)
+			if (absolute_path)
 			{
 				g_free(filename);
 				filename = absolute_path;

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2016, 2018, 2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -39,15 +39,15 @@ enum
 //-----------------------------------------------------------------------------
 
 Command::Command(const gchar* icon, const gchar* text, const gchar* command, const gchar* error_text, const gchar* confirm_question, const gchar* confirm_status) :
-	m_button(NULL),
-	m_menuitem(NULL),
+	m_button(nullptr),
+	m_menuitem(nullptr),
 	m_icon(g_strdup(icon)),
 	m_mnemonic(g_strdup(text)),
 	m_command(g_strdup(command)),
 	m_error_text(g_strdup(error_text)),
 	m_status(WHISKERMENU_COMMAND_UNCHECKED),
 	m_shown(true),
-	m_timeout_details({NULL, g_strdup(confirm_question), g_strdup(confirm_status), 0})
+	m_timeout_details({nullptr, g_strdup(confirm_question), g_strdup(confirm_status), 0})
 {
 	std::string tooltip(text ? text : "");
 	for (auto i = tooltip.begin(); i != tooltip.end(); ++i)
@@ -175,7 +175,7 @@ void Command::check()
 	if (m_status == WHISKERMENU_COMMAND_UNCHECKED)
 	{
 		gchar** argv;
-		if (g_shell_parse_argv(m_command, NULL, &argv, NULL))
+		if (g_shell_parse_argv(m_command, nullptr, &argv, nullptr))
 		{
 			gchar* path = g_find_program_in_path(argv[0]);
 			m_status = path ? WHISKERMENU_COMMAND_VALID : WHISKERMENU_COMMAND_INVALID;
@@ -212,10 +212,10 @@ void Command::activate()
 		return;
 	}
 
-	GError* error = NULL;
+	GError* error = nullptr;
 	if (!g_spawn_command_line_async(m_command, &error))
 	{
-		xfce_dialog_show_error(NULL, error, m_error_text, NULL);
+		xfce_dialog_show_error(nullptr, error, m_error_text, nullptr);
 		g_error_free(error);
 	}
 }
@@ -226,7 +226,7 @@ void Command::activate()
 bool Command::confirm()
 {
 	// Create dialog
-	m_timeout_details.dialog = gtk_message_dialog_new(NULL, GtkDialogFlags(0),
+	m_timeout_details.dialog = gtk_message_dialog_new(nullptr, GtkDialogFlags(0),
 			GTK_MESSAGE_QUESTION, GTK_BUTTONS_CANCEL,
 			"%s", m_timeout_details.question);
 	GtkDialog* dialog = GTK_DIALOG(m_timeout_details.dialog);
@@ -266,7 +266,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 
 	g_source_remove(timeout_id);
 	gtk_widget_destroy(m_timeout_details.dialog);
-	m_timeout_details.dialog = NULL;
+	m_timeout_details.dialog = nullptr;
 
 	return result == GTK_RESPONSE_ACCEPT;
 }

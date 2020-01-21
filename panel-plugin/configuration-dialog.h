@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015, 2016, 2018, 2019, 2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -69,7 +69,7 @@ private:
 
 	void toggle_confirm_session_command(GtkToggleButton* button);
 
-	SearchAction* get_selected_action(GtkTreeIter* iter = NULL) const;
+	SearchAction* get_selected_action(GtkTreeIter* iter = nullptr) const;
 	void action_selected(GtkTreeView* view);
 	void action_name_changed(GtkEditable* editable);
 	void action_pattern_changed(GtkEditable* editable);

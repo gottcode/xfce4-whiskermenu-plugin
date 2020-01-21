@@ -109,13 +109,13 @@ Launcher::Launcher(GarconMenuItem* item) :
 
 	// Fetch text
 	const gchar* name = garcon_menu_item_get_name(m_item);
-	if (G_UNLIKELY(!name) || !g_utf8_validate(name, -1, NULL))
+	if (G_UNLIKELY(!name) || !g_utf8_validate(name, -1, nullptr))
 	{
 		name = "";
 	}
 
 	const gchar* generic_name = garcon_menu_item_get_generic_name(m_item);
-	if (G_UNLIKELY(!generic_name) || !g_utf8_validate(generic_name, -1, NULL))
+	if (G_UNLIKELY(!generic_name) || !g_utf8_validate(generic_name, -1, nullptr))
 	{
 		generic_name = "";
 	}
@@ -127,7 +127,7 @@ Launcher::Launcher(GarconMenuItem* item) :
 	m_display_name = name;
 
 	const gchar* details = garcon_menu_item_get_comment(m_item);
-	if (!details || !g_utf8_validate(details, -1, NULL))
+	if (!details || !g_utf8_validate(details, -1, nullptr))
 	{
 		details = generic_name;
 	}
@@ -152,10 +152,10 @@ Launcher::Launcher(GarconMenuItem* item) :
 	// Create search text for keywords
 #if GARCON_CHECK_VERSION(0,6,2)
 	GList* keywords = garcon_menu_item_get_keywords(m_item);
-	for (GList* i = keywords; i != NULL; i = i->next)
+	for (GList* i = keywords; i; i = i->next)
 	{
 		const gchar* keyword = static_cast<gchar*>(i->data);
-		if (!exo_str_is_empty(keyword) && g_utf8_validate(keyword, -1, NULL))
+		if (!exo_str_is_empty(keyword) && g_utf8_validate(keyword, -1, nullptr))
 		{
 			m_search_keywords.push_back(normalize(keyword));
 		}
@@ -164,7 +164,7 @@ Launcher::Launcher(GarconMenuItem* item) :
 
 	// Create search text for command
 	const gchar* command = garcon_menu_item_get_command(m_item);
-	if (!exo_str_is_empty(command) && g_utf8_validate(command, -1, NULL))
+	if (!exo_str_is_empty(command) && g_utf8_validate(command, -1, nullptr))
 	{
 		m_search_command = normalize(command);
 	}
@@ -172,7 +172,7 @@ Launcher::Launcher(GarconMenuItem* item) :
 	// Fetch desktop actions
 #ifdef GARCON_TYPE_MENU_ITEM_ACTION
 	GList* actions = garcon_menu_item_get_actions(m_item);
-	for (GList* i = actions; i != NULL; i = i->next)
+	for (GList* i = actions; i; i = i->next)
 	{
 		GarconMenuItemAction* action = garcon_menu_item_get_action(m_item, static_cast<gchar*>(i->data));
 		if (action)
@@ -200,12 +200,12 @@ Launcher::~Launcher()
 void Launcher::hide()
 {
 	// Look up the correct relative path
-	const gchar* relpath = NULL;
+	const gchar* relpath = nullptr;
 	gchar* uri = get_uri();
 	if (uri)
 	{
 		gchar** dirs = xfce_resource_lookup_all(XFCE_RESOURCE_DATA, "applications/");
-		for (guint i = 0; dirs[i] != NULL; i++)
+		for (guint i = 0; dirs[i]; i++)
 		{
 			if (g_str_has_prefix(uri + 7, dirs[i]))
 			{
@@ -228,7 +228,7 @@ void Launcher::hide()
 			"remove the line \"%s\"."), path, "Hidden=true");
 	g_free(path);
 
-	if (xfce_dialog_confirm(NULL, NULL, _("Hide Application"), message,
+	if (xfce_dialog_confirm(nullptr, nullptr, _("Hide Application"), message,
 		_("Are you sure you want to hide \"%s\"?"), m_display_name))
 	{
 		XfceRc* rc = xfce_rc_config_open(XFCE_RESOURCE_DATA, relpath, false);
@@ -300,12 +300,12 @@ void Launcher::run(GdkScreen* screen) const
 	// Parse and spawn command
 	gchar** argv;
 	gboolean result = false;
-	GError* error = NULL;
-	if (g_shell_parse_argv(command.c_str(), NULL, &argv, &error))
+	GError* error = nullptr;
+	if (g_shell_parse_argv(command.c_str(), nullptr, &argv, &error))
 	{
 		result = xfce_spawn_on_screen(screen,
 				garcon_menu_item_get_path(m_item),
-				argv, NULL, G_SPAWN_SEARCH_PATH,
+				argv, nullptr, G_SPAWN_SEARCH_PATH,
 				garcon_menu_item_supports_startup_notification(m_item),
 				gtk_get_current_event_time(),
 				garcon_menu_item_get_icon_name(m_item),
@@ -315,7 +315,7 @@ void Launcher::run(GdkScreen* screen) const
 
 	if (G_UNLIKELY(!result))
 	{
-		xfce_dialog_show_error(NULL, error, _("Failed to execute command \"%s\"."), string);
+		xfce_dialog_show_error(nullptr, error, _("Failed to execute command \"%s\"."), string);
 		g_error_free(error);
 	}
 }
@@ -374,12 +374,12 @@ void Launcher::run(GdkScreen* screen, DesktopAction* action) const
 	// Parse and spawn command
 	gchar** argv;
 	gboolean result = false;
-	GError* error = NULL;
-	if (g_shell_parse_argv(command.c_str(), NULL, &argv, &error))
+	GError* error = nullptr;
+	if (g_shell_parse_argv(command.c_str(), nullptr, &argv, &error))
 	{
 		result = xfce_spawn_on_screen(screen,
 				garcon_menu_item_get_path(m_item),
-				argv, NULL, G_SPAWN_SEARCH_PATH,
+				argv, nullptr, G_SPAWN_SEARCH_PATH,
 				garcon_menu_item_supports_startup_notification(m_item),
 				gtk_get_current_event_time(),
 				action->get_icon(),
@@ -389,7 +389,7 @@ void Launcher::run(GdkScreen* screen, DesktopAction* action) const
 
 	if (G_UNLIKELY(!result))
 	{
-		xfce_dialog_show_error(NULL, error, _("Failed to execute command \"%s\"."), string);
+		xfce_dialog_show_error(nullptr, error, _("Failed to execute command \"%s\"."), string);
 		g_error_free(error);
 	}
 }

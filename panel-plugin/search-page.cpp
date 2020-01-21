@@ -112,12 +112,12 @@ void SearchPage::set_filter(const gchar* filter)
 			G_TYPE_STRING,
 			G_TYPE_STRING,
 			G_TYPE_POINTER);
-	Element* element;
+	Element* element = nullptr;
 	for (const auto& match : search_action_matches)
 	{
 		element = match.element();
 		gtk_list_store_insert_with_values(
-				store, NULL, G_MAXINT,
+				store, nullptr, G_MAXINT,
 				LauncherView::COLUMN_ICON, element->get_icon(),
 				LauncherView::COLUMN_TEXT, element->get_text(),
 				LauncherView::COLUMN_TOOLTIP, element->get_tooltip(),
@@ -128,7 +128,7 @@ void SearchPage::set_filter(const gchar* filter)
 	{
 		element = match.element();
 		gtk_list_store_insert_with_values(
-				store, NULL, G_MAXINT,
+				store, nullptr, G_MAXINT,
 				LauncherView::COLUMN_ICON, element->get_icon(),
 				LauncherView::COLUMN_TEXT, element->get_text(),
 				LauncherView::COLUMN_TOOLTIP, element->get_tooltip(),
@@ -161,7 +161,7 @@ void SearchPage::set_menu_items(GtkTreeModel* model)
 	bool valid = gtk_tree_model_get_iter_first(model, &iter);
 	while (valid)
 	{
-		Launcher* launcher = NULL;
+		Launcher* launcher = nullptr;
 		gtk_tree_model_get(model, &iter, LauncherView::COLUMN_LAUNCHER, &launcher, -1);
 		if (launcher)
 		{

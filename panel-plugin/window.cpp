@@ -50,7 +50,7 @@ static void grab_pointer(GtkWidget* widget)
 	GdkDisplay* display = gdk_display_get_default();
 	GdkSeat* seat = gdk_display_get_default_seat(display);
 	GdkWindow* window = gtk_widget_get_window(widget);
-	gdk_seat_grab(seat, window, GDK_SEAT_CAPABILITY_ALL_POINTING, true, NULL, NULL, NULL, NULL);
+	gdk_seat_grab(seat, window, GDK_SEAT_CAPABILITY_ALL_POINTING, true, nullptr, nullptr, nullptr, nullptr);
 }
 
 static void ungrab_pointer()
@@ -69,10 +69,10 @@ static void ungrab_pointer()
 
 WhiskerMenu::Window::Window(Plugin* plugin) :
 	m_plugin(plugin),
-	m_window(NULL),
+	m_window(nullptr),
 	m_search_cover(GTK_STACK_TRANSITION_TYPE_OVER_DOWN),
 	m_search_uncover(GTK_STACK_TRANSITION_TYPE_UNDER_UP),
-	m_sidebar_size_group(NULL),
+	m_sidebar_size_group(nullptr),
 	m_layout_left(true),
 	m_layout_bottom(true),
 	m_layout_categories_alternate(false),
@@ -106,10 +106,10 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	g_signal_connect_slot(m_window, "map-event", &Window::on_map_event, this);
 	g_signal_connect_slot(m_window, "state-flags-changed", &Window::on_state_flags_changed_event, this);
 	g_signal_connect_slot(m_window, "configure-event", &Window::on_configure_event, this);
-	g_signal_connect(m_window, "delete_event", G_CALLBACK(gtk_widget_hide_on_delete), NULL);
+	g_signal_connect(m_window, "delete_event", G_CALLBACK(gtk_widget_hide_on_delete), nullptr);
 
 	// Create the border of the window
-	GtkWidget* frame = gtk_frame_new(NULL);
+	GtkWidget* frame = gtk_frame_new(nullptr);
 	gtk_frame_set_shadow_type(GTK_FRAME(frame), GTK_SHADOW_OUT);
 	gtk_container_add(GTK_CONTAINER(m_window), frame);
 
@@ -133,7 +133,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 		name = g_get_user_name();
 	}
 	gchar* username = g_markup_printf_escaped("<b><big>%s</big></b>", name);
-	m_username = GTK_LABEL(gtk_label_new(NULL));
+	m_username = GTK_LABEL(gtk_label_new(nullptr));
 	gtk_label_set_markup(m_username, username);
 	gtk_widget_set_halign(GTK_WIDGET(m_username), GTK_ALIGN_START);
 	g_free(username);
@@ -193,7 +193,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 
 	// Create box for packing commands
 	m_commands_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0));
-	m_commands_spacer = gtk_label_new(NULL);
+	m_commands_spacer = gtk_label_new(nullptr);
 	gtk_box_pack_start(m_commands_box, m_commands_spacer, true, true, 0);
 	for (auto command : m_commands_button)
 	{
@@ -233,7 +233,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	gtk_box_pack_start(m_sidebar_buttons, m_recent_button->get_widget(), false, false, 0);
 	gtk_box_pack_start(m_sidebar_buttons, gtk_separator_new(GTK_ORIENTATION_HORIZONTAL), false, false, 4);
 
-	m_sidebar = GTK_SCROLLED_WINDOW(gtk_scrolled_window_new(NULL, NULL));
+	m_sidebar = GTK_SCROLLED_WINDOW(gtk_scrolled_window_new(nullptr, nullptr));
 	gtk_box_pack_start(m_contents_box, GTK_WIDGET(m_sidebar), false, false, 0);
 	gtk_scrolled_window_set_shadow_type(m_sidebar, GTK_SHADOW_NONE);
 	gtk_scrolled_window_set_policy(m_sidebar, GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
@@ -250,7 +250,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	gtk_widget_set_app_paintable(GTK_WIDGET(m_window), true);
 	g_signal_connect_slot(m_window, "draw", &Window::on_draw_event, this);
 	g_signal_connect_slot(m_window, "screen-changed", &Window::on_screen_changed_event, this);
-	on_screen_changed_event(GTK_WIDGET(m_window), NULL);
+	on_screen_changed_event(GTK_WIDGET(m_window), nullptr);
 
 	// Load applications
 	m_applications->load_applications();
@@ -383,7 +383,7 @@ void WhiskerMenu::Window::show(const Position position)
 	m_recent->get_view()->reload_icon_size();
 	m_applications->get_view()->reload_icon_size();
 
-	GdkScreen* screen = NULL;
+	GdkScreen* screen = nullptr;
 	int parent_x = 0, parent_y = 0, parent_w = 0, parent_h = 0;
 	if (position != PositionAtCursor)
 	{
@@ -513,7 +513,7 @@ void WhiskerMenu::Window::show(const Position position)
 		gtk_size_group_remove_widget(m_sidebar_size_group, GTK_WIDGET(m_sidebar));
 		gtk_size_group_remove_widget(m_sidebar_size_group, GTK_WIDGET(m_commands_box));
 		g_object_unref(m_sidebar_size_group);
-		m_sidebar_size_group = NULL;
+		m_sidebar_size_group = nullptr;
 	}
 
 	// Show window
@@ -681,7 +681,7 @@ gboolean WhiskerMenu::Window::on_key_press_event(GtkWidget* widget, GdkEvent* ev
 		return true;
 	}
 
-	Page* page = NULL;
+	Page* page = nullptr;
 	if (gtk_stack_get_visible_child(m_contents_stack) == m_search_results->get_widget())
 	{
 		page = m_search_results;
@@ -856,7 +856,7 @@ void WhiskerMenu::Window::check_scrollbar_needed()
 {
 	// Find height of sidebar buttons
 	int height = 0;
-	gtk_widget_get_preferred_height(GTK_WIDGET(m_sidebar_buttons), NULL, &height);
+	gtk_widget_get_preferred_height(GTK_WIDGET(m_sidebar_buttons), nullptr, &height);
 
 	// Always show scrollbar if sidebar is shorter than buttons
 	int allocated = gtk_widget_get_allocated_height(GTK_WIDGET(m_sidebar));
@@ -929,7 +929,7 @@ void WhiskerMenu::Window::search()
 	const gchar* text = gtk_entry_get_text(m_search_entry);
 	if (exo_str_is_empty(text))
 	{
-		text = NULL;
+		text = nullptr;
 	}
 
 	if (text)

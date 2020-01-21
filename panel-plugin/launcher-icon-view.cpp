@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019, 2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2019-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@ using namespace WhiskerMenu;
 //-----------------------------------------------------------------------------
 
 LauncherIconView::LauncherIconView() :
-	m_icon_renderer(NULL),
+	m_icon_renderer(nullptr),
 	m_icon_size(-1)
 {
 	// Create the view
@@ -38,10 +38,10 @@ LauncherIconView::LauncherIconView() :
 	g_object_set(m_icon_renderer,
 			"xalign", 0.5,
 			"yalign", 1.0,
-			NULL);
+			nullptr);
 	GtkCellLayout* cell_layout = GTK_CELL_LAYOUT(m_view);
 	gtk_cell_layout_pack_start(cell_layout, m_icon_renderer, false);
-	gtk_cell_layout_set_attributes(cell_layout, m_icon_renderer, "gicon", COLUMN_ICON, "launcher", COLUMN_LAUNCHER, NULL);
+	gtk_cell_layout_set_attributes(cell_layout, m_icon_renderer, "gicon", COLUMN_ICON, "launcher", COLUMN_LAUNCHER, nullptr);
 
 	gtk_icon_view_set_markup_column(m_view, COLUMN_TEXT);
 
@@ -74,8 +74,8 @@ LauncherIconView::~LauncherIconView()
 
 GtkTreePath* LauncherIconView::get_cursor() const
 {
-	GtkTreePath* path = NULL;
-	gtk_icon_view_get_cursor(m_view, &path, NULL);
+	GtkTreePath* path = nullptr;
+	gtk_icon_view_get_cursor(m_view, &path, nullptr);
 	return path;
 }
 
@@ -90,9 +90,9 @@ GtkTreePath* LauncherIconView::get_path_at_pos(int x, int y) const
 
 GtkTreePath* LauncherIconView::get_selected_path() const
 {
-	GtkTreePath* path = NULL;
+	GtkTreePath* path = nullptr;
 	GList* selection = gtk_icon_view_get_selected_items(m_view);
-	if (selection != NULL)
+	if (selection)
 	{
 		path = gtk_tree_path_copy(static_cast<GtkTreePath*>(selection->data));
 	}
@@ -125,7 +125,7 @@ void LauncherIconView::select_path(GtkTreePath* path)
 
 void LauncherIconView::set_cursor(GtkTreePath* path)
 {
-	gtk_icon_view_set_cursor(m_view,path, NULL, false);
+	gtk_icon_view_set_cursor(m_view,path, nullptr, false);
 }
 
 //-----------------------------------------------------------------------------
@@ -180,8 +180,8 @@ void LauncherIconView::set_model(GtkTreeModel* model)
 
 void LauncherIconView::unset_model()
 {
-	m_model = NULL;
-	gtk_icon_view_set_model(m_view, NULL);
+	m_model = nullptr;
+	gtk_icon_view_set_model(m_view, nullptr);
 }
 
 //-----------------------------------------------------------------------------
@@ -226,11 +226,11 @@ void LauncherIconView::reload_icon_size()
 	// Configure icon renderer
 	if (m_icon_size > 1)
 	{
-		g_object_set(m_icon_renderer, "size", m_icon_size, "visible", true, NULL);
+		g_object_set(m_icon_renderer, "size", m_icon_size, "visible", true, nullptr);
 	}
 	else
 	{
-		g_object_set(m_icon_renderer, "visible", false, NULL);
+		g_object_set(m_icon_renderer, "visible", false, nullptr);
 	}
 
 	// Adjust item size

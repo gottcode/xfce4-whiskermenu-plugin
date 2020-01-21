@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015, 2016 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@ using namespace WhiskerMenu;
 SearchAction::SearchAction() :
 	m_is_regex(false),
 	m_show_description(true),
-	m_regex(NULL)
+	m_regex(nullptr)
 {
 	set_icon("folder-saved-search");
 	update_text();
@@ -43,7 +43,7 @@ SearchAction::SearchAction(const gchar* name, const gchar* pattern, const gchar*
 	m_command(command ? command : ""),
 	m_is_regex(is_regex),
 	m_show_description(show_description),
-	m_regex(NULL)
+	m_regex(nullptr)
 {
 	set_icon("folder-saved-search");
 	update_text();
@@ -95,7 +95,7 @@ guint SearchAction::match_prefix(const gchar* haystack)
 	gchar* trimmed = g_strdup(haystack + m_pattern.length());
 	trimmed = g_strstrip(trimmed);
 
-	gchar* uri = NULL;
+	gchar* uri = nullptr;
 
 	m_expanded_command = m_command;
 	std::string::size_type pos = 0, lastpos = m_expanded_command.length() - 1;
@@ -121,7 +121,7 @@ guint SearchAction::match_prefix(const gchar* haystack)
 		case 'u':
 			if (!uri)
 			{
-				uri = g_uri_escape_string(trimmed, NULL, true);
+				uri = g_uri_escape_string(trimmed, nullptr, true);
 			}
 			m_expanded_command.replace(pos, 2, uri);
 			pos += strlen(uri) + 1;
@@ -152,16 +152,16 @@ guint SearchAction::match_regex(const gchar* haystack)
 
 	if (!m_regex)
 	{
-		m_regex = g_regex_new(m_pattern.c_str(), G_REGEX_OPTIMIZE, GRegexMatchFlags(0), NULL);
+		m_regex = g_regex_new(m_pattern.c_str(), G_REGEX_OPTIMIZE, GRegexMatchFlags(0), nullptr);
 		if (!m_regex)
 		{
 			return found;
 		}
 	}
-	GMatchInfo* match = NULL;
+	GMatchInfo* match = nullptr;
 	if (g_regex_match(m_regex, haystack, GRegexMatchFlags(0), &match))
 	{
-		gchar* expanded = g_match_info_expand_references(match, m_command.c_str(), NULL);
+		gchar* expanded = g_match_info_expand_references(match, m_command.c_str(), nullptr);
 		if (expanded)
 		{
 			m_expanded_command = expanded;
@@ -169,7 +169,7 @@ guint SearchAction::match_regex(const gchar* haystack)
 			found = m_pattern.length();
 		}
 	}
-	if (match != NULL)
+	if (match)
 	{
 		g_match_info_free(match);
 	}
@@ -181,12 +181,12 @@ guint SearchAction::match_regex(const gchar* haystack)
 
 void SearchAction::run(GdkScreen* screen) const
 {
-	GError* error = NULL;
+	GError* error = nullptr;
 	gboolean result = xfce_spawn_command_line_on_screen(screen, m_expanded_command.c_str(), FALSE, FALSE, &error);
 
 	if (G_UNLIKELY(!result))
 	{
-		xfce_dialog_show_error(NULL, error, _("Failed to execute command \"%s\"."), m_expanded_command.c_str());
+		xfce_dialog_show_error(nullptr, error, _("Failed to execute command \"%s\"."), m_expanded_command.c_str());
 		g_error_free(error);
 	}
 }
@@ -222,7 +222,7 @@ void SearchAction::set_pattern(const gchar* pattern)
 	if (m_regex)
 	{
 		g_regex_unref(m_regex);
-		m_regex = NULL;
+		m_regex = nullptr;
 	}
 }
 

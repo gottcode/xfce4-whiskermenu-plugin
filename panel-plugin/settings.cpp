@@ -31,7 +31,7 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-Settings* WhiskerMenu::wm_settings = NULL;
+Settings* WhiskerMenu::wm_settings = nullptr;
 
 static const char* const settings_command[Settings::CountCommands][2] = {
 	{ "command-settings",   "show-command-settings"   },
@@ -59,7 +59,7 @@ static void read_vector_entry(XfceRc* rc, const char* key, std::vector<std::stri
 	desktop_ids.clear();
 
 	gchar** values = xfce_rc_read_list_entry(rc, key, ",");
-	for (size_t i = 0; values[i] != NULL; ++i)
+	for (size_t i = 0; values[i]; ++i)
 	{
 		std::string desktop_id(values[i]);
 		if (std::find(desktop_ids.begin(), desktop_ids.end(), desktop_id) == desktop_ids.end())
@@ -219,7 +219,7 @@ void Settings::load(char* file)
 	{
 		return;
 	}
-	xfce_rc_set_group(rc, NULL);
+	xfce_rc_set_group(rc, nullptr);
 
 	read_vector_entry(rc, "favorites", favorites);
 	read_vector_entry(rc, "recent", recent);
@@ -326,7 +326,7 @@ void Settings::save(char* file)
 	{
 		return;
 	}
-	xfce_rc_set_group(rc, NULL);
+	xfce_rc_set_group(rc, nullptr);
 
 	write_vector_entry(rc, "favorites", favorites);
 	write_vector_entry(rc, "recent", recent);

@@ -26,7 +26,7 @@ using namespace WhiskerMenu;
 
 ResizerWidget::ResizerWidget(GtkWindow* window) :
 	m_window(window),
-	m_cursor(NULL),
+	m_cursor(nullptr),
 	m_shape(3)
 {
 	m_drawing = gtk_drawing_area_new();
@@ -131,7 +131,7 @@ gboolean ResizerWidget::on_enter_notify_event(GtkWidget* widget, GdkEvent*)
 gboolean ResizerWidget::on_leave_notify_event(GtkWidget* widget, GdkEvent*)
 {
 	GdkWindow* window = gtk_widget_get_window(widget);
-	gdk_window_set_cursor(window, NULL);
+	gdk_window_set_cursor(window, nullptr);
 	return false;
 }
 
