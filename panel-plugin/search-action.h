@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015, 2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,15 +31,6 @@ public:
 	SearchAction();
 	SearchAction(const gchar* name, const gchar* pattern, const gchar* command, bool is_regex, bool show_description);
 	~SearchAction();
-
-	enum
-	{
-		Type = 3
-	};
-	int get_type() const
-	{
-		return Type;
-	}
 
 	const gchar* get_name() const
 	{

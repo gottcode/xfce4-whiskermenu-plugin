@@ -298,7 +298,7 @@ void LauncherTreeView::on_row_activated(GtkTreeView* tree_view, GtkTreePath* pat
 	GtkTreeIter iter;
 	gtk_tree_model_get_iter(m_model, &iter, path);
 	gtk_tree_model_get(m_model, &iter, COLUMN_LAUNCHER, &element, -1);
-	if (element && (element->get_type() != Category::Type))
+	if (element && !dynamic_cast<Category*>(element))
 	{
 		return;
 	}

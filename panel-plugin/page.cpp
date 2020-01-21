@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2018, 2019 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -190,9 +190,8 @@ void Page::launcher_activated(GtkTreePath* path)
 	}
 
 	// Add to recent
-	if (element->get_type() == Launcher::Type)
+	if (Launcher* launcher = dynamic_cast<Launcher*>(element))
 	{
-		Launcher* launcher = static_cast<Launcher*>(element);
 		if (remember_launcher(launcher))
 		{
 			m_window->get_recent()->add(launcher);
@@ -250,14 +249,14 @@ gboolean Page::view_button_press_event(GtkWidget*, GdkEvent* event)
 		return false;
 	}
 
+	Element* element = NULL;
 	GtkTreeModel* model = m_view->get_model();
 	GtkTreeIter iter;
 	gtk_tree_model_get_iter(model, &iter, path);
 	gtk_tree_path_free(path);
-	gtk_tree_model_get(model, &iter, LauncherView::COLUMN_LAUNCHER, &m_selected_launcher, -1);
-	if (!m_selected_launcher || (m_selected_launcher->get_type() != Launcher::Type))
+	gtk_tree_model_get(model, &iter, LauncherView::COLUMN_LAUNCHER, &element, -1);
+	if (!(m_selected_launcher = dynamic_cast<Launcher*>(element)))
 	{
-		m_selected_launcher = NULL;
 		m_drag_enabled = false;
 		m_view->unset_drag_source();
 		m_view->unset_drag_dest();
@@ -340,13 +339,13 @@ gboolean Page::view_popup_menu_event(GtkWidget*)
 void Page::create_context_menu(GtkTreePath* path, GdkEvent* event)
 {
 	// Get selected launcher
+	Element* element = NULL;
 	GtkTreeModel* model = m_view->get_model();
 	GtkTreeIter iter;
 	gtk_tree_model_get_iter(model, &iter, path);
-	gtk_tree_model_get(model, &iter, LauncherView::COLUMN_LAUNCHER, &m_selected_launcher, -1);
-	if (!m_selected_launcher || (m_selected_launcher->get_type() != Launcher::Type))
+	gtk_tree_model_get(model, &iter, LauncherView::COLUMN_LAUNCHER, &element, -1);
+	if (!(m_selected_launcher = dynamic_cast<Launcher*>(element)))
 	{
-		m_selected_launcher = NULL;
 		gtk_tree_path_free(path);
 		return;
 	}

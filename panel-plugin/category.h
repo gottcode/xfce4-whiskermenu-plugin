@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2017 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2017, 2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -35,15 +35,6 @@ class Category : public Element
 public:
 	explicit Category(GarconMenuDirectory* directory);
 	~Category();
-
-	enum
-	{
-		Type = 1
-	};
-	int get_type() const
-	{
-		return Type;
-	}
 
 	SectionButton* get_button();
 

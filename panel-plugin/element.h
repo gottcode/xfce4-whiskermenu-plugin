@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015, 2016, 2019 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015, 2016, 2019, 2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -47,8 +47,6 @@ public:
 		g_free(m_tooltip);
 		g_free(m_sort_key);
 	}
-
-	virtual int get_type() const = 0;
 
 	GIcon* get_icon() const
 	{

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015, 2016, 2019 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015, 2016, 2019, 2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -175,11 +175,10 @@ void FavoritesPage::on_row_changed(GtkTreeModel* model, GtkTreePath* path, GtkTr
 		return;
 	}
 
-	Launcher* launcher;
-	gtk_tree_model_get(model, iter, LauncherView::COLUMN_LAUNCHER, &launcher, -1);
-	if (launcher)
+	Element* element = NULL;
+	gtk_tree_model_get(model, iter, LauncherView::COLUMN_LAUNCHER, &element, -1);
+	if (Launcher* launcher = dynamic_cast<Launcher*>(element))
 	{
-		g_assert(launcher->get_type() == Launcher::Type);
 		wm_settings->favorites[pos] = launcher->get_desktop_id();
 		wm_settings->set_modified();
 	}
@@ -192,11 +191,10 @@ void FavoritesPage::on_row_inserted(GtkTreeModel* model, GtkTreePath* path, GtkT
 	size_t pos = gtk_tree_path_get_indices(path)[0];
 
 	std::string desktop_id;
-	Launcher* launcher;
-	gtk_tree_model_get(model, iter, LauncherView::COLUMN_LAUNCHER, &launcher, -1);
-	if (launcher)
+	Element* element = NULL;
+	gtk_tree_model_get(model, iter, LauncherView::COLUMN_LAUNCHER, &element, -1);
+	if (Launcher* launcher = dynamic_cast<Launcher*>(element))
 	{
-		g_assert(launcher->get_type() == Launcher::Type);
 		desktop_id = launcher->get_desktop_id();
 	}
 

@@ -29,11 +29,6 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-static bool is_category(const Element* element)
-{
-	return element && (element->get_type() == Category::Type);
-}
-
 static bool is_null(const Element* element)
 {
 	return !element;
@@ -75,9 +70,9 @@ Category::~Category()
 
 	for (std::vector<Element*>::const_iterator i = m_items.begin(), end = m_items.end(); i != end; ++i)
 	{
-		if (is_category(*i))
+		if (Category* category = dynamic_cast<Category*>(*i))
 		{
-			delete *i;
+			delete category;
 		}
 	}
 }
@@ -133,7 +128,8 @@ bool Category::empty() const
 {
 	for (std::vector<Element*>::const_iterator i = m_items.begin(), end = m_items.end(); i != end; ++i)
 	{
-		if (*i && (!is_category(*i) || !static_cast<Category*>(*i)->empty()))
+		Category* category = dynamic_cast<Category*>(*i);
+		if ((!category && *i) || !category->empty())
 		{
 			return false;
 		}
@@ -185,9 +181,8 @@ void Category::insert_items(GtkTreeStore* model, GtkTreeIter* parent)
 	for (std::vector<Element*>::size_type i = 0, end = m_items.size(); i < end; ++i)
 	{
 		Element* element = m_items.at(i);
-		if (is_category(element))
+		if (Category* category = dynamic_cast<Category*>(element))
 		{
-			Category* category = static_cast<Category*>(element);
 			if (category->empty())
 			{
 				continue;
@@ -207,9 +202,8 @@ void Category::insert_items(GtkTreeStore* model, GtkTreeIter* parent)
 			g_free(text);
 			category->insert_items(model, &iter);
 		}
-		else if (element)
+		else if (Launcher* launcher = dynamic_cast<Launcher*>(element))
 		{
-			Launcher* launcher = static_cast<Launcher*>(element);
 			gtk_tree_store_insert_with_values(model,
 					NULL, parent, INT_MAX,
 					LauncherView::COLUMN_ICON, launcher->get_icon(),
@@ -238,9 +232,8 @@ void Category::insert_items(GtkListStore* model)
 	for (std::vector<Element*>::size_type i = 0, end = m_items.size(); i < end; ++i)
 	{
 		Element* element = m_items.at(i);
-		if (element)
+		if (Launcher* launcher = dynamic_cast<Launcher*>(element))
 		{
-			Launcher* launcher = static_cast<Launcher*>(element);
 			gtk_list_store_insert_with_values(model,
 					NULL, INT_MAX,
 					LauncherView::COLUMN_ICON, launcher->get_icon(),
@@ -275,9 +268,9 @@ void Category::merge()
 	std::vector<Category*> categories;
 	for (std::vector<Element*>::const_iterator i = m_items.begin(), end = m_items.end(); i != end; ++i)
 	{
-		if (is_category(*i))
+		if (Category* category = dynamic_cast<Category*>(*i))
 		{
-			categories.push_back(static_cast<Category*>(*i));
+			categories.push_back(category);
 		}
 	}
 	std::vector<Category*>::size_type last_direct = categories.size();
@@ -291,9 +284,9 @@ void Category::merge()
 
 		for (std::vector<Element*>::const_iterator j = category->m_items.begin(), end = category->m_items.end(); j != end; ++j)
 		{
-			if (is_category(*j))
+			if (Category* subcategory = dynamic_cast<Category*>(*j))
 			{
-				categories.push_back(static_cast<Category*>(*j));
+				categories.push_back(subcategory);
 			}
 		}
 	}
@@ -308,7 +301,7 @@ void Category::merge()
 	// Remove subcategories
 	for (std::vector<Element*>::iterator i = m_items.begin(), end = m_items.end(); i != end; ++i)
 	{
-		if (is_category(*i))
+		if (dynamic_cast<Category*>(*i))
 		{
 			*i = NULL;
 		}
