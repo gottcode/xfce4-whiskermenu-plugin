@@ -1,17 +1,18 @@
 # Italian translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2017 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # Bernardo Miguel Savone <bmsavone@gmail.com>, 2013-2015
+# Italang, 2020
 # Patrizio Bellan <patrizio.bellan@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-08 13:48-0500\n"
-"PO-Revision-Date: 2017-04-12 23:53+0000\n"
-"Last-Translator: Patrizio Bellan <patrizio.bellan@gmail.com>\n"
+"PO-Revision-Date: 2020-01-20 17:32+0000\n"
+"Last-Translator: Italang\n"
 "Language-Team: Italian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/it/)\n"
 "Language: it\n"
@@ -38,7 +39,7 @@ msgstr "Aggiungi al Pannello"
 
 #: ../panel-plugin/category.cpp:61
 msgid "All Applications"
-msgstr "Tutte le applicazioni"
+msgstr "Tutte le Applicazioni"
 
 #: ../panel-plugin/plugin.cpp:410
 msgid "Alternate application launcher for Xfce"
@@ -55,19 +56,19 @@ msgstr "Applicazioni"
 #: ../panel-plugin/launcher.cpp:262
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
-msgstr "Nascondere davvero \"%s\"?"
+msgstr "Sei sicuro di voler nascondere \"%s\"?"
 
 #: ../panel-plugin/settings.cpp:144
 msgid "Are you sure you want to log out?"
-msgstr "Uscire davvero?"
+msgstr "Sei sicuro di volerti disconnettere?"
 
 #: ../panel-plugin/settings.cpp:150
 msgid "Are you sure you want to restart?"
-msgstr "Riavviare davvero?"
+msgstr "Sei sicuro di voler riavviare?"
 
 #: ../panel-plugin/settings.cpp:156
 msgid "Are you sure you want to shut down?"
-msgstr "Spegnere davvero?"
+msgstr "Sei sicuro di voler spegnere?"
 
 #: ../panel-plugin/configuration-dialog.cpp:715
 msgid "Background opacit_y:"
@@ -107,11 +108,11 @@ msgstr "Visualizza per _default"
 
 #: ../panel-plugin/settings.cpp:162
 msgid "Do you want to suspend to RAM?"
-msgstr "Sospendere su RAM?"
+msgstr "Vuoi sospendere in RAM?"
 
 #: ../panel-plugin/settings.cpp:168
 msgid "Do you want to suspend to disk?"
-msgstr "Sospendere su disco?"
+msgstr "Vuoi sospendere su disco (ibernare)?"
 
 #: ../panel-plugin/page.cpp:415
 msgid "Edit Application..."
@@ -164,9 +165,8 @@ msgid "Failed to suspend."
 msgstr ""
 
 #: ../panel-plugin/settings.cpp:139
-#, fuzzy
 msgid "Failed to switch user."
-msgstr "Impossibile cambiare utente."
+msgstr ""
 
 #: ../panel-plugin/window.cpp:158
 msgid "Favorites"
@@ -190,9 +190,8 @@ msgid "Icon and title"
 msgstr "Icona e titolo"
 
 #: ../panel-plugin/configuration-dialog.cpp:799
-#, fuzzy
 msgid "Include _favorites"
-msgstr "Ignora _favoriti"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:684
 msgid "Ite_m icon size:"
@@ -385,9 +384,8 @@ msgid "Suspending computer in %d seconds."
 msgstr "Il sistema si sospenderà tra %d secondi."
 
 #: ../panel-plugin/settings.cpp:137
-#, fuzzy
 msgid "Switch _User"
-msgstr "Commutazione _utenti"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:749
 msgid "Switch categories by _hovering"
