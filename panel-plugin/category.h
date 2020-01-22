@@ -62,7 +62,6 @@ public:
 private:
 	void insert_items(GtkTreeStore* model, GtkTreeIter* parent);
 	void insert_items(GtkListStore* model);
-	void merge();
 	void unset_model();
 
 private:

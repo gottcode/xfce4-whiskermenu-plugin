@@ -29,13 +29,6 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-static bool is_null(const Element* element)
-{
-	return !element;
-}
-
-//-----------------------------------------------------------------------------
-
 Category::Category(GarconMenuDirectory* directory) :
 	m_button(NULL),
 	m_model(NULL),
@@ -166,11 +159,6 @@ void Category::append_separator()
 void Category::sort()
 {
 	unset_model();
-	merge();
-	if (m_has_separators)
-	{
-		m_items.erase(std::remove_if(m_items.begin(), m_items.end(), is_null), m_items.end());
-	}
 	std::sort(m_items.begin(), m_items.end(), &Element::less_than);
 }
 
@@ -253,68 +241,6 @@ void Category::insert_items(GtkListStore* model)
 					-1);
 		}
 	}
-}
-
-//-----------------------------------------------------------------------------
-
-void Category::merge()
-{
-	if (!m_has_subcategories)
-	{
-		return;
-	}
-
-	// Find direct subcategories
-	std::vector<Category*> categories;
-	for (std::vector<Element*>::const_iterator i = m_items.begin(), end = m_items.end(); i != end; ++i)
-	{
-		if (Category* category = dynamic_cast<Category*>(*i))
-		{
-			categories.push_back(category);
-		}
-	}
-	std::vector<Category*>::size_type last_direct = categories.size();
-
-	// Recursively find subcategories
-	std::vector<Element*>::size_type count = m_items.size();
-	for (std::vector<Category*>::size_type i = 0; i < categories.size(); ++i)
-	{
-		Category* category = categories[i];
-		count += category->m_items.size();
-
-		for (std::vector<Element*>::const_iterator j = category->m_items.begin(), end = category->m_items.end(); j != end; ++j)
-		{
-			if (Category* subcategory = dynamic_cast<Category*>(*j))
-			{
-				categories.push_back(subcategory);
-			}
-		}
-	}
-
-	// Append items
-	m_items.reserve(count);
-	for (std::vector<Category*>::const_iterator i = categories.begin(), end = categories.end(); i != end; ++i)
-	{
-		m_items.insert(m_items.end(), (*i)->m_items.begin(), (*i)->m_items.end());
-	}
-
-	// Remove subcategories
-	for (std::vector<Element*>::iterator i = m_items.begin(), end = m_items.end(); i != end; ++i)
-	{
-		if (dynamic_cast<Category*>(*i))
-		{
-			*i = NULL;
-		}
-	}
-
-	// Delete direct subcategories; they will recursively delete their subcategories
-	for (std::vector<Category*>::size_type i = 0; i < last_direct; ++i)
-	{
-		delete categories[i];
-	}
-
-	m_has_subcategories = false;
-	m_has_separators = true;
 }
 
 //-----------------------------------------------------------------------------
