@@ -543,7 +543,7 @@ void ConfigurationDialog::response(GtkDialog*, int response_id)
 	{
 		bool result = g_spawn_command_line_async("exo-open --launch WebBrowser " PLUGIN_WEBSITE, NULL);
 
-		if (G_UNLIKELY(result == false))
+		if (G_UNLIKELY(!result))
 		{
 			g_warning(_("Unable to open the following url: %s"), PLUGIN_WEBSITE);
 		}

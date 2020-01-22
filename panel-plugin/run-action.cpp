@@ -36,7 +36,7 @@ RunAction::RunAction()
 void RunAction::run(GdkScreen* screen) const
 {
 	GError* error = NULL;
-	if (xfce_spawn_command_line_on_screen(screen, m_command_line.c_str(), false, false, &error) == false)
+	if (!xfce_spawn_command_line_on_screen(screen, m_command_line.c_str(), false, false, &error))
 	{
 		xfce_dialog_show_error(NULL, error, _("Failed to execute command \"%s\"."), m_command_line.c_str());
 		g_error_free(error);

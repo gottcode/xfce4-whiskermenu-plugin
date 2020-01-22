@@ -303,7 +303,7 @@ void Plugin::set_loaded(bool loaded)
 
 void Plugin::button_toggled(GtkToggleButton* button)
 {
-	if (gtk_toggle_button_get_active(button) == false)
+	if (!gtk_toggle_button_get_active(button))
 	{
 		if (gtk_widget_get_visible(m_window->get_widget()))
 		{

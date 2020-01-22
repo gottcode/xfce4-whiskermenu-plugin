@@ -127,7 +127,7 @@ Launcher* ApplicationsPage::get_application(const std::string& desktop_id) const
 void ApplicationsPage::apply_filter(GtkToggleButton* togglebutton)
 {
 	// Only apply filter for active button
-	if (gtk_toggle_button_get_active(togglebutton) == false)
+	if (!gtk_toggle_button_get_active(togglebutton))
 	{
 		return;
 	}
