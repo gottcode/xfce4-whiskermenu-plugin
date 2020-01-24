@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-08 13:48-0500\n"
+"POT-Creation-Date: 2020-01-24 09:02-0500\n"
 "PO-Revision-Date: 2018-04-20 21:11+0000\n"
 "Last-Translator: Sebastian Brici <bricisebastian@gmail.com>\n"
 "Language-Team: Romanian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -22,56 +22,61 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
 "2:1));\n"
 
-#: ../panel-plugin/configuration-dialog.cpp:899
+#: ../panel-plugin/configuration-dialog.cpp:952
 msgid "Add action"
 msgstr "Adaugă acțiune"
 
-#: ../panel-plugin/page.cpp:404
+#: ../panel-plugin/page.cpp:403
 msgid "Add to Desktop"
 msgstr "Adaugă la desktop"
 
-#: ../panel-plugin/page.cpp:388
+#: ../panel-plugin/page.cpp:387
 msgid "Add to Favorites"
 msgstr "Adaugă la favorite"
 
-#: ../panel-plugin/page.cpp:408
+#: ../panel-plugin/page.cpp:407
 msgid "Add to Panel"
 msgstr "Adaugă la panou"
 
-#: ../panel-plugin/category.cpp:61
+#: ../panel-plugin/category.cpp:49
 msgid "All Applications"
 msgstr "Toate programele"
 
-#: ../panel-plugin/plugin.cpp:410
+#: ../panel-plugin/plugin.cpp:409
 msgid "Alternate application launcher for Xfce"
 msgstr "Lansator de aplicații alternativ pt. Xfce"
 
-#: ../panel-plugin/configuration-dialog.cpp:788
+#: ../panel-plugin/configuration-dialog.cpp:841
 msgid "Amount of _items:"
 msgstr "Număr de _elemente"
 
-#: ../panel-plugin/plugin.cpp:214
+#: ../panel-plugin/configuration-dialog.cpp:683
+#, fuzzy
+msgid "Application icon si_ze:"
+msgstr "Pornire de programe"
+
+#: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
 msgstr "Aplicații"
 
-#: ../panel-plugin/launcher.cpp:262
+#: ../panel-plugin/launcher.cpp:232
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
 msgstr "Sigur doriți să ascundeți elementul „%s”?"
 
-#: ../panel-plugin/settings.cpp:144
+#: ../panel-plugin/settings.cpp:146
 msgid "Are you sure you want to log out?"
 msgstr "Sigur doriți să ieșiți?"
 
-#: ../panel-plugin/settings.cpp:150
+#: ../panel-plugin/settings.cpp:152
 msgid "Are you sure you want to restart?"
 msgstr "Sigur doriți să reporniți?"
 
-#: ../panel-plugin/settings.cpp:156
+#: ../panel-plugin/settings.cpp:158
 msgid "Are you sure you want to shut down?"
 msgstr "Sigur doriți să opriți calculatorul?"
 
-#: ../panel-plugin/configuration-dialog.cpp:715
+#: ../panel-plugin/configuration-dialog.cpp:723
 msgid "Background opacit_y:"
 msgstr "Opac_itatea fondului:"
 
@@ -79,11 +84,11 @@ msgstr "Opac_itatea fondului:"
 msgid "Browse the file system to choose a custom command."
 msgstr "Caută sistemul de fișiere pentru a găsi o comandă personalizată."
 
-#: ../panel-plugin/configuration-dialog.cpp:956
+#: ../panel-plugin/configuration-dialog.cpp:1009
 msgid "C_ommand:"
 msgstr "C_omandă"
 
-#: ../panel-plugin/configuration-dialog.cpp:700
+#: ../panel-plugin/configuration-dialog.cpp:701
 msgid "Categ_ory icon size:"
 msgstr "Mărimea iconiței categ_oriei:"
 
@@ -91,113 +96,109 @@ msgstr "Mărimea iconiței categ_oriei:"
 msgid "Clear Recently Used"
 msgstr "Șterge recent folositele"
 
-#: ../panel-plugin/plugin.cpp:411
+#: ../panel-plugin/plugin.cpp:410
 msgid "Copyright © 2013-2020 Graeme Gott"
 msgstr "Copyright © 2013-2020 Graeme Gott"
 
-#: ../panel-plugin/configuration-dialog.cpp:927
+#: ../panel-plugin/configuration-dialog.cpp:980
 msgid "Details"
 msgstr "Detalii"
 
-#: ../panel-plugin/configuration-dialog.cpp:588
+#: ../panel-plugin/configuration-dialog.cpp:753
 msgid "Di_splay:"
 msgstr "Afi_șaj:"
 
-#: ../panel-plugin/configuration-dialog.cpp:805
+#: ../panel-plugin/configuration-dialog.cpp:858
 msgid "Display by _default"
 msgstr "Arată după stare i_mplicită"
 
-#: ../panel-plugin/settings.cpp:162
+#: ../panel-plugin/settings.cpp:164
 msgid "Do you want to suspend to RAM?"
 msgstr "Doriți suspendare în memoria RAM?"
 
-#: ../panel-plugin/settings.cpp:168
+#: ../panel-plugin/settings.cpp:170
 msgid "Do you want to suspend to disk?"
 msgstr "Doriți suspendare pe disc?"
 
-#: ../panel-plugin/page.cpp:415
+#: ../panel-plugin/page.cpp:414
 msgid "Edit Application..."
 msgstr "Editează aplicația..."
 
-#: ../panel-plugin/settings.cpp:179
+#: ../panel-plugin/settings.cpp:181
 msgid "Edit _Profile"
 msgstr "Editează _profilul"
 
-#: ../panel-plugin/settings.cpp:181
+#: ../panel-plugin/settings.cpp:183
 msgid "Failed to edit profile."
 msgstr "A eșuat editarea profilului."
 
-#: ../panel-plugin/launcher.cpp:348 ../panel-plugin/launcher.cpp:422
-#: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:188
+#: ../panel-plugin/launcher.cpp:318 ../panel-plugin/launcher.cpp:392
+#: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:189
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "A eșuat executarea comenzii \"%s\""
 
-#: ../panel-plugin/settings.cpp:167
+#: ../panel-plugin/settings.cpp:169
 msgid "Failed to hibernate."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:177
+#: ../panel-plugin/settings.cpp:179
 msgid "Failed to launch menu editor."
 msgstr "Nu se poate lansa editorul de meniu."
 
-#: ../panel-plugin/settings.cpp:135
+#: ../panel-plugin/settings.cpp:137
 msgid "Failed to lock screen."
 msgstr "A eșuat blocarea ecranului."
 
-#: ../panel-plugin/settings.cpp:143 ../panel-plugin/settings.cpp:173
+#: ../panel-plugin/settings.cpp:145 ../panel-plugin/settings.cpp:175
 msgid "Failed to log out."
 msgstr "A eșuat închiderea sesiunii."
 
-#: ../panel-plugin/settings.cpp:131
+#: ../panel-plugin/settings.cpp:133
 msgid "Failed to open settings manager."
 msgstr "A eșuat deschiderea gestionarului de setări."
 
-#: ../panel-plugin/settings.cpp:149
+#: ../panel-plugin/settings.cpp:151
 msgid "Failed to restart."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:155
+#: ../panel-plugin/settings.cpp:157
 msgid "Failed to shut down."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:161
+#: ../panel-plugin/settings.cpp:163
 msgid "Failed to suspend."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:139
+#: ../panel-plugin/settings.cpp:141
 #, fuzzy
 msgid "Failed to switch user."
 msgstr "Nu se pot schimba utilizatorii"
 
-#: ../panel-plugin/window.cpp:158
+#: ../panel-plugin/window.cpp:159
 msgid "Favorites"
 msgstr "Favorite"
 
-#: ../panel-plugin/settings.cpp:169
+#: ../panel-plugin/settings.cpp:171
 #, c-format
 msgid "Hibernating computer in %d seconds."
 msgstr "Calculatorul va intra în hibernare în %d secunde."
 
-#: ../panel-plugin/launcher.cpp:261 ../panel-plugin/page.cpp:419
+#: ../panel-plugin/launcher.cpp:231 ../panel-plugin/page.cpp:418
 msgid "Hide Application"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:593
+#: ../panel-plugin/configuration-dialog.cpp:758
 msgid "Icon"
 msgstr "Iconiță"
 
-#: ../panel-plugin/configuration-dialog.cpp:595
+#: ../panel-plugin/configuration-dialog.cpp:760
 msgid "Icon and title"
 msgstr "Iconiță și titlu"
 
-#: ../panel-plugin/configuration-dialog.cpp:799
+#: ../panel-plugin/configuration-dialog.cpp:852
 msgid "Include _favorites"
 msgstr "Include _favorite"
-
-#: ../panel-plugin/configuration-dialog.cpp:684
-msgid "Ite_m icon size:"
-msgstr "_Mărimea iconiței articolului:"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Large"
@@ -207,33 +208,32 @@ msgstr "Mare"
 msgid "Larger"
 msgstr "Mai mare"
 
-#: ../panel-plugin/settings.cpp:171
+#: ../panel-plugin/settings.cpp:173
 msgid "Log Ou_t..."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:141
+#: ../panel-plugin/settings.cpp:143
 msgid "Log _Out"
 msgstr "_Ieșire"
 
-#: ../panel-plugin/settings.cpp:145
+#: ../panel-plugin/settings.cpp:147
 #, c-format
 msgid "Logging out in %d seconds."
 msgstr "Ieșirea va avea loc în %d secunde."
 
-#: ../panel-plugin/settings.cpp:183
+#: ../panel-plugin/settings.cpp:185
 msgid "Man Pages"
 msgstr "Pagini Man"
 
-#: ../panel-plugin/configuration-dialog.cpp:641
-#: ../panel-plugin/configuration-dialog.cpp:745
+#: ../panel-plugin/configuration-dialog.cpp:816
 msgid "Menu"
 msgstr "Meniu"
 
-#: ../panel-plugin/configuration-dialog.cpp:931
+#: ../panel-plugin/configuration-dialog.cpp:984
 msgid "Nam_e:"
 msgstr "Num_e"
 
-#: ../panel-plugin/configuration-dialog.cpp:877
+#: ../panel-plugin/configuration-dialog.cpp:930
 msgid "Name"
 msgstr "Nume"
 
@@ -245,48 +245,44 @@ msgstr "Niciunul"
 msgid "Normal"
 msgstr "Normal"
 
-#: ../panel-plugin/settings.cpp:187
+#: ../panel-plugin/settings.cpp:189
 msgid "Open URI"
 msgstr "Deschide URL"
 
-#: ../panel-plugin/configuration-dialog.cpp:584
-msgid "Panel Button"
-msgstr "Buton panou"
-
-#: ../panel-plugin/configuration-dialog.cpp:882
+#: ../panel-plugin/configuration-dialog.cpp:935
 msgid "Pattern"
 msgstr "Tipar"
 
-#: ../panel-plugin/configuration-dialog.cpp:755
+#: ../panel-plugin/configuration-dialog.cpp:667
 msgid "Position _search entry next to panel button"
 msgstr "Poziționează căsuța de căutare _lângă butonul de panou"
 
-#: ../panel-plugin/configuration-dialog.cpp:767
+#: ../panel-plugin/configuration-dialog.cpp:661
 msgid "Position cate_gories next to panel button"
 msgstr "Poziționează cate_goriile lângă butonul de panou"
 
-#: ../panel-plugin/configuration-dialog.cpp:761
+#: ../panel-plugin/configuration-dialog.cpp:673
 msgid "Position commands next to search _entry"
 msgstr "Poziționează comen_zi lângă căsuța de căutare"
 
-#: ../panel-plugin/configuration-dialog.cpp:784 ../panel-plugin/window.cpp:164
+#: ../panel-plugin/configuration-dialog.cpp:837 ../panel-plugin/window.cpp:167
 msgid "Recently Used"
 msgstr "Folosite recent"
 
-#: ../panel-plugin/page.cpp:396
+#: ../panel-plugin/page.cpp:395
 msgid "Remove From Favorites"
 msgstr "Șterge din favorite"
 
-#: ../panel-plugin/configuration-dialog.cpp:488
+#: ../panel-plugin/configuration-dialog.cpp:486
 #, c-format
 msgid "Remove action \"%s\"?"
 msgstr "Reliminați acțiunea „%s”?"
 
-#: ../panel-plugin/configuration-dialog.cpp:908
+#: ../panel-plugin/configuration-dialog.cpp:961
 msgid "Remove selected action"
 msgstr "Elimină acțiunea selectată"
 
-#: ../panel-plugin/settings.cpp:151
+#: ../panel-plugin/settings.cpp:153
 #, c-format
 msgid "Restarting computer in %d seconds."
 msgstr "Calculatorul va fi repornit în %d secunde."
@@ -296,19 +292,19 @@ msgstr "Calculatorul va fi repornit în %d secunde."
 msgid "Run %s"
 msgstr "Rulează %s"
 
-#: ../panel-plugin/settings.cpp:186
+#: ../panel-plugin/settings.cpp:188
 msgid "Run in Terminal"
 msgstr "Rulează în terminal"
 
-#: ../panel-plugin/configuration-dialog.cpp:102
+#: ../panel-plugin/configuration-dialog.cpp:103
 msgid "Search Actio_ns"
 msgstr "Caută acți_uni"
 
-#: ../panel-plugin/search-action.cpp:259
+#: ../panel-plugin/search-action.cpp:260
 msgid "Search Action"
 msgstr "Caută acțiune"
 
-#: ../panel-plugin/configuration-dialog.cpp:135
+#: ../panel-plugin/configuration-dialog.cpp:276
 msgid "Select An Icon"
 msgstr "Selectează o iconiță"
 
@@ -316,7 +312,7 @@ msgstr "Selectează o iconiță"
 msgid "Select Command"
 msgstr "Alegeți comanda"
 
-#: ../panel-plugin/configuration-dialog.cpp:814
+#: ../panel-plugin/configuration-dialog.cpp:867
 msgid "Session Commands"
 msgstr ""
 
@@ -324,35 +320,41 @@ msgstr ""
 msgid "Show a menu to easily access installed applications"
 msgstr "Arată un meniu pentru a accesa ușor aplicații instalate"
 
-#: ../panel-plugin/configuration-dialog.cpp:658
+#: ../panel-plugin/configuration-dialog.cpp:650
 msgid "Show application _descriptions"
 msgstr "Arată _descrierile aplicațiilor"
 
-#: ../panel-plugin/configuration-dialog.cpp:665
+#: ../panel-plugin/configuration-dialog.cpp:644
 msgid "Show application too_ltips"
 msgstr "Arată _recomandările pentru aplicații"
 
-#: ../panel-plugin/configuration-dialog.cpp:678
+#: ../panel-plugin/configuration-dialog.cpp:587
 msgid "Show as _icons"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:818
+#: ../panel-plugin/configuration-dialog.cpp:595
+#, fuzzy
+msgid "Show as lis_t"
+msgstr "Arată liniile de bază"
+
+#: ../panel-plugin/configuration-dialog.cpp:603
+#, fuzzy
+msgid "Show as t_ree"
+msgstr "Arată ca_drul"
+
+#: ../panel-plugin/configuration-dialog.cpp:871
 msgid "Show c_onfirmation dialog"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:651
+#: ../panel-plugin/configuration-dialog.cpp:637
 msgid "Show cate_gory names"
 msgstr "Arată _denumirile categoriilor"
 
-#: ../panel-plugin/configuration-dialog.cpp:645
+#: ../panel-plugin/configuration-dialog.cpp:631
 msgid "Show generic application _names"
 msgstr "Arată _nume generice de aplicații"
 
-#: ../panel-plugin/configuration-dialog.cpp:671
-msgid "Show menu hie_rarchy"
-msgstr "Arată ie_rarhia meniului"
-
-#: ../panel-plugin/settings.cpp:153
+#: ../panel-plugin/settings.cpp:155
 msgid "Shut _Down"
 msgstr "_Oprire"
 
@@ -372,66 +374,66 @@ msgstr "Sortează alfabetic A-Z"
 msgid "Sort Alphabetically Z-A"
 msgstr "Sortează alfabetic Z-A"
 
-#: ../panel-plugin/configuration-dialog.cpp:773
+#: ../panel-plugin/configuration-dialog.cpp:826
 msgid "Stay _visible when focus is lost"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:159
+#: ../panel-plugin/settings.cpp:161
 msgid "Suspe_nd"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:163
+#: ../panel-plugin/settings.cpp:165
 #, c-format
 msgid "Suspending computer in %d seconds."
 msgstr "Calculatorul va fi suspendat în %d secunde."
 
-#: ../panel-plugin/settings.cpp:137
+#: ../panel-plugin/settings.cpp:139
 #, fuzzy
 msgid "Switch _User"
 msgstr "Schimbă _utilizatorii"
 
-#: ../panel-plugin/configuration-dialog.cpp:749
+#: ../panel-plugin/configuration-dialog.cpp:820
 msgid "Switch categories by _hovering"
 msgstr "Schimbă categoriile _planând cursorul"
 
-#: ../panel-plugin/configuration-dialog.cpp:487
+#: ../panel-plugin/configuration-dialog.cpp:485
 msgid "The action will be deleted permanently."
 msgstr "Această acțiune va fi ștearsă permanent"
 
-#: ../panel-plugin/configuration-dialog.cpp:594
+#: ../panel-plugin/configuration-dialog.cpp:759
 msgid "Title"
 msgstr "Titlu"
 
-#: ../panel-plugin/launcher.cpp:256
+#: ../panel-plugin/launcher.cpp:226
 #, c-format
 msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:157
+#: ../panel-plugin/settings.cpp:159
 #, c-format
 msgid "Turning off computer in %d seconds."
 msgstr "Calculatorul va fi oprit în %d secunde."
 
-#: ../panel-plugin/page.cpp:481
+#: ../panel-plugin/page.cpp:480
 msgid "Unable to add launcher to desktop."
 msgstr "Nu s-a putut adăuga lansator la desktop."
 
-#: ../panel-plugin/page.cpp:519 ../panel-plugin/page.cpp:528
+#: ../panel-plugin/page.cpp:518 ../panel-plugin/page.cpp:527
 msgid "Unable to add launcher to panel."
 msgstr "Nu s-a putut adăuga lansator la panou."
 
-#: ../panel-plugin/page.cpp:557
+#: ../panel-plugin/page.cpp:556
 msgid "Unable to edit launcher."
 msgstr "Eșec la editarea lansatorului."
 
-#: ../panel-plugin/configuration-dialog.cpp:548
+#: ../panel-plugin/configuration-dialog.cpp:546
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Nu se poate deschide următorul url: %s"
 
-#: ../panel-plugin/configuration-dialog.cpp:628
+#: ../panel-plugin/configuration-dialog.cpp:795
 msgid "Use a single _panel row"
 msgstr "Folosește un singur rând de _panou"
 
@@ -443,7 +445,7 @@ msgstr "Foarte mare"
 msgid "Very Small"
 msgstr "Foarte mic"
 
-#: ../panel-plugin/settings.cpp:184
+#: ../panel-plugin/settings.cpp:186
 msgid "Web Search"
 msgstr "Căutare web"
 
@@ -452,7 +454,7 @@ msgstr "Căutare web"
 msgid "Whisker Menu"
 msgstr "Meniu Whisker"
 
-#: ../panel-plugin/settings.cpp:185
+#: ../panel-plugin/settings.cpp:187
 msgid "Wikipedia"
 msgstr "Wikipedia"
 
@@ -460,12 +462,12 @@ msgstr "Wikipedia"
 msgid "_Appearance"
 msgstr "_Aspect"
 
-#: ../panel-plugin/configuration-dialog.cpp:100
+#: ../panel-plugin/configuration-dialog.cpp:101
 msgid "_Behavior"
 msgstr "Compo_rtament"
 
 #: ../panel-plugin/command-edit.cpp:67
-#: ../panel-plugin/configuration-dialog.cpp:137
+#: ../panel-plugin/configuration-dialog.cpp:278
 msgid "_Cancel"
 msgstr "_Anulează"
 
@@ -473,15 +475,15 @@ msgstr "_Anulează"
 msgid "_Close"
 msgstr "Înch_ide"
 
-#: ../panel-plugin/configuration-dialog.cpp:101
+#: ../panel-plugin/configuration-dialog.cpp:102
 msgid "_Commands"
 msgstr "_Comenzi"
 
-#: ../panel-plugin/configuration-dialog.cpp:486
+#: ../panel-plugin/configuration-dialog.cpp:484
 msgid "_Delete"
 msgstr "Șt_erge"
 
-#: ../panel-plugin/settings.cpp:175
+#: ../panel-plugin/settings.cpp:177
 msgid "_Edit Applications"
 msgstr "_Editează aplicații"
 
@@ -489,43 +491,47 @@ msgstr "_Editează aplicații"
 msgid "_Help"
 msgstr "_Ajutor"
 
-#: ../panel-plugin/settings.cpp:165
+#: ../panel-plugin/settings.cpp:167
 msgid "_Hibernate"
 msgstr "_Hibernare"
 
-#: ../panel-plugin/configuration-dialog.cpp:614
+#: ../panel-plugin/configuration-dialog.cpp:781
 msgid "_Icon:"
 msgstr "_Iconiță:"
 
-#: ../panel-plugin/settings.cpp:133
+#: ../panel-plugin/settings.cpp:135
 msgid "_Lock Screen"
 msgstr "B_lochează ecranul"
 
 #: ../panel-plugin/command-edit.cpp:68
-#: ../panel-plugin/configuration-dialog.cpp:138
+#: ../panel-plugin/configuration-dialog.cpp:279
 msgid "_OK"
 msgstr "_OK"
 
-#: ../panel-plugin/configuration-dialog.cpp:944
+#: ../panel-plugin/configuration-dialog.cpp:100
+msgid "_Panel Button"
+msgstr "Buton panou"
+
+#: ../panel-plugin/configuration-dialog.cpp:997
 msgid "_Pattern:"
 msgstr "Ti_par:"
 
-#: ../panel-plugin/configuration-dialog.cpp:968
+#: ../panel-plugin/configuration-dialog.cpp:1021
 msgid "_Regular expression"
 msgstr "Expresie _regulată"
 
-#: ../panel-plugin/settings.cpp:147
+#: ../panel-plugin/settings.cpp:149
 msgid "_Restart"
 msgstr "_Repornire"
 
-#: ../panel-plugin/settings.cpp:129
+#: ../panel-plugin/settings.cpp:131
 msgid "_Settings Manager"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:603
+#: ../panel-plugin/configuration-dialog.cpp:769
 msgid "_Title:"
 msgstr "_Titlu"
 
-#: ../panel-plugin/plugin.cpp:415
+#: ../panel-plugin/plugin.cpp:414
 msgid "translator-credits"
 msgstr "autori-traduceri"

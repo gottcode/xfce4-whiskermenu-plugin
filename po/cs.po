@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-08 13:48-0500\n"
+"POT-Creation-Date: 2020-01-24 09:02-0500\n"
 "PO-Revision-Date: 2020-01-09 06:15+0000\n"
 "Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
@@ -25,56 +25,61 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n "
 "<= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
-#: ../panel-plugin/configuration-dialog.cpp:899
+#: ../panel-plugin/configuration-dialog.cpp:952
 msgid "Add action"
 msgstr "Přidat akci"
 
-#: ../panel-plugin/page.cpp:404
+#: ../panel-plugin/page.cpp:403
 msgid "Add to Desktop"
 msgstr "Přidat na plochu"
 
-#: ../panel-plugin/page.cpp:388
+#: ../panel-plugin/page.cpp:387
 msgid "Add to Favorites"
 msgstr "Přidat k oblíbeným"
 
-#: ../panel-plugin/page.cpp:408
+#: ../panel-plugin/page.cpp:407
 msgid "Add to Panel"
 msgstr "Přidat na panel"
 
-#: ../panel-plugin/category.cpp:61
+#: ../panel-plugin/category.cpp:49
 msgid "All Applications"
 msgstr "Všechny aplikace"
 
-#: ../panel-plugin/plugin.cpp:410
+#: ../panel-plugin/plugin.cpp:409
 msgid "Alternate application launcher for Xfce"
 msgstr "Alternativní spouštěč aplikací pro Xfce"
 
-#: ../panel-plugin/configuration-dialog.cpp:788
+#: ../panel-plugin/configuration-dialog.cpp:841
 msgid "Amount of _items:"
 msgstr "Množství _položek:"
 
-#: ../panel-plugin/plugin.cpp:214
+#: ../panel-plugin/configuration-dialog.cpp:683
+#, fuzzy
+msgid "Application icon si_ze:"
+msgstr "Vyhledávač aplikací"
+
+#: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
 msgstr "Aplikace"
 
-#: ../panel-plugin/launcher.cpp:262
+#: ../panel-plugin/launcher.cpp:232
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
 msgstr "Opravdu chcete „%s“ skrýt?"
 
-#: ../panel-plugin/settings.cpp:144
+#: ../panel-plugin/settings.cpp:146
 msgid "Are you sure you want to log out?"
 msgstr "Opravdu se chcete odhlásit?"
 
-#: ../panel-plugin/settings.cpp:150
+#: ../panel-plugin/settings.cpp:152
 msgid "Are you sure you want to restart?"
 msgstr "Opravdu chcete počítač restartovat?"
 
-#: ../panel-plugin/settings.cpp:156
+#: ../panel-plugin/settings.cpp:158
 msgid "Are you sure you want to shut down?"
 msgstr "Opravdu chcete počítač vypnout?"
 
-#: ../panel-plugin/configuration-dialog.cpp:715
+#: ../panel-plugin/configuration-dialog.cpp:723
 msgid "Background opacit_y:"
 msgstr "Neprůhlednost po_zadí:"
 
@@ -82,11 +87,11 @@ msgstr "Neprůhlednost po_zadí:"
 msgid "Browse the file system to choose a custom command."
 msgstr "Procházet souborový systém a vybrat vlastní příkaz."
 
-#: ../panel-plugin/configuration-dialog.cpp:956
+#: ../panel-plugin/configuration-dialog.cpp:1009
 msgid "C_ommand:"
 msgstr "P_říkaz"
 
-#: ../panel-plugin/configuration-dialog.cpp:700
+#: ../panel-plugin/configuration-dialog.cpp:701
 msgid "Categ_ory icon size:"
 msgstr "Velikost ikon kateg_orií:"
 
@@ -94,112 +99,108 @@ msgstr "Velikost ikon kateg_orií:"
 msgid "Clear Recently Used"
 msgstr "Vymazat seznam nedávno použitých položek"
 
-#: ../panel-plugin/plugin.cpp:411
+#: ../panel-plugin/plugin.cpp:410
 msgid "Copyright © 2013-2020 Graeme Gott"
 msgstr "Autorská práva © 2013-2020 Graeme Gott"
 
-#: ../panel-plugin/configuration-dialog.cpp:927
+#: ../panel-plugin/configuration-dialog.cpp:980
 msgid "Details"
 msgstr "Podrobnosti"
 
-#: ../panel-plugin/configuration-dialog.cpp:588
+#: ../panel-plugin/configuration-dialog.cpp:753
 msgid "Di_splay:"
 msgstr "_Zobrazení:"
 
-#: ../panel-plugin/configuration-dialog.cpp:805
+#: ../panel-plugin/configuration-dialog.cpp:858
 msgid "Display by _default"
 msgstr "Zob_razit ve výchozím nastavení"
 
-#: ../panel-plugin/settings.cpp:162
+#: ../panel-plugin/settings.cpp:164
 msgid "Do you want to suspend to RAM?"
 msgstr "Chcete počítač uspat do operační paměti"
 
-#: ../panel-plugin/settings.cpp:168
+#: ../panel-plugin/settings.cpp:170
 msgid "Do you want to suspend to disk?"
 msgstr "Chcete počítač uspat na disk?"
 
-#: ../panel-plugin/page.cpp:415
+#: ../panel-plugin/page.cpp:414
 msgid "Edit Application..."
 msgstr "Upravit aplikaci…"
 
-#: ../panel-plugin/settings.cpp:179
+#: ../panel-plugin/settings.cpp:181
 msgid "Edit _Profile"
 msgstr "Upravit _profil"
 
-#: ../panel-plugin/settings.cpp:181
+#: ../panel-plugin/settings.cpp:183
 msgid "Failed to edit profile."
 msgstr "Úprava profilu se nezdařila."
 
-#: ../panel-plugin/launcher.cpp:348 ../panel-plugin/launcher.cpp:422
-#: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:188
+#: ../panel-plugin/launcher.cpp:318 ../panel-plugin/launcher.cpp:392
+#: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:189
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "Spuštění příkazu \"%s\" se nezdařilo"
 
-#: ../panel-plugin/settings.cpp:167
+#: ../panel-plugin/settings.cpp:169
 msgid "Failed to hibernate."
 msgstr "Nepodařilo se uspat na disk."
 
-#: ../panel-plugin/settings.cpp:177
+#: ../panel-plugin/settings.cpp:179
 msgid "Failed to launch menu editor."
 msgstr "Spuštění editoru nabídky se nezdařilo."
 
-#: ../panel-plugin/settings.cpp:135
+#: ../panel-plugin/settings.cpp:137
 msgid "Failed to lock screen."
 msgstr "Uzamknutí obrazovky se nezdařilo."
 
-#: ../panel-plugin/settings.cpp:143 ../panel-plugin/settings.cpp:173
+#: ../panel-plugin/settings.cpp:145 ../panel-plugin/settings.cpp:175
 msgid "Failed to log out."
 msgstr "Odhlášení se nezdařilo."
 
-#: ../panel-plugin/settings.cpp:131
+#: ../panel-plugin/settings.cpp:133
 msgid "Failed to open settings manager."
 msgstr "Otevření správce nastavení se nezdařilo."
 
-#: ../panel-plugin/settings.cpp:149
+#: ../panel-plugin/settings.cpp:151
 msgid "Failed to restart."
 msgstr "Nepodařilo se restartovat."
 
-#: ../panel-plugin/settings.cpp:155
+#: ../panel-plugin/settings.cpp:157
 msgid "Failed to shut down."
 msgstr "Nepodařilo se vypnout."
 
-#: ../panel-plugin/settings.cpp:161
+#: ../panel-plugin/settings.cpp:163
 msgid "Failed to suspend."
 msgstr "Nepodařilo se uspat do paměti."
 
-#: ../panel-plugin/settings.cpp:139
+#: ../panel-plugin/settings.cpp:141
 msgid "Failed to switch user."
 msgstr "Nepodařilo se přepnout uživatele."
 
-#: ../panel-plugin/window.cpp:158
+#: ../panel-plugin/window.cpp:159
 msgid "Favorites"
 msgstr "Oblíbené"
 
-#: ../panel-plugin/settings.cpp:169
+#: ../panel-plugin/settings.cpp:171
 #, c-format
 msgid "Hibernating computer in %d seconds."
 msgstr "Uspání počítače na disk za %d sekund."
 
-#: ../panel-plugin/launcher.cpp:261 ../panel-plugin/page.cpp:419
+#: ../panel-plugin/launcher.cpp:231 ../panel-plugin/page.cpp:418
 msgid "Hide Application"
 msgstr "Skrýt aplikaci"
 
-#: ../panel-plugin/configuration-dialog.cpp:593
+#: ../panel-plugin/configuration-dialog.cpp:758
 msgid "Icon"
 msgstr "Ikona"
 
-#: ../panel-plugin/configuration-dialog.cpp:595
+#: ../panel-plugin/configuration-dialog.cpp:760
 msgid "Icon and title"
 msgstr "Ikona a název"
 
-#: ../panel-plugin/configuration-dialog.cpp:799
+#: ../panel-plugin/configuration-dialog.cpp:852
 msgid "Include _favorites"
 msgstr "Zahrnout _oblíbené"
-
-#: ../panel-plugin/configuration-dialog.cpp:684
-msgid "Ite_m icon size:"
-msgstr "_Velikost ikon položek:"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Large"
@@ -209,33 +210,32 @@ msgstr "Velké"
 msgid "Larger"
 msgstr "Větší"
 
-#: ../panel-plugin/settings.cpp:171
+#: ../panel-plugin/settings.cpp:173
 msgid "Log Ou_t..."
 msgstr "Ohlási_t…"
 
-#: ../panel-plugin/settings.cpp:141
+#: ../panel-plugin/settings.cpp:143
 msgid "Log _Out"
 msgstr "_Odhlásit se"
 
-#: ../panel-plugin/settings.cpp:145
+#: ../panel-plugin/settings.cpp:147
 #, c-format
 msgid "Logging out in %d seconds."
 msgstr "Ohlášení za %d sekund."
 
-#: ../panel-plugin/settings.cpp:183
+#: ../panel-plugin/settings.cpp:185
 msgid "Man Pages"
 msgstr "Manuálové stránky"
 
-#: ../panel-plugin/configuration-dialog.cpp:641
-#: ../panel-plugin/configuration-dialog.cpp:745
+#: ../panel-plugin/configuration-dialog.cpp:816
 msgid "Menu"
 msgstr "Nabídka"
 
-#: ../panel-plugin/configuration-dialog.cpp:931
+#: ../panel-plugin/configuration-dialog.cpp:984
 msgid "Nam_e:"
 msgstr "Náz_ev:"
 
-#: ../panel-plugin/configuration-dialog.cpp:877
+#: ../panel-plugin/configuration-dialog.cpp:930
 msgid "Name"
 msgstr "Název"
 
@@ -247,48 +247,44 @@ msgstr "Žádný"
 msgid "Normal"
 msgstr "Normální"
 
-#: ../panel-plugin/settings.cpp:187
+#: ../panel-plugin/settings.cpp:189
 msgid "Open URI"
 msgstr "Otevřít URl"
 
-#: ../panel-plugin/configuration-dialog.cpp:584
-msgid "Panel Button"
-msgstr "Tlačítko panelu"
-
-#: ../panel-plugin/configuration-dialog.cpp:882
+#: ../panel-plugin/configuration-dialog.cpp:935
 msgid "Pattern"
 msgstr "Vzorec"
 
-#: ../panel-plugin/configuration-dialog.cpp:755
+#: ../panel-plugin/configuration-dialog.cpp:667
 msgid "Position _search entry next to panel button"
 msgstr "Umí_stit vyhledávání vedle tlačítka panelu"
 
-#: ../panel-plugin/configuration-dialog.cpp:767
+#: ../panel-plugin/configuration-dialog.cpp:661
 msgid "Position cate_gories next to panel button"
 msgstr "Umístit kate_gorie vedle tlačítka panelu"
 
-#: ../panel-plugin/configuration-dialog.cpp:761
+#: ../panel-plugin/configuration-dialog.cpp:673
 msgid "Position commands next to search _entry"
 msgstr "Umístit příkazy v_edle kolonky vyhledávání"
 
-#: ../panel-plugin/configuration-dialog.cpp:784 ../panel-plugin/window.cpp:164
+#: ../panel-plugin/configuration-dialog.cpp:837 ../panel-plugin/window.cpp:167
 msgid "Recently Used"
 msgstr "Nedávno použité"
 
-#: ../panel-plugin/page.cpp:396
+#: ../panel-plugin/page.cpp:395
 msgid "Remove From Favorites"
 msgstr "Odebrat z oblíbených"
 
-#: ../panel-plugin/configuration-dialog.cpp:488
+#: ../panel-plugin/configuration-dialog.cpp:486
 #, c-format
 msgid "Remove action \"%s\"?"
 msgstr "Odebrat akci „%s“?"
 
-#: ../panel-plugin/configuration-dialog.cpp:908
+#: ../panel-plugin/configuration-dialog.cpp:961
 msgid "Remove selected action"
 msgstr "Odebrat vybranou akci"
 
-#: ../panel-plugin/settings.cpp:151
+#: ../panel-plugin/settings.cpp:153
 #, c-format
 msgid "Restarting computer in %d seconds."
 msgstr "Restart počítače za %d sekund."
@@ -298,19 +294,19 @@ msgstr "Restart počítače za %d sekund."
 msgid "Run %s"
 msgstr "Spustit %s"
 
-#: ../panel-plugin/settings.cpp:186
+#: ../panel-plugin/settings.cpp:188
 msgid "Run in Terminal"
 msgstr "Spustit v terminálu"
 
-#: ../panel-plugin/configuration-dialog.cpp:102
+#: ../panel-plugin/configuration-dialog.cpp:103
 msgid "Search Actio_ns"
 msgstr "Akce hledá_ní"
 
-#: ../panel-plugin/search-action.cpp:259
+#: ../panel-plugin/search-action.cpp:260
 msgid "Search Action"
 msgstr "Akce hledání"
 
-#: ../panel-plugin/configuration-dialog.cpp:135
+#: ../panel-plugin/configuration-dialog.cpp:276
 msgid "Select An Icon"
 msgstr "Vyberte Ikonu"
 
@@ -318,7 +314,7 @@ msgstr "Vyberte Ikonu"
 msgid "Select Command"
 msgstr "Vyberte příkaz"
 
-#: ../panel-plugin/configuration-dialog.cpp:814
+#: ../panel-plugin/configuration-dialog.cpp:867
 msgid "Session Commands"
 msgstr "Povely relace"
 
@@ -326,35 +322,41 @@ msgstr "Povely relace"
 msgid "Show a menu to easily access installed applications"
 msgstr "Zobrazovat nabídku pro snadný přístup k nainstalovaným aplikacím"
 
-#: ../panel-plugin/configuration-dialog.cpp:658
+#: ../panel-plugin/configuration-dialog.cpp:650
 msgid "Show application _descriptions"
 msgstr "Zobrazit popisky _aplikací"
 
-#: ../panel-plugin/configuration-dialog.cpp:665
+#: ../panel-plugin/configuration-dialog.cpp:644
 msgid "Show application too_ltips"
 msgstr "Zobrazovat bublinové nápovědy ap_likací"
 
-#: ../panel-plugin/configuration-dialog.cpp:678
+#: ../panel-plugin/configuration-dialog.cpp:587
 msgid "Show as _icons"
 msgstr "Zobrazit jako _ikony"
 
-#: ../panel-plugin/configuration-dialog.cpp:818
+#: ../panel-plugin/configuration-dialog.cpp:595
+#, fuzzy
+msgid "Show as lis_t"
+msgstr "Zobrazit jako _ikony"
+
+#: ../panel-plugin/configuration-dialog.cpp:603
+#, fuzzy
+msgid "Show as t_ree"
+msgstr "Zobrazit jako _ikony"
+
+#: ../panel-plugin/configuration-dialog.cpp:871
 msgid "Show c_onfirmation dialog"
 msgstr "Zobrazovat p_otvrzovací dialog"
 
-#: ../panel-plugin/configuration-dialog.cpp:651
+#: ../panel-plugin/configuration-dialog.cpp:637
 msgid "Show cate_gory names"
 msgstr "Zobrazovat názvy kate_gorií"
 
-#: ../panel-plugin/configuration-dialog.cpp:645
+#: ../panel-plugin/configuration-dialog.cpp:631
 msgid "Show generic application _names"
 msgstr "Zobrazovat obecné _názvy aplikací"
 
-#: ../panel-plugin/configuration-dialog.cpp:671
-msgid "Show menu hie_rarchy"
-msgstr "Zob_razit strukturu nabídky"
-
-#: ../panel-plugin/settings.cpp:153
+#: ../panel-plugin/settings.cpp:155
 msgid "Shut _Down"
 msgstr "_Vypnout"
 
@@ -374,36 +376,36 @@ msgstr "Seřadit abecedně A-Z"
 msgid "Sort Alphabetically Z-A"
 msgstr "Seřadit abecedně Z-A"
 
-#: ../panel-plugin/configuration-dialog.cpp:773
+#: ../panel-plugin/configuration-dialog.cpp:826
 msgid "Stay _visible when focus is lost"
 msgstr "Po ztrátě zaměření ukazatele myši zůstat _viditelný"
 
-#: ../panel-plugin/settings.cpp:159
+#: ../panel-plugin/settings.cpp:161
 msgid "Suspe_nd"
 msgstr "_Uspat do paměti"
 
-#: ../panel-plugin/settings.cpp:163
+#: ../panel-plugin/settings.cpp:165
 #, c-format
 msgid "Suspending computer in %d seconds."
 msgstr "Uspání počítače do paměti za %d sekund."
 
-#: ../panel-plugin/settings.cpp:137
+#: ../panel-plugin/settings.cpp:139
 msgid "Switch _User"
 msgstr "Přepnout _uživatele"
 
-#: ../panel-plugin/configuration-dialog.cpp:749
+#: ../panel-plugin/configuration-dialog.cpp:820
 msgid "Switch categories by _hovering"
 msgstr "Přepínat _kategorie najetím kurzoru"
 
-#: ../panel-plugin/configuration-dialog.cpp:487
+#: ../panel-plugin/configuration-dialog.cpp:485
 msgid "The action will be deleted permanently."
 msgstr "Akce bude nenávratně smazána."
 
-#: ../panel-plugin/configuration-dialog.cpp:594
+#: ../panel-plugin/configuration-dialog.cpp:759
 msgid "Title"
 msgstr "Název"
 
-#: ../panel-plugin/launcher.cpp:256
+#: ../panel-plugin/launcher.cpp:226
 #, c-format
 msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
@@ -412,29 +414,29 @@ msgstr ""
 "Pro zrušení skrytí je třeba ručně odebrat soubor „%s“ nebo ho otevřít a "
 "odebrat řádek „%s“."
 
-#: ../panel-plugin/settings.cpp:157
+#: ../panel-plugin/settings.cpp:159
 #, c-format
 msgid "Turning off computer in %d seconds."
 msgstr "Vypnutí počítače za %d sekund."
 
-#: ../panel-plugin/page.cpp:481
+#: ../panel-plugin/page.cpp:480
 msgid "Unable to add launcher to desktop."
 msgstr "Nelze přidat spouštěč na plochu."
 
-#: ../panel-plugin/page.cpp:519 ../panel-plugin/page.cpp:528
+#: ../panel-plugin/page.cpp:518 ../panel-plugin/page.cpp:527
 msgid "Unable to add launcher to panel."
 msgstr "Nelze přidat spouštěč na panel."
 
-#: ../panel-plugin/page.cpp:557
+#: ../panel-plugin/page.cpp:556
 msgid "Unable to edit launcher."
 msgstr "Spouštěč se nedaří upravit."
 
-#: ../panel-plugin/configuration-dialog.cpp:548
+#: ../panel-plugin/configuration-dialog.cpp:546
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Nedaří se otevřít umístění URL adresy: %s"
 
-#: ../panel-plugin/configuration-dialog.cpp:628
+#: ../panel-plugin/configuration-dialog.cpp:795
 msgid "Use a single _panel row"
 msgstr "Použít jeden řádek _panelu"
 
@@ -446,7 +448,7 @@ msgstr "Velmi velké"
 msgid "Very Small"
 msgstr "Velmi malé"
 
-#: ../panel-plugin/settings.cpp:184
+#: ../panel-plugin/settings.cpp:186
 msgid "Web Search"
 msgstr "Hledání na webu"
 
@@ -455,7 +457,7 @@ msgstr "Hledání na webu"
 msgid "Whisker Menu"
 msgstr "Nabídka Whisker"
 
-#: ../panel-plugin/settings.cpp:185
+#: ../panel-plugin/settings.cpp:187
 msgid "Wikipedia"
 msgstr "Wikipedia"
 
@@ -463,12 +465,12 @@ msgstr "Wikipedia"
 msgid "_Appearance"
 msgstr "Vzh_led"
 
-#: ../panel-plugin/configuration-dialog.cpp:100
+#: ../panel-plugin/configuration-dialog.cpp:101
 msgid "_Behavior"
 msgstr "_Chování"
 
 #: ../panel-plugin/command-edit.cpp:67
-#: ../panel-plugin/configuration-dialog.cpp:137
+#: ../panel-plugin/configuration-dialog.cpp:278
 msgid "_Cancel"
 msgstr "_Storno"
 
@@ -476,15 +478,15 @@ msgstr "_Storno"
 msgid "_Close"
 msgstr "_Zavřít"
 
-#: ../panel-plugin/configuration-dialog.cpp:101
+#: ../panel-plugin/configuration-dialog.cpp:102
 msgid "_Commands"
 msgstr "_Příkazy"
 
-#: ../panel-plugin/configuration-dialog.cpp:486
+#: ../panel-plugin/configuration-dialog.cpp:484
 msgid "_Delete"
 msgstr "_Smazat"
 
-#: ../panel-plugin/settings.cpp:175
+#: ../panel-plugin/settings.cpp:177
 msgid "_Edit Applications"
 msgstr "Upravit aplikac_e"
 
@@ -492,44 +494,48 @@ msgstr "Upravit aplikac_e"
 msgid "_Help"
 msgstr "_Nápověda"
 
-#: ../panel-plugin/settings.cpp:165
+#: ../panel-plugin/settings.cpp:167
 msgid "_Hibernate"
 msgstr "_Uspat na disk"
 
-#: ../panel-plugin/configuration-dialog.cpp:614
+#: ../panel-plugin/configuration-dialog.cpp:781
 msgid "_Icon:"
 msgstr "_Ikona:"
 
-#: ../panel-plugin/settings.cpp:133
+#: ../panel-plugin/settings.cpp:135
 msgid "_Lock Screen"
 msgstr "_Zamknout obrazovku"
 
 #: ../panel-plugin/command-edit.cpp:68
-#: ../panel-plugin/configuration-dialog.cpp:138
+#: ../panel-plugin/configuration-dialog.cpp:279
 msgid "_OK"
 msgstr "_OK"
 
-#: ../panel-plugin/configuration-dialog.cpp:944
+#: ../panel-plugin/configuration-dialog.cpp:100
+msgid "_Panel Button"
+msgstr "Tlačítko panelu"
+
+#: ../panel-plugin/configuration-dialog.cpp:997
 msgid "_Pattern:"
 msgstr "_Vzorec:"
 
-#: ../panel-plugin/configuration-dialog.cpp:968
+#: ../panel-plugin/configuration-dialog.cpp:1021
 msgid "_Regular expression"
 msgstr "_Regulární výraz"
 
-#: ../panel-plugin/settings.cpp:147
+#: ../panel-plugin/settings.cpp:149
 msgid "_Restart"
 msgstr "_Restartovat"
 
-#: ../panel-plugin/settings.cpp:129
+#: ../panel-plugin/settings.cpp:131
 msgid "_Settings Manager"
 msgstr "_Správa nastavení"
 
-#: ../panel-plugin/configuration-dialog.cpp:603
+#: ../panel-plugin/configuration-dialog.cpp:769
 msgid "_Title:"
 msgstr "Náz_ev:"
 
-#: ../panel-plugin/plugin.cpp:415
+#: ../panel-plugin/plugin.cpp:414
 msgid "translator-credits"
 msgstr ""
 "Přeložili halfark, Michal Várady <miko.vaji@gmail.com> a Pavel Borecki "

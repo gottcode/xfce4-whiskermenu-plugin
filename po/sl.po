@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-08 13:48-0500\n"
+"POT-Creation-Date: 2020-01-24 09:02-0500\n"
 "PO-Revision-Date: 2020-01-08 21:42+0000\n"
 "Last-Translator: Kernc\n"
 "Language-Team: Slovenian (http://www.transifex.com/gottcode/xfce4-"
@@ -23,56 +23,61 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
 "%100==4 ? 2 : 3);\n"
 
-#: ../panel-plugin/configuration-dialog.cpp:899
+#: ../panel-plugin/configuration-dialog.cpp:952
 msgid "Add action"
 msgstr "Dodaj dejanje"
 
-#: ../panel-plugin/page.cpp:404
+#: ../panel-plugin/page.cpp:403
 msgid "Add to Desktop"
 msgstr "Dodaj na namizje"
 
-#: ../panel-plugin/page.cpp:388
+#: ../panel-plugin/page.cpp:387
 msgid "Add to Favorites"
 msgstr "Dodaj med priljubljene"
 
-#: ../panel-plugin/page.cpp:408
+#: ../panel-plugin/page.cpp:407
 msgid "Add to Panel"
 msgstr "Dodaj v pult"
 
-#: ../panel-plugin/category.cpp:61
+#: ../panel-plugin/category.cpp:49
 msgid "All Applications"
 msgstr "Vsi programi"
 
-#: ../panel-plugin/plugin.cpp:410
+#: ../panel-plugin/plugin.cpp:409
 msgid "Alternate application launcher for Xfce"
 msgstr "Alternativni zaganjalnik programov za Xfce"
 
-#: ../panel-plugin/configuration-dialog.cpp:788
+#: ../panel-plugin/configuration-dialog.cpp:841
 msgid "Amount of _items:"
 msgstr "Štev_ilo predmetov:"
 
-#: ../panel-plugin/plugin.cpp:214
+#: ../panel-plugin/configuration-dialog.cpp:683
+#, fuzzy
+msgid "Application icon si_ze:"
+msgstr "Iskalec aplikacije"
+
+#: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
 msgstr "Programi"
 
-#: ../panel-plugin/launcher.cpp:262
+#: ../panel-plugin/launcher.cpp:232
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
 msgstr "Ali ste prepričani, da želite skriti \"%s\"?"
 
-#: ../panel-plugin/settings.cpp:144
+#: ../panel-plugin/settings.cpp:146
 msgid "Are you sure you want to log out?"
 msgstr "Ali ste prepričani, da se želite odjaviti?"
 
-#: ../panel-plugin/settings.cpp:150
+#: ../panel-plugin/settings.cpp:152
 msgid "Are you sure you want to restart?"
 msgstr "Ali ste prepričani, da želite sistem ponovno zagnati?"
 
-#: ../panel-plugin/settings.cpp:156
+#: ../panel-plugin/settings.cpp:158
 msgid "Are you sure you want to shut down?"
 msgstr "Ali ste prepričani, da želite izklopiti računalnik?"
 
-#: ../panel-plugin/configuration-dialog.cpp:715
+#: ../panel-plugin/configuration-dialog.cpp:723
 msgid "Background opacit_y:"
 msgstr "Pro_zornost ozadja:"
 
@@ -80,11 +85,11 @@ msgstr "Pro_zornost ozadja:"
 msgid "Browse the file system to choose a custom command."
 msgstr "Izberite datoteko za zagon."
 
-#: ../panel-plugin/configuration-dialog.cpp:956
+#: ../panel-plugin/configuration-dialog.cpp:1009
 msgid "C_ommand:"
 msgstr "_Ukaz:"
 
-#: ../panel-plugin/configuration-dialog.cpp:700
+#: ../panel-plugin/configuration-dialog.cpp:701
 msgid "Categ_ory icon size:"
 msgstr "Velikost ikon kateg_orij"
 
@@ -92,113 +97,109 @@ msgstr "Velikost ikon kateg_orij"
 msgid "Clear Recently Used"
 msgstr "Počisti nedavno uporabljene"
 
-#: ../panel-plugin/plugin.cpp:411
+#: ../panel-plugin/plugin.cpp:410
 msgid "Copyright © 2013-2020 Graeme Gott"
 msgstr ""
 
-#: ../panel-plugin/configuration-dialog.cpp:927
+#: ../panel-plugin/configuration-dialog.cpp:980
 msgid "Details"
 msgstr "Podrobnosti"
 
-#: ../panel-plugin/configuration-dialog.cpp:588
+#: ../panel-plugin/configuration-dialog.cpp:753
 msgid "Di_splay:"
 msgstr "Pok_aži:"
 
-#: ../panel-plugin/configuration-dialog.cpp:805
+#: ../panel-plugin/configuration-dialog.cpp:858
 msgid "Display by _default"
 msgstr "Privzeto pri_kaži"
 
-#: ../panel-plugin/settings.cpp:162
+#: ../panel-plugin/settings.cpp:164
 msgid "Do you want to suspend to RAM?"
 msgstr "Ali želite preklopiti v stanje pripravljenosti v RAM?"
 
-#: ../panel-plugin/settings.cpp:168
+#: ../panel-plugin/settings.cpp:170
 msgid "Do you want to suspend to disk?"
 msgstr "Ali želite preklopiti v stanje pripravljenosti da diskovni pogon?"
 
-#: ../panel-plugin/page.cpp:415
+#: ../panel-plugin/page.cpp:414
 msgid "Edit Application..."
 msgstr "Uredi program ..."
 
-#: ../panel-plugin/settings.cpp:179
+#: ../panel-plugin/settings.cpp:181
 msgid "Edit _Profile"
 msgstr "Uredi _profil"
 
-#: ../panel-plugin/settings.cpp:181
+#: ../panel-plugin/settings.cpp:183
 msgid "Failed to edit profile."
 msgstr "Ni mogoče urejati profila."
 
-#: ../panel-plugin/launcher.cpp:348 ../panel-plugin/launcher.cpp:422
-#: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:188
+#: ../panel-plugin/launcher.cpp:318 ../panel-plugin/launcher.cpp:392
+#: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:189
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "Ni mogoče izvesti ukaza \"%s\"."
 
-#: ../panel-plugin/settings.cpp:167
+#: ../panel-plugin/settings.cpp:169
 msgid "Failed to hibernate."
 msgstr ""
 "Sistema ni bilo mogoče preklopiti v stanje pripravljenosti (hibernirati)."
 
-#: ../panel-plugin/settings.cpp:177
+#: ../panel-plugin/settings.cpp:179
 msgid "Failed to launch menu editor."
 msgstr "Ni mogoče zagnati urejevalnika menija."
 
-#: ../panel-plugin/settings.cpp:135
+#: ../panel-plugin/settings.cpp:137
 msgid "Failed to lock screen."
 msgstr "Ni mogoče zakleniti zaslona."
 
-#: ../panel-plugin/settings.cpp:143 ../panel-plugin/settings.cpp:173
+#: ../panel-plugin/settings.cpp:145 ../panel-plugin/settings.cpp:175
 msgid "Failed to log out."
 msgstr "Odjavljanje neuspešno."
 
-#: ../panel-plugin/settings.cpp:131
+#: ../panel-plugin/settings.cpp:133
 msgid "Failed to open settings manager."
 msgstr "Ni mogoče zagnati upravljalnika nastavitev."
 
-#: ../panel-plugin/settings.cpp:149
+#: ../panel-plugin/settings.cpp:151
 msgid "Failed to restart."
 msgstr "Sistema ni bilo mogoče ponovno zagnati."
 
-#: ../panel-plugin/settings.cpp:155
+#: ../panel-plugin/settings.cpp:157
 msgid "Failed to shut down."
 msgstr "Sistema ni bilo mogoče zaustaviti."
 
-#: ../panel-plugin/settings.cpp:161
+#: ../panel-plugin/settings.cpp:163
 msgid "Failed to suspend."
 msgstr "Sistema ni bilo mogoče preklopiti v stanje pripravljenosti."
 
-#: ../panel-plugin/settings.cpp:139
+#: ../panel-plugin/settings.cpp:141
 msgid "Failed to switch user."
 msgstr "Zamenjava uporabnika ni uspela."
 
-#: ../panel-plugin/window.cpp:158
+#: ../panel-plugin/window.cpp:159
 msgid "Favorites"
 msgstr "Priljubljene"
 
-#: ../panel-plugin/settings.cpp:169
+#: ../panel-plugin/settings.cpp:171
 #, c-format
 msgid "Hibernating computer in %d seconds."
 msgstr "Preklapljanje v stanje pripravljenosti v %dsekundah."
 
-#: ../panel-plugin/launcher.cpp:261 ../panel-plugin/page.cpp:419
+#: ../panel-plugin/launcher.cpp:231 ../panel-plugin/page.cpp:418
 msgid "Hide Application"
 msgstr "Skrij program"
 
-#: ../panel-plugin/configuration-dialog.cpp:593
+#: ../panel-plugin/configuration-dialog.cpp:758
 msgid "Icon"
 msgstr "Ikono"
 
-#: ../panel-plugin/configuration-dialog.cpp:595
+#: ../panel-plugin/configuration-dialog.cpp:760
 msgid "Icon and title"
 msgstr "Ikono in naziv"
 
-#: ../panel-plugin/configuration-dialog.cpp:799
+#: ../panel-plugin/configuration-dialog.cpp:852
 msgid "Include _favorites"
 msgstr "Vključi _priljubljene"
-
-#: ../panel-plugin/configuration-dialog.cpp:684
-msgid "Ite_m icon size:"
-msgstr "Velikost ikon pred_metov"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Large"
@@ -208,33 +209,32 @@ msgstr "Velika"
 msgid "Larger"
 msgstr "Večja"
 
-#: ../panel-plugin/settings.cpp:171
+#: ../panel-plugin/settings.cpp:173
 msgid "Log Ou_t..."
 msgstr "_Odjava"
 
-#: ../panel-plugin/settings.cpp:141
+#: ../panel-plugin/settings.cpp:143
 msgid "Log _Out"
 msgstr "_Odjava"
 
-#: ../panel-plugin/settings.cpp:145
+#: ../panel-plugin/settings.cpp:147
 #, c-format
 msgid "Logging out in %d seconds."
 msgstr "Odjavljanje v %d sekundah."
 
-#: ../panel-plugin/settings.cpp:183
+#: ../panel-plugin/settings.cpp:185
 msgid "Man Pages"
 msgstr "Priročniki"
 
-#: ../panel-plugin/configuration-dialog.cpp:641
-#: ../panel-plugin/configuration-dialog.cpp:745
+#: ../panel-plugin/configuration-dialog.cpp:816
 msgid "Menu"
 msgstr "Meni"
 
-#: ../panel-plugin/configuration-dialog.cpp:931
+#: ../panel-plugin/configuration-dialog.cpp:984
 msgid "Nam_e:"
 msgstr "Naz_iv:"
 
-#: ../panel-plugin/configuration-dialog.cpp:877
+#: ../panel-plugin/configuration-dialog.cpp:930
 msgid "Name"
 msgstr "Naziv"
 
@@ -246,48 +246,44 @@ msgstr "Brez"
 msgid "Normal"
 msgstr "Običajna"
 
-#: ../panel-plugin/settings.cpp:187
+#: ../panel-plugin/settings.cpp:189
 msgid "Open URI"
 msgstr "Odpri URL"
 
-#: ../panel-plugin/configuration-dialog.cpp:584
-msgid "Panel Button"
-msgstr "Gumb pulta"
-
-#: ../panel-plugin/configuration-dialog.cpp:882
+#: ../panel-plugin/configuration-dialog.cpp:935
 msgid "Pattern"
 msgstr "Vzorec"
 
-#: ../panel-plugin/configuration-dialog.cpp:755
+#: ../panel-plugin/configuration-dialog.cpp:667
 msgid "Position _search entry next to panel button"
 msgstr "Postavi i_skalno polje k gumbu za prikaz"
 
-#: ../panel-plugin/configuration-dialog.cpp:767
+#: ../panel-plugin/configuration-dialog.cpp:661
 msgid "Position cate_gories next to panel button"
 msgstr "Postavi kate_gorije poleg gumba v pultu"
 
-#: ../panel-plugin/configuration-dialog.cpp:761
+#: ../panel-plugin/configuration-dialog.cpp:673
 msgid "Position commands next to search _entry"
 msgstr "Postavi d_ejanja ob iskalno polje"
 
-#: ../panel-plugin/configuration-dialog.cpp:784 ../panel-plugin/window.cpp:164
+#: ../panel-plugin/configuration-dialog.cpp:837 ../panel-plugin/window.cpp:167
 msgid "Recently Used"
 msgstr "Nedavno uporabljeno"
 
-#: ../panel-plugin/page.cpp:396
+#: ../panel-plugin/page.cpp:395
 msgid "Remove From Favorites"
 msgstr "Odstrani iz priljubljenih"
 
-#: ../panel-plugin/configuration-dialog.cpp:488
+#: ../panel-plugin/configuration-dialog.cpp:486
 #, c-format
 msgid "Remove action \"%s\"?"
 msgstr "Odstrani dejanje \"%s\"?"
 
-#: ../panel-plugin/configuration-dialog.cpp:908
+#: ../panel-plugin/configuration-dialog.cpp:961
 msgid "Remove selected action"
 msgstr "Odstrani izbrano dejanje"
 
-#: ../panel-plugin/settings.cpp:151
+#: ../panel-plugin/settings.cpp:153
 #, c-format
 msgid "Restarting computer in %d seconds."
 msgstr "Ponoven zagon sistema v %d sekundah."
@@ -297,19 +293,19 @@ msgstr "Ponoven zagon sistema v %d sekundah."
 msgid "Run %s"
 msgstr "Zaženi %s"
 
-#: ../panel-plugin/settings.cpp:186
+#: ../panel-plugin/settings.cpp:188
 msgid "Run in Terminal"
 msgstr "Zaženi v terminalu"
 
-#: ../panel-plugin/configuration-dialog.cpp:102
+#: ../panel-plugin/configuration-dialog.cpp:103
 msgid "Search Actio_ns"
 msgstr "Deja_nja iskanja"
 
-#: ../panel-plugin/search-action.cpp:259
+#: ../panel-plugin/search-action.cpp:260
 msgid "Search Action"
 msgstr "Dejanje iskanja"
 
-#: ../panel-plugin/configuration-dialog.cpp:135
+#: ../panel-plugin/configuration-dialog.cpp:276
 msgid "Select An Icon"
 msgstr "Izberite ikono"
 
@@ -317,7 +313,7 @@ msgstr "Izberite ikono"
 msgid "Select Command"
 msgstr "Izbira programa"
 
-#: ../panel-plugin/configuration-dialog.cpp:814
+#: ../panel-plugin/configuration-dialog.cpp:867
 msgid "Session Commands"
 msgstr "Dejanja seje"
 
@@ -325,35 +321,41 @@ msgstr "Dejanja seje"
 msgid "Show a menu to easily access installed applications"
 msgstr "Prikaži meni za preprost dostop do nameščenih programov"
 
-#: ../panel-plugin/configuration-dialog.cpp:658
+#: ../panel-plugin/configuration-dialog.cpp:650
 msgid "Show application _descriptions"
 msgstr "Pokaži opise _programov"
 
-#: ../panel-plugin/configuration-dialog.cpp:665
+#: ../panel-plugin/configuration-dialog.cpp:644
 msgid "Show application too_ltips"
 msgstr "Pokaži orodni _namig programov"
 
-#: ../panel-plugin/configuration-dialog.cpp:678
+#: ../panel-plugin/configuration-dialog.cpp:587
 msgid "Show as _icons"
 msgstr "Prikaži kot _ikone"
 
-#: ../panel-plugin/configuration-dialog.cpp:818
+#: ../panel-plugin/configuration-dialog.cpp:595
+#, fuzzy
+msgid "Show as lis_t"
+msgstr "Prikaži kot _ikone"
+
+#: ../panel-plugin/configuration-dialog.cpp:603
+#, fuzzy
+msgid "Show as t_ree"
+msgstr "Prikaži kot _ikone"
+
+#: ../panel-plugin/configuration-dialog.cpp:871
 msgid "Show c_onfirmation dialog"
 msgstr "P_okaži pogovorno okno za potrditev"
 
-#: ../panel-plugin/configuration-dialog.cpp:651
+#: ../panel-plugin/configuration-dialog.cpp:637
 msgid "Show cate_gory names"
 msgstr "Pokaži imena kate_gorij"
 
-#: ../panel-plugin/configuration-dialog.cpp:645
+#: ../panel-plugin/configuration-dialog.cpp:631
 msgid "Show generic application _names"
 msgstr "Pokaži posplošena ime_na programov"
 
-#: ../panel-plugin/configuration-dialog.cpp:671
-msgid "Show menu hie_rarchy"
-msgstr "Pokaži menijsko hierarhijo"
-
-#: ../panel-plugin/settings.cpp:153
+#: ../panel-plugin/settings.cpp:155
 msgid "Shut _Down"
 msgstr "_Zaustavitev sistema"
 
@@ -373,36 +375,36 @@ msgstr "Razvrsti po abecedi A-Z"
 msgid "Sort Alphabetically Z-A"
 msgstr "Razvrsti po abecedi Z-A"
 
-#: ../panel-plugin/configuration-dialog.cpp:773
+#: ../panel-plugin/configuration-dialog.cpp:826
 msgid "Stay _visible when focus is lost"
 msgstr "Meni naj ostane _viden, tudi ko ni v žarišču"
 
-#: ../panel-plugin/settings.cpp:159
+#: ../panel-plugin/settings.cpp:161
 msgid "Suspe_nd"
 msgstr "V sta_nje pripravljenosti"
 
-#: ../panel-plugin/settings.cpp:163
+#: ../panel-plugin/settings.cpp:165
 #, c-format
 msgid "Suspending computer in %d seconds."
 msgstr "Preklapljanje v stanje pripravljenosti v %dsekundah."
 
-#: ../panel-plugin/settings.cpp:137
+#: ../panel-plugin/settings.cpp:139
 msgid "Switch _User"
 msgstr "Zamenjaj _uporabnika"
 
-#: ../panel-plugin/configuration-dialog.cpp:749
+#: ../panel-plugin/configuration-dialog.cpp:820
 msgid "Switch categories by _hovering"
 msgstr "Preklopi kategorije ob pre_hodu"
 
-#: ../panel-plugin/configuration-dialog.cpp:487
+#: ../panel-plugin/configuration-dialog.cpp:485
 msgid "The action will be deleted permanently."
 msgstr "Dejanje bo trajno izbrisano."
 
-#: ../panel-plugin/configuration-dialog.cpp:594
+#: ../panel-plugin/configuration-dialog.cpp:759
 msgid "Title"
 msgstr "Naziv"
 
-#: ../panel-plugin/launcher.cpp:256
+#: ../panel-plugin/launcher.cpp:226
 #, c-format
 msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
@@ -411,29 +413,29 @@ msgstr ""
 "Za ponoven prikaz morate ročno odstraniti datoteko \"%s\" oz. odpreti to "
 "datoteko in odstraniti vrstico \"%s\"."
 
-#: ../panel-plugin/settings.cpp:157
+#: ../panel-plugin/settings.cpp:159
 #, c-format
 msgid "Turning off computer in %d seconds."
 msgstr "Zaustavljanje sistema v %d sekundah."
 
-#: ../panel-plugin/page.cpp:481
+#: ../panel-plugin/page.cpp:480
 msgid "Unable to add launcher to desktop."
 msgstr "Zaganjalnika ni bilo mogoče dodati na namizje."
 
-#: ../panel-plugin/page.cpp:519 ../panel-plugin/page.cpp:528
+#: ../panel-plugin/page.cpp:518 ../panel-plugin/page.cpp:527
 msgid "Unable to add launcher to panel."
 msgstr "Zaganjalnika ni bilo mogoče dodati v pult."
 
-#: ../panel-plugin/page.cpp:557
+#: ../panel-plugin/page.cpp:556
 msgid "Unable to edit launcher."
 msgstr "Zaganjalnika ni mogoče urediti."
 
-#: ../panel-plugin/configuration-dialog.cpp:548
+#: ../panel-plugin/configuration-dialog.cpp:546
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Ni bilo mogoče odpreti URL naslova: %s"
 
-#: ../panel-plugin/configuration-dialog.cpp:628
+#: ../panel-plugin/configuration-dialog.cpp:795
 msgid "Use a single _panel row"
 msgstr "Zasedi eno samo vrstico pulta"
 
@@ -445,7 +447,7 @@ msgstr "Največja"
 msgid "Very Small"
 msgstr "Najmanjša"
 
-#: ../panel-plugin/settings.cpp:184
+#: ../panel-plugin/settings.cpp:186
 msgid "Web Search"
 msgstr "Spletno iskanje"
 
@@ -454,7 +456,7 @@ msgstr "Spletno iskanje"
 msgid "Whisker Menu"
 msgstr "Whisker meni"
 
-#: ../panel-plugin/settings.cpp:185
+#: ../panel-plugin/settings.cpp:187
 msgid "Wikipedia"
 msgstr "Wikipedia"
 
@@ -462,12 +464,12 @@ msgstr "Wikipedia"
 msgid "_Appearance"
 msgstr "_Izgled"
 
-#: ../panel-plugin/configuration-dialog.cpp:100
+#: ../panel-plugin/configuration-dialog.cpp:101
 msgid "_Behavior"
 msgstr "O_bnašanje"
 
 #: ../panel-plugin/command-edit.cpp:67
-#: ../panel-plugin/configuration-dialog.cpp:137
+#: ../panel-plugin/configuration-dialog.cpp:278
 msgid "_Cancel"
 msgstr "_Prekliči"
 
@@ -475,15 +477,15 @@ msgstr "_Prekliči"
 msgid "_Close"
 msgstr "_Zapri"
 
-#: ../panel-plugin/configuration-dialog.cpp:101
+#: ../panel-plugin/configuration-dialog.cpp:102
 msgid "_Commands"
 msgstr "_Ukazi"
 
-#: ../panel-plugin/configuration-dialog.cpp:486
+#: ../panel-plugin/configuration-dialog.cpp:484
 msgid "_Delete"
 msgstr "I_zbriši"
 
-#: ../panel-plugin/settings.cpp:175
+#: ../panel-plugin/settings.cpp:177
 msgid "_Edit Applications"
 msgstr "Uredi programe"
 
@@ -491,43 +493,47 @@ msgstr "Uredi programe"
 msgid "_Help"
 msgstr "_Pomoč"
 
-#: ../panel-plugin/settings.cpp:165
+#: ../panel-plugin/settings.cpp:167
 msgid "_Hibernate"
 msgstr "_Hibernacija"
 
-#: ../panel-plugin/configuration-dialog.cpp:614
+#: ../panel-plugin/configuration-dialog.cpp:781
 msgid "_Icon:"
 msgstr "_Ikona:"
 
-#: ../panel-plugin/settings.cpp:133
+#: ../panel-plugin/settings.cpp:135
 msgid "_Lock Screen"
 msgstr "Zak_leni zaslon"
 
 #: ../panel-plugin/command-edit.cpp:68
-#: ../panel-plugin/configuration-dialog.cpp:138
+#: ../panel-plugin/configuration-dialog.cpp:279
 msgid "_OK"
 msgstr "_V redu"
 
-#: ../panel-plugin/configuration-dialog.cpp:944
+#: ../panel-plugin/configuration-dialog.cpp:100
+msgid "_Panel Button"
+msgstr "Gumb pulta"
+
+#: ../panel-plugin/configuration-dialog.cpp:997
 msgid "_Pattern:"
 msgstr "_Vzorec:"
 
-#: ../panel-plugin/configuration-dialog.cpp:968
+#: ../panel-plugin/configuration-dialog.cpp:1021
 msgid "_Regular expression"
 msgstr "_Regularni izraz"
 
-#: ../panel-plugin/settings.cpp:147
+#: ../panel-plugin/settings.cpp:149
 msgid "_Restart"
 msgstr "_Ponovni zagon"
 
-#: ../panel-plugin/settings.cpp:129
+#: ../panel-plugin/settings.cpp:131
 msgid "_Settings Manager"
 msgstr "Nastavitve"
 
-#: ../panel-plugin/configuration-dialog.cpp:603
+#: ../panel-plugin/configuration-dialog.cpp:769
 msgid "_Title:"
 msgstr "_Naziv:"
 
-#: ../panel-plugin/plugin.cpp:415
+#: ../panel-plugin/plugin.cpp:414
 msgid "translator-credits"
 msgstr "seznam-prevajalcev"
