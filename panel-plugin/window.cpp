@@ -737,6 +737,9 @@ void WhiskerMenu::Window::set_loaded()
 
 	// Show panel button
 	m_plugin->set_loaded(true);
+
+	// Check in case of plugin reload
+	check_scrollbar_needed();
 }
 
 //-----------------------------------------------------------------------------
