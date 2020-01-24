@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015, 2019 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2015, 2019, 2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -39,9 +39,8 @@ public:
 	void unset_menu_items();
 
 private:
-	void activate_search();
-	void clear_search(GtkEntry* entry, GtkEntryIconPosition icon_pos, GdkEvent*);
-	gboolean cancel_search(GtkWidget* widget, GdkEvent* event);
+	void activate_search(GtkEntry* entry);
+	void cancel_search(GtkSearchEntry* entry);
 	void view_created();
 
 private:

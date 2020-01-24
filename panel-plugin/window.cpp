@@ -147,10 +147,8 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	m_resizer = new ResizerWidget(m_window);
 
 	// Create search entry
-	m_search_entry = GTK_ENTRY(gtk_entry_new());
-	gtk_entry_set_icon_from_icon_name(m_search_entry, GTK_ENTRY_ICON_SECONDARY, "edit-find");
-	gtk_entry_set_icon_activatable(m_search_entry, GTK_ENTRY_ICON_SECONDARY, false);
-	g_signal_connect_slot<GtkEditable*>(m_search_entry, "changed", &Window::search, this);
+	m_search_entry = GTK_ENTRY(gtk_search_entry_new());
+	g_signal_connect_slot<GtkSearchEntry*>(m_search_entry, "search-changed", &Window::search, this);
 
 	// Create favorites
 	m_favorites = new FavoritesPage(this);
@@ -1077,12 +1075,7 @@ void WhiskerMenu::Window::search()
 		text = NULL;
 	}
 
-	// Update search entry icon
-	bool visible = text != NULL;
-	gtk_entry_set_icon_from_icon_name(m_search_entry, GTK_ENTRY_ICON_SECONDARY, !visible ? "edit-find" : "edit-clear");
-	gtk_entry_set_icon_activatable(m_search_entry, GTK_ENTRY_ICON_SECONDARY, visible);
-
-	if (visible)
+	if (text)
 	{
 		// Show search results
 		gtk_stack_set_visible_child_full(m_contents_stack, "search", m_search_cover);

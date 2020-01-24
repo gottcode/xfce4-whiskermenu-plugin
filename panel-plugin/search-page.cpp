@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2016, 2019 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2016, 2019, 2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -37,9 +37,8 @@ SearchPage::SearchPage(Window* window) :
 {
 	view_created();
 
-	g_signal_connect_slot(window->get_search_entry(), "icon-release", &SearchPage::clear_search, this);
-	g_signal_connect_slot(window->get_search_entry(), "key-press-event", &SearchPage::cancel_search, this);
-	g_signal_connect_slot<GtkEntry*>(window->get_search_entry(), "activate", &SearchPage::activate_search, this);
+	g_signal_connect_slot(window->get_search_entry(), "activate", &SearchPage::activate_search, this);
+	g_signal_connect_slot(window->get_search_entry(), "stop-search", &SearchPage::cancel_search, this);
 }
 
 //-----------------------------------------------------------------------------
@@ -188,8 +187,9 @@ void SearchPage::unset_menu_items()
 
 //-----------------------------------------------------------------------------
 
-void SearchPage::activate_search()
+void SearchPage::activate_search(GtkEntry* entry)
 {
+	set_filter(gtk_entry_get_text(entry));
 	GtkTreePath* path = get_view()->get_selected_path();
 	if (path)
 	{
@@ -200,35 +200,13 @@ void SearchPage::activate_search()
 
 //-----------------------------------------------------------------------------
 
-void SearchPage::clear_search(GtkEntry* entry, GtkEntryIconPosition icon_pos, GdkEvent*)
+void SearchPage::cancel_search(GtkSearchEntry* entry)
 {
-	if (icon_pos == GTK_ENTRY_ICON_SECONDARY)
+	const gchar* text = gtk_entry_get_text(GTK_ENTRY(entry));
+	if (!exo_str_is_empty(text))
 	{
-		gtk_entry_set_text(entry, "");
+		gtk_entry_set_text(GTK_ENTRY(entry), "");
 	}
-}
-
-//-----------------------------------------------------------------------------
-
-gboolean SearchPage::cancel_search(GtkWidget* widget, GdkEvent* event)
-{
-	GdkEventKey* key_event = reinterpret_cast<GdkEventKey*>(event);
-	if (key_event->keyval == GDK_KEY_Escape)
-	{
-		GtkEntry* entry = GTK_ENTRY(widget);
-		const gchar* text = gtk_entry_get_text(entry);
-		if ((text != NULL) && (*text != '\0'))
-		{
-			gtk_entry_set_text(entry, "");
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	}
-
-	return false;
 }
 
 //-----------------------------------------------------------------------------
