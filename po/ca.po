@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Adolfo Jayme-Barrientos, 2016,2018
+# Adolfo Jayme-Barrientos, 2016,2018,2020
 # Adolfo Jayme-Barrientos, 2015
 # Adolfo Jayme-Barrientos, 2013
 # Adolfo Jayme-Barrientos, 2014
@@ -16,8 +16,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-24 09:02-0500\n"
-"PO-Revision-Date: 2020-01-02 21:07+0000\n"
-"Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
+"PO-Revision-Date: 2020-01-24 17:12+0000\n"
+"Last-Translator: Adolfo Jayme-Barrientos\n"
 "Language-Team: Catalan (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ca/)\n"
 "Language: ca\n"
@@ -55,9 +55,8 @@ msgid "Amount of _items:"
 msgstr "Nombre d’e_lements:"
 
 #: ../panel-plugin/configuration-dialog.cpp:683
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "Cercador d'aplicacions"
+msgstr ""
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -66,7 +65,7 @@ msgstr "Aplicacions"
 #: ../panel-plugin/launcher.cpp:232
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
-msgstr "Esteu segur que voleu ocultar «%s»?"
+msgstr "Segur que voleu amagar «%s»?"
 
 #: ../panel-plugin/settings.cpp:146
 msgid "Are you sure you want to log out?"
@@ -189,7 +188,7 @@ msgstr "S'hibernarà l'ordinador d'aquí a %d segons."
 
 #: ../panel-plugin/launcher.cpp:231 ../panel-plugin/page.cpp:418
 msgid "Hide Application"
-msgstr ""
+msgstr "Amaga l’aplicació"
 
 #: ../panel-plugin/configuration-dialog.cpp:758
 msgid "Icon"
@@ -336,14 +335,12 @@ msgid "Show as _icons"
 msgstr "Mostra com _icones"
 
 #: ../panel-plugin/configuration-dialog.cpp:595
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "Mostra com _icones"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:603
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "Mostra com _icones"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:871
 msgid "Show c_onfirmation dialog"
@@ -512,7 +509,7 @@ msgstr "_D’acord"
 
 #: ../panel-plugin/configuration-dialog.cpp:100
 msgid "_Panel Button"
-msgstr "Botó del plafó"
+msgstr "Botó del _plafó"
 
 #: ../panel-plugin/configuration-dialog.cpp:997
 msgid "_Pattern:"
