@@ -83,12 +83,21 @@ ConfigurationDialog::ConfigurationDialog(Plugin* plugin) :
 	{
 		window = GTK_WINDOW(toplevel);
 	}
+#if LIBXFCE4PANEL_CHECK_VERSION(4,13,0)
+	m_window = xfce_titled_dialog_new_with_mixed_buttons(_("Whisker Menu"),
+			window,
+			GtkDialogFlags(0),
+			"help-browser", _("_Help"), GTK_RESPONSE_HELP,
+			"window-close", _("_Close"), GTK_RESPONSE_CLOSE,
+			NULL);
+#else
 	m_window = xfce_titled_dialog_new_with_buttons(_("Whisker Menu"),
 			window,
 			GtkDialogFlags(0),
 			_("_Help"), GTK_RESPONSE_HELP,
 			_("_Close"), GTK_RESPONSE_CLOSE,
 			NULL);
+#endif
 	gtk_window_set_icon_name(GTK_WINDOW(m_window), "document-properties");
 	gtk_window_set_position(GTK_WINDOW(m_window), GTK_WIN_POS_CENTER);
 	g_signal_connect_slot(m_window, "response", &ConfigurationDialog::response, this);
