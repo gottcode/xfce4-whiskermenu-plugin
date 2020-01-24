@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-24 09:02-0500\n"
-"PO-Revision-Date: 2020-01-08 19:52+0000\n"
+"PO-Revision-Date: 2020-01-24 18:01+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/da/)\n"
@@ -50,9 +50,8 @@ msgid "Amount of _items:"
 msgstr "Antal _elementer:"
 
 #: ../panel-plugin/configuration-dialog.cpp:683
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "Programfinder"
+msgstr "Ikonstørrelse for _program:"
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -331,14 +330,12 @@ msgid "Show as _icons"
 msgstr "Vis som _ikoner"
 
 #: ../panel-plugin/configuration-dialog.cpp:595
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "Vis som _ikoner"
+msgstr "Vis som _liste"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "Vis som _ikoner"
+msgstr "Vis som _træ"
 
 #: ../panel-plugin/configuration-dialog.cpp:871
 msgid "Show c_onfirmation dialog"
@@ -509,7 +506,7 @@ msgstr "_OK"
 
 #: ../panel-plugin/configuration-dialog.cpp:100
 msgid "_Panel Button"
-msgstr "Panelknap"
+msgstr "_Panelknap"
 
 #: ../panel-plugin/configuration-dialog.cpp:997
 msgid "_Pattern:"
