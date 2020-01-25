@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-24 09:02-0500\n"
-"PO-Revision-Date: 2020-01-09 10:50+0000\n"
+"PO-Revision-Date: 2020-01-25 14:18+0000\n"
 "Last-Translator: Kiril Kirilov <cybercop_montana@abv.bg>\n"
 "Language-Team: Bulgarian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/bg/)\n"
@@ -48,9 +48,8 @@ msgid "Amount of _items:"
 msgstr "Брой на елементите:"
 
 #: ../panel-plugin/configuration-dialog.cpp:683
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "Търсене на програма"
+msgstr "Размер на икона на програма:"
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -329,14 +328,12 @@ msgid "Show as _icons"
 msgstr "Показване, като _икони"
 
 #: ../panel-plugin/configuration-dialog.cpp:595
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "Показване, като _икони"
+msgstr "Покажи, като _списък"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "Показване, като _икони"
+msgstr "Покажи, като _дърво"
 
 #: ../panel-plugin/configuration-dialog.cpp:871
 msgid "Show c_onfirmation dialog"
@@ -507,7 +504,7 @@ msgstr "OK"
 
 #: ../panel-plugin/configuration-dialog.cpp:100
 msgid "_Panel Button"
-msgstr "Бутон в панела"
+msgstr "Бутон на _панела"
 
 #: ../panel-plugin/configuration-dialog.cpp:997
 msgid "_Pattern:"
