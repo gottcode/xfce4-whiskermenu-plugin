@@ -57,7 +57,8 @@ public:
 	static std::string get_button_title_default();
 
 	void menu_hidden();
-	void reload();
+	void reload_button();
+	void reload_menu();
 	void set_button_style(ButtonStyle style);
 	void set_button_title(const std::string& title);
 	void set_button_icon_name(const std::string& icon);

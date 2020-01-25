@@ -49,6 +49,7 @@ public:
 
 	void load(XfceRc* rc, bool is_default);
 	void load();
+	bool load(const gchar* property, const GValue* value);
 
 private:
 	void set(bool data, bool store);
@@ -79,6 +80,7 @@ public:
 
 	void load(XfceRc* rc, bool is_default);
 	void load();
+	bool load(const gchar* property, const GValue* value);
 
 private:
 	void set(int data, bool store);
@@ -126,6 +128,7 @@ public:
 
 	void load(XfceRc* rc, bool is_default);
 	void load();
+	bool load(const gchar* property, const GValue* value);
 
 private:
 	void set(const std::string& data, bool store);
@@ -177,6 +180,7 @@ public:
 
 	void load(XfceRc* rc, bool is_default);
 	void load();
+	bool load(const gchar* property, const GValue* value);
 	void save();
 
 private:
@@ -232,6 +236,7 @@ public:
 
 	void load(XfceRc* rc);
 	void load();
+	bool load(const gchar* property, const GValue* value);
 	void save();
 
 private:
@@ -243,7 +248,7 @@ private:
 // Settings class
 class Settings
 {
-	Settings();
+	Settings(Plugin* plugin);
 	~Settings();
 
 	Settings(const Settings&) = delete;
@@ -255,8 +260,22 @@ class Settings
 	void load(const gchar* base);
 
 	void prevent_invalid();
+	void property_changed(const gchar* property, const GValue* value);
 
+	Plugin* m_plugin;
+	gulong m_change_slot;
 	std::string m_button_title_default;
+
+public:
+	void begin_property_update()
+	{
+		g_signal_handler_block(channel, m_change_slot);
+	}
+
+	void end_property_update()
+	{
+		g_signal_handler_unblock(channel, m_change_slot);
+	}
 
 public:
 	XfconfChannel* channel;

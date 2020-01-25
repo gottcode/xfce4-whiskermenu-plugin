@@ -20,10 +20,13 @@
 #include "command.h"
 #include "plugin.h"
 #include "search-action.h"
+#include "slot.h"
 
 #include <algorithm>
 
 #include <exo/exo.h>
+
+#include <cstdio>
 
 using namespace WhiskerMenu;
 
@@ -33,7 +36,9 @@ Settings* WhiskerMenu::wm_settings = nullptr;
 
 //-----------------------------------------------------------------------------
 
-Settings::Settings() :
+Settings::Settings(Plugin* plugin) :
+	m_plugin(plugin),
+	m_change_slot(0),
 	m_button_title_default(_("Applications")),
 	channel(nullptr),
 
@@ -294,6 +299,12 @@ void Settings::load(const gchar* base)
 	if (base && xfconf_init(nullptr))
 	{
 		channel = xfconf_channel_new_with_property_base(xfce_panel_get_channel_name(), base);
+		m_change_slot = connect(channel, "property-changed",
+			[this](XfconfChannel*, const gchar* property, const GValue* value)
+			{
+				property_changed(property, value);
+				prevent_invalid();
+			});
 	}
 	else
 	{
@@ -384,6 +395,64 @@ void Settings::prevent_invalid()
 
 //-----------------------------------------------------------------------------
 
+void Settings::property_changed(const gchar* property, const GValue* value)
+{
+	if (favorites.load(property, value)
+			|| recent.load(property, value)
+			|| launcher_show_name.load(property, value)
+			|| launcher_show_description.load(property, value)
+			|| sort_categories.load(property, value)
+			|| view_mode.load(property, value))
+	{
+		m_plugin->reload_menu();
+	}
+
+	else if (button_title.load(property, value)
+			|| button_icon_name.load(property, value)
+			|| button_title_visible.load(property, value)
+			|| button_icon_visible.load(property, value)
+			|| button_single_row.load(property, value))
+	{
+		m_plugin->reload_button();
+	}
+
+	else if (custom_menu_file.load(property, value)
+			|| launcher_show_tooltip.load(property, value)
+			|| launcher_icon_size.load(property, value)
+			|| category_hover_activate.load(property, value)
+			|| category_show_name.load(property, value)
+			|| category_icon_size.load(property, value)
+			|| default_category.load(property, value)
+			|| recent_items_max.load(property, value)
+			|| favorites_in_recent.load(property, value)
+			|| position_search_alternate.load(property, value)
+			|| position_commands_alternate.load(property, value)
+			|| position_categories_alternate.load(property, value)
+			|| position_categories_horizontal.load(property, value)
+			|| stay_on_focus_out.load(property, value)
+			|| profile_shape.load(property, value)
+			|| confirm_session_command.load(property, value)
+			|| menu_width.load(property, value)
+			|| menu_height.load(property, value)
+			|| menu_opacity.load(property, value)
+			|| search_actions.load(property, value))
+	{
+	}
+
+	else
+	{
+		for (auto i : command)
+		{
+			if (i->load(property, value))
+			{
+				break;
+			}
+		}
+	}
+}
+
+//-----------------------------------------------------------------------------
+
 Boolean::Boolean(const gchar* property, bool data) :
 	m_property(property),
 	m_default(data),
@@ -412,6 +481,20 @@ void Boolean::load()
 
 //-----------------------------------------------------------------------------
 
+bool Boolean::load(const gchar* property, const GValue* value)
+{
+	if (g_strcmp0(m_property, property) != 0)
+	{
+		return false;
+	}
+
+	set(G_VALUE_HOLDS_BOOLEAN(value) ? g_value_get_boolean(value) : m_default, false);
+
+	return true;
+}
+
+//-----------------------------------------------------------------------------
+
 void Boolean::set(bool data, bool store)
 {
 	if (m_data == data)
@@ -423,7 +506,9 @@ void Boolean::set(bool data, bool store)
 
 	if (store && wm_settings->channel)
 	{
+		wm_settings->begin_property_update();
 		xfconf_channel_set_bool(wm_settings->channel, m_property, m_data);
+		wm_settings->end_property_update();
 	}
 }
 
@@ -459,6 +544,20 @@ void Integer::load()
 
 //-----------------------------------------------------------------------------
 
+bool Integer::load(const gchar* property, const GValue* value)
+{
+	if (g_strcmp0(m_property, property) != 0)
+	{
+		return false;
+	}
+
+	set(G_VALUE_HOLDS_INT(value) ? g_value_get_int(value) : m_default, false);
+
+	return true;
+}
+
+//-----------------------------------------------------------------------------
+
 void Integer::set(int data, bool store)
 {
 	data = CLAMP(data, m_min, m_max);
@@ -471,7 +570,9 @@ void Integer::set(int data, bool store)
 
 	if (store && wm_settings->channel)
 	{
+		wm_settings->begin_property_update();
 		xfconf_channel_set_int(wm_settings->channel, m_property, m_data);
+		wm_settings->end_property_update();
 	}
 }
 
@@ -507,6 +608,20 @@ void String::load()
 
 //-----------------------------------------------------------------------------
 
+bool String::load(const gchar* property, const GValue* value)
+{
+	if (g_strcmp0(m_property, property) != 0)
+	{
+		return false;
+	}
+
+	set(G_VALUE_HOLDS_STRING(value) ? g_value_get_string(value) : m_default, false);
+
+	return true;
+}
+
+//-----------------------------------------------------------------------------
+
 void String::set(const std::string& data, bool store)
 {
 	if (m_data == data)
@@ -518,7 +633,9 @@ void String::set(const std::string& data, bool store)
 
 	if (store && wm_settings->channel)
 	{
+		wm_settings->begin_property_update();
 		xfconf_channel_set_string(wm_settings->channel, m_property, m_data.c_str());
+		wm_settings->end_property_update();
 	}
 }
 
@@ -615,48 +732,61 @@ void StringList::load(XfceRc* rc, bool is_default)
 void StringList::load()
 {
 	GValue value = G_VALUE_INIT;
-	if (!xfconf_channel_get_property(wm_settings->channel, m_property, &value))
+	if (xfconf_channel_get_property(wm_settings->channel, m_property, &value))
 	{
-		return;
+		load(m_property, &value);
+		g_value_unset(&value);
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+bool StringList::load(const gchar* property, const GValue* value)
+{
+	if (g_strcmp0(m_property, property) != 0)
+	{
+		return false;
+	}
+
+	// Handle resetting to default
+	if (G_VALUE_TYPE(value) == G_TYPE_INVALID)
+	{
+		m_modified = false;
+		m_data = m_default;
+		return true;
 	}
 
 	// Convert GValue to string list
 	std::vector<std::string> strings;
-	if (G_VALUE_HOLDS(&value, G_TYPE_PTR_ARRAY))
+	if (G_VALUE_HOLDS(value, G_TYPE_PTR_ARRAY))
 	{
-		const GPtrArray* values = static_cast<GPtrArray*>(g_value_get_boxed(&value));
+		const GPtrArray* values = static_cast<const GPtrArray*>(g_value_get_boxed(value));
 		for (guint i = 0; i < values->len; ++i)
 		{
-			const GValue* string = static_cast<GValue*>(g_ptr_array_index(values, i));
+			const GValue* string = static_cast<const GValue*>(g_ptr_array_index(values, i));
 			if (G_VALUE_HOLDS_STRING(string))
 			{
 				strings.push_back(g_value_get_string(string));
 			}
 		}
 	}
-	else if (G_VALUE_HOLDS(&value, G_TYPE_STRV))
+	else if (G_VALUE_HOLDS(value, G_TYPE_STRV))
 	{
-		const gchar** values = static_cast<const gchar**>(g_value_get_boxed(&value));
+		const gchar** values = static_cast<const gchar**>(g_value_get_boxed(value));
 		for (int i = 0; values[i]; ++i)
 		{
 			strings.push_back(values[i]);
 		}
 	}
-	else if (G_VALUE_HOLDS_STRING(&value))
+	else if (G_VALUE_HOLDS_STRING(value))
 	{
-		strings.push_back(g_value_get_string(&value));
-	}
-	else
-	{
-		return;
+		strings.push_back(g_value_get_string(value));
 	}
 
 	// Load string list
 	set(strings, false);
 
-	g_value_unset(&value);
-
-	return;
+	return true;
 }
 
 //-----------------------------------------------------------------------------
@@ -667,6 +797,8 @@ void StringList::save()
 	{
 		return;
 	}
+
+	wm_settings->begin_property_update();
 
 	const int size = m_data.size();
 	GPtrArray* array = g_ptr_array_sized_new(size);
@@ -683,6 +815,8 @@ void StringList::save()
 	xfconf_array_free(array);
 
 	m_modified = false;
+
+	wm_settings->end_property_update();
 }
 
 //-----------------------------------------------------------------------------
@@ -843,12 +977,57 @@ void SearchActionList::load()
 
 //-----------------------------------------------------------------------------
 
+bool SearchActionList::load(const gchar* property, const GValue* value)
+{
+	if (g_strcmp0("/search-actions", property) == 0)
+	{
+		load();
+		return true;
+	}
+
+	int index = 0;
+	char field[16];
+	if (std::sscanf(property, "/search-actions/action-%d/%14s", &index, field) != 2)
+	{
+		return false;
+	}
+
+	if (index >= size())
+	{
+		return true;
+	}
+	SearchAction* action = m_data[index];
+
+	if ((g_strcmp0(field, "name") == 0) && G_VALUE_HOLDS_STRING(value))
+	{
+		action->set_name(g_value_get_string(value));
+	}
+	else if ((g_strcmp0(field, "pattern") == 0) && G_VALUE_HOLDS_STRING(value))
+	{
+		action->set_pattern(g_value_get_string(value));
+	}
+	else if ((g_strcmp0(field, "command") == 0) && G_VALUE_HOLDS_STRING(value))
+	{
+		action->set_command(g_value_get_string(value));
+	}
+	else if ((g_strcmp0(field, "regex") == 0) && G_VALUE_HOLDS_BOOLEAN(value))
+	{
+		action->set_is_regex(g_value_get_boolean (value));
+	}
+
+	return true;
+}
+
+//-----------------------------------------------------------------------------
+
 void SearchActionList::save()
 {
 	if (!m_modified || !wm_settings->channel)
 	{
 		return;
 	}
+
+	wm_settings->begin_property_update();
 
 	xfconf_channel_reset_property(wm_settings->channel, "/search-actions", true);
 
@@ -880,6 +1059,8 @@ void SearchActionList::save()
 	}
 
 	m_modified = false;
+
+	wm_settings->end_property_update();
 }
 
 //-----------------------------------------------------------------------------

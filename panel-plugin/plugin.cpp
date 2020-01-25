@@ -42,12 +42,13 @@ extern "C" void whiskermenu_construct(XfcePanelPlugin* plugin)
 Plugin::Plugin(XfcePanelPlugin* plugin) :
 	m_plugin(plugin),
 	m_window(nullptr),
+	m_button(nullptr),
 	m_opacity(100),
 	m_file_icon(false),
 	m_hide_time(0)
 {
 	// Create settings
-	wm_settings = new Settings;
+	wm_settings = new Settings(this);
 
 	// Load default settings
 	gchar* defaults_file = xfce_resource_lookup(XFCE_RESOURCE_CONFIG, "xfce4/whiskermenu/defaults.rc");
@@ -229,10 +230,25 @@ void Plugin::menu_hidden()
 
 //-----------------------------------------------------------------------------
 
-void Plugin::reload()
+void Plugin::reload_button()
 {
-	m_window->hide();
-	m_window->get_applications()->invalidate();
+	if (m_button)
+	{
+		wm_settings->prevent_invalid();
+		icon_changed(wm_settings->button_icon_name);
+		set_button_style(get_button_style());
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void Plugin::reload_menu()
+{
+	if (m_window)
+	{
+		m_window->hide();
+		m_window->get_applications()->invalidate();
+	}
 }
 
 //-----------------------------------------------------------------------------

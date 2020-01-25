@@ -168,7 +168,9 @@ void Command::set(const gchar* command, bool store)
 
 	if (store && wm_settings->channel)
 	{
+		wm_settings->begin_property_update();
 		xfconf_channel_set_string(wm_settings->channel, m_property, m_command);
+		wm_settings->end_property_update();
 	}
 }
 
@@ -185,7 +187,9 @@ void Command::set_shown(bool shown, bool store)
 
 	if (store && wm_settings->channel)
 	{
+		wm_settings->begin_property_update();
 		xfconf_channel_set_bool(wm_settings->channel, m_property_show, m_shown);
+		wm_settings->end_property_update();
 	}
 
 	if (m_button)
@@ -278,6 +282,30 @@ void Command::load()
 	set_shown(xfconf_channel_get_bool(wm_settings->channel, m_property_show, m_shown), false);
 
 	check();
+}
+
+//-----------------------------------------------------------------------------
+
+bool Command::load(const gchar* property, const GValue* value)
+{
+	// Update command
+	if (g_strcmp0(m_property, property) == 0)
+	{
+		set(G_VALUE_HOLDS_STRING(value) ? g_value_get_string(value) : m_command_default, false);
+		check();
+
+		return true;
+	}
+
+	// Update shown
+	if (g_strcmp0(m_property_show, property) == 0)
+	{
+		set_shown(G_VALUE_HOLDS_BOOLEAN(value) ? g_value_get_boolean(value) : m_shown_default, false);
+
+		return true;
+	}
+
+	return false;
 }
 
 //-----------------------------------------------------------------------------

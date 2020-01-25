@@ -386,7 +386,7 @@ GtkWidget* SettingsDialog::init_general_tab()
 			if (gtk_toggle_button_get_active(button))
 			{
 				wm_settings->view_mode = Settings::ViewAsIcons;
-				m_plugin->reload();
+				m_plugin->reload_menu();
 
 				gtk_widget_set_sensitive(m_show_descriptions, false);
 			}
@@ -398,7 +398,7 @@ GtkWidget* SettingsDialog::init_general_tab()
 			if (gtk_toggle_button_get_active(button))
 			{
 				wm_settings->view_mode = Settings::ViewAsList;
-				m_plugin->reload();
+				m_plugin->reload_menu();
 
 				gtk_widget_set_sensitive(m_show_descriptions, true);
 			}
@@ -410,7 +410,7 @@ GtkWidget* SettingsDialog::init_general_tab()
 			if (gtk_toggle_button_get_active(button))
 			{
 				wm_settings->view_mode = Settings::ViewAsTree;
-				m_plugin->reload();
+				m_plugin->reload_menu();
 
 				gtk_widget_set_sensitive(m_show_descriptions, true);
 			}
@@ -429,7 +429,7 @@ GtkWidget* SettingsDialog::init_general_tab()
 		[this](GtkToggleButton* button)
 		{
 			wm_settings->launcher_show_name = !gtk_toggle_button_get_active(button);
-			m_plugin->reload();
+			m_plugin->reload_menu();
 		});
 
 	// Add option to hide category names
@@ -465,7 +465,7 @@ GtkWidget* SettingsDialog::init_general_tab()
 		[this](GtkToggleButton* button)
 		{
 			wm_settings->launcher_show_description = gtk_toggle_button_get_active(button);
-			m_plugin->reload();
+			m_plugin->reload_menu();
 		});
 
 	// Add space beneath options
@@ -839,7 +839,7 @@ GtkWidget* SettingsDialog::init_behavior_tab()
 		[this](GtkToggleButton* button)
 		{
 			wm_settings->sort_categories = gtk_toggle_button_get_active(button);
-			m_plugin->reload();
+			m_plugin->reload_menu();
 		});
 
 

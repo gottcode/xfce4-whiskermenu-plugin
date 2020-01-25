@@ -89,6 +89,20 @@ void IconSize::load()
 
 //-----------------------------------------------------------------------------
 
+bool IconSize::load(const gchar* property, const GValue* value)
+{
+	if (g_strcmp0(m_property, property) != 0)
+	{
+		return false;
+	}
+
+	set(G_VALUE_HOLDS_INT(value) ? g_value_get_int(value) : m_default, false);
+
+	return true;
+}
+
+//-----------------------------------------------------------------------------
+
 void IconSize::set(int size, bool store)
 {
 	size = CLAMP(size, NONE, Largest);
@@ -101,7 +115,9 @@ void IconSize::set(int size, bool store)
 
 	if (store && wm_settings->channel)
 	{
+		wm_settings->begin_property_update();
 		xfconf_channel_set_int(wm_settings->channel, m_property, m_size);
+		wm_settings->end_property_update();
 	}
 }
 
