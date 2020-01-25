@@ -199,29 +199,29 @@ void Settings::load(const gchar* file, bool is_default)
 	}
 	xfce_rc_set_group(rc, nullptr);
 
-	favorites.load(rc);
-	recent.load(rc);
+	favorites.load(rc, is_default);
+	recent.load(rc, is_default);
 
-	custom_menu_file.load(rc);
+	custom_menu_file.load(rc, is_default);
 
-	button_title.load(rc);
-	button_icon_name.load(rc);
-	button_single_row.load(rc);
-	button_title_visible.load(rc);
-	button_icon_visible.load(rc);
+	button_title.load(rc, is_default);
+	button_icon_name.load(rc, is_default);
+	button_single_row.load(rc, is_default);
+	button_title_visible.load(rc, is_default);
+	button_icon_visible.load(rc, is_default);
 
-	launcher_show_name.load(rc);
-	launcher_show_description.load(rc);
-	launcher_show_tooltip.load(rc);
+	launcher_show_name.load(rc, is_default);
+	launcher_show_description.load(rc, is_default);
+	launcher_show_tooltip.load(rc, is_default);
 	if (xfce_rc_has_entry(rc, "item-icon-size"))
 	{
 		launcher_icon_size = xfce_rc_read_int_entry(rc, "item-icon-size", launcher_icon_size);
 	}
-	launcher_icon_size.load(rc);
+	launcher_icon_size.load(rc, is_default);
 
-	category_hover_activate.load(rc);
-	category_show_name.load(rc);
-	category_icon_size.load(rc);
+	category_hover_activate.load(rc, is_default);
+	category_show_name.load(rc, is_default);
+	category_icon_size.load(rc, is_default);
 
 	if (!xfce_rc_has_entry(rc, "view-mode"))
 	{
@@ -238,35 +238,35 @@ void Settings::load(const gchar* file, bool is_default)
 			view_mode = ViewAsIcons;
 		}
 	}
-	view_mode.load(rc);
-	sort_categories.load(rc);
+	view_mode.load(rc, is_default);
+	sort_categories.load(rc, is_default);
 
 	if (xfce_rc_has_entry(rc, "display-recent-default"))
 	{
 		default_category = xfce_rc_read_bool_entry(rc, "display-recent-default", default_category);
 	}
-	default_category.load(rc);
+	default_category.load(rc, is_default);
 
-	recent_items_max.load(rc);
-	favorites_in_recent.load(rc);
+	recent_items_max.load(rc, is_default);
+	favorites_in_recent.load(rc, is_default);
 
-	position_search_alternate.load(rc);
-	position_commands_alternate.load(rc);
-	position_categories_alternate.load(rc);
-	position_categories_horizontal.load(rc);
-	stay_on_focus_out.load(rc);
+	position_search_alternate.load(rc, is_default);
+	position_commands_alternate.load(rc, is_default);
+	position_categories_alternate.load(rc, is_default);
+	position_categories_horizontal.load(rc, is_default);
+	stay_on_focus_out.load(rc, is_default);
 
-	profile_shape.load(rc);
+	profile_shape.load(rc, is_default);
 
-	confirm_session_command.load(rc);
+	confirm_session_command.load(rc, is_default);
 
-	menu_width.load(rc);
-	menu_height.load(rc);
-	menu_opacity.load(rc);
+	menu_width.load(rc, is_default);
+	menu_height.load(rc, is_default);
+	menu_opacity.load(rc, is_default);
 
 	for (auto i : command)
 	{
-		i->load(rc);
+		i->load(rc, is_default);
 	}
 
 	search_actions.load(rc);
@@ -386,15 +386,21 @@ void Settings::prevent_invalid()
 
 Boolean::Boolean(const gchar* property, bool data) :
 	m_property(property),
-	m_data(data)
+	m_default(data),
+	m_data(m_default)
 {
 }
 
 //-----------------------------------------------------------------------------
 
-void Boolean::load(XfceRc* rc)
+void Boolean::load(XfceRc* rc, bool is_default)
 {
-	set(xfce_rc_read_bool_entry(rc, m_property + 1, m_data), false);
+	set(xfce_rc_read_bool_entry(rc, m_property + 1, m_data), !is_default);
+
+	if (is_default)
+	{
+		m_default = m_data;
+	}
 }
 
 //-----------------------------------------------------------------------------
@@ -427,15 +433,21 @@ Integer::Integer(const gchar* property, int data, int min, int max) :
 	m_property(property),
 	m_min(min),
 	m_max(max),
-	m_data(CLAMP(data, min, max))
+	m_default(CLAMP(data, min, max)),
+	m_data(m_default)
 {
 }
 
 //-----------------------------------------------------------------------------
 
-void Integer::load(XfceRc* rc)
+void Integer::load(XfceRc* rc, bool is_default)
 {
-	set(xfce_rc_read_int_entry(rc, m_property + 1, m_data), false);
+	set(xfce_rc_read_int_entry(rc, m_property + 1, m_data), !is_default);
+
+	if (is_default)
+	{
+		m_default = m_data;
+	}
 }
 
 //-----------------------------------------------------------------------------
@@ -467,15 +479,21 @@ void Integer::set(int data, bool store)
 
 String::String(const gchar* property, const std::string& data) :
 	m_property(property),
-	m_data(data)
+	m_default(data),
+	m_data(m_default)
 {
 }
 
 //-----------------------------------------------------------------------------
 
-void String::load(XfceRc* rc)
+void String::load(XfceRc* rc, bool is_default)
 {
-	set(xfce_rc_read_entry(rc, m_property + 1, m_data.c_str()), false);
+	set(xfce_rc_read_entry(rc, m_property + 1, m_data.c_str()), !is_default);
+
+	if (is_default)
+	{
+		m_default = m_data;
+	}
 }
 
 //-----------------------------------------------------------------------------
@@ -508,7 +526,8 @@ void String::set(const std::string& data, bool store)
 
 StringList::StringList(const gchar* property, std::initializer_list<std::string> data) :
 	m_property(property),
-	m_data(data),
+	m_default(data),
+	m_data(m_default),
 	m_modified(false)
 {
 }
@@ -563,7 +582,7 @@ void StringList::set(int pos, const std::string& value)
 
 //-----------------------------------------------------------------------------
 
-void StringList::load(XfceRc* rc)
+void StringList::load(XfceRc* rc, bool is_default)
 {
 	if (!xfce_rc_has_entry(rc, m_property + 1))
 	{
@@ -581,9 +600,14 @@ void StringList::load(XfceRc* rc)
 	{
 		strings.push_back(data[i]);
 	}
-	set(strings, true);
+	set(strings, !is_default);
 
 	g_strfreev(data);
+
+	if (is_default)
+	{
+		m_default = m_data;
+	}
 }
 
 //-----------------------------------------------------------------------------

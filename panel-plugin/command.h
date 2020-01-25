@@ -75,7 +75,7 @@ public:
 
 	void activate();
 
-	void load(XfceRc* rc);
+	void load(XfceRc* rc, bool is_default);
 	void load();
 
 private:
@@ -90,8 +90,10 @@ private:
 	gchar* m_icon;
 	gchar* m_mnemonic;
 	gchar* m_text;
+	gchar* m_command_default;
 	gchar* m_command;
 	gchar* m_error_text;
+	bool m_shown_default;
 	bool m_shown;
 
 	enum class CommandStatus

@@ -63,7 +63,7 @@ public:
 		return *this;
 	}
 
-	void load(XfceRc* rc);
+	void load(XfceRc* rc, bool is_default);
 	void load();
 
 private:
@@ -71,6 +71,7 @@ private:
 
 private:
 	const gchar* const m_property;
+	int m_default;
 	int m_size;
 };
 

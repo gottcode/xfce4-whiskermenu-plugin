@@ -47,7 +47,7 @@ public:
 		return *this;
 	}
 
-	void load(XfceRc* rc);
+	void load(XfceRc* rc, bool is_default);
 	void load();
 
 private:
@@ -55,6 +55,7 @@ private:
 
 private:
 	const gchar* const m_property;
+	bool m_default;
 	bool m_data;
 };
 
@@ -76,7 +77,7 @@ public:
 		return *this;
 	}
 
-	void load(XfceRc* rc);
+	void load(XfceRc* rc, bool is_default);
 	void load();
 
 private:
@@ -86,6 +87,7 @@ private:
 	const gchar* const m_property;
 	const int m_min;
 	const int m_max;
+	int m_default;
 	int m_data;
 };
 
@@ -122,7 +124,7 @@ public:
 		return *this = std::string(data ? data : "");
 	}
 
-	void load(XfceRc* rc);
+	void load(XfceRc* rc, bool is_default);
 	void load();
 
 private:
@@ -130,6 +132,7 @@ private:
 
 private:
 	const gchar* const m_property;
+	std::string m_default;
 	std::string m_data;
 };
 
@@ -172,7 +175,7 @@ public:
 	void resize(int count);
 	void set(int pos, const std::string& value);
 
-	void load(XfceRc* rc);
+	void load(XfceRc* rc, bool is_default);
 	void load();
 	void save();
 
@@ -181,6 +184,7 @@ private:
 
 private:
 	const gchar* const m_property;
+	std::vector<std::string> m_default;
 	std::vector<std::string> m_data;
 	bool m_modified;
 };

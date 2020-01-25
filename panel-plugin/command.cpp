@@ -40,9 +40,11 @@ Command::Command(const gchar* property, const gchar* show_property,
 	m_button(nullptr),
 	m_menuitem(nullptr),
 	m_mnemonic(g_strdup(text)),
-	m_command(g_strdup(command)),
+	m_command_default(g_strdup(command)),
+	m_command(g_strdup(m_command_default)),
 	m_error_text(g_strdup(error_text)),
-	m_shown(shown),
+	m_shown_default(shown),
+	m_shown(m_shown_default),
 	m_status(CommandStatus::Unchecked),
 	m_timeout_details({nullptr, g_strdup(confirm_question), g_strdup(confirm_status), 0})
 {
@@ -86,6 +88,7 @@ Command::~Command()
 	g_free(m_icon);
 	g_free(m_mnemonic);
 	g_free(m_text);
+	g_free(m_command_default);
 	g_free(m_command);
 	g_free(m_error_text);
 	g_free(m_timeout_details.question);
@@ -249,11 +252,19 @@ void Command::activate()
 
 //-----------------------------------------------------------------------------
 
-void Command::load(XfceRc* rc)
+void Command::load(XfceRc* rc, bool is_default)
 {
-	set(xfce_rc_read_entry(rc, m_property + 1, m_command), true);
-	set_shown(xfce_rc_read_bool_entry(rc, m_property_show + 1, m_shown), true);
+	set(xfce_rc_read_entry(rc, m_property + 1, m_command), !is_default);
+	set_shown(xfce_rc_read_bool_entry(rc, m_property_show + 1, m_shown), !is_default);
 	check();
+
+	if (is_default)
+	{
+		g_free(m_command_default);
+		m_command_default = g_strdup(m_command);
+
+		m_shown_default = m_shown;
+	}
 }
 
 //-----------------------------------------------------------------------------

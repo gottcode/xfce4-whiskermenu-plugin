@@ -27,7 +27,8 @@ using namespace WhiskerMenu;
 
 IconSize::IconSize(const gchar* property, const int size) :
 	m_property(property),
-	m_size(CLAMP(size, NONE, Largest))
+	m_default(CLAMP(size, NONE, Largest)),
+	m_size(m_default)
 {
 }
 
@@ -69,9 +70,14 @@ std::vector<std::string> IconSize::get_strings()
 
 //-----------------------------------------------------------------------------
 
-void IconSize::load(XfceRc* rc)
+void IconSize::load(XfceRc* rc, bool is_default)
 {
-	set(xfce_rc_read_int_entry(rc, m_property + 1, m_size), false);
+	set(xfce_rc_read_int_entry(rc, m_property + 1, m_size), !is_default);
+
+	if (is_default)
+	{
+		m_default = m_size;
+	}
 }
 
 //-----------------------------------------------------------------------------
