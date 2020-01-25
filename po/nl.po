@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-24 09:02-0500\n"
-"PO-Revision-Date: 2020-01-05 15:30+0000\n"
+"PO-Revision-Date: 2020-01-25 21:51+0000\n"
 "Last-Translator: Pjotr <pjotrvertaalt@gmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/nl/)\n"
@@ -48,9 +48,8 @@ msgid "Amount of _items:"
 msgstr "Hoeveelheid _elementen:"
 
 #: ../panel-plugin/configuration-dialog.cpp:683
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "Toepassingenzoeker"
+msgstr "Pictogramgrootte van toepassing:"
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -329,14 +328,12 @@ msgid "Show as _icons"
 msgstr "Tonen als pictogrammen"
 
 #: ../panel-plugin/configuration-dialog.cpp:595
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "Tonen als pictogrammen"
+msgstr "Toon als lijst"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "Tonen als pictogrammen"
+msgstr "Toon als boomstructuur"
 
 #: ../panel-plugin/configuration-dialog.cpp:871
 msgid "Show c_onfirmation dialog"
@@ -523,7 +520,7 @@ msgstr "_Herstarten"
 
 #: ../panel-plugin/settings.cpp:131
 msgid "_Settings Manager"
-msgstr ""
+msgstr "Instellingenbeheer"
 
 #: ../panel-plugin/configuration-dialog.cpp:769
 msgid "_Title:"
