@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-24 09:02-0500\n"
-"PO-Revision-Date: 2020-01-11 11:44+0000\n"
+"PO-Revision-Date: 2020-01-25 16:48+0000\n"
 "Last-Translator: Yannick Le Guen <leguen.yannick@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/fr/)\n"
@@ -55,9 +55,8 @@ msgid "Amount of _items:"
 msgstr "Nombre d’élé_ments :"
 
 #: ../panel-plugin/configuration-dialog.cpp:683
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "Liste des applications"
+msgstr "Tai_lle des icônes des applications :"
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -337,14 +336,12 @@ msgid "Show as _icons"
 msgstr "Afficher sous forme d’_icônes"
 
 #: ../panel-plugin/configuration-dialog.cpp:595
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "Afficher sous forme d’_icônes"
+msgstr "Afficher sous forme de lis_te"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "Afficher sous forme d’_icônes"
+msgstr "Afficher sous forme d’a_rborescence"
 
 #: ../panel-plugin/configuration-dialog.cpp:871
 msgid "Show c_onfirmation dialog"
@@ -515,7 +512,7 @@ msgstr "_Ok"
 
 #: ../panel-plugin/configuration-dialog.cpp:100
 msgid "_Panel Button"
-msgstr "Bouton du tableau de bord"
+msgstr "Bouton du tableau de _bord"
 
 #: ../panel-plugin/configuration-dialog.cpp:997
 msgid "_Pattern:"
