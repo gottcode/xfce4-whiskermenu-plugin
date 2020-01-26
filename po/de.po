@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-24 09:02-0500\n"
-"PO-Revision-Date: 2020-01-08 21:52+0000\n"
+"PO-Revision-Date: 2020-01-26 19:57+0000\n"
 "Last-Translator: Michał Trzebiatowski <michtrz@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/de/)\n"
@@ -56,9 +56,8 @@ msgid "Amount of _items:"
 msgstr "Anzahl der _Einträge:"
 
 #: ../panel-plugin/configuration-dialog.cpp:683
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "Anwendungsfinder"
+msgstr "Größe des Anwendungs_symbols:"
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -263,7 +262,7 @@ msgstr "S_ucheintrag beim Leistenknopf positionieren"
 
 #: ../panel-plugin/configuration-dialog.cpp:661
 msgid "Position cate_gories next to panel button"
-msgstr "Kategorien beim _Leistenknopf positionieren"
+msgstr "Kate_gorien beim Leistenknopf positionieren"
 
 #: ../panel-plugin/configuration-dialog.cpp:673
 msgid "Position commands next to search _entry"
@@ -337,14 +336,12 @@ msgid "Show as _icons"
 msgstr "Als _Symbole anzeigen"
 
 #: ../panel-plugin/configuration-dialog.cpp:595
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "Als _Symbole anzeigen"
+msgstr "Listenansicht"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "Als _Symbole anzeigen"
+msgstr "Baumansicht"
 
 #: ../panel-plugin/configuration-dialog.cpp:871
 msgid "Show c_onfirmation dialog"
@@ -515,7 +512,7 @@ msgstr "_OK"
 
 #: ../panel-plugin/configuration-dialog.cpp:100
 msgid "_Panel Button"
-msgstr "Leistenknopf"
+msgstr "_Leistenknopf"
 
 #: ../panel-plugin/configuration-dialog.cpp:997
 msgid "_Pattern:"
