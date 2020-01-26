@@ -242,16 +242,21 @@ bool Command::confirm()
 	gtk_window_set_skip_taskbar_hint(window, true);
 	gtk_window_set_title(window, m_text);
 
-	// Add icon
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-	GtkWidget* image = gtk_image_new_from_icon_name(m_icon, GTK_ICON_SIZE_DIALOG);
-	gtk_widget_show(image);
-	gtk_message_dialog_set_image(GTK_MESSAGE_DIALOG(dialog), image);
-G_GNUC_END_IGNORE_DEPRECATIONS
-
 	// Create accept button
-	gtk_dialog_add_button(dialog, m_mnemonic, GTK_RESPONSE_ACCEPT);
+	GtkWidget* button = gtk_dialog_add_button(dialog, m_mnemonic, GTK_RESPONSE_ACCEPT);
+	GtkWidget* image = gtk_image_new_from_icon_name(m_icon, GTK_ICON_SIZE_DIALOG);
+	gtk_button_set_image(GTK_BUTTON(button), image);
+	gtk_button_set_image_position(GTK_BUTTON(button), GTK_POS_TOP);
 	gtk_dialog_set_default_response(dialog, GTK_RESPONSE_ACCEPT);
+
+	// Add icon to cancel button
+	button = gtk_dialog_get_widget_for_response(dialog, GTK_RESPONSE_CANCEL);
+	if (GTK_IS_BUTTON(button))
+	{
+		image = gtk_image_new_from_icon_name("gtk-cancel", GTK_ICON_SIZE_DIALOG);
+		gtk_button_set_image(GTK_BUTTON(button), image);
+		gtk_button_set_image_position(GTK_BUTTON(button), GTK_POS_TOP);
+	}
 
 	// Run dialog
 	m_timeout_details.time_left = 60;
