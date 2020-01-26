@@ -17,6 +17,7 @@
 
 #include "command.h"
 
+#include "image-menu-item.h"
 #include "settings.h"
 #include "slot.h"
 
@@ -121,12 +122,8 @@ GtkWidget* Command::get_menuitem()
 		return m_menuitem;
 	}
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-	m_menuitem = gtk_image_menu_item_new_with_mnemonic(m_mnemonic);
-	GtkWidget* image = gtk_image_new_from_icon_name(m_icon, GTK_ICON_SIZE_MENU);
-	gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM(m_menuitem), image);
+	m_menuitem = whiskermenu_image_menu_item_new_with_mnemonic(m_icon, m_mnemonic);
 	g_signal_connect_slot<GtkMenuItem*>(m_menuitem, "activate", &Command::activate, this);
-G_GNUC_END_IGNORE_DEPRECATIONS
 
 	gtk_widget_set_visible(m_menuitem, m_shown);
 	gtk_widget_set_sensitive(m_menuitem, m_status == WHISKERMENU_COMMAND_VALID);

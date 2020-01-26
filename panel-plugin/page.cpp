@@ -18,6 +18,7 @@
 #include "page.h"
 
 #include "favorites-page.h"
+#include "image-menu-item.h"
 #include "launcher.h"
 #include "launcher-icon-view.h"
 #include "launcher-tree-view.h"
@@ -368,11 +369,7 @@ void Page::create_context_menu(GtkTreePath* path, GdkEvent* event)
 		for (std::vector<DesktopAction*>::size_type i = 0, end = actions.size(); i < end; ++i)
 		{
 			DesktopAction* action = actions[i];
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-			menuitem = gtk_image_menu_item_new_with_label(action->get_name());
-			GtkWidget* image = gtk_image_new_from_icon_name(action->get_icon(), GTK_ICON_SIZE_MENU);
-			gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM(menuitem), image);
-G_GNUC_END_IGNORE_DEPRECATIONS
+			menuitem = whiskermenu_image_menu_item_new(action->get_icon(), action->get_name());
 			g_signal_connect_slot(menuitem, "activate", &Page::launcher_action_activated, this, action);
 			gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 		}
@@ -381,41 +378,35 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 		gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 	}
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 	if (!m_window->get_favorites()->contains(m_selected_launcher))
 	{
-		menuitem = gtk_image_menu_item_new_with_label(_("Add to Favorites"));
-		GtkWidget* image = gtk_image_new_from_icon_name("bookmark-new", GTK_ICON_SIZE_MENU);
-		gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM(menuitem), image);
+		menuitem = whiskermenu_image_menu_item_new("bookmark-new", _("Add to Favorites"));
 		g_signal_connect_slot<GtkMenuItem*>(menuitem, "activate", &Page::add_selected_to_favorites, this);
 		gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 	}
 	else
 	{
-		menuitem = gtk_image_menu_item_new_with_label(_("Remove From Favorites"));
-		GtkWidget* image = gtk_image_new_from_icon_name("list-remove", GTK_ICON_SIZE_MENU);
-		gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM(menuitem), image);
+		menuitem = whiskermenu_image_menu_item_new("list-remove", _("Remove From Favorites"));
 		g_signal_connect_slot<GtkMenuItem*>(menuitem, "activate", &Page::remove_selected_from_favorites, this);
 		gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 	}
-G_GNUC_END_IGNORE_DEPRECATIONS
 
-	menuitem = gtk_menu_item_new_with_label(_("Add to Desktop"));
+	menuitem = whiskermenu_image_menu_item_new("list-add", _("Add to Desktop"));
 	g_signal_connect_slot<GtkMenuItem*>(menuitem, "activate", &Page::add_selected_to_desktop, this);
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
-	menuitem = gtk_menu_item_new_with_label(_("Add to Panel"));
+	menuitem = whiskermenu_image_menu_item_new("list-add", _("Add to Panel"));
 	g_signal_connect_slot<GtkMenuItem*>(menuitem, "activate", &Page::add_selected_to_panel, this);
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
 	menuitem = gtk_separator_menu_item_new();
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
-	menuitem = gtk_menu_item_new_with_label(_("Edit Application..."));
+	menuitem = whiskermenu_image_menu_item_new("gtk-edit", _("Edit Application..."));
 	g_signal_connect_slot<GtkMenuItem*>(menuitem, "activate", &Page::edit_selected, this);
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
-	menuitem = gtk_menu_item_new_with_label(_("Hide Application"));
+	menuitem = whiskermenu_image_menu_item_new("edit-delete", _("Hide Application"));
 	g_signal_connect_slot<GtkMenuItem*>(menuitem, "activate", &Page::hide_selected, this);
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 

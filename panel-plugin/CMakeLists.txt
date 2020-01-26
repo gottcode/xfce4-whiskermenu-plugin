@@ -78,6 +78,7 @@ add_library(whiskermenu MODULE
 	favorites-page.cpp
 	icon-renderer.cpp
 	icon-size.cpp
+	image-menu-item.h
 	launcher.cpp
 	launcher-icon-view.cpp
 	launcher-tree-view.cpp

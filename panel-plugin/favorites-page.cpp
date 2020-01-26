@@ -18,6 +18,7 @@
 #include "favorites-page.h"
 
 #include "applications-page.h"
+#include "image-menu-item.h"
 #include "launcher.h"
 #include "launcher-view.h"
 #include "settings.h"
@@ -143,19 +144,13 @@ void FavoritesPage::extend_context_menu(GtkWidget* menu)
 	GtkWidget* menuitem = gtk_separator_menu_item_new();
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-	menuitem = gtk_image_menu_item_new_with_label(_("Sort Alphabetically A-Z"));
-	GtkWidget* image = gtk_image_new_from_icon_name("view-sort-ascending", GTK_ICON_SIZE_MENU);
-	gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM(menuitem), image);
+	menuitem = whiskermenu_image_menu_item_new("view-sort-ascending", _("Sort Alphabetically A-Z"));
 	g_signal_connect_slot<GtkMenuItem*>(menuitem, "activate", &FavoritesPage::sort_ascending, this);
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
-	menuitem = gtk_image_menu_item_new_with_label(_("Sort Alphabetically Z-A"));
-	image = gtk_image_new_from_icon_name("view-sort-descending", GTK_ICON_SIZE_MENU);
-	gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM(menuitem), image);
+	menuitem = whiskermenu_image_menu_item_new("view-sort-descending", _("Sort Alphabetically Z-A"));
 	g_signal_connect_slot<GtkMenuItem*>(menuitem, "activate", &FavoritesPage::sort_descending, this);
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
-G_GNUC_END_IGNORE_DEPRECATIONS
 }
 
 //-----------------------------------------------------------------------------
