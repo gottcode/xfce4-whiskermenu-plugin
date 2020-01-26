@@ -57,16 +57,23 @@ static void whiskermenu_config_dialog_delete(ConfigurationDialog* dialog)
 
 //-----------------------------------------------------------------------------
 
-static GtkWidget* make_aligned_frame(const gchar* label, GtkWidget* content)
+static GtkWidget* make_aligned_frame(const gchar* text, GtkWidget* content)
 {
-	GtkWidget* alignment;
-	GtkWidget* frame;
+	// Create bold label
+	gchar* markup = g_markup_printf_escaped("<b>%s</b>", text);
+	GtkWidget* label = gtk_label_new(NULL);
+	gtk_label_set_markup(GTK_LABEL(label), markup);
+	g_free(markup);
 
-	frame = xfce_gtk_frame_box_new(label, &alignment);
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-	gtk_alignment_set_padding(GTK_ALIGNMENT(alignment), 6, 0, 12, 0);
-G_GNUC_END_IGNORE_DEPRECATIONS
-	gtk_container_add(GTK_CONTAINER(alignment), GTK_WIDGET(content));
+	// Create frame
+	GtkWidget* frame = gtk_frame_new(NULL);
+	gtk_frame_set_label_widget(GTK_FRAME(frame), label);
+	gtk_frame_set_shadow_type(GTK_FRAME(frame), GTK_SHADOW_NONE);
+
+	// Add content
+	gtk_widget_set_margin_start(content, 12);
+	gtk_widget_set_margin_top(content, 6);
+	gtk_container_add(GTK_CONTAINER(frame), content);
 
 	return frame;
 }
