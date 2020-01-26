@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-24 09:02-0500\n"
-"PO-Revision-Date: 2020-01-13 21:01+0000\n"
+"PO-Revision-Date: 2020-01-26 21:36+0000\n"
 "Last-Translator: Demiray Muhterem <mdemiray@msn.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/tr/)\n"
@@ -51,9 +51,8 @@ msgid "Amount of _items:"
 msgstr "Ögelerin _miktarı:"
 
 #: ../panel-plugin/configuration-dialog.cpp:683
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "Uygulama Bulucu"
+msgstr "Uygulama simge bo_yutu:"
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -332,14 +331,12 @@ msgid "Show as _icons"
 msgstr "_Simgeler olarak göster"
 
 #: ../panel-plugin/configuration-dialog.cpp:595
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "_Simgeler olarak göster"
+msgstr "Lis_te olarak göster"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "_Simgeler olarak göster"
+msgstr "A_ğaç olarak göster"
 
 #: ../panel-plugin/configuration-dialog.cpp:871
 msgid "Show c_onfirmation dialog"
@@ -510,7 +507,7 @@ msgstr "_TAMAM"
 
 #: ../panel-plugin/configuration-dialog.cpp:100
 msgid "_Panel Button"
-msgstr "Panel Butonu"
+msgstr "_Panel Düğmesi"
 
 #: ../panel-plugin/configuration-dialog.cpp:997
 msgid "_Pattern:"
