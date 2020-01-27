@@ -601,7 +601,16 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 
 	// Add option to show as icons
 	m_show_as_icons = gtk_radio_button_new_with_mnemonic(NULL, _("Show as _icons"));
-	gtk_button_set_image(GTK_BUTTON(m_show_as_icons), gtk_image_new_from_icon_name("view-app-grid-symbolic", GTK_ICON_SIZE_DND));
+	{
+		gchar* icons[] = {
+			g_strdup("view-list-icons"),
+			g_strdup("view-grid"),
+			NULL
+		};
+		GIcon* gicon = g_themed_icon_new_from_names(icons, -1);
+		gtk_button_set_image(GTK_BUTTON(m_show_as_icons), gtk_image_new_from_gicon(gicon, GTK_ICON_SIZE_DND));
+		g_object_unref(gicon);
+	}
 	gtk_button_set_image_position(GTK_BUTTON(m_show_as_icons), GTK_POS_TOP);
 	gtk_button_set_always_show_image(GTK_BUTTON(m_show_as_icons), true);
 	gtk_toggle_button_set_mode(GTK_TOGGLE_BUTTON(m_show_as_icons), false);
@@ -609,7 +618,18 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 
 	// Add option to show as list
 	m_show_as_list = gtk_radio_button_new_with_mnemonic_from_widget(GTK_RADIO_BUTTON(m_show_as_icons), _("Show as lis_t"));
-	gtk_button_set_image(GTK_BUTTON(m_show_as_list), gtk_image_new_from_icon_name("view-list-symbolic", GTK_ICON_SIZE_DND));
+	m_show_as_icons = gtk_radio_button_new_with_mnemonic(NULL, _("Show as _icons"));
+	{
+		gchar* icons[] = {
+			g_strdup("view-list-compact"),
+			g_strdup("view-list-details"),
+			g_strdup("view-list"),
+			NULL
+		};
+		GIcon* gicon = g_themed_icon_new_from_names(icons, -1);
+		gtk_button_set_image(GTK_BUTTON(m_show_as_list), gtk_image_new_from_gicon(gicon, GTK_ICON_SIZE_DND));
+		g_object_unref(gicon);
+	}
 	gtk_button_set_image_position(GTK_BUTTON(m_show_as_list), GTK_POS_TOP);
 	gtk_button_set_always_show_image(GTK_BUTTON(m_show_as_list), true);
 	gtk_toggle_button_set_mode(GTK_TOGGLE_BUTTON(m_show_as_list), false);
@@ -617,7 +637,18 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 
 	// Add option to show as tree
 	m_show_as_tree = gtk_radio_button_new_with_mnemonic_from_widget(GTK_RADIO_BUTTON(m_show_as_list), _("Show as t_ree"));
-	gtk_button_set_image(GTK_BUTTON(m_show_as_tree), gtk_image_new_from_icon_name("pan-end-symbolic", GTK_ICON_SIZE_DND));
+	m_show_as_icons = gtk_radio_button_new_with_mnemonic(NULL, _("Show as _icons"));
+	{
+		gchar* icons[] = {
+			g_strdup("view-list-tree"),
+			g_strdup("view-list-details"),
+			g_strdup("pan-end"),
+			NULL
+		};
+		GIcon* gicon = g_themed_icon_new_from_names(icons, -1);
+		gtk_button_set_image(GTK_BUTTON(m_show_as_tree), gtk_image_new_from_gicon(gicon, GTK_ICON_SIZE_DND));
+		g_object_unref(gicon);
+	}
 	gtk_button_set_image_position(GTK_BUTTON(m_show_as_tree), GTK_POS_TOP);
 	gtk_button_set_always_show_image(GTK_BUTTON(m_show_as_tree), true);
 	gtk_toggle_button_set_mode(GTK_TOGGLE_BUTTON(m_show_as_tree), false);
