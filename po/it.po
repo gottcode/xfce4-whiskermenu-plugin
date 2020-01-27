@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-24 09:02-0500\n"
-"PO-Revision-Date: 2020-01-25 20:56+0000\n"
+"PO-Revision-Date: 2020-01-27 20:31+0000\n"
 "Last-Translator: Italang\n"
 "Language-Team: Italian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/it/)\n"
@@ -207,11 +207,11 @@ msgstr "Più grande"
 
 #: ../panel-plugin/settings.cpp:173
 msgid "Log Ou_t..."
-msgstr ""
+msgstr "_Esci..."
 
 #: ../panel-plugin/settings.cpp:143
 msgid "Log _Out"
-msgstr "Log _Out"
+msgstr "Disc_onnetti"
 
 #: ../panel-plugin/settings.cpp:147
 #, c-format
@@ -380,7 +380,7 @@ msgstr "Sospe_ndi"
 #: ../panel-plugin/settings.cpp:165
 #, c-format
 msgid "Suspending computer in %d seconds."
-msgstr "Il sistema si sospenderà tra %d secondi."
+msgstr "Sospensione del computer fra %d secondi."
 
 #: ../panel-plugin/settings.cpp:139
 msgid "Switch _User"
@@ -408,7 +408,7 @@ msgstr ""
 #: ../panel-plugin/settings.cpp:159
 #, c-format
 msgid "Turning off computer in %d seconds."
-msgstr "Spegnimento del computer in %d secondi."
+msgstr "Spegnimento del computer fra %d secondi."
 
 #: ../panel-plugin/page.cpp:480
 msgid "Unable to add launcher to desktop."
@@ -504,7 +504,7 @@ msgstr "_OK"
 
 #: ../panel-plugin/configuration-dialog.cpp:100
 msgid "_Panel Button"
-msgstr ""
+msgstr "Bottone del _Pannello"
 
 #: ../panel-plugin/configuration-dialog.cpp:997
 msgid "_Pattern:"
@@ -520,7 +520,7 @@ msgstr "_Riavvia"
 
 #: ../panel-plugin/settings.cpp:131
 msgid "_Settings Manager"
-msgstr ""
+msgstr "Ge_store Impostazioni"
 
 #: ../panel-plugin/configuration-dialog.cpp:769
 msgid "_Title:"
