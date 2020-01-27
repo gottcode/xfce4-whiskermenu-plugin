@@ -618,7 +618,6 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 
 	// Add option to show as list
 	m_show_as_list = gtk_radio_button_new_with_mnemonic_from_widget(GTK_RADIO_BUTTON(m_show_as_icons), _("Show as lis_t"));
-	m_show_as_icons = gtk_radio_button_new_with_mnemonic(NULL, _("Show as _icons"));
 	{
 		gchar* icons[] = {
 			g_strdup("view-list-compact"),
@@ -637,7 +636,6 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 
 	// Add option to show as tree
 	m_show_as_tree = gtk_radio_button_new_with_mnemonic_from_widget(GTK_RADIO_BUTTON(m_show_as_list), _("Show as t_ree"));
-	m_show_as_icons = gtk_radio_button_new_with_mnemonic(NULL, _("Show as _icons"));
 	{
 		gchar* icons[] = {
 			g_strdup("view-list-tree"),
