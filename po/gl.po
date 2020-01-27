@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-24 09:02-0500\n"
-"PO-Revision-Date: 2020-01-09 06:14+0000\n"
+"PO-Revision-Date: 2020-01-27 09:23+0000\n"
 "Last-Translator: Daniel Muñiz Fontoira <dani@damufo.com>\n"
 "Language-Team: Galician (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/gl/)\n"
@@ -48,9 +48,8 @@ msgid "Amount of _items:"
 msgstr "Cantidade de _elementos:"
 
 #: ../panel-plugin/configuration-dialog.cpp:683
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "Buscador de aplicativos"
+msgstr "Tamaño da icona da _aplicación:"
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -329,14 +328,12 @@ msgid "Show as _icons"
 msgstr "Amosar as _iconas"
 
 #: ../panel-plugin/configuration-dialog.cpp:595
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "Amosar as _iconas"
+msgstr "Amosar como _lista"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "Amosar as _iconas"
+msgstr "Amosar como _árbore"
 
 #: ../panel-plugin/configuration-dialog.cpp:871
 msgid "Show c_onfirmation dialog"
@@ -507,7 +504,7 @@ msgstr "_Vale"
 
 #: ../panel-plugin/configuration-dialog.cpp:100
 msgid "_Panel Button"
-msgstr "Botón do panel"
+msgstr "Botón do _panel"
 
 #: ../panel-plugin/configuration-dialog.cpp:997
 msgid "_Pattern:"
