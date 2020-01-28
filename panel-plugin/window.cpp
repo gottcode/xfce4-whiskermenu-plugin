@@ -344,6 +344,9 @@ void WhiskerMenu::Window::show(const Position position)
 	// Make sure recent item count is within max
 	m_recent->enforce_item_count();
 
+	// Make sure recent button is only visible when tracked
+	gtk_widget_set_visible(m_recent_button->get_widget(), wm_settings->recent_items_max);
+
 	// Make sure applications list is current; does nothing unless list has changed
 	if (m_applications->load_applications())
 	{
@@ -357,12 +360,12 @@ void WhiskerMenu::Window::show(const Position position)
 	}
 
 	// Update default page
-	if (wm_settings->display_recent && (m_default_page == m_favorites))
+	if (wm_settings->display_recent)
 	{
 		m_default_button = m_recent_button;
 		m_default_page = m_recent;
 	}
-	else if (!wm_settings->display_recent && (m_default_page == m_recent))
+	else
 	{
 		m_default_button = m_favorites_button;
 		m_default_page = m_favorites;
@@ -655,9 +658,6 @@ void WhiskerMenu::Window::show(const Position position)
 			m_search_uncover = GTK_STACK_TRANSITION_TYPE_UNDER_DOWN;
 		}
 	}
-
-	// Make sure recent button is only visible when tracked
-	gtk_widget_set_visible(m_recent_button->get_widget(), wm_settings->recent_items_max);
 
 	// Show window
 	gtk_widget_show(GTK_WIDGET(m_window));
