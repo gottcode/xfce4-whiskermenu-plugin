@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-24 09:02-0500\n"
-"PO-Revision-Date: 2020-01-09 03:11+0000\n"
+"PO-Revision-Date: 2020-01-30 08:55+0000\n"
 "Last-Translator: 黃柏諺 <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/zh_TW/)\n"
@@ -51,9 +51,8 @@ msgid "Amount of _items:"
 msgstr "項目數量(_I)："
 
 #: ../panel-plugin/configuration-dialog.cpp:683
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "應用程式協尋器"
+msgstr "應用程式圖示大小：(_Z)"
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -332,14 +331,12 @@ msgid "Show as _icons"
 msgstr "以圖示顯示 (_I)"
 
 #: ../panel-plugin/configuration-dialog.cpp:595
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "以圖示顯示 (_I)"
+msgstr "顯示為清單(_T)"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "以圖示顯示 (_I)"
+msgstr "顯示為樹狀(_R)"
 
 #: ../panel-plugin/configuration-dialog.cpp:871
 msgid "Show c_onfirmation dialog"
@@ -508,7 +505,7 @@ msgstr "確定(_O)"
 
 #: ../panel-plugin/configuration-dialog.cpp:100
 msgid "_Panel Button"
-msgstr "面板按鈕"
+msgstr "面板按鈕(_P)"
 
 #: ../panel-plugin/configuration-dialog.cpp:997
 msgid "_Pattern:"
