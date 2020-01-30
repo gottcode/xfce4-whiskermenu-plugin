@@ -105,7 +105,7 @@ ConfigurationDialog::ConfigurationDialog(Plugin* plugin) :
 			_("_Close"), GTK_RESPONSE_CLOSE,
 			NULL);
 #endif
-	gtk_window_set_icon_name(GTK_WINDOW(m_window), "document-properties");
+	gtk_window_set_icon_name(GTK_WINDOW(m_window), "xfce4-whiskermenu");
 	gtk_window_set_position(GTK_WINDOW(m_window), GTK_WIN_POS_CENTER);
 	g_signal_connect_slot(m_window, "response", &ConfigurationDialog::response, this);
 	g_signal_connect_swapped(m_window, "destroy", G_CALLBACK(whiskermenu_config_dialog_delete), this);
