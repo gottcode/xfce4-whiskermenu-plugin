@@ -90,7 +90,7 @@ void Page::reset_selection()
 
 void Page::update_view()
 {
-	if ((dynamic_cast<LauncherIconView*>(m_view) != 0) == wm_settings->view_as_icons)
+	if (dynamic_cast<LauncherIconView*>(m_view) && wm_settings->view_as_icons)
 	{
 		return;
 	}
