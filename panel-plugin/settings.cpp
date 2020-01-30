@@ -118,7 +118,7 @@ Settings::Settings() :
 
 	confirm_session_command(true),
 
-	menu_width(560),
+	menu_width(450),
 	menu_height(500),
 	menu_opacity(100)
 {
