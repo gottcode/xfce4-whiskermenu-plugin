@@ -1,11 +1,11 @@
 # Portuguese (Brazil) translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2019 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # Carlos Reis <reiscarlos1976@gmail.com>, 2017
 # Fábio Luciano de Góis <fabio@naoimporta.com>, 2013
-# Gabriel Henrique <gabrielddev@gmail.com>, 2018-2019
+# Gabriel Henrique <gabrielddev@gmail.com>, 2018-2020
 # Gabriel Henrique <gabrielddev@gmail.com>, 2017-2018
 # Graeme Gott <graeme@gottcode.org>, 2013
 # Holmes <holmes_holmes@live.com>, 2014
@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-24 09:02-0500\n"
-"PO-Revision-Date: 2019-08-07 17:51+0000\n"
+"PO-Revision-Date: 2020-01-29 22:17+0000\n"
 "Last-Translator: Gabriel Henrique <gabrielddev@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/pt_BR/)\n"
@@ -57,7 +57,6 @@ msgid "Amount of _items:"
 msgstr "Número de ite_ns:"
 
 #: ../panel-plugin/configuration-dialog.cpp:683
-#, fuzzy
 msgid "Application icon si_ze:"
 msgstr "Localizador de aplicativos"
 
@@ -104,7 +103,7 @@ msgstr "Limpar usados recentemente"
 
 #: ../panel-plugin/plugin.cpp:410
 msgid "Copyright © 2013-2020 Graeme Gott"
-msgstr "Direito Autoral © 2013-2020 Graeme Gott"
+msgstr "Copyright © 2013-2020 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:980
 msgid "Details"
@@ -191,7 +190,7 @@ msgstr "Hibernando o computador em %d segundos."
 
 #: ../panel-plugin/launcher.cpp:231 ../panel-plugin/page.cpp:418
 msgid "Hide Application"
-msgstr ""
+msgstr "Ocultar Aplicativo"
 
 #: ../panel-plugin/configuration-dialog.cpp:758
 msgid "Icon"
@@ -335,17 +334,15 @@ msgstr "Mostrar dicas de conte_xto das aplicações"
 
 #: ../panel-plugin/configuration-dialog.cpp:587
 msgid "Show as _icons"
-msgstr ""
+msgstr "Mostrar como _ícones"
 
 #: ../panel-plugin/configuration-dialog.cpp:595
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "Mostrar linhas base"
+msgstr "Mostrar com _lista"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "Mostrar borda"
+msgstr "Mostrar como _árvore"
 
 #: ../panel-plugin/configuration-dialog.cpp:871
 msgid "Show c_onfirmation dialog"
@@ -414,6 +411,8 @@ msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
 msgstr ""
+"Para mostrá-lo, você deve remover manualmente o arquivo \"%s\" ou abrir o "
+"arquivo e remova a linha \"%s\"."
 
 #: ../panel-plugin/settings.cpp:159
 #, c-format
@@ -514,7 +513,7 @@ msgstr "_OK"
 
 #: ../panel-plugin/configuration-dialog.cpp:100
 msgid "_Panel Button"
-msgstr "Botão do painel"
+msgstr "Botão do _Painel"
 
 #: ../panel-plugin/configuration-dialog.cpp:997
 msgid "_Pattern:"
@@ -530,7 +529,7 @@ msgstr "_Reiniciar"
 
 #: ../panel-plugin/settings.cpp:131
 msgid "_Settings Manager"
-msgstr ""
+msgstr "Gerenciador de con_figurações"
 
 #: ../panel-plugin/configuration-dialog.cpp:769
 msgid "_Title:"
@@ -541,7 +540,7 @@ msgid "translator-credits"
 msgstr ""
 "Carlos Reis <reiscarlos1976@gmail.com>, 2017\n"
 "Fábio Luciano de Góis <fabio@naoimporta.com>, 2013\n"
-"Gabriel Henrique <gabrielddev@gmail.com>, 2018-2019\n"
+"Gabriel Henrique <gabrielddev@gmail.com>, 2018-2020\n"
 "Graeme Gott <graeme@gottcode.org>, 2013\n"
 "Holmes <holmes_holmes@live.com>, 2014\n"
 "José Vieira <jvieira33@sapo.pt>, 2016-2017\n"
