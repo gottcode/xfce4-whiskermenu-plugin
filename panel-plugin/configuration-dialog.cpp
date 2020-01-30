@@ -149,35 +149,45 @@ ConfigurationDialog::~ConfigurationDialog()
 
 void ConfigurationDialog::toggle_show_as_icons(GtkToggleButton *button)
 {
-	const bool active = gtk_toggle_button_get_active(button);
-	wm_settings->view_as_icons = active;
-	wm_settings->set_modified();
-	m_plugin->reload();
+	if (gtk_toggle_button_get_active(button))
+	{
+		wm_settings->view_as_icons = true;
+		wm_settings->load_hierarchy = false;
+		wm_settings->set_modified();
+		m_plugin->reload();
 
-	gtk_widget_set_sensitive(GTK_WIDGET(m_show_descriptions), !active);
+		gtk_widget_set_sensitive(GTK_WIDGET(m_show_descriptions), false);
+	}
 }
 
 //-----------------------------------------------------------------------------
 
 void ConfigurationDialog::toggle_show_as_list(GtkToggleButton *button)
 {
-	wm_settings->view_as_icons = !gtk_toggle_button_get_active(button);
-	wm_settings->set_modified();
-	m_plugin->reload();
+	if (gtk_toggle_button_get_active(button))
+	{
+		wm_settings->view_as_icons = false;
+		wm_settings->load_hierarchy = false;
+		wm_settings->set_modified();
+		m_plugin->reload();
+
+		gtk_widget_set_sensitive(GTK_WIDGET(m_show_descriptions), true);
+	}
 }
 
 //-----------------------------------------------------------------------------
 
 void ConfigurationDialog::toggle_show_as_tree(GtkToggleButton* button)
 {
-	const bool active = gtk_toggle_button_get_active(button);
-	wm_settings->load_hierarchy = active;
-	if (active)
+	if (gtk_toggle_button_get_active(button))
 	{
 		wm_settings->view_as_icons = false;
+		wm_settings->load_hierarchy = true;
+		wm_settings->set_modified();
+		m_plugin->reload();
+
+		gtk_widget_set_sensitive(GTK_WIDGET(m_show_descriptions), true);
 	}
-	wm_settings->set_modified();
-	m_plugin->reload();
 }
 
 //-----------------------------------------------------------------------------
