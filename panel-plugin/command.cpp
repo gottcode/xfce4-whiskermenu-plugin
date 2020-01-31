@@ -240,9 +240,22 @@ bool Command::confirm()
 	gtk_window_set_skip_taskbar_hint(window, true);
 	gtk_window_stick(window);
 
+	GtkWidget* header = gtk_header_bar_new();
+	gtk_header_bar_set_has_subtitle(GTK_HEADER_BAR(header), false);
+	gtk_header_bar_set_show_close_button(GTK_HEADER_BAR(header), false);
+	gtk_widget_show(header);
+	gtk_window_set_titlebar(window, header);
+
+	// Add icon
+	GtkWidget* image = gtk_image_new_from_icon_name(m_icon, GTK_ICON_SIZE_DIALOG);
+	gtk_widget_show(image);
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+	gtk_message_dialog_set_image(GTK_MESSAGE_DIALOG(dialog), image);
+G_GNUC_END_IGNORE_DEPRECATIONS
+
 	// Create accept button
 	GtkWidget* button = gtk_dialog_add_button(dialog, m_mnemonic, GTK_RESPONSE_ACCEPT);
-	GtkWidget* image = gtk_image_new_from_icon_name(m_icon, GTK_ICON_SIZE_BUTTON);
+	image = gtk_image_new_from_icon_name(m_icon, GTK_ICON_SIZE_BUTTON);
 	gtk_button_set_image(GTK_BUTTON(button), image);
 	gtk_dialog_set_default_response(dialog, GTK_RESPONSE_ACCEPT);
 
