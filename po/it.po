@@ -6,13 +6,14 @@
 # Bernardo Miguel Savone <bmsavone@gmail.com>, 2013-2015
 # Italang, 2020
 # Patrizio Bellan <patrizio.bellan@gmail.com>, 2017
+# Pierluigi Mario <pierluigimariomail@gmail.com>, 2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-24 09:02-0500\n"
-"PO-Revision-Date: 2020-01-27 20:31+0000\n"
-"Last-Translator: Italang\n"
+"PO-Revision-Date: 2020-02-01 06:56+0000\n"
+"Last-Translator: Pierluigi Mario <pierluigimariomail@gmail.com>\n"
 "Language-Team: Italian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/it/)\n"
 "Language: it\n"
@@ -404,6 +405,8 @@ msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
 msgstr ""
+"Per scoprirlo è necessario rimuovere manualmente il file \"%s\" o aprire il "
+"file e rimuovere la linea \"%s\"."
 
 #: ../panel-plugin/settings.cpp:159
 #, c-format
