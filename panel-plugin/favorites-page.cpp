@@ -219,8 +219,10 @@ void FavoritesPage::on_row_deleted(GtkTreeModel*, GtkTreePath* path)
 
 //-----------------------------------------------------------------------------
 
-void FavoritesPage::sort(std::vector<Launcher*>& items) const
+std::vector<Launcher*> FavoritesPage::sort() const
 {
+	std::vector<Launcher*> items;
+	items.reserve(wm_settings->favorites.size());
 	for (const auto& favorite : wm_settings->favorites)
 	{
 		Launcher* launcher = get_window()->get_applications()->get_application(favorite);
@@ -231,14 +233,14 @@ void FavoritesPage::sort(std::vector<Launcher*>& items) const
 		items.push_back(launcher);
 	}
 	std::sort(items.begin(), items.end(), &Element::less_than);
+	return items;
 }
 
 //-----------------------------------------------------------------------------
 
 void FavoritesPage::sort_ascending()
 {
-	std::vector<Launcher*> items;
-	sort(items);
+	const std::vector<Launcher*> items = sort();
 
 	wm_settings->favorites.clear();
 	for (auto launcher : items)
@@ -253,8 +255,7 @@ void FavoritesPage::sort_ascending()
 
 void FavoritesPage::sort_descending()
 {
-	std::vector<Launcher*> items;
-	sort(items);
+	const std::vector<Launcher*> items = sort();
 
 	wm_settings->favorites.clear();
 	for (std::vector<Launcher*>::const_reverse_iterator i = items.rbegin(), end = items.rend(); i != end; ++i)
