@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -79,9 +79,9 @@ unsigned int Query::match(const std::string& haystack) const
 	{
 		// Check if haystack contains query as words
 		std::string::size_type search_pos = 0;
-		for (std::vector<std::string>::const_iterator i = m_query_words.begin(), end = m_query_words.end(); i != end; ++i)
+		for (const auto& word : m_query_words)
 		{
-			search_pos = haystack.find(*i, search_pos);
+			search_pos = haystack.find(word, search_pos);
 			if ((search_pos == std::string::npos) || !is_start_word(haystack, search_pos))
 			{
 				search_pos = std::string::npos;
@@ -95,9 +95,9 @@ unsigned int Query::match(const std::string& haystack) const
 
 		// Check if haystack contains query as words in any order
 		std::vector<std::string>::size_type found_words = 0;
-		for (std::vector<std::string>::const_iterator i = m_query_words.begin(), end = m_query_words.end(); i != end; ++i)
+		for (const auto& word : m_query_words)
 		{
-			search_pos = haystack.find(*i);
+			search_pos = haystack.find(word);
 			if ((search_pos != std::string::npos) && is_start_word(haystack, search_pos))
 			{
 				++found_words;

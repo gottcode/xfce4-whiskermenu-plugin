@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2018, 2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -195,9 +195,9 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	m_commands_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0));
 	m_commands_spacer = gtk_label_new(NULL);
 	gtk_box_pack_start(m_commands_box, m_commands_spacer, true, true, 0);
-	for (int i = 0; i < 9; ++i)
+	for (auto command : m_commands_button)
 	{
-		gtk_box_pack_start(m_commands_box, m_commands_button[i], false, false, 0);
+		gtk_box_pack_start(m_commands_box, command, false, false, 0);
 	}
 
 	// Create box for packing username, commands, and resize widget
@@ -297,9 +297,9 @@ void WhiskerMenu::Window::hide()
 	unset_pressed_category();
 
 	// Hide command buttons to remove active border
-	for (int i = 0; i < 9; ++i)
+	for (auto command : m_commands_button)
 	{
-		gtk_widget_set_visible(m_commands_button[i], false);
+		gtk_widget_set_visible(command, false);
 	}
 
 	// Hide window
@@ -337,9 +337,9 @@ void WhiskerMenu::Window::show(const Position position)
 	m_profilepic->reset_tooltip();
 
 	// Make sure commands are valid and visible
-	for (int i = 0; i < Settings::CountCommands; ++i)
+	for (auto command : wm_settings->command)
 	{
-		wm_settings->command[i]->check();
+		command->check();
 	}
 
 	// Make sure recent item count is within max
@@ -548,11 +548,11 @@ void WhiskerMenu::Window::on_context_menu_destroyed()
 
 void WhiskerMenu::Window::set_categories(const std::vector<SectionButton*>& categories)
 {
-	SectionButton* button = m_recent_button;
-	for (std::vector<SectionButton*>::const_iterator i = categories.begin(), end = categories.end(); i != end; ++i)
+	SectionButton* last_button = m_recent_button;
+	for (auto button : categories)
 	{
-		(*i)->join_group(button);
-		button = *i;
+		button->join_group(last_button);
+		last_button = button;
 		gtk_box_pack_start(m_sidebar_buttons, button->get_widget(), false, false, 0);
 		g_signal_connect_slot<GtkToggleButton*>(button->get_widget(), "toggled", &Window::category_toggled, this);
 	}

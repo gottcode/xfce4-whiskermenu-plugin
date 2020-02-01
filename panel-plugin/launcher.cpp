@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2014, 2015, 2016, 2019, 2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -188,9 +188,9 @@ Launcher::Launcher(GarconMenuItem* item) :
 
 Launcher::~Launcher()
 {
-	for (std::vector<DesktopAction*>::size_type i = 0, end = m_actions.size(); i < end; ++i)
+	for (auto action : m_actions)
 	{
-		delete m_actions[i];
+		delete action;
 	}
 }
 
@@ -422,9 +422,9 @@ guint Launcher::search(const Query& query)
 	}
 
 	// Sort matches in keywords next
-	for (std::vector<std::string>::size_type i = 0, end = m_search_keywords.size(); i < end; ++i)
+	for (const auto& keyword : m_search_keywords)
 	{
-		match = query.match(m_search_keywords[i]);
+		match = query.match(keyword);
 		if (match != G_MAXUINT)
 		{
 			return match | flags | 0x2000;

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -366,9 +366,8 @@ void Page::create_context_menu(GtkTreePath* path, GdkEvent* event)
 	const std::vector<DesktopAction*> actions = m_selected_launcher->get_actions();
 	if (!actions.empty())
 	{
-		for (std::vector<DesktopAction*>::size_type i = 0, end = actions.size(); i < end; ++i)
+		for (auto action : actions)
 		{
-			DesktopAction* action = actions[i];
 			menuitem = whiskermenu_image_menu_item_new(action->get_icon(), action->get_name());
 			g_signal_connect_slot(menuitem, "activate", &Page::launcher_action_activated, this, action);
 			gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);

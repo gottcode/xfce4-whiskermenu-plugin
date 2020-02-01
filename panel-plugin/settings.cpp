@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -193,14 +193,14 @@ Settings::Settings() :
 
 Settings::~Settings()
 {
-	for (int i = 0; i < CountCommands; ++i)
+	for (auto i : command)
 	{
-		delete command[i];
+		delete i;
 	}
 
-	for (std::vector<SearchAction*>::size_type i = 0, end = search_actions.size(); i < end; ++i)
+	for (auto action : search_actions)
 	{
-		delete search_actions[i];
+		delete action;
 	}
 }
 
@@ -277,9 +277,9 @@ void Settings::load(char* file)
 	int actions_count = xfce_rc_read_int_entry(rc, "search-actions", -1);
 	if (actions_count > -1)
 	{
-		for (std::vector<SearchAction*>::size_type i = 0, end = search_actions.size(); i < end; ++i)
+		for (auto action : search_actions)
 		{
-			delete search_actions[i];
+			delete action;
 		}
 		search_actions.clear();
 

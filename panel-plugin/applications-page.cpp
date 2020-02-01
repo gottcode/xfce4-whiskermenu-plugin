@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015, 2016, 2017, 2018, 2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -134,11 +134,11 @@ void ApplicationsPage::apply_filter(GtkToggleButton* togglebutton)
 
 	// Find category matching button
 	Category* category = NULL;
-	for (std::vector<Category*>::const_iterator i = m_categories.begin(), end = m_categories.end(); i != end; ++i)
+	for (auto test_category : m_categories)
 	{
-		if (GTK_TOGGLE_BUTTON((*i)->get_button()->get_widget()) == togglebutton)
+		if (GTK_TOGGLE_BUTTON(test_category->get_button()->get_widget()) == togglebutton)
 		{
-			category = *i;
+			category = test_category;
 			break;
 		}
 	}
@@ -199,9 +199,9 @@ bool ApplicationsPage::load_applications()
 
 void ApplicationsPage::reload_category_icon_size()
 {
-	for (std::vector<Category*>::const_iterator i = m_categories.begin(), end = m_categories.end(); i != end; ++i)
+	for (auto category : m_categories)
 	{
-		(*i)->get_button()->reload_icon_size();
+		category->get_button()->reload_icon_size();
 	}
 }
 
@@ -210,9 +210,9 @@ void ApplicationsPage::reload_category_icon_size()
 void ApplicationsPage::clear_applications()
 {
 	// Free categories
-	for (std::vector<Category*>::iterator i = m_categories.begin(), end = m_categories.end(); i != end; ++i)
+	for (auto category : m_categories)
 	{
-		delete *i;
+		delete category;
 	}
 	m_categories.clear();
 
@@ -220,9 +220,9 @@ void ApplicationsPage::clear_applications()
 	get_window()->unset_items();
 	get_view()->unset_model();
 
-	for (std::map<std::string, Launcher*>::iterator i = m_items.begin(), end = m_items.end(); i != end; ++i)
+	for (const auto& i : m_items)
 	{
-		delete i->second;
+		delete i.second;
 	}
 	m_items.clear();
 
@@ -289,18 +289,18 @@ void ApplicationsPage::load_garcon_menu()
 	// Sort items and categories
 	if (!wm_settings->load_hierarchy)
 	{
-		for (std::vector<Category*>::const_iterator i = m_categories.begin(), end = m_categories.end(); i != end; ++i)
+		for (auto category : m_categories)
 		{
-			(*i)->sort();
+			category->sort();
 		}
 		std::sort(m_categories.begin(), m_categories.end(), &Element::less_than);
 	}
 
 	// Create all items category
 	Category* category = new Category(NULL);
-	for (std::map<std::string, Launcher*>::const_iterator i = m_items.begin(), end = m_items.end(); i != end; ++i)
+	for (const auto& i : m_items)
 	{
-		category->append_item(i->second);
+		category->append_item(i.second);
 	}
 	category->sort();
 	m_categories.insert(m_categories.begin(), category);
@@ -325,9 +325,9 @@ void ApplicationsPage::load_contents()
 
 	// Add buttons for categories
 	std::vector<SectionButton*> category_buttons;
-	for (std::vector<Category*>::const_iterator i = m_categories.begin(), end = m_categories.end(); i != end; ++i)
+	for (auto category : m_categories)
 	{
-		SectionButton* category_button = (*i)->get_button();
+		SectionButton* category_button = category->get_button();
 		g_signal_connect_slot(category_button->get_widget(), "toggled", &ApplicationsPage::apply_filter, this);
 		category_buttons.push_back(category_button);
 	}

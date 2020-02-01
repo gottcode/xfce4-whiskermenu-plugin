@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2016, 2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -61,9 +61,9 @@ Category::~Category()
 
 	delete m_button;
 
-	for (std::vector<Element*>::const_iterator i = m_items.begin(), end = m_items.end(); i != end; ++i)
+	for (auto element : m_items)
 	{
-		if (Category* category = dynamic_cast<Category*>(*i))
+		if (Category* category = dynamic_cast<Category*>(element))
 		{
 			delete category;
 		}
@@ -119,10 +119,10 @@ GtkTreeModel* Category::get_model()
 
 bool Category::empty() const
 {
-	for (std::vector<Element*>::const_iterator i = m_items.begin(), end = m_items.end(); i != end; ++i)
+	for (auto element : m_items)
 	{
-		Category* category = dynamic_cast<Category*>(*i);
-		if ((!category && *i) || !category->empty())
+		Category* category = dynamic_cast<Category*>(element);
+		if ((!category && element) || !category->empty())
 		{
 			return false;
 		}
@@ -166,9 +166,13 @@ void Category::sort()
 
 void Category::insert_items(GtkTreeStore* model, GtkTreeIter* parent)
 {
-	for (std::vector<Element*>::size_type i = 0, end = m_items.size(); i < end; ++i)
+	if (!m_items.empty() && !m_items.back())
 	{
-		Element* element = m_items[i];
+		m_items.pop_back();
+	}
+
+	for (auto element : m_items)
+	{
 		if (Category* category = dynamic_cast<Category*>(element))
 		{
 			if (category->empty())
@@ -200,7 +204,7 @@ void Category::insert_items(GtkTreeStore* model, GtkTreeIter* parent)
 					LauncherView::COLUMN_LAUNCHER, launcher,
 					-1);
 		}
-		else if ((i + 1) < end)
+		else
 		{
 			gtk_tree_store_insert_with_values(model,
 					NULL, parent, INT_MAX,
@@ -217,9 +221,13 @@ void Category::insert_items(GtkTreeStore* model, GtkTreeIter* parent)
 
 void Category::insert_items(GtkListStore* model)
 {
-	for (std::vector<Element*>::size_type i = 0, end = m_items.size(); i < end; ++i)
+	if (!m_items.empty() && !m_items.back())
 	{
-		Element* element = m_items[i];
+		m_items.pop_back();
+	}
+
+	for (auto element : m_items)
+	{
 		if (Launcher* launcher = dynamic_cast<Launcher*>(element))
 		{
 			gtk_list_store_insert_with_values(model,
@@ -230,7 +238,7 @@ void Category::insert_items(GtkListStore* model)
 					LauncherView::COLUMN_LAUNCHER, launcher,
 					-1);
 		}
-		else if ((i + 1) < end)
+		else
 		{
 			gtk_list_store_insert_with_values(model,
 					NULL, INT_MAX,

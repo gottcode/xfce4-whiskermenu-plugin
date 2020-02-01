@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2016, 2019, 2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -72,9 +72,9 @@ void SearchPage::set_filter(const gchar* filter)
 	{
 		m_matches.clear();
 		m_matches.push_back(&m_run_action);
-		for (std::vector<Launcher*>::size_type i = 0, end = m_launchers.size(); i < end; ++i)
+		for (auto launcher : m_launchers)
 		{
-			m_matches.push_back(m_launchers[i]);
+			m_matches.push_back(launcher);
 		}
 	}
 	else if (std::find(m_matches.begin(), m_matches.end(), &m_run_action) == m_matches.end())
@@ -86,9 +86,9 @@ void SearchPage::set_filter(const gchar* filter)
 	// Create search results
 	std::vector<Match> search_action_matches;
 	search_action_matches.reserve(wm_settings->search_actions.size());
-	for (std::vector<SearchAction*>::size_type i = 0, end = wm_settings->search_actions.size(); i < end; ++i)
+	for (auto action : wm_settings->search_actions)
 	{
-		Match match(wm_settings->search_actions[i]);
+		Match match(action);
 		match.update(m_query);
 		if (!Match::invalid(match))
 		{
@@ -98,9 +98,9 @@ void SearchPage::set_filter(const gchar* filter)
 	std::stable_sort(search_action_matches.begin(), search_action_matches.end());
 	std::reverse(search_action_matches.begin(), search_action_matches.end());
 
-	for (std::vector<Match>::size_type i = 0, end = m_matches.size(); i < end; ++i)
+	for (auto& match : m_matches)
 	{
-		m_matches[i].update(m_query);
+		match.update(m_query);
 	}
 	m_matches.erase(std::remove_if(m_matches.begin(), m_matches.end(), &Match::invalid), m_matches.end());
 	std::stable_sort(m_matches.begin(), m_matches.end());
@@ -113,9 +113,9 @@ void SearchPage::set_filter(const gchar* filter)
 			G_TYPE_STRING,
 			G_TYPE_POINTER);
 	Element* element;
-	for (std::vector<Match>::size_type i = 0, end = search_action_matches.size(); i < end; ++i)
+	for (const auto& match : search_action_matches)
 	{
-		element = search_action_matches[i].element();
+		element = match.element();
 		gtk_list_store_insert_with_values(
 				store, NULL, G_MAXINT,
 				LauncherView::COLUMN_ICON, element->get_icon(),
@@ -124,9 +124,9 @@ void SearchPage::set_filter(const gchar* filter)
 				LauncherView::COLUMN_LAUNCHER, element,
 				-1);
 	}
-	for (std::vector<Match>::size_type i = 0, end = m_matches.size(); i < end; ++i)
+	for (const auto& match : m_matches)
 	{
-		element = m_matches[i].element();
+		element = match.element();
 		gtk_list_store_insert_with_values(
 				store, NULL, G_MAXINT,
 				LauncherView::COLUMN_ICON, element->get_icon(),

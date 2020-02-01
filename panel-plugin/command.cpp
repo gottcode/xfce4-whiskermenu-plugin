@@ -49,17 +49,15 @@ Command::Command(const gchar* icon, const gchar* text, const gchar* command, con
 	m_shown(true),
 	m_timeout_details({NULL, g_strdup(confirm_question), g_strdup(confirm_status), 0})
 {
-	std::string mnemonic(text ? text : "");
-	for (std::string::size_type i = 0, length = mnemonic.length(); i < length; ++i)
+	std::string tooltip(text ? text : "");
+	for (auto i = tooltip.begin(); i != tooltip.end(); ++i)
 	{
-		if (mnemonic[i] == '_')
+		if (*i == '_')
 		{
-			mnemonic.erase(i, 1);
-			--length;
-			--i;
+			i = tooltip.erase(i);
 		}
 	}
-	m_text = g_strdup(mnemonic.c_str());
+	m_text = g_strdup(tooltip.c_str());
 
 	check();
 }

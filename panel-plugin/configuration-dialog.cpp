@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015, 2016, 2017, 2018, 2019, 2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -135,9 +135,9 @@ ConfigurationDialog::ConfigurationDialog(Plugin* plugin) :
 
 ConfigurationDialog::~ConfigurationDialog()
 {
-	for (std::vector<CommandEdit*>::size_type i = 0; i < m_commands.size(); ++i)
+	for (auto command : m_commands)
 	{
-		delete m_commands[i];
+		delete command;
 	}
 
 	g_object_unref(m_actions_model);
@@ -579,9 +579,9 @@ void ConfigurationDialog::response(GtkDialog*, int response_id)
 			m_plugin->set_button_title(Plugin::get_button_title_default());
 		}
 
-		for (int i = 0; i < Settings::CountCommands; ++i)
+		for (auto command : wm_settings->command)
 		{
-			wm_settings->command[i]->check();
+			command->check();
 		}
 
 		if (response_id == GTK_RESPONSE_CLOSE)
@@ -742,10 +742,10 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	m_item_icon_size = gtk_combo_box_text_new();
 	gtk_widget_set_halign(m_item_icon_size, GTK_ALIGN_START);
 	gtk_widget_set_hexpand(m_item_icon_size, false);
-	std::vector<std::string> icon_sizes = IconSize::get_strings();
-	for (std::vector<std::string>::const_iterator i = icon_sizes.begin(), end = icon_sizes.end(); i != end; ++i)
+	const std::vector<std::string> icon_sizes = IconSize::get_strings();
+	for (const auto& icon_size : icon_sizes)
 	{
-		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_item_icon_size), i->c_str());
+		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_item_icon_size), icon_size.c_str());
 	}
 	gtk_combo_box_set_active(GTK_COMBO_BOX(m_item_icon_size), wm_settings->launcher_icon_size + 1);
 	gtk_grid_attach(page, m_item_icon_size, 1, 8, 1, 1);
@@ -760,9 +760,9 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	m_category_icon_size = gtk_combo_box_text_new();
 	gtk_widget_set_halign(m_category_icon_size, GTK_ALIGN_START);
 	gtk_widget_set_hexpand(m_category_icon_size, false);
-	for (std::vector<std::string>::const_iterator i = icon_sizes.begin(), end = icon_sizes.end(); i != end; ++i)
+	for (const auto& icon_size : icon_sizes)
 	{
-		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_category_icon_size), i->c_str());
+		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_category_icon_size), icon_size.c_str());
 	}
 	gtk_combo_box_set_active(GTK_COMBO_BOX(m_category_icon_size), wm_settings->category_icon_size + 1);
 	gtk_grid_attach(page, m_category_icon_size, 1, 9, 1, 1);
@@ -940,9 +940,9 @@ GtkWidget* ConfigurationDialog::init_commands_tab()
 	GtkSizeGroup* label_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
 
 	// Add command entries
-	for (int i = 0; i < Settings::CountCommands; ++i)
+	for (auto command : wm_settings->command)
 	{
-		CommandEdit* command_edit = new CommandEdit(wm_settings->command[i], label_size_group);
+		CommandEdit* command_edit = new CommandEdit(command, label_size_group);
 		gtk_box_pack_start(page, command_edit->get_widget(), false, false, 0);
 		m_commands.push_back(command_edit);
 	}
@@ -965,9 +965,8 @@ GtkWidget* ConfigurationDialog::init_search_actions_tab()
 			G_TYPE_STRING,
 			G_TYPE_STRING,
 			G_TYPE_POINTER);
-	for (std::vector<SearchAction*>::size_type i = 0, end = wm_settings->search_actions.size(); i < end; ++i)
+	for (auto action : wm_settings->search_actions)
 	{
-		SearchAction* action = wm_settings->search_actions[i];
 		gtk_list_store_insert_with_values(m_actions_model,
 				NULL, G_MAXINT,
 				COLUMN_NAME, action->get_name(),

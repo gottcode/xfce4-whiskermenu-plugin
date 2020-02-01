@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015, 2016, 2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -134,9 +134,9 @@ void RecentPage::enforce_item_count()
 
 void RecentPage::flag_items(bool enabled)
 {
-	for (std::vector<std::string>::size_type i = 0, end = wm_settings->recent.size(); i < end; ++i)
+	for (const auto& recent : wm_settings->recent)
 	{
-		Launcher* launcher = get_window()->get_applications()->get_application(wm_settings->recent[i]);
+		Launcher* launcher = get_window()->get_applications()->get_application(recent);
 		if (launcher)
 		{
 			launcher->set_flag(Launcher::RecentFlag, enabled);

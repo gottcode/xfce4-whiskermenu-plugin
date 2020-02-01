@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2016 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -145,9 +145,9 @@ gboolean ResizerWidget::on_draw_event(GtkWidget* widget, cairo_t* cr)
 	gdk_cairo_set_source_rgba(cr, &color);
 
 	cairo_move_to(cr, m_shape.back().x, m_shape.back().y);
-	for (std::vector<GdkPoint>::const_iterator point = m_shape.begin(), end = m_shape.end(); point != end; ++point)
+	for (const auto& point : m_shape)
 	{
-		cairo_line_to(cr, point->x, point->y);
+		cairo_line_to(cr, point.x, point.y);
 	}
 	cairo_fill(cr);
 

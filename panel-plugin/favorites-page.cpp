@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015, 2016, 2019, 2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -119,9 +119,9 @@ void FavoritesPage::set_menu_items()
 	g_signal_connect_slot(model, "row-deleted", &FavoritesPage::on_row_deleted, this);
 	g_object_unref(model);
 
-	for (std::vector<std::string>::size_type i = 0, end = wm_settings->favorites.size(); i < end; ++i)
+	for (const auto& favorite : wm_settings->favorites)
 	{
-		Launcher* launcher = get_window()->get_applications()->get_application(wm_settings->favorites[i]);
+		Launcher* launcher = get_window()->get_applications()->get_application(favorite);
 		if (launcher)
 		{
 			launcher->set_flag(Launcher::FavoriteFlag, true);
@@ -221,9 +221,9 @@ void FavoritesPage::on_row_deleted(GtkTreeModel*, GtkTreePath* path)
 
 void FavoritesPage::sort(std::vector<Launcher*>& items) const
 {
-	for (std::vector<std::string>::const_iterator i = wm_settings->favorites.begin(), end = wm_settings->favorites.end(); i != end; ++i)
+	for (const auto& favorite : wm_settings->favorites)
 	{
-		Launcher* launcher = get_window()->get_applications()->get_application(*i);
+		Launcher* launcher = get_window()->get_applications()->get_application(favorite);
 		if (!launcher)
 		{
 			continue;
@@ -240,12 +240,11 @@ void FavoritesPage::sort_ascending()
 	std::vector<Launcher*> items;
 	sort(items);
 
-	std::vector<std::string> desktop_ids;
-	for (std::vector<Launcher*>::const_iterator i = items.begin(), end = items.end(); i != end; ++i)
+	wm_settings->favorites.clear();
+	for (auto launcher : items)
 	{
-		desktop_ids.push_back((*i)->get_desktop_id());
+		wm_settings->favorites.push_back(launcher->get_desktop_id());
 	}
-	wm_settings->favorites = desktop_ids;
 	wm_settings->set_modified();
 	set_menu_items();
 }
@@ -257,12 +256,11 @@ void FavoritesPage::sort_descending()
 	std::vector<Launcher*> items;
 	sort(items);
 
-	std::vector<std::string> desktop_ids;
+	wm_settings->favorites.clear();
 	for (std::vector<Launcher*>::const_reverse_iterator i = items.rbegin(), end = items.rend(); i != end; ++i)
 	{
-		desktop_ids.push_back((*i)->get_desktop_id());
+		wm_settings->favorites.push_back((*i)->get_desktop_id());
 	}
-	wm_settings->favorites = desktop_ids;
 	wm_settings->set_modified();
 	set_menu_items();
 }
