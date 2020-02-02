@@ -54,7 +54,7 @@ static std::string normalize(const gchar* string)
 
 //-----------------------------------------------------------------------------
 
-static void replace_with_quoted_string(std::string& command, size_t& index, const gchar* unquoted)
+static void replace_with_quoted_string(std::string& command, std::string::size_type& index, const gchar* unquoted)
 {
 	if (!exo_str_is_empty(unquoted))
 	{
@@ -71,7 +71,7 @@ static void replace_with_quoted_string(std::string& command, size_t& index, cons
 
 //-----------------------------------------------------------------------------
 
-static void replace_with_quoted_string(std::string& command, size_t& index, const char* prefix, const gchar* unquoted)
+static void replace_with_quoted_string(std::string& command, std::string::size_type& index, const char* prefix, const gchar* unquoted)
 {
 	if (!exo_str_is_empty(unquoted))
 	{
@@ -91,7 +91,7 @@ static void replace_with_quoted_string(std::string& command, size_t& index, cons
 
 //-----------------------------------------------------------------------------
 
-static void replace_and_free_with_quoted_string(std::string& command, size_t& index, gchar* unquoted)
+static void replace_and_free_with_quoted_string(std::string& command, std::string::size_type& index, gchar* unquoted)
 {
 	replace_with_quoted_string(command, index, unquoted);
 	g_free(unquoted);
@@ -205,7 +205,7 @@ void Launcher::hide()
 	if (uri)
 	{
 		gchar** dirs = xfce_resource_lookup_all(XFCE_RESOURCE_DATA, "applications/");
-		for (guint i = 0; dirs[i]; i++)
+		for (size_t i = 0; dirs[i]; ++i)
 		{
 			if (g_str_has_prefix(uri + 7, dirs[i]))
 			{
@@ -258,8 +258,8 @@ void Launcher::run(GdkScreen* screen) const
 	}
 
 	// Expand the field codes
-	size_t length = command.length() - 1;
-	for (size_t i = 0; i < length; ++i)
+	std::string::size_type length = command.length() - 1;
+	for (std::string::size_type i = 0; i < length; ++i)
 	{
 		if (G_UNLIKELY(command[i] == '%'))
 		{
@@ -332,8 +332,8 @@ void Launcher::run(GdkScreen* screen, DesktopAction* action) const
 	std::string command(string);
 
 	// Expand the field codes
-	size_t length = command.length() - 1;
-	for (size_t i = 0; i < length; ++i)
+	std::string::size_type length = command.length() - 1;
+	for (std::string::size_type i = 0; i < length; ++i)
 	{
 		if (G_UNLIKELY(command[i] == '%'))
 		{
