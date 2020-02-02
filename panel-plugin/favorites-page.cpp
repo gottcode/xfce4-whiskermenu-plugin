@@ -164,7 +164,7 @@ bool FavoritesPage::remember_launcher(Launcher* launcher)
 
 void FavoritesPage::on_row_changed(GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter)
 {
-	size_t pos = gtk_tree_path_get_indices(path)[0];
+	const decltype(wm_settings->favorites.size()) pos = gtk_tree_path_get_indices(path)[0];
 	if (pos >= wm_settings->favorites.size())
 	{
 		return;
@@ -183,7 +183,7 @@ void FavoritesPage::on_row_changed(GtkTreeModel* model, GtkTreePath* path, GtkTr
 
 void FavoritesPage::on_row_inserted(GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter)
 {
-	size_t pos = gtk_tree_path_get_indices(path)[0];
+	const decltype(wm_settings->favorites.size()) pos = gtk_tree_path_get_indices(path)[0];
 
 	std::string desktop_id;
 	Element* element = nullptr;
@@ -209,7 +209,7 @@ void FavoritesPage::on_row_inserted(GtkTreeModel* model, GtkTreePath* path, GtkT
 
 void FavoritesPage::on_row_deleted(GtkTreeModel*, GtkTreePath* path)
 {
-	size_t pos = gtk_tree_path_get_indices(path)[0];
+	const decltype(wm_settings->favorites.size()) pos = gtk_tree_path_get_indices(path)[0];
 	if (pos < wm_settings->favorites.size())
 	{
 		wm_settings->favorites.erase(wm_settings->favorites.begin() + pos);
@@ -240,7 +240,7 @@ std::vector<Launcher*> FavoritesPage::sort() const
 
 void FavoritesPage::sort_ascending()
 {
-	const std::vector<Launcher*> items = sort();
+	const auto items = sort();
 
 	wm_settings->favorites.clear();
 	for (auto launcher : items)
@@ -255,10 +255,10 @@ void FavoritesPage::sort_ascending()
 
 void FavoritesPage::sort_descending()
 {
-	const std::vector<Launcher*> items = sort();
+	const auto items = sort();
 
 	wm_settings->favorites.clear();
-	for (std::vector<Launcher*>::const_reverse_iterator i = items.rbegin(), end = items.rend(); i != end; ++i)
+	for (auto i = items.rbegin(), end = items.rend(); i != end; ++i)
 	{
 		wm_settings->favorites.push_back((*i)->get_desktop_id());
 	}

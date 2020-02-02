@@ -81,7 +81,7 @@ unsigned int Query::match(const std::string& haystack) const
 		}
 
 		// Check if haystack contains query as words in any order
-		std::vector<std::string>::size_type found_words = 0;
+		decltype(m_query_words.size()) found_words = 0;
 		for (const auto& word : m_query_words)
 		{
 			search_pos = haystack.find(word);

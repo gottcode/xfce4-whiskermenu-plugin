@@ -80,7 +80,7 @@ public:
 	bool load_hierarchy;
 	bool view_as_icons;
 
-	unsigned int recent_items_max;
+	decltype(recent.size()) recent_items_max;
 	bool favorites_in_recent;
 	bool display_recent;
 

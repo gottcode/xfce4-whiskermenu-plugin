@@ -363,7 +363,7 @@ void Page::create_context_menu(GtkTreePath* path, GdkEvent* event)
 	menuitem = gtk_separator_menu_item_new();
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
-	const std::vector<DesktopAction*> actions = m_selected_launcher->get_actions();
+	const auto actions = m_selected_launcher->get_actions();
 	if (!actions.empty())
 	{
 		for (auto action : actions)

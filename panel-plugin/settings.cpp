@@ -74,9 +74,9 @@ static void read_vector_entry(XfceRc* rc, const char* key, std::vector<std::stri
 
 static void write_vector_entry(XfceRc* rc, const char* key, const std::vector<std::string>& desktop_ids)
 {
-	const std::vector<std::string>::size_type size = desktop_ids.size();
+	const auto size = desktop_ids.size();
 	gchar** values = g_new0(gchar*, size + 1);
-	for (std::vector<std::string>::size_type i = 0; i < size; ++i)
+	for (decltype(desktop_ids.size()) i = 0; i < size; ++i)
 	{
 		values[i] = g_strdup(desktop_ids[i].c_str());
 	}

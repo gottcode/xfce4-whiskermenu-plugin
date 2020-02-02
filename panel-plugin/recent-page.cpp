@@ -64,7 +64,7 @@ void RecentPage::add(Launcher* launcher)
 	std::string desktop_id = launcher->get_desktop_id();
 	if (!wm_settings->recent.empty())
 	{
-		std::vector<std::string>::iterator i = std::find(wm_settings->recent.begin(), wm_settings->recent.end(), desktop_id);
+		auto i = std::find(wm_settings->recent.begin(), wm_settings->recent.end(), desktop_id);
 
 		// Skip if already first launcher
 		if (i == wm_settings->recent.begin())

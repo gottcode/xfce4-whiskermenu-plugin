@@ -85,7 +85,7 @@ GtkTreeModel* ApplicationsPage::create_launcher_model(std::vector<std::string>& 
 			G_TYPE_POINTER);
 
 	// Fetch menu items or remove them from list if missing
-	for (std::vector<std::string>::iterator i = desktop_ids.begin(); i != desktop_ids.end(); ++i)
+	for (auto i = desktop_ids.begin(); i != desktop_ids.end(); ++i)
 	{
 		if (i->empty())
 		{
@@ -118,7 +118,7 @@ GtkTreeModel* ApplicationsPage::create_launcher_model(std::vector<std::string>& 
 
 Launcher* ApplicationsPage::get_application(const std::string& desktop_id) const
 {
-	std::map<std::string, Launcher*>::const_iterator i = m_items.find(desktop_id);
+	auto i = m_items.find(desktop_id);
 	return (i != m_items.end()) ? i->second : nullptr;
 }
 
@@ -417,7 +417,7 @@ void ApplicationsPage::load_menu_item(GarconMenuItem* menu_item, Category* categ
 
 	// Add to map
 	std::string desktop_id(garcon_menu_item_get_desktop_id(menu_item));
-	std::map<std::string, Launcher*>::iterator iter = m_items.find(desktop_id);
+	auto iter = m_items.find(desktop_id);
 	if (iter == m_items.end())
 	{
 		iter = m_items.insert(std::make_pair(desktop_id, new Launcher(menu_item))).first;

@@ -742,7 +742,7 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	m_item_icon_size = gtk_combo_box_text_new();
 	gtk_widget_set_halign(m_item_icon_size, GTK_ALIGN_START);
 	gtk_widget_set_hexpand(m_item_icon_size, false);
-	const std::vector<std::string> icon_sizes = IconSize::get_strings();
+	const auto icon_sizes = IconSize::get_strings();
 	for (const auto& icon_size : icon_sizes)
 	{
 		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_item_icon_size), icon_size.c_str());
