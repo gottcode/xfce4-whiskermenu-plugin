@@ -20,7 +20,7 @@
 
 #include <gtk/gtk.h>
 
-inline GtkWidget* whiskermenu_image_menu_item_new(const char* icon, const char* text)
+inline GtkWidget* whiskermenu_image_menu_item_new(const gchar* icon, const gchar* text)
 {
 	GtkWidget* image = gtk_image_new_from_icon_name(icon, GTK_ICON_SIZE_MENU);
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
@@ -30,7 +30,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 	return menuitem;
 }
 
-inline GtkWidget* whiskermenu_image_menu_item_new_with_mnemonic(const char* icon, const char* text)
+inline GtkWidget* whiskermenu_image_menu_item_new_with_mnemonic(const gchar* icon, const gchar* text)
 {
 	GtkWidget* image = gtk_image_new_from_icon_name(icon, GTK_ICON_SIZE_MENU);
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS

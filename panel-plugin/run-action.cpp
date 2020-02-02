@@ -45,7 +45,7 @@ void RunAction::run(GdkScreen* screen) const
 
 //-----------------------------------------------------------------------------
 
-guint RunAction::search(const Query& query)
+unsigned int RunAction::search(const Query& query)
 {
 	// Check if in PATH
 	bool valid = false;
@@ -61,7 +61,7 @@ guint RunAction::search(const Query& query)
 
 	if (!valid)
 	{
-		return G_MAXUINT;
+		return UINT_MAX;
 	}
 
 	m_command_line = query.raw_query();

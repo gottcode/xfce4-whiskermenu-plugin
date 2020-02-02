@@ -33,7 +33,7 @@ using namespace WhiskerMenu;
 
 Settings* WhiskerMenu::wm_settings = nullptr;
 
-static const char* const settings_command[Settings::CountCommands][2] = {
+static const gchar* const settings_command[Settings::CountCommands][2] = {
 	{ "command-settings",   "show-command-settings"   },
 	{ "command-lockscreen", "show-command-lockscreen" },
 	{ "command-switchuser", "show-command-switchuser" },
@@ -49,7 +49,7 @@ static const char* const settings_command[Settings::CountCommands][2] = {
 
 //-----------------------------------------------------------------------------
 
-static void read_vector_entry(XfceRc* rc, const char* key, std::vector<std::string>& desktop_ids)
+static void read_vector_entry(XfceRc* rc, const gchar* key, std::vector<std::string>& desktop_ids)
 {
 	if (!xfce_rc_has_entry(rc, key))
 	{
@@ -72,7 +72,7 @@ static void read_vector_entry(XfceRc* rc, const char* key, std::vector<std::stri
 
 //-----------------------------------------------------------------------------
 
-static void write_vector_entry(XfceRc* rc, const char* key, const std::vector<std::string>& desktop_ids)
+static void write_vector_entry(XfceRc* rc, const gchar* key, const std::vector<std::string>& desktop_ids)
 {
 	const auto size = desktop_ids.size();
 	gchar** values = g_new0(gchar*, size + 1);
@@ -210,7 +210,7 @@ Settings::~Settings()
 
 //-----------------------------------------------------------------------------
 
-void Settings::load(char* file)
+void Settings::load(gchar* file)
 {
 	if (!file)
 	{
@@ -314,7 +314,7 @@ void Settings::load(char* file)
 
 //-----------------------------------------------------------------------------
 
-void Settings::save(char* file)
+void Settings::save(gchar* file)
 {
 	if (!file)
 	{

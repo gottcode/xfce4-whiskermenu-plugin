@@ -56,7 +56,7 @@ static bool panel_utils_grab_available()
 	GdkSeat* seat = gdk_display_get_default_seat(display);
 
 	// Don't try to get the grab for longer then 1/4 second
-	for (guint i = 0; i < (G_USEC_PER_SEC / 400); ++i)
+	for (int i = 0; i < 2500; ++i)
 	{
 		if (gdk_seat_grab(seat, root, GDK_SEAT_CAPABILITY_ALL, true, nullptr, nullptr, nullptr, nullptr))
 		{

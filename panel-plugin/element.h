@@ -18,6 +18,8 @@
 #ifndef WHISKERMENU_ELEMENT_H
 #define WHISKERMENU_ELEMENT_H
 
+#include <climits>
+
 #include <exo/exo.h>
 #include <gdk/gdk.h>
 
@@ -64,9 +66,9 @@ public:
 	{
 	}
 
-	virtual guint search(const Query&)
+	virtual unsigned int search(const Query&)
 	{
-		return G_MAXUINT;
+		return UINT_MAX;
 	}
 
 	static bool less_than(const Element* lhs, const Element* rhs)

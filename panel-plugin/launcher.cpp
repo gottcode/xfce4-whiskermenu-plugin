@@ -71,7 +71,7 @@ static void replace_with_quoted_string(std::string& command, std::string::size_t
 
 //-----------------------------------------------------------------------------
 
-static void replace_with_quoted_string(std::string& command, std::string::size_type& index, const char* prefix, const gchar* unquoted)
+static void replace_with_quoted_string(std::string& command, std::string::size_type& index, const gchar* prefix, const gchar* unquoted)
 {
 	if (!exo_str_is_empty(unquoted))
 	{
@@ -299,7 +299,7 @@ void Launcher::run(GdkScreen* screen) const
 
 	// Parse and spawn command
 	gchar** argv;
-	gboolean result = false;
+	bool result = false;
 	GError* error = nullptr;
 	if (g_shell_parse_argv(command.c_str(), nullptr, &argv, &error))
 	{
@@ -373,7 +373,7 @@ void Launcher::run(GdkScreen* screen, DesktopAction* action) const
 
 	// Parse and spawn command
 	gchar** argv;
-	gboolean result = false;
+	bool result = false;
 	GError* error = nullptr;
 	if (g_shell_parse_argv(command.c_str(), nullptr, &argv, &error))
 	{
@@ -396,27 +396,27 @@ void Launcher::run(GdkScreen* screen, DesktopAction* action) const
 
 //-----------------------------------------------------------------------------
 
-guint Launcher::search(const Query& query)
+unsigned int Launcher::search(const Query& query)
 {
 	// Prioritize matches in favorites and recent, then favories, and then recent
-	const guint flags = 3 - m_search_flags;
+	const unsigned int flags = 3 - m_search_flags;
 
 	// Sort matches in names first
-	guint match = query.match(m_search_name);
-	if (match != G_MAXUINT)
+	unsigned int match = query.match(m_search_name);
+	if (match != UINT_MAX)
 	{
 		return match | flags | 0x400;
 	}
 
 	match = query.match(m_search_generic_name);
-	if (match != G_MAXUINT)
+	if (match != UINT_MAX)
 	{
 		return match | flags | 0x800;
 	}
 
 	// Sort matches in comments next
 	match = query.match(m_search_comment);
-	if (match != G_MAXUINT)
+	if (match != UINT_MAX)
 	{
 		return match | flags | 0x1000;
 	}
@@ -425,7 +425,7 @@ guint Launcher::search(const Query& query)
 	for (const auto& keyword : m_search_keywords)
 	{
 		match = query.match(keyword);
-		if (match != G_MAXUINT)
+		if (match != UINT_MAX)
 		{
 			return match | flags | 0x2000;
 		}
@@ -433,12 +433,12 @@ guint Launcher::search(const Query& query)
 
 	// Sort matches in executables last
 	match = query.match(m_search_command);
-	if (match != G_MAXUINT)
+	if (match != UINT_MAX)
 	{
 		return match | flags | 0x4000;
 	}
 
-	return G_MAXUINT;
+	return UINT_MAX;
 }
 
 //-----------------------------------------------------------------------------

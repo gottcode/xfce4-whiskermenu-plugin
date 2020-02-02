@@ -53,7 +53,7 @@ public:
 	}
 
 	void run(GdkScreen* screen) const;
-	guint search(const Query& query);
+	unsigned int search(const Query& query);
 
 	void set_name(const gchar* name);
 	void set_pattern(const gchar* pattern);
@@ -61,8 +61,8 @@ public:
 	void set_is_regex(bool is_regex);
 
 private:
-	guint match_prefix(const gchar* haystack);
-	guint match_regex(const gchar* haystack);
+	unsigned int match_prefix(const gchar* haystack);
+	unsigned int match_regex(const gchar* haystack);
 	void update_text();
 
 private:

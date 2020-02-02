@@ -61,7 +61,7 @@ SearchAction::~SearchAction()
 
 //-----------------------------------------------------------------------------
 
-guint SearchAction::search(const Query& query)
+unsigned int SearchAction::search(const Query& query)
 {
 	if (m_pattern.empty() || m_command.empty())
 	{
@@ -71,10 +71,10 @@ guint SearchAction::search(const Query& query)
 	m_expanded_command.clear();
 
 	const gchar* haystack = query.raw_query().c_str();
-	guint found = !m_is_regex ? match_prefix(haystack) : match_regex(haystack);
+	unsigned int found = !m_is_regex ? match_prefix(haystack) : match_regex(haystack);
 
 	const bool show_description = wm_settings->launcher_show_description && !wm_settings->view_as_icons;
-	if ((found != G_MAXUINT) && (m_show_description != show_description))
+	if ((found != UINT_MAX) && (m_show_description != show_description))
 	{
 		m_show_description = show_description;
 		update_text();
@@ -85,11 +85,11 @@ guint SearchAction::search(const Query& query)
 
 //-----------------------------------------------------------------------------
 
-guint SearchAction::match_prefix(const gchar* haystack)
+unsigned int SearchAction::match_prefix(const gchar* haystack)
 {
 	if (!g_str_has_prefix(haystack, m_pattern.c_str()))
 	{
-		return G_MAXUINT;
+		return UINT_MAX;
 	}
 
 	gchar* trimmed = g_strdup(haystack + m_pattern.length());
@@ -146,9 +146,9 @@ guint SearchAction::match_prefix(const gchar* haystack)
 
 //-----------------------------------------------------------------------------
 
-guint SearchAction::match_regex(const gchar* haystack)
+unsigned int SearchAction::match_regex(const gchar* haystack)
 {
-	guint found = G_MAXUINT;
+	unsigned int found = UINT_MAX;
 
 	if (!m_regex)
 	{
@@ -182,7 +182,7 @@ guint SearchAction::match_regex(const gchar* haystack)
 void SearchAction::run(GdkScreen* screen) const
 {
 	GError* error = nullptr;
-	gboolean result = xfce_spawn_command_line_on_screen(screen, m_expanded_command.c_str(), FALSE, FALSE, &error);
+	bool result = xfce_spawn_command_line_on_screen(screen, m_expanded_command.c_str(), false, false, &error);
 
 	if (G_UNLIKELY(!result))
 	{

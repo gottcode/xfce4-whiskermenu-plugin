@@ -452,7 +452,7 @@ void Page::add_selected_to_desktop()
 	GFile* source_file = m_selected_launcher->get_file();
 
 	// Fetch launcher destination
-	char* basename = g_file_get_basename(source_file);
+	gchar* basename = g_file_get_basename(source_file);
 	GFile* destination_file = g_file_get_child(desktop_folder, basename);
 	g_free(basename);
 

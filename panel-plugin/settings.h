@@ -23,6 +23,8 @@
 #include <string>
 #include <vector>
 
+#include <glib.h>
+
 namespace WhiskerMenu
 {
 
@@ -40,8 +42,8 @@ class Settings
 	Settings& operator=(const Settings&) = delete;
 	Settings& operator=(Settings&&) = delete;
 
-	void load(char* file);
-	void save(char* file);
+	void load(gchar* file);
+	void save(gchar* file);
 
 	bool m_modified;
 

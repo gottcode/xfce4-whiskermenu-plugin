@@ -20,7 +20,6 @@
 #include <sstream>
 
 #include <climits>
-#include <cstring>
 
 #include <glib.h>
 

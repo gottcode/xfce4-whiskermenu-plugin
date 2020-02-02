@@ -114,7 +114,7 @@ public:
 
 	void run(GdkScreen* screen, DesktopAction* action) const;
 
-	guint search(const Query& query);
+	unsigned int search(const Query& query);
 
 	enum SearchFlag
 	{
@@ -131,7 +131,7 @@ private:
 	std::string m_search_comment;
 	std::string m_search_command;
 	std::vector<std::string> m_search_keywords;
-	guint m_search_flags;
+	unsigned int m_search_flags;
 	std::vector<DesktopAction*> m_actions;
 };
 

@@ -185,7 +185,7 @@ void Category::insert_items(GtkTreeStore* model, GtkTreeIter* parent)
 
 			GtkTreeIter iter;
 			gtk_tree_store_insert_with_values(model,
-					&iter, parent, INT_MAX,
+					&iter, parent, G_MAXINT,
 					LauncherView::COLUMN_ICON, category->get_icon(),
 					LauncherView::COLUMN_TEXT, text,
 					LauncherView::COLUMN_TOOLTIP, tooltip,
@@ -197,7 +197,7 @@ void Category::insert_items(GtkTreeStore* model, GtkTreeIter* parent)
 		else if (Launcher* launcher = dynamic_cast<Launcher*>(element))
 		{
 			gtk_tree_store_insert_with_values(model,
-					nullptr, parent, INT_MAX,
+					nullptr, parent, G_MAXINT,
 					LauncherView::COLUMN_ICON, launcher->get_icon(),
 					LauncherView::COLUMN_TEXT, launcher->get_text(),
 					LauncherView::COLUMN_TOOLTIP, launcher->get_tooltip(),
@@ -207,7 +207,7 @@ void Category::insert_items(GtkTreeStore* model, GtkTreeIter* parent)
 		else
 		{
 			gtk_tree_store_insert_with_values(model,
-					nullptr, parent, INT_MAX,
+					nullptr, parent, G_MAXINT,
 					LauncherView::COLUMN_ICON, nullptr,
 					LauncherView::COLUMN_TEXT, nullptr,
 					LauncherView::COLUMN_TOOLTIP, nullptr,
@@ -231,7 +231,7 @@ void Category::insert_items(GtkListStore* model)
 		if (Launcher* launcher = dynamic_cast<Launcher*>(element))
 		{
 			gtk_list_store_insert_with_values(model,
-					nullptr, INT_MAX,
+					nullptr, G_MAXINT,
 					LauncherView::COLUMN_ICON, launcher->get_icon(),
 					LauncherView::COLUMN_TEXT, launcher->get_text(),
 					LauncherView::COLUMN_TOOLTIP, launcher->get_tooltip(),
@@ -241,7 +241,7 @@ void Category::insert_items(GtkListStore* model)
 		else
 		{
 			gtk_list_store_insert_with_values(model,
-					nullptr, INT_MAX,
+					nullptr, G_MAXINT,
 					LauncherView::COLUMN_ICON, nullptr,
 					LauncherView::COLUMN_TEXT, nullptr,
 					LauncherView::COLUMN_TOOLTIP, nullptr,

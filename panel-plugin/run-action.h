@@ -31,7 +31,7 @@ public:
 	RunAction();
 
 	void run(GdkScreen* screen) const;
-	guint search(const Query& query);
+	unsigned int search(const Query& query);
 
 private:
 	std::string m_command_line;

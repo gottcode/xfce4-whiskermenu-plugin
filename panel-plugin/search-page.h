@@ -53,7 +53,7 @@ private:
 	public:
 		Match(Element* element = nullptr) :
 			m_element(element),
-			m_relevancy(G_MAXINT)
+			m_relevancy(UINT_MAX)
 		{
 		}
 
@@ -80,12 +80,12 @@ private:
 
 		static bool invalid(const Match& match)
 		{
-			return match.m_relevancy == G_MAXUINT;
+			return match.m_relevancy == UINT_MAX;
 		}
 
 	private:
 		Element* m_element;
-		guint m_relevancy;
+		unsigned int m_relevancy;
 	};
 	std::vector<Match> m_matches;
 };
