@@ -56,7 +56,7 @@ bool FavoritesPage::contains(Launcher* launcher) const
 	}
 
 	std::string desktop_id(launcher->get_desktop_id());
-	return std::find(wm_settings->favorites.begin(), wm_settings->favorites.end(), desktop_id) != wm_settings->favorites.end();
+	return std::find(wm_settings->favorites.cbegin(), wm_settings->favorites.cend(), desktop_id) != wm_settings->favorites.cend();
 }
 
 //-----------------------------------------------------------------------------

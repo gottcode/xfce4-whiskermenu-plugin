@@ -77,7 +77,7 @@ void SearchPage::set_filter(const gchar* filter)
 			m_matches.push_back(launcher);
 		}
 	}
-	else if (std::find(m_matches.begin(), m_matches.end(), &m_run_action) == m_matches.end())
+	else if (std::find(m_matches.cbegin(), m_matches.cend(), &m_run_action) == m_matches.cend())
 	{
 		m_matches.insert(m_matches.begin(), &m_run_action);
 	}

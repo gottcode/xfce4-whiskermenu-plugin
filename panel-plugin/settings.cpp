@@ -62,7 +62,7 @@ static void read_vector_entry(XfceRc* rc, const char* key, std::vector<std::stri
 	for (size_t i = 0; values[i]; ++i)
 	{
 		std::string desktop_id(values[i]);
-		if (std::find(desktop_ids.begin(), desktop_ids.end(), desktop_id) == desktop_ids.end())
+		if (std::find(desktop_ids.cbegin(), desktop_ids.cend(), desktop_id) == desktop_ids.cend())
 		{
 			desktop_ids.push_back(desktop_id);
 		}
