@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2017, 2018, 2019, 2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,6 +33,11 @@ class Page
 public:
 	explicit Page(WhiskerMenu::Window *window);
 	virtual ~Page();
+
+	Page(const Page&) = delete;
+	Page(Page&&) = delete;
+	Page& operator=(const Page&) = delete;
+	Page& operator=(Page&&) = delete;
 
 	GtkWidget* get_widget() const
 	{

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014, 2016, 2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2014-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,6 +30,11 @@ class ProfilePicture
 public:
 	ProfilePicture(Window* window);
 	~ProfilePicture();
+
+	ProfilePicture(const ProfilePicture&) = delete;
+	ProfilePicture(ProfilePicture&&) = delete;
+	ProfilePicture& operator=(const ProfilePicture&) = delete;
+	ProfilePicture& operator=(ProfilePicture&&) = delete;
 
 	GtkWidget* get_widget() const
 	{

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,6 +29,11 @@ class CommandEdit
 {
 public:
 	CommandEdit(Command* command, GtkSizeGroup* label_size_group);
+
+	CommandEdit(const CommandEdit&) = delete;
+	CommandEdit(CommandEdit&&) = delete;
+	CommandEdit& operator=(const CommandEdit&) = delete;
+	CommandEdit& operator=(CommandEdit&&) = delete;
 
 	GtkWidget* get_widget() const
 	{

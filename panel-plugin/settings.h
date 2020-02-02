@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2014, 2016, 2018, 2019 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,9 +33,12 @@ class SearchAction;
 class Settings
 {
 	Settings();
-	Settings(const Settings&);
-	Settings& operator=(const Settings&);
 	~Settings();
+
+	Settings(const Settings&) = delete;
+	Settings(Settings&&) = delete;
+	Settings& operator=(const Settings&) = delete;
+	Settings& operator=(Settings&&) = delete;
 
 	void load(char* file);
 	void save(char* file);

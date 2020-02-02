@@ -29,6 +29,11 @@ public:
 	Command(const gchar* icon, const gchar* text, const gchar* command, const gchar* error_text, const gchar* confirm_question = nullptr, const gchar* confirm_status = nullptr);
 	~Command();
 
+	Command(const Command&) = delete;
+	Command(Command&&) = delete;
+	Command& operator=(const Command&) = delete;
+	Command& operator=(Command&&) = delete;
+
 	GtkWidget* get_button();
 	GtkWidget* get_menuitem();
 

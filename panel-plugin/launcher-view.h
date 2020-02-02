@@ -26,14 +26,12 @@ namespace WhiskerMenu
 class LauncherView
 {
 public:
-	LauncherView() :
-		m_model(nullptr)
-	{
-	}
+	virtual ~LauncherView() = default;
 
-	virtual ~LauncherView()
-	{
-	}
+	LauncherView(const LauncherView&) = delete;
+	LauncherView(LauncherView&&) = delete;
+	LauncherView& operator=(const LauncherView&) = delete;
+	LauncherView& operator=(LauncherView&&) = delete;
 
 	virtual GtkWidget* get_widget() const=0;
 
@@ -79,7 +77,9 @@ public:
 	};
 
 protected:
-	GtkTreeModel* m_model;
+	LauncherView() = default;
+
+	GtkTreeModel* m_model = nullptr;
 };
 
 }

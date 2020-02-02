@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2016, 2017, 2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,6 +28,11 @@ class SectionButton
 public:
 	SectionButton(GIcon* icon, const gchar* text);
 	~SectionButton();
+
+	SectionButton(const SectionButton&) = delete;
+	SectionButton(SectionButton&&) = delete;
+	SectionButton& operator=(const SectionButton&) = delete;
+	SectionButton& operator=(SectionButton&&) = delete;
 
 	GtkWidget* get_widget() const
 	{

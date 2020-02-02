@@ -29,14 +29,6 @@ class Query;
 class Element
 {
 public:
-	Element() :
-		m_icon(nullptr),
-		m_text(nullptr),
-		m_tooltip(nullptr),
-		m_sort_key(nullptr)
-	{
-	}
-
 	virtual ~Element()
 	{
 		if (m_icon)
@@ -47,6 +39,11 @@ public:
 		g_free(m_tooltip);
 		g_free(m_sort_key);
 	}
+
+	Element(const Element&) = delete;
+	Element(Element&&) = delete;
+	Element& operator=(const Element&) = delete;
+	Element& operator=(Element&&) = delete;
 
 	GIcon* get_icon() const
 	{
@@ -78,6 +75,8 @@ public:
 	}
 
 protected:
+	Element() = default;
+
 	void set_icon(const gchar* icon);
 
 	void set_text(const gchar* text)
@@ -103,14 +102,10 @@ protected:
 	}
 
 private:
-	Element(const Element&);
-	Element& operator=(const Element&);
-
-private:
-	GIcon* m_icon;
-	gchar* m_text;
-	gchar* m_tooltip;
-	gchar* m_sort_key;
+	GIcon* m_icon = nullptr;
+	gchar* m_text = nullptr;
+	gchar* m_tooltip = nullptr;
+	gchar* m_sort_key = nullptr;
 };
 
 }

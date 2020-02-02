@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2016 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,6 +30,11 @@ class ResizerWidget
 public:
 	explicit ResizerWidget(GtkWindow* window);
 	~ResizerWidget();
+
+	ResizerWidget(const ResizerWidget&) = delete;
+	ResizerWidget(ResizerWidget&&) = delete;
+	ResizerWidget& operator=(const ResizerWidget&) = delete;
+	ResizerWidget& operator=(ResizerWidget&&) = delete;
 
 	GtkWidget* get_widget() const
 	{

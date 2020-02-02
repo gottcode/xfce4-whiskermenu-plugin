@@ -35,6 +35,11 @@ public:
 	explicit ConfigurationDialog(Plugin* plugin);
 	~ConfigurationDialog();
 
+	ConfigurationDialog(const ConfigurationDialog&) = delete;
+	ConfigurationDialog(ConfigurationDialog&&) = delete;
+	ConfigurationDialog& operator=(const ConfigurationDialog&) = delete;
+	ConfigurationDialog& operator=(ConfigurationDialog&&) = delete;
+
 	GtkWidget* get_widget() const
 	{
 		return m_window;
