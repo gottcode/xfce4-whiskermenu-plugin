@@ -105,6 +105,8 @@ target_link_libraries(whiskermenu
 	${libxfce4ui_LIBRARIES}
 	${libxfce4util_LIBRARIES})
 
+target_compile_features(whiskermenu PRIVATE cxx_std_11)
+
 string(TOLOWER "${CMAKE_BUILD_TYPE}" CMAKE_BUILD_TYPE_TOLOWER)
 if(CMAKE_BUILD_TYPE_TOLOWER MATCHES "release|minsizerel|relwithdebinfo")
 	if(ENABLE_LINK_TIME_OPTIMIZATION)
