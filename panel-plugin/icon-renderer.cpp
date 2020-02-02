@@ -113,29 +113,35 @@ static void whiskermenu_icon_renderer_render(GtkCellRenderer* renderer, cairo_t*
 
 	const gint scale = gtk_widget_get_scale_factor(widget);
 	GtkIconTheme* icon_theme = gtk_icon_theme_get_for_screen(gtk_widget_get_screen(widget));
+	GdkWindow* window = gtk_widget_get_window(widget);
+
+	cairo_surface_t* surface = NULL;
 
 	GtkIconInfo* icon_info = gtk_icon_theme_lookup_by_gicon_for_scale(icon_theme,
 			icon_renderer->gicon,
 			icon_renderer->size,
 			scale,
 			GtkIconLookupFlags(GTK_ICON_LOOKUP_USE_BUILTIN | GTK_ICON_LOOKUP_FORCE_SIZE));
+	if (icon_info)
+	{
+		surface = gtk_icon_info_load_surface(icon_info, window, NULL);
+		g_object_unref(icon_info);
+	}
 
-	if (!icon_info)
+	if (!surface)
 	{
 		icon_info = gtk_icon_theme_lookup_icon_for_scale(icon_theme,
 				icon_renderer->launcher ? "application-x-executable" : "applications-other",
 				icon_renderer->size,
 				scale,
 				GtkIconLookupFlags(GTK_ICON_LOOKUP_USE_BUILTIN | GTK_ICON_LOOKUP_FORCE_SIZE));
-
-		if (!icon_info)
+		if (icon_info)
 		{
-			return;
+			surface = gtk_icon_info_load_surface(icon_info, window, NULL);
+			g_object_unref(icon_info);
 		}
 	}
 
-	cairo_surface_t* surface = gtk_icon_info_load_surface(icon_info, gtk_widget_get_window(widget), NULL);
-	g_object_unref(icon_info);
 	if (!surface)
 	{
 		return;
