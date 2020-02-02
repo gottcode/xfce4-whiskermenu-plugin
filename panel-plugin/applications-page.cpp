@@ -420,7 +420,7 @@ void ApplicationsPage::load_menu_item(GarconMenuItem* menu_item, Category* categ
 	auto iter = m_items.find(desktop_id);
 	if (iter == m_items.end())
 	{
-		iter = m_items.insert(std::make_pair(desktop_id, new Launcher(menu_item))).first;
+		iter = m_items.insert(std::make_pair(std::move(desktop_id), new Launcher(menu_item))).first;
 	}
 
 	// Add menu item to current category

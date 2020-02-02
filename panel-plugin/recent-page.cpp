@@ -79,7 +79,7 @@ void RecentPage::add(Launcher* launcher)
 			gtk_tree_model_iter_nth_child(model, &iter, nullptr, std::distance(wm_settings->recent.begin(), i));
 			gtk_list_store_move_after(GTK_LIST_STORE(model), &iter, nullptr);
 			wm_settings->recent.erase(i);
-			wm_settings->recent.insert(wm_settings->recent.begin(), desktop_id);
+			wm_settings->recent.insert(wm_settings->recent.begin(), std::move(desktop_id));
 			wm_settings->set_modified();
 			return;
 		}
@@ -94,7 +94,7 @@ void RecentPage::add(Launcher* launcher)
 			LauncherView::COLUMN_TOOLTIP, launcher->get_tooltip(),
 			LauncherView::COLUMN_LAUNCHER, launcher,
 			-1);
-	wm_settings->recent.insert(wm_settings->recent.begin(), desktop_id);
+	wm_settings->recent.insert(wm_settings->recent.begin(), std::move(desktop_id));
 	wm_settings->set_modified();
 
 	// Prevent going over max

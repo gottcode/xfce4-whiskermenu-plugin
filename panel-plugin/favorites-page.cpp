@@ -195,12 +195,12 @@ void FavoritesPage::on_row_inserted(GtkTreeModel* model, GtkTreePath* path, GtkT
 
 	if (pos >= wm_settings->favorites.size())
 	{
-		wm_settings->favorites.push_back(desktop_id);
+		wm_settings->favorites.push_back(std::move(desktop_id));
 		wm_settings->set_modified();
 	}
 	else if (wm_settings->favorites[pos] != desktop_id)
 	{
-		wm_settings->favorites.insert(wm_settings->favorites.begin() + pos, desktop_id);
+		wm_settings->favorites.insert(wm_settings->favorites.begin() + pos, std::move(desktop_id));
 		wm_settings->set_modified();
 	}
 }

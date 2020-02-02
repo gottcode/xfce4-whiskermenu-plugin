@@ -92,7 +92,7 @@ void SearchPage::set_filter(const gchar* filter)
 		match.update(m_query);
 		if (!Match::invalid(match))
 		{
-			search_action_matches.push_back(match);
+			search_action_matches.push_back(std::move(match));
 		}
 	}
 	std::stable_sort(search_action_matches.begin(), search_action_matches.end());
