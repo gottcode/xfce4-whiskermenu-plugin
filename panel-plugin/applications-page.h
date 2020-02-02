@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013, 2015, 2017, 2018, 2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,8 +20,8 @@
 
 #include "page.h"
 
-#include <map>
 #include <string>
+#include <unordered_map>
 #include <vector>
 
 #include <garcon/garcon.h>
@@ -69,7 +69,7 @@ private:
 	GarconMenu* m_garcon_menu;
 	GarconMenu* m_garcon_settings_menu;
 	std::vector<Category*> m_categories;
-	std::map<std::string, Launcher*> m_items;
+	std::unordered_map<std::string, Launcher*> m_items;
 	int m_load_status;
 };
 
