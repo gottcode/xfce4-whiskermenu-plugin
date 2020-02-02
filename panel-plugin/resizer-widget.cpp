@@ -57,32 +57,27 @@ ResizerWidget::~ResizerWidget()
 
 void ResizerWidget::set_corner(Corner corner)
 {
-	static const GdkPoint bottomleft[] = { {10,10}, {0,10}, {0,0} };
-	static const GdkPoint topleft[] = { {10,0}, {0,10}, {0,0} };
-	static const GdkPoint bottomright[] = { {10,10}, {0,10}, {10,0} };
-	static const GdkPoint topright[] = { {10,0}, {10,10}, {0,0} };
-
 	GdkCursorType type;
 	switch (corner)
 	{
 	case BottomLeft:
 		gtk_widget_set_halign(m_drawing, GTK_ALIGN_START);
 		gtk_widget_set_valign(m_drawing, GTK_ALIGN_END);
-		m_shape.assign(bottomleft, bottomleft + 3);
+		m_shape = { {10,10}, {0,10}, {0,0} };
 		m_edge = GDK_WINDOW_EDGE_SOUTH_WEST;
 		type = GDK_BOTTOM_LEFT_CORNER;
 		break;
 	case TopLeft:
 		gtk_widget_set_halign(m_drawing, GTK_ALIGN_START);
 		gtk_widget_set_valign(m_drawing, GTK_ALIGN_START);
-		m_shape.assign(topleft, topleft + 3);
+		m_shape = { {10,0}, {0,10}, {0,0} };
 		m_edge = GDK_WINDOW_EDGE_NORTH_WEST;
 		type = GDK_TOP_LEFT_CORNER;
 		break;
 	case BottomRight:
 		gtk_widget_set_halign(m_drawing, GTK_ALIGN_END);
 		gtk_widget_set_valign(m_drawing, GTK_ALIGN_END);
-		m_shape.assign(bottomright, bottomright + 3);
+		m_shape = { {10,10}, {0,10}, {10,0} };
 		m_edge = GDK_WINDOW_EDGE_SOUTH_EAST;
 		type = GDK_BOTTOM_RIGHT_CORNER;
 		break;
@@ -90,7 +85,7 @@ void ResizerWidget::set_corner(Corner corner)
 	default:
 		gtk_widget_set_halign(m_drawing, GTK_ALIGN_END);
 		gtk_widget_set_valign(m_drawing, GTK_ALIGN_START);
-		m_shape.assign(topright, topright + 3);
+		m_shape = { {10,0}, {10,10}, {0,0} };
 		m_edge = GDK_WINDOW_EDGE_NORTH_EAST;
 		type = GDK_TOP_RIGHT_CORNER;
 		break;

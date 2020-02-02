@@ -89,6 +89,13 @@ static void write_vector_entry(XfceRc* rc, const char* key, const std::vector<st
 Settings::Settings() :
 	m_modified(false),
 
+	favorites {
+		"exo-web-browser.desktop",
+		"exo-mail-reader.desktop",
+		"exo-file-manager.desktop",
+		"exo-terminal-emulator.desktop"
+	},
+
 	button_title(Plugin::get_button_title_default()),
 	button_icon_name("xfce4-whiskermenu"),
 	button_title_visible(false),
@@ -118,15 +125,18 @@ Settings::Settings() :
 
 	confirm_session_command(true),
 
+	search_actions {
+		new SearchAction(_("Man Pages"), "#", "exo-open --launch TerminalEmulator man %s", false, true),
+		new SearchAction(_("Web Search"), "?", "exo-open --launch WebBrowser https://duckduckgo.com/?q=%u", false, true),
+		new SearchAction(_("Wikipedia"), "!w", "exo-open --launch WebBrowser https://en.wikipedia.org/wiki/%u", false, true),
+		new SearchAction(_("Run in Terminal"), "!", "exo-open --launch TerminalEmulator %s", false, true),
+		new SearchAction(_("Open URI"), "^(file|http|https):\\/\\/(.*)$", "exo-open \\0", true, true)
+	},
+
 	menu_width(450),
 	menu_height(500),
 	menu_opacity(100)
 {
-	favorites.push_back("exo-web-browser.desktop");
-	favorites.push_back("exo-mail-reader.desktop");
-	favorites.push_back("exo-file-manager.desktop");
-	favorites.push_back("exo-terminal-emulator.desktop");
-
 	command[CommandSettings] = new Command("preferences-desktop",
 			_("_Settings Manager"),
 			"xfce4-settings-manager",
@@ -181,12 +191,6 @@ Settings::Settings() :
 			_("Edit _Profile"),
 			"mugshot",
 			_("Failed to edit profile."));
-
-	search_actions.push_back(new SearchAction(_("Man Pages"), "#", "exo-open --launch TerminalEmulator man %s", false, true));
-	search_actions.push_back(new SearchAction(_("Web Search"), "?", "exo-open --launch WebBrowser https://duckduckgo.com/?q=%u", false, true));
-	search_actions.push_back(new SearchAction(_("Wikipedia"), "!w", "exo-open --launch WebBrowser https://en.wikipedia.org/wiki/%u", false, true));
-	search_actions.push_back(new SearchAction(_("Run in Terminal"), "!", "exo-open --launch TerminalEmulator %s", false, true));
-	search_actions.push_back(new SearchAction(_("Open URI"), "^(file|http|https):\\/\\/(.*)$", "exo-open \\0", true, true));
 }
 
 //-----------------------------------------------------------------------------

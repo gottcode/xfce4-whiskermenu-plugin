@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -45,16 +45,16 @@ int IconSize::get_size() const
 
 std::vector<std::string> IconSize::get_strings()
 {
-	std::vector<std::string> strings;
-	strings.push_back(_("None"));
-	strings.push_back(_("Very Small"));
-	strings.push_back(_("Smaller"));
-	strings.push_back(_("Small"));
-	strings.push_back(_("Normal"));
-	strings.push_back(_("Large"));
-	strings.push_back(_("Larger"));
-	strings.push_back(_("Very Large"));
-	return strings;
+	return {
+		_("None"),
+		_("Very Small"),
+		_("Smaller"),
+		_("Small"),
+		_("Normal"),
+		_("Large"),
+		_("Larger"),
+		_("Very Large")
+	};
 }
 
 //-----------------------------------------------------------------------------

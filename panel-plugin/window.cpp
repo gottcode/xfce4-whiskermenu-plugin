@@ -73,6 +73,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	m_search_cover(GTK_STACK_TRANSITION_TYPE_OVER_DOWN),
 	m_search_uncover(GTK_STACK_TRANSITION_TYPE_UNDER_UP),
 	m_sidebar_size_group(nullptr),
+	m_geometry{0,0,wm_settings->menu_width,wm_settings->menu_height},
 	m_layout_left(true),
 	m_layout_bottom(true),
 	m_layout_categories_alternate(false),
@@ -80,11 +81,6 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	m_layout_commands_alternate(false),
 	m_supports_alpha(false)
 {
-	m_geometry.x = 0;
-	m_geometry.y = 0;
-	m_geometry.width = wm_settings->menu_width;
-	m_geometry.height = wm_settings->menu_height;
-
 	// Create the window
 	m_window = GTK_WINDOW(gtk_window_new(GTK_WINDOW_TOPLEVEL));
 	gtk_widget_set_name(GTK_WIDGET(m_window), "whiskermenu-window");
