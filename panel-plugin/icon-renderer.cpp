@@ -100,7 +100,7 @@ static void whiskermenu_icon_renderer_render(GtkCellRenderer* renderer, cairo_t*
 {
 	WhiskerMenuIconRenderer* icon_renderer = WHISKERMENU_ICON_RENDERER(renderer);
 
-	if (icon_renderer->gicon == NULL)
+	if (!icon_renderer->gicon)
 	{
 		return;
 	}
@@ -120,7 +120,7 @@ static void whiskermenu_icon_renderer_render(GtkCellRenderer* renderer, cairo_t*
 			scale,
 			GtkIconLookupFlags(GTK_ICON_LOOKUP_USE_BUILTIN | GTK_ICON_LOOKUP_FORCE_SIZE));
 
-	if (icon_info == NULL)
+	if (!icon_info)
 	{
 		icon_info = gtk_icon_theme_lookup_icon_for_scale(icon_theme,
 				icon_renderer->launcher ? "application-x-executable" : "applications-other",
@@ -128,7 +128,7 @@ static void whiskermenu_icon_renderer_render(GtkCellRenderer* renderer, cairo_t*
 				scale,
 				GtkIconLookupFlags(GTK_ICON_LOOKUP_USE_BUILTIN | GTK_ICON_LOOKUP_FORCE_SIZE));
 
-		if (icon_info == NULL)
+		if (!icon_info)
 		{
 			return;
 		}
@@ -136,6 +136,10 @@ static void whiskermenu_icon_renderer_render(GtkCellRenderer* renderer, cairo_t*
 
 	cairo_surface_t* surface = gtk_icon_info_load_surface(icon_info, gtk_widget_get_window(widget), NULL);
 	g_object_unref(icon_info);
+	if (!surface)
+	{
+		return;
+	}
 
 	GdkRectangle icon_area;
 	icon_area.width = cairo_image_surface_get_width(surface) / scale;
@@ -193,7 +197,7 @@ static void whiskermenu_icon_renderer_set_property(GObject* object, guint prop_i
 		break;
 
 	case PROP_GICON:
-		if (icon_renderer->gicon != NULL)
+		if (icon_renderer->gicon)
 		{
 			g_object_unref(icon_renderer->gicon);
 		}
@@ -216,7 +220,7 @@ static void whiskermenu_icon_renderer_finalize(GObject* object)
 {
 	WhiskerMenuIconRenderer* icon_renderer = WHISKERMENU_ICON_RENDERER(object);
 
-	if (icon_renderer->gicon != NULL)
+	if (icon_renderer->gicon)
 	{
 		g_object_unref(icon_renderer->gicon);
 	}
