@@ -311,7 +311,7 @@ void ConfigurationDialog::choose_icon()
 	if (gtk_dialog_run(GTK_DIALOG (chooser)) == GTK_RESPONSE_ACCEPT)
 	{
 		gchar* icon = exo_icon_chooser_dialog_get_icon(EXO_ICON_CHOOSER_DIALOG(chooser));
-		xfce_panel_image_set_from_source(XFCE_PANEL_IMAGE(m_icon), icon);
+		gtk_image_set_from_icon_name(GTK_IMAGE(m_icon), icon, GTK_ICON_SIZE_DIALOG);
 		m_plugin->set_button_icon_name(icon);
 		g_free(icon);
 	}
@@ -843,8 +843,7 @@ GtkWidget* ConfigurationDialog::init_panel_button_tab()
 	g_signal_connect_slot<GtkButton*>(m_icon_button, "clicked", &ConfigurationDialog::choose_icon, this);
 	gtk_grid_attach(page, m_icon_button, 1, 2, 1, 1);
 
-	m_icon = xfce_panel_image_new_from_source(m_plugin->get_button_icon_name().c_str());
-	xfce_panel_image_set_size(XFCE_PANEL_IMAGE(m_icon), 48);
+	m_icon = gtk_image_new_from_icon_name(m_plugin->get_button_icon_name().c_str(), GTK_ICON_SIZE_DIALOG);
 	gtk_container_add(GTK_CONTAINER(m_icon_button), m_icon);
 
 	m_button_single_row = gtk_check_button_new_with_mnemonic(_("Use a single _panel row"));
