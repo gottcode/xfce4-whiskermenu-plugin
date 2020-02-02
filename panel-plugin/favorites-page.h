@@ -28,7 +28,7 @@ namespace WhiskerMenu
 class FavoritesPage : public Page
 {
 public:
-	FavoritesPage(Window* window);
+	explicit FavoritesPage(Window* window);
 	~FavoritesPage();
 
 	bool contains(Launcher* launcher) const;

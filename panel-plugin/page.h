@@ -31,7 +31,7 @@ class Window;
 class Page
 {
 public:
-	explicit Page(WhiskerMenu::Window *window);
+	explicit Page(Window* window);
 	virtual ~Page();
 
 	Page(const Page&) = delete;

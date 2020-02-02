@@ -28,7 +28,7 @@ class Window;
 class ProfilePicture
 {
 public:
-	ProfilePicture(Window* window);
+	explicit ProfilePicture(Window* window);
 	~ProfilePicture();
 
 	ProfilePicture(const ProfilePicture&) = delete;
