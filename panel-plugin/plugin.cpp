@@ -40,9 +40,9 @@ extern "C" void whiskermenu_construct(XfcePanelPlugin* plugin)
 	new Plugin(plugin);
 }
 
-static void whiskermenu_free(XfcePanelPlugin*, Plugin* whiskermenu)
+static void plugin_free(XfcePanelPlugin*, gpointer user_data)
 {
-	delete whiskermenu;
+	delete static_cast<Plugin*>(user_data);
 }
 
 // Wait for grab; allows modifier as shortcut
@@ -155,7 +155,7 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	xfce_panel_plugin_add_action_widget(plugin, m_button);
 
 	// Connect plugin signals to functions
-	g_signal_connect(plugin, "free-data", G_CALLBACK(whiskermenu_free), this);
+	g_signal_connect(plugin, "free-data", G_CALLBACK(&plugin_free), this);
 	g_signal_connect_slot<XfcePanelPlugin*>(plugin, "configure-plugin", &Plugin::configure, this);
 	g_signal_connect_slot(plugin, "mode-changed", &Plugin::mode_changed, this);
 	g_signal_connect_slot(plugin, "remote-event", &Plugin::remote_event, this);

@@ -50,9 +50,9 @@ enum
 
 //-----------------------------------------------------------------------------
 
-static void whiskermenu_config_dialog_delete(ConfigurationDialog* dialog)
+static void configuration_dialog_free(GtkWidget*, gpointer user_data)
 {
-	delete dialog;
+	delete static_cast<ConfigurationDialog*>(user_data);
 }
 
 //-----------------------------------------------------------------------------
@@ -108,7 +108,7 @@ ConfigurationDialog::ConfigurationDialog(Plugin* plugin) :
 	gtk_window_set_icon_name(GTK_WINDOW(m_window), "xfce4-whiskermenu");
 	gtk_window_set_position(GTK_WINDOW(m_window), GTK_WIN_POS_CENTER);
 	g_signal_connect_slot(m_window, "response", &ConfigurationDialog::response, this);
-	g_signal_connect_swapped(m_window, "destroy", G_CALLBACK(whiskermenu_config_dialog_delete), this);
+	g_signal_connect(m_window, "destroy", G_CALLBACK(&configuration_dialog_free), this);
 
 	// Create tabs
 	GtkNotebook* notebook = GTK_NOTEBOOK(gtk_notebook_new());
