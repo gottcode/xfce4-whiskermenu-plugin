@@ -476,15 +476,17 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 		}
 	}
 
-	if (wm_settings->button_title_visible)
-	{
-		gtk_widget_set_size_request(m_button, -1, -1);
-	}
-	else
+	// Make panel button square only if single row and title hidden
+	if (!wm_settings->button_title_visible && (wm_settings->button_single_row || (xfce_panel_plugin_get_nrows(m_plugin) == 1)))
 	{
 		gtk_widget_set_size_request(m_button, size, size);
 	}
+	else
+	{
+		gtk_widget_set_size_request(m_button, -1, -1);
+	}
 
+	// Use single panel row if requested and title hidden
 	if (wm_settings->button_title_visible || !wm_settings->button_single_row)
 	{
 		xfce_panel_plugin_set_small(m_plugin, false);
