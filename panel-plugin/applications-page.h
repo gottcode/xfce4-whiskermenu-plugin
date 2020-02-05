@@ -70,7 +70,15 @@ private:
 	GarconMenu* m_garcon_settings_menu;
 	std::vector<Category*> m_categories;
 	std::unordered_map<std::string, Launcher*> m_items;
-	int m_load_status;
+
+	enum class LoadStatus
+	{
+		Invalid,
+		Loading,
+		ReloadRequired,
+		Done
+	}
+	m_status;
 };
 
 }

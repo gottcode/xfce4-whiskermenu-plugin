@@ -29,15 +29,6 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-enum
-{
-	WHISKERMENU_COMMAND_UNCHECKED = -1,
-	WHISKERMENU_COMMAND_INVALID,
-	WHISKERMENU_COMMAND_VALID
-};
-
-//-----------------------------------------------------------------------------
-
 Command::Command(const gchar* icon, const gchar* text, const gchar* command, const gchar* error_text, const gchar* confirm_question, const gchar* confirm_status) :
 	m_button(nullptr),
 	m_menuitem(nullptr),
@@ -45,8 +36,8 @@ Command::Command(const gchar* icon, const gchar* text, const gchar* command, con
 	m_mnemonic(g_strdup(text)),
 	m_command(g_strdup(command)),
 	m_error_text(g_strdup(error_text)),
-	m_status(WHISKERMENU_COMMAND_UNCHECKED),
 	m_shown(true),
+	m_status(CommandStatus::Unchecked),
 	m_timeout_details({nullptr, g_strdup(confirm_question), g_strdup(confirm_status), 0})
 {
 	std::string tooltip(text ? text : "");
@@ -104,7 +95,7 @@ GtkWidget* Command::get_button()
 	gtk_container_add(GTK_CONTAINER(m_button), GTK_WIDGET(image));
 
 	gtk_widget_set_visible(m_button, m_shown);
-	gtk_widget_set_sensitive(m_button, m_status == WHISKERMENU_COMMAND_VALID);
+	gtk_widget_set_sensitive(m_button, m_status == CommandStatus::Valid);
 
 	g_object_ref_sink(m_button);
 
@@ -124,7 +115,7 @@ GtkWidget* Command::get_menuitem()
 	g_signal_connect_slot<GtkMenuItem*>(m_menuitem, "activate", &Command::activate, this);
 
 	gtk_widget_set_visible(m_menuitem, m_shown);
-	gtk_widget_set_sensitive(m_menuitem, m_status == WHISKERMENU_COMMAND_VALID);
+	gtk_widget_set_sensitive(m_menuitem, m_status == CommandStatus::Valid);
 
 	g_object_ref_sink(m_menuitem);
 
@@ -142,7 +133,7 @@ void Command::set(const gchar* command)
 
 	g_free(m_command);
 	m_command = g_strdup(command);
-	m_status = WHISKERMENU_COMMAND_UNCHECKED;
+	m_status = CommandStatus::Unchecked;
 	wm_settings->set_modified();
 }
 
@@ -172,31 +163,31 @@ void Command::set_shown(bool shown)
 
 void Command::check()
 {
-	if (m_status == WHISKERMENU_COMMAND_UNCHECKED)
+	if (m_status == CommandStatus::Unchecked)
 	{
 		gchar** argv;
 		if (g_shell_parse_argv(m_command, nullptr, &argv, nullptr))
 		{
 			gchar* path = g_find_program_in_path(argv[0]);
-			m_status = path ? WHISKERMENU_COMMAND_VALID : WHISKERMENU_COMMAND_INVALID;
+			m_status = path ? CommandStatus::Valid : CommandStatus::Invalid;
 			g_free(path);
 			g_strfreev(argv);
 		}
 		else
 		{
-			m_status = WHISKERMENU_COMMAND_INVALID;
+			m_status = CommandStatus::Invalid;
 		}
 	}
 
 	if (m_button)
 	{
 		gtk_widget_set_visible(m_button, m_shown);
-		gtk_widget_set_sensitive(m_button, m_status == WHISKERMENU_COMMAND_VALID);
+		gtk_widget_set_sensitive(m_button, m_status == CommandStatus::Valid);
 	}
 	if (m_menuitem)
 	{
 		gtk_widget_set_visible(m_menuitem, m_shown);
-		gtk_widget_set_sensitive(m_menuitem, m_status == WHISKERMENU_COMMAND_VALID);
+		gtk_widget_set_sensitive(m_menuitem, m_status == CommandStatus::Valid);
 	}
 }
 

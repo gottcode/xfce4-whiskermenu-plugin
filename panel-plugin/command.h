@@ -77,8 +77,15 @@ private:
 	gchar* m_text;
 	gchar* m_command;
 	gchar* m_error_text;
-	int m_status;
 	bool m_shown;
+
+	enum class CommandStatus
+	{
+		Unchecked,
+		Invalid,
+		Valid
+	}
+	m_status;
 
 	struct TimeoutDetails
 	{

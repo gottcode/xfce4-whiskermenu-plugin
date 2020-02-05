@@ -36,21 +36,11 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-enum
-{
-	STATUS_INVALID,
-	STATUS_LOADING,
-	STATUS_LOADING_RELOAD,
-	STATUS_LOADED
-};
-
-//-----------------------------------------------------------------------------
-
 ApplicationsPage::ApplicationsPage(Window* window) :
 	Page(window),
 	m_garcon_menu(nullptr),
 	m_garcon_settings_menu(nullptr),
-	m_load_status(STATUS_INVALID)
+	m_status(LoadStatus::Invalid)
 {
 	// Set desktop environment for applications
 	const gchar* desktop = g_getenv("XDG_CURRENT_DESKTOP");
@@ -157,13 +147,13 @@ void ApplicationsPage::apply_filter(GtkToggleButton* togglebutton)
 
 void ApplicationsPage::invalidate_applications()
 {
-	if (m_load_status == STATUS_LOADED)
+	if (m_status == LoadStatus::Done)
 	{
-		m_load_status = STATUS_INVALID;
+		m_status = LoadStatus::Invalid;
 	}
-	else if (m_load_status == STATUS_LOADING)
+	else if (m_status == LoadStatus::Loading)
 	{
-		m_load_status = STATUS_LOADING_RELOAD;
+		m_status = LoadStatus::ReloadRequired;
 	}
 }
 
@@ -172,16 +162,16 @@ void ApplicationsPage::invalidate_applications()
 bool ApplicationsPage::load_applications()
 {
 	// Check if already loaded
-	if (m_load_status == STATUS_LOADED)
+	if (m_status == LoadStatus::Done)
 	{
 		return true;
 	}
 	// Check if currently loading
-	else if ((m_load_status == STATUS_LOADING) || (m_load_status == STATUS_LOADING_RELOAD))
+	else if (m_status != LoadStatus::Invalid)
 	{
 		return false;
 	}
-	m_load_status = STATUS_LOADING;
+	m_status = LoadStatus::Loading;
 
 	// Load menu
 	clear_applications();
@@ -314,7 +304,7 @@ void ApplicationsPage::load_contents()
 	{
 		get_window()->set_loaded();
 
-		m_load_status = STATUS_INVALID;
+		m_status = LoadStatus::Invalid;
 
 		return;
 	}
@@ -339,7 +329,7 @@ void ApplicationsPage::load_contents()
 	get_window()->set_items();
 	get_window()->set_loaded();
 
-	m_load_status = (m_load_status == STATUS_LOADING) ? STATUS_LOADED : STATUS_INVALID;
+	m_status = (m_status == LoadStatus::Loading) ? LoadStatus::Done : LoadStatus::Invalid;
 }
 
 //-----------------------------------------------------------------------------
