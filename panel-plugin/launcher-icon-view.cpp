@@ -96,7 +96,7 @@ GtkTreePath* LauncherIconView::get_selected_path() const
 	{
 		path = gtk_tree_path_copy(static_cast<GtkTreePath*>(selection->data));
 	}
-	g_list_free_full(selection, reinterpret_cast<GDestroyNotify>(gtk_tree_path_free));
+	g_list_free_full(selection, reinterpret_cast<GDestroyNotify>(&gtk_tree_path_free));
 	return path;
 }
 

@@ -157,7 +157,7 @@ void Page::create_view()
 	{
 		m_view = new LauncherTreeView();
 		g_signal_connect(m_view->get_widget(), "row-activated", G_CALLBACK(&Page::row_activated_slot), this);
-		g_signal_connect_swapped(m_view->get_widget(), "start-interactive-search", G_CALLBACK(gtk_widget_grab_focus), m_window->get_search_entry());
+		g_signal_connect_swapped(m_view->get_widget(), "start-interactive-search", G_CALLBACK(&gtk_widget_grab_focus), m_window->get_search_entry());
 	}
 	g_signal_connect_slot(m_view->get_widget(), "button-press-event", &Page::view_button_press_event, this);
 	g_signal_connect_slot(m_view->get_widget(), "button-release-event", &Page::view_button_release_event, this);

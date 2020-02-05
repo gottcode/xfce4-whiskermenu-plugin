@@ -239,13 +239,13 @@ static void whiskermenu_icon_renderer_finalize(GObject* object)
 static void whiskermenu_icon_renderer_class_init(WhiskerMenuIconRendererClass* klass)
 {
 	GObjectClass* gobject_class = G_OBJECT_CLASS(klass);
-	gobject_class->finalize = whiskermenu_icon_renderer_finalize;
-	gobject_class->get_property = whiskermenu_icon_renderer_get_property;
-	gobject_class->set_property = whiskermenu_icon_renderer_set_property;
+	gobject_class->finalize = &whiskermenu_icon_renderer_finalize;
+	gobject_class->get_property = &whiskermenu_icon_renderer_get_property;
+	gobject_class->set_property = &whiskermenu_icon_renderer_set_property;
 
 	GtkCellRendererClass* renderer_class = GTK_CELL_RENDERER_CLASS(klass);
-	renderer_class->get_size = whiskermenu_icon_renderer_get_size;
-	renderer_class->render = whiskermenu_icon_renderer_render;
+	renderer_class->get_size = &whiskermenu_icon_renderer_get_size;
+	renderer_class->render = &whiskermenu_icon_renderer_render;
 
 	g_object_class_install_property(gobject_class,
 			PROP_LAUNCHER,
