@@ -95,7 +95,7 @@ SettingsDialog::SettingsDialog(Plugin* plugin) :
 			window,
 			GtkDialogFlags(0),
 			"help-browser", _("_Help"), GTK_RESPONSE_HELP,
-			"window-close", _("_Close"), GTK_RESPONSE_CLOSE,
+			"window-close-symbolic", _("_Close"), GTK_RESPONSE_CLOSE,
 			nullptr);
 #else
 	m_window = xfce_titled_dialog_new_with_buttons(_("Whisker Menu"),
