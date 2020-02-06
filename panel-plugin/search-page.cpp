@@ -17,6 +17,7 @@
 
 #include "search-page.h"
 
+#include "applications-page.h"
 #include "launcher.h"
 #include "launcher-view.h"
 #include "search-action.h"
@@ -154,21 +155,9 @@ void SearchPage::set_filter(const gchar* filter)
 
 //-----------------------------------------------------------------------------
 
-void SearchPage::set_menu_items(GtkTreeModel* model)
+void SearchPage::set_menu_items()
 {
-	// loop over every single item in model
-	GtkTreeIter iter;
-	bool valid = gtk_tree_model_get_iter_first(model, &iter);
-	while (valid)
-	{
-		Launcher* launcher = nullptr;
-		gtk_tree_model_get(model, &iter, LauncherView::COLUMN_LAUNCHER, &launcher, -1);
-		if (launcher)
-		{
-			m_launchers.push_back(launcher);
-		}
-		valid = gtk_tree_model_iter_next(model, &iter);
-	}
+	m_launchers = get_window()->get_applications()->find_all();
 
 	get_view()->unset_model();
 

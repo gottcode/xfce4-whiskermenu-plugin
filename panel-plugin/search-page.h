@@ -35,7 +35,7 @@ public:
 	~SearchPage();
 
 	void set_filter(const gchar* filter);
-	void set_menu_items(GtkTreeModel* model);
+	void set_menu_items();
 	void unset_menu_items();
 
 private:

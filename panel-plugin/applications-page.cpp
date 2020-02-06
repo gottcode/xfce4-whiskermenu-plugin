@@ -114,6 +114,19 @@ Launcher* ApplicationsPage::find(const std::string& desktop_id) const
 
 //-----------------------------------------------------------------------------
 
+std::vector<Launcher*> ApplicationsPage::find_all() const
+{
+	std::vector<Launcher*> launchers;
+	launchers.reserve(m_items.size());
+	for (const auto& i : m_items)
+	{
+		launchers.push_back(i.second);
+	}
+	return launchers;
+}
+
+//-----------------------------------------------------------------------------
+
 void ApplicationsPage::apply_filter(GtkToggleButton* togglebutton)
 {
 	// Only apply filter for active button

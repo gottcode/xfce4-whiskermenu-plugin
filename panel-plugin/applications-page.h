@@ -40,6 +40,7 @@ public:
 
 	GtkTreeModel* create_launcher_model(std::vector<std::string>& desktop_ids) const;
 	Launcher* find(const std::string& desktop_id) const;
+	std::vector<Launcher*> find_all() const;
 
 	void invalidate();
 	bool load();

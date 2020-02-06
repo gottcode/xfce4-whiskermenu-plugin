@@ -566,7 +566,7 @@ void WhiskerMenu::Window::set_categories(const std::vector<CategoryButton*>& cat
 
 void WhiskerMenu::Window::set_items()
 {
-	m_search_results->set_menu_items(m_applications->get_view()->get_model());
+	m_search_results->set_menu_items();
 	m_favorites->set_menu_items();
 	m_recent->set_menu_items();
 
