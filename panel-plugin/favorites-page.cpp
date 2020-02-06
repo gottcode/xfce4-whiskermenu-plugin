@@ -121,7 +121,7 @@ void FavoritesPage::set_menu_items()
 
 	for (const auto& favorite : wm_settings->favorites)
 	{
-		Launcher* launcher = get_window()->get_applications()->get_application(favorite);
+		Launcher* launcher = get_window()->get_applications()->find(favorite);
 		if (launcher)
 		{
 			launcher->set_flag(Launcher::FavoriteFlag, true);
@@ -225,7 +225,7 @@ std::vector<Launcher*> FavoritesPage::sort() const
 	items.reserve(wm_settings->favorites.size());
 	for (const auto& favorite : wm_settings->favorites)
 	{
-		Launcher* launcher = get_window()->get_applications()->get_application(favorite);
+		Launcher* launcher = get_window()->get_applications()->find(favorite);
 		if (!launcher)
 		{
 			continue;

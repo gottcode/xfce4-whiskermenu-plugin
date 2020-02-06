@@ -249,7 +249,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	on_screen_changed_event(GTK_WIDGET(m_window), nullptr);
 
 	// Load applications
-	m_applications->load_applications();
+	m_applications->load();
 
 	g_object_ref_sink(m_window);
 }
@@ -345,7 +345,7 @@ void WhiskerMenu::Window::show(const Position position)
 	gtk_widget_set_visible(m_recent_button->get_widget(), wm_settings->recent_items_max);
 
 	// Make sure applications list is current; does nothing unless list has changed
-	if (m_applications->load_applications())
+	if (m_applications->load())
 	{
 		set_loaded();
 	}

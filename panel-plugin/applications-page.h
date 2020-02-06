@@ -40,15 +40,15 @@ public:
 	~ApplicationsPage();
 
 	GtkTreeModel* create_launcher_model(std::vector<std::string>& desktop_ids) const;
-	Launcher* get_application(const std::string& desktop_id) const;
+	Launcher* find(const std::string& desktop_id) const;
 
-	void invalidate_applications();
-	bool load_applications();
+	void invalidate();
+	bool load();
 	void reload_category_icon_size();
 
 private:
 	void apply_filter(GtkToggleButton* togglebutton);
-	void clear_applications();
+	void clear();
 	void load_garcon_menu();
 	void load_contents();
 	void load_menu(GarconMenu* menu, Category* parent_category);

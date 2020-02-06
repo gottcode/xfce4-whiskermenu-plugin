@@ -113,7 +113,7 @@ void RecentPage::enforce_item_count()
 	GtkListStore* store = GTK_LIST_STORE(get_view()->get_model());
 	for (ssize_t i = wm_settings->recent.size() - 1, end = wm_settings->recent_items_max; i >= end; --i)
 	{
-		Launcher* launcher = get_window()->get_applications()->get_application(wm_settings->recent[i]);
+		Launcher* launcher = get_window()->get_applications()->find(wm_settings->recent[i]);
 		if (launcher)
 		{
 			launcher->set_flag(Launcher::RecentFlag, false);
@@ -136,7 +136,7 @@ void RecentPage::flag_items(bool enabled)
 {
 	for (const auto& recent : wm_settings->recent)
 	{
-		Launcher* launcher = get_window()->get_applications()->get_application(recent);
+		Launcher* launcher = get_window()->get_applications()->find(recent);
 		if (launcher)
 		{
 			launcher->set_flag(Launcher::RecentFlag, enabled);

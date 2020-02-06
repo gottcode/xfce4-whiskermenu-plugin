@@ -59,7 +59,7 @@ ApplicationsPage::ApplicationsPage(Window* window) :
 
 ApplicationsPage::~ApplicationsPage()
 {
-	clear_applications();
+	clear();
 }
 
 //-----------------------------------------------------------------------------
@@ -82,7 +82,7 @@ GtkTreeModel* ApplicationsPage::create_launcher_model(std::vector<std::string>& 
 			continue;
 		}
 
-		Launcher* launcher = get_application(*i);
+		Launcher* launcher = find(*i);
 		if (launcher)
 		{
 			gtk_list_store_insert_with_values(
@@ -106,7 +106,7 @@ GtkTreeModel* ApplicationsPage::create_launcher_model(std::vector<std::string>& 
 
 //-----------------------------------------------------------------------------
 
-Launcher* ApplicationsPage::get_application(const std::string& desktop_id) const
+Launcher* ApplicationsPage::find(const std::string& desktop_id) const
 {
 	auto i = m_items.find(desktop_id);
 	return (i != m_items.end()) ? i->second : nullptr;
@@ -145,7 +145,7 @@ void ApplicationsPage::apply_filter(GtkToggleButton* togglebutton)
 
 //-----------------------------------------------------------------------------
 
-void ApplicationsPage::invalidate_applications()
+void ApplicationsPage::invalidate()
 {
 	if (m_status == LoadStatus::Done)
 	{
@@ -159,7 +159,7 @@ void ApplicationsPage::invalidate_applications()
 
 //-----------------------------------------------------------------------------
 
-bool ApplicationsPage::load_applications()
+bool ApplicationsPage::load()
 {
 	// Check if already loaded
 	if (m_status == LoadStatus::Done)
@@ -174,7 +174,7 @@ bool ApplicationsPage::load_applications()
 	m_status = LoadStatus::Loading;
 
 	// Load menu
-	clear_applications();
+	clear();
 
 	// Load contents in thread if possible
 	GTask* task = g_task_new(nullptr, nullptr, &ApplicationsPage::load_contents_slot, this);
@@ -197,7 +197,7 @@ void ApplicationsPage::reload_category_icon_size()
 
 //-----------------------------------------------------------------------------
 
-void ApplicationsPage::clear_applications()
+void ApplicationsPage::clear()
 {
 	// Free categories
 	for (auto category : m_categories)
@@ -257,7 +257,7 @@ void ApplicationsPage::load_garcon_menu()
 		return;
 	}
 
-	g_signal_connect_slot<GarconMenu*>(m_garcon_menu, "reload-required", &ApplicationsPage::invalidate_applications, this);
+	g_signal_connect_slot<GarconMenu*>(m_garcon_menu, "reload-required", &ApplicationsPage::invalidate, this);
 	load_menu(m_garcon_menu, nullptr);
 
 	// Create settings menu
@@ -267,7 +267,7 @@ void ApplicationsPage::load_garcon_menu()
 
 	if (m_garcon_settings_menu)
 	{
-		g_signal_connect_slot<GarconMenu*>(m_garcon_settings_menu, "reload-required", &ApplicationsPage::invalidate_applications, this);
+		g_signal_connect_slot<GarconMenu*>(m_garcon_settings_menu, "reload-required", &ApplicationsPage::invalidate, this);
 	}
 
 	// Load settings menu
@@ -392,7 +392,7 @@ void ApplicationsPage::load_menu(GarconMenu* menu, Category* parent_category)
 	}
 
 	// Listen for menu changes
-	g_signal_connect_slot<GarconMenu*,GarconMenuDirectory*,GarconMenuDirectory*>(menu, "directory-changed", &ApplicationsPage::invalidate_applications, this);
+	g_signal_connect_slot<GarconMenu*,GarconMenuDirectory*,GarconMenuDirectory*>(menu, "directory-changed", &ApplicationsPage::invalidate, this);
 }
 
 //-----------------------------------------------------------------------------
@@ -420,7 +420,7 @@ void ApplicationsPage::load_menu_item(GarconMenuItem* menu_item, Category* categ
 	}
 
 	// Listen for menu changes
-	g_signal_connect_slot<GarconMenuItem*>(menu_item, "changed", &ApplicationsPage::invalidate_applications, this);
+	g_signal_connect_slot<GarconMenuItem*>(menu_item, "changed", &ApplicationsPage::invalidate, this);
 }
 
 //-----------------------------------------------------------------------------

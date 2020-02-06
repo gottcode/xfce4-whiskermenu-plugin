@@ -225,7 +225,7 @@ std::string Plugin::get_button_icon_name() const
 void Plugin::reload()
 {
 	m_window->hide();
-	m_window->get_applications()->invalidate_applications();
+	m_window->get_applications()->invalidate();
 }
 
 //-----------------------------------------------------------------------------
