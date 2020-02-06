@@ -18,6 +18,7 @@
 #include "window.h"
 
 #include "applications-page.h"
+#include "category-button.h"
 #include "command.h"
 #include "favorites-page.h"
 #include "launcher-view.h"
@@ -26,7 +27,6 @@
 #include "recent-page.h"
 #include "resizer-widget.h"
 #include "search-page.h"
-#include "section-button.h"
 #include "settings.h"
 #include "slot.h"
 
@@ -151,7 +151,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	m_favorites = new FavoritesPage(this);
 
 	GIcon* icon = g_themed_icon_new("user-bookmarks");
-	m_favorites_button = new SectionButton(icon, _("Favorites"));
+	m_favorites_button = new CategoryButton(icon, _("Favorites"));
 	g_object_unref(icon);
 	g_signal_connect_slot<GtkToggleButton*>(m_favorites_button->get_widget(), "toggled", &Window::favorites_toggled, this);
 
@@ -159,7 +159,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	m_recent = new RecentPage(this);
 
 	icon = g_themed_icon_new("document-open-recent");
-	m_recent_button = new SectionButton(icon, _("Recently Used"));
+	m_recent_button = new CategoryButton(icon, _("Recently Used"));
 	g_object_unref(icon);
 	m_recent_button->join_group(m_favorites_button);
 	g_signal_connect_slot<GtkToggleButton*>(m_recent_button->get_widget(), "toggled", &Window::recent_toggled, this);
@@ -542,9 +542,9 @@ void WhiskerMenu::Window::on_context_menu_destroyed()
 
 //-----------------------------------------------------------------------------
 
-void WhiskerMenu::Window::set_categories(const std::vector<SectionButton*>& categories)
+void WhiskerMenu::Window::set_categories(const std::vector<CategoryButton*>& categories)
 {
-	SectionButton* last_button = m_recent_button;
+	CategoryButton* last_button = m_recent_button;
 	for (auto button : categories)
 	{
 		button->join_group(last_button);

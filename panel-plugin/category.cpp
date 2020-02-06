@@ -17,8 +17,8 @@
 
 #include "category.h"
 
+#include "category-button.h"
 #include "launcher-view.h"
-#include "section-button.h"
 
 #include <algorithm>
 
@@ -72,11 +72,11 @@ Category::~Category()
 
 //-----------------------------------------------------------------------------
 
-SectionButton* Category::get_button()
+CategoryButton* Category::get_button()
 {
 	if (!m_button)
 	{
-		m_button = new SectionButton(get_icon(), get_text());
+		m_button = new CategoryButton(get_icon(), get_text());
 	}
 
 	return m_button;

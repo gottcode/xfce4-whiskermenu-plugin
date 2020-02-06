@@ -9,6 +9,7 @@ pkg_check_modules(libxfce4util REQUIRED IMPORTED_TARGET libxfce4util-1.0>=4.11)
 add_library(whiskermenu MODULE
 	applications-page.cpp
 	category.cpp
+	category-button.cpp
 	command.cpp
 	command-edit.cpp
 	element.cpp
@@ -29,7 +30,6 @@ add_library(whiskermenu MODULE
 	run-action.cpp
 	search-action.cpp
 	search-page.cpp
-	section-button.cpp
 	settings.cpp
 	settings-dialog.cpp
 	slot.h

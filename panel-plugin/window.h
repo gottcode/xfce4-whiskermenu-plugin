@@ -26,6 +26,7 @@ namespace WhiskerMenu
 {
 
 class ApplicationsPage;
+class CategoryButton;
 class FavoritesPage;
 class Page;
 class Plugin;
@@ -33,7 +34,6 @@ class ProfilePicture;
 class ResizerWidget;
 class RecentPage;
 class SearchPage;
-class SectionButton;
 
 class Window
 {
@@ -82,7 +82,7 @@ public:
 	void show(const Position position);
 	void save();
 	void on_context_menu_destroyed();
-	void set_categories(const std::vector<SectionButton*>& categories);
+	void set_categories(const std::vector<CategoryButton*>& categories);
 	void set_items();
 	void set_loaded();
 	void unset_items();
@@ -146,9 +146,9 @@ private:
 
 	GtkScrolledWindow* m_sidebar;
 	GtkBox* m_sidebar_buttons;
-	SectionButton* m_favorites_button;
-	SectionButton* m_recent_button;
-	SectionButton* m_default_button;
+	CategoryButton* m_favorites_button;
+	CategoryButton* m_recent_button;
+	CategoryButton* m_default_button;
 	GtkSizeGroup* m_sidebar_size_group;
 
 	GdkRectangle m_geometry;

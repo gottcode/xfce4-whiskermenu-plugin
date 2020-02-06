@@ -15,7 +15,7 @@
  * along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "section-button.h"
+#include "category-button.h"
 
 #include "settings.h"
 
@@ -58,7 +58,7 @@ static gboolean on_focus_in_event(GtkWidget* widget, GdkEvent*, gpointer)
 
 //-----------------------------------------------------------------------------
 
-SectionButton::SectionButton(GIcon* icon, const gchar* text)
+CategoryButton::CategoryButton(GIcon* icon, const gchar* text)
 {
 	m_button = GTK_RADIO_BUTTON(gtk_radio_button_new(nullptr));
 	gtk_toggle_button_set_mode(GTK_TOGGLE_BUTTON(m_button), false);
@@ -84,14 +84,14 @@ SectionButton::SectionButton(GIcon* icon, const gchar* text)
 
 //-----------------------------------------------------------------------------
 
-SectionButton::~SectionButton()
+CategoryButton::~CategoryButton()
 {
 	gtk_widget_destroy(GTK_WIDGET(m_button));
 }
 
 //-----------------------------------------------------------------------------
 
-void SectionButton::reload_icon_size()
+void CategoryButton::reload_icon_size()
 {
 	int size = wm_settings->category_icon_size.get_size();
 	gtk_image_set_pixel_size(GTK_IMAGE(m_icon), size);

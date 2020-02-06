@@ -15,24 +15,24 @@
  * along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef WHISKERMENU_SECTION_BUTTON_H
-#define WHISKERMENU_SECTION_BUTTON_H
+#ifndef WHISKERMENU_CATEGORY_BUTTON_H
+#define WHISKERMENU_CATEGORY_BUTTON_H
 
 #include <gtk/gtk.h>
 
 namespace WhiskerMenu
 {
 
-class SectionButton
+class CategoryButton
 {
 public:
-	SectionButton(GIcon* icon, const gchar* text);
-	~SectionButton();
+	CategoryButton(GIcon* icon, const gchar* text);
+	~CategoryButton();
 
-	SectionButton(const SectionButton&) = delete;
-	SectionButton(SectionButton&&) = delete;
-	SectionButton& operator=(const SectionButton&) = delete;
-	SectionButton& operator=(SectionButton&&) = delete;
+	CategoryButton(const CategoryButton&) = delete;
+	CategoryButton(CategoryButton&&) = delete;
+	CategoryButton& operator=(const CategoryButton&) = delete;
+	CategoryButton& operator=(CategoryButton&&) = delete;
 
 	GtkWidget* get_widget() const
 	{
@@ -49,7 +49,7 @@ public:
 		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_button), active);
 	}
 
-	void join_group(SectionButton* button)
+	void join_group(CategoryButton* button)
 	{
 		gtk_radio_button_join_group(m_button, button->m_button);
 	}
@@ -65,4 +65,4 @@ private:
 
 }
 
-#endif // WHISKERMENU_SECTION_BUTTON_H
+#endif // WHISKERMENU_CATEGORY_BUTTON_H

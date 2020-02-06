@@ -18,9 +18,9 @@
 #include "applications-page.h"
 
 #include "category.h"
+#include "category-button.h"
 #include "launcher.h"
 #include "launcher-view.h"
-#include "section-button.h"
 #include "settings.h"
 #include "slot.h"
 #include "window.h"
@@ -314,10 +314,10 @@ void ApplicationsPage::load_contents()
 	get_view()->set_model(m_categories.front()->get_model());
 
 	// Add buttons for categories
-	std::vector<SectionButton*> category_buttons;
+	std::vector<CategoryButton*> category_buttons;
 	for (auto category : m_categories)
 	{
-		SectionButton* category_button = category->get_button();
+		CategoryButton* category_button = category->get_button();
 		g_signal_connect_slot(category_button->get_widget(), "toggled", &ApplicationsPage::apply_filter, this);
 		category_buttons.push_back(category_button);
 	}

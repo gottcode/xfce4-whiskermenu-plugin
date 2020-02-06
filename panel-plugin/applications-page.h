@@ -30,7 +30,6 @@ namespace WhiskerMenu
 {
 
 class Category;
-class SectionButton;
 
 class ApplicationsPage : public Page
 {

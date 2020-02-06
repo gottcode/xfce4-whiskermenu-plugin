@@ -28,7 +28,7 @@
 namespace WhiskerMenu
 {
 
-class SectionButton;
+class CategoryButton;
 
 class Category : public Element
 {
@@ -36,7 +36,7 @@ public:
 	explicit Category(GarconMenuDirectory* directory);
 	~Category();
 
-	SectionButton* get_button();
+	CategoryButton* get_button();
 
 	GtkTreeModel* get_model();
 
@@ -65,7 +65,7 @@ private:
 	void unset_model();
 
 private:
-	SectionButton* m_button;
+	CategoryButton* m_button;
 	std::vector<Element*> m_items;
 	GtkTreeModel* m_model;
 	bool m_has_separators;
