@@ -15,8 +15,8 @@
  * along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef WHISKERMENU_RESIZER_WIDGET_H
-#define WHISKERMENU_RESIZER_WIDGET_H
+#ifndef WHISKERMENU_RESIZE_GRIP_H
+#define WHISKERMENU_RESIZE_GRIP_H
 
 #include <vector>
 
@@ -25,16 +25,16 @@
 namespace WhiskerMenu
 {
 
-class ResizerWidget
+class ResizeGrip
 {
 public:
-	explicit ResizerWidget(GtkWindow* window);
-	~ResizerWidget();
+	explicit ResizeGrip(GtkWindow* window);
+	~ResizeGrip();
 
-	ResizerWidget(const ResizerWidget&) = delete;
-	ResizerWidget(ResizerWidget&&) = delete;
-	ResizerWidget& operator=(const ResizerWidget&) = delete;
-	ResizerWidget& operator=(ResizerWidget&&) = delete;
+	ResizeGrip(const ResizeGrip&) = delete;
+	ResizeGrip(ResizeGrip&&) = delete;
+	ResizeGrip& operator=(const ResizeGrip&) = delete;
+	ResizeGrip& operator=(ResizeGrip&&) = delete;
 
 	GtkWidget* get_widget() const
 	{
@@ -66,4 +66,4 @@ private:
 
 }
 
-#endif // WHISKERMENU_RESIZER_WIDGET_H
+#endif // WHISKERMENU_RESIZE_GRIP_H

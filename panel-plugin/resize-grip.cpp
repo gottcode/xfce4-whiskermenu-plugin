@@ -15,7 +15,7 @@
  * along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "resizer-widget.h"
+#include "resize-grip.h"
 
 #include "settings.h"
 #include "slot.h"
@@ -24,7 +24,7 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-ResizerWidget::ResizerWidget(GtkWindow* window) :
+ResizeGrip::ResizeGrip(GtkWindow* window) :
 	m_window(window),
 	m_cursor(nullptr),
 	m_shape(3)
@@ -35,17 +35,17 @@ ResizerWidget::ResizerWidget(GtkWindow* window) :
 	gtk_widget_set_size_request(m_drawing, 10, 10);
 	gtk_widget_add_events(m_drawing, GDK_BUTTON_PRESS_MASK | GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK);
 
-	g_signal_connect_slot(m_drawing, "button-press-event", &ResizerWidget::on_button_press_event, this);
-	g_signal_connect_slot(m_drawing, "enter-notify-event", &ResizerWidget::on_enter_notify_event, this);
-	g_signal_connect_slot(m_drawing, "leave-notify-event", &ResizerWidget::on_leave_notify_event, this);
-	g_signal_connect_slot(m_drawing, "draw", &ResizerWidget::on_draw_event, this);
+	g_signal_connect_slot(m_drawing, "button-press-event", &ResizeGrip::on_button_press_event, this);
+	g_signal_connect_slot(m_drawing, "enter-notify-event", &ResizeGrip::on_enter_notify_event, this);
+	g_signal_connect_slot(m_drawing, "leave-notify-event", &ResizeGrip::on_leave_notify_event, this);
+	g_signal_connect_slot(m_drawing, "draw", &ResizeGrip::on_draw_event, this);
 
 	set_corner(TopRight);
 }
 
 //-----------------------------------------------------------------------------
 
-ResizerWidget::~ResizerWidget()
+ResizeGrip::~ResizeGrip()
 {
 	if (m_cursor)
 	{
@@ -55,7 +55,7 @@ ResizerWidget::~ResizerWidget()
 
 //-----------------------------------------------------------------------------
 
-void ResizerWidget::set_corner(Corner corner)
+void ResizeGrip::set_corner(Corner corner)
 {
 	GdkCursorType type;
 	switch (corner)
@@ -100,7 +100,7 @@ void ResizerWidget::set_corner(Corner corner)
 
 //-----------------------------------------------------------------------------
 
-gboolean ResizerWidget::on_button_press_event(GtkWidget*, GdkEvent* event)
+gboolean ResizeGrip::on_button_press_event(GtkWidget*, GdkEvent* event)
 {
 	GdkEventButton* event_button = reinterpret_cast<GdkEventButton*>(event);
 	gtk_window_begin_resize_drag(m_window,
@@ -114,7 +114,7 @@ gboolean ResizerWidget::on_button_press_event(GtkWidget*, GdkEvent* event)
 
 //-----------------------------------------------------------------------------
 
-gboolean ResizerWidget::on_enter_notify_event(GtkWidget* widget, GdkEvent*)
+gboolean ResizeGrip::on_enter_notify_event(GtkWidget* widget, GdkEvent*)
 {
 	GdkWindow* window = gtk_widget_get_window(widget);
 	gdk_window_set_cursor(window, m_cursor);
@@ -123,7 +123,7 @@ gboolean ResizerWidget::on_enter_notify_event(GtkWidget* widget, GdkEvent*)
 
 //-----------------------------------------------------------------------------
 
-gboolean ResizerWidget::on_leave_notify_event(GtkWidget* widget, GdkEvent*)
+gboolean ResizeGrip::on_leave_notify_event(GtkWidget* widget, GdkEvent*)
 {
 	GdkWindow* window = gtk_widget_get_window(widget);
 	gdk_window_set_cursor(window, nullptr);
@@ -132,7 +132,7 @@ gboolean ResizerWidget::on_leave_notify_event(GtkWidget* widget, GdkEvent*)
 
 //-----------------------------------------------------------------------------
 
-gboolean ResizerWidget::on_draw_event(GtkWidget* widget, cairo_t* cr)
+gboolean ResizeGrip::on_draw_event(GtkWidget* widget, cairo_t* cr)
 {
 	GdkRGBA color;
 	GtkStyleContext* context = gtk_widget_get_style_context(widget);

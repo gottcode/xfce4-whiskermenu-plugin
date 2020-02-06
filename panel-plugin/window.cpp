@@ -25,7 +25,7 @@
 #include "plugin.h"
 #include "profile-picture.h"
 #include "recent-page.h"
-#include "resizer-widget.h"
+#include "resize-grip.h"
 #include "search-page.h"
 #include "settings.h"
 #include "slot.h"
@@ -141,7 +141,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 		m_command_slots[i] = g_signal_connect_slot<GtkButton*>(m_commands_button[i], "clicked", &Window::hide, this);
 	}
 
-	m_resizer = new ResizerWidget(m_window);
+	m_resizer = new ResizeGrip(m_window);
 
 	// Create search entry
 	m_search_entry = GTK_ENTRY(gtk_search_entry_new());
@@ -459,22 +459,22 @@ void WhiskerMenu::Window::show(const Position position)
 	{
 		if (layout_bottom)
 		{
-			m_resizer->set_corner(ResizerWidget::TopRight);
+			m_resizer->set_corner(ResizeGrip::TopRight);
 		}
 		else
 		{
-			m_resizer->set_corner(ResizerWidget::BottomRight);
+			m_resizer->set_corner(ResizeGrip::BottomRight);
 		}
 	}
 	else
 	{
 		if (layout_bottom)
 		{
-			m_resizer->set_corner(ResizerWidget::TopLeft);
+			m_resizer->set_corner(ResizeGrip::TopLeft);
 		}
 		else
 		{
-			m_resizer->set_corner(ResizerWidget::BottomLeft);
+			m_resizer->set_corner(ResizeGrip::BottomLeft);
 		}
 	}
 

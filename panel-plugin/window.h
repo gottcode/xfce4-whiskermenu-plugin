@@ -31,7 +31,7 @@ class FavoritesPage;
 class Page;
 class Plugin;
 class ProfilePicture;
-class ResizerWidget;
+class ResizeGrip;
 class RecentPage;
 class SearchPage;
 
@@ -130,7 +130,7 @@ private:
 
 	ProfilePicture* m_profilepic;
 	GtkLabel* m_username;
-	ResizerWidget* m_resizer;
+	ResizeGrip* m_resizer;
 
 	GtkWidget* m_commands_spacer;
 	GtkWidget* m_commands_button[9];
