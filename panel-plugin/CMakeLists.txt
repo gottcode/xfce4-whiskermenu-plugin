@@ -11,7 +11,6 @@ add_library(whiskermenu MODULE
 	category.cpp
 	command.cpp
 	command-edit.cpp
-	configuration-dialog.cpp
 	element.cpp
 	favorites-page.cpp
 	icon-renderer.cpp
@@ -32,6 +31,7 @@ add_library(whiskermenu MODULE
 	search-page.cpp
 	section-button.cpp
 	settings.cpp
+	settings-dialog.cpp
 	slot.h
 	window.cpp)
 

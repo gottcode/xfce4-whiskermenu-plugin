@@ -15,7 +15,7 @@
  * along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "configuration-dialog.h"
+#include "settings-dialog.h"
 
 #include "command.h"
 #include "command-edit.h"
@@ -50,9 +50,9 @@ enum
 
 //-----------------------------------------------------------------------------
 
-static void configuration_dialog_free(GtkWidget*, gpointer user_data)
+static void settings_dialog_free(GtkWidget*, gpointer user_data)
 {
-	delete static_cast<ConfigurationDialog*>(user_data);
+	delete static_cast<SettingsDialog*>(user_data);
 }
 
 //-----------------------------------------------------------------------------
@@ -80,7 +80,7 @@ static GtkWidget* make_aligned_frame(const gchar* text, GtkWidget* content)
 
 //-----------------------------------------------------------------------------
 
-ConfigurationDialog::ConfigurationDialog(Plugin* plugin) :
+SettingsDialog::SettingsDialog(Plugin* plugin) :
 	m_plugin(plugin)
 {
 	// Create dialog window
@@ -107,8 +107,8 @@ ConfigurationDialog::ConfigurationDialog(Plugin* plugin) :
 #endif
 	gtk_window_set_icon_name(GTK_WINDOW(m_window), "xfce4-whiskermenu");
 	gtk_window_set_position(GTK_WINDOW(m_window), GTK_WIN_POS_CENTER);
-	g_signal_connect_slot(m_window, "response", &ConfigurationDialog::response, this);
-	g_signal_connect(m_window, "destroy", G_CALLBACK(&configuration_dialog_free), this);
+	g_signal_connect_slot(m_window, "response", &SettingsDialog::response, this);
+	g_signal_connect(m_window, "destroy", G_CALLBACK(&settings_dialog_free), this);
 
 	// Create tabs
 	GtkNotebook* notebook = GTK_NOTEBOOK(gtk_notebook_new());
@@ -133,7 +133,7 @@ ConfigurationDialog::ConfigurationDialog(Plugin* plugin) :
 
 //-----------------------------------------------------------------------------
 
-ConfigurationDialog::~ConfigurationDialog()
+SettingsDialog::~SettingsDialog()
 {
 	for (auto command : m_commands)
 	{
@@ -147,7 +147,7 @@ ConfigurationDialog::~ConfigurationDialog()
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::toggle_show_as_icons(GtkToggleButton *button)
+void SettingsDialog::toggle_show_as_icons(GtkToggleButton *button)
 {
 	if (gtk_toggle_button_get_active(button))
 	{
@@ -162,7 +162,7 @@ void ConfigurationDialog::toggle_show_as_icons(GtkToggleButton *button)
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::toggle_show_as_list(GtkToggleButton *button)
+void SettingsDialog::toggle_show_as_list(GtkToggleButton *button)
 {
 	if (gtk_toggle_button_get_active(button))
 	{
@@ -177,7 +177,7 @@ void ConfigurationDialog::toggle_show_as_list(GtkToggleButton *button)
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::toggle_show_as_tree(GtkToggleButton* button)
+void SettingsDialog::toggle_show_as_tree(GtkToggleButton* button)
 {
 	if (gtk_toggle_button_get_active(button))
 	{
@@ -192,7 +192,7 @@ void ConfigurationDialog::toggle_show_as_tree(GtkToggleButton* button)
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::toggle_show_generic_name(GtkToggleButton* button)
+void SettingsDialog::toggle_show_generic_name(GtkToggleButton* button)
 {
 	wm_settings->launcher_show_name = !gtk_toggle_button_get_active(button);
 	wm_settings->set_modified();
@@ -201,7 +201,7 @@ void ConfigurationDialog::toggle_show_generic_name(GtkToggleButton* button)
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::toggle_show_category_name(GtkToggleButton* button)
+void SettingsDialog::toggle_show_category_name(GtkToggleButton* button)
 {
 	wm_settings->category_show_name = gtk_toggle_button_get_active(button);
 	wm_settings->set_modified();
@@ -209,7 +209,7 @@ void ConfigurationDialog::toggle_show_category_name(GtkToggleButton* button)
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::toggle_show_description(GtkToggleButton* button)
+void SettingsDialog::toggle_show_description(GtkToggleButton* button)
 {
 	wm_settings->launcher_show_description = gtk_toggle_button_get_active(button);
 	wm_settings->set_modified();
@@ -218,7 +218,7 @@ void ConfigurationDialog::toggle_show_description(GtkToggleButton* button)
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::toggle_show_tooltip(GtkToggleButton* button)
+void SettingsDialog::toggle_show_tooltip(GtkToggleButton* button)
 {
 	wm_settings->launcher_show_tooltip = gtk_toggle_button_get_active(button);
 	wm_settings->set_modified();
@@ -226,7 +226,7 @@ void ConfigurationDialog::toggle_show_tooltip(GtkToggleButton* button)
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::toggle_position_categories_alternate(GtkToggleButton* button)
+void SettingsDialog::toggle_position_categories_alternate(GtkToggleButton* button)
 {
 	wm_settings->position_categories_alternate = gtk_toggle_button_get_active(button);
 	wm_settings->set_modified();
@@ -234,7 +234,7 @@ void ConfigurationDialog::toggle_position_categories_alternate(GtkToggleButton* 
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::toggle_position_search_alternate(GtkToggleButton* button)
+void SettingsDialog::toggle_position_search_alternate(GtkToggleButton* button)
 {
 	wm_settings->position_search_alternate = gtk_toggle_button_get_active(button);
 	wm_settings->set_modified();
@@ -242,7 +242,7 @@ void ConfigurationDialog::toggle_position_search_alternate(GtkToggleButton* butt
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::toggle_position_commands_alternate(GtkToggleButton* button)
+void SettingsDialog::toggle_position_commands_alternate(GtkToggleButton* button)
 {
 	wm_settings->position_commands_alternate = gtk_toggle_button_get_active(button);
 	wm_settings->set_modified();
@@ -250,7 +250,7 @@ void ConfigurationDialog::toggle_position_commands_alternate(GtkToggleButton* bu
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::category_icon_size_changed(GtkComboBox* combo)
+void SettingsDialog::category_icon_size_changed(GtkComboBox* combo)
 {
 	wm_settings->category_icon_size = gtk_combo_box_get_active(combo) - 1;
 	wm_settings->set_modified();
@@ -265,7 +265,7 @@ void ConfigurationDialog::category_icon_size_changed(GtkComboBox* combo)
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::item_icon_size_changed(GtkComboBox* combo)
+void SettingsDialog::item_icon_size_changed(GtkComboBox* combo)
 {
 	wm_settings->launcher_icon_size = gtk_combo_box_get_active(combo) - 1;
 	wm_settings->set_modified();
@@ -273,7 +273,7 @@ void ConfigurationDialog::item_icon_size_changed(GtkComboBox* combo)
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::background_opacity_changed(GtkRange* range)
+void SettingsDialog::background_opacity_changed(GtkRange* range)
 {
 	wm_settings->menu_opacity = gtk_range_get_value(range);
 	wm_settings->set_modified();
@@ -281,7 +281,7 @@ void ConfigurationDialog::background_opacity_changed(GtkRange* range)
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::style_changed(GtkComboBox* combo)
+void SettingsDialog::style_changed(GtkComboBox* combo)
 {
 	m_plugin->set_button_style(Plugin::ButtonStyle(gtk_combo_box_get_active(combo) + 1));
 	gtk_widget_set_sensitive(m_button_single_row, gtk_combo_box_get_active(combo) == 0);
@@ -289,7 +289,7 @@ void ConfigurationDialog::style_changed(GtkComboBox* combo)
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::title_changed(GtkEditable* editable)
+void SettingsDialog::title_changed(GtkEditable* editable)
 {
 	const gchar* text = gtk_entry_get_text(GTK_ENTRY(editable));
 	m_plugin->set_button_title(text ? text : "");
@@ -297,7 +297,7 @@ void ConfigurationDialog::title_changed(GtkEditable* editable)
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::choose_icon()
+void SettingsDialog::choose_icon()
 {
 	GtkWidget* chooser = exo_icon_chooser_dialog_new(_("Select An Icon"),
 			GTK_WINDOW(m_window),
@@ -321,7 +321,7 @@ void ConfigurationDialog::choose_icon()
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::toggle_button_single_row(GtkToggleButton* button)
+void SettingsDialog::toggle_button_single_row(GtkToggleButton* button)
 {
 	wm_settings->button_single_row = gtk_toggle_button_get_active(button);
 	m_plugin->set_button_style(Plugin::ButtonStyle(gtk_combo_box_get_active(GTK_COMBO_BOX(m_button_style)) + 1));
@@ -329,7 +329,7 @@ void ConfigurationDialog::toggle_button_single_row(GtkToggleButton* button)
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::toggle_hover_switch_category(GtkToggleButton* button)
+void SettingsDialog::toggle_hover_switch_category(GtkToggleButton* button)
 {
 	wm_settings->category_hover_activate = gtk_toggle_button_get_active(button);
 	wm_settings->set_modified();
@@ -337,7 +337,7 @@ void ConfigurationDialog::toggle_hover_switch_category(GtkToggleButton* button)
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::toggle_stay_on_focus_out(GtkToggleButton* button)
+void SettingsDialog::toggle_stay_on_focus_out(GtkToggleButton* button)
 {
 	wm_settings->stay_on_focus_out = gtk_toggle_button_get_active(button);
 	wm_settings->set_modified();
@@ -345,7 +345,7 @@ void ConfigurationDialog::toggle_stay_on_focus_out(GtkToggleButton* button)
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::recent_items_max_changed(GtkSpinButton* button)
+void SettingsDialog::recent_items_max_changed(GtkSpinButton* button)
 {
 	wm_settings->recent_items_max = gtk_spin_button_get_value_as_int(button);
 	wm_settings->set_modified();
@@ -359,7 +359,7 @@ void ConfigurationDialog::recent_items_max_changed(GtkSpinButton* button)
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::toggle_remember_favorites(GtkToggleButton* button)
+void SettingsDialog::toggle_remember_favorites(GtkToggleButton* button)
 {
 	wm_settings->favorites_in_recent = gtk_toggle_button_get_active(button);
 	wm_settings->set_modified();
@@ -367,7 +367,7 @@ void ConfigurationDialog::toggle_remember_favorites(GtkToggleButton* button)
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::toggle_display_recent(GtkToggleButton* button)
+void SettingsDialog::toggle_display_recent(GtkToggleButton* button)
 {
 	wm_settings->display_recent = gtk_toggle_button_get_active(button);
 	wm_settings->set_modified();
@@ -375,7 +375,7 @@ void ConfigurationDialog::toggle_display_recent(GtkToggleButton* button)
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::toggle_confirm_session_command(GtkToggleButton* button)
+void SettingsDialog::toggle_confirm_session_command(GtkToggleButton* button)
 {
 	wm_settings->confirm_session_command = gtk_toggle_button_get_active(button);
 	wm_settings->set_modified();
@@ -383,7 +383,7 @@ void ConfigurationDialog::toggle_confirm_session_command(GtkToggleButton* button
 
 //-----------------------------------------------------------------------------
 
-SearchAction* ConfigurationDialog::get_selected_action(GtkTreeIter* iter) const
+SearchAction* SettingsDialog::get_selected_action(GtkTreeIter* iter) const
 {
 	GtkTreeIter selected_iter;
 	if (!iter)
@@ -403,7 +403,7 @@ SearchAction* ConfigurationDialog::get_selected_action(GtkTreeIter* iter) const
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::action_selected(GtkTreeView*)
+void SettingsDialog::action_selected(GtkTreeView*)
 {
 	SearchAction* action = get_selected_action();
 	if (action)
@@ -417,7 +417,7 @@ void ConfigurationDialog::action_selected(GtkTreeView*)
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::action_name_changed(GtkEditable* editable)
+void SettingsDialog::action_name_changed(GtkEditable* editable)
 {
 	GtkTreeIter iter;
 	SearchAction* action = get_selected_action(&iter);
@@ -431,7 +431,7 @@ void ConfigurationDialog::action_name_changed(GtkEditable* editable)
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::action_pattern_changed(GtkEditable* editable)
+void SettingsDialog::action_pattern_changed(GtkEditable* editable)
 {
 	GtkTreeIter iter;
 	SearchAction* action = get_selected_action(&iter);
@@ -445,7 +445,7 @@ void ConfigurationDialog::action_pattern_changed(GtkEditable* editable)
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::action_command_changed(GtkEditable* editable)
+void SettingsDialog::action_command_changed(GtkEditable* editable)
 {
 	SearchAction* action = get_selected_action();
 	if (action)
@@ -456,7 +456,7 @@ void ConfigurationDialog::action_command_changed(GtkEditable* editable)
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::action_toggle_regex(GtkToggleButton* button)
+void SettingsDialog::action_toggle_regex(GtkToggleButton* button)
 {
 	SearchAction* action = get_selected_action();
 	if (action)
@@ -467,7 +467,7 @@ void ConfigurationDialog::action_toggle_regex(GtkToggleButton* button)
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::add_action(GtkButton*)
+void SettingsDialog::add_action(GtkButton*)
 {
 	// Add to action list
 	SearchAction* action = new SearchAction;
@@ -495,7 +495,7 @@ void ConfigurationDialog::add_action(GtkButton*)
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::remove_action(GtkButton* button)
+void SettingsDialog::remove_action(GtkButton* button)
 {
 	// Fetch action
 	GtkTreeIter iter;
@@ -561,7 +561,7 @@ void ConfigurationDialog::remove_action(GtkButton* button)
 
 //-----------------------------------------------------------------------------
 
-void ConfigurationDialog::response(GtkDialog*, int response_id)
+void SettingsDialog::response(GtkDialog*, int response_id)
 {
 	if (response_id == GTK_RESPONSE_HELP)
 	{
@@ -593,7 +593,7 @@ void ConfigurationDialog::response(GtkDialog*, int response_id)
 
 //-----------------------------------------------------------------------------
 
-GtkWidget* ConfigurationDialog::init_appearance_tab()
+GtkWidget* SettingsDialog::init_appearance_tab()
 {
 	// Create appearance page
 	GtkGrid* page = GTK_GRID(gtk_grid_new());
@@ -674,9 +674,9 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	{
 		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_as_list), true);
 	}
-	g_signal_connect_slot(m_show_as_icons, "toggled", &ConfigurationDialog::toggle_show_as_icons, this);
-	g_signal_connect_slot(m_show_as_list, "toggled", &ConfigurationDialog::toggle_show_as_list, this);
-	g_signal_connect_slot(m_show_as_tree, "toggled", &ConfigurationDialog::toggle_show_as_tree, this);
+	g_signal_connect_slot(m_show_as_icons, "toggled", &SettingsDialog::toggle_show_as_icons, this);
+	g_signal_connect_slot(m_show_as_list, "toggled", &SettingsDialog::toggle_show_as_list, this);
+	g_signal_connect_slot(m_show_as_tree, "toggled", &SettingsDialog::toggle_show_as_tree, this);
 
 	// Add space beneath options
 	gtk_widget_set_margin_bottom(GTK_WIDGET(display_box), 12);
@@ -686,27 +686,27 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	m_show_generic_names = gtk_check_button_new_with_mnemonic(_("Show generic application _names"));
 	gtk_grid_attach(page, m_show_generic_names, 0, 1, 2, 1);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_generic_names), !wm_settings->launcher_show_name);
-	g_signal_connect_slot(m_show_generic_names, "toggled", &ConfigurationDialog::toggle_show_generic_name, this);
+	g_signal_connect_slot(m_show_generic_names, "toggled", &SettingsDialog::toggle_show_generic_name, this);
 
 	// Add option to hide category names
 	m_show_category_names = gtk_check_button_new_with_mnemonic(_("Show cate_gory names"));
 	gtk_grid_attach(page, m_show_category_names, 0, 2, 2, 1);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_category_names), wm_settings->category_show_name);
 	gtk_widget_set_sensitive(m_show_category_names, wm_settings->category_icon_size != -1);
-	g_signal_connect_slot(m_show_category_names, "toggled", &ConfigurationDialog::toggle_show_category_name, this);
+	g_signal_connect_slot(m_show_category_names, "toggled", &SettingsDialog::toggle_show_category_name, this);
 
 	// Add option to hide tooltips
 	m_show_tooltips = gtk_check_button_new_with_mnemonic(_("Show application too_ltips"));
 	gtk_grid_attach(page, m_show_tooltips, 0, 3, 2, 1);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_tooltips), wm_settings->launcher_show_tooltip);
-	g_signal_connect_slot(m_show_tooltips, "toggled", &ConfigurationDialog::toggle_show_tooltip, this);
+	g_signal_connect_slot(m_show_tooltips, "toggled", &SettingsDialog::toggle_show_tooltip, this);
 
 	// Add option to hide descriptions
 	m_show_descriptions = gtk_check_button_new_with_mnemonic(_("Show application _descriptions"));
 	gtk_grid_attach(page, m_show_descriptions, 0, 4, 2, 1);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_descriptions), wm_settings->launcher_show_description);
 	gtk_widget_set_sensitive(m_show_descriptions, !wm_settings->view_as_icons);
-	g_signal_connect_slot(m_show_descriptions, "toggled", &ConfigurationDialog::toggle_show_description, this);
+	g_signal_connect_slot(m_show_descriptions, "toggled", &SettingsDialog::toggle_show_description, this);
 
 	// Add space beneath options
 	gtk_widget_set_margin_bottom(m_show_descriptions, 12);
@@ -716,19 +716,19 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	m_position_categories_alternate = gtk_check_button_new_with_mnemonic(_("Position cate_gories next to panel button"));
 	gtk_grid_attach(page, m_position_categories_alternate, 0, 5, 2, 1);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_categories_alternate), wm_settings->position_categories_alternate);
-	g_signal_connect_slot(m_position_categories_alternate, "toggled", &ConfigurationDialog::toggle_position_categories_alternate, this);
+	g_signal_connect_slot(m_position_categories_alternate, "toggled", &SettingsDialog::toggle_position_categories_alternate, this);
 
 	// Add option to use alternate search entry position
 	m_position_search_alternate = gtk_check_button_new_with_mnemonic(_("Position _search entry next to panel button"));
 	gtk_grid_attach(page, m_position_search_alternate, 0, 6, 2, 1);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_search_alternate), wm_settings->position_search_alternate);
-	g_signal_connect_slot(m_position_search_alternate, "toggled", &ConfigurationDialog::toggle_position_search_alternate, this);
+	g_signal_connect_slot(m_position_search_alternate, "toggled", &SettingsDialog::toggle_position_search_alternate, this);
 
 	// Add option to use alternate commands position
 	m_position_commands_alternate = gtk_check_button_new_with_mnemonic(_("Position commands next to search _entry"));
 	gtk_grid_attach(page, m_position_commands_alternate, 0, 7, 2, 1);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_commands_alternate), wm_settings->position_commands_alternate);
-	g_signal_connect_slot(m_position_commands_alternate, "toggled", &ConfigurationDialog::toggle_position_commands_alternate, this);
+	g_signal_connect_slot(m_position_commands_alternate, "toggled", &SettingsDialog::toggle_position_commands_alternate, this);
 
 	// Add space beneath options
 	gtk_widget_set_margin_bottom(m_position_commands_alternate, 12);
@@ -750,7 +750,7 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	gtk_combo_box_set_active(GTK_COMBO_BOX(m_item_icon_size), wm_settings->launcher_icon_size + 1);
 	gtk_grid_attach(page, m_item_icon_size, 1, 8, 1, 1);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_item_icon_size);
-	g_signal_connect_slot(m_item_icon_size, "changed", &ConfigurationDialog::item_icon_size_changed, this);
+	g_signal_connect_slot(m_item_icon_size, "changed", &SettingsDialog::item_icon_size_changed, this);
 
 	// Add category icon size selector
 	label = gtk_label_new_with_mnemonic(_("Categ_ory icon size:"));
@@ -767,7 +767,7 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	gtk_combo_box_set_active(GTK_COMBO_BOX(m_category_icon_size), wm_settings->category_icon_size + 1);
 	gtk_grid_attach(page, m_category_icon_size, 1, 9, 1, 1);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_category_icon_size);
-	g_signal_connect_slot(m_category_icon_size, "changed", &ConfigurationDialog::category_icon_size_changed, this);
+	g_signal_connect_slot(m_category_icon_size, "changed", &SettingsDialog::category_icon_size_changed, this);
 
 	// Add space beneath options
 	gtk_widget_set_margin_bottom(label, 12);
@@ -784,7 +784,7 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 	gtk_grid_attach(page, m_background_opacity, 1, 10, 1, 1);
 	gtk_scale_set_value_pos(GTK_SCALE(m_background_opacity), GTK_POS_RIGHT);
 	gtk_range_set_value(GTK_RANGE(m_background_opacity), wm_settings->menu_opacity);
-	g_signal_connect_slot(m_background_opacity, "value-changed", &ConfigurationDialog::background_opacity_changed, this);
+	g_signal_connect_slot(m_background_opacity, "value-changed", &SettingsDialog::background_opacity_changed, this);
 
 	GdkScreen* screen = gtk_widget_get_screen(m_window);
 	const bool enabled = gdk_screen_is_composited(screen);
@@ -796,7 +796,7 @@ GtkWidget* ConfigurationDialog::init_appearance_tab()
 
 //-----------------------------------------------------------------------------
 
-GtkWidget* ConfigurationDialog::init_panel_button_tab()
+GtkWidget* SettingsDialog::init_panel_button_tab()
 {
 	// Create panel button page
 	GtkGrid* page = GTK_GRID(gtk_grid_new());
@@ -818,7 +818,7 @@ GtkWidget* ConfigurationDialog::init_panel_button_tab()
 	gtk_widget_set_hexpand(m_button_style, false);
 	gtk_grid_attach(page, m_button_style, 1, 0, 1, 1);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_button_style);
-	g_signal_connect_slot(m_button_style, "changed", &ConfigurationDialog::style_changed, this);
+	g_signal_connect_slot(m_button_style, "changed", &SettingsDialog::style_changed, this);
 
 	// Add title selector
 	label = gtk_label_new_with_mnemonic(_("_Title:"));
@@ -830,7 +830,7 @@ GtkWidget* ConfigurationDialog::init_panel_button_tab()
 	gtk_widget_set_hexpand(m_title, true);
 	gtk_grid_attach(page, m_title, 1, 1, 1, 1);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_title);
-	g_signal_connect_slot(m_title, "changed", &ConfigurationDialog::title_changed, this);
+	g_signal_connect_slot(m_title, "changed", &SettingsDialog::title_changed, this);
 
 	// Add icon selector
 	label = gtk_label_new_with_mnemonic(_("_Icon:"));
@@ -840,7 +840,7 @@ GtkWidget* ConfigurationDialog::init_panel_button_tab()
 	m_icon_button = gtk_button_new();
 	gtk_widget_set_halign(m_icon_button, GTK_ALIGN_START);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_icon_button);
-	g_signal_connect_slot<GtkButton*>(m_icon_button, "clicked", &ConfigurationDialog::choose_icon, this);
+	g_signal_connect_slot<GtkButton*>(m_icon_button, "clicked", &SettingsDialog::choose_icon, this);
 	gtk_grid_attach(page, m_icon_button, 1, 2, 1, 1);
 
 	m_icon = gtk_image_new_from_icon_name(m_plugin->get_button_icon_name().c_str(), GTK_ICON_SIZE_DIALOG);
@@ -850,7 +850,7 @@ GtkWidget* ConfigurationDialog::init_panel_button_tab()
 	gtk_grid_attach(page, m_button_single_row, 1, 3, 1, 1);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_button_single_row), wm_settings->button_single_row);
 	gtk_widget_set_sensitive(m_button_single_row, gtk_combo_box_get_active(GTK_COMBO_BOX (m_button_style)) == 0);
-	g_signal_connect_slot(m_button_single_row, "toggled", &ConfigurationDialog::toggle_button_single_row, this);
+	g_signal_connect_slot(m_button_single_row, "toggled", &SettingsDialog::toggle_button_single_row, this);
 	gtk_widget_show(m_button_single_row);
 
 	return GTK_WIDGET(page);
@@ -858,7 +858,7 @@ GtkWidget* ConfigurationDialog::init_panel_button_tab()
 
 //-----------------------------------------------------------------------------
 
-GtkWidget* ConfigurationDialog::init_behavior_tab()
+GtkWidget* SettingsDialog::init_behavior_tab()
 {
 	// Create behavior page
 	GtkBox* page = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 18));
@@ -874,13 +874,13 @@ GtkWidget* ConfigurationDialog::init_behavior_tab()
 	m_hover_switch_category = gtk_check_button_new_with_mnemonic(_("Switch categories by _hovering"));
 	gtk_box_pack_start(behavior_vbox, m_hover_switch_category, true, true, 0);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_hover_switch_category), wm_settings->category_hover_activate);
-	g_signal_connect_slot(m_hover_switch_category, "toggled", &ConfigurationDialog::toggle_hover_switch_category, this);
+	g_signal_connect_slot(m_hover_switch_category, "toggled", &SettingsDialog::toggle_hover_switch_category, this);
 
 	// Add option to stay when menu loses focus
 	m_stay_on_focus_out = gtk_check_button_new_with_mnemonic(_("Stay _visible when focus is lost"));
 	gtk_box_pack_start(behavior_vbox, m_stay_on_focus_out, true, true, 0);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_stay_on_focus_out), wm_settings->stay_on_focus_out);
-	g_signal_connect_slot(m_stay_on_focus_out, "toggled", &ConfigurationDialog::toggle_stay_on_focus_out, this);
+	g_signal_connect_slot(m_stay_on_focus_out, "toggled", &SettingsDialog::toggle_stay_on_focus_out, this);
 
 
 	// Create recently used section
@@ -900,20 +900,20 @@ GtkWidget* ConfigurationDialog::init_behavior_tab()
 	gtk_grid_attach(recent_table, m_recent_items_max, 1, 0, 1, 1);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_recent_items_max);
 	gtk_spin_button_set_value(GTK_SPIN_BUTTON(m_recent_items_max), wm_settings->recent_items_max);
-	g_signal_connect_slot(m_recent_items_max, "value-changed", &ConfigurationDialog::recent_items_max_changed, this);
+	g_signal_connect_slot(m_recent_items_max, "value-changed", &SettingsDialog::recent_items_max_changed, this);
 
 	// Add option to remember favorites
 	m_remember_favorites = gtk_check_button_new_with_mnemonic(_("Include _favorites"));
 	gtk_grid_attach(recent_table, m_remember_favorites, 0, 1, 2, 1);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_remember_favorites), wm_settings->favorites_in_recent);
-	g_signal_connect_slot(m_remember_favorites, "toggled", &ConfigurationDialog::toggle_remember_favorites, this);
+	g_signal_connect_slot(m_remember_favorites, "toggled", &SettingsDialog::toggle_remember_favorites, this);
 
 	// Add option to display recently used
 	m_display_recent = gtk_check_button_new_with_mnemonic(_("Display by _default"));
 	gtk_grid_attach(recent_table, m_display_recent, 0, 2, 2, 1);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_display_recent), wm_settings->display_recent);
 	gtk_widget_set_sensitive(GTK_WIDGET(m_display_recent), wm_settings->recent_items_max);
-	g_signal_connect_slot(m_display_recent, "toggled", &ConfigurationDialog::toggle_display_recent, this);
+	g_signal_connect_slot(m_display_recent, "toggled", &SettingsDialog::toggle_display_recent, this);
 
 
 	// Create command buttons section
@@ -925,14 +925,14 @@ GtkWidget* ConfigurationDialog::init_behavior_tab()
 	m_confirm_session_command = gtk_check_button_new_with_mnemonic(_("Show c_onfirmation dialog"));
 	gtk_box_pack_start(command_vbox, m_confirm_session_command, true, true, 0);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_confirm_session_command), wm_settings->confirm_session_command);
-	g_signal_connect_slot(m_confirm_session_command, "toggled", &ConfigurationDialog::toggle_confirm_session_command, this);
+	g_signal_connect_slot(m_confirm_session_command, "toggled", &SettingsDialog::toggle_confirm_session_command, this);
 
 	return GTK_WIDGET(page);
 }
 
 //-----------------------------------------------------------------------------
 
-GtkWidget* ConfigurationDialog::init_commands_tab()
+GtkWidget* SettingsDialog::init_commands_tab()
 {
 	// Create commands page
 	GtkBox* page = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 6));
@@ -952,7 +952,7 @@ GtkWidget* ConfigurationDialog::init_commands_tab()
 
 //-----------------------------------------------------------------------------
 
-GtkWidget* ConfigurationDialog::init_search_actions_tab()
+GtkWidget* SettingsDialog::init_search_actions_tab()
 {
 	// Create search actions page
 	GtkGrid* page = GTK_GRID(gtk_grid_new());
@@ -977,7 +977,7 @@ GtkWidget* ConfigurationDialog::init_search_actions_tab()
 
 	// Create view
 	m_actions_view = GTK_TREE_VIEW(gtk_tree_view_new_with_model(GTK_TREE_MODEL(m_actions_model)));
-	g_signal_connect_slot(m_actions_view, "cursor-changed", &ConfigurationDialog::action_selected, this);
+	g_signal_connect_slot(m_actions_view, "cursor-changed", &SettingsDialog::action_selected, this);
 
 	GtkCellRenderer* renderer = gtk_cell_renderer_text_new();
 	GtkTreeViewColumn* column = gtk_tree_view_column_new_with_attributes(_("Name"),
@@ -1008,7 +1008,7 @@ GtkWidget* ConfigurationDialog::init_search_actions_tab()
 	GtkWidget* image = gtk_image_new_from_icon_name("list-add", GTK_ICON_SIZE_BUTTON);
 	gtk_container_add(GTK_CONTAINER(m_action_add), image);
 	gtk_widget_show(image);
-	g_signal_connect_slot(m_action_add, "clicked", &ConfigurationDialog::add_action, this);
+	g_signal_connect_slot(m_action_add, "clicked", &SettingsDialog::add_action, this);
 
 	m_action_remove = gtk_button_new();
 	gtk_widget_set_tooltip_text(m_action_remove, _("Remove selected action"));
@@ -1017,7 +1017,7 @@ GtkWidget* ConfigurationDialog::init_search_actions_tab()
 	image = gtk_image_new_from_icon_name("list-remove", GTK_ICON_SIZE_BUTTON);
 	gtk_container_add(GTK_CONTAINER(m_action_remove), image);
 	gtk_widget_show(image);
-	g_signal_connect_slot(m_action_remove, "clicked", &ConfigurationDialog::remove_action, this);
+	g_signal_connect_slot(m_action_remove, "clicked", &SettingsDialog::remove_action, this);
 
 	GtkBox* actions_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 6));
 	gtk_widget_set_halign(GTK_WIDGET(actions_box), GTK_ALIGN_START);
@@ -1044,7 +1044,7 @@ GtkWidget* ConfigurationDialog::init_search_actions_tab()
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_action_name);
 	gtk_widget_set_hexpand(m_action_name, true);
 	gtk_grid_attach(details_table, m_action_name, 1, 0, 1, 1);
-	g_signal_connect_slot(m_action_name, "changed", &ConfigurationDialog::action_name_changed, this);
+	g_signal_connect_slot(m_action_name, "changed", &SettingsDialog::action_name_changed, this);
 
 	// Create entry for keyword
 	label = gtk_label_new_with_mnemonic(_("_Pattern:"));
@@ -1056,7 +1056,7 @@ GtkWidget* ConfigurationDialog::init_search_actions_tab()
 	gtk_widget_show(m_action_pattern);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_action_pattern);
 	gtk_grid_attach(details_table, m_action_pattern, 1, 1, 1, 1);
-	g_signal_connect_slot(m_action_pattern, "changed", &ConfigurationDialog::action_pattern_changed, this);
+	g_signal_connect_slot(m_action_pattern, "changed", &SettingsDialog::action_pattern_changed, this);
 
 	// Create entry for command
 	label = gtk_label_new_with_mnemonic(_("C_ommand:"));
@@ -1068,13 +1068,13 @@ GtkWidget* ConfigurationDialog::init_search_actions_tab()
 	gtk_widget_show(m_action_command);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_action_command);
 	gtk_grid_attach(details_table, m_action_command, 1, 2, 1, 1);
-	g_signal_connect_slot(m_action_command, "changed", &ConfigurationDialog::action_command_changed, this);
+	g_signal_connect_slot(m_action_command, "changed", &SettingsDialog::action_command_changed, this);
 
 	// Create toggle button for regular expressions
 	m_action_regex = gtk_check_button_new_with_mnemonic(_("_Regular expression"));
 	gtk_widget_show(m_action_regex);
 	gtk_grid_attach(details_table, m_action_regex, 1, 3, 1, 1);
-	g_signal_connect_slot(m_action_regex, "toggled", &ConfigurationDialog::action_toggle_regex, this);
+	g_signal_connect_slot(m_action_regex, "toggled", &SettingsDialog::action_toggle_regex, this);
 
 	// Select first action
 	if (!wm_settings->search_actions.empty())

@@ -15,8 +15,8 @@
  * along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef WHISKERMENU_CONFIGURATION_DIALOG_H
-#define WHISKERMENU_CONFIGURATION_DIALOG_H
+#ifndef WHISKERMENU_SETTINGS_DIALOG_H
+#define WHISKERMENU_SETTINGS_DIALOG_H
 
 #include <vector>
 
@@ -29,16 +29,16 @@ class CommandEdit;
 class Plugin;
 class SearchAction;
 
-class ConfigurationDialog
+class SettingsDialog
 {
 public:
-	explicit ConfigurationDialog(Plugin* plugin);
-	~ConfigurationDialog();
+	explicit SettingsDialog(Plugin* plugin);
+	~SettingsDialog();
 
-	ConfigurationDialog(const ConfigurationDialog&) = delete;
-	ConfigurationDialog(ConfigurationDialog&&) = delete;
-	ConfigurationDialog& operator=(const ConfigurationDialog&) = delete;
-	ConfigurationDialog& operator=(ConfigurationDialog&&) = delete;
+	SettingsDialog(const SettingsDialog&) = delete;
+	SettingsDialog(SettingsDialog&&) = delete;
+	SettingsDialog& operator=(const SettingsDialog&) = delete;
+	SettingsDialog& operator=(SettingsDialog&&) = delete;
 
 	GtkWidget* get_widget() const
 	{
@@ -143,4 +143,4 @@ private:
 
 }
 
-#endif // WHISKERMENU_CONFIGURATION_DIALOG_H
+#endif // WHISKERMENU_SETTINGS_DIALOG_H

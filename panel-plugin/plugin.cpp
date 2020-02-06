@@ -19,8 +19,8 @@
 
 #include "applications-page.h"
 #include "command.h"
-#include "configuration-dialog.h"
 #include "settings.h"
+#include "settings-dialog.h"
 #include "slot.h"
 #include "window.h"
 
@@ -330,7 +330,7 @@ void Plugin::menu_hidden()
 
 void Plugin::configure()
 {
-	ConfigurationDialog* dialog = new ConfigurationDialog(this);
+	SettingsDialog* dialog = new SettingsDialog(this);
 	g_signal_connect_slot<GtkWidget*>(dialog->get_widget(), "destroy", &Plugin::save, this);
 }
 
