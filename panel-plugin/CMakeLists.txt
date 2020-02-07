@@ -63,16 +63,33 @@ if(ENABLE_VISIBILITY)
 	set_target_properties(whiskermenu PROPERTIES CXX_VISIBILITY_PRESET hidden)
 endif()
 
-if(ENABLE_AS_NEEDED)
-	target_link_options(whiskermenu PRIVATE "LINKER:--as-needed")
-endif()
+if(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.13.0")
+	if(ENABLE_AS_NEEDED)
+		target_link_options(whiskermenu PRIVATE "LINKER:--as-needed")
+	endif()
 
-if(ENABLE_LINKER_OPTIMIZED_HASH_TABLES)
-	target_link_options(whiskermenu PRIVATE "LINKER:-O1")
+	if(ENABLE_LINKER_OPTIMIZED_HASH_TABLES)
+		target_link_options(whiskermenu PRIVATE "LINKER:-O1")
+	endif()
+
+	if(ENABLE_DEVELOPER_MODE)
+		target_link_options(whiskermenu PRIVATE "LINKER:-z,defs")
+	endif()
+else()
+	if(ENABLE_AS_NEEDED)
+		set_property(TARGET whiskermenu APPEND_STRING PROPERTY LINK_FLAGS " -Wl,--as-needed")
+	endif()
+
+	if(ENABLE_LINKER_OPTIMIZED_HASH_TABLES)
+		set_property(TARGET whiskermenu APPEND_STRING PROPERTY LINK_FLAGS " -Wl,-O1")
+	endif()
+
+	if(ENABLE_DEVELOPER_MODE)
+		set_property(TARGET whiskermenu APPEND_STRING PROPERTY LINK_FLAGS " -Wl,-z,defs")
+	endif()
 endif()
 
 if(ENABLE_DEVELOPER_MODE)
-	target_link_options(whiskermenu PRIVATE "LINKER:-z,defs")
 	target_compile_options(whiskermenu PRIVATE -Werror)
 	target_compile_definitions(whiskermenu PRIVATE
 		XFCE_DISABLE_DEPRECATED
