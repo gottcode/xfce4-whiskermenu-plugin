@@ -53,6 +53,13 @@ public:
 		m_items.push_back(launcher);
 	}
 
+	void append_items(const std::vector<Launcher*>& launchers)
+	{
+		unset_model();
+		m_items.reserve(m_items.size() + launchers.size());
+		m_items.insert(m_items.end(), launchers.begin(), launchers.end());
+	}
+
 	Category* append_menu(GarconMenuDirectory* directory);
 
 	void append_separator();

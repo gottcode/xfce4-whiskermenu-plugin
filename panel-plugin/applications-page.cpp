@@ -302,11 +302,7 @@ void ApplicationsPage::load_garcon_menu()
 
 	// Create all items category
 	Category* category = new Category(nullptr);
-	for (const auto& i : m_items)
-	{
-		category->append_item(i.second);
-	}
-	category->sort();
+	category->append_items(find_all());
 	m_categories.insert(m_categories.begin(), category);
 }
 
