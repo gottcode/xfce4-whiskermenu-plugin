@@ -106,20 +106,19 @@ unsigned int Query::match(const std::string& haystack) const
 	}
 
 	// Check if haystack contains query as characters
-	bool characters_start_words = true;
 	bool start_word = true;
-	bool started = false;
+	const gchar* query_startwords_string = m_query.c_str();
 	const gchar* query_string = m_query.c_str();
 	for (const gchar* pos = haystack.c_str(); *pos; pos = g_utf8_next_char(pos))
 	{
 		gunichar c = g_utf8_get_char(pos);
-		if (c == g_utf8_get_char(query_string))
+
+		if (start_word)
 		{
-			if (start_word || started)
+			// Check if individual letters of query start words in haystack
+			if (c == g_utf8_get_char(query_startwords_string))
 			{
-				characters_start_words &= start_word;
-				query_string = g_utf8_next_char(query_string);
-				started = true;
+				query_startwords_string = g_utf8_next_char(query_startwords_string);
 			}
 			start_word = false;
 		}
@@ -127,18 +126,23 @@ unsigned int Query::match(const std::string& haystack) const
 		{
 			start_word = true;
 		}
-		else
+
+		// Check if individual letters of query are in haystack
+		if (c == g_utf8_get_char(query_string))
 		{
-			start_word = false;
+			query_string = g_utf8_next_char(query_string);
 		}
 	}
-	unsigned int result = UINT_MAX;
-	if (*query_string == 0)
+	if (!*query_startwords_string)
 	{
-		result = characters_start_words ? 0x100 : 0x200;
+		return 0x100;
+	}
+	if (!*query_string)
+	{
+		return 0x200;
 	}
 
-	return result;
+	return UINT_MAX;
 }
 
 //-----------------------------------------------------------------------------
