@@ -122,6 +122,7 @@ std::vector<Launcher*> ApplicationsPage::find_all() const
 	{
 		launchers.push_back(i.second);
 	}
+	std::sort(launchers.begin(), launchers.end(), &Element::less_than);
 	return launchers;
 }
 
