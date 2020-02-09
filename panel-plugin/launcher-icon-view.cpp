@@ -36,6 +36,7 @@ LauncherIconView::LauncherIconView() :
 
 	m_icon_renderer = whiskermenu_icon_renderer_new();
 	g_object_set(m_icon_renderer,
+			"stretch", true,
 			"xalign", 0.5,
 			"yalign", 1.0,
 			nullptr);
@@ -235,49 +236,28 @@ void LauncherIconView::reload_icon_size()
 
 	// Adjust item size
 	int padding = 2;
-	int width = 88;
 	switch (wm_settings->launcher_icon_size)
 	{
 	case IconSize::Smallest:
-		padding = 2;
-		width = 88;
-		break;
-
 	case IconSize::Smaller:
 		padding = 2;
-		width =  92;
 		break;
 
 	case IconSize::Small:
-		padding = 4;
-		width = 100;
-		break;
-
 	case IconSize::Normal:
-		padding = 4;
-		width = 108;
-		break;
-
 	case IconSize::Large:
 		padding = 4;
-		width = 116;
 		break;
 
 	case IconSize::Larger:
-		padding = 6;
-		width = 136;
-		break;
-
 	case IconSize::Largest:
 		padding = 6;
-		width = 152;
 		break;
 
 	default:
 		break;
 	}
 	gtk_icon_view_set_item_padding(m_view, padding);
-	gtk_icon_view_set_item_width(m_view, width);
 }
 
 //-----------------------------------------------------------------------------

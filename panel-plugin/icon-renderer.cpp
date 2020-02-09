@@ -28,6 +28,7 @@ struct _WhiskerMenuIconRenderer
 	gpointer launcher;
 	GIcon* gicon;
 	gint size;
+	bool stretch;
 };
 
 #define WHISKERMENU_TYPE_ICON_RENDERER whiskermenu_icon_renderer_get_type()
@@ -41,6 +42,7 @@ enum
 	PROP_LAUNCHER,
 	PROP_GICON,
 	PROP_SIZE,
+	PROP_STRETCH
 };
 
 //-----------------------------------------------------------------------------
@@ -53,13 +55,18 @@ static void whiskermenu_icon_renderer_get_preferred_width(GtkCellRenderer* rende
 	gtk_cell_renderer_get_padding(renderer, &pad, nullptr);
 	gint width = (pad * 2) + icon_renderer->size;
 
+	if (icon_renderer->stretch)
+	{
+		width += 76 - (icon_renderer->size / 2);
+	}
+	else if (natural)
+	{
+		*natural = width;
+	}
+
 	if (minimum)
 	{
 		*minimum = width;
-	}
-	if (natural)
-	{
-		*natural = width;
 	}
 }
 
@@ -174,6 +181,10 @@ static void whiskermenu_icon_renderer_get_property(GObject* object, guint prop_i
 		g_value_set_int(value, icon_renderer->size);
 		break;
 
+	case PROP_STRETCH:
+		g_value_set_boolean(value, icon_renderer->stretch);
+		break;
+
 	default:
 		G_OBJECT_WARN_INVALID_PROPERTY_ID(object, prop_id, pspec);
 		break;
@@ -202,6 +213,10 @@ static void whiskermenu_icon_renderer_set_property(GObject* object, guint prop_i
 
 	case PROP_SIZE:
 		icon_renderer->size = g_value_get_int(value);
+		break;
+
+	case PROP_STRETCH:
+		icon_renderer->stretch = g_value_get_boolean(value);
 		break;
 
 	default:
@@ -253,6 +268,12 @@ static void whiskermenu_icon_renderer_class_init(WhiskerMenuIconRendererClass* k
 			PROP_SIZE,
 			g_param_spec_int("size", "size", "size",
 					1, G_MAXINT, 48,
+					GParamFlags(G_PARAM_CONSTRUCT | G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS)));
+
+	g_object_class_install_property(gobject_class,
+			PROP_STRETCH,
+			g_param_spec_boolean("stretch", "stretch", "stretch",
+					false,
 					GParamFlags(G_PARAM_CONSTRUCT | G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS)));
 }
 
