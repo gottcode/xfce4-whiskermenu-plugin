@@ -45,51 +45,41 @@ enum
 
 //-----------------------------------------------------------------------------
 
-static void whiskermenu_icon_renderer_get_size(GtkCellRenderer* renderer, GtkWidget* widget,
-		const GdkRectangle* cell_area, gint* x_offset, gint* y_offset, gint* width, gint* height)
+static void whiskermenu_icon_renderer_get_preferred_width(GtkCellRenderer* renderer, GtkWidget*, gint* minimum, gint* natural)
 {
 	WhiskerMenuIconRenderer* icon_renderer = WHISKERMENU_ICON_RENDERER(renderer);
 
-	gint xpad, ypad;
-	gtk_cell_renderer_get_padding(renderer, &xpad, &ypad);
-	gint calc_width  = xpad * 2 + icon_renderer->size;
-	gint calc_height = ypad * 2 + icon_renderer->size;
+	gint pad;
+	gtk_cell_renderer_get_padding(renderer, &pad, nullptr);
+	gint width = (pad * 2) + icon_renderer->size;
 
-	if (cell_area)
+	if (minimum)
 	{
-		gfloat xalign, yalign;
-		gtk_cell_renderer_get_alignment(renderer, &xalign, &yalign);
-		if (x_offset)
-		{
-			*x_offset = (((gtk_widget_get_direction(widget) == GTK_TEXT_DIR_RTL) ? (1.0 - xalign) : xalign)
-					* (cell_area->width - calc_width));
-			*x_offset = MAX(*x_offset, 0);
-		}
-		if (y_offset)
-		{
-			*y_offset = (yalign * (cell_area->height - calc_height));
-			*y_offset = MAX(*y_offset, 0);
-		}
+		*minimum = width;
 	}
-	else
+	if (natural)
 	{
-		if (x_offset)
-		{
-			*x_offset = 0;
-		}
-		if (y_offset)
-		{
-			*y_offset = 0;
-		}
+		*natural = width;
 	}
+}
 
-	if (width)
+//-----------------------------------------------------------------------------
+
+static void whiskermenu_icon_renderer_get_preferred_height(GtkCellRenderer* renderer, GtkWidget*, gint* minimum, gint* natural)
+{
+	WhiskerMenuIconRenderer* icon_renderer = WHISKERMENU_ICON_RENDERER(renderer);
+
+	gint pad;
+	gtk_cell_renderer_get_padding(renderer, nullptr, &pad);
+	gint height = (pad * 2) + icon_renderer->size;
+
+	if (minimum)
 	{
-		*width = calc_width;
+		*minimum = height;
 	}
-	if (height)
+	if (natural)
 	{
-		*height = calc_height;
+		*natural = height;
 	}
 }
 
@@ -244,7 +234,8 @@ static void whiskermenu_icon_renderer_class_init(WhiskerMenuIconRendererClass* k
 	gobject_class->set_property = &whiskermenu_icon_renderer_set_property;
 
 	GtkCellRendererClass* renderer_class = GTK_CELL_RENDERER_CLASS(klass);
-	renderer_class->get_size = &whiskermenu_icon_renderer_get_size;
+	renderer_class->get_preferred_width = &whiskermenu_icon_renderer_get_preferred_width;
+	renderer_class->get_preferred_height = &whiskermenu_icon_renderer_get_preferred_height;
 	renderer_class->render = &whiskermenu_icon_renderer_render;
 
 	g_object_class_install_property(gobject_class,
