@@ -29,7 +29,7 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-Category::Category(GarconMenuDirectory* directory) :
+Category::Category(GarconMenu* menu) :
 	m_button(nullptr),
 	m_model(nullptr),
 	m_has_separators(false),
@@ -38,11 +38,12 @@ Category::Category(GarconMenuDirectory* directory) :
 	const gchar* icon = nullptr;
 	const gchar* text = nullptr;
 	const gchar* tooltip = nullptr;
-	if (directory)
+	if (menu)
 	{
-		icon = garcon_menu_directory_get_icon_name(directory);
-		text = garcon_menu_directory_get_name(directory);
-		tooltip = garcon_menu_directory_get_comment(directory);
+		GarconMenuElement* element = GARCON_MENU_ELEMENT(menu);
+		icon = garcon_menu_element_get_icon_name(element);
+		text = garcon_menu_element_get_name(element);
+		tooltip = garcon_menu_element_get_comment(element);
 	}
 	else
 	{
@@ -117,33 +118,6 @@ GtkTreeModel* Category::get_model()
 
 //-----------------------------------------------------------------------------
 
-bool Category::empty() const
-{
-	for (auto element : m_items)
-	{
-		Category* category = dynamic_cast<Category*>(element);
-		if ((!category && element) || !category->empty())
-		{
-			return false;
-		}
-	}
-
-	return true;
-}
-
-//-----------------------------------------------------------------------------
-
-Category* Category::append_menu(GarconMenuDirectory* directory)
-{
-	m_has_subcategories = true;
-	unset_model();
-	Category* category = new Category(directory);
-	m_items.push_back(category);
-	return category;
-}
-
-//-----------------------------------------------------------------------------
-
 void Category::append_separator()
 {
 	if (!m_items.empty() && m_items.back())
@@ -175,11 +149,6 @@ void Category::insert_items(GtkTreeStore* model, GtkTreeIter* parent)
 	{
 		if (Category* category = dynamic_cast<Category*>(element))
 		{
-			if (category->empty())
-			{
-				continue;
-			}
-
 			gchar* text = g_markup_escape_text(category->get_text(), -1);
 			const gchar* tooltip = category->get_tooltip();
 

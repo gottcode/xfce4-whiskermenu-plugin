@@ -33,18 +33,23 @@ class CategoryButton;
 class Category : public Element
 {
 public:
-	explicit Category(GarconMenuDirectory* directory);
+	explicit Category(GarconMenu* menu);
 	~Category();
 
 	CategoryButton* get_button();
 
 	GtkTreeModel* get_model();
 
-	bool empty() const;
-
 	bool has_separators() const
 	{
 		return m_has_separators;
+	}
+
+	void append_category(Category* category)
+	{
+		unset_model();
+		m_has_subcategories = true;
+		m_items.push_back(category);
 	}
 
 	void append_item(Launcher* launcher)
@@ -59,8 +64,6 @@ public:
 		m_items.reserve(m_items.size() + launchers.size());
 		m_items.insert(m_items.end(), launchers.begin(), launchers.end());
 	}
-
-	Category* append_menu(GarconMenuDirectory* directory);
 
 	void append_separator();
 

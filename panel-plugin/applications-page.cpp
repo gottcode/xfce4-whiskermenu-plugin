@@ -42,17 +42,7 @@ ApplicationsPage::ApplicationsPage(Window* window) :
 	m_garcon_settings_menu(nullptr),
 	m_status(LoadStatus::Invalid)
 {
-	// Set desktop environment for applications
-	const gchar* desktop = g_getenv("XDG_CURRENT_DESKTOP");
-	if (G_LIKELY(!desktop))
-	{
-		desktop = "XFCE";
-	}
-	else if (*desktop == '\0')
-	{
-		desktop = nullptr;
-	}
-	garcon_set_environment(desktop);
+	garcon_set_environment_xdg(GARCON_ENVIRONMENT_XFCE);
 }
 
 //-----------------------------------------------------------------------------
@@ -272,7 +262,7 @@ void ApplicationsPage::load_garcon_menu()
 	}
 
 	g_signal_connect_slot<GarconMenu*>(m_garcon_menu, "reload-required", &ApplicationsPage::invalidate, this);
-	load_menu(m_garcon_menu, nullptr);
+	load_menu(m_garcon_menu, nullptr, wm_settings->load_hierarchy);
 
 	// Create settings menu
 	gchar* path = xfce_resource_lookup(XFCE_RESOURCE_CONFIG, "menus/xfce-settings-manager.menu");
@@ -287,7 +277,9 @@ void ApplicationsPage::load_garcon_menu()
 	// Load settings menu
 	if (m_garcon_settings_menu && garcon_menu_load(m_garcon_settings_menu, nullptr, nullptr))
 	{
-		load_menu(m_garcon_settings_menu, nullptr);
+		Category* category = new Category(nullptr);
+		load_menu(m_garcon_settings_menu, category, false);
+		delete category;
 	}
 
 	// Sort items and categories
@@ -344,93 +336,96 @@ void ApplicationsPage::load_contents()
 
 //-----------------------------------------------------------------------------
 
-void ApplicationsPage::load_menu(GarconMenu* menu, Category* parent_category)
+bool ApplicationsPage::load_menu(GarconMenu* menu, Category* parent_category, bool load_hierarchy)
 {
-	GarconMenuDirectory* directory = garcon_menu_get_directory(menu);
-
-	// Skip hidden categories
-	if (directory && !garcon_menu_directory_get_visible(directory))
-	{
-		return;
-	}
-
-	// Track categories
-	bool first_level = directory && (garcon_menu_get_parent(menu) == m_garcon_menu);
-	Category* category = nullptr;
-	if (directory)
-	{
-		if (first_level)
-		{
-			category = new Category(directory);
-			m_categories.push_back(category);
-		}
-		else if (!wm_settings->load_hierarchy)
-		{
-			category = parent_category;
-		}
-		else if (parent_category)
-		{
-			category = parent_category->append_menu(directory);
-		}
-	}
+	bool has_children = false;
 
 	// Add menu elements
 	GList* elements = garcon_menu_get_elements(menu);
 	for (GList* li = elements; li; li = li->next)
 	{
+		// Add menu item
 		if (GARCON_IS_MENU_ITEM(li->data))
 		{
-			load_menu_item(GARCON_MENU_ITEM(li->data), category);
+			GarconMenuItem* menuitem = GARCON_MENU_ITEM(li->data);
+
+			// Listen for changes
+			g_signal_connect_slot<GarconMenuItem*>(menuitem, "changed", &ApplicationsPage::invalidate, this);
+
+			// Skip hidden items
+			if (!garcon_menu_element_get_visible(GARCON_MENU_ELEMENT(menuitem)))
+			{
+				continue;
+			}
+
+			// Create launcher
+			std::string desktop_id(garcon_menu_item_get_desktop_id(menuitem));
+			auto iter = m_items.find(desktop_id);
+			if (iter == m_items.end())
+			{
+				iter = m_items.emplace(std::move(desktop_id), new Launcher(menuitem)).first;
+			}
+
+			// Add launcher to current category
+			if (parent_category)
+			{
+				parent_category->append_item(iter->second);
+			}
+
+			has_children = true;
 		}
+		// Add separator
+		else if (GARCON_IS_MENU_SEPARATOR(li->data) && load_hierarchy && parent_category)
+		{
+			parent_category->append_separator();
+		}
+		// Add submenu
 		else if (GARCON_IS_MENU(li->data))
 		{
-			load_menu(GARCON_MENU(li->data), category);
-		}
-		else if (GARCON_IS_MENU_SEPARATOR(li->data) && wm_settings->load_hierarchy && category)
-		{
-			category->append_separator();
+			GarconMenu* submenu = GARCON_MENU(li->data);
+
+			// Skip hidden categories
+			GarconMenuDirectory* directory = garcon_menu_get_directory(submenu);
+			if (directory && !garcon_menu_directory_get_visible(directory))
+			{
+				continue;
+			}
+
+			// Create category
+			Category* category = nullptr;
+			if (!load_hierarchy && parent_category)
+			{
+				category = parent_category;
+			}
+			else
+			{
+				category = new Category(submenu);
+			}
+
+			// Populate category
+			if (load_menu(submenu, category, load_hierarchy))
+			{
+				if (!parent_category)
+				{
+					m_categories.push_back(category);
+				}
+				else if (category != parent_category)
+				{
+					parent_category->append_category(category);
+				}
+
+				has_children = true;
+			}
+			// Remove empty categories
+			else if (category != parent_category)
+			{
+				delete category;
+			}
 		}
 	}
 	g_list_free(elements);
 
-	// Free unused top-level categories
-	if (first_level && category->empty())
-	{
-		m_categories.erase(std::find(m_categories.begin(), m_categories.end(), category));
-		delete category;
-		category = nullptr;
-	}
-
-	// Listen for menu changes
-	g_signal_connect_slot<GarconMenu*,GarconMenuDirectory*,GarconMenuDirectory*>(menu, "directory-changed", &ApplicationsPage::invalidate, this);
-}
-
-//-----------------------------------------------------------------------------
-
-void ApplicationsPage::load_menu_item(GarconMenuItem* menu_item, Category* category)
-{
-	// Skip hidden items
-	if (!garcon_menu_element_get_visible(GARCON_MENU_ELEMENT(menu_item)))
-	{
-		return;
-	}
-
-	// Add to map
-	std::string desktop_id(garcon_menu_item_get_desktop_id(menu_item));
-	auto iter = m_items.find(desktop_id);
-	if (iter == m_items.end())
-	{
-		iter = m_items.insert(std::make_pair(std::move(desktop_id), new Launcher(menu_item))).first;
-	}
-
-	// Add menu item to current category
-	if (category)
-	{
-		category->append_item(iter->second);
-	}
-
-	// Listen for menu changes
-	g_signal_connect_slot<GarconMenuItem*>(menu_item, "changed", &ApplicationsPage::invalidate, this);
+	return has_children;
 }
 
 //-----------------------------------------------------------------------------

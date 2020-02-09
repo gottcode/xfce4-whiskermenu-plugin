@@ -51,8 +51,7 @@ private:
 	void clear();
 	void load_garcon_menu();
 	void load_contents();
-	void load_menu(GarconMenu* menu, Category* parent_category);
-	void load_menu_item(GarconMenuItem* menu_item, Category* category);
+	bool load_menu(GarconMenu* menu, Category* parent_category, bool load_hierarchy);
 
 	static void load_garcon_menu_slot(GTask* task, gpointer, gpointer task_data, GCancellable*)
 	{
