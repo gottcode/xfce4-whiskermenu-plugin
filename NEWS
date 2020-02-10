@@ -1,3 +1,27 @@
+2.4.0
+=====
+- Add option to show as icons. (bug #15675)
+- Add hiding menu items. (bug #14816)
+- Add searching keywords of menu items. (bug #15047)
+- Add tooltip to profile picture for editing profile. (bug #15501)
+- Adjust wording of switch user command. (bug #15398)
+- Add icons to context menu.
+- New default layout.
+- Make panel button square only if single row and title hidden.
+- Rearrange settings dialog.
+- Redesign session confirmation dialogs.
+- Refactor code.
+- Rewrite menu load to match GarconGtkMenu.
+- Switch categories with keyboard focus if hover enabled.
+- Use custom icon renderer.
+- Use link time optimization if available.
+- Increase C++ version.
+- Translation updates: Bulgarian, Catalan, Chinese (Taiwan), Czech,
+  Danish, Dutch, Finnish, French, Galician, Georgian, German, Greek,
+  Icelandic, Indonesian, Interlingue, Italian, Japanese, Lithuanian,
+  Malay, Nepali, Norwegian Bokmål, Polish, Portuguese,
+  Portuguese (Brazil), Slovak, Spanish, Turkish.
+
 2.3.5
 =====
 - Fix saving unchanged plugin title. (bug #15403)
