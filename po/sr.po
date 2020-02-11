@@ -1,5 +1,5 @@
 # Serbian translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2018 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -8,13 +8,13 @@
 # Мирослав Николић <miroslavnikolic@rocketmail.com>, 2012
 # Саша Петровић <salepetronije@gmail.com>, 2013-2014,2016-2018
 # Саша Петровић <salepetronije@gmail.com>, 2015
-# Саша Петровић <salepetronije@gmail.com>, 2015,2018
+# Саша Петровић <salepetronije@gmail.com>, 2015,2018,2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-24 09:02-0500\n"
-"PO-Revision-Date: 2018-07-09 07:55+0000\n"
+"PO-Revision-Date: 2020-02-11 12:37+0000\n"
 "Last-Translator: Саша Петровић <salepetronije@gmail.com>\n"
 "Language-Team: Serbian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/sr/)\n"
@@ -54,9 +54,8 @@ msgid "Amount of _items:"
 msgstr "Количина _ставки:"
 
 #: ../panel-plugin/configuration-dialog.cpp:683
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "Проналазач програма"
+msgstr "Величина сличица_ програма:"
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -65,19 +64,19 @@ msgstr "Програми"
 #: ../panel-plugin/launcher.cpp:232
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
-msgstr "Да ли сте сигурни да желите да сакријете „%s“?"
+msgstr "Да ли сте сигурни да желите сакрити „%s“?"
 
 #: ../panel-plugin/settings.cpp:146
 msgid "Are you sure you want to log out?"
-msgstr "Да ли сигурно желите да се одјавите?"
+msgstr "Да ли сте сигурни да се желите одјавити?"
 
 #: ../panel-plugin/settings.cpp:152
 msgid "Are you sure you want to restart?"
-msgstr "Да ли сте сигурни да желите поново да покренете рачунар?"
+msgstr "Да ли сте сигурни да желите поново покренути рачунар?"
 
 #: ../panel-plugin/settings.cpp:158
 msgid "Are you sure you want to shut down?"
-msgstr "Да ли сте сигурни да желите да искључите рачунар?"
+msgstr "Да ли сте сигурни да желите искључити рачунар?"
 
 #: ../panel-plugin/configuration-dialog.cpp:723
 msgid "Background opacit_y:"
@@ -101,7 +100,7 @@ msgstr "Очисти недавно коришћено"
 
 #: ../panel-plugin/plugin.cpp:410
 msgid "Copyright © 2013-2020 Graeme Gott"
-msgstr "Права умножавања © 2013-2020 Грејем Гот (Graeme Gott)"
+msgstr "Права умножавања © 2013-2020 Graeme Gott (Грејем Гот)"
 
 #: ../panel-plugin/configuration-dialog.cpp:980
 msgid "Details"
@@ -117,11 +116,11 @@ msgstr "Подразумевани приказ"
 
 #: ../panel-plugin/settings.cpp:164
 msgid "Do you want to suspend to RAM?"
-msgstr "Да ли желите да обуставите у РАМ?"
+msgstr "Да ли желите обуставити у РАМ?"
 
 #: ../panel-plugin/settings.cpp:170
 msgid "Do you want to suspend to disk?"
-msgstr "Да ли желите да обуставите на диску?"
+msgstr "Да ли желите обуставити на диску?"
 
 #: ../panel-plugin/page.cpp:414
 msgid "Edit Application..."
@@ -143,7 +142,7 @@ msgstr "Нисам успео да извршим наредбу „%s“."
 
 #: ../panel-plugin/settings.cpp:169
 msgid "Failed to hibernate."
-msgstr ""
+msgstr "Нисам успео да успавам систем."
 
 #: ../panel-plugin/settings.cpp:179
 msgid "Failed to launch menu editor."
@@ -163,18 +162,17 @@ msgstr "Нисам успео да отворим управника поста�
 
 #: ../panel-plugin/settings.cpp:151
 msgid "Failed to restart."
-msgstr ""
+msgstr "Нисам успео да поново покренем рачунар."
 
 #: ../panel-plugin/settings.cpp:157
 msgid "Failed to shut down."
-msgstr ""
+msgstr "Нисам успео да искључим рачунар."
 
 #: ../panel-plugin/settings.cpp:163
 msgid "Failed to suspend."
-msgstr ""
+msgstr "Нисам успео да обуставим рачунар."
 
 #: ../panel-plugin/settings.cpp:141
-#, fuzzy
 msgid "Failed to switch user."
 msgstr "Нисам успео да променим корисника."
 
@@ -185,11 +183,11 @@ msgstr "Омиљено"
 #: ../panel-plugin/settings.cpp:171
 #, c-format
 msgid "Hibernating computer in %d seconds."
-msgstr "Замрзавам рачунар за %d секунде."
+msgstr "Успављујем рачунар кроз %d секунди."
 
 #: ../panel-plugin/launcher.cpp:231 ../panel-plugin/page.cpp:418
 msgid "Hide Application"
-msgstr ""
+msgstr "Сакриј програме"
 
 #: ../panel-plugin/configuration-dialog.cpp:758
 msgid "Icon"
@@ -213,7 +211,7 @@ msgstr "Веће"
 
 #: ../panel-plugin/settings.cpp:173
 msgid "Log Ou_t..."
-msgstr ""
+msgstr "Одјав_а..."
 
 #: ../panel-plugin/settings.cpp:143
 msgid "Log _Out"
@@ -222,7 +220,7 @@ msgstr "Одја_ва"
 #: ../panel-plugin/settings.cpp:147
 #, c-format
 msgid "Logging out in %d seconds."
-msgstr "Одјављујем се кроз %d секунде."
+msgstr "Одјава кроз %d секунди"
 
 #: ../panel-plugin/settings.cpp:185
 msgid "Man Pages"
@@ -288,7 +286,7 @@ msgstr "Уклони означену радњу"
 #: ../panel-plugin/settings.cpp:153
 #, c-format
 msgid "Restarting computer in %d seconds."
-msgstr "Поново ћу покренути за %d секунде."
+msgstr "Поново покрећем рачунар кроз %d секунди."
 
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
@@ -317,7 +315,7 @@ msgstr "Изаберите наредбу"
 
 #: ../panel-plugin/configuration-dialog.cpp:867
 msgid "Session Commands"
-msgstr ""
+msgstr "Наредбе седнице"
 
 #: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
@@ -333,21 +331,19 @@ msgstr "Приказуј програмске напомене"
 
 #: ../panel-plugin/configuration-dialog.cpp:587
 msgid "Show as _icons"
-msgstr ""
+msgstr "Приказуј као сличице"
 
 #: ../panel-plugin/configuration-dialog.cpp:595
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "Прикажи основице"
+msgstr "Приказуј као спис_ак"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "Прикажи _оквир"
+msgstr "Приказуј као грана_ње"
 
 #: ../panel-plugin/configuration-dialog.cpp:871
 msgid "Show c_onfirmation dialog"
-msgstr ""
+msgstr "Приказуј прозорче потврд_е"
 
 #: ../panel-plugin/configuration-dialog.cpp:637
 msgid "Show cate_gory names"
@@ -359,7 +355,7 @@ msgstr "Приказуј уопштене _називе програма"
 
 #: ../panel-plugin/settings.cpp:155
 msgid "Shut _Down"
-msgstr "_Искључи"
+msgstr "Искључи"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -383,15 +379,14 @@ msgstr "Остани _видљив при губитку жиже"
 
 #: ../panel-plugin/settings.cpp:161
 msgid "Suspe_nd"
-msgstr ""
+msgstr "Обустав_и"
 
 #: ../panel-plugin/settings.cpp:165
 #, c-format
 msgid "Suspending computer in %d seconds."
-msgstr "Обустављам рачунар за %d секунде."
+msgstr "Обустави рачунар кроз %d секунди."
 
 #: ../panel-plugin/settings.cpp:139
-#, fuzzy
 msgid "Switch _User"
 msgstr "Промени _корисника"
 
@@ -413,11 +408,13 @@ msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
 msgstr ""
+"Ради откривања треба ручно да уклоните датотеку„%s“ или отворите датотеку и "
+"уклоните линију „%s“."
 
 #: ../panel-plugin/settings.cpp:159
 #, c-format
 msgid "Turning off computer in %d seconds."
-msgstr "Искључићу рачунар за %d секунде."
+msgstr "Искључујем рачунар кроз %d секунди."
 
 #: ../panel-plugin/page.cpp:480
 msgid "Unable to add launcher to desktop."
@@ -496,7 +493,7 @@ msgstr "_Помоћ"
 
 #: ../panel-plugin/settings.cpp:167
 msgid "_Hibernate"
-msgstr "_Замрзни"
+msgstr "_Успавај"
 
 #: ../panel-plugin/configuration-dialog.cpp:781
 msgid "_Icon:"
@@ -529,7 +526,7 @@ msgstr "_Поново покрени"
 
 #: ../panel-plugin/settings.cpp:131
 msgid "_Settings Manager"
-msgstr ""
+msgstr "_Управник поставки"
 
 #: ../panel-plugin/configuration-dialog.cpp:769
 msgid "_Title:"
