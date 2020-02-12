@@ -313,7 +313,7 @@ msgstr "Sélection d’une commande"
 
 #: ../panel-plugin/settings-dialog.cpp:302
 msgid "Select an Icon"
-msgstr "Sélectionnez une icône"
+msgstr "Sélectionner un icône"
 
 #: ../panel-plugin/settings-dialog.cpp:921
 msgid "Session Commands"
