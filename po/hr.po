@@ -1,18 +1,18 @@
 # Croatian translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2018 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # Ante Grubišić Čabo <ante.gc@gmail.com>, 2016
 # dmanthing <dmanthing@gmail.com>, 2018
-# Ilija Ćulap <ilija.culap14@gmail.com>, 2013-2015,2018
+# Ilija Ćulap <ilija.culap14@gmail.com>, 2013-2015,2018,2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-12 12:49-0500\n"
-"PO-Revision-Date: 2018-05-19 08:37+0000\n"
-"Last-Translator: dmanthing <dmanthing@gmail.com>\n"
+"PO-Revision-Date: 2020-02-12 20:16+0000\n"
+"Last-Translator: Ilija Ćulap <ilija.culap14@gmail.com>\n"
 "Language-Team: Croatian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/hr/)\n"
 "Language: hr\n"
@@ -40,7 +40,7 @@ msgstr "Dodaj na ploču"
 
 #: ../panel-plugin/category.cpp:50
 msgid "All Applications"
-msgstr "Svi programi"
+msgstr "Sve aplikacije"
 
 #: ../panel-plugin/plugin.cpp:409
 msgid "Alternate application launcher for Xfce"
@@ -51,9 +51,8 @@ msgid "Amount of _items:"
 msgstr "Broj stavki:"
 
 #: ../panel-plugin/settings-dialog.cpp:738
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "Nalaznik programa"
+msgstr "Veliči_na ikone aplikacije"
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -62,7 +61,7 @@ msgstr "Aplikacije"
 #: ../panel-plugin/launcher.cpp:232
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
-msgstr "Jeste li sigurni da želite sakriti \"%s\"?"
+msgstr "Jeste li sigurne da želite skriti \"%s\"?"
 
 #: ../panel-plugin/settings.cpp:156
 msgid "Are you sure you want to log out?"
@@ -70,11 +69,11 @@ msgstr "Jeste li sigurni da se želite odjaviti?"
 
 #: ../panel-plugin/settings.cpp:162
 msgid "Are you sure you want to restart?"
-msgstr "Jeste li sigurni da želite ponovno pokrenuti?"
+msgstr "Jeste li sigurni da želiti ponovno pokretanje?"
 
 #: ../panel-plugin/settings.cpp:168
 msgid "Are you sure you want to shut down?"
-msgstr "Jeste li sigurni da želite isključiti?"
+msgstr "Jeste li sigurni da želite isključiti računar?"
 
 #: ../panel-plugin/settings-dialog.cpp:778
 msgid "Background opacit_y:"
@@ -98,7 +97,7 @@ msgstr "Očisti kategoriju Najčešće korišteno"
 
 #: ../panel-plugin/plugin.cpp:410
 msgid "Copyright © 2013-2020 Graeme Gott"
-msgstr "Autorska prava © 2013-2020 Graeme Gott"
+msgstr "Copyright © 2013-2020 Graeme Gott"
 
 #: ../panel-plugin/settings-dialog.cpp:1033
 msgid "Details"
@@ -114,11 +113,11 @@ msgstr "Prema zadanom prikaži"
 
 #: ../panel-plugin/settings.cpp:174
 msgid "Do you want to suspend to RAM?"
-msgstr "Želite li suspendirati u memoriju?"
+msgstr "Želite li suspenziju u RAM memoriju?"
 
 #: ../panel-plugin/settings.cpp:180
 msgid "Do you want to suspend to disk?"
-msgstr "Želite li suspendirati na disk?"
+msgstr "Želite li suspenziju na tvrdi disk?"
 
 #: ../panel-plugin/page.cpp:404
 msgid "Edit Application..."
@@ -140,7 +139,7 @@ msgstr "Nije moguće izvršiti naredbu \"%s\"."
 
 #: ../panel-plugin/settings.cpp:179
 msgid "Failed to hibernate."
-msgstr ""
+msgstr "Pogriješka pri hibernaciji."
 
 #: ../panel-plugin/settings.cpp:189
 msgid "Failed to launch menu editor."
@@ -160,20 +159,19 @@ msgstr "Nije moguće otvoriti Upravitelja Postavki."
 
 #: ../panel-plugin/settings.cpp:161
 msgid "Failed to restart."
-msgstr ""
+msgstr "Pogriješka pri pokušaju ponovnog pokretanja."
 
 #: ../panel-plugin/settings.cpp:167
 msgid "Failed to shut down."
-msgstr ""
+msgstr "Pogriješka pri isključenju računara."
 
 #: ../panel-plugin/settings.cpp:173
 msgid "Failed to suspend."
-msgstr ""
+msgstr "Pogriješka prilikom suspenzije."
 
 #: ../panel-plugin/settings.cpp:151
-#, fuzzy
 msgid "Failed to switch user."
-msgstr "Nije moguće promijeniti korisnika."
+msgstr "Pogriješka prilikom promjene korisnika."
 
 #: ../panel-plugin/window.cpp:154
 msgid "Favorites"
@@ -182,11 +180,11 @@ msgstr "Omiljeno"
 #: ../panel-plugin/settings.cpp:181
 #, c-format
 msgid "Hibernating computer in %d seconds."
-msgstr "Hiberniram računalo za %d sekundi."
+msgstr "Hibernacija računara za %d sekundi"
 
 #: ../panel-plugin/launcher.cpp:231 ../panel-plugin/page.cpp:408
 msgid "Hide Application"
-msgstr ""
+msgstr "Sakrij aplikaciju"
 
 #: ../panel-plugin/settings-dialog.cpp:813
 msgid "Icon"
@@ -210,7 +208,7 @@ msgstr "Veće"
 
 #: ../panel-plugin/settings.cpp:183
 msgid "Log Ou_t..."
-msgstr ""
+msgstr "Odja_va..."
 
 #: ../panel-plugin/settings.cpp:153
 msgid "Log _Out"
@@ -285,7 +283,7 @@ msgstr "Ukloni odabranu akciju"
 #: ../panel-plugin/settings.cpp:163
 #, c-format
 msgid "Restarting computer in %d seconds."
-msgstr "Ponovno pokretanje računala za %d sekundi."
+msgstr "Ponovno pokretanje za %d sekundi."
 
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
@@ -314,7 +312,7 @@ msgstr "Izaberi ikonu"
 
 #: ../panel-plugin/settings-dialog.cpp:921
 msgid "Session Commands"
-msgstr ""
+msgstr "Komande sesije"
 
 #: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
@@ -330,21 +328,19 @@ msgstr "Prikazati savjete za korištenje aplikacije"
 
 #: ../panel-plugin/settings-dialog.cpp:613
 msgid "Show as _icons"
-msgstr ""
+msgstr "Prikaži kao i_kone"
 
 #: ../panel-plugin/settings-dialog.cpp:630
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "Prikaži izvorne redke"
+msgstr "Prikaži kao l_istu"
 
 #: ../panel-plugin/settings-dialog.cpp:648
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "Pokaži _okvir"
+msgstr "Prikaži kao s_tablo"
 
 #: ../panel-plugin/settings-dialog.cpp:925
 msgid "Show c_onfirmation dialog"
-msgstr ""
+msgstr "Prikaži potvrdni dijaloški okvir"
 
 #: ../panel-plugin/settings-dialog.cpp:692
 msgid "Show cate_gory names"
@@ -356,7 +352,7 @@ msgstr "Prikaži generička i_mena aplikacija"
 
 #: ../panel-plugin/settings.cpp:165
 msgid "Shut _Down"
-msgstr "Isklju_či"
+msgstr "Iskl_jučenje"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -376,21 +372,20 @@ msgstr "Posloži prema abecedi (Ž-A)"
 
 #: ../panel-plugin/settings-dialog.cpp:880
 msgid "Stay _visible when focus is lost"
-msgstr ""
+msgstr "Budi vidljiv ako se fokus izgubi"
 
 #: ../panel-plugin/settings.cpp:171
 msgid "Suspe_nd"
-msgstr ""
+msgstr "Suspen_zija"
 
 #: ../panel-plugin/settings.cpp:175
 #, c-format
 msgid "Suspending computer in %d seconds."
-msgstr "Suspendiram računalo za %d sekundi."
+msgstr "Suspenzija računara za %d sekundi."
 
 #: ../panel-plugin/settings.cpp:149
-#, fuzzy
 msgid "Switch _User"
-msgstr "Zamjeni _Korisnike"
+msgstr "Promjeni _korisnika"
 
 #: ../panel-plugin/settings-dialog.cpp:874
 msgid "Switch categories by _hovering"
@@ -410,11 +405,13 @@ msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
 msgstr ""
+"Za uklanjanje nevidljivosi potrebno je izbrisati datoteku \"%s\" ili u "
+"datoteci izbrisati liniju \"%s\"."
 
 #: ../panel-plugin/settings.cpp:169
 #, c-format
 msgid "Turning off computer in %d seconds."
-msgstr "Gašenje računala za %d sekundi."
+msgstr "Isključivanje za %d sekundi."
 
 #: ../panel-plugin/page.cpp:470
 msgid "Unable to add launcher to desktop."
@@ -495,7 +492,7 @@ msgstr "_Pomoć"
 
 #: ../panel-plugin/settings.cpp:177
 msgid "_Hibernate"
-msgstr "_Hiberniraj"
+msgstr "_Hibernacija"
 
 #: ../panel-plugin/settings-dialog.cpp:836
 msgid "_Icon:"
@@ -511,7 +508,7 @@ msgstr "_U redu"
 
 #: ../panel-plugin/settings-dialog.cpp:116
 msgid "_Panel Button"
-msgstr "Gumb na ploči"
+msgstr "_Gumb trake"
 
 #: ../panel-plugin/settings-dialog.cpp:1050
 msgid "_Pattern:"
@@ -527,7 +524,7 @@ msgstr "_Ponovno pokretanje"
 
 #: ../panel-plugin/settings.cpp:141
 msgid "_Settings Manager"
-msgstr ""
+msgstr "_Upravitelj postavkama"
 
 #: ../panel-plugin/settings-dialog.cpp:824
 msgid "_Title:"
