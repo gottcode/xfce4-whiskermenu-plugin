@@ -57,7 +57,7 @@ static void whiskermenu_icon_renderer_get_preferred_width(GtkCellRenderer* rende
 
 	if (icon_renderer->stretch)
 	{
-		width += 76 - (icon_renderer->size / 2);
+		width += 76 - (icon_renderer->size / 4);
 		if (natural)
 		{
 			*natural = (width * 2) - 1;
