@@ -271,7 +271,7 @@ msgstr "Quere retirar a acción «%s»?"
 
 #: ../panel-plugin/page.cpp:388
 msgid "Remove from Favorites"
-msgstr "Retirar dos favoritos"
+msgstr "Retirar de favoritos"
 
 #: ../panel-plugin/settings-dialog.cpp:1014
 msgid "Remove selected action"
