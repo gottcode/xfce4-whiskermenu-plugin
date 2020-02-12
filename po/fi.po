@@ -1,9 +1,9 @@
 # Finnish translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2019 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# Ammuu5, 2018-2019
+# Ammuu5, 2018-2020
 # Pasi Lallinaho <pasi@shimmerproject.org>, 2014-2015,2019
 # Sami Korkalainen, 2014
 # Assalat3 <assalat3@gmail.com>, 2018
@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-24 09:02-0500\n"
-"PO-Revision-Date: 2019-10-23 12:56+0000\n"
+"PO-Revision-Date: 2020-02-12 12:14+0000\n"
 "Last-Translator: Ammuu5\n"
 "Language-Team: Finnish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/fi/)\n"
@@ -52,9 +52,8 @@ msgid "Amount of _items:"
 msgstr "_Kohteiden määrä:"
 
 #: ../panel-plugin/configuration-dialog.cpp:683
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "Sovellusten hakutyökalu"
+msgstr "Sovelluksen kuvakkeen ko_ko:"
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -186,7 +185,7 @@ msgstr "Siirrytään lepotilaan %d sekunnin kuluttua."
 
 #: ../panel-plugin/launcher.cpp:231 ../panel-plugin/page.cpp:418
 msgid "Hide Application"
-msgstr ""
+msgstr "Piilota sovellus"
 
 #: ../panel-plugin/configuration-dialog.cpp:758
 msgid "Icon"
@@ -333,14 +332,12 @@ msgid "Show as _icons"
 msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:595
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "Näytä tiedot"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:603
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "Näytä _kehys"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:871
 msgid "Show c_onfirmation dialog"
