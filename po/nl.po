@@ -305,7 +305,7 @@ msgstr "Opdracht kiezen"
 
 #: ../panel-plugin/settings-dialog.cpp:302
 msgid "Select an Icon"
-msgstr "Pictogram kiezen"
+msgstr "Kies een pictogram"
 
 #: ../panel-plugin/settings-dialog.cpp:921
 msgid "Session Commands"
