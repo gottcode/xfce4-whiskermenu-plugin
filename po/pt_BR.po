@@ -271,11 +271,11 @@ msgstr "Posicionar comandos junto à _entrada de pesquisa"
 
 #: ../panel-plugin/configuration-dialog.cpp:837 ../panel-plugin/window.cpp:167
 msgid "Recently Used"
-msgstr "Usados recentemente"
+msgstr "Usados Recentemente"
 
 #: ../panel-plugin/page.cpp:395
 msgid "Remove From Favorites"
-msgstr "Remover dos favoritos"
+msgstr "Remover Dos Favoritos"
 
 #: ../panel-plugin/configuration-dialog.cpp:486
 #, c-format
@@ -298,23 +298,23 @@ msgstr "Executar %s"
 
 #: ../panel-plugin/settings.cpp:188
 msgid "Run in Terminal"
-msgstr "Executar no terminal"
+msgstr "Executar no Terminal"
 
 #: ../panel-plugin/configuration-dialog.cpp:103
 msgid "Search Actio_ns"
-msgstr "Procurar a_ções"
+msgstr "Procurar A_ções"
 
 #: ../panel-plugin/search-action.cpp:260
 msgid "Search Action"
-msgstr "Procurar ação"
+msgstr "Procurar Ação"
 
 #: ../panel-plugin/configuration-dialog.cpp:276
 msgid "Select An Icon"
-msgstr "Escolher um ícone"
+msgstr "Escolher Um Ícone"
 
 #: ../panel-plugin/command-edit.cpp:64
 msgid "Select Command"
-msgstr "Selecionar comando"
+msgstr "Selecionar Comando"
 
 #: ../panel-plugin/configuration-dialog.cpp:867
 msgid "Session Commands"
@@ -370,11 +370,11 @@ msgstr "Muito pequeno"
 
 #: ../panel-plugin/favorites-page.cpp:147
 msgid "Sort Alphabetically A-Z"
-msgstr "Ordem alfabética A-Z"
+msgstr "Ordem Alfabética A-Z"
 
 #: ../panel-plugin/favorites-page.cpp:153
 msgid "Sort Alphabetically Z-A"
-msgstr "Ordem alfabética Z-A"
+msgstr "Ordem Alfabética Z-A"
 
 #: ../panel-plugin/configuration-dialog.cpp:826
 msgid "Stay _visible when focus is lost"
@@ -391,7 +391,7 @@ msgstr "Suspendendo o computador em %d segundos."
 
 #: ../panel-plugin/settings.cpp:139
 msgid "Switch _User"
-msgstr "Trocar de _usuário"
+msgstr "Trocar de _Usuário"
 
 #: ../panel-plugin/configuration-dialog.cpp:820
 msgid "Switch categories by _hovering"
@@ -529,7 +529,7 @@ msgstr "_Reiniciar"
 
 #: ../panel-plugin/settings.cpp:131
 msgid "_Settings Manager"
-msgstr "Gerenciador de con_figurações"
+msgstr "Gerenciador de Con_figurações"
 
 #: ../panel-plugin/configuration-dialog.cpp:769
 msgid "_Title:"
