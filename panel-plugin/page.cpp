@@ -385,7 +385,7 @@ void Page::create_context_menu(GtkTreePath* path, GdkEvent* event)
 	}
 	else
 	{
-		menuitem = whiskermenu_image_menu_item_new("list-remove", _("Remove From Favorites"));
+		menuitem = whiskermenu_image_menu_item_new("list-remove", _("Remove from Favorites"));
 		g_signal_connect_slot<GtkMenuItem*>(menuitem, "activate", &Page::remove_selected_from_favorites, this);
 		gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 	}

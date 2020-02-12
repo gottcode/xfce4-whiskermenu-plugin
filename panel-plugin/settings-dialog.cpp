@@ -299,7 +299,7 @@ void SettingsDialog::title_changed(GtkEditable* editable)
 
 void SettingsDialog::choose_icon()
 {
-	GtkWidget* chooser = exo_icon_chooser_dialog_new(_("Select An Icon"),
+	GtkWidget* chooser = exo_icon_chooser_dialog_new(_("Select an Icon"),
 			GTK_WINDOW(m_window),
 			_("_Cancel"), GTK_RESPONSE_CANCEL,
 			_("_OK"), GTK_RESPONSE_ACCEPT,
