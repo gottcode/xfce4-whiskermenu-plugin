@@ -118,7 +118,6 @@ if(CMAKE_BUILD_TYPE_TOLOWER MATCHES "release|minsizerel|relwithdebinfo")
 endif()
 
 install(TARGETS whiskermenu LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/xfce4/panel/plugins)
-install(FILES whiskermenu.desktop DESTINATION ${CMAKE_INSTALL_DATADIR}/xfce4/panel/plugins)
 
 # popup script
 configure_file(${PROJECT_SOURCE_DIR}/panel-plugin/xfce4-popup-whiskermenu.in
