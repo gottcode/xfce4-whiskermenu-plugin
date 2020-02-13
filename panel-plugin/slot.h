@@ -92,28 +92,28 @@ gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(
 			after ? G_CONNECT_AFTER : GConnectFlags(0));
 }
 
-// Member function with parameters and 1 bound parameter
-template<typename T, typename R, typename... Args, typename A2>
-gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(T::*member)(Args...,A2), T* obj, A2 bound1, bool after = false)
+// Member function with 1 parameter and 1 bound parameter
+template<typename T, typename R, typename A1, typename A2>
+gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(T::*member)(A1,A2), T* obj, A2 bound1, bool after = false)
 {
 	class Slot
 	{
 		T* m_instance;
-		R (T::*m_member)(Args...,A2);
+		R (T::*m_member)(A1,A2);
 		A2 m_bound1;
 
 	public:
-		Slot(T* instance, R (T::*member)(Args...,A2), A2 bound1) :
+		Slot(T* instance, R (T::*member)(A1,A2), A2 bound1) :
 			m_instance(instance),
 			m_member(member),
 			m_bound1(bound1)
 		{
 		}
 
-		static R invoke(Args... args, gpointer user_data)
+		static R invoke(A1 arg, gpointer user_data)
 		{
 			Slot* slot = static_cast<Slot*>(user_data);
-			return (slot->m_instance->*slot->m_member)(args..., slot->m_bound1);
+			return (slot->m_instance->*slot->m_member)(arg, slot->m_bound1);
 		}
 
 		static void destroy(gpointer data, GClosure*)
