@@ -1,5 +1,5 @@
 # Romanian translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2018 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-12 12:49-0500\n"
-"PO-Revision-Date: 2018-04-20 21:11+0000\n"
-"Last-Translator: Sebastian Brici <bricisebastian@gmail.com>\n"
+"PO-Revision-Date: 2020-02-12 22:14+0000\n"
+"Last-Translator: Alexandru Ianu <alexandru.ianu@gmail.com>\n"
 "Language-Team: Romanian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ro/)\n"
 "Language: ro\n"
@@ -51,9 +51,8 @@ msgid "Amount of _items:"
 msgstr "Număr de _elemente"
 
 #: ../panel-plugin/settings-dialog.cpp:738
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "Pornire de programe"
+msgstr ""
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -98,7 +97,7 @@ msgstr "Șterge recent folositele"
 
 #: ../panel-plugin/plugin.cpp:410
 msgid "Copyright © 2013-2020 Graeme Gott"
-msgstr "Copyright © 2013-2020 Graeme Gott"
+msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:1033
 msgid "Details"
@@ -171,9 +170,8 @@ msgid "Failed to suspend."
 msgstr ""
 
 #: ../panel-plugin/settings.cpp:151
-#, fuzzy
 msgid "Failed to switch user."
-msgstr "Nu se pot schimba utilizatorii"
+msgstr ""
 
 #: ../panel-plugin/window.cpp:154
 msgid "Favorites"
@@ -333,14 +331,12 @@ msgid "Show as _icons"
 msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:630
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "Arată liniile de bază"
+msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:648
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "Arată ca_drul"
+msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:925
 msgid "Show c_onfirmation dialog"
@@ -388,9 +384,8 @@ msgid "Suspending computer in %d seconds."
 msgstr "Calculatorul va fi suspendat în %d secunde."
 
 #: ../panel-plugin/settings.cpp:149
-#, fuzzy
 msgid "Switch _User"
-msgstr "Schimbă _utilizatorii"
+msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:874
 msgid "Switch categories by _hovering"
@@ -511,7 +506,7 @@ msgstr "_OK"
 
 #: ../panel-plugin/settings-dialog.cpp:116
 msgid "_Panel Button"
-msgstr "Buton panou"
+msgstr "_Buton de Panou"
 
 #: ../panel-plugin/settings-dialog.cpp:1050
 msgid "_Pattern:"

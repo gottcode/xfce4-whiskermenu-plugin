@@ -1,5 +1,5 @@
 # Nepali translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2019 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-12 12:49-0500\n"
-"PO-Revision-Date: 2019-11-27 16:05+0000\n"
+"PO-Revision-Date: 2020-02-12 22:13+0000\n"
 "Last-Translator: starryprabin <mr.prabin@gmail.com>\n"
 "Language-Team: Nepali (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ne/)\n"
@@ -49,9 +49,8 @@ msgid "Amount of _items:"
 msgstr "वस्तुको परिमाण:"
 
 #: ../panel-plugin/settings-dialog.cpp:738
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "अनुप्रयोगहरु"
+msgstr ""
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -330,14 +329,12 @@ msgid "Show as _icons"
 msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:630
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "अरू धेरै विवरण देखाउनुहोस्"
+msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:648
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "वर्गका नामहरू देखाउनुहोस्"
+msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:925
 msgid "Show c_onfirmation dialog"
@@ -507,7 +504,7 @@ msgstr "ठीक"
 
 #: ../panel-plugin/settings-dialog.cpp:116
 msgid "_Panel Button"
-msgstr "पट्टीको बटन"
+msgstr "प॒ट्टीको टांक"
 
 #: ../panel-plugin/settings-dialog.cpp:1050
 msgid "_Pattern:"

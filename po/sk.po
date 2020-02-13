@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-12 12:49-0500\n"
-"PO-Revision-Date: 2020-01-04 16:49+0000\n"
+"PO-Revision-Date: 2020-02-12 22:14+0000\n"
 "Last-Translator: Slavko <linux@slavino.sk>\n"
 "Language-Team: Slovak (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/sk/)\n"
@@ -50,9 +50,8 @@ msgid "Amount of _items:"
 msgstr "Počet polož_iek:"
 
 #: ../panel-plugin/settings-dialog.cpp:738
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "Vyhľadávač aplikácií"
+msgstr ""
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -331,14 +330,12 @@ msgid "Show as _icons"
 msgstr "Zobraziť ako _ikony"
 
 #: ../panel-plugin/settings-dialog.cpp:630
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "Zobraziť ako _ikony"
+msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:648
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "Zobraziť ako _ikony"
+msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:925
 msgid "Show c_onfirmation dialog"
@@ -510,7 +507,7 @@ msgstr "_OK"
 
 #: ../panel-plugin/settings-dialog.cpp:116
 msgid "_Panel Button"
-msgstr "Tlačidlo panela"
+msgstr "Tlačidlo _panela"
 
 #: ../panel-plugin/settings-dialog.cpp:1050
 msgid "_Pattern:"

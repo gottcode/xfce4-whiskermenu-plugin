@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-12 12:49-0500\n"
-"PO-Revision-Date: 2020-01-05 16:51+0000\n"
+"PO-Revision-Date: 2020-02-12 21:17+0000\n"
 "Last-Translator: zura davitashvili <zdavitashvili0@gmail.com>\n"
 "Language-Team: Georgian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ka/)\n"
@@ -38,7 +38,7 @@ msgstr "პანელზე დამატება"
 
 #: ../panel-plugin/category.cpp:50
 msgid "All Applications"
-msgstr ""
+msgstr "ყველა პროგრამა"
 
 #: ../panel-plugin/plugin.cpp:409
 msgid "Alternate application launcher for Xfce"
@@ -49,9 +49,8 @@ msgid "Amount of _items:"
 msgstr "საგნების რაოდენობა:"
 
 #: ../panel-plugin/settings-dialog.cpp:738
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "პროგრამები"
+msgstr "პროგრამის ხატულას ზომა:"
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -330,14 +329,12 @@ msgid "Show as _icons"
 msgstr "ხატულებად ჩვენება"
 
 #: ../panel-plugin/settings-dialog.cpp:630
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "ხატულებად ჩვენება"
+msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:648
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "ხატულებად ჩვენება"
+msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:925
 msgid "Show c_onfirmation dialog"
@@ -525,7 +522,7 @@ msgstr "გადატვირთვა"
 
 #: ../panel-plugin/settings.cpp:141
 msgid "_Settings Manager"
-msgstr ""
+msgstr "პარამეტრების მმართველი"
 
 #: ../panel-plugin/settings-dialog.cpp:824
 msgid "_Title:"

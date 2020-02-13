@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-12 12:49-0500\n"
-"PO-Revision-Date: 2020-01-01 15:51+0000\n"
-"Last-Translator: Andreas Bayu <kaze_abbey@outlook.com>\n"
+"PO-Revision-Date: 2020-02-12 22:13+0000\n"
+"Last-Translator: se7entime <se7entime@disroot.org>\n"
 "Language-Team: Indonesian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/id/)\n"
 "Language: id\n"
@@ -51,9 +51,8 @@ msgid "Amount of _items:"
 msgstr "Jumlah _item:"
 
 #: ../panel-plugin/settings-dialog.cpp:738
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "Pencari Aplikasi"
+msgstr ""
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -332,14 +331,12 @@ msgid "Show as _icons"
 msgstr "Tampilkan sebagai _ikon"
 
 #: ../panel-plugin/settings-dialog.cpp:630
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "Tampilkan sebagai _ikon"
+msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:648
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "Tampilkan sebagai _ikon"
+msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:925
 msgid "Show c_onfirmation dialog"
@@ -509,7 +506,7 @@ msgstr "_OK"
 
 #: ../panel-plugin/settings-dialog.cpp:116
 msgid "_Panel Button"
-msgstr "Tombol Panel"
+msgstr "_Tombol Panel"
 
 #: ../panel-plugin/settings-dialog.cpp:1050
 msgid "_Pattern:"

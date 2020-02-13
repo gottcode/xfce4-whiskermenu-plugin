@@ -1,5 +1,5 @@
 # Russian translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2018 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -7,14 +7,14 @@
 # Kyrill Detinov <lazy.kent@opensuse.org>, 2013,2016
 # Sergey Alyoshin <alyoshin.s@gmail.com>, 2013-2015,2017-2018
 # Sergey Shlyapugin <shlyapugin@gmail.com>, 2013
-# Владимир Пенчиков <vladi105@yandex.ru>, 2018
+# Владимир <vladi105@yandex.ru>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-12 12:49-0500\n"
-"PO-Revision-Date: 2018-10-13 05:08+0000\n"
-"Last-Translator: Владимир Пенчиков <vladi105@yandex.ru>\n"
+"PO-Revision-Date: 2020-02-12 22:13+0000\n"
+"Last-Translator: Kyrill Detinov <lazy.kent@opensuse.org>\n"
 "Language-Team: Russian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ru/)\n"
 "Language: ru\n"
@@ -54,9 +54,8 @@ msgid "Amount of _items:"
 msgstr "_Количество элементов:"
 
 #: ../panel-plugin/settings-dialog.cpp:738
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "Поиск приложений"
+msgstr ""
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -101,7 +100,7 @@ msgstr "Очистить историю"
 
 #: ../panel-plugin/plugin.cpp:410
 msgid "Copyright © 2013-2020 Graeme Gott"
-msgstr "Copyright © 2013—2020 Graeme Gott"
+msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:1033
 msgid "Details"
@@ -174,9 +173,8 @@ msgid "Failed to suspend."
 msgstr "Ошибка включения режима сна"
 
 #: ../panel-plugin/settings.cpp:151
-#, fuzzy
 msgid "Failed to switch user."
-msgstr "Не удалось сменить пользователя."
+msgstr ""
 
 #: ../panel-plugin/window.cpp:154
 msgid "Favorites"
@@ -336,14 +334,12 @@ msgid "Show as _icons"
 msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:630
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "Показывать базовые линии"
+msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:648
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "_Показывать рамку"
+msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:925
 msgid "Show c_onfirmation dialog"
@@ -391,9 +387,8 @@ msgid "Suspending computer in %d seconds."
 msgstr "Переход в режим сна через %d секунд."
 
 #: ../panel-plugin/settings.cpp:149
-#, fuzzy
 msgid "Switch _User"
-msgstr "Сменить _пользователя"
+msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:874
 msgid "Switch categories by _hovering"
@@ -514,7 +509,7 @@ msgstr "_OK"
 
 #: ../panel-plugin/settings-dialog.cpp:116
 msgid "_Panel Button"
-msgstr "Кнопка на панели"
+msgstr "_Кнопка панели"
 
 #: ../panel-plugin/settings-dialog.cpp:1050
 msgid "_Pattern:"

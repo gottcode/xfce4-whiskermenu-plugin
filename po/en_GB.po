@@ -1,5 +1,5 @@
 # British English translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2018 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-12 12:49-0500\n"
-"PO-Revision-Date: 2018-06-23 09:38+0000\n"
+"PO-Revision-Date: 2020-02-12 22:13+0000\n"
 "Last-Translator: Jason Collins <JasonPCollins@protonmail.com>\n"
 "Language-Team: English (United Kingdom) (http://www.transifex.com/gottcode/"
 "xfce4-whiskermenu-plugin/language/en_GB/)\n"
@@ -49,9 +49,8 @@ msgid "Amount of _items:"
 msgstr "Amount of _items:"
 
 #: ../panel-plugin/settings-dialog.cpp:738
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "Application Finder"
+msgstr ""
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -169,9 +168,8 @@ msgid "Failed to suspend."
 msgstr ""
 
 #: ../panel-plugin/settings.cpp:151
-#, fuzzy
 msgid "Failed to switch user."
-msgstr "Failed to switch users."
+msgstr ""
 
 #: ../panel-plugin/window.cpp:154
 msgid "Favorites"
@@ -331,14 +329,12 @@ msgid "Show as _icons"
 msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:630
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "Show Baselines"
+msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:648
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "Show _frame"
+msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:925
 msgid "Show c_onfirmation dialog"
@@ -386,9 +382,8 @@ msgid "Suspending computer in %d seconds."
 msgstr "Suspending computer in %d seconds."
 
 #: ../panel-plugin/settings.cpp:149
-#, fuzzy
 msgid "Switch _User"
-msgstr "Switch _Users"
+msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:874
 msgid "Switch categories by _hovering"

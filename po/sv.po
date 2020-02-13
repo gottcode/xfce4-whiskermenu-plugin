@@ -1,5 +1,5 @@
 # Swedish translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2019 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -17,8 +17,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-12 12:49-0500\n"
-"PO-Revision-Date: 2019-03-13 07:02+0000\n"
-"Last-Translator: Carlos Dz <cls567@tuta.io>\n"
+"PO-Revision-Date: 2020-02-12 22:13+0000\n"
+"Last-Translator: Fredrik Nyqvist <fredrik@nyqvist.biz>\n"
 "Language-Team: Swedish (Sweden) (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/sv_SE/)\n"
 "Language: sv\n"
@@ -56,9 +56,8 @@ msgid "Amount of _items:"
 msgstr "Antal _objekt:"
 
 #: ../panel-plugin/settings-dialog.cpp:738
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "Programstartare"
+msgstr ""
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -103,7 +102,7 @@ msgstr "Rensa senast använda"
 
 #: ../panel-plugin/plugin.cpp:410
 msgid "Copyright © 2013-2020 Graeme Gott"
-msgstr "Copyright © 2013-2020 Graeme Gott"
+msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:1033
 msgid "Details"
@@ -176,9 +175,8 @@ msgid "Failed to suspend."
 msgstr ""
 
 #: ../panel-plugin/settings.cpp:151
-#, fuzzy
 msgid "Failed to switch user."
-msgstr "Misslyckades med att växla användare."
+msgstr ""
 
 #: ../panel-plugin/window.cpp:154
 msgid "Favorites"
@@ -338,14 +336,12 @@ msgid "Show as _icons"
 msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:630
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "Visa baslinjer"
+msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:648
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "Visa _ram"
+msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:925
 msgid "Show c_onfirmation dialog"
@@ -393,9 +389,8 @@ msgid "Suspending computer in %d seconds."
 msgstr "Försätter datorn i viloläge om %d sekunder."
 
 #: ../panel-plugin/settings.cpp:149
-#, fuzzy
 msgid "Switch _User"
-msgstr "_Växla användare"
+msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:874
 msgid "Switch categories by _hovering"
