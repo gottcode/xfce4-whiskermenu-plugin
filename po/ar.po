@@ -1,5 +1,5 @@
 # Arabic translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2017 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-24 09:02-0500\n"
-"PO-Revision-Date: 2017-03-03 15:49+0000\n"
-"Last-Translator: محمدأمين الصامت <mohamedamin.samet@gmail.com>\n"
+"PO-Revision-Date: 2020-02-12 22:13+0000\n"
+"Last-Translator: كريم أولاد الشلحة <herr.linux88@gmail.com>\n"
 "Language-Team: Arabic (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ar/)\n"
 "Language: ar\n"
@@ -50,9 +50,8 @@ msgid "Amount of _items:"
 msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:683
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "مكتشف التطبيقات"
+msgstr ""
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -170,9 +169,8 @@ msgid "Failed to suspend."
 msgstr ""
 
 #: ../panel-plugin/settings.cpp:141
-#, fuzzy
 msgid "Failed to switch user."
-msgstr "فشل تبديل المستخدم."
+msgstr ""
 
 #: ../panel-plugin/window.cpp:159
 msgid "Favorites"
@@ -196,9 +194,8 @@ msgid "Icon and title"
 msgstr "أيقونة و عنوان"
 
 #: ../panel-plugin/configuration-dialog.cpp:852
-#, fuzzy
 msgid "Include _favorites"
-msgstr "تجاها المفضلات"
+msgstr ""
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Large"
@@ -333,14 +330,12 @@ msgid "Show as _icons"
 msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:595
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "اعرض البيانات"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:603
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "عرض النافذة"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:871
 msgid "Show c_onfirmation dialog"
@@ -388,9 +383,8 @@ msgid "Suspending computer in %d seconds."
 msgstr "تعليق الكمبيوتر بعد %d ثانية."
 
 #: ../panel-plugin/settings.cpp:139
-#, fuzzy
 msgid "Switch _User"
-msgstr "تغيير المستخدم"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:820
 msgid "Switch categories by _hovering"
@@ -473,7 +467,7 @@ msgstr "إلغاء"
 
 #: ../panel-plugin/configuration-dialog.cpp:90
 msgid "_Close"
-msgstr "أ_غلق"
+msgstr "_أغلق"
 
 #: ../panel-plugin/configuration-dialog.cpp:102
 msgid "_Commands"
@@ -510,7 +504,7 @@ msgstr "_موافق"
 
 #: ../panel-plugin/configuration-dialog.cpp:100
 msgid "_Panel Button"
-msgstr "داخل الزر"
+msgstr "زر الشري_ط"
 
 #: ../panel-plugin/configuration-dialog.cpp:997
 msgid "_Pattern:"

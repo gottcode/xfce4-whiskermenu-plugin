@@ -1,5 +1,5 @@
 # Hungarian translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2018 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-24 09:02-0500\n"
-"PO-Revision-Date: 2018-11-11 18:12+0000\n"
+"PO-Revision-Date: 2020-02-12 22:13+0000\n"
 "Last-Translator: Gábor Horváth <xazax.hun@gmail.com>\n"
 "Language-Team: Hungarian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/hu/)\n"
@@ -52,9 +52,8 @@ msgid "Amount of _items:"
 msgstr "Elemek száma:"
 
 #: ../panel-plugin/configuration-dialog.cpp:683
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "Alkalmazáskereső"
+msgstr ""
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -172,9 +171,8 @@ msgid "Failed to suspend."
 msgstr ""
 
 #: ../panel-plugin/settings.cpp:141
-#, fuzzy
 msgid "Failed to switch user."
-msgstr "Nem sikerült a felhasználóváltás."
+msgstr ""
 
 #: ../panel-plugin/window.cpp:159
 msgid "Favorites"
@@ -334,14 +332,12 @@ msgid "Show as _icons"
 msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:595
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "Alapvonalak megjelenítése"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:603
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "Ke_ret megjelenítése"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:871
 msgid "Show c_onfirmation dialog"
@@ -389,9 +385,8 @@ msgid "Suspending computer in %d seconds."
 msgstr "A számítógép felfüggesztése %d másodperc múlva."
 
 #: ../panel-plugin/settings.cpp:139
-#, fuzzy
 msgid "Switch _User"
-msgstr "_Felhasználóváltás"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:820
 msgid "Switch categories by _hovering"
@@ -511,7 +506,7 @@ msgstr "OK"
 
 #: ../panel-plugin/configuration-dialog.cpp:100
 msgid "_Panel Button"
-msgstr "Panel gomb"
+msgstr "_Panel gomb"
 
 #: ../panel-plugin/configuration-dialog.cpp:997
 msgid "_Pattern:"

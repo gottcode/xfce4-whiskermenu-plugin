@@ -1,5 +1,5 @@
 # Ukrainian translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2019 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-24 09:02-0500\n"
-"PO-Revision-Date: 2019-02-07 17:05+0000\n"
+"PO-Revision-Date: 2020-02-12 22:13+0000\n"
 "Last-Translator: zubr139\n"
 "Language-Team: Ukrainian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/uk/)\n"
@@ -53,9 +53,8 @@ msgid "Amount of _items:"
 msgstr "Кількість _елементів:"
 
 #: ../panel-plugin/configuration-dialog.cpp:683
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "Пошук встановлених програм"
+msgstr ""
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -173,9 +172,8 @@ msgid "Failed to suspend."
 msgstr "Не вдалося призупинити."
 
 #: ../panel-plugin/settings.cpp:141
-#, fuzzy
 msgid "Failed to switch user."
-msgstr "Неможливо поміняти користувачів."
+msgstr ""
 
 #: ../panel-plugin/window.cpp:159
 msgid "Favorites"
@@ -335,14 +333,12 @@ msgid "Show as _icons"
 msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:595
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "Показати базову лінію"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:603
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "Показувати _рамку"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:871
 msgid "Show c_onfirmation dialog"
@@ -390,9 +386,8 @@ msgid "Suspending computer in %d seconds."
 msgstr "Призупинення роботи комп'ютера за %d секунд."
 
 #: ../panel-plugin/settings.cpp:139
-#, fuzzy
 msgid "Switch _User"
-msgstr "Поміняти _користувачів"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:820
 msgid "Switch categories by _hovering"
@@ -512,7 +507,7 @@ msgstr "_Гаразд"
 
 #: ../panel-plugin/configuration-dialog.cpp:100
 msgid "_Panel Button"
-msgstr "Кнопка панелі"
+msgstr "Кн_опка панелі"
 
 #: ../panel-plugin/configuration-dialog.cpp:997
 msgid "_Pattern:"

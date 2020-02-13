@@ -1,5 +1,5 @@
 # Hebrew translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2017 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -12,15 +12,16 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-24 09:02-0500\n"
-"PO-Revision-Date: 2017-09-23 19:01+0000\n"
-"Last-Translator: Eli Shleifer <eligator@gmail.com>\n"
+"PO-Revision-Date: 2020-02-12 22:13+0000\n"
+"Last-Translator: GenghisKhan <genghiskhan@gmx.ca>\n"
 "Language-Team: Hebrew (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/he/)\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % "
+"1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
 #: ../panel-plugin/configuration-dialog.cpp:952
 msgid "Add action"
@@ -51,9 +52,8 @@ msgid "Amount of _items:"
 msgstr "כמות _פריטים:"
 
 #: ../panel-plugin/configuration-dialog.cpp:683
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "מוצא יישומים"
+msgstr ""
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -171,9 +171,8 @@ msgid "Failed to suspend."
 msgstr ""
 
 #: ../panel-plugin/settings.cpp:141
-#, fuzzy
 msgid "Failed to switch user."
-msgstr "נכשל להעביר בין משתמשים."
+msgstr ""
 
 #: ../panel-plugin/window.cpp:159
 msgid "Favorites"
@@ -197,9 +196,8 @@ msgid "Icon and title"
 msgstr "איקון וכותרת"
 
 #: ../panel-plugin/configuration-dialog.cpp:852
-#, fuzzy
 msgid "Include _favorites"
-msgstr "התעלם מ_מועדפים"
+msgstr ""
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Large"
@@ -334,14 +332,12 @@ msgid "Show as _icons"
 msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:595
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "הצגת קווי בסיס (Baselines)"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:603
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "הצג _מסגרת"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:871
 msgid "Show c_onfirmation dialog"
@@ -389,9 +385,8 @@ msgid "Suspending computer in %d seconds."
 msgstr "משהה מחשב בעוד %d שניות."
 
 #: ../panel-plugin/settings.cpp:139
-#, fuzzy
 msgid "Switch _User"
-msgstr "העבר בין _משתמשים"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:820
 msgid "Switch categories by _hovering"
@@ -511,7 +506,7 @@ msgstr "_אישור"
 
 #: ../panel-plugin/configuration-dialog.cpp:100
 msgid "_Panel Button"
-msgstr "כפתור לוח"
+msgstr "_לחצן לוח"
 
 #: ../panel-plugin/configuration-dialog.cpp:997
 msgid "_Pattern:"

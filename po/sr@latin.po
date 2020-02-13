@@ -1,5 +1,5 @@
 # Serbian (Latin) translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2017 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-24 09:02-0500\n"
-"PO-Revision-Date: 2017-02-16 08:48+0000\n"
-"Last-Translator: srdjan srdjan <acrvena@gmail.com>\n"
+"PO-Revision-Date: 2020-02-12 22:14+0000\n"
+"Last-Translator: kakonema <kakonema@gmail.com>\n"
 "Language-Team: Serbian (Latin) (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/sr@latin/)\n"
 "Language: sr@latin\n"
@@ -53,9 +53,8 @@ msgid "Amount of _items:"
 msgstr "Kolicina stvari:"
 
 #: ../panel-plugin/configuration-dialog.cpp:683
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "Aplikacije"
+msgstr ""
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -173,9 +172,8 @@ msgid "Failed to suspend."
 msgstr ""
 
 #: ../panel-plugin/settings.cpp:141
-#, fuzzy
 msgid "Failed to switch user."
-msgstr "Nisam uspeo da promenim korisnika."
+msgstr ""
 
 #: ../panel-plugin/window.cpp:159
 msgid "Favorites"
@@ -199,9 +197,8 @@ msgid "Icon and title"
 msgstr "Ikonica i naslov"
 
 #: ../panel-plugin/configuration-dialog.cpp:852
-#, fuzzy
 msgid "Include _favorites"
-msgstr "Zanemari_omiljene"
+msgstr ""
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Large"
@@ -336,14 +333,12 @@ msgid "Show as _icons"
 msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:595
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "Prikaži osnovice"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:603
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "Prikaži osnovice"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:871
 msgid "Show c_onfirmation dialog"
@@ -391,9 +386,8 @@ msgid "Suspending computer in %d seconds."
 msgstr ""
 
 #: ../panel-plugin/settings.cpp:139
-#, fuzzy
 msgid "Switch _User"
-msgstr "Promeni _korisnika"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:820
 msgid "Switch categories by _hovering"
@@ -513,7 +507,7 @@ msgstr "_U redu"
 
 #: ../panel-plugin/configuration-dialog.cpp:100
 msgid "_Panel Button"
-msgstr "Dugme police"
+msgstr "Dugme _Panela"
 
 #: ../panel-plugin/configuration-dialog.cpp:997
 msgid "_Pattern:"

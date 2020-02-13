@@ -1,5 +1,5 @@
 # Persian translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2015 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-24 09:02-0500\n"
-"PO-Revision-Date: 2015-06-04 14:31+0000\n"
-"Last-Translator: Reza Gharibi <reza.gharibi.rg@gmail.com>\n"
+"PO-Revision-Date: 2020-02-12 22:14+0000\n"
+"Last-Translator: Transifex Bot <>\n"
 "Language-Team: Persian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/fa/)\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../panel-plugin/configuration-dialog.cpp:952
 msgid "Add action"
@@ -48,9 +48,8 @@ msgid "Amount of _items:"
 msgstr "تعداد _آیتم‌ها"
 
 #: ../panel-plugin/configuration-dialog.cpp:683
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "برنامه‌ها"
+msgstr ""
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -118,9 +117,8 @@ msgid "Do you want to suspend to disk?"
 msgstr ""
 
 #: ../panel-plugin/page.cpp:414
-#, fuzzy
 msgid "Edit Application..."
-msgstr "_ویرایش برنامه‌ها"
+msgstr ""
 
 #: ../panel-plugin/settings.cpp:181
 msgid "Edit _Profile"
@@ -169,9 +167,8 @@ msgid "Failed to suspend."
 msgstr ""
 
 #: ../panel-plugin/settings.cpp:141
-#, fuzzy
 msgid "Failed to switch user."
-msgstr "تغییر کاربر با شکست مواجه شد."
+msgstr ""
 
 #: ../panel-plugin/window.cpp:159
 msgid "Favorites"
@@ -195,9 +192,8 @@ msgid "Icon and title"
 msgstr "آیکان و عنوان"
 
 #: ../panel-plugin/configuration-dialog.cpp:852
-#, fuzzy
 msgid "Include _favorites"
-msgstr "چشم‌پوشی از _مورد علاقه‌ها"
+msgstr ""
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Large"
@@ -324,23 +320,20 @@ msgid "Show application _descriptions"
 msgstr "نمایش برنامه _توضیحات"
 
 #: ../panel-plugin/configuration-dialog.cpp:644
-#, fuzzy
 msgid "Show application too_ltips"
-msgstr "نمایش برنامه _توضیحات"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:587
 msgid "Show as _icons"
 msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:595
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "نمایش مبناها"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:603
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "نمایش مبناها"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:871
 msgid "Show c_onfirmation dialog"
@@ -388,9 +381,8 @@ msgid "Suspending computer in %d seconds."
 msgstr ""
 
 #: ../panel-plugin/settings.cpp:139
-#, fuzzy
 msgid "Switch _User"
-msgstr "تغییر _کاربر"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:820
 msgid "Switch categories by _hovering"
@@ -425,9 +417,8 @@ msgid "Unable to add launcher to panel."
 msgstr "ناتوان در اضافه‌کردن لانچر به پنل."
 
 #: ../panel-plugin/page.cpp:556
-#, fuzzy
 msgid "Unable to edit launcher."
-msgstr "ناتوان در اضافه‌کردن لانچر به پنل."
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:546
 #, c-format
@@ -511,7 +502,7 @@ msgstr "_تأیید"
 
 #: ../panel-plugin/configuration-dialog.cpp:100
 msgid "_Panel Button"
-msgstr "دکمه‌ی پنل"
+msgstr "_دکمه‌ی پنل"
 
 #: ../panel-plugin/configuration-dialog.cpp:997
 msgid "_Pattern:"

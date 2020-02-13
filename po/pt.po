@@ -1,10 +1,11 @@
 # Portuguese translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2019 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # Carlos Reis <reiscarlos1976@gmail.com>, 2017
 # fabioluciano <fabio@naoimporta.com>, 2013
+# Graeme Gott <graeme@gottcode.org>, 2013
 # José Vieira <jvieira33@sapo.pt>, 2016-2019
 # Rui <xymarior@yandex.com>, 2018-2019
 # Sérgio Marques <smarquespt@gmail.com>, 2013-2015
@@ -13,8 +14,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-24 09:02-0500\n"
-"PO-Revision-Date: 2019-11-14 11:52+0000\n"
-"Last-Translator: José Vieira <jvieira33@sapo.pt>\n"
+"PO-Revision-Date: 2020-02-12 22:14+0000\n"
+"Last-Translator: Sérgio Marques <smarquespt@gmail.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/pt/)\n"
 "Language: pt\n"
@@ -52,9 +53,8 @@ msgid "Amount of _items:"
 msgstr "Número de ite_ns:"
 
 #: ../panel-plugin/configuration-dialog.cpp:683
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "Localizar aplicações"
+msgstr ""
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -333,14 +333,12 @@ msgid "Show as _icons"
 msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:595
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "Mostrar linhas base"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:603
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "Mostrar m_oldura"
+msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:871
 msgid "Show c_onfirmation dialog"
@@ -509,7 +507,7 @@ msgstr "_OK"
 
 #: ../panel-plugin/configuration-dialog.cpp:100
 msgid "_Panel Button"
-msgstr "Botão do painel"
+msgstr "Botão do _painel"
 
 #: ../panel-plugin/configuration-dialog.cpp:997
 msgid "_Pattern:"
