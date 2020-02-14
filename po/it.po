@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-12 12:49-0500\n"
-"PO-Revision-Date: 2020-02-01 06:56+0000\n"
-"Last-Translator: Pierluigi Mario <pierluigimariomail@gmail.com>\n"
+"PO-Revision-Date: 2020-02-12 17:57+0000\n"
+"Last-Translator: Italang, 2020\n"
 "Language-Team: Italian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/it/)\n"
 "Language: it\n"
@@ -308,7 +308,7 @@ msgstr "Seleziona comando"
 
 #: ../panel-plugin/settings-dialog.cpp:302
 msgid "Select an Icon"
-msgstr "Selezionare un'icona"
+msgstr "Seleziona un'icona"
 
 #: ../panel-plugin/settings-dialog.cpp:921
 msgid "Session Commands"
