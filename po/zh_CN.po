@@ -1,17 +1,17 @@
 # Chinese (China) translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2019 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # Mingcong Bai <jeffbai@aosc.xyz>, 2014
 # Tao Lin <lintao51@gmail.com>, 2015
-# 玉堂白鹤 <yjwork@qq.com>, 2015-2019
+# 玉堂白鹤 <yjwork@qq.com>, 2015-2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-24 09:02-0500\n"
-"PO-Revision-Date: 2019-04-02 06:50+0000\n"
+"PO-Revision-Date: 2020-02-14 03:17+0000\n"
 "Last-Translator: 玉堂白鹤 <yjwork@qq.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/zh_CN/)\n"
@@ -39,7 +39,7 @@ msgstr "添加到面板"
 
 #: ../panel-plugin/category.cpp:49
 msgid "All Applications"
-msgstr "所有应用程序"
+msgstr "全部应用程序"
 
 #: ../panel-plugin/plugin.cpp:409
 msgid "Alternate application launcher for Xfce"
@@ -50,9 +50,8 @@ msgid "Amount of _items:"
 msgstr "项目合计(_I):"
 
 #: ../panel-plugin/configuration-dialog.cpp:683
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "应用程序查找器"
+msgstr "应用图标大小 (_Z): "
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -61,7 +60,7 @@ msgstr "应用程序"
 #: ../panel-plugin/launcher.cpp:232
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
-msgstr "您确定要隐藏 “%s” 吗？"
+msgstr "您确定要隐藏\"%s\"?"
 
 #: ../panel-plugin/settings.cpp:146
 msgid "Are you sure you want to log out?"
@@ -170,7 +169,6 @@ msgid "Failed to suspend."
 msgstr "挂起失败。"
 
 #: ../panel-plugin/settings.cpp:141
-#, fuzzy
 msgid "Failed to switch user."
 msgstr "切换用户失败。"
 
@@ -185,7 +183,7 @@ msgstr "计算机将在%d 秒内休眠。"
 
 #: ../panel-plugin/launcher.cpp:231 ../panel-plugin/page.cpp:418
 msgid "Hide Application"
-msgstr ""
+msgstr "隐藏应用程序"
 
 #: ../panel-plugin/configuration-dialog.cpp:758
 msgid "Icon"
@@ -329,17 +327,15 @@ msgstr "显示应用程序工具提示(_L)"
 
 #: ../panel-plugin/configuration-dialog.cpp:587
 msgid "Show as _icons"
-msgstr ""
+msgstr "显示为图标(_I)"
 
 #: ../panel-plugin/configuration-dialog.cpp:595
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "显示基线"
+msgstr "显示为列表(_T)"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "显示边框(_F)"
+msgstr "显示为树(_R)"
 
 #: ../panel-plugin/configuration-dialog.cpp:871
 msgid "Show c_onfirmation dialog"
@@ -387,9 +383,8 @@ msgid "Suspending computer in %d seconds."
 msgstr "计算机将在%d 秒内挂起。"
 
 #: ../panel-plugin/settings.cpp:139
-#, fuzzy
 msgid "Switch _User"
-msgstr "切换用户 (_U)"
+msgstr "切换用户(_U)"
 
 #: ../panel-plugin/configuration-dialog.cpp:820
 msgid "Switch categories by _hovering"
@@ -408,7 +403,7 @@ msgstr "标题"
 msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
-msgstr ""
+msgstr "要取消隐藏，您必须手动删除文件 \"%s\" ，或打开文件并删除行 \"%s\"。"
 
 #: ../panel-plugin/settings.cpp:159
 #, c-format
@@ -509,7 +504,7 @@ msgstr "确定(_O)"
 
 #: ../panel-plugin/configuration-dialog.cpp:100
 msgid "_Panel Button"
-msgstr "面板按钮"
+msgstr "面板按钮(_P)"
 
 #: ../panel-plugin/configuration-dialog.cpp:997
 msgid "_Pattern:"
@@ -525,7 +520,7 @@ msgstr "重启(_R)"
 
 #: ../panel-plugin/settings.cpp:131
 msgid "_Settings Manager"
-msgstr ""
+msgstr "设置管理(_S)"
 
 #: ../panel-plugin/configuration-dialog.cpp:769
 msgid "_Title:"
