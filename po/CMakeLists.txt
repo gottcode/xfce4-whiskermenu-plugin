@@ -43,3 +43,29 @@ install(
 	DESTINATION ${CMAKE_INSTALL_DATADIR}/xfce4/panel/plugins
 )
 add_custom_target(desktopfile ALL DEPENDS whiskermenu.desktop)
+
+# Generate translations template
+find_program(XGETTEXT_EXECUTABLE xgettext)
+if(XGETTEXT_EXECUTABLE)
+	add_custom_target(update_pot
+		COMMAND ${XGETTEXT_EXECUTABLE}
+			--output=xfce4-whiskermenu-plugin.pot
+			--from-code=UTF-8
+			--c++ --keyword=_
+			--sort-output
+			--package-name='Whisker Menu'
+			--copyright-holder='Graeme Gott'
+			../panel-plugin/*.cpp ../panel-plugin/*.h
+		COMMAND ${XGETTEXT_EXECUTABLE}
+			--output=xfce4-whiskermenu-plugin.pot
+			--join-existing
+			--from-code=UTF-8
+			-k --keyword=Name --keyword=Comment
+			--sort-output
+			--package-name='Whisker Menu'
+			--copyright-holder='Graeme Gott'
+			../panel-plugin/whiskermenu.desktop.in
+		WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+		COMMENT "Generating xfce4-whiskermenu-plugin.pot"
+	)
+endif()
