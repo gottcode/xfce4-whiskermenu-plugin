@@ -55,7 +55,7 @@ msgstr "_Количество элементов:"
 
 #: ../panel-plugin/settings-dialog.cpp:738
 msgid "Application icon si_ze:"
-msgstr ""
+msgstr "Раз_мер иконок приложений:"
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -174,7 +174,7 @@ msgstr "Ошибка включения режима сна"
 
 #: ../panel-plugin/settings.cpp:151
 msgid "Failed to switch user."
-msgstr ""
+msgstr "Не удалось сменить пользователя."
 
 #: ../panel-plugin/window.cpp:154
 msgid "Favorites"
@@ -187,7 +187,7 @@ msgstr "Включение режима гибернации через %d се�
 
 #: ../panel-plugin/launcher.cpp:231 ../panel-plugin/page.cpp:408
 msgid "Hide Application"
-msgstr ""
+msgstr "Скрыть приложение"
 
 #: ../panel-plugin/settings-dialog.cpp:813
 msgid "Icon"
@@ -331,15 +331,15 @@ msgstr "Показывать всплывающие ко_мментарии к �
 
 #: ../panel-plugin/settings-dialog.cpp:613
 msgid "Show as _icons"
-msgstr ""
+msgstr "Показать как _значки"
 
 #: ../panel-plugin/settings-dialog.cpp:630
 msgid "Show as lis_t"
-msgstr ""
+msgstr "Показать как списо_к"
 
 #: ../panel-plugin/settings-dialog.cpp:648
 msgid "Show as t_ree"
-msgstr ""
+msgstr "Показать в виде д_ерева"
 
 #: ../panel-plugin/settings-dialog.cpp:925
 msgid "Show c_onfirmation dialog"
@@ -388,7 +388,7 @@ msgstr "Переход в режим сна через %d секунд."
 
 #: ../panel-plugin/settings.cpp:149
 msgid "Switch _User"
-msgstr ""
+msgstr "Сменить _пользователя"
 
 #: ../panel-plugin/settings-dialog.cpp:874
 msgid "Switch categories by _hovering"
@@ -408,6 +408,8 @@ msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
 msgstr ""
+"Чтобы снова показать его, вручную удалите файл \"%s\" или откройте его и "
+"удалите строчку \"%s\"."
 
 #: ../panel-plugin/settings.cpp:169
 #, c-format
@@ -525,7 +527,7 @@ msgstr "_Перезагрузить"
 
 #: ../panel-plugin/settings.cpp:141
 msgid "_Settings Manager"
-msgstr ""
+msgstr "Диспетчер _настроек"
 
 #: ../panel-plugin/settings-dialog.cpp:824
 msgid "_Title:"
