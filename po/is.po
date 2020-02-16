@@ -1,16 +1,16 @@
 # Icelandic translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2019 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # Kristján Magnússon, 2016-2017
-# Sveinn í Felli <sv1@fellsnet.is>, 2019
+# Sveinn í Felli <sv1@fellsnet.is>, 2019-2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-24 09:02-0500\n"
-"PO-Revision-Date: 2019-09-23 17:49+0000\n"
+"PO-Revision-Date: 2020-02-16 17:16+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/is/)\n"
@@ -49,9 +49,8 @@ msgid "Amount of _items:"
 msgstr "Fjöldi _atriða:"
 
 #: ../panel-plugin/configuration-dialog.cpp:683
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "Forritaleit"
+msgstr "Stærð táknmynda fyrir f_orrit:"
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -60,7 +59,7 @@ msgstr "Forrit"
 #: ../panel-plugin/launcher.cpp:232
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
-msgstr "Ertu viss að þú viljir fela \"%s\"?"
+msgstr "Ertu viss um að þú viljir fela \"%s\"?"
 
 #: ../panel-plugin/settings.cpp:146
 msgid "Are you sure you want to log out?"
@@ -183,7 +182,7 @@ msgstr "Legg tölvu í dvala eftir %d sekúndur."
 
 #: ../panel-plugin/launcher.cpp:231 ../panel-plugin/page.cpp:418
 msgid "Hide Application"
-msgstr ""
+msgstr "Fela forrit"
 
 #: ../panel-plugin/configuration-dialog.cpp:758
 msgid "Icon"
@@ -327,17 +326,15 @@ msgstr "Birta _vísbendingar forrita"
 
 #: ../panel-plugin/configuration-dialog.cpp:587
 msgid "Show as _icons"
-msgstr ""
+msgstr "Birta sem táknm_yndir"
 
 #: ../panel-plugin/configuration-dialog.cpp:595
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "Birta grunnlínur"
+msgstr "Birta sem lis_ta"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "Sýna ra_mma."
+msgstr "Birta sem g_reinar"
 
 #: ../panel-plugin/configuration-dialog.cpp:871
 msgid "Show c_onfirmation dialog"
@@ -522,7 +519,7 @@ msgstr "Endu_rræsa"
 
 #: ../panel-plugin/settings.cpp:131
 msgid "_Settings Manager"
-msgstr ""
+msgstr "_Stillingastýring"
 
 #: ../panel-plugin/configuration-dialog.cpp:769
 msgid "_Title:"
