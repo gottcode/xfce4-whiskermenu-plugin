@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-12 12:49-0500\n"
-"PO-Revision-Date: 2020-01-25 14:18+0000\n"
+"PO-Revision-Date: 2020-02-16 11:21+0000\n"
 "Last-Translator: Kiril Kirilov <cybercop_montana@abv.bg>\n"
 "Language-Team: Bulgarian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/bg/)\n"
@@ -329,11 +329,11 @@ msgstr "Показване, като _икони"
 
 #: ../panel-plugin/settings-dialog.cpp:630
 msgid "Show as lis_t"
-msgstr "Покажи, като _списък"
+msgstr "Показване, като _списък"
 
 #: ../panel-plugin/settings-dialog.cpp:648
 msgid "Show as t_ree"
-msgstr "Покажи, като _дърво"
+msgstr "Показване, като _дърво"
 
 #: ../panel-plugin/settings-dialog.cpp:925
 msgid "Show c_onfirmation dialog"
@@ -341,7 +341,7 @@ msgstr "Показване на диалог за потвърждение"
 
 #: ../panel-plugin/settings-dialog.cpp:692
 msgid "Show cate_gory names"
-msgstr "Покажи имената на _категориите"
+msgstr "Показване имената на _категориите"
 
 #: ../panel-plugin/settings-dialog.cpp:686
 msgid "Show generic application _names"
@@ -489,19 +489,19 @@ msgstr "_Помощ"
 
 #: ../panel-plugin/settings.cpp:177
 msgid "_Hibernate"
-msgstr "Хибернация"
+msgstr "_Хибернация"
 
 #: ../panel-plugin/settings-dialog.cpp:836
 msgid "_Icon:"
-msgstr "Икона:"
+msgstr "_Икона:"
 
 #: ../panel-plugin/settings.cpp:145
 msgid "_Lock Screen"
-msgstr "Заключване на екрана"
+msgstr "_Заключване на екрана"
 
 #: ../panel-plugin/command-edit.cpp:68 ../panel-plugin/settings-dialog.cpp:305
 msgid "_OK"
-msgstr "OK"
+msgstr "_OK"
 
 #: ../panel-plugin/settings-dialog.cpp:116
 msgid "_Panel Button"
@@ -509,7 +509,7 @@ msgstr "Бутон на _панела"
 
 #: ../panel-plugin/settings-dialog.cpp:1050
 msgid "_Pattern:"
-msgstr "Шаблон:"
+msgstr "_Шаблон:"
 
 #: ../panel-plugin/settings-dialog.cpp:1074
 msgid "_Regular expression"
@@ -517,7 +517,7 @@ msgstr "Регулярен израз"
 
 #: ../panel-plugin/settings.cpp:159
 msgid "_Restart"
-msgstr "Рестартиране"
+msgstr "_Рестартиране"
 
 #: ../panel-plugin/settings.cpp:141
 msgid "_Settings Manager"
