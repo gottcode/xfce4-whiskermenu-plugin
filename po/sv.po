@@ -279,7 +279,7 @@ msgstr "Ta bort åtgärd \"%s\"?"
 
 #: ../panel-plugin/page.cpp:388
 msgid "Remove from Favorites"
-msgstr "Ta bort från favoriter"
+msgstr "Ta bort från Favoriter"
 
 #: ../panel-plugin/settings-dialog.cpp:1014
 msgid "Remove selected action"
@@ -313,7 +313,7 @@ msgstr "Välj kommando"
 
 #: ../panel-plugin/settings-dialog.cpp:302
 msgid "Select an Icon"
-msgstr "Välj en ikon"
+msgstr "Välj en Ikon"
 
 #: ../panel-plugin/settings-dialog.cpp:921
 msgid "Session Commands"
