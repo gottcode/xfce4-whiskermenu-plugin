@@ -79,7 +79,7 @@ public:
 protected:
 	Element() = default;
 
-	void set_icon(const gchar* icon);
+	void set_icon(const gchar* icon, bool use_fallbacks = false);
 
 	void set_text(const gchar* text)
 	{
