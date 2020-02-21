@@ -21,7 +21,7 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-void Element::set_icon(const gchar* icon)
+void Element::set_icon(const gchar* icon, bool use_fallbacks)
 {
 	if (m_icon)
 	{
@@ -34,12 +34,14 @@ void Element::set_icon(const gchar* icon)
 		return;
 	}
 
+	auto themed_icon_new = use_fallbacks ? &g_themed_icon_new_with_default_fallbacks : &g_themed_icon_new;
+
 	if (!g_path_is_absolute(icon))
 	{
 		const gchar* pos = g_strrstr(icon, ".");
 		if (!pos)
 		{
-			m_icon = g_themed_icon_new_with_default_fallbacks(icon);
+			m_icon = themed_icon_new(icon);
 		}
 		else
 		{
@@ -50,12 +52,12 @@ void Element::set_icon(const gchar* icon)
 					|| (g_strcmp0(suffix, ".svgz") == 0))
 			{
 				gchar* name = g_strndup(icon, pos - icon);
-				m_icon = g_themed_icon_new_with_default_fallbacks(name);
+				m_icon = themed_icon_new(name);
 				g_free(name);
 			}
 			else
 			{
-				m_icon = g_themed_icon_new_with_default_fallbacks(icon);
+				m_icon = themed_icon_new(icon);
 			}
 			g_free(suffix);
 		}
