@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-12 12:49-0500\n"
-"PO-Revision-Date: 2020-01-12 09:05+0000\n"
+"PO-Revision-Date: 2020-02-21 18:10+0000\n"
 "Last-Translator: Caarmi\n"
 "Language-Team: Interlingue (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/ie/)\n"
@@ -48,9 +48,8 @@ msgid "Amount of _items:"
 msgstr "Númere de _elementes:"
 
 #: ../panel-plugin/settings-dialog.cpp:738
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "Trovator de applicationes"
+msgstr "Di_m. de icones de apps:"
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -329,14 +328,12 @@ msgid "Show as _icons"
 msgstr "Monstrar quam _icones"
 
 #: ../panel-plugin/settings-dialog.cpp:630
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "Monstrar quam _icones"
+msgstr "Monstrar quam lis_te"
 
 #: ../panel-plugin/settings-dialog.cpp:648
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "Monstrar quam _icones"
+msgstr "Monstrar quam á_rbor "
 
 #: ../panel-plugin/settings-dialog.cpp:925
 msgid "Show c_onfirmation dialog"
