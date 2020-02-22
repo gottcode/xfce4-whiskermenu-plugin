@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-24 09:02-0500\n"
-"PO-Revision-Date: 2020-02-12 22:14+0000\n"
+"PO-Revision-Date: 2020-02-22 11:48+0000\n"
 "Last-Translator: Slavko <linux@slavino.sk>\n"
 "Language-Team: Slovak (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/sk/)\n"
@@ -51,7 +51,7 @@ msgstr "Počet polož_iek:"
 
 #: ../panel-plugin/configuration-dialog.cpp:683
 msgid "Application icon si_ze:"
-msgstr ""
+msgstr "_Veľkosť ikony aplikácie:"
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -331,11 +331,11 @@ msgstr "Zobraziť ako _ikony"
 
 #: ../panel-plugin/configuration-dialog.cpp:595
 msgid "Show as lis_t"
-msgstr ""
+msgstr "Zobraziť ako _zoznam:"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "Show as t_ree"
-msgstr ""
+msgstr "Zobraziť ako st_rom:"
 
 #: ../panel-plugin/configuration-dialog.cpp:871
 msgid "Show c_onfirmation dialog"
@@ -522,7 +522,7 @@ msgstr "_Reštartovať"
 
 #: ../panel-plugin/settings.cpp:131
 msgid "_Settings Manager"
-msgstr ""
+msgstr "_Správca nastavení"
 
 #: ../panel-plugin/configuration-dialog.cpp:769
 msgid "_Title:"
