@@ -1,20 +1,23 @@
 # Greek translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2019 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # angel_solomos, 2013
-# Ioannis LM, 2016,2018-2019
+# angel_solomos, 2013
+# gapan <vlahavas@gmail.com>, 2014
+# Ioannis LM, 2016,2018-2020
 # Thanos Apostolou <thanosapostolou@outlook.com>, 2017
 # gapan <vlahavas@gmail.com>, 2014
-# Γιάννης Ανθυμίδης, 2013
+# Yannis Anthymidis, 2013
+# Yannis Anthymidis, 2013
 # Πέτρος Σαμαράς <psamaras1@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-12 12:49-0500\n"
-"PO-Revision-Date: 2019-09-21 09:00+0000\n"
+"PO-Revision-Date: 2020-02-22 10:10+0000\n"
 "Last-Translator: Ioannis LM\n"
 "Language-Team: Greek (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/el/)\n"
@@ -42,7 +45,7 @@ msgstr "Προσθήκη στο ταμπλό"
 
 #: ../panel-plugin/category.cpp:50
 msgid "All Applications"
-msgstr "Όλες οι Εφαρμογές"
+msgstr "Όλες οι εφαρμογές"
 
 #: ../panel-plugin/plugin.cpp:409
 msgid "Alternate application launcher for Xfce"
@@ -53,9 +56,8 @@ msgid "Amount of _items:"
 msgstr "Σύνολο _αντικειμένων:"
 
 #: ../panel-plugin/settings-dialog.cpp:738
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "Εύρεση Εφαρμογών"
+msgstr "Μέγεθος εικονιδίων _εφαρμογών:"
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -64,7 +66,7 @@ msgstr "Εφαρμογές"
 #: ../panel-plugin/launcher.cpp:232
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
-msgstr "Είστε σίγουροι ότι θέλετε να αποκρύψετε το \"%s\";"
+msgstr "Θέλετε σίγουρα να αποκρύψετε την \"%s\";"
 
 #: ../panel-plugin/settings.cpp:156
 msgid "Are you sure you want to log out?"
@@ -187,7 +189,7 @@ msgstr "Αδρανοποίηση υπολογιστή σε %d δευτερόλε
 
 #: ../panel-plugin/launcher.cpp:231 ../panel-plugin/page.cpp:408
 msgid "Hide Application"
-msgstr ""
+msgstr "Απόκρυψη εφαρμογής"
 
 #: ../panel-plugin/settings-dialog.cpp:813
 msgid "Icon"
@@ -331,17 +333,15 @@ msgstr "Εμφάνιση αναδυόμενης συμ_βουλής εφαρμο
 
 #: ../panel-plugin/settings-dialog.cpp:613
 msgid "Show as _icons"
-msgstr ""
+msgstr "Εμφάνιση _εικονιδίων"
 
 #: ../panel-plugin/settings-dialog.cpp:630
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "Εμφάνιση αφετηρίας"
+msgstr "Εμφάνιση _λίστας"
 
 #: ../panel-plugin/settings-dialog.cpp:648
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "Εμ_φάνιση πλαισίου"
+msgstr "Εμφάνιση _δομής"
 
 #: ../panel-plugin/settings-dialog.cpp:925
 msgid "Show c_onfirmation dialog"
@@ -410,6 +410,8 @@ msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
 msgstr ""
+"Για να την επαναφέρετε πρέπει να διαγράψετε το αρχείο \"%s\" ή να ανοίξετε "
+"το αρχείο και να αφαιρέσετε τη γραμμή \"%s\"."
 
 #: ../panel-plugin/settings.cpp:169
 #, c-format
@@ -527,7 +529,7 @@ msgstr "Επανεκκ_ίνηση"
 
 #: ../panel-plugin/settings.cpp:141
 msgid "_Settings Manager"
-msgstr ""
+msgstr "_Διαχειριστής ρυθμίσεων"
 
 #: ../panel-plugin/settings-dialog.cpp:824
 msgid "_Title:"
