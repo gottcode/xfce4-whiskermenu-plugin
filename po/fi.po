@@ -4,7 +4,9 @@
 #
 # Translators:
 # Ammuu5, 2018-2020
+# Assalat3 <assalat3@gmail.com>, 2018
 # Pasi Lallinaho <pasi@shimmerproject.org>, 2014-2015,2019
+# Sami Korkalainen, 2013-2014
 # Sami Korkalainen, 2014
 # Assalat3 <assalat3@gmail.com>, 2018
 # Sami Korkalainen, 2013
@@ -13,8 +15,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-24 09:02-0500\n"
-"PO-Revision-Date: 2020-02-12 22:13+0000\n"
-"Last-Translator: Sami Korkalainen\n"
+"PO-Revision-Date: 2020-02-25 00:44+0000\n"
+"Last-Translator: Ammuu5\n"
 "Language-Team: Finnish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/fi/)\n"
 "Language: fi\n"
@@ -329,15 +331,15 @@ msgstr "Näytä sovelluksien työka_luvihjeet"
 
 #: ../panel-plugin/configuration-dialog.cpp:587
 msgid "Show as _icons"
-msgstr ""
+msgstr "Näytä _kuvakkeina"
 
 #: ../panel-plugin/configuration-dialog.cpp:595
 msgid "Show as lis_t"
-msgstr ""
+msgstr "Näytä lis_tana"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "Show as t_ree"
-msgstr ""
+msgstr "Näytä p_uuna"
 
 #: ../panel-plugin/configuration-dialog.cpp:871
 msgid "Show c_onfirmation dialog"
@@ -522,7 +524,7 @@ msgstr "_Käynnistä uudelleen"
 
 #: ../panel-plugin/settings.cpp:131
 msgid "_Settings Manager"
-msgstr ""
+msgstr "_Asetustenhallinta"
 
 #: ../panel-plugin/configuration-dialog.cpp:769
 msgid "_Title:"
