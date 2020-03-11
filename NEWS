@@ -1,3 +1,9 @@
+2.4.3
+=====
+- Fix loading incorrect icons for some applications. (bug #16461)
+- Translation updates: Bulgarian, Finnish, Greek, Icelandic, Interlingue,
+  Nepali, Norwegian Bokmål, Russian, Slovak.
+
 2.4.2
 =====
 - Fix crash when selecting desktop action. (bug #16445)
