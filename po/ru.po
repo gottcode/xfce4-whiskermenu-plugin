@@ -4,16 +4,18 @@
 #
 # Translators:
 # sorrymak <dearalcher@gmail.com>, 2013
-# Kyrill Detinov <lazy.kent@opensuse.org>, 2013,2016
+# Kyrill Detinov <lazy.kent@opensuse.org>, 2013,2016,2020
 # Sergey Alyoshin <alyoshin.s@gmail.com>, 2013-2015,2017-2018
 # Sergey Shlyapugin <shlyapugin@gmail.com>, 2013
+# sorrymak <dearalcher@gmail.com>, 2013
+# Владимир <vladi105@yandex.ru>, 2018
 # Владимир <vladi105@yandex.ru>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-12 12:49-0500\n"
-"PO-Revision-Date: 2020-02-12 22:13+0000\n"
+"PO-Revision-Date: 2020-03-10 18:35+0000\n"
 "Last-Translator: Kyrill Detinov <lazy.kent@opensuse.org>\n"
 "Language-Team: Russian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ru/)\n"
@@ -100,7 +102,7 @@ msgstr "Очистить историю"
 
 #: ../panel-plugin/plugin.cpp:410
 msgid "Copyright © 2013-2020 Graeme Gott"
-msgstr ""
+msgstr "Copyright © 2013-2020 Graeme Gott"
 
 #: ../panel-plugin/settings-dialog.cpp:1033
 msgid "Details"
