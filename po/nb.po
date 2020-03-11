@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-24 09:02-0500\n"
-"PO-Revision-Date: 2020-02-12 22:14+0000\n"
+"PO-Revision-Date: 2020-03-11 11:41+0000\n"
 "Last-Translator: thomas <thomasbjornvold@gmail.com>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/nb/)\n"
@@ -37,7 +37,7 @@ msgstr "Legg til på panel"
 
 #: ../panel-plugin/category.cpp:49
 msgid "All Applications"
-msgstr "Alle programmer"
+msgstr "Alle applikasjoner"
 
 #: ../panel-plugin/plugin.cpp:409
 msgid "Alternate application launcher for Xfce"
@@ -49,7 +49,7 @@ msgstr "Antall enheter"
 
 #: ../panel-plugin/configuration-dialog.cpp:683
 msgid "Application icon si_ze:"
-msgstr ""
+msgstr "Applikasjon ikon-størrelse"
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -329,11 +329,11 @@ msgstr "Vis som_ikoner"
 
 #: ../panel-plugin/configuration-dialog.cpp:595
 msgid "Show as lis_t"
-msgstr ""
+msgstr "Vis som Lis_te"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "Show as t_ree"
-msgstr ""
+msgstr "Vis som t_ree"
 
 #: ../panel-plugin/configuration-dialog.cpp:871
 msgid "Show c_onfirmation dialog"
@@ -520,7 +520,7 @@ msgstr "_Restart"
 
 #: ../panel-plugin/settings.cpp:131
 msgid "_Settings Manager"
-msgstr ""
+msgstr "_Innstillinger"
 
 #: ../panel-plugin/configuration-dialog.cpp:769
 msgid "_Title:"
