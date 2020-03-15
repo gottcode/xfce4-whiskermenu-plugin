@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-24 09:02-0500\n"
-"PO-Revision-Date: 2020-02-25 00:44+0000\n"
+"PO-Revision-Date: 2020-03-15 06:25+0000\n"
 "Last-Translator: Ammuu5\n"
 "Language-Team: Finnish (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/fi/)\n"
@@ -408,6 +408,8 @@ msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
 msgstr ""
+"Poistaaksesi piilotuksen, sinun on poistettava tiedosto \"%s\" manuaalisesti "
+"tai avata tiedosto ja poistaa rivi \"%s\"."
 
 #: ../panel-plugin/settings.cpp:159
 #, c-format
