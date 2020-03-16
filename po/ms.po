@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# abuyop <abuyop@gmail.com>, 2013-2015,2017-2019
+# abuyop <abuyop@gmail.com>, 2013-2015,2017-2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-12 12:49-0500\n"
-"PO-Revision-Date: 2020-02-12 22:13+0000\n"
+"PO-Revision-Date: 2020-03-16 10:51+0000\n"
 "Last-Translator: abuyop <abuyop@gmail.com>\n"
 "Language-Team: Malay (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ms/)\n"
@@ -49,7 +49,7 @@ msgstr "Amaun _item:"
 
 #: ../panel-plugin/settings-dialog.cpp:738
 msgid "Application icon si_ze:"
-msgstr ""
+msgstr "Sai_z ikon aplikasi:"
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -58,7 +58,7 @@ msgstr "Aplikasi"
 #: ../panel-plugin/launcher.cpp:232
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
-msgstr "Anda pasti untuk sembunyi \"%s\"?"
+msgstr "Anda pasti mahu sembunyikan \"%s\"?"
 
 #: ../panel-plugin/settings.cpp:156
 msgid "Are you sure you want to log out?"
@@ -181,7 +181,7 @@ msgstr "Menghibernasikan komputer dalam tempoh %d saat."
 
 #: ../panel-plugin/launcher.cpp:231 ../panel-plugin/page.cpp:408
 msgid "Hide Application"
-msgstr ""
+msgstr "Sembunyi Aplikasi"
 
 #: ../panel-plugin/settings-dialog.cpp:813
 msgid "Icon"
@@ -271,7 +271,7 @@ msgstr "Buang tindakan \"%s\"?"
 
 #: ../panel-plugin/page.cpp:388
 msgid "Remove from Favorites"
-msgstr "Buang Dari Kegemaran"
+msgstr "Buang dari Kegemaran"
 
 #: ../panel-plugin/settings-dialog.cpp:1014
 msgid "Remove selected action"
@@ -305,7 +305,7 @@ msgstr "Pilih Perintah"
 
 #: ../panel-plugin/settings-dialog.cpp:302
 msgid "Select an Icon"
-msgstr "Pilih Satu Ikon"
+msgstr "Pilih satu Ikon"
 
 #: ../panel-plugin/settings-dialog.cpp:921
 msgid "Session Commands"
@@ -325,15 +325,15 @@ msgstr "Tunjuk pet_ua alat aplikasi"
 
 #: ../panel-plugin/settings-dialog.cpp:613
 msgid "Show as _icons"
-msgstr ""
+msgstr "Tunjuk sebagai _ikon"
 
 #: ../panel-plugin/settings-dialog.cpp:630
 msgid "Show as lis_t"
-msgstr ""
+msgstr "Tunjuk sebagai se_narai"
 
 #: ../panel-plugin/settings-dialog.cpp:648
 msgid "Show as t_ree"
-msgstr ""
+msgstr "Tunjuk sebagai p_epohon"
 
 #: ../panel-plugin/settings-dialog.cpp:925
 msgid "Show c_onfirmation dialog"
@@ -402,6 +402,8 @@ msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
 msgstr ""
+"Untuk keluarkannya anda perlu membuang fail \"%s\" secara manual atau buka "
+"fail dan buang baris \"%s\"."
 
 #: ../panel-plugin/settings.cpp:169
 #, c-format
@@ -519,7 +521,7 @@ msgstr "_Mula Semula"
 
 #: ../panel-plugin/settings.cpp:141
 msgid "_Settings Manager"
-msgstr ""
+msgstr "Pengurus _Tetapan"
 
 #: ../panel-plugin/settings-dialog.cpp:824
 msgid "_Title:"
