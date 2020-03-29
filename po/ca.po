@@ -3,21 +3,23 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
+# Adolfo Jayme-Barrientos, 2013-2016,2018,2020
 # Adolfo Jayme-Barrientos, 2016,2018,2020
 # Adolfo Jayme-Barrientos, 2015
 # Adolfo Jayme-Barrientos, 2013
 # Adolfo Jayme-Barrientos, 2014
+# Marc Riera <marcriera@softcatala.org>, 2020
 # Davidmp <medipas@gmail.com>, 2017-2020
 # Oriol Fernandez <oriolfa@ono.com>, 2013
-# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2017-2020
+# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016-2020
 # Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-12 12:49-0500\n"
-"PO-Revision-Date: 2020-01-29 16:40+0000\n"
-"Last-Translator: Davidmp <medipas@gmail.com>\n"
+"PO-Revision-Date: 2020-03-28 19:41+0000\n"
+"Last-Translator: Marc Riera <marcriera@softcatala.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ca/)\n"
 "Language: ca\n"
@@ -56,7 +58,7 @@ msgstr "Nombre d’e_lements:"
 
 #: ../panel-plugin/settings-dialog.cpp:738
 msgid "Application icon si_ze:"
-msgstr "M_ida de la icona de l'aplicació:"
+msgstr "M_ida de les icones de les aplicacions:"
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -133,49 +135,49 @@ msgstr "Edita el _perfil"
 
 #: ../panel-plugin/settings.cpp:193
 msgid "Failed to edit profile."
-msgstr "Ha fallat editar el perfil."
+msgstr "No s'ha pogut editar el perfil."
 
 #: ../panel-plugin/launcher.cpp:318 ../panel-plugin/launcher.cpp:392
 #: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:189
 #, c-format
 msgid "Failed to execute command \"%s\"."
-msgstr "Ha fallat executar l'ordre «%s»."
+msgstr "No s'ha pogut executar l'ordre «%s»."
 
 #: ../panel-plugin/settings.cpp:179
 msgid "Failed to hibernate."
-msgstr "Ha fallat la hibernació."
+msgstr "No s'ha pogut hibernar."
 
 #: ../panel-plugin/settings.cpp:189
 msgid "Failed to launch menu editor."
-msgstr "Ha fallat obrir l'editor del menú."
+msgstr "No s'ha pogut iniciar l'editor del menú."
 
 #: ../panel-plugin/settings.cpp:147
 msgid "Failed to lock screen."
-msgstr "Ha fallat bloquejar la pantalla."
+msgstr "No s'ha pogut bloquejar la pantalla."
 
 #: ../panel-plugin/settings.cpp:155 ../panel-plugin/settings.cpp:185
 msgid "Failed to log out."
-msgstr "Ha fallat tancar la sessió."
+msgstr "No s'ha pogut tancar la sessió."
 
 #: ../panel-plugin/settings.cpp:143
 msgid "Failed to open settings manager."
-msgstr "Ha fallat obrir el gestor d'ajusts."
+msgstr "No s'ha pogut obrir el gestor de paràmetres."
 
 #: ../panel-plugin/settings.cpp:161
 msgid "Failed to restart."
-msgstr "Ha fallat el reinici."
+msgstr "No s'ha pogut reiniciar."
 
 #: ../panel-plugin/settings.cpp:167
 msgid "Failed to shut down."
-msgstr "Ha fallat l'aturada."
+msgstr "No s'ha pogut apagar."
 
 #: ../panel-plugin/settings.cpp:173
 msgid "Failed to suspend."
-msgstr "Ha fallat la suspensió."
+msgstr "No s'ha pogut aturar temporalment."
 
 #: ../panel-plugin/settings.cpp:151
 msgid "Failed to switch user."
-msgstr "Ha fallat canviar d'usuari."
+msgstr "No s'ha pogut canviar d'usuari."
 
 #: ../panel-plugin/window.cpp:154
 msgid "Favorites"
@@ -332,7 +334,7 @@ msgstr "Mostra els indicadors de funció de les ap_licacions"
 
 #: ../panel-plugin/settings-dialog.cpp:613
 msgid "Show as _icons"
-msgstr "Mostra com _icones"
+msgstr "Mostra-ho com a _icones"
 
 #: ../panel-plugin/settings-dialog.cpp:630
 msgid "Show as lis_t"
@@ -380,12 +382,12 @@ msgstr "Continua _visible quan se'n perdi el focus"
 
 #: ../panel-plugin/settings.cpp:171
 msgid "Suspe_nd"
-msgstr "Suspè_n"
+msgstr "Atura temporalme_nt"
 
 #: ../panel-plugin/settings.cpp:175
 #, c-format
 msgid "Suspending computer in %d seconds."
-msgstr "Se suspendrà l'ordinador d'aquí a %d segons."
+msgstr "S'aturarà temporalment l'ordinador d'aquí a %d segons."
 
 #: ../panel-plugin/settings.cpp:149
 msgid "Switch _User"
@@ -540,4 +542,5 @@ msgstr ""
 "Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2013–2016\n"
 "Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016-2018\n"
 "David Medina <opensusecatala@gmail.com>, 2017-2018\n"
-"Oriol Fernandez, 2013"
+"Oriol Fernandez, 2013\n"
+"Marc Riera <marcriera@softcatala.org>, 2020"
