@@ -280,7 +280,7 @@ msgstr "Remover a ação \"%s\"?"
 
 #: ../panel-plugin/page.cpp:388
 msgid "Remove from Favorites"
-msgstr "Remover dos favoritos"
+msgstr "Remover dos Favoritos"
 
 #: ../panel-plugin/settings-dialog.cpp:1014
 msgid "Remove selected action"
@@ -314,7 +314,7 @@ msgstr "Selecionar comando"
 
 #: ../panel-plugin/settings-dialog.cpp:302
 msgid "Select an Icon"
-msgstr "Escolher um ícone"
+msgstr "Selecione um Ícone"
 
 #: ../panel-plugin/settings-dialog.cpp:921
 msgid "Session Commands"
