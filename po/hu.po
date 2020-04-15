@@ -5,16 +5,18 @@
 # Translators:
 # Gábor Horváth <xazax.hun@gmail.com>, 2013,2016,2018
 # gyeben <gyonkibendeguz@gmail.com>, 2013
+# gyeben <gyonkibendeguz@gmail.com>, 2013
 # Kisbenedek Márton <kmarton815@gmail.com>, 2016
-# user14 <nleknh@gmail.com>, 2016
+# user14 <nleknh@gmail.com>, 2016,2020
 # Rezső Páder <rezso@rezso.net>, 2014-2015,2017
+# user14 <nleknh@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-12 12:49-0500\n"
-"PO-Revision-Date: 2020-02-12 22:13+0000\n"
-"Last-Translator: Gábor Horváth <xazax.hun@gmail.com>\n"
+"PO-Revision-Date: 2020-04-15 01:37+0000\n"
+"Last-Translator: user14 <nleknh@gmail.com>\n"
 "Language-Team: Hungarian (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/hu/)\n"
 "Language: hu\n"
@@ -41,7 +43,7 @@ msgstr "Ikon hozzáadása a tálcához"
 
 #: ../panel-plugin/category.cpp:50
 msgid "All Applications"
-msgstr "Minden alkalmazás"
+msgstr "Összes alkalmazás"
 
 #: ../panel-plugin/plugin.cpp:409
 msgid "Alternate application launcher for Xfce"
@@ -53,7 +55,7 @@ msgstr "Elemek száma:"
 
 #: ../panel-plugin/settings-dialog.cpp:738
 msgid "Application icon si_ze:"
-msgstr ""
+msgstr "Alkalmazás ikonmérete:"
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
