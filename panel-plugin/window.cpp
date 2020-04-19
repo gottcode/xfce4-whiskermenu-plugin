@@ -145,7 +145,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 
 	// Create search entry
 	m_search_entry = GTK_ENTRY(gtk_search_entry_new());
-	g_signal_connect_slot<GtkSearchEntry*>(m_search_entry, "search-changed", &Window::search, this);
+	g_signal_connect_slot<GtkSearchEntry*>(m_search_entry, "changed", &Window::search, this);
 
 	// Create favorites
 	m_favorites = new FavoritesPage(this);
