@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-24 09:02-0500\n"
-"PO-Revision-Date: 2020-04-14 11:25+0000\n"
+"PO-Revision-Date: 2020-04-20 11:36+0000\n"
 "Last-Translator: José Vieira <jvieira33@sapo.pt>\n"
 "Language-Team: Portuguese (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/pt/)\n"
@@ -255,11 +255,11 @@ msgstr "Direccionador"
 
 #: ../panel-plugin/configuration-dialog.cpp:667
 msgid "Position _search entry next to panel button"
-msgstr "Posicionar a caixa de pe_squisa em baixo"
+msgstr "Posicionar caixa de pe_squisa junto ao botão no painel"
 
 #: ../panel-plugin/configuration-dialog.cpp:661
 msgid "Position cate_gories next to panel button"
-msgstr "Posicionar as categ_orias à esquerda"
+msgstr "Posicionar categ_orias junto ao botão do painel"
 
 #: ../panel-plugin/configuration-dialog.cpp:673
 msgid "Position commands next to search _entry"
