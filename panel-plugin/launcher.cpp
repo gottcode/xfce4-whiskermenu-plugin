@@ -367,6 +367,12 @@ unsigned int Launcher::search(const Query& query)
 		return match | flags | 0x400;
 	}
 
+	match = query.match_as_characters(m_search_name);
+	if (match != UINT_MAX)
+	{
+		return match | flags | 0x400;
+	}
+
 	match = query.match(m_search_generic_name);
 	if (match != UINT_MAX)
 	{

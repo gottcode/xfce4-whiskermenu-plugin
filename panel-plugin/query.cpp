@@ -105,7 +105,19 @@ unsigned int Query::match(const std::string& haystack) const
 		return 0x80;
 	}
 
-	// Check if haystack contains query as characters
+	return UINT_MAX;
+}
+
+//-----------------------------------------------------------------------------
+
+unsigned int Query::match_as_characters(const std::string& haystack) const
+{
+	// Make sure haystack is longer than query
+	if (m_query.empty() || (m_query.length() > haystack.length()))
+	{
+		return UINT_MAX;
+	}
+
 	bool start_word = true;
 	const gchar* query_startwords_string = m_query.c_str();
 	const gchar* query_string = m_query.c_str();
@@ -133,10 +145,12 @@ unsigned int Query::match(const std::string& haystack) const
 			query_string = g_utf8_next_char(query_string);
 		}
 	}
+
 	if (!*query_startwords_string)
 	{
 		return 0x100;
 	}
+
 	if (!*query_string)
 	{
 		return 0x200;

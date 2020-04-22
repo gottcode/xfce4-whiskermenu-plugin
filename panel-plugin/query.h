@@ -37,6 +37,8 @@ public:
 
 	unsigned int match(const std::string& haystack) const;
 
+	unsigned int match_as_characters(const std::string& haystack) const;
+
 	const std::string& query() const
 	{
 		return m_query;
