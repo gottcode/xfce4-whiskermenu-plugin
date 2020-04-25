@@ -712,13 +712,7 @@ gboolean WhiskerMenu::Window::on_key_press_event(GtkWidget* widget, GdkEvent* ev
 		GtkWidget* search = GTK_WIDGET(m_search_entry);
 		if ((widget == search) || (gtk_window_get_focus(m_window) == search))
 		{
-			GtkTreePath* path = page->get_view()->get_cursor();
-			if (path)
-			{
-				page->get_view()->select_path(path);
-			}
 			gtk_widget_grab_focus(view);
-			return true;
 		}
 	}
 

@@ -147,6 +147,7 @@ void SearchPage::set_filter(const gchar* filter)
 	// Scroll to and select first result
 	if (found)
 	{
+		get_view()->set_cursor(path);
 		get_view()->select_path(path);
 		get_view()->scroll_to_path(path);
 	}
