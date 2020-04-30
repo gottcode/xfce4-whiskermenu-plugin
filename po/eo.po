@@ -1,16 +1,18 @@
 # Esperanto translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2018 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # Kurt Ankh Phoenix <kurtphoenix@tuta.io>, 2018
+# Kurt Ankh Phoenix <kurtphoenix@tuta.io>, 2018
+# Warut Bunprasert <warutbun92@gmail.com>, 2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-24 09:02-0500\n"
-"PO-Revision-Date: 2018-05-09 13:11+0000\n"
-"Last-Translator: Kurt Ankh Phoenix <kurtphoenix@tuta.io>\n"
+"PO-Revision-Date: 2020-04-29 10:53+0000\n"
+"Last-Translator: Warut Bunprasert <warutbun92@gmail.com>\n"
 "Language-Team: Esperanto (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/eo/)\n"
 "Language: eo\n"
@@ -21,7 +23,7 @@ msgstr ""
 
 #: ../panel-plugin/configuration-dialog.cpp:952
 msgid "Add action"
-msgstr ""
+msgstr "Aldoni agon"
 
 #: ../panel-plugin/page.cpp:403
 msgid "Add to Desktop"
@@ -33,24 +35,23 @@ msgstr "Aldoni al Favoratoj"
 
 #: ../panel-plugin/page.cpp:407
 msgid "Add to Panel"
-msgstr ""
+msgstr "Aldoni al panelo"
 
 #: ../panel-plugin/category.cpp:49
 msgid "All Applications"
-msgstr ""
+msgstr "Ĉiuj aplikaĵoj"
 
 #: ../panel-plugin/plugin.cpp:409
 msgid "Alternate application launcher for Xfce"
-msgstr ""
+msgstr "Alternativa aplikaĵolanĉilo por Xfce "
 
 #: ../panel-plugin/configuration-dialog.cpp:841
 msgid "Amount of _items:"
-msgstr ""
+msgstr "Sumo de _elemento:"
 
 #: ../panel-plugin/configuration-dialog.cpp:683
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "Aplikaĵoj"
+msgstr "Grando de aplikaĵa bildsimbo_lo:"
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -59,43 +60,43 @@ msgstr "Aplikaĵoj"
 #: ../panel-plugin/launcher.cpp:232
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
-msgstr ""
+msgstr "Ĉu vi certe volas kaŝi \"%s\"?"
 
 #: ../panel-plugin/settings.cpp:146
 msgid "Are you sure you want to log out?"
-msgstr ""
+msgstr "Ĉu vi certe volas elsaluti?"
 
 #: ../panel-plugin/settings.cpp:152
 msgid "Are you sure you want to restart?"
-msgstr ""
+msgstr "Ĉu vi certe volas restarigi?"
 
 #: ../panel-plugin/settings.cpp:158
 msgid "Are you sure you want to shut down?"
-msgstr ""
+msgstr "Ĉu vi certe volas malŝalti?"
 
 #: ../panel-plugin/configuration-dialog.cpp:723
 msgid "Background opacit_y:"
-msgstr ""
+msgstr "Fona opakec_o:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
-msgstr ""
+msgstr "Esplori la dosiersistemon por elekti propran komandon."
 
 #: ../panel-plugin/configuration-dialog.cpp:1009
 msgid "C_ommand:"
-msgstr ""
+msgstr "K_omando:"
 
 #: ../panel-plugin/configuration-dialog.cpp:701
 msgid "Categ_ory icon size:"
-msgstr ""
+msgstr "Gra_ndo de ildsimbola kategorio:"
 
 #: ../panel-plugin/recent-page.cpp:173
 msgid "Clear Recently Used"
-msgstr ""
+msgstr "Purigi lastatempan uzitaĵon"
 
 #: ../panel-plugin/plugin.cpp:410
 msgid "Copyright © 2013-2020 Graeme Gott"
-msgstr ""
+msgstr "Kopirajto © 2013-2020 Graeme Gott"
 
 #: ../panel-plugin/configuration-dialog.cpp:980
 msgid "Details"
@@ -103,19 +104,19 @@ msgstr "Detaloj"
 
 #: ../panel-plugin/configuration-dialog.cpp:753
 msgid "Di_splay:"
-msgstr ""
+msgstr "Ek_rano:"
 
 #: ../panel-plugin/configuration-dialog.cpp:858
 msgid "Display by _default"
-msgstr ""
+msgstr "Vidigi _defaŭlte"
 
 #: ../panel-plugin/settings.cpp:164
 msgid "Do you want to suspend to RAM?"
-msgstr ""
+msgstr "Ĉu vi volas prokrasti al la ĉefmemoro?"
 
 #: ../panel-plugin/settings.cpp:170
 msgid "Do you want to suspend to disk?"
-msgstr ""
+msgstr "Ĉu vi volas prokrasti al la disko?"
 
 #: ../panel-plugin/page.cpp:414
 msgid "Edit Application..."
@@ -123,54 +124,53 @@ msgstr "Redakti Aplikaĵo..."
 
 #: ../panel-plugin/settings.cpp:181
 msgid "Edit _Profile"
-msgstr ""
+msgstr "Radakti _profilon"
 
 #: ../panel-plugin/settings.cpp:183
 msgid "Failed to edit profile."
-msgstr ""
+msgstr "Malsukcesis redakti profilon."
 
 #: ../panel-plugin/launcher.cpp:318 ../panel-plugin/launcher.cpp:392
 #: ../panel-plugin/run-action.cpp:41 ../panel-plugin/search-action.cpp:189
 #, c-format
 msgid "Failed to execute command \"%s\"."
-msgstr ""
+msgstr "Malsukcesis plenumi komandon \"%s\"."
 
 #: ../panel-plugin/settings.cpp:169
 msgid "Failed to hibernate."
-msgstr ""
+msgstr "Malsukcesis pasivumigi."
 
 #: ../panel-plugin/settings.cpp:179
 msgid "Failed to launch menu editor."
-msgstr ""
+msgstr "Malsukcesis lanĉi menuo-redaktilon."
 
 #: ../panel-plugin/settings.cpp:137
 msgid "Failed to lock screen."
-msgstr ""
+msgstr "Malsukcesis ŝlosi ekranon."
 
 #: ../panel-plugin/settings.cpp:145 ../panel-plugin/settings.cpp:175
 msgid "Failed to log out."
-msgstr ""
+msgstr "Malsukcesis elsaluti."
 
 #: ../panel-plugin/settings.cpp:133
 msgid "Failed to open settings manager."
-msgstr ""
+msgstr "Malsukcesis malfermi agordo-administranton."
 
 #: ../panel-plugin/settings.cpp:151
 msgid "Failed to restart."
-msgstr ""
+msgstr "Malsukcesis restarigi."
 
 #: ../panel-plugin/settings.cpp:157
 msgid "Failed to shut down."
-msgstr ""
+msgstr "Malsukcesis malŝalti."
 
 #: ../panel-plugin/settings.cpp:163
 msgid "Failed to suspend."
-msgstr ""
+msgstr "Malsukcesis prokrasti."
 
 #: ../panel-plugin/settings.cpp:141
-#, fuzzy
 msgid "Failed to switch user."
-msgstr "Malsukcesis skribi ĉapon\n"
+msgstr "Malsukcesis ŝanĝi uzanton."
 
 #: ../panel-plugin/window.cpp:159
 msgid "Favorites"
@@ -179,11 +179,11 @@ msgstr "Favoratoj"
 #: ../panel-plugin/settings.cpp:171
 #, c-format
 msgid "Hibernating computer in %d seconds."
-msgstr ""
+msgstr "Pasivumigos komputilon en %d sekundoj."
 
 #: ../panel-plugin/launcher.cpp:231 ../panel-plugin/page.cpp:418
 msgid "Hide Application"
-msgstr ""
+msgstr "Kaŝi aplikaĵon"
 
 #: ../panel-plugin/configuration-dialog.cpp:758
 msgid "Icon"
@@ -207,20 +207,20 @@ msgstr "Pli Granda"
 
 #: ../panel-plugin/settings.cpp:173
 msgid "Log Ou_t..."
-msgstr ""
+msgstr "Elsalut_i..."
 
 #: ../panel-plugin/settings.cpp:143
 msgid "Log _Out"
-msgstr ""
+msgstr "Elsalu_ti"
 
 #: ../panel-plugin/settings.cpp:147
 #, c-format
 msgid "Logging out in %d seconds."
-msgstr ""
+msgstr "Elsalutos en %d sekundoj."
 
 #: ../panel-plugin/settings.cpp:185
 msgid "Man Pages"
-msgstr ""
+msgstr "Ĉefaj paĝoj"
 
 #: ../panel-plugin/configuration-dialog.cpp:816
 msgid "Menu"
@@ -228,7 +228,7 @@ msgstr "Menuo"
 
 #: ../panel-plugin/configuration-dialog.cpp:984
 msgid "Nam_e:"
-msgstr ""
+msgstr "Nom_o:"
 
 #: ../panel-plugin/configuration-dialog.cpp:930
 msgid "Name"
@@ -244,27 +244,27 @@ msgstr "Normala"
 
 #: ../panel-plugin/settings.cpp:189
 msgid "Open URI"
-msgstr ""
+msgstr "Malfermi URI"
 
 #: ../panel-plugin/configuration-dialog.cpp:935
 msgid "Pattern"
-msgstr ""
+msgstr "Ŝablono"
 
 #: ../panel-plugin/configuration-dialog.cpp:667
 msgid "Position _search entry next to panel button"
-msgstr ""
+msgstr "Poziciigi _serĉan eniron apud panela butono"
 
 #: ../panel-plugin/configuration-dialog.cpp:661
 msgid "Position cate_gories next to panel button"
-msgstr ""
+msgstr "Poziciigi kate_goriojn apud panela butono"
 
 #: ../panel-plugin/configuration-dialog.cpp:673
 msgid "Position commands next to search _entry"
-msgstr ""
+msgstr "Poziciigi komandojn apud serĉa _eniro"
 
 #: ../panel-plugin/configuration-dialog.cpp:837 ../panel-plugin/window.cpp:167
 msgid "Recently Used"
-msgstr ""
+msgstr "Lastatempe uzita"
 
 #: ../panel-plugin/page.cpp:395
 msgid "Remove From Favorites"
@@ -273,87 +273,85 @@ msgstr "Forigi El Favoratoj"
 #: ../panel-plugin/configuration-dialog.cpp:486
 #, c-format
 msgid "Remove action \"%s\"?"
-msgstr ""
+msgstr "Forigado: \"%s\"?"
 
 #: ../panel-plugin/configuration-dialog.cpp:961
 msgid "Remove selected action"
-msgstr ""
+msgstr "Elektita forigado"
 
 #: ../panel-plugin/settings.cpp:153
 #, c-format
 msgid "Restarting computer in %d seconds."
-msgstr ""
+msgstr "Restarigos komputilon in %d sekundoj."
 
 #: ../panel-plugin/run-action.cpp:71
 #, c-format
 msgid "Run %s"
-msgstr ""
+msgstr "Lanĉado %s"
 
 #: ../panel-plugin/settings.cpp:188
 msgid "Run in Terminal"
-msgstr ""
+msgstr "Lanĉi per Terminalo"
 
 #: ../panel-plugin/configuration-dialog.cpp:103
 msgid "Search Actio_ns"
-msgstr ""
+msgstr "Serĉad_oj"
 
 #: ../panel-plugin/search-action.cpp:260
 msgid "Search Action"
-msgstr ""
+msgstr "Serĉado"
 
 #: ../panel-plugin/configuration-dialog.cpp:276
 msgid "Select An Icon"
-msgstr ""
+msgstr "Elekti bildsimbolon"
 
 #: ../panel-plugin/command-edit.cpp:64
 msgid "Select Command"
-msgstr ""
+msgstr "Elekti komandon"
 
 #: ../panel-plugin/configuration-dialog.cpp:867
 msgid "Session Commands"
-msgstr ""
+msgstr "Sceanaj komandoj"
 
 #: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
-msgstr ""
+msgstr "Montri menuon por facile aliri al instalitaj aplikaĵoj"
 
 #: ../panel-plugin/configuration-dialog.cpp:650
 msgid "Show application _descriptions"
-msgstr ""
+msgstr "Montri klarigojn de aplikaĵo"
 
 #: ../panel-plugin/configuration-dialog.cpp:644
 msgid "Show application too_ltips"
-msgstr ""
+msgstr "Montri butonajn informojn de aplikaĵo"
 
 #: ../panel-plugin/configuration-dialog.cpp:587
 msgid "Show as _icons"
-msgstr ""
+msgstr "Montri kiel _bildsimbolojn"
 
 #: ../panel-plugin/configuration-dialog.cpp:595
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "Montri bazliniojn"
+msgstr "Montri kiel list_on"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "Montru la _kadron"
+msgstr "Montri kiel a_rbon"
 
 #: ../panel-plugin/configuration-dialog.cpp:871
 msgid "Show c_onfirmation dialog"
-msgstr ""
+msgstr "Montri konfirman dialogon"
 
 #: ../panel-plugin/configuration-dialog.cpp:637
 msgid "Show cate_gory names"
-msgstr ""
+msgstr "Montri kategoriajn nomojn"
 
 #: ../panel-plugin/configuration-dialog.cpp:631
 msgid "Show generic application _names"
-msgstr ""
+msgstr "Montri komunajn nomojn de aplikaĵo"
 
 #: ../panel-plugin/settings.cpp:155
 msgid "Shut _Down"
-msgstr ""
+msgstr "M_alŝalti"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -365,36 +363,36 @@ msgstr "Pli Malgranda"
 
 #: ../panel-plugin/favorites-page.cpp:147
 msgid "Sort Alphabetically A-Z"
-msgstr ""
+msgstr "Ordigi alfabete A-Z"
 
 #: ../panel-plugin/favorites-page.cpp:153
 msgid "Sort Alphabetically Z-A"
-msgstr ""
+msgstr "Ordigi alfabete Z-A"
 
 #: ../panel-plugin/configuration-dialog.cpp:826
 msgid "Stay _visible when focus is lost"
-msgstr ""
+msgstr "Resti vibeble kiam perdis fokuso"
 
 #: ../panel-plugin/settings.cpp:161
 msgid "Suspe_nd"
-msgstr ""
+msgstr "Prokras_ti"
 
 #: ../panel-plugin/settings.cpp:165
 #, c-format
 msgid "Suspending computer in %d seconds."
-msgstr ""
+msgstr "Prokrastos komputilon en %d sekundoj"
 
 #: ../panel-plugin/settings.cpp:139
 msgid "Switch _User"
-msgstr ""
+msgstr "Ŝanĝi _uzanton"
 
 #: ../panel-plugin/configuration-dialog.cpp:820
 msgid "Switch categories by _hovering"
-msgstr ""
+msgstr "Ŝanĝi kategoriojn per glisado"
 
 #: ../panel-plugin/configuration-dialog.cpp:485
 msgid "The action will be deleted permanently."
-msgstr ""
+msgstr "La ago estos forigita porĉiame."
 
 #: ../panel-plugin/configuration-dialog.cpp:759
 msgid "Title"
@@ -406,32 +404,34 @@ msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
 msgstr ""
+"Por malkaŝi tion vi devas permane forigi la dosieron \"%s\" aŭ malfermi la "
+"dosieron kaj forigi la linion \"%s\". "
 
 #: ../panel-plugin/settings.cpp:159
 #, c-format
 msgid "Turning off computer in %d seconds."
-msgstr ""
+msgstr "Malŝaltos komputilon en %d sekundoj."
 
 #: ../panel-plugin/page.cpp:480
 msgid "Unable to add launcher to desktop."
-msgstr ""
+msgstr "Ne eblas aldoni lanĉilon al labortablo."
 
 #: ../panel-plugin/page.cpp:518 ../panel-plugin/page.cpp:527
 msgid "Unable to add launcher to panel."
-msgstr ""
+msgstr "Ne eblas aldoni lanĉilon al panelo."
 
 #: ../panel-plugin/page.cpp:556
 msgid "Unable to edit launcher."
-msgstr ""
+msgstr "Ne eblas redakti lanĉilon"
 
 #: ../panel-plugin/configuration-dialog.cpp:546
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "Ne eblas malfermi la URL: %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:795
 msgid "Use a single _panel row"
-msgstr ""
+msgstr "Uzi unuopan panel-vicon"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
@@ -448,7 +448,7 @@ msgstr "Reta Serĉo"
 #: ../panel-plugin/configuration-dialog.cpp:86
 #: ../panel-plugin/whiskermenu.desktop.in:5
 msgid "Whisker Menu"
-msgstr ""
+msgstr "La menuo Whisker"
 
 #: ../panel-plugin/settings.cpp:187
 msgid "Wikipedia"
@@ -456,11 +456,11 @@ msgstr "Vikipedio"
 
 #: ../panel-plugin/configuration-dialog.cpp:99
 msgid "_Appearance"
-msgstr ""
+msgstr "_Apero"
 
 #: ../panel-plugin/configuration-dialog.cpp:101
 msgid "_Behavior"
-msgstr ""
+msgstr "_Konduto"
 
 #: ../panel-plugin/command-edit.cpp:67
 #: ../panel-plugin/configuration-dialog.cpp:278
@@ -473,7 +473,7 @@ msgstr "_Fermi"
 
 #: ../panel-plugin/configuration-dialog.cpp:102
 msgid "_Commands"
-msgstr ""
+msgstr "_Komando"
 
 #: ../panel-plugin/configuration-dialog.cpp:484
 msgid "_Delete"
@@ -489,7 +489,7 @@ msgstr "_Helpi"
 
 #: ../panel-plugin/settings.cpp:167
 msgid "_Hibernate"
-msgstr ""
+msgstr "_Pasivumigo"
 
 #: ../panel-plugin/configuration-dialog.cpp:781
 msgid "_Icon:"
@@ -497,7 +497,7 @@ msgstr "_Bildsimbolo:"
 
 #: ../panel-plugin/settings.cpp:135
 msgid "_Lock Screen"
-msgstr ""
+msgstr "_Ŝlosi ekranon"
 
 #: ../panel-plugin/command-edit.cpp:68
 #: ../panel-plugin/configuration-dialog.cpp:279
@@ -506,23 +506,23 @@ msgstr "_Bone"
 
 #: ../panel-plugin/configuration-dialog.cpp:100
 msgid "_Panel Button"
-msgstr ""
+msgstr "_Panela butono"
 
 #: ../panel-plugin/configuration-dialog.cpp:997
 msgid "_Pattern:"
-msgstr ""
+msgstr "_Ŝablono:"
 
 #: ../panel-plugin/configuration-dialog.cpp:1021
 msgid "_Regular expression"
-msgstr ""
+msgstr "_Regula esprimo"
 
 #: ../panel-plugin/settings.cpp:149
 msgid "_Restart"
-msgstr "_Restartigu"
+msgstr "_Restarigi"
 
 #: ../panel-plugin/settings.cpp:131
 msgid "_Settings Manager"
-msgstr ""
+msgstr "_Agordo-administranto"
 
 #: ../panel-plugin/configuration-dialog.cpp:769
 msgid "_Title:"
@@ -530,4 +530,4 @@ msgstr "_Titolo:"
 
 #: ../panel-plugin/plugin.cpp:414
 msgid "translator-credits"
-msgstr ""
+msgstr "tradukanto-agnoskoj"
