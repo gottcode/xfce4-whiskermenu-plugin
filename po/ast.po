@@ -3,16 +3,17 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
-# enolp <enolp@softastur.org>, 2015-2016
-# Ḷḷumex03 <tornes@opmbx.org>, 2013-2014
-# Ḷḷumex03 <tornes@opmbx.org>, 2014
+# enolp <enolp@softastur.org>, 2015-2016,2020
+# Ḷḷumex03, 2013-2014
+# Ḷḷumex03, 2014
+# Ḷḷumex03, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-12 12:49-0500\n"
-"PO-Revision-Date: 2020-02-12 22:13+0000\n"
-"Last-Translator: Ḷḷumex03 <tornes@opmbx.org>\n"
+"PO-Revision-Date: 2020-04-28 13:52+0000\n"
+"Last-Translator: enolp <enolp@softastur.org>\n"
 "Language-Team: Asturian (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ast/)\n"
 "Language: ast\n"
@@ -76,7 +77,7 @@ msgstr "¿De xuru que quies apagar?"
 
 #: ../panel-plugin/settings-dialog.cpp:778
 msgid "Background opacit_y:"
-msgstr "_Opacidá del fondu:"
+msgstr "Opaci_dá del fondu:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
@@ -96,7 +97,7 @@ msgstr "Llimpiar Usáo apocayá"
 
 #: ../panel-plugin/plugin.cpp:410
 msgid "Copyright © 2013-2020 Graeme Gott"
-msgstr ""
+msgstr "Copyright © 2013-2020 Graeme Gott"
 
 #: ../panel-plugin/settings-dialog.cpp:1033
 msgid "Details"
@@ -138,11 +139,11 @@ msgstr "Fallu al executar el comandu \"%s\"."
 
 #: ../panel-plugin/settings.cpp:179
 msgid "Failed to hibernate."
-msgstr ""
+msgstr "Fallu al ivernar."
 
 #: ../panel-plugin/settings.cpp:189
 msgid "Failed to launch menu editor."
-msgstr "Fallu al llanzar l'editor de menú."
+msgstr "Fallu al llanzar l'editor del menú."
 
 #: ../panel-plugin/settings.cpp:147
 msgid "Failed to lock screen."
@@ -154,23 +155,23 @@ msgstr "Fallu al zarrar sesión."
 
 #: ../panel-plugin/settings.cpp:143
 msgid "Failed to open settings manager."
-msgstr "Fallu al abrir l'alministrador d'axustes."
+msgstr "Fallu al abrir el xestor d'axustes."
 
 #: ../panel-plugin/settings.cpp:161
 msgid "Failed to restart."
-msgstr ""
+msgstr "Fallu al reaniciar."
 
 #: ../panel-plugin/settings.cpp:167
 msgid "Failed to shut down."
-msgstr ""
+msgstr "Fallu al apagar."
 
 #: ../panel-plugin/settings.cpp:173
 msgid "Failed to suspend."
-msgstr ""
+msgstr "Fallu al suspendar."
 
 #: ../panel-plugin/settings.cpp:151
 msgid "Failed to switch user."
-msgstr ""
+msgstr "Fallu al cambiar d'usuariu."
 
 #: ../panel-plugin/window.cpp:154
 msgid "Favorites"
@@ -489,7 +490,7 @@ msgstr "_Ayuda"
 
 #: ../panel-plugin/settings.cpp:177
 msgid "_Hibernate"
-msgstr "I_vernar"
+msgstr "_Ivernar"
 
 #: ../panel-plugin/settings-dialog.cpp:836
 msgid "_Icon:"
@@ -513,7 +514,7 @@ msgstr "_Patrón:"
 
 #: ../panel-plugin/settings-dialog.cpp:1074
 msgid "_Regular expression"
-msgstr "Espresión _regular"
+msgstr "_Espresión regular"
 
 #: ../panel-plugin/settings.cpp:159
 msgid "_Restart"
@@ -521,7 +522,7 @@ msgstr "_Reaniciar"
 
 #: ../panel-plugin/settings.cpp:141
 msgid "_Settings Manager"
-msgstr ""
+msgstr "_Xestor d'axustes"
 
 #: ../panel-plugin/settings-dialog.cpp:824
 msgid "_Title:"
