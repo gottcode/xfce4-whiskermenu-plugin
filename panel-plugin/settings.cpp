@@ -87,6 +87,7 @@ static void write_vector_entry(XfceRc* rc, const gchar* key, const std::vector<s
 //-----------------------------------------------------------------------------
 
 Settings::Settings() :
+	m_button_title_default(_("Applications")),
 	m_modified(false),
 
 	favorites {
@@ -96,7 +97,7 @@ Settings::Settings() :
 		"exo-terminal-emulator.desktop"
 	},
 
-	button_title(Plugin::get_button_title_default()),
+	button_title(m_button_title_default),
 	button_icon_name("xfce4-whiskermenu"),
 	button_title_visible(false),
 	button_icon_visible(true),

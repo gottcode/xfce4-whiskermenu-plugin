@@ -45,6 +45,7 @@ class Settings
 	void load(gchar* file);
 	void save(gchar* file);
 
+	std::string m_button_title_default;
 	bool m_modified;
 
 public:
