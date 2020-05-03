@@ -102,6 +102,7 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 		wm_settings->command[i]->set_shown(false);
 	}
 	wm_settings->load(xfce_resource_lookup(XFCE_RESOURCE_CONFIG, "xfce4/whiskermenu/defaults.rc"));
+	wm_settings->m_button_title_default = wm_settings->button_title;
 	wm_settings->load(xfce_panel_plugin_lookup_rc_file(m_plugin));
 	m_opacity = wm_settings->menu_opacity;
 
@@ -210,7 +211,7 @@ std::string Plugin::get_button_title() const
 
 std::string Plugin::get_button_title_default()
 {
-	return _("Applications");
+	return wm_settings->m_button_title_default;
 }
 
 //-----------------------------------------------------------------------------
