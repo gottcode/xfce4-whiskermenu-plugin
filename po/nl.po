@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-12 12:49-0500\n"
-"PO-Revision-Date: 2020-01-25 21:51+0000\n"
+"PO-Revision-Date: 2020-05-19 22:05+0000\n"
 "Last-Translator: Pjotr <pjotrvertaalt@gmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/nl/)\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:1005
 msgid "Add action"
-msgstr "Actie toevoegen"
+msgstr "Voeg actie toe"
 
 #: ../panel-plugin/page.cpp:393
 msgid "Add to Desktop"
@@ -49,7 +49,7 @@ msgstr "Hoeveelheid _elementen:"
 
 #: ../panel-plugin/settings-dialog.cpp:738
 msgid "Application icon si_ze:"
-msgstr "Pictogramgrootte van toepassing:"
+msgstr "Grootte van toepassingspictogram:"
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -78,7 +78,7 @@ msgstr "Ondoorzichtigheid van achtergrond:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
-msgstr "Blader door het bestandssysteem om een aangepaste opdracht te kiezen."
+msgstr "Verken het bestandssysteem om een aangepaste opdracht te kiezen."
 
 #: ../panel-plugin/settings-dialog.cpp:1062
 msgid "C_ommand:"
@@ -86,7 +86,7 @@ msgstr "_Opdracht:"
 
 #: ../panel-plugin/settings-dialog.cpp:756
 msgid "Categ_ory icon size:"
-msgstr "Pictogramgrootte van categorie:"
+msgstr "Grootte van categoriepictogram:"
 
 #: ../panel-plugin/recent-page.cpp:173
 msgid "Clear Recently Used"
@@ -193,7 +193,7 @@ msgstr "Pictogram en titel"
 
 #: ../panel-plugin/settings-dialog.cpp:906
 msgid "Include _favorites"
-msgstr "Favorieten opnemen"
+msgstr "_Favorieten opnemen"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Large"
@@ -250,7 +250,7 @@ msgstr "Patroon"
 
 #: ../panel-plugin/settings-dialog.cpp:722
 msgid "Position _search entry next to panel button"
-msgstr "Plaats zoekvak naast werkbalkknop"
+msgstr "Plaats _zoekvak naast werkbalkknop"
 
 #: ../panel-plugin/settings-dialog.cpp:716
 msgid "Position cate_gories next to panel button"
@@ -271,7 +271,7 @@ msgstr "Actie '%s' verwijderen?"
 
 #: ../panel-plugin/page.cpp:388
 msgid "Remove from Favorites"
-msgstr "Verwijderen uit favorieten"
+msgstr "Verwijder uit favorieten"
 
 #: ../panel-plugin/settings-dialog.cpp:1014
 msgid "Remove selected action"
@@ -293,7 +293,7 @@ msgstr "Draai in terminal"
 
 #: ../panel-plugin/settings-dialog.cpp:119
 msgid "Search Actio_ns"
-msgstr "Zoekacties"
+msgstr "_Zoekacties"
 
 #: ../panel-plugin/search-action.cpp:260
 msgid "Search Action"
@@ -321,31 +321,31 @@ msgstr "Toon _beschrijvingen van toepassingen"
 
 #: ../panel-plugin/settings-dialog.cpp:699
 msgid "Show application too_ltips"
-msgstr "Toon zweeftips voor toepassingen"
+msgstr "Toon _zweeftips voor toepassingen"
 
 #: ../panel-plugin/settings-dialog.cpp:613
 msgid "Show as _icons"
-msgstr "Tonen als pictogrammen"
+msgstr "Toon als _pictogrammen"
 
 #: ../panel-plugin/settings-dialog.cpp:630
 msgid "Show as lis_t"
-msgstr "Toon als lijst"
+msgstr "Toon als _lijst"
 
 #: ../panel-plugin/settings-dialog.cpp:648
 msgid "Show as t_ree"
-msgstr "Toon als boomstructuur"
+msgstr "Toon als _boomstructuur"
 
 #: ../panel-plugin/settings-dialog.cpp:925
 msgid "Show c_onfirmation dialog"
-msgstr "Toon bevestigingsdialoog"
+msgstr "Toon bevestigings_dialoog"
 
 #: ../panel-plugin/settings-dialog.cpp:692
 msgid "Show cate_gory names"
-msgstr "Toon namen van categorieën"
+msgstr "Toon namen van _categorieën"
 
 #: ../panel-plugin/settings-dialog.cpp:686
 msgid "Show generic application _names"
-msgstr "Toon generieke toepassingsnamen"
+msgstr "Toon _generieke toepassingsnamen"
 
 #: ../panel-plugin/settings.cpp:165
 msgid "Shut _Down"
