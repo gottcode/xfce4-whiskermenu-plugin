@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-24 09:02-0500\n"
-"PO-Revision-Date: 2020-04-29 10:53+0000\n"
+"PO-Revision-Date: 2020-05-03 10:00+0000\n"
 "Last-Translator: Warut Bunprasert <warutbun92@gmail.com>\n"
 "Language-Team: Esperanto (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/eo/)\n"
@@ -27,11 +27,11 @@ msgstr "Aldoni agon"
 
 #: ../panel-plugin/page.cpp:403
 msgid "Add to Desktop"
-msgstr "Aldoni al Labortablo"
+msgstr "Aldoni al labortablo"
 
 #: ../panel-plugin/page.cpp:387
 msgid "Add to Favorites"
-msgstr "Aldoni al Favoratoj"
+msgstr "Aldoni al legosignoj"
 
 #: ../panel-plugin/page.cpp:407
 msgid "Add to Panel"
@@ -47,7 +47,7 @@ msgstr "Alternativa aplikaĵolanĉilo por Xfce "
 
 #: ../panel-plugin/configuration-dialog.cpp:841
 msgid "Amount of _items:"
-msgstr "Sumo de _elemento:"
+msgstr "Sumo de _elementoj:"
 
 #: ../panel-plugin/configuration-dialog.cpp:683
 msgid "Application icon si_ze:"
@@ -76,7 +76,7 @@ msgstr "Ĉu vi certe volas malŝalti?"
 
 #: ../panel-plugin/configuration-dialog.cpp:723
 msgid "Background opacit_y:"
-msgstr "Fona opakec_o:"
+msgstr "Fona _opakeco:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
@@ -88,11 +88,11 @@ msgstr "K_omando:"
 
 #: ../panel-plugin/configuration-dialog.cpp:701
 msgid "Categ_ory icon size:"
-msgstr "Gra_ndo de ildsimbola kategorio:"
+msgstr "Gra_ndo de bildsimbola kategorio:"
 
 #: ../panel-plugin/recent-page.cpp:173
 msgid "Clear Recently Used"
-msgstr "Purigi lastatempan uzitaĵon"
+msgstr "Purigi lastajn programojn"
 
 #: ../panel-plugin/plugin.cpp:410
 msgid "Copyright © 2013-2020 Graeme Gott"
@@ -120,7 +120,7 @@ msgstr "Ĉu vi volas prokrasti al la disko?"
 
 #: ../panel-plugin/page.cpp:414
 msgid "Edit Application..."
-msgstr "Redakti Aplikaĵo..."
+msgstr "Redakti aplikaĵon..."
 
 #: ../panel-plugin/settings.cpp:181
 msgid "Edit _Profile"
@@ -174,7 +174,7 @@ msgstr "Malsukcesis ŝanĝi uzanton."
 
 #: ../panel-plugin/window.cpp:159
 msgid "Favorites"
-msgstr "Favoratoj"
+msgstr "Legosignoj"
 
 #: ../panel-plugin/settings.cpp:171
 #, c-format
@@ -195,7 +195,7 @@ msgstr "Bildsimbolo kaj titolo"
 
 #: ../panel-plugin/configuration-dialog.cpp:852
 msgid "Include _favorites"
-msgstr "Inkluzivi _favoratoj"
+msgstr "Inkluzivi _legosignojn"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Large"
@@ -203,7 +203,7 @@ msgstr "Granda"
 
 #: ../panel-plugin/icon-size.cpp:55
 msgid "Larger"
-msgstr "Pli Granda"
+msgstr "Pli granda"
 
 #: ../panel-plugin/settings.cpp:173
 msgid "Log Ou_t..."
@@ -264,11 +264,11 @@ msgstr "Poziciigi komandojn apud serĉa _eniro"
 
 #: ../panel-plugin/configuration-dialog.cpp:837 ../panel-plugin/window.cpp:167
 msgid "Recently Used"
-msgstr "Lastatempe uzita"
+msgstr "lastaj programoj"
 
 #: ../panel-plugin/page.cpp:395
 msgid "Remove From Favorites"
-msgstr "Forigi El Favoratoj"
+msgstr "Forigi El legosignoj"
 
 #: ../panel-plugin/configuration-dialog.cpp:486
 #, c-format
@@ -359,7 +359,7 @@ msgstr "Malgranda"
 
 #: ../panel-plugin/icon-size.cpp:51
 msgid "Smaller"
-msgstr "Pli Malgranda"
+msgstr "Pli malgranda"
 
 #: ../panel-plugin/favorites-page.cpp:147
 msgid "Sort Alphabetically A-Z"
@@ -380,7 +380,7 @@ msgstr "Prokras_ti"
 #: ../panel-plugin/settings.cpp:165
 #, c-format
 msgid "Suspending computer in %d seconds."
-msgstr "Prokrastos komputilon en %d sekundoj"
+msgstr "Halteti komputilon en %d sekundoj"
 
 #: ../panel-plugin/settings.cpp:139
 msgid "Switch _User"
@@ -435,15 +435,15 @@ msgstr "Uzi unuopan panel-vicon"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
-msgstr "Tre Granda"
+msgstr "Tre granda"
 
 #: ../panel-plugin/icon-size.cpp:50
 msgid "Very Small"
-msgstr "Tre Malgranda"
+msgstr "Tre malgranda"
 
 #: ../panel-plugin/settings.cpp:186
 msgid "Web Search"
-msgstr "Reta Serĉo"
+msgstr "Reta serĉo"
 
 #: ../panel-plugin/configuration-dialog.cpp:86
 #: ../panel-plugin/whiskermenu.desktop.in:5
@@ -481,7 +481,7 @@ msgstr "_Forigi"
 
 #: ../panel-plugin/settings.cpp:177
 msgid "_Edit Applications"
-msgstr "_Redakti Aplikaĵoj"
+msgstr "_Redakti aplikaĵojn"
 
 #: ../panel-plugin/configuration-dialog.cpp:89
 msgid "_Help"
@@ -530,4 +530,6 @@ msgstr "_Titolo:"
 
 #: ../panel-plugin/plugin.cpp:414
 msgid "translator-credits"
-msgstr "tradukanto-agnoskoj"
+msgstr ""
+"Kurt Ankh Phoenix \n"
+"Warut BUNPRASERT <warut92@gmail.com>"
