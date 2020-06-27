@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-12 12:49-0500\n"
-"PO-Revision-Date: 2020-02-16 17:16+0000\n"
+"PO-Revision-Date: 2020-06-22 09:15+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/is/)\n"
@@ -403,6 +403,8 @@ msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
 msgstr ""
+"Til að hætta að fela það, þarftu að fjarlægja handvirkt skrána \"%s\" eða "
+"opna skrána og fjarlægja línuna \"%s\"."
 
 #: ../panel-plugin/settings.cpp:169
 #, c-format
