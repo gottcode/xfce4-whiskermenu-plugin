@@ -5,12 +5,16 @@
 # Translators:
 # Carlos Reis <reiscarlos1976@gmail.com>, 2017
 # Fábio Luciano de Góis <fabio@naoimporta.com>, 2013
+# Fábio Luciano de Góis <fabio@naoimporta.com>, 2013
 # Gabriel Henrique <gabrielddev@gmail.com>, 2018-2020
 # Gabriel Henrique <gabrielddev@gmail.com>, 2017-2018
 # Graeme Gott <graeme@gottcode.org>, 2013
 # Holmes <holmes_holmes@live.com>, 2014
+# Hugo Carvalho <hugokarvalho@hotmail.com>, 2020
 # José Vieira <jvieira33@sapo.pt>, 2016-2017
 # Lorhan Sohaky, 2018
+# Lorhan Sohaky, 2018
+# Paulo Castro, 2013
 # Paulo Castro, 2013
 # Thiago Albuquerque Soares <tasbrjob@gmail.com>, 2018
 msgid ""
@@ -18,7 +22,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-24 09:02-0500\n"
-"PO-Revision-Date: 2020-01-29 22:17+0000\n"
+"PO-Revision-Date: 2020-06-27 03:17+0000\n"
 "Last-Translator: Gabriel Henrique <gabrielddev@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/pt_BR/)\n"
@@ -34,7 +38,7 @@ msgstr "Adicionar ação"
 
 #: ../panel-plugin/page.cpp:403
 msgid "Add to Desktop"
-msgstr "Adicionar à área de trabalho"
+msgstr "Adicionar à Área de Trabalho"
 
 #: ../panel-plugin/page.cpp:387
 msgid "Add to Favorites"
@@ -46,7 +50,7 @@ msgstr "Adicionar ao painel"
 
 #: ../panel-plugin/category.cpp:49
 msgid "All Applications"
-msgstr "Todos os aplicativos"
+msgstr "Todas as aplicações"
 
 #: ../panel-plugin/plugin.cpp:409
 msgid "Alternate application launcher for Xfce"
@@ -54,11 +58,11 @@ msgstr "Lançador de aplicações alternativo para o Xfce"
 
 #: ../panel-plugin/configuration-dialog.cpp:841
 msgid "Amount of _items:"
-msgstr "Número de ite_ns:"
+msgstr "Quantidade de _itens:"
 
 #: ../panel-plugin/configuration-dialog.cpp:683
 msgid "Application icon si_ze:"
-msgstr "Localizador de aplicativos"
+msgstr "Tamanho do íco_ne da aplicação:"
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -67,19 +71,19 @@ msgstr "Aplicações"
 #: ../panel-plugin/launcher.cpp:232
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
-msgstr "Você tem certeza de que quer ocultar \"%s\"?"
+msgstr "Tem certeza de que deseja ocultar \"%s\"?"
 
 #: ../panel-plugin/settings.cpp:146
 msgid "Are you sure you want to log out?"
-msgstr "Tem certeza que você quer sair?"
+msgstr "Tem certeza de que deseja sair?"
 
 #: ../panel-plugin/settings.cpp:152
 msgid "Are you sure you want to restart?"
-msgstr "Tem certeza que você quer reiniciar?"
+msgstr "Tem certeza de que deseja reiniciar?"
 
 #: ../panel-plugin/settings.cpp:158
 msgid "Are you sure you want to shut down?"
-msgstr "Tem certeza que você quer desligar?"
+msgstr "Tem certeza de que deseja desligar?"
 
 #: ../panel-plugin/configuration-dialog.cpp:723
 msgid "Background opacit_y:"
@@ -87,7 +91,7 @@ msgstr "Opa_cidade do fundo:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
-msgstr "Procurar no sistema de arquivos para escolher o comando."
+msgstr "Navegar pelo sistema de arquivos para escolher um comando."
 
 #: ../panel-plugin/configuration-dialog.cpp:1009
 msgid "C_ommand:"
@@ -99,7 +103,7 @@ msgstr "Tamanho do ícone da categ_oria:"
 
 #: ../panel-plugin/recent-page.cpp:173
 msgid "Clear Recently Used"
-msgstr "Limpar usados recentemente"
+msgstr "Limpar usadas recentemente"
 
 #: ../panel-plugin/plugin.cpp:410
 msgid "Copyright © 2013-2020 Graeme Gott"
@@ -115,23 +119,23 @@ msgstr "E_xibição:"
 
 #: ../panel-plugin/configuration-dialog.cpp:858
 msgid "Display by _default"
-msgstr "Mostrar por _padrão"
+msgstr "Exibir por p_adrão"
 
 #: ../panel-plugin/settings.cpp:164
 msgid "Do you want to suspend to RAM?"
-msgstr "Você quer suspender para a memória RAM?"
+msgstr "Desejar suspender para a RAM?"
 
 #: ../panel-plugin/settings.cpp:170
 msgid "Do you want to suspend to disk?"
-msgstr "Você quer suspender para o disco?"
+msgstr "Deseja suspender para o disco?"
 
 #: ../panel-plugin/page.cpp:414
 msgid "Edit Application..."
-msgstr "Editar Aplicação..."
+msgstr "Editar aplicação..."
 
 #: ../panel-plugin/settings.cpp:181
 msgid "Edit _Profile"
-msgstr "Editar _Perfil"
+msgstr "Editar _perfil"
 
 #: ../panel-plugin/settings.cpp:183
 msgid "Failed to edit profile."
@@ -153,7 +157,7 @@ msgstr "Falha ao iniciar o editor de menu."
 
 #: ../panel-plugin/settings.cpp:137
 msgid "Failed to lock screen."
-msgstr "Falha ao bloquear tela."
+msgstr "Falha ao bloquear a tela."
 
 #: ../panel-plugin/settings.cpp:145 ../panel-plugin/settings.cpp:175
 msgid "Failed to log out."
@@ -190,7 +194,7 @@ msgstr "Hibernando o computador em %d segundos."
 
 #: ../panel-plugin/launcher.cpp:231 ../panel-plugin/page.cpp:418
 msgid "Hide Application"
-msgstr "Ocultar Aplicativo"
+msgstr "Ocultar aplicação"
 
 #: ../panel-plugin/configuration-dialog.cpp:758
 msgid "Icon"
@@ -227,7 +231,7 @@ msgstr "Saindo em %d segundos."
 
 #: ../panel-plugin/settings.cpp:185
 msgid "Man Pages"
-msgstr "Páginas de manual"
+msgstr "Manual"
 
 #: ../panel-plugin/configuration-dialog.cpp:816
 msgid "Menu"
@@ -259,7 +263,7 @@ msgstr "Padrão"
 
 #: ../panel-plugin/configuration-dialog.cpp:667
 msgid "Position _search entry next to panel button"
-msgstr "Po_sicionar pesquisa junto ao botão do painel"
+msgstr "Posicionar a caixa de pe_squisa junto ao botão do painel"
 
 #: ../panel-plugin/configuration-dialog.cpp:661
 msgid "Position cate_gories next to panel button"
@@ -267,11 +271,11 @@ msgstr "Posicionar categ_orias junto ao botão do painel"
 
 #: ../panel-plugin/configuration-dialog.cpp:673
 msgid "Position commands next to search _entry"
-msgstr "Posicionar comandos junto à _entrada de pesquisa"
+msgstr "Posicionar os botões junto à _caixa de pesquisa"
 
 #: ../panel-plugin/configuration-dialog.cpp:837 ../panel-plugin/window.cpp:167
 msgid "Recently Used"
-msgstr "Usados recentemente"
+msgstr "Usadas recentemente"
 
 #: ../panel-plugin/page.cpp:395
 msgid "Remove From Favorites"
@@ -302,15 +306,15 @@ msgstr "Executar no terminal"
 
 #: ../panel-plugin/configuration-dialog.cpp:103
 msgid "Search Actio_ns"
-msgstr "Procurar a_ções"
+msgstr "Ações de p_esquisa"
 
 #: ../panel-plugin/search-action.cpp:260
 msgid "Search Action"
-msgstr "Procurar ação"
+msgstr "Ação de pesquisa"
 
 #: ../panel-plugin/configuration-dialog.cpp:276
 msgid "Select An Icon"
-msgstr "Escolher um ícone"
+msgstr "Selecione um ícone"
 
 #: ../panel-plugin/command-edit.cpp:64
 msgid "Select Command"
@@ -318,11 +322,11 @@ msgstr "Selecionar comando"
 
 #: ../panel-plugin/configuration-dialog.cpp:867
 msgid "Session Commands"
-msgstr "Comandos da Sessão"
+msgstr "Comandos da sessão"
 
 #: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
-msgstr "Mostrar um menu para acessar facilmente às aplicações instaladas"
+msgstr "Mostrar um menu para acessar facilmente as aplicações instaladas"
 
 #: ../panel-plugin/configuration-dialog.cpp:650
 msgid "Show application _descriptions"
@@ -338,11 +342,11 @@ msgstr "Mostrar como _ícones"
 
 #: ../panel-plugin/configuration-dialog.cpp:595
 msgid "Show as lis_t"
-msgstr "Mostrar com _lista"
+msgstr "Mostrar como lis_ta"
 
 #: ../panel-plugin/configuration-dialog.cpp:603
 msgid "Show as t_ree"
-msgstr "Mostrar como _árvore"
+msgstr "Mostrar como á_rvore"
 
 #: ../panel-plugin/configuration-dialog.cpp:871
 msgid "Show c_onfirmation dialog"
@@ -350,7 +354,7 @@ msgstr "Mostrar janela de c_onfirmação"
 
 #: ../panel-plugin/configuration-dialog.cpp:637
 msgid "Show cate_gory names"
-msgstr "Mostrar nomes das categ_orias"
+msgstr "Mostrar nomes das cate_gorias"
 
 #: ../panel-plugin/configuration-dialog.cpp:631
 msgid "Show generic application _names"
@@ -378,7 +382,7 @@ msgstr "Ordem alfabética Z-A"
 
 #: ../panel-plugin/configuration-dialog.cpp:826
 msgid "Stay _visible when focus is lost"
-msgstr "Permanecer _visível quando o foco é perdido"
+msgstr "Perman_ecer visível quando o foco for perdido"
 
 #: ../panel-plugin/settings.cpp:161
 msgid "Suspe_nd"
@@ -391,7 +395,7 @@ msgstr "Suspendendo o computador em %d segundos."
 
 #: ../panel-plugin/settings.cpp:139
 msgid "Switch _User"
-msgstr "Trocar de _usuário"
+msgstr "Trocar de _usuário."
 
 #: ../panel-plugin/configuration-dialog.cpp:820
 msgid "Switch categories by _hovering"
@@ -399,7 +403,7 @@ msgstr "Trocar categorias ao passar com o m_ouse"
 
 #: ../panel-plugin/configuration-dialog.cpp:485
 msgid "The action will be deleted permanently."
-msgstr "Esta ação será eliminada permanentemente."
+msgstr "A ação será excluída permanentemente."
 
 #: ../panel-plugin/configuration-dialog.cpp:759
 msgid "Title"
@@ -411,8 +415,8 @@ msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
 msgstr ""
-"Para mostrá-lo, você deve remover manualmente o arquivo \"%s\" ou abrir o "
-"arquivo e remova a linha \"%s\"."
+"Para desocultar, você precisa remover manualmente o arquivo \"%s\" ou abrir "
+"o arquivo e remover a linha \"%s\"."
 
 #: ../panel-plugin/settings.cpp:159
 #, c-format
@@ -421,7 +425,7 @@ msgstr "Desligando o computador em %d segundos."
 
 #: ../panel-plugin/page.cpp:480
 msgid "Unable to add launcher to desktop."
-msgstr "Não foi possível adicionar o lançador à área de trabalho."
+msgstr "Não foi possível adicionar o lançador à Área de Trabalho."
 
 #: ../panel-plugin/page.cpp:518 ../panel-plugin/page.cpp:527
 msgid "Unable to add launcher to panel."
@@ -429,16 +433,16 @@ msgstr "Não foi possível adicionar o lançador ao painel."
 
 #: ../panel-plugin/page.cpp:556
 msgid "Unable to edit launcher."
-msgstr "Não foi possível editar o lançador."
+msgstr "Não é possível editar o lançador."
 
 #: ../panel-plugin/configuration-dialog.cpp:546
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "Não foi possível abrir o URL: %s"
+msgstr "Não foi possível abrir a URL: %s"
 
 #: ../panel-plugin/configuration-dialog.cpp:795
 msgid "Use a single _panel row"
-msgstr "Utilizar p_ainel de uma única linha"
+msgstr "Use uma ún_ica linha do painel"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
@@ -467,12 +471,12 @@ msgstr "_Aparência"
 
 #: ../panel-plugin/configuration-dialog.cpp:101
 msgid "_Behavior"
-msgstr "C_omportamento"
+msgstr "_Comportamento"
 
 #: ../panel-plugin/command-edit.cpp:67
 #: ../panel-plugin/configuration-dialog.cpp:278
 msgid "_Cancel"
-msgstr "Ca_ncelar"
+msgstr "_Cancelar"
 
 #: ../panel-plugin/configuration-dialog.cpp:90
 msgid "_Close"
@@ -484,15 +488,15 @@ msgstr "_Comandos"
 
 #: ../panel-plugin/configuration-dialog.cpp:484
 msgid "_Delete"
-msgstr "A_pagar"
+msgstr "Ex_cluir"
 
 #: ../panel-plugin/settings.cpp:177
 msgid "_Edit Applications"
-msgstr "_Editar Aplicações"
+msgstr "_Editar aplicações"
 
 #: ../panel-plugin/configuration-dialog.cpp:89
 msgid "_Help"
-msgstr "Aj_uda"
+msgstr "_Ajuda"
 
 #: ../panel-plugin/settings.cpp:167
 msgid "_Hibernate"
@@ -513,15 +517,15 @@ msgstr "_OK"
 
 #: ../panel-plugin/configuration-dialog.cpp:100
 msgid "_Panel Button"
-msgstr "Botão do _Painel"
+msgstr "Botão do _painel"
 
 #: ../panel-plugin/configuration-dialog.cpp:997
 msgid "_Pattern:"
-msgstr "Pa_drão:"
+msgstr "_Padrão:"
 
 #: ../panel-plugin/configuration-dialog.cpp:1021
 msgid "_Regular expression"
-msgstr "Expressão r_egular"
+msgstr "Expressão _regular"
 
 #: ../panel-plugin/settings.cpp:149
 msgid "_Restart"
@@ -533,17 +537,19 @@ msgstr "Gerenciador de con_figurações"
 
 #: ../panel-plugin/configuration-dialog.cpp:769
 msgid "_Title:"
-msgstr "Tít_ulo:"
+msgstr "_Título:"
 
 #: ../panel-plugin/plugin.cpp:414
 msgid "translator-credits"
 msgstr ""
 "Carlos Reis <reiscarlos1976@gmail.com>, 2017\n"
 "Fábio Luciano de Góis <fabio@naoimporta.com>, 2013\n"
-"Gabriel Henrique <gabrielddev@gmail.com>, 2018-2020\n"
+"Gabriel Henrique <gabrielddev@gmail.com>, 2017-2020\n"
 "Graeme Gott <graeme@gottcode.org>, 2013\n"
 "Holmes <holmes_holmes@live.com>, 2014\n"
-"José Vieira <jvieira33@sapo.pt>, 2016-2017\n"
+"Hugo Carvalho <hugokarvalho@hotmail.com>, 2020\n"
+"José Vieira <jvieira33@sapo.pt>, 2016-2020\n"
 "Lorhan Sohaky, 2018\n"
 "Paulo Castro, 2013\n"
-"Thiago Albuquerque Soares <tasbrjob@gmail.com>, 2018"
+"Rui <xymarior@yandex.com>, 2018-2019\n"
+"Sérgio Marques <smarquespt@gmail.com>, 2013-2015"
