@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-12 12:49-0500\n"
-"PO-Revision-Date: 2020-06-27 03:17+0000\n"
+"PO-Revision-Date: 2020-07-08 20:20+0000\n"
 "Last-Translator: Gabriel Henrique <gabrielddev@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/pt_BR/)\n"
@@ -50,11 +50,11 @@ msgstr "Adicionar ao painel"
 
 #: ../panel-plugin/category.cpp:50
 msgid "All Applications"
-msgstr "Todas as aplicações"
+msgstr "Todos os aplicativos"
 
 #: ../panel-plugin/plugin.cpp:409
 msgid "Alternate application launcher for Xfce"
-msgstr "Lançador de aplicações alternativo para o Xfce"
+msgstr "Lançador de aplicativos alternativo para o Xfce"
 
 #: ../panel-plugin/settings-dialog.cpp:895
 msgid "Amount of _items:"
@@ -62,11 +62,11 @@ msgstr "Quantidade de _itens:"
 
 #: ../panel-plugin/settings-dialog.cpp:738
 msgid "Application icon si_ze:"
-msgstr "Tamanho do íco_ne da aplicação:"
+msgstr "Tamanho do íco_ne do aplicativo:"
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
-msgstr "Aplicações"
+msgstr "Aplicativos"
 
 #: ../panel-plugin/launcher.cpp:232
 #, c-format
@@ -91,7 +91,8 @@ msgstr "Opa_cidade do fundo:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
-msgstr "Navegar pelo sistema de arquivos para escolher um comando."
+msgstr ""
+"Navegar pelo sistema de arquivos para escolher um comando personalizado."
 
 #: ../panel-plugin/settings-dialog.cpp:1062
 msgid "C_ommand:"
@@ -103,7 +104,7 @@ msgstr "Tamanho do ícone da categ_oria:"
 
 #: ../panel-plugin/recent-page.cpp:173
 msgid "Clear Recently Used"
-msgstr "Limpar usadas recentemente"
+msgstr "Limpar usados recentemente"
 
 #: ../panel-plugin/plugin.cpp:410
 msgid "Copyright © 2013-2020 Graeme Gott"
@@ -131,7 +132,7 @@ msgstr "Deseja suspender para o disco?"
 
 #: ../panel-plugin/page.cpp:404
 msgid "Edit Application..."
-msgstr "Editar aplicação..."
+msgstr "Editar aplicativo..."
 
 #: ../panel-plugin/settings.cpp:191
 msgid "Edit _Profile"
@@ -194,7 +195,7 @@ msgstr "Hibernando o computador em %d segundos."
 
 #: ../panel-plugin/launcher.cpp:231 ../panel-plugin/page.cpp:408
 msgid "Hide Application"
-msgstr "Ocultar aplicação"
+msgstr "Ocultar aplicativo"
 
 #: ../panel-plugin/settings-dialog.cpp:813
 msgid "Icon"
@@ -271,11 +272,11 @@ msgstr "Posicionar categ_orias junto ao botão do painel"
 
 #: ../panel-plugin/settings-dialog.cpp:728
 msgid "Position commands next to search _entry"
-msgstr "Posicionar os botões junto à _caixa de pesquisa"
+msgstr "Posicionar os comandos junto à _caixa de pesquisa"
 
 #: ../panel-plugin/settings-dialog.cpp:891 ../panel-plugin/window.cpp:162
 msgid "Recently Used"
-msgstr "Usadas recentemente"
+msgstr "Usados recentemente"
 
 #: ../panel-plugin/settings-dialog.cpp:512
 #, c-format
@@ -326,15 +327,15 @@ msgstr "Comandos da sessão"
 
 #: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
-msgstr "Mostrar um menu para acessar facilmente as aplicações instaladas"
+msgstr "Mostrar um menu para acessar facilmente os aplicativos instalados"
 
 #: ../panel-plugin/settings-dialog.cpp:705
 msgid "Show application _descriptions"
-msgstr "Mostrar _descrição das aplicações"
+msgstr "Mostrar _descrição dos aplicativos"
 
 #: ../panel-plugin/settings-dialog.cpp:699
 msgid "Show application too_ltips"
-msgstr "Mostrar dicas de conte_xto das aplicações"
+msgstr "Mostrar dica de conte_xto dos aplicativos"
 
 #: ../panel-plugin/settings-dialog.cpp:613
 msgid "Show as _icons"
@@ -354,11 +355,11 @@ msgstr "Mostrar janela de c_onfirmação"
 
 #: ../panel-plugin/settings-dialog.cpp:692
 msgid "Show cate_gory names"
-msgstr "Mostrar nomes das cate_gorias"
+msgstr "Mostrar nome das cate_gorias"
 
 #: ../panel-plugin/settings-dialog.cpp:686
 msgid "Show generic application _names"
-msgstr "Mostrar _nome genérico das aplicações"
+msgstr "Mostrar _nome genérico dos aplicativos"
 
 #: ../panel-plugin/settings.cpp:165
 msgid "Shut _Down"
@@ -438,11 +439,11 @@ msgstr "Não é possível editar o lançador."
 #: ../panel-plugin/settings-dialog.cpp:572
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "Não foi possível abrir a URL: %s"
+msgstr "Não foi possível abrir a seguinte URL: %s"
 
 #: ../panel-plugin/settings-dialog.cpp:849
 msgid "Use a single _panel row"
-msgstr "Use uma ún_ica linha do painel"
+msgstr "Usar uma ún_ica linha do painel"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
@@ -493,7 +494,7 @@ msgstr "Ex_cluir"
 
 #: ../panel-plugin/settings.cpp:187
 msgid "_Edit Applications"
-msgstr "_Editar aplicações"
+msgstr "_Editar aplicativos"
 
 #: ../panel-plugin/settings-dialog.cpp:97
 #: ../panel-plugin/settings-dialog.cpp:104
