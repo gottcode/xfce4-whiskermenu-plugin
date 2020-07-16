@@ -20,7 +20,7 @@
 
 #include <libxfce4ui/libxfce4ui.h>
 
-#if !LIBXFCE4UTIL_CHECK_VERSION(4,15,1)
+#if !LIBXFCE4UTIL_CHECK_VERSION(4,15,2)
 #include <exo/exo.h>
 
 #define xfce_str_is_empty exo_str_is_empty

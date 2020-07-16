@@ -54,7 +54,7 @@ static std::string normalize(const gchar* string)
 
 //-----------------------------------------------------------------------------
 
-#if !LIBXFCE4UTIL_CHECK_VERSION(4,15,1)
+#if !LIBXFCE4UTIL_CHECK_VERSION(4,15,2)
 static void replace_with_quoted_string(std::string& command, std::string::size_type& index, const gchar* unquoted)
 {
 	if (!xfce_str_is_empty(unquoted))
