@@ -19,10 +19,10 @@
 
 #include "category-button.h"
 #include "launcher-view.h"
+#include "util.h"
 
 #include <algorithm>
 
-#include <exo/exo.h>
 #include <glib/gi18n-lib.h>
 
 using namespace WhiskerMenu;
@@ -49,7 +49,7 @@ Category::Category(GarconMenu* menu) :
 	{
 		text = _("All Applications");
 	}
-	set_icon(!exo_str_is_empty(icon) ? icon : "applications-other", true);
+	set_icon(!xfce_str_is_empty(icon) ? icon : "applications-other", true);
 	set_text(text ? text : "");
 	set_tooltip(tooltip ? tooltip : "");
 }

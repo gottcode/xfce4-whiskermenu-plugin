@@ -21,8 +21,8 @@
 #include "icon-renderer.h"
 #include "settings.h"
 #include "slot.h"
+#include "util.h"
 
-#include <exo/exo.h>
 #include <gdk/gdkkeysyms.h>
 
 using namespace WhiskerMenu;
@@ -33,7 +33,7 @@ static gboolean is_separator(GtkTreeModel* model, GtkTreeIter* iter, gpointer)
 {
 	const gchar* text;
 	gtk_tree_model_get(model, iter, LauncherView::COLUMN_TEXT, &text, -1);
-	return exo_str_is_empty(text);
+	return xfce_str_is_empty(text);
 }
 
 //-----------------------------------------------------------------------------

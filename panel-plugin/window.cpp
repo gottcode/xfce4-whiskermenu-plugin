@@ -29,8 +29,8 @@
 #include "search-page.h"
 #include "settings.h"
 #include "slot.h"
+#include "util.h"
 
-#include <exo/exo.h>
 #include <gdk/gdkkeysyms.h>
 #include <libxfce4ui/libxfce4ui.h>
 
@@ -671,7 +671,7 @@ gboolean WhiskerMenu::Window::on_key_press_event(GtkWidget* widget, GdkEvent* ev
 	GdkEventKey* key_event = reinterpret_cast<GdkEventKey*>(event);
 
 	// Hide if escape is pressed and there is no text in search entry
-	if ( (key_event->keyval == GDK_KEY_Escape) && exo_str_is_empty(gtk_entry_get_text(m_search_entry)) )
+	if ( (key_event->keyval == GDK_KEY_Escape) && xfce_str_is_empty(gtk_entry_get_text(m_search_entry)) )
 	{
 		hide();
 		return true;
@@ -923,7 +923,7 @@ void WhiskerMenu::Window::search()
 {
 	// Fetch search string
 	const gchar* text = gtk_entry_get_text(m_search_entry);
-	if (exo_str_is_empty(text))
+	if (xfce_str_is_empty(text))
 	{
 		text = nullptr;
 	}

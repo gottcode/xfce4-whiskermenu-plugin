@@ -23,6 +23,7 @@
 #include "search-action.h"
 #include "settings.h"
 #include "slot.h"
+#include "util.h"
 #include "window.h"
 
 #include <algorithm>
@@ -192,7 +193,7 @@ void SearchPage::activate_search(GtkEntry* entry)
 void SearchPage::cancel_search(GtkSearchEntry* entry)
 {
 	const gchar* text = gtk_entry_get_text(GTK_ENTRY(entry));
-	if (!exo_str_is_empty(text))
+	if (!xfce_str_is_empty(text))
 	{
 		gtk_entry_set_text(GTK_ENTRY(entry), "");
 	}

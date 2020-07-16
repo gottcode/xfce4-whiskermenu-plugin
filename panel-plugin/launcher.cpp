@@ -19,8 +19,8 @@
 
 #include "query.h"
 #include "settings.h"
+#include "util.h"
 
-#include <exo/exo.h>
 #include <libxfce4ui/libxfce4ui.h>
 
 using namespace WhiskerMenu;
@@ -57,7 +57,7 @@ static std::string normalize(const gchar* string)
 #if !LIBXFCE4UTIL_CHECK_VERSION(4,15,1)
 static void replace_with_quoted_string(std::string& command, std::string::size_type& index, const gchar* unquoted)
 {
-	if (!exo_str_is_empty(unquoted))
+	if (!xfce_str_is_empty(unquoted))
 	{
 		gchar* quoted = g_shell_quote(unquoted);
 		command.replace(index, 2, quoted);
@@ -74,7 +74,7 @@ static void replace_with_quoted_string(std::string& command, std::string::size_t
 
 static void replace_with_quoted_string(std::string& command, std::string::size_type& index, const gchar* prefix, const gchar* unquoted)
 {
-	if (!exo_str_is_empty(unquoted))
+	if (!xfce_str_is_empty(unquoted))
 	{
 		command.replace(index, 2, prefix);
 		index += strlen(prefix);
@@ -167,7 +167,7 @@ Launcher::Launcher(GarconMenuItem* item) :
 		generic_name = "";
 	}
 
-	if (!wm_settings->launcher_show_name && !exo_str_is_empty(generic_name))
+	if (!wm_settings->launcher_show_name && !xfce_str_is_empty(generic_name))
 	{
 		std::swap(name, generic_name);
 	}
@@ -202,7 +202,7 @@ Launcher::Launcher(GarconMenuItem* item) :
 	for (GList* i = keywords; i; i = i->next)
 	{
 		const gchar* keyword = static_cast<gchar*>(i->data);
-		if (!exo_str_is_empty(keyword) && g_utf8_validate(keyword, -1, nullptr))
+		if (!xfce_str_is_empty(keyword) && g_utf8_validate(keyword, -1, nullptr))
 		{
 			m_search_keywords.push_back(normalize(keyword));
 		}
@@ -211,7 +211,7 @@ Launcher::Launcher(GarconMenuItem* item) :
 
 	// Create search text for command
 	const gchar* command = garcon_menu_item_get_command(m_item);
-	if (!exo_str_is_empty(command) && g_utf8_validate(command, -1, nullptr))
+	if (!xfce_str_is_empty(command) && g_utf8_validate(command, -1, nullptr))
 	{
 		m_search_command = normalize(command);
 	}
@@ -294,7 +294,7 @@ void Launcher::run(GdkScreen* screen) const
 {
 	// Expand the field codes
 	const gchar* string = garcon_menu_item_get_command(m_item);
-	if (exo_str_is_empty(string))
+	if (xfce_str_is_empty(string))
 	{
 		return;
 	}
@@ -339,7 +339,7 @@ void Launcher::run(GdkScreen* screen, DesktopAction* action) const
 {
 	// Expand the field codes
 	const gchar* string = action->get_command();
-	if (exo_str_is_empty(string))
+	if (xfce_str_is_empty(string))
 	{
 		return;
 	}

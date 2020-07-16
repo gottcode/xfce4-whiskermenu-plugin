@@ -18,9 +18,10 @@
 #ifndef WHISKERMENU_ELEMENT_H
 #define WHISKERMENU_ELEMENT_H
 
+#include "util.h"
+
 #include <climits>
 
-#include <exo/exo.h>
 #include <gdk/gdk.h>
 
 namespace WhiskerMenu
@@ -100,7 +101,7 @@ protected:
 	void set_tooltip(const gchar* tooltip)
 	{
 		g_free(m_tooltip);
-		m_tooltip = !exo_str_is_empty(tooltip) ? g_markup_escape_text(tooltip, -1) : nullptr;
+		m_tooltip = !xfce_str_is_empty(tooltip) ? g_markup_escape_text(tooltip, -1) : nullptr;
 	}
 
 private:
