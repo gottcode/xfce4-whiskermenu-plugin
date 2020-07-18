@@ -141,18 +141,7 @@ void SearchPage::set_filter(const gchar* filter)
 	g_object_unref(store);
 
 	// Find first result
-	GtkTreeIter iter;
-	GtkTreePath* path = gtk_tree_path_new_first();
-	bool found = gtk_tree_model_get_iter(get_view()->get_model(), &iter, path);
-
-	// Scroll to and select first result
-	if (found)
-	{
-		get_view()->set_cursor(path);
-		get_view()->select_path(path);
-		get_view()->scroll_to_path(path);
-	}
-	gtk_tree_path_free(path);
+	select_first();
 }
 
 //-----------------------------------------------------------------------------
