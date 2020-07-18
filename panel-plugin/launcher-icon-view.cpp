@@ -110,13 +110,6 @@ void LauncherIconView::activate_path(GtkTreePath* path)
 
 //-----------------------------------------------------------------------------
 
-void LauncherIconView::scroll_to_path(GtkTreePath* path)
-{
-	gtk_icon_view_scroll_to_path(m_view, path, true, 0.5f, 0.5f);
-}
-
-//-----------------------------------------------------------------------------
-
 void LauncherIconView::select_path(GtkTreePath* path)
 {
 	gtk_icon_view_select_path(m_view, path);

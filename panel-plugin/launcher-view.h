@@ -39,7 +39,6 @@ public:
 	virtual GtkTreePath* get_path_at_pos(int x, int y) const=0;
 	virtual GtkTreePath* get_selected_path() const=0;
 	virtual void activate_path(GtkTreePath* path)=0;
-	virtual void scroll_to_path(GtkTreePath* path)=0;
 	virtual void select_path(GtkTreePath* path)=0;
 	virtual void set_cursor(GtkTreePath* path)=0;
 

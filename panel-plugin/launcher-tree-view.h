@@ -38,7 +38,6 @@ public:
 	GtkTreePath* get_path_at_pos(int x, int y) const;
 	GtkTreePath* get_selected_path() const;
 	void activate_path(GtkTreePath* path);
-	void scroll_to_path(GtkTreePath* path);
 	void select_path(GtkTreePath* path);
 	void set_cursor(GtkTreePath* path);
 
