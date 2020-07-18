@@ -50,6 +50,7 @@ public:
 	}
 
 	void reset_selection();
+	void select_first();
 	void update_view();
 
 protected:

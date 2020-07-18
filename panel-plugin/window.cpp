@@ -714,6 +714,19 @@ gboolean WhiskerMenu::Window::on_key_press_event(GtkWidget* widget, GdkEvent* ev
 		{
 			gtk_widget_grab_focus(view);
 		}
+		if (gtk_window_get_focus(m_window) == view)
+		{
+			GtkTreePath* path = page->get_view()->get_selected_path();
+			if (path)
+			{
+				gtk_tree_path_free(path);
+			}
+			else
+			{
+				page->select_first();
+				return true;
+			}
+		}
 	}
 
 	return false;
