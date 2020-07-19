@@ -248,12 +248,12 @@ gboolean Page::view_button_press_event(GtkWidget*, GdkEvent* event)
 		return false;
 	}
 
-	if (button_event->button == 3)
+	if (gdk_event_triggers_context_menu(event))
 	{
 		create_context_menu(path, event);
 		return true;
 	}
-	else if (button_event->button != 1)
+	else if (button_event->button != GDK_BUTTON_PRIMARY)
 	{
 		gtk_tree_path_free(path);
 		return false;
