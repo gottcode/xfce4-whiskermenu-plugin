@@ -109,7 +109,7 @@ gboolean ResizeGrip::on_button_press_event(GtkWidget*, GdkEvent* event)
 			event_button->x_root,
 			event_button->y_root,
 			event_button->time);
-	return true;
+	return GDK_EVENT_STOP;
 }
 
 //-----------------------------------------------------------------------------
@@ -118,7 +118,7 @@ gboolean ResizeGrip::on_enter_notify_event(GtkWidget* widget, GdkEvent*)
 {
 	GdkWindow* window = gtk_widget_get_window(widget);
 	gdk_window_set_cursor(window, m_cursor);
-	return false;
+	return GDK_EVENT_PROPAGATE;
 }
 
 //-----------------------------------------------------------------------------
@@ -127,7 +127,7 @@ gboolean ResizeGrip::on_leave_notify_event(GtkWidget* widget, GdkEvent*)
 {
 	GdkWindow* window = gtk_widget_get_window(widget);
 	gdk_window_set_cursor(window, nullptr);
-	return false;
+	return GDK_EVENT_PROPAGATE;
 }
 
 //-----------------------------------------------------------------------------
@@ -146,7 +146,7 @@ gboolean ResizeGrip::on_draw_event(GtkWidget* widget, cairo_t* cr)
 	}
 	cairo_fill(cr);
 
-	return true;
+	return GDK_EVENT_STOP;
 }
 
 //-----------------------------------------------------------------------------

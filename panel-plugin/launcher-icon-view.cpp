@@ -258,7 +258,7 @@ void LauncherIconView::reload_icon_size()
 gboolean LauncherIconView::on_leave_notify_event(GtkWidget*, GdkEvent*)
 {
 	clear_selection();
-	return false;
+	return GDK_EVENT_PROPAGATE;
 }
 
 //-----------------------------------------------------------------------------
@@ -267,7 +267,7 @@ gboolean LauncherIconView::on_motion_notify_event(GtkWidget*, GdkEvent* event)
 {
 	GdkEventMotion* motion_event = reinterpret_cast<GdkEventMotion*>(event);
 	select_path_at_pos(motion_event->x, motion_event->y);
-	return false;
+	return GDK_EVENT_PROPAGATE;
 }
 
 //-----------------------------------------------------------------------------
@@ -276,7 +276,7 @@ gboolean LauncherIconView::on_scroll_event(GtkWidget*, GdkEvent* event)
 {
 	GdkEventScroll* scroll_event = reinterpret_cast<GdkEventScroll*>(event);
 	select_path_at_pos(scroll_event->x, scroll_event->y);
-	return false;
+	return GDK_EVENT_PROPAGATE;
 }
 
 //-----------------------------------------------------------------------------

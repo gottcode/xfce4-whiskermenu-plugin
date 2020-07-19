@@ -611,12 +611,12 @@ gboolean WhiskerMenu::Window::on_enter_notify_event(GtkWidget*, GdkEvent* event)
 			|| (crossing_event->mode == GDK_CROSSING_GRAB)
 			|| (crossing_event->mode == GDK_CROSSING_GTK_GRAB))
 	{
-		return false;
+		return GDK_EVENT_PROPAGATE;
 	}
 
 	grab_pointer(GTK_WIDGET(m_window));
 
-	return false;
+	return GDK_EVENT_PROPAGATE;
 }
 
 //-----------------------------------------------------------------------------
@@ -627,12 +627,12 @@ gboolean WhiskerMenu::Window::on_leave_notify_event(GtkWidget*, GdkEvent* event)
 	if ((crossing_event->detail == GDK_NOTIFY_INFERIOR)
 			|| (crossing_event->mode != GDK_CROSSING_NORMAL))
 	{
-		return false;
+		return GDK_EVENT_PROPAGATE;
 	}
 
 	grab_pointer(GTK_WIDGET(m_window));
 
-	return false;
+	return GDK_EVENT_PROPAGATE;
 }
 
 //-----------------------------------------------------------------------------
@@ -641,7 +641,7 @@ gboolean WhiskerMenu::Window::on_button_press_event(GtkWidget*, GdkEvent* event)
 {
 	if (wm_settings->stay_on_focus_out)
 	{
-		return false;
+		return GDK_EVENT_PROPAGATE;
 	}
 
 	// Hide menu if user clicks outside
@@ -653,7 +653,7 @@ gboolean WhiskerMenu::Window::on_button_press_event(GtkWidget*, GdkEvent* event)
 	{
 		hide();
 	}
-	return false;
+	return GDK_EVENT_PROPAGATE;
 }
 
 //-----------------------------------------------------------------------------
@@ -661,7 +661,7 @@ gboolean WhiskerMenu::Window::on_button_press_event(GtkWidget*, GdkEvent* event)
 gboolean WhiskerMenu::Window::on_button_release_event(GtkWidget*, GdkEvent*)
 {
 	unset_pressed_category();
-	return false;
+	return GDK_EVENT_PROPAGATE;
 }
 
 //-----------------------------------------------------------------------------
@@ -674,7 +674,7 @@ gboolean WhiskerMenu::Window::on_key_press_event(GtkWidget* widget, GdkEvent* ev
 	if ( (key_event->keyval == GDK_KEY_Escape) && xfce_str_is_empty(gtk_entry_get_text(m_search_entry)) )
 	{
 		hide();
-		return true;
+		return GDK_EVENT_STOP;
 	}
 
 	Page* page = nullptr;
@@ -724,12 +724,12 @@ gboolean WhiskerMenu::Window::on_key_press_event(GtkWidget* widget, GdkEvent* ev
 			else
 			{
 				page->select_first();
-				return true;
+				return GDK_EVENT_STOP;
 			}
 		}
 	}
 
-	return false;
+	return GDK_EVENT_PROPAGATE;
 }
 
 //-----------------------------------------------------------------------------
@@ -743,13 +743,13 @@ gboolean WhiskerMenu::Window::on_key_press_event_after(GtkWidget* widget, GdkEve
 		GdkEventKey* key_event = reinterpret_cast<GdkEventKey*>(event);
 		if (key_event->is_modifier)
 		{
-			return false;
+			return GDK_EVENT_PROPAGATE;
 		}
 		gtk_widget_grab_focus(search_entry);
 		gtk_window_propagate_key_event(m_window, key_event);
-		return true;
+		return GDK_EVENT_STOP;
 	}
-	return false;
+	return GDK_EVENT_PROPAGATE;
 }
 
 //-----------------------------------------------------------------------------
@@ -766,7 +766,7 @@ gboolean WhiskerMenu::Window::on_map_event(GtkWidget*, GdkEvent*)
 	// Focus search entry
 	gtk_widget_grab_focus(GTK_WIDGET(m_search_entry));
 
-	return false;
+	return GDK_EVENT_PROPAGATE;
 }
 
 //-----------------------------------------------------------------------------
@@ -779,7 +779,7 @@ gboolean WhiskerMenu::Window::on_state_flags_changed_event(GtkWidget* widget, Gt
 		gtk_window_present(m_window);
 	}
 
-	return false;
+	return GDK_EVENT_PROPAGATE;
 }
 
 //-----------------------------------------------------------------------------
@@ -797,7 +797,7 @@ gboolean WhiskerMenu::Window::on_configure_event(GtkWidget*, GdkEvent* event)
 
 	check_scrollbar_needed();
 
-	return false;
+	return GDK_EVENT_PROPAGATE;
 }
 
 //-----------------------------------------------------------------------------
@@ -850,7 +850,7 @@ gboolean WhiskerMenu::Window::on_draw_event(GtkWidget* widget, cairo_t* cr)
 		gtk_render_background(context, cr, 0.0, 0.0, width, height);
 	}
 
-	return false;
+	return GDK_EVENT_PROPAGATE;
 }
 
 //-----------------------------------------------------------------------------

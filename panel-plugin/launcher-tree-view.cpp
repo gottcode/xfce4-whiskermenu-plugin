@@ -268,7 +268,7 @@ gboolean LauncherTreeView::on_key_press_event(GtkWidget*, GdkEvent* event)
 	{
 		gtk_tree_view_set_hover_selection(m_view, false);
 	}
-	return false;
+	return GDK_EVENT_PROPAGATE;
 }
 
 //-----------------------------------------------------------------------------
@@ -280,7 +280,7 @@ gboolean LauncherTreeView::on_key_release_event(GtkWidget*, GdkEvent* event)
 	{
 		gtk_tree_view_set_hover_selection(m_view, true);
 	}
-	return false;
+	return GDK_EVENT_PROPAGATE;
 }
 
 //-----------------------------------------------------------------------------

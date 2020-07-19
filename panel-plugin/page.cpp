@@ -245,18 +245,18 @@ gboolean Page::view_button_press_event(GtkWidget*, GdkEvent* event)
 	GtkTreePath* path = m_view->get_path_at_pos(button_event->x, button_event->y);
 	if (!path)
 	{
-		return false;
+		return GDK_EVENT_PROPAGATE;
 	}
 
 	if (gdk_event_triggers_context_menu(event))
 	{
 		create_context_menu(path, event);
-		return true;
+		return GDK_EVENT_STOP;
 	}
 	else if (button_event->button != GDK_BUTTON_PRIMARY)
 	{
 		gtk_tree_path_free(path);
-		return false;
+		return GDK_EVENT_PROPAGATE;
 	}
 
 	Element* element = nullptr;
@@ -277,7 +277,7 @@ gboolean Page::view_button_press_event(GtkWidget*, GdkEvent* event)
 		set_reorderable(m_reorderable);
 	}
 
-	return false;
+	return GDK_EVENT_PROPAGATE;
 }
 
 //-----------------------------------------------------------------------------
@@ -287,7 +287,7 @@ gboolean Page::view_button_release_event(GtkWidget*, GdkEvent* event)
 	GdkEventButton* button_event = reinterpret_cast<GdkEventButton*>(event);
 	if (button_event->button != 1)
 	{
-		return false;
+		return GDK_EVENT_PROPAGATE;
 	}
 
 	if (m_launcher_dragged)
@@ -296,7 +296,7 @@ gboolean Page::view_button_release_event(GtkWidget*, GdkEvent* event)
 		m_launcher_dragged = false;
 	}
 
-	return false;
+	return GDK_EVENT_PROPAGATE;
 }
 
 //-----------------------------------------------------------------------------
@@ -336,12 +336,12 @@ gboolean Page::view_popup_menu_event(GtkWidget*)
 	GtkTreePath* path = m_view->get_cursor();
 	if (!path)
 	{
-		return false;
+		return GDK_EVENT_PROPAGATE;
 	}
 
 	create_context_menu(path, nullptr);
 
-	return true;
+	return GDK_EVENT_STOP;
 }
 
 //-----------------------------------------------------------------------------

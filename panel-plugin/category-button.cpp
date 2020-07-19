@@ -32,7 +32,7 @@ static gboolean hover_timeout(gpointer user_data)
 	{
 		gtk_toggle_button_set_active(button, true);
 	}
-	return false;
+	return GDK_EVENT_PROPAGATE;
 }
 
 static gboolean on_enter_notify_event(GtkWidget* widget, GdkEvent*, gpointer)
@@ -42,7 +42,7 @@ static gboolean on_enter_notify_event(GtkWidget* widget, GdkEvent*, gpointer)
 	{
 		g_timeout_add(150, &hover_timeout, button);
 	}
-	return false;
+	return GDK_EVENT_PROPAGATE;
 }
 
 static gboolean on_focus_in_event(GtkWidget* widget, GdkEvent*, gpointer)
@@ -53,7 +53,7 @@ static gboolean on_focus_in_event(GtkWidget* widget, GdkEvent*, gpointer)
 		gtk_toggle_button_set_active(button, true);
 		gtk_widget_grab_focus(widget);
 	}
-	return false;
+	return GDK_EVENT_PROPAGATE;
 }
 
 //-----------------------------------------------------------------------------
