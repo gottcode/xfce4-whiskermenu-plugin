@@ -102,7 +102,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	g_signal_connect_slot(m_window, "map-event", &Window::on_map_event, this);
 	g_signal_connect_slot(m_window, "state-flags-changed", &Window::on_state_flags_changed_event, this);
 	g_signal_connect_slot(m_window, "configure-event", &Window::on_configure_event, this);
-	g_signal_connect(m_window, "delete_event", G_CALLBACK(&gtk_widget_hide_on_delete), nullptr);
+	g_signal_connect(m_window, "delete-event", G_CALLBACK(&gtk_widget_hide_on_delete), nullptr);
 
 	// Create the border of the window
 	GtkWidget* frame = gtk_frame_new(nullptr);
