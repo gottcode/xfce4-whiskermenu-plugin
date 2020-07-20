@@ -47,18 +47,18 @@ static void plugin_free(XfcePanelPlugin*, gpointer user_data)
 
 // Wait for grab; allows modifier as shortcut
 // Adapted from http://git.xfce.org/xfce/xfce4-panel/tree/common/panel-utils.c#n122
-static bool panel_utils_grab_available()
+static bool can_grab(GtkWidget* widget)
 {
 	bool grab_succeed = false;
 
-	GdkWindow* root = gdk_screen_get_root_window(xfce_gdk_screen_get_active(nullptr));
-	GdkDisplay* display = gdk_display_get_default();
+	GdkWindow* window = gtk_widget_get_window(widget);
+	GdkDisplay* display = gdk_window_get_display(window);
 	GdkSeat* seat = gdk_display_get_default_seat(display);
 
 	// Don't try to get the grab for longer then 1/4 second
 	for (int i = 0; i < 2500; ++i)
 	{
-		if (gdk_seat_grab(seat, root, GDK_SEAT_CAPABILITY_ALL, true, nullptr, nullptr, nullptr, nullptr))
+		if (gdk_seat_grab(seat, window, GDK_SEAT_CAPABILITY_ALL, true, nullptr, nullptr, nullptr, nullptr) == GDK_GRAB_SUCCESS)
 		{
 			gdk_seat_ungrab(seat);
 			grab_succeed = true;
@@ -372,7 +372,7 @@ void Plugin::mode_changed(XfcePanelPlugin*, XfcePanelPluginMode mode)
 
 gboolean Plugin::remote_event(XfcePanelPlugin*, gchar* name, GValue* value)
 {
-	if (strcmp(name, "popup") || !panel_utils_grab_available())
+	if (strcmp(name, "popup") || !can_grab(m_button))
 	{
 		return false;
 	}
