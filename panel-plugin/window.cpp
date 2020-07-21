@@ -148,12 +148,10 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	if (!wm_settings->display_recent)
 	{
 		m_default_button = m_favorites_button;
-		m_default_page = m_favorites;
 	}
 	else
 	{
 		m_default_button = m_recent_button;
-		m_default_page = m_recent;
 	}
 
 	// Create box for packing children
@@ -329,12 +327,10 @@ void WhiskerMenu::Window::show(const Position position)
 	if (wm_settings->display_recent)
 	{
 		m_default_button = m_recent_button;
-		m_default_page = m_recent;
 	}
 	else
 	{
 		m_default_button = m_favorites_button;
-		m_default_page = m_favorites;
 	}
 	show_default_page();
 

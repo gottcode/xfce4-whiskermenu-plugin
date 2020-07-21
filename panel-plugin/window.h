@@ -139,7 +139,6 @@ private:
 	FavoritesPage* m_favorites;
 	RecentPage* m_recent;
 	ApplicationsPage* m_applications;
-	Page* m_default_page;
 
 	GtkScrolledWindow* m_sidebar;
 	GtkBox* m_sidebar_buttons;
