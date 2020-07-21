@@ -1,3 +1,13 @@
+2.4.5
+=====
+- Fix saving plugin title with overridden default text. (Bug #16822)
+- Fix extra key press to select search items. (Issue #8)
+- Fix icon view skipping first item when pressing arrow key.
+- Fix incorrect signal name.
+- Fix nonfunctional grab check.
+- Translation updates: Asturian, Dutch, Esperanto, Hungarian, Icelandic,
+  Portuguese, Portuguese (Brazil), Russian.
+
 2.4.4
 =====
 - Fixed search delay. (bug #16731)
