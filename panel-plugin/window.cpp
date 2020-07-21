@@ -831,7 +831,10 @@ gboolean WhiskerMenu::Window::on_draw_event(GtkWidget* widget, cairo_t* cr)
 	const double width = gtk_widget_get_allocated_width(widget);
 	const double height = gtk_widget_get_allocated_height(widget);
 
-	if (m_supports_alpha)
+	GdkScreen* screen = gtk_widget_get_screen(widget);
+	const bool enabled = gdk_screen_is_composited(screen);
+
+	if (enabled && m_supports_alpha)
 	{
 		cairo_surface_t* background = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, width, height);
 		cairo_t* cr_background = cairo_create(background);
