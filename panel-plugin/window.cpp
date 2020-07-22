@@ -144,9 +144,6 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	// Create search results
 	m_search_results = new SearchPage(this);
 
-	// Handle default page
-	reset_default_button();
-
 	// Create box for packing children
 	m_vbox = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 6));
 	gtk_container_set_border_width(GTK_CONTAINER(m_vbox), 2);
@@ -200,6 +197,9 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	gtk_scrolled_window_set_shadow_type(m_sidebar, GTK_SHADOW_NONE);
 	gtk_scrolled_window_set_policy(m_sidebar, GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
 	gtk_container_add(GTK_CONTAINER(m_sidebar), GTK_WIDGET(m_sidebar_buttons));
+
+	// Handle default page
+	reset_default_button();
 
 	// Show widgets
 	gtk_widget_show_all(frame);
@@ -815,14 +815,23 @@ void WhiskerMenu::Window::reset_default_button()
 	{
 	case 1:
 		m_default_button = m_recent->get_button();
+		gtk_box_reorder_child(m_sidebar_buttons, m_recent->get_button()->get_widget(), 0);
+		gtk_box_reorder_child(m_sidebar_buttons, m_favorites->get_button()->get_widget(), 1);
+		gtk_box_reorder_child(m_sidebar_buttons, m_applications->get_button()->get_widget(), 2);
 		break;
 
 	case 2:
 		m_default_button = m_applications->get_button();
+		gtk_box_reorder_child(m_sidebar_buttons, m_applications->get_button()->get_widget(), 0);
+		gtk_box_reorder_child(m_sidebar_buttons, m_favorites->get_button()->get_widget(), 1);
+		gtk_box_reorder_child(m_sidebar_buttons, m_recent->get_button()->get_widget(), 2);
 		break;
 
 	default:
 		m_default_button = m_favorites->get_button();
+		gtk_box_reorder_child(m_sidebar_buttons, m_favorites->get_button()->get_widget(), 0);
+		gtk_box_reorder_child(m_sidebar_buttons, m_recent->get_button()->get_widget(), 1);
+		gtk_box_reorder_child(m_sidebar_buttons, m_applications->get_button()->get_widget(), 2);
 		break;
 	}
 }
