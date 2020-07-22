@@ -37,12 +37,15 @@ using namespace WhiskerMenu;
 //-----------------------------------------------------------------------------
 
 ApplicationsPage::ApplicationsPage(Window* window) :
-	Page(window),
+	Page(window, "applications-other", _("All Applications")),
 	m_garcon_menu(nullptr),
 	m_garcon_settings_menu(nullptr),
 	m_status(LoadStatus::Invalid)
 {
 	garcon_set_environment_xdg(GARCON_ENVIRONMENT_XFCE);
+
+	const decltype(m_categories.size()) index = 0;
+	g_signal_connect_slot(get_button()->get_widget(), "toggled", &ApplicationsPage::show_category, this, index);
 }
 
 //-----------------------------------------------------------------------------
@@ -280,6 +283,7 @@ void ApplicationsPage::load_garcon_menu()
 
 	// Create all items category
 	Category* category = new Category(nullptr);
+	category->set_button(get_button());
 	category->append_items(find_all());
 	m_categories.insert(m_categories.begin(), category);
 }
@@ -304,7 +308,7 @@ void ApplicationsPage::load_contents()
 	// Add buttons for categories
 	std::vector<CategoryButton*> category_buttons;
 	const auto size = m_categories.size();
-	for (decltype(m_categories.size()) i = 0; i < size; ++i)
+	for (decltype(m_categories.size()) i = 1; i < size; ++i)
 	{
 		CategoryButton* category_button = m_categories[i]->get_button();
 		g_signal_connect_slot(category_button->get_widget(), "toggled", &ApplicationsPage::show_category, this, i);

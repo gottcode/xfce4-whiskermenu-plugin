@@ -137,6 +137,10 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	// Create applications
 	m_applications = new ApplicationsPage(this);
 
+	CategoryButton* applications_button = m_applications->get_button();
+	applications_button->join_group(recent_button);
+	g_signal_connect_slot<GtkToggleButton*>(applications_button->get_widget(), "toggled", &Window::category_toggled, this);
+
 	// Create search results
 	m_search_results = new SearchPage(this);
 
@@ -188,6 +192,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	m_sidebar_buttons = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 0));
 	gtk_box_pack_start(m_sidebar_buttons, favorites_button->get_widget(), false, false, 0);
 	gtk_box_pack_start(m_sidebar_buttons, recent_button->get_widget(), false, false, 0);
+	gtk_box_pack_start(m_sidebar_buttons, applications_button->get_widget(), false, false, 0);
 	gtk_box_pack_start(m_sidebar_buttons, gtk_separator_new(GTK_ORIENTATION_HORIZONTAL), false, false, 4);
 
 	m_sidebar = GTK_SCROLLED_WINDOW(gtk_scrolled_window_new(nullptr, nullptr));
@@ -488,19 +493,13 @@ void WhiskerMenu::Window::set_child_has_focus()
 
 void WhiskerMenu::Window::set_categories(const std::vector<CategoryButton*>& categories)
 {
-	CategoryButton* last_button = m_recent->get_button();
+	CategoryButton* last_button = m_applications->get_button();
 	for (auto button : categories)
 	{
 		button->join_group(last_button);
 		last_button = button;
 		gtk_box_pack_start(m_sidebar_buttons, button->get_widget(), false, false, 0);
 		g_signal_connect_slot<GtkToggleButton*>(button->get_widget(), "toggled", &Window::category_toggled, this);
-	}
-
-	// Position "All Applications" above divider
-	if (!categories.empty())
-	{
-		gtk_box_reorder_child(m_sidebar_buttons, categories.front()->get_widget(), 2);
 	}
 
 	show_default_page();
