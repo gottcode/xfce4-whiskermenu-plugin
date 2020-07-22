@@ -67,6 +67,8 @@ public:
 
 	void append_separator();
 
+	void set_button(CategoryButton* button);
+
 	void sort();
 
 private:
@@ -80,6 +82,7 @@ private:
 	GtkTreeModel* m_model;
 	bool m_has_separators;
 	bool m_has_subcategories;
+	bool m_owns_button;
 };
 
 }

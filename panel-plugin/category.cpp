@@ -33,7 +33,8 @@ Category::Category(GarconMenu* menu) :
 	m_button(nullptr),
 	m_model(nullptr),
 	m_has_separators(false),
-	m_has_subcategories(false)
+	m_has_subcategories(false),
+	m_owns_button(true)
 {
 	const gchar* icon = nullptr;
 	const gchar* text = nullptr;
@@ -60,7 +61,10 @@ Category::~Category()
 {
 	unset_model();
 
-	delete m_button;
+	if (m_owns_button)
+	{
+		delete m_button;
+	}
 
 	for (auto element : m_items)
 	{
@@ -126,6 +130,20 @@ void Category::append_separator()
 		m_items.push_back(nullptr);
 		m_has_separators = true;
 	}
+}
+
+//-----------------------------------------------------------------------------
+
+void Category::set_button(CategoryButton* button)
+{
+	if (m_owns_button)
+	{
+		delete m_button;
+	}
+
+	m_owns_button = false;
+
+	m_button = button;
 }
 
 //-----------------------------------------------------------------------------
