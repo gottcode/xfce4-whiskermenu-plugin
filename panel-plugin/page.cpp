@@ -17,6 +17,7 @@
 
 #include "page.h"
 
+#include "category-button.h"
 #include "favorites-page.h"
 #include "image-menu-item.h"
 #include "launcher.h"
@@ -35,13 +36,22 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-Page::Page(Window* window) :
+Page::Page(Window* window, const gchar* icon, const gchar* text) :
 	m_window(window),
+	m_button(nullptr),
 	m_selected_launcher(nullptr),
 	m_drag_enabled(true),
 	m_launcher_dragged(false),
 	m_reorderable(false)
 {
+	// Create button
+	if (icon && text)
+	{
+		GIcon* gicon = g_themed_icon_new(icon);
+		m_button = new CategoryButton(gicon, text);
+		g_object_unref(gicon);
+	}
+
 	// Create view
 	create_view();
 
@@ -57,6 +67,7 @@ Page::Page(Window* window) :
 
 Page::~Page()
 {
+	delete m_button;
 	delete m_view;
 	gtk_widget_destroy(m_widget);
 	g_object_unref(m_widget);

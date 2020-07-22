@@ -34,7 +34,7 @@ using namespace WhiskerMenu;
 //-----------------------------------------------------------------------------
 
 FavoritesPage::FavoritesPage(Window* window) :
-	Page(window)
+	Page(window, "user-bookmarks", _("Favorites"))
 {
 	view_created();
 }

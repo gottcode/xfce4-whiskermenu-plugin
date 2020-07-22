@@ -23,6 +23,7 @@
 namespace WhiskerMenu
 {
 
+class CategoryButton;
 class DesktopAction;
 class Launcher;
 class LauncherView;
@@ -31,7 +32,7 @@ class Window;
 class Page
 {
 public:
-	explicit Page(Window* window);
+	explicit Page(Window* window, const gchar* icon = nullptr, const gchar* text = nullptr);
 	virtual ~Page();
 
 	Page(const Page&) = delete;
@@ -42,6 +43,11 @@ public:
 	GtkWidget* get_widget() const
 	{
 		return m_widget;
+	}
+
+	CategoryButton* get_button() const
+	{
+		return m_button;
 	}
 
 	LauncherView* get_view() const
@@ -98,6 +104,7 @@ private:
 
 private:
 	Window* m_window;
+	CategoryButton* m_button;
 	GtkWidget* m_widget;
 	LauncherView* m_view;
 	Launcher* m_selected_launcher;

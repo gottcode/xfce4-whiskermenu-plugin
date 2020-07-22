@@ -101,6 +101,7 @@ private:
 	void favorites_toggled();
 	void recent_toggled();
 	void category_toggled();
+	void reset_default_button();
 	void show_favorites();
 	void show_default_page();
 	void search();
@@ -142,8 +143,6 @@ private:
 
 	GtkScrolledWindow* m_sidebar;
 	GtkBox* m_sidebar_buttons;
-	CategoryButton* m_favorites_button;
-	CategoryButton* m_recent_button;
 	CategoryButton* m_default_button;
 	GtkSizeGroup* m_sidebar_size_group;
 

@@ -124,19 +124,15 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	// Create favorites
 	m_favorites = new FavoritesPage(this);
 
-	GIcon* icon = g_themed_icon_new("user-bookmarks");
-	m_favorites_button = new CategoryButton(icon, _("Favorites"));
-	g_object_unref(icon);
-	g_signal_connect_slot<GtkToggleButton*>(m_favorites_button->get_widget(), "toggled", &Window::favorites_toggled, this);
+	CategoryButton* favorites_button = m_favorites->get_button();
+	g_signal_connect_slot<GtkToggleButton*>(favorites_button->get_widget(), "toggled", &Window::favorites_toggled, this);
 
 	// Create recent
 	m_recent = new RecentPage(this);
 
-	icon = g_themed_icon_new("document-open-recent");
-	m_recent_button = new CategoryButton(icon, _("Recently Used"));
-	g_object_unref(icon);
-	m_recent_button->join_group(m_favorites_button);
-	g_signal_connect_slot<GtkToggleButton*>(m_recent_button->get_widget(), "toggled", &Window::recent_toggled, this);
+	CategoryButton* recent_button = m_recent->get_button();
+	recent_button->join_group(favorites_button);
+	g_signal_connect_slot<GtkToggleButton*>(recent_button->get_widget(), "toggled", &Window::recent_toggled, this);
 
 	// Create applications
 	m_applications = new ApplicationsPage(this);
@@ -145,14 +141,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	m_search_results = new SearchPage(this);
 
 	// Handle default page
-	if (!wm_settings->display_recent)
-	{
-		m_default_button = m_favorites_button;
-	}
-	else
-	{
-		m_default_button = m_recent_button;
-	}
+	reset_default_button();
 
 	// Create box for packing children
 	m_vbox = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 6));
@@ -197,8 +186,8 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 
 	// Create box for packing sidebar
 	m_sidebar_buttons = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 0));
-	gtk_box_pack_start(m_sidebar_buttons, m_favorites_button->get_widget(), false, false, 0);
-	gtk_box_pack_start(m_sidebar_buttons, m_recent_button->get_widget(), false, false, 0);
+	gtk_box_pack_start(m_sidebar_buttons, favorites_button->get_widget(), false, false, 0);
+	gtk_box_pack_start(m_sidebar_buttons, recent_button->get_widget(), false, false, 0);
 	gtk_box_pack_start(m_sidebar_buttons, gtk_separator_new(GTK_ORIENTATION_HORIZONTAL), false, false, 4);
 
 	m_sidebar = GTK_SCROLLED_WINDOW(gtk_scrolled_window_new(nullptr, nullptr));
@@ -243,9 +232,6 @@ WhiskerMenu::Window::~Window()
 
 	delete m_profilepic;
 	delete m_resizer;
-
-	delete m_favorites_button;
-	delete m_recent_button;
 
 	gtk_widget_destroy(GTK_WIDGET(m_window));
 	g_object_unref(m_window);
@@ -309,7 +295,7 @@ void WhiskerMenu::Window::show(const Position position)
 	m_recent->enforce_item_count();
 
 	// Make sure recent button is only visible when tracked
-	gtk_widget_set_visible(m_recent_button->get_widget(), wm_settings->recent_items_max);
+	gtk_widget_set_visible(m_recent->get_button()->get_widget(), wm_settings->recent_items_max);
 
 	// Make sure applications list is current; does nothing unless list has changed
 	if (m_applications->load())
@@ -324,19 +310,12 @@ void WhiskerMenu::Window::show(const Position position)
 	}
 
 	// Update default page
-	if (wm_settings->display_recent)
-	{
-		m_default_button = m_recent_button;
-	}
-	else
-	{
-		m_default_button = m_favorites_button;
-	}
+	reset_default_button();
 	show_default_page();
 
 	// Make sure icon sizes are correct
-	m_favorites_button->reload_icon_size();
-	m_recent_button->reload_icon_size();
+	m_favorites->get_button()->reload_icon_size();
+	m_recent->get_button()->reload_icon_size();
 	m_applications->reload_category_icon_size();
 
 	m_search_results->get_view()->reload_icon_size();
@@ -509,7 +488,7 @@ void WhiskerMenu::Window::set_child_has_focus()
 
 void WhiskerMenu::Window::set_categories(const std::vector<CategoryButton*>& categories)
 {
-	CategoryButton* last_button = m_recent_button;
+	CategoryButton* last_button = m_recent->get_button();
 	for (auto button : categories)
 	{
 		button->join_group(last_button);
@@ -611,11 +590,11 @@ gboolean WhiskerMenu::Window::on_key_press_event(GtkWidget* widget, GdkEvent* ev
 	{
 		page = m_search_results;
 	}
-	else if (m_favorites_button->get_active())
+	else if (m_favorites->get_button()->get_active())
 	{
 		page = m_favorites;
 	}
-	else if (m_recent_button->get_active())
+	else if (m_recent->get_button()->get_active())
 	{
 		page = m_recent;
 	}
@@ -630,7 +609,7 @@ gboolean WhiskerMenu::Window::on_key_press_event(GtkWidget* widget, GdkEvent* ev
 	{
 		if (GTK_IS_TREE_VIEW(view) && ((widget == view) || (gtk_window_get_focus(m_window) == view)))
 		{
-			gtk_widget_grab_focus(m_favorites_button->get_widget());
+			gtk_widget_grab_focus(m_favorites->get_button()->get_widget());
 			page->reset_selection();
 		}
 	}
@@ -831,10 +810,24 @@ void WhiskerMenu::Window::category_toggled()
 
 //-----------------------------------------------------------------------------
 
+void WhiskerMenu::Window::reset_default_button()
+{
+	if (wm_settings->display_recent)
+	{
+		m_default_button = m_recent->get_button();
+	}
+	else
+	{
+		m_default_button = m_favorites->get_button();
+	}
+}
+
+//-----------------------------------------------------------------------------
+
 void WhiskerMenu::Window::show_favorites()
 {
 	// Switch to favorites panel
-	m_favorites_button->set_active(true);
+	m_favorites->get_button()->set_active(true);
 
 	// Clear search entry
 	gtk_entry_set_text(m_search_entry, "");

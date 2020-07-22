@@ -34,7 +34,7 @@ using namespace WhiskerMenu;
 //-----------------------------------------------------------------------------
 
 RecentPage::RecentPage(Window* window) :
-	Page(window)
+	Page(window, "document-open-recent", _("Recently Used"))
 {
 	// Prevent going over max
 	if (wm_settings->recent.size() > wm_settings->recent_items_max)
