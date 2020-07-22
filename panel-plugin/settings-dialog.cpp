@@ -345,15 +345,48 @@ void SettingsDialog::toggle_stay_on_focus_out(GtkToggleButton* button)
 
 //-----------------------------------------------------------------------------
 
+void SettingsDialog::toggle_display_favorites(GtkToggleButton* button)
+{
+	if (gtk_toggle_button_get_active(button))
+	{
+		wm_settings->default_category = 0;
+		wm_settings->set_modified();
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void SettingsDialog::toggle_display_recent(GtkToggleButton* button)
+{
+	if (gtk_toggle_button_get_active(button))
+	{
+		wm_settings->default_category = 1;
+		wm_settings->set_modified();
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void SettingsDialog::toggle_display_applications(GtkToggleButton *button)
+{
+	if (gtk_toggle_button_get_active(button))
+	{
+		wm_settings->default_category = 2;
+		wm_settings->set_modified();
+	}
+}
+
+//-----------------------------------------------------------------------------
+
 void SettingsDialog::recent_items_max_changed(GtkSpinButton* button)
 {
 	wm_settings->recent_items_max = gtk_spin_button_get_value_as_int(button);
 	wm_settings->set_modified();
 	const bool active = wm_settings->recent_items_max;
 	gtk_widget_set_sensitive(GTK_WIDGET(m_display_recent), active);
-	if (!active)
+	if (!active && gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(m_display_recent)))
 	{
-		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_display_recent), false);
+		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_display_favorites), true);
 	}
 }
 
@@ -362,14 +395,6 @@ void SettingsDialog::recent_items_max_changed(GtkSpinButton* button)
 void SettingsDialog::toggle_remember_favorites(GtkToggleButton* button)
 {
 	wm_settings->favorites_in_recent = gtk_toggle_button_get_active(button);
-	wm_settings->set_modified();
-}
-
-//-----------------------------------------------------------------------------
-
-void SettingsDialog::toggle_display_recent(GtkToggleButton* button)
-{
-	wm_settings->display_recent = gtk_toggle_button_get_active(button);
 	wm_settings->set_modified();
 }
 
@@ -865,6 +890,43 @@ GtkWidget* SettingsDialog::init_behavior_tab()
 	gtk_container_set_border_width(GTK_CONTAINER(page), 12);
 
 
+	// Create default display section
+	GtkBox* display_vbox = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 6));
+	GtkWidget* display_frame = make_aligned_frame(_("Default Category"), GTK_WIDGET(display_vbox));
+	gtk_box_pack_start(page, display_frame, false, false, 0);
+
+	// Add option to display favorites
+	m_display_favorites = gtk_radio_button_new_with_mnemonic(nullptr, _("Favorites"));
+	gtk_box_pack_start(display_vbox, m_display_favorites, true, true, 0);
+
+	// Add option to display recently used
+	m_display_recent = gtk_radio_button_new_with_mnemonic_from_widget(GTK_RADIO_BUTTON(m_display_favorites), _("Recently Used"));
+	gtk_box_pack_start(display_vbox, m_display_recent, true, true, 0);
+	gtk_widget_set_sensitive(GTK_WIDGET(m_display_recent), wm_settings->recent_items_max);
+
+	// Add option to display all applications
+	m_display_applications = gtk_radio_button_new_with_mnemonic_from_widget(GTK_RADIO_BUTTON(m_display_recent), _("All Applications"));
+	gtk_box_pack_start(display_vbox, m_display_applications, true, true, 0);
+
+	switch (wm_settings->default_category)
+	{
+	case 1:
+		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_display_recent), true);
+		break;
+
+	case 2:
+		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_display_applications), true);
+		break;
+
+	default:
+		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_display_favorites), true);
+		break;
+	}
+	g_signal_connect_slot(m_display_favorites, "toggled", &SettingsDialog::toggle_display_favorites, this);
+	g_signal_connect_slot(m_display_recent, "toggled", &SettingsDialog::toggle_display_recent, this);
+	g_signal_connect_slot(m_display_applications, "toggled", &SettingsDialog::toggle_display_applications, this);
+
+
 	// Create menu section
 	GtkBox* behavior_vbox = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 6));
 	GtkWidget* behavior_frame = make_aligned_frame(_("Menu"), GTK_WIDGET(behavior_vbox));
@@ -907,13 +969,6 @@ GtkWidget* SettingsDialog::init_behavior_tab()
 	gtk_grid_attach(recent_table, m_remember_favorites, 0, 1, 2, 1);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_remember_favorites), wm_settings->favorites_in_recent);
 	g_signal_connect_slot(m_remember_favorites, "toggled", &SettingsDialog::toggle_remember_favorites, this);
-
-	// Add option to display recently used
-	m_display_recent = gtk_check_button_new_with_mnemonic(_("Display by _default"));
-	gtk_grid_attach(recent_table, m_display_recent, 0, 2, 2, 1);
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_display_recent), wm_settings->display_recent);
-	gtk_widget_set_sensitive(GTK_WIDGET(m_display_recent), wm_settings->recent_items_max);
-	g_signal_connect_slot(m_display_recent, "toggled", &SettingsDialog::toggle_display_recent, this);
 
 
 	// Create command buttons section

@@ -811,13 +811,19 @@ void WhiskerMenu::Window::category_toggled()
 
 void WhiskerMenu::Window::reset_default_button()
 {
-	if (wm_settings->display_recent)
+	switch (wm_settings->default_category)
 	{
+	case 1:
 		m_default_button = m_recent->get_button();
-	}
-	else
-	{
+		break;
+
+	case 2:
+		m_default_button = m_applications->get_button();
+		break;
+
+	default:
 		m_default_button = m_favorites->get_button();
+		break;
 	}
 }
 

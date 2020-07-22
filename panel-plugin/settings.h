@@ -83,9 +83,10 @@ public:
 	bool load_hierarchy;
 	bool view_as_icons;
 
+	int default_category;
+
 	decltype(recent.size()) recent_items_max;
 	bool favorites_in_recent;
-	bool display_recent;
 
 	bool position_search_alternate;
 	bool position_commands_alternate;

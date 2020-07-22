@@ -68,9 +68,12 @@ private:
 	void toggle_hover_switch_category(GtkToggleButton* button);
 	void toggle_stay_on_focus_out(GtkToggleButton* button);
 
+	void toggle_display_favorites(GtkToggleButton* button);
+	void toggle_display_recent(GtkToggleButton* button);
+	void toggle_display_applications(GtkToggleButton* button);
+
 	void recent_items_max_changed(GtkSpinButton* button);
 	void toggle_remember_favorites(GtkToggleButton* button);
-	void toggle_display_recent(GtkToggleButton* button);
 
 	void toggle_confirm_session_command(GtkToggleButton* button);
 
@@ -120,9 +123,13 @@ private:
 	GtkWidget* m_hover_switch_category;
 	GtkWidget* m_stay_on_focus_out;
 
+	// Default Display
+	GtkWidget* m_display_favorites;
+	GtkWidget* m_display_recent;
+	GtkWidget* m_display_applications;
+
 	// Recently Used
 	GtkWidget* m_remember_favorites;
-	GtkWidget* m_display_recent;
 	GtkWidget* m_recent_items_max;
 
 	// Session Commands

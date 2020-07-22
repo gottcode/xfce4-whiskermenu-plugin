@@ -115,9 +115,10 @@ Settings::Settings() :
 	load_hierarchy(false),
 	view_as_icons(true),
 
+	default_category(0),
+
 	recent_items_max(10),
 	favorites_in_recent(true),
-	display_recent(false),
 
 	position_search_alternate(true),
 	position_commands_alternate(false),
@@ -257,9 +258,15 @@ void Settings::load(gchar* file)
 		view_as_icons = false;
 	}
 
+	default_category = xfce_rc_read_bool_entry(rc, "display-recent-default", default_category);
+	default_category = CLAMP(xfce_rc_read_int_entry(rc, "default-category", default_category), 0, 2);
+
 	recent_items_max = std::max(0, xfce_rc_read_int_entry(rc, "recent-items-max", recent_items_max));
 	favorites_in_recent = xfce_rc_read_bool_entry(rc, "favorites-in-recent", favorites_in_recent);
-	display_recent = xfce_rc_read_bool_entry(rc, "display-recent-default", display_recent) && recent_items_max;
+	if (!recent_items_max && (default_category == 1))
+	{
+		default_category = 0;
+	}
 
 	position_search_alternate = xfce_rc_read_bool_entry(rc, "position-search-alternate", position_search_alternate);
 	position_commands_alternate = xfce_rc_read_bool_entry(rc, "position-commands-alternate", position_commands_alternate);
@@ -362,9 +369,10 @@ void Settings::save(gchar* file)
 	xfce_rc_write_bool_entry(rc, "load-hierarchy", load_hierarchy);
 	xfce_rc_write_bool_entry(rc, "view-as-icons", view_as_icons);
 
+	xfce_rc_write_int_entry(rc, "default-category", default_category);
+
 	xfce_rc_write_int_entry(rc, "recent-items-max", recent_items_max);
 	xfce_rc_write_bool_entry(rc, "favorites-in-recent", favorites_in_recent);
-	xfce_rc_write_bool_entry(rc, "display-recent-default", display_recent);
 
 	xfce_rc_write_bool_entry(rc, "position-search-alternate", position_search_alternate);
 	xfce_rc_write_bool_entry(rc, "position-commands-alternate", position_commands_alternate);
