@@ -118,30 +118,16 @@ std::vector<Launcher*> ApplicationsPage::find_all() const
 
 //-----------------------------------------------------------------------------
 
-void ApplicationsPage::apply_filter(GtkToggleButton* togglebutton)
+void ApplicationsPage::show_category(GtkToggleButton* togglebutton, std::vector<Category*>::size_type index)
 {
-	// Only apply filter for active button
-	if (!gtk_toggle_button_get_active(togglebutton))
-	{
-		return;
-	}
-
-	// Find category matching button
-	Category* category = nullptr;
-	for (auto test_category : m_categories)
-	{
-		if (GTK_TOGGLE_BUTTON(test_category->get_button()->get_widget()) == togglebutton)
-		{
-			category = test_category;
-			break;
-		}
-	}
-	if (!category)
+	// Only apply filter for active button and valid category
+	if (!gtk_toggle_button_get_active(togglebutton) || m_categories.empty())
 	{
 		return;
 	}
 
 	// Apply filter
+	Category* category = m_categories[index];
 	get_view()->unset_model();
 	get_view()->set_fixed_height_mode(!category->has_separators());
 	get_view()->set_model(category->get_model());
@@ -317,10 +303,11 @@ void ApplicationsPage::load_contents()
 
 	// Add buttons for categories
 	std::vector<CategoryButton*> category_buttons;
-	for (auto category : m_categories)
+	const auto size = m_categories.size();
+	for (decltype(m_categories.size()) i = 0; i < size; ++i)
 	{
-		CategoryButton* category_button = category->get_button();
-		g_signal_connect_slot(category_button->get_widget(), "toggled", &ApplicationsPage::apply_filter, this);
+		CategoryButton* category_button = m_categories[i]->get_button();
+		g_signal_connect_slot(category_button->get_widget(), "toggled", &ApplicationsPage::show_category, this, i);
 		category_buttons.push_back(category_button);
 	}
 

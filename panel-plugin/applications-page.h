@@ -47,7 +47,7 @@ public:
 	void reload_category_icon_size();
 
 private:
-	void apply_filter(GtkToggleButton* togglebutton);
+	void show_category(GtkToggleButton* togglebutton, std::vector<Category*>::size_type index);
 	void clear();
 	void load_garcon_menu();
 	void load_contents();
