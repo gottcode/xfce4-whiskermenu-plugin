@@ -47,32 +47,34 @@ static void plugin_free(XfcePanelPlugin*, gpointer user_data)
 
 // Wait for grab; allows modifier as shortcut
 // Adapted from http://git.xfce.org/xfce/xfce4-panel/tree/common/panel-utils.c#n122
-static bool can_grab(GtkWidget* widget)
+static bool can_grab()
 {
-	bool grab_succeed = false;
-
-	GdkWindow* window = gtk_widget_get_window(widget);
+	GdkWindow* window = gdk_screen_get_root_window(xfce_gdk_screen_get_active(nullptr));
 	GdkDisplay* display = gdk_window_get_display(window);
 	GdkSeat* seat = gdk_display_get_default_seat(display);
+	GdkDevice* keyboard = gdk_seat_get_keyboard(seat);
 
 	// Don't try to get the grab for longer then 1/4 second
 	for (int i = 0; i < 2500; ++i)
 	{
-		if (gdk_seat_grab(seat, window, GDK_SEAT_CAPABILITY_ALL, true, nullptr, nullptr, nullptr, nullptr) == GDK_GRAB_SUCCESS)
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+		const GdkGrabStatus grab_status = gdk_device_grab(keyboard,
+				window,
+				GDK_OWNERSHIP_NONE,
+				true,
+				GdkEventMask(GDK_KEY_PRESS_MASK | GDK_KEY_RELEASE_MASK),
+				nullptr,
+				GDK_CURRENT_TIME);
+		if (grab_status == GDK_GRAB_SUCCESS)
 		{
-			gdk_seat_ungrab(seat);
-			grab_succeed = true;
-			break;
+			gdk_device_ungrab(keyboard, GDK_CURRENT_TIME);
+			return true;
 		}
+G_GNUC_END_IGNORE_DEPRECATIONS
 		g_usleep(100);
 	}
 
-	if (!grab_succeed)
-	{
-		g_printerr("xfce4-whiskermenu-plugin: Unable to get keyboard and mouse grab. Menu popup failed.\n");
-	}
-
-	return grab_succeed;
+	return false;
 }
 
 #if !LIBXFCE4PANEL_CHECK_VERSION(4,13,0)
@@ -373,7 +375,7 @@ void Plugin::mode_changed(XfcePanelPlugin*, XfcePanelPluginMode mode)
 
 gboolean Plugin::remote_event(XfcePanelPlugin*, gchar* name, GValue* value)
 {
-	if (strcmp(name, "popup") || !can_grab(m_button))
+	if (strcmp(name, "popup"))
 	{
 		return false;
 	}
@@ -393,6 +395,10 @@ gboolean Plugin::remote_event(XfcePanelPlugin*, gchar* name, GValue* value)
 	if (gtk_widget_get_visible(m_window->get_widget()))
 	{
 		m_window->hide();
+	}
+	else if (!can_grab())
+	{
+		g_printerr("xfce4-whiskermenu-plugin: Unable to get keyboard. Menu popup failed.\n");
 	}
 	else if (value && G_VALUE_HOLDS_BOOLEAN(value) && g_value_get_boolean(value))
 	{
