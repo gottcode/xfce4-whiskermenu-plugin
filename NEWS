@@ -1,3 +1,8 @@
+2.4.6
+=====
+- Fix crash during grab check. (Issue #19)
+- Fix background incorrect without compositing.
+
 2.4.5
 =====
 - Fix saving plugin title with overridden default text. (Bug #16822)
