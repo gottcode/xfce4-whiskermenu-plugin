@@ -22,9 +22,16 @@
 
 namespace WhiskerMenu
 {
+// Connect flags
+enum class Connect
+{
+	Default = 0,
+	After = G_CONNECT_AFTER
+};
+
 // Member function with ignored parameters
 template<typename... Args, typename T, typename R>
-gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(T::*member)(), T* obj, bool after = false)
+gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(T::*member)(), T* obj, Connect flags = Connect::Default)
 {
 	class Slot
 	{
@@ -54,12 +61,12 @@ gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(
 			G_CALLBACK(&Slot::invoke),
 			new Slot(obj, member),
 			&Slot::destroy,
-			after ? G_CONNECT_AFTER : GConnectFlags(0));
+			GConnectFlags(flags));
 }
 
 // Member function with parameters
 template<typename T, typename R, typename... Args>
-gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(T::*member)(Args...), T* obj, bool after = false)
+gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(T::*member)(Args...), T* obj, Connect flags = Connect::Default)
 {
 	class Slot
 	{
@@ -89,12 +96,12 @@ gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(
 			G_CALLBACK(&Slot::invoke),
 			new Slot(obj, member),
 			&Slot::destroy,
-			after ? G_CONNECT_AFTER : GConnectFlags(0));
+			GConnectFlags(flags));
 }
 
 // Member function with 1 parameter and 1 bound parameter
 template<typename T, typename R, typename A1, typename A2>
-gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(T::*member)(A1,A2), T* obj, A2 bound1, bool after = false)
+gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(T::*member)(A1,A2), T* obj, A2 bound1, Connect flags = Connect::Default)
 {
 	class Slot
 	{
@@ -126,7 +133,7 @@ gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(
 			G_CALLBACK(&Slot::invoke),
 			new Slot(obj, member, bound1),
 			&Slot::destroy,
-			after ? G_CONNECT_AFTER : GConnectFlags(0));
+			GConnectFlags(flags));
 }
 
 }

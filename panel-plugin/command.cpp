@@ -91,7 +91,7 @@ GtkWidget* Command::get_button()
 	m_button = gtk_button_new();
 	gtk_button_set_relief(GTK_BUTTON(m_button), GTK_RELIEF_NONE);
 	gtk_widget_set_tooltip_text(m_button, m_text);
-	g_signal_connect_slot<GtkButton*>(m_button, "clicked", &Command::activate, this, true);
+	g_signal_connect_slot<GtkButton*>(m_button, "clicked", &Command::activate, this, Connect::After);
 
 	GtkWidget* image = nullptr;
 	if (gtk_icon_theme_has_icon(gtk_icon_theme_get_default(), m_icon))

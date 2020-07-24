@@ -71,7 +71,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	g_signal_connect_slot(m_window, "focus-in-event", &Window::on_focus_in_event, this);
 	g_signal_connect_slot(m_window, "focus-out-event", &Window::on_focus_out_event, this);
 	g_signal_connect_slot(m_window, "key-press-event", &Window::on_key_press_event, this);
-	g_signal_connect_slot(m_window, "key-press-event", &Window::on_key_press_event_after, this, true);
+	g_signal_connect_slot(m_window, "key-press-event", &Window::on_key_press_event_after, this, Connect::After);
 	g_signal_connect_slot(m_window, "map-event", &Window::on_map_event, this);
 	g_signal_connect_slot(m_window, "state-flags-changed", &Window::on_state_flags_changed_event, this);
 	g_signal_connect_slot(m_window, "configure-event", &Window::on_configure_event, this);
