@@ -49,6 +49,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	m_geometry{0,0,wm_settings->menu_width,wm_settings->menu_height},
 	m_layout_left(true),
 	m_layout_bottom(true),
+	m_layout_categories_horizontal(false),
 	m_layout_categories_alternate(false),
 	m_layout_search_alternate(false),
 	m_layout_commands_alternate(false),
@@ -178,14 +179,22 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 
 	// Create box for packing launcher pages and sidebar
 	m_contents_stack = GTK_STACK(gtk_stack_new());
-	m_contents_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 6));
+	m_contents_box = GTK_GRID(gtk_grid_new());
+	gtk_grid_set_column_spacing(m_contents_box, 6);
+	gtk_grid_set_row_spacing(m_contents_box, 0);
 	gtk_stack_add_named(m_contents_stack, GTK_WIDGET(m_contents_box), "contents");
 	gtk_stack_add_named(m_contents_stack, m_search_results->get_widget(), "search");
 	gtk_box_pack_start(m_vbox, GTK_WIDGET(m_contents_stack), true, true, 0);
 
+	// Create box for packing categories horizontally
+	m_categories_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0));
+	gtk_grid_attach(m_contents_box, GTK_WIDGET(m_categories_box), 0, 0, 2, 1);
+
 	// Create box for packing launcher pages
 	m_panels_stack = GTK_STACK(gtk_stack_new());
-	gtk_box_pack_start(m_contents_box, GTK_WIDGET(m_panels_stack), true, true, 0);
+	gtk_grid_attach(m_contents_box, GTK_WIDGET(m_panels_stack), 0, 1, 1, 1);
+	gtk_widget_set_hexpand(GTK_WIDGET(m_panels_stack), true);
+	gtk_widget_set_vexpand(GTK_WIDGET(m_panels_stack), true);
 	gtk_stack_add_named(m_panels_stack, m_favorites->get_widget(), "favorites");
 	gtk_stack_add_named(m_panels_stack, m_recent->get_widget(), "recent");
 	gtk_stack_add_named(m_panels_stack, m_applications->get_widget(), "applications");
@@ -198,7 +207,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	gtk_box_pack_start(m_category_buttons, gtk_separator_new(GTK_ORIENTATION_HORIZONTAL), false, false, 4);
 
 	m_sidebar = GTK_SCROLLED_WINDOW(gtk_scrolled_window_new(nullptr, nullptr));
-	gtk_box_pack_start(m_contents_box, GTK_WIDGET(m_sidebar), false, false, 0);
+	gtk_grid_attach(m_contents_box, GTK_WIDGET(m_sidebar), 1, 1, 1, 1);
 	gtk_scrolled_window_set_shadow_type(m_sidebar, GTK_SHADOW_NONE);
 	gtk_scrolled_window_set_policy(m_sidebar, GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
 	gtk_container_add(GTK_CONTAINER(m_sidebar), GTK_WIDGET(m_category_buttons));
@@ -442,25 +451,28 @@ void WhiskerMenu::Window::show(const Position position)
 
 	if ((m_layout_left != layout_left)
 			|| (m_layout_bottom != layout_bottom)
+			|| (m_layout_categories_horizontal != wm_settings->position_categories_horizontal)
 			|| (m_layout_categories_alternate != wm_settings->position_categories_alternate)
 			|| (m_layout_search_alternate != wm_settings->position_search_alternate)
 			|| (m_layout_commands_alternate != wm_settings->position_commands_alternate))
 	{
 		m_layout_left = layout_left;
 		m_layout_bottom = layout_bottom;
+		m_layout_categories_horizontal = wm_settings->position_categories_horizontal;
 		m_layout_categories_alternate = wm_settings->position_categories_alternate;
 		m_layout_search_alternate = wm_settings->position_search_alternate;
 		m_layout_commands_alternate = wm_settings->position_commands_alternate;
 		update_layout();
 	}
 
-	if (!m_sidebar_size_group && m_layout_commands_alternate && wm_settings->category_show_name)
+	const bool category_show_name = wm_settings->category_show_name && !wm_settings->position_categories_horizontal;
+	if (!m_sidebar_size_group && m_layout_commands_alternate && category_show_name)
 	{
 		m_sidebar_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
 		gtk_size_group_add_widget(m_sidebar_size_group, GTK_WIDGET(m_sidebar));
 		gtk_size_group_add_widget(m_sidebar_size_group, GTK_WIDGET(m_commands_box));
 	}
-	else if (m_sidebar_size_group && (!m_layout_commands_alternate || !wm_settings->category_show_name))
+	else if (m_sidebar_size_group && (!m_layout_commands_alternate || !category_show_name))
 	{
 		gtk_size_group_remove_widget(m_sidebar_size_group, GTK_WIDGET(m_sidebar));
 		gtk_size_group_remove_widget(m_sidebar_size_group, GTK_WIDGET(m_commands_box));
@@ -930,6 +942,32 @@ void WhiskerMenu::Window::update_layout()
 	}
 	g_object_unref(m_commands_box);
 
+	// Set horizontal position of categories
+	g_object_ref(m_category_buttons);
+	if (m_layout_categories_horizontal)
+	{
+		if (gtk_orientable_get_orientation(GTK_ORIENTABLE(m_category_buttons)) == GTK_ORIENTATION_VERTICAL)
+		{
+			gtk_orientable_set_orientation(GTK_ORIENTABLE(m_category_buttons), GTK_ORIENTATION_HORIZONTAL);
+			gtk_container_remove(GTK_CONTAINER(m_sidebar), GTK_WIDGET(m_category_buttons));
+			gtk_widget_set_visible(GTK_WIDGET(m_sidebar), false);
+			gtk_widget_set_visible(GTK_WIDGET(m_categories_box), true);
+			gtk_box_set_center_widget(m_categories_box, GTK_WIDGET(m_category_buttons));
+		}
+	}
+	else
+	{
+		if (gtk_orientable_get_orientation(GTK_ORIENTABLE(m_category_buttons)) == GTK_ORIENTATION_HORIZONTAL)
+		{
+			gtk_orientable_set_orientation(GTK_ORIENTABLE(m_category_buttons), GTK_ORIENTATION_VERTICAL);
+			gtk_container_remove(GTK_CONTAINER(m_categories_box), GTK_WIDGET(m_category_buttons));
+			gtk_widget_set_visible(GTK_WIDGET(m_categories_box), false);
+			gtk_widget_set_visible(GTK_WIDGET(m_sidebar), true);
+			gtk_container_add(GTK_CONTAINER(m_sidebar), GTK_WIDGET(m_category_buttons));
+		}
+	}
+	g_object_unref(m_category_buttons);
+
 	// Arrange horizontal order of profile picture, username, resizer, and commands
 	if (m_layout_left && m_layout_commands_alternate)
 	{
@@ -987,20 +1025,51 @@ void WhiskerMenu::Window::update_layout()
 	}
 
 	// Arrange horizontal order of applications and sidebar
+	g_object_ref(m_categories_box);
+	g_object_ref(m_panels_stack);
+	g_object_ref(m_sidebar);
+
+	gtk_grid_remove_row(m_contents_box, 1);
+	gtk_grid_remove_row(m_contents_box, 0);
+	if (m_layout_categories_horizontal)
+	{
+		gtk_grid_set_column_spacing(m_contents_box, 0);
+		gtk_grid_set_row_spacing(m_contents_box, 6);
+	}
+	else
+	{
+		gtk_grid_set_column_spacing(m_contents_box, 6);
+		gtk_grid_set_row_spacing(m_contents_box, 0);
+	}
+
 	if (m_layout_left != m_layout_categories_alternate)
 	{
-		gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_panels_stack), 0);
-		gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_sidebar), 1);
+		gtk_grid_attach(m_contents_box, GTK_WIDGET(m_panels_stack), 0, 0, 1, 1);
+		gtk_grid_attach(m_contents_box, GTK_WIDGET(m_sidebar), 1, 0, 1, 1);
 
 		gtk_box_reorder_child(m_commands_box, m_commands_spacer, 0);
 	}
 	else
 	{
-		gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_panels_stack), 1);
-		gtk_box_reorder_child(m_contents_box, GTK_WIDGET(m_sidebar), 0);
+		gtk_grid_attach(m_contents_box, GTK_WIDGET(m_sidebar), 0, 0, 1, 1);
+		gtk_grid_attach(m_contents_box, GTK_WIDGET(m_panels_stack), 1, 0, 1, 1);
 
 		gtk_box_reorder_child(m_commands_box, m_commands_spacer, 9);
 	}
+
+	if (m_layout_bottom != m_layout_categories_alternate)
+	{
+		gtk_grid_insert_row(m_contents_box, 0);
+		gtk_grid_attach(m_contents_box, GTK_WIDGET(m_categories_box), 0, 0, 2, 1);
+	}
+	else
+	{
+		gtk_grid_attach(m_contents_box, GTK_WIDGET(m_categories_box), 0, 1, 2, 1);
+	}
+
+	g_object_unref(m_sidebar);
+	g_object_unref(m_panels_stack);
+	g_object_unref(m_categories_box);
 
 	// Arrange vertical order of header, applications, and search
 	const int window_border_width = gtk_container_get_border_width(GTK_CONTAINER(m_vbox));

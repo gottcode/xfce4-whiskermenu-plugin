@@ -150,6 +150,7 @@ Settings::Settings() :
 	position_search_alternate(true),
 	position_commands_alternate(false),
 	position_categories_alternate(true),
+	position_categories_horizontal(false),
 	stay_on_focus_out(false),
 
 	confirm_session_command(true),

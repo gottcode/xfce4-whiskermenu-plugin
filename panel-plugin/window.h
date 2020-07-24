@@ -121,7 +121,8 @@ private:
 	GtkBox* m_commands_box;
 	GtkBox* m_search_box;
 	GtkStack* m_contents_stack;
-	GtkBox* m_contents_box;
+	GtkGrid* m_contents_box;
+	GtkBox* m_categories_box;
 	GtkStack* m_panels_stack;
 
 	GtkStackTransitionType m_search_cover;
@@ -150,6 +151,7 @@ private:
 	GdkRectangle m_geometry;
 	bool m_layout_left;
 	bool m_layout_bottom;
+	bool m_layout_categories_horizontal;
 	bool m_layout_categories_alternate;
 	bool m_layout_search_alternate;
 	bool m_layout_commands_alternate;

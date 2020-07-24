@@ -97,7 +97,7 @@ void CategoryButton::reload_icon_size()
 	gtk_image_set_pixel_size(GTK_IMAGE(m_icon), size);
 	gtk_widget_set_visible(m_icon, size > 1);
 
-	if (wm_settings->category_show_name)
+	if (wm_settings->category_show_name && !wm_settings->position_categories_horizontal)
 	{
 		gtk_widget_set_has_tooltip(GTK_WIDGET(m_button), false);
 		gtk_box_set_child_packing(m_box, m_icon, false, false, 0, GTK_PACK_START);

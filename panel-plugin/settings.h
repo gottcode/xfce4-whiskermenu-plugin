@@ -92,6 +92,7 @@ public:
 	bool position_search_alternate;
 	bool position_commands_alternate;
 	bool position_categories_alternate;
+	bool position_categories_horizontal;
 	bool stay_on_focus_out;
 
 	enum Commands
