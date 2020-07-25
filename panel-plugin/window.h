@@ -143,7 +143,7 @@ private:
 	ApplicationsPage* m_applications;
 
 	GtkScrolledWindow* m_sidebar;
-	GtkBox* m_sidebar_buttons;
+	GtkBox* m_category_buttons;
 	CategoryButton* m_default_button;
 	GtkSizeGroup* m_sidebar_size_group;
 

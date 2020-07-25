@@ -191,17 +191,17 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	gtk_stack_add_named(m_panels_stack, m_applications->get_widget(), "applications");
 
 	// Create box for packing sidebar
-	m_sidebar_buttons = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 0));
-	gtk_box_pack_start(m_sidebar_buttons, favorites_button->get_widget(), false, false, 0);
-	gtk_box_pack_start(m_sidebar_buttons, recent_button->get_widget(), false, false, 0);
-	gtk_box_pack_start(m_sidebar_buttons, applications_button->get_widget(), false, false, 0);
-	gtk_box_pack_start(m_sidebar_buttons, gtk_separator_new(GTK_ORIENTATION_HORIZONTAL), false, false, 4);
+	m_category_buttons = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 0));
+	gtk_box_pack_start(m_category_buttons, favorites_button->get_widget(), false, false, 0);
+	gtk_box_pack_start(m_category_buttons, recent_button->get_widget(), false, false, 0);
+	gtk_box_pack_start(m_category_buttons, applications_button->get_widget(), false, false, 0);
+	gtk_box_pack_start(m_category_buttons, gtk_separator_new(GTK_ORIENTATION_HORIZONTAL), false, false, 4);
 
 	m_sidebar = GTK_SCROLLED_WINDOW(gtk_scrolled_window_new(nullptr, nullptr));
 	gtk_box_pack_start(m_contents_box, GTK_WIDGET(m_sidebar), false, false, 0);
 	gtk_scrolled_window_set_shadow_type(m_sidebar, GTK_SHADOW_NONE);
 	gtk_scrolled_window_set_policy(m_sidebar, GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
-	gtk_container_add(GTK_CONTAINER(m_sidebar), GTK_WIDGET(m_sidebar_buttons));
+	gtk_container_add(GTK_CONTAINER(m_sidebar), GTK_WIDGET(m_category_buttons));
 
 	// Handle default page
 	reset_default_button();
@@ -505,7 +505,7 @@ void WhiskerMenu::Window::set_categories(const std::vector<CategoryButton*>& cat
 	{
 		button->join_group(last_button);
 		last_button = button;
-		gtk_box_pack_start(m_sidebar_buttons, button->get_widget(), false, false, 0);
+		gtk_box_pack_start(m_category_buttons, button->get_widget(), false, false, 0);
 		g_signal_connect_slot<GtkToggleButton*>(button->get_widget(), "toggled", &Window::category_toggled, this);
 	}
 
@@ -787,7 +787,7 @@ void WhiskerMenu::Window::check_scrollbar_needed()
 {
 	// Find height of sidebar buttons
 	int height = 0;
-	gtk_widget_get_preferred_height(GTK_WIDGET(m_sidebar_buttons), nullptr, &height);
+	gtk_widget_get_preferred_height(GTK_WIDGET(m_category_buttons), nullptr, &height);
 
 	// Always show scrollbar if sidebar is shorter than buttons
 	int allocated = gtk_widget_get_allocated_height(GTK_WIDGET(m_sidebar));
@@ -836,23 +836,23 @@ void WhiskerMenu::Window::reset_default_button()
 	{
 	case 1:
 		m_default_button = m_recent->get_button();
-		gtk_box_reorder_child(m_sidebar_buttons, m_recent->get_button()->get_widget(), 0);
-		gtk_box_reorder_child(m_sidebar_buttons, m_favorites->get_button()->get_widget(), 1);
-		gtk_box_reorder_child(m_sidebar_buttons, m_applications->get_button()->get_widget(), 2);
+		gtk_box_reorder_child(m_category_buttons, m_recent->get_button()->get_widget(), 0);
+		gtk_box_reorder_child(m_category_buttons, m_favorites->get_button()->get_widget(), 1);
+		gtk_box_reorder_child(m_category_buttons, m_applications->get_button()->get_widget(), 2);
 		break;
 
 	case 2:
 		m_default_button = m_applications->get_button();
-		gtk_box_reorder_child(m_sidebar_buttons, m_applications->get_button()->get_widget(), 0);
-		gtk_box_reorder_child(m_sidebar_buttons, m_favorites->get_button()->get_widget(), 1);
-		gtk_box_reorder_child(m_sidebar_buttons, m_recent->get_button()->get_widget(), 2);
+		gtk_box_reorder_child(m_category_buttons, m_applications->get_button()->get_widget(), 0);
+		gtk_box_reorder_child(m_category_buttons, m_favorites->get_button()->get_widget(), 1);
+		gtk_box_reorder_child(m_category_buttons, m_recent->get_button()->get_widget(), 2);
 		break;
 
 	default:
 		m_default_button = m_favorites->get_button();
-		gtk_box_reorder_child(m_sidebar_buttons, m_favorites->get_button()->get_widget(), 0);
-		gtk_box_reorder_child(m_sidebar_buttons, m_recent->get_button()->get_widget(), 1);
-		gtk_box_reorder_child(m_sidebar_buttons, m_applications->get_button()->get_widget(), 2);
+		gtk_box_reorder_child(m_category_buttons, m_favorites->get_button()->get_widget(), 0);
+		gtk_box_reorder_child(m_category_buttons, m_recent->get_button()->get_widget(), 1);
+		gtk_box_reorder_child(m_category_buttons, m_applications->get_button()->get_widget(), 2);
 		break;
 	}
 }
