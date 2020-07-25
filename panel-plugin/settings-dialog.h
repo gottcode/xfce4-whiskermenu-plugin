@@ -53,6 +53,7 @@ private:
 	void toggle_show_category_name(GtkToggleButton* button);
 	void toggle_show_description(GtkToggleButton* button);
 	void toggle_show_tooltip(GtkToggleButton* button);
+	void toggle_position_categories_horizontal(GtkToggleButton* button);
 	void toggle_position_categories_alternate(GtkToggleButton* button);
 	void toggle_position_search_alternate(GtkToggleButton* button);
 	void toggle_position_commands_alternate(GtkToggleButton* button);
@@ -106,6 +107,7 @@ private:
 	GtkWidget* m_show_category_names;
 	GtkWidget* m_show_descriptions;
 	GtkWidget* m_show_tooltips;
+	GtkWidget* m_position_categories_horizontal;
 	GtkWidget* m_position_categories_alternate;
 	GtkWidget* m_position_search_alternate;
 	GtkWidget* m_position_commands_alternate;
