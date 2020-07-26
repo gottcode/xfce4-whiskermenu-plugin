@@ -149,8 +149,8 @@ Settings::Settings() :
 
 	position_search_alternate(true),
 	position_commands_alternate(false),
-	position_categories_alternate(true),
-	position_categories_horizontal(false),
+	position_categories_alternate(false),
+	position_categories_horizontal(true),
 	stay_on_focus_out(false),
 
 	confirm_session_command(true),
@@ -163,7 +163,7 @@ Settings::Settings() :
 		new SearchAction(_("Open URI"), "^(file|http|https):\\/\\/(.*)$", "exo-open \\0", true, true)
 	},
 
-	menu_width(450),
+	menu_width(560),
 	menu_height(500),
 	menu_opacity(100)
 {
@@ -319,8 +319,16 @@ void Settings::load(gchar* file)
 	position_search_alternate = xfce_rc_read_bool_entry(rc, "position-search-alternate", position_search_alternate);
 	position_commands_alternate = xfce_rc_read_bool_entry(rc, "position-commands-alternate", position_commands_alternate);
 	position_categories_alternate = xfce_rc_read_bool_entry(rc, "position-categories-alternate", position_categories_alternate);
-	position_categories_horizontal = xfce_rc_read_bool_entry(rc, "position-categories-horizontal", position_categories_horizontal);
 	stay_on_focus_out = xfce_rc_read_bool_entry(rc, "stay-on-focus-out", stay_on_focus_out);
+
+	if (xfce_rc_has_entry(rc, "position-categories-horizontal"))
+	{
+		position_categories_horizontal = xfce_rc_read_bool_entry(rc, "position-categories-horizontal", position_categories_horizontal);
+	}
+	else
+	{
+		position_categories_horizontal = false;
+	}
 
 	confirm_session_command = xfce_rc_read_bool_entry(rc, "confirm-session-command", confirm_session_command);
 
