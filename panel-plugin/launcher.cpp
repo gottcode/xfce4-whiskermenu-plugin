@@ -25,6 +25,8 @@
 
 using namespace WhiskerMenu;
 
+constexpr GSpawnFlags g_spawnFlags = static_cast<GSpawnFlags>(G_SPAWN_SEARCH_PATH | G_SPAWN_STDOUT_TO_DEV_NULL | G_SPAWN_STDERR_TO_DEV_NULL);
+
 //-----------------------------------------------------------------------------
 
 static std::string normalize(const gchar* string)
@@ -316,7 +318,7 @@ void Launcher::run(GdkScreen* screen) const
 	{
 		result = xfce_spawn_on_screen(screen,
 				garcon_menu_item_get_path(m_item),
-				argv, nullptr, G_SPAWN_SEARCH_PATH,
+				argv, nullptr, g_spawnFlags,
 				garcon_menu_item_supports_startup_notification(m_item),
 				gtk_get_current_event_time(),
 				garcon_menu_item_get_icon_name(m_item),
@@ -361,7 +363,7 @@ void Launcher::run(GdkScreen* screen, DesktopAction* action) const
 	{
 		result = xfce_spawn_on_screen(screen,
 				garcon_menu_item_get_path(m_item),
-				argv, nullptr, G_SPAWN_SEARCH_PATH,
+				argv, nullptr, g_spawnFlags,
 				garcon_menu_item_supports_startup_notification(m_item),
 				gtk_get_current_event_time(),
 				action->get_icon(),
