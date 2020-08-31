@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-12 12:49-0500\n"
-"PO-Revision-Date: 2020-07-08 20:20+0000\n"
+"PO-Revision-Date: 2020-08-30 15:50+0000\n"
 "Last-Translator: Gabriel Henrique <gabrielddev@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/pt_BR/)\n"
@@ -50,11 +50,11 @@ msgstr "Adicionar ao painel"
 
 #: ../panel-plugin/category.cpp:50
 msgid "All Applications"
-msgstr "Todos os aplicativos"
+msgstr "Todas as aplicações"
 
 #: ../panel-plugin/plugin.cpp:409
 msgid "Alternate application launcher for Xfce"
-msgstr "Lançador de aplicativos alternativo para o Xfce"
+msgstr "Lançador de aplicações alternativo para o Xfce"
 
 #: ../panel-plugin/settings-dialog.cpp:895
 msgid "Amount of _items:"
@@ -62,11 +62,11 @@ msgstr "Quantidade de _itens:"
 
 #: ../panel-plugin/settings-dialog.cpp:738
 msgid "Application icon si_ze:"
-msgstr "Tamanho do íco_ne do aplicativo:"
+msgstr "Tamanho do íco_ne da aplicação:"
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
-msgstr "Aplicativos"
+msgstr "Aplicações"
 
 #: ../panel-plugin/launcher.cpp:232
 #, c-format
@@ -132,7 +132,7 @@ msgstr "Deseja suspender para o disco?"
 
 #: ../panel-plugin/page.cpp:404
 msgid "Edit Application..."
-msgstr "Editar aplicativo..."
+msgstr "Editar aplicação..."
 
 #: ../panel-plugin/settings.cpp:191
 msgid "Edit _Profile"
@@ -195,7 +195,7 @@ msgstr "Hibernando o computador em %d segundos."
 
 #: ../panel-plugin/launcher.cpp:231 ../panel-plugin/page.cpp:408
 msgid "Hide Application"
-msgstr "Ocultar aplicativo"
+msgstr "Ocultar aplicação"
 
 #: ../panel-plugin/settings-dialog.cpp:813
 msgid "Icon"
@@ -327,15 +327,15 @@ msgstr "Comandos da sessão"
 
 #: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
-msgstr "Mostrar um menu para acessar facilmente os aplicativos instalados"
+msgstr "Mostrar um menu para acessar facilmente as aplicações instaladas"
 
 #: ../panel-plugin/settings-dialog.cpp:705
 msgid "Show application _descriptions"
-msgstr "Mostrar _descrição dos aplicativos"
+msgstr "Mostrar _descrição das aplicações"
 
 #: ../panel-plugin/settings-dialog.cpp:699
 msgid "Show application too_ltips"
-msgstr "Mostrar dica de conte_xto dos aplicativos"
+msgstr "Mostrar dica de conte_xto das aplicações"
 
 #: ../panel-plugin/settings-dialog.cpp:613
 msgid "Show as _icons"
@@ -359,7 +359,7 @@ msgstr "Mostrar nome das cate_gorias"
 
 #: ../panel-plugin/settings-dialog.cpp:686
 msgid "Show generic application _names"
-msgstr "Mostrar _nome genérico dos aplicativos"
+msgstr "Mostrar _nome genérico das aplicações"
 
 #: ../panel-plugin/settings.cpp:165
 msgid "Shut _Down"
@@ -494,7 +494,7 @@ msgstr "Ex_cluir"
 
 #: ../panel-plugin/settings.cpp:187
 msgid "_Edit Applications"
-msgstr "_Editar aplicativos"
+msgstr "_Editar aplicações"
 
 #: ../panel-plugin/settings-dialog.cpp:97
 #: ../panel-plugin/settings-dialog.cpp:104
