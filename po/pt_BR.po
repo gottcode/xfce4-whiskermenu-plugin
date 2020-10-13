@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-12 12:49-0500\n"
-"PO-Revision-Date: 2020-08-30 15:50+0000\n"
+"PO-Revision-Date: 2020-10-13 18:27+0000\n"
 "Last-Translator: Gabriel Henrique <gabrielddev@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/pt_BR/)\n"
@@ -50,11 +50,11 @@ msgstr "Adicionar ao painel"
 
 #: ../panel-plugin/category.cpp:50
 msgid "All Applications"
-msgstr "Todas as aplicações"
+msgstr "Todos os aplicativos"
 
 #: ../panel-plugin/plugin.cpp:409
 msgid "Alternate application launcher for Xfce"
-msgstr "Lançador de aplicações alternativo para o Xfce"
+msgstr "Lançador de aplicativos alternativo para Xfce"
 
 #: ../panel-plugin/settings-dialog.cpp:895
 msgid "Amount of _items:"
@@ -62,28 +62,28 @@ msgstr "Quantidade de _itens:"
 
 #: ../panel-plugin/settings-dialog.cpp:738
 msgid "Application icon si_ze:"
-msgstr "Tamanho do íco_ne da aplicação:"
+msgstr "Tamanho do íco_ne do aplicativo:"
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
-msgstr "Aplicações"
+msgstr "Aplicativos"
 
 #: ../panel-plugin/launcher.cpp:232
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
-msgstr "Tem certeza de que deseja ocultar \"%s\"?"
+msgstr "Tem certeza de que quer ocultar \"%s\"?"
 
 #: ../panel-plugin/settings.cpp:156
 msgid "Are you sure you want to log out?"
-msgstr "Tem certeza de que deseja sair?"
+msgstr "Tem certeza de que quer sair?"
 
 #: ../panel-plugin/settings.cpp:162
 msgid "Are you sure you want to restart?"
-msgstr "Tem certeza de que deseja reiniciar?"
+msgstr "Tem certeza de que quer reiniciar?"
 
 #: ../panel-plugin/settings.cpp:168
 msgid "Are you sure you want to shut down?"
-msgstr "Tem certeza de que deseja desligar?"
+msgstr "Tem certeza de que quer desligar?"
 
 #: ../panel-plugin/settings-dialog.cpp:778
 msgid "Background opacit_y:"
@@ -124,15 +124,15 @@ msgstr "Exibir por p_adrão"
 
 #: ../panel-plugin/settings.cpp:174
 msgid "Do you want to suspend to RAM?"
-msgstr "Desejar suspender para a RAM?"
+msgstr "Você quer suspender para a RAM?"
 
 #: ../panel-plugin/settings.cpp:180
 msgid "Do you want to suspend to disk?"
-msgstr "Deseja suspender para o disco?"
+msgstr "Você quer suspender para o disco?"
 
 #: ../panel-plugin/page.cpp:404
 msgid "Edit Application..."
-msgstr "Editar aplicação..."
+msgstr "Editar aplicativo..."
 
 #: ../panel-plugin/settings.cpp:191
 msgid "Edit _Profile"
@@ -154,7 +154,7 @@ msgstr "Falha ao hibernar."
 
 #: ../panel-plugin/settings.cpp:189
 msgid "Failed to launch menu editor."
-msgstr "Falha ao iniciar o editor de menu."
+msgstr "Falha ao lançar o editor de menu."
 
 #: ../panel-plugin/settings.cpp:147
 msgid "Failed to lock screen."
@@ -195,7 +195,7 @@ msgstr "Hibernando o computador em %d segundos."
 
 #: ../panel-plugin/launcher.cpp:231 ../panel-plugin/page.cpp:408
 msgid "Hide Application"
-msgstr "Ocultar aplicação"
+msgstr "Ocultar aplicativo"
 
 #: ../panel-plugin/settings-dialog.cpp:813
 msgid "Icon"
@@ -232,7 +232,7 @@ msgstr "Saindo em %d segundos."
 
 #: ../panel-plugin/settings.cpp:129
 msgid "Man Pages"
-msgstr "Manual"
+msgstr "Páginas de manual"
 
 #: ../panel-plugin/settings-dialog.cpp:870
 msgid "Menu"
@@ -327,15 +327,15 @@ msgstr "Comandos da sessão"
 
 #: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
-msgstr "Mostrar um menu para acessar facilmente as aplicações instaladas"
+msgstr "Mostrar um menu para acessar facilmente aplicativos instalados"
 
 #: ../panel-plugin/settings-dialog.cpp:705
 msgid "Show application _descriptions"
-msgstr "Mostrar _descrição das aplicações"
+msgstr "Mostrar _descrição dos aplicativos"
 
 #: ../panel-plugin/settings-dialog.cpp:699
 msgid "Show application too_ltips"
-msgstr "Mostrar dica de conte_xto das aplicações"
+msgstr "Mostrar dica de conte_xto dos aplicativos"
 
 #: ../panel-plugin/settings-dialog.cpp:613
 msgid "Show as _icons"
@@ -359,7 +359,7 @@ msgstr "Mostrar nome das cate_gorias"
 
 #: ../panel-plugin/settings-dialog.cpp:686
 msgid "Show generic application _names"
-msgstr "Mostrar _nome genérico das aplicações"
+msgstr "Mostrar _nome genérico dos aplicativos"
 
 #: ../panel-plugin/settings.cpp:165
 msgid "Shut _Down"
@@ -383,7 +383,7 @@ msgstr "Ordem alfabética Z-A"
 
 #: ../panel-plugin/settings-dialog.cpp:880
 msgid "Stay _visible when focus is lost"
-msgstr "Perman_ecer visível quando o foco for perdido"
+msgstr "Ficar _visível quando o foco for perdido"
 
 #: ../panel-plugin/settings.cpp:171
 msgid "Suspe_nd"
@@ -400,7 +400,7 @@ msgstr "Trocar de _usuário."
 
 #: ../panel-plugin/settings-dialog.cpp:874
 msgid "Switch categories by _hovering"
-msgstr "Trocar categorias ao passar com o m_ouse"
+msgstr "Trocar categorias ao passar o m_ouse"
 
 #: ../panel-plugin/settings-dialog.cpp:511
 msgid "The action will be deleted permanently."
@@ -416,7 +416,7 @@ msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
 msgstr ""
-"Para desocultar, você precisa remover manualmente o arquivo \"%s\" ou abrir "
+"Para desocultar, você tem que remover manualmente o arquivo \"%s\" ou abrir "
 "o arquivo e remover a linha \"%s\"."
 
 #: ../panel-plugin/settings.cpp:169
@@ -494,7 +494,7 @@ msgstr "Ex_cluir"
 
 #: ../panel-plugin/settings.cpp:187
 msgid "_Edit Applications"
-msgstr "_Editar aplicações"
+msgstr "_Editar aplicativos"
 
 #: ../panel-plugin/settings-dialog.cpp:97
 #: ../panel-plugin/settings-dialog.cpp:104
