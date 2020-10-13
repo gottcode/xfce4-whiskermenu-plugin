@@ -5,17 +5,18 @@
 # Translators:
 # halfark <vojtechprecechtel@gmail.com>, 2014
 # Laco Lazelod, 2013
-# Laco Lazelod, 2013
+# 3d4809c17cb90cd5bd5c98e6eb2d8dc9_66922ff, 2013
 # Michal Várady <miko.vaji@gmail.com>, 2015-2019
 # Pavel Borecki <pavel.borecki@gmail.com>, 2018-2020
+# Dukecz, 2020
 # halfark <vojtechprecechtel@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-12 12:49-0500\n"
-"PO-Revision-Date: 2020-01-25 06:42+0000\n"
-"Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
+"PO-Revision-Date: 2020-09-13 15:03+0000\n"
+"Last-Translator: Dukecz\n"
 "Language-Team: Czech (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/cs/)\n"
 "Language: cs\n"
@@ -211,7 +212,7 @@ msgstr "Větší"
 
 #: ../panel-plugin/settings.cpp:183
 msgid "Log Ou_t..."
-msgstr "Ohlási_t…"
+msgstr "Odhlási_t…"
 
 #: ../panel-plugin/settings.cpp:153
 msgid "Log _Out"
