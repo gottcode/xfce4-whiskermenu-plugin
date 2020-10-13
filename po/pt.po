@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-12 12:49-0500\n"
-"PO-Revision-Date: 2020-05-16 15:07+0000\n"
+"PO-Revision-Date: 2020-09-21 09:39+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/gottcode/xfce4-"
 "whiskermenu-plugin/language/pt/)\n"
@@ -56,7 +56,7 @@ msgstr "Número de _itens:"
 
 #: ../panel-plugin/settings-dialog.cpp:738
 msgid "Application icon si_ze:"
-msgstr "_Tamanho do ícone:"
+msgstr "Tamanho do ícone da aplicação:"
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -81,7 +81,7 @@ msgstr "Tem a certeza que deseja encerrar?"
 
 #: ../panel-plugin/settings-dialog.cpp:778
 msgid "Background opacit_y:"
-msgstr "Opa_cidade do fundo:"
+msgstr "Opacidade do fundo:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
@@ -109,7 +109,7 @@ msgstr "Detalhes"
 
 #: ../panel-plugin/settings-dialog.cpp:808
 msgid "Di_splay:"
-msgstr "E_xibição:"
+msgstr "Exibição:"
 
 #: ../panel-plugin/settings-dialog.cpp:912
 msgid "Display by _default"
@@ -356,7 +356,7 @@ msgstr "Mostrar _nomes genéricos da aplicação"
 
 #: ../panel-plugin/settings.cpp:165
 msgid "Shut _Down"
-msgstr "_Desligar"
+msgstr "Encerrar"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -483,7 +483,7 @@ msgstr "_Comandos"
 
 #: ../panel-plugin/settings-dialog.cpp:510
 msgid "_Delete"
-msgstr "Eli_minar"
+msgstr "Eliminar"
 
 #: ../panel-plugin/settings.cpp:187
 msgid "_Edit Applications"
@@ -492,7 +492,7 @@ msgstr "_Editar aplicações"
 #: ../panel-plugin/settings-dialog.cpp:97
 #: ../panel-plugin/settings-dialog.cpp:104
 msgid "_Help"
-msgstr "_Ajuda"
+msgstr "Ajuda"
 
 #: ../panel-plugin/settings.cpp:177
 msgid "_Hibernate"
@@ -508,7 +508,7 @@ msgstr "_Bloquear ecrã"
 
 #: ../panel-plugin/command-edit.cpp:68 ../panel-plugin/settings-dialog.cpp:305
 msgid "_OK"
-msgstr "_Aceitar"
+msgstr "Aceitar"
 
 #: ../panel-plugin/settings-dialog.cpp:116
 msgid "_Panel Button"
@@ -528,7 +528,7 @@ msgstr "_Reiniciar"
 
 #: ../panel-plugin/settings.cpp:141
 msgid "_Settings Manager"
-msgstr "Gestor de _Definições"
+msgstr "Ge_stor de Definições"
 
 #: ../panel-plugin/settings-dialog.cpp:824
 msgid "_Title:"
@@ -537,5 +537,5 @@ msgstr "_Título:"
 #: ../panel-plugin/plugin.cpp:414
 msgid "translator-credits"
 msgstr ""
-"Sérgio Marques <smarquespt@gmail.com>\n"
-"Hugo Carvalho <hugokarvalho@hotmail.com>"
+"Hugo Carvalho <hugokarvalho@hotmail.com>\n"
+"Sérgio Marques <smarquespt@gmail.com>"
