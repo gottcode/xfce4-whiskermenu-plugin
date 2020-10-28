@@ -1,17 +1,18 @@
 # Korean translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2019 Graeme Gott
+# Copyright (C) 2020 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2015
-# 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2016-2017,2019
+# 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2015-2017,2019
+# Seok Chae <seok.chae@gmail.com>, 2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-12 12:49-0500\n"
-"PO-Revision-Date: 2019-03-23 09:05+0000\n"
-"Last-Translator: 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>\n"
+"PO-Revision-Date: 2020-10-27 18:10+0000\n"
+"Last-Translator: Seok Chae <seok.chae@gmail.com>\n"
 "Language-Team: Korean (http://www.transifex.com/gottcode/xfce4-whiskermenu-"
 "plugin/language/ko/)\n"
 "Language: ko\n"
@@ -49,9 +50,8 @@ msgid "Amount of _items:"
 msgstr "표시할 항목 수"
 
 #: ../panel-plugin/settings-dialog.cpp:738
-#, fuzzy
 msgid "Application icon si_ze:"
-msgstr "프로그램 탐색기"
+msgstr "프로그램 아이콘 사이즈(_z):"
 
 #: ../panel-plugin/plugin.cpp:213
 msgid "Applications"
@@ -169,9 +169,8 @@ msgid "Failed to suspend."
 msgstr "대기 실패."
 
 #: ../panel-plugin/settings.cpp:151
-#, fuzzy
 msgid "Failed to switch user."
-msgstr "사용자 전환을 못 했습니다."
+msgstr "사용자 전환에 실패하였습니다."
 
 #: ../panel-plugin/window.cpp:154
 msgid "Favorites"
@@ -184,7 +183,7 @@ msgstr "%d초 안에 컴퓨터 잠자기 모드 실행."
 
 #: ../panel-plugin/launcher.cpp:231 ../panel-plugin/page.cpp:408
 msgid "Hide Application"
-msgstr ""
+msgstr "프로그램을 숨깁니다."
 
 #: ../panel-plugin/settings-dialog.cpp:813
 msgid "Icon"
@@ -274,7 +273,7 @@ msgstr "\"%s\" 설정을 제거할까요?"
 
 #: ../panel-plugin/page.cpp:388
 msgid "Remove from Favorites"
-msgstr "즐겨찾기에서 제거"
+msgstr "즐겨찾기에서 삭제"
 
 #: ../panel-plugin/settings-dialog.cpp:1014
 msgid "Remove selected action"
@@ -328,17 +327,15 @@ msgstr "애플리케이션 툴팁 보이기"
 
 #: ../panel-plugin/settings-dialog.cpp:613
 msgid "Show as _icons"
-msgstr ""
+msgstr "아이콘으로 보기(_i)"
 
 #: ../panel-plugin/settings-dialog.cpp:630
-#, fuzzy
 msgid "Show as lis_t"
-msgstr "베이스라인 표시"
+msgstr "목록으로 보기(_t)"
 
 #: ../panel-plugin/settings-dialog.cpp:648
-#, fuzzy
 msgid "Show as t_ree"
-msgstr "틀 표시(_F)"
+msgstr "트리형 보기(_r)"
 
 #: ../panel-plugin/settings-dialog.cpp:925
 msgid "Show c_onfirmation dialog"
@@ -386,9 +383,8 @@ msgid "Suspending computer in %d seconds."
 msgstr "%d초 안에 컴퓨터 대기 모드 실행."
 
 #: ../panel-plugin/settings.cpp:149
-#, fuzzy
 msgid "Switch _User"
-msgstr "사용자 전환"
+msgstr "사용자 전환(_u)"
 
 #: ../panel-plugin/settings-dialog.cpp:874
 msgid "Switch categories by _hovering"
@@ -509,7 +505,7 @@ msgstr "확인"
 
 #: ../panel-plugin/settings-dialog.cpp:116
 msgid "_Panel Button"
-msgstr "패널 버튼"
+msgstr "패널 버튼(_p)"
 
 #: ../panel-plugin/settings-dialog.cpp:1050
 msgid "_Pattern:"
@@ -525,7 +521,7 @@ msgstr "다시 시작(_R)"
 
 #: ../panel-plugin/settings.cpp:141
 msgid "_Settings Manager"
-msgstr ""
+msgstr "설정 관리자(_s)"
 
 #: ../panel-plugin/settings-dialog.cpp:824
 msgid "_Title:"
