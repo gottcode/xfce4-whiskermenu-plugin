@@ -29,10 +29,11 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-Command::Command(const gchar* icon, const gchar* text, const gchar* command, const gchar* error_text, const gchar* confirm_question, const gchar* confirm_status) :
+Command::Command(const gchar* icon, const gchar* fallback_icon, const gchar* text, const gchar* command, const gchar* error_text, const gchar* confirm_question, const gchar* confirm_status) :
 	m_button(nullptr),
 	m_menuitem(nullptr),
 	m_icon(g_strdup(icon)),
+	m_fallback_icon(g_strdup(fallback_icon)),
 	m_mnemonic(g_strdup(text)),
 	m_command(g_strdup(command)),
 	m_error_text(g_strdup(error_text)),
@@ -69,6 +70,7 @@ Command::~Command()
 	}
 
 	g_free(m_icon);
+	g_free(m_fallback_icon);
 	g_free(m_mnemonic);
 	g_free(m_text);
 	g_free(m_command);
@@ -91,7 +93,15 @@ GtkWidget* Command::get_button()
 	gtk_widget_set_tooltip_text(m_button, m_text);
 	g_signal_connect_slot<GtkButton*>(m_button, "clicked", &Command::activate, this, true);
 
-	GtkWidget* image = gtk_image_new_from_icon_name(m_icon, GTK_ICON_SIZE_LARGE_TOOLBAR);
+	GtkWidget* image = nullptr;
+	if (gtk_icon_theme_has_icon(gtk_icon_theme_get_default(), m_icon))
+	{
+		image = gtk_image_new_from_icon_name(m_icon, GTK_ICON_SIZE_LARGE_TOOLBAR);
+	}
+	else
+	{
+		image = gtk_image_new_from_icon_name(m_fallback_icon, GTK_ICON_SIZE_LARGE_TOOLBAR);
+	}
 	gtk_container_add(GTK_CONTAINER(m_button), GTK_WIDGET(image));
 
 	gtk_widget_set_visible(m_button, m_shown);

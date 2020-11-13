@@ -26,7 +26,7 @@ namespace WhiskerMenu
 class Command
 {
 public:
-	Command(const gchar* icon, const gchar* text, const gchar* command, const gchar* error_text, const gchar* confirm_question = nullptr, const gchar* confirm_status = nullptr);
+	Command(const gchar* icon, const gchar* fallback_icon, const gchar* text, const gchar* command, const gchar* error_text, const gchar* confirm_question = nullptr, const gchar* confirm_status = nullptr);
 	~Command();
 
 	Command(const Command&) = delete;
@@ -73,6 +73,7 @@ private:
 	GtkWidget* m_button;
 	GtkWidget* m_menuitem;
 	gchar* m_icon;
+	gchar* m_fallback_icon;
 	gchar* m_mnemonic;
 	gchar* m_text;
 	gchar* m_command;
