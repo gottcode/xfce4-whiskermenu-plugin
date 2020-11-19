@@ -182,7 +182,20 @@ unsigned int SearchAction::match_regex(const gchar* haystack)
 void SearchAction::run(GdkScreen* screen) const
 {
 	GError* error = nullptr;
-	bool result = xfce_spawn_command_line_on_screen(screen, m_expanded_command.c_str(), false, false, &error);
+	bool result = false;
+
+	gchar** argv;
+	if (g_shell_parse_argv(m_expanded_command.c_str(), nullptr, &argv, &error))
+	{
+#if LIBXFCE4UI_CHECK_VERSION(4,15,5)
+		result = xfce_spawn_no_child(screen,
+#else
+		result = xfce_spawn_on_screen(screen,
+#endif
+				nullptr, argv, nullptr, G_SPAWN_SEARCH_PATH,
+				false, gtk_get_current_event_time(), nullptr, &error);
+		g_strfreev(argv);
+	}
 
 	if (G_UNLIKELY(!result))
 	{

@@ -314,7 +314,11 @@ void Launcher::run(GdkScreen* screen) const
 	GError* error = nullptr;
 	if (g_shell_parse_argv(command, nullptr, &argv, &error))
 	{
+#if LIBXFCE4UI_CHECK_VERSION(4,15,5)
+		result = xfce_spawn_no_child(screen,
+#else
 		result = xfce_spawn_on_screen(screen,
+#endif
 				garcon_menu_item_get_path(m_item),
 				argv, nullptr, G_SPAWN_SEARCH_PATH,
 				garcon_menu_item_supports_startup_notification(m_item),
@@ -359,7 +363,11 @@ void Launcher::run(GdkScreen* screen, DesktopAction* action) const
 	GError* error = nullptr;
 	if (g_shell_parse_argv(command, nullptr, &argv, &error))
 	{
+#if LIBXFCE4UI_CHECK_VERSION(4,15,5)
+		result = xfce_spawn_no_child(screen,
+#else
 		result = xfce_spawn_on_screen(screen,
+#endif
 				garcon_menu_item_get_path(m_item),
 				argv, nullptr, G_SPAWN_SEARCH_PATH,
 				garcon_menu_item_supports_startup_notification(m_item),
