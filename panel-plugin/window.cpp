@@ -321,6 +321,8 @@ void WhiskerMenu::Window::show(const Position position)
 	// Make sure icon sizes are correct
 	m_favorites->get_button()->reload_icon_size();
 	m_recent->get_button()->reload_icon_size();
+	m_applications->get_button()->reload_icon_size();
+
 	m_applications->reload_category_icon_size();
 
 	m_search_results->get_view()->reload_icon_size();
