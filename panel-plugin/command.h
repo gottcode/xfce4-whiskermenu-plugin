@@ -72,8 +72,7 @@ private:
 private:
 	GtkWidget* m_button;
 	GtkWidget* m_menuitem;
-	gchar* m_icon;
-	gchar* m_fallback_icon;
+	GIcon* m_icon;
 	gchar* m_mnemonic;
 	gchar* m_text;
 	gchar* m_command;

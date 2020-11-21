@@ -32,8 +32,6 @@ using namespace WhiskerMenu;
 Command::Command(const gchar* icon, const gchar* fallback_icon, const gchar* text, const gchar* command, const gchar* error_text, const gchar* confirm_question, const gchar* confirm_status) :
 	m_button(nullptr),
 	m_menuitem(nullptr),
-	m_icon(g_strdup(icon)),
-	m_fallback_icon(g_strdup(fallback_icon)),
 	m_mnemonic(g_strdup(text)),
 	m_command(g_strdup(command)),
 	m_error_text(g_strdup(error_text)),
@@ -41,6 +39,13 @@ Command::Command(const gchar* icon, const gchar* fallback_icon, const gchar* tex
 	m_status(CommandStatus::Unchecked),
 	m_timeout_details({nullptr, g_strdup(confirm_question), g_strdup(confirm_status), 0})
 {
+	const gchar* icons[] = {
+		icon,
+		fallback_icon,
+		nullptr
+	};
+	m_icon = g_themed_icon_new_from_names(const_cast<gchar**>(icons), -1);
+
 	std::string tooltip(text ? text : "");
 	for (auto i = tooltip.begin(); i != tooltip.end(); ++i)
 	{
@@ -69,8 +74,7 @@ Command::~Command()
 		g_object_unref(m_menuitem);
 	}
 
-	g_free(m_icon);
-	g_free(m_fallback_icon);
+	g_object_unref(m_icon);
 	g_free(m_mnemonic);
 	g_free(m_text);
 	g_free(m_command);
@@ -93,15 +97,8 @@ GtkWidget* Command::get_button()
 	gtk_widget_set_tooltip_text(m_button, m_text);
 	g_signal_connect_slot<GtkButton*>(m_button, "clicked", &Command::activate, this, Connect::After);
 
-	GtkWidget* image = nullptr;
-	if (gtk_icon_theme_has_icon(gtk_icon_theme_get_default(), m_icon))
-	{
-		image = gtk_image_new_from_icon_name(m_icon, GTK_ICON_SIZE_LARGE_TOOLBAR);
-	}
-	else
-	{
-		image = gtk_image_new_from_icon_name(m_fallback_icon, GTK_ICON_SIZE_LARGE_TOOLBAR);
-	}
+	GtkWidget* image = gtk_image_new_from_gicon(m_icon, GTK_ICON_SIZE_LARGE_TOOLBAR);
+
 	gtk_container_add(GTK_CONTAINER(m_button), GTK_WIDGET(image));
 
 	gtk_widget_set_visible(m_button, m_shown);
@@ -233,7 +230,6 @@ bool Command::confirm()
 	GtkDialog* dialog = GTK_DIALOG(m_timeout_details.dialog);
 
 	GtkWindow* window = GTK_WINDOW(m_timeout_details.dialog);
-	gtk_window_set_icon_name(window, m_icon);
 	gtk_window_set_deletable(window, false);
 	gtk_window_set_keep_above(window, true);
 	gtk_window_set_skip_taskbar_hint(window, true);
@@ -246,7 +242,7 @@ bool Command::confirm()
 	gtk_window_set_titlebar(window, header);
 
 	// Add icon
-	GtkWidget* image = gtk_image_new_from_icon_name(m_icon, GTK_ICON_SIZE_DIALOG);
+	GtkWidget* image = gtk_image_new_from_gicon(m_icon, GTK_ICON_SIZE_DIALOG);
 	gtk_widget_show(image);
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 	gtk_message_dialog_set_image(GTK_MESSAGE_DIALOG(dialog), image);
@@ -254,7 +250,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 
 	// Create accept button
 	GtkWidget* button = gtk_dialog_add_button(dialog, m_mnemonic, GTK_RESPONSE_ACCEPT);
-	image = gtk_image_new_from_icon_name(m_icon, GTK_ICON_SIZE_BUTTON);
+	image = gtk_image_new_from_gicon(m_icon, GTK_ICON_SIZE_BUTTON);
 	gtk_button_set_image(GTK_BUTTON(button), image);
 	gtk_dialog_set_default_response(dialog, GTK_RESPONSE_ACCEPT);
 
