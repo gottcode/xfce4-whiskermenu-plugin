@@ -637,12 +637,12 @@ GtkWidget* SettingsDialog::init_appearance_tab()
 	// Add option to show as icons
 	m_show_as_icons = gtk_radio_button_new_with_mnemonic(nullptr, _("Show as _icons"));
 	{
-		gchar* icons[] = {
-			g_strdup("view-list-icons"),
-			g_strdup("view-grid"),
+		const gchar* icons[] = {
+			"view-list-icons",
+			"view-grid",
 			nullptr
 		};
-		GIcon* gicon = g_themed_icon_new_from_names(icons, -1);
+		GIcon* gicon = g_themed_icon_new_from_names(const_cast<gchar**>(icons), -1);
 		gtk_button_set_image(GTK_BUTTON(m_show_as_icons), gtk_image_new_from_gicon(gicon, GTK_ICON_SIZE_DND));
 		g_object_unref(gicon);
 	}
@@ -654,13 +654,13 @@ GtkWidget* SettingsDialog::init_appearance_tab()
 	// Add option to show as list
 	m_show_as_list = gtk_radio_button_new_with_mnemonic_from_widget(GTK_RADIO_BUTTON(m_show_as_icons), _("Show as lis_t"));
 	{
-		gchar* icons[] = {
-			g_strdup("view-list-compact"),
-			g_strdup("view-list-details"),
-			g_strdup("view-list"),
+		const gchar* icons[] = {
+			"view-list-compact",
+			"view-list-details",
+			"view-list",
 			nullptr
 		};
-		GIcon* gicon = g_themed_icon_new_from_names(icons, -1);
+		GIcon* gicon = g_themed_icon_new_from_names(const_cast<gchar**>(icons), -1);
 		gtk_button_set_image(GTK_BUTTON(m_show_as_list), gtk_image_new_from_gicon(gicon, GTK_ICON_SIZE_DND));
 		g_object_unref(gicon);
 	}
@@ -672,13 +672,13 @@ GtkWidget* SettingsDialog::init_appearance_tab()
 	// Add option to show as tree
 	m_show_as_tree = gtk_radio_button_new_with_mnemonic_from_widget(GTK_RADIO_BUTTON(m_show_as_list), _("Show as t_ree"));
 	{
-		gchar* icons[] = {
-			g_strdup("view-list-tree"),
-			g_strdup("view-list-details"),
-			g_strdup("pan-end"),
+		const gchar* icons[] = {
+			"view-list-tree",
+			"view-list-details",
+			"pan-end",
 			nullptr
 		};
-		GIcon* gicon = g_themed_icon_new_from_names(icons, -1);
+		GIcon* gicon = g_themed_icon_new_from_names(const_cast<gchar**>(icons), -1);
 		gtk_button_set_image(GTK_BUTTON(m_show_as_tree), gtk_image_new_from_gicon(gicon, GTK_ICON_SIZE_DND));
 		g_object_unref(gicon);
 	}
