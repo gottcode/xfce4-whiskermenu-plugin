@@ -17,6 +17,8 @@
 
 #include "element.h"
 
+#include <libxfce4ui/libxfce4ui.h>
+
 using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
@@ -67,6 +69,39 @@ void Element::set_icon(const gchar* icon, bool use_fallbacks)
 		GFile* file = g_file_new_for_path(icon);
 		m_icon = g_file_icon_new(file);
 		g_object_unref(file);
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void Element::spawn(GdkScreen* screen, const gchar* command, const gchar* working_directory, gboolean startup_notify, const gchar* icon_name) const
+{
+	GError* error = nullptr;
+	bool result = false;
+
+	gchar** argv;
+	if (g_shell_parse_argv(command, nullptr, &argv, &error))
+	{
+#if LIBXFCE4UI_CHECK_VERSION(4,15,5)
+		result = xfce_spawn_no_child(screen,
+#else
+		result = xfce_spawn_on_screen(screen,
+#endif
+				working_directory,
+				argv,
+				nullptr,
+				G_SPAWN_SEARCH_PATH,
+				startup_notify,
+				gtk_get_current_event_time(),
+				icon_name,
+				&error);
+		g_strfreev(argv);
+	}
+
+	if (G_UNLIKELY(!result))
+	{
+		xfce_dialog_show_error(nullptr, error, _("Failed to execute command \"%s\"."), command);
+		g_error_free(error);
 	}
 }
 

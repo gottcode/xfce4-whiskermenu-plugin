@@ -20,8 +20,6 @@
 #include "query.h"
 #include "settings.h"
 
-#include <libxfce4ui/libxfce4ui.h>
-
 using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
@@ -181,27 +179,7 @@ unsigned int SearchAction::match_regex(const gchar* haystack)
 
 void SearchAction::run(GdkScreen* screen) const
 {
-	GError* error = nullptr;
-	bool result = false;
-
-	gchar** argv;
-	if (g_shell_parse_argv(m_expanded_command.c_str(), nullptr, &argv, &error))
-	{
-#if LIBXFCE4UI_CHECK_VERSION(4,15,5)
-		result = xfce_spawn_no_child(screen,
-#else
-		result = xfce_spawn_on_screen(screen,
-#endif
-				nullptr, argv, nullptr, G_SPAWN_SEARCH_PATH,
-				false, gtk_get_current_event_time(), nullptr, &error);
-		g_strfreev(argv);
-	}
-
-	if (G_UNLIKELY(!result))
-	{
-		xfce_dialog_show_error(nullptr, error, _("Failed to execute command \"%s\"."), m_expanded_command.c_str());
-		g_error_free(error);
-	}
+	spawn(screen, m_expanded_command.c_str(), nullptr, false, nullptr);
 }
 
 //-----------------------------------------------------------------------------

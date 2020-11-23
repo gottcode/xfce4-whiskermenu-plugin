@@ -21,8 +21,6 @@
 #include "settings.h"
 #include "util.h"
 
-#include <libxfce4ui/libxfce4ui.h>
-
 using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
@@ -309,30 +307,10 @@ void Launcher::run(GdkScreen* screen) const
 	g_free(uri);
 
 	// Parse and spawn command
-	gchar** argv;
-	bool result = false;
-	GError* error = nullptr;
-	if (g_shell_parse_argv(command, nullptr, &argv, &error))
-	{
-#if LIBXFCE4UI_CHECK_VERSION(4,15,5)
-		result = xfce_spawn_no_child(screen,
-#else
-		result = xfce_spawn_on_screen(screen,
-#endif
-				garcon_menu_item_get_path(m_item),
-				argv, nullptr, G_SPAWN_SEARCH_PATH,
-				garcon_menu_item_supports_startup_notification(m_item),
-				gtk_get_current_event_time(),
-				garcon_menu_item_get_icon_name(m_item),
-				&error);
-		g_strfreev(argv);
-	}
-
-	if (G_UNLIKELY(!result))
-	{
-		xfce_dialog_show_error(nullptr, error, _("Failed to execute command \"%s\"."), command);
-		g_error_free(error);
-	}
+	spawn(screen, command,
+			garcon_menu_item_get_path(m_item),
+			garcon_menu_item_supports_startup_notification(m_item),
+			garcon_menu_item_get_icon_name(m_item));
 
 	g_free(command);
 }
@@ -358,30 +336,10 @@ void Launcher::run(GdkScreen* screen, DesktopAction* action) const
 	g_free(uri);
 
 	// Parse and spawn command
-	gchar** argv;
-	bool result = false;
-	GError* error = nullptr;
-	if (g_shell_parse_argv(command, nullptr, &argv, &error))
-	{
-#if LIBXFCE4UI_CHECK_VERSION(4,15,5)
-		result = xfce_spawn_no_child(screen,
-#else
-		result = xfce_spawn_on_screen(screen,
-#endif
-				garcon_menu_item_get_path(m_item),
-				argv, nullptr, G_SPAWN_SEARCH_PATH,
-				garcon_menu_item_supports_startup_notification(m_item),
-				gtk_get_current_event_time(),
-				action->get_icon(),
-				&error);
-		g_strfreev(argv);
-	}
-
-	if (G_UNLIKELY(!result))
-	{
-		xfce_dialog_show_error(nullptr, error, _("Failed to execute command \"%s\"."), command);
-		g_error_free(error);
-	}
+	spawn(screen, command,
+			garcon_menu_item_get_path(m_item),
+			garcon_menu_item_supports_startup_notification(m_item),
+			action->get_icon());
 
 	g_free(command);
 }

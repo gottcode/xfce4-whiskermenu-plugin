@@ -104,6 +104,8 @@ protected:
 		m_tooltip = !xfce_str_is_empty(tooltip) ? g_markup_escape_text(tooltip, -1) : nullptr;
 	}
 
+	void spawn(GdkScreen* screen, const gchar* command, const gchar* working_directory, gboolean startup_notify, const gchar* icon_name) const;
+
 private:
 	GIcon* m_icon = nullptr;
 	gchar* m_text = nullptr;
