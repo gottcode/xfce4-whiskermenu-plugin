@@ -101,7 +101,7 @@ msgstr "版权所有© 2013-2020 Graeme Gott"
 
 #: ../panel-plugin/settings-dialog.cpp:895
 msgid "Default Category"
-msgstr ""
+msgstr "默认分类"
 
 #: ../panel-plugin/settings-dialog.cpp:1088
 msgid "Details"
