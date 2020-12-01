@@ -145,7 +145,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	m_search_results = new SearchPage(this);
 
 	// Create box for packing children
-	m_vbox = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 6));
+	m_vbox = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 0));
 	gtk_container_set_border_width(GTK_CONTAINER(m_vbox), 2);
 	gtk_stack_add_named(m_window_stack, GTK_WIDGET(m_vbox), "contents");
 
@@ -984,42 +984,63 @@ void WhiskerMenu::Window::update_layout()
 	}
 
 	// Arrange vertical order of header, applications, and search
+	std::array<GtkWidget*, 3> v_ordered_widgets;
 	if (m_layout_bottom && m_layout_search_alternate)
 	{
-		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_title_box), 0);
-		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_contents_stack), 1);
-		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_search_box), 2);
+		v_ordered_widgets[0] = GTK_WIDGET(m_title_box);
+		v_ordered_widgets[1] = GTK_WIDGET(m_contents_stack);
+		v_ordered_widgets[2] = GTK_WIDGET(m_search_box);
 
 		m_search_cover = GTK_STACK_TRANSITION_TYPE_OVER_UP;
 		m_search_uncover = GTK_STACK_TRANSITION_TYPE_UNDER_DOWN;
 	}
 	else if (m_layout_search_alternate)
 	{
-		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_title_box), 2);
-		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_contents_stack), 1);
-		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_search_box), 0);
+		v_ordered_widgets[2] = GTK_WIDGET(m_title_box);
+		v_ordered_widgets[1] = GTK_WIDGET(m_contents_stack);
+		v_ordered_widgets[0] = GTK_WIDGET(m_search_box);
 
 		m_search_cover = GTK_STACK_TRANSITION_TYPE_OVER_DOWN;
 		m_search_uncover = GTK_STACK_TRANSITION_TYPE_UNDER_UP;
 	}
 	else if (m_layout_bottom)
 	{
-		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_title_box), 0);
-		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_search_box), 1);
-		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_contents_stack), 2);
+		v_ordered_widgets[0] = GTK_WIDGET(m_title_box);
+		v_ordered_widgets[2] = GTK_WIDGET(m_contents_stack);
+		v_ordered_widgets[1] = GTK_WIDGET(m_search_box);
 
 		m_search_cover = GTK_STACK_TRANSITION_TYPE_OVER_DOWN;
 		m_search_uncover = GTK_STACK_TRANSITION_TYPE_UNDER_UP;
 	}
 	else
 	{
-		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_title_box), 2);
-		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_search_box), 1);
-		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_contents_stack), 0);
+		v_ordered_widgets[2] = GTK_WIDGET(m_title_box);
+		v_ordered_widgets[0] = GTK_WIDGET(m_contents_stack);
+		v_ordered_widgets[1] = GTK_WIDGET(m_search_box);
 
 		m_search_cover = GTK_STACK_TRANSITION_TYPE_OVER_UP;
 		m_search_uncover = GTK_STACK_TRANSITION_TYPE_UNDER_DOWN;
 	}
+
+	gtk_box_reorder_child(m_vbox, v_ordered_widgets[0], 0);
+	gtk_box_reorder_child(m_vbox, v_ordered_widgets[1], 1);
+	gtk_box_reorder_child(m_vbox, v_ordered_widgets[2], 2);
+
+	// Add margins to compensate window border width
+	int window_border_width =  gtk_container_get_border_width(GTK_CONTAINER(m_vbox));
+	gtk_widget_set_margin_bottom(v_ordered_widgets[0], window_border_width);
+	gtk_widget_set_margin_top(v_ordered_widgets[2], window_border_width);
+	gtk_widget_set_margin_bottom(v_ordered_widgets[2], 0);
+	gtk_widget_set_margin_top(v_ordered_widgets[0], 0);
+
+	// Add additional margins (instead of box spacing)
+	int additional_spacing = 2;
+	gtk_widget_set_margin_top(m_profilepic->get_widget(), additional_spacing);
+	gtk_widget_set_margin_bottom(m_profilepic->get_widget(), additional_spacing);
+
+	gtk_widget_set_margin_top(GTK_WIDGET(m_search_entry), additional_spacing);
+	gtk_widget_set_margin_bottom(GTK_WIDGET(m_search_entry), additional_spacing);
+
 }
 
 //-----------------------------------------------------------------------------
