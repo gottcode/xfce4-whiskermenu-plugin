@@ -94,6 +94,8 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 
 	// Create the profile picture
 	m_profilepic = new ProfilePicture(this);
+	gtk_widget_set_margin_top(m_profilepic->get_widget(), 2);
+	gtk_widget_set_margin_bottom(m_profilepic->get_widget(), 2);
 
 	// Create the username label
 	const gchar* name = g_get_real_name();
@@ -145,7 +147,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	m_search_results = new SearchPage(this);
 
 	// Create box for packing children
-	m_vbox = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 6));
+	m_vbox = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 0));
 	gtk_container_set_border_width(GTK_CONTAINER(m_vbox), 2);
 	gtk_stack_add_named(m_window_stack, GTK_WIDGET(m_vbox), "contents");
 
@@ -165,11 +167,13 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_username), true, true, 0);
 	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_commands_box), false, false, 0);
 	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_resizer->get_widget()), false, false, 0);
+	gtk_widget_set_margin_bottom(GTK_WIDGET(m_title_box), gtk_container_get_border_width(GTK_CONTAINER(m_vbox)));
 
 	// Add search to layout
 	m_search_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 6));
 	gtk_box_pack_start(m_vbox, GTK_WIDGET(m_search_box), false, true, 0);
 	gtk_box_pack_start(m_search_box, GTK_WIDGET(m_search_entry), true, true, 0);
+	gtk_widget_set_margin_bottom(GTK_WIDGET(m_search_box), 6);
 
 	// Create box for packing launcher pages and sidebar
 	m_contents_stack = GTK_STACK(gtk_stack_new());
@@ -984,41 +988,64 @@ void WhiskerMenu::Window::update_layout()
 	}
 
 	// Arrange vertical order of header, applications, and search
+	const int window_border_width = gtk_container_get_border_width(GTK_CONTAINER(m_vbox));
+	GtkWidget* search = GTK_WIDGET(m_search_box);
+	GtkWidget* title = GTK_WIDGET(m_title_box);
 	if (m_layout_bottom && m_layout_search_alternate)
 	{
-		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_title_box), 0);
+		gtk_box_reorder_child(m_vbox, title, 0);
 		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_contents_stack), 1);
-		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_search_box), 2);
+		gtk_box_reorder_child(m_vbox, search, 2);
 
 		m_search_cover = GTK_STACK_TRANSITION_TYPE_OVER_UP;
 		m_search_uncover = GTK_STACK_TRANSITION_TYPE_UNDER_DOWN;
+
+		gtk_widget_set_margin_top(title, 0);
+		gtk_widget_set_margin_bottom(title, window_border_width);
+		gtk_widget_set_margin_top(search, 6);
+		gtk_widget_set_margin_bottom(search, 0);
 	}
 	else if (m_layout_search_alternate)
 	{
-		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_title_box), 2);
+		gtk_box_reorder_child(m_vbox, title, 2);
 		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_contents_stack), 1);
-		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_search_box), 0);
+		gtk_box_reorder_child(m_vbox, search, 0);
 
 		m_search_cover = GTK_STACK_TRANSITION_TYPE_OVER_DOWN;
 		m_search_uncover = GTK_STACK_TRANSITION_TYPE_UNDER_UP;
+
+		gtk_widget_set_margin_top(title, window_border_width);
+		gtk_widget_set_margin_bottom(title, 0);
+		gtk_widget_set_margin_top(search, 0);
+		gtk_widget_set_margin_bottom(search, 6);
 	}
 	else if (m_layout_bottom)
 	{
-		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_title_box), 0);
-		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_search_box), 1);
+		gtk_box_reorder_child(m_vbox, title, 0);
+		gtk_box_reorder_child(m_vbox, search, 1);
 		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_contents_stack), 2);
 
 		m_search_cover = GTK_STACK_TRANSITION_TYPE_OVER_DOWN;
 		m_search_uncover = GTK_STACK_TRANSITION_TYPE_UNDER_UP;
+
+		gtk_widget_set_margin_top(title, 0);
+		gtk_widget_set_margin_bottom(title, window_border_width);
+		gtk_widget_set_margin_top(search, 0);
+		gtk_widget_set_margin_bottom(search, 6);
 	}
 	else
 	{
-		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_title_box), 2);
-		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_search_box), 1);
+		gtk_box_reorder_child(m_vbox, title, 2);
+		gtk_box_reorder_child(m_vbox, search, 1);
 		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_contents_stack), 0);
 
 		m_search_cover = GTK_STACK_TRANSITION_TYPE_OVER_UP;
 		m_search_uncover = GTK_STACK_TRANSITION_TYPE_UNDER_DOWN;
+
+		gtk_widget_set_margin_top(title, window_border_width);
+		gtk_widget_set_margin_bottom(title, 0);
+		gtk_widget_set_margin_top(search, 6);
+		gtk_widget_set_margin_bottom(search, 0);
 	}
 }
 
