@@ -82,8 +82,8 @@ void Element::spawn(GdkScreen* screen, const gchar* command, const gchar* workin
 	gchar** argv;
 	if (g_shell_parse_argv(command, nullptr, &argv, &error))
 	{
-#if LIBXFCE4UI_CHECK_VERSION(4,15,5)
-		result = xfce_spawn_no_child(screen,
+#if LIBXFCE4UI_CHECK_VERSION(4,15,6)
+		result = xfce_spawn(screen,
 #else
 		result = xfce_spawn_on_screen(screen,
 #endif
@@ -94,6 +94,9 @@ void Element::spawn(GdkScreen* screen, const gchar* command, const gchar* workin
 				startup_notify,
 				gtk_get_current_event_time(),
 				icon_name,
+#if LIBXFCE4UI_CHECK_VERSION(4,15,6)
+				false,
+#endif
 				&error);
 		g_strfreev(argv);
 	}
