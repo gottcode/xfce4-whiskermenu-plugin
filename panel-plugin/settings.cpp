@@ -23,6 +23,7 @@
 
 #include <algorithm>
 
+#include <exo/exo.h>
 #include <libxfce4util/libxfce4util.h>
 
 #include <unistd.h>
@@ -62,6 +63,24 @@ static void read_vector_entry(XfceRc* rc, const gchar* key, std::vector<std::str
 	for (size_t i = 0; values[i]; ++i)
 	{
 		std::string desktop_id(values[i]);
+#if EXO_CHECK_VERSION(4,15,0)
+		if (desktop_id == "exo-web-browser.desktop")
+		{
+			desktop_id = "xfce4-web-browser.desktop";
+		}
+		else if (desktop_id == "exo-mail-reader.desktop")
+		{
+			desktop_id = "xfce4-mail-reader.desktop";
+		}
+		else if (desktop_id == "exo-file-manager.desktop")
+		{
+			desktop_id = "xfce4-file-manager.desktop";
+		}
+		else if (desktop_id == "exo-terminal-emulator.desktop")
+		{
+			desktop_id = "xfce4-terminal-emulator.desktop";
+		}
+#endif
 		if (std::find(desktop_ids.cbegin(), desktop_ids.cend(), desktop_id) == desktop_ids.cend())
 		{
 			desktop_ids.push_back(std::move(desktop_id));
@@ -91,10 +110,17 @@ Settings::Settings() :
 	m_modified(false),
 
 	favorites {
+#if EXO_CHECK_VERSION(4,15,0)
+		"xfce4-web-browser.desktop",
+		"xfce4-mail-reader.desktop",
+		"xfce4-file-manager.desktop",
+		"xfce4-terminal-emulator.desktop"
+#else
 		"exo-web-browser.desktop",
 		"exo-mail-reader.desktop",
 		"exo-file-manager.desktop",
 		"exo-terminal-emulator.desktop"
+#endif
 	},
 
 	button_title(m_button_title_default),
