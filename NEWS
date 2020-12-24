@@ -1,3 +1,20 @@
+2.5.0
+=====
+- Add option to show all applications by default. (Issue #4)
+- Rearrange sidebar buttons to match default category. (Issue #9)
+- Show panel button title as tooltip in icon-only mode. (Issue #12)
+- Always sort top-level categories.
+- Vertically center contents of header.
+- Use new Xfce action icons.
+- Use new desktop ids for default programs.
+- Rewrite to hide menu on focus out.
+- Refactor code to use new Xfce functions.
+- Refactor building translations.
+- Translation updates: Bulgarian, Chinese (China), Chinese (Taiwan),
+  Croatian, Czech, Danish, Dutch, Esperanto, French, Galician,
+  German, Italian, Korean, Lithuanian, Malay, Polish, Portuguese,
+  Portuguese (Brazil), Slovak, Spanish, Swedish, Turkish.
+
 2.4.6
 =====
 - Fix crash during grab check. (Issue #19)
