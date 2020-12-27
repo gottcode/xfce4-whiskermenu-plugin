@@ -40,14 +40,4 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 	return menuitem;
 }
 
-inline GtkWidget* whiskermenu_image_menu_item_new_with_mnemonic(GIcon* icon, const gchar* text)
-{
-	GtkWidget* image = gtk_image_new_from_gicon(icon, GTK_ICON_SIZE_MENU);
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-	GtkWidget* menuitem = gtk_image_menu_item_new_with_mnemonic(text);
-	gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM(menuitem), image);
-G_GNUC_END_IGNORE_DEPRECATIONS
-	return menuitem;
-}
-
 #endif

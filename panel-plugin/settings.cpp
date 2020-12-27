@@ -211,7 +211,7 @@ Settings::Settings() :
 			_("Log Ou_t..."),
 			"xfce4-session-logout",
 			_("Failed to log out."));
-	command[CommandMenuEditor] = new Command("xfce4-menueditor", "menu-editor",
+	command[CommandMenuEditor] = new Command("menu-editor", "xfce4-menueditor",
 			_("_Edit Applications"),
 			"menulibre",
 			_("Failed to launch menu editor."));
