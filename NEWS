@@ -1,3 +1,7 @@
+2.5.1
+=====
+- Fix not always using new action icons. (Issue #33)
+
 2.5.0
 =====
 - Add option to show all applications by default. (Issue #4)
