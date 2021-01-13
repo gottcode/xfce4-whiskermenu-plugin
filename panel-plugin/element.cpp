@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2017-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -95,7 +95,7 @@ void Element::spawn(GdkScreen* screen, const gchar* command, const gchar* workin
 				gtk_get_current_event_time(),
 				icon_name,
 #if LIBXFCE4UI_CHECK_VERSION(4,15,6)
-				false,
+				true,
 #endif
 				&error);
 		g_strfreev(argv);
