@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-19 19:33-0500\n"
-"PO-Revision-Date: 2021-01-12 16:12+0000\n"
+"PO-Revision-Date: 2021-01-18 15:28+0000\n"
 "Last-Translator: beriain\n"
 "Language-Team: Basque (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/eu/)\n"
 "MIME-Version: 1.0\n"
@@ -92,7 +92,7 @@ msgstr "Kateg_orien ikonoen neurria:"
 
 #: ../panel-plugin/recent-page.cpp:173
 msgid "Clear Recently Used"
-msgstr "Azkenaldian erabilitakoak garbitu"
+msgstr "Erabilitako azkenak garbitu"
 
 #: ../panel-plugin/plugin.cpp:439
 msgid "Copyright © 2013-2020 Graeme Gott"
@@ -266,7 +266,7 @@ msgstr "Komandoak bilaketa eremutik hurbil kokatu"
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:903
 #: ../panel-plugin/settings-dialog.cpp:953
 msgid "Recently Used"
-msgstr "Azkenaldian erabilitakoak"
+msgstr "Erabilitako azkenak"
 
 #: ../panel-plugin/settings-dialog.cpp:537
 #, c-format
@@ -297,11 +297,11 @@ msgstr "Terminalean abiarazi"
 
 #: ../panel-plugin/settings-dialog.cpp:119
 msgid "Search Actio_ns"
-msgstr "Eki_ntzak bilatu"
+msgstr "Bilaketa eki_ntzak"
 
 #: ../panel-plugin/search-action.cpp:273
 msgid "Search Action"
-msgstr "Ekintza bilatu"
+msgstr "Bilaketa ekintza"
 
 #: ../panel-plugin/command-edit.cpp:64
 msgid "Select Command"
@@ -443,7 +443,7 @@ msgstr "Oso txikia"
 
 #: ../panel-plugin/settings.cpp:132
 msgid "Web Search"
-msgstr "Web-an bilatu"
+msgstr "Webean bilatu"
 
 #: ../panel-plugin/settings-dialog.cpp:94
 #: ../panel-plugin/settings-dialog.cpp:101
