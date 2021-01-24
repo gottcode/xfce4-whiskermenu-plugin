@@ -1,3 +1,8 @@
+2.5.3
+=====
+- Fix invalid command expansion with Xfce 4.14 (Issue #39)
+- Translation updates: Basque, Portuguese (Brazil).
+
 2.5.2
 =====
 - Do not reparent launched programs. (Issue #32)
