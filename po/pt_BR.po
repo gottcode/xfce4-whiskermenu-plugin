@@ -23,14 +23,13 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-19 19:33-0500\n"
-"PO-Revision-Date: 2020-10-27 16:54+0000\n"
+"PO-Revision-Date: 2021-01-19 23:54+0000\n"
 "Last-Translator: Gabriel Henrique <gabrielhmoderno@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) (http://www.transifex.com/gottcode/xfce4-"
-"whiskermenu-plugin/language/pt_BR/)\n"
-"Language: pt_BR\n"
+"Language-Team: Portuguese (Brazil) (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../panel-plugin/settings-dialog.cpp:1060
@@ -93,8 +92,7 @@ msgstr "Opa_cidade do fundo:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
-msgstr ""
-"Navegar pelo sistema de arquivos para escolher um comando personalizado."
+msgstr "Navegar pelo sistema de arquivos para escolher um comando personalizado."
 
 #: ../panel-plugin/settings-dialog.cpp:1117
 msgid "C_ommand:"
@@ -419,9 +417,7 @@ msgstr "Título"
 msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
-msgstr ""
-"Para desocultar, você tem que remover manualmente o arquivo \"%s\" ou abrir "
-"o arquivo e remover a linha \"%s\"."
+msgstr "Para desocultar, você tem que remover manualmente o arquivo \"%s\" ou abrir o arquivo e remover a linha \"%s\"."
 
 #: ../panel-plugin/settings.cpp:171
 #, c-format
@@ -547,14 +543,4 @@ msgstr "_Título:"
 
 #: ../panel-plugin/plugin.cpp:443
 msgid "translator-credits"
-msgstr ""
-"Carlos Reis <reiscarlos1976@gmail.com>, 2017\n"
-"Fábio Luciano de Góis <fabio@naoimporta.com>, 2013\n"
-"Gabriel Henrique <gabrielhmoderno@gmail.com>, 2017-2020\n"
-"Graeme Gott <graeme@gottcode.org>, 2013\n"
-"Holmes <holmes_holmes@live.com>, 2014\n"
-"Hugo Carvalho <hugokarvalho@hotmail.com>, 2020\n"
-"José Vieira <jvieira33@sapo.pt>, 2016-2017\n"
-"Lorhan Sohaky, 2018\n"
-"Paulo Castro, 2013\n"
-"Thiago Albuquerque Soares <tasbrjob@gmail.com>, 2018"
+msgstr "Carlos Reis <reiscarlos1976@gmail.com>, 2017\nFábio Luciano de Góis <fabio@naoimporta.com>, 2013\nGabriel Henrique <gabrielhmoderno@gmail.com>, 2017-2020\nGraeme Gott <graeme@gottcode.org>, 2013\nHolmes <holmes_holmes@live.com>, 2014\nHugo Carvalho <hugokarvalho@hotmail.com>, 2020\nJosé Vieira <jvieira33@sapo.pt>, 2016-2017\nLorhan Sohaky, 2018\nPaulo Castro, 2013\nThiago Albuquerque Soares <tasbrjob@gmail.com>, 2018"
