@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -103,9 +103,9 @@ static gchar* xfce_expand_desktop_entry_field_codes(const gchar* command, GSList
 	std::string::size_type length = expanded.length() - 1;
 	for (std::string::size_type i = 0; i < length; ++i)
 	{
-		if (G_UNLIKELY(command[i] == '%'))
+		if (G_UNLIKELY(expanded[i] == '%'))
 		{
-			switch (command[i + 1])
+			switch (expanded[i + 1])
 			{
 			case 'i':
 				replace_with_quoted_string(expanded, i, "--icon ", icon);
