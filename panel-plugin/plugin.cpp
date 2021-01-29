@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -436,7 +436,7 @@ void Plugin::show_about()
 		(nullptr,
 		"authors", authors,
 		"comments", _("Alternate application launcher for Xfce"),
-		"copyright", _("Copyright \302\251 2013-2020 Graeme Gott"),
+		"copyright", _("Copyright \302\251 2013-2021 Graeme Gott"),
 		"license", XFCE_LICENSE_GPL,
 		"logo-icon-name", "xfce4-whiskermenu",
 		"program-name", PACKAGE_NAME,
