@@ -1,5 +1,5 @@
 # Danish translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2020 Graeme Gott
+# Copyright (C) 2021 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-19 19:33-0500\n"
-"PO-Revision-Date: 2021-01-12 17:05+0000\n"
+"POT-Creation-Date: 2021-01-29 13:31-0500\n"
+"PO-Revision-Date: 2021-02-01 20:07+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -53,24 +53,24 @@ msgstr "Antal _elementer:"
 msgid "Application icon si_ze:"
 msgstr "Ikonstørrelse for _program:"
 
-#: ../panel-plugin/settings.cpp:90
+#: ../panel-plugin/settings.cpp:109
 msgid "Applications"
 msgstr "Programmer"
 
-#: ../panel-plugin/launcher.cpp:279
+#: ../panel-plugin/launcher.cpp:277
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
 msgstr "Er du sikker på, at du vil skjule \"%s\"?"
 
-#: ../panel-plugin/settings.cpp:158
+#: ../panel-plugin/settings.cpp:184
 msgid "Are you sure you want to log out?"
 msgstr "Er du sikker på, at du vil logge ud?"
 
-#: ../panel-plugin/settings.cpp:164
+#: ../panel-plugin/settings.cpp:190
 msgid "Are you sure you want to restart?"
 msgstr "Er du sikker på, at du vil genstarte?"
 
-#: ../panel-plugin/settings.cpp:170
+#: ../panel-plugin/settings.cpp:196
 msgid "Are you sure you want to shut down?"
 msgstr "Er du sikker på, at du vil lukke ned?"
 
@@ -95,8 +95,8 @@ msgid "Clear Recently Used"
 msgstr "Nulstil senest anvendte"
 
 #: ../panel-plugin/plugin.cpp:439
-msgid "Copyright © 2013-2020 Graeme Gott"
-msgstr "Ophavsret © 2013-2020 Graeme Gott"
+msgid "Copyright © 2013-2021 Graeme Gott"
+msgstr "Ophavsret © 2013-2021 Graeme Gott"
 
 #: ../panel-plugin/settings-dialog.cpp:895
 msgid "Default Category"
@@ -110,11 +110,11 @@ msgstr "Detaljer"
 msgid "Di_splay:"
 msgstr "_Vis:"
 
-#: ../panel-plugin/settings.cpp:176
+#: ../panel-plugin/settings.cpp:202
 msgid "Do you want to suspend to RAM?"
 msgstr "Vil du suspendere til RAM?"
 
-#: ../panel-plugin/settings.cpp:182
+#: ../panel-plugin/settings.cpp:208
 msgid "Do you want to suspend to disk?"
 msgstr "Vil du suspendere til disk?"
 
@@ -122,53 +122,52 @@ msgstr "Vil du suspendere til disk?"
 msgid "Edit Application..."
 msgstr "Rediger program ..."
 
-#: ../panel-plugin/settings.cpp:193
+#: ../panel-plugin/settings.cpp:219
 msgid "Edit _Profile"
 msgstr "Rediger _profil"
 
-#: ../panel-plugin/settings.cpp:195
+#: ../panel-plugin/settings.cpp:221
 msgid "Failed to edit profile."
 msgstr "Profilen kunne ikke redigeres."
 
-#: ../panel-plugin/launcher.cpp:333 ../panel-plugin/launcher.cpp:382
-#: ../panel-plugin/run-action.cpp:56 ../panel-plugin/search-action.cpp:202
+#: ../panel-plugin/element.cpp:106
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "Kunne ikke udføre kommandoen \"%s\"."
 
-#: ../panel-plugin/settings.cpp:181
+#: ../panel-plugin/settings.cpp:207
 msgid "Failed to hibernate."
 msgstr "Kunne ikke gå i dvale."
 
-#: ../panel-plugin/settings.cpp:191
+#: ../panel-plugin/settings.cpp:217
 msgid "Failed to launch menu editor."
 msgstr "Kunne ikke starte menuredigering."
 
-#: ../panel-plugin/settings.cpp:149
+#: ../panel-plugin/settings.cpp:175
 msgid "Failed to lock screen."
 msgstr "Kunne ikke låse skærmen."
 
-#: ../panel-plugin/settings.cpp:157 ../panel-plugin/settings.cpp:187
+#: ../panel-plugin/settings.cpp:183 ../panel-plugin/settings.cpp:213
 msgid "Failed to log out."
 msgstr "Kunne ikke logge ud."
 
-#: ../panel-plugin/settings.cpp:145
+#: ../panel-plugin/settings.cpp:171
 msgid "Failed to open settings manager."
 msgstr "Kunne ikke åbne indstillingshåndtering."
 
-#: ../panel-plugin/settings.cpp:163
+#: ../panel-plugin/settings.cpp:189
 msgid "Failed to restart."
 msgstr "Kunne ikke genstarte."
 
-#: ../panel-plugin/settings.cpp:169
+#: ../panel-plugin/settings.cpp:195
 msgid "Failed to shut down."
 msgstr "Kunne ikke lukke ned."
 
-#: ../panel-plugin/settings.cpp:175
+#: ../panel-plugin/settings.cpp:201
 msgid "Failed to suspend."
 msgstr "Kunne ikke suspendere."
 
-#: ../panel-plugin/settings.cpp:153
+#: ../panel-plugin/settings.cpp:179
 msgid "Failed to switch user."
 msgstr "Kunne ikke skifte bruger."
 
@@ -177,12 +176,12 @@ msgstr "Kunne ikke skifte bruger."
 msgid "Favorites"
 msgstr "Favoritter"
 
-#: ../panel-plugin/settings.cpp:183
+#: ../panel-plugin/settings.cpp:209
 #, c-format
 msgid "Hibernating computer in %d seconds."
 msgstr "Computeren går i dvale om %d sekunder."
 
-#: ../panel-plugin/launcher.cpp:278 ../panel-plugin/page.cpp:430
+#: ../panel-plugin/launcher.cpp:276 ../panel-plugin/page.cpp:430
 msgid "Hide Application"
 msgstr "Skjul program"
 
@@ -206,20 +205,20 @@ msgstr "Stor"
 msgid "Larger"
 msgstr "Større"
 
-#: ../panel-plugin/settings.cpp:185
+#: ../panel-plugin/settings.cpp:211
 msgid "Log Ou_t..."
 msgstr "Log _ud ..."
 
-#: ../panel-plugin/settings.cpp:155
+#: ../panel-plugin/settings.cpp:181
 msgid "Log _Out"
 msgstr "Log _ud"
 
-#: ../panel-plugin/settings.cpp:159
+#: ../panel-plugin/settings.cpp:185
 #, c-format
 msgid "Logging out in %d seconds."
 msgstr "Logger ud om %d sekunder."
 
-#: ../panel-plugin/settings.cpp:131
+#: ../panel-plugin/settings.cpp:157
 msgid "Man Pages"
 msgstr "Man-sider"
 
@@ -243,7 +242,7 @@ msgstr "Ingen"
 msgid "Normal"
 msgstr "Normal"
 
-#: ../panel-plugin/settings.cpp:135
+#: ../panel-plugin/settings.cpp:161
 msgid "Open URI"
 msgstr "Åbn URI"
 
@@ -281,17 +280,17 @@ msgstr "Fjern fra favoritter"
 msgid "Remove selected action"
 msgstr "Fjern valgte handling"
 
-#: ../panel-plugin/settings.cpp:165
+#: ../panel-plugin/settings.cpp:191
 #, c-format
 msgid "Restarting computer in %d seconds."
 msgstr "Computeren genstartes om %d sekunder."
 
-#: ../panel-plugin/run-action.cpp:86
+#: ../panel-plugin/run-action.cpp:64
 #, c-format
 msgid "Run %s"
 msgstr "Kør %s"
 
-#: ../panel-plugin/settings.cpp:134
+#: ../panel-plugin/settings.cpp:160
 msgid "Run in Terminal"
 msgstr "Kør i terminal"
 
@@ -299,7 +298,7 @@ msgstr "Kør i terminal"
 msgid "Search Actio_ns"
 msgstr "Søgeha_ndlinger"
 
-#: ../panel-plugin/search-action.cpp:273
+#: ../panel-plugin/search-action.cpp:251
 msgid "Search Action"
 msgstr "Søgehandling"
 
@@ -351,7 +350,7 @@ msgstr "Vis kate_gorinavne"
 msgid "Show generic application _names"
 msgstr "Vis generiske program_navne"
 
-#: ../panel-plugin/settings.cpp:167
+#: ../panel-plugin/settings.cpp:193
 msgid "Shut _Down"
 msgstr "_Luk ned"
 
@@ -375,16 +374,16 @@ msgstr "Sortér alfabetisk Å-A"
 msgid "Stay _visible when focus is lost"
 msgstr "Forbliv _synlig når fokus mistes"
 
-#: ../panel-plugin/settings.cpp:173
+#: ../panel-plugin/settings.cpp:199
 msgid "Suspe_nd"
 msgstr "_Hvile"
 
-#: ../panel-plugin/settings.cpp:177
+#: ../panel-plugin/settings.cpp:203
 #, c-format
 msgid "Suspending computer in %d seconds."
 msgstr "Computeren suspenderes om %d sekunder."
 
-#: ../panel-plugin/settings.cpp:151
+#: ../panel-plugin/settings.cpp:177
 msgid "Switch _User"
 msgstr "Skift _bruger"
 
@@ -400,14 +399,14 @@ msgstr "Handlingen vil blive slettet permanent."
 msgid "Title"
 msgstr "Titel"
 
-#: ../panel-plugin/launcher.cpp:273
+#: ../panel-plugin/launcher.cpp:271
 #, c-format
 msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
 msgstr "For at vise det skal du fjern filen \"%s\" manuelt eller åbne filen og fjerne linjen \"%s\"."
 
-#: ../panel-plugin/settings.cpp:171
+#: ../panel-plugin/settings.cpp:197
 #, c-format
 msgid "Turning off computer in %d seconds."
 msgstr "Computeren slukkes om %d sekunder."
@@ -420,7 +419,7 @@ msgstr "Kan ikke tilføje opstarter til skrivebordet."
 msgid "Unable to add launcher to panel."
 msgstr "Kan ikke tilføje opstarter til panelet."
 
-#: ../panel-plugin/page.cpp:567
+#: ../panel-plugin/page.cpp:566
 msgid "Unable to edit launcher."
 msgstr "Kan ikke redigere opstarter."
 
@@ -441,7 +440,7 @@ msgstr "Meget stor"
 msgid "Very Small"
 msgstr "Meget lille"
 
-#: ../panel-plugin/settings.cpp:132
+#: ../panel-plugin/settings.cpp:158
 msgid "Web Search"
 msgstr "Websøgning"
 
@@ -451,7 +450,7 @@ msgstr "Websøgning"
 msgid "Whisker Menu"
 msgstr "Whiskermenu"
 
-#: ../panel-plugin/settings.cpp:133
+#: ../panel-plugin/settings.cpp:159
 msgid "Wikipedia"
 msgstr "Wikipedia"
 
@@ -480,7 +479,7 @@ msgstr "_Kommandoer"
 msgid "_Delete"
 msgstr "_Slet"
 
-#: ../panel-plugin/settings.cpp:189
+#: ../panel-plugin/settings.cpp:215
 msgid "_Edit Applications"
 msgstr "_Rediger programmer"
 
@@ -489,7 +488,7 @@ msgstr "_Rediger programmer"
 msgid "_Help"
 msgstr "_Hjælp"
 
-#: ../panel-plugin/settings.cpp:179
+#: ../panel-plugin/settings.cpp:205
 msgid "_Hibernate"
 msgstr "_Dvale"
 
@@ -497,7 +496,7 @@ msgstr "_Dvale"
 msgid "_Icon:"
 msgstr "_Ikon:"
 
-#: ../panel-plugin/settings.cpp:147
+#: ../panel-plugin/settings.cpp:173
 msgid "_Lock Screen"
 msgstr "_Lås skærm"
 
@@ -517,11 +516,11 @@ msgstr "_Mønster:"
 msgid "_Regular expression"
 msgstr "_Regulært udtryk"
 
-#: ../panel-plugin/settings.cpp:161
+#: ../panel-plugin/settings.cpp:187
 msgid "_Restart"
 msgstr "_Genstart"
 
-#: ../panel-plugin/settings.cpp:143
+#: ../panel-plugin/settings.cpp:169
 msgid "_Settings Manager"
 msgstr "_Indstillingshåndtering"
 
