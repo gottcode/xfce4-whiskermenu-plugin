@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-29 13:31-0500\n"
-"PO-Revision-Date: 2021-01-30 00:47+0000\n"
+"PO-Revision-Date: 2021-02-02 11:31+0000\n"
 "Last-Translator: Adolfo Jayme-Barrientos\n"
 "Language-Team: Spanish (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -62,7 +62,7 @@ msgstr "Cantidad de _elementos:"
 
 #: ../panel-plugin/settings-dialog.cpp:763
 msgid "Application icon si_ze:"
-msgstr ""
+msgstr "_Tamaño de iconos de aplicaciones:"
 
 #: ../panel-plugin/settings.cpp:109
 msgid "Applications"
@@ -259,7 +259,7 @@ msgstr "Abrir un URI"
 
 #: ../panel-plugin/settings-dialog.cpp:1043
 msgid "Pattern"
-msgstr "Patrón"
+msgstr "Pauta"
 
 #: ../panel-plugin/settings-dialog.cpp:747
 msgid "Position _search entry next to panel button"
@@ -285,7 +285,7 @@ msgstr "¿Quiere eliminar la acción «%s»?"
 
 #: ../panel-plugin/page.cpp:410
 msgid "Remove from Favorites"
-msgstr "Eliminar de Favoritos"
+msgstr "Quitar de Favoritas"
 
 #: ../panel-plugin/settings-dialog.cpp:1069
 msgid "Remove selected action"
@@ -396,7 +396,7 @@ msgstr "El equipo se suspenderá en %d segundos."
 
 #: ../panel-plugin/settings.cpp:177
 msgid "Switch _User"
-msgstr ""
+msgstr "Cambiar de _usuario"
 
 #: ../panel-plugin/settings-dialog.cpp:936
 msgid "Switch categories by _hovering"
@@ -415,7 +415,7 @@ msgstr "Título"
 msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
-msgstr ""
+msgstr "Para hacerlo visible, elimine manualmente el archivo «%s» o abra este y retire el texto «%s»."
 
 #: ../panel-plugin/settings.cpp:197
 #, c-format
@@ -541,4 +541,4 @@ msgstr "_Título:"
 
 #: ../panel-plugin/plugin.cpp:443
 msgid "translator-credits"
-msgstr "Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2013-2016, 2019, 2021\nPablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>, 2014, 2017"
+msgstr "Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2013-2021\nPablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>, 2014, 2017"
