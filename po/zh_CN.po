@@ -1,24 +1,24 @@
 # Chinese (China) translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2020 Graeme Gott
+# Copyright (C) 2021 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
 # Mingcong Bai <jeffbai@aosc.xyz>, 2014
+# Mingcong Bai <jeffbai@aosc.xyz>, 2014
 # Tao Lin <lintao51@gmail.com>, 2015
-# 玉堂白鹤 <yjwork@qq.com>, 2015-2020
+# 玉堂白鹤 <yjwork@qq.com>, 2015-2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-19 19:33-0500\n"
-"PO-Revision-Date: 2020-02-14 03:17+0000\n"
+"POT-Creation-Date: 2021-01-29 13:31-0500\n"
+"PO-Revision-Date: 2021-02-16 14:24+0000\n"
 "Last-Translator: 玉堂白鹤 <yjwork@qq.com>\n"
-"Language-Team: Chinese (China) (http://www.transifex.com/gottcode/xfce4-"
-"whiskermenu-plugin/language/zh_CN/)\n"
-"Language: zh_CN\n"
+"Language-Team: Chinese (China) (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../panel-plugin/settings-dialog.cpp:1060
@@ -54,24 +54,24 @@ msgstr "项目合计(_I):"
 msgid "Application icon si_ze:"
 msgstr "应用图标大小 (_Z): "
 
-#: ../panel-plugin/settings.cpp:90
+#: ../panel-plugin/settings.cpp:109
 msgid "Applications"
 msgstr "应用程序"
 
-#: ../panel-plugin/launcher.cpp:279
+#: ../panel-plugin/launcher.cpp:277
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
 msgstr "您确定要隐藏\"%s\"?"
 
-#: ../panel-plugin/settings.cpp:158
+#: ../panel-plugin/settings.cpp:184
 msgid "Are you sure you want to log out?"
 msgstr "您确定要注销吗？"
 
-#: ../panel-plugin/settings.cpp:164
+#: ../panel-plugin/settings.cpp:190
 msgid "Are you sure you want to restart?"
 msgstr "您确定要重启吗？"
 
-#: ../panel-plugin/settings.cpp:170
+#: ../panel-plugin/settings.cpp:196
 msgid "Are you sure you want to shut down?"
 msgstr "您确定要关机吗？"
 
@@ -96,8 +96,8 @@ msgid "Clear Recently Used"
 msgstr "清除最近使用项"
 
 #: ../panel-plugin/plugin.cpp:439
-msgid "Copyright © 2013-2020 Graeme Gott"
-msgstr "版权所有© 2013-2020 Graeme Gott"
+msgid "Copyright © 2013-2021 Graeme Gott"
+msgstr "版权所有© 2013-2021 Graeme Gott"
 
 #: ../panel-plugin/settings-dialog.cpp:895
 msgid "Default Category"
@@ -111,11 +111,11 @@ msgstr "细节"
 msgid "Di_splay:"
 msgstr "显示 (_S): "
 
-#: ../panel-plugin/settings.cpp:176
+#: ../panel-plugin/settings.cpp:202
 msgid "Do you want to suspend to RAM?"
 msgstr "您确定要挂起到内存吗？"
 
-#: ../panel-plugin/settings.cpp:182
+#: ../panel-plugin/settings.cpp:208
 msgid "Do you want to suspend to disk?"
 msgstr "您确定要挂起到硬盘吗？"
 
@@ -123,53 +123,52 @@ msgstr "您确定要挂起到硬盘吗？"
 msgid "Edit Application..."
 msgstr "编辑应用程序..."
 
-#: ../panel-plugin/settings.cpp:193
+#: ../panel-plugin/settings.cpp:219
 msgid "Edit _Profile"
 msgstr "编辑个人资料(_P)"
 
-#: ../panel-plugin/settings.cpp:195
+#: ../panel-plugin/settings.cpp:221
 msgid "Failed to edit profile."
 msgstr "编辑个人资料失败"
 
-#: ../panel-plugin/launcher.cpp:333 ../panel-plugin/launcher.cpp:382
-#: ../panel-plugin/run-action.cpp:56 ../panel-plugin/search-action.cpp:202
+#: ../panel-plugin/element.cpp:106
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "执行命令 \"%s\" 失败。"
 
-#: ../panel-plugin/settings.cpp:181
+#: ../panel-plugin/settings.cpp:207
 msgid "Failed to hibernate."
 msgstr "休眠失败。"
 
-#: ../panel-plugin/settings.cpp:191
+#: ../panel-plugin/settings.cpp:217
 msgid "Failed to launch menu editor."
 msgstr "执行菜单编辑器失败。"
 
-#: ../panel-plugin/settings.cpp:149
+#: ../panel-plugin/settings.cpp:175
 msgid "Failed to lock screen."
 msgstr "锁定屏幕失败。"
 
-#: ../panel-plugin/settings.cpp:157 ../panel-plugin/settings.cpp:187
+#: ../panel-plugin/settings.cpp:183 ../panel-plugin/settings.cpp:213
 msgid "Failed to log out."
 msgstr "注销失败。"
 
-#: ../panel-plugin/settings.cpp:145
+#: ../panel-plugin/settings.cpp:171
 msgid "Failed to open settings manager."
 msgstr "打开设置管理器失败。"
 
-#: ../panel-plugin/settings.cpp:163
+#: ../panel-plugin/settings.cpp:189
 msgid "Failed to restart."
 msgstr "重启失败。"
 
-#: ../panel-plugin/settings.cpp:169
+#: ../panel-plugin/settings.cpp:195
 msgid "Failed to shut down."
 msgstr "关机失败。"
 
-#: ../panel-plugin/settings.cpp:175
+#: ../panel-plugin/settings.cpp:201
 msgid "Failed to suspend."
 msgstr "挂起失败。"
 
-#: ../panel-plugin/settings.cpp:153
+#: ../panel-plugin/settings.cpp:179
 msgid "Failed to switch user."
 msgstr "切换用户失败。"
 
@@ -178,12 +177,12 @@ msgstr "切换用户失败。"
 msgid "Favorites"
 msgstr "收藏夹"
 
-#: ../panel-plugin/settings.cpp:183
+#: ../panel-plugin/settings.cpp:209
 #, c-format
 msgid "Hibernating computer in %d seconds."
 msgstr "计算机将在%d 秒内休眠。"
 
-#: ../panel-plugin/launcher.cpp:278 ../panel-plugin/page.cpp:430
+#: ../panel-plugin/launcher.cpp:276 ../panel-plugin/page.cpp:430
 msgid "Hide Application"
 msgstr "隐藏应用程序"
 
@@ -207,20 +206,20 @@ msgstr "大"
 msgid "Larger"
 msgstr "非常大"
 
-#: ../panel-plugin/settings.cpp:185
+#: ../panel-plugin/settings.cpp:211
 msgid "Log Ou_t..."
 msgstr "注销 (_T)..."
 
-#: ../panel-plugin/settings.cpp:155
+#: ../panel-plugin/settings.cpp:181
 msgid "Log _Out"
 msgstr "注销 (_O)"
 
-#: ../panel-plugin/settings.cpp:159
+#: ../panel-plugin/settings.cpp:185
 #, c-format
 msgid "Logging out in %d seconds."
 msgstr "将在%d 秒内注销。"
 
-#: ../panel-plugin/settings.cpp:131
+#: ../panel-plugin/settings.cpp:157
 msgid "Man Pages"
 msgstr "Man 页面"
 
@@ -244,7 +243,7 @@ msgstr "无"
 msgid "Normal"
 msgstr "正常"
 
-#: ../panel-plugin/settings.cpp:135
+#: ../panel-plugin/settings.cpp:161
 msgid "Open URI"
 msgstr "打开 URI"
 
@@ -282,17 +281,17 @@ msgstr "从收藏夹移除"
 msgid "Remove selected action"
 msgstr "移除选中的动作"
 
-#: ../panel-plugin/settings.cpp:165
+#: ../panel-plugin/settings.cpp:191
 #, c-format
 msgid "Restarting computer in %d seconds."
 msgstr "计算机将在%d 秒内重启。"
 
-#: ../panel-plugin/run-action.cpp:86
+#: ../panel-plugin/run-action.cpp:64
 #, c-format
 msgid "Run %s"
 msgstr "运行 %s"
 
-#: ../panel-plugin/settings.cpp:134
+#: ../panel-plugin/settings.cpp:160
 msgid "Run in Terminal"
 msgstr "在终端模拟器运行"
 
@@ -300,7 +299,7 @@ msgstr "在终端模拟器运行"
 msgid "Search Actio_ns"
 msgstr "搜索动作 (_N)"
 
-#: ../panel-plugin/search-action.cpp:273
+#: ../panel-plugin/search-action.cpp:251
 msgid "Search Action"
 msgstr "搜索动作"
 
@@ -352,7 +351,7 @@ msgstr "显示类别名称(_G)"
 msgid "Show generic application _names"
 msgstr "显示通用应用程序名称 (_N)"
 
-#: ../panel-plugin/settings.cpp:167
+#: ../panel-plugin/settings.cpp:193
 msgid "Shut _Down"
 msgstr "关机(_D)"
 
@@ -376,16 +375,16 @@ msgstr "以 Z-A 排列"
 msgid "Stay _visible when focus is lost"
 msgstr "焦点丢失时保持可见(_V)"
 
-#: ../panel-plugin/settings.cpp:173
+#: ../panel-plugin/settings.cpp:199
 msgid "Suspe_nd"
 msgstr "挂起(_N)"
 
-#: ../panel-plugin/settings.cpp:177
+#: ../panel-plugin/settings.cpp:203
 #, c-format
 msgid "Suspending computer in %d seconds."
 msgstr "计算机将在%d 秒内挂起。"
 
-#: ../panel-plugin/settings.cpp:151
+#: ../panel-plugin/settings.cpp:177
 msgid "Switch _User"
 msgstr "切换用户(_U)"
 
@@ -401,14 +400,14 @@ msgstr "此动作将被永久删除。"
 msgid "Title"
 msgstr "标题"
 
-#: ../panel-plugin/launcher.cpp:273
+#: ../panel-plugin/launcher.cpp:271
 #, c-format
 msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
 msgstr "要取消隐藏，您必须手动删除文件 \"%s\" ，或打开文件并删除行 \"%s\"。"
 
-#: ../panel-plugin/settings.cpp:171
+#: ../panel-plugin/settings.cpp:197
 #, c-format
 msgid "Turning off computer in %d seconds."
 msgstr "计算机将在%d 秒内关闭。"
@@ -421,7 +420,7 @@ msgstr "无法添加启动器到桌面。"
 msgid "Unable to add launcher to panel."
 msgstr "无法添加启动器到面板/"
 
-#: ../panel-plugin/page.cpp:567
+#: ../panel-plugin/page.cpp:566
 msgid "Unable to edit launcher."
 msgstr "无法编辑启动器。"
 
@@ -442,7 +441,7 @@ msgstr "极大"
 msgid "Very Small"
 msgstr "极小"
 
-#: ../panel-plugin/settings.cpp:132
+#: ../panel-plugin/settings.cpp:158
 msgid "Web Search"
 msgstr "网页搜索"
 
@@ -452,7 +451,7 @@ msgstr "网页搜索"
 msgid "Whisker Menu"
 msgstr "Whisker 菜单"
 
-#: ../panel-plugin/settings.cpp:133
+#: ../panel-plugin/settings.cpp:159
 msgid "Wikipedia"
 msgstr "维基百科"
 
@@ -481,7 +480,7 @@ msgstr "命令(_C)"
 msgid "_Delete"
 msgstr "删除(_D)"
 
-#: ../panel-plugin/settings.cpp:189
+#: ../panel-plugin/settings.cpp:215
 msgid "_Edit Applications"
 msgstr "编辑应用程序 (_E)"
 
@@ -490,7 +489,7 @@ msgstr "编辑应用程序 (_E)"
 msgid "_Help"
 msgstr "帮助(_H)"
 
-#: ../panel-plugin/settings.cpp:179
+#: ../panel-plugin/settings.cpp:205
 msgid "_Hibernate"
 msgstr "休眠(_H)"
 
@@ -498,7 +497,7 @@ msgstr "休眠(_H)"
 msgid "_Icon:"
 msgstr "图标 (_I): "
 
-#: ../panel-plugin/settings.cpp:147
+#: ../panel-plugin/settings.cpp:173
 msgid "_Lock Screen"
 msgstr "锁定屏幕 (_L)"
 
@@ -518,11 +517,11 @@ msgstr "模式 (_P): "
 msgid "_Regular expression"
 msgstr "正则表达式 (_R)"
 
-#: ../panel-plugin/settings.cpp:161
+#: ../panel-plugin/settings.cpp:187
 msgid "_Restart"
 msgstr "重启(_R)"
 
-#: ../panel-plugin/settings.cpp:143
+#: ../panel-plugin/settings.cpp:169
 msgid "_Settings Manager"
 msgstr "设置管理(_S)"
 
@@ -532,7 +531,4 @@ msgstr "标题 (_T): "
 
 #: ../panel-plugin/plugin.cpp:443
 msgid "translator-credits"
-msgstr ""
-"白铭骢 <jeffbaichina@members.fsf.org>, 2014\\n\n"
-"Tao Lin <lintao51@gmail.com>, 2015\\n\n"
-"玉堂白鹤 <yjwork@qq.com>, 2015"
+msgstr "白铭骢 <jeffbaichina@members.fsf.org>, 2014\\n\nTao Lin <lintao51@gmail.com>, 2015\\n\n玉堂白鹤 <yjwork@qq.com>, 2015"
