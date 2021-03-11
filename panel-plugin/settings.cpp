@@ -273,9 +273,24 @@ void Settings::load(gchar* file)
 	category_hover_activate = xfce_rc_read_bool_entry(rc, "hover-switch-category", category_hover_activate);
 	category_icon_size = xfce_rc_read_int_entry(rc, "category-icon-size", category_icon_size);
 	category_show_name = xfce_rc_read_bool_entry(rc, "category-show-name", category_show_name) || (category_icon_size == -1);
-	sort_categories = xfce_rc_read_bool_entry(rc, "sort-categories", sort_categories);
 
-	if (xfce_rc_has_entry(rc, "view-as-icons"))
+	if (xfce_rc_has_entry(rc, "view-mode")) {
+		switch (xfce_rc_read_int_entry(rc, "view-mode", 0)) {
+		case 1:
+			load_hierarchy = false;
+			view_as_icons = false;
+			break;
+		case 2:
+			load_hierarchy = true;
+			view_as_icons = false;
+			break;
+		case 0:
+		default:
+			load_hierarchy = false;
+			view_as_icons = true;
+		}
+	}
+	else if (xfce_rc_has_entry(rc, "view-as-icons"))
 	{
 		load_hierarchy = xfce_rc_read_bool_entry(rc, "load-hierarchy", load_hierarchy);
 		view_as_icons = xfce_rc_read_bool_entry(rc, "view-as-icons", view_as_icons) && !load_hierarchy;
@@ -283,8 +298,12 @@ void Settings::load(gchar* file)
 	else if (xfce_rc_has_entry(rc, "load-hierarchy"))
 	{
 		load_hierarchy = xfce_rc_read_bool_entry(rc, "load-hierarchy", load_hierarchy);
+		if (load_hierarchy) {
+			sort_categories = false;
+		}
 		view_as_icons = false;
 	}
+	sort_categories = xfce_rc_read_bool_entry(rc, "sort-categories", sort_categories);
 
 	default_category = xfce_rc_read_bool_entry(rc, "display-recent-default", default_category);
 	default_category = CLAMP(xfce_rc_read_int_entry(rc, "default-category", default_category), 0, 2);
@@ -395,8 +414,13 @@ void Settings::save(gchar* file)
 	xfce_rc_write_int_entry(rc, "category-icon-size", category_icon_size);
 	xfce_rc_write_bool_entry(rc, "sort-categories", sort_categories);
 
-	xfce_rc_write_bool_entry(rc, "load-hierarchy", load_hierarchy);
-	xfce_rc_write_bool_entry(rc, "view-as-icons", view_as_icons);
+	if (view_as_icons) {
+		xfce_rc_write_int_entry(rc, "view-mode", 0);
+	} else if (load_hierarchy) {
+		xfce_rc_write_int_entry(rc, "view-mode", 2);
+	} else {
+		xfce_rc_write_int_entry(rc, "view-mode", 1);
+	}
 
 	xfce_rc_write_int_entry(rc, "default-category", default_category);
 
