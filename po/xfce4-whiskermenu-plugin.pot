@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-29 13:31-0500\n"
+"POT-Creation-Date: 2021-03-11 10:52-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../panel-plugin/settings-dialog.cpp:1060
+#: ../panel-plugin/settings-dialog.cpp:1075
 msgid "Add action"
 msgstr ""
 
@@ -34,7 +34,7 @@ msgid "Add to Panel"
 msgstr ""
 
 #: ../panel-plugin/applications-page.cpp:40 ../panel-plugin/category.cpp:51
-#: ../panel-plugin/settings-dialog.cpp:908
+#: ../panel-plugin/settings-dialog.cpp:917
 msgid "All Applications"
 msgstr ""
 
@@ -42,11 +42,11 @@ msgstr ""
 msgid "Alternate application launcher for Xfce"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:957
+#: ../panel-plugin/settings-dialog.cpp:972
 msgid "Amount of _items:"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:763
+#: ../panel-plugin/settings-dialog.cpp:772
 msgid "Application icon si_ze:"
 msgstr ""
 
@@ -59,19 +59,19 @@ msgstr ""
 msgid "Are you sure you want to hide \"%s\"?"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:184
+#: ../panel-plugin/settings.cpp:185
 msgid "Are you sure you want to log out?"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:190
+#: ../panel-plugin/settings.cpp:191
 msgid "Are you sure you want to restart?"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:196
+#: ../panel-plugin/settings.cpp:197
 msgid "Are you sure you want to shut down?"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:803
+#: ../panel-plugin/settings-dialog.cpp:812
 msgid "Background opacit_y:"
 msgstr ""
 
@@ -79,11 +79,11 @@ msgstr ""
 msgid "Browse the file system to choose a custom command."
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:1117
+#: ../panel-plugin/settings-dialog.cpp:1132
 msgid "C_ommand:"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:781
+#: ../panel-plugin/settings-dialog.cpp:790
 msgid "Categ_ory icon size:"
 msgstr ""
 
@@ -95,23 +95,23 @@ msgstr ""
 msgid "Copyright © 2013-2021 Graeme Gott"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:895
+#: ../panel-plugin/settings-dialog.cpp:904
 msgid "Default Category"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:1088
+#: ../panel-plugin/settings-dialog.cpp:1103
 msgid "Details"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:833
+#: ../panel-plugin/settings-dialog.cpp:842
 msgid "Di_splay:"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:202
+#: ../panel-plugin/settings.cpp:203
 msgid "Do you want to suspend to RAM?"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:208
+#: ../panel-plugin/settings.cpp:209
 msgid "Do you want to suspend to disk?"
 msgstr ""
 
@@ -119,11 +119,11 @@ msgstr ""
 msgid "Edit Application..."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:219
+#: ../panel-plugin/settings.cpp:220
 msgid "Edit _Profile"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:221
+#: ../panel-plugin/settings.cpp:222
 msgid "Failed to edit profile."
 msgstr ""
 
@@ -132,48 +132,48 @@ msgstr ""
 msgid "Failed to execute command \"%s\"."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:207
+#: ../panel-plugin/settings.cpp:208
 msgid "Failed to hibernate."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:217
+#: ../panel-plugin/settings.cpp:218
 msgid "Failed to launch menu editor."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:175
+#: ../panel-plugin/settings.cpp:176
 msgid "Failed to lock screen."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:183 ../panel-plugin/settings.cpp:213
+#: ../panel-plugin/settings.cpp:184 ../panel-plugin/settings.cpp:214
 msgid "Failed to log out."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:171
+#: ../panel-plugin/settings.cpp:172
 msgid "Failed to open settings manager."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:189
+#: ../panel-plugin/settings.cpp:190
 msgid "Failed to restart."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:195
+#: ../panel-plugin/settings.cpp:196
 msgid "Failed to shut down."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:201
+#: ../panel-plugin/settings.cpp:202
 msgid "Failed to suspend."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:179
+#: ../panel-plugin/settings.cpp:180
 msgid "Failed to switch user."
 msgstr ""
 
 #: ../panel-plugin/favorites-page.cpp:37
-#: ../panel-plugin/settings-dialog.cpp:899
+#: ../panel-plugin/settings-dialog.cpp:908
 msgid "Favorites"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:209
+#: ../panel-plugin/settings.cpp:210
 #, c-format
 msgid "Hibernating computer in %d seconds."
 msgstr ""
@@ -182,15 +182,15 @@ msgstr ""
 msgid "Hide Application"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:838
+#: ../panel-plugin/settings-dialog.cpp:847
 msgid "Icon"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:840
+#: ../panel-plugin/settings-dialog.cpp:849
 msgid "Icon and title"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:968
+#: ../panel-plugin/settings-dialog.cpp:983
 msgid "Include _favorites"
 msgstr ""
 
@@ -202,32 +202,32 @@ msgstr ""
 msgid "Larger"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:211
+#: ../panel-plugin/settings.cpp:212
 msgid "Log Ou_t..."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:181
+#: ../panel-plugin/settings.cpp:182
 msgid "Log _Out"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:185
+#: ../panel-plugin/settings.cpp:186
 #, c-format
 msgid "Logging out in %d seconds."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:157
+#: ../panel-plugin/settings.cpp:158
 msgid "Man Pages"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:932
+#: ../panel-plugin/settings-dialog.cpp:941
 msgid "Menu"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:1092
+#: ../panel-plugin/settings-dialog.cpp:1107
 msgid "Nam_e:"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:1038
+#: ../panel-plugin/settings-dialog.cpp:1053
 msgid "Name"
 msgstr ""
 
@@ -239,32 +239,32 @@ msgstr ""
 msgid "Normal"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:161
+#: ../panel-plugin/settings.cpp:162
 msgid "Open URI"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:1043
+#: ../panel-plugin/settings-dialog.cpp:1058
 msgid "Pattern"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:747
+#: ../panel-plugin/settings-dialog.cpp:756
 msgid "Position _search entry next to panel button"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:741
+#: ../panel-plugin/settings-dialog.cpp:750
 msgid "Position cate_gories next to panel button"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:753
+#: ../panel-plugin/settings-dialog.cpp:762
 msgid "Position commands next to search _entry"
 msgstr ""
 
-#: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:903
-#: ../panel-plugin/settings-dialog.cpp:953
+#: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:912
+#: ../panel-plugin/settings-dialog.cpp:968
 msgid "Recently Used"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:537
+#: ../panel-plugin/settings-dialog.cpp:546
 #, c-format
 msgid "Remove action \"%s\"?"
 msgstr ""
@@ -273,11 +273,11 @@ msgstr ""
 msgid "Remove from Favorites"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:1069
+#: ../panel-plugin/settings-dialog.cpp:1084
 msgid "Remove selected action"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:191
+#: ../panel-plugin/settings.cpp:192
 #, c-format
 msgid "Restarting computer in %d seconds."
 msgstr ""
@@ -287,7 +287,7 @@ msgstr ""
 msgid "Run %s"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:160
+#: ../panel-plugin/settings.cpp:161
 msgid "Run in Terminal"
 msgstr ""
 
@@ -307,7 +307,7 @@ msgstr ""
 msgid "Select an Icon"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:976
+#: ../panel-plugin/settings-dialog.cpp:991
 msgid "Session Commands"
 msgstr ""
 
@@ -315,39 +315,39 @@ msgstr ""
 msgid "Show a menu to easily access installed applications"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:730
+#: ../panel-plugin/settings-dialog.cpp:739
 msgid "Show application _descriptions"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:724
+#: ../panel-plugin/settings-dialog.cpp:733
 msgid "Show application too_ltips"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:638
+#: ../panel-plugin/settings-dialog.cpp:647
 msgid "Show as _icons"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:655
+#: ../panel-plugin/settings-dialog.cpp:664
 msgid "Show as lis_t"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:673
+#: ../panel-plugin/settings-dialog.cpp:682
 msgid "Show as t_ree"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:980
+#: ../panel-plugin/settings-dialog.cpp:995
 msgid "Show c_onfirmation dialog"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:717
+#: ../panel-plugin/settings-dialog.cpp:726
 msgid "Show cate_gory names"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:711
+#: ../panel-plugin/settings-dialog.cpp:720
 msgid "Show generic application _names"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:193
+#: ../panel-plugin/settings.cpp:194
 msgid "Shut _Down"
 msgstr ""
 
@@ -367,32 +367,36 @@ msgstr ""
 msgid "Sort Alphabetically Z-A"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:942
+#: ../panel-plugin/settings-dialog.cpp:957
+msgid "Sort ca_tegories"
+msgstr ""
+
+#: ../panel-plugin/settings-dialog.cpp:951
 msgid "Stay _visible when focus is lost"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:199
+#: ../panel-plugin/settings.cpp:200
 msgid "Suspe_nd"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:203
+#: ../panel-plugin/settings.cpp:204
 #, c-format
 msgid "Suspending computer in %d seconds."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:177
+#: ../panel-plugin/settings.cpp:178
 msgid "Switch _User"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:936
+#: ../panel-plugin/settings-dialog.cpp:945
 msgid "Switch categories by _hovering"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:536
+#: ../panel-plugin/settings-dialog.cpp:545
 msgid "The action will be deleted permanently."
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:839
+#: ../panel-plugin/settings-dialog.cpp:848
 msgid "Title"
 msgstr ""
 
@@ -403,7 +407,7 @@ msgid ""
 "and remove the line \"%s\"."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:197
+#: ../panel-plugin/settings.cpp:198
 #, c-format
 msgid "Turning off computer in %d seconds."
 msgstr ""
@@ -420,12 +424,12 @@ msgstr ""
 msgid "Unable to edit launcher."
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:597
+#: ../panel-plugin/settings-dialog.cpp:606
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:874
+#: ../panel-plugin/settings-dialog.cpp:883
 msgid "Use a single _panel row"
 msgstr ""
 
@@ -437,7 +441,7 @@ msgstr ""
 msgid "Very Small"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:158
+#: ../panel-plugin/settings.cpp:159
 msgid "Web Search"
 msgstr ""
 
@@ -447,7 +451,7 @@ msgstr ""
 msgid "Whisker Menu"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:159
+#: ../panel-plugin/settings.cpp:160
 msgid "Wikipedia"
 msgstr ""
 
@@ -472,11 +476,11 @@ msgstr ""
 msgid "_Commands"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:535
+#: ../panel-plugin/settings-dialog.cpp:544
 msgid "_Delete"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:215
+#: ../panel-plugin/settings.cpp:216
 msgid "_Edit Applications"
 msgstr ""
 
@@ -485,15 +489,15 @@ msgstr ""
 msgid "_Help"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:205
+#: ../panel-plugin/settings.cpp:206
 msgid "_Hibernate"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:861
+#: ../panel-plugin/settings-dialog.cpp:870
 msgid "_Icon:"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:173
+#: ../panel-plugin/settings.cpp:174
 msgid "_Lock Screen"
 msgstr ""
 
@@ -505,23 +509,23 @@ msgstr ""
 msgid "_Panel Button"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:1105
+#: ../panel-plugin/settings-dialog.cpp:1120
 msgid "_Pattern:"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:1129
+#: ../panel-plugin/settings-dialog.cpp:1144
 msgid "_Regular expression"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:187
+#: ../panel-plugin/settings.cpp:188
 msgid "_Restart"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:169
+#: ../panel-plugin/settings.cpp:170
 msgid "_Settings Manager"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:849
+#: ../panel-plugin/settings-dialog.cpp:858
 msgid "_Title:"
 msgstr ""
 
