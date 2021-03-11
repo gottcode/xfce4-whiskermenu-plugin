@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -341,6 +341,15 @@ void SettingsDialog::toggle_stay_on_focus_out(GtkToggleButton* button)
 {
 	wm_settings->stay_on_focus_out = gtk_toggle_button_get_active(button);
 	wm_settings->set_modified();
+}
+
+//-----------------------------------------------------------------------------
+
+void SettingsDialog::toggle_sort_categories(GtkToggleButton* button)
+{
+	wm_settings->sort_categories = gtk_toggle_button_get_active(button);
+	wm_settings->set_modified();
+	m_plugin->reload();
 }
 
 //-----------------------------------------------------------------------------
@@ -943,6 +952,12 @@ GtkWidget* SettingsDialog::init_behavior_tab()
 	gtk_box_pack_start(behavior_vbox, m_stay_on_focus_out, true, true, 0);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_stay_on_focus_out), wm_settings->stay_on_focus_out);
 	g_signal_connect_slot(m_stay_on_focus_out, "toggled", &SettingsDialog::toggle_stay_on_focus_out, this);
+
+	// Add option to sort categories
+	m_sort_categories = gtk_check_button_new_with_mnemonic(_("Sort ca_tegories"));
+	gtk_box_pack_start(behavior_vbox, m_sort_categories, true, true, 0);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_sort_categories), wm_settings->sort_categories);
+	g_signal_connect_slot(m_sort_categories, "toggled", &SettingsDialog::toggle_sort_categories, this);
 
 
 	// Create recently used section

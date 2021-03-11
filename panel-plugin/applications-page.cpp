@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -279,7 +279,10 @@ void ApplicationsPage::load_garcon_menu()
 			category->sort();
 		}
 	}
-	std::sort(m_categories.begin(), m_categories.end(), &Element::less_than);
+	if (wm_settings->sort_categories)
+	{
+		std::sort(m_categories.begin(), m_categories.end(), &Element::less_than);
+	}
 
 	// Create all items category
 	Category* category = new Category(nullptr);

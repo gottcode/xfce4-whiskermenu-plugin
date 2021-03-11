@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -78,6 +78,7 @@ public:
 
 	bool category_hover_activate;
 	bool category_show_name;
+	bool sort_categories;
 	IconSize category_icon_size;
 
 	bool load_hierarchy;

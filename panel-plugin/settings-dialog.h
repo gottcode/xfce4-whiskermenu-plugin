@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -67,6 +67,7 @@ private:
 
 	void toggle_hover_switch_category(GtkToggleButton* button);
 	void toggle_stay_on_focus_out(GtkToggleButton* button);
+	void toggle_sort_categories(GtkToggleButton* button);
 
 	void toggle_display_favorites(GtkToggleButton* button);
 	void toggle_display_recent(GtkToggleButton* button);
@@ -122,6 +123,7 @@ private:
 	// Behavior
 	GtkWidget* m_hover_switch_category;
 	GtkWidget* m_stay_on_focus_out;
+	GtkWidget* m_sort_categories;
 
 	// Default Display
 	GtkWidget* m_display_favorites;
