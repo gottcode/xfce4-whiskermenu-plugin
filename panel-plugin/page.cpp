@@ -98,6 +98,7 @@ void Page::select_first()
 		GtkTreePath* path = gtk_tree_model_get_path(model, &iter);
 		m_view->set_cursor(path);
 		m_view->select_path(path);
+		m_view->scroll_to_path(path);
 		gtk_tree_path_free(path);
 	}
 
