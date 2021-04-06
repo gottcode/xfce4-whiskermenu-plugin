@@ -1,7 +1,7 @@
 # Basque translation of xfce4-whiskermenu-plugin.
 # Copyright (C) 2021 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
-#
+# 
 # Translators:
 # John Smith <aboutafteragain@gmail.com>, 2014,2016
 # beriain, 2021
@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-29 13:31-0500\n"
-"PO-Revision-Date: 2021-02-18 15:59+0000\n"
+"POT-Creation-Date: 2021-03-11 10:52-0500\n"
+"PO-Revision-Date: 2021-04-05 15:43+0000\n"
 "Last-Translator: beriain\n"
 "Language-Team: Basque (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/eu/)\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Language: eu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/settings-dialog.cpp:1060
+#: ../panel-plugin/settings-dialog.cpp:1075
 msgid "Add action"
 msgstr "Ekintza gehitu"
 
@@ -37,7 +37,7 @@ msgid "Add to Panel"
 msgstr "Panelera gehitu"
 
 #: ../panel-plugin/applications-page.cpp:40 ../panel-plugin/category.cpp:51
-#: ../panel-plugin/settings-dialog.cpp:908
+#: ../panel-plugin/settings-dialog.cpp:917
 msgid "All Applications"
 msgstr "Aplikazio guztiak"
 
@@ -45,11 +45,11 @@ msgstr "Aplikazio guztiak"
 msgid "Alternate application launcher for Xfce"
 msgstr "Xfce-rentzako ordezko aplikazio abiarazlea"
 
-#: ../panel-plugin/settings-dialog.cpp:957
+#: ../panel-plugin/settings-dialog.cpp:972
 msgid "Amount of _items:"
 msgstr "Elementu kopurua:"
 
-#: ../panel-plugin/settings-dialog.cpp:763
+#: ../panel-plugin/settings-dialog.cpp:772
 msgid "Application icon si_ze:"
 msgstr "Aplikazioen ikonoen neurria:"
 
@@ -62,19 +62,19 @@ msgstr "Aplikazioak"
 msgid "Are you sure you want to hide \"%s\"?"
 msgstr "\"%s\" ezkutatu nahi duzu?"
 
-#: ../panel-plugin/settings.cpp:184
+#: ../panel-plugin/settings.cpp:185
 msgid "Are you sure you want to log out?"
 msgstr "Saioa itxi nahi duzu?"
 
-#: ../panel-plugin/settings.cpp:190
+#: ../panel-plugin/settings.cpp:191
 msgid "Are you sure you want to restart?"
 msgstr "Berrabiarazi nahi duzu?"
 
-#: ../panel-plugin/settings.cpp:196
+#: ../panel-plugin/settings.cpp:197
 msgid "Are you sure you want to shut down?"
 msgstr "Itzali nahi duzu?"
 
-#: ../panel-plugin/settings-dialog.cpp:803
+#: ../panel-plugin/settings-dialog.cpp:812
 msgid "Background opacit_y:"
 msgstr "Atzealdearen opakotasuna:"
 
@@ -82,11 +82,11 @@ msgstr "Atzealdearen opakotasuna:"
 msgid "Browse the file system to choose a custom command."
 msgstr "Fitxategi sistema arakatu komando pertsonalizatu bat hautatzeko:"
 
-#: ../panel-plugin/settings-dialog.cpp:1117
+#: ../panel-plugin/settings-dialog.cpp:1132
 msgid "C_ommand:"
 msgstr "K_omandoa:"
 
-#: ../panel-plugin/settings-dialog.cpp:781
+#: ../panel-plugin/settings-dialog.cpp:790
 msgid "Categ_ory icon size:"
 msgstr "Kateg_orien ikonoen neurria:"
 
@@ -98,23 +98,23 @@ msgstr "Erabilitako azkenak garbitu"
 msgid "Copyright © 2013-2021 Graeme Gott"
 msgstr "Copyright © 2013-2021 Graeme Gott"
 
-#: ../panel-plugin/settings-dialog.cpp:895
+#: ../panel-plugin/settings-dialog.cpp:904
 msgid "Default Category"
 msgstr "Kategoria lehenetsia"
 
-#: ../panel-plugin/settings-dialog.cpp:1088
+#: ../panel-plugin/settings-dialog.cpp:1103
 msgid "Details"
 msgstr "Xehetasunak"
 
-#: ../panel-plugin/settings-dialog.cpp:833
+#: ../panel-plugin/settings-dialog.cpp:842
 msgid "Di_splay:"
 msgstr "Erakut_si:"
 
-#: ../panel-plugin/settings.cpp:202
+#: ../panel-plugin/settings.cpp:203
 msgid "Do you want to suspend to RAM?"
 msgstr "RAMera eten?"
 
-#: ../panel-plugin/settings.cpp:208
+#: ../panel-plugin/settings.cpp:209
 msgid "Do you want to suspend to disk?"
 msgstr "Diskora eten?"
 
@@ -122,11 +122,11 @@ msgstr "Diskora eten?"
 msgid "Edit Application..."
 msgstr "Aplikazioa editatu..."
 
-#: ../panel-plugin/settings.cpp:219
+#: ../panel-plugin/settings.cpp:220
 msgid "Edit _Profile"
 msgstr "_Profila editatu"
 
-#: ../panel-plugin/settings.cpp:221
+#: ../panel-plugin/settings.cpp:222
 msgid "Failed to edit profile."
 msgstr "Profila editatzeak huts egin du."
 
@@ -135,48 +135,48 @@ msgstr "Profila editatzeak huts egin du."
 msgid "Failed to execute command \"%s\"."
 msgstr "\"%s\" komandoa exekutatzeak huts egin du."
 
-#: ../panel-plugin/settings.cpp:207
+#: ../panel-plugin/settings.cpp:208
 msgid "Failed to hibernate."
 msgstr "Hibernatzeak huts egin du."
 
-#: ../panel-plugin/settings.cpp:217
+#: ../panel-plugin/settings.cpp:218
 msgid "Failed to launch menu editor."
 msgstr "Menuaren editorea abiarazteak huts egin du."
 
-#: ../panel-plugin/settings.cpp:175
+#: ../panel-plugin/settings.cpp:176
 msgid "Failed to lock screen."
 msgstr "Pantaila blokeatzeak huts egin du."
 
-#: ../panel-plugin/settings.cpp:183 ../panel-plugin/settings.cpp:213
+#: ../panel-plugin/settings.cpp:184 ../panel-plugin/settings.cpp:214
 msgid "Failed to log out."
 msgstr "Saioa ixteak huts egin du."
 
-#: ../panel-plugin/settings.cpp:171
+#: ../panel-plugin/settings.cpp:172
 msgid "Failed to open settings manager."
 msgstr "Ezarpenen kudeatzailea irekitzeak huts egin du."
 
-#: ../panel-plugin/settings.cpp:189
+#: ../panel-plugin/settings.cpp:190
 msgid "Failed to restart."
 msgstr "Berrabiarazteak huts egin du."
 
-#: ../panel-plugin/settings.cpp:195
+#: ../panel-plugin/settings.cpp:196
 msgid "Failed to shut down."
 msgstr "Itzaltzeak huts egin du."
 
-#: ../panel-plugin/settings.cpp:201
+#: ../panel-plugin/settings.cpp:202
 msgid "Failed to suspend."
 msgstr "Eteteak huts egin du."
 
-#: ../panel-plugin/settings.cpp:179
+#: ../panel-plugin/settings.cpp:180
 msgid "Failed to switch user."
 msgstr "Erabiltzailea aldatzeak huts egin du."
 
 #: ../panel-plugin/favorites-page.cpp:37
-#: ../panel-plugin/settings-dialog.cpp:899
+#: ../panel-plugin/settings-dialog.cpp:908
 msgid "Favorites"
 msgstr "Gogokoenak"
 
-#: ../panel-plugin/settings.cpp:209
+#: ../panel-plugin/settings.cpp:210
 #, c-format
 msgid "Hibernating computer in %d seconds."
 msgstr "Ordenagailua %d segundotan hibernatzen."
@@ -185,15 +185,15 @@ msgstr "Ordenagailua %d segundotan hibernatzen."
 msgid "Hide Application"
 msgstr "Aplikazioa ezkutatu"
 
-#: ../panel-plugin/settings-dialog.cpp:838
+#: ../panel-plugin/settings-dialog.cpp:847
 msgid "Icon"
 msgstr "Ikonoa"
 
-#: ../panel-plugin/settings-dialog.cpp:840
+#: ../panel-plugin/settings-dialog.cpp:849
 msgid "Icon and title"
 msgstr "Ikono eta izenburua"
 
-#: ../panel-plugin/settings-dialog.cpp:968
+#: ../panel-plugin/settings-dialog.cpp:983
 msgid "Include _favorites"
 msgstr "Gogokoenak sartu"
 
@@ -205,32 +205,32 @@ msgstr "Handia"
 msgid "Larger"
 msgstr "Handiagoa"
 
-#: ../panel-plugin/settings.cpp:211
+#: ../panel-plugin/settings.cpp:212
 msgid "Log Ou_t..."
 msgstr "Saioa i_txi..."
 
-#: ../panel-plugin/settings.cpp:181
+#: ../panel-plugin/settings.cpp:182
 msgid "Log _Out"
 msgstr "Saioa _itxi"
 
-#: ../panel-plugin/settings.cpp:185
+#: ../panel-plugin/settings.cpp:186
 #, c-format
 msgid "Logging out in %d seconds."
 msgstr "Saioa %d segundotan ixten."
 
-#: ../panel-plugin/settings.cpp:157
+#: ../panel-plugin/settings.cpp:158
 msgid "Man Pages"
 msgstr "Eskuliburu orriak"
 
-#: ../panel-plugin/settings-dialog.cpp:932
+#: ../panel-plugin/settings-dialog.cpp:941
 msgid "Menu"
 msgstr "Menua"
 
-#: ../panel-plugin/settings-dialog.cpp:1092
+#: ../panel-plugin/settings-dialog.cpp:1107
 msgid "Nam_e:"
 msgstr "Iz_ena:"
 
-#: ../panel-plugin/settings-dialog.cpp:1038
+#: ../panel-plugin/settings-dialog.cpp:1053
 msgid "Name"
 msgstr "Izena"
 
@@ -242,32 +242,32 @@ msgstr "Bat ere ez"
 msgid "Normal"
 msgstr "Normala"
 
-#: ../panel-plugin/settings.cpp:161
+#: ../panel-plugin/settings.cpp:162
 msgid "Open URI"
 msgstr "URIa ireki"
 
-#: ../panel-plugin/settings-dialog.cpp:1043
+#: ../panel-plugin/settings-dialog.cpp:1058
 msgid "Pattern"
 msgstr "Patroia"
 
-#: ../panel-plugin/settings-dialog.cpp:747
+#: ../panel-plugin/settings-dialog.cpp:756
 msgid "Position _search entry next to panel button"
 msgstr "Bilaketa eremua panelaren botoitik hurbil kokatu"
 
-#: ../panel-plugin/settings-dialog.cpp:741
+#: ../panel-plugin/settings-dialog.cpp:750
 msgid "Position cate_gories next to panel button"
 msgstr "Kate_goriak panelaren botoitik hurbil kokatu"
 
-#: ../panel-plugin/settings-dialog.cpp:753
+#: ../panel-plugin/settings-dialog.cpp:762
 msgid "Position commands next to search _entry"
 msgstr "Komandoak bilaketa eremutik hurbil kokatu"
 
-#: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:903
-#: ../panel-plugin/settings-dialog.cpp:953
+#: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:912
+#: ../panel-plugin/settings-dialog.cpp:968
 msgid "Recently Used"
 msgstr "Erabilitako azkenak"
 
-#: ../panel-plugin/settings-dialog.cpp:537
+#: ../panel-plugin/settings-dialog.cpp:546
 #, c-format
 msgid "Remove action \"%s\"?"
 msgstr "\"%s\" ekintza kendu?"
@@ -276,11 +276,11 @@ msgstr "\"%s\" ekintza kendu?"
 msgid "Remove from Favorites"
 msgstr "Gogokoenetatik kendu"
 
-#: ../panel-plugin/settings-dialog.cpp:1069
+#: ../panel-plugin/settings-dialog.cpp:1084
 msgid "Remove selected action"
 msgstr "Hautatutako ekintza kendu"
 
-#: ../panel-plugin/settings.cpp:191
+#: ../panel-plugin/settings.cpp:192
 #, c-format
 msgid "Restarting computer in %d seconds."
 msgstr "Ordenagailua %d segundotan berrabiarazten."
@@ -290,7 +290,7 @@ msgstr "Ordenagailua %d segundotan berrabiarazten."
 msgid "Run %s"
 msgstr "Exekutatu %s"
 
-#: ../panel-plugin/settings.cpp:160
+#: ../panel-plugin/settings.cpp:161
 msgid "Run in Terminal"
 msgstr "Terminalean abiarazi"
 
@@ -310,7 +310,7 @@ msgstr "Komandoa hautatu"
 msgid "Select an Icon"
 msgstr "Ikono bat hautatu"
 
-#: ../panel-plugin/settings-dialog.cpp:976
+#: ../panel-plugin/settings-dialog.cpp:991
 msgid "Session Commands"
 msgstr "Saio komandoak"
 
@@ -318,39 +318,39 @@ msgstr "Saio komandoak"
 msgid "Show a menu to easily access installed applications"
 msgstr "Menu bat erakutsi instalatutako aplikazioetara modu errazean sartzeko"
 
-#: ../panel-plugin/settings-dialog.cpp:730
+#: ../panel-plugin/settings-dialog.cpp:739
 msgid "Show application _descriptions"
 msgstr "Aplikazioen _deskribapena erakutsi"
 
-#: ../panel-plugin/settings-dialog.cpp:724
+#: ../panel-plugin/settings-dialog.cpp:733
 msgid "Show application too_ltips"
 msgstr "Aplikazioen _laguntza-koadroak erakutsi"
 
-#: ../panel-plugin/settings-dialog.cpp:638
+#: ../panel-plugin/settings-dialog.cpp:647
 msgid "Show as _icons"
 msgstr "_Ikono bezala erakutsi"
 
-#: ../panel-plugin/settings-dialog.cpp:655
+#: ../panel-plugin/settings-dialog.cpp:664
 msgid "Show as lis_t"
 msgstr "Zerrenda bezala erakutsi"
 
-#: ../panel-plugin/settings-dialog.cpp:673
+#: ../panel-plugin/settings-dialog.cpp:682
 msgid "Show as t_ree"
 msgstr "Zuhaitz bezala e_rakutsi"
 
-#: ../panel-plugin/settings-dialog.cpp:980
+#: ../panel-plugin/settings-dialog.cpp:995
 msgid "Show c_onfirmation dialog"
 msgstr "Baieztapen leih_oa erakutsi"
 
-#: ../panel-plugin/settings-dialog.cpp:717
+#: ../panel-plugin/settings-dialog.cpp:726
 msgid "Show cate_gory names"
 msgstr "Kate_gorien izenak erakutsi"
 
-#: ../panel-plugin/settings-dialog.cpp:711
+#: ../panel-plugin/settings-dialog.cpp:720
 msgid "Show generic application _names"
 msgstr "Aplikazioen ize_n generikoak erakutsi"
 
-#: ../panel-plugin/settings.cpp:193
+#: ../panel-plugin/settings.cpp:194
 msgid "Shut _Down"
 msgstr "Itzali"
 
@@ -370,32 +370,36 @@ msgstr "Alfabetikoki sailkatu A-Z"
 msgid "Sort Alphabetically Z-A"
 msgstr "Alfabetikoki sailkatu Z-A"
 
-#: ../panel-plugin/settings-dialog.cpp:942
+#: ../panel-plugin/settings-dialog.cpp:957
+msgid "Sort ca_tegories"
+msgstr "Ka_tegoriak ordenatu"
+
+#: ../panel-plugin/settings-dialog.cpp:951
 msgid "Stay _visible when focus is lost"
 msgstr "Ikusgai mantendu fokua galdutakoan"
 
-#: ../panel-plugin/settings.cpp:199
+#: ../panel-plugin/settings.cpp:200
 msgid "Suspe_nd"
 msgstr "Ete_n"
 
-#: ../panel-plugin/settings.cpp:203
+#: ../panel-plugin/settings.cpp:204
 #, c-format
 msgid "Suspending computer in %d seconds."
 msgstr "Ordenagailua %d segundotan eteten."
 
-#: ../panel-plugin/settings.cpp:177
+#: ../panel-plugin/settings.cpp:178
 msgid "Switch _User"
 msgstr "Erabiltzailea aldat_u"
 
-#: ../panel-plugin/settings-dialog.cpp:936
+#: ../panel-plugin/settings-dialog.cpp:945
 msgid "Switch categories by _hovering"
 msgstr "Aldatu kategoriaz sagua gainetik pasatuz"
 
-#: ../panel-plugin/settings-dialog.cpp:536
+#: ../panel-plugin/settings-dialog.cpp:545
 msgid "The action will be deleted permanently."
 msgstr "Ekintza betirako ezabatuko da."
 
-#: ../panel-plugin/settings-dialog.cpp:839
+#: ../panel-plugin/settings-dialog.cpp:848
 msgid "Title"
 msgstr "Izenburua"
 
@@ -406,7 +410,7 @@ msgid ""
 "and remove the line \"%s\"."
 msgstr "Berriro ikusteko \"%s\" fitxategia eskuz ezabatu edo fitxategia ireki eta \"%s\" lerroa ezabatu behar duzu."
 
-#: ../panel-plugin/settings.cpp:197
+#: ../panel-plugin/settings.cpp:198
 #, c-format
 msgid "Turning off computer in %d seconds."
 msgstr "Ordenagailua %d segundotan itzaltzen."
@@ -423,12 +427,12 @@ msgstr "Ezin izan da abiarazlea panelera gehitu."
 msgid "Unable to edit launcher."
 msgstr "Ezin izan da abiarazlea editatu."
 
-#: ../panel-plugin/settings-dialog.cpp:597
+#: ../panel-plugin/settings-dialog.cpp:606
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Ezin izan da hurrengo url-a ireki: %s"
 
-#: ../panel-plugin/settings-dialog.cpp:874
+#: ../panel-plugin/settings-dialog.cpp:883
 msgid "Use a single _panel row"
 msgstr "Lerro bakarreko _panela erabili"
 
@@ -440,7 +444,7 @@ msgstr "Oso handia "
 msgid "Very Small"
 msgstr "Oso txikia"
 
-#: ../panel-plugin/settings.cpp:158
+#: ../panel-plugin/settings.cpp:159
 msgid "Web Search"
 msgstr "Webean bilatu"
 
@@ -450,7 +454,7 @@ msgstr "Webean bilatu"
 msgid "Whisker Menu"
 msgstr "Whisker menua"
 
-#: ../panel-plugin/settings.cpp:159
+#: ../panel-plugin/settings.cpp:160
 msgid "Wikipedia"
 msgstr "Wikipedia"
 
@@ -475,11 +479,11 @@ msgstr "_Itxi"
 msgid "_Commands"
 msgstr "_Komandoak"
 
-#: ../panel-plugin/settings-dialog.cpp:535
+#: ../panel-plugin/settings-dialog.cpp:544
 msgid "_Delete"
 msgstr "_Ezabatu"
 
-#: ../panel-plugin/settings.cpp:215
+#: ../panel-plugin/settings.cpp:216
 msgid "_Edit Applications"
 msgstr "_Aplikazioak editatu"
 
@@ -488,15 +492,15 @@ msgstr "_Aplikazioak editatu"
 msgid "_Help"
 msgstr "_Laguntza"
 
-#: ../panel-plugin/settings.cpp:205
+#: ../panel-plugin/settings.cpp:206
 msgid "_Hibernate"
 msgstr "_Hibernatu"
 
-#: ../panel-plugin/settings-dialog.cpp:861
+#: ../panel-plugin/settings-dialog.cpp:870
 msgid "_Icon:"
 msgstr "_Ikonoa:"
 
-#: ../panel-plugin/settings.cpp:173
+#: ../panel-plugin/settings.cpp:174
 msgid "_Lock Screen"
 msgstr "_Blokeatu pantaila"
 
@@ -508,23 +512,23 @@ msgstr "_Ados"
 msgid "_Panel Button"
 msgstr "Barne botoia"
 
-#: ../panel-plugin/settings-dialog.cpp:1105
+#: ../panel-plugin/settings-dialog.cpp:1120
 msgid "_Pattern:"
 msgstr "_Patroia:"
 
-#: ../panel-plugin/settings-dialog.cpp:1129
+#: ../panel-plugin/settings-dialog.cpp:1144
 msgid "_Regular expression"
 msgstr "Adierazpen e_rregularra"
 
-#: ../panel-plugin/settings.cpp:187
+#: ../panel-plugin/settings.cpp:188
 msgid "_Restart"
 msgstr "Be_rrabiarazi"
 
-#: ../panel-plugin/settings.cpp:169
+#: ../panel-plugin/settings.cpp:170
 msgid "_Settings Manager"
 msgstr "Ezarpenen kudeatzailea"
 
-#: ../panel-plugin/settings-dialog.cpp:849
+#: ../panel-plugin/settings-dialog.cpp:858
 msgid "_Title:"
 msgstr "_Izenburua:"
 
