@@ -4,7 +4,7 @@ Basic Installation
 CMake is designed for the build process to be done in a separate
 directory. The simplest way to compile this plugin is:
 
-  1. `cd' to the directory containing the source code.
+  1. `cd' into the extracted directory.
 
   2. `mkdir build && cd build' to create a location for building.
 
