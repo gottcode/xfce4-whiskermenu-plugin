@@ -7,6 +7,7 @@
 # Patrik Nilsson <asavartzeth@gmail.com>, 2014
 # Carlos Dz <cls567@tuta.io>, 2019
 # Fredrik Nyqvist <fredrik@nyqvist.biz>, 2013
+# Luna Jernberg <bittin@cafe8bitar.se>, 2021
 # Patrik Nilsson <asavartzeth@gmail.com>, 2014-2015,2017
 # Påvel Nicklasson <pavel2@frimixse>, 2015,2018
 # Påvel Nicklasson <pavel@frimix.se>, 2015
@@ -17,13 +18,13 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-11 10:52-0500\n"
-"PO-Revision-Date: 2021-04-23 07:56+0000\n"
-"Last-Translator: Luna Jernberg <droidbittin@gmail.com>\n"
+"PO-Revision-Date: 2021-04-28 12:57+0000\n"
+"Last-Translator: Luna Jernberg <bittin@cafe8bitar.se>\n"
 "Language-Team: Swedish (Sweden) (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/sv_SE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sv\n"
+"Language: sv_SE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/settings-dialog.cpp:1075
@@ -102,11 +103,11 @@ msgstr "Rensa senast använda"
 
 #: ../panel-plugin/plugin.cpp:439
 msgid "Copyright © 2013-2021 Graeme Gott"
-msgstr ""
+msgstr "Copyright © 2013-2021 Graeme Gott"
 
 #: ../panel-plugin/settings-dialog.cpp:904
 msgid "Default Category"
-msgstr ""
+msgstr "Standard kategori"
 
 #: ../panel-plugin/settings-dialog.cpp:1103
 msgid "Details"
@@ -378,7 +379,7 @@ msgstr "Sortera alfabetiskt Ö-A"
 
 #: ../panel-plugin/settings-dialog.cpp:957
 msgid "Sort ca_tegories"
-msgstr ""
+msgstr "Sortera ka_tegorier"
 
 #: ../panel-plugin/settings-dialog.cpp:951
 msgid "Stay _visible when focus is lost"
