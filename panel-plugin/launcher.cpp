@@ -271,11 +271,19 @@ void Launcher::hide()
 	gchar* message = g_strdup_printf(_("To unhide it you have to manually "
 			"remove the file \"%s\" or open the file and "
 			"remove the line \"%s\"."), path, "Hidden=true");
-	g_free(path);
 
 	if (xfce_dialog_confirm(nullptr, nullptr, _("Hide Application"), message,
 		_("Are you sure you want to hide \"%s\"?"), m_display_name))
 	{
+		GFile* source = garcon_menu_item_get_file(m_item);
+		GFile* dest = g_file_new_for_path(path);
+		if (!g_file_equal(source, dest))
+		{
+			g_file_copy(source, dest, G_FILE_COPY_NONE, nullptr, nullptr, nullptr, nullptr);
+		}
+		g_object_unref(source);
+		g_object_unref(dest);
+
 		XfceRc* rc = xfce_rc_config_open(XFCE_RESOURCE_DATA, relpath, false);
 		xfce_rc_set_group(rc, G_KEY_FILE_DESKTOP_GROUP);
 		xfce_rc_write_bool_entry(rc, G_KEY_FILE_DESKTOP_KEY_HIDDEN, true);
@@ -283,6 +291,7 @@ void Launcher::hide()
 	}
 
 	g_free(message);
+	g_free(path);
 	g_free(uri);
 }
 
