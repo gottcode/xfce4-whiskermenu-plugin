@@ -43,8 +43,6 @@ using namespace WhiskerMenu;
 WhiskerMenu::Window::Window(Plugin* plugin) :
 	m_plugin(plugin),
 	m_window(nullptr),
-	m_search_cover(GTK_STACK_TRANSITION_TYPE_OVER_DOWN),
-	m_search_uncover(GTK_STACK_TRANSITION_TYPE_UNDER_UP),
 	m_sidebar_size_group(nullptr),
 	m_geometry{0,0,wm_settings->menu_width,wm_settings->menu_height},
 	m_layout_left(true),
@@ -901,12 +899,12 @@ void WhiskerMenu::Window::search()
 	if (text)
 	{
 		// Show search results
-		gtk_stack_set_visible_child_full(m_contents_stack, "search", m_search_cover);
+		gtk_stack_set_visible_child_name(m_contents_stack, "search");
 	}
 	else
 	{
 		// Show active panel
-		gtk_stack_set_visible_child_full(m_contents_stack, "contents", m_search_uncover);
+		gtk_stack_set_visible_child_name(m_contents_stack, "contents");
 	}
 
 	// Apply filter
@@ -1128,36 +1126,24 @@ void WhiskerMenu::Window::update_layout()
 		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_title_box), 0);
 		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_contents_stack), 1);
 		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_search_box), 2);
-
-		m_search_cover = GTK_STACK_TRANSITION_TYPE_OVER_UP;
-		m_search_uncover = GTK_STACK_TRANSITION_TYPE_UNDER_DOWN;
 	}
 	else if (m_layout_search_alternate)
 	{
 		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_title_box), 2);
 		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_contents_stack), 1);
 		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_search_box), 0);
-
-		m_search_cover = GTK_STACK_TRANSITION_TYPE_OVER_DOWN;
-		m_search_uncover = GTK_STACK_TRANSITION_TYPE_UNDER_UP;
 	}
 	else if (m_layout_bottom)
 	{
 		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_title_box), 0);
 		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_search_box), 1);
 		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_contents_stack), 2);
-
-		m_search_cover = GTK_STACK_TRANSITION_TYPE_OVER_DOWN;
-		m_search_uncover = GTK_STACK_TRANSITION_TYPE_UNDER_UP;
 	}
 	else
 	{
 		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_title_box), 2);
 		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_search_box), 1);
 		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_contents_stack), 0);
-
-		m_search_cover = GTK_STACK_TRANSITION_TYPE_OVER_UP;
-		m_search_uncover = GTK_STACK_TRANSITION_TYPE_UNDER_DOWN;
 	}
 }
 

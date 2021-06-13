@@ -125,9 +125,6 @@ private:
 	GtkBox* m_categories_box;
 	GtkStack* m_panels_stack;
 
-	GtkStackTransitionType m_search_cover;
-	GtkStackTransitionType m_search_uncover;
-
 	Resizer* m_resize[8];
 
 	Profile* m_profile;
