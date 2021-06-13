@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-11 10:52-0500\n"
-"PO-Revision-Date: 2021-05-05 02:35+0000\n"
-"Last-Translator: Osama Chibani\n"
+"PO-Revision-Date: 2021-06-01 00:08+0000\n"
+"Last-Translator: Muadh Abdulaziz <m_abdulaziz@tutamail.com>\n"
 "Language-Team: Arabic (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,19 +23,19 @@ msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:1075
 msgid "Add action"
-msgstr "أضف إجراء"
+msgstr "إضافة إجراء"
 
 #: ../panel-plugin/page.cpp:415
 msgid "Add to Desktop"
-msgstr "أضف إلى سطح المكتب"
+msgstr "إضافة إلى سطح المكتب"
 
 #: ../panel-plugin/page.cpp:404
 msgid "Add to Favorites"
-msgstr "أضف إلى المفضلات"
+msgstr "إضافة إلى المفضلات"
 
 #: ../panel-plugin/page.cpp:419
 msgid "Add to Panel"
-msgstr "أضف إلى الشريط"
+msgstr "إضافة إلى الشريط"
 
 #: ../panel-plugin/applications-page.cpp:40 ../panel-plugin/category.cpp:51
 #: ../panel-plugin/settings-dialog.cpp:917
@@ -44,15 +44,15 @@ msgstr "جميع التطبيقات"
 
 #: ../panel-plugin/plugin.cpp:438
 msgid "Alternate application launcher for Xfce"
-msgstr "مطلق تطبيق بديل من أجل Xfce"
+msgstr "مُطلق تطبيق بديل ل Xfce"
 
 #: ../panel-plugin/settings-dialog.cpp:972
 msgid "Amount of _items:"
-msgstr "كمية العناصر:"
+msgstr "_كمية العناصر:"
 
 #: ../panel-plugin/settings-dialog.cpp:772
 msgid "Application icon si_ze:"
-msgstr "ح_جم أيقونة التطبيق:"
+msgstr "حجم أيقو_نة التطبيق:"
 
 #: ../panel-plugin/settings.cpp:109
 msgid "Applications"
@@ -77,7 +77,7 @@ msgstr "هل أنت متأكد أنك تريد إيقاف التشغيل؟"
 
 #: ../panel-plugin/settings-dialog.cpp:812
 msgid "Background opacit_y:"
-msgstr "عَتَمَة الخلفية:"
+msgstr "_تعتيم الخلفية:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
@@ -101,7 +101,7 @@ msgstr "حقوق النشر © 2013-2021 Graeme Gott"
 
 #: ../panel-plugin/settings-dialog.cpp:904
 msgid "Default Category"
-msgstr "التبويب الافتراضي"
+msgstr "الفئة الافتراضية"
 
 #: ../panel-plugin/settings-dialog.cpp:1103
 msgid "Details"
@@ -121,15 +121,15 @@ msgstr "هل تريد تعليق النظام إلى القرص؟"
 
 #: ../panel-plugin/page.cpp:426
 msgid "Edit Application..."
-msgstr "تعديل تطبيق..."
+msgstr "تعديل التطبيق..."
 
 #: ../panel-plugin/settings.cpp:220
 msgid "Edit _Profile"
-msgstr "تعديل _الملف الشخصي"
+msgstr "تعديل الملف الشخ_صي"
 
 #: ../panel-plugin/settings.cpp:222
 msgid "Failed to edit profile."
-msgstr "فشل في تعديل الملف الشخصي"
+msgstr "فشل تعديل الملف الشخصي."
 
 #: ../panel-plugin/element.cpp:106
 #, c-format
@@ -138,7 +138,7 @@ msgstr "فشل تنفيذ الأمر \"%s\"."
 
 #: ../panel-plugin/settings.cpp:208
 msgid "Failed to hibernate."
-msgstr "فشل  اﻹسبات."
+msgstr "فشل إسبات النظام."
 
 #: ../panel-plugin/settings.cpp:218
 msgid "Failed to launch menu editor."
@@ -162,7 +162,7 @@ msgstr "فشل إعادة التشغيل."
 
 #: ../panel-plugin/settings.cpp:196
 msgid "Failed to shut down."
-msgstr "فشل إنهاء التشغيل."
+msgstr "فشل إيقاف التشغيل."
 
 #: ../panel-plugin/settings.cpp:202
 msgid "Failed to suspend."
@@ -196,7 +196,7 @@ msgstr "أيقونة و عنوان"
 
 #: ../panel-plugin/settings-dialog.cpp:983
 msgid "Include _favorites"
-msgstr "تضمين _المفضلة"
+msgstr "ت_ضمين المفضلة"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Large"
@@ -208,7 +208,7 @@ msgstr "أكبر"
 
 #: ../panel-plugin/settings.cpp:212
 msgid "Log Ou_t..."
-msgstr "تسجيل الخرو_ج..."
+msgstr "تسجيل ال_خروج..."
 
 #: ../panel-plugin/settings.cpp:182
 msgid "Log _Out"
@@ -253,15 +253,15 @@ msgstr "نمط"
 
 #: ../panel-plugin/settings-dialog.cpp:756
 msgid "Position _search entry next to panel button"
-msgstr "موضع التبويبات يلي زر الشريط"
+msgstr "موضع _خانة البحث يلي زر الشريط"
 
 #: ../panel-plugin/settings-dialog.cpp:750
 msgid "Position cate_gories next to panel button"
-msgstr "موضع التبويبات يلي زر الشريط"
+msgstr "موضع الت_صنيفات يلي زر الشريط"
 
 #: ../panel-plugin/settings-dialog.cpp:762
 msgid "Position commands next to search _entry"
-msgstr "موضع الأوامر بجانب مربع البحث"
+msgstr "مو_ضع الأوامر بجانب خانة البحث"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:912
 #: ../panel-plugin/settings-dialog.cpp:968
@@ -309,7 +309,7 @@ msgstr "حدد أمرا"
 
 #: ../panel-plugin/settings-dialog.cpp:302
 msgid "Select an Icon"
-msgstr "اختيار أيقونة"
+msgstr "تحديد الأيقونة"
 
 #: ../panel-plugin/settings-dialog.cpp:991
 msgid "Session Commands"
@@ -325,11 +325,11 @@ msgstr "عرض _وصف التطبيقات"
 
 #: ../panel-plugin/settings-dialog.cpp:733
 msgid "Show application too_ltips"
-msgstr "عرض تلميحات التطبيق"
+msgstr "عرض تلميحات الت_طبيق"
 
 #: ../panel-plugin/settings-dialog.cpp:647
 msgid "Show as _icons"
-msgstr "عرض ك _أيقونات"
+msgstr "عرض  _كأيقونات"
 
 #: ../panel-plugin/settings-dialog.cpp:664
 msgid "Show as lis_t"
@@ -337,23 +337,23 @@ msgstr "عرض كلائح_ة"
 
 #: ../panel-plugin/settings-dialog.cpp:682
 msgid "Show as t_ree"
-msgstr "عرض كش_جرة"
+msgstr "_عرض كشجرة"
 
 #: ../panel-plugin/settings-dialog.cpp:995
 msgid "Show c_onfirmation dialog"
-msgstr "إظهار حوار التأكيد"
+msgstr "إ_ظهار  مربع حوار التأكيد"
 
 #: ../panel-plugin/settings-dialog.cpp:726
 msgid "Show cate_gory names"
-msgstr "إظهار أسماء اﻷبواب"
+msgstr "إظهار أ_سماء التصنيفات"
 
 #: ../panel-plugin/settings-dialog.cpp:720
 msgid "Show generic application _names"
-msgstr "إظهار الأسماء العامة للتطبيق"
+msgstr "إ_ظهار الأسماء العامة للتطبيق"
 
 #: ../panel-plugin/settings.cpp:194
 msgid "Shut _Down"
-msgstr "إنهاء _التشغيل"
+msgstr "إ_نهاء التشغيل"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -373,11 +373,11 @@ msgstr "رتب أبجديا ي-أ"
 
 #: ../panel-plugin/settings-dialog.cpp:957
 msgid "Sort ca_tegories"
-msgstr "رتب بالأبواب"
+msgstr "رتب حسب الت_صنيفات"
 
 #: ../panel-plugin/settings-dialog.cpp:951
 msgid "Stay _visible when focus is lost"
-msgstr "أبقها _مرئية عندما لا تكون نشطة"
+msgstr "أب_قها مرئية عندما لا تكون نشطة"
 
 #: ../panel-plugin/settings.cpp:200
 msgid "Suspe_nd"
@@ -390,15 +390,15 @@ msgstr "تعليق الحاسوب خلال %d ثانية."
 
 #: ../panel-plugin/settings.cpp:178
 msgid "Switch _User"
-msgstr "تبديل _المستخدم"
+msgstr "تبديل المست_خدم"
 
 #: ../panel-plugin/settings-dialog.cpp:945
 msgid "Switch categories by _hovering"
-msgstr "تبديل الأبواب بواسطة _التحليق"
+msgstr "_تبديل التصنيفات بواسطة التحليق"
 
 #: ../panel-plugin/settings-dialog.cpp:545
 msgid "The action will be deleted permanently."
-msgstr "الإجراء سيمسح نهائيا"
+msgstr "سيُحذف الإجراء بصفة دائمة."
 
 #: ../panel-plugin/settings-dialog.cpp:848
 msgid "Title"
@@ -426,7 +426,7 @@ msgstr "عاجز عن إضافة المطلقة إلى الشريط."
 
 #: ../panel-plugin/page.cpp:566
 msgid "Unable to edit launcher."
-msgstr "غير قادر على تعديل المطلق."
+msgstr "غير قادر على تعديل المُطلق."
 
 #: ../panel-plugin/settings-dialog.cpp:606
 #, c-format
@@ -435,7 +435,7 @@ msgstr "غير قادر على فتح عنوان url التالي: %s"
 
 #: ../panel-plugin/settings-dialog.cpp:883
 msgid "Use a single _panel row"
-msgstr "استخدام _شريط بصف فردي"
+msgstr "استخدام شريط بصف _فردي"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
@@ -469,16 +469,16 @@ msgstr "س_لوك"
 
 #: ../panel-plugin/command-edit.cpp:67 ../panel-plugin/settings-dialog.cpp:304
 msgid "_Cancel"
-msgstr "_إلغاء"
+msgstr "إلغ_اء"
 
 #: ../panel-plugin/settings-dialog.cpp:98
 #: ../panel-plugin/settings-dialog.cpp:105
 msgid "_Close"
-msgstr "_إغلاق"
+msgstr "إ_غلاق"
 
 #: ../panel-plugin/settings-dialog.cpp:118
 msgid "_Commands"
-msgstr "_أوامر"
+msgstr "أو_امر"
 
 #: ../panel-plugin/settings-dialog.cpp:544
 msgid "_Delete"
@@ -486,16 +486,16 @@ msgstr "_مسح"
 
 #: ../panel-plugin/settings.cpp:216
 msgid "_Edit Applications"
-msgstr "_تعديل التطبيقات"
+msgstr "تعديل الت_طبيقات"
 
 #: ../panel-plugin/settings-dialog.cpp:97
 #: ../panel-plugin/settings-dialog.cpp:104
 msgid "_Help"
-msgstr "_مساعدة"
+msgstr "مساع_دة"
 
 #: ../panel-plugin/settings.cpp:206
 msgid "_Hibernate"
-msgstr "_إسبات"
+msgstr "إسبا_ت"
 
 #: ../panel-plugin/settings-dialog.cpp:870
 msgid "_Icon:"
@@ -511,7 +511,7 @@ msgstr "_موافق"
 
 #: ../panel-plugin/settings-dialog.cpp:116
 msgid "_Panel Button"
-msgstr "_زر الشريط"
+msgstr "زر ال_شريط"
 
 #: ../panel-plugin/settings-dialog.cpp:1120
 msgid "_Pattern:"
@@ -519,15 +519,15 @@ msgstr "_نمط"
 
 #: ../panel-plugin/settings-dialog.cpp:1144
 msgid "_Regular expression"
-msgstr "_التعبيرات القياسية"
+msgstr "_تعابير قياسية"
 
 #: ../panel-plugin/settings.cpp:188
 msgid "_Restart"
-msgstr "_إعادة تشغيل"
+msgstr "إعاد_ة التشغيل"
 
 #: ../panel-plugin/settings.cpp:170
 msgid "_Settings Manager"
-msgstr "_مدير الإعدادات"
+msgstr "مدير الإ_عدادات"
 
 #: ../panel-plugin/settings-dialog.cpp:858
 msgid "_Title:"
