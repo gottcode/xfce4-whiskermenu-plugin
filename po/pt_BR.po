@@ -6,10 +6,10 @@
 # Carlos Reis <reiscarlos1976@gmail.com>, 2017
 # Fábio Luciano de Góis <fabio@naoimporta.com>, 2013
 # Fábio Luciano de Góis <fabio@naoimporta.com>, 2013
-# Gabriel Henrique <gabrielhenrique@tuta.io>, 2018-2020
-# Gabriel Henrique <gabrielhenrique@tuta.io>, 2021
-# Gabriel Henrique <gabrielhenrique@tuta.io>, 2020-2021
-# Gabriel Henrique <gabrielhenrique@tuta.io>, 2017-2018
+# Gabriel Henrique, 2018-2020
+# Gabriel Henrique, 2021
+# Gabriel Henrique, 2020-2021
+# Gabriel Henrique, 2017-2018
 # Graeme Gott <graeme@gottcode.org>, 2013
 # Holmes <holmes_holmes@live.com>, 2014
 # Hugo Carvalho <hugokarvalho@hotmail.com>, 2020
@@ -24,8 +24,8 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-11 10:52-0500\n"
-"PO-Revision-Date: 2021-04-02 14:29+0000\n"
-"Last-Translator: Gabriel Henrique <gabrielhenrique@tuta.io>\n"
+"PO-Revision-Date: 2021-06-20 21:41+0000\n"
+"Last-Translator: Gabriel Henrique\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -121,7 +121,7 @@ msgstr "Detalhes"
 
 #: ../panel-plugin/settings-dialog.cpp:842
 msgid "Di_splay:"
-msgstr "E_xibição:"
+msgstr "E_xibir:"
 
 #: ../panel-plugin/settings.cpp:203
 msgid "Do you want to suspend to RAM?"
@@ -265,15 +265,15 @@ msgstr "Padrão"
 
 #: ../panel-plugin/settings-dialog.cpp:756
 msgid "Position _search entry next to panel button"
-msgstr "Posicionar a caixa de pe_squisa próxima do botão do painel"
+msgstr "Posicionar a caixa de pe_squisa junto ao botão do painel"
 
 #: ../panel-plugin/settings-dialog.cpp:750
 msgid "Position cate_gories next to panel button"
-msgstr "Posicionar categ_orias próximas do botão do painel"
+msgstr "Posicionar categ_orias junto ao botão do painel"
 
 #: ../panel-plugin/settings-dialog.cpp:762
 msgid "Position commands next to search _entry"
-msgstr "Posicionar os comandos próximos à _caixa de pesquisa"
+msgstr "Posicionar os comandos junto à _caixa de pesquisa"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:912
 #: ../panel-plugin/settings-dialog.cpp:968
@@ -329,7 +329,7 @@ msgstr "Comandos da sessão"
 
 #: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
-msgstr "Mostrar um menu para acessar facilmente aplicativos instalados"
+msgstr "Mostrar um menu para acessar facilmente os aplicativos instalados"
 
 #: ../panel-plugin/settings-dialog.cpp:739
 msgid "Show application _descriptions"
@@ -377,15 +377,15 @@ msgstr "Muito pequeno"
 
 #: ../panel-plugin/favorites-page.cpp:147
 msgid "Sort Alphabetically A-Z"
-msgstr "Ordem alfabética A-Z"
+msgstr "Ordenar alfabeticamente de A a Z"
 
 #: ../panel-plugin/favorites-page.cpp:151
 msgid "Sort Alphabetically Z-A"
-msgstr "Ordem alfabética Z-A"
+msgstr "Ordenar alfabeticamente de  Z a A"
 
 #: ../panel-plugin/settings-dialog.cpp:957
 msgid "Sort ca_tegories"
-msgstr "Classificar cate_gorias"
+msgstr "Ordenar cate_gorias"
 
 #: ../panel-plugin/settings-dialog.cpp:951
 msgid "Stay _visible when focus is lost"
@@ -402,7 +402,7 @@ msgstr "Suspendendo o computador em %d segundos."
 
 #: ../panel-plugin/settings.cpp:178
 msgid "Switch _User"
-msgstr "Trocar de _usuário."
+msgstr "Trocar de _usuário"
 
 #: ../panel-plugin/settings-dialog.cpp:945
 msgid "Switch categories by _hovering"
@@ -410,7 +410,7 @@ msgstr "Trocar categorias ao passar o m_ouse"
 
 #: ../panel-plugin/settings-dialog.cpp:545
 msgid "The action will be deleted permanently."
-msgstr "A ação será deletada permanentemente."
+msgstr "A ação será excluída permanentemente."
 
 #: ../panel-plugin/settings-dialog.cpp:848
 msgid "Title"
@@ -443,11 +443,11 @@ msgstr "Incapaz de editar o lançador."
 #: ../panel-plugin/settings-dialog.cpp:606
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "Incapaz abrir o seguinte url: %s"
+msgstr "Incapaz abrir o seguinte URL: %s"
 
 #: ../panel-plugin/settings-dialog.cpp:883
 msgid "Use a single _panel row"
-msgstr "Usar uma ún_ica fileira do painel"
+msgstr "Usar uma ún_ica linha do painel"
 
 #: ../panel-plugin/icon-size.cpp:56
 msgid "Very Large"
@@ -459,7 +459,7 @@ msgstr "Minúsculo"
 
 #: ../panel-plugin/settings.cpp:159
 msgid "Web Search"
-msgstr "Pesquisar na web"
+msgstr "Pesquisar na rede"
 
 #: ../panel-plugin/settings-dialog.cpp:94
 #: ../panel-plugin/settings-dialog.cpp:101
@@ -494,7 +494,7 @@ msgstr "_Comandos"
 
 #: ../panel-plugin/settings-dialog.cpp:544
 msgid "_Delete"
-msgstr "Del_etar"
+msgstr "Ex_cluir"
 
 #: ../panel-plugin/settings.cpp:216
 msgid "_Edit Applications"
@@ -547,4 +547,4 @@ msgstr "_Título:"
 
 #: ../panel-plugin/plugin.cpp:443
 msgid "translator-credits"
-msgstr "Carlos Reis <reiscarlos1976@gmail.com>, 2017\nFábio Luciano de Góis <fabio@naoimporta.com>, 2013\nGabriel Henrique <gabrielhenrique@tuta.io>, 2017-2021\nGraeme Gott <graeme@gottcode.org>, 2013\nHolmes <holmes_holmes@live.com>, 2014\nHugo Carvalho <hugokarvalho@hotmail.com>, 2020\nJosé Vieira <jvieira33@sapo.pt>, 2016-2017\nLorhan Sohaky, 2018\nPaulo Castro, 2013\nThiago Albuquerque Soares <tasbrjob@gmail.com>, 2018"
+msgstr "Carlos Reis <reiscarlos1976@gmail.com>, 2017\nFábio Luciano de Góis <fabio@naoimporta.com>, 2013\nGabriel Henrique, 2017-2021\nGraeme Gott <graeme@gottcode.org>, 2013\nHolmes <holmes_holmes@live.com>, 2014\nHugo Carvalho <hugokarvalho@hotmail.com>, 2020\nJosé Vieira <jvieira33@sapo.pt>, 2016-2017\nLorhan Sohaky, 2018\nPaulo Castro, 2013\nThiago Albuquerque Soares <tasbrjob@gmail.com>, 2018"
