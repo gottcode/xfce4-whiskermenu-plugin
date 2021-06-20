@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-11 10:52-0500\n"
-"PO-Revision-Date: 2021-06-01 00:08+0000\n"
+"PO-Revision-Date: 2021-06-18 00:13+0000\n"
 "Last-Translator: Muadh Abdulaziz <m_abdulaziz@tutamail.com>\n"
 "Language-Team: Arabic (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/ar/)\n"
 "MIME-Version: 1.0\n"
@@ -31,7 +31,7 @@ msgstr "إضافة إلى سطح المكتب"
 
 #: ../panel-plugin/page.cpp:404
 msgid "Add to Favorites"
-msgstr "إضافة إلى المفضلات"
+msgstr "إضافة إلى التطبيقات المفضلة"
 
 #: ../panel-plugin/page.cpp:419
 msgid "Add to Panel"
@@ -44,7 +44,7 @@ msgstr "جميع التطبيقات"
 
 #: ../panel-plugin/plugin.cpp:438
 msgid "Alternate application launcher for Xfce"
-msgstr "مُطلق تطبيق بديل ل Xfce"
+msgstr "مُشَغِّلُ تطبيق بديل ل Xfce"
 
 #: ../panel-plugin/settings-dialog.cpp:972
 msgid "Amount of _items:"
@@ -77,15 +77,15 @@ msgstr "هل أنت متأكد أنك تريد إيقاف التشغيل؟"
 
 #: ../panel-plugin/settings-dialog.cpp:812
 msgid "Background opacit_y:"
-msgstr "_تعتيم الخلفية:"
+msgstr "_عتمة الخلفية:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
-msgstr "تصفح نظام الملفات لإختيار أمر مخصص."
+msgstr "تصفح نظام الملفات لاختيار أمر مخصص."
 
 #: ../panel-plugin/settings-dialog.cpp:1132
 msgid "C_ommand:"
-msgstr "أ_مر:"
+msgstr "الأم_ر:"
 
 #: ../panel-plugin/settings-dialog.cpp:790
 msgid "Categ_ory icon size:"
@@ -101,7 +101,7 @@ msgstr "حقوق النشر © 2013-2021 Graeme Gott"
 
 #: ../panel-plugin/settings-dialog.cpp:904
 msgid "Default Category"
-msgstr "الفئة الافتراضية"
+msgstr "الصنف الافتراضي"
 
 #: ../panel-plugin/settings-dialog.cpp:1103
 msgid "Details"
@@ -225,7 +225,7 @@ msgstr "صفحات الدليل"
 
 #: ../panel-plugin/settings-dialog.cpp:941
 msgid "Menu"
-msgstr "قائمة"
+msgstr "القائمة"
 
 #: ../panel-plugin/settings-dialog.cpp:1107
 msgid "Nam_e:"
@@ -257,7 +257,7 @@ msgstr "موضع _خانة البحث يلي زر الشريط"
 
 #: ../panel-plugin/settings-dialog.cpp:750
 msgid "Position cate_gories next to panel button"
-msgstr "موضع الت_صنيفات يلي زر الشريط"
+msgstr "موضع الأ_صناف يلي زر الشريط"
 
 #: ../panel-plugin/settings-dialog.cpp:762
 msgid "Position commands next to search _entry"
@@ -337,7 +337,7 @@ msgstr "عرض كلائح_ة"
 
 #: ../panel-plugin/settings-dialog.cpp:682
 msgid "Show as t_ree"
-msgstr "_عرض كشجرة"
+msgstr "عرض كش_جرة"
 
 #: ../panel-plugin/settings-dialog.cpp:995
 msgid "Show c_onfirmation dialog"
@@ -345,7 +345,7 @@ msgstr "إ_ظهار  مربع حوار التأكيد"
 
 #: ../panel-plugin/settings-dialog.cpp:726
 msgid "Show cate_gory names"
-msgstr "إظهار أ_سماء التصنيفات"
+msgstr "إظهار أ_سماء الأصناف"
 
 #: ../panel-plugin/settings-dialog.cpp:720
 msgid "Show generic application _names"
@@ -353,7 +353,7 @@ msgstr "إ_ظهار الأسماء العامة للتطبيق"
 
 #: ../panel-plugin/settings.cpp:194
 msgid "Shut _Down"
-msgstr "إ_نهاء التشغيل"
+msgstr "إيقا_ف التشغيل"
 
 #: ../panel-plugin/icon-size.cpp:52
 msgid "Small"
@@ -373,15 +373,15 @@ msgstr "رتب أبجديا ي-أ"
 
 #: ../panel-plugin/settings-dialog.cpp:957
 msgid "Sort ca_tegories"
-msgstr "رتب حسب الت_صنيفات"
+msgstr "رتب حسب ال_فئات"
 
 #: ../panel-plugin/settings-dialog.cpp:951
 msgid "Stay _visible when focus is lost"
-msgstr "أب_قها مرئية عندما لا تكون نشطة"
+msgstr "إب_قاء القائمة مرئية عندما تكون غير نشطة"
 
 #: ../panel-plugin/settings.cpp:200
 msgid "Suspe_nd"
-msgstr "تعلي_ق"
+msgstr "تعل_يق"
 
 #: ../panel-plugin/settings.cpp:204
 #, c-format
@@ -390,11 +390,11 @@ msgstr "تعليق الحاسوب خلال %d ثانية."
 
 #: ../panel-plugin/settings.cpp:178
 msgid "Switch _User"
-msgstr "تبديل المست_خدم"
+msgstr "ت_بديل المستخدم"
 
 #: ../panel-plugin/settings-dialog.cpp:945
 msgid "Switch categories by _hovering"
-msgstr "_تبديل التصنيفات بواسطة التحليق"
+msgstr "_تبديل الأصناف عند التمرير فوقها"
 
 #: ../panel-plugin/settings-dialog.cpp:545
 msgid "The action will be deleted permanently."
@@ -409,12 +409,12 @@ msgstr "عنوان"
 msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
-msgstr "ﻹلغاء اﻹخفاء يجب عليك إزالة الملف \"%s\" يدوياً أو فتح الملف وإزالة السطر \"%s\"."
+msgstr "ﻹعادة إظهاره يجب عليك حذف الملف \"%s\" يدوياً أو فتح الملف وحذف السطر \"%s\"."
 
 #: ../panel-plugin/settings.cpp:198
 #, c-format
 msgid "Turning off computer in %d seconds."
-msgstr "إطفاء الحاسوب خلال %d ثانية."
+msgstr "إيقاف تشغيل الحاسوب خلال %d ثانية."
 
 #: ../panel-plugin/page.cpp:491
 msgid "Unable to add launcher to desktop."
@@ -426,12 +426,12 @@ msgstr "عاجز عن إضافة المطلقة إلى الشريط."
 
 #: ../panel-plugin/page.cpp:566
 msgid "Unable to edit launcher."
-msgstr "غير قادر على تعديل المُطلق."
+msgstr "تعذَّر تعديل المُشَغِّل."
 
 #: ../panel-plugin/settings-dialog.cpp:606
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "غير قادر على فتح عنوان url التالي: %s"
+msgstr "تعذَّر فتح عنوان url الآتي: %s"
 
 #: ../panel-plugin/settings-dialog.cpp:883
 msgid "Use a single _panel row"
@@ -478,7 +478,7 @@ msgstr "إ_غلاق"
 
 #: ../panel-plugin/settings-dialog.cpp:118
 msgid "_Commands"
-msgstr "أو_امر"
+msgstr "الأو_امر"
 
 #: ../panel-plugin/settings-dialog.cpp:544
 msgid "_Delete"
