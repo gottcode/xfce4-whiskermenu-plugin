@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-11 10:52-0500\n"
-"PO-Revision-Date: 2021-03-12 14:59+0000\n"
+"PO-Revision-Date: 2021-06-25 11:00+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/pt/)\n"
 "MIME-Version: 1.0\n"
@@ -85,7 +85,7 @@ msgstr "Opacidade do fundo:"
 
 #: ../panel-plugin/command-edit.cpp:49
 msgid "Browse the file system to choose a custom command."
-msgstr "Procurar no sistema de ficheiros para escolher o comando."
+msgstr "Procurar no sistema de ficheiros para escolher um comando personalizado."
 
 #: ../panel-plugin/settings-dialog.cpp:1132
 msgid "C_ommand:"
@@ -257,15 +257,15 @@ msgstr "Padrão"
 
 #: ../panel-plugin/settings-dialog.cpp:756
 msgid "Position _search entry next to panel button"
-msgstr "Posicionar caixa de pe_squisa junto ao botão no painel"
+msgstr "Posicionar a caixa de pe_squisa junto ao botão do painel"
 
 #: ../panel-plugin/settings-dialog.cpp:750
 msgid "Position cate_gories next to panel button"
-msgstr "Posicionar categ_orias junto ao botão do painel"
+msgstr "Posicionar as categ_orias junto ao botão do painel"
 
 #: ../panel-plugin/settings-dialog.cpp:762
 msgid "Position commands next to search _entry"
-msgstr "Posicionar os botões junto à _caixa de pesquisa"
+msgstr "Posicionar os comandos junto à _caixa de pesquisa"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:912
 #: ../panel-plugin/settings-dialog.cpp:968
@@ -353,7 +353,7 @@ msgstr "Mostrar nomes das cate_gorias"
 
 #: ../panel-plugin/settings-dialog.cpp:720
 msgid "Show generic application _names"
-msgstr "Mostrar _nomes genéricos da aplicação"
+msgstr "Mostrar _nomes genéricos das aplicações"
 
 #: ../panel-plugin/settings.cpp:194
 msgid "Shut _Down"
@@ -381,7 +381,7 @@ msgstr "Ordenar ca_tegorias"
 
 #: ../panel-plugin/settings-dialog.cpp:951
 msgid "Stay _visible when focus is lost"
-msgstr "Continuar _visível quando perde o foco"
+msgstr "Permanecer _visível quando perde o foco"
 
 #: ../panel-plugin/settings.cpp:200
 msgid "Suspe_nd"
@@ -398,7 +398,7 @@ msgstr "Mudar de _Utilizador"
 
 #: ../panel-plugin/settings-dialog.cpp:945
 msgid "Switch categories by _hovering"
-msgstr "Acionar categorias ao passar com o r_ato"
+msgstr "Mudar de categorias ao passar com o r_ato"
 
 #: ../panel-plugin/settings-dialog.cpp:545
 msgid "The action will be deleted permanently."
@@ -435,7 +435,7 @@ msgstr "Não é possível editar o lançador."
 #: ../panel-plugin/settings-dialog.cpp:606
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "Não foi possível abrir o URL: %s"
+msgstr "Não foi possível abrir o seguinte endereço: %s"
 
 #: ../panel-plugin/settings-dialog.cpp:883
 msgid "Use a single _panel row"
