@@ -642,6 +642,29 @@ gboolean WhiskerMenu::Window::on_key_press_event(GtkWidget* widget, GdkEvent* ev
 		}
 	}
 
+	//Allows for scrolling with left and right keys if in icon view
+	if (GTK_IS_ICON_VIEW(view) && ((key_event->keyval == GDK_KEY_Left) || (key_event->keyval == GDK_KEY_Right)))
+	{
+		GtkWidget* search = GTK_WIDGET(m_search_entry);
+		if ((widget == search) || (gtk_window_get_focus(m_window) == search))
+		{
+			gtk_widget_grab_focus(view);
+		}
+		if (gtk_window_get_focus(m_window) == view)
+		{
+			GtkTreePath* path = page->get_view()->get_selected_path();
+			if (path)
+			{
+				gtk_tree_path_free(path);
+			}
+			else
+			{
+				page->select_first();
+				return GDK_EVENT_STOP;
+			}
+		}
+	}
+
 	return GDK_EVENT_PROPAGATE;
 }
 
