@@ -1,3 +1,15 @@
+2.6.0
+=====
+- Fix unable to resize with metacity. (Issue #56)
+- Fix invalid desktop files when hiding applications. (Issue #53)
+- Fix not showing focused launcher when searching. (Issue #45)
+- Add option to disable sorting categories. (Issue #42)
+- Translation updates: Arabic, Basque, Bulgarian, Catalan, Chinese (China),
+  Chinese (Taiwan), Czech, Danish, Dutch, Esperanto, Finnish, French,
+  Galician, Georgian, German, Hungarian, Interlingue, Italian, Lithuanian,
+  Polish, Portuguese, Portuguese (Brazil), Russian, Spanish, Swedish, Thai,
+  Turkish, Ukrainian.
+
 2.5.3
 =====
 - Fix invalid command expansion with Xfce 4.14 (Issue #39)
