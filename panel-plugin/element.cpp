@@ -17,6 +17,8 @@
 
 #include "element.h"
 
+#include "plugin.h"
+
 #include <libxfce4ui/libxfce4ui.h>
 
 using namespace WhiskerMenu;
@@ -101,7 +103,11 @@ void Element::spawn(GdkScreen* screen, const gchar* command, const gchar* workin
 		g_strfreev(argv);
 	}
 
-	if (G_UNLIKELY(!result))
+	if (result)
+	{
+		Plugin::launcher_activated();
+	}
+	else
 	{
 		xfce_dialog_show_error(nullptr, error, _("Failed to execute command \"%s\"."), command);
 		g_error_free(error);

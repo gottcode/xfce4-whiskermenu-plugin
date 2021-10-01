@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -58,17 +58,17 @@ public:
 	static std::string get_button_title_default();
 	std::string get_button_icon_name() const;
 
-	void focus_lost()
-	{
-		m_focus_out_time = g_get_monotonic_time();
-	}
-
 	void reload();
 	void set_button_style(ButtonStyle style);
 	void set_button_title(const std::string& title);
 	void set_button_icon_name(const std::string& icon);
 	void set_configure_enabled(bool enabled);
 	void set_loaded(bool loaded);
+
+	static void launcher_activated()
+	{
+		m_menu_shown = false;
+	}
 
 private:
 	void button_toggled(GtkToggleButton* button);
@@ -94,7 +94,8 @@ private:
 
 	int m_opacity;
 	bool m_file_icon;
-	gint64 m_focus_out_time;
+
+	static bool m_menu_shown;
 };
 
 }
