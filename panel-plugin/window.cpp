@@ -571,7 +571,6 @@ gboolean WhiskerMenu::Window::on_focus_out_event(GtkWidget* widget, GdkEvent*)
 	if (!m_child_has_focus && gtk_widget_get_visible(widget))
 	{
 		hide();
-		m_plugin->focus_lost();
 	}
 
 	return GDK_EVENT_PROPAGATE;

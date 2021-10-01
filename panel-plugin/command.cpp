@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,6 +18,7 @@
 #include "command.h"
 
 #include "image-menu-item.h"
+#include "plugin.h"
 #include "settings.h"
 #include "slot.h"
 
@@ -212,7 +213,11 @@ void Command::activate()
 	}
 
 	GError* error = nullptr;
-	if (!g_spawn_command_line_async(m_command, &error))
+	if (g_spawn_command_line_async(m_command, &error))
+	{
+		Plugin::launcher_activated();
+	}
+	else
 	{
 		xfce_dialog_show_error(nullptr, error, m_error_text, nullptr);
 		g_error_free(error);

@@ -32,6 +32,8 @@ extern "C"
 
 using namespace WhiskerMenu;
 
+bool Plugin::m_menu_shown = false;
+
 //-----------------------------------------------------------------------------
 
 extern "C" void whiskermenu_construct(XfcePanelPlugin* plugin)
@@ -95,8 +97,7 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	m_plugin(plugin),
 	m_window(nullptr),
 	m_opacity(100),
-	m_file_icon(false),
-	m_focus_out_time(0)
+	m_file_icon(false)
 {
 	// Load settings
 	wm_settings = new Settings;
@@ -320,6 +321,7 @@ void Plugin::button_toggled(GtkToggleButton* button)
 	{
 		if (gtk_widget_get_visible(m_window->get_widget()))
 		{
+			m_menu_shown = false;
 			m_window->hide();
 		}
 		xfce_panel_plugin_block_autohide(m_plugin, false);
@@ -380,16 +382,12 @@ gboolean Plugin::remote_event(XfcePanelPlugin*, gchar* name, GValue* value)
 		return false;
 	}
 
-	// Ignore event if menu lost focus and hid within last 1/4 second;
+	// Ignore event if last shown through remote event;
 	// needed for toggling as remote event happens after focus is lost
-	if (m_focus_out_time)
+	if (m_menu_shown)
 	{
-		if ((g_get_monotonic_time() - m_focus_out_time) < 250000)
-		{
-			m_focus_out_time = 0;
-			return true;
-		}
-		m_focus_out_time = 0;
+		m_menu_shown = false;
+		return true;
 	}
 
 	if (gtk_widget_get_visible(m_window->get_widget()))
@@ -573,7 +571,7 @@ void Plugin::show_menu(bool at_cursor)
 		m_opacity = wm_settings->menu_opacity;
 	}
 	m_window->show(at_cursor ? Window::PositionAtCursor : Window::Position(xfce_panel_plugin_get_orientation(m_plugin)));
-	m_focus_out_time = 0;
+	m_menu_shown = true;
 }
 
 //-----------------------------------------------------------------------------
