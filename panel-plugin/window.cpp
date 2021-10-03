@@ -75,6 +75,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	g_signal_connect_slot(m_window, "map-event", &Window::on_map_event, this);
 	g_signal_connect_slot(m_window, "state-flags-changed", &Window::on_state_flags_changed_event, this);
 	g_signal_connect_slot(m_window, "configure-event", &Window::on_configure_event, this);
+	g_signal_connect_slot(m_window, "window-state-event", &Window::on_window_state_event, this);
 	g_signal_connect(m_window, "delete-event", G_CALLBACK(&gtk_widget_hide_on_delete), nullptr);
 
 	// Create the border of the window
@@ -705,6 +706,21 @@ gboolean WhiskerMenu::Window::on_configure_event(GtkWidget*, GdkEvent* event)
 	}
 
 	check_scrollbar_needed();
+
+	return GDK_EVENT_PROPAGATE;
+}
+
+//-----------------------------------------------------------------------------
+
+gboolean WhiskerMenu::Window::on_window_state_event(GtkWidget*, GdkEvent* event)
+{
+	// Workaround to detect clicking off menu to hide it; xfwm only sets it to this
+	// state in that case, for all others it is purely GDK_WINDOW_STATE_WITHDRAWN
+	GdkEventWindowState* state_event = reinterpret_cast<GdkEventWindowState*>(event);
+	if (state_event->new_window_state == (GDK_WINDOW_STATE_WITHDRAWN | GDK_WINDOW_STATE_STICKY))
+	{
+		Plugin::launcher_activated();
+	}
 
 	return GDK_EVENT_PROPAGATE;
 }
