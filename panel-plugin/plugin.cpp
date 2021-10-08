@@ -49,31 +49,28 @@ static void plugin_free(XfcePanelPlugin*, gpointer user_data)
 
 // Wait for grab; allows modifier as shortcut
 // Adapted from http://git.xfce.org/xfce/xfce4-panel/tree/common/panel-utils.c#n122
-static bool can_grab()
+static bool can_grab(GtkWidget* widget)
 {
-	GdkWindow* window = gdk_screen_get_root_window(xfce_gdk_screen_get_active(nullptr));
+	GdkWindow* window = gtk_widget_get_window(widget);
 	GdkDisplay* display = gdk_window_get_display(window);
 	GdkSeat* seat = gdk_display_get_default_seat(display);
-	GdkDevice* keyboard = gdk_seat_get_keyboard(seat);
 
-	// Don't try to get the grab for longer then 1/4 second
-	for (int i = 0; i < 2500; ++i)
+	for (int i = 0; i < 5; ++i)
 	{
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-		const GdkGrabStatus grab_status = gdk_device_grab(keyboard,
+		const GdkGrabStatus grab_status = gdk_seat_grab(seat,
 				window,
-				GDK_OWNERSHIP_NONE,
-				true,
-				GdkEventMask(GDK_KEY_PRESS_MASK | GDK_KEY_RELEASE_MASK),
+				GDK_SEAT_CAPABILITY_ALL,
+				false,
 				nullptr,
-				GDK_CURRENT_TIME);
+				nullptr,
+				nullptr,
+				nullptr);
 		if (grab_status == GDK_GRAB_SUCCESS)
 		{
-			gdk_device_ungrab(keyboard, GDK_CURRENT_TIME);
+			gdk_seat_ungrab(seat);
 			return true;
 		}
-G_GNUC_END_IGNORE_DEPRECATIONS
-		g_usleep(100);
+		g_usleep(100000);
 	}
 
 	return false;
@@ -394,7 +391,7 @@ gboolean Plugin::remote_event(XfcePanelPlugin*, gchar* name, GValue* value)
 	{
 		m_window->hide();
 	}
-	else if (!can_grab())
+	else if (!can_grab(gtk_widget_get_toplevel(m_button)))
 	{
 		g_printerr("xfce4-whiskermenu-plugin: Unable to get keyboard. Menu popup failed.\n");
 	}
