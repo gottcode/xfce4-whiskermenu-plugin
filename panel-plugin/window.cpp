@@ -25,7 +25,7 @@
 #include "plugin.h"
 #include "profile-picture.h"
 #include "recent-page.h"
-#include "resize-grip.h"
+#include "resizer.h"
 #include "search-page.h"
 #include "settings.h"
 #include "slot.h"
@@ -94,6 +94,23 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	gtk_widget_set_valign(GTK_WIDGET(m_window_load_spinner), GTK_ALIGN_CENTER);
 	gtk_stack_add_named(m_window_stack, GTK_WIDGET(m_window_load_spinner), "load");
 
+	// Create resizers
+	m_resize[Resizer::TopLeft] = new Resizer(Resizer::TopLeft, this);
+	m_resize[Resizer::Top] = new Resizer(Resizer::Top, this);
+	m_resize[Resizer::TopRight] = new Resizer(Resizer::TopRight, this);
+	m_resize[Resizer::Left] = new Resizer(Resizer::Left, this);
+	m_resize[Resizer::Right] = new Resizer(Resizer::Right, this);
+	m_resize[Resizer::BottomLeft] = new Resizer(Resizer::BottomLeft, this);
+	m_resize[Resizer::Bottom] = new Resizer(Resizer::Bottom, this);
+	m_resize[Resizer::BottomRight] = new Resizer(Resizer::BottomRight, this);
+	for (int i = 0; i < 8; ++i)
+	{
+		gtk_widget_set_sensitive(m_resize[i]->get_widget(), false);
+	}
+	gtk_widget_set_sensitive(m_resize[Resizer::Top]->get_widget(), true);
+	gtk_widget_set_sensitive(m_resize[Resizer::TopRight]->get_widget(), true);
+	gtk_widget_set_sensitive(m_resize[Resizer::Right]->get_widget(), true);
+
 	// Create the profile picture
 	m_profilepic = new ProfilePicture(this);
 
@@ -115,8 +132,6 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 		m_commands_button[i] = wm_settings->command[i]->get_button();
 		m_command_slots[i] = g_signal_connect_slot<GtkButton*>(m_commands_button[i], "clicked", &Window::hide, this);
 	}
-
-	m_resizer = new ResizeGrip(this);
 
 	// Create search entry
 	m_search_entry = GTK_ENTRY(gtk_search_entry_new());
@@ -146,10 +161,22 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	// Create search results
 	m_search_results = new SearchPage(this);
 
+	// Create grid for packing resizers
+	GtkGrid* grid = GTK_GRID(gtk_grid_new());
+	gtk_grid_attach(grid, m_resize[Resizer::TopLeft]->get_widget(), 0, 0, 1, 1);
+	gtk_grid_attach(grid, m_resize[Resizer::Top]->get_widget(), 1, 0, 1, 1);
+	gtk_grid_attach(grid, m_resize[Resizer::TopRight]->get_widget(), 2, 0, 1, 1);
+	gtk_grid_attach(grid, m_resize[Resizer::Left]->get_widget(), 0, 1, 1, 1);
+	gtk_grid_attach(grid, m_resize[Resizer::Right]->get_widget(), 2, 1, 1, 1);
+	gtk_grid_attach(grid, m_resize[Resizer::BottomLeft]->get_widget(), 0, 2, 1, 1);
+	gtk_grid_attach(grid, m_resize[Resizer::Bottom]->get_widget(), 1, 2, 1, 1);
+	gtk_grid_attach(grid, m_resize[Resizer::BottomRight]->get_widget(), 2, 2, 1, 1);
+	gtk_stack_add_named(m_window_stack, GTK_WIDGET(grid), "contents");
+
 	// Create box for packing children
 	m_vbox = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 6));
-	gtk_container_set_border_width(GTK_CONTAINER(m_vbox), 6);
-	gtk_stack_add_named(m_window_stack, GTK_WIDGET(m_vbox), "contents");
+	gtk_container_set_border_width(GTK_CONTAINER(m_vbox), 0);
+	gtk_grid_attach(grid, GTK_WIDGET(m_vbox), 1, 1, 1, 1);
 
 	// Create box for packing commands
 	m_commands_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0));
@@ -166,7 +193,6 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_profilepic->get_widget()), false, false, 0);
 	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_username), true, true, 0);
 	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_commands_box), false, false, 0);
-	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_resizer->get_widget()), false, false, 0);
 
 	// Add search to layout
 	m_search_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 6));
@@ -246,7 +272,11 @@ WhiskerMenu::Window::~Window()
 	delete m_favorites;
 
 	delete m_profilepic;
-	delete m_resizer;
+
+	for (int i = 0; i < 8; ++i)
+	{
+		delete m_resize[i];
+	}
 
 	gtk_widget_destroy(GTK_WIDGET(m_window));
 	g_object_unref(m_window);
@@ -414,30 +444,6 @@ void WhiskerMenu::Window::show(const Position position)
 
 	// Move window
 	gtk_window_move(m_window, m_geometry.x, m_geometry.y);
-
-	// Set corner for resizer
-	if (layout_left)
-	{
-		if (layout_bottom)
-		{
-			m_resizer->set_corner(ResizeGrip::TopRight);
-		}
-		else
-		{
-			m_resizer->set_corner(ResizeGrip::BottomRight);
-		}
-	}
-	else
-	{
-		if (layout_bottom)
-		{
-			m_resizer->set_corner(ResizeGrip::TopLeft);
-		}
-		else
-		{
-			m_resizer->set_corner(ResizeGrip::BottomLeft);
-		}
-	}
 
 	// Relayout window if necessary
 	if (gtk_widget_get_direction(GTK_WIDGET(m_window)) == GTK_TEXT_DIR_RTL)
@@ -919,6 +925,42 @@ void WhiskerMenu::Window::search()
 
 void WhiskerMenu::Window::update_layout()
 {
+	// Set enabled resize edges
+	for (int i = 0; i < 8; ++i)
+	{
+		gtk_widget_set_sensitive(m_resize[i]->get_widget(), false);
+	}
+	if (m_layout_left)
+	{
+		if (m_layout_bottom)
+		{
+			gtk_widget_set_sensitive(m_resize[Resizer::Top]->get_widget(), true);
+			gtk_widget_set_sensitive(m_resize[Resizer::TopRight]->get_widget(), true);
+			gtk_widget_set_sensitive(m_resize[Resizer::Right]->get_widget(), true);
+		}
+		else
+		{
+			gtk_widget_set_sensitive(m_resize[Resizer::Bottom]->get_widget(), true);
+			gtk_widget_set_sensitive(m_resize[Resizer::BottomRight]->get_widget(), true);
+			gtk_widget_set_sensitive(m_resize[Resizer::Right]->get_widget(), true);
+		}
+	}
+	else
+	{
+		if (m_layout_bottom)
+		{
+			gtk_widget_set_sensitive(m_resize[Resizer::Top]->get_widget(), true);
+			gtk_widget_set_sensitive(m_resize[Resizer::TopLeft]->get_widget(), true);
+			gtk_widget_set_sensitive(m_resize[Resizer::Left]->get_widget(), true);
+		}
+		else
+		{
+			gtk_widget_set_sensitive(m_resize[Resizer::Bottom]->get_widget(), true);
+			gtk_widget_set_sensitive(m_resize[Resizer::BottomLeft]->get_widget(), true);
+			gtk_widget_set_sensitive(m_resize[Resizer::Left]->get_widget(), true);
+		}
+	}
+
 	// Set vertical position of commands
 	g_object_ref(m_commands_box);
 	gtk_container_remove(GTK_CONTAINER(gtk_widget_get_parent(GTK_WIDGET(m_commands_box))), GTK_WIDGET(m_commands_box));
@@ -982,7 +1024,6 @@ void WhiskerMenu::Window::update_layout()
 
 		gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_profilepic->get_widget()), 0);
 		gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 1);
-		gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 2);
 
 		for (int i = 0; i < 9; ++i)
 		{
@@ -993,9 +1034,8 @@ void WhiskerMenu::Window::update_layout()
 	{
 		gtk_widget_set_halign(GTK_WIDGET(m_username), GTK_ALIGN_END);
 
-		gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_profilepic->get_widget()), 2);
-		gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 1);
-		gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 0);
+		gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_profilepic->get_widget()), 1);
+		gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 0);
 
 		for (int i = 0; i < 9; ++i)
 		{
@@ -1009,7 +1049,6 @@ void WhiskerMenu::Window::update_layout()
 		gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_profilepic->get_widget()), 0);
 		gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 1);
 		gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_commands_box), 2);
-		gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 3);
 
 		for (int i = 0; i < 9; ++i)
 		{
@@ -1020,10 +1059,9 @@ void WhiskerMenu::Window::update_layout()
 	{
 		gtk_widget_set_halign(GTK_WIDGET(m_username), GTK_ALIGN_END);
 
-		gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_profilepic->get_widget()), 3);
-		gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 2);
-		gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_commands_box), 1);
-		gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_resizer->get_widget()), 0);
+		gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_profilepic->get_widget()), 2);
+		gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 1);
+		gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_commands_box), 0);
 
 		for (int i = 0; i < 9; ++i)
 		{

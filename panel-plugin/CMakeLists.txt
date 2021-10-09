@@ -26,7 +26,7 @@ add_library(whiskermenu MODULE
 	query.cpp
 	recent-page.cpp
 	register-plugin.c
-	resize-grip.cpp
+	resizer.cpp
 	run-action.cpp
 	search-action.cpp
 	search-page.cpp

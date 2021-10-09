@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,10 +15,8 @@
  * along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef WHISKERMENU_RESIZE_GRIP_H
-#define WHISKERMENU_RESIZE_GRIP_H
-
-#include <vector>
+#ifndef WHISKERMENU_RESIZER_H
+#define WHISKERMENU_RESIZER_H
 
 #include <gtk/gtk.h>
 
@@ -27,45 +25,46 @@ namespace WhiskerMenu
 
 class Window;
 
-class ResizeGrip
+class Resizer
 {
 public:
-	explicit ResizeGrip(Window* window);
-	~ResizeGrip();
+	enum Edge
+	{
+		TopLeft = 0,
+		Top,
+		TopRight,
+		Left,
+		Right,
+		BottomLeft,
+		Bottom,
+		BottomRight
+	};
 
-	ResizeGrip(const ResizeGrip&) = delete;
-	ResizeGrip(ResizeGrip&&) = delete;
-	ResizeGrip& operator=(const ResizeGrip&) = delete;
-	ResizeGrip& operator=(ResizeGrip&&) = delete;
+	explicit Resizer(Edge edge, Window* window);
+	~Resizer();
+
+	Resizer(const Resizer&) = delete;
+	Resizer(Resizer&&) = delete;
+	Resizer& operator=(const Resizer&) = delete;
+	Resizer& operator=(Resizer&&) = delete;
 
 	GtkWidget* get_widget() const
 	{
 		return m_drawing;
 	}
 
-	enum Corner
-	{
-		TopLeft,
-		TopRight,
-		BottomLeft,
-		BottomRight
-	};
-	void set_corner(Corner corner);
-
 private:
 	gboolean on_button_press_event(GtkWidget*, GdkEvent* event);
 	gboolean on_enter_notify_event(GtkWidget* widget, GdkEvent*);
 	gboolean on_leave_notify_event(GtkWidget* widget, GdkEvent*);
-	gboolean on_draw_event(GtkWidget* widget, cairo_t* cr);
 
 private:
 	Window* m_window;
 	GtkWidget* m_drawing;
 	GdkCursor* m_cursor;
 	GdkWindowEdge m_edge;
-	std::vector<GdkPoint> m_shape;
 };
 
 }
 
-#endif // WHISKERMENU_RESIZE_GRIP_H
+#endif // WHISKERMENU_RESIZER_H

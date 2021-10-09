@@ -31,7 +31,7 @@ class FavoritesPage;
 class Page;
 class Plugin;
 class ProfilePicture;
-class ResizeGrip;
+class Resizer;
 class RecentPage;
 class SearchPage;
 
@@ -128,9 +128,10 @@ private:
 	GtkStackTransitionType m_search_cover;
 	GtkStackTransitionType m_search_uncover;
 
+	Resizer* m_resize[8];
+
 	ProfilePicture* m_profilepic;
 	GtkLabel* m_username;
-	ResizeGrip* m_resizer;
 
 	GtkWidget* m_commands_spacer;
 	GtkWidget* m_commands_button[9];
