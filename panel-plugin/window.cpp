@@ -188,7 +188,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	}
 
 	// Create box for packing username, commands, and resize widget
-	m_title_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0));
+	m_title_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 6));
 	gtk_box_pack_start(m_vbox, GTK_WIDGET(m_title_box), false, false, 0);
 	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_profilepic->get_widget()), false, false, 0);
 	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_username), true, true, 0);

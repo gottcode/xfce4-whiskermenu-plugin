@@ -35,8 +35,6 @@ ProfilePicture::ProfilePicture(Window* window) :
 
 	gtk_widget_set_halign(m_image, GTK_ALIGN_CENTER);
 	gtk_widget_set_valign(m_image, GTK_ALIGN_CENTER);
-	gtk_widget_set_margin_start(m_image, 10);
-	gtk_widget_set_margin_end(m_image, 10);
 
 	m_container = gtk_event_box_new();
 	gtk_event_box_set_visible_window(GTK_EVENT_BOX(m_container), false);
