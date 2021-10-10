@@ -20,6 +20,7 @@
 #include "command.h"
 #include "settings.h"
 #include "slot.h"
+#include "util.h"
 #include "window.h"
 
 #include <libxfce4panel/libxfce4panel.h>
@@ -46,6 +47,9 @@ Profile::Profile(Window* window) :
 
 	Command* command = wm_settings->command[Settings::CommandProfile];
 	gtk_widget_set_tooltip_text(m_container, command->get_tooltip());
+
+	m_username = gtk_label_new(nullptr);
+	gtk_widget_set_halign(m_username, GTK_ALIGN_START);
 
 #ifdef HAS_ACCOUNTSERVICE
 	m_act_user = nullptr;
@@ -98,6 +102,15 @@ void Profile::reset_tooltip()
 
 void Profile::init_fallback()
 {
+	// Load username
+	const gchar* name = g_get_real_name();
+	if (g_strcmp0(name, "Unknown") == 0)
+	{
+		name = g_get_user_name();
+	}
+	set_username(name);
+
+	// Load picture and monitor for changes
 	if (m_file_path)
 	{
 		g_free(m_file_path);
@@ -110,6 +123,15 @@ void Profile::init_fallback()
 	on_file_changed(m_file_monitor, nullptr, nullptr, G_FILE_MONITOR_EVENT_CHANGED);
 
 	g_object_unref(file);
+}
+
+//-----------------------------------------------------------------------------
+
+void Profile::set_username(const gchar* name)
+{
+	gchar* username = g_markup_printf_escaped("<b><big>%s</big></b>", name);
+	gtk_label_set_markup(GTK_LABEL(m_username), username);
+	g_free(username);
 }
 
 //-----------------------------------------------------------------------------
@@ -160,6 +182,15 @@ void Profile::on_user_changed(ActUserManager*, ActUser* user)
 		return;
 	}
 
+	// Load username
+	const char* name = act_user_get_real_name(user);
+	if (xfce_str_is_empty(name))
+	{
+		name = act_user_get_user_name(user);
+	}
+	set_username(name);
+
+	// Load picture
 	if (m_file_path)
 	{
 		g_free(m_file_path);
@@ -223,3 +254,4 @@ void Profile::on_button_press_event()
 }
 
 //-----------------------------------------------------------------------------
+

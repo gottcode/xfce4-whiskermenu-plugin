@@ -131,7 +131,6 @@ private:
 	Resizer* m_resize[8];
 
 	Profile* m_profile;
-	GtkLabel* m_username;
 
 	GtkWidget* m_commands_spacer;
 	GtkWidget* m_commands_button[9];

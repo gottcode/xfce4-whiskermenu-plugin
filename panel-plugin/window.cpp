@@ -111,20 +111,8 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	gtk_widget_set_sensitive(m_resize[Resizer::TopRight]->get_widget(), true);
 	gtk_widget_set_sensitive(m_resize[Resizer::Right]->get_widget(), true);
 
-	// Create the profile picture
+	// Create the profile picture and username label
 	m_profile = new Profile(this);
-
-	// Create the username label
-	const gchar* name = g_get_real_name();
-	if (g_strcmp0(name, "Unknown") == 0)
-	{
-		name = g_get_user_name();
-	}
-	gchar* username = g_markup_printf_escaped("<b><big>%s</big></b>", name);
-	m_username = GTK_LABEL(gtk_label_new(nullptr));
-	gtk_label_set_markup(m_username, username);
-	gtk_widget_set_halign(GTK_WIDGET(m_username), GTK_ALIGN_START);
-	g_free(username);
 
 	// Create action buttons
 	for (int i = 0; i < 9; ++i)
@@ -191,7 +179,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	m_title_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 6));
 	gtk_box_pack_start(m_vbox, GTK_WIDGET(m_title_box), false, false, 0);
 	gtk_box_pack_start(m_title_box, m_profile->get_picture(), false, false, 0);
-	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_username), true, true, 0);
+	gtk_box_pack_start(m_title_box, m_profile->get_username(), true, true, 0);
 	gtk_box_pack_start(m_title_box, GTK_WIDGET(m_commands_box), false, false, 0);
 
 	// Add search to layout
@@ -1020,10 +1008,10 @@ void WhiskerMenu::Window::update_layout()
 	// Arrange horizontal order of profile picture, username, resizer, and commands
 	if (m_layout_left && m_layout_commands_alternate)
 	{
-		gtk_widget_set_halign(GTK_WIDGET(m_username), GTK_ALIGN_START);
+		gtk_widget_set_halign(m_profile->get_username(), GTK_ALIGN_START);
 
 		gtk_box_reorder_child(m_title_box, m_profile->get_picture(), 0);
-		gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 1);
+		gtk_box_reorder_child(m_title_box, m_profile->get_username(), 1);
 
 		for (int i = 0; i < 9; ++i)
 		{
@@ -1032,10 +1020,10 @@ void WhiskerMenu::Window::update_layout()
 	}
 	else if (m_layout_commands_alternate)
 	{
-		gtk_widget_set_halign(GTK_WIDGET(m_username), GTK_ALIGN_END);
+		gtk_widget_set_halign(m_profile->get_username(), GTK_ALIGN_END);
 
 		gtk_box_reorder_child(m_title_box, m_profile->get_picture(), 1);
-		gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 0);
+		gtk_box_reorder_child(m_title_box, m_profile->get_username(), 0);
 
 		for (int i = 0; i < 9; ++i)
 		{
@@ -1044,10 +1032,10 @@ void WhiskerMenu::Window::update_layout()
 	}
 	else if (m_layout_left)
 	{
-		gtk_widget_set_halign(GTK_WIDGET(m_username), GTK_ALIGN_START);
+		gtk_widget_set_halign(m_profile->get_username(), GTK_ALIGN_START);
 
 		gtk_box_reorder_child(m_title_box, m_profile->get_picture(), 0);
-		gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 1);
+		gtk_box_reorder_child(m_title_box, m_profile->get_username(), 1);
 		gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_commands_box), 2);
 
 		for (int i = 0; i < 9; ++i)
@@ -1057,10 +1045,10 @@ void WhiskerMenu::Window::update_layout()
 	}
 	else
 	{
-		gtk_widget_set_halign(GTK_WIDGET(m_username), GTK_ALIGN_END);
+		gtk_widget_set_halign(m_profile->get_username(), GTK_ALIGN_END);
 
 		gtk_box_reorder_child(m_title_box, m_profile->get_picture(), 2);
-		gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_username), 1);
+		gtk_box_reorder_child(m_title_box, m_profile->get_username(), 1);
 		gtk_box_reorder_child(m_title_box, GTK_WIDGET(m_commands_box), 0);
 
 		for (int i = 0; i < 9; ++i)

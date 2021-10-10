@@ -45,10 +45,16 @@ public:
 		return m_container;
 	}
 
+	GtkWidget* get_username() const
+	{
+		return m_username;
+	}
+
 	void reset_tooltip();
 
 private:
 	void init_fallback();
+	void set_username(const gchar* name);
 	void update_profile_picture();
 #ifdef HAS_ACCOUNTSERVICE
 	void on_user_changed(ActUserManager* um, ActUser* user);
@@ -62,6 +68,7 @@ private:
 	Window* m_window;
 	GtkWidget* m_container;
 	GtkWidget* m_image;
+	GtkWidget* m_username;
 #ifdef HAS_ACCOUNTSERVICE
 	ActUserManager* m_act_user_manager;
 	ActUser* m_act_user;
