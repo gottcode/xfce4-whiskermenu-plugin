@@ -462,6 +462,10 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 	}
 #if LIBXFCE4PANEL_CHECK_VERSION(4,13,0)
 	gint icon_size = xfce_panel_plugin_get_icon_size(m_plugin);
+	if (!wm_settings->button_single_row)
+	{
+		icon_size *= xfce_panel_plugin_get_nrows(m_plugin);
+	}
 #else
 	GtkBorder padding, border;
 	GtkStyleContext* context = gtk_widget_get_style_context(m_button);
