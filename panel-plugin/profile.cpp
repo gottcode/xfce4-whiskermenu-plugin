@@ -15,7 +15,7 @@
  * along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "profile-picture.h"
+#include "profile.h"
 
 #include "command.h"
 #include "settings.h"
@@ -28,7 +28,7 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-ProfilePicture::ProfilePicture(Window* window) :
+Profile::Profile(Window* window) :
 	m_window(window),
 	m_file_monitor(nullptr),
 	m_file_path(nullptr)
@@ -41,7 +41,7 @@ ProfilePicture::ProfilePicture(Window* window) :
 	m_container = gtk_event_box_new();
 	gtk_event_box_set_visible_window(GTK_EVENT_BOX(m_container), false);
 	gtk_widget_add_events(m_container, GDK_BUTTON_PRESS_MASK);
-	g_signal_connect_slot<GtkWidget*, GdkEvent*>(m_container, "button-press-event", &ProfilePicture::on_button_press_event, this);
+	g_signal_connect_slot<GtkWidget*, GdkEvent*>(m_container, "button-press-event", &Profile::on_button_press_event, this);
 	gtk_container_add(GTK_CONTAINER(m_container), m_image);
 
 	Command* command = wm_settings->command[Settings::CommandProfile];
@@ -58,7 +58,7 @@ ProfilePicture::ProfilePicture(Window* window) :
 	}
 	else
 	{
-		g_signal_connect_slot(m_act_user_manager, "notify::is-loaded", &ProfilePicture::on_user_info_loaded, this);
+		g_signal_connect_slot(m_act_user_manager, "notify::is-loaded", &Profile::on_user_info_loaded, this);
 	}
 #else
 	init_fallback();
@@ -67,7 +67,7 @@ ProfilePicture::ProfilePicture(Window* window) :
 
 //-----------------------------------------------------------------------------
 
-ProfilePicture::~ProfilePicture()
+Profile::~Profile()
 {
 #ifdef HAS_ACCOUNTSERVICE
 	g_object_unref(m_act_user_manager);
@@ -88,7 +88,7 @@ ProfilePicture::~ProfilePicture()
 
 //-----------------------------------------------------------------------------
 
-void ProfilePicture::reset_tooltip()
+void Profile::reset_tooltip()
 {
 	Command* command = wm_settings->command[Settings::CommandProfile];
 	gtk_widget_set_has_tooltip(m_container, command->get_shown());
@@ -96,7 +96,7 @@ void ProfilePicture::reset_tooltip()
 
 //-----------------------------------------------------------------------------
 
-void ProfilePicture::init_fallback()
+void Profile::init_fallback()
 {
 	if (m_file_path)
 	{
@@ -106,7 +106,7 @@ void ProfilePicture::init_fallback()
 
 	GFile* file = g_file_new_for_path(m_file_path);
 	m_file_monitor = g_file_monitor_file(file, G_FILE_MONITOR_NONE, nullptr, nullptr);
-	g_signal_connect_slot(m_file_monitor, "changed", &ProfilePicture::on_file_changed, this);
+	g_signal_connect_slot(m_file_monitor, "changed", &Profile::on_file_changed, this);
 	on_file_changed(m_file_monitor, nullptr, nullptr, G_FILE_MONITOR_EVENT_CHANGED);
 
 	g_object_unref(file);
@@ -114,7 +114,7 @@ void ProfilePicture::init_fallback()
 
 //-----------------------------------------------------------------------------
 
-void ProfilePicture::update_profile_picture()
+void Profile::update_profile_picture()
 {
 	const gint scale = gtk_widget_get_scale_factor(m_image);
 	const gint size = 32;
@@ -153,7 +153,7 @@ void ProfilePicture::update_profile_picture()
 //-----------------------------------------------------------------------------
 
 #ifdef HAS_ACCOUNTSERVICE
-void ProfilePicture::on_user_changed(ActUserManager*, ActUser* user)
+void Profile::on_user_changed(ActUserManager*, ActUser* user)
 {
 	if (act_user_get_uid(user) != getuid())
 	{
@@ -172,14 +172,14 @@ void ProfilePicture::on_user_changed(ActUserManager*, ActUser* user)
 
 //-----------------------------------------------------------------------------
 
-void ProfilePicture::on_user_loaded(ActUser* user, GParamSpec*)
+void Profile::on_user_loaded(ActUser* user, GParamSpec*)
 {
 	on_user_changed(nullptr, user);
 }
 
 //-----------------------------------------------------------------------------
 
-void ProfilePicture::on_user_info_loaded(ActUserManager*, GParamSpec*)
+void Profile::on_user_info_loaded(ActUserManager*, GParamSpec*)
 {
 	if (act_user_manager_no_service(m_act_user_manager))
 	{
@@ -187,7 +187,7 @@ void ProfilePicture::on_user_info_loaded(ActUserManager*, GParamSpec*)
 		return;
 	}
 
-	g_signal_connect_slot(m_act_user_manager, "user-changed", &ProfilePicture::on_user_changed, this);
+	g_signal_connect_slot(m_act_user_manager, "user-changed", &Profile::on_user_changed, this);
 
 	m_act_user = act_user_manager_get_user_by_id(m_act_user_manager, getuid());
 	if (act_user_is_loaded(m_act_user))
@@ -196,21 +196,21 @@ void ProfilePicture::on_user_info_loaded(ActUserManager*, GParamSpec*)
 	}
 	else
 	{
-		g_signal_connect_slot(m_act_user, "notify::is-loaded", &ProfilePicture::on_user_loaded, this);
+		g_signal_connect_slot(m_act_user, "notify::is-loaded", &Profile::on_user_loaded, this);
 	}
 }
 #endif
 
 //-----------------------------------------------------------------------------
 
-void ProfilePicture::on_file_changed(GFileMonitor*, GFile*, GFile*, GFileMonitorEvent)
+void Profile::on_file_changed(GFileMonitor*, GFile*, GFile*, GFileMonitorEvent)
 {
 	update_profile_picture();
 }
 
 //-----------------------------------------------------------------------------
 
-void ProfilePicture::on_button_press_event()
+void Profile::on_button_press_event()
 {
 	Command* command = wm_settings->command[Settings::CommandProfile];
 	if (!command->get_shown())

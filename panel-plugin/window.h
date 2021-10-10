@@ -30,7 +30,7 @@ class CategoryButton;
 class FavoritesPage;
 class Page;
 class Plugin;
-class ProfilePicture;
+class Profile;
 class Resizer;
 class RecentPage;
 class SearchPage;
@@ -130,7 +130,7 @@ private:
 
 	Resizer* m_resize[8];
 
-	ProfilePicture* m_profilepic;
+	Profile* m_profile;
 	GtkLabel* m_username;
 
 	GtkWidget* m_commands_spacer;

@@ -15,8 +15,8 @@
  * along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef WHISKERMENU_PROFILE_PICTURE_H
-#define WHISKERMENU_PROFILE_PICTURE_H
+#ifndef WHISKERMENU_PROFILE_H
+#define WHISKERMENU_PROFILE_H
 
 #include <gtk/gtk.h>
 
@@ -29,18 +29,18 @@ namespace WhiskerMenu
 
 class Window;
 
-class ProfilePicture
+class Profile
 {
 public:
-	explicit ProfilePicture(Window* window);
-	~ProfilePicture();
+	explicit Profile(Window* window);
+	~Profile();
 
-	ProfilePicture(const ProfilePicture&) = delete;
-	ProfilePicture(ProfilePicture&&) = delete;
-	ProfilePicture& operator=(const ProfilePicture&) = delete;
-	ProfilePicture& operator=(ProfilePicture&&) = delete;
+	Profile(const Profile&) = delete;
+	Profile(Profile&&) = delete;
+	Profile& operator=(const Profile&) = delete;
+	Profile& operator=(Profile&&) = delete;
 
-	GtkWidget* get_widget() const
+	GtkWidget* get_picture() const
 	{
 		return m_container;
 	}
@@ -72,4 +72,4 @@ private:
 
 }
 
-#endif // WHISKERMENU_PROFILE_PICTURE_H
+#endif // WHISKERMENU_PROFILE_H

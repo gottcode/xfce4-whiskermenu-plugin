@@ -23,7 +23,7 @@ add_library(whiskermenu MODULE
 	launcher-tree-view.cpp
 	page.cpp
 	plugin.cpp
-	profile-picture.cpp
+	profile.cpp
 	query.cpp
 	recent-page.cpp
 	register-plugin.c
