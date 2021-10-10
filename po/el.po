@@ -1,5 +1,5 @@
 # Greek translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2020 Graeme Gott
+# Copyright (C) 2021 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 #
 # Translators:
@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-19 19:33-0500\n"
-"PO-Revision-Date: 2021-01-12 15:48+0000\n"
+"POT-Creation-Date: 2021-03-11 10:52-0500\n"
+"PO-Revision-Date: 2021-10-10 07:40+0000\n"
 "Last-Translator: Ioannis LM\n"
 "Language-Team: Greek (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/el/)\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/settings-dialog.cpp:1060
+#: ../panel-plugin/settings-dialog.cpp:1075
 msgid "Add action"
 msgstr "Προσθήκη ενέργειας"
 
@@ -43,7 +43,7 @@ msgid "Add to Panel"
 msgstr "Προσθήκη στο ταμπλό"
 
 #: ../panel-plugin/applications-page.cpp:40 ../panel-plugin/category.cpp:51
-#: ../panel-plugin/settings-dialog.cpp:908
+#: ../panel-plugin/settings-dialog.cpp:917
 msgid "All Applications"
 msgstr "Όλες οι εφαρμογές"
 
@@ -51,36 +51,36 @@ msgstr "Όλες οι εφαρμογές"
 msgid "Alternate application launcher for Xfce"
 msgstr "Εναλλακτικός εκκινητής εφαρμογών για το Xfce"
 
-#: ../panel-plugin/settings-dialog.cpp:957
+#: ../panel-plugin/settings-dialog.cpp:972
 msgid "Amount of _items:"
 msgstr "Σύνολο _αντικειμένων:"
 
-#: ../panel-plugin/settings-dialog.cpp:763
+#: ../panel-plugin/settings-dialog.cpp:772
 msgid "Application icon si_ze:"
 msgstr "Μέγεθος εικονιδίων _εφαρμογών:"
 
-#: ../panel-plugin/settings.cpp:90
+#: ../panel-plugin/settings.cpp:109
 msgid "Applications"
 msgstr "Εφαρμογές"
 
-#: ../panel-plugin/launcher.cpp:279
+#: ../panel-plugin/launcher.cpp:277
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
 msgstr "Θέλετε σίγουρα να αποκρύψετε την \"%s\";"
 
-#: ../panel-plugin/settings.cpp:158
+#: ../panel-plugin/settings.cpp:185
 msgid "Are you sure you want to log out?"
 msgstr "Θέλετε σίγουρα αποσύνδεση;"
 
-#: ../panel-plugin/settings.cpp:164
+#: ../panel-plugin/settings.cpp:191
 msgid "Are you sure you want to restart?"
 msgstr "Θέλετε σίγουρα επανεκκίνηση;"
 
-#: ../panel-plugin/settings.cpp:170
+#: ../panel-plugin/settings.cpp:197
 msgid "Are you sure you want to shut down?"
 msgstr "Θέλετε σίγουρα τερματισμό;"
 
-#: ../panel-plugin/settings-dialog.cpp:803
+#: ../panel-plugin/settings-dialog.cpp:812
 msgid "Background opacit_y:"
 msgstr "Αδιαφάνεια παρασκη_νίου:"
 
@@ -88,11 +88,11 @@ msgstr "Αδιαφάνεια παρασκη_νίου:"
 msgid "Browse the file system to choose a custom command."
 msgstr "Περιήγηση του συστήματος αρχείων για την επιλογή μιας εντολής."
 
-#: ../panel-plugin/settings-dialog.cpp:1117
+#: ../panel-plugin/settings-dialog.cpp:1132
 msgid "C_ommand:"
 msgstr "_Εντολή:"
 
-#: ../panel-plugin/settings-dialog.cpp:781
+#: ../panel-plugin/settings-dialog.cpp:790
 msgid "Categ_ory icon size:"
 msgstr "Μέγεθος εικονιδίων _κατηγοριών:"
 
@@ -101,26 +101,26 @@ msgid "Clear Recently Used"
 msgstr "Εκκαθάριση πρόσφατα χρησιμοποιημένων"
 
 #: ../panel-plugin/plugin.cpp:439
-msgid "Copyright © 2013-2020 Graeme Gott"
-msgstr "Πνευματικά δικαιώματα © 2013-2020 Graeme Gott"
+msgid "Copyright © 2013-2021 Graeme Gott"
+msgstr "Πνευματικά δικαιώματα © 2013-2021 Graeme Gott"
 
-#: ../panel-plugin/settings-dialog.cpp:895
+#: ../panel-plugin/settings-dialog.cpp:904
 msgid "Default Category"
 msgstr "Προεπιλεγμένη κατηγορία"
 
-#: ../panel-plugin/settings-dialog.cpp:1088
+#: ../panel-plugin/settings-dialog.cpp:1103
 msgid "Details"
 msgstr "Λεπτομέρειες"
 
-#: ../panel-plugin/settings-dialog.cpp:833
+#: ../panel-plugin/settings-dialog.cpp:842
 msgid "Di_splay:"
 msgstr "Εμ_φάνιση:"
 
-#: ../panel-plugin/settings.cpp:176
+#: ../panel-plugin/settings.cpp:203
 msgid "Do you want to suspend to RAM?"
 msgstr "Θέλετε αναστολή στη RAM;"
 
-#: ../panel-plugin/settings.cpp:182
+#: ../panel-plugin/settings.cpp:209
 msgid "Do you want to suspend to disk?"
 msgstr "Θέλετε αδρανοποίηση στο δίσκο;"
 
@@ -128,79 +128,78 @@ msgstr "Θέλετε αδρανοποίηση στο δίσκο;"
 msgid "Edit Application..."
 msgstr "Επεξεργασία εφαρμογής..."
 
-#: ../panel-plugin/settings.cpp:193
+#: ../panel-plugin/settings.cpp:220
 msgid "Edit _Profile"
 msgstr "Επε_ξεργασία προφίλ"
 
-#: ../panel-plugin/settings.cpp:195
+#: ../panel-plugin/settings.cpp:222
 msgid "Failed to edit profile."
 msgstr "Η επεξεργασία του προφίλ απέτυχε."
 
-#: ../panel-plugin/launcher.cpp:333 ../panel-plugin/launcher.cpp:382
-#: ../panel-plugin/run-action.cpp:56 ../panel-plugin/search-action.cpp:202
+#: ../panel-plugin/element.cpp:106
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "Αποτυχία εκτέλεσης της εντολής \"%s\"."
 
-#: ../panel-plugin/settings.cpp:181
+#: ../panel-plugin/settings.cpp:208
 msgid "Failed to hibernate."
 msgstr "Αποτυχία αδρανοποίησης."
 
-#: ../panel-plugin/settings.cpp:191
+#: ../panel-plugin/settings.cpp:218
 msgid "Failed to launch menu editor."
 msgstr "Αποτυχία εκτέλεσης του επεξεργαστή μενού."
 
-#: ../panel-plugin/settings.cpp:149
+#: ../panel-plugin/settings.cpp:176
 msgid "Failed to lock screen."
 msgstr "Αποτυχία κλειδώματος οθόνης."
 
-#: ../panel-plugin/settings.cpp:157 ../panel-plugin/settings.cpp:187
+#: ../panel-plugin/settings.cpp:184 ../panel-plugin/settings.cpp:214
 msgid "Failed to log out."
 msgstr "Αποτυχία αποσύνδεσης."
 
-#: ../panel-plugin/settings.cpp:145
+#: ../panel-plugin/settings.cpp:172
 msgid "Failed to open settings manager."
 msgstr "Αποτυχία εκκίνησης του διαχειριστή ρυθμίσεων."
 
-#: ../panel-plugin/settings.cpp:163
+#: ../panel-plugin/settings.cpp:190
 msgid "Failed to restart."
 msgstr "Αποτυχία επανεκκίνησης."
 
-#: ../panel-plugin/settings.cpp:169
+#: ../panel-plugin/settings.cpp:196
 msgid "Failed to shut down."
 msgstr "Αποτυχία τερματισμού."
 
-#: ../panel-plugin/settings.cpp:175
+#: ../panel-plugin/settings.cpp:202
 msgid "Failed to suspend."
 msgstr "Αποτυχία αναστολής."
 
-#: ../panel-plugin/settings.cpp:153
+#: ../panel-plugin/settings.cpp:180
 msgid "Failed to switch user."
 msgstr "Αποτυχία αλλαγής χρήστη."
 
 #: ../panel-plugin/favorites-page.cpp:37
-#: ../panel-plugin/settings-dialog.cpp:899
+#: ../panel-plugin/settings-dialog.cpp:908
 msgid "Favorites"
 msgstr "Αγαπημένα"
 
-#: ../panel-plugin/settings.cpp:183
+#: ../panel-plugin/settings.cpp:210
 #, c-format
 msgid "Hibernating computer in %d seconds."
 msgstr "Αδρανοποίηση υπολογιστή σε %d δευτερόλεπτα."
 
-#: ../panel-plugin/launcher.cpp:278 ../panel-plugin/page.cpp:430
+#: ../panel-plugin/launcher.cpp:276 ../panel-plugin/page.cpp:430
 msgid "Hide Application"
 msgstr "Απόκρυψη εφαρμογής"
 
-#: ../panel-plugin/settings-dialog.cpp:838
+#: ../panel-plugin/settings-dialog.cpp:847
 msgid "Icon"
 msgstr "Εικονίδιο"
 
-#: ../panel-plugin/settings-dialog.cpp:840
+#: ../panel-plugin/settings-dialog.cpp:849
 msgid "Icon and title"
 msgstr "Εικονίδιο και τίτλος"
 
-#: ../panel-plugin/settings-dialog.cpp:968
+#: ../panel-plugin/settings-dialog.cpp:983
 msgid "Include _favorites"
 msgstr "Συμπερίληψη α_γαπημένων"
 
@@ -212,32 +211,32 @@ msgstr "Μεγάλα"
 msgid "Larger"
 msgstr "Μεγαλύτερα"
 
-#: ../panel-plugin/settings.cpp:185
+#: ../panel-plugin/settings.cpp:212
 msgid "Log Ou_t..."
 msgstr "Αποσύν_δεση..."
 
-#: ../panel-plugin/settings.cpp:155
+#: ../panel-plugin/settings.cpp:182
 msgid "Log _Out"
 msgstr "_Αποσύνδεση"
 
-#: ../panel-plugin/settings.cpp:159
+#: ../panel-plugin/settings.cpp:186
 #, c-format
 msgid "Logging out in %d seconds."
 msgstr "Αποσύνδεση σε %d δευτερόλεπτα."
 
-#: ../panel-plugin/settings.cpp:131
+#: ../panel-plugin/settings.cpp:158
 msgid "Man Pages"
 msgstr "Σελίδες εγχειριδίων"
 
-#: ../panel-plugin/settings-dialog.cpp:932
+#: ../panel-plugin/settings-dialog.cpp:941
 msgid "Menu"
 msgstr "Μενού"
 
-#: ../panel-plugin/settings-dialog.cpp:1092
+#: ../panel-plugin/settings-dialog.cpp:1107
 msgid "Nam_e:"
 msgstr "Ό_νομα:"
 
-#: ../panel-plugin/settings-dialog.cpp:1038
+#: ../panel-plugin/settings-dialog.cpp:1053
 msgid "Name"
 msgstr "Όνομα"
 
@@ -249,32 +248,32 @@ msgstr "Κανένα"
 msgid "Normal"
 msgstr "Κανονικά"
 
-#: ../panel-plugin/settings.cpp:135
+#: ../panel-plugin/settings.cpp:162
 msgid "Open URI"
 msgstr "Άνοιγμα URI"
 
-#: ../panel-plugin/settings-dialog.cpp:1043
+#: ../panel-plugin/settings-dialog.cpp:1058
 msgid "Pattern"
 msgstr "Σχέδιο"
 
-#: ../panel-plugin/settings-dialog.cpp:747
+#: ../panel-plugin/settings-dialog.cpp:756
 msgid "Position _search entry next to panel button"
 msgstr "Τοποθέτηση του πεδίου εύ_ρεσης δίπλα στο κουμπί του ταμπλό"
 
-#: ../panel-plugin/settings-dialog.cpp:741
+#: ../panel-plugin/settings-dialog.cpp:750
 msgid "Position cate_gories next to panel button"
 msgstr "Τοποθέτηση των κατη_γοριών δίπλα στο κουμπί του ταμπλό"
 
-#: ../panel-plugin/settings-dialog.cpp:753
+#: ../panel-plugin/settings-dialog.cpp:762
 msgid "Position commands next to search _entry"
 msgstr "Τοποθέτηση των εντολών δίπ_λα στο πεδίο εύρεσης"
 
-#: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:903
-#: ../panel-plugin/settings-dialog.cpp:953
+#: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:912
+#: ../panel-plugin/settings-dialog.cpp:968
 msgid "Recently Used"
 msgstr "Πρόσφατα"
 
-#: ../panel-plugin/settings-dialog.cpp:537
+#: ../panel-plugin/settings-dialog.cpp:546
 #, c-format
 msgid "Remove action \"%s\"?"
 msgstr "Αφαίρεση της ενέργειας \"%s\";"
@@ -283,21 +282,21 @@ msgstr "Αφαίρεση της ενέργειας \"%s\";"
 msgid "Remove from Favorites"
 msgstr "Αφαίρεση από τα αγαπημένα"
 
-#: ../panel-plugin/settings-dialog.cpp:1069
+#: ../panel-plugin/settings-dialog.cpp:1084
 msgid "Remove selected action"
 msgstr "Αφαίρεση της επιλεγμένης ενέργειας"
 
-#: ../panel-plugin/settings.cpp:165
+#: ../panel-plugin/settings.cpp:192
 #, c-format
 msgid "Restarting computer in %d seconds."
 msgstr "Επανεκκίνηση υπολογιστή σε %d δευτερόλεπτα."
 
-#: ../panel-plugin/run-action.cpp:86
+#: ../panel-plugin/run-action.cpp:64
 #, c-format
 msgid "Run %s"
 msgstr "Εκτέλεση του %s"
 
-#: ../panel-plugin/settings.cpp:134
+#: ../panel-plugin/settings.cpp:161
 msgid "Run in Terminal"
 msgstr "Εκτέλεση σε τερματικό"
 
@@ -305,7 +304,7 @@ msgstr "Εκτέλεση σε τερματικό"
 msgid "Search Actio_ns"
 msgstr "Ενέργειες ανα_ζήτησης"
 
-#: ../panel-plugin/search-action.cpp:273
+#: ../panel-plugin/search-action.cpp:251
 msgid "Search Action"
 msgstr "Αναζήτηση ενέργειας"
 
@@ -317,7 +316,7 @@ msgstr "Επιλογή εντολής"
 msgid "Select an Icon"
 msgstr "Επιλέξτε εικονίδιο"
 
-#: ../panel-plugin/settings-dialog.cpp:976
+#: ../panel-plugin/settings-dialog.cpp:991
 msgid "Session Commands"
 msgstr "Εντολές συνεδρίας"
 
@@ -325,39 +324,39 @@ msgstr "Εντολές συνεδρίας"
 msgid "Show a menu to easily access installed applications"
 msgstr "Εμφάνιση μενού για εύκολη πρόσβαση στις εγκατεστημένες εφαρμογές"
 
-#: ../panel-plugin/settings-dialog.cpp:730
+#: ../panel-plugin/settings-dialog.cpp:739
 msgid "Show application _descriptions"
 msgstr "Εμφάνιση _περιγραφής εφαρμογών"
 
-#: ../panel-plugin/settings-dialog.cpp:724
+#: ../panel-plugin/settings-dialog.cpp:733
 msgid "Show application too_ltips"
 msgstr "Εμφάνιση αναδυόμενης συμ_βουλής εφαρμογών"
 
-#: ../panel-plugin/settings-dialog.cpp:638
+#: ../panel-plugin/settings-dialog.cpp:647
 msgid "Show as _icons"
 msgstr "Εμφάνιση _εικονιδίων"
 
-#: ../panel-plugin/settings-dialog.cpp:655
+#: ../panel-plugin/settings-dialog.cpp:664
 msgid "Show as lis_t"
 msgstr "Εμφάνιση _λίστας"
 
-#: ../panel-plugin/settings-dialog.cpp:673
+#: ../panel-plugin/settings-dialog.cpp:682
 msgid "Show as t_ree"
 msgstr "Εμφάνιση _δομής"
 
-#: ../panel-plugin/settings-dialog.cpp:980
+#: ../panel-plugin/settings-dialog.cpp:995
 msgid "Show c_onfirmation dialog"
 msgstr "Εμφάνιση διαλόγου επι_βεβαίωσης"
 
-#: ../panel-plugin/settings-dialog.cpp:717
+#: ../panel-plugin/settings-dialog.cpp:726
 msgid "Show cate_gory names"
 msgstr "Εμφάνιση ονομάτων _κατηγοριών"
 
-#: ../panel-plugin/settings-dialog.cpp:711
+#: ../panel-plugin/settings-dialog.cpp:720
 msgid "Show generic application _names"
 msgstr "Εμφάνιση γενικών _ονομάτων εφαρμογών"
 
-#: ../panel-plugin/settings.cpp:167
+#: ../panel-plugin/settings.cpp:194
 msgid "Shut _Down"
 msgstr "_Τερματισμός"
 
@@ -377,43 +376,47 @@ msgstr "Αλφαβητική ταξινόμηση Α-Ω"
 msgid "Sort Alphabetically Z-A"
 msgstr "Αλφαβητική ταξινόμηση Ω-Α"
 
-#: ../panel-plugin/settings-dialog.cpp:942
+#: ../panel-plugin/settings-dialog.cpp:957
+msgid "Sort ca_tegories"
+msgstr "Ταξινόμηση κα_τηγοριών"
+
+#: ../panel-plugin/settings-dialog.cpp:951
 msgid "Stay _visible when focus is lost"
 msgstr "Εμ_φάνιση όταν χάνεται η εστίαση"
 
-#: ../panel-plugin/settings.cpp:173
+#: ../panel-plugin/settings.cpp:200
 msgid "Suspe_nd"
 msgstr "Αναστο_λή"
 
-#: ../panel-plugin/settings.cpp:177
+#: ../panel-plugin/settings.cpp:204
 #, c-format
 msgid "Suspending computer in %d seconds."
 msgstr "Αναστολή υπολογιστή σε %d δευτερόλεπτα."
 
-#: ../panel-plugin/settings.cpp:151
+#: ../panel-plugin/settings.cpp:178
 msgid "Switch _User"
 msgstr "Αλλαγή _χρήστη"
 
-#: ../panel-plugin/settings-dialog.cpp:936
+#: ../panel-plugin/settings-dialog.cpp:945
 msgid "Switch categories by _hovering"
 msgstr "Αλλαγή κατηγοριών στο _πέρασμα του ποντικιού"
 
-#: ../panel-plugin/settings-dialog.cpp:536
+#: ../panel-plugin/settings-dialog.cpp:545
 msgid "The action will be deleted permanently."
 msgstr "Αυτή η ενέργεια θα διαγραφεί μόνιμα"
 
-#: ../panel-plugin/settings-dialog.cpp:839
+#: ../panel-plugin/settings-dialog.cpp:848
 msgid "Title"
 msgstr "Τίτλος"
 
-#: ../panel-plugin/launcher.cpp:273
+#: ../panel-plugin/launcher.cpp:271
 #, c-format
 msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
 msgstr "Για να την επαναφέρετε πρέπει να διαγράψετε το αρχείο \"%s\" ή να ανοίξετε το αρχείο και να αφαιρέσετε τη γραμμή \"%s\"."
 
-#: ../panel-plugin/settings.cpp:171
+#: ../panel-plugin/settings.cpp:198
 #, c-format
 msgid "Turning off computer in %d seconds."
 msgstr "Τερματισμός υπολογιστή σε %d δευτερόλεπτα."
@@ -426,16 +429,16 @@ msgstr "Απέτυχε η προσθήκη εκκινητή στην επιφά�
 msgid "Unable to add launcher to panel."
 msgstr "Απέτυχε η προσθήκη εκκινητή στο ταμπλό."
 
-#: ../panel-plugin/page.cpp:567
+#: ../panel-plugin/page.cpp:566
 msgid "Unable to edit launcher."
 msgstr "Απέτυχε η επεξεργασία εκκινητή."
 
-#: ../panel-plugin/settings-dialog.cpp:597
+#: ../panel-plugin/settings-dialog.cpp:606
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Αδύνατο να ανοίξει ο ακόλουθος σύνδεσμος: %s"
 
-#: ../panel-plugin/settings-dialog.cpp:874
+#: ../panel-plugin/settings-dialog.cpp:883
 msgid "Use a single _panel row"
 msgstr "Χρήση μόνο μιας _γραμμής στο ταμπλό"
 
@@ -447,7 +450,7 @@ msgstr "Πολύ μεγάλα"
 msgid "Very Small"
 msgstr "Πολύ μικρά"
 
-#: ../panel-plugin/settings.cpp:132
+#: ../panel-plugin/settings.cpp:159
 msgid "Web Search"
 msgstr "Αναζήτηση στο διαδίκτυο"
 
@@ -457,7 +460,7 @@ msgstr "Αναζήτηση στο διαδίκτυο"
 msgid "Whisker Menu"
 msgstr "Μενού Whisker"
 
-#: ../panel-plugin/settings.cpp:133
+#: ../panel-plugin/settings.cpp:160
 msgid "Wikipedia"
 msgstr "Wikipedia"
 
@@ -482,11 +485,11 @@ msgstr "_Κλείσιμο"
 msgid "_Commands"
 msgstr "Ε_ντολές"
 
-#: ../panel-plugin/settings-dialog.cpp:535
+#: ../panel-plugin/settings-dialog.cpp:544
 msgid "_Delete"
 msgstr "_Διαγραφή"
 
-#: ../panel-plugin/settings.cpp:189
+#: ../panel-plugin/settings.cpp:216
 msgid "_Edit Applications"
 msgstr "Ε_πεξεργασία εφαρμογών"
 
@@ -495,15 +498,15 @@ msgstr "Ε_πεξεργασία εφαρμογών"
 msgid "_Help"
 msgstr "_Βοήθεια"
 
-#: ../panel-plugin/settings.cpp:179
+#: ../panel-plugin/settings.cpp:206
 msgid "_Hibernate"
 msgstr "Α_δρανοποίηση"
 
-#: ../panel-plugin/settings-dialog.cpp:861
+#: ../panel-plugin/settings-dialog.cpp:870
 msgid "_Icon:"
 msgstr "_Εικονίδιο:"
 
-#: ../panel-plugin/settings.cpp:147
+#: ../panel-plugin/settings.cpp:174
 msgid "_Lock Screen"
 msgstr "Κ_λείδωμα οθόνης"
 
@@ -515,23 +518,23 @@ msgstr "_Εντάξει"
 msgid "_Panel Button"
 msgstr "Κουμπί ταμπλό"
 
-#: ../panel-plugin/settings-dialog.cpp:1105
+#: ../panel-plugin/settings-dialog.cpp:1120
 msgid "_Pattern:"
 msgstr "Σ_χέδιο:"
 
-#: ../panel-plugin/settings-dialog.cpp:1129
+#: ../panel-plugin/settings-dialog.cpp:1144
 msgid "_Regular expression"
 msgstr "_Κανονική έκφραση"
 
-#: ../panel-plugin/settings.cpp:161
+#: ../panel-plugin/settings.cpp:188
 msgid "_Restart"
 msgstr "Επανεκκ_ίνηση"
 
-#: ../panel-plugin/settings.cpp:143
+#: ../panel-plugin/settings.cpp:170
 msgid "_Settings Manager"
 msgstr "_Διαχειριστής ρυθμίσεων"
 
-#: ../panel-plugin/settings-dialog.cpp:849
+#: ../panel-plugin/settings-dialog.cpp:858
 msgid "_Title:"
 msgstr "_Τίτλος:"
 
