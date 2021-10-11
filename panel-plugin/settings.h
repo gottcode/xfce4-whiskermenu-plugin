@@ -95,6 +95,8 @@ public:
 	bool position_categories_horizontal;
 	bool stay_on_focus_out;
 
+	int profile_shape;
+
 	enum Commands
 	{
 		CommandSettings = 0,

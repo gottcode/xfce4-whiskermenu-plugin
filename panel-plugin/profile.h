@@ -52,10 +52,11 @@ public:
 
 	void reset_tooltip();
 
+	void update_picture();
+
 private:
 	void init_fallback();
 	void set_username(const gchar* name);
-	void update_profile_picture();
 #ifdef HAS_ACCOUNTSERVICE
 	void on_user_changed(ActUserManager* um, ActUser* user);
 	void on_user_loaded(ActUser* user, GParamSpec* param);

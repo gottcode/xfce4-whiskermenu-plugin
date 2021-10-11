@@ -53,6 +53,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	m_layout_categories_alternate(false),
 	m_layout_search_alternate(false),
 	m_layout_commands_alternate(false),
+	m_profile_shape(0),
 	m_supports_alpha(false),
 	m_child_has_focus(false)
 {
@@ -444,7 +445,8 @@ void WhiskerMenu::Window::show(const Position position)
 			|| (m_layout_categories_horizontal != wm_settings->position_categories_horizontal)
 			|| (m_layout_categories_alternate != wm_settings->position_categories_alternate)
 			|| (m_layout_search_alternate != wm_settings->position_search_alternate)
-			|| (m_layout_commands_alternate != wm_settings->position_commands_alternate))
+			|| (m_layout_commands_alternate != wm_settings->position_commands_alternate)
+			|| (m_profile_shape != wm_settings->profile_shape))
 	{
 		m_layout_left = layout_left;
 		m_layout_bottom = layout_bottom;
@@ -452,6 +454,8 @@ void WhiskerMenu::Window::show(const Position position)
 		m_layout_categories_alternate = wm_settings->position_categories_alternate;
 		m_layout_search_alternate = wm_settings->position_search_alternate;
 		m_layout_commands_alternate = wm_settings->position_commands_alternate;
+		m_profile->update_picture();
+		m_profile_shape = wm_settings->profile_shape;
 		update_layout();
 	}
 
@@ -1005,7 +1009,21 @@ void WhiskerMenu::Window::update_layout()
 	}
 	g_object_unref(m_category_buttons);
 
-	// Arrange horizontal order of profile picture, username, resizer, and commands
+	// Handle showing username and profile
+	if (m_profile_shape < 2)
+	{
+		gtk_widget_set_visible(m_profile->get_picture(), true);
+		gtk_widget_set_visible(m_profile->get_username(), true);
+		gtk_widget_set_visible(GTK_WIDGET(m_title_box), true);
+	}
+	else
+	{
+		gtk_widget_set_visible(m_profile->get_picture(), false);
+		gtk_widget_set_visible(m_profile->get_username(), false);
+		gtk_widget_set_visible(GTK_WIDGET(m_title_box), !m_layout_categories_alternate);
+	}
+
+	// Arrange horizontal order of profile picture, username, and commands
 	if (m_layout_left && m_layout_commands_alternate)
 	{
 		gtk_widget_set_halign(m_profile->get_username(), GTK_ALIGN_START);

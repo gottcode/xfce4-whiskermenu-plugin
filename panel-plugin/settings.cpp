@@ -153,6 +153,8 @@ Settings::Settings() :
 	position_categories_horizontal(true),
 	stay_on_focus_out(false),
 
+	profile_shape(0),
+
 	confirm_session_command(true),
 
 	search_actions {
@@ -321,6 +323,8 @@ void Settings::load(gchar* file)
 	position_categories_alternate = xfce_rc_read_bool_entry(rc, "position-categories-alternate", position_categories_alternate);
 	stay_on_focus_out = xfce_rc_read_bool_entry(rc, "stay-on-focus-out", stay_on_focus_out);
 
+	profile_shape = CLAMP(xfce_rc_read_int_entry(rc, "profile-shape", profile_shape), 0, 2);
+
 	if (xfce_rc_has_entry(rc, "position-categories-horizontal"))
 	{
 		position_categories_horizontal = xfce_rc_read_bool_entry(rc, "position-categories-horizontal", position_categories_horizontal);
@@ -442,6 +446,8 @@ void Settings::save(gchar* file)
 	xfce_rc_write_bool_entry(rc, "position-categories-alternate", position_categories_alternate);
 	xfce_rc_write_bool_entry(rc, "position-categories-horizontal", position_categories_horizontal);
 	xfce_rc_write_bool_entry(rc, "stay-on-focus-out", stay_on_focus_out);
+
+	xfce_rc_write_int_entry(rc, "profile-shape", profile_shape);
 
 	xfce_rc_write_bool_entry(rc, "confirm-session-command", confirm_session_command);
 

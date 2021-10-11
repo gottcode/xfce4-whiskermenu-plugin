@@ -260,6 +260,14 @@ void SettingsDialog::toggle_position_commands_alternate(GtkToggleButton* button)
 
 //-----------------------------------------------------------------------------
 
+void SettingsDialog::profile_shape_changed(GtkComboBox* combo)
+{
+	wm_settings->profile_shape = gtk_combo_box_get_active(combo);
+	wm_settings->set_modified();
+}
+
+//-----------------------------------------------------------------------------
+
 void SettingsDialog::category_icon_size_changed(GtkComboBox* combo)
 {
 	wm_settings->category_icon_size = gtk_combo_box_get_active(combo) - 1;
@@ -784,10 +792,31 @@ GtkWidget* SettingsDialog::init_appearance_tab()
 	gtk_widget_set_margin_bottom(m_position_commands_alternate, 12);
 
 
-	// Add item icon size selector
-	GtkWidget* label = gtk_label_new_with_mnemonic(_("Application icon si_ze:"));
-	gtk_widget_set_halign(label, GTK_ALIGN_START);
+	// Add profile shape selector
+	GtkWidget* label = gtk_label_new_with_mnemonic(_("P_rofile:"));
+	gtk_widget_set_halign(label, GTK_ALIGN_END);
 	gtk_grid_attach(page, label, 0, 9, 1, 1);
+
+	m_profile_shape = gtk_combo_box_text_new();
+	gtk_widget_set_halign(m_profile_shape, GTK_ALIGN_START);
+	gtk_widget_set_hexpand(m_profile_shape, false);
+	gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_profile_shape), _("Round Picture"));
+	gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_profile_shape), _("Square Picture"));
+	gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_profile_shape), _("Hidden"));
+	gtk_combo_box_set_active(GTK_COMBO_BOX(m_profile_shape), wm_settings->profile_shape);
+	gtk_grid_attach(page, m_profile_shape, 1, 9, 1, 1);
+	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_profile_shape);
+	g_signal_connect_slot(m_profile_shape, "changed", &SettingsDialog::profile_shape_changed, this);
+
+	// Add space beneath options
+	gtk_widget_set_margin_bottom(label, 12);
+	gtk_widget_set_margin_bottom(m_profile_shape, 12);
+
+
+	// Add item icon size selector
+	label = gtk_label_new_with_mnemonic(_("Application icon si_ze:"));
+	gtk_widget_set_halign(label, GTK_ALIGN_START);
+	gtk_grid_attach(page, label, 0, 10, 1, 1);
 
 	m_item_icon_size = gtk_combo_box_text_new();
 	gtk_widget_set_halign(m_item_icon_size, GTK_ALIGN_START);
@@ -798,14 +827,14 @@ GtkWidget* SettingsDialog::init_appearance_tab()
 		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_item_icon_size), icon_size.c_str());
 	}
 	gtk_combo_box_set_active(GTK_COMBO_BOX(m_item_icon_size), wm_settings->launcher_icon_size + 1);
-	gtk_grid_attach(page, m_item_icon_size, 1, 9, 1, 1);
+	gtk_grid_attach(page, m_item_icon_size, 1, 10, 1, 1);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_item_icon_size);
 	g_signal_connect_slot(m_item_icon_size, "changed", &SettingsDialog::item_icon_size_changed, this);
 
 	// Add category icon size selector
 	label = gtk_label_new_with_mnemonic(_("Categ_ory icon size:"));
 	gtk_widget_set_halign(label, GTK_ALIGN_START);
-	gtk_grid_attach(page, label, 0, 10, 1, 1);
+	gtk_grid_attach(page, label, 0, 11, 1, 1);
 
 	m_category_icon_size = gtk_combo_box_text_new();
 	gtk_widget_set_halign(m_category_icon_size, GTK_ALIGN_START);
@@ -815,7 +844,7 @@ GtkWidget* SettingsDialog::init_appearance_tab()
 		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_category_icon_size), icon_size.c_str());
 	}
 	gtk_combo_box_set_active(GTK_COMBO_BOX(m_category_icon_size), wm_settings->category_icon_size + 1);
-	gtk_grid_attach(page, m_category_icon_size, 1, 10, 1, 1);
+	gtk_grid_attach(page, m_category_icon_size, 1, 11, 1, 1);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_category_icon_size);
 	g_signal_connect_slot(m_category_icon_size, "changed", &SettingsDialog::category_icon_size_changed, this);
 
@@ -827,11 +856,11 @@ GtkWidget* SettingsDialog::init_appearance_tab()
 	// Add option to control background opacity
 	label = gtk_label_new_with_mnemonic(_("Background opacit_y:"));
 	gtk_widget_set_halign(label, GTK_ALIGN_START);
-	gtk_grid_attach(page, label, 0, 11, 1, 1);
+	gtk_grid_attach(page, label, 0, 12, 1, 1);
 
 	m_background_opacity = gtk_scale_new_with_range(GTK_ORIENTATION_HORIZONTAL, 0.0, 100.0, 1.0);
 	gtk_widget_set_hexpand(GTK_WIDGET(m_background_opacity), true);
-	gtk_grid_attach(page, m_background_opacity, 1, 11, 1, 1);
+	gtk_grid_attach(page, m_background_opacity, 1, 12, 1, 1);
 	gtk_scale_set_value_pos(GTK_SCALE(m_background_opacity), GTK_POS_RIGHT);
 	gtk_range_set_value(GTK_RANGE(m_background_opacity), wm_settings->menu_opacity);
 	g_signal_connect_slot(m_background_opacity, "value-changed", &SettingsDialog::background_opacity_changed, this);

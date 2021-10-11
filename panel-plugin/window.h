@@ -155,6 +155,7 @@ private:
 	bool m_layout_categories_alternate;
 	bool m_layout_search_alternate;
 	bool m_layout_commands_alternate;
+	int m_profile_shape;
 	bool m_supports_alpha;
 	bool m_child_has_focus;
 };

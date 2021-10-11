@@ -100,6 +100,47 @@ void Profile::reset_tooltip()
 
 //-----------------------------------------------------------------------------
 
+void Profile::update_picture()
+{
+	const gint scale = gtk_widget_get_scale_factor(m_image);
+	const gint size = 32;
+	const gint half_size = size / 2;
+
+	GdkPixbuf* pixbuf = gdk_pixbuf_new_from_file_at_size(m_file_path, size * scale, size * scale, nullptr);
+	if (!pixbuf)
+	{
+		gtk_image_set_from_icon_name(GTK_IMAGE(m_image), "avatar-default", GTK_ICON_SIZE_DND);
+		return;
+	}
+
+	const gint half_width = gdk_pixbuf_get_width(pixbuf) / scale / 2;
+	const gint half_height = gdk_pixbuf_get_height(pixbuf) / scale / 2;
+
+	cairo_surface_t* picture = gdk_cairo_surface_create_from_pixbuf(pixbuf, scale, nullptr);
+	g_object_unref(pixbuf);
+
+	cairo_surface_t* surface = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, size * scale, size * scale);
+	cairo_surface_set_device_scale(surface, scale, scale);
+	cairo_t* cr = cairo_create(surface);
+
+	if (wm_settings->profile_shape == 0)
+	{
+		cairo_arc(cr, half_size, half_size, half_size, 0, 2 * G_PI);
+		cairo_clip(cr);
+		cairo_new_path(cr);
+	}
+
+	cairo_set_source_surface(cr, picture, half_size - half_width, half_size - half_height);
+	cairo_paint(cr);
+	cairo_surface_destroy(picture);
+
+	gtk_image_set_from_surface(GTK_IMAGE(m_image), surface);
+	cairo_surface_destroy(surface);
+	cairo_destroy(cr);
+}
+
+//-----------------------------------------------------------------------------
+
 void Profile::init_fallback()
 {
 	// Load username
@@ -136,44 +177,6 @@ void Profile::set_username(const gchar* name)
 
 //-----------------------------------------------------------------------------
 
-void Profile::update_profile_picture()
-{
-	const gint scale = gtk_widget_get_scale_factor(m_image);
-	const gint size = 32;
-	const gint half_size = size / 2;
-
-	GdkPixbuf* pixbuf = gdk_pixbuf_new_from_file_at_size(m_file_path, size * scale, size * scale, nullptr);
-	if (!pixbuf)
-	{
-		gtk_image_set_from_icon_name(GTK_IMAGE(m_image), "avatar-default", GTK_ICON_SIZE_DND);
-		return;
-	}
-
-	const gint half_width = gdk_pixbuf_get_width(pixbuf) / scale / 2;
-	const gint half_height = gdk_pixbuf_get_height(pixbuf) / scale / 2;
-
-	cairo_surface_t* picture = gdk_cairo_surface_create_from_pixbuf(pixbuf, scale, nullptr);
-	g_object_unref(pixbuf);
-
-	cairo_surface_t* surface = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, size * scale, size * scale);
-	cairo_surface_set_device_scale(surface, scale, scale);
-	cairo_t* cr = cairo_create(surface);
-
-	cairo_arc(cr, half_size, half_size, half_size, 0, 2 * G_PI);
-	cairo_clip(cr);
-	cairo_new_path(cr);
-
-	cairo_set_source_surface(cr, picture, half_size - half_width, half_size - half_height);
-	cairo_paint(cr);
-	cairo_surface_destroy(picture);
-
-	gtk_image_set_from_surface(GTK_IMAGE(m_image), surface);
-	cairo_surface_destroy(surface);
-	cairo_destroy(cr);
-}
-
-//-----------------------------------------------------------------------------
-
 #ifdef HAS_ACCOUNTSERVICE
 void Profile::on_user_changed(ActUserManager*, ActUser* user)
 {
@@ -198,7 +201,7 @@ void Profile::on_user_changed(ActUserManager*, ActUser* user)
 
 	m_file_path = g_strdup(act_user_get_icon_file(user));
 
-	update_profile_picture();
+	update_picture();
 }
 
 //-----------------------------------------------------------------------------
@@ -236,7 +239,7 @@ void Profile::on_user_info_loaded(ActUserManager*, GParamSpec*)
 
 void Profile::on_file_changed(GFileMonitor*, GFile*, GFile*, GFileMonitorEvent)
 {
-	update_profile_picture();
+	update_picture();
 }
 
 //-----------------------------------------------------------------------------
