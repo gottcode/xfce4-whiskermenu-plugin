@@ -376,7 +376,7 @@ void SettingsDialog::toggle_display_favorites(GtkToggleButton* button)
 {
 	if (gtk_toggle_button_get_active(button))
 	{
-		wm_settings->default_category = 0;
+		wm_settings->default_category = Settings::CategoryFavorites;
 		wm_settings->set_modified();
 	}
 }
@@ -387,7 +387,7 @@ void SettingsDialog::toggle_display_recent(GtkToggleButton* button)
 {
 	if (gtk_toggle_button_get_active(button))
 	{
-		wm_settings->default_category = 1;
+		wm_settings->default_category = Settings::CategoryRecent;
 		wm_settings->set_modified();
 	}
 }
@@ -398,7 +398,7 @@ void SettingsDialog::toggle_display_applications(GtkToggleButton *button)
 {
 	if (gtk_toggle_button_get_active(button))
 	{
-		wm_settings->default_category = 2;
+		wm_settings->default_category = Settings::CategoryAll;
 		wm_settings->set_modified();
 	}
 }
@@ -983,11 +983,11 @@ GtkWidget* SettingsDialog::init_behavior_tab()
 
 	switch (wm_settings->default_category)
 	{
-	case 1:
+	case Settings::CategoryRecent:
 		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_display_recent), true);
 		break;
 
-	case 2:
+	case Settings::CategoryAll:
 		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_display_applications), true);
 		break;
 

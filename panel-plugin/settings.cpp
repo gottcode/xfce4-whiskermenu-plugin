@@ -142,7 +142,7 @@ Settings::Settings() :
 	load_hierarchy(false),
 	view_as_icons(true),
 
-	default_category(0),
+	default_category(CategoryFavorites),
 
 	recent_items_max(10),
 	favorites_in_recent(true),
@@ -153,7 +153,7 @@ Settings::Settings() :
 	position_categories_horizontal(true),
 	stay_on_focus_out(false),
 
-	profile_shape(0),
+	profile_shape(ProfileRound),
 
 	confirm_session_command(true),
 
@@ -309,13 +309,13 @@ void Settings::load(gchar* file)
 	sort_categories = xfce_rc_read_bool_entry(rc, "sort-categories", sort_categories);
 
 	default_category = xfce_rc_read_bool_entry(rc, "display-recent-default", default_category);
-	default_category = CLAMP(xfce_rc_read_int_entry(rc, "default-category", default_category), 0, 2);
+	default_category = CLAMP(xfce_rc_read_int_entry(rc, "default-category", default_category), CategoryFavorites, CategoryAll);
 
 	recent_items_max = std::max(0, xfce_rc_read_int_entry(rc, "recent-items-max", recent_items_max));
 	favorites_in_recent = xfce_rc_read_bool_entry(rc, "favorites-in-recent", favorites_in_recent);
-	if (!recent_items_max && (default_category == 1))
+	if (!recent_items_max && (default_category == CategoryRecent))
 	{
-		default_category = 0;
+		default_category = CategoryFavorites;
 	}
 
 	position_search_alternate = xfce_rc_read_bool_entry(rc, "position-search-alternate", position_search_alternate);
@@ -323,7 +323,7 @@ void Settings::load(gchar* file)
 	position_categories_alternate = xfce_rc_read_bool_entry(rc, "position-categories-alternate", position_categories_alternate);
 	stay_on_focus_out = xfce_rc_read_bool_entry(rc, "stay-on-focus-out", stay_on_focus_out);
 
-	profile_shape = CLAMP(xfce_rc_read_int_entry(rc, "profile-shape", profile_shape), 0, 2);
+	profile_shape = CLAMP(xfce_rc_read_int_entry(rc, "profile-shape", profile_shape), ProfileRound, ProfileHidden);
 
 	if (xfce_rc_has_entry(rc, "position-categories-horizontal"))
 	{

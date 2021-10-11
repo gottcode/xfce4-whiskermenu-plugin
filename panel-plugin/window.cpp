@@ -840,14 +840,14 @@ void WhiskerMenu::Window::reset_default_button()
 {
 	switch (wm_settings->default_category)
 	{
-	case 1:
+	case Settings::CategoryRecent:
 		m_default_button = m_recent->get_button();
 		gtk_box_reorder_child(m_category_buttons, m_recent->get_button()->get_widget(), 0);
 		gtk_box_reorder_child(m_category_buttons, m_favorites->get_button()->get_widget(), 1);
 		gtk_box_reorder_child(m_category_buttons, m_applications->get_button()->get_widget(), 2);
 		break;
 
-	case 2:
+	case Settings::CategoryAll:
 		m_default_button = m_applications->get_button();
 		gtk_box_reorder_child(m_category_buttons, m_applications->get_button()->get_widget(), 0);
 		gtk_box_reorder_child(m_category_buttons, m_favorites->get_button()->get_widget(), 1);
@@ -1010,7 +1010,7 @@ void WhiskerMenu::Window::update_layout()
 	g_object_unref(m_category_buttons);
 
 	// Handle showing username and profile
-	if (m_profile_shape < 2)
+	if (m_profile_shape != Settings::ProfileHidden)
 	{
 		gtk_widget_set_visible(m_profile->get_picture(), true);
 		gtk_widget_set_visible(m_profile->get_username(), true);

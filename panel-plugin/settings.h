@@ -84,6 +84,12 @@ public:
 	bool load_hierarchy;
 	bool view_as_icons;
 
+	enum DefaultCategory
+	{
+		CategoryFavorites = 0,
+		CategoryRecent,
+		CategoryAll
+	};
 	int default_category;
 
 	decltype(recent.size()) recent_items_max;
@@ -95,6 +101,12 @@ public:
 	bool position_categories_horizontal;
 	bool stay_on_focus_out;
 
+	enum ProfileShape
+	{
+		ProfileRound = 0,
+		ProfileSquare,
+		ProfileHidden
+	};
 	int profile_shape;
 
 	enum Commands

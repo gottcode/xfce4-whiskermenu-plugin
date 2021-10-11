@@ -123,7 +123,7 @@ void Profile::update_picture()
 	cairo_surface_set_device_scale(surface, scale, scale);
 	cairo_t* cr = cairo_create(surface);
 
-	if (wm_settings->profile_shape == 0)
+	if (wm_settings->profile_shape == Settings::ProfileRound)
 	{
 		cairo_arc(cr, half_size, half_size, half_size, 0, 2 * G_PI);
 		cairo_clip(cr);
