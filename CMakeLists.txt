@@ -20,6 +20,7 @@ if(${whiskermenu_version_tag} MATCHES "git")
 endif()
 
 # options
+option(ENABLE_ACCOUNTSSERVICE "Enable building with AccountsService" ON)
 option(ENABLE_VISIBILITY "Enable ELF visibility attributes" ON)
 option(ENABLE_AS_NEEDED "Enable -Wl,--as-needed for the linker" ON)
 option(ENABLE_LINKER_OPTIMIZED_HASH_TABLES "Enable -Wl,-O1 for the linker" ON)

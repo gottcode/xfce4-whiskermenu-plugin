@@ -5,7 +5,9 @@ pkg_check_modules(garcon REQUIRED IMPORTED_TARGET garcon-1)
 pkg_check_modules(libxfce4panel REQUIRED IMPORTED_TARGET libxfce4panel-2.0>=4.11)
 pkg_check_modules(libxfce4ui REQUIRED IMPORTED_TARGET libxfce4ui-2>=4.11)
 pkg_check_modules(libxfce4util REQUIRED IMPORTED_TARGET libxfce4util-1.0>=4.11)
-pkg_check_modules(accountsservice IMPORTED_TARGET accountsservice>=0.6.45)
+if(ENABLE_ACCOUNTSSERVICE)
+	pkg_check_modules(accountsservice IMPORTED_TARGET accountsservice>=0.6.45)
+endif()
 
 add_library(whiskermenu MODULE
 	applications-page.cpp
