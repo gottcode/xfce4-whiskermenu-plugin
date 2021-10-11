@@ -53,14 +53,15 @@ private:
 	void toggle_show_category_name(GtkToggleButton* button);
 	void toggle_show_description(GtkToggleButton* button);
 	void toggle_show_tooltip(GtkToggleButton* button);
+	void category_icon_size_changed(GtkComboBox* combo);
+	void item_icon_size_changed(GtkComboBox* combo);
+	void background_opacity_changed(GtkRange* range);
+
 	void toggle_position_categories_horizontal(GtkToggleButton* button);
 	void toggle_position_categories_alternate(GtkToggleButton* button);
 	void toggle_position_search_alternate(GtkToggleButton* button);
 	void toggle_position_commands_alternate(GtkToggleButton* button);
 	void profile_shape_changed(GtkComboBox* combo);
-	void category_icon_size_changed(GtkComboBox* combo);
-	void item_icon_size_changed(GtkComboBox* combo);
-	void background_opacity_changed(GtkRange* range);
 
 	void style_changed(GtkComboBox* combo);
 	void title_changed(GtkEditable* editable);
@@ -90,6 +91,7 @@ private:
 	void remove_action(GtkButton* button);
 
 	void response(GtkDialog*, int response_id);
+	GtkWidget* init_general_tab();
 	GtkWidget* init_appearance_tab();
 	GtkWidget* init_panel_button_tab();
 	GtkWidget* init_behavior_tab();
@@ -108,14 +110,16 @@ private:
 	GtkWidget* m_show_category_names;
 	GtkWidget* m_show_descriptions;
 	GtkWidget* m_show_tooltips;
+	GtkWidget* m_category_icon_size;
+	GtkWidget* m_item_icon_size;
+	GtkWidget* m_background_opacity;
+
+	// Layout
 	GtkWidget* m_position_categories_horizontal;
 	GtkWidget* m_position_categories_alternate;
 	GtkWidget* m_position_search_alternate;
 	GtkWidget* m_position_commands_alternate;
 	GtkWidget* m_profile_shape;
-	GtkWidget* m_category_icon_size;
-	GtkWidget* m_item_icon_size;
-	GtkWidget* m_background_opacity;
 
 	// Panel Button
 	GtkWidget* m_button_style;

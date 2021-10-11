@@ -112,6 +112,7 @@ SettingsDialog::SettingsDialog(Plugin* plugin) :
 
 	// Create tabs
 	GtkNotebook* notebook = GTK_NOTEBOOK(gtk_notebook_new());
+	gtk_notebook_append_page(notebook, init_general_tab(), gtk_label_new_with_mnemonic(_("_General")));
 	gtk_notebook_append_page(notebook, init_appearance_tab(), gtk_label_new_with_mnemonic(_("_Appearance")));
 	gtk_notebook_append_page(notebook, init_panel_button_tab(), gtk_label_new_with_mnemonic(_("_Panel Button")));
 	gtk_notebook_append_page(notebook, init_behavior_tab(), gtk_label_new_with_mnemonic(_("_Behavior")));
@@ -226,6 +227,37 @@ void SettingsDialog::toggle_show_tooltip(GtkToggleButton* button)
 
 //-----------------------------------------------------------------------------
 
+void SettingsDialog::category_icon_size_changed(GtkComboBox* combo)
+{
+	wm_settings->category_icon_size = gtk_combo_box_get_active(combo) - 1;
+	wm_settings->set_modified();
+
+	const bool active = (wm_settings->category_icon_size != -1) && !wm_settings->position_categories_horizontal;
+	gtk_widget_set_sensitive(m_show_category_names, active);
+	if (!active)
+	{
+		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_category_names), true);
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void SettingsDialog::item_icon_size_changed(GtkComboBox* combo)
+{
+	wm_settings->launcher_icon_size = gtk_combo_box_get_active(combo) - 1;
+	wm_settings->set_modified();
+}
+
+//-----------------------------------------------------------------------------
+
+void SettingsDialog::background_opacity_changed(GtkRange* range)
+{
+	wm_settings->menu_opacity = gtk_range_get_value(range);
+	wm_settings->set_modified();
+}
+
+//-----------------------------------------------------------------------------
+
 void SettingsDialog::toggle_position_categories_horizontal(GtkToggleButton* button)
 {
 	wm_settings->position_categories_horizontal = gtk_toggle_button_get_active(button);
@@ -263,37 +295,6 @@ void SettingsDialog::toggle_position_commands_alternate(GtkToggleButton* button)
 void SettingsDialog::profile_shape_changed(GtkComboBox* combo)
 {
 	wm_settings->profile_shape = gtk_combo_box_get_active(combo);
-	wm_settings->set_modified();
-}
-
-//-----------------------------------------------------------------------------
-
-void SettingsDialog::category_icon_size_changed(GtkComboBox* combo)
-{
-	wm_settings->category_icon_size = gtk_combo_box_get_active(combo) - 1;
-	wm_settings->set_modified();
-
-	const bool active = (wm_settings->category_icon_size != -1) && !wm_settings->position_categories_horizontal;
-	gtk_widget_set_sensitive(m_show_category_names, active);
-	if (!active)
-	{
-		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_category_names), true);
-	}
-}
-
-//-----------------------------------------------------------------------------
-
-void SettingsDialog::item_icon_size_changed(GtkComboBox* combo)
-{
-	wm_settings->launcher_icon_size = gtk_combo_box_get_active(combo) - 1;
-	wm_settings->set_modified();
-}
-
-//-----------------------------------------------------------------------------
-
-void SettingsDialog::background_opacity_changed(GtkRange* range)
-{
-	wm_settings->menu_opacity = gtk_range_get_value(range);
 	wm_settings->set_modified();
 }
 
@@ -645,9 +646,9 @@ void SettingsDialog::response(GtkDialog*, int response_id)
 
 //-----------------------------------------------------------------------------
 
-GtkWidget* SettingsDialog::init_appearance_tab()
+GtkWidget* SettingsDialog::init_general_tab()
 {
-	// Create appearance page
+	// Create general page
 	GtkGrid* page = GTK_GRID(gtk_grid_new());
 	gtk_container_set_border_width(GTK_CONTAINER(page), 12);
 	gtk_grid_set_column_spacing(page, 12);
@@ -764,59 +765,10 @@ GtkWidget* SettingsDialog::init_appearance_tab()
 	gtk_widget_set_margin_bottom(m_show_descriptions, 12);
 
 
-	// Add option to use horizontal categories
-	m_position_categories_horizontal = gtk_check_button_new_with_mnemonic(_("Position categories _horizontally"));
-	gtk_grid_attach(page, m_position_categories_horizontal, 0, 5, 2, 1);
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_categories_horizontal), wm_settings->position_categories_horizontal);
-	g_signal_connect_slot(m_position_categories_horizontal, "toggled", &SettingsDialog::toggle_position_categories_horizontal, this);
-
-	// Add option to use alternate categories position
-	m_position_categories_alternate = gtk_check_button_new_with_mnemonic(_("Position cate_gories next to panel button"));
-	gtk_grid_attach(page, m_position_categories_alternate, 0, 6, 2, 1);
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_categories_alternate), wm_settings->position_categories_alternate);
-	g_signal_connect_slot(m_position_categories_alternate, "toggled", &SettingsDialog::toggle_position_categories_alternate, this);
-
-	// Add option to use alternate search entry position
-	m_position_search_alternate = gtk_check_button_new_with_mnemonic(_("Position _search entry next to panel button"));
-	gtk_grid_attach(page, m_position_search_alternate, 0, 7, 2, 1);
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_search_alternate), wm_settings->position_search_alternate);
-	g_signal_connect_slot(m_position_search_alternate, "toggled", &SettingsDialog::toggle_position_search_alternate, this);
-
-	// Add option to use alternate commands position
-	m_position_commands_alternate = gtk_check_button_new_with_mnemonic(_("Position commands next to search _entry"));
-	gtk_grid_attach(page, m_position_commands_alternate, 0, 8, 2, 1);
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_commands_alternate), wm_settings->position_commands_alternate);
-	g_signal_connect_slot(m_position_commands_alternate, "toggled", &SettingsDialog::toggle_position_commands_alternate, this);
-
-	// Add space beneath options
-	gtk_widget_set_margin_bottom(m_position_commands_alternate, 12);
-
-
-	// Add profile shape selector
-	GtkWidget* label = gtk_label_new_with_mnemonic(_("P_rofile:"));
-	gtk_widget_set_halign(label, GTK_ALIGN_END);
-	gtk_grid_attach(page, label, 0, 9, 1, 1);
-
-	m_profile_shape = gtk_combo_box_text_new();
-	gtk_widget_set_halign(m_profile_shape, GTK_ALIGN_START);
-	gtk_widget_set_hexpand(m_profile_shape, false);
-	gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_profile_shape), _("Round Picture"));
-	gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_profile_shape), _("Square Picture"));
-	gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_profile_shape), _("Hidden"));
-	gtk_combo_box_set_active(GTK_COMBO_BOX(m_profile_shape), wm_settings->profile_shape);
-	gtk_grid_attach(page, m_profile_shape, 1, 9, 1, 1);
-	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_profile_shape);
-	g_signal_connect_slot(m_profile_shape, "changed", &SettingsDialog::profile_shape_changed, this);
-
-	// Add space beneath options
-	gtk_widget_set_margin_bottom(label, 12);
-	gtk_widget_set_margin_bottom(m_profile_shape, 12);
-
-
 	// Add item icon size selector
-	label = gtk_label_new_with_mnemonic(_("Application icon si_ze:"));
+	GtkWidget* label = gtk_label_new_with_mnemonic(_("Application icon si_ze:"));
 	gtk_widget_set_halign(label, GTK_ALIGN_START);
-	gtk_grid_attach(page, label, 0, 10, 1, 1);
+	gtk_grid_attach(page, label, 0, 5, 1, 1);
 
 	m_item_icon_size = gtk_combo_box_text_new();
 	gtk_widget_set_halign(m_item_icon_size, GTK_ALIGN_START);
@@ -827,14 +779,14 @@ GtkWidget* SettingsDialog::init_appearance_tab()
 		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_item_icon_size), icon_size.c_str());
 	}
 	gtk_combo_box_set_active(GTK_COMBO_BOX(m_item_icon_size), wm_settings->launcher_icon_size + 1);
-	gtk_grid_attach(page, m_item_icon_size, 1, 10, 1, 1);
+	gtk_grid_attach(page, m_item_icon_size, 1, 5, 1, 1);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_item_icon_size);
 	g_signal_connect_slot(m_item_icon_size, "changed", &SettingsDialog::item_icon_size_changed, this);
 
 	// Add category icon size selector
 	label = gtk_label_new_with_mnemonic(_("Categ_ory icon size:"));
 	gtk_widget_set_halign(label, GTK_ALIGN_START);
-	gtk_grid_attach(page, label, 0, 11, 1, 1);
+	gtk_grid_attach(page, label, 0, 6, 1, 1);
 
 	m_category_icon_size = gtk_combo_box_text_new();
 	gtk_widget_set_halign(m_category_icon_size, GTK_ALIGN_START);
@@ -844,7 +796,7 @@ GtkWidget* SettingsDialog::init_appearance_tab()
 		gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_category_icon_size), icon_size.c_str());
 	}
 	gtk_combo_box_set_active(GTK_COMBO_BOX(m_category_icon_size), wm_settings->category_icon_size + 1);
-	gtk_grid_attach(page, m_category_icon_size, 1, 11, 1, 1);
+	gtk_grid_attach(page, m_category_icon_size, 1, 6, 1, 1);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_category_icon_size);
 	g_signal_connect_slot(m_category_icon_size, "changed", &SettingsDialog::category_icon_size_changed, this);
 
@@ -856,11 +808,11 @@ GtkWidget* SettingsDialog::init_appearance_tab()
 	// Add option to control background opacity
 	label = gtk_label_new_with_mnemonic(_("Background opacit_y:"));
 	gtk_widget_set_halign(label, GTK_ALIGN_START);
-	gtk_grid_attach(page, label, 0, 12, 1, 1);
+	gtk_grid_attach(page, label, 0, 7, 1, 1);
 
 	m_background_opacity = gtk_scale_new_with_range(GTK_ORIENTATION_HORIZONTAL, 0.0, 100.0, 1.0);
 	gtk_widget_set_hexpand(GTK_WIDGET(m_background_opacity), true);
-	gtk_grid_attach(page, m_background_opacity, 1, 12, 1, 1);
+	gtk_grid_attach(page, m_background_opacity, 1, 7, 1, 1);
 	gtk_scale_set_value_pos(GTK_SCALE(m_background_opacity), GTK_POS_RIGHT);
 	gtk_range_set_value(GTK_RANGE(m_background_opacity), wm_settings->menu_opacity);
 	g_signal_connect_slot(m_background_opacity, "value-changed", &SettingsDialog::background_opacity_changed, this);
@@ -869,6 +821,64 @@ GtkWidget* SettingsDialog::init_appearance_tab()
 	const bool enabled = gdk_screen_is_composited(screen);
 	gtk_widget_set_sensitive(label, enabled);
 	gtk_widget_set_sensitive(GTK_WIDGET(m_background_opacity), enabled);
+
+	return GTK_WIDGET(page);
+}
+
+//-----------------------------------------------------------------------------
+
+GtkWidget* SettingsDialog::init_appearance_tab()
+{
+	// Create appearance page
+	GtkGrid* page = GTK_GRID(gtk_grid_new());
+	gtk_container_set_border_width(GTK_CONTAINER(page), 12);
+	gtk_grid_set_column_spacing(page, 12);
+	gtk_grid_set_row_spacing(page, 6);
+
+
+	// Add option to use horizontal categories
+	m_position_categories_horizontal = gtk_check_button_new_with_mnemonic(_("Position categories _horizontally"));
+	gtk_grid_attach(page, m_position_categories_horizontal, 0, 0, 2, 1);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_categories_horizontal), wm_settings->position_categories_horizontal);
+	g_signal_connect_slot(m_position_categories_horizontal, "toggled", &SettingsDialog::toggle_position_categories_horizontal, this);
+
+	// Add option to use alternate categories position
+	m_position_categories_alternate = gtk_check_button_new_with_mnemonic(_("Position cate_gories next to panel button"));
+	gtk_grid_attach(page, m_position_categories_alternate, 0, 1, 2, 1);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_categories_alternate), wm_settings->position_categories_alternate);
+	g_signal_connect_slot(m_position_categories_alternate, "toggled", &SettingsDialog::toggle_position_categories_alternate, this);
+
+	// Add option to use alternate search entry position
+	m_position_search_alternate = gtk_check_button_new_with_mnemonic(_("Position _search entry next to panel button"));
+	gtk_grid_attach(page, m_position_search_alternate, 0, 2, 2, 1);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_search_alternate), wm_settings->position_search_alternate);
+	g_signal_connect_slot(m_position_search_alternate, "toggled", &SettingsDialog::toggle_position_search_alternate, this);
+
+	// Add option to use alternate commands position
+	m_position_commands_alternate = gtk_check_button_new_with_mnemonic(_("Position commands next to search _entry"));
+	gtk_grid_attach(page, m_position_commands_alternate, 0, 3, 2, 1);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_commands_alternate), wm_settings->position_commands_alternate);
+	g_signal_connect_slot(m_position_commands_alternate, "toggled", &SettingsDialog::toggle_position_commands_alternate, this);
+
+	// Add space beneath options
+	gtk_widget_set_margin_bottom(m_position_commands_alternate, 12);
+
+
+	// Add profile shape selector
+	GtkWidget* label = gtk_label_new_with_mnemonic(_("P_rofile:"));
+	gtk_widget_set_halign(label, GTK_ALIGN_START);
+	gtk_grid_attach(page, label, 0, 4, 1, 1);
+
+	m_profile_shape = gtk_combo_box_text_new();
+	gtk_widget_set_halign(m_profile_shape, GTK_ALIGN_START);
+	gtk_widget_set_hexpand(m_profile_shape, true);
+	gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_profile_shape), _("Round Picture"));
+	gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_profile_shape), _("Square Picture"));
+	gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_profile_shape), _("Hidden"));
+	gtk_combo_box_set_active(GTK_COMBO_BOX(m_profile_shape), wm_settings->profile_shape);
+	gtk_grid_attach(page, m_profile_shape, 1, 4, 1, 1);
+	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_profile_shape);
+	g_signal_connect_slot(m_profile_shape, "changed", &SettingsDialog::profile_shape_changed, this);
 
 	return GTK_WIDGET(page);
 }
