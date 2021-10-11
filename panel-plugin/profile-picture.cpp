@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2014-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -96,12 +96,15 @@ void ProfilePicture::reset_tooltip()
 
 //-----------------------------------------------------------------------------
 
-static GdkPixbuf* round_pixbuf_file_at_size(const gchar* file, gint size)
+void ProfilePicture::update_profile_picture()
 {
-	GdkPixbuf* pixbuf = gdk_pixbuf_new_from_file_at_size(file, size, size, nullptr);
+	const gint size = 32;
+
+	GdkPixbuf* pixbuf = gdk_pixbuf_new_from_file_at_size(m_file_path, size, size, nullptr);
 	if (!pixbuf)
 	{
-		return nullptr;
+		gtk_image_set_from_icon_name(GTK_IMAGE(m_image), "avatar-default", GTK_ICON_SIZE_DND);
+		return;
 	}
 
 	cairo_surface_t* surface = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, size, size);
@@ -120,28 +123,8 @@ static GdkPixbuf* round_pixbuf_file_at_size(const gchar* file, gint size)
 
 	g_object_unref(pixbuf);
 
-	return dest;
-}
-
-//-----------------------------------------------------------------------------
-
-void ProfilePicture::update_profile_picture()
-{
-	GdkPixbuf* pixbuf = nullptr;
-	if (m_file_path && g_file_test(m_file_path, G_FILE_TEST_EXISTS))
-	{
-		pixbuf = round_pixbuf_file_at_size(m_file_path, 32);
-	}
-
-	if (pixbuf)
-	{
-		gtk_image_set_from_pixbuf(GTK_IMAGE(m_image), pixbuf);
-		g_object_unref(pixbuf);
-	}
-	else
-	{
-		gtk_image_set_from_icon_name(GTK_IMAGE(m_image), "avatar-default", GTK_ICON_SIZE_DND);
-	}
+	gtk_image_set_from_pixbuf(GTK_IMAGE(m_image), dest);
+	g_object_unref(dest);
 }
 
 #ifdef HAS_ACCOUNTSERVICE
