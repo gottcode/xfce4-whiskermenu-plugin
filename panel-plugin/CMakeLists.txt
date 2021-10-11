@@ -5,6 +5,7 @@ pkg_check_modules(garcon REQUIRED IMPORTED_TARGET garcon-1)
 pkg_check_modules(libxfce4panel REQUIRED IMPORTED_TARGET libxfce4panel-2.0>=4.11)
 pkg_check_modules(libxfce4ui REQUIRED IMPORTED_TARGET libxfce4ui-2>=4.11)
 pkg_check_modules(libxfce4util REQUIRED IMPORTED_TARGET libxfce4util-1.0>=4.11)
+pkg_check_modules(accountsservice IMPORTED_TARGET accountsservice>=0.6.45)
 
 add_library(whiskermenu MODULE
 	applications-page.cpp
@@ -58,6 +59,13 @@ target_compile_definitions(whiskermenu PRIVATE
 	GTK_MULTIHEAD_SAFE)
 
 target_compile_features(whiskermenu PRIVATE cxx_std_11)
+
+if (accountsservice_FOUND)
+	target_link_libraries(whiskermenu
+		PkgConfig::accountsservice)
+	target_compile_definitions(whiskermenu PRIVATE
+		HAS_ACCOUNTSERVICE)
+endif()
 
 if(ENABLE_VISIBILITY)
 	set_target_properties(whiskermenu PROPERTIES CXX_VISIBILITY_PRESET hidden)
