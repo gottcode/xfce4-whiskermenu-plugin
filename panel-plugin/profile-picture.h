@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2014-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -48,14 +48,14 @@ public:
 	void reset_tooltip();
 
 private:
+	void init_fallback();
 	void update_profile_picture();
 #ifdef HAS_ACCOUNTSERVICE
 	void on_user_changed(ActUserManager* um, ActUser* user);
 	void on_user_loaded(ActUser* user, GParamSpec* param);
 	void on_user_info_loaded(ActUserManager* um, GParamSpec* param);
-#else
-	void on_file_changed(GFileMonitor* monitor, GFile* file, GFile* other_file, GFileMonitorEvent event_type);
 #endif
+	void on_file_changed(GFileMonitor* monitor, GFile* file, GFile* other_file, GFileMonitorEvent event_type);
 	void on_button_press_event();
 
 private:
@@ -65,10 +65,9 @@ private:
 #ifdef HAS_ACCOUNTSERVICE
 	ActUserManager* m_act_user_manager;
 	ActUser* m_act_user;
-#else
-	GFileMonitor* m_file_monitor;
 #endif
-	gchar *m_file_path;
+	GFileMonitor* m_file_monitor;
+	gchar* m_file_path;
 };
 
 }

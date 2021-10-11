@@ -29,7 +29,9 @@ using namespace WhiskerMenu;
 //-----------------------------------------------------------------------------
 
 ProfilePicture::ProfilePicture(Window* window) :
-	m_window(window)
+	m_window(window),
+	m_file_monitor(nullptr),
+	m_file_path(nullptr)
 {
 	m_image = gtk_image_new();
 
@@ -46,6 +48,7 @@ ProfilePicture::ProfilePicture(Window* window) :
 	gtk_widget_set_tooltip_text(m_container, command->get_tooltip());
 
 #ifdef HAS_ACCOUNTSERVICE
+	m_act_user = nullptr;
 	m_act_user_manager = act_user_manager_get_default();
 	gboolean loaded = FALSE;
 	g_object_get(m_act_user_manager, "is-loaded", &loaded, nullptr);
@@ -58,14 +61,7 @@ ProfilePicture::ProfilePicture(Window* window) :
 		g_signal_connect_slot(m_act_user_manager, "notify::is-loaded", &ProfilePicture::on_user_info_loaded, this);
 	}
 #else
-	m_file_path = g_build_filename(g_get_home_dir(), ".face", nullptr);
-
-	GFile* file = g_file_new_for_path(m_file_path);
-	m_file_monitor = g_file_monitor_file(file, G_FILE_MONITOR_NONE, nullptr, nullptr);
-	g_signal_connect_slot(m_file_monitor, "changed", &ProfilePicture::on_file_changed, this);
-	on_file_changed(m_file_monitor, nullptr, nullptr, G_FILE_MONITOR_EVENT_CHANGED);
-
-	g_object_unref(file);
+	init_fallback();
 #endif
 }
 
@@ -76,10 +72,14 @@ ProfilePicture::~ProfilePicture()
 #ifdef HAS_ACCOUNTSERVICE
 	g_object_unref(m_act_user_manager);
 	g_object_unref(m_act_user);
-#else
-	g_file_monitor_cancel(m_file_monitor);
-	g_object_unref(m_file_monitor);
 #endif
+
+	if (m_file_monitor)
+	{
+		g_file_monitor_cancel(m_file_monitor);
+		g_object_unref(m_file_monitor);
+	}
+
 	if (m_file_path)
 	{
 		g_free(m_file_path);
@@ -92,6 +92,24 @@ void ProfilePicture::reset_tooltip()
 {
 	Command* command = wm_settings->command[Settings::CommandProfile];
 	gtk_widget_set_has_tooltip(m_container, command->get_shown());
+}
+
+//-----------------------------------------------------------------------------
+
+void ProfilePicture::init_fallback()
+{
+	if (m_file_path)
+	{
+		g_free(m_file_path);
+	}
+	m_file_path = g_build_filename(g_get_home_dir(), ".face", nullptr);
+
+	GFile* file = g_file_new_for_path(m_file_path);
+	m_file_monitor = g_file_monitor_file(file, G_FILE_MONITOR_NONE, nullptr, nullptr);
+	g_signal_connect_slot(m_file_monitor, "changed", &ProfilePicture::on_file_changed, this);
+	on_file_changed(m_file_monitor, nullptr, nullptr, G_FILE_MONITOR_EVENT_CHANGED);
+
+	g_object_unref(file);
 }
 
 //-----------------------------------------------------------------------------
@@ -132,9 +150,9 @@ void ProfilePicture::update_profile_picture()
 	cairo_destroy(cr);
 }
 
-#ifdef HAS_ACCOUNTSERVICE
 //-----------------------------------------------------------------------------
 
+#ifdef HAS_ACCOUNTSERVICE
 void ProfilePicture::on_user_changed(ActUserManager*, ActUser* user)
 {
 	if (act_user_get_uid(user) != getuid())
@@ -165,7 +183,7 @@ void ProfilePicture::on_user_info_loaded(ActUserManager*, GParamSpec*)
 {
 	if (act_user_manager_no_service(m_act_user_manager))
 	{
-		gtk_image_set_from_icon_name(GTK_IMAGE(m_image), "avatar-default", GTK_ICON_SIZE_DND);
+		init_fallback();
 		return;
 	}
 
@@ -181,12 +199,14 @@ void ProfilePicture::on_user_info_loaded(ActUserManager*, GParamSpec*)
 		g_signal_connect_slot(m_act_user, "notify::is-loaded", &ProfilePicture::on_user_loaded, this);
 	}
 }
-#else
+#endif
+
+//-----------------------------------------------------------------------------
+
 void ProfilePicture::on_file_changed(GFileMonitor*, GFile*, GFile*, GFileMonitorEvent)
 {
 	update_profile_picture();
 }
-#endif
 
 //-----------------------------------------------------------------------------
 
