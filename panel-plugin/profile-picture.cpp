@@ -98,33 +98,34 @@ void ProfilePicture::reset_tooltip()
 
 void ProfilePicture::update_profile_picture()
 {
+	const gint scale = gtk_widget_get_scale_factor(m_image);
 	const gint size = 32;
 
-	GdkPixbuf* pixbuf = gdk_pixbuf_new_from_file_at_size(m_file_path, size, size, nullptr);
+	GdkPixbuf* pixbuf = gdk_pixbuf_new_from_file_at_size(m_file_path, size * scale, size * scale, nullptr);
 	if (!pixbuf)
 	{
 		gtk_image_set_from_icon_name(GTK_IMAGE(m_image), "avatar-default", GTK_ICON_SIZE_DND);
 		return;
 	}
 
-	cairo_surface_t* surface = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, size, size);
+	cairo_surface_t* picture = gdk_cairo_surface_create_from_pixbuf(pixbuf, scale, nullptr);
+	g_object_unref(pixbuf);
+
+	cairo_surface_t* surface = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, size * scale, size * scale);
+	cairo_surface_set_device_scale(surface, scale, scale);
 	cairo_t* cr = cairo_create(surface);
 
 	cairo_arc(cr, size/2, size/2, size/2, 0, 2 * G_PI);
 	cairo_clip(cr);
 	cairo_new_path(cr);
 
-	gdk_cairo_set_source_pixbuf(cr, pixbuf, 0, 0);
+	cairo_set_source_surface(cr, picture, 0, 0);
 	cairo_paint(cr);
+	cairo_surface_destroy(picture);
 
-	GdkPixbuf* dest = gdk_pixbuf_get_from_surface(surface, 0, 0, size, size);
+	gtk_image_set_from_surface(GTK_IMAGE(m_image), surface);
 	cairo_surface_destroy(surface);
 	cairo_destroy(cr);
-
-	g_object_unref(pixbuf);
-
-	gtk_image_set_from_pixbuf(GTK_IMAGE(m_image), dest);
-	g_object_unref(dest);
 }
 
 #ifdef HAS_ACCOUNTSERVICE
