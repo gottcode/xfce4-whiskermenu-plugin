@@ -114,7 +114,6 @@ SettingsDialog::SettingsDialog(Plugin* plugin) :
 	GtkNotebook* notebook = GTK_NOTEBOOK(gtk_notebook_new());
 	gtk_notebook_append_page(notebook, init_general_tab(), gtk_label_new_with_mnemonic(_("_General")));
 	gtk_notebook_append_page(notebook, init_appearance_tab(), gtk_label_new_with_mnemonic(_("_Appearance")));
-	gtk_notebook_append_page(notebook, init_panel_button_tab(), gtk_label_new_with_mnemonic(_("_Panel Button")));
 	gtk_notebook_append_page(notebook, init_behavior_tab(), gtk_label_new_with_mnemonic(_("_Behavior")));
 	gtk_notebook_append_page(notebook, init_commands_tab(), gtk_label_new_with_mnemonic(_("_Commands")));
 	gtk_notebook_append_page(notebook, init_search_actions_tab(), gtk_label_new_with_mnemonic(_("Search Actio_ns")));
@@ -830,44 +829,52 @@ GtkWidget* SettingsDialog::init_general_tab()
 GtkWidget* SettingsDialog::init_appearance_tab()
 {
 	// Create appearance page
-	GtkGrid* page = GTK_GRID(gtk_grid_new());
+	GtkBox* page = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 18));
 	gtk_container_set_border_width(GTK_CONTAINER(page), 12);
-	gtk_grid_set_column_spacing(page, 12);
-	gtk_grid_set_row_spacing(page, 6);
 
+
+	// Align labels across sections
+	GtkSizeGroup* label_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
+	GtkSizeGroup* size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
+
+
+	// Create menu section
+	GtkGrid* menu_table = GTK_GRID(gtk_grid_new());
+	gtk_grid_set_column_spacing(menu_table, 12);
+	gtk_grid_set_row_spacing(menu_table, 6);
+
+	GtkWidget* behavior_frame = make_aligned_frame(_("Menu"), GTK_WIDGET(menu_table));
+	gtk_box_pack_start(page, behavior_frame, false, false, 0);
 
 	// Add option to use horizontal categories
 	m_position_categories_horizontal = gtk_check_button_new_with_mnemonic(_("Position categories _horizontally"));
-	gtk_grid_attach(page, m_position_categories_horizontal, 0, 0, 2, 1);
+	gtk_grid_attach(menu_table, m_position_categories_horizontal, 0, 0, 2, 1);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_categories_horizontal), wm_settings->position_categories_horizontal);
 	g_signal_connect_slot(m_position_categories_horizontal, "toggled", &SettingsDialog::toggle_position_categories_horizontal, this);
 
 	// Add option to use alternate categories position
 	m_position_categories_alternate = gtk_check_button_new_with_mnemonic(_("Position cate_gories next to panel button"));
-	gtk_grid_attach(page, m_position_categories_alternate, 0, 1, 2, 1);
+	gtk_grid_attach(menu_table, m_position_categories_alternate, 0, 1, 2, 1);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_categories_alternate), wm_settings->position_categories_alternate);
 	g_signal_connect_slot(m_position_categories_alternate, "toggled", &SettingsDialog::toggle_position_categories_alternate, this);
 
 	// Add option to use alternate search entry position
 	m_position_search_alternate = gtk_check_button_new_with_mnemonic(_("Position _search entry next to panel button"));
-	gtk_grid_attach(page, m_position_search_alternate, 0, 2, 2, 1);
+	gtk_grid_attach(menu_table, m_position_search_alternate, 0, 2, 2, 1);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_search_alternate), wm_settings->position_search_alternate);
 	g_signal_connect_slot(m_position_search_alternate, "toggled", &SettingsDialog::toggle_position_search_alternate, this);
 
 	// Add option to use alternate commands position
 	m_position_commands_alternate = gtk_check_button_new_with_mnemonic(_("Position commands next to search _entry"));
-	gtk_grid_attach(page, m_position_commands_alternate, 0, 3, 2, 1);
+	gtk_grid_attach(menu_table, m_position_commands_alternate, 0, 3, 2, 1);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_commands_alternate), wm_settings->position_commands_alternate);
 	g_signal_connect_slot(m_position_commands_alternate, "toggled", &SettingsDialog::toggle_position_commands_alternate, this);
-
-	// Add space beneath options
-	gtk_widget_set_margin_bottom(m_position_commands_alternate, 12);
 
 
 	// Add profile shape selector
 	GtkWidget* label = gtk_label_new_with_mnemonic(_("P_rofile:"));
 	gtk_widget_set_halign(label, GTK_ALIGN_START);
-	gtk_grid_attach(page, label, 0, 4, 1, 1);
+	gtk_grid_attach(menu_table, label, 0, 4, 1, 1);
 
 	m_profile_shape = gtk_combo_box_text_new();
 	gtk_widget_set_halign(m_profile_shape, GTK_ALIGN_START);
@@ -876,27 +883,26 @@ GtkWidget* SettingsDialog::init_appearance_tab()
 	gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_profile_shape), _("Square Picture"));
 	gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_profile_shape), _("Hidden"));
 	gtk_combo_box_set_active(GTK_COMBO_BOX(m_profile_shape), wm_settings->profile_shape);
-	gtk_grid_attach(page, m_profile_shape, 1, 4, 1, 1);
+	gtk_grid_attach(menu_table, m_profile_shape, 1, 4, 1, 1);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_profile_shape);
 	g_signal_connect_slot(m_profile_shape, "changed", &SettingsDialog::profile_shape_changed, this);
 
-	return GTK_WIDGET(page);
-}
+	gtk_size_group_add_widget(label_size_group, label);
+	gtk_size_group_add_widget(size_group, m_profile_shape);
 
-//-----------------------------------------------------------------------------
 
-GtkWidget* SettingsDialog::init_panel_button_tab()
-{
-	// Create panel button page
-	GtkGrid* page = GTK_GRID(gtk_grid_new());
-	gtk_container_set_border_width(GTK_CONTAINER(page), 12);
-	gtk_grid_set_column_spacing(page, 12);
-	gtk_grid_set_row_spacing(page, 6);
+	// Create panel button section
+	GtkGrid* panel_table = GTK_GRID(gtk_grid_new());
+	gtk_grid_set_column_spacing(panel_table, 12);
+	gtk_grid_set_row_spacing(panel_table, 6);
+
+	GtkWidget* recent_frame = make_aligned_frame(_("Panel Button"), GTK_WIDGET(panel_table));
+	gtk_box_pack_start(page, recent_frame, false, false, 0);
 
 	// Add button style selector
-	GtkWidget* label = gtk_label_new_with_mnemonic(_("Di_splay:"));
+	label = gtk_label_new_with_mnemonic(_("Di_splay:"));
 	gtk_widget_set_halign(label, GTK_ALIGN_START);
-	gtk_grid_attach(page, label, 0, 0, 1, 1);
+	gtk_grid_attach(panel_table, label, 0, 0, 1, 1);
 
 	m_button_style = gtk_combo_box_text_new();
 	gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_button_style), _("Icon"));
@@ -905,38 +911,41 @@ GtkWidget* SettingsDialog::init_panel_button_tab()
 	gtk_combo_box_set_active(GTK_COMBO_BOX(m_button_style), static_cast<int>(m_plugin->get_button_style()) - 1);
 	gtk_widget_set_halign(m_button_style, GTK_ALIGN_START);
 	gtk_widget_set_hexpand(m_button_style, false);
-	gtk_grid_attach(page, m_button_style, 1, 0, 1, 1);
+	gtk_grid_attach(panel_table, m_button_style, 1, 0, 1, 1);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_button_style);
 	g_signal_connect_slot(m_button_style, "changed", &SettingsDialog::style_changed, this);
+
+	gtk_size_group_add_widget(label_size_group, label);
+	gtk_size_group_add_widget(size_group, m_button_style);
 
 	// Add title selector
 	label = gtk_label_new_with_mnemonic(_("_Title:"));
 	gtk_widget_set_halign(label, GTK_ALIGN_START);
-	gtk_grid_attach(page, label, 0, 1, 1, 1);
+	gtk_grid_attach(panel_table, label, 0, 1, 1, 1);
 
 	m_title = gtk_entry_new();
 	gtk_entry_set_text(GTK_ENTRY(m_title), m_plugin->get_button_title().c_str());
 	gtk_widget_set_hexpand(m_title, true);
-	gtk_grid_attach(page, m_title, 1, 1, 1, 1);
+	gtk_grid_attach(panel_table, m_title, 1, 1, 1, 1);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_title);
 	g_signal_connect_slot(m_title, "changed", &SettingsDialog::title_changed, this);
 
 	// Add icon selector
 	label = gtk_label_new_with_mnemonic(_("_Icon:"));
 	gtk_widget_set_halign(label, GTK_ALIGN_START);
-	gtk_grid_attach(page, label, 0, 2, 1, 1);
+	gtk_grid_attach(panel_table, label, 0, 2, 1, 1);
 
 	m_icon_button = gtk_button_new();
 	gtk_widget_set_halign(m_icon_button, GTK_ALIGN_START);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_icon_button);
 	g_signal_connect_slot<GtkButton*>(m_icon_button, "clicked", &SettingsDialog::choose_icon, this);
-	gtk_grid_attach(page, m_icon_button, 1, 2, 1, 1);
+	gtk_grid_attach(panel_table, m_icon_button, 1, 2, 1, 1);
 
 	m_icon = gtk_image_new_from_icon_name(m_plugin->get_button_icon_name().c_str(), GTK_ICON_SIZE_DIALOG);
 	gtk_container_add(GTK_CONTAINER(m_icon_button), m_icon);
 
 	m_button_single_row = gtk_check_button_new_with_mnemonic(_("Use a single _panel row"));
-	gtk_grid_attach(page, m_button_single_row, 1, 3, 1, 1);
+	gtk_grid_attach(panel_table, m_button_single_row, 1, 3, 1, 1);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_button_single_row), wm_settings->button_single_row);
 	gtk_widget_set_sensitive(m_button_single_row, gtk_combo_box_get_active(GTK_COMBO_BOX (m_button_style)) == 0);
 	g_signal_connect_slot(m_button_single_row, "toggled", &SettingsDialog::toggle_button_single_row, this);

@@ -93,7 +93,6 @@ private:
 	void response(GtkDialog*, int response_id);
 	GtkWidget* init_general_tab();
 	GtkWidget* init_appearance_tab();
-	GtkWidget* init_panel_button_tab();
 	GtkWidget* init_behavior_tab();
 	GtkWidget* init_commands_tab();
 	GtkWidget* init_search_actions_tab();
