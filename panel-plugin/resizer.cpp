@@ -36,51 +36,51 @@ Resizer::Resizer(Edge edge, Window* window) :
 	g_signal_connect_slot(m_drawing, "enter-notify-event", &Resizer::on_enter_notify_event, this);
 	g_signal_connect_slot(m_drawing, "leave-notify-event", &Resizer::on_leave_notify_event, this);
 
-	GdkCursorType type;
+	const char* type = nullptr;
 	switch (edge)
 	{
 	case BottomLeft:
 		m_edge = GDK_WINDOW_EDGE_SOUTH_WEST;
-		type = GDK_BOTTOM_LEFT_CORNER;
+		type = "nesw-resize";
 		break;
 
 	case Bottom:
 		m_edge = GDK_WINDOW_EDGE_SOUTH;
-		type = GDK_BOTTOM_SIDE;
+		type =  "ns-resize";
 		break;
 
 	case BottomRight:
 		m_edge = GDK_WINDOW_EDGE_SOUTH_EAST;
-		type = GDK_BOTTOM_RIGHT_CORNER;
+		type = "nwse-resize";
 		break;
 
 	case Left:
 		m_edge = GDK_WINDOW_EDGE_WEST;
-		type = GDK_LEFT_SIDE;
+		type = "ew-resize";
 		break;
 
 	case Right:
 		m_edge = GDK_WINDOW_EDGE_EAST;
-		type = GDK_RIGHT_SIDE;
+		type = "ew-resize";
 		break;
 
 	case TopLeft:
 		m_edge = GDK_WINDOW_EDGE_NORTH_WEST;
-		type = GDK_TOP_LEFT_CORNER;
+		type = "nwse-resize";
 		break;
 
 	case Top:
 		m_edge = GDK_WINDOW_EDGE_NORTH;
-		type = GDK_TOP_SIDE;
+		type = "ns-resize";
 		break;
 
 	case TopRight:
 	default:
 		m_edge = GDK_WINDOW_EDGE_NORTH_EAST;
-		type = GDK_TOP_RIGHT_CORNER;
+		type = "nesw-resize";
 		break;
 	}
-	m_cursor = gdk_cursor_new_for_display(gtk_widget_get_display(m_drawing), type);
+	m_cursor = gdk_cursor_new_from_name(gtk_widget_get_display(m_drawing), type);
 }
 
 //-----------------------------------------------------------------------------
