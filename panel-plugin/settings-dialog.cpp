@@ -105,7 +105,7 @@ SettingsDialog::SettingsDialog(Plugin* plugin) :
 			_("_Close"), GTK_RESPONSE_CLOSE,
 			nullptr);
 #endif
-	gtk_window_set_icon_name(GTK_WINDOW(m_window), "xfce4-whiskermenu");
+	gtk_window_set_icon_name(GTK_WINDOW(m_window), "org.xfce.panel.whiskermenu");
 	gtk_window_set_position(GTK_WINDOW(m_window), GTK_WIN_POS_CENTER);
 	g_signal_connect_slot(m_window, "response", &SettingsDialog::response, this);
 	g_signal_connect(m_window, "destroy", G_CALLBACK(&settings_dialog_free), this);

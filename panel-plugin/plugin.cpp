@@ -441,7 +441,7 @@ void Plugin::show_about()
 		"comments", _("Alternate application launcher for Xfce"),
 		"copyright", _("Copyright \302\251 2013-2021 Graeme Gott"),
 		"license", XFCE_LICENSE_GPL,
-		"logo-icon-name", "xfce4-whiskermenu",
+		"logo-icon-name", "org.xfce.panel.whiskermenu",
 		"program-name", PACKAGE_NAME,
 		"translator-credits", _("translator-credits"),
 		"version", PACKAGE_VERSION,

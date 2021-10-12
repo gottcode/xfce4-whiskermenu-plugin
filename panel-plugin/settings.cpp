@@ -124,7 +124,7 @@ Settings::Settings() :
 	},
 
 	button_title(m_button_title_default),
-	button_icon_name("xfce4-whiskermenu"),
+	button_icon_name("org.xfce.panel.whiskermenu"),
 	button_title_visible(false),
 	button_icon_visible(true),
 	button_single_row(false),
@@ -264,6 +264,10 @@ void Settings::load(gchar* file)
 
 	button_title = xfce_rc_read_entry(rc, "button-title", button_title.c_str());
 	button_icon_name = xfce_rc_read_entry(rc, "button-icon", button_icon_name.c_str());
+	if (button_icon_name == "xfce4-whiskermenu")
+	{
+		button_icon_name = "org.xfce.panel.whiskermenu";
+	}
 	button_single_row = xfce_rc_read_bool_entry(rc, "button-single-row", button_single_row);
 	button_title_visible = xfce_rc_read_bool_entry(rc, "show-button-title", button_title_visible);
 	button_icon_visible = xfce_rc_read_bool_entry(rc, "show-button-icon", button_icon_visible);
