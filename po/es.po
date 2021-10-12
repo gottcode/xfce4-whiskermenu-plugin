@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-09 13:41-0400\n"
-"PO-Revision-Date: 2021-10-11 06:57+0000\n"
+"PO-Revision-Date: 2021-10-11 06:59+0000\n"
 "Last-Translator: Toni Estévez <toni.estevez@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -43,7 +43,7 @@ msgstr "Añadir al escritorio"
 
 #: ../panel-plugin/page.cpp:405
 msgid "Add to Favorites"
-msgstr "Añadir a las aplicaciones favoritas"
+msgstr "Añadir a aplicaciones favoritas"
 
 #: ../panel-plugin/page.cpp:420
 msgid "Add to Panel"
@@ -208,7 +208,7 @@ msgstr "Icono y título"
 
 #: ../panel-plugin/settings-dialog.cpp:999
 msgid "Include _favorites"
-msgstr "_Incluir las aplicaciones favoritas"
+msgstr "_Incluir aplicaciones favoritas"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Large"
@@ -269,15 +269,15 @@ msgstr "Cuadro de bús_queda junto al botón del panel"
 
 #: ../panel-plugin/settings-dialog.cpp:766
 msgid "Position cate_gories next to panel button"
-msgstr "Situar las categorías junto al botón del _panel"
+msgstr "Categorías junto al botón del _panel"
 
 #: ../panel-plugin/settings-dialog.cpp:760
 msgid "Position categories _horizontally"
-msgstr "Situar las categorías _horizontalmente"
+msgstr "Categorías en posición _horizontal"
 
 #: ../panel-plugin/settings-dialog.cpp:778
 msgid "Position commands next to search _entry"
-msgstr "Situar las órdenes _junto al cuadro de búsqueda"
+msgstr "Órdenes _junto al cuadro de búsqueda"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:928
 #: ../panel-plugin/settings-dialog.cpp:984
@@ -291,7 +291,7 @@ msgstr "¿Quiere eliminar la acción «%s»?"
 
 #: ../panel-plugin/page.cpp:411
 msgid "Remove from Favorites"
-msgstr "Eliminar de las aplicaciones favoritas"
+msgstr "Eliminar de aplicaciones favoritas"
 
 #: ../panel-plugin/settings-dialog.cpp:1100
 msgid "Remove selected action"
