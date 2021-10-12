@@ -13,7 +13,7 @@
 # Inti Alonso <intialonso@gmail.com>, 2013
 # Jason Collins <JasonPCollins@protonmail.com>, 2018
 # John Teixido <jtdevnet0@gmail.com>, 2021
-# Logan 8192 <logan8192@protonmail.com>, 2019
+# a1a9b52a3f40dff112eca965c254c602_089360e <d1597d94e208cfb976efe0f2ce18d2e5_734602>, 2019
 # Noe Moreno <NOE.MORENO@gmail.com>, 2016
 # prflr88 <prflr88@gmail.com>, 2013-2015
 # prflr88 <prflr88@gmail.com>, 2017
@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-11 10:52-0500\n"
-"PO-Revision-Date: 2021-05-24 11:07+0000\n"
+"PO-Revision-Date: 2021-10-11 06:59+0000\n"
 "Last-Translator: Toni Estévez <toni.estevez@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -43,7 +43,7 @@ msgstr "Añadir al escritorio"
 
 #: ../panel-plugin/page.cpp:404
 msgid "Add to Favorites"
-msgstr "Añadir a las aplicaciones favoritas"
+msgstr "Añadir a aplicaciones favoritas"
 
 #: ../panel-plugin/page.cpp:419
 msgid "Add to Panel"
@@ -208,7 +208,7 @@ msgstr "Icono y título"
 
 #: ../panel-plugin/settings-dialog.cpp:983
 msgid "Include _favorites"
-msgstr "_Incluir las aplicaciones favoritas"
+msgstr "_Incluir aplicaciones favoritas"
 
 #: ../panel-plugin/icon-size.cpp:54
 msgid "Large"
@@ -265,15 +265,15 @@ msgstr "Patrón"
 
 #: ../panel-plugin/settings-dialog.cpp:756
 msgid "Position _search entry next to panel button"
-msgstr "Situar el cuadro de bús_queda junto al botón del panel"
+msgstr "Cuadro de bús_queda junto al botón del panel"
 
 #: ../panel-plugin/settings-dialog.cpp:750
 msgid "Position cate_gories next to panel button"
-msgstr "Situar las categorías junto al botón del _panel"
+msgstr "Categorías junto al botón del _panel"
 
 #: ../panel-plugin/settings-dialog.cpp:762
 msgid "Position commands next to search _entry"
-msgstr "Situar las órdenes _junto al cuadro de búsqueda"
+msgstr "Órdenes _junto al cuadro de búsqueda"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:912
 #: ../panel-plugin/settings-dialog.cpp:968
@@ -287,7 +287,7 @@ msgstr "¿Quiere eliminar la acción «%s»?"
 
 #: ../panel-plugin/page.cpp:410
 msgid "Remove from Favorites"
-msgstr "Eliminar de las aplicaciones favoritas"
+msgstr "Eliminar de aplicaciones favoritas"
 
 #: ../panel-plugin/settings-dialog.cpp:1084
 msgid "Remove selected action"
@@ -329,7 +329,7 @@ msgstr "Órdenes de la sesión"
 
 #: ../panel-plugin/whiskermenu.desktop.in:6
 msgid "Show a menu to easily access installed applications"
-msgstr "Muestra un menú para acceder fácilmente a las aplicaciones instaladas"
+msgstr "Mostrar un menú para acceder fácilmente a las aplicaciones instaladas"
 
 #: ../panel-plugin/settings-dialog.cpp:739
 msgid "Show application _descriptions"
