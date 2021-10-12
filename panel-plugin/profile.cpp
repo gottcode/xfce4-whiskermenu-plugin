@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2014-2021 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2021 Matias De lellis <mati86dl@gmail.com>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
