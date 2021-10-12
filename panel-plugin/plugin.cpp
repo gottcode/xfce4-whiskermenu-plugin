@@ -128,6 +128,13 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 		}
 	}
 
+	// Switch to new icon only if theme is missing old icon
+	if ((wm_settings->button_icon_name == "xfce4-whiskermenu")
+			&& !gtk_icon_theme_has_icon(gtk_icon_theme_get_default(), "xfce4-whiskermenu"))
+	{
+		wm_settings->button_icon_name = "org.xfce.panel.whiskermenu";
+	}
+
 	// Create toggle button
 	m_button = xfce_panel_create_toggle_button();
 	gtk_widget_set_name(m_button, "whiskermenu-button");
