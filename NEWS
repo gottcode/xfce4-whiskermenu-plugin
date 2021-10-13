@@ -1,3 +1,11 @@
+2.6.1
+=====
+- Fix menu not toggling. (Issue #61)
+- Fix small icon in multi-row panels. (Issue #37)
+- Fix missing minimize and maximize buttons in settings dialog.
+- Replace deprecated code for grab check.
+- Translation updates: Greek, Slovak, Spanish.
+
 2.6.0
 =====
 - Fix unable to resize with metacity. (Issue #56)
