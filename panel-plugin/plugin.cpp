@@ -381,7 +381,7 @@ gboolean Plugin::remote_event(XfcePanelPlugin*, gchar* name, GValue* value)
 
 	// Ignore event if last shown through remote event;
 	// needed for toggling as remote event happens after focus is lost
-	if (m_menu_shown)
+	if (m_menu_shown && !wm_settings->stay_on_focus_out)
 	{
 		m_menu_shown = false;
 		return true;
