@@ -81,8 +81,13 @@ public:
 	bool sort_categories;
 	IconSize category_icon_size;
 
-	bool load_hierarchy;
-	bool view_as_icons;
+	enum ViewMode
+	{
+		ViewAsIcons = 0,
+		ViewAsList,
+		ViewAsTree
+	};
+	int view_mode;
 
 	enum DefaultCategory
 	{

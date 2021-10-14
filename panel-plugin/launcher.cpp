@@ -179,7 +179,7 @@ Launcher::Launcher(GarconMenuItem* item) :
 
 	// Create display text
 	const gchar* direction = (gtk_widget_get_default_direction() != GTK_TEXT_DIR_RTL) ? "\342\200\216" : "\342\200\217";
-	if (wm_settings->launcher_show_description && !wm_settings->view_as_icons)
+	if (wm_settings->launcher_show_description && (wm_settings->view_mode != Settings::ViewAsIcons))
 	{
 		set_text(g_markup_printf_escaped("%s<b>%s</b>\n%s%s", direction, m_display_name, direction, details));
 	}

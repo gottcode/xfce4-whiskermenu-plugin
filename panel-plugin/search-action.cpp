@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -71,7 +71,7 @@ unsigned int SearchAction::search(const Query& query)
 	const gchar* haystack = query.raw_query().c_str();
 	unsigned int found = !m_is_regex ? match_prefix(haystack) : match_regex(haystack);
 
-	const bool show_description = wm_settings->launcher_show_description && !wm_settings->view_as_icons;
+	const bool show_description = wm_settings->launcher_show_description && (wm_settings->view_mode != Settings::ViewAsIcons);
 	if ((found != UINT_MAX) && (m_show_description != show_description))
 	{
 		m_show_description = show_description;
@@ -194,7 +194,7 @@ void SearchAction::set_name(const gchar* name)
 	m_name = name;
 	wm_settings->set_modified();
 
-	m_show_description = wm_settings->launcher_show_description && !wm_settings->view_as_icons;
+	m_show_description = wm_settings->launcher_show_description && (wm_settings->view_mode != Settings::ViewAsIcons);
 	update_text();
 }
 

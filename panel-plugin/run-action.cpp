@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -62,7 +62,7 @@ unsigned int RunAction::search(const Query& query)
 	// Set item text
 	const gchar* direction = (gtk_widget_get_default_direction() != GTK_TEXT_DIR_RTL) ? "\342\200\216" : "\342\200\217";
 	gchar* display_name = g_strdup_printf(_("Run %s"), m_command_line.c_str());
-	if (wm_settings->launcher_show_description && !wm_settings->view_as_icons)
+	if (wm_settings->launcher_show_description && (wm_settings->view_mode != Settings::ViewAsIcons))
 	{
 		set_text(g_markup_printf_escaped("%s<b>%s</b>\n", direction, display_name));
 	}

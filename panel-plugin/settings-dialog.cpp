@@ -146,8 +146,7 @@ void SettingsDialog::toggle_show_as_icons(GtkToggleButton *button)
 {
 	if (gtk_toggle_button_get_active(button))
 	{
-		wm_settings->view_as_icons = true;
-		wm_settings->load_hierarchy = false;
+		wm_settings->view_mode = Settings::ViewAsIcons;
 		wm_settings->set_modified();
 		m_plugin->reload();
 
@@ -161,8 +160,7 @@ void SettingsDialog::toggle_show_as_list(GtkToggleButton *button)
 {
 	if (gtk_toggle_button_get_active(button))
 	{
-		wm_settings->view_as_icons = false;
-		wm_settings->load_hierarchy = false;
+		wm_settings->view_mode = Settings::ViewAsList;
 		wm_settings->set_modified();
 		m_plugin->reload();
 
@@ -176,8 +174,7 @@ void SettingsDialog::toggle_show_as_tree(GtkToggleButton* button)
 {
 	if (gtk_toggle_button_get_active(button))
 	{
-		wm_settings->view_as_icons = false;
-		wm_settings->load_hierarchy = true;
+		wm_settings->view_mode = Settings::ViewAsTree;
 		wm_settings->set_modified();
 		m_plugin->reload();
 
@@ -709,11 +706,11 @@ GtkWidget* SettingsDialog::init_general_tab()
 	gtk_toggle_button_set_mode(GTK_TOGGLE_BUTTON(m_show_as_tree), false);
 	gtk_box_pack_start(GTK_BOX(display_box), m_show_as_tree, true, true, 0);
 
-	if (wm_settings->view_as_icons)
+	if (wm_settings->view_mode == Settings::ViewAsIcons)
 	{
 		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_as_icons), true);
 	}
-	else if (wm_settings->load_hierarchy)
+	else if (wm_settings->view_mode == Settings::ViewAsTree)
 	{
 		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_as_tree), true);
 	}
@@ -752,7 +749,7 @@ GtkWidget* SettingsDialog::init_general_tab()
 	m_show_descriptions = gtk_check_button_new_with_mnemonic(_("Show application _descriptions"));
 	gtk_grid_attach(page, m_show_descriptions, 0, 4, 2, 1);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_show_descriptions), wm_settings->launcher_show_description);
-	gtk_widget_set_sensitive(m_show_descriptions, !wm_settings->view_as_icons);
+	gtk_widget_set_sensitive(m_show_descriptions, wm_settings->view_mode != Settings::ViewAsIcons);
 	g_signal_connect_slot(m_show_descriptions, "toggled", &SettingsDialog::toggle_show_description, this);
 
 	// Add space beneath options

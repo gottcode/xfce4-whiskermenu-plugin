@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -111,7 +111,7 @@ void Page::select_first()
 
 void Page::update_view()
 {
-	if (dynamic_cast<LauncherIconView*>(m_view) && wm_settings->view_as_icons)
+	if (dynamic_cast<LauncherIconView*>(m_view) && (wm_settings->view_mode == Settings::ViewAsIcons))
 	{
 		return;
 	}
@@ -169,7 +169,7 @@ void Page::set_reorderable(bool reorderable)
 
 void Page::create_view()
 {
-	if (wm_settings->view_as_icons)
+	if (wm_settings->view_mode == Settings::ViewAsIcons)
 	{
 		m_view = new LauncherIconView();
 		g_signal_connect(m_view->get_widget(), "item-activated", G_CALLBACK(&Page::item_activated_slot), this);

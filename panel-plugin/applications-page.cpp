@@ -251,7 +251,7 @@ void ApplicationsPage::load_garcon_menu()
 	}
 
 	g_signal_connect_slot<GarconMenu*>(m_garcon_menu, "reload-required", &ApplicationsPage::invalidate, this);
-	load_menu(m_garcon_menu, nullptr, wm_settings->load_hierarchy);
+	load_menu(m_garcon_menu, nullptr, wm_settings->view_mode == Settings::ViewAsTree);
 
 	// Create settings menu
 	gchar* path = xfce_resource_lookup(XFCE_RESOURCE_CONFIG, "menus/xfce-settings-manager.menu");
@@ -272,7 +272,7 @@ void ApplicationsPage::load_garcon_menu()
 	}
 
 	// Sort items and categories
-	if (!wm_settings->load_hierarchy)
+	if (wm_settings->view_mode != Settings::ViewAsTree)
 	{
 		for (auto category : m_categories)
 		{
