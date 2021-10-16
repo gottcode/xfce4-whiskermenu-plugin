@@ -35,15 +35,7 @@ Resizer::Resizer(Edge edge, Window* window) :
 	connect(m_drawing, "button-press-event",
 		[this](GtkWidget*, GdkEvent* event) -> gboolean
 		{
-			m_window->set_child_has_focus();
-
-			GdkEventButton* event_button = reinterpret_cast<GdkEventButton*>(event);
-			gtk_window_begin_resize_drag(GTK_WINDOW(m_window->get_widget()),
-					m_edge,
-					event_button->button,
-					event_button->x_root,
-					event_button->y_root,
-					event_button->time);
+			m_window->resize(m_edge, reinterpret_cast<GdkEventButton*>(event));
 			return GDK_EVENT_STOP;
 		});
 

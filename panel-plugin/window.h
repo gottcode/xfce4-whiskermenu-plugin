@@ -80,6 +80,7 @@ public:
 
 	void hide(bool lost_focus = false);
 	void show(const Position position);
+	void resize(GdkWindowEdge edge, GdkEventButton* event);
 	void set_child_has_focus();
 	void set_categories(const std::vector<CategoryButton*>& categories);
 	void set_items();
@@ -151,6 +152,7 @@ private:
 	int m_profile_shape;
 	bool m_supports_alpha;
 	bool m_child_has_focus;
+	bool m_resized;
 };
 
 }

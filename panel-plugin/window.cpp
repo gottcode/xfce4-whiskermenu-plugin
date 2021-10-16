@@ -53,7 +53,8 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	m_layout_commands_alternate(false),
 	m_profile_shape(0),
 	m_supports_alpha(false),
-	m_child_has_focus(false)
+	m_child_has_focus(false),
+	m_resized(false)
 {
 	// Create the window
 	m_window = GTK_WINDOW(gtk_window_new(GTK_WINDOW_TOPLEVEL));
@@ -383,8 +384,12 @@ void WhiskerMenu::Window::hide(bool lost_focus)
 	wm_settings->favorites.save();
 	wm_settings->recent.save();
 
-	wm_settings->menu_width = m_geometry.width;
-	wm_settings->menu_height = m_geometry.height;
+	if (m_resized)
+	{
+		m_resized = false;
+		wm_settings->menu_width = m_geometry.width;
+		wm_settings->menu_height = m_geometry.height;
+	}
 
 	// Scroll categories to top
 	GtkAdjustment* adjustment = gtk_scrolled_window_get_vadjustment(m_sidebar);
@@ -524,14 +529,12 @@ void WhiskerMenu::Window::show(const Position position)
 	gdk_monitor_get_geometry(monitor_gdk, &monitor);
 
 	// Prevent window from being larger than screen
-	if (m_geometry.width > monitor.width)
+	const int width = std::min(static_cast<int>(wm_settings->menu_width), monitor.width);
+	const int height = std::min(static_cast<int>(wm_settings->menu_height), monitor.height);
+	if ((m_geometry.width != width) || (m_geometry.height != height))
 	{
-		m_geometry.width = monitor.width;
-		gtk_window_resize(m_window, m_geometry.width, m_geometry.height);
-	}
-	if (m_geometry.height > monitor.height)
-	{
-		m_geometry.height = monitor.height;
+		m_geometry.width = width;
+		m_geometry.height = height;
 		gtk_window_resize(m_window, m_geometry.width, m_geometry.height);
 	}
 
@@ -599,6 +602,15 @@ void WhiskerMenu::Window::show(const Position position)
 	// Show window
 	gtk_window_present(m_window);
 	gtk_window_move(m_window, m_geometry.x, m_geometry.y);
+}
+
+//-----------------------------------------------------------------------------
+
+void WhiskerMenu::Window::resize(GdkWindowEdge edge, GdkEventButton* event)
+{
+	m_resized = true;
+	set_child_has_focus();
+	gtk_window_begin_resize_drag(m_window, edge, event->button, event->x_root, event->y_root, event->time);
 }
 
 //-----------------------------------------------------------------------------
