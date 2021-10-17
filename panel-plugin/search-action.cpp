@@ -245,6 +245,15 @@ void SearchAction::set_is_regex(bool is_regex)
 
 //-----------------------------------------------------------------------------
 
+bool SearchAction::operator==(const SearchAction& action) const
+{
+	return ((m_pattern == action.m_pattern)
+			&& (m_command == action.m_command)
+			&& (m_is_regex == action.m_is_regex));
+}
+
+//-----------------------------------------------------------------------------
+
 void SearchAction::update_text()
 {
 	const gchar* direction = (gtk_widget_get_default_direction() != GTK_TEXT_DIR_RTL) ? "\342\200\216" : "\342\200\217";

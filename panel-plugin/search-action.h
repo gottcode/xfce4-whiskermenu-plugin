@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -59,6 +59,8 @@ public:
 	void set_pattern(const gchar* pattern);
 	void set_command(const gchar* command);
 	void set_is_regex(bool is_regex);
+
+	bool operator==(const SearchAction& action) const;
 
 private:
 	unsigned int match_prefix(const gchar* haystack);

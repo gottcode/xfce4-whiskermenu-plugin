@@ -898,12 +898,6 @@ void SearchActionList::load(XfceRc* rc)
 		return;
 	}
 
-	for (auto action : m_data)
-	{
-		delete action;
-	}
-	m_data.clear();
-
 	for (int i = 0; i < size; ++i)
 	{
 		gchar* key = g_strdup_printf("action%i", i);
@@ -915,14 +909,32 @@ void SearchActionList::load(XfceRc* rc)
 		xfce_rc_set_group(rc, key);
 		g_free(key);
 
-		m_data.push_back(new SearchAction(
+		SearchAction* action = new SearchAction(
 				xfce_rc_read_entry(rc, "name", ""),
 				xfce_rc_read_entry(rc, "pattern", ""),
 				xfce_rc_read_entry(rc, "command", ""),
-				xfce_rc_read_bool_entry(rc, "regex", false)));
-	}
+				xfce_rc_read_bool_entry(rc, "regex", false));
 
-	m_modified = true;
+		bool found = false;
+		for (auto current : m_data)
+		{
+			if (*current == *action)
+			{
+				found = true;
+				break;
+			}
+		}
+
+		if (!found)
+		{
+			m_data.push_back(action);
+			m_modified = true;
+		}
+		else
+		{
+			delete action;
+		}
+	}
 }
 
 //-----------------------------------------------------------------------------
