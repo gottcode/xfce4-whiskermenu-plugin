@@ -397,14 +397,18 @@ void Settings::prevent_invalid()
 
 void Settings::property_changed(const gchar* property, const GValue* value)
 {
-	if (favorites.load(property, value)
-			|| recent.load(property, value)
+	bool reload = true;
+	if (favorites.load(property, value, reload)
+			|| recent.load(property, value, reload)
 			|| launcher_show_name.load(property, value)
 			|| launcher_show_description.load(property, value)
 			|| sort_categories.load(property, value)
 			|| view_mode.load(property, value))
 	{
-		m_plugin->reload_menu();
+		if (reload)
+		{
+			m_plugin->reload_menu();
+		}
 	}
 
 	else if (button_title.load(property, value)
@@ -645,7 +649,8 @@ StringList::StringList(const gchar* property, std::initializer_list<std::string>
 	m_property(property),
 	m_default(data),
 	m_data(m_default),
-	m_modified(false)
+	m_modified(false),
+	m_saved(false)
 {
 }
 
@@ -734,18 +739,30 @@ void StringList::load()
 	GValue value = G_VALUE_INIT;
 	if (xfconf_channel_get_property(wm_settings->channel, m_property, &value))
 	{
-		load(m_property, &value);
+		m_saved = false;
+
+		bool reload_menu;
+		load(m_property, &value, reload_menu);
+
 		g_value_unset(&value);
 	}
 }
 
 //-----------------------------------------------------------------------------
 
-bool StringList::load(const gchar* property, const GValue* value)
+bool StringList::load(const gchar* property, const GValue* value, bool& reload_menu)
 {
 	if (g_strcmp0(m_property, property) != 0)
 	{
 		return false;
+	}
+
+	// Ignore own changes to prevent extra menu reload
+	if (m_saved)
+	{
+		m_saved = false;
+		reload_menu = false;
+		return true;
 	}
 
 	// Handle resetting to default
@@ -753,6 +770,7 @@ bool StringList::load(const gchar* property, const GValue* value)
 	{
 		m_modified = false;
 		m_data = m_default;
+		reload_menu = true;
 		return true;
 	}
 
@@ -785,6 +803,7 @@ bool StringList::load(const gchar* property, const GValue* value)
 
 	// Load string list
 	set(strings, false);
+	reload_menu = true;
 
 	return true;
 }
@@ -814,6 +833,7 @@ void StringList::save()
 	xfconf_channel_set_arrayv(wm_settings->channel, m_property, array);
 	xfconf_array_free(array);
 
+	m_saved = true;
 	m_modified = false;
 
 	wm_settings->end_property_update();

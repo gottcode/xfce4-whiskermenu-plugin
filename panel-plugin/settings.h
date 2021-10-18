@@ -180,7 +180,7 @@ public:
 
 	void load(XfceRc* rc, bool is_default);
 	void load();
-	bool load(const gchar* property, const GValue* value);
+	bool load(const gchar* property, const GValue* value, bool& reload_menu);
 	void save();
 
 private:
@@ -191,6 +191,7 @@ private:
 	std::vector<std::string> m_default;
 	std::vector<std::string> m_data;
 	bool m_modified;
+	bool m_saved;
 };
 
 
