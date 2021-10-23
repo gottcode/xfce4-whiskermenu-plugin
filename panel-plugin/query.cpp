@@ -137,15 +137,9 @@ unsigned int Query::match_as_characters(const std::string& haystack) const
 		else if (g_unichar_isspace(c))
 		{
 			start_word = true;
-
-			// Restart check as individual letters for next word
-			if (*query_string)
-			{
-				query_string = m_query.c_str();
-			}
 		}
 
-		// Check if all individual letters of query are in a single word of haystack
+		// Check if individual letters of query are in haystack
 		if (c == g_utf8_get_char(query_string))
 		{
 			query_string = g_utf8_next_char(query_string);
