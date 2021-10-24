@@ -179,7 +179,7 @@ Settings::Settings() :
 			_("Failed to lock screen."));
 	command[CommandSwitchUser] = new Command("xfsm-switch-user", "system-users",
 			_("Switch _User"),
-			"gdmflexiserver",
+			"dm-tool switch-to-greeter",
 			_("Failed to switch user."));
 	command[CommandLogOutUser] = new Command("xfsm-logout", "system-log-out",
 			_("Log _Out"),
