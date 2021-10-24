@@ -159,7 +159,8 @@ Settings::Settings() :
 
 	search_actions {
 		new SearchAction(_("Man Pages"), "#", "exo-open --launch TerminalEmulator man %s", false, true),
-		new SearchAction(_("Web Search"), "?", "exo-open --launch WebBrowser https://duckduckgo.com/?q=%u", false, true),
+		new SearchAction(_("Search the Web"), "?", "exo-open --launch WebBrowser https://duckduckgo.com/?q=%u", false, true),
+		new SearchAction(_("Search for Files"), "-", "catfish --path=~ --start %s", false, true),
 		new SearchAction(_("Wikipedia"), "!w", "exo-open --launch WebBrowser https://en.wikipedia.org/wiki/%u", false, true),
 		new SearchAction(_("Run in Terminal"), "!", "exo-open --launch TerminalEmulator %s", false, true),
 		new SearchAction(_("Open URI"), "^(file|http|https):\\/\\/(.*)$", "exo-open \\0", true, true)
