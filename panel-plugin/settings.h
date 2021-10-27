@@ -48,7 +48,6 @@ public:
 	}
 
 	void load(XfceRc* rc, bool is_default);
-	void load();
 	bool load(const gchar* property, const GValue* value);
 
 private:
@@ -79,7 +78,6 @@ public:
 	}
 
 	void load(XfceRc* rc, bool is_default);
-	void load();
 	bool load(const gchar* property, const GValue* value);
 
 private:
@@ -127,7 +125,6 @@ public:
 	}
 
 	void load(XfceRc* rc, bool is_default);
-	void load();
 	bool load(const gchar* property, const GValue* value);
 
 private:
@@ -179,7 +176,6 @@ public:
 	void set(int pos, const std::string& value);
 
 	void load(XfceRc* rc, bool is_default);
-	void load();
 	bool load(const gchar* property, const GValue* value, bool& reload_menu);
 	void save();
 

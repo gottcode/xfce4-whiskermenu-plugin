@@ -64,7 +64,6 @@ public:
 	}
 
 	void load(XfceRc* rc, bool is_default);
-	void load();
 	bool load(const gchar* property, const GValue* value);
 
 private:

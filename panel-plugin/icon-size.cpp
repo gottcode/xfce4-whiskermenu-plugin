@@ -82,13 +82,6 @@ void IconSize::load(XfceRc* rc, bool is_default)
 
 //-----------------------------------------------------------------------------
 
-void IconSize::load()
-{
-	set(xfconf_channel_get_int(wm_settings->channel, m_property, m_size), false);
-}
-
-//-----------------------------------------------------------------------------
-
 bool IconSize::load(const gchar* property, const GValue* value)
 {
 	if (g_strcmp0(m_property, property) != 0)

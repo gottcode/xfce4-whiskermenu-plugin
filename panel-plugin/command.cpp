@@ -273,19 +273,6 @@ void Command::load(XfceRc* rc, bool is_default)
 
 //-----------------------------------------------------------------------------
 
-void Command::load()
-{
-	gchar* value = xfconf_channel_get_string(wm_settings->channel, m_property, m_command);
-	set(value, false);
-	g_free(value);
-
-	set_shown(xfconf_channel_get_bool(wm_settings->channel, m_property_show, m_shown), false);
-
-	check();
-}
-
-//-----------------------------------------------------------------------------
-
 bool Command::load(const gchar* property, const GValue* value)
 {
 	// Update command

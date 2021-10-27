@@ -296,6 +296,7 @@ void Settings::load(const gchar* file, bool is_default)
 
 void Settings::load(const gchar* base)
 {
+	// Set up Xfconf channel
 	if (base && xfconf_init(nullptr))
 	{
 		channel = xfconf_channel_new_with_property_base(xfce_panel_get_channel_name(), base);
@@ -311,54 +312,24 @@ void Settings::load(const gchar* base)
 		return;
 	}
 
-	favorites.load();
-	recent.load();
-
-	custom_menu_file.load();
-
-	button_title.load();
-	button_icon_name.load();
-	button_title_visible.load();
-	button_icon_visible.load();
-	button_single_row.load();
-
-	launcher_show_name.load();
-	launcher_show_description.load();
-	launcher_show_tooltip.load();
-	launcher_icon_size.load();
-
-	category_hover_activate.load();
-	category_show_name.load();
-	sort_categories.load();
-	category_icon_size.load();
-
-	view_mode.load();
-
-	default_category.load();
-
-	recent_items_max.load();
-	favorites_in_recent.load();
-
-	position_search_alternate.load();
-	position_commands_alternate.load();
-	position_categories_alternate.load();
-	position_categories_horizontal.load();
-	stay_on_focus_out.load();
-
-	profile_shape.load();
-
-	confirm_session_command.load();
-
-	menu_width.load();
-	menu_height.load();
-	menu_opacity.load();
-
-	for (auto i : command)
+	// Fetch all settings
+	GHashTable* properties = xfconf_channel_get_properties(channel, nullptr);
+	if (!properties)
 	{
-		i->load();
+		return;
 	}
 
-	search_actions.load();
+	// Fetch length of property base
+	const int base_len = strlen(base);
+
+	// Load settings
+	GHashTableIter iter;
+	gpointer key, value;
+	g_hash_table_iter_init(&iter, properties);
+	while (g_hash_table_iter_next(&iter, &key, &value))
+	{
+		property_changed(static_cast<const gchar*>(key) + base_len, static_cast<GValue*>(value));
+	}
 
 	prevent_invalid();
 }
@@ -478,13 +449,6 @@ void Boolean::load(XfceRc* rc, bool is_default)
 
 //-----------------------------------------------------------------------------
 
-void Boolean::load()
-{
-	set(xfconf_channel_get_bool(wm_settings->channel, m_property, m_data), false);
-}
-
-//-----------------------------------------------------------------------------
-
 bool Boolean::load(const gchar* property, const GValue* value)
 {
 	if (g_strcmp0(m_property, property) != 0)
@@ -541,13 +505,6 @@ void Integer::load(XfceRc* rc, bool is_default)
 
 //-----------------------------------------------------------------------------
 
-void Integer::load()
-{
-	set(xfconf_channel_get_int(wm_settings->channel, m_property, m_data), false);
-}
-
-//-----------------------------------------------------------------------------
-
 bool Integer::load(const gchar* property, const GValue* value)
 {
 	if (g_strcmp0(m_property, property) != 0)
@@ -599,15 +556,6 @@ void String::load(XfceRc* rc, bool is_default)
 	{
 		m_default = m_data;
 	}
-}
-
-//-----------------------------------------------------------------------------
-
-void String::load()
-{
-	gchar* value = xfconf_channel_get_string(wm_settings->channel, m_property, m_data.c_str());
-	set(value, false);
-	g_free(value);
 }
 
 //-----------------------------------------------------------------------------
@@ -729,22 +677,6 @@ void StringList::load(XfceRc* rc, bool is_default)
 	if (is_default)
 	{
 		m_default = m_data;
-	}
-}
-
-//-----------------------------------------------------------------------------
-
-void StringList::load()
-{
-	GValue value = G_VALUE_INIT;
-	if (xfconf_channel_get_property(wm_settings->channel, m_property, &value))
-	{
-		m_saved = false;
-
-		bool reload_menu;
-		load(m_property, &value, reload_menu);
-
-		g_value_unset(&value);
 	}
 }
 
