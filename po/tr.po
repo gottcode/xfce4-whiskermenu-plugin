@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-11 10:52-0500\n"
-"PO-Revision-Date: 2021-03-22 13:56+0000\n"
+"POT-Creation-Date: 2021-10-11 20:26-0400\n"
+"PO-Revision-Date: 2021-10-25 22:05+0000\n"
 "Last-Translator: Demiray Muhterem <mdemiray@msn.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -22,36 +22,36 @@ msgstr ""
 "Language: tr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../panel-plugin/settings-dialog.cpp:1075
+#: ../panel-plugin/settings-dialog.cpp:1139
 msgid "Add action"
 msgstr "Komut ekle"
 
-#: ../panel-plugin/page.cpp:415
+#: ../panel-plugin/page.cpp:416
 msgid "Add to Desktop"
 msgstr "Masaüstüne Ekle"
 
-#: ../panel-plugin/page.cpp:404
+#: ../panel-plugin/page.cpp:405
 msgid "Add to Favorites"
 msgstr "Sık kullanılanlara ekle"
 
-#: ../panel-plugin/page.cpp:419
+#: ../panel-plugin/page.cpp:420
 msgid "Add to Panel"
 msgstr "Panele Ekle"
 
 #: ../panel-plugin/applications-page.cpp:40 ../panel-plugin/category.cpp:51
-#: ../panel-plugin/settings-dialog.cpp:917
+#: ../panel-plugin/settings-dialog.cpp:981
 msgid "All Applications"
 msgstr "Tüm Uygulamalar"
 
-#: ../panel-plugin/plugin.cpp:438
+#: ../panel-plugin/plugin.cpp:441
 msgid "Alternate application launcher for Xfce"
 msgstr "Xfce için alternatif uygulama başlatıcısı"
 
-#: ../panel-plugin/settings-dialog.cpp:972
+#: ../panel-plugin/settings-dialog.cpp:1036
 msgid "Amount of _items:"
 msgstr "Ögelerin _miktarı:"
 
-#: ../panel-plugin/settings-dialog.cpp:772
+#: ../panel-plugin/settings-dialog.cpp:768
 msgid "Application icon si_ze:"
 msgstr "Uygulama simge bo_yutu:"
 
@@ -59,24 +59,24 @@ msgstr "Uygulama simge bo_yutu:"
 msgid "Applications"
 msgstr "Uygulamalar"
 
-#: ../panel-plugin/launcher.cpp:277
+#: ../panel-plugin/launcher.cpp:276
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
 msgstr "\"%s\" Gizlemek istediğinizden emin misiniz?"
 
-#: ../panel-plugin/settings.cpp:185
+#: ../panel-plugin/settings.cpp:188
 msgid "Are you sure you want to log out?"
 msgstr "Çıkış yapmak istediğinize emin misiniz?"
 
-#: ../panel-plugin/settings.cpp:191
+#: ../panel-plugin/settings.cpp:194
 msgid "Are you sure you want to restart?"
 msgstr "Yeniden başlatmak istediğinize emin misiniz?"
 
-#: ../panel-plugin/settings.cpp:197
+#: ../panel-plugin/settings.cpp:200
 msgid "Are you sure you want to shut down?"
 msgstr "Sistemi kapatmak istediğinize emin misiniz?"
 
-#: ../panel-plugin/settings-dialog.cpp:812
+#: ../panel-plugin/settings-dialog.cpp:808
 msgid "Background opacit_y:"
 msgstr "Arkaplan şeffaflı_k:"
 
@@ -84,11 +84,11 @@ msgstr "Arkaplan şeffaflı_k:"
 msgid "Browse the file system to choose a custom command."
 msgstr "Dosya sistemine gözatmak için bir komut seçin."
 
-#: ../panel-plugin/settings-dialog.cpp:1132
+#: ../panel-plugin/settings-dialog.cpp:1196
 msgid "C_ommand:"
 msgstr "K_omut:"
 
-#: ../panel-plugin/settings-dialog.cpp:790
+#: ../panel-plugin/settings-dialog.cpp:786
 msgid "Categ_ory icon size:"
 msgstr "Kategori simge boyutu:"
 
@@ -96,106 +96,110 @@ msgstr "Kategori simge boyutu:"
 msgid "Clear Recently Used"
 msgstr "Yakında Kullanılanları Temizle"
 
-#: ../panel-plugin/plugin.cpp:439
+#: ../panel-plugin/plugin.cpp:442
 msgid "Copyright © 2013-2021 Graeme Gott"
 msgstr "Telif Hakkı © 2013-2021 Graeme Gott"
 
-#: ../panel-plugin/settings-dialog.cpp:904
+#: ../panel-plugin/settings-dialog.cpp:968
 msgid "Default Category"
 msgstr "Varsayılan Kategori"
 
-#: ../panel-plugin/settings-dialog.cpp:1103
+#: ../panel-plugin/settings-dialog.cpp:1167
 msgid "Details"
 msgstr "Detaylar"
 
-#: ../panel-plugin/settings-dialog.cpp:842
+#: ../panel-plugin/settings-dialog.cpp:903
 msgid "Di_splay:"
 msgstr "Görüntü:"
 
-#: ../panel-plugin/settings.cpp:203
+#: ../panel-plugin/settings.cpp:206
 msgid "Do you want to suspend to RAM?"
 msgstr "Sistemi RAM belleğe askıya almak istiyor musunuz?"
 
-#: ../panel-plugin/settings.cpp:209
+#: ../panel-plugin/settings.cpp:212
 msgid "Do you want to suspend to disk?"
 msgstr "Diske askıya almak istiyor musunuz?"
 
-#: ../panel-plugin/page.cpp:426
+#: ../panel-plugin/page.cpp:427
 msgid "Edit Application..."
 msgstr "Uygulama Düzenle..."
 
-#: ../panel-plugin/settings.cpp:220
+#: ../panel-plugin/settings.cpp:223
 msgid "Edit _Profile"
 msgstr "Profili _Düzenle"
 
-#: ../panel-plugin/settings.cpp:222
+#: ../panel-plugin/settings.cpp:225
 msgid "Failed to edit profile."
 msgstr "Profil düzenleme başarısız."
 
-#: ../panel-plugin/element.cpp:106
+#: ../panel-plugin/element.cpp:112
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "\"%s\" Komutunu Yürütme Hatası"
 
-#: ../panel-plugin/settings.cpp:208
+#: ../panel-plugin/settings.cpp:211
 msgid "Failed to hibernate."
 msgstr "Hazırda bekletme başarısız oldu."
 
-#: ../panel-plugin/settings.cpp:218
+#: ../panel-plugin/settings.cpp:221
 msgid "Failed to launch menu editor."
 msgstr "Menü düzenleyici başlatılamadı."
 
-#: ../panel-plugin/settings.cpp:176
+#: ../panel-plugin/settings.cpp:179
 msgid "Failed to lock screen."
 msgstr "Ekran Kilitleme Hatası"
 
-#: ../panel-plugin/settings.cpp:184 ../panel-plugin/settings.cpp:214
+#: ../panel-plugin/settings.cpp:187 ../panel-plugin/settings.cpp:217
 msgid "Failed to log out."
 msgstr "Çıkış Hatası"
 
-#: ../panel-plugin/settings.cpp:172
+#: ../panel-plugin/settings.cpp:175
 msgid "Failed to open settings manager."
 msgstr "Ayarlar Yöneticisini Açma Hatası"
 
-#: ../panel-plugin/settings.cpp:190
+#: ../panel-plugin/settings.cpp:193
 msgid "Failed to restart."
 msgstr "Yeniden başlatma başarısız oldu."
 
-#: ../panel-plugin/settings.cpp:196
+#: ../panel-plugin/settings.cpp:199
 msgid "Failed to shut down."
 msgstr "Kapatma başarısız oldu."
 
-#: ../panel-plugin/settings.cpp:202
+#: ../panel-plugin/settings.cpp:205
 msgid "Failed to suspend."
 msgstr "Askıya alma başarısız oldu."
 
-#: ../panel-plugin/settings.cpp:180
+#: ../panel-plugin/settings.cpp:183
 msgid "Failed to switch user."
 msgstr "Kullanıcı değişimi başarısız oldu."
 
 #: ../panel-plugin/favorites-page.cpp:37
-#: ../panel-plugin/settings-dialog.cpp:908
+#: ../panel-plugin/settings-dialog.cpp:972
 msgid "Favorites"
 msgstr "Sık kullanılanlar"
 
-#: ../panel-plugin/settings.cpp:210
+#: ../panel-plugin/settings.cpp:213
 #, c-format
 msgid "Hibernating computer in %d seconds."
 msgstr "Bilgisayar %d saniyede hazır duruma geçiyor."
 
-#: ../panel-plugin/launcher.cpp:276 ../panel-plugin/page.cpp:430
+#: ../panel-plugin/settings-dialog.cpp:884
+msgid "Hidden"
+msgstr "Gizle"
+
+#: ../panel-plugin/launcher.cpp:275 ../panel-plugin/page.cpp:431
 msgid "Hide Application"
 msgstr "Uygulamayı Gizle"
 
-#: ../panel-plugin/settings-dialog.cpp:847
+#: ../panel-plugin/settings-dialog.cpp:908
 msgid "Icon"
 msgstr "Simge"
 
-#: ../panel-plugin/settings-dialog.cpp:849
+#: ../panel-plugin/settings-dialog.cpp:910
 msgid "Icon and title"
 msgstr "Başlık ve Simge"
 
-#: ../panel-plugin/settings-dialog.cpp:983
+#: ../panel-plugin/settings-dialog.cpp:1047
 msgid "Include _favorites"
 msgstr "_Favorileri dahil et"
 
@@ -207,32 +211,33 @@ msgstr "Büyük"
 msgid "Larger"
 msgstr "Daha büyük"
 
-#: ../panel-plugin/settings.cpp:212
+#: ../panel-plugin/settings.cpp:215
 msgid "Log Ou_t..."
 msgstr "Çık_ış..."
 
-#: ../panel-plugin/settings.cpp:182
+#: ../panel-plugin/settings.cpp:185
 msgid "Log _Out"
 msgstr "Çık_ış"
 
-#: ../panel-plugin/settings.cpp:186
+#: ../panel-plugin/settings.cpp:189
 #, c-format
 msgid "Logging out in %d seconds."
 msgstr "%dsaniyede çıkış yapılıyor."
 
-#: ../panel-plugin/settings.cpp:158
+#: ../panel-plugin/settings.cpp:161
 msgid "Man Pages"
 msgstr "Man Sayfaları"
 
-#: ../panel-plugin/settings-dialog.cpp:941
+#: ../panel-plugin/settings-dialog.cpp:846
+#: ../panel-plugin/settings-dialog.cpp:1005
 msgid "Menu"
 msgstr "Menü"
 
-#: ../panel-plugin/settings-dialog.cpp:1107
+#: ../panel-plugin/settings-dialog.cpp:1171
 msgid "Nam_e:"
 msgstr "İsi_m:"
 
-#: ../panel-plugin/settings-dialog.cpp:1053
+#: ../panel-plugin/settings-dialog.cpp:1117
 msgid "Name"
 msgstr "İsim"
 
@@ -244,55 +249,71 @@ msgstr "Hiçbiri"
 msgid "Normal"
 msgstr "Normal"
 
-#: ../panel-plugin/settings.cpp:162
+#: ../panel-plugin/settings.cpp:165
 msgid "Open URI"
 msgstr "URI aç"
 
-#: ../panel-plugin/settings-dialog.cpp:1058
+#: ../panel-plugin/settings-dialog.cpp:875
+msgid "P_rofile:"
+msgstr "P_rofil:"
+
+#: ../panel-plugin/settings-dialog.cpp:899
+msgid "Panel Button"
+msgstr "Panel Butonu"
+
+#: ../panel-plugin/settings-dialog.cpp:1122
 msgid "Pattern"
 msgstr "Desen"
 
-#: ../panel-plugin/settings-dialog.cpp:756
+#: ../panel-plugin/settings-dialog.cpp:862
 msgid "Position _search entry next to panel button"
 msgstr "_arama çubuğu menünün altında konumlansın"
 
-#: ../panel-plugin/settings-dialog.cpp:750
+#: ../panel-plugin/settings-dialog.cpp:856
 msgid "Position cate_gories next to panel button"
 msgstr "Kate_goriler menünün sol tarafında konumlansın"
 
-#: ../panel-plugin/settings-dialog.cpp:762
+#: ../panel-plugin/settings-dialog.cpp:850
+msgid "Position categories _horizontally"
+msgstr "Konum kategorileri _yatay olarak"
+
+#: ../panel-plugin/settings-dialog.cpp:868
 msgid "Position commands next to search _entry"
 msgstr "Menünün altında solda daraltılmış arama _çubuğu"
 
-#: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:912
-#: ../panel-plugin/settings-dialog.cpp:968
+#: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:976
+#: ../panel-plugin/settings-dialog.cpp:1032
 msgid "Recently Used"
 msgstr "Son Kullanılanlar"
 
-#: ../panel-plugin/settings-dialog.cpp:546
+#: ../panel-plugin/settings-dialog.cpp:564
 #, c-format
 msgid "Remove action \"%s\"?"
 msgstr "Komutu sil \"%s\"?"
 
-#: ../panel-plugin/page.cpp:410
+#: ../panel-plugin/page.cpp:411
 msgid "Remove from Favorites"
 msgstr "Favorilerden kaldır"
 
-#: ../panel-plugin/settings-dialog.cpp:1084
+#: ../panel-plugin/settings-dialog.cpp:1148
 msgid "Remove selected action"
 msgstr "Seçili komutu sil"
 
-#: ../panel-plugin/settings.cpp:192
+#: ../panel-plugin/settings.cpp:195
 #, c-format
 msgid "Restarting computer in %d seconds."
 msgstr "%dsaniyede bilgisayar yeniden başlatılıyor."
+
+#: ../panel-plugin/settings-dialog.cpp:882
+msgid "Round Picture"
+msgstr "Yuvarlak Resim"
 
 #: ../panel-plugin/run-action.cpp:64
 #, c-format
 msgid "Run %s"
 msgstr "Çalıştır %s"
 
-#: ../panel-plugin/settings.cpp:161
+#: ../panel-plugin/settings.cpp:164
 msgid "Run in Terminal"
 msgstr "Uçbirimde Çalıştır"
 
@@ -308,11 +329,11 @@ msgstr "Komut Ara"
 msgid "Select Command"
 msgstr "Komut Seç"
 
-#: ../panel-plugin/settings-dialog.cpp:302
+#: ../panel-plugin/settings-dialog.cpp:320
 msgid "Select an Icon"
 msgstr "Bir Simge Seçin"
 
-#: ../panel-plugin/settings-dialog.cpp:991
+#: ../panel-plugin/settings-dialog.cpp:1055
 msgid "Session Commands"
 msgstr "Oturum Komutları"
 
@@ -320,39 +341,39 @@ msgstr "Oturum Komutları"
 msgid "Show a menu to easily access installed applications"
 msgstr "Kolayca yüklenen uygulamalara erişmek için bir menü göster"
 
-#: ../panel-plugin/settings-dialog.cpp:739
+#: ../panel-plugin/settings-dialog.cpp:757
 msgid "Show application _descriptions"
 msgstr "Uygulama _tanımlarını göster"
 
-#: ../panel-plugin/settings-dialog.cpp:733
+#: ../panel-plugin/settings-dialog.cpp:751
 msgid "Show application too_ltips"
 msgstr "Uygulama ip_uçlarını göster"
 
-#: ../panel-plugin/settings-dialog.cpp:647
+#: ../panel-plugin/settings-dialog.cpp:665
 msgid "Show as _icons"
 msgstr "_Simgeler olarak göster"
 
-#: ../panel-plugin/settings-dialog.cpp:664
+#: ../panel-plugin/settings-dialog.cpp:682
 msgid "Show as lis_t"
 msgstr "Lis_te olarak göster"
 
-#: ../panel-plugin/settings-dialog.cpp:682
+#: ../panel-plugin/settings-dialog.cpp:700
 msgid "Show as t_ree"
 msgstr "A_ğaç olarak göster"
 
-#: ../panel-plugin/settings-dialog.cpp:995
+#: ../panel-plugin/settings-dialog.cpp:1059
 msgid "Show c_onfirmation dialog"
 msgstr "Onay i_letişimini göster"
 
-#: ../panel-plugin/settings-dialog.cpp:726
+#: ../panel-plugin/settings-dialog.cpp:744
 msgid "Show cate_gory names"
 msgstr "Kate_gori isimlerini göster"
 
-#: ../panel-plugin/settings-dialog.cpp:720
+#: ../panel-plugin/settings-dialog.cpp:738
 msgid "Show generic application _names"
 msgstr "Genel uygulama _isimlerini göster"
 
-#: ../panel-plugin/settings.cpp:194
+#: ../panel-plugin/settings.cpp:197
 msgid "Shut _Down"
 msgstr "Kap_at"
 
@@ -372,36 +393,40 @@ msgstr "Alfabetik diz A-Z"
 msgid "Sort Alphabetically Z-A"
 msgstr "Alfabetik diz Z-A"
 
-#: ../panel-plugin/settings-dialog.cpp:957
+#: ../panel-plugin/settings-dialog.cpp:1021
 msgid "Sort ca_tegories"
 msgstr "Ka_tegorileri sırala"
 
-#: ../panel-plugin/settings-dialog.cpp:951
+#: ../panel-plugin/settings-dialog.cpp:883
+msgid "Square Picture"
+msgstr "Kare Resim"
+
+#: ../panel-plugin/settings-dialog.cpp:1015
 msgid "Stay _visible when focus is lost"
 msgstr "Odak kaybolduğunda _görünür kal"
 
-#: ../panel-plugin/settings.cpp:200
+#: ../panel-plugin/settings.cpp:203
 msgid "Suspe_nd"
 msgstr "Askıya A_l"
 
-#: ../panel-plugin/settings.cpp:204
+#: ../panel-plugin/settings.cpp:207
 #, c-format
 msgid "Suspending computer in %d seconds."
 msgstr "Bilgisayar %dsaniyede askıya alınıyor. "
 
-#: ../panel-plugin/settings.cpp:178
+#: ../panel-plugin/settings.cpp:181
 msgid "Switch _User"
 msgstr "_Kullanıcı Değiştir"
 
-#: ../panel-plugin/settings-dialog.cpp:945
+#: ../panel-plugin/settings-dialog.cpp:1009
 msgid "Switch categories by _hovering"
 msgstr "Kategorileri gezintiye göre değiştir"
 
-#: ../panel-plugin/settings-dialog.cpp:545
+#: ../panel-plugin/settings-dialog.cpp:563
 msgid "The action will be deleted permanently."
 msgstr "Komut kalıcı olarak silinir."
 
-#: ../panel-plugin/settings-dialog.cpp:848
+#: ../panel-plugin/settings-dialog.cpp:909
 msgid "Title"
 msgstr "Başlık"
 
@@ -412,29 +437,29 @@ msgid ""
 "and remove the line \"%s\"."
 msgstr "Uygulamayı göstermek için \"%s\" dosyasını manuel olarak kaldırmanız veya dosyayı açıp \"%s\" satırını silmeniz gerekir."
 
-#: ../panel-plugin/settings.cpp:198
+#: ../panel-plugin/settings.cpp:201
 #, c-format
 msgid "Turning off computer in %d seconds."
 msgstr "Bilgisayar %d saniyede kapatılıyor."
 
-#: ../panel-plugin/page.cpp:491
+#: ../panel-plugin/page.cpp:492
 msgid "Unable to add launcher to desktop."
 msgstr "Çalıştırıcı Masaüstüne Eklenemedi"
 
-#: ../panel-plugin/page.cpp:529 ../panel-plugin/page.cpp:538
+#: ../panel-plugin/page.cpp:530 ../panel-plugin/page.cpp:539
 msgid "Unable to add launcher to panel."
 msgstr "Çalıştırıcı Panele Eklenemedi"
 
-#: ../panel-plugin/page.cpp:566
+#: ../panel-plugin/page.cpp:567
 msgid "Unable to edit launcher."
 msgstr "Başlatıcı düzenlenemiyor."
 
-#: ../panel-plugin/settings-dialog.cpp:606
+#: ../panel-plugin/settings-dialog.cpp:624
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Aşağıdaki url açılamıyor: %s"
 
-#: ../panel-plugin/settings-dialog.cpp:883
+#: ../panel-plugin/settings-dialog.cpp:947
 msgid "Use a single _panel row"
 msgstr "Tek satırlık bir _panel kullan"
 
@@ -446,7 +471,7 @@ msgstr "Çok büyük"
 msgid "Very Small"
 msgstr "Çok küçük"
 
-#: ../panel-plugin/settings.cpp:159
+#: ../panel-plugin/settings.cpp:162
 msgid "Web Search"
 msgstr "İnternette Ara"
 
@@ -456,11 +481,11 @@ msgstr "İnternette Ara"
 msgid "Whisker Menu"
 msgstr "Whisker Menü"
 
-#: ../panel-plugin/settings.cpp:160
+#: ../panel-plugin/settings.cpp:163
 msgid "Wikipedia"
 msgstr "Wikipedia"
 
-#: ../panel-plugin/settings-dialog.cpp:115
+#: ../panel-plugin/settings-dialog.cpp:116
 msgid "_Appearance"
 msgstr "_Görünüm"
 
@@ -468,7 +493,7 @@ msgstr "_Görünüm"
 msgid "_Behavior"
 msgstr "_Davranış"
 
-#: ../panel-plugin/command-edit.cpp:67 ../panel-plugin/settings-dialog.cpp:304
+#: ../panel-plugin/command-edit.cpp:67 ../panel-plugin/settings-dialog.cpp:322
 msgid "_Cancel"
 msgstr "_Vazgeç"
 
@@ -481,59 +506,59 @@ msgstr "_Kapat"
 msgid "_Commands"
 msgstr "_Komutlar"
 
-#: ../panel-plugin/settings-dialog.cpp:544
+#: ../panel-plugin/settings-dialog.cpp:562
 msgid "_Delete"
 msgstr "_Sil"
 
-#: ../panel-plugin/settings.cpp:216
+#: ../panel-plugin/settings.cpp:219
 msgid "_Edit Applications"
 msgstr "Uygulamaları _Düzenle"
+
+#: ../panel-plugin/settings-dialog.cpp:115
+msgid "_General"
+msgstr "_Genel"
 
 #: ../panel-plugin/settings-dialog.cpp:97
 #: ../panel-plugin/settings-dialog.cpp:104
 msgid "_Help"
 msgstr "_Yardım"
 
-#: ../panel-plugin/settings.cpp:206
+#: ../panel-plugin/settings.cpp:209
 msgid "_Hibernate"
 msgstr "_Uyku"
 
-#: ../panel-plugin/settings-dialog.cpp:870
+#: ../panel-plugin/settings-dialog.cpp:934
 msgid "_Icon:"
 msgstr "_Simge"
 
-#: ../panel-plugin/settings.cpp:174
+#: ../panel-plugin/settings.cpp:177
 msgid "_Lock Screen"
 msgstr "Ekranı _Kilitle"
 
-#: ../panel-plugin/command-edit.cpp:68 ../panel-plugin/settings-dialog.cpp:305
+#: ../panel-plugin/command-edit.cpp:68 ../panel-plugin/settings-dialog.cpp:323
 msgid "_OK"
 msgstr "_TAMAM"
 
-#: ../panel-plugin/settings-dialog.cpp:116
-msgid "_Panel Button"
-msgstr "_Panel Düğmesi"
-
-#: ../panel-plugin/settings-dialog.cpp:1120
+#: ../panel-plugin/settings-dialog.cpp:1184
 msgid "_Pattern:"
 msgstr "_Desen:"
 
-#: ../panel-plugin/settings-dialog.cpp:1144
+#: ../panel-plugin/settings-dialog.cpp:1208
 msgid "_Regular expression"
 msgstr "_Düzenli ifade"
 
-#: ../panel-plugin/settings.cpp:188
+#: ../panel-plugin/settings.cpp:191
 msgid "_Restart"
 msgstr "_Yeniden Başlat"
 
-#: ../panel-plugin/settings.cpp:170
+#: ../panel-plugin/settings.cpp:173
 msgid "_Settings Manager"
 msgstr "_Ayar Yöneticisi"
 
-#: ../panel-plugin/settings-dialog.cpp:858
+#: ../panel-plugin/settings-dialog.cpp:922
 msgid "_Title:"
 msgstr "_Başlık:"
 
-#: ../panel-plugin/plugin.cpp:443
+#: ../panel-plugin/plugin.cpp:446
 msgid "translator-credits"
 msgstr "Yusuf Faruk Doğan-yfdogan\nMekanın cennet olsun Yusuf Abim\n---\nDemiray Muhterem-tulliana\nErcan PEKER-Reis33"
