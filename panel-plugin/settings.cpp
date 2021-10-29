@@ -274,7 +274,7 @@ void Settings::load(const gchar* file, bool is_default)
 		i->load(rc, is_default);
 	}
 
-	search_actions.load(rc);
+	search_actions.load(rc, is_default);
 
 	xfce_rc_close(rc);
 
@@ -812,12 +812,18 @@ SearchActionList::SearchActionList(std::initializer_list<SearchAction*> data) :
 	m_data(data),
 	m_modified(false)
 {
+	clone(m_data, m_default);
 }
 
 //-----------------------------------------------------------------------------
 
 SearchActionList::~SearchActionList()
 {
+	for (auto action : m_default)
+	{
+		delete action;
+	}
+
 	for (auto action : m_data)
 	{
 		delete action;
@@ -842,7 +848,7 @@ void SearchActionList::push_back(SearchAction* value)
 
 //-----------------------------------------------------------------------------
 
-void SearchActionList::load(XfceRc* rc)
+void SearchActionList::load(XfceRc* rc, bool is_default)
 {
 	const int size = xfce_rc_read_int_entry(rc, "search-actions", -1);
 	if (size < 0)
@@ -886,6 +892,12 @@ void SearchActionList::load(XfceRc* rc)
 		{
 			delete action;
 		}
+	}
+
+	if (is_default)
+	{
+		clone(m_data, m_default);
+		m_modified = false;
 	}
 }
 
@@ -945,7 +957,14 @@ bool SearchActionList::load(const gchar* property, const GValue* value)
 {
 	if (g_strcmp0("/search-actions", property) == 0)
 	{
-		load();
+		if (G_VALUE_TYPE(value) != G_TYPE_INVALID)
+		{
+			load();
+		}
+		else
+		{
+			clone(m_default, m_data);
+		}
 		return true;
 	}
 
@@ -1025,6 +1044,29 @@ void SearchActionList::save()
 	m_modified = false;
 
 	wm_settings->end_property_update();
+}
+
+//-----------------------------------------------------------------------------
+
+void SearchActionList::clone(const std::vector<SearchAction*>& in, std::vector<SearchAction*>& out) const
+{
+	// Remove previous actions
+	for (auto action : out)
+	{
+		delete action;
+	}
+	out.clear();
+
+	// Copy actions
+	out.reserve(in.size());
+	for (auto action : in)
+	{
+		out.push_back(new SearchAction(
+				action->get_name(),
+				action->get_pattern(),
+				action->get_command(),
+				action->get_is_regex()));
+	}
 }
 
 //-----------------------------------------------------------------------------

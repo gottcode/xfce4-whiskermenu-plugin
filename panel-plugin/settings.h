@@ -231,12 +231,16 @@ public:
 		m_modified = true;
 	}
 
-	void load(XfceRc* rc);
+	void load(XfceRc* rc, bool is_default);
 	void load();
 	bool load(const gchar* property, const GValue* value);
 	void save();
 
 private:
+	void clone(const std::vector<SearchAction*>& in, std::vector<SearchAction*>& out) const;
+
+private:
+	std::vector<SearchAction*> m_default;
 	std::vector<SearchAction*> m_data;
 	bool m_modified;
 };
