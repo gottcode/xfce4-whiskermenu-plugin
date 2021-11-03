@@ -92,24 +92,24 @@ Settings::Settings() :
 	launcher_show_name(true),
 	launcher_show_description(true),
 	launcher_show_tooltip(true),
-	launcher_icon_size(IconSize::Normal),
+	launcher_icon_size(IconSize::Small),
 
 	category_hover_activate(false),
 	category_show_name(true),
 	sort_categories(true),
 	category_icon_size(IconSize::Smaller),
 
-	view_mode(ViewAsIcons, ViewAsIcons, ViewAsTree),
+	view_mode(ViewAsList, ViewAsIcons, ViewAsTree),
 
 	default_category(CategoryFavorites, CategoryFavorites, CategoryAll),
 
 	recent_items_max(10, 0, 100),
 	favorites_in_recent(true),
 
-	position_search_alternate(true),
+	position_search_alternate(false),
 	position_commands_alternate(false),
 	position_categories_alternate(false),
-	position_categories_horizontal(true),
+	position_categories_horizontal(false),
 	stay_on_focus_out(false),
 
 	profile_shape(ProfileRound, ProfileRound, ProfileHidden),
@@ -125,7 +125,7 @@ Settings::Settings() :
 		new SearchAction(_("Open URI"), "^(file|http|https):\\/\\/(.*)$", "exo-open \\0", true, true)
 	},
 
-	menu_width(560, 10, INT_MAX),
+	menu_width(450, 10, INT_MAX),
 	menu_height(500, 10, INT_MAX),
 	menu_opacity(100, 0, 100)
 {
