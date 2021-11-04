@@ -20,8 +20,6 @@
 
 #include "util.h"
 
-#include <climits>
-
 #include <gdk/gdk.h>
 
 namespace WhiskerMenu

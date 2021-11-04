@@ -21,8 +21,6 @@
 #include "settings.h"
 #include "slot.h"
 
-#include <exo/exo.h>
-
 using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------

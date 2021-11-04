@@ -19,8 +19,6 @@
 
 #include <sstream>
 
-#include <climits>
-
 #include <glib.h>
 
 using namespace WhiskerMenu;

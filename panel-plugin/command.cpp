@@ -21,8 +21,6 @@
 #include "settings.h"
 #include "slot.h"
 
-#include <string>
-
 #include <libxfce4ui/libxfce4ui.h>
 
 using namespace WhiskerMenu;
