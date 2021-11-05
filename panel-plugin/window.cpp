@@ -431,11 +431,11 @@ void WhiskerMenu::Window::show(const Position position)
 	if (position != PositionVertical)
 	{
 		m_geometry.x = layout_left ? parent_x : (parent_x + parent_w - m_geometry.width);
-		m_geometry.y = layout_bottom ? (parent_y - m_geometry.height) : (parent_y + parent_h);
+		m_geometry.y = layout_bottom ? (parent_y - m_geometry.height - 1) : (parent_y + parent_h + 1);
 	}
 	else
 	{
-		m_geometry.x = layout_left ? (parent_x + parent_w) : (parent_x - m_geometry.width);
+		m_geometry.x = layout_left ? (parent_x + parent_w + 1) : (parent_x - m_geometry.width - 1);
 		m_geometry.y = layout_bottom ? (parent_y + parent_h - m_geometry.height) : parent_y;
 	}
 
