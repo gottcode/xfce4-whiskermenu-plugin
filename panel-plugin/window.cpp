@@ -374,6 +374,10 @@ WhiskerMenu::Window::~Window()
 
 void WhiskerMenu::Window::hide(bool lost_focus)
 {
+	// Save size
+	wm_settings->menu_width = m_geometry.width;
+	wm_settings->menu_height = m_geometry.height;
+
 	// Scroll categories to top
 	GtkAdjustment* adjustment = gtk_scrolled_window_get_vadjustment(m_sidebar);
 	gtk_adjustment_set_value(adjustment, gtk_adjustment_get_lower(adjustment));
@@ -579,20 +583,6 @@ void WhiskerMenu::Window::show(const Position position)
 	// Show window
 	gtk_window_present(m_window);
 	gtk_window_move(m_window, m_geometry.x, m_geometry.y);
-}
-
-//-----------------------------------------------------------------------------
-
-void WhiskerMenu::Window::save()
-{
-	if (wm_settings->menu_width != m_geometry.width)
-	{
-		wm_settings->menu_width = m_geometry.width;
-	}
-	if (wm_settings->menu_height != m_geometry.height)
-	{
-		wm_settings->menu_height = m_geometry.height;
-	}
 }
 
 //-----------------------------------------------------------------------------

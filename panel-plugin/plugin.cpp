@@ -198,8 +198,6 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 
 Plugin::~Plugin()
 {
-	save();
-
 	delete m_window;
 	m_window = nullptr;
 
@@ -232,7 +230,6 @@ void Plugin::menu_hidden(bool lost_focus)
 		m_menu_shown = false;
 	}
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_button), false);
-	save();
 }
 
 //-----------------------------------------------------------------------------
@@ -407,8 +404,6 @@ gboolean Plugin::remote_event(const gchar* name, const GValue* value)
 
 void Plugin::save()
 {
-	m_window->save();
-
 	if (wm_settings->get_modified())
 	{
 		wm_settings->save(xfce_panel_plugin_save_location(m_plugin, true));

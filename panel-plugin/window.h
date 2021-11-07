@@ -80,7 +80,6 @@ public:
 
 	void hide(bool lost_focus = false);
 	void show(const Position position);
-	void save();
 	void set_child_has_focus();
 	void set_categories(const std::vector<CategoryButton*>& categories);
 	void set_items();
