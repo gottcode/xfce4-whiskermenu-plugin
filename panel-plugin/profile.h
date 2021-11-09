@@ -60,9 +60,8 @@ private:
 #ifdef HAS_ACCOUNTSERVICE
 	void on_user_changed(ActUserManager* um, ActUser* user);
 	void on_user_loaded(ActUser* user, GParamSpec* param);
-	void on_user_info_loaded(ActUserManager* um, GParamSpec* param);
+	void on_user_info_loaded();
 #endif
-	void on_file_changed(GFileMonitor* monitor, GFile* file, GFile* other_file, GFileMonitorEvent event_type);
 	void on_button_press_event();
 
 private:

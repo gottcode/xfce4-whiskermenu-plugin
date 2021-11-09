@@ -63,11 +63,11 @@ Profile::Profile(Window* window) :
 	g_object_get(m_act_user_manager, "is-loaded", &loaded, nullptr);
 	if (loaded)
 	{
-		on_user_info_loaded(m_act_user_manager, nullptr);
+		on_user_info_loaded();
 	}
 	else
 	{
-		g_signal_connect_slot(m_act_user_manager, "notify::is-loaded", &Profile::on_user_info_loaded, this);
+		g_signal_connect_slot<ActUserManager*,GParamSpec*>(m_act_user_manager, "notify::is-loaded", &Profile::on_user_info_loaded, this);
 	}
 #else
 	init_fallback();
@@ -165,8 +165,8 @@ void Profile::init_fallback()
 
 	GFile* file = g_file_new_for_path(m_file_path);
 	m_file_monitor = g_file_monitor_file(file, G_FILE_MONITOR_NONE, nullptr, nullptr);
-	g_signal_connect_slot(m_file_monitor, "changed", &Profile::on_file_changed, this);
-	on_file_changed(m_file_monitor, nullptr, nullptr, G_FILE_MONITOR_EVENT_CHANGED);
+	g_signal_connect_slot<GFileMonitor*,GFile*,GFile*,GFileMonitorEvent>(m_file_monitor, "changed", &Profile::update_picture, this);
+	update_picture();
 
 	g_object_unref(file);
 }
@@ -218,7 +218,7 @@ void Profile::on_user_loaded(ActUser* user, GParamSpec*)
 
 //-----------------------------------------------------------------------------
 
-void Profile::on_user_info_loaded(ActUserManager*, GParamSpec*)
+void Profile::on_user_info_loaded()
 {
 	if (act_user_manager_no_service(m_act_user_manager))
 	{
@@ -239,13 +239,6 @@ void Profile::on_user_info_loaded(ActUserManager*, GParamSpec*)
 	}
 }
 #endif
-
-//-----------------------------------------------------------------------------
-
-void Profile::on_file_changed(GFileMonitor*, GFile*, GFile*, GFileMonitorEvent)
-{
-	update_picture();
-}
 
 //-----------------------------------------------------------------------------
 
