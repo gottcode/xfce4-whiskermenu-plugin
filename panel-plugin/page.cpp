@@ -118,6 +118,7 @@ void Page::update_view()
 		return;
 	}
 
+	g_assert(m_view);
 	LauncherView* view = m_view;
 	create_view();
 	m_view->set_model(view->get_model());
