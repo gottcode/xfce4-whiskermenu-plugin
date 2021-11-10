@@ -89,10 +89,7 @@ Profile::~Profile()
 		g_object_unref(m_file_monitor);
 	}
 
-	if (m_file_path)
-	{
-		g_free(m_file_path);
-	}
+	g_free(m_file_path);
 }
 
 //-----------------------------------------------------------------------------
@@ -157,10 +154,7 @@ void Profile::init_fallback()
 	set_username(name);
 
 	// Load picture and monitor for changes
-	if (m_file_path)
-	{
-		g_free(m_file_path);
-	}
+	g_free(m_file_path);
 	m_file_path = g_build_filename(g_get_home_dir(), ".face", nullptr);
 
 	GFile* file = g_file_new_for_path(m_file_path);
@@ -199,13 +193,8 @@ void Profile::on_user_changed(ActUserManager*, ActUser* user)
 	set_username(name);
 
 	// Load picture
-	if (m_file_path)
-	{
-		g_free(m_file_path);
-	}
-
+	g_free(m_file_path);
 	m_file_path = g_strdup(act_user_get_icon_file(user));
-
 	update_picture();
 }
 
