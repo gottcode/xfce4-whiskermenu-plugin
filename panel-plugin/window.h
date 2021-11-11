@@ -78,7 +78,12 @@ public:
 		return m_recent;
 	}
 
-	void hide();
+	void hide()
+	{
+		hide(false);
+	}
+
+	void hide(bool lost_focus);
 	void show(const Position position);
 	void save();
 	void set_child_has_focus();

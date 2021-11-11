@@ -28,8 +28,6 @@
 
 using namespace WhiskerMenu;
 
-bool Plugin::m_menu_shown = false;
-
 //-----------------------------------------------------------------------------
 
 extern "C" void whiskermenu_construct(XfcePanelPlugin* plugin)
@@ -98,7 +96,8 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	m_plugin(plugin),
 	m_window(nullptr),
 	m_opacity(100),
-	m_file_icon(false)
+	m_file_icon(false),
+	m_menu_shown(false)
 {
 	// Load settings
 	wm_settings = new Settings;
@@ -188,7 +187,6 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 
 	// Create menu window
 	m_window = new Window(this);
-	g_signal_connect_slot<GtkWidget*>(m_window->get_widget(), "unmap", &Plugin::menu_hidden, this);
 }
 
 //-----------------------------------------------------------------------------
@@ -218,6 +216,18 @@ Plugin::ButtonStyle Plugin::get_button_style() const
 std::string Plugin::get_button_title_default()
 {
 	return wm_settings->m_button_title_default;
+}
+
+//-----------------------------------------------------------------------------
+
+void Plugin::menu_hidden(bool lost_focus)
+{
+	if (!lost_focus)
+	{
+		m_menu_shown = false;
+	}
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_button), false);
+	save();
 }
 
 //-----------------------------------------------------------------------------
@@ -307,7 +317,6 @@ void Plugin::button_toggled(GtkToggleButton* button)
 	{
 		if (gtk_widget_get_visible(m_window->get_widget()))
 		{
-			m_menu_shown = false;
 			m_window->hide();
 		}
 		xfce_panel_plugin_block_autohide(m_plugin, false);
@@ -317,14 +326,6 @@ void Plugin::button_toggled(GtkToggleButton* button)
 		xfce_panel_plugin_block_autohide(m_plugin, true);
 		show_menu(false);
 	}
-}
-
-//-----------------------------------------------------------------------------
-
-void Plugin::menu_hidden()
-{
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_button), false);
-	save();
 }
 
 //-----------------------------------------------------------------------------
@@ -556,7 +557,6 @@ void Plugin::show_menu(bool at_cursor)
 		{
 			delete m_window;
 			m_window = new Window(this);
-			g_signal_connect_slot<GtkWidget*>(m_window->get_widget(), "unmap", &Plugin::menu_hidden, this);
 		}
 		m_opacity = wm_settings->menu_opacity;
 	}
