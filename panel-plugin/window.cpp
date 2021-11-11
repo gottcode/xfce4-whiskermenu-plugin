@@ -249,7 +249,7 @@ WhiskerMenu::Window::~Window()
 
 //-----------------------------------------------------------------------------
 
-void WhiskerMenu::Window::hide()
+void WhiskerMenu::Window::hide(bool lost_focus)
 {
 	// Scroll categories to top
 	GtkAdjustment* adjustment = gtk_scrolled_window_get_vadjustment(m_sidebar);
@@ -266,6 +266,9 @@ void WhiskerMenu::Window::hide()
 
 	// Switch back to default page
 	show_default_page();
+
+	// Inform plugin that window is hidden
+	m_plugin->menu_hidden(lost_focus);
 }
 
 //-----------------------------------------------------------------------------
@@ -571,7 +574,7 @@ gboolean WhiskerMenu::Window::on_focus_out_event(GtkWidget* widget, GdkEvent*)
 
 	if (!m_child_has_focus && gtk_widget_get_visible(widget))
 	{
-		hide();
+		hide(true);
 	}
 
 	return GDK_EVENT_PROPAGATE;
@@ -719,7 +722,7 @@ gboolean WhiskerMenu::Window::on_window_state_event(GtkWidget*, GdkEvent* event)
 	GdkEventWindowState* state_event = reinterpret_cast<GdkEventWindowState*>(event);
 	if (state_event->new_window_state == (GDK_WINDOW_STATE_WITHDRAWN | GDK_WINDOW_STATE_STICKY))
 	{
-		Plugin::launcher_activated();
+		m_plugin->menu_hidden(false);
 	}
 
 	return GDK_EVENT_PROPAGATE;
