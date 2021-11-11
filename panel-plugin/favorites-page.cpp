@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -114,9 +114,25 @@ void FavoritesPage::set_menu_items()
 {
 	GtkTreeModel* model = get_window()->get_applications()->create_launcher_model(wm_settings->favorites);
 	get_view()->set_model(model);
-	g_signal_connect_slot(model, "row-changed", &FavoritesPage::on_row_changed, this);
-	g_signal_connect_slot(model, "row-inserted", &FavoritesPage::on_row_inserted, this);
-	g_signal_connect_slot(model, "row-deleted", &FavoritesPage::on_row_deleted, this);
+
+	connect(model, "row-changed",
+		[this](GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter)
+		{
+			on_row_changed(model, path, iter);
+		});
+
+	connect(model, "row-inserted",
+		[this](GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter)
+		{
+			on_row_inserted(model, path, iter);
+		});
+
+	connect(model, "row-deleted",
+		[this](GtkTreeModel*, GtkTreePath* path)
+		{
+			on_row_deleted(path);
+		});
+
 	g_object_unref(model);
 
 	for (const auto& favorite : wm_settings->favorites)
@@ -145,11 +161,19 @@ void FavoritesPage::extend_context_menu(GtkWidget* menu)
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
 	menuitem = whiskermenu_image_menu_item_new("view-sort-ascending", _("Sort Alphabetically A-Z"));
-	g_signal_connect_slot<GtkMenuItem*>(menuitem, "activate", &FavoritesPage::sort_ascending, this);
+	connect(menuitem, "activate",
+		[this](GtkMenuItem*)
+		{
+			sort_ascending();
+		});
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
 	menuitem = whiskermenu_image_menu_item_new("view-sort-descending", _("Sort Alphabetically Z-A"));
-	g_signal_connect_slot<GtkMenuItem*>(menuitem, "activate", &FavoritesPage::sort_descending, this);
+	connect(menuitem, "activate",
+		[this](GtkMenuItem*)
+		{
+			sort_descending();
+		});
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 }
 
@@ -204,7 +228,7 @@ void FavoritesPage::on_row_inserted(GtkTreeModel* model, GtkTreePath* path, GtkT
 
 //-----------------------------------------------------------------------------
 
-void FavoritesPage::on_row_deleted(GtkTreeModel*, GtkTreePath* path)
+void FavoritesPage::on_row_deleted(GtkTreePath* path)
 {
 	const int pos = gtk_tree_path_get_indices(path)[0];
 	if (pos < wm_settings->favorites.size())

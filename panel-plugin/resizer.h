@@ -54,11 +54,6 @@ public:
 	}
 
 private:
-	gboolean on_button_press_event(GtkWidget*, GdkEvent* event);
-	gboolean on_enter_notify_event(GtkWidget* widget, GdkEvent*);
-	gboolean on_leave_notify_event(GtkWidget* widget, GdkEvent*);
-
-private:
 	Window* m_window;
 	GtkWidget* m_drawing;
 	GdkCursor* m_cursor;

@@ -67,16 +67,69 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	gtk_window_set_type_hint(m_window, GDK_WINDOW_TYPE_HINT_MENU);
 	gtk_window_stick(m_window);
 	gtk_widget_add_events(GTK_WIDGET(m_window), GDK_FOCUS_CHANGE_MASK | GDK_STRUCTURE_MASK);
-	g_signal_connect_slot(m_window, "enter-notify-event", &Window::on_focus_in_event, this);
-	g_signal_connect_slot(m_window, "focus-in-event", &Window::on_focus_in_event, this);
-	g_signal_connect_slot(m_window, "focus-out-event", &Window::on_focus_out_event, this);
-	g_signal_connect_slot(m_window, "key-press-event", &Window::on_key_press_event, this);
-	g_signal_connect_slot(m_window, "key-press-event", &Window::on_key_press_event_after, this, Connect::After);
-	g_signal_connect_slot(m_window, "map-event", &Window::on_map_event, this);
-	g_signal_connect_slot(m_window, "state-flags-changed", &Window::on_state_flags_changed_event, this);
-	g_signal_connect_slot(m_window, "configure-event", &Window::on_configure_event, this);
-	g_signal_connect_slot(m_window, "window-state-event", &Window::on_window_state_event, this);
-	g_signal_connect(m_window, "delete-event", G_CALLBACK(&gtk_widget_hide_on_delete), nullptr);
+
+	connect(m_window, "enter-notify-event",
+		[this](GtkWidget*, GdkEvent*) -> gboolean
+		{
+			m_child_has_focus = false;
+			return GDK_EVENT_PROPAGATE;
+		});
+
+	connect(m_window, "focus-in-event",
+		[this](GtkWidget*, GdkEvent*) -> gboolean
+		{
+			m_child_has_focus = false;
+			return GDK_EVENT_PROPAGATE;
+		});
+
+	connect(m_window, "focus-out-event",
+		[this](GtkWidget* widget, GdkEvent*) -> gboolean
+		{
+			if (!wm_settings->stay_on_focus_out && !m_child_has_focus && gtk_widget_get_visible(widget))
+			{
+				hide(true);
+			}
+			return GDK_EVENT_PROPAGATE;
+		});
+
+	connect(m_window, "key-press-event",
+		[this](GtkWidget* widget, GdkEvent* event) -> gboolean
+		{
+			return on_key_press_event(widget, reinterpret_cast<GdkEventKey*>(event));
+		});
+
+	connect(m_window, "key-press-event",
+		[this](GtkWidget* widget, GdkEvent* event) -> gboolean
+		{
+			return on_key_press_event_after(widget, reinterpret_cast<GdkEventKey*>(event));
+		},
+		Connect::After);
+
+	connect(m_window, "map-event",
+		[this](GtkWidget*, GdkEvent*) -> gboolean
+		{
+			return on_map_event();
+		});
+
+	connect(m_window, "state-flags-changed",
+		[this](GtkWidget* widget, GtkStateFlags)
+		{
+			on_state_flags_changed(widget);
+		});
+
+	connect(m_window, "configure-event",
+		[this](GtkWidget*, GdkEvent* event) -> gboolean
+		{
+			return on_configure_event(reinterpret_cast<GdkEventConfigure*>(event));
+		});
+
+	connect(m_window, "window-state-event",
+		[this](GtkWidget*, GdkEvent* event) -> gboolean
+		{
+			return on_window_state_event(reinterpret_cast<GdkEventWindowState*>(event));
+		});
+
+	g_signal_connect(G_OBJECT(m_window), "delete-event", G_CALLBACK(&gtk_widget_hide_on_delete), nullptr);
 
 	// Create the border of the window
 	GtkWidget* frame = gtk_frame_new(nullptr);
@@ -117,33 +170,59 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	for (int i = 0; i < 9; ++i)
 	{
 		m_commands_button[i] = wm_settings->command[i]->get_button();
-		m_command_slots[i] = g_signal_connect_slot<GtkButton*>(m_commands_button[i], "clicked", &Window::hide, this);
+		m_command_slots[i] = connect(m_commands_button[i], "clicked",
+			[this](GtkButton*)
+			{
+				hide();
+			});
 	}
 
 	// Create search entry
 	m_search_entry = GTK_ENTRY(gtk_search_entry_new());
-	g_signal_connect_slot<GtkSearchEntry*>(m_search_entry, "changed", &Window::search, this);
-	g_signal_connect_slot<GtkEntry*,GtkWidget*>(m_search_entry, "populate-popup", &Window::set_child_has_focus, this);
+
+	connect(m_search_entry, "changed",
+		[this](GtkEditable*)
+		{
+			search();
+		});
+
+	connect(m_search_entry, "populate-popup",
+		[this](GtkEntry*, GtkWidget*)
+		{
+			set_child_has_focus();
+		});
 
 	// Create favorites
 	m_favorites = new FavoritesPage(this);
 
 	CategoryButton* favorites_button = m_favorites->get_button();
-	g_signal_connect_slot<GtkToggleButton*>(favorites_button->get_widget(), "toggled", &Window::favorites_toggled, this);
+	connect(favorites_button->get_widget(), "toggled",
+		[this](GtkToggleButton*)
+		{
+			favorites_toggled();
+		});
 
 	// Create recent
 	m_recent = new RecentPage(this);
 
 	CategoryButton* recent_button = m_recent->get_button();
 	recent_button->join_group(favorites_button);
-	g_signal_connect_slot<GtkToggleButton*>(recent_button->get_widget(), "toggled", &Window::recent_toggled, this);
+	connect(recent_button->get_widget(), "toggled",
+		[this](GtkToggleButton*)
+		{
+			recent_toggled();
+		});
 
 	// Create applications
 	m_applications = new ApplicationsPage(this);
 
 	CategoryButton* applications_button = m_applications->get_button();
 	applications_button->join_group(recent_button);
-	g_signal_connect_slot<GtkToggleButton*>(applications_button->get_widget(), "toggled", &Window::category_toggled, this);
+	connect(applications_button->get_widget(), "toggled",
+		[this](GtkToggleButton*)
+		{
+			category_toggled();
+		});
 
 	// Create search results
 	m_search_results = new SearchPage(this);
@@ -244,9 +323,19 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 
 	// Handle transparency
 	gtk_widget_set_app_paintable(GTK_WIDGET(m_window), true);
-	g_signal_connect_slot(m_window, "draw", &Window::on_draw_event, this);
-	g_signal_connect_slot(m_window, "screen-changed", &Window::on_screen_changed_event, this);
-	on_screen_changed_event(GTK_WIDGET(m_window), nullptr);
+
+	connect(m_window, "draw",
+		[this](GtkWidget* widget, cairo_t* cr) -> gboolean
+		{
+			return on_draw_event(widget, cr);
+		});
+
+	connect(m_window, "screen-changed",
+		[this](GtkWidget* widget, GdkScreen*)
+		{
+			on_screen_changed(widget);
+		});
+	on_screen_changed(GTK_WIDGET(m_window));
 
 	// Load applications
 	m_applications->load();
@@ -522,7 +611,11 @@ void WhiskerMenu::Window::set_categories(const std::vector<CategoryButton*>& cat
 		button->join_group(last_button);
 		last_button = button;
 		gtk_box_pack_start(m_category_buttons, button->get_widget(), false, false, 0);
-		g_signal_connect_slot<GtkToggleButton*>(button->get_widget(), "toggled", &Window::category_toggled, this);
+		connect(button->get_widget(), "toggled",
+			[this](GtkToggleButton*)
+			{
+				category_toggled();
+			});
 	}
 
 	show_default_page();
@@ -537,8 +630,11 @@ void WhiskerMenu::Window::set_items()
 	m_recent->set_menu_items();
 
 	// Handle switching to favorites are added
-	GtkTreeModel* favorites_model = m_favorites->get_view()->get_model();
-	g_signal_connect_slot<GtkTreeModel*, GtkTreePath*, GtkTreeIter*>(favorites_model, "row-inserted", &Window::show_favorites, this);
+	connect(m_favorites->get_view()->get_model(), "row-inserted",
+		[this](GtkTreeModel*, GtkTreePath*, GtkTreeIter*)
+		{
+			show_favorites();
+		});
 }
 
 //-----------------------------------------------------------------------------
@@ -570,35 +666,8 @@ void WhiskerMenu::Window::unset_items()
 
 //-----------------------------------------------------------------------------
 
-gboolean WhiskerMenu::Window::on_focus_in_event(GtkWidget*, GdkEvent*)
+gboolean WhiskerMenu::Window::on_key_press_event(GtkWidget* widget, GdkEventKey* key_event)
 {
-	m_child_has_focus = false;
-	return GDK_EVENT_PROPAGATE;
-}
-
-//-----------------------------------------------------------------------------
-
-gboolean WhiskerMenu::Window::on_focus_out_event(GtkWidget* widget, GdkEvent*)
-{
-	if (wm_settings->stay_on_focus_out)
-	{
-		return GDK_EVENT_PROPAGATE;
-	}
-
-	if (!m_child_has_focus && gtk_widget_get_visible(widget))
-	{
-		hide(true);
-	}
-
-	return GDK_EVENT_PROPAGATE;
-}
-
-//-----------------------------------------------------------------------------
-
-gboolean WhiskerMenu::Window::on_key_press_event(GtkWidget* widget, GdkEvent* event)
-{
-	GdkEventKey* key_event = reinterpret_cast<GdkEventKey*>(event);
-
 	// Hide if escape is pressed and there is no text in search entry
 	if ( (key_event->keyval == GDK_KEY_Escape) && xfce_str_is_empty(gtk_entry_get_text(m_search_entry)) )
 	{
@@ -663,13 +732,12 @@ gboolean WhiskerMenu::Window::on_key_press_event(GtkWidget* widget, GdkEvent* ev
 
 //-----------------------------------------------------------------------------
 
-gboolean WhiskerMenu::Window::on_key_press_event_after(GtkWidget* widget, GdkEvent* event)
+gboolean WhiskerMenu::Window::on_key_press_event_after(GtkWidget* widget, GdkEventKey* key_event)
 {
 	// Pass unhandled key presses to search entry
 	GtkWidget* search_entry = GTK_WIDGET(m_search_entry);
 	if ((widget != search_entry) && (gtk_window_get_focus(m_window) != search_entry))
 	{
-		GdkEventKey* key_event = reinterpret_cast<GdkEventKey*>(event);
 		if (key_event->is_modifier)
 		{
 			return GDK_EVENT_PROPAGATE;
@@ -683,7 +751,7 @@ gboolean WhiskerMenu::Window::on_key_press_event_after(GtkWidget* widget, GdkEve
 
 //-----------------------------------------------------------------------------
 
-gboolean WhiskerMenu::Window::on_map_event(GtkWidget*, GdkEvent*)
+gboolean WhiskerMenu::Window::on_map_event()
 {
 	m_favorites->reset_selection();
 
@@ -697,22 +765,19 @@ gboolean WhiskerMenu::Window::on_map_event(GtkWidget*, GdkEvent*)
 
 //-----------------------------------------------------------------------------
 
-gboolean WhiskerMenu::Window::on_state_flags_changed_event(GtkWidget* widget, GtkStateFlags)
+void WhiskerMenu::Window::on_state_flags_changed(GtkWidget* widget)
 {
 	// Refocus and raise window if visible
 	if (gtk_widget_get_visible(widget))
 	{
 		gtk_window_present(m_window);
 	}
-
-	return GDK_EVENT_PROPAGATE;
 }
 
 //-----------------------------------------------------------------------------
 
-gboolean WhiskerMenu::Window::on_configure_event(GtkWidget*, GdkEvent* event)
+gboolean WhiskerMenu::Window::on_configure_event(GdkEventConfigure* configure_event)
 {
-	GdkEventConfigure* configure_event = reinterpret_cast<GdkEventConfigure*>(event);
 	if (configure_event->width && configure_event->height)
 	{
 		m_geometry.x = configure_event->x;
@@ -728,11 +793,10 @@ gboolean WhiskerMenu::Window::on_configure_event(GtkWidget*, GdkEvent* event)
 
 //-----------------------------------------------------------------------------
 
-gboolean WhiskerMenu::Window::on_window_state_event(GtkWidget*, GdkEvent* event)
+gboolean WhiskerMenu::Window::on_window_state_event(GdkEventWindowState* state_event)
 {
 	// Workaround to detect clicking off menu to hide it; xfwm only sets it to this
 	// state in that case, for all others it is purely GDK_WINDOW_STATE_WITHDRAWN
-	GdkEventWindowState* state_event = reinterpret_cast<GdkEventWindowState*>(event);
 	if (state_event->new_window_state == (GDK_WINDOW_STATE_WITHDRAWN | GDK_WINDOW_STATE_STICKY))
 	{
 		m_plugin->menu_hidden(false);
@@ -743,7 +807,7 @@ gboolean WhiskerMenu::Window::on_window_state_event(GtkWidget*, GdkEvent* event)
 
 //-----------------------------------------------------------------------------
 
-void WhiskerMenu::Window::on_screen_changed_event(GtkWidget* widget, GdkScreen*)
+void WhiskerMenu::Window::on_screen_changed(GtkWidget* widget)
 {
 	GdkScreen* screen = gtk_widget_get_screen(widget);
 	GdkVisual* visual = gdk_screen_get_rgba_visual(screen);

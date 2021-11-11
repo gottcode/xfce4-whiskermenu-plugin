@@ -36,11 +36,6 @@ extern "C" void whiskermenu_construct(XfcePanelPlugin* plugin)
 	new Plugin(plugin);
 }
 
-static void plugin_free(XfcePanelPlugin*, gpointer user_data)
-{
-	delete static_cast<Plugin*>(user_data);
-}
-
 // Wait for grab; allows modifier as shortcut
 // Adapted from http://git.xfce.org/xfce/xfce4-panel/tree/common/panel-utils.c#n122
 static bool can_grab(GtkWidget* widget)
@@ -132,7 +127,11 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 #if !LIBXFCE4PANEL_CHECK_VERSION(4,13,0)
 	widget_add_css(m_button, ".xfce4-panel button { padding: 1px; }");
 #endif
-	g_signal_connect_slot(m_button, "toggled", &Plugin::button_toggled, this);
+	connect(m_button, "toggled",
+		[this](GtkToggleButton* button)
+		{
+			button_toggled(button);
+		});
 	gtk_widget_show(m_button);
 
 	m_button_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 2));
@@ -168,22 +167,65 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	xfce_panel_plugin_add_action_widget(plugin, m_button);
 
 	// Connect plugin signals to functions
-	g_signal_connect(plugin, "free-data", G_CALLBACK(&plugin_free), this);
-	g_signal_connect_slot<XfcePanelPlugin*>(plugin, "configure-plugin", &Plugin::configure, this);
-	g_signal_connect_slot(plugin, "mode-changed", &Plugin::mode_changed, this);
-	g_signal_connect_slot(plugin, "remote-event", &Plugin::remote_event, this);
-	g_signal_connect_slot<XfcePanelPlugin*>(plugin, "save", &Plugin::save, this);
-	g_signal_connect_slot<XfcePanelPlugin*>(plugin, "about", &Plugin::show_about, this);
-	g_signal_connect_slot(plugin, "size-changed", &Plugin::size_changed, this);
+	connect(m_plugin, "free-data",
+		[this](XfcePanelPlugin*)
+		{
+			delete this;
+		});
+
+	connect(m_plugin, "configure-plugin",
+		[this](XfcePanelPlugin*)
+		{
+			configure();
+		});
+
+	connect(m_plugin, "mode-changed",
+		[this](XfcePanelPlugin*, XfcePanelPluginMode mode)
+		{
+			mode_changed(mode);
+		});
+
+	connect(m_plugin, "remote-event",
+		[this](XfcePanelPlugin*, const gchar* name, const GValue* value) -> gboolean
+		{
+			return remote_event(name, value);
+		});
+
+	connect(m_plugin, "save",
+		[this](XfcePanelPlugin*)
+		{
+			save();
+		});
+
+	connect(m_plugin, "about",
+		[this](XfcePanelPlugin*)
+		{
+			show_about();
+		});
+
+	connect(m_plugin, "size-changed",
+		[this](XfcePanelPlugin*, gint size) -> gboolean
+		{
+			return size_changed(size);
+		});
 
 	xfce_panel_plugin_menu_show_about(plugin);
 	xfce_panel_plugin_menu_show_configure(plugin);
 	xfce_panel_plugin_menu_insert_item(plugin, GTK_MENU_ITEM(wm_settings->command[Settings::CommandMenuEditor]->get_menuitem()));
 
-	mode_changed(m_plugin, xfce_panel_plugin_get_mode(m_plugin));
+	mode_changed(xfce_panel_plugin_get_mode(m_plugin));
 
-	g_signal_connect_slot<GtkWidget*,GtkStyle*>(m_button, "style-set", &Plugin::update_size, this);
-	g_signal_connect_slot<GtkWidget*,GdkScreen*>(m_button, "screen-changed", &Plugin::update_size, this);
+	connect(m_button, "style-updated",
+		[this](GtkWidget*)
+		{
+			update_size();
+		});
+
+	connect(m_button, "screen-changed",
+		[this](GtkWidget*, GdkScreen*)
+		{
+			update_size();
+		});
 
 	// Create menu window
 	m_window = new Window(this);
@@ -264,7 +306,7 @@ void Plugin::set_button_style(ButtonStyle style)
 		gtk_widget_set_has_tooltip(m_button, true);
 	}
 
-	size_changed(m_plugin, xfce_panel_plugin_get_size(m_plugin));
+	update_size();
 }
 
 //-----------------------------------------------------------------------------
@@ -275,7 +317,7 @@ void Plugin::set_button_title(const std::string& title)
 	gtk_label_set_markup(m_button_label, wm_settings->button_title);
 	gtk_widget_set_tooltip_markup(m_button, wm_settings->button_title);
 	gtk_widget_set_has_tooltip(m_button, !wm_settings->button_title_visible);
-	size_changed(m_plugin, xfce_panel_plugin_get_size(m_plugin));
+	update_size();
 }
 
 //-----------------------------------------------------------------------------
@@ -284,7 +326,7 @@ void Plugin::set_button_icon_name(const std::string& icon)
 {
 	wm_settings->button_icon_name = icon;
 	icon_changed(icon.c_str());
-	size_changed(m_plugin, xfce_panel_plugin_get_size(m_plugin));
+	update_size();
 }
 
 //-----------------------------------------------------------------------------
@@ -333,7 +375,12 @@ void Plugin::button_toggled(GtkToggleButton* button)
 void Plugin::configure()
 {
 	SettingsDialog* dialog = new SettingsDialog(this);
-	g_signal_connect_slot<GtkWidget*>(dialog->get_widget(), "destroy", &Plugin::save, this);
+	connect(dialog->get_widget(), "destroy",
+		[this, dialog](GtkWidget*)
+		{
+			save();
+			delete dialog;
+		});
 }
 
 //-----------------------------------------------------------------------------
@@ -354,7 +401,7 @@ void Plugin::icon_changed(const gchar* icon)
 
 //-----------------------------------------------------------------------------
 
-void Plugin::mode_changed(XfcePanelPlugin*, XfcePanelPluginMode mode)
+void Plugin::mode_changed(XfcePanelPluginMode mode)
 {
 	gtk_label_set_angle(m_button_label, (mode == XFCE_PANEL_PLUGIN_MODE_VERTICAL) ? 270: 0);
 	update_size();
@@ -362,7 +409,7 @@ void Plugin::mode_changed(XfcePanelPlugin*, XfcePanelPluginMode mode)
 
 //-----------------------------------------------------------------------------
 
-gboolean Plugin::remote_event(XfcePanelPlugin*, gchar* name, GValue* value)
+gboolean Plugin::remote_event(const gchar* name, const GValue* value)
 {
 	if (strcmp(name, "popup"))
 	{
@@ -433,7 +480,7 @@ void Plugin::show_about()
 
 //-----------------------------------------------------------------------------
 
-gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
+gboolean Plugin::size_changed(gint size)
 {
 	GtkOrientation panel_orientation = xfce_panel_plugin_get_orientation(m_plugin);
 	GtkOrientation orientation = panel_orientation;
@@ -544,7 +591,7 @@ gboolean Plugin::size_changed(XfcePanelPlugin*, gint size)
 
 void Plugin::update_size()
 {
-	size_changed(m_plugin, xfce_panel_plugin_get_size(m_plugin));
+	size_changed(xfce_panel_plugin_get_size(m_plugin));
 }
 
 //-----------------------------------------------------------------------------

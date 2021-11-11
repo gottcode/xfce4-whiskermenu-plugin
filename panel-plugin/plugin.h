@@ -68,11 +68,11 @@ private:
 	void button_toggled(GtkToggleButton* button);
 	void configure();
 	void icon_changed(const gchar* icon);
-	void mode_changed(XfcePanelPlugin*, XfcePanelPluginMode mode);
-	gboolean remote_event(XfcePanelPlugin*, gchar* name, GValue* value);
+	void mode_changed(XfcePanelPluginMode mode);
+	gboolean remote_event(const gchar* name, const GValue* value);
 	void save();
 	void show_about();
-	gboolean size_changed(XfcePanelPlugin*, gint size);
+	gboolean size_changed(gint size);
 	void update_size();
 	void show_menu(bool at_cursor);
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -168,18 +168,14 @@ void RecentPage::extend_context_menu(GtkWidget* menu)
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
 	menuitem = whiskermenu_image_menu_item_new("edit-clear", _("Clear Recently Used"));
-	g_signal_connect_slot<GtkMenuItem*>(menuitem, "activate", &RecentPage::clear_menu, this);
+	connect(menuitem, "activate",
+		[this](GtkMenuItem*)
+		{
+			flag_items(false);
+			gtk_list_store_clear(GTK_LIST_STORE(get_view()->get_model()));
+			wm_settings->recent.clear();
+		});
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
-}
-
-//-----------------------------------------------------------------------------
-
-void RecentPage::clear_menu()
-{
-	flag_items(false);
-
-	gtk_list_store_clear(GTK_LIST_STORE(get_view()->get_model()));
-	wm_settings->recent.clear();
 }
 
 //-----------------------------------------------------------------------------

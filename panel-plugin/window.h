@@ -78,12 +78,7 @@ public:
 		return m_recent;
 	}
 
-	void hide()
-	{
-		hide(false);
-	}
-
-	void hide(bool lost_focus);
+	void hide(bool lost_focus = false);
 	void show(const Position position);
 	void save();
 	void set_child_has_focus();
@@ -93,15 +88,13 @@ public:
 	void unset_items();
 
 private:
-	gboolean on_focus_in_event(GtkWidget*, GdkEvent*);
-	gboolean on_focus_out_event(GtkWidget* widget, GdkEvent* event);
-	gboolean on_key_press_event(GtkWidget* widget, GdkEvent* event);
-	gboolean on_key_press_event_after(GtkWidget* widget, GdkEvent* event);
-	gboolean on_map_event(GtkWidget*, GdkEvent*);
-	gboolean on_state_flags_changed_event(GtkWidget*widget, GtkStateFlags);
-	gboolean on_configure_event(GtkWidget*, GdkEvent* event);
-	gboolean on_window_state_event(GtkWidget*, GdkEvent* event);
-	void on_screen_changed_event(GtkWidget* widget, GdkScreen* old_screen);
+	gboolean on_key_press_event(GtkWidget* widget, GdkEventKey* key_event);
+	gboolean on_key_press_event_after(GtkWidget* widget, GdkEventKey* key_event);
+	gboolean on_map_event();
+	void on_state_flags_changed(GtkWidget* widget);
+	gboolean on_configure_event(GdkEventConfigure* configure_event);
+	gboolean on_window_state_event(GdkEventWindowState* state_event);
+	void on_screen_changed(GtkWidget* widget);
 	gboolean on_draw_event(GtkWidget* widget, cairo_t* cr);
 	void check_scrollbar_needed();
 	void favorites_toggled();

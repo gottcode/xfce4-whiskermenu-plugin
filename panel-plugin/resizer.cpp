@@ -30,11 +30,36 @@ Resizer::Resizer(Edge edge, Window* window) :
 {
 	m_drawing = gtk_drawing_area_new();
 	gtk_widget_set_size_request(m_drawing, 6, 6);
-
 	gtk_widget_add_events(m_drawing, GDK_BUTTON_PRESS_MASK | GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK);
-	g_signal_connect_slot(m_drawing, "button-press-event", &Resizer::on_button_press_event, this);
-	g_signal_connect_slot(m_drawing, "enter-notify-event", &Resizer::on_enter_notify_event, this);
-	g_signal_connect_slot(m_drawing, "leave-notify-event", &Resizer::on_leave_notify_event, this);
+
+	connect(m_drawing, "button-press-event",
+		[this](GtkWidget*, GdkEvent* event) -> gboolean
+		{
+			m_window->set_child_has_focus();
+
+			GdkEventButton* event_button = reinterpret_cast<GdkEventButton*>(event);
+			gtk_window_begin_resize_drag(GTK_WINDOW(m_window->get_widget()),
+					m_edge,
+					event_button->button,
+					event_button->x_root,
+					event_button->y_root,
+					event_button->time);
+			return GDK_EVENT_STOP;
+		});
+
+	connect(m_drawing, "enter-notify-event",
+		[this](GtkWidget* widget, GdkEvent*) -> gboolean
+		{
+			gdk_window_set_cursor(gtk_widget_get_window(widget), m_cursor);
+			return GDK_EVENT_PROPAGATE;
+		});
+
+	connect(m_drawing, "leave-notify-event",
+		[](GtkWidget* widget, GdkEvent*) -> gboolean
+		{
+			gdk_window_set_cursor(gtk_widget_get_window(widget), nullptr);
+			return GDK_EVENT_PROPAGATE;
+		});
 
 	const char* type = nullptr;
 	switch (edge)
@@ -46,7 +71,7 @@ Resizer::Resizer(Edge edge, Window* window) :
 
 	case Bottom:
 		m_edge = GDK_WINDOW_EDGE_SOUTH;
-		type =  "ns-resize";
+		type = "ns-resize";
 		break;
 
 	case BottomRight:
@@ -91,42 +116,6 @@ Resizer::~Resizer()
 	{
 		g_object_unref(G_OBJECT(m_cursor));
 	}
-}
-
-//-----------------------------------------------------------------------------
-
-gboolean Resizer::on_button_press_event(GtkWidget*, GdkEvent* event)
-{
-	m_window->set_child_has_focus();
-
-	GtkWindow* window = GTK_WINDOW(m_window->get_widget());
-
-	GdkEventButton* event_button = reinterpret_cast<GdkEventButton*>(event);
-	gtk_window_begin_resize_drag(window,
-			m_edge,
-			event_button->button,
-			event_button->x_root,
-			event_button->y_root,
-			event_button->time);
-	return GDK_EVENT_STOP;
-}
-
-//-----------------------------------------------------------------------------
-
-gboolean Resizer::on_enter_notify_event(GtkWidget* widget, GdkEvent*)
-{
-	GdkWindow* window = gtk_widget_get_window(widget);
-	gdk_window_set_cursor(window, m_cursor);
-	return GDK_EVENT_PROPAGATE;
-}
-
-//-----------------------------------------------------------------------------
-
-gboolean Resizer::on_leave_notify_event(GtkWidget* widget, GdkEvent*)
-{
-	GdkWindow* window = gtk_widget_get_window(widget);
-	gdk_window_set_cursor(window, nullptr);
-	return GDK_EVENT_PROPAGATE;
 }
 
 //-----------------------------------------------------------------------------

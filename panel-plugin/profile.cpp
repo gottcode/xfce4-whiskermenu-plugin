@@ -31,7 +31,6 @@ using namespace WhiskerMenu;
 //-----------------------------------------------------------------------------
 
 Profile::Profile(Window* window) :
-	m_window(window),
 	m_file_monitor(nullptr),
 	m_file_path(nullptr)
 {
@@ -45,7 +44,19 @@ Profile::Profile(Window* window) :
 	m_container = gtk_event_box_new();
 	gtk_event_box_set_visible_window(GTK_EVENT_BOX(m_container), false);
 	gtk_widget_add_events(m_container, GDK_BUTTON_PRESS_MASK);
-	g_signal_connect_slot<GtkWidget*, GdkEvent*>(m_container, "button-press-event", &Profile::on_button_press_event, this);
+
+	connect(m_container, "button-press-event",
+		[window](GtkWidget*, GdkEvent*) -> gboolean
+		{
+			Command* command = wm_settings->command[Settings::CommandProfile];
+			if (command->get_shown())
+			{
+				window->hide();
+				command->activate();
+			}
+			return GDK_EVENT_STOP;
+		});
+
 	gtk_container_add(GTK_CONTAINER(m_container), m_image);
 
 	Command* command = wm_settings->command[Settings::CommandProfile];
@@ -67,7 +78,11 @@ Profile::Profile(Window* window) :
 	}
 	else
 	{
-		g_signal_connect_slot<ActUserManager*,GParamSpec*>(m_act_user_manager, "notify::is-loaded", &Profile::on_user_info_loaded, this);
+		connect(m_act_user_manager, "notify::is-loaded",
+			[this](ActUserManager*, GParamSpec*)
+			{
+				on_user_info_loaded();
+			});
 	}
 #else
 	init_fallback();
@@ -159,10 +174,14 @@ void Profile::init_fallback()
 
 	GFile* file = g_file_new_for_path(m_file_path);
 	m_file_monitor = g_file_monitor_file(file, G_FILE_MONITOR_NONE, nullptr, nullptr);
-	g_signal_connect_slot<GFileMonitor*,GFile*,GFile*,GFileMonitorEvent>(m_file_monitor, "changed", &Profile::update_picture, this);
-	update_picture();
-
 	g_object_unref(file);
+
+	connect(m_file_monitor, "changed",
+		[this](GFileMonitor*, GFile*, GFile*, GFileMonitorEvent)
+		{
+			update_picture();
+		});
+	update_picture();
 }
 
 //-----------------------------------------------------------------------------
@@ -177,7 +196,7 @@ void Profile::set_username(const gchar* name)
 //-----------------------------------------------------------------------------
 
 #ifdef HAS_ACCOUNTSERVICE
-void Profile::on_user_changed(ActUserManager*, ActUser* user)
+void Profile::on_user_changed(ActUser* user)
 {
 	if (act_user_get_uid(user) != getuid())
 	{
@@ -200,13 +219,6 @@ void Profile::on_user_changed(ActUserManager*, ActUser* user)
 
 //-----------------------------------------------------------------------------
 
-void Profile::on_user_loaded(ActUser* user, GParamSpec*)
-{
-	on_user_changed(nullptr, user);
-}
-
-//-----------------------------------------------------------------------------
-
 void Profile::on_user_info_loaded()
 {
 	if (act_user_manager_no_service(m_act_user_manager))
@@ -215,33 +227,26 @@ void Profile::on_user_info_loaded()
 		return;
 	}
 
-	g_signal_connect_slot(m_act_user_manager, "user-changed", &Profile::on_user_changed, this);
+	connect(m_act_user_manager, "user-changed",
+		[this](ActUserManager*, ActUser* user)
+		{
+			on_user_changed(user);
+		});
 
 	m_act_user = act_user_manager_get_user_by_id(m_act_user_manager, getuid());
 	if (act_user_is_loaded(m_act_user))
 	{
-		on_user_changed(nullptr, m_act_user);
+		on_user_changed(m_act_user);
 	}
 	else
 	{
-		g_signal_connect_slot(m_act_user, "notify::is-loaded", &Profile::on_user_loaded, this);
+		connect(m_act_user, "notify::is-loaded",
+			[this](ActUser* user, GParamSpec*)
+			{
+				on_user_changed(user);
+			});
 	}
 }
 #endif
 
 //-----------------------------------------------------------------------------
-
-void Profile::on_button_press_event()
-{
-	Command* command = wm_settings->command[Settings::CommandProfile];
-	if (!command->get_shown())
-	{
-		return;
-	}
-
-	m_window->hide();
-	command->activate();
-}
-
-//-----------------------------------------------------------------------------
-

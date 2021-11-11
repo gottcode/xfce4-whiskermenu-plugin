@@ -175,18 +175,52 @@ void Page::create_view()
 	if (wm_settings->view_mode == Settings::ViewAsIcons)
 	{
 		m_view = new LauncherIconView();
-		g_signal_connect(m_view->get_widget(), "item-activated", G_CALLBACK(&Page::item_activated_slot), this);
+		connect(m_view->get_widget(), "item-activated",
+			[this](GtkIconView*, GtkTreePath* path)
+			{
+				launcher_activated(path);
+			});
 	}
 	else
 	{
 		m_view = new LauncherTreeView();
-		g_signal_connect(m_view->get_widget(), "row-activated", G_CALLBACK(&Page::row_activated_slot), this);
+		connect(m_view->get_widget(), "row-activated",
+			[this](GtkTreeView*, GtkTreePath* path, GtkTreeViewColumn*)
+			{
+				launcher_activated(path);
+			});
 	}
-	g_signal_connect_slot(m_view->get_widget(), "button-press-event", &Page::view_button_press_event, this);
-	g_signal_connect_slot(m_view->get_widget(), "button-release-event", &Page::view_button_release_event, this);
-	g_signal_connect_slot(m_view->get_widget(), "drag-data-get", &Page::view_drag_data_get, this);
-	g_signal_connect_slot(m_view->get_widget(), "drag-end", &Page::view_drag_end, this);
-	g_signal_connect_slot(m_view->get_widget(), "popup-menu", &Page::view_popup_menu_event, this);
+
+	connect(m_view->get_widget(), "button-press-event",
+		[this](GtkWidget*, GdkEvent* event) -> gboolean
+		{
+			return view_button_press_event(event);
+		});
+
+	connect(m_view->get_widget(), "button-release-event",
+		[this](GtkWidget*, GdkEvent* event) -> gboolean
+		{
+			return view_button_release_event(event);
+		});
+
+	connect(m_view->get_widget(), "drag-data-get",
+		[this](GtkWidget*, GdkDragContext*, GtkSelectionData* data, guint info, guint)
+		{
+			view_drag_data_get(data, info);
+		});
+
+	connect(m_view->get_widget(), "drag-end",
+		[this](GtkWidget*, GdkDragContext*)
+		{
+			view_drag_end();
+		});
+
+	connect(m_view->get_widget(), "popup-menu",
+		[this](GtkWidget*) -> gboolean
+		{
+			return view_popup_menu_event();
+		});
+
 	set_reorderable(m_reorderable);
 }
 
@@ -250,7 +284,7 @@ void Page::launcher_action_activated(GtkMenuItem* menuitem, DesktopAction* actio
 
 //-----------------------------------------------------------------------------
 
-gboolean Page::view_button_press_event(GtkWidget*, GdkEvent* event)
+gboolean Page::view_button_press_event(GdkEvent* event)
 {
 	GdkEventButton* button_event = reinterpret_cast<GdkEventButton*>(event);
 
@@ -298,7 +332,7 @@ gboolean Page::view_button_press_event(GtkWidget*, GdkEvent* event)
 
 //-----------------------------------------------------------------------------
 
-gboolean Page::view_button_release_event(GtkWidget*, GdkEvent* event)
+gboolean Page::view_button_release_event(GdkEvent* event)
 {
 	GdkEventButton* button_event = reinterpret_cast<GdkEventButton*>(event);
 	if (button_event->button != 1)
@@ -317,7 +351,7 @@ gboolean Page::view_button_release_event(GtkWidget*, GdkEvent* event)
 
 //-----------------------------------------------------------------------------
 
-void Page::view_drag_data_get(GtkWidget*, GdkDragContext*, GtkSelectionData* data, guint info, guint)
+void Page::view_drag_data_get(GtkSelectionData* data, guint info)
 {
 	if ((info != 1) || !m_selected_launcher)
 	{
@@ -336,7 +370,7 @@ void Page::view_drag_data_get(GtkWidget*, GdkDragContext*, GtkSelectionData* dat
 
 //-----------------------------------------------------------------------------
 
-void Page::view_drag_end(GtkWidget*, GdkDragContext*)
+void Page::view_drag_end()
 {
 	if (m_launcher_dragged)
 	{
@@ -347,7 +381,7 @@ void Page::view_drag_end(GtkWidget*, GdkDragContext*)
 
 //-----------------------------------------------------------------------------
 
-gboolean Page::view_popup_menu_event(GtkWidget*)
+gboolean Page::view_popup_menu_event()
 {
 	GtkTreePath* path = m_view->get_cursor();
 	if (!path)
@@ -378,7 +412,12 @@ void Page::create_context_menu(GtkTreePath* path, GdkEvent* event)
 
 	// Create context menu
 	GtkWidget* menu = gtk_menu_new();
-	g_signal_connect_slot(menu, "selection-done", &Page::destroy_context_menu, this);
+	connect(menu, "selection-done",
+		[this](GtkMenuShell* menu)
+		{
+			m_selected_launcher = nullptr;
+			gtk_widget_destroy(GTK_WIDGET(menu));
+		});
 
 	// Add menu items
 	GtkWidget* menuitem = gtk_menu_item_new_with_label(m_selected_launcher->get_display_name());
@@ -394,7 +433,11 @@ void Page::create_context_menu(GtkTreePath* path, GdkEvent* event)
 		for (auto action : actions)
 		{
 			menuitem = whiskermenu_image_menu_item_new(action->get_icon(), action->get_name());
-			g_signal_connect_slot(menuitem, "activate", &Page::launcher_action_activated, this, action);
+			connect(menuitem, "activate",
+				[this, action](GtkMenuItem* menuitem)
+				{
+					launcher_action_activated(menuitem, action);
+				});
 			gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 		}
 
@@ -405,33 +448,61 @@ void Page::create_context_menu(GtkTreePath* path, GdkEvent* event)
 	if (!m_window->get_favorites()->contains(m_selected_launcher))
 	{
 		menuitem = whiskermenu_image_menu_item_new("bookmark-new", _("Add to Favorites"));
-		g_signal_connect_slot<GtkMenuItem*>(menuitem, "activate", &Page::add_selected_to_favorites, this);
+		connect(menuitem, "activate",
+			[this](GtkMenuItem*)
+			{
+				g_assert(m_selected_launcher);
+				m_window->get_favorites()->add(m_selected_launcher);
+			});
 		gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 	}
 	else
 	{
 		menuitem = whiskermenu_image_menu_item_new("list-remove", _("Remove from Favorites"));
-		g_signal_connect_slot<GtkMenuItem*>(menuitem, "activate", &Page::remove_selected_from_favorites, this);
+		connect(menuitem, "activate",
+			[this](GtkMenuItem*)
+			{
+				g_assert(m_selected_launcher);
+				m_window->get_favorites()->remove(m_selected_launcher);
+			});
 		gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 	}
 
 	menuitem = whiskermenu_image_menu_item_new("list-add", _("Add to Desktop"));
-	g_signal_connect_slot<GtkMenuItem*>(menuitem, "activate", &Page::add_selected_to_desktop, this);
+	connect(menuitem, "activate",
+		[this](GtkMenuItem*)
+		{
+			add_selected_to_desktop();
+		});
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
 	menuitem = whiskermenu_image_menu_item_new("list-add", _("Add to Panel"));
-	g_signal_connect_slot<GtkMenuItem*>(menuitem, "activate", &Page::add_selected_to_panel, this);
+	connect(menuitem, "activate",
+		[this](GtkMenuItem*)
+		{
+			add_selected_to_panel();
+		});
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
 	menuitem = gtk_separator_menu_item_new();
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
 	menuitem = whiskermenu_image_menu_item_new("gtk-edit", _("Edit Application..."));
-	g_signal_connect_slot<GtkMenuItem*>(menuitem, "activate", &Page::edit_selected, this);
+	connect(menuitem, "activate",
+		[this](GtkMenuItem*)
+		{
+			edit_selected();
+		});
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
 	menuitem = whiskermenu_image_menu_item_new("edit-delete", _("Hide Application"));
-	g_signal_connect_slot<GtkMenuItem*>(menuitem, "activate", &Page::hide_selected, this);
+	connect(menuitem, "activate",
+		[this](GtkMenuItem*)
+		{
+			g_assert(m_selected_launcher);
+			m_window->hide();
+			m_selected_launcher->hide();
+		});
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
 	extend_context_menu(menu);
@@ -446,15 +517,6 @@ void Page::create_context_menu(GtkTreePath* path, GdkEvent* event)
 	// Keep selection
 	m_view->select_path(path);
 	gtk_tree_path_free(path);
-}
-
-//-----------------------------------------------------------------------------
-
-void Page::destroy_context_menu(GtkMenuShell* menu)
-{
-	m_selected_launcher = nullptr;
-
-	gtk_widget_destroy(GTK_WIDGET(menu));
 }
 
 //-----------------------------------------------------------------------------
@@ -545,14 +607,6 @@ void Page::add_selected_to_panel()
 
 //-----------------------------------------------------------------------------
 
-void Page::add_selected_to_favorites()
-{
-	g_assert(m_selected_launcher);
-	m_window->get_favorites()->add(m_selected_launcher);
-}
-
-//-----------------------------------------------------------------------------
-
 void Page::edit_selected()
 {
 	g_assert(m_selected_launcher);
@@ -570,25 +624,6 @@ void Page::edit_selected()
 		g_error_free(error);
 	}
 	g_free(command);
-}
-
-//-----------------------------------------------------------------------------
-
-void Page::hide_selected()
-{
-	g_assert(m_selected_launcher);
-
-	m_window->hide();
-
-	m_selected_launcher->hide();
-}
-
-//-----------------------------------------------------------------------------
-
-void Page::remove_selected_from_favorites()
-{
-	g_assert(m_selected_launcher);
-	m_window->get_favorites()->remove(m_selected_launcher);
 }
 
 //-----------------------------------------------------------------------------

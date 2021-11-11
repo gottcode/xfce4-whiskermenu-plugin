@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2019-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -62,9 +62,6 @@ public:
 	void reload_icon_size();
 
 private:
-	gboolean on_leave_notify_event(GtkWidget*, GdkEvent*);
-	gboolean on_motion_notify_event(GtkWidget*, GdkEvent* event);
-	gboolean on_scroll_event(GtkWidget*, GdkEvent* event);
 	void select_path_at_pos(int x, int y);
 
 private:

@@ -58,14 +58,11 @@ private:
 	void init_fallback();
 	void set_username(const gchar* name);
 #ifdef HAS_ACCOUNTSERVICE
-	void on_user_changed(ActUserManager* um, ActUser* user);
-	void on_user_loaded(ActUser* user, GParamSpec* param);
+	void on_user_changed(ActUser* user);
 	void on_user_info_loaded();
 #endif
-	void on_button_press_event();
 
 private:
-	Window* m_window;
 	GtkWidget* m_container;
 	GtkWidget* m_image;
 	GtkWidget* m_username;

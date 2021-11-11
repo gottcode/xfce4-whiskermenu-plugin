@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -39,8 +39,27 @@ SearchPage::SearchPage(Window* window) :
 {
 	view_created();
 
-	g_signal_connect_slot(window->get_search_entry(), "activate", &SearchPage::activate_search, this);
-	g_signal_connect_slot(window->get_search_entry(), "stop-search", &SearchPage::cancel_search, this);
+	connect(window->get_search_entry(), "activate",
+		[this](GtkEntry* entry)
+		{
+			set_filter(gtk_entry_get_text(entry));
+			GtkTreePath* path = get_view()->get_selected_path();
+			if (path)
+			{
+				get_view()->activate_path(path);
+				gtk_tree_path_free(path);
+			}
+		});
+
+	connect(window->get_search_entry(), "stop-search",
+		[](GtkSearchEntry* entry)
+		{
+			const gchar* text = gtk_entry_get_text(GTK_ENTRY(entry));
+			if (!xfce_str_is_empty(text))
+			{
+				gtk_entry_set_text(GTK_ENTRY(entry), "");
+			}
+		});
 }
 
 //-----------------------------------------------------------------------------
@@ -163,30 +182,6 @@ void SearchPage::unset_menu_items()
 	m_launchers.clear();
 	m_matches.clear();
 	get_view()->unset_model();
-}
-
-//-----------------------------------------------------------------------------
-
-void SearchPage::activate_search(GtkEntry* entry)
-{
-	set_filter(gtk_entry_get_text(entry));
-	GtkTreePath* path = get_view()->get_selected_path();
-	if (path)
-	{
-		get_view()->activate_path(path);
-		gtk_tree_path_free(path);
-	}
-}
-
-//-----------------------------------------------------------------------------
-
-void SearchPage::cancel_search(GtkSearchEntry* entry)
-{
-	const gchar* text = gtk_entry_get_text(GTK_ENTRY(entry));
-	if (!xfce_str_is_empty(text))
-	{
-		gtk_entry_set_text(GTK_ENTRY(entry), "");
-	}
 }
 
 //-----------------------------------------------------------------------------

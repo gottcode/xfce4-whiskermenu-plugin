@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -63,9 +63,6 @@ public:
 
 private:
 	void create_column();
-	gboolean on_key_press_event(GtkWidget*, GdkEvent* event);
-	gboolean on_key_release_event(GtkWidget*, GdkEvent* event);
-	void on_row_activated(GtkTreeView* tree_view, GtkTreePath* path, GtkTreeViewColumn* column);
 
 private:
 	GtkTreeView* m_view;

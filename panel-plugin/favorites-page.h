@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -43,7 +43,7 @@ private:
 	bool remember_launcher(Launcher* launcher);
 	void on_row_changed(GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter);
 	void on_row_inserted(GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter);
-	void on_row_deleted(GtkTreeModel*, GtkTreePath* path);
+	void on_row_deleted(GtkTreePath* path);
 	std::vector<Launcher*> sort() const;
 	void sort_ascending();
 	void sort_descending();

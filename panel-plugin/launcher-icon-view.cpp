@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2019-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -60,9 +60,29 @@ LauncherIconView::LauncherIconView() :
 
 	// Handle hover selection
 	gtk_widget_add_events(GTK_WIDGET(m_view), GDK_SCROLL_MASK);
-	g_signal_connect_slot(m_view, "leave-notify-event", &LauncherIconView::on_leave_notify_event, this);
-	g_signal_connect_slot(m_view, "motion-notify-event", &LauncherIconView::on_motion_notify_event, this);
-	g_signal_connect_slot(m_view, "scroll-event", &LauncherIconView::on_scroll_event, this);
+
+	connect(m_view, "leave-notify-event",
+		[this](GtkWidget*, GdkEvent*) -> gboolean
+		{
+			clear_selection();
+			return GDK_EVENT_PROPAGATE;
+		});
+
+	connect(m_view, "motion-notify-event",
+		[this](GtkWidget*, GdkEvent* event) -> gboolean
+		{
+			GdkEventMotion* motion_event = reinterpret_cast<GdkEventMotion*>(event);
+			select_path_at_pos(motion_event->x, motion_event->y);
+			return GDK_EVENT_PROPAGATE;
+		});
+
+	connect(m_view, "scroll-event",
+		[this](GtkWidget*, GdkEvent* event) -> gboolean
+		{
+			GdkEventScroll* scroll_event = reinterpret_cast<GdkEventScroll*>(event);
+			select_path_at_pos(scroll_event->x, scroll_event->y);
+			return GDK_EVENT_PROPAGATE;
+		});
 }
 
 //-----------------------------------------------------------------------------
@@ -260,32 +280,6 @@ void LauncherIconView::reload_icon_size()
 		break;
 	}
 	gtk_icon_view_set_item_padding(m_view, padding);
-}
-
-//-----------------------------------------------------------------------------
-
-gboolean LauncherIconView::on_leave_notify_event(GtkWidget*, GdkEvent*)
-{
-	clear_selection();
-	return GDK_EVENT_PROPAGATE;
-}
-
-//-----------------------------------------------------------------------------
-
-gboolean LauncherIconView::on_motion_notify_event(GtkWidget*, GdkEvent* event)
-{
-	GdkEventMotion* motion_event = reinterpret_cast<GdkEventMotion*>(event);
-	select_path_at_pos(motion_event->x, motion_event->y);
-	return GDK_EVENT_PROPAGATE;
-}
-
-//-----------------------------------------------------------------------------
-
-gboolean LauncherIconView::on_scroll_event(GtkWidget*, GdkEvent* event)
-{
-	GdkEventScroll* scroll_event = reinterpret_cast<GdkEventScroll*>(event);
-	select_path_at_pos(scroll_event->x, scroll_event->y);
-	return GDK_EVENT_PROPAGATE;
 }
 
 //-----------------------------------------------------------------------------

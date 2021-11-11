@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -76,31 +76,16 @@ private:
 	virtual bool remember_launcher(Launcher* launcher);
 	void launcher_activated(GtkTreePath* path);
 	void launcher_action_activated(GtkMenuItem* menuitem, DesktopAction* action);
-	gboolean view_button_press_event(GtkWidget* view, GdkEvent* event);
-	gboolean view_button_release_event(GtkWidget*, GdkEvent* event);
-	void view_drag_data_get(GtkWidget*, GdkDragContext*, GtkSelectionData* data, guint info, guint);
-	void view_drag_end(GtkWidget*, GdkDragContext*);
-	gboolean view_popup_menu_event(GtkWidget* view);
-	void on_unmap();
-	void destroy_context_menu(GtkMenuShell* menu);
+	gboolean view_button_press_event(GdkEvent* event);
+	gboolean view_button_release_event(GdkEvent* event);
+	void view_drag_data_get(GtkSelectionData* data, guint info);
+	void view_drag_end();
+	gboolean view_popup_menu_event();
 	void add_selected_to_desktop();
 	void add_selected_to_panel();
-	void add_selected_to_favorites();
 	void edit_selected();
-	void hide_selected();
-	void remove_selected_from_favorites();
 	void create_context_menu(GtkTreePath* path, GdkEvent* event);
 	virtual void extend_context_menu(GtkWidget* menu);
-
-	static void item_activated_slot(GtkIconView*, GtkTreePath* path, gpointer user_data)
-	{
-		static_cast<Page*>(user_data)->launcher_activated(path);
-	}
-
-	static void row_activated_slot(GtkTreeView*, GtkTreePath* path, GtkTreeViewColumn*, gpointer user_data)
-	{
-		static_cast<Page*>(user_data)->launcher_activated(path);
-	}
 
 private:
 	Window* m_window;

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,6 +18,7 @@
 #include "category-button.h"
 
 #include "settings.h"
+#include "slot.h"
 
 #include <libxfce4panel/libxfce4panel.h>
 
@@ -35,27 +36,6 @@ static gboolean hover_timeout(gpointer user_data)
 	return GDK_EVENT_PROPAGATE;
 }
 
-static gboolean on_enter_notify_event(GtkWidget* widget, GdkEvent*, gpointer)
-{
-	GtkToggleButton* button = GTK_TOGGLE_BUTTON(widget);
-	if (wm_settings->category_hover_activate && !gtk_toggle_button_get_active(button))
-	{
-		g_timeout_add(150, &hover_timeout, button);
-	}
-	return GDK_EVENT_PROPAGATE;
-}
-
-static gboolean on_focus_in_event(GtkWidget* widget, GdkEvent*, gpointer)
-{
-	GtkToggleButton* button = GTK_TOGGLE_BUTTON(widget);
-	if (wm_settings->category_hover_activate && !gtk_toggle_button_get_active(button))
-	{
-		gtk_toggle_button_set_active(button, true);
-		gtk_widget_grab_focus(widget);
-	}
-	return GDK_EVENT_PROPAGATE;
-}
-
 //-----------------------------------------------------------------------------
 
 CategoryButton::CategoryButton(GIcon* icon, const gchar* text)
@@ -65,8 +45,29 @@ CategoryButton::CategoryButton(GIcon* icon, const gchar* text)
 	gtk_button_set_relief(GTK_BUTTON(m_button), GTK_RELIEF_NONE);
 	gtk_widget_set_tooltip_text(GTK_WIDGET(m_button), text);
 	gtk_widget_set_focus_on_click(GTK_WIDGET(m_button), false);
-	g_signal_connect(m_button, "enter-notify-event", G_CALLBACK(&on_enter_notify_event), m_button);
-	g_signal_connect(m_button, "focus-in-event", G_CALLBACK(&on_focus_in_event), m_button);
+
+	connect(m_button, "enter-notify-event",
+		[](GtkWidget* widget, GdkEvent*) -> gboolean
+		{
+			GtkToggleButton* button = GTK_TOGGLE_BUTTON(widget);
+			if (wm_settings->category_hover_activate && !gtk_toggle_button_get_active(button))
+			{
+				g_timeout_add(150, &hover_timeout, button);
+			}
+			return GDK_EVENT_PROPAGATE;
+		});
+
+	connect(m_button, "focus-in-event",
+		[](GtkWidget* widget, GdkEvent*) -> gboolean
+		{
+			GtkToggleButton* button = GTK_TOGGLE_BUTTON(widget);
+			if (wm_settings->category_hover_activate && !gtk_toggle_button_get_active(button))
+			{
+				gtk_toggle_button_set_active(button, true);
+				gtk_widget_grab_focus(widget);
+			}
+			return GDK_EVENT_PROPAGATE;
+		});
 
 	m_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 4));
 	gtk_container_add(GTK_CONTAINER(m_button), GTK_WIDGET(m_box));

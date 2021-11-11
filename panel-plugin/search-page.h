@@ -39,8 +39,6 @@ public:
 	void unset_menu_items();
 
 private:
-	void activate_search(GtkEntry* entry);
-	void cancel_search(GtkSearchEntry* entry);
 	void view_created();
 
 private:

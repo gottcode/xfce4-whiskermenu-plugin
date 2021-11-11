@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,110 +29,44 @@ enum class Connect
 	After = G_CONNECT_AFTER
 };
 
-// Member function with ignored parameters
-template<typename... Args, typename T, typename R>
-gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(T::*member)(), T* obj, Connect flags = Connect::Default)
+// Lambda with parameters
+template<typename Func, typename T>
+class Slot
 {
-	class Slot
-	{
-		T* m_instance;
-		R (T::*m_member)();
+};
 
-	public:
-		Slot(T* instance, R (T::*member)()) :
-			m_instance(instance),
-			m_member(member)
-		{
-		}
-
-		static R invoke(Args..., gpointer user_data)
-		{
-			Slot* slot = static_cast<Slot*>(user_data);
-			return (slot->m_instance->*slot->m_member)();
-		}
-
-		static void destroy(gpointer data, GClosure*)
-		{
-			delete static_cast<Slot*>(data);
-		}
-	};
-
-	return g_signal_connect_data(instance, detailed_signal,
-			G_CALLBACK(&Slot::invoke),
-			new Slot(obj, member),
-			&Slot::destroy,
-			GConnectFlags(flags));
-}
-
-// Member function with parameters
-template<typename T, typename R, typename... Args>
-gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(T::*member)(Args...), T* obj, Connect flags = Connect::Default)
+template<typename Func, typename R, typename T, typename... Args>
+class Slot<Func, R(T::*)(Args...) const>
 {
-	class Slot
+	Func m_func;
+
+public:
+	Slot(Func func) :
+		m_func(func)
 	{
-		T* m_instance;
-		R (T::*m_member)(Args...);
+	}
 
-	public:
-		Slot(T* instance, R (T::*member)(Args...)) :
-			m_instance(instance),
-			m_member(member)
-		{
-		}
+	static R invoke(Args... args, gpointer user_data)
+	{
+		return static_cast<Slot*>(user_data)->m_func(args...);
+	}
 
-		static R invoke(Args... args, gpointer user_data)
-		{
-			Slot* slot = static_cast<Slot*>(user_data);
-			return (slot->m_instance->*slot->m_member)(args...);
-		}
+	static void destroy(gpointer data, GClosure*)
+	{
+		delete static_cast<Slot*>(data);
+	}
+};
 
-		static void destroy(gpointer data, GClosure*)
-		{
-			delete static_cast<Slot*>(data);
-		}
-	};
-
-	return g_signal_connect_data(instance, detailed_signal,
-			G_CALLBACK(&Slot::invoke),
-			new Slot(obj, member),
-			&Slot::destroy,
-			GConnectFlags(flags));
-}
-
-// Member function with 1 parameter and 1 bound parameter
-template<typename T, typename R, typename A1, typename A2>
-gulong g_signal_connect_slot(gpointer instance, const gchar* detailed_signal, R(T::*member)(A1,A2), T* obj, A2 bound1, Connect flags = Connect::Default)
+template<typename Sender, typename Func>
+gulong connect(Sender instance, const gchar* detailed_signal, Func func, Connect flags = Connect::Default)
 {
-	class Slot
-	{
-		T* m_instance;
-		R (T::*m_member)(A1,A2);
-		A2 m_bound1;
+	typedef Slot<Func, decltype(&Func::operator())> Receiver;
 
-	public:
-		Slot(T* instance, R (T::*member)(A1,A2), A2 bound1) :
-			m_instance(instance),
-			m_member(member),
-			m_bound1(bound1)
-		{
-		}
-
-		static R invoke(A1 arg, gpointer user_data)
-		{
-			Slot* slot = static_cast<Slot*>(user_data);
-			return (slot->m_instance->*slot->m_member)(arg, slot->m_bound1);
-		}
-
-		static void destroy(gpointer data, GClosure*)
-		{
-			delete static_cast<Slot*>(data);
-		}
-	};
-
-	return g_signal_connect_data(instance, detailed_signal,
-			G_CALLBACK(&Slot::invoke),
-			new Slot(obj, member, bound1),
-			&Slot::destroy,
+	return g_signal_connect_data(G_OBJECT(instance),
+			detailed_signal,
+			G_CALLBACK(&Receiver::invoke),
+			new Receiver(func),
+			&Receiver::destroy,
 			GConnectFlags(flags));
 }
 

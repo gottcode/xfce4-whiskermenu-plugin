@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -51,8 +51,28 @@ LauncherTreeView::LauncherTreeView() :
 	gtk_tree_view_set_fixed_height_mode(m_view, true);
 	gtk_tree_view_set_row_separator_func(m_view, &is_separator, nullptr, nullptr);
 	create_column();
-	g_signal_connect_slot(m_view, "key-press-event", &LauncherTreeView::on_key_press_event, this);
-	g_signal_connect_slot(m_view, "key-release-event", &LauncherTreeView::on_key_release_event, this);
+
+	connect(m_view, "key-press-event",
+		[this](GtkWidget*, GdkEvent* event) -> gboolean
+		{
+			GdkEventKey* key_event = reinterpret_cast<GdkEventKey*>(event);
+			if ((key_event->keyval == GDK_KEY_Up) || (key_event->keyval == GDK_KEY_Down))
+			{
+				gtk_tree_view_set_hover_selection(m_view, false);
+			}
+			return GDK_EVENT_PROPAGATE;
+		});
+
+	connect(m_view, "key-release-event",
+		[this](GtkWidget*, GdkEvent* event) -> gboolean
+		{
+			GdkEventKey* key_event = reinterpret_cast<GdkEventKey*>(event);
+			if ((key_event->keyval == GDK_KEY_Up) || (key_event->keyval == GDK_KEY_Down))
+			{
+				gtk_tree_view_set_hover_selection(m_view, true);
+			}
+			return GDK_EVENT_PROPAGATE;
+		});
 
 	// Only allow up to one selected item
 	GtkTreeSelection* selection = gtk_tree_view_get_selection(m_view);
@@ -62,8 +82,28 @@ LauncherTreeView::LauncherTreeView() :
 
 	gtk_style_context_add_class(gtk_widget_get_style_context(GTK_WIDGET(m_view)), "launchers");
 
-	// Handle drag-and-drop
-	g_signal_connect_slot(m_view, "row-activated", &LauncherTreeView::on_row_activated, this);
+	// Expand on click
+	connect(m_view, "row-activated",
+		[this](GtkTreeView* tree_view, GtkTreePath* path, GtkTreeViewColumn*)
+		{
+			Element* element = nullptr;
+			GtkTreeIter iter;
+			gtk_tree_model_get_iter(m_model, &iter, path);
+			gtk_tree_model_get(m_model, &iter, COLUMN_LAUNCHER, &element, -1);
+			if (element && !dynamic_cast<Category*>(element))
+			{
+				return;
+			}
+
+			if (gtk_tree_view_row_expanded(tree_view, path))
+			{
+				gtk_tree_view_collapse_row(tree_view, path);
+			}
+			else
+			{
+				gtk_tree_view_expand_row(tree_view, path, false);
+			}
+		});
 }
 
 //-----------------------------------------------------------------------------
@@ -267,53 +307,6 @@ void LauncherTreeView::create_column()
 	gtk_tree_view_column_set_sizing(m_column, GTK_TREE_VIEW_COLUMN_FIXED);
 
 	gtk_tree_view_append_column(m_view, m_column);
-}
-
-//-----------------------------------------------------------------------------
-
-gboolean LauncherTreeView::on_key_press_event(GtkWidget*, GdkEvent* event)
-{
-	GdkEventKey* key_event = reinterpret_cast<GdkEventKey*>(event);
-	if ((key_event->keyval == GDK_KEY_Up) || (key_event->keyval == GDK_KEY_Down))
-	{
-		gtk_tree_view_set_hover_selection(m_view, false);
-	}
-	return GDK_EVENT_PROPAGATE;
-}
-
-//-----------------------------------------------------------------------------
-
-gboolean LauncherTreeView::on_key_release_event(GtkWidget*, GdkEvent* event)
-{
-	GdkEventKey* key_event = reinterpret_cast<GdkEventKey*>(event);
-	if ((key_event->keyval == GDK_KEY_Up) || (key_event->keyval == GDK_KEY_Down))
-	{
-		gtk_tree_view_set_hover_selection(m_view, true);
-	}
-	return GDK_EVENT_PROPAGATE;
-}
-
-//-----------------------------------------------------------------------------
-
-void LauncherTreeView::on_row_activated(GtkTreeView* tree_view, GtkTreePath* path, GtkTreeViewColumn*)
-{
-	Element* element = nullptr;
-	GtkTreeIter iter;
-	gtk_tree_model_get_iter(m_model, &iter, path);
-	gtk_tree_model_get(m_model, &iter, COLUMN_LAUNCHER, &element, -1);
-	if (element && !dynamic_cast<Category*>(element))
-	{
-		return;
-	}
-
-	if (gtk_tree_view_row_expanded(tree_view, path))
-	{
-		gtk_tree_view_collapse_row(tree_view, path);
-	}
-	else
-	{
-		gtk_tree_view_expand_row(tree_view, path, false);
-	}
 }
 
 //-----------------------------------------------------------------------------

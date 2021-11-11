@@ -46,51 +46,14 @@ public:
 	}
 
 private:
-	void toggle_show_as_icons(GtkToggleButton* button);
-	void toggle_show_as_list(GtkToggleButton* button);
-	void toggle_show_as_tree(GtkToggleButton* button);
-	void toggle_show_generic_name(GtkToggleButton* button);
-	void toggle_show_category_name(GtkToggleButton* button);
-	void toggle_show_description(GtkToggleButton* button);
-	void toggle_show_tooltip(GtkToggleButton* button);
-	void category_icon_size_changed(GtkComboBox* combo);
-	void item_icon_size_changed(GtkComboBox* combo);
-	void background_opacity_changed(GtkRange* range);
-
-	void toggle_position_categories_horizontal(GtkToggleButton* button);
-	void toggle_position_categories_alternate(GtkToggleButton* button);
-	void toggle_position_search_alternate(GtkToggleButton* button);
-	void toggle_position_commands_alternate(GtkToggleButton* button);
-	void profile_shape_changed(GtkComboBox* combo);
-
-	void style_changed(GtkComboBox* combo);
-	void title_changed(GtkEditable* editable);
 	void choose_icon();
-	void toggle_button_single_row(GtkToggleButton* button);
-
-	void toggle_hover_switch_category(GtkToggleButton* button);
-	void toggle_stay_on_focus_out(GtkToggleButton* button);
-	void toggle_sort_categories(GtkToggleButton* button);
-
-	void toggle_display_favorites(GtkToggleButton* button);
-	void toggle_display_recent(GtkToggleButton* button);
-	void toggle_display_applications(GtkToggleButton* button);
-
-	void recent_items_max_changed(GtkSpinButton* button);
-	void toggle_remember_favorites(GtkToggleButton* button);
-
-	void toggle_confirm_session_command(GtkToggleButton* button);
 
 	SearchAction* get_selected_action(GtkTreeIter* iter = nullptr) const;
-	void action_selected(GtkTreeView* view);
-	void action_name_changed(GtkEditable* editable);
-	void action_pattern_changed(GtkEditable* editable);
-	void action_command_changed(GtkEditable* editable);
-	void action_toggle_regex(GtkToggleButton* button);
-	void add_action(GtkButton*);
-	void remove_action(GtkButton* button);
+	void add_action();
+	void remove_action();
 
-	void response(GtkDialog*, int response_id);
+	void response(int response_id);
+
 	GtkWidget* init_general_tab();
 	GtkWidget* init_appearance_tab();
 	GtkWidget* init_behavior_tab();

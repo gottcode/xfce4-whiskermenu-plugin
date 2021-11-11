@@ -40,7 +40,11 @@ ApplicationsPage::ApplicationsPage(Window* window) :
 	garcon_set_environment_xdg(GARCON_ENVIRONMENT_XFCE);
 
 	const decltype(m_categories.size()) index = 0;
-	g_signal_connect_slot(get_button()->get_widget(), "toggled", &ApplicationsPage::show_category, this, index);
+	connect(get_button()->get_widget(), "toggled",
+		[this](GtkToggleButton* button)
+		{
+			show_category(button, index);
+		});
 }
 
 //-----------------------------------------------------------------------------
@@ -165,9 +169,19 @@ bool ApplicationsPage::load()
 	clear();
 
 	// Load contents in thread if possible
-	GTask* task = g_task_new(nullptr, nullptr, &ApplicationsPage::load_contents_slot, this);
+	GTask* task = g_task_new(nullptr, nullptr,
+		+[](GObject*, GAsyncResult*, gpointer user_data)
+		{
+			static_cast<ApplicationsPage*>(user_data)->load_contents();
+		},
+		this);
 	g_task_set_task_data(task, this, nullptr);
-	g_task_run_in_thread(task, &ApplicationsPage::load_garcon_menu_slot);
+	g_task_run_in_thread(task,
+		+[](GTask* task, gpointer, gpointer task_data, GCancellable*)
+		{
+			static_cast<ApplicationsPage*>(task_data)->load_garcon_menu();
+			g_task_return_boolean(task, true);
+		});
 	g_object_unref(task);
 
 	return false;
@@ -245,7 +259,12 @@ void ApplicationsPage::load_garcon_menu()
 		return;
 	}
 
-	g_signal_connect_slot<GarconMenu*>(m_garcon_menu, "reload-required", &ApplicationsPage::invalidate, this);
+	connect(m_garcon_menu, "reload-required",
+		[this](GarconMenu*)
+		{
+			invalidate();
+		});
+
 	load_menu(m_garcon_menu, nullptr, wm_settings->view_mode == Settings::ViewAsTree);
 
 	// Create settings menu
@@ -255,7 +274,11 @@ void ApplicationsPage::load_garcon_menu()
 
 	if (m_garcon_settings_menu)
 	{
-		g_signal_connect_slot<GarconMenu*>(m_garcon_settings_menu, "reload-required", &ApplicationsPage::invalidate, this);
+		connect(m_garcon_settings_menu, "reload-required",
+			[this](GarconMenu*)
+			{
+				invalidate();
+			});
 	}
 
 	// Load settings menu
@@ -309,7 +332,11 @@ void ApplicationsPage::load_contents()
 	for (decltype(m_categories.size()) i = 1; i < size; ++i)
 	{
 		CategoryButton* category_button = m_categories[i]->get_button();
-		g_signal_connect_slot(category_button->get_widget(), "toggled", &ApplicationsPage::show_category, this, i);
+		connect(category_button->get_widget(), "toggled",
+			[this, i](GtkToggleButton* button)
+			{
+				show_category(button, i);
+			});
 		category_buttons.push_back(category_button);
 	}
 
@@ -339,7 +366,11 @@ bool ApplicationsPage::load_menu(GarconMenu* menu, Category* parent_category, bo
 			GarconMenuItem* menuitem = GARCON_MENU_ITEM(li->data);
 
 			// Listen for changes
-			g_signal_connect_slot<GarconMenuItem*>(menuitem, "changed", &ApplicationsPage::invalidate, this);
+			connect(menuitem, "changed",
+				[this](GarconMenuItem*)
+				{
+					invalidate();
+				});
 
 			// Skip hidden items
 			if (!garcon_menu_element_get_visible(GARCON_MENU_ELEMENT(menuitem)))
