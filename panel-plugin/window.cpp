@@ -599,6 +599,7 @@ gboolean WhiskerMenu::Window::on_key_press_event(GtkWidget* widget, GdkEvent* ev
 	// Hide if escape is pressed and there is no text in search entry
 	if ( (key_event->keyval == GDK_KEY_Escape) && xfce_str_is_empty(gtk_entry_get_text(m_search_entry)) )
 	{
+		Plugin::launcher_activated();
 		hide();
 		return GDK_EVENT_STOP;
 	}
