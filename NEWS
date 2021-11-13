@@ -1,3 +1,9 @@
+2.6.2
+=====
+- Fix background shifting when showing menu. (Issue #41)
+- Fix menu not toggling after pressing escape. (Issue #65)
+- Properly prevent interactive search in treeview.
+
 2.6.1
 =====
 - Fix menu not toggling. (Issue #61)
