@@ -52,8 +52,8 @@ public:
 		return m_is_regex;
 	}
 
-	void run(GdkScreen* screen) const;
-	unsigned int search(const Query& query);
+	void run(GdkScreen* screen) const override;
+	unsigned int search(const Query& query) override;
 
 	void set_name(const gchar* name);
 	void set_pattern(const gchar* pattern);

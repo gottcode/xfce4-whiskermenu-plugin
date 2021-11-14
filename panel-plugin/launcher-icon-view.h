@@ -29,37 +29,37 @@ public:
 	LauncherIconView();
 	~LauncherIconView();
 
-	GtkWidget* get_widget() const
+	GtkWidget* get_widget() const override
 	{
 		return GTK_WIDGET(m_view);
 	}
 
-	GtkTreePath* get_cursor() const;
-	GtkTreePath* get_path_at_pos(int x, int y) const;
-	GtkTreePath* get_selected_path() const;
-	void activate_path(GtkTreePath* path);
-	void scroll_to_path(GtkTreePath* path);
-	void select_path(GtkTreePath* path);
-	void set_cursor(GtkTreePath* path);
+	GtkTreePath* get_cursor() const override;
+	GtkTreePath* get_path_at_pos(int x, int y) const override;
+	GtkTreePath* get_selected_path() const override;
+	void activate_path(GtkTreePath* path) override;
+	void scroll_to_path(GtkTreePath* path) override;
+	void select_path(GtkTreePath* path) override;
+	void set_cursor(GtkTreePath* path) override;
 
-	void set_fixed_height_mode(bool fixed_height);
-	void set_selection_mode(GtkSelectionMode mode);
+	void set_fixed_height_mode(bool fixed_height) override;
+	void set_selection_mode(GtkSelectionMode mode) override;
 
-	void hide_tooltips();
-	void show_tooltips();
+	void hide_tooltips() override;
+	void show_tooltips() override;
 
-	void clear_selection();
-	void collapse_all();
+	void clear_selection() override;
+	void collapse_all() override;
 
-	void set_model(GtkTreeModel* model);
-	void unset_model();
+	void set_model(GtkTreeModel* model) override;
+	void unset_model() override;
 
-	void set_drag_source(GdkModifierType start_button_mask, const GtkTargetEntry* targets, gint n_targets, GdkDragAction actions);
-	void set_drag_dest(const GtkTargetEntry* targets, gint n_targets, GdkDragAction actions);
-	void unset_drag_source();
-	void unset_drag_dest();
+	void set_drag_source(GdkModifierType start_button_mask, const GtkTargetEntry* targets, gint n_targets, GdkDragAction actions) override;
+	void set_drag_dest(const GtkTargetEntry* targets, gint n_targets, GdkDragAction actions) override;
+	void unset_drag_source() override;
+	void unset_drag_dest() override;
 
-	void reload_icon_size();
+	void reload_icon_size() override;
 
 private:
 	void select_path_at_pos(int x, int y);

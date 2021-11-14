@@ -36,7 +36,7 @@ public:
 	void unset_menu_items();
 
 private:
-	void extend_context_menu(GtkWidget* menu);
+	void extend_context_menu(GtkWidget* menu) override;
 };
 
 }

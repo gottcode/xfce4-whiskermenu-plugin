@@ -30,8 +30,8 @@ class RunAction : public Element
 public:
 	RunAction();
 
-	void run(GdkScreen* screen) const;
-	unsigned int search(const Query& query);
+	void run(GdkScreen* screen) const override;
+	unsigned int search(const Query& query) override;
 
 private:
 	std::string m_command_line;

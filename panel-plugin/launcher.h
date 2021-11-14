@@ -110,11 +110,11 @@ public:
 
 	void hide();
 
-	void run(GdkScreen* screen) const;
+	void run(GdkScreen* screen) const override;
 
 	void run(GdkScreen* screen, DesktopAction* action) const;
 
-	unsigned int search(const Query& query);
+	unsigned int search(const Query& query) override;
 
 	enum SearchFlag
 	{

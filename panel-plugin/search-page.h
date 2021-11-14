@@ -39,7 +39,7 @@ public:
 	void unset_menu_items();
 
 private:
-	void view_created();
+	void view_created() override;
 
 private:
 	Query m_query;

@@ -39,15 +39,15 @@ public:
 	void unset_menu_items();
 
 private:
-	void extend_context_menu(GtkWidget* menu);
-	bool remember_launcher(Launcher* launcher);
+	void extend_context_menu(GtkWidget* menu) override;
+	bool remember_launcher(Launcher* launcher) override;
 	void on_row_changed(GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter);
 	void on_row_inserted(GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter);
 	void on_row_deleted(GtkTreePath* path);
 	std::vector<Launcher*> sort() const;
 	void sort_ascending();
 	void sort_descending();
-	void view_created();
+	void view_created() override;
 };
 
 }
