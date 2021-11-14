@@ -65,11 +65,9 @@ CommandEdit::CommandEdit(Command* command, GtkSizeGroup* label_size_group) :
 	gtk_widget_set_tooltip_text(m_browse_button, _("Browse the file system to choose a custom command."));
 	gtk_widget_set_sensitive(GTK_WIDGET(m_browse_button), active);
 	gtk_box_pack_start(GTK_BOX(m_widget), m_browse_button, false, false, 0);
-	gtk_widget_show(m_browse_button);
 
 	GtkWidget* image = gtk_image_new_from_icon_name("document-open", GTK_ICON_SIZE_BUTTON);
 	gtk_container_add(GTK_CONTAINER(m_browse_button), image);
-	gtk_widget_show(image);
 
 	connect(m_browse_button, "clicked",
 		[this](GtkButton*)

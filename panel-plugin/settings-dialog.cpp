@@ -999,11 +999,9 @@ GtkWidget* SettingsDialog::init_search_actions_tab()
 	// Create buttons
 	m_action_add = gtk_button_new();
 	gtk_widget_set_tooltip_text(m_action_add, _("Add action"));
-	gtk_widget_show(m_action_add);
 
 	GtkWidget* image = gtk_image_new_from_icon_name("list-add", GTK_ICON_SIZE_BUTTON);
 	gtk_container_add(GTK_CONTAINER(m_action_add), image);
-	gtk_widget_show(image);
 
 	connect(m_action_add, "clicked",
 		[this](GtkButton*)
@@ -1013,11 +1011,9 @@ GtkWidget* SettingsDialog::init_search_actions_tab()
 
 	m_action_remove = gtk_button_new();
 	gtk_widget_set_tooltip_text(m_action_remove, _("Remove selected action"));
-	gtk_widget_show(m_action_remove);
 
 	image = gtk_image_new_from_icon_name("list-remove", GTK_ICON_SIZE_BUTTON);
 	gtk_container_add(GTK_CONTAINER(m_action_remove), image);
-	gtk_widget_show(image);
 
 	connect(m_action_remove, "clicked",
 		[this](GtkButton*)
@@ -1030,7 +1026,6 @@ GtkWidget* SettingsDialog::init_search_actions_tab()
 	gtk_box_pack_start(actions_box, m_action_add, false, false, 0);
 	gtk_box_pack_start(actions_box, m_action_remove, false, false, 0);
 	gtk_grid_attach(page, GTK_WIDGET(actions_box), 1, 0, 1, 1);
-	gtk_widget_show_all(GTK_WIDGET(actions_box));
 
 	// Create details section
 	GtkGrid* details_table = GTK_GRID(gtk_grid_new());
@@ -1042,11 +1037,9 @@ GtkWidget* SettingsDialog::init_search_actions_tab()
 	// Create entry for name
 	GtkWidget* label = gtk_label_new_with_mnemonic(_("Nam_e:"));
 	gtk_widget_set_halign(label, GTK_ALIGN_START);
-	gtk_widget_show(label);
 	gtk_grid_attach(details_table, label, 0, 0, 1, 1);
 
 	m_action_name = gtk_entry_new();
-	gtk_widget_show(m_action_name);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_action_name);
 	gtk_widget_set_hexpand(m_action_name, true);
 	gtk_grid_attach(details_table, m_action_name, 1, 0, 1, 1);
@@ -1067,11 +1060,9 @@ GtkWidget* SettingsDialog::init_search_actions_tab()
 	// Create entry for keyword
 	label = gtk_label_new_with_mnemonic(_("_Pattern:"));
 	gtk_widget_set_halign(label, GTK_ALIGN_START);
-	gtk_widget_show(label);
 	gtk_grid_attach(details_table, label, 0, 1, 1, 1);
 
 	m_action_pattern = gtk_entry_new();
-	gtk_widget_show(m_action_pattern);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_action_pattern);
 	gtk_grid_attach(details_table, m_action_pattern, 1, 1, 1, 1);
 
@@ -1091,11 +1082,9 @@ GtkWidget* SettingsDialog::init_search_actions_tab()
 	// Create entry for command
 	label = gtk_label_new_with_mnemonic(_("C_ommand:"));
 	gtk_widget_set_halign(label, GTK_ALIGN_START);
-	gtk_widget_show(label);
 	gtk_grid_attach(details_table, label, 0, 2, 1, 1);
 
 	m_action_command = gtk_entry_new();
-	gtk_widget_show(m_action_command);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_action_command);
 	gtk_grid_attach(details_table, m_action_command, 1, 2, 1, 1);
 
@@ -1111,7 +1100,6 @@ GtkWidget* SettingsDialog::init_search_actions_tab()
 
 	// Create toggle button for regular expressions
 	m_action_regex = gtk_check_button_new_with_mnemonic(_("_Regular expression"));
-	gtk_widget_show(m_action_regex);
 	gtk_grid_attach(details_table, m_action_regex, 1, 3, 1, 1);
 
 	connect(m_action_regex, "toggled",
