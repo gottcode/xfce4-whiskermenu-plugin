@@ -38,7 +38,7 @@ add_library(whiskermenu MODULE
 	slot.h
 	window.cpp)
 
-target_link_libraries(whiskermenu
+target_link_libraries(whiskermenu PRIVATE
 	PkgConfig::GTK3
 	PkgConfig::exo
 	PkgConfig::garcon
@@ -58,12 +58,13 @@ target_compile_definitions(whiskermenu PRIVATE
 	SETTINGS_MENUFILE="${CMAKE_INSTALL_FULL_SYSCONFDIR}/xdg/menus/xfce-settings-manager.menu"
 	G_LOG_DOMAIN="whiskermenu"
 	GSEAL_ENABLE
-	GTK_MULTIHEAD_SAFE)
+	GTK_MULTIHEAD_SAFE
+	$<$<CONFIG:Release,MinSizeRel,RelWithDebInfo>:G_DISABLE_ASSERT G_DISABLE_CAST_CHECKS>)
 
 target_compile_features(whiskermenu PRIVATE cxx_std_11)
 
 if (accountsservice_FOUND)
-	target_link_libraries(whiskermenu
+	target_link_libraries(whiskermenu PRIVATE
 		PkgConfig::accountsservice)
 	target_compile_definitions(whiskermenu PRIVATE
 		HAS_ACCOUNTSERVICE)
@@ -111,20 +112,17 @@ if(ENABLE_DEVELOPER_MODE)
 		GTK_DISABLE_SINGLE_INCLUDES)
 endif()
 
-string(TOLOWER "${CMAKE_BUILD_TYPE}" CMAKE_BUILD_TYPE_TOLOWER)
-if(CMAKE_BUILD_TYPE_TOLOWER MATCHES "release|minsizerel|relwithdebinfo")
-	if(ENABLE_LINK_TIME_OPTIMIZATION)
-		include(CheckIPOSupported)
-		check_ipo_supported(RESULT result)
-		if(result)
-			set_target_properties(whiskermenu PROPERTIES INTERPROCEDURAL_OPTIMIZATION TRUE)
-		endif()
+if(ENABLE_LINK_TIME_OPTIMIZATION)
+	include(CheckIPOSupported)
+	check_ipo_supported(RESULT result)
+	if(result)
+		set_target_properties(whiskermenu PROPERTIES INTERPROCEDURAL_OPTIMIZATION TRUE)
 	endif()
+endif()
 
-	target_compile_definitions(whiskermenu PRIVATE G_DISABLE_CAST_CHECKS G_DISABLE_ASSERT)
-
-	add_custom_command(TARGET whiskermenu
-		POST_BUILD COMMAND ${CMAKE_STRIP} $<TARGET_FILE:whiskermenu>)
+if(ENABLE_STRIP)
+	add_custom_command(TARGET whiskermenu POST_BUILD
+		COMMAND ${CMAKE_STRIP} $<TARGET_FILE:whiskermenu>)
 endif()
 
 install(TARGETS whiskermenu LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/xfce4/panel/plugins)

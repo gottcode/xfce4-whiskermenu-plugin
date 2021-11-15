@@ -20,11 +20,20 @@ if(${whiskermenu_version_tag} MATCHES "git")
 endif()
 
 # options
+string(TOLOWER "${CMAKE_BUILD_TYPE}" CMAKE_BUILD_TYPE_TOLOWER)
+if(CMAKE_BUILD_TYPE_TOLOWER MATCHES "release|minsizerel")
+	set(whiskermenu_strip ON)
+endif()
+if(CMAKE_BUILD_TYPE_TOLOWER MATCHES "release|minsizerel|relwithdebinfo")
+	set(whiskermenu_lto ON)
+endif()
+
 option(ENABLE_ACCOUNTSSERVICE "Enable building with AccountsService" ON)
 option(ENABLE_VISIBILITY "Enable ELF visibility attributes" ON)
 option(ENABLE_AS_NEEDED "Enable -Wl,--as-needed for the linker" ON)
 option(ENABLE_LINKER_OPTIMIZED_HASH_TABLES "Enable -Wl,-O1 for the linker" ON)
-option(ENABLE_LINK_TIME_OPTIMIZATION "Enable link time optimization" ON)
+option(ENABLE_LINK_TIME_OPTIMIZATION "Enable link time optimization" ${whiskermenu_lto})
+option(ENABLE_STRIP "Enable automatic stripping of release builds" ${whiskermenu_strip})
 option(ENABLE_DEVELOPER_MODE "Enable strict checks to help with development" OFF)
 
 include(GNUInstallDirs)
