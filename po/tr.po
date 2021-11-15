@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-29 08:27-0400\n"
-"PO-Revision-Date: 2021-11-10 18:23+0000\n"
+"PO-Revision-Date: 2021-11-15 07:11+0000\n"
 "Last-Translator: Demiray Muhterem <mdemiray@msn.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -267,7 +267,7 @@ msgstr "Desen"
 
 #: ../panel-plugin/settings-dialog.cpp:857
 msgid "Position _search entry next to panel button"
-msgstr "_arama çubuğu menünün altında konumlansın"
+msgstr "_Arama çubuğu menünün altında konumlansın"
 
 #: ../panel-plugin/settings-dialog.cpp:851
 msgid "Position cate_gories next to panel button"
@@ -279,7 +279,7 @@ msgstr "Konum kategorileri _yatay olarak"
 
 #: ../panel-plugin/settings-dialog.cpp:863
 msgid "Position commands next to search _entry"
-msgstr "Menünün altında solda daraltılmış arama _çubuğu"
+msgstr "Daraltılmış arama _çubuğu"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:971
 #: ../panel-plugin/settings-dialog.cpp:1027
@@ -428,7 +428,7 @@ msgstr "_Kullanıcı Değiştir"
 
 #: ../panel-plugin/settings-dialog.cpp:1004
 msgid "Switch categories by _hovering"
-msgstr "Kategorileri gezintiye göre değiştir"
+msgstr "İmleç _üzerine gelince kategori değişsin"
 
 #: ../panel-plugin/settings-dialog.cpp:558
 msgid "The action will be deleted permanently."
