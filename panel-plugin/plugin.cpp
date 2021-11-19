@@ -36,43 +36,6 @@ extern "C" void whiskermenu_construct(XfcePanelPlugin* plugin)
 	new Plugin(plugin);
 }
 
-// Wait for grab; allows modifier as shortcut
-// Adapted from http://git.xfce.org/xfce/xfce4-panel/tree/common/panel-utils.c#n122
-static bool can_grab(GtkWidget* widget)
-{
-	GdkWindow* window = gtk_widget_get_window(widget);
-	GdkDisplay* display = gdk_window_get_display(window);
-	GdkSeat* seat = gdk_display_get_default_seat(display);
-
-#if LIBXFCE4UI_CHECK_VERSION(4,17,1)
-	if (xfce_gdk_device_grab(seat, window, GDK_SEAT_CAPABILITY_ALL, nullptr))
-	{
-		gdk_seat_ungrab(seat);
-		return true;
-	}
-#else
-	for (int i = 0; i < 5; ++i)
-	{
-		const GdkGrabStatus grab_status = gdk_seat_grab(seat,
-				window,
-				GDK_SEAT_CAPABILITY_ALL,
-				false,
-				nullptr,
-				nullptr,
-				nullptr,
-				nullptr);
-		if (grab_status == GDK_GRAB_SUCCESS)
-		{
-			gdk_seat_ungrab(seat);
-			return true;
-		}
-		g_usleep(100000);
-	}
-#endif
-
-	return false;
-}
-
 #if !LIBXFCE4PANEL_CHECK_VERSION(4,13,0)
 static void widget_add_css(GtkWidget* widget, const gchar* css)
 {
@@ -427,10 +390,6 @@ gboolean Plugin::remote_event(const gchar* name, const GValue* value)
 	if (gtk_widget_get_visible(m_window->get_widget()))
 	{
 		m_window->hide();
-	}
-	else if (!can_grab(gtk_widget_get_toplevel(m_button)))
-	{
-		g_printerr("xfce4-whiskermenu-plugin: Unable to get keyboard. Menu popup failed.\n");
 	}
 	else if (value && G_VALUE_HOLDS_BOOLEAN(value) && g_value_get_boolean(value))
 	{
