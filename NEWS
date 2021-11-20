@@ -1,3 +1,25 @@
+2.7.0
+=====
+- Add showing categories as icons on top or bottom. (Issue #62)
+- Add hiding username. (Issue #36)
+- Add rounded profile picture.
+- Add optional AccountsService support.
+- Add catfish search action.
+- Add CSS classes for theming.
+- Improve search result relevance.
+- Make stripping release builds optional.
+- Rearrange settings dialog.
+- Remove sliding out search results.
+- Remove useless grab check.
+- Rename icon to follow reverse DNS scheme.
+- Replace size grip with resizing from edges.
+- Replace slots with lambdas.
+- Use original menu layout.
+- Use dm-tool for switching users.
+- Translation updates: Basque, Bulgarian, Chinese (Taiwan), Danish, Dutch,
+  French, Greek, Lithuanian, Portuguese, Portuguese (Brazil), Slovak,
+  Spanish, Swedish, Turkish, Ukrainian.
+
 2.6.2
 =====
 - Fix background shifting when showing menu. (Issue #41)
