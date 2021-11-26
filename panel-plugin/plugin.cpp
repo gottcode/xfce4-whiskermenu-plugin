@@ -43,7 +43,7 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	m_window(nullptr),
 	m_opacity(100),
 	m_file_icon(false),
-	m_menu_shown(false)
+	m_hide_time(0)
 {
 	// Load settings
 	wm_settings = new Settings;
@@ -75,10 +75,25 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	// Create toggle button
 	m_button = xfce_panel_create_toggle_button();
 	gtk_widget_set_name(m_button, "whiskermenu-button");
-	connect(m_button, "toggled",
-		[this](GtkToggleButton* button)
+	connect(m_button, "button-press-event",
+		[this](GtkWidget* widget, GdkEvent* event) -> gboolean
 		{
-			button_toggled(button);
+			GdkEventButton* button_event = reinterpret_cast<GdkEventButton*>(event);
+			if ((button_event->type != GDK_BUTTON_PRESS) || (button_event->button != 1))
+			{
+				return GDK_EVENT_PROPAGATE;
+			}
+
+			GtkToggleButton* button GTK_TOGGLE_BUTTON(widget);
+			if (!gtk_toggle_button_get_active(button))
+			{
+				show_menu(false);
+			}
+			else
+			{
+				m_window->hide();
+			}
+			return GDK_EVENT_STOP;
 		});
 	gtk_widget_show(m_button);
 
@@ -165,6 +180,13 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 
 	// Create menu window
 	m_window = new Window(this);
+	connect(m_window->get_widget(), "hide",
+		[this](GtkWidget*)
+		{
+			m_hide_time = g_get_monotonic_time();
+			gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_button), false);
+			xfce_panel_plugin_block_autohide(m_plugin, false);
+		});
 }
 
 //-----------------------------------------------------------------------------
@@ -196,13 +218,9 @@ std::string Plugin::get_button_title_default()
 
 //-----------------------------------------------------------------------------
 
-void Plugin::menu_hidden(bool lost_focus)
+void Plugin::menu_hidden()
 {
-	if (!lost_focus)
-	{
-		m_menu_shown = false;
-	}
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_button), false);
+	m_hide_time = 0;
 }
 
 //-----------------------------------------------------------------------------
@@ -286,25 +304,6 @@ void Plugin::set_loaded(bool loaded)
 
 //-----------------------------------------------------------------------------
 
-void Plugin::button_toggled(GtkToggleButton* button)
-{
-	if (!gtk_toggle_button_get_active(button))
-	{
-		if (gtk_widget_get_visible(m_window->get_widget()))
-		{
-			m_window->hide();
-		}
-		xfce_panel_plugin_block_autohide(m_plugin, false);
-	}
-	else
-	{
-		xfce_panel_plugin_block_autohide(m_plugin, true);
-		show_menu(false);
-	}
-}
-
-//-----------------------------------------------------------------------------
-
 void Plugin::configure()
 {
 	SettingsDialog* dialog = new SettingsDialog(this);
@@ -349,25 +348,25 @@ gboolean Plugin::remote_event(const gchar* name, const GValue* value)
 		return false;
 	}
 
-	// Ignore event if last shown through remote event;
+	// Ignore event if menu lost focus and hid within last 1/4 second;
 	// needed for toggling as remote event happens after focus is lost
-	if (m_menu_shown && !wm_settings->stay_on_focus_out)
+	if (m_hide_time)
 	{
-		m_menu_shown = false;
-		return true;
+		const gint64 delta = g_get_monotonic_time() - m_hide_time;
+		m_hide_time = 0;
+		if (delta < 250000)
+		{
+			return true;
+		}
 	}
 
 	if (gtk_widget_get_visible(m_window->get_widget()))
 	{
 		m_window->hide();
 	}
-	else if (value && G_VALUE_HOLDS_BOOLEAN(value) && g_value_get_boolean(value))
-	{
-		show_menu(true);
-	}
 	else
 	{
-		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_button), true);
+		show_menu(value && G_VALUE_HOLDS_BOOLEAN(value) && g_value_get_boolean(value));
 	}
 
 	return true;
@@ -520,11 +519,28 @@ void Plugin::show_menu(bool at_cursor)
 		{
 			delete m_window;
 			m_window = new Window(this);
+			connect(m_window->get_widget(), "hide",
+				[this](GtkWidget*)
+				{
+					m_hide_time = g_get_monotonic_time();
+					gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_button), false);
+					xfce_panel_plugin_block_autohide(m_plugin, false);
+				});
 		}
 		m_opacity = wm_settings->menu_opacity;
 	}
-	m_window->show(at_cursor ? Window::PositionAtCursor : Window::Position(xfce_panel_plugin_get_orientation(m_plugin)));
-	m_menu_shown = true;
+
+	if (!at_cursor)
+	{
+		xfce_panel_plugin_block_autohide(m_plugin, true);
+		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_button), true);
+		m_window->show(Window::Position(xfce_panel_plugin_get_orientation(m_plugin)));
+	}
+	else
+	{
+		m_window->show(Window::PositionAtCursor);
+	}
+	m_hide_time = 0;
 }
 
 //-----------------------------------------------------------------------------

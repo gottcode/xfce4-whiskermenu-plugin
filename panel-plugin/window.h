@@ -92,7 +92,6 @@ private:
 	gboolean on_map_event();
 	void on_state_flags_changed(GtkWidget* widget);
 	gboolean on_configure_event(GdkEventConfigure* configure_event);
-	gboolean on_window_state_event(GdkEventWindowState* state_event);
 	void on_screen_changed(GtkWidget* widget);
 	gboolean on_draw_event(GtkWidget* widget, cairo_t* cr);
 	void check_scrollbar_needed();

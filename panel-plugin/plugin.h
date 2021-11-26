@@ -56,7 +56,7 @@ public:
 	ButtonStyle get_button_style() const;
 	static std::string get_button_title_default();
 
-	void menu_hidden(bool lost_focus);
+	void menu_hidden();
 	void reload();
 	void set_button_style(ButtonStyle style);
 	void set_button_title(const std::string& title);
@@ -65,7 +65,6 @@ public:
 	void set_loaded(bool loaded);
 
 private:
-	void button_toggled(GtkToggleButton* button);
 	void configure();
 	void icon_changed(const gchar* icon);
 	void mode_changed(XfcePanelPluginMode mode);
@@ -87,7 +86,7 @@ private:
 
 	int m_opacity;
 	bool m_file_icon;
-	bool m_menu_shown;
+	gint64 m_hide_time;
 };
 
 }

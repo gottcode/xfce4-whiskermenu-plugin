@@ -85,10 +85,21 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	connect(m_window, "focus-out-event",
 		[this](GtkWidget* widget, GdkEvent*) -> gboolean
 		{
-			if (!wm_settings->stay_on_focus_out && !m_child_has_focus && gtk_widget_get_visible(widget))
+			if (wm_settings->stay_on_focus_out || m_child_has_focus || !gtk_widget_get_visible(widget))
 			{
-				hide(true);
+				return GDK_EVENT_PROPAGATE;
 			}
+
+			// Needed to make focus out event happen after button press event,
+			// otherwise it is impossible to toggle panel button.
+			g_idle_add(
+				+[](gpointer user_data) -> gboolean
+				{
+					static_cast<Window*>(user_data)->hide(true);
+					return G_SOURCE_REMOVE;
+				},
+			this);
+
 			return GDK_EVENT_PROPAGATE;
 		});
 
@@ -121,12 +132,6 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 		[this](GtkWidget*, GdkEvent* event) -> gboolean
 		{
 			return on_configure_event(reinterpret_cast<GdkEventConfigure*>(event));
-		});
-
-	connect(m_window, "window-state-event",
-		[this](GtkWidget*, GdkEvent* event) -> gboolean
-		{
-			return on_window_state_event(reinterpret_cast<GdkEventWindowState*>(event));
 		});
 
 	g_signal_connect(G_OBJECT(m_window), "delete-event", G_CALLBACK(&gtk_widget_hide_on_delete), nullptr);
@@ -395,7 +400,10 @@ void WhiskerMenu::Window::hide(bool lost_focus)
 	show_default_page();
 
 	// Inform plugin that window is hidden
-	m_plugin->menu_hidden(lost_focus);
+	if (!lost_focus)
+	{
+		m_plugin->menu_hidden();
+	}
 }
 
 //-----------------------------------------------------------------------------
@@ -795,20 +803,6 @@ gboolean WhiskerMenu::Window::on_configure_event(GdkEventConfigure* configure_ev
 	}
 
 	check_scrollbar_needed();
-
-	return GDK_EVENT_PROPAGATE;
-}
-
-//-----------------------------------------------------------------------------
-
-gboolean WhiskerMenu::Window::on_window_state_event(GdkEventWindowState* state_event)
-{
-	// Workaround to detect clicking off menu to hide it; xfwm only sets it to this
-	// state in that case, for all others it is purely GDK_WINDOW_STATE_WITHDRAWN
-	if (state_event->new_window_state == (GDK_WINDOW_STATE_WITHDRAWN | GDK_WINDOW_STATE_STICKY))
-	{
-		m_plugin->menu_hidden(false);
-	}
 
 	return GDK_EVENT_PROPAGATE;
 }
