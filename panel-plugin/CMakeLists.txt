@@ -4,8 +4,10 @@
 
 include(../cmake/AddVersionCompileDefinition.cmake)
 add_version_compile_definition(plugin.cpp PACKAGE_VERSION)
+add_version_compile_definition(xfce4-popup-whiskermenu.cpp PACKAGE_VERSION)
 
 find_package(PkgConfig REQUIRED)
+pkg_check_modules(gio REQUIRED IMPORTED_TARGET gio-2.0)
 pkg_check_modules(GTK3 REQUIRED IMPORTED_TARGET gtk+-3.0>=3.22)
 pkg_check_modules(exo REQUIRED IMPORTED_TARGET exo-2>=0.12)
 pkg_check_modules(garcon REQUIRED IMPORTED_TARGET garcon-1>=0.6.4)
@@ -16,6 +18,7 @@ if(ENABLE_ACCOUNTSSERVICE)
 	pkg_check_modules(accountsservice IMPORTED_TARGET accountsservice>=0.6.45)
 endif()
 
+# plugin
 add_library(whiskermenu MODULE
 	applications-page.cpp
 	category.cpp
@@ -76,6 +79,24 @@ if (accountsservice_FOUND)
 		HAS_ACCOUNTSERVICE)
 endif()
 
+# popup
+add_executable(xfce4-popup-whiskermenu xfce4-popup-whiskermenu.cpp)
+
+target_link_libraries(xfce4-popup-whiskermenu PRIVATE PkgConfig::gio)
+
+target_compile_options(xfce4-popup-whiskermenu PRIVATE -Wall -Wextra)
+
+target_compile_definitions(xfce4-popup-whiskermenu PRIVATE
+	GETTEXT_PACKAGE="xfce4-whiskermenu-plugin"
+	PACKAGE_LOCALE_DIR="${CMAKE_INSTALL_FULL_LOCALEDIR}"
+	PACKAGE_NAME="xfce4-popup-whiskermenu"
+	G_LOG_DOMAIN="whiskermenu"
+	GSEAL_ENABLE
+	$<$<CONFIG:Release>:G_DISABLE_ASSERT G_DISABLE_CAST_CHECKS>
+	$<$<CONFIG:MinSizeRel>:G_DISABLE_ASSERT G_DISABLE_CAST_CHECKS>
+	$<$<CONFIG:RelWithDebInfo>:G_DISABLE_ASSERT G_DISABLE_CAST_CHECKS>)
+
+# options
 if(ENABLE_VISIBILITY)
 	set_target_properties(whiskermenu PROPERTIES CXX_VISIBILITY_PRESET hidden)
 endif()
@@ -102,6 +123,10 @@ if(ENABLE_DEVELOPER_MODE)
 		GDK_DISABLE_SINGLE_INCLUDES
 		GDK_PIXBUF_DISABLE_SINGLE_INCLUDES
 		GTK_DISABLE_SINGLE_INCLUDES)
+
+	target_compile_options(xfce4-popup-whiskermenu PRIVATE -Werror)
+	target_compile_definitions(xfce4-popup-whiskermenu PRIVATE
+		G_DISABLE_DEPRECATED)
 endif()
 
 if(ENABLE_LINK_TIME_OPTIMIZATION)
@@ -115,13 +140,13 @@ endif()
 if(ENABLE_STRIP)
 	add_custom_command(TARGET whiskermenu POST_BUILD
 		COMMAND ${CMAKE_STRIP} $<TARGET_FILE:whiskermenu>)
+	add_custom_command(TARGET xfce4-popup-whiskermenu POST_BUILD
+		COMMAND ${CMAKE_STRIP} $<TARGET_FILE:xfce4-popup-whiskermenu>)
 endif()
 
+# install plugin
 install(TARGETS whiskermenu LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/xfce4/panel/plugins)
 
-# popup script
-configure_file(${PROJECT_SOURCE_DIR}/panel-plugin/xfce4-popup-whiskermenu.in
-	${PROJECT_BINARY_DIR}/xfce4-popup-whiskermenu ESCAPE_QUOTES @ONLY)
-install(PROGRAMS ${PROJECT_BINARY_DIR}/xfce4-popup-whiskermenu
-	DESTINATION ${CMAKE_INSTALL_BINDIR})
+# install popup
+install(TARGETS xfce4-popup-whiskermenu RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 install(FILES xfce4-popup-whiskermenu.1 DESTINATION ${CMAKE_INSTALL_MANDIR}/man1 COMPONENT doc)
