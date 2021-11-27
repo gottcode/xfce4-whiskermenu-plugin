@@ -757,6 +757,8 @@ gboolean WhiskerMenu::Window::on_key_press_event_after(GtkWidget* widget, GdkEve
 gboolean WhiskerMenu::Window::on_map_event()
 {
 	m_favorites->reset_selection();
+	m_recent->reset_selection();
+	m_applications->reset_selection();
 
 	gtk_window_set_keep_above(m_window, true);
 

@@ -113,7 +113,8 @@ void Page::select_first()
 
 void Page::update_view()
 {
-	if (dynamic_cast<LauncherIconView*>(m_view) && (wm_settings->view_mode == Settings::ViewAsIcons))
+	if ( ((wm_settings->view_mode == Settings::ViewAsIcons) && dynamic_cast<LauncherIconView*>(m_view))
+			|| ((wm_settings->view_mode != Settings::ViewAsIcons) && dynamic_cast<LauncherTreeView*>(m_view)) )
 	{
 		return;
 	}
