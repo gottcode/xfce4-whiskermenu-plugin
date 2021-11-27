@@ -691,7 +691,7 @@ gboolean WhiskerMenu::Window::on_key_press_event(GtkWidget* widget, GdkEventKey*
 		// Allow keyboard navigation out of treeview
 		if (GTK_IS_TREE_VIEW(view) && ((widget == view) || (gtk_window_get_focus(m_window) == view)))
 		{
-			gtk_widget_grab_focus(m_favorites->get_button()->get_widget());
+			gtk_widget_grab_focus(m_default_button->get_widget());
 			page->reset_selection();
 		}
 		// Allow keyboard navigation out of search into iconview
