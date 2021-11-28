@@ -178,18 +178,6 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 
 	mode_changed(xfce_panel_plugin_get_mode(m_plugin));
 
-	connect(m_button, "style-updated",
-		[this](GtkWidget*)
-		{
-			update_size();
-		});
-
-	connect(m_button, "screen-changed",
-		[this](GtkWidget*, GdkScreen*)
-		{
-			update_size();
-		});
-
 	// Create menu window
 	m_window = new Window(this);
 }
