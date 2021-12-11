@@ -1,3 +1,11 @@
+2.7.1
+=====
+- Fix not selecting second icon in search results. (Issue #50)
+- Fix incorrect selection when leaving treeview.
+- Fix skipping first treeview item.
+- Fix unnecessary button size changes.
+- Translation updates: Catalan, Greek.
+
 2.7.0
 =====
 - Add showing categories as icons on top or bottom. (Issue #62)
