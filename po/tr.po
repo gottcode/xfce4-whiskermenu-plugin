@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-29 08:27-0400\n"
-"PO-Revision-Date: 2021-11-15 07:11+0000\n"
+"PO-Revision-Date: 2021-12-25 09:08+0000\n"
 "Last-Translator: Demiray Muhterem <mdemiray@msn.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -275,7 +275,7 @@ msgstr "Kate_goriler menünün sol tarafında konumlansın"
 
 #: ../panel-plugin/settings-dialog.cpp:845
 msgid "Position categories _horizontally"
-msgstr "Konum kategorileri _yatay olarak"
+msgstr "Kategoriler _yatay olarak altta konumlansın"
 
 #: ../panel-plugin/settings-dialog.cpp:863
 msgid "Position commands next to search _entry"
