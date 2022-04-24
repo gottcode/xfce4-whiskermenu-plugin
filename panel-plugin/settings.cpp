@@ -115,7 +115,7 @@ Settings::Settings() :
 	command[CommandSwitchUser] = new Command("command-switchuser", "show-command-switchuser",
 			"xfsm-switch-user", "system-users",
 			_("Switch _User"),
-			"dm-tool switch-to-greeter", false,
+			"xfce4-session-logout --switch-user", false,
 			_("Failed to switch user."));
 	command[CommandLogOutUser] = new Command("command-logoutuser", "show-command-logoutuser",
 			"xfsm-logout", "system-log-out",
