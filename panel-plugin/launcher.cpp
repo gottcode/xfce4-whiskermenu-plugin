@@ -195,7 +195,6 @@ Launcher::Launcher(GarconMenuItem* item) :
 	m_search_comment = normalize(details);
 
 	// Create search text for keywords
-#if GARCON_CHECK_VERSION(0,6,2)
 	GList* keywords = garcon_menu_item_get_keywords(m_item);
 	for (GList* i = keywords; i; i = i->next)
 	{
@@ -205,7 +204,6 @@ Launcher::Launcher(GarconMenuItem* item) :
 			m_search_keywords.push_back(normalize(keyword));
 		}
 	}
-#endif
 
 	// Create search text for command
 	const gchar* command = garcon_menu_item_get_command(m_item);
@@ -215,7 +213,6 @@ Launcher::Launcher(GarconMenuItem* item) :
 	}
 
 	// Fetch desktop actions
-#ifdef GARCON_TYPE_MENU_ITEM_ACTION
 	GList* actions = garcon_menu_item_get_actions(m_item);
 	for (GList* i = actions; i; i = i->next)
 	{
@@ -226,7 +223,6 @@ Launcher::Launcher(GarconMenuItem* item) :
 		}
 	}
 	g_list_free(actions);
-#endif
 }
 
 //-----------------------------------------------------------------------------

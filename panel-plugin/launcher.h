@@ -30,8 +30,6 @@ namespace WhiskerMenu
 
 class DesktopAction
 {
-#ifdef GARCON_TYPE_MENU_ITEM_ACTION
-
 public:
 	DesktopAction(GarconMenuItemAction* action) :
 		m_action(action)
@@ -55,26 +53,6 @@ public:
 
 private:
 	GarconMenuItemAction* m_action;
-
-#else
-
-public:
-	const gchar* get_name() const
-	{
-		return nullptr;
-	}
-
-	const gchar* get_icon() const
-	{
-		return nullptr;
-	}
-
-	const gchar* get_command() const
-	{
-		return nullptr;
-	}
-
-#endif
 };
 
 class Launcher : public Element

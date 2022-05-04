@@ -36,18 +36,6 @@ extern "C" void whiskermenu_construct(XfcePanelPlugin* plugin)
 	new Plugin(plugin);
 }
 
-#if !LIBXFCE4PANEL_CHECK_VERSION(4,13,0)
-static void widget_add_css(GtkWidget* widget, const gchar* css)
-{
-	GtkCssProvider* provider = gtk_css_provider_new();
-	gtk_css_provider_load_from_data(provider, css, -1, nullptr);
-	gtk_style_context_add_provider(gtk_widget_get_style_context(widget),
-			GTK_STYLE_PROVIDER(provider),
-			GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
-	g_object_unref(provider);
-}
-#endif
-
 //-----------------------------------------------------------------------------
 
 Plugin::Plugin(XfcePanelPlugin* plugin) :
@@ -87,9 +75,6 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	// Create toggle button
 	m_button = xfce_panel_create_toggle_button();
 	gtk_widget_set_name(m_button, "whiskermenu-button");
-#if !LIBXFCE4PANEL_CHECK_VERSION(4,13,0)
-	widget_add_css(m_button, ".xfce4-panel button { padding: 1px; }");
-#endif
 	connect(m_button, "toggled",
 		[this](GtkToggleButton* button)
 		{
@@ -439,22 +424,11 @@ gboolean Plugin::size_changed(gint size)
 	{
 		size /= xfce_panel_plugin_get_nrows(m_plugin);
 	}
-#if LIBXFCE4PANEL_CHECK_VERSION(4,13,0)
 	gint icon_size = xfce_panel_plugin_get_icon_size(m_plugin);
 	if (!wm_settings->button_single_row)
 	{
 		icon_size *= xfce_panel_plugin_get_nrows(m_plugin);
 	}
-#else
-	GtkBorder padding, border;
-	GtkStyleContext* context = gtk_widget_get_style_context(m_button);
-	GtkStateFlags flags = gtk_widget_get_state_flags(m_button);
-	gtk_style_context_get_padding(context, flags, &padding);
-	gtk_style_context_get_border(context, flags, &border);
-	gint xthickness = padding.left + padding.right + border.left + border.right;
-	gint ythickness = padding.top + padding.bottom + border.top + border.bottom;
-	gint icon_size = size - 2 * std::max(xthickness, ythickness);
-#endif
 	gtk_image_set_pixel_size(m_button_icon, icon_size);
 
 	// Load icon from absolute path

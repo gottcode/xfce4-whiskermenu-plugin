@@ -77,7 +77,6 @@ SettingsDialog::SettingsDialog(Plugin* plugin) :
 	m_plugin(plugin)
 {
 	// Create dialog window
-#if LIBXFCE4UI_CHECK_VERSION(4,13,0)
 	m_window = xfce_titled_dialog_new_with_mixed_buttons(_("Whisker Menu"),
 			nullptr,
 			GtkDialogFlags(0),
@@ -85,14 +84,6 @@ SettingsDialog::SettingsDialog(Plugin* plugin) :
 			"window-close-symbolic", _("_Close"), GTK_RESPONSE_CLOSE,
 			nullptr);
 	gtk_window_set_type_hint(GTK_WINDOW(m_window), GDK_WINDOW_TYPE_HINT_NORMAL);
-#else
-	m_window = xfce_titled_dialog_new_with_buttons(_("Whisker Menu"),
-			GTK_WINDOW(gtk_widget_get_toplevel(GTK_WIDGET(m_plugin->get_button()))),
-			GtkDialogFlags(0),
-			_("_Help"), GTK_RESPONSE_HELP,
-			_("_Close"), GTK_RESPONSE_CLOSE,
-			nullptr);
-#endif
 	gtk_window_set_icon_name(GTK_WINDOW(m_window), "org.xfce.panel.whiskermenu");
 	gtk_window_set_position(GTK_WINDOW(m_window), GTK_WIN_POS_CENTER);
 
