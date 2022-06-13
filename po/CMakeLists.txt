@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2013-2020 Graeme Gott <graeme@gottcode.org>
+#
+# SPDX-License-Identifier: GPL-2.0-or-later
+
 find_package(Gettext 0.19.1 REQUIRED)
 
 # Generate translations

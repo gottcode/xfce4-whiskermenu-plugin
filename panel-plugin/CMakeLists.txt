@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2013-2022 Graeme Gott <graeme@gottcode.org>
+#
+# SPDX-License-Identifier: GPL-2.0-or-later
+
+include(../cmake/AddVersionCompileDefinition.cmake)
+add_version_compile_definition(plugin.cpp PACKAGE_VERSION)
+
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(GTK3 REQUIRED IMPORTED_TARGET gtk+-3.0>=3.22)
 pkg_check_modules(exo REQUIRED IMPORTED_TARGET exo-2>=0.11)
@@ -52,7 +59,6 @@ target_compile_definitions(whiskermenu PRIVATE
 	GETTEXT_PACKAGE="xfce4-whiskermenu-plugin"
 	PACKAGE_LOCALE_DIR="${CMAKE_INSTALL_FULL_LOCALEDIR}"
 	PACKAGE_NAME="xfce4-whiskermenu-plugin"
-	PACKAGE_VERSION="${whiskermenu_version}"
 	BINDIR="${CMAKE_INSTALL_FULL_BINDIR}"
 	DATADIR="${CMAKE_INSTALL_FULL_DATADIR}"
 	SETTINGS_MENUFILE="${CMAKE_INSTALL_FULL_SYSCONFDIR}/xdg/menus/xfce-settings-manager.menu"
