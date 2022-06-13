@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2013 Graeme Gott <graeme@gottcode.org>
+#
+# SPDX-License-Identifier: GPL-2.0-or-later
+
 set(INSTALL_ICONDIR ${CMAKE_INSTALL_DATADIR}/icons/hicolor)
 
 install(FILES hi16-app-whiskermenu.png

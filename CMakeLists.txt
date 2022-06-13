@@ -1,23 +1,10 @@
+# SPDX-FileCopyrightText: 2013-2022 Graeme Gott <graeme@gottcode.org>
+#
+# SPDX-License-Identifier: GPL-2.0-or-later
+
 cmake_minimum_required(VERSION 3.16)
 
-project(whiskermenu)
-
-# version number
-set(whiskermenu_version_major "2")
-set(whiskermenu_version_minor "7")
-set(whiskermenu_version_micro "0")
-set(whiskermenu_version_tag "git")
-set(whiskermenu_version "${whiskermenu_version_major}.${whiskermenu_version_minor}.${whiskermenu_version_micro}")
-if(${whiskermenu_version_tag} MATCHES "git")
-	if(NOT DEFINED whiskermenu_version_build)
-		execute_process(COMMAND git describe
-			WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-			OUTPUT_VARIABLE whiskermenu_version_build)
-		string(REGEX REPLACE "^.*-g" "" whiskermenu_version_build "${whiskermenu_version_build}")
-		string(REGEX REPLACE "\n" "" whiskermenu_version_build "${whiskermenu_version_build}")
-	endif()
-	set(whiskermenu_version "${whiskermenu_version}.${whiskermenu_version_tag}-${whiskermenu_version_build}")
-endif()
+project(whiskermenu VERSION 2.7.0)
 
 # options
 string(TOLOWER "${CMAKE_BUILD_TYPE}" CMAKE_BUILD_TYPE_TOLOWER)
