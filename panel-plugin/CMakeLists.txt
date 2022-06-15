@@ -65,9 +65,7 @@ target_compile_definitions(whiskermenu PRIVATE
 	G_LOG_DOMAIN="whiskermenu"
 	GSEAL_ENABLE
 	GTK_MULTIHEAD_SAFE
-	$<$<CONFIG:Release>:G_DISABLE_ASSERT G_DISABLE_CAST_CHECKS>
-	$<$<CONFIG:MinSizeRel>:G_DISABLE_ASSERT G_DISABLE_CAST_CHECKS>
-	$<$<CONFIG:RelWithDebInfo>:G_DISABLE_ASSERT G_DISABLE_CAST_CHECKS>)
+	$<$<NOT:$<CONFIG:Debug>>:G_DISABLE_ASSERT G_DISABLE_CAST_CHECKS>)
 
 target_compile_features(whiskermenu PRIVATE cxx_std_11)
 
