@@ -6,14 +6,14 @@ directory. The simplest way to compile this plugin is:
 
   1. `cd' into the extracted directory.
 
-  3. `cmake -B build -S . -DCMAKE_INSTALL_PREFIX=/usr' to create a location
+  2. `cmake -B build -S . -DCMAKE_INSTALL_PREFIX=/usr' to create a location
      for the sources and then configure the sources. There are more options
      you can pass to cmake, see below for details.
 
-  4. `cmake --build build' to compile the plugin. This will also rerun
+  3. `cmake --build build' to compile the plugin. This will also rerun
      cmake for you if any CMakeLists.txt files have changed.
 
-  5. `cmake --install build' to install the plugin. This has to be done
+  4. `cmake --install build' to install the plugin. This has to be done
      with root privileges if installing to system directories, but the
      rest of the build should be done with regular user privileges.
 
