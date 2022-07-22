@@ -30,6 +30,14 @@ Uninstallation
      be sure to provide the same variable. The DESTDIR variable must be
      an absolute path when uninstalling.
 
+Release Builds
+==============
+
+CMake does not specify any compiler optimizations by default; this is
+useful if you want to inherit CFLAGS and CXXFLAGS from the environment.
+You may want to add "-DCMAKE_BUILD_TYPE=Release" during configuration
+to get an optimized build.
+
 Debug Builds
 ============
 
