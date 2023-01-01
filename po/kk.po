@@ -94,8 +94,8 @@ msgid "Clear Recently Used"
 msgstr "Соңғы қолданылған тізімін тазалау"
 
 #: ../panel-plugin/plugin.cpp:410
-msgid "Copyright © 2013-2020 Graeme Gott"
-msgstr "Copyright © 2013-2020 Graeme Gott"
+msgid "Copyright © 2013-2023 Graeme Gott"
+msgstr "Copyright © 2013-2023 Graeme Gott"
 
 #: ../panel-plugin/settings-dialog.cpp:1033
 msgid "Details"

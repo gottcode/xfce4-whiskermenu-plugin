@@ -95,8 +95,8 @@ msgid "Clear Recently Used"
 msgstr "최근 사용 기록 지우기"
 
 #: ../panel-plugin/plugin.cpp:413
-msgid "Copyright © 2013-2022 Graeme Gott"
-msgstr "Copyright © 2013-2022 Graeme Gott"
+msgid "Copyright © 2013-2023 Graeme Gott"
+msgstr "Copyright © 2013-2023 Graeme Gott"
 
 #: ../panel-plugin/settings-dialog.cpp:756
 msgid "Default Category"

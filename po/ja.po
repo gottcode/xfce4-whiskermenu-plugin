@@ -93,7 +93,7 @@ msgid "Clear Recently Used"
 msgstr "最近使ったものをクリア"
 
 #: ../panel-plugin/plugin.cpp:410
-msgid "Copyright © 2013-2020 Graeme Gott"
+msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:1033

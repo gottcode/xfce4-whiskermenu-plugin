@@ -97,8 +97,8 @@ msgid "Clear Recently Used"
 msgstr "Yakında Kullanılanları Temizle"
 
 #: ../panel-plugin/plugin.cpp:413
-msgid "Copyright © 2013-2022 Graeme Gott"
-msgstr "Telif Hakkı © 2013-2022 Graeme Gott"
+msgid "Copyright © 2013-2023 Graeme Gott"
+msgstr "Telif Hakkı © 2013-2023 Graeme Gott"
 
 #: ../panel-plugin/settings-dialog.cpp:756
 msgid "Default Category"

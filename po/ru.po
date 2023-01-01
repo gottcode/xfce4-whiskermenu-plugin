@@ -100,7 +100,7 @@ msgid "Clear Recently Used"
 msgstr "Очистить историю"
 
 #: ../panel-plugin/plugin.cpp:413
-msgid "Copyright © 2013-2022 Graeme Gott"
+msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:756
