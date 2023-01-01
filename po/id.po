@@ -98,8 +98,8 @@ msgid "Clear Recently Used"
 msgstr "Bersihkan yang Baru diGunakan"
 
 #: ../panel-plugin/plugin.cpp:439
-msgid "Copyright © 2013-2021 Graeme Gott"
-msgstr "Hak Cipta © 2013-2021 Graeme Gott"
+msgid "Copyright © 2013-2023 Graeme Gott"
+msgstr "Hak Cipta © 2013-2023 Graeme Gott"
 
 #: ../panel-plugin/settings-dialog.cpp:904
 msgid "Default Category"

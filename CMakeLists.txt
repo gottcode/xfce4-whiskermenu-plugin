@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2013-2022 Graeme Gott <graeme@gottcode.org>
+# SPDX-FileCopyrightText: 2013-2023 Graeme Gott <graeme@gottcode.org>
 #
 # SPDX-License-Identifier: GPL-2.0-or-later
 
