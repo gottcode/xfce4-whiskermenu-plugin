@@ -543,19 +543,65 @@ void Page::add_selected_to_desktop()
 	GFile* destination_file = g_file_get_child(desktop_folder, basename);
 	g_free(basename);
 
-	// Copy launcher to desktop folder
+	// Connect to Xfce file manager through D-Bus
+	GVariant* result = nullptr;
 	GError* error = nullptr;
-	if (g_file_copy(source_file, destination_file, G_FILE_COPY_NONE, nullptr, nullptr, nullptr, &error))
+	GDBusProxy* proxy = g_dbus_proxy_new_for_bus_sync(G_BUS_TYPE_SESSION,
+			G_DBUS_PROXY_FLAGS_NONE,
+			nullptr,
+			"org.xfce.FileManager",
+			"/org/xfce/FileManager",
+			"org.xfce.FileManager",
+			nullptr,
+			&error);
+	if (proxy)
 	{
-		// Make launcher executable
-		gchar* path = g_file_get_path(destination_file);
-		g_chmod(path, S_IRWXU | S_IRGRP | S_IXGRP | S_IROTH | S_IXOTH);
-		g_free(path);
+		gchar* source_parameters[] = { g_file_get_path(source_file), nullptr };
+		gchar* dest_parameters[] = { g_file_get_path(destination_file), nullptr };
+
+		// Copy launcher to desktop folder
+		result = g_dbus_proxy_call_sync(proxy,
+				"CopyTo",
+				g_variant_new("(s^as^asss)",
+						desktop_path,
+						source_parameters,
+						dest_parameters,
+						"",
+						""),
+				G_DBUS_CALL_FLAGS_NONE,
+				-1,
+				nullptr,
+				&error);
+
+		g_free(source_parameters[0]);
+		g_free(dest_parameters[0]);
+
+		// Disconnect from D-Bus
+		g_object_unref(proxy);
+	}
+
+	// Copy launcher to desktop folder fallback
+	if (!result)
+	{
+		g_error_free(error);
+		error = nullptr;
+
+		if (g_file_copy(source_file, destination_file, G_FILE_COPY_NONE, nullptr, nullptr, nullptr, &error))
+		{
+			// Make launcher executable
+			gchar* path = g_file_get_path(destination_file);
+			g_chmod(path, S_IRWXU | S_IRGRP | S_IXGRP | S_IROTH | S_IXOTH);
+			g_free(path);
+		}
+		else
+		{
+			xfce_dialog_show_error(nullptr, error, _("Unable to add launcher to desktop."));
+			g_error_free(error);
+		}
 	}
 	else
 	{
-		xfce_dialog_show_error(nullptr, error, _("Unable to add launcher to desktop."));
-		g_error_free(error);
+		g_variant_unref(result);
 	}
 
 	g_object_unref(destination_file);
