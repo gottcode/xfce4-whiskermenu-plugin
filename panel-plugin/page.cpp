@@ -630,16 +630,22 @@ void Page::add_selected_to_panel()
 		const gchar* parameters[] = { m_selected_launcher->get_desktop_id(), nullptr };
 
 		// Tell panel to add item
-		if (!g_dbus_proxy_call_sync(proxy,
+		GVariant* result = g_dbus_proxy_call_sync(proxy,
 				"AddNewItem",
 				g_variant_new("(s^as)", "launcher", parameters),
 				G_DBUS_CALL_FLAGS_NONE,
 				-1,
 				nullptr,
-				&error))
+				&error);
+
+		if (!result)
 		{
 			xfce_dialog_show_error(nullptr, error, _("Unable to add launcher to panel."));
 			g_error_free(error);
+		}
+		else
+		{
+			g_variant_unref(result);
 		}
 
 		// Disconnect from D-Bus
