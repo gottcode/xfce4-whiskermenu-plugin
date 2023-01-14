@@ -453,6 +453,11 @@ void WhiskerMenu::Window::show(const Position position)
 	reset_default_button();
 	show_default_page();
 
+	// Clear any previous selection
+	m_favorites->reset_selection();
+	m_recent->reset_selection();
+	m_applications->reset_selection();
+
 	// Make sure icon sizes are correct
 	m_favorites->get_button()->reload_icon_size();
 	m_recent->get_button()->reload_icon_size();
@@ -711,22 +716,27 @@ gboolean WhiskerMenu::Window::on_key_press_event(GtkWidget* widget, GdkEventKey*
 	// Make up and down keys scroll current list of applications from search
 	if ((key_event->keyval == GDK_KEY_Up) || (key_event->keyval == GDK_KEY_Down))
 	{
-		if ((widget == search) || (gtk_window_get_focus(m_window) == search))
-		{
-			gtk_widget_grab_focus(view);
-		}
-		if (gtk_window_get_focus(m_window) == view)
+		// Determine if there is a selected item
+		bool reset = page != m_search_results;
+		if (reset)
 		{
 			GtkTreePath* path = page->get_view()->get_selected_path();
 			if (path)
 			{
+				reset = false;
 				gtk_tree_path_free(path);
 			}
-			else
-			{
-				page->select_first();
-				return GDK_EVENT_STOP;
-			}
+		}
+		// Allow keyboard navigation out of search into view
+		if ((widget == search) || (gtk_window_get_focus(m_window) == search))
+		{
+			gtk_widget_grab_focus(view);
+		}
+		// Only select first item if there is no selected item
+		if ((gtk_window_get_focus(m_window) == view) && reset)
+		{
+			page->select_first();
+			return GDK_EVENT_STOP;
 		}
 	}
 
@@ -756,10 +766,6 @@ gboolean WhiskerMenu::Window::on_key_press_event_after(GtkWidget* widget, GdkEve
 
 gboolean WhiskerMenu::Window::on_map_event()
 {
-	m_favorites->reset_selection();
-	m_recent->reset_selection();
-	m_applications->reset_selection();
-
 	gtk_window_set_keep_above(m_window, true);
 
 	return GDK_EVENT_PROPAGATE;
