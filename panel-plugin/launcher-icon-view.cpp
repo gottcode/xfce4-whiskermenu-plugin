@@ -256,6 +256,9 @@ void LauncherIconView::reload_icon_size()
 		g_object_set(m_icon_renderer, "visible", false, nullptr);
 	}
 
+	// Reset padding to fix icon clipping
+	gtk_icon_view_set_item_padding(m_view, 0);
+
 	// Adjust item size
 	int padding = 2;
 	switch (wm_settings->launcher_icon_size)
