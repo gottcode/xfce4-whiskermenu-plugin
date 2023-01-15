@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2023 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,7 +18,6 @@
 #include "command.h"
 
 #include "image-menu-item.h"
-#include "settings.h"
 #include "slot.h"
 
 #include <libxfce4ui/libxfce4ui.h>
@@ -33,16 +32,12 @@ Command::Command(const gchar* property, const gchar* show_property,
 		const gchar* command, bool shown,
 		const gchar* error_text,
 		const gchar* confirm_question, const gchar* confirm_status) :
-	m_property(property),
-	m_property_show(show_property),
 	m_button(nullptr),
 	m_menuitem(nullptr),
 	m_mnemonic(g_strdup(text)),
-	m_command_default(g_strdup(command)),
-	m_command(g_strdup(m_command_default)),
+	m_command(property, command),
 	m_error_text(g_strdup(error_text)),
-	m_shown_default(shown),
-	m_shown(m_shown_default),
+	m_shown(show_property, shown),
 	m_status(CommandStatus::Unchecked),
 	m_timeout_details({nullptr, g_strdup(confirm_question), g_strdup(confirm_status), 0})
 {
@@ -86,8 +81,6 @@ Command::~Command()
 	g_free(m_icon);
 	g_free(m_mnemonic);
 	g_free(m_text);
-	g_free(m_command_default);
-	g_free(m_command);
 	g_free(m_error_text);
 	g_free(m_timeout_details.question);
 	g_free(m_timeout_details.status);
@@ -153,28 +146,20 @@ GtkWidget* Command::get_menuitem()
 
 //-----------------------------------------------------------------------------
 
-void Command::set(const gchar* command, bool store)
+void Command::set(const gchar* command)
 {
-	if (g_strcmp0(command, m_command) == 0)
+	if (m_command == command)
 	{
 		return;
 	}
 
-	g_free(m_command);
-	m_command = g_strdup(command);
+	m_command = command;
 	m_status = CommandStatus::Unchecked;
-
-	if (store && wm_settings->channel)
-	{
-		wm_settings->begin_property_update();
-		xfconf_channel_set_string(wm_settings->channel, m_property, m_command);
-		wm_settings->end_property_update();
-	}
 }
 
 //-----------------------------------------------------------------------------
 
-void Command::set_shown(bool shown, bool store)
+void Command::set_shown(bool shown)
 {
 	if (shown == m_shown)
 	{
@@ -182,13 +167,6 @@ void Command::set_shown(bool shown, bool store)
 	}
 
 	m_shown = shown;
-
-	if (store && wm_settings->channel)
-	{
-		wm_settings->begin_property_update();
-		xfconf_channel_set_bool(wm_settings->channel, m_property_show, m_shown);
-		wm_settings->end_property_update();
-	}
 
 	if (m_button)
 	{
@@ -256,17 +234,9 @@ void Command::activate()
 
 void Command::load(XfceRc* rc, bool is_default)
 {
-	set(xfce_rc_read_entry(rc, m_property + 1, m_command), !is_default);
-	set_shown(xfce_rc_read_bool_entry(rc, m_property_show + 1, m_shown), !is_default);
-	check();
-
-	if (is_default)
-	{
-		g_free(m_command_default);
-		m_command_default = g_strdup(m_command);
-
-		m_shown_default = m_shown;
-	}
+	m_command.load(rc, is_default);
+	m_shown.load(rc, is_default);
+	m_status = CommandStatus::Unchecked;
 }
 
 //-----------------------------------------------------------------------------
@@ -274,19 +244,15 @@ void Command::load(XfceRc* rc, bool is_default)
 bool Command::load(const gchar* property, const GValue* value)
 {
 	// Update command
-	if (g_strcmp0(m_property, property) == 0)
+	if (m_command.load(property, value))
 	{
-		set(G_VALUE_HOLDS_STRING(value) ? g_value_get_string(value) : m_command_default, false);
-		check();
-
+		m_status = CommandStatus::Unchecked;
 		return true;
 	}
 
 	// Update shown
-	if (g_strcmp0(m_property_show, property) == 0)
+	if (m_shown.load(property, value))
 	{
-		set_shown(G_VALUE_HOLDS_BOOLEAN(value) ? g_value_get_boolean(value) : m_shown_default, false);
-
 		return true;
 	}
 

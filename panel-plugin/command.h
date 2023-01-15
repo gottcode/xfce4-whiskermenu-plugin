@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2023 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,12 +18,9 @@
 #ifndef WHISKERMENU_COMMAND_H
 #define WHISKERMENU_COMMAND_H
 
-#include <gtk/gtk.h>
+#include "settings.h"
 
-extern "C"
-{
-#include <libxfce4util/libxfce4util.h>
-}
+#include <gtk/gtk.h>
 
 namespace WhiskerMenu
 {
@@ -67,9 +64,9 @@ public:
 		return m_text;
 	}
 
-	void set(const gchar* command, bool store);
+	void set(const gchar* command);
 
-	void set_shown(bool shown, bool store);
+	void set_shown(bool shown);
 
 	void check();
 
@@ -83,18 +80,14 @@ private:
 	static gboolean confirm_countdown(gpointer data);
 
 private:
-	const gchar* const m_property;
-	const gchar* const m_property_show;
 	GtkWidget* m_button;
 	GtkWidget* m_menuitem;
 	gchar* m_icon;
 	gchar* m_mnemonic;
 	gchar* m_text;
-	gchar* m_command_default;
-	gchar* m_command;
+	String m_command;
 	gchar* m_error_text;
-	bool m_shown_default;
-	bool m_shown;
+	Boolean m_shown;
 
 	enum class CommandStatus
 	{
