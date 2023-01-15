@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2023 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -106,7 +106,7 @@ public:
 
 	bool operator==(const char* data) const
 	{
-		return m_data == data;
+		return data ? (m_data == data) : m_data.empty();
 	}
 
 	bool operator!=(const std::string& data) const
@@ -118,6 +118,11 @@ public:
 	{
 		set(data);
 		return *this;
+	}
+
+	String& operator=(const char* data)
+	{
+		return *this = std::string(data ? data : "");
 	}
 
 	void load(XfceRc* rc);
