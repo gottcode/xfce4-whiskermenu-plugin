@@ -1,5 +1,5 @@
 # Finnish translation of xfce4-whiskermenu-plugin
-# Copyright (C) 2021 Graeme Gott
+# Copyright (C) 2023 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 # 
 # Translators:
@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-11 10:52-0500\n"
+"POT-Creation-Date: 2023-01-01 07:54-0500\n"
 "PO-Revision-Date: 2021-03-15 20:04+0000\n"
 "Last-Translator: Ammuu5\n"
 "Language-Team: Finnish (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/fi/)\n"
@@ -24,113 +24,113 @@ msgstr ""
 "Language: fi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/settings-dialog.cpp:1075
+#: ../panel-plugin/settings-dialog.cpp:992
 msgid "Add action"
 msgstr "Lisää toiminto"
 
-#: ../panel-plugin/page.cpp:415
+#: ../panel-plugin/page.cpp:472
 msgid "Add to Desktop"
 msgstr "Lisää työpöydälle"
 
-#: ../panel-plugin/page.cpp:404
+#: ../panel-plugin/page.cpp:451
 msgid "Add to Favorites"
 msgstr "Lisää suosikkeihin"
 
-#: ../panel-plugin/page.cpp:419
+#: ../panel-plugin/page.cpp:480
 msgid "Add to Panel"
 msgstr "Lisää paneeliin"
 
-#: ../panel-plugin/applications-page.cpp:40 ../panel-plugin/category.cpp:51
-#: ../panel-plugin/settings-dialog.cpp:917
+#: ../panel-plugin/applications-page.cpp:35 ../panel-plugin/category.cpp:51
+#: ../panel-plugin/settings-dialog.cpp:760
 msgid "All Applications"
 msgstr "Kaikki sovellukset"
 
-#: ../panel-plugin/plugin.cpp:438
+#: ../panel-plugin/plugin.cpp:397
 msgid "Alternate application launcher for Xfce"
 msgstr "Vaihtoehtoinen sovellusten käynnistin Xfce:lle"
 
-#: ../panel-plugin/settings-dialog.cpp:972
+#: ../panel-plugin/settings-dialog.cpp:855
 msgid "Amount of _items:"
 msgstr "_Kohteiden määrä:"
 
-#: ../panel-plugin/settings-dialog.cpp:772
+#: ../panel-plugin/settings-dialog.cpp:476
 msgid "Application icon si_ze:"
 msgstr "Sovelluksen kuvakkeen ko_ko:"
 
-#: ../panel-plugin/settings.cpp:109
+#: ../panel-plugin/settings.cpp:39
 msgid "Applications"
 msgstr "Sovellukset"
 
-#: ../panel-plugin/launcher.cpp:277
+#: ../panel-plugin/launcher.cpp:272
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
 msgstr "Haluatko varmasti piilottaa kohteen \"%s\"?"
 
-#: ../panel-plugin/settings.cpp:185
+#: ../panel-plugin/settings.cpp:125
 msgid "Are you sure you want to log out?"
 msgstr "Haluatko varmasti kirjautua ulos?"
 
-#: ../panel-plugin/settings.cpp:191
+#: ../panel-plugin/settings.cpp:132
 msgid "Are you sure you want to restart?"
 msgstr "Haluatko varmasti käynnistää uudelleen?"
 
-#: ../panel-plugin/settings.cpp:197
+#: ../panel-plugin/settings.cpp:139
 msgid "Are you sure you want to shut down?"
 msgstr "Haluatko varmasti sammuttaa?"
 
-#: ../panel-plugin/settings-dialog.cpp:812
+#: ../panel-plugin/settings-dialog.cpp:533
 msgid "Background opacit_y:"
 msgstr "Taustan läpinäk_yvyys:"
 
-#: ../panel-plugin/command-edit.cpp:49
+#: ../panel-plugin/command-edit.cpp:65
 msgid "Browse the file system to choose a custom command."
 msgstr "Selaa tiedostojärjestelmää valitaksesi komennon."
 
-#: ../panel-plugin/settings-dialog.cpp:1132
+#: ../panel-plugin/settings-dialog.cpp:1074
 msgid "C_ommand:"
 msgstr "K_omento:"
 
-#: ../panel-plugin/settings-dialog.cpp:790
+#: ../panel-plugin/settings-dialog.cpp:499
 msgid "Categ_ory icon size:"
 msgstr "Kateg_orian kuvakkeen koko:"
 
-#: ../panel-plugin/recent-page.cpp:173
+#: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
 msgstr "Pyyhi viimeksi käytetyt"
 
-#: ../panel-plugin/plugin.cpp:439
+#: ../panel-plugin/plugin.cpp:398
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Tekijänoikeudet © 2013-2023 Graeme Gott"
 
-#: ../panel-plugin/settings-dialog.cpp:904
+#: ../panel-plugin/settings-dialog.cpp:747
 msgid "Default Category"
 msgstr "Oletus kategoria"
 
-#: ../panel-plugin/settings-dialog.cpp:1103
+#: ../panel-plugin/settings-dialog.cpp:1025
 msgid "Details"
 msgstr "Tiedot"
 
-#: ../panel-plugin/settings-dialog.cpp:842
+#: ../panel-plugin/settings-dialog.cpp:660
 msgid "Di_splay:"
 msgstr "Nä_yttö:"
 
-#: ../panel-plugin/settings.cpp:203
+#: ../panel-plugin/settings.cpp:146
 msgid "Do you want to suspend to RAM?"
 msgstr "Haluatko siirtyä RAM-pohjaiseen keskeytystilaan?"
 
-#: ../panel-plugin/settings.cpp:209
+#: ../panel-plugin/settings.cpp:153
 msgid "Do you want to suspend to disk?"
 msgstr "Haluatko siirtyä levypohjaiseen lepotilaan?"
 
-#: ../panel-plugin/page.cpp:426
+#: ../panel-plugin/page.cpp:491
 msgid "Edit Application..."
 msgstr "Muokkaa sovellusta..."
 
-#: ../panel-plugin/settings.cpp:220
+#: ../panel-plugin/settings.cpp:167
 msgid "Edit _Profile"
 msgstr "Muokkaa _profiilia"
 
-#: ../panel-plugin/settings.cpp:222
+#: ../panel-plugin/settings.cpp:169
 msgid "Failed to edit profile."
 msgstr "Profiilin muokkaaminen epäonnistui."
 
@@ -139,166 +139,187 @@ msgstr "Profiilin muokkaaminen epäonnistui."
 msgid "Failed to execute command \"%s\"."
 msgstr "Komennon \"%s\" suorittaminen epäonnistui."
 
-#: ../panel-plugin/settings.cpp:208
+#: ../panel-plugin/settings.cpp:152
 msgid "Failed to hibernate."
 msgstr "Lepotilaan siirtyminen epäonnistui."
 
-#: ../panel-plugin/settings.cpp:218
+#: ../panel-plugin/settings.cpp:164
 msgid "Failed to launch menu editor."
 msgstr "Valikkomuokkaimen käynnistäminen epäonnistui."
 
-#: ../panel-plugin/settings.cpp:176
+#: ../panel-plugin/settings.cpp:114
 msgid "Failed to lock screen."
 msgstr "Näytön lukitseminen epäonnistui."
 
-#: ../panel-plugin/settings.cpp:184 ../panel-plugin/settings.cpp:214
+#: ../panel-plugin/settings.cpp:124 ../panel-plugin/settings.cpp:159
 msgid "Failed to log out."
 msgstr "Ulos kirjautuminen epäonnistui."
 
-#: ../panel-plugin/settings.cpp:172
+#: ../panel-plugin/settings.cpp:109
 msgid "Failed to open settings manager."
 msgstr "Asetustenhallinnan avaaminen epäonnistui."
 
-#: ../panel-plugin/settings.cpp:190
+#: ../panel-plugin/settings.cpp:131
 msgid "Failed to restart."
 msgstr "Uudelleen käynnistäminen epäonnistui."
 
-#: ../panel-plugin/settings.cpp:196
+#: ../panel-plugin/settings.cpp:138
 msgid "Failed to shut down."
 msgstr "Sammuttaminen epäonnistui."
 
-#: ../panel-plugin/settings.cpp:202
+#: ../panel-plugin/settings.cpp:145
 msgid "Failed to suspend."
 msgstr "Keskeytystilaan siirtyminen epäonnistui."
 
-#: ../panel-plugin/settings.cpp:180
+#: ../panel-plugin/settings.cpp:119
 msgid "Failed to switch user."
 msgstr "Käyttäjän vaihtaminen epäonnistui."
 
 #: ../panel-plugin/favorites-page.cpp:37
-#: ../panel-plugin/settings-dialog.cpp:908
+#: ../panel-plugin/settings-dialog.cpp:751
 msgid "Favorites"
 msgstr "Suosikit"
 
-#: ../panel-plugin/settings.cpp:210
+#: ../panel-plugin/settings.cpp:154
 #, c-format
 msgid "Hibernating computer in %d seconds."
 msgstr "Siirrytään lepotilaan %d sekunnin kuluttua."
 
-#: ../panel-plugin/launcher.cpp:276 ../panel-plugin/page.cpp:430
+#: ../panel-plugin/settings-dialog.cpp:636
+msgid "Hidden"
+msgstr "Piilotettu"
+
+#: ../panel-plugin/launcher.cpp:271 ../panel-plugin/page.cpp:499
 msgid "Hide Application"
 msgstr "Piilota sovellus"
 
-#: ../panel-plugin/settings-dialog.cpp:847
+#: ../panel-plugin/settings-dialog.cpp:665
 msgid "Icon"
 msgstr "Kuvake"
 
-#: ../panel-plugin/settings-dialog.cpp:849
+#: ../panel-plugin/settings-dialog.cpp:667
 msgid "Icon and title"
 msgstr "Kuvake ja otsikko"
 
-#: ../panel-plugin/settings-dialog.cpp:983
+#: ../panel-plugin/settings-dialog.cpp:878
 msgid "Include _favorites"
 msgstr "Sisällytä _suosikit"
 
-#: ../panel-plugin/icon-size.cpp:54
+#: ../panel-plugin/icon-size.cpp:64
 msgid "Large"
 msgstr "Suuri"
 
-#: ../panel-plugin/icon-size.cpp:55
+#: ../panel-plugin/icon-size.cpp:65
 msgid "Larger"
 msgstr "Suurempi"
 
-#: ../panel-plugin/settings.cpp:212
+#: ../panel-plugin/settings.cpp:157
 msgid "Log Ou_t..."
 msgstr "Kirjaudu ul_os..."
 
-#: ../panel-plugin/settings.cpp:182
+#: ../panel-plugin/settings.cpp:122
 msgid "Log _Out"
 msgstr "Kirjaudu ul_os"
 
-#: ../panel-plugin/settings.cpp:186
+#: ../panel-plugin/settings.cpp:126
 #, c-format
 msgid "Logging out in %d seconds."
 msgstr "Kirjaudutaan ulos %d sekunnin kuluttua."
 
-#: ../panel-plugin/settings.cpp:158
+#: ../panel-plugin/settings.cpp:93
 msgid "Man Pages"
 msgstr "Ohjesivut"
 
-#: ../panel-plugin/settings-dialog.cpp:941
+#: ../panel-plugin/settings-dialog.cpp:576
+#: ../panel-plugin/settings-dialog.cpp:808
 msgid "Menu"
 msgstr "Valikko"
 
-#: ../panel-plugin/settings-dialog.cpp:1107
+#: ../panel-plugin/settings-dialog.cpp:1029
 msgid "Nam_e:"
 msgstr "Nimi:"
 
-#: ../panel-plugin/settings-dialog.cpp:1053
+#: ../panel-plugin/settings-dialog.cpp:970
 msgid "Name"
 msgstr "Nimi"
 
-#: ../panel-plugin/icon-size.cpp:49
+#: ../panel-plugin/icon-size.cpp:59
 msgid "None"
 msgstr "Ei kuvaketta"
 
-#: ../panel-plugin/icon-size.cpp:53
+#: ../panel-plugin/icon-size.cpp:63
 msgid "Normal"
 msgstr "Normaali"
 
-#: ../panel-plugin/settings.cpp:162
+#: ../panel-plugin/settings.cpp:98
 msgid "Open URI"
 msgstr "Avaa URI-osoite"
 
-#: ../panel-plugin/settings-dialog.cpp:1058
+#: ../panel-plugin/settings-dialog.cpp:627
+msgid "P_rofile:"
+msgstr ""
+
+#: ../panel-plugin/settings-dialog.cpp:656
+msgid "Panel Button"
+msgstr "Paneelipainike"
+
+#: ../panel-plugin/settings-dialog.cpp:975
 msgid "Pattern"
 msgstr "Hakulauseke"
 
-#: ../panel-plugin/settings-dialog.cpp:756
+#: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
 msgstr "Sijoita _hakukenttä paneelipainikkeen viereen."
 
-#: ../panel-plugin/settings-dialog.cpp:750
+#: ../panel-plugin/settings-dialog.cpp:593
 msgid "Position cate_gories next to panel button"
 msgstr "Sijoita _kategoriat paneelipainikkeen viereen"
 
-#: ../panel-plugin/settings-dialog.cpp:762
+#: ../panel-plugin/settings-dialog.cpp:580
+msgid "Position categories _horizontally"
+msgstr ""
+
+#: ../panel-plugin/settings-dialog.cpp:615
 msgid "Position commands next to search _entry"
 msgstr "Sijoita komennot _hakukentän viereen"
 
-#: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:912
-#: ../panel-plugin/settings-dialog.cpp:968
+#: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
+#: ../panel-plugin/settings-dialog.cpp:851
 msgid "Recently Used"
 msgstr "Viimeksi käytetyt"
 
-#: ../panel-plugin/settings-dialog.cpp:546
+#: ../panel-plugin/settings-dialog.cpp:218
 #, c-format
 msgid "Remove action \"%s\"?"
 msgstr "Poistetaanko toiminto \"%s\"?"
 
-#: ../panel-plugin/page.cpp:410
+#: ../panel-plugin/page.cpp:462
 msgid "Remove from Favorites"
 msgstr "Poista suosikeista"
 
-#: ../panel-plugin/settings-dialog.cpp:1084
+#: ../panel-plugin/settings-dialog.cpp:1004
 msgid "Remove selected action"
 msgstr "Poista valittu toiminto"
 
-#: ../panel-plugin/settings.cpp:192
+#: ../panel-plugin/settings.cpp:133
 #, c-format
 msgid "Restarting computer in %d seconds."
 msgstr "Tietokone käynnistetään uudelleen %d sekunnin kuluttua."
+
+#: ../panel-plugin/settings-dialog.cpp:634
+msgid "Round Picture"
+msgstr ""
 
 #: ../panel-plugin/run-action.cpp:64
 #, c-format
 msgid "Run %s"
 msgstr "Suorita %s"
 
-#: ../panel-plugin/settings.cpp:161
+#: ../panel-plugin/settings.cpp:97
 msgid "Run in Terminal"
 msgstr "Suorita pääteohjelmassa"
 
-#: ../panel-plugin/settings-dialog.cpp:119
+#: ../panel-plugin/settings-dialog.cpp:102
 msgid "Search Actio_ns"
 msgstr "Haun toimi_nnot"
 
@@ -306,15 +327,23 @@ msgstr "Haun toimi_nnot"
 msgid "Search Action"
 msgstr "Haun toiminto"
 
-#: ../panel-plugin/command-edit.cpp:64
+#: ../panel-plugin/settings.cpp:95
+msgid "Search for Files"
+msgstr ""
+
+#: ../panel-plugin/settings.cpp:94
+msgid "Search the Web"
+msgstr ""
+
+#: ../panel-plugin/command-edit.cpp:75
 msgid "Select Command"
 msgstr "Valitse komento"
 
-#: ../panel-plugin/settings-dialog.cpp:302
+#: ../panel-plugin/settings-dialog.cpp:135
 msgid "Select an Icon"
 msgstr "Valitse kuvake"
 
-#: ../panel-plugin/settings-dialog.cpp:991
+#: ../panel-plugin/settings-dialog.cpp:891
 msgid "Session Commands"
 msgstr "Istunnon komennot"
 
@@ -322,220 +351,217 @@ msgstr "Istunnon komennot"
 msgid "Show a menu to easily access installed applications"
 msgstr "Näytä valikko, josta on helppo pääsy asennettuihin sovelluksiin"
 
-#: ../panel-plugin/settings-dialog.cpp:739
+#: ../panel-plugin/settings-dialog.cpp:459
 msgid "Show application _descriptions"
 msgstr "Näytä sovelluksien _kuvaukset"
 
-#: ../panel-plugin/settings-dialog.cpp:733
+#: ../panel-plugin/settings-dialog.cpp:448
 msgid "Show application too_ltips"
 msgstr "Näytä sovelluksien työka_luvihjeet"
 
-#: ../panel-plugin/settings-dialog.cpp:647
+#: ../panel-plugin/settings-dialog.cpp:318
 msgid "Show as _icons"
 msgstr "Näytä _kuvakkeina"
 
-#: ../panel-plugin/settings-dialog.cpp:664
+#: ../panel-plugin/settings-dialog.cpp:335
 msgid "Show as lis_t"
 msgstr "Näytä lis_tana"
 
-#: ../panel-plugin/settings-dialog.cpp:682
+#: ../panel-plugin/settings-dialog.cpp:353
 msgid "Show as t_ree"
 msgstr "Näytä p_uuna"
 
-#: ../panel-plugin/settings-dialog.cpp:995
+#: ../panel-plugin/settings-dialog.cpp:895
 msgid "Show c_onfirmation dialog"
 msgstr "Näytä _vahvistusikkuna"
 
-#: ../panel-plugin/settings-dialog.cpp:726
+#: ../panel-plugin/settings-dialog.cpp:436
 msgid "Show cate_gory names"
 msgstr "Näytä kate_gorioiden nimet"
 
-#: ../panel-plugin/settings-dialog.cpp:720
+#: ../panel-plugin/settings-dialog.cpp:424
 msgid "Show generic application _names"
 msgstr "Näytä sovelluksien yleispätevät _nimet"
 
-#: ../panel-plugin/settings.cpp:194
+#: ../panel-plugin/settings.cpp:136
 msgid "Shut _Down"
 msgstr "_Sammuta"
 
-#: ../panel-plugin/icon-size.cpp:52
+#: ../panel-plugin/icon-size.cpp:62
 msgid "Small"
 msgstr "Pieni"
 
-#: ../panel-plugin/icon-size.cpp:51
+#: ../panel-plugin/icon-size.cpp:61
 msgid "Smaller"
 msgstr "Pienempi"
 
-#: ../panel-plugin/favorites-page.cpp:147
+#: ../panel-plugin/favorites-page.cpp:163
 msgid "Sort Alphabetically A-Z"
 msgstr "Järjestä aakkosten mukaan A-Ö"
 
-#: ../panel-plugin/favorites-page.cpp:151
+#: ../panel-plugin/favorites-page.cpp:171
 msgid "Sort Alphabetically Z-A"
 msgstr "Järjestä aakkosten mukaan Ö-A"
 
-#: ../panel-plugin/settings-dialog.cpp:957
+#: ../panel-plugin/settings-dialog.cpp:834
 msgid "Sort ca_tegories"
 msgstr "Lajittele ka_tegoriat"
 
-#: ../panel-plugin/settings-dialog.cpp:951
+#: ../panel-plugin/settings-dialog.cpp:635
+msgid "Square Picture"
+msgstr ""
+
+#: ../panel-plugin/settings-dialog.cpp:823
 msgid "Stay _visible when focus is lost"
 msgstr "Pidä _näkyvissä, kun valikko ei ole enää aktiivisena"
 
-#: ../panel-plugin/settings.cpp:200
+#: ../panel-plugin/settings.cpp:143
 msgid "Suspe_nd"
 msgstr "_Keskeytystila"
 
-#: ../panel-plugin/settings.cpp:204
+#: ../panel-plugin/settings.cpp:147
 #, c-format
 msgid "Suspending computer in %d seconds."
 msgstr "Siirrytään keskeytystilaan %d sekunnin kuluttua."
 
-#: ../panel-plugin/settings.cpp:178
+#: ../panel-plugin/settings.cpp:117
 msgid "Switch _User"
 msgstr "Vaihda _käyttäjää"
 
-#: ../panel-plugin/settings-dialog.cpp:945
+#: ../panel-plugin/settings-dialog.cpp:812
 msgid "Switch categories by _hovering"
 msgstr "Vaihda ryhmiä _napsauttamatta"
 
-#: ../panel-plugin/settings-dialog.cpp:545
+#: ../panel-plugin/settings-dialog.cpp:217
 msgid "The action will be deleted permanently."
 msgstr "Toiminto poistetaan pysyvästi."
 
-#: ../panel-plugin/settings-dialog.cpp:848
+#: ../panel-plugin/settings-dialog.cpp:666
 msgid "Title"
 msgstr "Otsikko"
 
-#: ../panel-plugin/launcher.cpp:271
+#: ../panel-plugin/launcher.cpp:267
 #, c-format
 msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
 msgstr "Poistaaksesi piilotuksen, sinun on poistettava tiedosto \"%s\" manuaalisesti tai avata tiedosto ja poistaa rivi \"%s\"."
 
-#: ../panel-plugin/settings.cpp:198
+#: ../panel-plugin/settings.cpp:140
 #, c-format
 msgid "Turning off computer in %d seconds."
 msgstr "Tietokone sammutetaan %d sekunnin kuluttua."
 
-#: ../panel-plugin/page.cpp:491
+#: ../panel-plugin/page.cpp:557
 msgid "Unable to add launcher to desktop."
 msgstr "Työpöydälle ei voitu luoda käynnistintä."
 
-#: ../panel-plugin/page.cpp:529 ../panel-plugin/page.cpp:538
+#: ../panel-plugin/page.cpp:595 ../panel-plugin/page.cpp:604
 msgid "Unable to add launcher to panel."
 msgstr "Paneeliin ei voitu luoda käynnistintä."
 
-#: ../panel-plugin/page.cpp:566
+#: ../panel-plugin/page.cpp:624
 msgid "Unable to edit launcher."
 msgstr "Käynnistintä ei voitu muokata."
 
-#: ../panel-plugin/settings-dialog.cpp:606
+#: ../panel-plugin/settings-dialog.cpp:277
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Ei voitu avata osoitetta: %s"
 
-#: ../panel-plugin/settings-dialog.cpp:883
+#: ../panel-plugin/settings-dialog.cpp:721
 msgid "Use a single _panel row"
 msgstr "Käytä yhtä paneelin riviä"
 
-#: ../panel-plugin/icon-size.cpp:56
+#: ../panel-plugin/icon-size.cpp:66
 msgid "Very Large"
 msgstr "Erittäin suuri"
 
-#: ../panel-plugin/icon-size.cpp:50
+#: ../panel-plugin/icon-size.cpp:60
 msgid "Very Small"
 msgstr "Erittäin pieni"
 
-#: ../panel-plugin/settings.cpp:159
-msgid "Web Search"
-msgstr "Internethaku"
-
-#: ../panel-plugin/settings-dialog.cpp:94
-#: ../panel-plugin/settings-dialog.cpp:101
+#: ../panel-plugin/settings-dialog.cpp:80
 #: ../panel-plugin/whiskermenu.desktop.in:5
 msgid "Whisker Menu"
 msgstr "Whisker-valikko"
 
-#: ../panel-plugin/settings.cpp:160
+#: ../panel-plugin/settings.cpp:96
 msgid "Wikipedia"
 msgstr "Wikipedia"
 
-#: ../panel-plugin/settings-dialog.cpp:115
+#: ../panel-plugin/settings-dialog.cpp:99
 msgid "_Appearance"
 msgstr "_Ulkoasu"
 
-#: ../panel-plugin/settings-dialog.cpp:117
+#: ../panel-plugin/settings-dialog.cpp:100
 msgid "_Behavior"
 msgstr "_Toimintatapa"
 
-#: ../panel-plugin/command-edit.cpp:67 ../panel-plugin/settings-dialog.cpp:304
+#: ../panel-plugin/command-edit.cpp:78 ../panel-plugin/settings-dialog.cpp:137
 msgid "_Cancel"
 msgstr "_Peru"
 
-#: ../panel-plugin/settings-dialog.cpp:98
-#: ../panel-plugin/settings-dialog.cpp:105
+#: ../panel-plugin/settings-dialog.cpp:84
 msgid "_Close"
 msgstr "_Sulje"
 
-#: ../panel-plugin/settings-dialog.cpp:118
+#: ../panel-plugin/settings-dialog.cpp:101
 msgid "_Commands"
 msgstr "_Komennot"
 
-#: ../panel-plugin/settings-dialog.cpp:544
+#: ../panel-plugin/settings-dialog.cpp:216
 msgid "_Delete"
 msgstr "_Poista"
 
-#: ../panel-plugin/settings.cpp:216
+#: ../panel-plugin/settings.cpp:162
 msgid "_Edit Applications"
 msgstr "Muokkaa sov_elluksia"
 
-#: ../panel-plugin/settings-dialog.cpp:97
-#: ../panel-plugin/settings-dialog.cpp:104
+#: ../panel-plugin/settings-dialog.cpp:98
+msgid "_General"
+msgstr "_Yleiset"
+
+#: ../panel-plugin/settings-dialog.cpp:83
 msgid "_Help"
 msgstr "_Apua"
 
-#: ../panel-plugin/settings.cpp:206
+#: ../panel-plugin/settings.cpp:150
 msgid "_Hibernate"
 msgstr "_Lepotila"
 
-#: ../panel-plugin/settings-dialog.cpp:870
+#: ../panel-plugin/settings-dialog.cpp:703
 msgid "_Icon:"
 msgstr "_Kuvake:"
 
-#: ../panel-plugin/settings.cpp:174
+#: ../panel-plugin/settings.cpp:112
 msgid "_Lock Screen"
 msgstr "_Lukitse näyttö"
 
-#: ../panel-plugin/command-edit.cpp:68 ../panel-plugin/settings-dialog.cpp:305
+#: ../panel-plugin/command-edit.cpp:79 ../panel-plugin/settings-dialog.cpp:138
 msgid "_OK"
 msgstr "_OK"
 
-#: ../panel-plugin/settings-dialog.cpp:116
-msgid "_Panel Button"
-msgstr "_Paneelinäppäin"
-
-#: ../panel-plugin/settings-dialog.cpp:1120
+#: ../panel-plugin/settings-dialog.cpp:1052
 msgid "_Pattern:"
 msgstr "_Hakulauseke:"
 
-#: ../panel-plugin/settings-dialog.cpp:1144
+#: ../panel-plugin/settings-dialog.cpp:1093
 msgid "_Regular expression"
 msgstr "Säännöllinen lauseke (_regex)"
 
-#: ../panel-plugin/settings.cpp:188
+#: ../panel-plugin/settings.cpp:129
 msgid "_Restart"
 msgstr "_Käynnistä uudelleen"
 
-#: ../panel-plugin/settings.cpp:170
+#: ../panel-plugin/settings.cpp:107
 msgid "_Settings Manager"
 msgstr "_Asetustenhallinta"
 
-#: ../panel-plugin/settings-dialog.cpp:858
+#: ../panel-plugin/settings-dialog.cpp:685
 msgid "_Title:"
 msgstr "_Otsikko:"
 
-#: ../panel-plugin/plugin.cpp:443
+#: ../panel-plugin/plugin.cpp:402
 msgid "translator-credits"
 msgstr "Pasi Lallinaho <pasi@shimmerproject.org>"
