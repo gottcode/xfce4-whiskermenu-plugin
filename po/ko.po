@@ -1,5 +1,5 @@
 # Korean translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2022 Graeme Gott
+# Copyright (C) 2023 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 # 
 # Translators:
@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-01 08:04-0500\n"
+"POT-Creation-Date: 2023-01-01 07:54-0500\n"
 "PO-Revision-Date: 2013-06-20 11:26+0000\n"
 "Last-Translator: 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2015-2017,2019,2022\n"
 "Language-Team: Korean (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/ko/)\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Language: ko\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../panel-plugin/settings-dialog.cpp:1001
+#: ../panel-plugin/settings-dialog.cpp:992
 msgid "Add action"
 msgstr "설정 추가"
 
@@ -37,19 +37,19 @@ msgid "Add to Panel"
 msgstr "패널에 추가"
 
 #: ../panel-plugin/applications-page.cpp:35 ../panel-plugin/category.cpp:51
-#: ../panel-plugin/settings-dialog.cpp:769
+#: ../panel-plugin/settings-dialog.cpp:760
 msgid "All Applications"
 msgstr "모든 프로그램"
 
-#: ../panel-plugin/plugin.cpp:412
+#: ../panel-plugin/plugin.cpp:397
 msgid "Alternate application launcher for Xfce"
 msgstr "Xfce 용 다른 런처 프로그램"
 
-#: ../panel-plugin/settings-dialog.cpp:864
+#: ../panel-plugin/settings-dialog.cpp:855
 msgid "Amount of _items:"
 msgstr "표시할 항목 수"
 
-#: ../panel-plugin/settings-dialog.cpp:485
+#: ../panel-plugin/settings-dialog.cpp:476
 msgid "Application icon si_ze:"
 msgstr "프로그램 아이콘 크기(_Z):"
 
@@ -57,7 +57,7 @@ msgstr "프로그램 아이콘 크기(_Z):"
 msgid "Applications"
 msgstr "프로그램"
 
-#: ../panel-plugin/launcher.cpp:276
+#: ../panel-plugin/launcher.cpp:272
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
 msgstr "\"%s\"를 숨기시겠습니까?"
@@ -74,7 +74,7 @@ msgstr "다시 시작하시겠습니까?"
 msgid "Are you sure you want to shut down?"
 msgstr "컴퓨터를 끄시겠습니까?"
 
-#: ../panel-plugin/settings-dialog.cpp:542
+#: ../panel-plugin/settings-dialog.cpp:533
 msgid "Background opacit_y:"
 msgstr "배경 화면 불투명도:"
 
@@ -82,11 +82,11 @@ msgstr "배경 화면 불투명도:"
 msgid "Browse the file system to choose a custom command."
 msgstr "사용자 지정 명령어를 설정하기 위해 파일 시스템을 둘러봅니다."
 
-#: ../panel-plugin/settings-dialog.cpp:1083
+#: ../panel-plugin/settings-dialog.cpp:1074
 msgid "C_ommand:"
 msgstr "명령어:"
 
-#: ../panel-plugin/settings-dialog.cpp:508
+#: ../panel-plugin/settings-dialog.cpp:499
 msgid "Categ_ory icon size:"
 msgstr "카테고리 아이콘 크기:"
 
@@ -94,19 +94,19 @@ msgstr "카테고리 아이콘 크기:"
 msgid "Clear Recently Used"
 msgstr "최근 사용 기록 지우기"
 
-#: ../panel-plugin/plugin.cpp:413
+#: ../panel-plugin/plugin.cpp:398
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Copyright © 2013-2023 Graeme Gott"
 
-#: ../panel-plugin/settings-dialog.cpp:756
+#: ../panel-plugin/settings-dialog.cpp:747
 msgid "Default Category"
 msgstr "기본 카테고리"
 
-#: ../panel-plugin/settings-dialog.cpp:1034
+#: ../panel-plugin/settings-dialog.cpp:1025
 msgid "Details"
 msgstr "자세한 내용"
 
-#: ../panel-plugin/settings-dialog.cpp:669
+#: ../panel-plugin/settings-dialog.cpp:660
 msgid "Di_splay:"
 msgstr "보기"
 
@@ -172,7 +172,7 @@ msgid "Failed to switch user."
 msgstr "사용자 전환에 실패하였습니다."
 
 #: ../panel-plugin/favorites-page.cpp:37
-#: ../panel-plugin/settings-dialog.cpp:760
+#: ../panel-plugin/settings-dialog.cpp:751
 msgid "Favorites"
 msgstr "즐겨찾기"
 
@@ -181,23 +181,23 @@ msgstr "즐겨찾기"
 msgid "Hibernating computer in %d seconds."
 msgstr "%d초 안에 컴퓨터 잠자기 모드 실행."
 
-#: ../panel-plugin/settings-dialog.cpp:645
+#: ../panel-plugin/settings-dialog.cpp:636
 msgid "Hidden"
 msgstr "숨김"
 
-#: ../panel-plugin/launcher.cpp:275 ../panel-plugin/page.cpp:499
+#: ../panel-plugin/launcher.cpp:271 ../panel-plugin/page.cpp:499
 msgid "Hide Application"
 msgstr "프로그램을 숨깁니다."
 
-#: ../panel-plugin/settings-dialog.cpp:674
+#: ../panel-plugin/settings-dialog.cpp:665
 msgid "Icon"
 msgstr "아이콘"
 
-#: ../panel-plugin/settings-dialog.cpp:676
+#: ../panel-plugin/settings-dialog.cpp:667
 msgid "Icon and title"
 msgstr "아이콘과 제목"
 
-#: ../panel-plugin/settings-dialog.cpp:887
+#: ../panel-plugin/settings-dialog.cpp:878
 msgid "Include _favorites"
 msgstr "즐겨찾기 포함하기(_F)"
 
@@ -226,16 +226,16 @@ msgstr "%d초 안에 로그아웃 하기."
 msgid "Man Pages"
 msgstr "사용 설명"
 
-#: ../panel-plugin/settings-dialog.cpp:585
-#: ../panel-plugin/settings-dialog.cpp:817
+#: ../panel-plugin/settings-dialog.cpp:576
+#: ../panel-plugin/settings-dialog.cpp:808
 msgid "Menu"
 msgstr "메뉴"
 
-#: ../panel-plugin/settings-dialog.cpp:1038
+#: ../panel-plugin/settings-dialog.cpp:1029
 msgid "Nam_e:"
 msgstr "이름:"
 
-#: ../panel-plugin/settings-dialog.cpp:979
+#: ../panel-plugin/settings-dialog.cpp:970
 msgid "Name"
 msgstr "이름"
 
@@ -251,40 +251,40 @@ msgstr "기본"
 msgid "Open URI"
 msgstr "URI 열기"
 
-#: ../panel-plugin/settings-dialog.cpp:636
+#: ../panel-plugin/settings-dialog.cpp:627
 msgid "P_rofile:"
 msgstr "프로필(_R):"
 
-#: ../panel-plugin/settings-dialog.cpp:665
+#: ../panel-plugin/settings-dialog.cpp:656
 msgid "Panel Button"
 msgstr "패널 버튼"
 
-#: ../panel-plugin/settings-dialog.cpp:984
+#: ../panel-plugin/settings-dialog.cpp:975
 msgid "Pattern"
 msgstr "패턴"
 
-#: ../panel-plugin/settings-dialog.cpp:613
+#: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
 msgstr "패널 버튼 옆에 올 검색 창 입력 위치"
 
-#: ../panel-plugin/settings-dialog.cpp:602
+#: ../panel-plugin/settings-dialog.cpp:593
 msgid "Position cate_gories next to panel button"
 msgstr "패널 버튼 옆에 올 카테고리 위치"
 
-#: ../panel-plugin/settings-dialog.cpp:589
+#: ../panel-plugin/settings-dialog.cpp:580
 msgid "Position categories _horizontally"
 msgstr "위치 카테고리 가로(_H)"
 
-#: ../panel-plugin/settings-dialog.cpp:624
+#: ../panel-plugin/settings-dialog.cpp:615
 msgid "Position commands next to search _entry"
 msgstr "검색 창 옆에 올 명령어 위치"
 
-#: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:764
-#: ../panel-plugin/settings-dialog.cpp:860
+#: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
+#: ../panel-plugin/settings-dialog.cpp:851
 msgid "Recently Used"
 msgstr "최근 사용 기록"
 
-#: ../panel-plugin/settings-dialog.cpp:227
+#: ../panel-plugin/settings-dialog.cpp:218
 #, c-format
 msgid "Remove action \"%s\"?"
 msgstr "\"%s\" 설정을 제거할까요?"
@@ -293,7 +293,7 @@ msgstr "\"%s\" 설정을 제거할까요?"
 msgid "Remove from Favorites"
 msgstr "즐겨찾기에서 삭제"
 
-#: ../panel-plugin/settings-dialog.cpp:1013
+#: ../panel-plugin/settings-dialog.cpp:1004
 msgid "Remove selected action"
 msgstr "선택한 설정 빼기"
 
@@ -302,7 +302,7 @@ msgstr "선택한 설정 빼기"
 msgid "Restarting computer in %d seconds."
 msgstr "%d초 안에 컴퓨터 다시 시작하기."
 
-#: ../panel-plugin/settings-dialog.cpp:643
+#: ../panel-plugin/settings-dialog.cpp:634
 msgid "Round Picture"
 msgstr "둥근 그림"
 
@@ -315,7 +315,7 @@ msgstr "%s 실행"
 msgid "Run in Terminal"
 msgstr "터미널에서 실행"
 
-#: ../panel-plugin/settings-dialog.cpp:111
+#: ../panel-plugin/settings-dialog.cpp:102
 msgid "Search Actio_ns"
 msgstr "검색 설정"
 
@@ -335,11 +335,11 @@ msgstr "웹 검색"
 msgid "Select Command"
 msgstr "명령어 선택"
 
-#: ../panel-plugin/settings-dialog.cpp:144
+#: ../panel-plugin/settings-dialog.cpp:135
 msgid "Select an Icon"
 msgstr "아이콘 선택"
 
-#: ../panel-plugin/settings-dialog.cpp:900
+#: ../panel-plugin/settings-dialog.cpp:891
 msgid "Session Commands"
 msgstr "세션 명령어"
 
@@ -347,35 +347,35 @@ msgstr "세션 명령어"
 msgid "Show a menu to easily access installed applications"
 msgstr "설치된 프로그램에 쉽게 접근하도록 메뉴 보이기"
 
-#: ../panel-plugin/settings-dialog.cpp:468
+#: ../panel-plugin/settings-dialog.cpp:459
 msgid "Show application _descriptions"
 msgstr "프로그램 설명 보이기"
 
-#: ../panel-plugin/settings-dialog.cpp:457
+#: ../panel-plugin/settings-dialog.cpp:448
 msgid "Show application too_ltips"
 msgstr "애플리케이션 툴팁 보이기"
 
-#: ../panel-plugin/settings-dialog.cpp:327
+#: ../panel-plugin/settings-dialog.cpp:318
 msgid "Show as _icons"
 msgstr "아이콘으로 보기(_I)"
 
-#: ../panel-plugin/settings-dialog.cpp:344
+#: ../panel-plugin/settings-dialog.cpp:335
 msgid "Show as lis_t"
 msgstr "목록으로 보기(_T)"
 
-#: ../panel-plugin/settings-dialog.cpp:362
+#: ../panel-plugin/settings-dialog.cpp:353
 msgid "Show as t_ree"
 msgstr "트리형 보기(_R)"
 
-#: ../panel-plugin/settings-dialog.cpp:904
+#: ../panel-plugin/settings-dialog.cpp:895
 msgid "Show c_onfirmation dialog"
 msgstr "확인 대화 상자 보이기(_O)"
 
-#: ../panel-plugin/settings-dialog.cpp:445
+#: ../panel-plugin/settings-dialog.cpp:436
 msgid "Show cate_gory names"
 msgstr "카테고리 보이기"
 
-#: ../panel-plugin/settings-dialog.cpp:433
+#: ../panel-plugin/settings-dialog.cpp:424
 msgid "Show generic application _names"
 msgstr "프로그램 전체 이름 보이기"
 
@@ -399,15 +399,15 @@ msgstr "알파벳순으로 정렬 A-Z"
 msgid "Sort Alphabetically Z-A"
 msgstr "알파벳순으로 정렬 Z-A"
 
-#: ../panel-plugin/settings-dialog.cpp:843
+#: ../panel-plugin/settings-dialog.cpp:834
 msgid "Sort ca_tegories"
 msgstr "카테고리 정열(_T)"
 
-#: ../panel-plugin/settings-dialog.cpp:644
+#: ../panel-plugin/settings-dialog.cpp:635
 msgid "Square Picture"
 msgstr "정사각형 그림"
 
-#: ../panel-plugin/settings-dialog.cpp:832
+#: ../panel-plugin/settings-dialog.cpp:823
 msgid "Stay _visible when focus is lost"
 msgstr "초점을 잃었을 때 보이기(_V)"
 
@@ -424,19 +424,19 @@ msgstr "%d초 안에 컴퓨터 대기 모드 실행."
 msgid "Switch _User"
 msgstr "사용자 전환(_U)"
 
-#: ../panel-plugin/settings-dialog.cpp:821
+#: ../panel-plugin/settings-dialog.cpp:812
 msgid "Switch categories by _hovering"
 msgstr "호버링으로 카테고리 바꾸기"
 
-#: ../panel-plugin/settings-dialog.cpp:226
+#: ../panel-plugin/settings-dialog.cpp:217
 msgid "The action will be deleted permanently."
 msgstr "설정값이 완전히 제거됩니다."
 
-#: ../panel-plugin/settings-dialog.cpp:675
+#: ../panel-plugin/settings-dialog.cpp:666
 msgid "Title"
 msgstr "제목"
 
-#: ../panel-plugin/launcher.cpp:271
+#: ../panel-plugin/launcher.cpp:267
 #, c-format
 msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
@@ -460,12 +460,12 @@ msgstr "패널에 런처를 더할 수 없습니다."
 msgid "Unable to edit launcher."
 msgstr "런처를 편집할 수 없습니다."
 
-#: ../panel-plugin/settings-dialog.cpp:286
+#: ../panel-plugin/settings-dialog.cpp:277
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "다음 주소를 열 수 없습니다: %s"
 
-#: ../panel-plugin/settings-dialog.cpp:730
+#: ../panel-plugin/settings-dialog.cpp:721
 msgid "Use a single _panel row"
 msgstr "한 줄 패널 사용하기"
 
@@ -477,8 +477,7 @@ msgstr "매우 크게"
 msgid "Very Small"
 msgstr "매우 작게"
 
-#: ../panel-plugin/settings-dialog.cpp:81
-#: ../panel-plugin/settings-dialog.cpp:89
+#: ../panel-plugin/settings-dialog.cpp:80
 #: ../panel-plugin/whiskermenu.desktop.in:5
 msgid "Whisker Menu"
 msgstr "휘스커 메뉴"
@@ -487,28 +486,27 @@ msgstr "휘스커 메뉴"
 msgid "Wikipedia"
 msgstr "위키피디아"
 
-#: ../panel-plugin/settings-dialog.cpp:108
+#: ../panel-plugin/settings-dialog.cpp:99
 msgid "_Appearance"
 msgstr "모양"
 
-#: ../panel-plugin/settings-dialog.cpp:109
+#: ../panel-plugin/settings-dialog.cpp:100
 msgid "_Behavior"
 msgstr "동작"
 
-#: ../panel-plugin/command-edit.cpp:78 ../panel-plugin/settings-dialog.cpp:146
+#: ../panel-plugin/command-edit.cpp:78 ../panel-plugin/settings-dialog.cpp:137
 msgid "_Cancel"
 msgstr "취소"
 
-#: ../panel-plugin/settings-dialog.cpp:85
-#: ../panel-plugin/settings-dialog.cpp:93
+#: ../panel-plugin/settings-dialog.cpp:84
 msgid "_Close"
 msgstr "닫기"
 
-#: ../panel-plugin/settings-dialog.cpp:110
+#: ../panel-plugin/settings-dialog.cpp:101
 msgid "_Commands"
 msgstr "명령어"
 
-#: ../panel-plugin/settings-dialog.cpp:225
+#: ../panel-plugin/settings-dialog.cpp:216
 msgid "_Delete"
 msgstr "지우기"
 
@@ -516,12 +514,11 @@ msgstr "지우기"
 msgid "_Edit Applications"
 msgstr "프로그램 편집"
 
-#: ../panel-plugin/settings-dialog.cpp:107
+#: ../panel-plugin/settings-dialog.cpp:98
 msgid "_General"
 msgstr "일반(_G)"
 
-#: ../panel-plugin/settings-dialog.cpp:84
-#: ../panel-plugin/settings-dialog.cpp:92
+#: ../panel-plugin/settings-dialog.cpp:83
 msgid "_Help"
 msgstr "도움말"
 
@@ -529,7 +526,7 @@ msgstr "도움말"
 msgid "_Hibernate"
 msgstr "잠자기(_H)"
 
-#: ../panel-plugin/settings-dialog.cpp:712
+#: ../panel-plugin/settings-dialog.cpp:703
 msgid "_Icon:"
 msgstr "아이콘"
 
@@ -537,15 +534,15 @@ msgstr "아이콘"
 msgid "_Lock Screen"
 msgstr "화면 잠그기"
 
-#: ../panel-plugin/command-edit.cpp:79 ../panel-plugin/settings-dialog.cpp:147
+#: ../panel-plugin/command-edit.cpp:79 ../panel-plugin/settings-dialog.cpp:138
 msgid "_OK"
 msgstr "확인"
 
-#: ../panel-plugin/settings-dialog.cpp:1061
+#: ../panel-plugin/settings-dialog.cpp:1052
 msgid "_Pattern:"
 msgstr "패턴"
 
-#: ../panel-plugin/settings-dialog.cpp:1102
+#: ../panel-plugin/settings-dialog.cpp:1093
 msgid "_Regular expression"
 msgstr "일반 표현"
 
@@ -557,10 +554,10 @@ msgstr "다시 시작(_R)"
 msgid "_Settings Manager"
 msgstr "설정 관리자(_S)"
 
-#: ../panel-plugin/settings-dialog.cpp:694
+#: ../panel-plugin/settings-dialog.cpp:685
 msgid "_Title:"
 msgstr "제목"
 
-#: ../panel-plugin/plugin.cpp:417
+#: ../panel-plugin/plugin.cpp:402
 msgid "translator-credits"
 msgstr "번역가 정보"

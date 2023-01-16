@@ -1,5 +1,5 @@
 # Catalan translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2022 Graeme Gott
+# Copyright (C) 2023 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 # 
 # Translators:
@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-01 08:04-0500\n"
+"POT-Creation-Date: 2023-01-01 07:54-0500\n"
 "PO-Revision-Date: 2022-02-20 14:26+0000\n"
 "Last-Translator: Davidmp <medipas@gmail.com>\n"
 "Language-Team: Catalan (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/ca/)\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Language: ca\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/settings-dialog.cpp:1001
+#: ../panel-plugin/settings-dialog.cpp:992
 msgid "Add action"
 msgstr "Afegeix una acció"
 
@@ -44,19 +44,19 @@ msgid "Add to Panel"
 msgstr "Afegeix al plafó"
 
 #: ../panel-plugin/applications-page.cpp:35 ../panel-plugin/category.cpp:51
-#: ../panel-plugin/settings-dialog.cpp:769
+#: ../panel-plugin/settings-dialog.cpp:760
 msgid "All Applications"
 msgstr "Totes les aplicacions"
 
-#: ../panel-plugin/plugin.cpp:412
+#: ../panel-plugin/plugin.cpp:397
 msgid "Alternate application launcher for Xfce"
 msgstr "Llançador d’aplicacions alternatiu per a Xfce"
 
-#: ../panel-plugin/settings-dialog.cpp:864
+#: ../panel-plugin/settings-dialog.cpp:855
 msgid "Amount of _items:"
 msgstr "Nombre d’e_lements:"
 
-#: ../panel-plugin/settings-dialog.cpp:485
+#: ../panel-plugin/settings-dialog.cpp:476
 msgid "Application icon si_ze:"
 msgstr "M_ida de les icones de les aplicacions:"
 
@@ -64,7 +64,7 @@ msgstr "M_ida de les icones de les aplicacions:"
 msgid "Applications"
 msgstr "Aplicacions"
 
-#: ../panel-plugin/launcher.cpp:276
+#: ../panel-plugin/launcher.cpp:272
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
 msgstr "Segur que voleu amagar «%s»?"
@@ -81,7 +81,7 @@ msgstr "Segur que voleu reiniciar?"
 msgid "Are you sure you want to shut down?"
 msgstr "Segur que voleu apagar?"
 
-#: ../panel-plugin/settings-dialog.cpp:542
+#: ../panel-plugin/settings-dialog.cpp:533
 msgid "Background opacit_y:"
 msgstr "Opacitat del _fons:"
 
@@ -89,11 +89,11 @@ msgstr "Opacitat del _fons:"
 msgid "Browse the file system to choose a custom command."
 msgstr "Navegueu pel sistema de fitxers per triar una ordre personalitzada."
 
-#: ../panel-plugin/settings-dialog.cpp:1083
+#: ../panel-plugin/settings-dialog.cpp:1074
 msgid "C_ommand:"
 msgstr "_Ordre:"
 
-#: ../panel-plugin/settings-dialog.cpp:508
+#: ../panel-plugin/settings-dialog.cpp:499
 msgid "Categ_ory icon size:"
 msgstr "Mida de les icones de les categ_ories:"
 
@@ -101,19 +101,19 @@ msgstr "Mida de les icones de les categ_ories:"
 msgid "Clear Recently Used"
 msgstr "Neteja els elements recents"
 
-#: ../panel-plugin/plugin.cpp:413
+#: ../panel-plugin/plugin.cpp:398
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Drets d'autor © 2013-2023 Graeme Gott"
 
-#: ../panel-plugin/settings-dialog.cpp:756
+#: ../panel-plugin/settings-dialog.cpp:747
 msgid "Default Category"
 msgstr "Categoria per defecte"
 
-#: ../panel-plugin/settings-dialog.cpp:1034
+#: ../panel-plugin/settings-dialog.cpp:1025
 msgid "Details"
 msgstr "Detalls"
 
-#: ../panel-plugin/settings-dialog.cpp:669
+#: ../panel-plugin/settings-dialog.cpp:660
 msgid "Di_splay:"
 msgstr "Mo_stra:"
 
@@ -179,7 +179,7 @@ msgid "Failed to switch user."
 msgstr "No s'ha pogut canviar d'usuari."
 
 #: ../panel-plugin/favorites-page.cpp:37
-#: ../panel-plugin/settings-dialog.cpp:760
+#: ../panel-plugin/settings-dialog.cpp:751
 msgid "Favorites"
 msgstr "Preferides"
 
@@ -188,23 +188,23 @@ msgstr "Preferides"
 msgid "Hibernating computer in %d seconds."
 msgstr "S'hibernarà l'ordinador d'aquí a %d segons."
 
-#: ../panel-plugin/settings-dialog.cpp:645
+#: ../panel-plugin/settings-dialog.cpp:636
 msgid "Hidden"
 msgstr "Amagat"
 
-#: ../panel-plugin/launcher.cpp:275 ../panel-plugin/page.cpp:499
+#: ../panel-plugin/launcher.cpp:271 ../panel-plugin/page.cpp:499
 msgid "Hide Application"
 msgstr "Amaga l’aplicació"
 
-#: ../panel-plugin/settings-dialog.cpp:674
+#: ../panel-plugin/settings-dialog.cpp:665
 msgid "Icon"
 msgstr "Icona"
 
-#: ../panel-plugin/settings-dialog.cpp:676
+#: ../panel-plugin/settings-dialog.cpp:667
 msgid "Icon and title"
 msgstr "Icona i títol"
 
-#: ../panel-plugin/settings-dialog.cpp:887
+#: ../panel-plugin/settings-dialog.cpp:878
 msgid "Include _favorites"
 msgstr "Inclou les pre_ferides"
 
@@ -233,16 +233,16 @@ msgstr "Es tancarà la sessió d'aquí a %d segons."
 msgid "Man Pages"
 msgstr "Pàgines del manual"
 
-#: ../panel-plugin/settings-dialog.cpp:585
-#: ../panel-plugin/settings-dialog.cpp:817
+#: ../panel-plugin/settings-dialog.cpp:576
+#: ../panel-plugin/settings-dialog.cpp:808
 msgid "Menu"
 msgstr "Menú"
 
-#: ../panel-plugin/settings-dialog.cpp:1038
+#: ../panel-plugin/settings-dialog.cpp:1029
 msgid "Nam_e:"
 msgstr "N_om:"
 
-#: ../panel-plugin/settings-dialog.cpp:979
+#: ../panel-plugin/settings-dialog.cpp:970
 msgid "Name"
 msgstr "Nom"
 
@@ -258,40 +258,40 @@ msgstr "Normal"
 msgid "Open URI"
 msgstr "Obre un URI"
 
-#: ../panel-plugin/settings-dialog.cpp:636
+#: ../panel-plugin/settings-dialog.cpp:627
 msgid "P_rofile:"
 msgstr "Pe_rfil:"
 
-#: ../panel-plugin/settings-dialog.cpp:665
+#: ../panel-plugin/settings-dialog.cpp:656
 msgid "Panel Button"
 msgstr "Botó del plafó"
 
-#: ../panel-plugin/settings-dialog.cpp:984
+#: ../panel-plugin/settings-dialog.cpp:975
 msgid "Pattern"
 msgstr "Patró"
 
-#: ../panel-plugin/settings-dialog.cpp:613
+#: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
 msgstr "_Situa el quadre de cerca al costat del botó del plafó"
 
-#: ../panel-plugin/settings-dialog.cpp:602
+#: ../panel-plugin/settings-dialog.cpp:593
 msgid "Position cate_gories next to panel button"
 msgstr "Situa les cate_gories al costat del botó del plafó"
 
-#: ../panel-plugin/settings-dialog.cpp:589
+#: ../panel-plugin/settings-dialog.cpp:580
 msgid "Position categories _horizontally"
 msgstr "Posiciona les categories _horitzontalment"
 
-#: ../panel-plugin/settings-dialog.cpp:624
+#: ../panel-plugin/settings-dialog.cpp:615
 msgid "Position commands next to search _entry"
 msgstr "S_itua les ordres al costat del quadre de cerca"
 
-#: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:764
-#: ../panel-plugin/settings-dialog.cpp:860
+#: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
+#: ../panel-plugin/settings-dialog.cpp:851
 msgid "Recently Used"
 msgstr "Utilitzades recentment"
 
-#: ../panel-plugin/settings-dialog.cpp:227
+#: ../panel-plugin/settings-dialog.cpp:218
 #, c-format
 msgid "Remove action \"%s\"?"
 msgstr "Voleu suprimir l’acció «%s»?"
@@ -300,7 +300,7 @@ msgstr "Voleu suprimir l’acció «%s»?"
 msgid "Remove from Favorites"
 msgstr "Suprimeix de les preferides"
 
-#: ../panel-plugin/settings-dialog.cpp:1013
+#: ../panel-plugin/settings-dialog.cpp:1004
 msgid "Remove selected action"
 msgstr "Suprimeix l’acció seleccionada"
 
@@ -309,7 +309,7 @@ msgstr "Suprimeix l’acció seleccionada"
 msgid "Restarting computer in %d seconds."
 msgstr "Es reiniciarà l'ordinador d'aquí a %d segons."
 
-#: ../panel-plugin/settings-dialog.cpp:643
+#: ../panel-plugin/settings-dialog.cpp:634
 msgid "Round Picture"
 msgstr "Imatge rodona"
 
@@ -322,7 +322,7 @@ msgstr "Executa «%s»"
 msgid "Run in Terminal"
 msgstr "Executa en un terminal"
 
-#: ../panel-plugin/settings-dialog.cpp:111
+#: ../panel-plugin/settings-dialog.cpp:102
 msgid "Search Actio_ns"
 msgstr "Accio_ns del cercador"
 
@@ -342,11 +342,11 @@ msgstr "Cerca a la xarxa"
 msgid "Select Command"
 msgstr "Seleccioneu una ordre"
 
-#: ../panel-plugin/settings-dialog.cpp:144
+#: ../panel-plugin/settings-dialog.cpp:135
 msgid "Select an Icon"
 msgstr "Seleccioneu una icona"
 
-#: ../panel-plugin/settings-dialog.cpp:900
+#: ../panel-plugin/settings-dialog.cpp:891
 msgid "Session Commands"
 msgstr "Ordres de la sessió"
 
@@ -354,35 +354,35 @@ msgstr "Ordres de la sessió"
 msgid "Show a menu to easily access installed applications"
 msgstr "Mostra un menú per accedir fàcilment a les aplicacions instal·lades"
 
-#: ../panel-plugin/settings-dialog.cpp:468
+#: ../panel-plugin/settings-dialog.cpp:459
 msgid "Show application _descriptions"
 msgstr "Mostra la _descripció de les aplicacions"
 
-#: ../panel-plugin/settings-dialog.cpp:457
+#: ../panel-plugin/settings-dialog.cpp:448
 msgid "Show application too_ltips"
 msgstr "Mostra els indicadors de funció de les ap_licacions"
 
-#: ../panel-plugin/settings-dialog.cpp:327
+#: ../panel-plugin/settings-dialog.cpp:318
 msgid "Show as _icons"
 msgstr "Mostra-ho com a _icones"
 
-#: ../panel-plugin/settings-dialog.cpp:344
+#: ../panel-plugin/settings-dialog.cpp:335
 msgid "Show as lis_t"
 msgstr "Mostra-ho com a llis_ta"
 
-#: ../panel-plugin/settings-dialog.cpp:362
+#: ../panel-plugin/settings-dialog.cpp:353
 msgid "Show as t_ree"
 msgstr "Mostra-ho com a a_rbre"
 
-#: ../panel-plugin/settings-dialog.cpp:904
+#: ../panel-plugin/settings-dialog.cpp:895
 msgid "Show c_onfirmation dialog"
 msgstr "Mostra el diàleg de c_onfirmació"
 
-#: ../panel-plugin/settings-dialog.cpp:445
+#: ../panel-plugin/settings-dialog.cpp:436
 msgid "Show cate_gory names"
 msgstr "Mostra el nom de les cate_gories"
 
-#: ../panel-plugin/settings-dialog.cpp:433
+#: ../panel-plugin/settings-dialog.cpp:424
 msgid "Show generic application _names"
 msgstr "Mostra el _nom genèric de les aplicacions"
 
@@ -406,15 +406,15 @@ msgstr "Ordena alfabèticament: A–Z"
 msgid "Sort Alphabetically Z-A"
 msgstr "Ordena alfabèticament: Z–A"
 
-#: ../panel-plugin/settings-dialog.cpp:843
+#: ../panel-plugin/settings-dialog.cpp:834
 msgid "Sort ca_tegories"
 msgstr "Ordena les ca_tegories"
 
-#: ../panel-plugin/settings-dialog.cpp:644
+#: ../panel-plugin/settings-dialog.cpp:635
 msgid "Square Picture"
 msgstr "Imatge quadrada"
 
-#: ../panel-plugin/settings-dialog.cpp:832
+#: ../panel-plugin/settings-dialog.cpp:823
 msgid "Stay _visible when focus is lost"
 msgstr "Continua _visible quan se'n perdi el focus"
 
@@ -431,19 +431,19 @@ msgstr "S'aturarà temporalment l'ordinador d'aquí a %d segons."
 msgid "Switch _User"
 msgstr "Canvia d'_usuari"
 
-#: ../panel-plugin/settings-dialog.cpp:821
+#: ../panel-plugin/settings-dialog.cpp:812
 msgid "Switch categories by _hovering"
 msgstr "Canvia de categoria en _passar-hi el ratolí"
 
-#: ../panel-plugin/settings-dialog.cpp:226
+#: ../panel-plugin/settings-dialog.cpp:217
 msgid "The action will be deleted permanently."
 msgstr "L'acció se suprimirà permanentment."
 
-#: ../panel-plugin/settings-dialog.cpp:675
+#: ../panel-plugin/settings-dialog.cpp:666
 msgid "Title"
 msgstr "Títol"
 
-#: ../panel-plugin/launcher.cpp:271
+#: ../panel-plugin/launcher.cpp:267
 #, c-format
 msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
@@ -467,12 +467,12 @@ msgstr "No es pot afegir el llançador al plafó."
 msgid "Unable to edit launcher."
 msgstr "No es pot editar el llançador."
 
-#: ../panel-plugin/settings-dialog.cpp:286
+#: ../panel-plugin/settings-dialog.cpp:277
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "No es pot obrir l'URL següent: %s"
 
-#: ../panel-plugin/settings-dialog.cpp:730
+#: ../panel-plugin/settings-dialog.cpp:721
 msgid "Use a single _panel row"
 msgstr "Utilitza un _plafó d'una sola fila"
 
@@ -484,8 +484,7 @@ msgstr "Molt grossa"
 msgid "Very Small"
 msgstr "Molt petita"
 
-#: ../panel-plugin/settings-dialog.cpp:81
-#: ../panel-plugin/settings-dialog.cpp:89
+#: ../panel-plugin/settings-dialog.cpp:80
 #: ../panel-plugin/whiskermenu.desktop.in:5
 msgid "Whisker Menu"
 msgstr "Menú Whisker"
@@ -494,28 +493,27 @@ msgstr "Menú Whisker"
 msgid "Wikipedia"
 msgstr "Viquipèdia"
 
-#: ../panel-plugin/settings-dialog.cpp:108
+#: ../panel-plugin/settings-dialog.cpp:99
 msgid "_Appearance"
 msgstr "_Aparença"
 
-#: ../panel-plugin/settings-dialog.cpp:109
+#: ../panel-plugin/settings-dialog.cpp:100
 msgid "_Behavior"
 msgstr "_Comportament"
 
-#: ../panel-plugin/command-edit.cpp:78 ../panel-plugin/settings-dialog.cpp:146
+#: ../panel-plugin/command-edit.cpp:78 ../panel-plugin/settings-dialog.cpp:137
 msgid "_Cancel"
 msgstr "_Cancel·la"
 
-#: ../panel-plugin/settings-dialog.cpp:85
-#: ../panel-plugin/settings-dialog.cpp:93
+#: ../panel-plugin/settings-dialog.cpp:84
 msgid "_Close"
 msgstr "_Tanca"
 
-#: ../panel-plugin/settings-dialog.cpp:110
+#: ../panel-plugin/settings-dialog.cpp:101
 msgid "_Commands"
 msgstr "_Ordres"
 
-#: ../panel-plugin/settings-dialog.cpp:225
+#: ../panel-plugin/settings-dialog.cpp:216
 msgid "_Delete"
 msgstr "_Suprimeix"
 
@@ -523,12 +521,11 @@ msgstr "_Suprimeix"
 msgid "_Edit Applications"
 msgstr "_Edita les aplicacions"
 
-#: ../panel-plugin/settings-dialog.cpp:107
+#: ../panel-plugin/settings-dialog.cpp:98
 msgid "_General"
 msgstr "_General"
 
-#: ../panel-plugin/settings-dialog.cpp:84
-#: ../panel-plugin/settings-dialog.cpp:92
+#: ../panel-plugin/settings-dialog.cpp:83
 msgid "_Help"
 msgstr "_Ajuda"
 
@@ -536,7 +533,7 @@ msgstr "_Ajuda"
 msgid "_Hibernate"
 msgstr "_Hiberna"
 
-#: ../panel-plugin/settings-dialog.cpp:712
+#: ../panel-plugin/settings-dialog.cpp:703
 msgid "_Icon:"
 msgstr "_Icona:"
 
@@ -544,15 +541,15 @@ msgstr "_Icona:"
 msgid "_Lock Screen"
 msgstr "_Bloqueja la pantalla"
 
-#: ../panel-plugin/command-edit.cpp:79 ../panel-plugin/settings-dialog.cpp:147
+#: ../panel-plugin/command-edit.cpp:79 ../panel-plugin/settings-dialog.cpp:138
 msgid "_OK"
 msgstr "_D’acord"
 
-#: ../panel-plugin/settings-dialog.cpp:1061
+#: ../panel-plugin/settings-dialog.cpp:1052
 msgid "_Pattern:"
 msgstr "_Patró:"
 
-#: ../panel-plugin/settings-dialog.cpp:1102
+#: ../panel-plugin/settings-dialog.cpp:1093
 msgid "_Regular expression"
 msgstr "Expressió _regular"
 
@@ -564,10 +561,10 @@ msgstr "_Reinicia"
 msgid "_Settings Manager"
 msgstr "Ge_stor de paràmetres"
 
-#: ../panel-plugin/settings-dialog.cpp:694
+#: ../panel-plugin/settings-dialog.cpp:685
 msgid "_Title:"
 msgstr "_Títol:"
 
-#: ../panel-plugin/plugin.cpp:417
+#: ../panel-plugin/plugin.cpp:402
 msgid "translator-credits"
 msgstr "Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2013-2021\nRobert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016-2018\nDavid Medina <opensusecatala@gmail.com>, 2017-2018\nOriol Fernandez, 2013\nMarc Riera <marcriera@softcatala.org>, 2020"

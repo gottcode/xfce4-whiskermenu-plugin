@@ -1,5 +1,5 @@
 # Swedish translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2022 Graeme Gott
+# Copyright (C) 2023 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 # 
 # Translators:
@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-01 08:04-0500\n"
+"POT-Creation-Date: 2023-01-01 07:54-0500\n"
 "PO-Revision-Date: 2022-01-05 11:39+0000\n"
 "Last-Translator: Luna Jernberg <bittin@cafe8bitar.se>\n"
 "Language-Team: Swedish (Sweden) (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/sv_SE/)\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Language: sv_SE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/settings-dialog.cpp:1001
+#: ../panel-plugin/settings-dialog.cpp:992
 msgid "Add action"
 msgstr "Lägg till åtgärd"
 
@@ -44,19 +44,19 @@ msgid "Add to Panel"
 msgstr "Lägg till i panelen"
 
 #: ../panel-plugin/applications-page.cpp:35 ../panel-plugin/category.cpp:51
-#: ../panel-plugin/settings-dialog.cpp:769
+#: ../panel-plugin/settings-dialog.cpp:760
 msgid "All Applications"
 msgstr "Alla program"
 
-#: ../panel-plugin/plugin.cpp:412
+#: ../panel-plugin/plugin.cpp:397
 msgid "Alternate application launcher for Xfce"
 msgstr "Alternativ programstartare för Xfce"
 
-#: ../panel-plugin/settings-dialog.cpp:864
+#: ../panel-plugin/settings-dialog.cpp:855
 msgid "Amount of _items:"
 msgstr "Antal _objekt:"
 
-#: ../panel-plugin/settings-dialog.cpp:485
+#: ../panel-plugin/settings-dialog.cpp:476
 msgid "Application icon si_ze:"
 msgstr "Program ikon st_orlek:"
 
@@ -64,7 +64,7 @@ msgstr "Program ikon st_orlek:"
 msgid "Applications"
 msgstr "Program"
 
-#: ../panel-plugin/launcher.cpp:276
+#: ../panel-plugin/launcher.cpp:272
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
 msgstr "Är du säker på att du vill dölja \"%s\"?"
@@ -81,7 +81,7 @@ msgstr "Är du säker på att du vill starta om?"
 msgid "Are you sure you want to shut down?"
 msgstr "Är du säker på att du vill stänga av?"
 
-#: ../panel-plugin/settings-dialog.cpp:542
+#: ../panel-plugin/settings-dialog.cpp:533
 msgid "Background opacit_y:"
 msgstr "Bakgrundens opa_citet:"
 
@@ -89,11 +89,11 @@ msgstr "Bakgrundens opa_citet:"
 msgid "Browse the file system to choose a custom command."
 msgstr "Bläddra i filsystemet för att välja ett anpassat kommando."
 
-#: ../panel-plugin/settings-dialog.cpp:1083
+#: ../panel-plugin/settings-dialog.cpp:1074
 msgid "C_ommand:"
 msgstr "K_ommando:"
 
-#: ../panel-plugin/settings-dialog.cpp:508
+#: ../panel-plugin/settings-dialog.cpp:499
 msgid "Categ_ory icon size:"
 msgstr "K_ategori ikonstorlek:"
 
@@ -101,19 +101,19 @@ msgstr "K_ategori ikonstorlek:"
 msgid "Clear Recently Used"
 msgstr "Rensa senast använda"
 
-#: ../panel-plugin/plugin.cpp:413
+#: ../panel-plugin/plugin.cpp:398
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Copyright © 2013-2023 Graeme Gott"
 
-#: ../panel-plugin/settings-dialog.cpp:756
+#: ../panel-plugin/settings-dialog.cpp:747
 msgid "Default Category"
 msgstr "Standard kategori"
 
-#: ../panel-plugin/settings-dialog.cpp:1034
+#: ../panel-plugin/settings-dialog.cpp:1025
 msgid "Details"
 msgstr "Detaljer"
 
-#: ../panel-plugin/settings-dialog.cpp:669
+#: ../panel-plugin/settings-dialog.cpp:660
 msgid "Di_splay:"
 msgstr "_Visa:"
 
@@ -179,7 +179,7 @@ msgid "Failed to switch user."
 msgstr "Misslyckades att byta användare."
 
 #: ../panel-plugin/favorites-page.cpp:37
-#: ../panel-plugin/settings-dialog.cpp:760
+#: ../panel-plugin/settings-dialog.cpp:751
 msgid "Favorites"
 msgstr "Favoriter"
 
@@ -188,23 +188,23 @@ msgstr "Favoriter"
 msgid "Hibernating computer in %d seconds."
 msgstr "Försätter datorn i viloläge om %d sekunder."
 
-#: ../panel-plugin/settings-dialog.cpp:645
+#: ../panel-plugin/settings-dialog.cpp:636
 msgid "Hidden"
 msgstr "Dold"
 
-#: ../panel-plugin/launcher.cpp:275 ../panel-plugin/page.cpp:499
+#: ../panel-plugin/launcher.cpp:271 ../panel-plugin/page.cpp:499
 msgid "Hide Application"
 msgstr "Dölj program"
 
-#: ../panel-plugin/settings-dialog.cpp:674
+#: ../panel-plugin/settings-dialog.cpp:665
 msgid "Icon"
 msgstr "Ikon"
 
-#: ../panel-plugin/settings-dialog.cpp:676
+#: ../panel-plugin/settings-dialog.cpp:667
 msgid "Icon and title"
 msgstr "Ikon och titel"
 
-#: ../panel-plugin/settings-dialog.cpp:887
+#: ../panel-plugin/settings-dialog.cpp:878
 msgid "Include _favorites"
 msgstr "Inkludera _favoriter"
 
@@ -233,16 +233,16 @@ msgstr "Loggar ut om %d sekunder."
 msgid "Man Pages"
 msgstr "Manualsidor"
 
-#: ../panel-plugin/settings-dialog.cpp:585
-#: ../panel-plugin/settings-dialog.cpp:817
+#: ../panel-plugin/settings-dialog.cpp:576
+#: ../panel-plugin/settings-dialog.cpp:808
 msgid "Menu"
 msgstr "Meny"
 
-#: ../panel-plugin/settings-dialog.cpp:1038
+#: ../panel-plugin/settings-dialog.cpp:1029
 msgid "Nam_e:"
 msgstr "_Namn:"
 
-#: ../panel-plugin/settings-dialog.cpp:979
+#: ../panel-plugin/settings-dialog.cpp:970
 msgid "Name"
 msgstr "Namn"
 
@@ -258,40 +258,40 @@ msgstr "Normal"
 msgid "Open URI"
 msgstr "Öppna URI"
 
-#: ../panel-plugin/settings-dialog.cpp:636
+#: ../panel-plugin/settings-dialog.cpp:627
 msgid "P_rofile:"
 msgstr "P_rofil:"
 
-#: ../panel-plugin/settings-dialog.cpp:665
+#: ../panel-plugin/settings-dialog.cpp:656
 msgid "Panel Button"
 msgstr "Panelknapp"
 
-#: ../panel-plugin/settings-dialog.cpp:984
+#: ../panel-plugin/settings-dialog.cpp:975
 msgid "Pattern"
 msgstr "Mönster"
 
-#: ../panel-plugin/settings-dialog.cpp:613
+#: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
 msgstr "Placera s_ökfältet intill panelknappen"
 
-#: ../panel-plugin/settings-dialog.cpp:602
+#: ../panel-plugin/settings-dialog.cpp:593
 msgid "Position cate_gories next to panel button"
 msgstr "Placera k_ategorier intill panelknappen"
 
-#: ../panel-plugin/settings-dialog.cpp:589
+#: ../panel-plugin/settings-dialog.cpp:580
 msgid "Position categories _horizontally"
 msgstr "Positionera kategorier _horisontellt"
 
-#: ../panel-plugin/settings-dialog.cpp:624
+#: ../panel-plugin/settings-dialog.cpp:615
 msgid "Position commands next to search _entry"
 msgstr "Placera ko_mmandon bredvid sökfältet"
 
-#: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:764
-#: ../panel-plugin/settings-dialog.cpp:860
+#: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
+#: ../panel-plugin/settings-dialog.cpp:851
 msgid "Recently Used"
 msgstr "Senast använda"
 
-#: ../panel-plugin/settings-dialog.cpp:227
+#: ../panel-plugin/settings-dialog.cpp:218
 #, c-format
 msgid "Remove action \"%s\"?"
 msgstr "Ta bort åtgärd \"%s\"?"
@@ -300,7 +300,7 @@ msgstr "Ta bort åtgärd \"%s\"?"
 msgid "Remove from Favorites"
 msgstr "Ta bort från Favoriter"
 
-#: ../panel-plugin/settings-dialog.cpp:1013
+#: ../panel-plugin/settings-dialog.cpp:1004
 msgid "Remove selected action"
 msgstr "Ta bort markerad åtgärd"
 
@@ -309,7 +309,7 @@ msgstr "Ta bort markerad åtgärd"
 msgid "Restarting computer in %d seconds."
 msgstr "Startar om datorn om %d sekunder."
 
-#: ../panel-plugin/settings-dialog.cpp:643
+#: ../panel-plugin/settings-dialog.cpp:634
 msgid "Round Picture"
 msgstr "Rund bild"
 
@@ -322,7 +322,7 @@ msgstr "Kör %s"
 msgid "Run in Terminal"
 msgstr "Kör i terminal"
 
-#: ../panel-plugin/settings-dialog.cpp:111
+#: ../panel-plugin/settings-dialog.cpp:102
 msgid "Search Actio_ns"
 msgstr "Sök_åtgärder"
 
@@ -342,11 +342,11 @@ msgstr "Sök på webben"
 msgid "Select Command"
 msgstr "Välj kommando"
 
-#: ../panel-plugin/settings-dialog.cpp:144
+#: ../panel-plugin/settings-dialog.cpp:135
 msgid "Select an Icon"
 msgstr "Välj en Ikon"
 
-#: ../panel-plugin/settings-dialog.cpp:900
+#: ../panel-plugin/settings-dialog.cpp:891
 msgid "Session Commands"
 msgstr "Sessionskommandon"
 
@@ -354,35 +354,35 @@ msgstr "Sessionskommandon"
 msgid "Show a menu to easily access installed applications"
 msgstr "Visa en meny för att enkelt komma åt installerade program"
 
-#: ../panel-plugin/settings-dialog.cpp:468
+#: ../panel-plugin/settings-dialog.cpp:459
 msgid "Show application _descriptions"
 msgstr "Visa _programbeskrivningar"
 
-#: ../panel-plugin/settings-dialog.cpp:457
+#: ../panel-plugin/settings-dialog.cpp:448
 msgid "Show application too_ltips"
 msgstr "Visa _verktygstips _för program"
 
-#: ../panel-plugin/settings-dialog.cpp:327
+#: ../panel-plugin/settings-dialog.cpp:318
 msgid "Show as _icons"
 msgstr "Visa som _ikoner"
 
-#: ../panel-plugin/settings-dialog.cpp:344
+#: ../panel-plugin/settings-dialog.cpp:335
 msgid "Show as lis_t"
 msgstr "Visa som lis_ta"
 
-#: ../panel-plugin/settings-dialog.cpp:362
+#: ../panel-plugin/settings-dialog.cpp:353
 msgid "Show as t_ree"
 msgstr "Visa som t_räd"
 
-#: ../panel-plugin/settings-dialog.cpp:904
+#: ../panel-plugin/settings-dialog.cpp:895
 msgid "Show c_onfirmation dialog"
 msgstr "Visa b_ekräftelsedialog"
 
-#: ../panel-plugin/settings-dialog.cpp:445
+#: ../panel-plugin/settings-dialog.cpp:436
 msgid "Show cate_gory names"
 msgstr "Visa kate_gorinamn"
 
-#: ../panel-plugin/settings-dialog.cpp:433
+#: ../panel-plugin/settings-dialog.cpp:424
 msgid "Show generic application _names"
 msgstr "Visa allmänna program_namn"
 
@@ -406,15 +406,15 @@ msgstr "Sortera alfabetiskt A-Ö"
 msgid "Sort Alphabetically Z-A"
 msgstr "Sortera alfabetiskt Ö-A"
 
-#: ../panel-plugin/settings-dialog.cpp:843
+#: ../panel-plugin/settings-dialog.cpp:834
 msgid "Sort ca_tegories"
 msgstr "Sortera ka_tegorier"
 
-#: ../panel-plugin/settings-dialog.cpp:644
+#: ../panel-plugin/settings-dialog.cpp:635
 msgid "Square Picture"
 msgstr "Fyrkantig bild"
 
-#: ../panel-plugin/settings-dialog.cpp:832
+#: ../panel-plugin/settings-dialog.cpp:823
 msgid "Stay _visible when focus is lost"
 msgstr "Håll _synlig när fokus förloras"
 
@@ -431,19 +431,19 @@ msgstr "Försätter datorn i viloläge om %d sekunder."
 msgid "Switch _User"
 msgstr "Byta _Användare"
 
-#: ../panel-plugin/settings-dialog.cpp:821
+#: ../panel-plugin/settings-dialog.cpp:812
 msgid "Switch categories by _hovering"
 msgstr "_Växla kategorier med drag av muspekaren"
 
-#: ../panel-plugin/settings-dialog.cpp:226
+#: ../panel-plugin/settings-dialog.cpp:217
 msgid "The action will be deleted permanently."
 msgstr "Åtgärden kommer att tas bort permanent."
 
-#: ../panel-plugin/settings-dialog.cpp:675
+#: ../panel-plugin/settings-dialog.cpp:666
 msgid "Title"
 msgstr "Titel"
 
-#: ../panel-plugin/launcher.cpp:271
+#: ../panel-plugin/launcher.cpp:267
 #, c-format
 msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
@@ -467,12 +467,12 @@ msgstr "Kunde inte lägga till programstartare i panelen."
 msgid "Unable to edit launcher."
 msgstr "Det gick inte att redigera programstartare."
 
-#: ../panel-plugin/settings-dialog.cpp:286
+#: ../panel-plugin/settings-dialog.cpp:277
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Kan inte öppna följande URL: %s"
 
-#: ../panel-plugin/settings-dialog.cpp:730
+#: ../panel-plugin/settings-dialog.cpp:721
 msgid "Use a single _panel row"
 msgstr "Använd en _enskild panel rad"
 
@@ -484,8 +484,7 @@ msgstr "Mycket stor"
 msgid "Very Small"
 msgstr "Mycket liten"
 
-#: ../panel-plugin/settings-dialog.cpp:81
-#: ../panel-plugin/settings-dialog.cpp:89
+#: ../panel-plugin/settings-dialog.cpp:80
 #: ../panel-plugin/whiskermenu.desktop.in:5
 msgid "Whisker Menu"
 msgstr "Whisker Meny"
@@ -494,28 +493,27 @@ msgstr "Whisker Meny"
 msgid "Wikipedia"
 msgstr "Wikipedia"
 
-#: ../panel-plugin/settings-dialog.cpp:108
+#: ../panel-plugin/settings-dialog.cpp:99
 msgid "_Appearance"
 msgstr "_Utseende"
 
-#: ../panel-plugin/settings-dialog.cpp:109
+#: ../panel-plugin/settings-dialog.cpp:100
 msgid "_Behavior"
 msgstr "_Beteende"
 
-#: ../panel-plugin/command-edit.cpp:78 ../panel-plugin/settings-dialog.cpp:146
+#: ../panel-plugin/command-edit.cpp:78 ../panel-plugin/settings-dialog.cpp:137
 msgid "_Cancel"
 msgstr "_Avbryt"
 
-#: ../panel-plugin/settings-dialog.cpp:85
-#: ../panel-plugin/settings-dialog.cpp:93
+#: ../panel-plugin/settings-dialog.cpp:84
 msgid "_Close"
 msgstr "_Stäng"
 
-#: ../panel-plugin/settings-dialog.cpp:110
+#: ../panel-plugin/settings-dialog.cpp:101
 msgid "_Commands"
 msgstr "_Kommandon"
 
-#: ../panel-plugin/settings-dialog.cpp:225
+#: ../panel-plugin/settings-dialog.cpp:216
 msgid "_Delete"
 msgstr "Ta bort"
 
@@ -523,12 +521,11 @@ msgstr "Ta bort"
 msgid "_Edit Applications"
 msgstr "_Redigera program"
 
-#: ../panel-plugin/settings-dialog.cpp:107
+#: ../panel-plugin/settings-dialog.cpp:98
 msgid "_General"
 msgstr "_Allmän"
 
-#: ../panel-plugin/settings-dialog.cpp:84
-#: ../panel-plugin/settings-dialog.cpp:92
+#: ../panel-plugin/settings-dialog.cpp:83
 msgid "_Help"
 msgstr "_Hjälp"
 
@@ -536,7 +533,7 @@ msgstr "_Hjälp"
 msgid "_Hibernate"
 msgstr "_Viloläge"
 
-#: ../panel-plugin/settings-dialog.cpp:712
+#: ../panel-plugin/settings-dialog.cpp:703
 msgid "_Icon:"
 msgstr "_Ikon:"
 
@@ -544,15 +541,15 @@ msgstr "_Ikon:"
 msgid "_Lock Screen"
 msgstr "_Lås skärm"
 
-#: ../panel-plugin/command-edit.cpp:79 ../panel-plugin/settings-dialog.cpp:147
+#: ../panel-plugin/command-edit.cpp:79 ../panel-plugin/settings-dialog.cpp:138
 msgid "_OK"
 msgstr "_OK"
 
-#: ../panel-plugin/settings-dialog.cpp:1061
+#: ../panel-plugin/settings-dialog.cpp:1052
 msgid "_Pattern:"
 msgstr "_Mönster:"
 
-#: ../panel-plugin/settings-dialog.cpp:1102
+#: ../panel-plugin/settings-dialog.cpp:1093
 msgid "_Regular expression"
 msgstr "_Reguljära uttryck"
 
@@ -564,10 +561,10 @@ msgstr "Sta_rta om"
 msgid "_Settings Manager"
 msgstr "_Inställningshanterare"
 
-#: ../panel-plugin/settings-dialog.cpp:694
+#: ../panel-plugin/settings-dialog.cpp:685
 msgid "_Title:"
 msgstr "Tite_l:"
 
-#: ../panel-plugin/plugin.cpp:417
+#: ../panel-plugin/plugin.cpp:402
 msgid "translator-credits"
 msgstr "Patrik Nilsson <translation@hembas.se>\nLuna Jernberg <droidbittin@gmail.com>"
