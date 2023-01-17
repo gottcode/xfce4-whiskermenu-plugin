@@ -1,3 +1,16 @@
+2.7.2
+=====
+- Fix missing version number.
+- Fix memory leak when adding launchers to panel.
+- Fix skipping first treeview item when switching modes.
+- Fix clipping when changing application icon size.
+- Fix missing NULL checks with String class.
+- Use Thunar for adding launchers to desktop.
+- Translation updates: Arabic, Basque, Bulgarian, Catalan, Chinese (Taiwan),
+  Danish, Dutch, German, Greek, Esperanto, French, Italian, Korean,
+  Lithuanian, Polish, Portuguese, Portuguese (Brazil), Russian, Slovak,
+  Slovenian, Spanish, Swedish, Turkish, Ukrainian.
+
 2.7.1
 =====
 - Fix not selecting second icon in search results. (Issue #50)
