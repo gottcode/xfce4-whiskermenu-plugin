@@ -15,23 +15,23 @@
 # John Teixido <jtdevnet0@gmail.com>, 2021
 # a1a9b52a3f40dff112eca965c254c602_089360e <d1597d94e208cfb976efe0f2ce18d2e5_734602>, 2019
 # Noe Moreno <NOE.MORENO@gmail.com>, 2016
-# prflr88 <prflr88@gmail.com>, 2013-2015
-# prflr88 <prflr88@gmail.com>, 2017
-# prflr88 <prflr88@gmail.com>, 2017
-# Toni Estévez <toni.estevez@gmail.com>, 2021-2022
+# Pablo Lezaeta Reyes <prflr88@gmail.com>, 2013-2015
+# Pablo Lezaeta Reyes <prflr88@gmail.com>, 2017
+# Pablo Lezaeta Reyes <prflr88@gmail.com>, 2017
+# Toni Estévez <toni.estevez@gmail.com>, 2021-2023
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-01 07:54-0500\n"
-"PO-Revision-Date: 2022-01-01 20:00+0000\n"
-"Last-Translator: Toni Estévez <toni.estevez@gmail.com>\n"
+"PO-Revision-Date: 2013-06-20 11:26+0000\n"
+"Last-Translator: Toni Estévez <toni.estevez@gmail.com>, 2021-2023\n"
 "Language-Team: Spanish (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: ../panel-plugin/settings-dialog.cpp:992
 msgid "Add action"
