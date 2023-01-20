@@ -623,10 +623,13 @@ GtkWidget* SettingsDialog::init_appearance_tab()
 			wm_settings->position_categories_horizontal = gtk_toggle_button_get_active(button);
 			const bool active = (wm_settings->category_icon_size != -1) && !wm_settings->position_categories_horizontal;
 			gtk_widget_set_sensitive(m_show_category_names, active);
+			gtk_button_set_label(GTK_BUTTON(m_position_categories_alternate),
+					wm_settings->position_categories_horizontal ? _("Position cate_gories on bottom") : _("Position cate_gories on left"));
 		});
 
 	// Add option to use alternate categories position
-	m_position_categories_alternate = gtk_check_button_new_with_mnemonic(_("Position cate_gories next to panel button"));
+	m_position_categories_alternate = gtk_check_button_new_with_mnemonic(
+			wm_settings->position_categories_horizontal ? _("Position cate_gories on bottom") : _("Position cate_gories on left"));
 	gtk_grid_attach(menu_table, m_position_categories_alternate, 0, 1, 2, 1);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_categories_alternate), wm_settings->position_categories_alternate);
 
@@ -637,7 +640,7 @@ GtkWidget* SettingsDialog::init_appearance_tab()
 		});
 
 	// Add option to use alternate profile position
-	m_position_profile_alternate = gtk_check_button_new_with_mnemonic(_("Position pro_file next to panel button"));
+	m_position_profile_alternate = gtk_check_button_new_with_mnemonic(_("Position pro_file on bottom"));
 	gtk_grid_attach(menu_table, m_position_profile_alternate, 0, 2, 2, 1);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_profile_alternate), wm_settings->position_profile_alternate);
 
@@ -648,7 +651,7 @@ GtkWidget* SettingsDialog::init_appearance_tab()
 		});
 
 	// Add option to use alternate search entry position
-	m_position_search_alternate = gtk_check_button_new_with_mnemonic(_("Position _search entry next to panel button"));
+	m_position_search_alternate = gtk_check_button_new_with_mnemonic(_("Position _search entry on bottom"));
 	gtk_grid_attach(menu_table, m_position_search_alternate, 0, 3, 2, 1);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_search_alternate), wm_settings->position_search_alternate);
 
