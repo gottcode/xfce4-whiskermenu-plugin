@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2023 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -529,14 +529,50 @@ GtkWidget* SettingsDialog::init_general_tab()
 	gtk_widget_set_margin_bottom(m_category_icon_size, 12);
 
 
-	// Add option to control background opacity
-	label = gtk_label_new_with_mnemonic(_("Background opacit_y:"));
+	// Add option to change menu width
+	label = gtk_label_new_with_mnemonic(_("Menu _width:"));
 	gtk_widget_set_halign(label, GTK_ALIGN_START);
 	gtk_grid_attach(page, label, 0, 7, 1, 1);
 
+	m_menu_width = gtk_spin_button_new_with_range(100, 10000, 1);
+	gtk_widget_set_halign(m_menu_width, GTK_ALIGN_START);
+	gtk_widget_set_hexpand(m_menu_width, false);
+	gtk_grid_attach(page, m_menu_width, 1, 7, 1, 1);
+	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_menu_width);
+	gtk_spin_button_set_value(GTK_SPIN_BUTTON(m_menu_width), wm_settings->menu_width);
+
+	connect(m_menu_width, "value-changed",
+		[](GtkSpinButton* button)
+		{
+			wm_settings->menu_width = gtk_spin_button_get_value_as_int(button);
+		});
+
+	// Add option to change menu height
+	label = gtk_label_new_with_mnemonic(_("Menu _height:"));
+	gtk_widget_set_halign(label, GTK_ALIGN_START);
+	gtk_grid_attach(page, label, 0, 8, 1, 1);
+
+	m_menu_height = gtk_spin_button_new_with_range(100, 10000, 1);
+	gtk_widget_set_halign(m_menu_height, GTK_ALIGN_START);
+	gtk_widget_set_hexpand(m_menu_height, false);
+	gtk_grid_attach(page, m_menu_height, 1, 8, 1, 1);
+	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_menu_height);
+	gtk_spin_button_set_value(GTK_SPIN_BUTTON(m_menu_height), wm_settings->menu_height);
+
+	connect(m_menu_height, "value-changed",
+		[](GtkSpinButton* button)
+		{
+			wm_settings->menu_height = gtk_spin_button_get_value_as_int(button);
+		});
+
+	// Add option to control background opacity
+	label = gtk_label_new_with_mnemonic(_("Background opacit_y:"));
+	gtk_widget_set_halign(label, GTK_ALIGN_START);
+	gtk_grid_attach(page, label, 0, 9, 1, 1);
+
 	m_background_opacity = gtk_scale_new_with_range(GTK_ORIENTATION_HORIZONTAL, 0.0, 100.0, 1.0);
 	gtk_widget_set_hexpand(GTK_WIDGET(m_background_opacity), true);
-	gtk_grid_attach(page, m_background_opacity, 1, 7, 1, 1);
+	gtk_grid_attach(page, m_background_opacity, 1, 9, 1, 1);
 	gtk_scale_set_value_pos(GTK_SCALE(m_background_opacity), GTK_POS_RIGHT);
 	gtk_range_set_value(GTK_RANGE(m_background_opacity), wm_settings->menu_opacity);
 

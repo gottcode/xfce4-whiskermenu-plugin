@@ -31,7 +31,6 @@ class FavoritesPage;
 class Page;
 class Plugin;
 class Profile;
-class Resizer;
 class RecentPage;
 class SearchPage;
 
@@ -80,7 +79,6 @@ public:
 
 	void hide(bool lost_focus = false);
 	void show(const Position position);
-	void resize(GdkWindowEdge edge, GdkEventButton* event);
 	void set_child_has_focus();
 	void set_categories(const std::vector<CategoryButton*>& categories);
 	void set_items();
@@ -92,7 +90,6 @@ private:
 	gboolean on_key_press_event_after(GtkWidget* widget, GdkEventKey* key_event);
 	gboolean on_map_event();
 	void on_state_flags_changed(GtkWidget* widget);
-	gboolean on_configure_event(GdkEventConfigure* configure_event);
 	void on_screen_changed(GtkWidget* widget);
 	gboolean on_draw_event(GtkWidget* widget, cairo_t* cr);
 	void check_scrollbar_needed();
@@ -122,8 +119,6 @@ private:
 	GtkBox* m_categories_box;
 	GtkStack* m_panels_stack;
 
-	Resizer* m_resize[8];
-
 	Profile* m_profile;
 
 	GtkWidget* m_commands_spacer;
@@ -152,7 +147,6 @@ private:
 	int m_profile_shape;
 	bool m_supports_alpha;
 	bool m_child_has_focus;
-	bool m_resized;
 };
 
 }

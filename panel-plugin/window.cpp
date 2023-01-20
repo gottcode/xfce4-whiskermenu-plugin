@@ -25,7 +25,6 @@
 #include "plugin.h"
 #include "profile.h"
 #include "recent-page.h"
-#include "resizer.h"
 #include "search-page.h"
 #include "settings.h"
 #include "slot.h"
@@ -44,7 +43,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	m_plugin(plugin),
 	m_window(nullptr),
 	m_sidebar_size_group(nullptr),
-	m_geometry{0,0,wm_settings->menu_width,wm_settings->menu_height},
+	m_geometry{0,0,1,1},
 	m_layout_left(true),
 	m_layout_bottom(true),
 	m_layout_categories_horizontal(false),
@@ -53,8 +52,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	m_layout_commands_alternate(false),
 	m_profile_shape(0),
 	m_supports_alpha(false),
-	m_child_has_focus(false),
-	m_resized(false)
+	m_child_has_focus(false)
 {
 	// Create the window
 	m_window = GTK_WINDOW(gtk_window_new(GTK_WINDOW_TOPLEVEL));
@@ -129,12 +127,6 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 			on_state_flags_changed(widget);
 		});
 
-	connect(m_window, "configure-event",
-		[this](GtkWidget*, GdkEvent* event) -> gboolean
-		{
-			return on_configure_event(reinterpret_cast<GdkEventConfigure*>(event));
-		});
-
 	g_signal_connect(G_OBJECT(m_window), "delete-event", G_CALLBACK(&gtk_widget_hide_on_delete), nullptr);
 
 	// Create the border of the window
@@ -151,23 +143,6 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	gtk_widget_set_halign(GTK_WIDGET(m_window_load_spinner), GTK_ALIGN_CENTER);
 	gtk_widget_set_valign(GTK_WIDGET(m_window_load_spinner), GTK_ALIGN_CENTER);
 	gtk_stack_add_named(m_window_stack, GTK_WIDGET(m_window_load_spinner), "load");
-
-	// Create resizers
-	m_resize[Resizer::TopLeft] = new Resizer(Resizer::TopLeft, this);
-	m_resize[Resizer::Top] = new Resizer(Resizer::Top, this);
-	m_resize[Resizer::TopRight] = new Resizer(Resizer::TopRight, this);
-	m_resize[Resizer::Left] = new Resizer(Resizer::Left, this);
-	m_resize[Resizer::Right] = new Resizer(Resizer::Right, this);
-	m_resize[Resizer::BottomLeft] = new Resizer(Resizer::BottomLeft, this);
-	m_resize[Resizer::Bottom] = new Resizer(Resizer::Bottom, this);
-	m_resize[Resizer::BottomRight] = new Resizer(Resizer::BottomRight, this);
-	for (int i = 0; i < 8; ++i)
-	{
-		gtk_widget_set_sensitive(m_resize[i]->get_widget(), false);
-	}
-	gtk_widget_set_sensitive(m_resize[Resizer::Top]->get_widget(), true);
-	gtk_widget_set_sensitive(m_resize[Resizer::TopRight]->get_widget(), true);
-	gtk_widget_set_sensitive(m_resize[Resizer::Right]->get_widget(), true);
 
 	// Create the profile picture and username label
 	m_profile = new Profile(this);
@@ -234,22 +209,10 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	// Create search results
 	m_search_results = new SearchPage(this);
 
-	// Create grid for packing resizers
-	GtkGrid* grid = GTK_GRID(gtk_grid_new());
-	gtk_grid_attach(grid, m_resize[Resizer::TopLeft]->get_widget(), 0, 0, 1, 1);
-	gtk_grid_attach(grid, m_resize[Resizer::Top]->get_widget(), 1, 0, 1, 1);
-	gtk_grid_attach(grid, m_resize[Resizer::TopRight]->get_widget(), 2, 0, 1, 1);
-	gtk_grid_attach(grid, m_resize[Resizer::Left]->get_widget(), 0, 1, 1, 1);
-	gtk_grid_attach(grid, m_resize[Resizer::Right]->get_widget(), 2, 1, 1, 1);
-	gtk_grid_attach(grid, m_resize[Resizer::BottomLeft]->get_widget(), 0, 2, 1, 1);
-	gtk_grid_attach(grid, m_resize[Resizer::Bottom]->get_widget(), 1, 2, 1, 1);
-	gtk_grid_attach(grid, m_resize[Resizer::BottomRight]->get_widget(), 2, 2, 1, 1);
-	gtk_stack_add_named(m_window_stack, GTK_WIDGET(grid), "contents");
-
 	// Create box for packing children
 	m_vbox = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 6));
-	gtk_container_set_border_width(GTK_CONTAINER(m_vbox), 0);
-	gtk_grid_attach(grid, GTK_WIDGET(m_vbox), 1, 1, 1, 1);
+	gtk_container_set_border_width(GTK_CONTAINER(m_vbox), 6);
+	gtk_stack_add_named(m_window_stack, GTK_WIDGET(m_vbox), "contents");
 
 	// Create box for packing commands
 	m_commands_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0));
@@ -260,7 +223,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 		gtk_box_pack_start(m_commands_box, command, false, false, 0);
 	}
 
-	// Create box for packing username, commands, and resize widget
+	// Create box for packing username and commands
 	m_title_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 6));
 	gtk_box_pack_start(m_vbox, GTK_WIDGET(m_title_box), false, false, 0);
 	gtk_box_pack_start(m_title_box, m_profile->get_picture(), false, false, 0);
@@ -325,9 +288,6 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	gtk_widget_show_all(frame);
 	m_default_button->set_active(true);
 
-	// Resize to last known size
-	gtk_window_set_default_size(m_window, m_geometry.width, m_geometry.height);
-
 	// Handle transparency
 	gtk_widget_set_app_paintable(GTK_WIDGET(m_window), true);
 
@@ -367,11 +327,6 @@ WhiskerMenu::Window::~Window()
 
 	delete m_profile;
 
-	for (int i = 0; i < 8; ++i)
-	{
-		delete m_resize[i];
-	}
-
 	gtk_widget_destroy(GTK_WIDGET(m_window));
 	g_object_unref(m_window);
 }
@@ -383,13 +338,6 @@ void WhiskerMenu::Window::hide(bool lost_focus)
 	// Save settings
 	wm_settings->favorites.save();
 	wm_settings->recent.save();
-
-	if (m_resized)
-	{
-		m_resized = false;
-		wm_settings->menu_width = m_geometry.width;
-		wm_settings->menu_height = m_geometry.height;
-	}
 
 	// Scroll categories to top
 	GtkAdjustment* adjustment = gtk_scrolled_window_get_vadjustment(m_sidebar);
@@ -528,14 +476,17 @@ void WhiskerMenu::Window::show(const Position position)
 	GdkMonitor* monitor_gdk = gdk_display_get_monitor_at_point(gdk_display_get_default(), parent_x, parent_y);
 	gdk_monitor_get_geometry(monitor_gdk, &monitor);
 
-	// Prevent window from being larger than screen
+	// Resize window if necessary, and also prevent it from being larger than screen
 	const int width = std::min(static_cast<int>(wm_settings->menu_width), monitor.width);
 	const int height = std::min(static_cast<int>(wm_settings->menu_height), monitor.height);
+	bool resized = false;
 	if ((m_geometry.width != width) || (m_geometry.height != height))
 	{
 		m_geometry.width = width;
 		m_geometry.height = height;
-		gtk_window_resize(m_window, m_geometry.width, m_geometry.height);
+		gtk_widget_set_size_request(GTK_WIDGET(m_window), m_geometry.width, m_geometry.height);
+		gtk_window_resize(m_window, 1, 1);
+		resized = true;
 	}
 
 	// Find window position
@@ -601,16 +552,13 @@ void WhiskerMenu::Window::show(const Position position)
 
 	// Show window
 	gtk_window_present(m_window);
+
+	if (resized)
+	{
+		check_scrollbar_needed();
+	}
+
 	gtk_window_move(m_window, m_geometry.x, m_geometry.y);
-}
-
-//-----------------------------------------------------------------------------
-
-void WhiskerMenu::Window::resize(GdkWindowEdge edge, GdkEventButton* event)
-{
-	m_resized = true;
-	set_child_has_focus();
-	gtk_window_begin_resize_drag(m_window, edge, event->button, event->x_root, event->y_root, event->time);
 }
 
 //-----------------------------------------------------------------------------
@@ -815,23 +763,6 @@ void WhiskerMenu::Window::on_state_flags_changed(GtkWidget* widget)
 
 //-----------------------------------------------------------------------------
 
-gboolean WhiskerMenu::Window::on_configure_event(GdkEventConfigure* configure_event)
-{
-	if (configure_event->width && configure_event->height)
-	{
-		m_geometry.x = configure_event->x;
-		m_geometry.y = configure_event->y;
-		m_geometry.width = configure_event->width;
-		m_geometry.height = configure_event->height;
-	}
-
-	check_scrollbar_needed();
-
-	return GDK_EVENT_PROPAGATE;
-}
-
-//-----------------------------------------------------------------------------
-
 void WhiskerMenu::Window::on_screen_changed(GtkWidget* widget)
 {
 	GdkScreen* screen = gtk_widget_get_screen(widget);
@@ -1016,42 +947,6 @@ void WhiskerMenu::Window::search()
 
 void WhiskerMenu::Window::update_layout()
 {
-	// Set enabled resize edges
-	for (int i = 0; i < 8; ++i)
-	{
-		gtk_widget_set_sensitive(m_resize[i]->get_widget(), false);
-	}
-	if (m_layout_left)
-	{
-		if (m_layout_bottom)
-		{
-			gtk_widget_set_sensitive(m_resize[Resizer::Top]->get_widget(), true);
-			gtk_widget_set_sensitive(m_resize[Resizer::TopRight]->get_widget(), true);
-			gtk_widget_set_sensitive(m_resize[Resizer::Right]->get_widget(), true);
-		}
-		else
-		{
-			gtk_widget_set_sensitive(m_resize[Resizer::Bottom]->get_widget(), true);
-			gtk_widget_set_sensitive(m_resize[Resizer::BottomRight]->get_widget(), true);
-			gtk_widget_set_sensitive(m_resize[Resizer::Right]->get_widget(), true);
-		}
-	}
-	else
-	{
-		if (m_layout_bottom)
-		{
-			gtk_widget_set_sensitive(m_resize[Resizer::Top]->get_widget(), true);
-			gtk_widget_set_sensitive(m_resize[Resizer::TopLeft]->get_widget(), true);
-			gtk_widget_set_sensitive(m_resize[Resizer::Left]->get_widget(), true);
-		}
-		else
-		{
-			gtk_widget_set_sensitive(m_resize[Resizer::Bottom]->get_widget(), true);
-			gtk_widget_set_sensitive(m_resize[Resizer::BottomLeft]->get_widget(), true);
-			gtk_widget_set_sensitive(m_resize[Resizer::Left]->get_widget(), true);
-		}
-	}
-
 	// Set vertical position of commands
 	g_object_ref(m_commands_box);
 	gtk_container_remove(GTK_CONTAINER(gtk_widget_get_parent(GTK_WIDGET(m_commands_box))), GTK_WIDGET(m_commands_box));
