@@ -135,48 +135,48 @@ msgstr "Επε_ξεργασία προφίλ"
 
 #: ../panel-plugin/settings.cpp:169
 msgid "Failed to edit profile."
-msgstr "Η επεξεργασία του προφίλ απέτυχε."
+msgstr "Απέτυχε η επεξεργασία του προφίλ."
 
 #: ../panel-plugin/element.cpp:106
 #, c-format
 msgid "Failed to execute command \"%s\"."
-msgstr "Αποτυχία εκτέλεσης της εντολής \"%s\"."
+msgstr "Απέτυχε η εκτέλεση της εντολής \"%s\"."
 
 #: ../panel-plugin/settings.cpp:152
 msgid "Failed to hibernate."
-msgstr "Αποτυχία αδρανοποίησης."
+msgstr "Απέτυχε η αδρανοποίηση."
 
 #: ../panel-plugin/settings.cpp:164
 msgid "Failed to launch menu editor."
-msgstr "Αποτυχία εκτέλεσης του επεξεργαστή μενού."
+msgstr "Απέτυχε η έναρξη του επεξεργαστή μενού."
 
 #: ../panel-plugin/settings.cpp:114
 msgid "Failed to lock screen."
-msgstr "Αποτυχία κλειδώματος οθόνης."
+msgstr "Απέτυχε το κλείδωμα της οθόνης."
 
 #: ../panel-plugin/settings.cpp:124 ../panel-plugin/settings.cpp:159
 msgid "Failed to log out."
-msgstr "Αποτυχία αποσύνδεσης."
+msgstr "Απέτυχε η αποσύνδεση."
 
 #: ../panel-plugin/settings.cpp:109
 msgid "Failed to open settings manager."
-msgstr "Αποτυχία εκκίνησης του διαχειριστή ρυθμίσεων."
+msgstr "Απέτυχε το άνοιγμα του διαχειριστή ρυθμίσεων."
 
 #: ../panel-plugin/settings.cpp:131
 msgid "Failed to restart."
-msgstr "Αποτυχία επανεκκίνησης."
+msgstr "Απέτυχε η επανεκκίνηση."
 
 #: ../panel-plugin/settings.cpp:138
 msgid "Failed to shut down."
-msgstr "Αποτυχία τερματισμού."
+msgstr "Απέτυχε ο τερματισμός."
 
 #: ../panel-plugin/settings.cpp:145
 msgid "Failed to suspend."
-msgstr "Αποτυχία αναστολής."
+msgstr "Απέτυχε η αναστολή."
 
 #: ../panel-plugin/settings.cpp:119
 msgid "Failed to switch user."
-msgstr "Αποτυχία αλλαγής χρήστη."
+msgstr "Απέτυχε η αλλαγή χρήστη."
 
 #: ../panel-plugin/favorites-page.cpp:37
 #: ../panel-plugin/settings-dialog.cpp:751
@@ -457,20 +457,20 @@ msgstr "Τερματισμός υπολογιστή σε %d δευτερόλεπ
 
 #: ../panel-plugin/page.cpp:557
 msgid "Unable to add launcher to desktop."
-msgstr "Απέτυχε η προσθήκη εκκινητή στην επιφάνεια εργασίας."
+msgstr "Αδύνατη η προσθήκη εκκινητή στην επιφάνεια εργασίας."
 
 #: ../panel-plugin/page.cpp:595 ../panel-plugin/page.cpp:604
 msgid "Unable to add launcher to panel."
-msgstr "Απέτυχε η προσθήκη εκκινητή στο ταμπλό."
+msgstr "Αδύνατη η προσθήκη εκκινητή στο ταμπλό."
 
 #: ../panel-plugin/page.cpp:624
 msgid "Unable to edit launcher."
-msgstr "Απέτυχε η επεξεργασία εκκινητή."
+msgstr "Αδύνατη η επεξεργασία του εκκινητή."
 
 #: ../panel-plugin/settings-dialog.cpp:277
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "Αδύνατο να ανοίξει ο ακόλουθος σύνδεσμος: %s"
+msgstr "Αδύνατη η πρόσβαση στη διεύθυνση: %s"
 
 #: ../panel-plugin/settings-dialog.cpp:721
 msgid "Use a single _panel row"
