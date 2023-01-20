@@ -82,6 +82,7 @@ Settings::Settings(Plugin* plugin) :
 	recent_items_max("/recent-items-max", 10, 0, 100),
 	favorites_in_recent("/favorites-in-recent", false),
 
+	position_profile_alternate("/position-profile-alternate", false),
 	position_search_alternate("/position-search-alternate", false),
 	position_commands_alternate("/position-commands-alternate", false),
 	position_categories_alternate("/position-categories-alternate", false),
@@ -255,6 +256,7 @@ void Settings::load(const gchar* file, bool is_default)
 	recent_items_max.load(rc, is_default);
 	favorites_in_recent.load(rc, is_default);
 
+	position_profile_alternate.load(rc, is_default);
 	position_search_alternate.load(rc, is_default);
 	position_commands_alternate.load(rc, is_default);
 	position_categories_alternate.load(rc, is_default);
@@ -400,6 +402,7 @@ void Settings::property_changed(const gchar* property, const GValue* value)
 			|| default_category.load(property, value)
 			|| recent_items_max.load(property, value)
 			|| favorites_in_recent.load(property, value)
+			|| position_profile_alternate.load(property, value)
 			|| position_search_alternate.load(property, value)
 			|| position_commands_alternate.load(property, value)
 			|| position_categories_alternate.load(property, value)

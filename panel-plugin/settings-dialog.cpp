@@ -636,9 +636,20 @@ GtkWidget* SettingsDialog::init_appearance_tab()
 			wm_settings->position_categories_alternate = gtk_toggle_button_get_active(button);
 		});
 
+	// Add option to use alternate profile position
+	m_position_profile_alternate = gtk_check_button_new_with_mnemonic(_("Position pro_file next to panel button"));
+	gtk_grid_attach(menu_table, m_position_profile_alternate, 0, 2, 2, 1);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_profile_alternate), wm_settings->position_profile_alternate);
+
+	connect(m_position_profile_alternate, "toggled",
+		[](GtkToggleButton* button)
+		{
+			wm_settings->position_profile_alternate = gtk_toggle_button_get_active(button);
+		});
+
 	// Add option to use alternate search entry position
 	m_position_search_alternate = gtk_check_button_new_with_mnemonic(_("Position _search entry next to panel button"));
-	gtk_grid_attach(menu_table, m_position_search_alternate, 0, 2, 2, 1);
+	gtk_grid_attach(menu_table, m_position_search_alternate, 0, 3, 2, 1);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_search_alternate), wm_settings->position_search_alternate);
 
 	connect(m_position_search_alternate, "toggled",
@@ -649,7 +660,7 @@ GtkWidget* SettingsDialog::init_appearance_tab()
 
 	// Add option to use alternate commands position
 	m_position_commands_alternate = gtk_check_button_new_with_mnemonic(_("Position commands next to search _entry"));
-	gtk_grid_attach(menu_table, m_position_commands_alternate, 0, 3, 2, 1);
+	gtk_grid_attach(menu_table, m_position_commands_alternate, 0, 4, 2, 1);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_position_commands_alternate), wm_settings->position_commands_alternate);
 
 	connect(m_position_commands_alternate, "toggled",
@@ -658,11 +669,10 @@ GtkWidget* SettingsDialog::init_appearance_tab()
 			wm_settings->position_commands_alternate = gtk_toggle_button_get_active(button);
 		});
 
-
 	// Add profile shape selector
 	GtkWidget* label = gtk_label_new_with_mnemonic(_("P_rofile:"));
 	gtk_widget_set_halign(label, GTK_ALIGN_START);
-	gtk_grid_attach(menu_table, label, 0, 4, 1, 1);
+	gtk_grid_attach(menu_table, label, 0, 5, 1, 1);
 
 	m_profile_shape = gtk_combo_box_text_new();
 	gtk_widget_set_halign(m_profile_shape, GTK_ALIGN_START);
@@ -671,7 +681,7 @@ GtkWidget* SettingsDialog::init_appearance_tab()
 	gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_profile_shape), _("Square Picture"));
 	gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(m_profile_shape), _("Hidden"));
 	gtk_combo_box_set_active(GTK_COMBO_BOX(m_profile_shape), wm_settings->profile_shape);
-	gtk_grid_attach(menu_table, m_profile_shape, 1, 4, 1, 1);
+	gtk_grid_attach(menu_table, m_profile_shape, 1, 5, 1, 1);
 	gtk_label_set_mnemonic_widget(GTK_LABEL(label), m_profile_shape);
 
 	connect(m_profile_shape, "changed",

@@ -321,6 +321,7 @@ public:
 	Integer recent_items_max;
 	Boolean favorites_in_recent;
 
+	Boolean position_profile_alternate;
 	Boolean position_search_alternate;
 	Boolean position_commands_alternate;
 	Boolean position_categories_alternate;
