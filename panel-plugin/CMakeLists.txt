@@ -14,6 +14,7 @@ pkg_check_modules(garcon REQUIRED IMPORTED_TARGET garcon-1>=0.6.4)
 pkg_check_modules(libxfce4panel REQUIRED IMPORTED_TARGET libxfce4panel-2.0>=4.14)
 pkg_check_modules(libxfce4ui REQUIRED IMPORTED_TARGET libxfce4ui-2>=4.14)
 pkg_check_modules(libxfce4util REQUIRED IMPORTED_TARGET libxfce4util-1.0>=4.14)
+pkg_check_modules(libxfconf REQUIRED IMPORTED_TARGET libxfconf-0>=4.14)
 if(ENABLE_ACCOUNTSSERVICE)
 	pkg_check_modules(accountsservice IMPORTED_TARGET accountsservice>=0.6.45)
 endif()
@@ -82,7 +83,9 @@ endif()
 # popup
 add_executable(xfce4-popup-whiskermenu xfce4-popup-whiskermenu.cpp)
 
-target_link_libraries(xfce4-popup-whiskermenu PRIVATE PkgConfig::gio)
+target_link_libraries(xfce4-popup-whiskermenu PRIVATE
+	PkgConfig::gio
+	PkgConfig::libxfconf)
 
 target_compile_options(xfce4-popup-whiskermenu PRIVATE -Wall -Wextra)
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2021-2023 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,9 +16,76 @@
  */
 
 #include <iostream>
+#include <string>
+#include <vector>
 
 #include <gio/gio.h>
 #include <glib/gi18n.h>
+
+#include <xfconf/xfconf.h>
+
+//-----------------------------------------------------------------------------
+
+static int listInstances()
+{
+	// Connect to Xfconf
+	if (!xfconf_init(nullptr))
+	{
+		return EXIT_FAILURE;
+	}
+	XfconfChannel* channel = xfconf_channel_get("xfce4-panel");
+
+	// Find all plugins in each panel
+	std::vector<std::string> panels;
+	GPtrArray* values = xfconf_channel_get_arrayv(channel, "/panels");
+	const guint size = (values) ? values->len : xfconf_channel_get_uint(channel, "/panels", 0);
+	for (guint i = 0; i < size; ++i)
+	{
+		const guint id = (values) ? g_value_get_int(static_cast<GValue*>(g_ptr_array_index(values, i))) : i;
+
+		gchar* panel = g_strdup_printf("/panels/panel-%d/plugin-ids", id);
+		panels.push_back(panel);
+		g_free(panel);
+	}
+	xfconf_array_free(values);
+
+	// Find Whisker Menu plugins
+	for (const std::string& panel : panels)
+	{
+		values = xfconf_channel_get_arrayv(channel, panel.c_str());
+		if (!values)
+		{
+			continue;
+		}
+
+		for (guint i = 0; i < values->len; ++i)
+		{
+			const GValue* id = static_cast<GValue*>(g_ptr_array_index(values, i));
+			if (!G_VALUE_HOLDS_INT(id))
+			{
+				continue;
+			}
+			const int instance = g_value_get_int(id);
+
+			gchar* plugin = g_strdup_printf("/plugins/plugin-%d", instance);
+			gchar* name = xfconf_channel_get_string(channel, plugin, nullptr);
+			if (g_strcmp0(name, "whiskermenu") == 0)
+			{
+				std::cout << instance << std::endl;
+			}
+			g_free(name);
+			g_free(plugin);
+		}
+		xfconf_array_free(values);
+	}
+
+	// Disconnect from Xfconf
+	xfconf_shutdown();
+
+	return EXIT_SUCCESS;
+}
+
+//-----------------------------------------------------------------------------
 
 int main(int argc, char** argv)
 {
@@ -31,9 +98,13 @@ int main(int argc, char** argv)
 	// Parse commandline options
 	gboolean at_pointer = FALSE;
 	gboolean print_version = FALSE;
+	gboolean list_instances = FALSE;
+	gint instance_number = 0;
 	const GOptionEntry entries[] =
 	{
 		{ "pointer", 'p', 0, G_OPTION_ARG_NONE, &at_pointer, _("Popup menu at current mouse position"), nullptr },
+		{ "list", 'l', 0, G_OPTION_ARG_NONE, &list_instances, _("Print available menu instance IDs"), nullptr },
+		{ "instance", 'i', 0, G_OPTION_ARG_INT, &instance_number, _("Choose which menu to popup by instance ID"), nullptr },
 		{ "version", 'V', 0, G_OPTION_ARG_NONE, &print_version, _("Print version information and exit"), nullptr },
 		{ nullptr, '\0', 0, G_OPTION_ARG_NONE, nullptr, nullptr, nullptr }
 	};
@@ -52,8 +123,13 @@ int main(int argc, char** argv)
 	if (print_version)
 	{
 		std::cout << PACKAGE_NAME << " " << PACKAGE_VERSION << "\n"
-				<< _("Copyright \302\251 2013-2021 Graeme Gott") << std::endl;
+				<< _("Copyright \302\251 2013-2023 Graeme Gott") << std::endl;
 		return EXIT_SUCCESS;
+	}
+
+	if (list_instances)
+	{
+		return listInstances();
 	}
 
 	// Connect to Xfce panel through D-Bus
@@ -74,11 +150,13 @@ int main(int argc, char** argv)
 	}
 
 	// Tell panel to call remote-event on Whisker Menu
+	const std::string instance = !instance_number ? "whiskermenu" : ("whiskermenu-" + std::to_string(instance_number));
+
 	int result = EXIT_SUCCESS;
 	GVariant* variant = g_variant_new_variant(g_variant_new_boolean(at_pointer));
 	GVariant* ret = g_dbus_proxy_call_sync(proxy,
 			"PluginEvent",
-			g_variant_new("(ss@v)", "whiskermenu", "popup", variant),
+			g_variant_new("(ss@v)", instance.c_str(), "popup", variant),
 			G_DBUS_CALL_FLAGS_NONE,
 			-1,
 			nullptr,
@@ -99,3 +177,5 @@ int main(int argc, char** argv)
 
 	return result;
 }
+
+//-----------------------------------------------------------------------------
