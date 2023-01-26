@@ -672,10 +672,18 @@ void WhiskerMenu::Window::unset_items()
 
 gboolean WhiskerMenu::Window::on_key_press_event(GtkWidget* widget, GdkEventKey* key_event)
 {
-	// Hide if escape is pressed and there is no text in search entry
-	if ( (key_event->keyval == GDK_KEY_Escape) && xfce_str_is_empty(gtk_entry_get_text(m_search_entry)) )
+	if (key_event->keyval == GDK_KEY_Escape)
 	{
-		hide();
+		// Hide if escape is pressed and there is no text in search entry
+		if (xfce_str_is_empty(gtk_entry_get_text(m_search_entry)))
+		{
+			hide();
+		}
+		// Clear search entry of text if escape is pressed
+		else
+		{
+			gtk_entry_set_text(m_search_entry, "");
+		}
 		return GDK_EVENT_STOP;
 	}
 
