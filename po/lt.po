@@ -86,7 +86,7 @@ msgstr "K_omanda:"
 
 #: ../panel-plugin/settings-dialog.cpp:499
 msgid "Categ_ory icon size:"
-msgstr "Kategori_jos piktogramos dydis:"
+msgstr "Kategori_jų piktogramų dydis:"
 
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
