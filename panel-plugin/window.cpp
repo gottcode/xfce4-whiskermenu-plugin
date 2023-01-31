@@ -531,21 +531,6 @@ void WhiskerMenu::Window::show(const Position position)
 		update_layout();
 	}
 
-	const bool category_show_name = wm_settings->category_show_name && !wm_settings->position_categories_horizontal;
-	if (!m_sidebar_size_group && m_layout_commands_alternate && category_show_name)
-	{
-		m_sidebar_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
-		gtk_size_group_add_widget(m_sidebar_size_group, GTK_WIDGET(m_sidebar));
-		gtk_size_group_add_widget(m_sidebar_size_group, GTK_WIDGET(m_commands_box));
-	}
-	else if (m_sidebar_size_group && (!m_layout_commands_alternate || !category_show_name))
-	{
-		gtk_size_group_remove_widget(m_sidebar_size_group, GTK_WIDGET(m_sidebar));
-		gtk_size_group_remove_widget(m_sidebar_size_group, GTK_WIDGET(m_commands_box));
-		g_object_unref(m_sidebar_size_group);
-		m_sidebar_size_group = nullptr;
-	}
-
 	// Show window
 	gtk_window_present(m_window);
 
@@ -1158,6 +1143,22 @@ void WhiskerMenu::Window::update_layout()
 		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_title_box), 0);
 		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_search_box), 1);
 		gtk_box_reorder_child(m_vbox, GTK_WIDGET(m_contents_stack), 2);
+	}
+
+	// Handle size group to category buttons
+	const bool category_show_name = wm_settings->category_show_name && !wm_settings->position_categories_horizontal;
+	if (!m_sidebar_size_group && m_layout_commands_alternate && category_show_name)
+	{
+		m_sidebar_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
+		gtk_size_group_add_widget(m_sidebar_size_group, GTK_WIDGET(m_sidebar));
+		gtk_size_group_add_widget(m_sidebar_size_group, GTK_WIDGET(m_commands_box));
+	}
+	else if (m_sidebar_size_group && (!m_layout_commands_alternate || !category_show_name))
+	{
+		gtk_size_group_remove_widget(m_sidebar_size_group, GTK_WIDGET(m_sidebar));
+		gtk_size_group_remove_widget(m_sidebar_size_group, GTK_WIDGET(m_commands_box));
+		g_object_unref(m_sidebar_size_group);
+		m_sidebar_size_group = nullptr;
 	}
 }
 
