@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-01 07:54-0500\n"
+"POT-Creation-Date: 2023-02-02 18:19-0500\n"
 "PO-Revision-Date: 2018-07-16 19:17+0000\n"
 "Last-Translator: ciaran\n"
 "Language-Team: Welsh (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/cy/)\n"
@@ -39,7 +39,7 @@ msgstr "Ychwanegu i banel"
 msgid "All Applications"
 msgstr ""
 
-#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/plugin.cpp:396
 msgid "Alternate application launcher for Xfce"
 msgstr "Lansiwr rhaglenni amgen i Xfce"
 
@@ -88,11 +88,16 @@ msgstr "Gorchymyn:"
 msgid "Categ_ory icon size:"
 msgstr "Maint eiconau categorïau"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Choose which menu to popup by instance ID"
+msgstr ""
+
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
 msgstr "Clirio'r eitemau diweddar"
 
-#: ../panel-plugin/plugin.cpp:398
+#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Hawlfraint © 2013-2023 Graeme Gott"
 
@@ -261,6 +266,10 @@ msgstr "Botwm y panel"
 msgid "Pattern"
 msgstr "Patrwm"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+msgid "Popup menu at current mouse position"
+msgstr ""
+
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
 msgstr "Lleoli chwiliadau wrth ymyl botwm y panel"
@@ -276,6 +285,14 @@ msgstr ""
 #: ../panel-plugin/settings-dialog.cpp:615
 msgid "Position commands next to search _entry"
 msgstr "Lleoli gorchmynion wrth ymyl chwiliadau"
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+msgid "Print available menu instance IDs"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+msgid "Print version information and exit"
+msgstr ""
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
@@ -436,9 +453,7 @@ msgstr "Teitl"
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
-msgid ""
-"To unhide it you have to manually remove the file \"%s\" or open the file "
-"and remove the line \"%s\"."
+msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
 msgstr ""
 
 #: ../panel-plugin/settings.cpp:140
@@ -446,15 +461,15 @@ msgstr ""
 msgid "Turning off computer in %d seconds."
 msgstr ""
 
-#: ../panel-plugin/page.cpp:557
+#: ../panel-plugin/page.cpp:598
 msgid "Unable to add launcher to desktop."
 msgstr "Methu ychwanegu'r lansiw i'r bwrdd gwaith."
 
-#: ../panel-plugin/page.cpp:595 ../panel-plugin/page.cpp:604
+#: ../panel-plugin/page.cpp:643 ../panel-plugin/page.cpp:656
 msgid "Unable to add launcher to panel."
 msgstr "Methu ychwanegu'r lansiwr i'r panel."
 
-#: ../panel-plugin/page.cpp:624
+#: ../panel-plugin/page.cpp:676
 msgid "Unable to edit launcher."
 msgstr "Methu golygu'r lansiwr."
 
@@ -556,6 +571,6 @@ msgstr ""
 msgid "_Title:"
 msgstr "Teitl:"
 
-#: ../panel-plugin/plugin.cpp:402
+#: ../panel-plugin/plugin.cpp:401
 msgid "translator-credits"
 msgstr "Cyfieithwyd gan ."

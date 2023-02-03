@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-01 07:54-0500\n"
+"POT-Creation-Date: 2023-02-02 18:19-0500\n"
 "PO-Revision-Date: 2022-03-02 23:16+0000\n"
 "Last-Translator: Sod Emin\n"
 "Language-Team: Arabic (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/ar/)\n"
@@ -43,7 +43,7 @@ msgstr "إضافة إلى الشريط"
 msgid "All Applications"
 msgstr "جميع التطبيقات"
 
-#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/plugin.cpp:396
 msgid "Alternate application launcher for Xfce"
 msgstr "مُشَغِّلُ تطبيق بديل ل Xfce"
 
@@ -92,11 +92,16 @@ msgstr "الأم_ر:"
 msgid "Categ_ory icon size:"
 msgstr "_حجم أيقونة الصنف:"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Choose which menu to popup by instance ID"
+msgstr ""
+
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
 msgstr "محو المستعملة حديثا"
 
-#: ../panel-plugin/plugin.cpp:398
+#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr ""
 
@@ -265,6 +270,10 @@ msgstr "زر الشريط"
 msgid "Pattern"
 msgstr "نمط"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+msgid "Popup menu at current mouse position"
+msgstr "القائمة المنبثقة في موضع الفارة الحالي"
+
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
 msgstr "موضع _خانة البحث يلي زر الشريط"
@@ -280,6 +289,14 @@ msgstr ""
 #: ../panel-plugin/settings-dialog.cpp:615
 msgid "Position commands next to search _entry"
 msgstr "مو_ضع الأوامر بجانب خانة البحث"
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+msgid "Print available menu instance IDs"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+msgid "Print version information and exit"
+msgstr "طباعة معلومات الإصدار و الخروج"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
@@ -440,9 +457,7 @@ msgstr "عنوان"
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
-msgid ""
-"To unhide it you have to manually remove the file \"%s\" or open the file "
-"and remove the line \"%s\"."
+msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
 msgstr "ﻹعادة إظهاره يجب عليك حذف الملف \"%s\" يدوياً أو فتح الملف وحذف السطر \"%s\"."
 
 #: ../panel-plugin/settings.cpp:140
@@ -450,15 +465,15 @@ msgstr "ﻹعادة إظهاره يجب عليك حذف الملف \"%s\" يدو
 msgid "Turning off computer in %d seconds."
 msgstr "إيقاف تشغيل الحاسوب خلال %d ثانية."
 
-#: ../panel-plugin/page.cpp:557
+#: ../panel-plugin/page.cpp:598
 msgid "Unable to add launcher to desktop."
 msgstr "عاجز عن إضافة المطلقة إلى سطح المكتب."
 
-#: ../panel-plugin/page.cpp:595 ../panel-plugin/page.cpp:604
+#: ../panel-plugin/page.cpp:643 ../panel-plugin/page.cpp:656
 msgid "Unable to add launcher to panel."
 msgstr "عاجز عن إضافة المطلقة إلى الشريط."
 
-#: ../panel-plugin/page.cpp:624
+#: ../panel-plugin/page.cpp:676
 msgid "Unable to edit launcher."
 msgstr "تعذَّر تعديل المُشَغِّل."
 
@@ -560,6 +575,6 @@ msgstr "مدير الإ_عدادات"
 msgid "_Title:"
 msgstr "عن_وان:"
 
-#: ../panel-plugin/plugin.cpp:402
+#: ../panel-plugin/plugin.cpp:401
 msgid "translator-credits"
 msgstr "قائمة-المترجمين"

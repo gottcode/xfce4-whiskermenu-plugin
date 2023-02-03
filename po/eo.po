@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-01 07:54-0500\n"
+"POT-Creation-Date: 2023-02-02 18:19-0500\n"
 "PO-Revision-Date: 2022-03-11 15:21+0000\n"
 "Last-Translator: Matt Marshall <communications@mrshll.uk>\n"
 "Language-Team: Esperanto (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/eo/)\n"
@@ -42,7 +42,7 @@ msgstr "Aldoni al panelo"
 msgid "All Applications"
 msgstr "Ĉiuj aplikaĵoj"
 
-#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/plugin.cpp:396
 msgid "Alternate application launcher for Xfce"
 msgstr "Alternativa aplikaĵolanĉilo por Xfce "
 
@@ -91,11 +91,16 @@ msgstr "K_omando:"
 msgid "Categ_ory icon size:"
 msgstr "Gra_ndo de bildsimbola kategorio:"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Choose which menu to popup by instance ID"
+msgstr ""
+
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
 msgstr "Purigi lastajn programojn"
 
-#: ../panel-plugin/plugin.cpp:398
+#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Aŭtora rajto © 2013-2023 Graeme Gott"
 
@@ -264,6 +269,10 @@ msgstr "Panela butono"
 msgid "Pattern"
 msgstr "Ŝablono"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+msgid "Popup menu at current mouse position"
+msgstr ""
+
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
 msgstr "Poziciigi _serĉan eniron apud panela butono"
@@ -279,6 +288,14 @@ msgstr "Poziciigi kategoriojn horizontale"
 #: ../panel-plugin/settings-dialog.cpp:615
 msgid "Position commands next to search _entry"
 msgstr "Poziciigi komandojn apud serĉa _eniro"
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+msgid "Print available menu instance IDs"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+msgid "Print version information and exit"
+msgstr ""
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
@@ -439,9 +456,7 @@ msgstr "Titolo"
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
-msgid ""
-"To unhide it you have to manually remove the file \"%s\" or open the file "
-"and remove the line \"%s\"."
+msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
 msgstr "Por malkaŝi tion vi devas permane forigi la dosieron \"%s\" aŭ malfermi la dosieron kaj forigi la linion \"%s\". "
 
 #: ../panel-plugin/settings.cpp:140
@@ -449,15 +464,15 @@ msgstr "Por malkaŝi tion vi devas permane forigi la dosieron \"%s\" aŭ malferm
 msgid "Turning off computer in %d seconds."
 msgstr "Malŝaltos komputilon en %d sekundoj."
 
-#: ../panel-plugin/page.cpp:557
+#: ../panel-plugin/page.cpp:598
 msgid "Unable to add launcher to desktop."
 msgstr "Ne eblas aldoni lanĉilon al labortablo."
 
-#: ../panel-plugin/page.cpp:595 ../panel-plugin/page.cpp:604
+#: ../panel-plugin/page.cpp:643 ../panel-plugin/page.cpp:656
 msgid "Unable to add launcher to panel."
 msgstr "Ne eblas aldoni lanĉilon al panelo."
 
-#: ../panel-plugin/page.cpp:624
+#: ../panel-plugin/page.cpp:676
 msgid "Unable to edit launcher."
 msgstr "Ne eblas redakti lanĉilon"
 
@@ -559,6 +574,6 @@ msgstr "_Agordo-administranto"
 msgid "_Title:"
 msgstr "_Titolo:"
 
-#: ../panel-plugin/plugin.cpp:402
+#: ../panel-plugin/plugin.cpp:401
 msgid "translator-credits"
 msgstr "Kurt Ankh Phoenix \nWarut BUNPRASERT <warut92@gmail.com>"

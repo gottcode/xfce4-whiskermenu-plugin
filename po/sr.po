@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-01 07:54-0500\n"
+"POT-Creation-Date: 2023-02-02 18:19-0500\n"
 "PO-Revision-Date: 2020-02-11 12:37+0000\n"
 "Last-Translator: Саша Петровић <salepetronije@gmail.com>\n"
 "Language-Team: Serbian (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/sr/)\n"
@@ -40,7 +40,7 @@ msgstr "Додај на полицу"
 msgid "All Applications"
 msgstr "Сви програми"
 
-#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/plugin.cpp:396
 msgid "Alternate application launcher for Xfce"
 msgstr "Заменски покретач програма за Иксфце"
 
@@ -89,11 +89,16 @@ msgstr "Н_аредба:"
 msgid "Categ_ory icon size:"
 msgstr "Величина иконица _врста:"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Choose which menu to popup by instance ID"
+msgstr ""
+
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
 msgstr "Очисти недавно коришћено"
 
-#: ../panel-plugin/plugin.cpp:398
+#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Права умножавања © 2013-2023 Graeme Gott (Грејем Гот)"
 
@@ -262,6 +267,10 @@ msgstr "Дугме полице"
 msgid "Pattern"
 msgstr "Образац"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+msgid "Popup menu at current mouse position"
+msgstr "Искачући изборник на тренутном положају миша"
+
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
 msgstr "Постави кућицу за унос до дугмета на полици"
@@ -277,6 +286,14 @@ msgstr ""
 #: ../panel-plugin/settings-dialog.cpp:615
 msgid "Position commands next to search _entry"
 msgstr "Постави наредбе до кућице претраге"
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+msgid "Print available menu instance IDs"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+msgid "Print version information and exit"
+msgstr "Испиши податке о издању и изађи"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
@@ -437,9 +454,7 @@ msgstr "Наслов"
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
-msgid ""
-"To unhide it you have to manually remove the file \"%s\" or open the file "
-"and remove the line \"%s\"."
+msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
 msgstr "Ради откривања треба ручно да уклоните датотеку„%s“ или отворите датотеку и уклоните линију „%s“."
 
 #: ../panel-plugin/settings.cpp:140
@@ -447,15 +462,15 @@ msgstr "Ради откривања треба ручно да уклоните 
 msgid "Turning off computer in %d seconds."
 msgstr "Искључујем рачунар кроз %d секунди."
 
-#: ../panel-plugin/page.cpp:557
+#: ../panel-plugin/page.cpp:598
 msgid "Unable to add launcher to desktop."
 msgstr "Нисам успео да додам покретач на радну површ."
 
-#: ../panel-plugin/page.cpp:595 ../panel-plugin/page.cpp:604
+#: ../panel-plugin/page.cpp:643 ../panel-plugin/page.cpp:656
 msgid "Unable to add launcher to panel."
 msgstr "Нисам успео да додам покретач на полицу."
 
-#: ../panel-plugin/page.cpp:624
+#: ../panel-plugin/page.cpp:676
 msgid "Unable to edit launcher."
 msgstr "Нисам успео да уредим покретач."
 
@@ -557,6 +572,6 @@ msgstr "_Управник поставки"
 msgid "_Title:"
 msgstr "_Наслов:"
 
-#: ../panel-plugin/plugin.cpp:402
+#: ../panel-plugin/plugin.cpp:401
 msgid "translator-credits"
 msgstr "Саша Петровић <salepetronije@gmail.com>"

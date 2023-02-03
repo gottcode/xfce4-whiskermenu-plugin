@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-01 07:54-0500\n"
+"POT-Creation-Date: 2023-02-02 18:19-0500\n"
 "PO-Revision-Date: 2013-06-20 11:26+0000\n"
 "Last-Translator: Kiril Kirilov <cybercop_montana@abv.bg>, 2013-2023\n"
 "Language-Team: Bulgarian (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/bg/)\n"
@@ -39,7 +39,7 @@ msgstr "Добавяне в панела"
 msgid "All Applications"
 msgstr "Всички програми"
 
-#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/plugin.cpp:396
 msgid "Alternate application launcher for Xfce"
 msgstr "Алтернативно меню на програмите за Xfce"
 
@@ -88,11 +88,16 @@ msgstr "Команда:"
 msgid "Categ_ory icon size:"
 msgstr "Размер на иконите на категориите:"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Choose which menu to popup by instance ID"
+msgstr ""
+
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
 msgstr "Изчисти последно използваните"
 
-#: ../panel-plugin/plugin.cpp:398
+#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Авторски права © 2013-2023 Graeme Gott"
 
@@ -261,6 +266,10 @@ msgstr "Бутон в панела"
 msgid "Pattern"
 msgstr "Шаблон"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+msgid "Popup menu at current mouse position"
+msgstr "Показване на изскачащо меню в текущата позиция на мишката"
+
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
 msgstr "Полето за търсене да се намира след бутона в панела"
@@ -276,6 +285,14 @@ msgstr "Хоризонтално разположение на категори�
 #: ../panel-plugin/settings-dialog.cpp:615
 msgid "Position commands next to search _entry"
 msgstr "Командите да се намират след полето за търсене"
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+msgid "Print available menu instance IDs"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+msgid "Print version information and exit"
+msgstr "Показване на сведения за изданието и изход"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
@@ -436,9 +453,7 @@ msgstr "Заглавие"
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
-msgid ""
-"To unhide it you have to manually remove the file \"%s\" or open the file "
-"and remove the line \"%s\"."
+msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
 msgstr "За да се покаже, трябва ръчно да премахнете файла \"%s\" или да отворите файла и да премахнете реда \"%s\"."
 
 #: ../panel-plugin/settings.cpp:140
@@ -446,15 +461,15 @@ msgstr "За да се покаже, трябва ръчно да премахн
 msgid "Turning off computer in %d seconds."
 msgstr "Изключване на компютъра след %d секунди."
 
-#: ../panel-plugin/page.cpp:557
+#: ../panel-plugin/page.cpp:598
 msgid "Unable to add launcher to desktop."
 msgstr "Неуспешно добавяне на стартер върху работния плот."
 
-#: ../panel-plugin/page.cpp:595 ../panel-plugin/page.cpp:604
+#: ../panel-plugin/page.cpp:643 ../panel-plugin/page.cpp:656
 msgid "Unable to add launcher to panel."
 msgstr "Неуспешно добавяне на стартер в панела."
 
-#: ../panel-plugin/page.cpp:624
+#: ../panel-plugin/page.cpp:676
 msgid "Unable to edit launcher."
 msgstr "Стартера не може да бъде редактиран."
 
@@ -556,6 +571,6 @@ msgstr "_Мениджър на настройките"
 msgid "_Title:"
 msgstr "Заглавие:"
 
-#: ../panel-plugin/plugin.cpp:402
+#: ../panel-plugin/plugin.cpp:401
 msgid "translator-credits"
 msgstr "Kiril Kirilov <cybercop_montana@abv.bg>"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-01 07:54-0500\n"
+"POT-Creation-Date: 2023-02-02 18:19-0500\n"
 "PO-Revision-Date: 2013-06-20 11:26+0000\n"
 "Last-Translator: Italang, 2020,2022-2023\n"
 "Language-Team: Italian (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/it/)\n"
@@ -43,7 +43,7 @@ msgstr "Aggiungi al Pannello"
 msgid "All Applications"
 msgstr "Tutte le Applicazioni"
 
-#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/plugin.cpp:396
 msgid "Alternate application launcher for Xfce"
 msgstr "Lanciatore delle applicazioni alternativo per Xfce"
 
@@ -92,11 +92,16 @@ msgstr "C_omando:"
 msgid "Categ_ory icon size:"
 msgstr "Dimensione icona Categ_oria:"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Choose which menu to popup by instance ID"
+msgstr ""
+
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
 msgstr "Cancella Usati di recente"
 
-#: ../panel-plugin/plugin.cpp:398
+#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Copyright © 2013-2023 Graeme Gott"
 
@@ -265,6 +270,10 @@ msgstr "Pulsante del pannello"
 msgid "Pattern"
 msgstr "Motivo"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+msgid "Popup menu at current mouse position"
+msgstr "Fa comparire il menu nell'attuale posizione del mouse"
+
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
 msgstr "Posiziona il campo _Cerca accanto al pulsante del pannello"
@@ -280,6 +289,14 @@ msgstr "Posiziona categorie _orizzontalmente"
 #: ../panel-plugin/settings-dialog.cpp:615
 msgid "Position commands next to search _entry"
 msgstr "Posiziona c_omandi  accanto al campo Cerca"
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+msgid "Print available menu instance IDs"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+msgid "Print version information and exit"
+msgstr "Stampa le informazioni di versione ed esce"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
@@ -440,9 +457,7 @@ msgstr "Titolo"
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
-msgid ""
-"To unhide it you have to manually remove the file \"%s\" or open the file "
-"and remove the line \"%s\"."
+msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
 msgstr "Per scoprirlo è necessario rimuovere manualmente il file \"%s\" o aprire il file e rimuovere la linea \"%s\"."
 
 #: ../panel-plugin/settings.cpp:140
@@ -450,15 +465,15 @@ msgstr "Per scoprirlo è necessario rimuovere manualmente il file \"%s\" o aprir
 msgid "Turning off computer in %d seconds."
 msgstr "Spegnimento del computer fra %d secondi."
 
-#: ../panel-plugin/page.cpp:557
+#: ../panel-plugin/page.cpp:598
 msgid "Unable to add launcher to desktop."
 msgstr "Impossibile aggiungere lanciatore al desktop."
 
-#: ../panel-plugin/page.cpp:595 ../panel-plugin/page.cpp:604
+#: ../panel-plugin/page.cpp:643 ../panel-plugin/page.cpp:656
 msgid "Unable to add launcher to panel."
 msgstr "Impossibile aggiungere lanciatore al pannello."
 
-#: ../panel-plugin/page.cpp:624
+#: ../panel-plugin/page.cpp:676
 msgid "Unable to edit launcher."
 msgstr "Impossibile modificare il lanciatore."
 
@@ -560,6 +575,6 @@ msgstr "Ge_store Impostazioni"
 msgid "_Title:"
 msgstr "_Titolo:"
 
-#: ../panel-plugin/plugin.cpp:402
+#: ../panel-plugin/plugin.cpp:401
 msgid "translator-credits"
 msgstr "attribuzione traduzioni"

@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-01 07:54-0500\n"
+"POT-Creation-Date: 2023-02-02 18:19-0500\n"
 "PO-Revision-Date: 2022-01-02 23:07+0000\n"
 "Last-Translator: jc1 <jc1.quebecos@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/fr/)\n"
@@ -46,7 +46,7 @@ msgstr "Ajouter au tableau de bord"
 msgid "All Applications"
 msgstr "Toutes les applications"
 
-#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/plugin.cpp:396
 msgid "Alternate application launcher for Xfce"
 msgstr "Lanceur d’application alternatif pour Xfce"
 
@@ -95,11 +95,16 @@ msgstr "C_ommande : "
 msgid "Categ_ory icon size:"
 msgstr "Taille des icônes des caté_gories :"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Choose which menu to popup by instance ID"
+msgstr ""
+
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
 msgstr "Effacer les applications récemment utilisées"
 
-#: ../panel-plugin/plugin.cpp:398
+#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Copyright © 2013-2023 Graeme Gott"
 
@@ -268,6 +273,10 @@ msgstr "Bouton du tableau de bord"
 msgid "Pattern"
 msgstr "Motif"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+msgid "Popup menu at current mouse position"
+msgstr "Menu contextuel à la position actuelle de la souris"
+
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
 msgstr "Positionner le champ de _recherche à côté du bouton du tableau de bord"
@@ -283,6 +292,14 @@ msgstr "Catégories de position _horizontalement"
 #: ../panel-plugin/settings-dialog.cpp:615
 msgid "Position commands next to search _entry"
 msgstr "Positionner les commandes à côté du _champ de recherche"
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+msgid "Print available menu instance IDs"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+msgid "Print version information and exit"
+msgstr "Afficher les informations sur la version et quitter"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
@@ -443,9 +460,7 @@ msgstr "Titre"
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
-msgid ""
-"To unhide it you have to manually remove the file \"%s\" or open the file "
-"and remove the line \"%s\"."
+msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
 msgstr "Pour l’afficher à nouveau, vous devez supprimer manuellement le fichier « %s » ou ouvrir le fichier et supprimer la ligne « %s »."
 
 #: ../panel-plugin/settings.cpp:140
@@ -453,15 +468,15 @@ msgstr "Pour l’afficher à nouveau, vous devez supprimer manuellement le fichi
 msgid "Turning off computer in %d seconds."
 msgstr "Arrêt de l’ordinateur dans %d secondes."
 
-#: ../panel-plugin/page.cpp:557
+#: ../panel-plugin/page.cpp:598
 msgid "Unable to add launcher to desktop."
 msgstr "Impossible d’ajouter le lanceur sur le bureau."
 
-#: ../panel-plugin/page.cpp:595 ../panel-plugin/page.cpp:604
+#: ../panel-plugin/page.cpp:643 ../panel-plugin/page.cpp:656
 msgid "Unable to add launcher to panel."
 msgstr "Impossible d’ajouter le lanceur dans le tableau de bord."
 
-#: ../panel-plugin/page.cpp:624
+#: ../panel-plugin/page.cpp:676
 msgid "Unable to edit launcher."
 msgstr "Impossible de modifier le lanceur."
 
@@ -563,6 +578,6 @@ msgstr "Gestionnaire de _paramètres"
 msgid "_Title:"
 msgstr "_Titre :"
 
-#: ../panel-plugin/plugin.cpp:402
+#: ../panel-plugin/plugin.cpp:401
 msgid "translator-credits"
 msgstr "L’équipe de traduction francophone du Menu Whisker"

@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-01 07:54-0500\n"
+"POT-Creation-Date: 2023-02-02 18:19-0500\n"
 "PO-Revision-Date: 2013-06-20 11:26+0000\n"
 "Last-Translator: Luna Jernberg <bittin@cafe8bitar.se>, 2021-2023\n"
 "Language-Team: Swedish (Sweden) (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/sv_SE/)\n"
@@ -48,7 +48,7 @@ msgstr "Lägg till i panelen"
 msgid "All Applications"
 msgstr "Alla program"
 
-#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/plugin.cpp:396
 msgid "Alternate application launcher for Xfce"
 msgstr "Alternativ programstartare för Xfce"
 
@@ -97,11 +97,16 @@ msgstr "K_ommando:"
 msgid "Categ_ory icon size:"
 msgstr "K_ategori ikonstorlek:"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Choose which menu to popup by instance ID"
+msgstr ""
+
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
 msgstr "Rensa senast använda"
 
-#: ../panel-plugin/plugin.cpp:398
+#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Copyright © 2013-2023 Graeme Gott"
 
@@ -270,6 +275,10 @@ msgstr "Panelknapp"
 msgid "Pattern"
 msgstr "Mönster"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+msgid "Popup menu at current mouse position"
+msgstr "Visa meny vid aktuell musposition"
+
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
 msgstr "Placera s_ökfältet intill panelknappen"
@@ -285,6 +294,14 @@ msgstr "Positionera kategorier _horisontellt"
 #: ../panel-plugin/settings-dialog.cpp:615
 msgid "Position commands next to search _entry"
 msgstr "Placera ko_mmandon bredvid sökfältet"
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+msgid "Print available menu instance IDs"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+msgid "Print version information and exit"
+msgstr "Visa versionsinformation och avsluta"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
@@ -445,9 +462,7 @@ msgstr "Titel"
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
-msgid ""
-"To unhide it you have to manually remove the file \"%s\" or open the file "
-"and remove the line \"%s\"."
+msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
 msgstr "För att ta bort den måste du ta bort filen \"%s\" manuellt eller öppna filen och ta bort raden \"%s\"."
 
 #: ../panel-plugin/settings.cpp:140
@@ -455,15 +470,15 @@ msgstr "För att ta bort den måste du ta bort filen \"%s\" manuellt eller öppn
 msgid "Turning off computer in %d seconds."
 msgstr "Stänger av datorn om %d sekunder."
 
-#: ../panel-plugin/page.cpp:557
+#: ../panel-plugin/page.cpp:598
 msgid "Unable to add launcher to desktop."
 msgstr "Kunde inte skapa skrivbordsgenväg."
 
-#: ../panel-plugin/page.cpp:595 ../panel-plugin/page.cpp:604
+#: ../panel-plugin/page.cpp:643 ../panel-plugin/page.cpp:656
 msgid "Unable to add launcher to panel."
 msgstr "Kunde inte lägga till programstartare i panelen."
 
-#: ../panel-plugin/page.cpp:624
+#: ../panel-plugin/page.cpp:676
 msgid "Unable to edit launcher."
 msgstr "Det gick inte att redigera programstartare."
 
@@ -565,6 +580,6 @@ msgstr "_Inställningshanterare"
 msgid "_Title:"
 msgstr "Tite_l:"
 
-#: ../panel-plugin/plugin.cpp:402
+#: ../panel-plugin/plugin.cpp:401
 msgid "translator-credits"
 msgstr "Patrik Nilsson <translation@hembas.se>\nLuna Jernberg <droidbittin@gmail.com>"

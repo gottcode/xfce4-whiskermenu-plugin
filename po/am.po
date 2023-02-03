@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-01 07:54-0500\n"
+"POT-Creation-Date: 2023-02-02 18:19-0500\n"
 "PO-Revision-Date: 2018-05-01 14:33+0000\n"
 "Last-Translator: samson <sambelet@yahoo.com>\n"
 "Language-Team: Amharic (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/am/)\n"
@@ -39,7 +39,7 @@ msgstr "ወደ ክፍል መጨመሪያ"
 msgid "All Applications"
 msgstr "ሁሉም ፕሮግራሞች"
 
-#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/plugin.cpp:396
 msgid "Alternate application launcher for Xfce"
 msgstr "አማራጭ መተግበሪያ ማስጀመሪያ ለ Xfce"
 
@@ -88,11 +88,16 @@ msgstr "ት_እዛዝ:"
 msgid "Categ_ory icon size:"
 msgstr "የ ምድ_ብ ምልክት መጠን:"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Choose which menu to popup by instance ID"
+msgstr ""
+
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
 msgstr "በ ቅርብ የተጠቀሙትን ማጽጃ"
 
-#: ../panel-plugin/plugin.cpp:398
+#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Copyright © 2013-2023 Graeme Gott"
 
@@ -261,6 +266,10 @@ msgstr "የ ክፍል ቁልፍ"
 msgid "Pattern"
 msgstr "ድግግሞሽ"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+msgid "Popup menu at current mouse position"
+msgstr ""
+
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
 msgstr "የ _መፈለጊያ ቦታ ማስገቢያ ከ ክፍል ቁልፍ አጠገብ "
@@ -276,6 +285,14 @@ msgstr ""
 #: ../panel-plugin/settings-dialog.cpp:615
 msgid "Position commands next to search _entry"
 msgstr "የ ትእዛዝ ቦታ ከ መፈለጊያ  አጠገብ _ማስገቢያ"
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+msgid "Print available menu instance IDs"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+msgid "Print version information and exit"
+msgstr "የ እትም መረጃ ማተሚያ እና መውጫ"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
@@ -436,9 +453,7 @@ msgstr "አርእስት"
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
-msgid ""
-"To unhide it you have to manually remove the file \"%s\" or open the file "
-"and remove the line \"%s\"."
+msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
 msgstr ""
 
 #: ../panel-plugin/settings.cpp:140
@@ -446,15 +461,15 @@ msgstr ""
 msgid "Turning off computer in %d seconds."
 msgstr "ኮምፒዩተሩን ማጥፋት ይፈልጋሉ በ %d ሰከንዶች"
 
-#: ../panel-plugin/page.cpp:557
+#: ../panel-plugin/page.cpp:598
 msgid "Unable to add launcher to desktop."
 msgstr "ወደ ዴስክቶፕ ማስጀመሪያ መጨመር አልተቻለም"
 
-#: ../panel-plugin/page.cpp:595 ../panel-plugin/page.cpp:604
+#: ../panel-plugin/page.cpp:643 ../panel-plugin/page.cpp:656
 msgid "Unable to add launcher to panel."
 msgstr "ወደ ክፍል ማስጀመሪያ መጨመር አልተቻለም"
 
-#: ../panel-plugin/page.cpp:624
+#: ../panel-plugin/page.cpp:676
 msgid "Unable to edit launcher."
 msgstr "ማስጀመሪያ ማረም አልተቻለም"
 
@@ -556,6 +571,6 @@ msgstr ""
 msgid "_Title:"
 msgstr "_አርእስት: "
 
-#: ../panel-plugin/plugin.cpp:402
+#: ../panel-plugin/plugin.cpp:401
 msgid "translator-credits"
 msgstr "ምስጋና-ለ ተርጓሚዎች"

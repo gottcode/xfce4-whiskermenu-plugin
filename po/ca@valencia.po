@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-01 07:54-0500\n"
+"POT-Creation-Date: 2023-02-02 18:19-0500\n"
 "PO-Revision-Date: 2017-09-23 02:38+0000\n"
 "Last-Translator: Jose Alfredo Murcia Andrés <joamuran@gmail.com>\n"
 "Language-Team: Catalan (Valencian) (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/ca@valencia/)\n"
@@ -40,7 +40,7 @@ msgstr "Afig al quadre"
 msgid "All Applications"
 msgstr ""
 
-#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/plugin.cpp:396
 msgid "Alternate application launcher for Xfce"
 msgstr "Accés directe a aplicacions alternatiu per a l'Xfce"
 
@@ -89,11 +89,16 @@ msgstr "_Ordre:"
 msgid "Categ_ory icon size:"
 msgstr "Mida de les icones de les categ_ories:"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Choose which menu to popup by instance ID"
+msgstr ""
+
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
 msgstr "Neteja els elements recents"
 
-#: ../panel-plugin/plugin.cpp:398
+#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Copyright © 2013-2023 Graeme Gott"
 
@@ -262,6 +267,10 @@ msgstr "Botó del quadre"
 msgid "Pattern"
 msgstr "Patró"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+msgid "Popup menu at current mouse position"
+msgstr ""
+
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
 msgstr "_Situa el quadre de cerca al costat del botó del quadre"
@@ -277,6 +286,14 @@ msgstr ""
 #: ../panel-plugin/settings-dialog.cpp:615
 msgid "Position commands next to search _entry"
 msgstr "S_itua les ordres al costat del quadre de cerca"
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+msgid "Print available menu instance IDs"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+msgid "Print version information and exit"
+msgstr ""
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
@@ -437,9 +454,7 @@ msgstr "Títol"
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
-msgid ""
-"To unhide it you have to manually remove the file \"%s\" or open the file "
-"and remove the line \"%s\"."
+msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
 msgstr ""
 
 #: ../panel-plugin/settings.cpp:140
@@ -447,15 +462,15 @@ msgstr ""
 msgid "Turning off computer in %d seconds."
 msgstr ""
 
-#: ../panel-plugin/page.cpp:557
+#: ../panel-plugin/page.cpp:598
 msgid "Unable to add launcher to desktop."
 msgstr "No s’ha pogut afegir a l'escriptori l'accés directe."
 
-#: ../panel-plugin/page.cpp:595 ../panel-plugin/page.cpp:604
+#: ../panel-plugin/page.cpp:643 ../panel-plugin/page.cpp:656
 msgid "Unable to add launcher to panel."
 msgstr "No s’ha pogut afegir al quadre l'accés directe."
 
-#: ../panel-plugin/page.cpp:624
+#: ../panel-plugin/page.cpp:676
 msgid "Unable to edit launcher."
 msgstr "No s'ha pogut editar el carregador"
 
@@ -557,6 +572,6 @@ msgstr ""
 msgid "_Title:"
 msgstr "_Títol:"
 
-#: ../panel-plugin/plugin.cpp:402
+#: ../panel-plugin/plugin.cpp:401
 msgid "translator-credits"
 msgstr "Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2013–2016\nRobert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016\nOriol Fernandez, 2013"

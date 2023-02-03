@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-01 07:54-0500\n"
+"POT-Creation-Date: 2023-02-02 18:19-0500\n"
 "PO-Revision-Date: 2021-03-15 20:04+0000\n"
 "Last-Translator: Ammuu5\n"
 "Language-Team: Finnish (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/fi/)\n"
@@ -45,7 +45,7 @@ msgstr "Lisää paneeliin"
 msgid "All Applications"
 msgstr "Kaikki sovellukset"
 
-#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/plugin.cpp:396
 msgid "Alternate application launcher for Xfce"
 msgstr "Vaihtoehtoinen sovellusten käynnistin Xfce:lle"
 
@@ -94,11 +94,16 @@ msgstr "K_omento:"
 msgid "Categ_ory icon size:"
 msgstr "Kateg_orian kuvakkeen koko:"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Choose which menu to popup by instance ID"
+msgstr ""
+
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
 msgstr "Pyyhi viimeksi käytetyt"
 
-#: ../panel-plugin/plugin.cpp:398
+#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Tekijänoikeudet © 2013-2023 Graeme Gott"
 
@@ -267,6 +272,10 @@ msgstr "Paneelipainike"
 msgid "Pattern"
 msgstr "Hakulauseke"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+msgid "Popup menu at current mouse position"
+msgstr "Avaa valikko osoittimen nykyisessä sijainnissa"
+
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
 msgstr "Sijoita _hakukenttä paneelipainikkeen viereen."
@@ -282,6 +291,14 @@ msgstr ""
 #: ../panel-plugin/settings-dialog.cpp:615
 msgid "Position commands next to search _entry"
 msgstr "Sijoita komennot _hakukentän viereen"
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+msgid "Print available menu instance IDs"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+msgid "Print version information and exit"
+msgstr "Näytä versiotiedot ja poistu"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
@@ -442,9 +459,7 @@ msgstr "Otsikko"
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
-msgid ""
-"To unhide it you have to manually remove the file \"%s\" or open the file "
-"and remove the line \"%s\"."
+msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
 msgstr "Poistaaksesi piilotuksen, sinun on poistettava tiedosto \"%s\" manuaalisesti tai avata tiedosto ja poistaa rivi \"%s\"."
 
 #: ../panel-plugin/settings.cpp:140
@@ -452,15 +467,15 @@ msgstr "Poistaaksesi piilotuksen, sinun on poistettava tiedosto \"%s\" manuaalis
 msgid "Turning off computer in %d seconds."
 msgstr "Tietokone sammutetaan %d sekunnin kuluttua."
 
-#: ../panel-plugin/page.cpp:557
+#: ../panel-plugin/page.cpp:598
 msgid "Unable to add launcher to desktop."
 msgstr "Työpöydälle ei voitu luoda käynnistintä."
 
-#: ../panel-plugin/page.cpp:595 ../panel-plugin/page.cpp:604
+#: ../panel-plugin/page.cpp:643 ../panel-plugin/page.cpp:656
 msgid "Unable to add launcher to panel."
 msgstr "Paneeliin ei voitu luoda käynnistintä."
 
-#: ../panel-plugin/page.cpp:624
+#: ../panel-plugin/page.cpp:676
 msgid "Unable to edit launcher."
 msgstr "Käynnistintä ei voitu muokata."
 
@@ -562,6 +577,6 @@ msgstr "_Asetustenhallinta"
 msgid "_Title:"
 msgstr "_Otsikko:"
 
-#: ../panel-plugin/plugin.cpp:402
+#: ../panel-plugin/plugin.cpp:401
 msgid "translator-credits"
 msgstr "Pasi Lallinaho <pasi@shimmerproject.org>"

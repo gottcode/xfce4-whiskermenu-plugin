@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-01 07:54-0500\n"
+"POT-Creation-Date: 2023-02-02 18:19-0500\n"
 "PO-Revision-Date: 2022-01-03 10:01+0000\n"
 "Last-Translator: Slavko <linux@slavino.sk>\n"
 "Language-Team: Slovak (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/sk/)\n"
@@ -40,7 +40,7 @@ msgstr "Pridať do panela"
 msgid "All Applications"
 msgstr "Všetky aplikácie"
 
-#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/plugin.cpp:396
 msgid "Alternate application launcher for Xfce"
 msgstr "Alternatívny spúšťač aplikácií pre XFCE"
 
@@ -89,11 +89,16 @@ msgstr "P_ríkaz:"
 msgid "Categ_ory icon size:"
 msgstr "Veľkosť ikony _kategorie"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Choose which menu to popup by instance ID"
+msgstr ""
+
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
 msgstr "Vymazať nedávne"
 
-#: ../panel-plugin/plugin.cpp:398
+#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Copyright © 2013-2023 Graeme Gott"
 
@@ -262,6 +267,10 @@ msgstr "Tlačidlo panela"
 msgid "Pattern"
 msgstr "Vzor"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+msgid "Popup menu at current mouse position"
+msgstr "Ponuka v mieste kurzora myši"
+
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
 msgstr "Umiestniť položku hľadať vedľa tlačidla panela"
@@ -277,6 +286,14 @@ msgstr "Pozícia kategórií _horizontálne"
 #: ../panel-plugin/settings-dialog.cpp:615
 msgid "Position commands next to search _entry"
 msgstr "Umiestniť príkazy _vedľa položky hľadať"
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+msgid "Print available menu instance IDs"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+msgid "Print version information and exit"
+msgstr "Zobrazí informáciu o verzii a ukončí sa"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
@@ -437,9 +454,7 @@ msgstr "Názov"
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
-msgid ""
-"To unhide it you have to manually remove the file \"%s\" or open the file "
-"and remove the line \"%s\"."
+msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
 msgstr "Na opätovné zobrazenie musíte manuálne odstrániť súbor „%s” alebo ho otvoriť a odstrániť riadok „%s”."
 
 #: ../panel-plugin/settings.cpp:140
@@ -447,15 +462,15 @@ msgstr "Na opätovné zobrazenie musíte manuálne odstrániť súbor „%s” a
 msgid "Turning off computer in %d seconds."
 msgstr "Vypnutie počítača za%d sekúnd."
 
-#: ../panel-plugin/page.cpp:557
+#: ../panel-plugin/page.cpp:598
 msgid "Unable to add launcher to desktop."
 msgstr "Nemožno pridať spúšťač na plochu"
 
-#: ../panel-plugin/page.cpp:595 ../panel-plugin/page.cpp:604
+#: ../panel-plugin/page.cpp:643 ../panel-plugin/page.cpp:656
 msgid "Unable to add launcher to panel."
 msgstr "Nemožno pridať spúšťač do panela"
 
-#: ../panel-plugin/page.cpp:624
+#: ../panel-plugin/page.cpp:676
 msgid "Unable to edit launcher."
 msgstr "Nemožno upraviť spúšťač"
 
@@ -557,6 +572,6 @@ msgstr "_Správca nastavení"
 msgid "_Title:"
 msgstr "_Názov:"
 
-#: ../panel-plugin/plugin.cpp:402
+#: ../panel-plugin/plugin.cpp:401
 msgid "translator-credits"
 msgstr "Slavko <linux@slavino.sk>"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-01 07:54-0500\n"
+"POT-Creation-Date: 2023-02-02 18:19-0500\n"
 "PO-Revision-Date: 2013-06-20 11:26+0000\n"
 "Last-Translator: 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2015-2017,2019,2022\n"
 "Language-Team: Korean (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/ko/)\n"
@@ -41,7 +41,7 @@ msgstr "패널에 추가"
 msgid "All Applications"
 msgstr "모든 프로그램"
 
-#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/plugin.cpp:396
 msgid "Alternate application launcher for Xfce"
 msgstr "Xfce 용 다른 런처 프로그램"
 
@@ -90,11 +90,16 @@ msgstr "명령어:"
 msgid "Categ_ory icon size:"
 msgstr "카테고리 아이콘 크기:"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Choose which menu to popup by instance ID"
+msgstr ""
+
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
 msgstr "최근 사용 기록 지우기"
 
-#: ../panel-plugin/plugin.cpp:398
+#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Copyright © 2013-2023 Graeme Gott"
 
@@ -263,6 +268,10 @@ msgstr "패널 버튼"
 msgid "Pattern"
 msgstr "패턴"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+msgid "Popup menu at current mouse position"
+msgstr "현재 마우스 포지션에 메뉴 띄우기"
+
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
 msgstr "패널 버튼 옆에 올 검색 창 입력 위치"
@@ -278,6 +287,14 @@ msgstr "위치 카테고리 가로(_H)"
 #: ../panel-plugin/settings-dialog.cpp:615
 msgid "Position commands next to search _entry"
 msgstr "검색 창 옆에 올 명령어 위치"
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+msgid "Print available menu instance IDs"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+msgid "Print version information and exit"
+msgstr "버전 정보를 출력하고 끝내기"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
@@ -438,9 +455,7 @@ msgstr "제목"
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
-msgid ""
-"To unhide it you have to manually remove the file \"%s\" or open the file "
-"and remove the line \"%s\"."
+msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
 msgstr "숨기기를 해제하려면 \"%s\" 파일을 수동으로 제거하거나 파일을 열고 \"%s\"줄을 제거해야 합니다."
 
 #: ../panel-plugin/settings.cpp:140
@@ -448,15 +463,15 @@ msgstr "숨기기를 해제하려면 \"%s\" 파일을 수동으로 제거하거�
 msgid "Turning off computer in %d seconds."
 msgstr "%d초 안에 컴퓨터 끄기."
 
-#: ../panel-plugin/page.cpp:557
+#: ../panel-plugin/page.cpp:598
 msgid "Unable to add launcher to desktop."
 msgstr "데스크톱에 런처를 더할 수 없습니다."
 
-#: ../panel-plugin/page.cpp:595 ../panel-plugin/page.cpp:604
+#: ../panel-plugin/page.cpp:643 ../panel-plugin/page.cpp:656
 msgid "Unable to add launcher to panel."
 msgstr "패널에 런처를 더할 수 없습니다."
 
-#: ../panel-plugin/page.cpp:624
+#: ../panel-plugin/page.cpp:676
 msgid "Unable to edit launcher."
 msgstr "런처를 편집할 수 없습니다."
 
@@ -558,6 +573,6 @@ msgstr "설정 관리자(_S)"
 msgid "_Title:"
 msgstr "제목"
 
-#: ../panel-plugin/plugin.cpp:402
+#: ../panel-plugin/plugin.cpp:401
 msgid "translator-credits"
 msgstr "번역가 정보"

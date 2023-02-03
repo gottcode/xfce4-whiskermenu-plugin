@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-01 07:54-0500\n"
+"POT-Creation-Date: 2023-02-02 18:19-0500\n"
 "PO-Revision-Date: 2013-06-20 11:26+0000\n"
 "Last-Translator: Moo, 2014-2023\n"
 "Language-Team: Lithuanian (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/lt/)\n"
@@ -39,7 +39,7 @@ msgstr "Pridėti į skydelį"
 msgid "All Applications"
 msgstr "Visos programos"
 
-#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/plugin.cpp:396
 msgid "Alternate application launcher for Xfce"
 msgstr "Alternatyvus programų leistukas Xfce darbalaukio aplinkai"
 
@@ -88,11 +88,16 @@ msgstr "K_omanda:"
 msgid "Categ_ory icon size:"
 msgstr "Kategori_jų piktogramų dydis:"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Choose which menu to popup by instance ID"
+msgstr ""
+
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
 msgstr "Išvalyti neseniai naudotas"
 
-#: ../panel-plugin/plugin.cpp:398
+#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Autorių teisės © 2013–2023 Graeme Gott"
 
@@ -261,6 +266,10 @@ msgstr "Skydelio mygtukas"
 msgid "Pattern"
 msgstr "Šablonas"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+msgid "Popup menu at current mouse position"
+msgstr "Iškylantysis meniu esamoje pelės pozicijoje"
+
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
 msgstr "Išdė_styti paieškos lauką šalia skydelio mygtuko"
@@ -276,6 +285,14 @@ msgstr "Išdėstyti kategorijas _horizontaliai"
 #: ../panel-plugin/settings-dialog.cpp:615
 msgid "Position commands next to search _entry"
 msgstr "Išdės_tyti komandas šalia paieškos lauko"
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+msgid "Print available menu instance IDs"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+msgid "Print version information and exit"
+msgstr "Rodyti versijos informaciją ir išeiti"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
@@ -436,9 +453,7 @@ msgstr "Užrašą"
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
-msgid ""
-"To unhide it you have to manually remove the file \"%s\" or open the file "
-"and remove the line \"%s\"."
+msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
 msgstr "Norėdami nustoti slėpti, turite rankiniu būdu pašalinti failą „%s“ arba atverti failą ir pašalinti eilutę „%s“."
 
 #: ../panel-plugin/settings.cpp:140
@@ -446,15 +461,15 @@ msgstr "Norėdami nustoti slėpti, turite rankiniu būdu pašalinti failą „%s
 msgid "Turning off computer in %d seconds."
 msgstr "Kompiuteris išjungiamas po %d sekundžių."
 
-#: ../panel-plugin/page.cpp:557
+#: ../panel-plugin/page.cpp:598
 msgid "Unable to add launcher to desktop."
 msgstr "Nepavyko pridėti leistuko į darbalaukį."
 
-#: ../panel-plugin/page.cpp:595 ../panel-plugin/page.cpp:604
+#: ../panel-plugin/page.cpp:643 ../panel-plugin/page.cpp:656
 msgid "Unable to add launcher to panel."
 msgstr "Nepavyko pridėti leistuko į skydelį."
 
-#: ../panel-plugin/page.cpp:624
+#: ../panel-plugin/page.cpp:676
 msgid "Unable to edit launcher."
 msgstr "Nepavyko redaguoti leistuko."
 
@@ -556,6 +571,6 @@ msgstr "Nu_statymų tvarkytuvė"
 msgid "_Title:"
 msgstr "Už_rašas:"
 
-#: ../panel-plugin/plugin.cpp:402
+#: ../panel-plugin/plugin.cpp:401
 msgid "translator-credits"
 msgstr "Moo"

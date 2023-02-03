@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-01 07:54-0500\n"
+"POT-Creation-Date: 2023-02-02 18:19-0500\n"
 "PO-Revision-Date: 2021-03-31 04:53+0000\n"
 "Last-Translator: Daniel Muñiz Fontoira <dani@damufo.com>\n"
 "Language-Team: Galician (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/gl/)\n"
@@ -39,7 +39,7 @@ msgstr "Engadir ao panel"
 msgid "All Applications"
 msgstr "Todas as aplicacións"
 
-#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/plugin.cpp:396
 msgid "Alternate application launcher for Xfce"
 msgstr "Iniciador de aplicacións alternativo para o Xfce"
 
@@ -88,11 +88,16 @@ msgstr "_Orde:"
 msgid "Categ_ory icon size:"
 msgstr "Tamaño da icona da categoría:"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Choose which menu to popup by instance ID"
+msgstr ""
+
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
 msgstr "Limpar os elementos recentes"
 
-#: ../panel-plugin/plugin.cpp:398
+#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Copyright © 2013-2023 Graeme Gott"
 
@@ -261,6 +266,10 @@ msgstr "Botón do panel"
 msgid "Pattern"
 msgstr "Padrón"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+msgid "Popup menu at current mouse position"
+msgstr "Amosar o menú na posición actual do rato"
+
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
 msgstr "Situar o cadro de busca a carón do botón do panel"
@@ -276,6 +285,14 @@ msgstr ""
 #: ../panel-plugin/settings-dialog.cpp:615
 msgid "Position commands next to search _entry"
 msgstr "Situar as ordes a carón do cadro de busca"
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+msgid "Print available menu instance IDs"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+msgid "Print version information and exit"
+msgstr "Amosar a información da versión e saír"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
@@ -436,9 +453,7 @@ msgstr "Título"
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
-msgid ""
-"To unhide it you have to manually remove the file \"%s\" or open the file "
-"and remove the line \"%s\"."
+msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
 msgstr "Para desagochar ten que eliminar manualmente o ficheiro «%s» ou abrir o ficheiro e eliminar a liña «%s»."
 
 #: ../panel-plugin/settings.cpp:140
@@ -446,15 +461,15 @@ msgstr "Para desagochar ten que eliminar manualmente o ficheiro «%s» ou abrir 
 msgid "Turning off computer in %d seconds."
 msgstr "A computadora apagarase en %d segundos."
 
-#: ../panel-plugin/page.cpp:557
+#: ../panel-plugin/page.cpp:598
 msgid "Unable to add launcher to desktop."
 msgstr "Non se puido engadir o iniciador no escritorio."
 
-#: ../panel-plugin/page.cpp:595 ../panel-plugin/page.cpp:604
+#: ../panel-plugin/page.cpp:643 ../panel-plugin/page.cpp:656
 msgid "Unable to add launcher to panel."
 msgstr "Non se puido engadir o iniciador no panel."
 
-#: ../panel-plugin/page.cpp:624
+#: ../panel-plugin/page.cpp:676
 msgid "Unable to edit launcher."
 msgstr "Non se puido modificar o iniciador."
 
@@ -556,6 +571,6 @@ msgstr "Xestor _da configuración"
 msgid "_Title:"
 msgstr "_Título:"
 
-#: ../panel-plugin/plugin.cpp:402
+#: ../panel-plugin/plugin.cpp:401
 msgid "translator-credits"
 msgstr "damufo <dani@damufo.com>"

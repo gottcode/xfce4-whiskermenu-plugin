@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-01 07:54-0500\n"
+"POT-Creation-Date: 2023-02-02 18:19-0500\n"
 "PO-Revision-Date: 2013-06-20 11:26+0000\n"
 "Last-Translator: beriain, 2021-2022\n"
 "Language-Team: Basque (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/eu/)\n"
@@ -41,7 +41,7 @@ msgstr "Panelera gehitu"
 msgid "All Applications"
 msgstr "Aplikazio guztiak"
 
-#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/plugin.cpp:396
 msgid "Alternate application launcher for Xfce"
 msgstr "Xfce-rentzako ordezko aplikazio abiarazlea"
 
@@ -90,11 +90,16 @@ msgstr "K_omandoa:"
 msgid "Categ_ory icon size:"
 msgstr "Kateg_orien ikonoen neurria:"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Choose which menu to popup by instance ID"
+msgstr ""
+
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
 msgstr "Erabilitako azkenak garbitu"
 
-#: ../panel-plugin/plugin.cpp:398
+#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Copyright © 2013-2023 Graeme Gott"
 
@@ -263,6 +268,10 @@ msgstr "Paneleko botoia"
 msgid "Pattern"
 msgstr "Patroia"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+msgid "Popup menu at current mouse position"
+msgstr "Bistarazi menua saguaren uneko kokalekuan"
+
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
 msgstr "Bilaketa eremua panelaren botoitik hurbil kokatu"
@@ -278,6 +287,14 @@ msgstr "Kategoriak _horizontalki kokatu"
 #: ../panel-plugin/settings-dialog.cpp:615
 msgid "Position commands next to search _entry"
 msgstr "Komandoak bilaketa eremutik hurbil kokatu"
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+msgid "Print available menu instance IDs"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+msgid "Print version information and exit"
+msgstr "Inprimatu bertsio argibideak eta irten"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
@@ -438,9 +455,7 @@ msgstr "Izenburua"
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
-msgid ""
-"To unhide it you have to manually remove the file \"%s\" or open the file "
-"and remove the line \"%s\"."
+msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
 msgstr "Berriro ikusteko \"%s\" fitxategia eskuz ezabatu edo fitxategia ireki eta \"%s\" lerroa ezabatu behar duzu."
 
 #: ../panel-plugin/settings.cpp:140
@@ -448,15 +463,15 @@ msgstr "Berriro ikusteko \"%s\" fitxategia eskuz ezabatu edo fitxategia ireki et
 msgid "Turning off computer in %d seconds."
 msgstr "Ordenagailua %d segundotan itzaliko da."
 
-#: ../panel-plugin/page.cpp:557
+#: ../panel-plugin/page.cpp:598
 msgid "Unable to add launcher to desktop."
 msgstr "Ezin izan da abiarazlea mahaigainera gehitu."
 
-#: ../panel-plugin/page.cpp:595 ../panel-plugin/page.cpp:604
+#: ../panel-plugin/page.cpp:643 ../panel-plugin/page.cpp:656
 msgid "Unable to add launcher to panel."
 msgstr "Ezin izan da abiarazlea panelera gehitu."
 
-#: ../panel-plugin/page.cpp:624
+#: ../panel-plugin/page.cpp:676
 msgid "Unable to edit launcher."
 msgstr "Ezin izan da abiarazlea editatu."
 
@@ -558,6 +573,6 @@ msgstr "Ezarpenen kudeatzailea"
 msgid "_Title:"
 msgstr "_Izenburua:"
 
-#: ../panel-plugin/plugin.cpp:402
+#: ../panel-plugin/plugin.cpp:401
 msgid "translator-credits"
 msgstr "itzultzailearen-kredituak"

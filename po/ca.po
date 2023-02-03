@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-01 07:54-0500\n"
+"POT-Creation-Date: 2023-02-02 18:19-0500\n"
 "PO-Revision-Date: 2022-02-20 14:26+0000\n"
 "Last-Translator: Davidmp <medipas@gmail.com>\n"
 "Language-Team: Catalan (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/ca/)\n"
@@ -48,7 +48,7 @@ msgstr "Afegeix al plafó"
 msgid "All Applications"
 msgstr "Totes les aplicacions"
 
-#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/plugin.cpp:396
 msgid "Alternate application launcher for Xfce"
 msgstr "Llançador d’aplicacions alternatiu per a Xfce"
 
@@ -97,11 +97,16 @@ msgstr "_Ordre:"
 msgid "Categ_ory icon size:"
 msgstr "Mida de les icones de les categ_ories:"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Choose which menu to popup by instance ID"
+msgstr ""
+
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
 msgstr "Neteja els elements recents"
 
-#: ../panel-plugin/plugin.cpp:398
+#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Drets d'autor © 2013-2023 Graeme Gott"
 
@@ -270,6 +275,10 @@ msgstr "Botó del plafó"
 msgid "Pattern"
 msgstr "Patró"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+msgid "Popup menu at current mouse position"
+msgstr "Menú emergent en la posició actual del ratolí"
+
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
 msgstr "_Situa el quadre de cerca al costat del botó del plafó"
@@ -285,6 +294,14 @@ msgstr "Posiciona les categories _horitzontalment"
 #: ../panel-plugin/settings-dialog.cpp:615
 msgid "Position commands next to search _entry"
 msgstr "S_itua les ordres al costat del quadre de cerca"
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+msgid "Print available menu instance IDs"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+msgid "Print version information and exit"
+msgstr "Imprimeix la informació de la versió i surt"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
@@ -445,9 +462,7 @@ msgstr "Títol"
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
-msgid ""
-"To unhide it you have to manually remove the file \"%s\" or open the file "
-"and remove the line \"%s\"."
+msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
 msgstr "Per amagar-ho, heu de suprimir manualment el fitxer %s o obrir-lo i suprimir-ne la línia %s."
 
 #: ../panel-plugin/settings.cpp:140
@@ -455,15 +470,15 @@ msgstr "Per amagar-ho, heu de suprimir manualment el fitxer %s o obrir-lo i supr
 msgid "Turning off computer in %d seconds."
 msgstr "S'apagarà l'ordinador d'aquí a %d segons."
 
-#: ../panel-plugin/page.cpp:557
+#: ../panel-plugin/page.cpp:598
 msgid "Unable to add launcher to desktop."
 msgstr "No es pot afegir el llançador a l'escriptori."
 
-#: ../panel-plugin/page.cpp:595 ../panel-plugin/page.cpp:604
+#: ../panel-plugin/page.cpp:643 ../panel-plugin/page.cpp:656
 msgid "Unable to add launcher to panel."
 msgstr "No es pot afegir el llançador al plafó."
 
-#: ../panel-plugin/page.cpp:624
+#: ../panel-plugin/page.cpp:676
 msgid "Unable to edit launcher."
 msgstr "No es pot editar el llançador."
 
@@ -565,6 +580,6 @@ msgstr "Ge_stor de paràmetres"
 msgid "_Title:"
 msgstr "_Títol:"
 
-#: ../panel-plugin/plugin.cpp:402
+#: ../panel-plugin/plugin.cpp:401
 msgid "translator-credits"
 msgstr "Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2013-2021\nRobert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016-2018\nDavid Medina <opensusecatala@gmail.com>, 2017-2018\nOriol Fernandez, 2013\nMarc Riera <marcriera@softcatala.org>, 2020"

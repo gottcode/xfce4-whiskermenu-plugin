@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-01 07:54-0500\n"
+"POT-Creation-Date: 2023-02-02 18:19-0500\n"
 "PO-Revision-Date: 2013-06-20 11:26+0000\n"
 "Last-Translator: Dejweed, 2022\n"
 "Language-Team: Slovenian (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/sl/)\n"
@@ -44,7 +44,7 @@ msgstr "Dodaj v pult"
 msgid "All Applications"
 msgstr "Vsi programi"
 
-#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/plugin.cpp:396
 msgid "Alternate application launcher for Xfce"
 msgstr "Alternativni zaganjalnik programov za Xfce"
 
@@ -93,11 +93,16 @@ msgstr "_Ukaz:"
 msgid "Categ_ory icon size:"
 msgstr "Velikost ikon kateg_orij"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Choose which menu to popup by instance ID"
+msgstr ""
+
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
 msgstr "Počisti nedavno uporabljene"
 
-#: ../panel-plugin/plugin.cpp:398
+#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Copyright © 2013-2023 Graeme Gott"
 
@@ -266,6 +271,10 @@ msgstr "Gumb pulta"
 msgid "Pattern"
 msgstr "Vzorec"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+msgid "Popup menu at current mouse position"
+msgstr "Pojavni meni pri trenutnem položaju miške"
+
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
 msgstr "Postavi is_kalno polje k gumbu za prikaz"
@@ -281,6 +290,14 @@ msgstr "Postavi kategorije _vodoravno"
 #: ../panel-plugin/settings-dialog.cpp:615
 msgid "Position commands next to search _entry"
 msgstr "Postavi d_ejanja ob iskalno polje"
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+msgid "Print available menu instance IDs"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+msgid "Print version information and exit"
+msgstr "Izpiši informacijo o verziji in končaj"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
@@ -441,9 +458,7 @@ msgstr "Naziv"
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
-msgid ""
-"To unhide it you have to manually remove the file \"%s\" or open the file "
-"and remove the line \"%s\"."
+msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
 msgstr "Za ponoven prikaz morate ročno odstraniti datoteko \"%s\" oz. odpreti to datoteko in odstraniti vrstico \"%s\"."
 
 #: ../panel-plugin/settings.cpp:140
@@ -451,15 +466,15 @@ msgstr "Za ponoven prikaz morate ročno odstraniti datoteko \"%s\" oz. odpreti t
 msgid "Turning off computer in %d seconds."
 msgstr "Zaustavljanje sistema v %d sekundah."
 
-#: ../panel-plugin/page.cpp:557
+#: ../panel-plugin/page.cpp:598
 msgid "Unable to add launcher to desktop."
 msgstr "Zaganjalnika ni bilo mogoče dodati na namizje."
 
-#: ../panel-plugin/page.cpp:595 ../panel-plugin/page.cpp:604
+#: ../panel-plugin/page.cpp:643 ../panel-plugin/page.cpp:656
 msgid "Unable to add launcher to panel."
 msgstr "Zaganjalnika ni bilo mogoče dodati v pult."
 
-#: ../panel-plugin/page.cpp:624
+#: ../panel-plugin/page.cpp:676
 msgid "Unable to edit launcher."
 msgstr "Zaganjalnika ni mogoče urediti."
 
@@ -561,6 +576,6 @@ msgstr "Nastavitve"
 msgid "_Title:"
 msgstr "_Naziv:"
 
-#: ../panel-plugin/plugin.cpp:402
+#: ../panel-plugin/plugin.cpp:401
 msgid "translator-credits"
 msgstr "seznam-prevajalcev"

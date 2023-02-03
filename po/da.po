@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-01 07:54-0500\n"
+"POT-Creation-Date: 2023-02-02 18:19-0500\n"
 "PO-Revision-Date: 2022-02-19 23:31+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/da/)\n"
@@ -41,7 +41,7 @@ msgstr "Tilføj til panel"
 msgid "All Applications"
 msgstr "Alle programmer"
 
-#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/plugin.cpp:396
 msgid "Alternate application launcher for Xfce"
 msgstr "Alternativ programopstarter til Xfce"
 
@@ -90,11 +90,16 @@ msgstr "K_ommando:"
 msgid "Categ_ory icon size:"
 msgstr "Ikonstørrelse for _kategori:"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Choose which menu to popup by instance ID"
+msgstr ""
+
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
 msgstr "Nulstil senest anvendte"
 
-#: ../panel-plugin/plugin.cpp:398
+#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Ophavsret © 2013-2023 Graeme Gott"
 
@@ -263,6 +268,10 @@ msgstr "Panelknap"
 msgid "Pattern"
 msgstr "Mønster"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+msgid "Popup menu at current mouse position"
+msgstr "Pop op-menu ved nuværende museposition"
+
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
 msgstr "Placer _søgeindtastning ved siden af panelknap"
@@ -278,6 +287,14 @@ msgstr "Placer kategorier _vandret"
 #: ../panel-plugin/settings-dialog.cpp:615
 msgid "Position commands next to search _entry"
 msgstr "Placer kommandoer ved siden af søge_indtastning"
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+msgid "Print available menu instance IDs"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+msgid "Print version information and exit"
+msgstr "Udskriv versionsinformation og afslut"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
@@ -438,9 +455,7 @@ msgstr "Titel"
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
-msgid ""
-"To unhide it you have to manually remove the file \"%s\" or open the file "
-"and remove the line \"%s\"."
+msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
 msgstr "For at vise det skal du fjern filen \"%s\" manuelt eller åbne filen og fjerne linjen \"%s\"."
 
 #: ../panel-plugin/settings.cpp:140
@@ -448,15 +463,15 @@ msgstr "For at vise det skal du fjern filen \"%s\" manuelt eller åbne filen og 
 msgid "Turning off computer in %d seconds."
 msgstr "Computeren slukkes om %d sekunder."
 
-#: ../panel-plugin/page.cpp:557
+#: ../panel-plugin/page.cpp:598
 msgid "Unable to add launcher to desktop."
 msgstr "Kan ikke tilføje opstarter til skrivebordet."
 
-#: ../panel-plugin/page.cpp:595 ../panel-plugin/page.cpp:604
+#: ../panel-plugin/page.cpp:643 ../panel-plugin/page.cpp:656
 msgid "Unable to add launcher to panel."
 msgstr "Kan ikke tilføje opstarter til panelet."
 
-#: ../panel-plugin/page.cpp:624
+#: ../panel-plugin/page.cpp:676
 msgid "Unable to edit launcher."
 msgstr "Kan ikke redigere opstarter."
 
@@ -558,6 +573,6 @@ msgstr "_Indstillingshåndtering"
 msgid "_Title:"
 msgstr "_Titel:"
 
-#: ../panel-plugin/plugin.cpp:402
+#: ../panel-plugin/plugin.cpp:401
 msgid "translator-credits"
 msgstr "scootergrisen\nEpsilonDK"

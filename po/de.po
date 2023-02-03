@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-01 07:54-0500\n"
+"POT-Creation-Date: 2023-02-02 18:19-0500\n"
 "PO-Revision-Date: 2022-02-20 10:20+0000\n"
 "Last-Translator: Andreas Eitel <github-aneitel@online.de>\n"
 "Language-Team: German (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/de/)\n"
@@ -47,7 +47,7 @@ msgstr "Zur Leiste hinzufügen"
 msgid "All Applications"
 msgstr "Alle Anwendungen"
 
-#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/plugin.cpp:396
 msgid "Alternate application launcher for Xfce"
 msgstr "Alternativer Anwendungsstarter für Xfce"
 
@@ -96,11 +96,16 @@ msgstr "B_efehl:"
 msgid "Categ_ory icon size:"
 msgstr "Symbolgröße der _Kategorien:"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Choose which menu to popup by instance ID"
+msgstr ""
+
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
 msgstr "»Zuletzt verwendet« leeren"
 
-#: ../panel-plugin/plugin.cpp:398
+#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Urheberrecht © 2013-2023 Graeme Gott"
 
@@ -269,6 +274,10 @@ msgstr "Leistenknopf"
 msgid "Pattern"
 msgstr "Muster"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+msgid "Popup menu at current mouse position"
+msgstr "Menü an aktueller Position des Mauszeigers öffnen"
+
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
 msgstr "S_ucheintrag beim Leistenknopf positionieren"
@@ -284,6 +293,14 @@ msgstr "Kategorien _waagerecht positionieren"
 #: ../panel-plugin/settings-dialog.cpp:615
 msgid "Position commands next to search _entry"
 msgstr "Befehle beim Sucheintrag _positionieren"
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+msgid "Print available menu instance IDs"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+msgid "Print version information and exit"
+msgstr "Versionsinformationen ausgeben und beenden"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
@@ -444,9 +461,7 @@ msgstr "Titel"
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
-msgid ""
-"To unhide it you have to manually remove the file \"%s\" or open the file "
-"and remove the line \"%s\"."
+msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
 msgstr "Um sie wieder einzublenden, müssen Sie die Datei \"%s\" manuell entfernen oder diese Datei öffnen und die Zeile \"%s\" entfernen."
 
 #: ../panel-plugin/settings.cpp:140
@@ -454,15 +469,15 @@ msgstr "Um sie wieder einzublenden, müssen Sie die Datei \"%s\" manuell entfern
 msgid "Turning off computer in %d seconds."
 msgstr "Rechner wird in %d Sekunden heruntergefahren."
 
-#: ../panel-plugin/page.cpp:557
+#: ../panel-plugin/page.cpp:598
 msgid "Unable to add launcher to desktop."
 msgstr "Starter konnte nicht zum Schreibtisch hinzufügt werden."
 
-#: ../panel-plugin/page.cpp:595 ../panel-plugin/page.cpp:604
+#: ../panel-plugin/page.cpp:643 ../panel-plugin/page.cpp:656
 msgid "Unable to add launcher to panel."
 msgstr "Starter konnte nicht zur Leiste hinzufügt werden."
 
-#: ../panel-plugin/page.cpp:624
+#: ../panel-plugin/page.cpp:676
 msgid "Unable to edit launcher."
 msgstr "Starter konnte nicht bearbeitet werden."
 
@@ -564,6 +579,6 @@ msgstr "_Einstellungsverwaltung"
 msgid "_Title:"
 msgstr "_Titel:"
 
-#: ../panel-plugin/plugin.cpp:402
+#: ../panel-plugin/plugin.cpp:401
 msgid "translator-credits"
 msgstr "Übersetzerdanksagungen"

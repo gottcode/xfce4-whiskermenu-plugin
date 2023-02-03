@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-01 07:54-0500\n"
+"POT-Creation-Date: 2023-02-02 18:19-0500\n"
 "PO-Revision-Date: 2021-06-11 09:26+0000\n"
 "Last-Translator: János Czentye <czentye@tmit.bme.hu>\n"
 "Language-Team: Hungarian (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/hu/)\n"
@@ -46,7 +46,7 @@ msgstr "Ikon hozzáadása a tálcához"
 msgid "All Applications"
 msgstr "Összes alkalmazás"
 
-#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/plugin.cpp:396
 msgid "Alternate application launcher for Xfce"
 msgstr "Alternatív alkalmazásindító az Xfce-hez"
 
@@ -95,11 +95,16 @@ msgstr "P_arancs:"
 msgid "Categ_ory icon size:"
 msgstr "_Kategória ikon méret:"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Choose which menu to popup by instance ID"
+msgstr ""
+
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
 msgstr "Előzmények törlése"
 
-#: ../panel-plugin/plugin.cpp:398
+#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Copyright © 2013-2023 Graeme Gott"
 
@@ -268,6 +273,10 @@ msgstr "Panel gomb"
 msgid "Pattern"
 msgstr "Minta"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+msgid "Popup menu at current mouse position"
+msgstr "Menü megjelenítése az aktuális egérpozícióban "
+
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
 msgstr "A _keresőmező elhelyezése a panel gomb mellé"
@@ -283,6 +292,14 @@ msgstr ""
 #: ../panel-plugin/settings-dialog.cpp:615
 msgid "Position commands next to search _entry"
 msgstr "Parancsok elhelyezése a kereső_mező mellé"
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+msgid "Print available menu instance IDs"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+msgid "Print version information and exit"
+msgstr "Verzióinformációk kiírása és kilépés"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
@@ -443,9 +460,7 @@ msgstr "Cím"
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
-msgid ""
-"To unhide it you have to manually remove the file \"%s\" or open the file "
-"and remove the line \"%s\"."
+msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
 msgstr "Elrejtéshez törölje a \"1 %s\" fájlt vagy törölje ki a fájlból a \"1 %s\" sort."
 
 #: ../panel-plugin/settings.cpp:140
@@ -453,15 +468,15 @@ msgstr "Elrejtéshez törölje a \"1 %s\" fájlt vagy törölje ki a fájlból a
 msgid "Turning off computer in %d seconds."
 msgstr "A számítógép kikapcsolása %d másodperc múlva."
 
-#: ../panel-plugin/page.cpp:557
+#: ../panel-plugin/page.cpp:598
 msgid "Unable to add launcher to desktop."
 msgstr "Nem lehet az ikont kirakni az asztalra."
 
-#: ../panel-plugin/page.cpp:595 ../panel-plugin/page.cpp:604
+#: ../panel-plugin/page.cpp:643 ../panel-plugin/page.cpp:656
 msgid "Unable to add launcher to panel."
 msgstr "Nem lehet az ikont kirakni a tálcára."
 
-#: ../panel-plugin/page.cpp:624
+#: ../panel-plugin/page.cpp:676
 msgid "Unable to edit launcher."
 msgstr "Az indító nem szerkeszthető."
 
@@ -563,6 +578,6 @@ msgstr "Beállításkezelő"
 msgid "_Title:"
 msgstr "_Cím:"
 
-#: ../panel-plugin/plugin.cpp:402
+#: ../panel-plugin/plugin.cpp:401
 msgid "translator-credits"
 msgstr "fordítás-érdemek"

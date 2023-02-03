@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-01 07:54-0500\n"
+"POT-Creation-Date: 2023-02-02 18:19-0500\n"
 "PO-Revision-Date: 2021-06-24 09:58+0000\n"
 "Last-Translator: Aryo Kamandanu <novarinoakise@gmail.com>\n"
 "Language-Team: Indonesian (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/id/)\n"
@@ -44,7 +44,7 @@ msgstr "Tambahkan ke Panel"
 msgid "All Applications"
 msgstr "Semua Aplikasi"
 
-#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/plugin.cpp:396
 msgid "Alternate application launcher for Xfce"
 msgstr "Peluncur aplikasi alternatif untuk Xfce"
 
@@ -93,11 +93,16 @@ msgstr "P_erintah:"
 msgid "Categ_ory icon size:"
 msgstr "ukuran ikon Kateg_ory:"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Choose which menu to popup by instance ID"
+msgstr ""
+
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
 msgstr "Bersihkan yang Baru diGunakan"
 
-#: ../panel-plugin/plugin.cpp:398
+#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Hak Cipta © 2013-2023 Graeme Gott"
 
@@ -266,6 +271,10 @@ msgstr "Tombol Panel"
 msgid "Pattern"
 msgstr "Pola"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+msgid "Popup menu at current mouse position"
+msgstr "Menu popup di posisi tetikus saat ini"
+
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
 msgstr "Posisi entri _cari setelah tombol panel"
@@ -281,6 +290,14 @@ msgstr ""
 #: ../panel-plugin/settings-dialog.cpp:615
 msgid "Position commands next to search _entry"
 msgstr "Posisi perintah setelah _entri cari"
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+msgid "Print available menu instance IDs"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+msgid "Print version information and exit"
+msgstr "Cetak informasi versi lalu keluar"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
@@ -441,9 +458,7 @@ msgstr "Judul"
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
-msgid ""
-"To unhide it you have to manually remove the file \"%s\" or open the file "
-"and remove the line \"%s\"."
+msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
 msgstr "Untuk menyembunyikannya Anda harus menghapus file \"%s\" secara manual atau membuka file dan menghapus baris \"%s\"."
 
 #: ../panel-plugin/settings.cpp:140
@@ -451,15 +466,15 @@ msgstr "Untuk menyembunyikannya Anda harus menghapus file \"%s\" secara manual a
 msgid "Turning off computer in %d seconds."
 msgstr "Mematikan komputer dalam %d detik."
 
-#: ../panel-plugin/page.cpp:557
+#: ../panel-plugin/page.cpp:598
 msgid "Unable to add launcher to desktop."
 msgstr "Gagal menambahkan peluncur ke desktop."
 
-#: ../panel-plugin/page.cpp:595 ../panel-plugin/page.cpp:604
+#: ../panel-plugin/page.cpp:643 ../panel-plugin/page.cpp:656
 msgid "Unable to add launcher to panel."
 msgstr "Gagal menambahkan peluncur ke panel."
 
-#: ../panel-plugin/page.cpp:624
+#: ../panel-plugin/page.cpp:676
 msgid "Unable to edit launcher."
 msgstr "Tidak dapat mengubah peluncur."
 
@@ -561,6 +576,6 @@ msgstr "_Manajer Pengaturan"
 msgid "_Title:"
 msgstr "_Judul:"
 
-#: ../panel-plugin/plugin.cpp:402
+#: ../panel-plugin/plugin.cpp:401
 msgid "translator-credits"
 msgstr "kredit-penerjemah"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-01 07:54-0500\n"
+"POT-Creation-Date: 2023-02-02 18:19-0500\n"
 "PO-Revision-Date: 2013-06-20 11:26+0000\n"
 "Last-Translator: dsafsadf <heneral@gmail.com>, 2021-2023\n"
 "Language-Team: Ukrainian (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/uk/)\n"
@@ -43,7 +43,7 @@ msgstr "Додати на панель"
 msgid "All Applications"
 msgstr "Усі програми"
 
-#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/plugin.cpp:396
 msgid "Alternate application launcher for Xfce"
 msgstr "Альтернативний пускач програм для Xfce"
 
@@ -92,11 +92,16 @@ msgstr "К_оманда:"
 msgid "Categ_ory icon size:"
 msgstr "Розмір піктограм _категорії:"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Choose which menu to popup by instance ID"
+msgstr ""
+
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
 msgstr "Очистити історію"
 
-#: ../panel-plugin/plugin.cpp:398
+#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Авторське право © 2013-2023 Ґрем Ґотт"
 
@@ -265,6 +270,10 @@ msgstr "Кнопка панелі"
 msgid "Pattern"
 msgstr "Шаблон"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+msgid "Popup menu at current mouse position"
+msgstr "Спливаюче меню в позиції вказівника миші"
+
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
 msgstr "Помістити П_ошук біля кнопки панелі"
@@ -280,6 +289,14 @@ msgstr "Розташувати категорії _горизонтально"
 #: ../panel-plugin/settings-dialog.cpp:615
 msgid "Position commands next to search _entry"
 msgstr "Помістити кнопки команд біля р_ядка пошуку"
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+msgid "Print available menu instance IDs"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+msgid "Print version information and exit"
+msgstr "Надрукувати інформацію про версію і вийти"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
@@ -440,9 +457,7 @@ msgstr "Назва"
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
-msgid ""
-"To unhide it you have to manually remove the file \"%s\" or open the file "
-"and remove the line \"%s\"."
+msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
 msgstr "Щоб показати його, вам потрібно вручну видалити файл \"%s\" або відкрити файл і видалити рядок \"%s\"."
 
 #: ../panel-plugin/settings.cpp:140
@@ -450,15 +465,15 @@ msgstr "Щоб показати його, вам потрібно вручну �
 msgid "Turning off computer in %d seconds."
 msgstr "Вимикання комп'ютера за %d секунд."
 
-#: ../panel-plugin/page.cpp:557
+#: ../panel-plugin/page.cpp:598
 msgid "Unable to add launcher to desktop."
 msgstr "Неможливо додати запускач до стільниці."
 
-#: ../panel-plugin/page.cpp:595 ../panel-plugin/page.cpp:604
+#: ../panel-plugin/page.cpp:643 ../panel-plugin/page.cpp:656
 msgid "Unable to add launcher to panel."
 msgstr "Неможливо додати запускач на панель."
 
-#: ../panel-plugin/page.cpp:624
+#: ../panel-plugin/page.cpp:676
 msgid "Unable to edit launcher."
 msgstr "Неможливо змінити лауечер."
 
@@ -560,6 +575,6 @@ msgstr "Менед_жер налаштувань"
 msgid "_Title:"
 msgstr "На_зва:"
 
-#: ../panel-plugin/plugin.cpp:402
+#: ../panel-plugin/plugin.cpp:401
 msgid "translator-credits"
 msgstr "Yarema aka Knedlyk <yupadmin at gmail.com>,\nZubr139"

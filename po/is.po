@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-01 07:54-0500\n"
+"POT-Creation-Date: 2023-02-02 18:19-0500\n"
 "PO-Revision-Date: 2020-06-22 09:15+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/is/)\n"
@@ -40,7 +40,7 @@ msgstr "Bæta við skjátstiku"
 msgid "All Applications"
 msgstr "Öll forrit"
 
-#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/plugin.cpp:396
 msgid "Alternate application launcher for Xfce"
 msgstr "Annar forritaræsari fyrir XFCE"
 
@@ -89,11 +89,16 @@ msgstr "S_kipun:"
 msgid "Categ_ory icon size:"
 msgstr "Stærð táknmynda fyrir fl_okk:"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Choose which menu to popup by instance ID"
+msgstr ""
+
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
 msgstr "Hreinsa nýlega notað"
 
-#: ../panel-plugin/plugin.cpp:398
+#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Höfundarréttur © 2013-2023 Graeme Gott"
 
@@ -262,6 +267,10 @@ msgstr "Skjástikuhnappur"
 msgid "Pattern"
 msgstr "Mynstur"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+msgid "Popup menu at current mouse position"
+msgstr "Sprettvalmynd við staðsetningu músarbendils"
+
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
 msgstr "_Staðsetja leitarfærslu við hlið skjástikuhnapps"
@@ -277,6 +286,14 @@ msgstr ""
 #: ../panel-plugin/settings-dialog.cpp:615
 msgid "Position commands next to search _entry"
 msgstr "Staðs_etja skipanir við hlið leitarfærslu"
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+msgid "Print available menu instance IDs"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+msgid "Print version information and exit"
+msgstr "Prenta upplýsingar um útgáfu og hætta"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
@@ -437,9 +454,7 @@ msgstr "Titill"
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
-msgid ""
-"To unhide it you have to manually remove the file \"%s\" or open the file "
-"and remove the line \"%s\"."
+msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
 msgstr "Til að hætta að fela það, þarftu að fjarlægja handvirkt skrána \"%s\" eða opna skrána og fjarlægja línuna \"%s\"."
 
 #: ../panel-plugin/settings.cpp:140
@@ -447,15 +462,15 @@ msgstr "Til að hætta að fela það, þarftu að fjarlægja handvirkt skrána 
 msgid "Turning off computer in %d seconds."
 msgstr "Slekk á tölvu eftir %d sekúndur."
 
-#: ../panel-plugin/page.cpp:557
+#: ../panel-plugin/page.cpp:598
 msgid "Unable to add launcher to desktop."
 msgstr "Tókst ekki að bæta þessum ræsi við skjáborðið."
 
-#: ../panel-plugin/page.cpp:595 ../panel-plugin/page.cpp:604
+#: ../panel-plugin/page.cpp:643 ../panel-plugin/page.cpp:656
 msgid "Unable to add launcher to panel."
 msgstr "Tókst ekki að bæta þessum ræsi við stikuna."
 
-#: ../panel-plugin/page.cpp:624
+#: ../panel-plugin/page.cpp:676
 msgid "Unable to edit launcher."
 msgstr "Tókst ekki að breyta ræsinum."
 
@@ -557,6 +572,6 @@ msgstr "_Stillingastýring"
 msgid "_Title:"
 msgstr "_Titill:"
 
-#: ../panel-plugin/plugin.cpp:402
+#: ../panel-plugin/plugin.cpp:401
 msgid "translator-credits"
 msgstr "Kristján Magnússon, 2016-2017. Sveinn í Felli (sv1@fellsnet.is), 2019."

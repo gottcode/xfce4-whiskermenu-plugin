@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-01 07:54-0500\n"
+"POT-Creation-Date: 2023-02-02 18:19-0500\n"
 "PO-Revision-Date: 2021-08-19 07:23+0000\n"
 "Last-Translator: 玉堂白鹤 <yjwork@qq.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/zh_CN/)\n"
@@ -42,7 +42,7 @@ msgstr "添加到面板"
 msgid "All Applications"
 msgstr "全部应用程序"
 
-#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/plugin.cpp:396
 msgid "Alternate application launcher for Xfce"
 msgstr "Xfce 应用程序启动器替代品"
 
@@ -91,11 +91,16 @@ msgstr "命令 (_O): "
 msgid "Categ_ory icon size:"
 msgstr "类目图标大小 (_O): "
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Choose which menu to popup by instance ID"
+msgstr ""
+
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
 msgstr "清除最近使用项"
 
-#: ../panel-plugin/plugin.cpp:398
+#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "版权所有© 2013-2023 Graeme Gott"
 
@@ -264,6 +269,10 @@ msgstr "面板按钮"
 msgid "Pattern"
 msgstr "模式"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+msgid "Popup menu at current mouse position"
+msgstr "在鼠标当前位置弹出菜单"
+
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
 msgstr "在面板按钮旁放置搜索框 (_S)"
@@ -279,6 +288,14 @@ msgstr ""
 #: ../panel-plugin/settings-dialog.cpp:615
 msgid "Position commands next to search _entry"
 msgstr "在搜索框旁放置命令列表 (_E)"
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+msgid "Print available menu instance IDs"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+msgid "Print version information and exit"
+msgstr "打印版本信息后退出"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
@@ -439,9 +456,7 @@ msgstr "标题"
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
-msgid ""
-"To unhide it you have to manually remove the file \"%s\" or open the file "
-"and remove the line \"%s\"."
+msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
 msgstr "要取消隐藏，您必须手动删除文件 \"%s\" ，或打开文件并删除行 \"%s\"。"
 
 #: ../panel-plugin/settings.cpp:140
@@ -449,15 +464,15 @@ msgstr "要取消隐藏，您必须手动删除文件 \"%s\" ，或打开文件�
 msgid "Turning off computer in %d seconds."
 msgstr "计算机将在%d 秒内关闭。"
 
-#: ../panel-plugin/page.cpp:557
+#: ../panel-plugin/page.cpp:598
 msgid "Unable to add launcher to desktop."
 msgstr "无法添加启动器到桌面。"
 
-#: ../panel-plugin/page.cpp:595 ../panel-plugin/page.cpp:604
+#: ../panel-plugin/page.cpp:643 ../panel-plugin/page.cpp:656
 msgid "Unable to add launcher to panel."
 msgstr "无法添加启动器到面板/"
 
-#: ../panel-plugin/page.cpp:624
+#: ../panel-plugin/page.cpp:676
 msgid "Unable to edit launcher."
 msgstr "无法编辑启动器。"
 
@@ -559,6 +574,6 @@ msgstr "设置管理(_S)"
 msgid "_Title:"
 msgstr "标题 (_T): "
 
-#: ../panel-plugin/plugin.cpp:402
+#: ../panel-plugin/plugin.cpp:401
 msgid "translator-credits"
 msgstr "白铭骢 <jeffbaichina@members.fsf.org>, 2014\\n\nTao Lin <lintao51@gmail.com>, 2015\\n\n玉堂白鹤 <yjwork@qq.com>, 2015"

@@ -57,6 +57,7 @@ if(XGETTEXT_EXECUTABLE)
 			--from-code=UTF-8
 			--c++ --keyword=_
 			--sort-output
+			--no-wrap
 			--package-name='Whisker Menu'
 			--copyright-holder='Graeme Gott'
 			../panel-plugin/*.cpp ../panel-plugin/*.h
@@ -66,6 +67,7 @@ if(XGETTEXT_EXECUTABLE)
 			--from-code=UTF-8
 			-k --keyword=Name --keyword=Comment
 			--sort-output
+			--no-wrap
 			--package-name='Whisker Menu'
 			--copyright-holder='Graeme Gott'
 			../panel-plugin/whiskermenu.desktop.in

@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-01 07:54-0500\n"
+"POT-Creation-Date: 2023-02-02 18:19-0500\n"
 "PO-Revision-Date: 2013-06-20 11:26+0000\n"
 "Last-Translator: Ioannis LM, 2016,2018-2023\n"
 "Language-Team: Greek (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/el/)\n"
@@ -48,7 +48,7 @@ msgstr "Προσθήκη στο ταμπλό"
 msgid "All Applications"
 msgstr "Όλες οι εφαρμογές"
 
-#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/plugin.cpp:396
 msgid "Alternate application launcher for Xfce"
 msgstr "Εναλλακτικός εκκινητής εφαρμογών για το Xfce"
 
@@ -97,11 +97,16 @@ msgstr "_Εντολή:"
 msgid "Categ_ory icon size:"
 msgstr "Μέγεθος εικονιδίων _κατηγοριών:"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Choose which menu to popup by instance ID"
+msgstr ""
+
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
 msgstr "Εκκαθάριση πρόσφατα χρησιμοποιημένων"
 
-#: ../panel-plugin/plugin.cpp:398
+#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Πνευματικά δικαιώματα © 2013-2023 Graeme Gott"
 
@@ -270,6 +275,10 @@ msgstr "Κουμπί ταμπλό"
 msgid "Pattern"
 msgstr "Σχέδιο"
 
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+msgid "Popup menu at current mouse position"
+msgstr "Αναδυόμενο μενού στην τρέχουσα θέση του ποντικιού"
+
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
 msgstr "Τοποθέτηση του πεδίου εύ_ρεσης δίπλα στο κουμπί του ταμπλό"
@@ -285,6 +294,14 @@ msgstr "_Οριζόντια τοποθέτηση κατηγοριών"
 #: ../panel-plugin/settings-dialog.cpp:615
 msgid "Position commands next to search _entry"
 msgstr "Τοποθέτηση των εντολών δίπ_λα στο πεδίο εύρεσης"
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+msgid "Print available menu instance IDs"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+msgid "Print version information and exit"
+msgstr "Εμφάνιση πληροφοριών έκδοσης και έξοδος"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
@@ -445,9 +462,7 @@ msgstr "Τίτλος"
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
-msgid ""
-"To unhide it you have to manually remove the file \"%s\" or open the file "
-"and remove the line \"%s\"."
+msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
 msgstr "Για να την επαναφέρετε πρέπει να διαγράψετε το αρχείο \"%s\" ή να ανοίξετε το αρχείο και να αφαιρέσετε τη γραμμή \"%s\"."
 
 #: ../panel-plugin/settings.cpp:140
@@ -455,15 +470,15 @@ msgstr "Για να την επαναφέρετε πρέπει να διαγρά
 msgid "Turning off computer in %d seconds."
 msgstr "Τερματισμός υπολογιστή σε %d δευτερόλεπτα."
 
-#: ../panel-plugin/page.cpp:557
+#: ../panel-plugin/page.cpp:598
 msgid "Unable to add launcher to desktop."
 msgstr "Αδύνατη η προσθήκη εκκινητή στην επιφάνεια εργασίας."
 
-#: ../panel-plugin/page.cpp:595 ../panel-plugin/page.cpp:604
+#: ../panel-plugin/page.cpp:643 ../panel-plugin/page.cpp:656
 msgid "Unable to add launcher to panel."
 msgstr "Αδύνατη η προσθήκη εκκινητή στο ταμπλό."
 
-#: ../panel-plugin/page.cpp:624
+#: ../panel-plugin/page.cpp:676
 msgid "Unable to edit launcher."
 msgstr "Αδύνατη η επεξεργασία του εκκινητή."
 
@@ -565,6 +580,6 @@ msgstr "_Διαχειριστής ρυθμίσεων"
 msgid "_Title:"
 msgstr "_Τίτλος:"
 
-#: ../panel-plugin/plugin.cpp:402
+#: ../panel-plugin/plugin.cpp:401
 msgid "translator-credits"
 msgstr "Γιώργος Βλαχάβας <vlahavas~at~gmail~dot~com>"
