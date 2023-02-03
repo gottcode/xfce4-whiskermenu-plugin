@@ -4,14 +4,14 @@
 # 
 # Translators:
 # Jose Riha <jose1711@gmail.com>, 2018-2019
-# Slavko <linux@slavino.sk>, 2013-2022
+# Slavko <linux@slavino.sk>, 2013-2023
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-02 18:19-0500\n"
-"PO-Revision-Date: 2022-01-03 10:01+0000\n"
-"Last-Translator: Slavko <linux@slavino.sk>\n"
+"PO-Revision-Date: 2013-06-20 11:26+0000\n"
+"Last-Translator: Slavko <linux@slavino.sk>, 2013-2023\n"
 "Language-Team: Slovak (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -91,7 +91,7 @@ msgstr "Veľkosť ikony _kategorie"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
 msgid "Choose which menu to popup by instance ID"
-msgstr ""
+msgstr "Zvoľte, ktoré menu zobraziť pomocou ID inštancie"
 
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
@@ -269,7 +269,7 @@ msgstr "Vzor"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
 msgid "Popup menu at current mouse position"
-msgstr "Ponuka v mieste kurzora myši"
+msgstr "Zobraziť menu v aktuálnej pozícii kurzora"
 
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
@@ -289,11 +289,11 @@ msgstr "Umiestniť príkazy _vedľa položky hľadať"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
 msgid "Print available menu instance IDs"
-msgstr ""
+msgstr "Vypísať ID dostupných inštancií menu"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
 msgid "Print version information and exit"
-msgstr "Zobrazí informáciu o verzii a ukončí sa"
+msgstr "Vypísať verziou a skončiť"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
