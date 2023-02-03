@@ -93,7 +93,7 @@ msgstr "分類圖示大小(_O)："
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
 msgid "Choose which menu to popup by instance ID"
-msgstr ""
+msgstr "透過實體 ID 選擇要彈出的選單"
 
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
@@ -271,7 +271,7 @@ msgstr "圖案"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
 msgid "Popup menu at current mouse position"
-msgstr "於目前滑鼠位置彈出選單"
+msgstr "目前滑鼠位置的彈出式選單"
 
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
@@ -291,11 +291,11 @@ msgstr "下一個指令的搜尋結果(_E)"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
 msgid "Print available menu instance IDs"
-msgstr ""
+msgstr "印出可用的選單實體 ID"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
 msgid "Print version information and exit"
-msgstr "印出版本資訊並離開"
+msgstr "印出版本資訊然後結束"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
