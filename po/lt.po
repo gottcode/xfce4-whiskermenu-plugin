@@ -90,7 +90,7 @@ msgstr "Kategori_jų piktogramų dydis:"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
 msgid "Choose which menu to popup by instance ID"
-msgstr ""
+msgstr "Pasirinkti, kurį meniu iškelti pagal egzemplioriaus ID"
 
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
@@ -268,7 +268,7 @@ msgstr "Šablonas"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
 msgid "Popup menu at current mouse position"
-msgstr "Iškylantysis meniu esamoje pelės pozicijoje"
+msgstr "Iškelti meniu dabartinėje pelės vietoje"
 
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
@@ -288,11 +288,11 @@ msgstr "Išdės_tyti komandas šalia paieškos lauko"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
 msgid "Print available menu instance IDs"
-msgstr ""
+msgstr "Parodyti prieinamus meniu egzemplioriaus ID"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
 msgid "Print version information and exit"
-msgstr "Rodyti versijos informaciją ir išeiti"
+msgstr "Parodyti informaciją apie versiją ir išeiti"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
