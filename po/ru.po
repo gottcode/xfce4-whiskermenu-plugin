@@ -5,6 +5,7 @@
 # Translators:
 # sorrymak <dearalcher@gmail.com>, 2013
 # Kyrill Detinov <lazy.kent@opensuse.org>, 2013,2016,2020
+# ndvio, 2023
 # Olesya Gerasimenko <translation-team@basealt.ru>, 2022
 # Sergey Alyoshin <alyoshin.s@gmail.com>, 2013-2015,2017-2018,2020-2021
 # Sergey Shlyapugin <shlyapugin@gmail.com>, 2013
@@ -17,7 +18,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-01 07:54-0500\n"
 "PO-Revision-Date: 2013-06-20 11:26+0000\n"
-"Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>, 2022\n"
+"Last-Translator: ndvio, 2023\n"
 "Language-Team: Russian (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -101,7 +102,7 @@ msgstr "Очистить историю"
 
 #: ../panel-plugin/plugin.cpp:398
 msgid "Copyright © 2013-2023 Graeme Gott"
-msgstr ""
+msgstr "Авторские права © 2013-2023 Graeme Gott"
 
 #: ../panel-plugin/settings-dialog.cpp:747
 msgid "Default Category"
@@ -188,7 +189,7 @@ msgstr "Переход в режим сна через %d с."
 
 #: ../panel-plugin/settings-dialog.cpp:636
 msgid "Hidden"
-msgstr "Скрытые"
+msgstr "Скрытый"
 
 #: ../panel-plugin/launcher.cpp:271 ../panel-plugin/page.cpp:499
 msgid "Hide Application"
@@ -258,7 +259,7 @@ msgstr "Открыть URI"
 
 #: ../panel-plugin/settings-dialog.cpp:627
 msgid "P_rofile:"
-msgstr ""
+msgstr "П_рофиль:"
 
 #: ../panel-plugin/settings-dialog.cpp:656
 msgid "Panel Button"
@@ -278,7 +279,7 @@ msgstr "Ка_тегории после кнопок панели"
 
 #: ../panel-plugin/settings-dialog.cpp:580
 msgid "Position categories _horizontally"
-msgstr ""
+msgstr "Расположить категории _горизонтально"
 
 #: ../panel-plugin/settings-dialog.cpp:615
 msgid "Position commands next to search _entry"
@@ -334,7 +335,7 @@ msgstr ""
 
 #: ../panel-plugin/settings.cpp:94
 msgid "Search the Web"
-msgstr ""
+msgstr "Поиск в Интернете"
 
 #: ../panel-plugin/command-edit.cpp:75
 msgid "Select Command"
@@ -406,7 +407,7 @@ msgstr "Сортировать по алфавиту от Я до А"
 
 #: ../panel-plugin/settings-dialog.cpp:834
 msgid "Sort ca_tegories"
-msgstr ""
+msgstr "Сортировать категории"
 
 #: ../panel-plugin/settings-dialog.cpp:635
 msgid "Square Picture"
@@ -521,7 +522,7 @@ msgstr "Изменить п_риложения"
 
 #: ../panel-plugin/settings-dialog.cpp:98
 msgid "_General"
-msgstr "О_бщие"
+msgstr "_Общие"
 
 #: ../panel-plugin/settings-dialog.cpp:83
 msgid "_Help"
