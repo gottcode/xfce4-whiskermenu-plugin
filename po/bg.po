@@ -90,7 +90,7 @@ msgstr "Размер на иконите на категориите:"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
 msgid "Choose which menu to popup by instance ID"
-msgstr ""
+msgstr "Изберете кое меню да се появи по ID на екземпляр"
 
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
@@ -268,7 +268,7 @@ msgstr "Шаблон"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
 msgid "Popup menu at current mouse position"
-msgstr "Показване на изскачащо меню в текущата позиция на мишката"
+msgstr "Изскачащо меню в текущата позиция на мишката"
 
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
@@ -288,11 +288,11 @@ msgstr "Командите да се намират след полето за �
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
 msgid "Print available menu instance IDs"
-msgstr ""
+msgstr "Отпечатване на налични идентификатори на екземплярите на менюто"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
 msgid "Print version information and exit"
-msgstr "Показване на сведения за изданието и изход"
+msgstr "Отпечатване на информация за версията и изход"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
