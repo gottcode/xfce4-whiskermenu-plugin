@@ -90,7 +90,7 @@ msgstr "Grootte van categoriepictogram:"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
 msgid "Choose which menu to popup by instance ID"
-msgstr ""
+msgstr "Kies welk menu er moet opduiken per instantie-ID"
 
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
@@ -268,7 +268,7 @@ msgstr "Patroon"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
 msgid "Popup menu at current mouse position"
-msgstr "Opduikmenu bij de huidige muispositie"
+msgstr "Opduikmenu bij huidige muispositie"
 
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
@@ -288,11 +288,11 @@ msgstr "Plaats opdrachten naast zoekvak"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
 msgid "Print available menu instance IDs"
-msgstr ""
+msgstr "Toon beschikbare instantie-ID's voor het menu"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
 msgid "Print version information and exit"
-msgstr "Druk versie-informatie af en sluit af"
+msgstr "Toon versie-informatie en sluit af"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
