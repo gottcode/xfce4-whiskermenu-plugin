@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 # 
 # Translators:
+# K2latmanesh <sudo.k2latmanesh@tutamail.com>, 2023
 # Reza Gharibi <reza.gharibi.rg@gmail.com>, 2013-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-01 07:54-0500\n"
-"PO-Revision-Date: 2020-02-12 22:14+0000\n"
-"Last-Translator: Transifex Bot <>\n"
+"PO-Revision-Date: 2013-06-20 11:26+0000\n"
+"Last-Translator: K2latmanesh <sudo.k2latmanesh@tutamail.com>, 2023\n"
 "Language-Team: Persian (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/fa/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,15 +25,15 @@ msgstr "اضافه‌کردن عمل"
 
 #: ../panel-plugin/page.cpp:472
 msgid "Add to Desktop"
-msgstr "اضافه کردن به میزکار"
+msgstr "افزودن به میزکار"
 
 #: ../panel-plugin/page.cpp:451
 msgid "Add to Favorites"
-msgstr "اضافه‌کردن به علاقه‌مندی‌ها"
+msgstr "افزودن به علاقه‌مندی‌ها"
 
 #: ../panel-plugin/page.cpp:480
 msgid "Add to Panel"
-msgstr "اضافه‌کردن به پنل"
+msgstr "افزودن به تابلو"
 
 #: ../panel-plugin/applications-page.cpp:35 ../panel-plugin/category.cpp:51
 #: ../panel-plugin/settings-dialog.cpp:760
