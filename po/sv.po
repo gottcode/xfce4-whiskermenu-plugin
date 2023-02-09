@@ -99,7 +99,7 @@ msgstr "K_ategori ikonstorlek:"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
 msgid "Choose which menu to popup by instance ID"
-msgstr ""
+msgstr "Välj vilken meny som ska visas efter instans-ID"
 
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
@@ -277,7 +277,7 @@ msgstr "Mönster"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
 msgid "Popup menu at current mouse position"
-msgstr "Visa meny vid aktuell musposition"
+msgstr "Popup-meny vid aktuell musposition"
 
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
@@ -297,11 +297,11 @@ msgstr "Placera ko_mmandon bredvid sökfältet"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
 msgid "Print available menu instance IDs"
-msgstr ""
+msgstr "Skriv ut tillgängliga menyinstans-ID:n"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
 msgid "Print version information and exit"
-msgstr "Visa versionsinformation och avsluta"
+msgstr "Skriv ut versionsinformation och avsluta"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
