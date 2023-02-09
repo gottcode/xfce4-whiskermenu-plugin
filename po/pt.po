@@ -97,7 +97,7 @@ msgstr "Tamanho do ícone da categ_oria:"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
 msgid "Choose which menu to popup by instance ID"
-msgstr ""
+msgstr "Escolha qual o menu a emergir por ID de instância"
 
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
@@ -275,7 +275,7 @@ msgstr "Padrão"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
 msgid "Popup menu at current mouse position"
-msgstr "Abrir menu na posição atual do rato"
+msgstr "Menu emergente na posição atual do rato"
 
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
@@ -295,11 +295,11 @@ msgstr "Posicionar os comandos junto à _caixa de pesquisa"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
 msgid "Print available menu instance IDs"
-msgstr ""
+msgstr "Mostrar IDs de instâncias do menu disponíveis"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
 msgid "Print version information and exit"
-msgstr "Mostra a informação da versão e sai"
+msgstr "Mostrar informação da versão e sair"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
