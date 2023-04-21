@@ -21,7 +21,10 @@
 #include <gtk/gtk.h>
 
 #ifdef HAS_ACCOUNTSERVICE
+extern "C"
+{
 #include <act/act.h>
+}
 #endif
 
 namespace WhiskerMenu
