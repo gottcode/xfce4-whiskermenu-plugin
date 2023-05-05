@@ -5,15 +5,15 @@
 # Translators:
 # Jens E. Jensen <jens.e.jensen@gmail.com>, 2013,2017
 # Morten Juhl-Johansen Zölde-Fejér <morten@writtenandread.net>, 2013-2015
-# scootergrisen, 2017-2022
+# scootergrisen, 2017-2023
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-02 18:19-0500\n"
-"PO-Revision-Date: 2022-02-19 23:31+0000\n"
-"Last-Translator: scootergrisen\n"
-"Language-Team: Danish (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/da/)\n"
+"PO-Revision-Date: 2013-06-20 11:26+0000\n"
+"Last-Translator: scootergrisen, 2017-2023\n"
+"Language-Team: Danish (http://app.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -92,11 +92,11 @@ msgstr "Ikonstørrelse for _kategori:"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
 msgid "Choose which menu to popup by instance ID"
-msgstr ""
+msgstr "Vælg hvilken menu som skal vises efter instans-ID"
 
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
-msgstr "Nulstil senest anvendte"
+msgstr "Ryd senest anvendte"
 
 #: ../panel-plugin/plugin.cpp:397
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
@@ -270,7 +270,7 @@ msgstr "Mønster"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
 msgid "Popup menu at current mouse position"
-msgstr "Pop op-menu ved nuværende museposition"
+msgstr "Vis menuen ved nuværende placering"
 
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
@@ -290,11 +290,11 @@ msgstr "Placer kommandoer ved siden af søge_indtastning"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
 msgid "Print available menu instance IDs"
-msgstr ""
+msgstr "Vis tilgængelige instans-ID'er for menu"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
 msgid "Print version information and exit"
-msgstr "Udskriv versionsinformation og afslut"
+msgstr "Vis information om version og afslut"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
@@ -455,7 +455,9 @@ msgstr "Titel"
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
-msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
+msgid ""
+"To unhide it you have to manually remove the file \"%s\" or open the file "
+"and remove the line \"%s\"."
 msgstr "For at vise det skal du fjern filen \"%s\" manuelt eller åbne filen og fjerne linjen \"%s\"."
 
 #: ../panel-plugin/settings.cpp:140
