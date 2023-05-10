@@ -90,12 +90,12 @@ Settings::Settings() :
 	confirm_session_command("confirm-session-command", true),
 
 	search_actions {
-		new SearchAction(_("Man Pages"), "#", "exo-open --launch TerminalEmulator man %s", false, true),
-		new SearchAction(_("Search the Web"), "?", "exo-open --launch WebBrowser https://duckduckgo.com/?q=%u", false, true),
-		new SearchAction(_("Search for Files"), "-", "catfish --path=~ --start %s", false, true),
-		new SearchAction(_("Wikipedia"), "!w", "exo-open --launch WebBrowser https://en.wikipedia.org/wiki/%u", false, true),
-		new SearchAction(_("Run in Terminal"), "!", "exo-open --launch TerminalEmulator %s", false, true),
-		new SearchAction(_("Open URI"), "^(file|http|https):\\/\\/(.*)$", "exo-open \\0", true, true)
+		new SearchAction(_("Man Pages"), "#", "exo-open --launch TerminalEmulator man %s", false),
+		new SearchAction(_("Search the Web"), "?", "exo-open --launch WebBrowser https://duckduckgo.com/?q=%u", false),
+		new SearchAction(_("Search for Files"), "-", "catfish --path=~ --start %s", false),
+		new SearchAction(_("Wikipedia"), "!w", "exo-open --launch WebBrowser https://en.wikipedia.org/wiki/%u", false),
+		new SearchAction(_("Run in Terminal"), "!", "exo-open --launch TerminalEmulator %s", false),
+		new SearchAction(_("Open URI"), "^(file|http|https):\\/\\/(.*)$", "exo-open \\0", true)
 	},
 
 	menu_width("menu-width", 450, 10, INT_MAX),
@@ -650,8 +650,7 @@ void SearchActionList::load(XfceRc* rc)
 				xfce_rc_read_entry(rc, "name", ""),
 				xfce_rc_read_entry(rc, "pattern", ""),
 				xfce_rc_read_entry(rc, "command", ""),
-				xfce_rc_read_bool_entry(rc, "regex", false),
-				wm_settings->launcher_show_description));
+				xfce_rc_read_bool_entry(rc, "regex", false)));
 	}
 
 	wm_settings->set_modified();

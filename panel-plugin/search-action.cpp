@@ -35,12 +35,12 @@ SearchAction::SearchAction() :
 
 //-----------------------------------------------------------------------------
 
-SearchAction::SearchAction(const gchar* name, const gchar* pattern, const gchar* command, bool is_regex, bool show_description) :
+SearchAction::SearchAction(const gchar* name, const gchar* pattern, const gchar* command, bool is_regex) :
 	m_name(name ? name : ""),
 	m_pattern(pattern ? pattern : ""),
 	m_command(command ? command : ""),
 	m_is_regex(is_regex),
-	m_show_description(show_description),
+	m_show_description(true),
 	m_regex(nullptr)
 {
 	set_icon("folder-saved-search");

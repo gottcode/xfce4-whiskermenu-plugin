@@ -29,7 +29,7 @@ class SearchAction : public Element
 {
 public:
 	SearchAction();
-	SearchAction(const gchar* name, const gchar* pattern, const gchar* command, bool is_regex, bool show_description);
+	SearchAction(const gchar* name, const gchar* pattern, const gchar* command, bool is_regex);
 	~SearchAction();
 
 	const gchar* get_name() const
