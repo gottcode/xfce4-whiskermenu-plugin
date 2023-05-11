@@ -1,30 +1,31 @@
 # Russian translation of xfce4-whiskermenu-plugin.
 # Copyright (C) 2023 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
-# 
+#
 # Translators:
-# sorrymak <dearalcher@gmail.com>, 2013
-# Kyrill Detinov <lazy.kent@opensuse.org>, 2013,2016,2020
-# ndvio, 2023
-# Olesya Gerasimenko <translation-team@basealt.ru>, 2022
-# Sergey Alyoshin <alyoshin.s@gmail.com>, 2013-2015,2017-2018,2020-2021
-# Sergey Shlyapugin <shlyapugin@gmail.com>, 2013
-# sorrymak <dearalcher@gmail.com>, 2013
-# Владимир <vladi105@yandex.ru>, 2018
-# Владимир <vladi105@yandex.ru>, 2018
+# sorrymak <dearalcher@gmail.com>, 2013.
+# Kyrill Detinov <lazy.kent@opensuse.org>, 2013,2016,2020.
+# ndvio, 2023.
+# Olesya Gerasimenko <translation-team@basealt.ru>, 2022, 2023.
+# Sergey Alyoshin <alyoshin.s@gmail.com>, 2013-2015,2017-2018,2020-2021.
+# Sergey Shlyapugin <shlyapugin@gmail.com>, 2013.
+# Владимир <vladi105@yandex.ru>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-02 18:19-0500\n"
-"PO-Revision-Date: 2013-06-20 11:26+0000\n"
-"Last-Translator: ndvio, 2023\n"
-"Language-Team: Russian (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/ru/)\n"
+"PO-Revision-Date: 2023-05-11 09:34+0300\n"
+"Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
+"Language-Team: Basealt Translation Team\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ru\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
+"=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: ../panel-plugin/settings-dialog.cpp:992
 msgid "Add action"
@@ -98,7 +99,7 @@ msgstr "Размер значка _категории:"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
 msgid "Choose which menu to popup by instance ID"
-msgstr ""
+msgstr "Выбрать меню для показа по идентификатору экземпляра"
 
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
@@ -296,7 +297,7 @@ msgstr "Кнопки _команд рядом со строкой поиска"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
 msgid "Print available menu instance IDs"
-msgstr ""
+msgstr "Показать идентификаторы экземпляров доступных меню"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
 msgid "Print version information and exit"
@@ -327,7 +328,7 @@ msgstr "Перезагрузка компьютера через %d с"
 
 #: ../panel-plugin/settings-dialog.cpp:634
 msgid "Round Picture"
-msgstr ""
+msgstr "Круглое изображение"
 
 #: ../panel-plugin/run-action.cpp:64
 #, c-format
@@ -348,7 +349,7 @@ msgstr "Поисковое действие"
 
 #: ../panel-plugin/settings.cpp:95
 msgid "Search for Files"
-msgstr ""
+msgstr "Поиск файлов"
 
 #: ../panel-plugin/settings.cpp:94
 msgid "Search the Web"
@@ -428,7 +429,7 @@ msgstr "Сортировать категории"
 
 #: ../panel-plugin/settings-dialog.cpp:635
 msgid "Square Picture"
-msgstr ""
+msgstr "Квадратное изображение"
 
 #: ../panel-plugin/settings-dialog.cpp:823
 msgid "Stay _visible when focus is lost"
@@ -461,8 +462,12 @@ msgstr "Заголовок"
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
-msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
-msgstr "Чтобы снова показать его, вручную удалите файл «%s» или откройте файл и удалите строчку «%s»."
+msgid ""
+"To unhide it you have to manually remove the file \"%s\" or open the file and"
+" remove the line \"%s\"."
+msgstr ""
+"Чтобы снова показать его, вручную удалите файл «%s» или откройте файл и"
+" удалите строчку «%s»."
 
 #: ../panel-plugin/settings.cpp:140
 #, c-format
@@ -581,4 +586,8 @@ msgstr "За_головок:"
 
 #: ../panel-plugin/plugin.cpp:401
 msgid "translator-credits"
-msgstr "Артём Демаков <dearalcher@gmail.com>, 2013\nКирилл Детинов <lazy.kent@opensuse.org>, 2013—2016\nСергей Алёшин <alyoshin.s@gmail.com>, 2013, 2014, 2020\nСергей Шляпугин <shlyapugin@gmail.com>, 2013\nВладимир Пенчиков <vladi105@yandex.ru>, 2018"
+msgstr ""
+"Артём Демаков <dearalcher@gmail.com>, 2013\nКирилл Детинов <"
+"lazy.kent@opensuse.org>, 2013—2016\nСергей Алёшин <alyoshin.s@gmail.com>,"
+" 2013, 2014, 2020\nСергей Шляпугин <shlyapugin@gmail.com>, 2013\nВладимир"
+" Пенчиков <vladi105@yandex.ru>, 2018"
