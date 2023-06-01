@@ -15,7 +15,7 @@ msgstr ""
 "POT-Creation-Date: 2023-02-02 18:19-0500\n"
 "PO-Revision-Date: 2013-06-20 11:26+0000\n"
 "Last-Translator: Italang, 2020,2022-2023\n"
-"Language-Team: Italian (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/it/)\n"
+"Language-Team: Italian (http://app.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -94,7 +94,7 @@ msgstr "Dimensione icona Categ_oria:"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
 msgid "Choose which menu to popup by instance ID"
-msgstr ""
+msgstr "Scegli che menù mostrare per ID istanza"
 
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
@@ -272,7 +272,7 @@ msgstr "Motivo"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
 msgid "Popup menu at current mouse position"
-msgstr "Fa comparire il menu nell'attuale posizione del mouse"
+msgstr "Mostra menù nella posizione corrente del mouse"
 
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
@@ -296,7 +296,7 @@ msgstr ""
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
 msgid "Print version information and exit"
-msgstr "Stampa le informazioni di versione ed esce"
+msgstr "Stampa informazioni versione ed esci"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
@@ -457,7 +457,9 @@ msgstr "Titolo"
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
-msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
+msgid ""
+"To unhide it you have to manually remove the file \"%s\" or open the file "
+"and remove the line \"%s\"."
 msgstr "Per scoprirlo è necessario rimuovere manualmente il file \"%s\" o aprire il file e rimuovere la linea \"%s\"."
 
 #: ../panel-plugin/settings.cpp:140
