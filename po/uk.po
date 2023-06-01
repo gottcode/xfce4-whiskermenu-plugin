@@ -15,7 +15,7 @@ msgstr ""
 "POT-Creation-Date: 2023-02-02 18:19-0500\n"
 "PO-Revision-Date: 2013-06-20 11:26+0000\n"
 "Last-Translator: dsafsadf <heneral@gmail.com>, 2021-2023\n"
-"Language-Team: Ukrainian (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/uk/)\n"
+"Language-Team: Ukrainian (http://app.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -94,7 +94,7 @@ msgstr "Розмір піктограм _категорії:"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
 msgid "Choose which menu to popup by instance ID"
-msgstr ""
+msgstr "Виберіть, яке меню відобразити за ID."
 
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
@@ -272,7 +272,7 @@ msgstr "Шаблон"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
 msgid "Popup menu at current mouse position"
-msgstr "Спливаюче меню в позиції вказівника миші"
+msgstr "Відобразити спливаюче меню у поточному положенні курсора миші."
 
 #: ../panel-plugin/settings-dialog.cpp:604
 msgid "Position _search entry next to panel button"
@@ -292,11 +292,11 @@ msgstr "Помістити кнопки команд біля р_ядка пош
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
 msgid "Print available menu instance IDs"
-msgstr ""
+msgstr "Вивести на екран доступні ID."
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
 msgid "Print version information and exit"
-msgstr "Надрукувати інформацію про версію і вийти"
+msgstr "Вивести інформацію про версію та закрити."
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
 #: ../panel-plugin/settings-dialog.cpp:851
@@ -457,7 +457,9 @@ msgstr "Назва"
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
-msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
+msgid ""
+"To unhide it you have to manually remove the file \"%s\" or open the file "
+"and remove the line \"%s\"."
 msgstr "Щоб показати його, вам потрібно вручну видалити файл \"%s\" або відкрити файл і видалити рядок \"%s\"."
 
 #: ../panel-plugin/settings.cpp:140
