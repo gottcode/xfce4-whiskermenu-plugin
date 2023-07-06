@@ -76,6 +76,12 @@ if(ENABLE_ACCOUNTS_SERVICE)
 	target_compile_definitions(whiskermenu PRIVATE HAVE_ACCOUNTS_SERVICE)
 endif()
 
+if(ENABLE_GTK_LAYER_SHELL)
+	pkg_check_modules(gtklayershell REQUIRED IMPORTED_TARGET gtk-layer-shell-0>=0.7)
+	target_link_libraries(whiskermenu PRIVATE PkgConfig::gtklayershell)
+	target_compile_definitions(whiskermenu PRIVATE HAVE_GTK_LAYER_SHELL)
+endif()
+
 # popup
 add_executable(xfce4-popup-whiskermenu xfce4-popup-whiskermenu.cpp)
 

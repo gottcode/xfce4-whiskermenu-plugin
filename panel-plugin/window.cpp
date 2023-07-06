@@ -33,6 +33,10 @@
 #include <gdk/gdkkeysyms.h>
 #include <libxfce4ui/libxfce4ui.h>
 
+#ifdef HAVE_GTK_LAYER_SHELL
+#include <gtk-layer-shell.h>
+#endif
+
 #include <ctime>
 
 using namespace WhiskerMenu;
@@ -66,6 +70,26 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	gtk_window_set_type_hint(m_window, GDK_WINDOW_TYPE_HINT_MENU);
 	gtk_window_stick(m_window);
 	gtk_widget_add_events(GTK_WIDGET(m_window), GDK_FOCUS_CHANGE_MASK | GDK_STRUCTURE_MASK);
+
+#ifdef HAVE_GTK_LAYER_SHELL
+	if (gtk_layer_is_supported())
+	{
+		gtk_layer_init_for_window(m_window);
+
+		// Position from top left, and excludes other windows
+		gtk_layer_set_exclusive_zone(m_window, -1);
+		gtk_layer_set_anchor(m_window, GTK_LAYER_SHELL_EDGE_TOP, true);
+		gtk_layer_set_anchor(m_window, GTK_LAYER_SHELL_EDGE_BOTTOM, false);
+		gtk_layer_set_anchor(m_window, GTK_LAYER_SHELL_EDGE_LEFT, true);
+		gtk_layer_set_anchor(m_window, GTK_LAYER_SHELL_EDGE_RIGHT, false);
+
+		// Grab keyboard focus when shown
+		gtk_layer_set_keyboard_mode(m_window, GTK_LAYER_SHELL_KEYBOARD_MODE_EXCLUSIVE);
+
+		// Position menu above other windows
+		gtk_layer_set_layer(m_window, GTK_LAYER_SHELL_LAYER_OVERLAY);
+	}
+#endif
 
 	connect(m_window, "enter-notify-event",
 		[this](GtkWidget*, GdkEvent*) -> gboolean
@@ -434,11 +458,10 @@ void WhiskerMenu::Window::show(const Position position)
 	m_recent->get_view()->reload_icon_size();
 	m_applications->get_view()->reload_icon_size();
 
-	GdkScreen* screen = nullptr;
-	int parent_x = 0, parent_y = 0, parent_w = 0, parent_h = 0;
 	if (position != PositionAtCursor)
 	{
 		// Wait up to half a second for auto-hidden panels to be shown
+		int parent_x = 0, parent_y = 0;
 		clock_t end = clock() + (CLOCKS_PER_SEC / 2);
 		GtkWidget* parent = m_plugin->get_button();
 		GtkWindow* parent_window = GTK_WINDOW(gtk_widget_get_toplevel(parent));
@@ -452,28 +475,21 @@ void WhiskerMenu::Window::show(const Position position)
 			gtk_window_get_position(parent_window, &parent_x, &parent_y);
 		}
 
-		// Fetch parent geometry
-		if (!gtk_widget_get_realized(parent))
-		{
-			gtk_widget_realize(parent);
-		}
-		GdkWindow* window = gtk_widget_get_window(parent);
-		gdk_window_get_origin(window, &parent_x, &parent_y);
-		screen = gdk_window_get_screen(window);
-		parent_w = gdk_window_get_width(window);
-		parent_h = gdk_window_get_height(window);
+		// Fetch position
+		m_plugin->get_menu_position(&m_geometry.x, &m_geometry.y);
 	}
 	else
 	{
+		// Fetch cursor position
 		GdkDisplay* display = gdk_display_get_default();
 		GdkSeat* seat = gdk_display_get_default_seat(display);
 		GdkDevice* device = gdk_seat_get_pointer(seat);
-		gdk_device_get_position(device, &screen, &parent_x, &parent_y);
+		gdk_device_get_position(device, nullptr, &m_geometry.x, &m_geometry.y);
 	}
 
 	// Fetch screen geomtry
 	GdkRectangle monitor;
-	GdkMonitor* monitor_gdk = gdk_display_get_monitor_at_point(gdk_display_get_default(), parent_x, parent_y);
+	GdkMonitor* monitor_gdk = gdk_display_get_monitor_at_point(gdk_display_get_default(), m_geometry.x, m_geometry.y);
 	gdk_monitor_get_geometry(monitor_gdk, &monitor);
 
 	// Resize window if necessary, and also prevent it from being larger than screen
@@ -489,26 +505,8 @@ void WhiskerMenu::Window::show(const Position position)
 		resized = true;
 	}
 
-	// Find window position
-	bool layout_left = ((2 * (parent_x - monitor.x)) + parent_w) < monitor.width;
-	bool layout_bottom = ((2 * (parent_y - monitor.y)) + (parent_h / 2)) > monitor.height;
-	if (position != PositionVertical)
-	{
-		m_geometry.x = layout_left ? parent_x : (parent_x + parent_w - m_geometry.width);
-		m_geometry.y = layout_bottom ? (parent_y - m_geometry.height - 1) : (parent_y + parent_h + 1);
-	}
-	else
-	{
-		m_geometry.x = layout_left ? (parent_x + parent_w + 1) : (parent_x - m_geometry.width - 1);
-		m_geometry.y = layout_bottom ? (parent_y + parent_h - m_geometry.height) : parent_y;
-	}
-
-	// Prevent window from leaving screen
-	m_geometry.x = CLAMP(m_geometry.x, monitor.x, monitor.x + monitor.width - m_geometry.width);
-	m_geometry.y = CLAMP(m_geometry.y, monitor.y, monitor.y + monitor.height - m_geometry.height);
-
 	// Move window
-	gtk_window_move(m_window, m_geometry.x, m_geometry.y);
+	move_window(monitor);
 
 	// Relayout window if necessary
 	const bool layout_ltr = gtk_widget_get_default_direction() != GTK_TEXT_DIR_RTL;
@@ -539,7 +537,14 @@ void WhiskerMenu::Window::show(const Position position)
 		check_scrollbar_needed();
 	}
 
-	gtk_window_move(m_window, m_geometry.x, m_geometry.y);
+	// Fetch position again to make sure window does not overlap panel
+	if (position != PositionAtCursor)
+	{
+		m_plugin->get_menu_position(&m_geometry.x, &m_geometry.y);
+	}
+
+	// Move window
+	move_window(monitor);
 }
 
 //-----------------------------------------------------------------------------
@@ -843,6 +848,28 @@ void WhiskerMenu::Window::category_toggled()
 	m_applications->reset_selection();
 	gtk_stack_set_visible_child_name(m_panels_stack, "applications");
 	gtk_widget_grab_focus(GTK_WIDGET(m_search_entry));
+}
+
+//-----------------------------------------------------------------------------
+
+void WhiskerMenu::Window::move_window(const GdkRectangle& monitor)
+{
+	// Prevent window from leaving screen
+	m_geometry.x = CLAMP(m_geometry.x, monitor.x, monitor.x + monitor.width - m_geometry.width);
+	m_geometry.y = CLAMP(m_geometry.y, monitor.y, monitor.y + monitor.height - m_geometry.height);
+
+	// Move window
+#ifdef HAVE_GTK_LAYER_SHELL
+	if (gtk_layer_is_supported())
+	{
+		gtk_layer_set_margin(m_window, GTK_LAYER_SHELL_EDGE_LEFT, m_geometry.x);
+		gtk_layer_set_margin(m_window, GTK_LAYER_SHELL_EDGE_TOP, m_geometry.y);
+	}
+	else
+#endif
+	{
+		gtk_window_move(m_window, m_geometry.x, m_geometry.y);
+	}
 }
 
 //-----------------------------------------------------------------------------

@@ -16,6 +16,7 @@ if(CMAKE_BUILD_TYPE_TOLOWER MATCHES "release|minsizerel|relwithdebinfo")
 endif()
 
 option(ENABLE_ACCOUNTS_SERVICE "Enable building with AccountsService" ON)
+option(ENABLE_GTK_LAYER_SHELL "Enable support for positioning in Wayland" ON)
 option(ENABLE_VISIBILITY "Enable ELF visibility attributes" ON)
 option(ENABLE_AS_NEEDED "Enable -Wl,--as-needed for the linker" ON)
 option(ENABLE_LINKER_OPTIMIZED_HASH_TABLES "Enable -Wl,-O1 for the linker" ON)

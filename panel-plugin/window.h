@@ -96,6 +96,7 @@ private:
 	void favorites_toggled();
 	void recent_toggled();
 	void category_toggled();
+	void move_window(const GdkRectangle& monitor);
 	void reset_default_button();
 	void show_favorites();
 	void show_default_page();

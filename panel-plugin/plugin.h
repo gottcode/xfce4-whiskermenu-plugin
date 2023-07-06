@@ -55,6 +55,7 @@ public:
 
 	ButtonStyle get_button_style() const;
 	static std::string get_button_title_default();
+	void get_menu_position(int* x, int* y) const;
 
 	void menu_hidden();
 	void reload_button();

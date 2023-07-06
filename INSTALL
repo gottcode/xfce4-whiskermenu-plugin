@@ -81,6 +81,9 @@ More CMake Options
 -DENABLE_ACCOUNTS_SERVICE=[ON]
     Check for the AccountsService library.
 
+-DENABLE_GTK_LAYER_SHELL=[ON]
+    Use GtkLayerShell to position menu in Wayland.
+
 -DENABLE_VISIBILITY=[ON]
     Make compiler hide local symbols in plugin.
 
