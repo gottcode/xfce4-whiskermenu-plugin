@@ -63,7 +63,12 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	gtk_widget_set_name(GTK_WIDGET(m_window), "whiskermenu-window");
 	// Untranslated window title to allow window managers to identify it; not visible to users.
 	gtk_window_set_title(m_window, "Whisker Menu");
-	gtk_window_set_modal(m_window, true);
+#ifdef HAVE_GTK_LAYER_SHELL
+	if (!gtk_layer_is_supported())
+#endif
+	{
+		gtk_window_set_modal(m_window, true);
+	}
 	gtk_window_set_decorated(m_window, false);
 	gtk_window_set_skip_taskbar_hint(m_window, true);
 	gtk_window_set_skip_pager_hint(m_window, true);
