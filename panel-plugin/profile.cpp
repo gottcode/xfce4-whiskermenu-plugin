@@ -67,7 +67,7 @@ Profile::Profile(Window* window) :
 
 	gtk_style_context_add_class(gtk_widget_get_style_context(m_username), "profile-username");
 
-#ifdef HAS_ACCOUNTSERVICE
+#ifdef HAVE_ACCOUNTS_SERVICE
 	m_act_user = nullptr;
 	m_act_user_manager = act_user_manager_get_default();
 	gboolean loaded = FALSE;
@@ -93,7 +93,7 @@ Profile::Profile(Window* window) :
 
 Profile::~Profile()
 {
-#ifdef HAS_ACCOUNTSERVICE
+#ifdef HAVE_ACCOUNTS_SERVICE
 	g_object_unref(m_act_user_manager);
 	g_object_unref(m_act_user);
 #endif
@@ -195,7 +195,7 @@ void Profile::set_username(const gchar* name)
 
 //-----------------------------------------------------------------------------
 
-#ifdef HAS_ACCOUNTSERVICE
+#ifdef HAVE_ACCOUNTS_SERVICE
 void Profile::on_user_changed(ActUser* user)
 {
 	if (act_user_get_uid(user) != getuid())

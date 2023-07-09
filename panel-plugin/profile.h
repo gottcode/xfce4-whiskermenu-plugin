@@ -20,7 +20,7 @@
 
 #include <gtk/gtk.h>
 
-#ifdef HAS_ACCOUNTSERVICE
+#ifdef HAVE_ACCOUNTS_SERVICE
 extern "C"
 {
 #include <act/act.h>
@@ -60,7 +60,7 @@ public:
 private:
 	void init_fallback();
 	void set_username(const gchar* name);
-#ifdef HAS_ACCOUNTSERVICE
+#ifdef HAVE_ACCOUNTS_SERVICE
 	void on_user_changed(ActUser* user);
 	void on_user_info_loaded();
 #endif
@@ -69,7 +69,7 @@ private:
 	GtkWidget* m_container;
 	GtkWidget* m_image;
 	GtkWidget* m_username;
-#ifdef HAS_ACCOUNTSERVICE
+#ifdef HAVE_ACCOUNTS_SERVICE
 	ActUserManager* m_act_user_manager;
 	ActUser* m_act_user;
 #endif

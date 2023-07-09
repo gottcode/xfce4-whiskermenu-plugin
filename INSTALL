@@ -78,7 +78,7 @@ More CMake Options
     Choose where manual pages are installed
     (defaults to $CMAKE_INSTALL_DATADIR/man).
 
--DENABLE_ACCOUNTSSERVICE=[ON]
+-DENABLE_ACCOUNTS_SERVICE=[ON]
     Check for the AccountsService library.
 
 -DENABLE_VISIBILITY=[ON]

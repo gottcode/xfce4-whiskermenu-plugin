@@ -15,9 +15,6 @@ pkg_check_modules(libxfce4panel REQUIRED IMPORTED_TARGET libxfce4panel-2.0>=4.14
 pkg_check_modules(libxfce4ui REQUIRED IMPORTED_TARGET libxfce4ui-2>=4.14)
 pkg_check_modules(libxfce4util REQUIRED IMPORTED_TARGET libxfce4util-1.0>=4.14)
 pkg_check_modules(libxfconf REQUIRED IMPORTED_TARGET libxfconf-0>=4.14)
-if(ENABLE_ACCOUNTSSERVICE)
-	pkg_check_modules(accountsservice IMPORTED_TARGET accountsservice>=0.6.45)
-endif()
 
 # plugin
 add_library(whiskermenu MODULE
@@ -73,11 +70,10 @@ target_compile_definitions(whiskermenu PRIVATE
 
 target_compile_features(whiskermenu PRIVATE cxx_std_11)
 
-if (accountsservice_FOUND)
-	target_link_libraries(whiskermenu PRIVATE
-		PkgConfig::accountsservice)
-	target_compile_definitions(whiskermenu PRIVATE
-		HAS_ACCOUNTSERVICE)
+if(ENABLE_ACCOUNTS_SERVICE)
+	pkg_check_modules(accountsservice REQUIRED IMPORTED_TARGET accountsservice>=0.6.45)
+	target_link_libraries(whiskermenu PRIVATE PkgConfig::accountsservice)
+	target_compile_definitions(whiskermenu PRIVATE HAVE_ACCOUNTS_SERVICE)
 endif()
 
 # popup
