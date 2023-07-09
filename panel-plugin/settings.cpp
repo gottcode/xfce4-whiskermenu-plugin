@@ -80,7 +80,7 @@ Settings::Settings(Plugin* plugin) :
 	default_category("/default-category", CategoryFavorites, CategoryFavorites, CategoryAll),
 
 	recent_items_max("/recent-items-max", 10, 0, 100),
-	favorites_in_recent("/favorites-in-recent", true),
+	favorites_in_recent("/favorites-in-recent", false),
 
 	position_search_alternate("/position-search-alternate", false),
 	position_commands_alternate("/position-commands-alternate", false),
