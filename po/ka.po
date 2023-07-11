@@ -3,24 +3,24 @@
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 # 
 # Translators:
-# ზურაბი დავითაშვილი <zdavitashvili0@gmail.com>, 2018-2019
-# ზურაბი დავითაშვილი <zdavitashvili0@gmail.com>, 2019-2020
-# ზურაბი დავითაშვილი <zdavitashvili0@gmail.com>, 2021
+# ზურაბი დავითაშვილი <zurabi@tuta.io>, 2018-2019
+# ზურაბი დავითაშვილი <zurabi@tuta.io>, 2019-2020
+# ზურაბი დავითაშვილი <zurabi@tuta.io>, 2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-02 18:19-0500\n"
+"POT-Creation-Date: 2023-07-11 07:02-0400\n"
 "PO-Revision-Date: 2021-02-25 11:04+0000\n"
-"Last-Translator: ზურაბი დავითაშვილი <zdavitashvili0@gmail.com>\n"
-"Language-Team: Georgian (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/ka/)\n"
+"Last-Translator: ზურაბი დავითაშვილი <zurabi@tuta.io>, 2021\n"
+"Language-Team: Georgian (http://app.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/ka/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ka\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: ../panel-plugin/settings-dialog.cpp:992
+#: ../panel-plugin/settings-dialog.cpp:1028
 msgid "Add action"
 msgstr "მოქმედების დამატება"
 
@@ -37,15 +37,15 @@ msgid "Add to Panel"
 msgstr "პანელზე დამატება"
 
 #: ../panel-plugin/applications-page.cpp:35 ../panel-plugin/category.cpp:51
-#: ../panel-plugin/settings-dialog.cpp:760
+#: ../panel-plugin/settings-dialog.cpp:796
 msgid "All Applications"
 msgstr "ყველა პროგრამა"
 
-#: ../panel-plugin/plugin.cpp:396
+#: ../panel-plugin/plugin.cpp:413
 msgid "Alternate application launcher for Xfce"
 msgstr "ალტერნატიული პროგრამების გამშვები Xfce-სთვის"
 
-#: ../panel-plugin/settings-dialog.cpp:855
+#: ../panel-plugin/settings-dialog.cpp:891
 msgid "Amount of _items:"
 msgstr "საგნების რაოდენობა:"
 
@@ -53,7 +53,7 @@ msgstr "საგნების რაოდენობა:"
 msgid "Application icon si_ze:"
 msgstr "პროგრამის ხატულას ზომა:"
 
-#: ../panel-plugin/settings.cpp:39
+#: ../panel-plugin/settings.cpp:42
 msgid "Applications"
 msgstr "პროგრამები"
 
@@ -62,19 +62,19 @@ msgstr "პროგრამები"
 msgid "Are you sure you want to hide \"%s\"?"
 msgstr "დარწმუნებული ხართ, რომ გსურთ დამალოთ \"%s\"?"
 
-#: ../panel-plugin/settings.cpp:125
+#: ../panel-plugin/settings.cpp:128
 msgid "Are you sure you want to log out?"
 msgstr "დარწმუნებული ხართ, რომ გსურთ გამოსვლა?"
 
-#: ../panel-plugin/settings.cpp:132
+#: ../panel-plugin/settings.cpp:135
 msgid "Are you sure you want to restart?"
 msgstr "დარწმუნებული ხართ, რომ გსურთ გადატვირთვა?"
 
-#: ../panel-plugin/settings.cpp:139
+#: ../panel-plugin/settings.cpp:142
 msgid "Are you sure you want to shut down?"
 msgstr "დარწმუნებული ხართ, რომ გსურთ გამორთვა?"
 
-#: ../panel-plugin/settings-dialog.cpp:533
+#: ../panel-plugin/settings-dialog.cpp:569
 msgid "Background opacit_y:"
 msgstr "ფონის ბუნდოვნება:"
 
@@ -82,7 +82,7 @@ msgstr "ფონის ბუნდოვნება:"
 msgid "Browse the file system to choose a custom command."
 msgstr "განსხვავებული ბრძანების ასარჩევად, დაათვალიერეთ ფაილური სისტემა."
 
-#: ../panel-plugin/settings-dialog.cpp:1074
+#: ../panel-plugin/settings-dialog.cpp:1110
 msgid "C_ommand:"
 msgstr "ბრძანება:"
 
@@ -98,28 +98,28 @@ msgstr ""
 msgid "Clear Recently Used"
 msgstr "ახლახანს გამოყენებულების გასუფთავება"
 
-#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/plugin.cpp:414
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "საავტორო უფლებები © 2013-2023 Graeme Gott"
 
-#: ../panel-plugin/settings-dialog.cpp:747
+#: ../panel-plugin/settings-dialog.cpp:783
 msgid "Default Category"
 msgstr "ნაგულისხმები კატეგორია"
 
-#: ../panel-plugin/settings-dialog.cpp:1025
+#: ../panel-plugin/settings-dialog.cpp:1061
 msgid "Details"
 msgstr "დეტალები"
 
-#: ../panel-plugin/settings-dialog.cpp:660
+#: ../panel-plugin/settings-dialog.cpp:696
 msgid "Di_splay:"
 msgstr "აჩვენე:"
 
-#: ../panel-plugin/settings.cpp:146
+#: ../panel-plugin/settings.cpp:149
 msgid "Do you want to suspend to RAM?"
 msgstr "გსურთ შეჩერება მოხდეს ოპერატიულ მეხსიერებაში?"
 
-#: ../panel-plugin/settings.cpp:153
+#: ../panel-plugin/settings.cpp:156
 msgid "Do you want to suspend to disk?"
 msgstr "გსურთ შეჩერება მოხდეს დისკზე?"
 
@@ -127,11 +127,11 @@ msgstr "გსურთ შეჩერება მოხდეს დისკ
 msgid "Edit Application..."
 msgstr "პროგრამის რედაქტირება..."
 
-#: ../panel-plugin/settings.cpp:167
+#: ../panel-plugin/settings.cpp:170
 msgid "Edit _Profile"
 msgstr "პროფილის რედაქტირება"
 
-#: ../panel-plugin/settings.cpp:169
+#: ../panel-plugin/settings.cpp:172
 msgid "Failed to edit profile."
 msgstr "პროფილის რედაქტირება ვერ მოხერხდა."
 
@@ -140,53 +140,53 @@ msgstr "პროფილის რედაქტირება ვერ მ
 msgid "Failed to execute command \"%s\"."
 msgstr "ვერ მოხერხდა ბრძანების გაშვება \"%s\"."
 
-#: ../panel-plugin/settings.cpp:152
+#: ../panel-plugin/settings.cpp:155
 msgid "Failed to hibernate."
 msgstr "ჰიბერნაცია ვერ მოხერხდა."
 
-#: ../panel-plugin/settings.cpp:164
+#: ../panel-plugin/settings.cpp:167
 msgid "Failed to launch menu editor."
 msgstr "მენიუს რედაქტორის გაშვება ვერ მოხერხდა."
 
-#: ../panel-plugin/settings.cpp:114
+#: ../panel-plugin/settings.cpp:117
 msgid "Failed to lock screen."
 msgstr "ეკრანის დაბლოკვა ვერ მოხერხდა."
 
-#: ../panel-plugin/settings.cpp:124 ../panel-plugin/settings.cpp:159
+#: ../panel-plugin/settings.cpp:127 ../panel-plugin/settings.cpp:162
 msgid "Failed to log out."
 msgstr "გამოსვლა ვერ მოხერხდა."
 
-#: ../panel-plugin/settings.cpp:109
+#: ../panel-plugin/settings.cpp:112
 msgid "Failed to open settings manager."
 msgstr "პარამეტრების მმართველის გახსნა ვერ მოხერხდა."
 
-#: ../panel-plugin/settings.cpp:131
+#: ../panel-plugin/settings.cpp:134
 msgid "Failed to restart."
 msgstr "გადატვირთვა ვერ მოხერხდა."
 
-#: ../panel-plugin/settings.cpp:138
+#: ../panel-plugin/settings.cpp:141
 msgid "Failed to shut down."
 msgstr "გამორთვა ვერ მოხერხდა."
 
-#: ../panel-plugin/settings.cpp:145
+#: ../panel-plugin/settings.cpp:148
 msgid "Failed to suspend."
 msgstr "შეჩერება ვერ მოხერხდა."
 
-#: ../panel-plugin/settings.cpp:119
+#: ../panel-plugin/settings.cpp:122
 msgid "Failed to switch user."
 msgstr "მომხმარებლის შეცვლა ვერ მოხერხდა."
 
 #: ../panel-plugin/favorites-page.cpp:37
-#: ../panel-plugin/settings-dialog.cpp:751
+#: ../panel-plugin/settings-dialog.cpp:787
 msgid "Favorites"
 msgstr "რჩეულები"
 
-#: ../panel-plugin/settings.cpp:154
+#: ../panel-plugin/settings.cpp:157
 #, c-format
 msgid "Hibernating computer in %d seconds."
 msgstr "კომპიუტერის ჰიბერნაცია %d წამში."
 
-#: ../panel-plugin/settings-dialog.cpp:636
+#: ../panel-plugin/settings-dialog.cpp:672
 msgid "Hidden"
 msgstr "დამალული"
 
@@ -194,77 +194,85 @@ msgstr "დამალული"
 msgid "Hide Application"
 msgstr "პროგრამის დამალვა"
 
-#: ../panel-plugin/settings-dialog.cpp:665
+#: ../panel-plugin/settings-dialog.cpp:701
 msgid "Icon"
 msgstr "ხატულა"
 
-#: ../panel-plugin/settings-dialog.cpp:667
+#: ../panel-plugin/settings-dialog.cpp:703
 msgid "Icon and title"
 msgstr "ხატულა და სათაური"
 
-#: ../panel-plugin/settings-dialog.cpp:878
+#: ../panel-plugin/settings-dialog.cpp:914
 msgid "Include _favorites"
 msgstr "რჩეულების ჩათვლით"
 
-#: ../panel-plugin/icon-size.cpp:64
+#: ../panel-plugin/icon-size.cpp:65
 msgid "Large"
 msgstr "დიდი"
 
-#: ../panel-plugin/icon-size.cpp:65
+#: ../panel-plugin/icon-size.cpp:66
 msgid "Larger"
 msgstr "უფრო დიდი"
 
-#: ../panel-plugin/settings.cpp:157
+#: ../panel-plugin/settings.cpp:160
 msgid "Log Ou_t..."
 msgstr "გამოსვლა..."
 
-#: ../panel-plugin/settings.cpp:122
+#: ../panel-plugin/settings.cpp:125
 msgid "Log _Out"
 msgstr "გამოსვლა"
 
-#: ../panel-plugin/settings.cpp:126
+#: ../panel-plugin/settings.cpp:129
 #, c-format
 msgid "Logging out in %d seconds."
 msgstr "გამოსვლა %d წამში."
 
-#: ../panel-plugin/settings.cpp:93
+#: ../panel-plugin/settings.cpp:96
 msgid "Man Pages"
 msgstr "მომხმარებლის სახელმძღვანელო"
 
-#: ../panel-plugin/settings-dialog.cpp:576
-#: ../panel-plugin/settings-dialog.cpp:808
+#: ../panel-plugin/settings-dialog.cpp:612
+#: ../panel-plugin/settings-dialog.cpp:844
 msgid "Menu"
 msgstr "მენიუ"
 
-#: ../panel-plugin/settings-dialog.cpp:1029
+#: ../panel-plugin/settings-dialog.cpp:551
+msgid "Menu _height:"
+msgstr ""
+
+#: ../panel-plugin/settings-dialog.cpp:533
+msgid "Menu _width:"
+msgstr ""
+
+#: ../panel-plugin/settings-dialog.cpp:1065
 msgid "Nam_e:"
 msgstr "სახელი:"
 
-#: ../panel-plugin/settings-dialog.cpp:970
+#: ../panel-plugin/settings-dialog.cpp:1006
 msgid "Name"
 msgstr "სახელი"
 
-#: ../panel-plugin/icon-size.cpp:59
+#: ../panel-plugin/icon-size.cpp:60
 msgid "None"
 msgstr "არცერთი"
 
-#: ../panel-plugin/icon-size.cpp:63
+#: ../panel-plugin/icon-size.cpp:64
 msgid "Normal"
 msgstr "ნორმალური"
 
-#: ../panel-plugin/settings.cpp:98
+#: ../panel-plugin/settings.cpp:101
 msgid "Open URI"
 msgstr "ვებ-ბმულის გახსნა"
 
-#: ../panel-plugin/settings-dialog.cpp:627
+#: ../panel-plugin/settings-dialog.cpp:663
 msgid "P_rofile:"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:656
+#: ../panel-plugin/settings-dialog.cpp:692
 msgid "Panel Button"
 msgstr "პანელის ღილაკი"
 
-#: ../panel-plugin/settings-dialog.cpp:975
+#: ../panel-plugin/settings-dialog.cpp:1011
 msgid "Pattern"
 msgstr "ნიმუში"
 
@@ -272,19 +280,19 @@ msgstr "ნიმუში"
 msgid "Popup menu at current mouse position"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:604
+#: ../panel-plugin/settings-dialog.cpp:640
 msgid "Position _search entry next to panel button"
 msgstr "საძიებო გრაფის განთავსება პანელის ღილაკის გვერდით"
 
-#: ../panel-plugin/settings-dialog.cpp:593
+#: ../panel-plugin/settings-dialog.cpp:629
 msgid "Position cate_gories next to panel button"
 msgstr "კატეგორიების განთავსება პანელის ღილაკის გვერდით"
 
-#: ../panel-plugin/settings-dialog.cpp:580
+#: ../panel-plugin/settings-dialog.cpp:616
 msgid "Position categories _horizontally"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:615
+#: ../panel-plugin/settings-dialog.cpp:651
 msgid "Position commands next to search _entry"
 msgstr "ბრძანებების განთავსება საძიებო გრაფის გვერდით"
 
@@ -296,8 +304,8 @@ msgstr ""
 msgid "Print version information and exit"
 msgstr "ვერსიის ინფორმაციის დაბეჭდვა და გასვლა"
 
-#: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
-#: ../panel-plugin/settings-dialog.cpp:851
+#: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:791
+#: ../panel-plugin/settings-dialog.cpp:887
 msgid "Recently Used"
 msgstr "ახლახანს გამოყენებული"
 
@@ -310,16 +318,16 @@ msgstr "მოცილდეს მოქმედება \"%s\"?"
 msgid "Remove from Favorites"
 msgstr "რჩეულებიდან მოცილება"
 
-#: ../panel-plugin/settings-dialog.cpp:1004
+#: ../panel-plugin/settings-dialog.cpp:1040
 msgid "Remove selected action"
 msgstr "არჩეული მოქმედების მოცილება"
 
-#: ../panel-plugin/settings.cpp:133
+#: ../panel-plugin/settings.cpp:136
 #, c-format
 msgid "Restarting computer in %d seconds."
 msgstr "კომპიუტერი გადაიტვირთება %d წამში."
 
-#: ../panel-plugin/settings-dialog.cpp:634
+#: ../panel-plugin/settings-dialog.cpp:670
 msgid "Round Picture"
 msgstr ""
 
@@ -328,7 +336,7 @@ msgstr ""
 msgid "Run %s"
 msgstr "გაუშვი %s"
 
-#: ../panel-plugin/settings.cpp:97
+#: ../panel-plugin/settings.cpp:100
 msgid "Run in Terminal"
 msgstr "ტერმინალში გაშვება"
 
@@ -336,15 +344,15 @@ msgstr "ტერმინალში გაშვება"
 msgid "Search Actio_ns"
 msgstr "მოქმედებების ძებნა"
 
-#: ../panel-plugin/search-action.cpp:251
+#: ../panel-plugin/search-action.cpp:260
 msgid "Search Action"
 msgstr "მოქმედების ძებნა"
 
-#: ../panel-plugin/settings.cpp:95
+#: ../panel-plugin/settings.cpp:98
 msgid "Search for Files"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:94
+#: ../panel-plugin/settings.cpp:97
 msgid "Search the Web"
 msgstr ""
 
@@ -356,7 +364,7 @@ msgstr "ბრძანების არჩევა"
 msgid "Select an Icon"
 msgstr "ხატულას არჩევა"
 
-#: ../panel-plugin/settings-dialog.cpp:891
+#: ../panel-plugin/settings-dialog.cpp:927
 msgid "Session Commands"
 msgstr "სესიის ბრძანებები"
 
@@ -384,7 +392,7 @@ msgstr "სიის სახით ჩვენება"
 msgid "Show as t_ree"
 msgstr "ხის სახით ჩვენება"
 
-#: ../panel-plugin/settings-dialog.cpp:895
+#: ../panel-plugin/settings-dialog.cpp:931
 msgid "Show c_onfirmation dialog"
 msgstr "დადასტურების დიალოგის ჩვენება"
 
@@ -396,15 +404,15 @@ msgstr "კატეგორიების სახელების ჩვ�
 msgid "Show generic application _names"
 msgstr "პროგრამების ზოგადი სახელების ჩვენება"
 
-#: ../panel-plugin/settings.cpp:136
+#: ../panel-plugin/settings.cpp:139
 msgid "Shut _Down"
 msgstr "გამორთვა"
 
-#: ../panel-plugin/icon-size.cpp:62
+#: ../panel-plugin/icon-size.cpp:63
 msgid "Small"
 msgstr "პატარა"
 
-#: ../panel-plugin/icon-size.cpp:61
+#: ../panel-plugin/icon-size.cpp:62
 msgid "Smaller"
 msgstr "უფრო პატარა"
 
@@ -416,32 +424,32 @@ msgstr "დალაგება ანბანის მიხედვით 
 msgid "Sort Alphabetically Z-A"
 msgstr "დალაგება ანბანის მიხედვით ჰ-ა"
 
-#: ../panel-plugin/settings-dialog.cpp:834
+#: ../panel-plugin/settings-dialog.cpp:870
 msgid "Sort ca_tegories"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:635
+#: ../panel-plugin/settings-dialog.cpp:671
 msgid "Square Picture"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:823
+#: ../panel-plugin/settings-dialog.cpp:859
 msgid "Stay _visible when focus is lost"
 msgstr "ფოკუსის დაკარგვის შემდეგ, დარჩეს ხილული"
 
-#: ../panel-plugin/settings.cpp:143
+#: ../panel-plugin/settings.cpp:146
 msgid "Suspe_nd"
 msgstr "შეჩერება"
 
-#: ../panel-plugin/settings.cpp:147
+#: ../panel-plugin/settings.cpp:150
 #, c-format
 msgid "Suspending computer in %d seconds."
 msgstr "კომპიუტერი შეჩერდება %d წამში."
 
-#: ../panel-plugin/settings.cpp:117
+#: ../panel-plugin/settings.cpp:120
 msgid "Switch _User"
 msgstr "მომხმარებლის შეცვლა"
 
-#: ../panel-plugin/settings-dialog.cpp:812
+#: ../panel-plugin/settings-dialog.cpp:848
 msgid "Switch categories by _hovering"
 msgstr "კატეგორიების შეცვლა თაგვის მიახლოვებით"
 
@@ -449,16 +457,18 @@ msgstr "კატეგორიების შეცვლა თაგვი�
 msgid "The action will be deleted permanently."
 msgstr "ეს მოქმედება სამუდამოდ წაიშლება."
 
-#: ../panel-plugin/settings-dialog.cpp:666
+#: ../panel-plugin/settings-dialog.cpp:702
 msgid "Title"
 msgstr "სათაური"
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
-msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
+msgid ""
+"To unhide it you have to manually remove the file \"%s\" or open the file "
+"and remove the line \"%s\"."
 msgstr "მის გამოსაჩენად, თქვენ ან ხელით უნდა მოაცილოთ ფაილი \"%s\" ან გახსნათ ფაილი და მოაცილოთ ხაზი \"%s\"."
 
-#: ../panel-plugin/settings.cpp:140
+#: ../panel-plugin/settings.cpp:143
 #, c-format
 msgid "Turning off computer in %d seconds."
 msgstr "კომპიუტერი გაითიშება %d წამში."
@@ -480,15 +490,15 @@ msgstr "გამშვების რედაქტირება შეუ�
 msgid "Unable to open the following url: %s"
 msgstr "შემდეგი ვებ-მისამართის გახსნა ვერ მოხერხდა: %s"
 
-#: ../panel-plugin/settings-dialog.cpp:721
+#: ../panel-plugin/settings-dialog.cpp:757
 msgid "Use a single _panel row"
 msgstr "პანელის ერთი რიგის გამოყენება"
 
-#: ../panel-plugin/icon-size.cpp:66
+#: ../panel-plugin/icon-size.cpp:67
 msgid "Very Large"
 msgstr "ძალიან დიდი"
 
-#: ../panel-plugin/icon-size.cpp:60
+#: ../panel-plugin/icon-size.cpp:61
 msgid "Very Small"
 msgstr "ძალიან პატარა"
 
@@ -497,7 +507,7 @@ msgstr "ძალიან პატარა"
 msgid "Whisker Menu"
 msgstr "ვისკერ მენიუ"
 
-#: ../panel-plugin/settings.cpp:96
+#: ../panel-plugin/settings.cpp:99
 msgid "Wikipedia"
 msgstr "ვიკიპედია"
 
@@ -525,7 +535,7 @@ msgstr "ბრძანებები"
 msgid "_Delete"
 msgstr "წაშლა"
 
-#: ../panel-plugin/settings.cpp:162
+#: ../panel-plugin/settings.cpp:165
 msgid "_Edit Applications"
 msgstr "პროგრამების რედაქტირება"
 
@@ -537,15 +547,15 @@ msgstr ""
 msgid "_Help"
 msgstr "დახმარება"
 
-#: ../panel-plugin/settings.cpp:150
+#: ../panel-plugin/settings.cpp:153
 msgid "_Hibernate"
 msgstr "ჰიბერნაცია"
 
-#: ../panel-plugin/settings-dialog.cpp:703
+#: ../panel-plugin/settings-dialog.cpp:739
 msgid "_Icon:"
 msgstr "ხატულა:"
 
-#: ../panel-plugin/settings.cpp:112
+#: ../panel-plugin/settings.cpp:115
 msgid "_Lock Screen"
 msgstr "ეკრანის დაბლოკვა"
 
@@ -553,26 +563,26 @@ msgstr "ეკრანის დაბლოკვა"
 msgid "_OK"
 msgstr "კარგი"
 
-#: ../panel-plugin/settings-dialog.cpp:1052
+#: ../panel-plugin/settings-dialog.cpp:1088
 msgid "_Pattern:"
 msgstr "ნიმუში:"
 
-#: ../panel-plugin/settings-dialog.cpp:1093
+#: ../panel-plugin/settings-dialog.cpp:1129
 msgid "_Regular expression"
 msgstr "ჩვეულებრივი გამოხატულება"
 
-#: ../panel-plugin/settings.cpp:129
+#: ../panel-plugin/settings.cpp:132
 msgid "_Restart"
 msgstr "გადატვირთვა"
 
-#: ../panel-plugin/settings.cpp:107
+#: ../panel-plugin/settings.cpp:110
 msgid "_Settings Manager"
 msgstr "პარამეტრების მმართველი"
 
-#: ../panel-plugin/settings-dialog.cpp:685
+#: ../panel-plugin/settings-dialog.cpp:721
 msgid "_Title:"
 msgstr "სათაური:"
 
-#: ../panel-plugin/plugin.cpp:401
+#: ../panel-plugin/plugin.cpp:418
 msgid "translator-credits"
 msgstr "ინფორმაცია მთარგმნელზე"

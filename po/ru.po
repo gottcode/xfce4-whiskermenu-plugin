@@ -1,33 +1,32 @@
 # Russian translation of xfce4-whiskermenu-plugin.
 # Copyright (C) 2023 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
-#
+# 
 # Translators:
-# sorrymak <dearalcher@gmail.com>, 2013.
-# Kyrill Detinov <lazy.kent@opensuse.org>, 2013,2016,2020.
-# ndvio, 2023.
-# Olesya Gerasimenko <translation-team@basealt.ru>, 2022, 2023.
-# Sergey Alyoshin <alyoshin.s@gmail.com>, 2013-2015,2017-2018,2020-2021.
-# Sergey Shlyapugin <shlyapugin@gmail.com>, 2013.
-# Владимир <vladi105@yandex.ru>, 2018.
+# sorrymak <dearalcher@gmail.com>, 2013
+# Kyrill Detinov <lazy.kent@opensuse.org>, 2013,2016,2020
+# ndvio, 2023
+# Olesya Gerasimenko <translation-team@basealt.ru>, 2022
+# Sergey Alyoshin <alyoshin.s@gmail.com>, 2013-2015,2017-2018,2020-2021
+# Sergey Shlyapugin <shlyapugin@gmail.com>, 2013
+# sorrymak <dearalcher@gmail.com>, 2013
+# Владимир <vladi105@yandex.ru>, 2018
+# Владимир <vladi105@yandex.ru>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-02 18:19-0500\n"
+"POT-Creation-Date: 2023-07-11 07:02-0400\n"
 "PO-Revision-Date: 2023-05-11 09:34+0300\n"
-"Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
-"Language-Team: Basealt Translation Team\n"
+"Last-Translator: ndvio, 2023\n"
+"Language-Team: Russian (http://app.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ru\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
-"=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
-"%100>=11 && n%100<=14)? 2 : 3);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: ../panel-plugin/settings-dialog.cpp:992
+#: ../panel-plugin/settings-dialog.cpp:1028
 msgid "Add action"
 msgstr "Добавить действие"
 
@@ -44,15 +43,15 @@ msgid "Add to Panel"
 msgstr "Добавить на панель"
 
 #: ../panel-plugin/applications-page.cpp:35 ../panel-plugin/category.cpp:51
-#: ../panel-plugin/settings-dialog.cpp:760
+#: ../panel-plugin/settings-dialog.cpp:796
 msgid "All Applications"
 msgstr "Все приложения"
 
-#: ../panel-plugin/plugin.cpp:396
+#: ../panel-plugin/plugin.cpp:413
 msgid "Alternate application launcher for Xfce"
 msgstr "Альтернативное меню запуска приложений для Xfce"
 
-#: ../panel-plugin/settings-dialog.cpp:855
+#: ../panel-plugin/settings-dialog.cpp:891
 msgid "Amount of _items:"
 msgstr "_Количество элементов:"
 
@@ -60,7 +59,7 @@ msgstr "_Количество элементов:"
 msgid "Application icon si_ze:"
 msgstr "Раз_мер значка приложений:"
 
-#: ../panel-plugin/settings.cpp:39
+#: ../panel-plugin/settings.cpp:42
 msgid "Applications"
 msgstr "Приложения"
 
@@ -69,19 +68,19 @@ msgstr "Приложения"
 msgid "Are you sure you want to hide \"%s\"?"
 msgstr "Скрыть «%s»?"
 
-#: ../panel-plugin/settings.cpp:125
+#: ../panel-plugin/settings.cpp:128
 msgid "Are you sure you want to log out?"
 msgstr "Действительно выйти?"
 
-#: ../panel-plugin/settings.cpp:132
+#: ../panel-plugin/settings.cpp:135
 msgid "Are you sure you want to restart?"
 msgstr "Действительно перезагрузить?"
 
-#: ../panel-plugin/settings.cpp:139
+#: ../panel-plugin/settings.cpp:142
 msgid "Are you sure you want to shut down?"
 msgstr "Действительно выключить?"
 
-#: ../panel-plugin/settings-dialog.cpp:533
+#: ../panel-plugin/settings-dialog.cpp:569
 msgid "Background opacit_y:"
 msgstr "Прозрачность _фона:"
 
@@ -89,7 +88,7 @@ msgstr "Прозрачность _фона:"
 msgid "Browse the file system to choose a custom command."
 msgstr "Обзор файловой системы для выбора специальной команды."
 
-#: ../panel-plugin/settings-dialog.cpp:1074
+#: ../panel-plugin/settings-dialog.cpp:1110
 msgid "C_ommand:"
 msgstr "_Команда:"
 
@@ -105,28 +104,28 @@ msgstr "Выбрать меню для показа по идентификат�
 msgid "Clear Recently Used"
 msgstr "Очистить историю"
 
-#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/plugin.cpp:414
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Авторские права © 2013-2023 Graeme Gott"
 
-#: ../panel-plugin/settings-dialog.cpp:747
+#: ../panel-plugin/settings-dialog.cpp:783
 msgid "Default Category"
 msgstr "Категория по умолчанию"
 
-#: ../panel-plugin/settings-dialog.cpp:1025
+#: ../panel-plugin/settings-dialog.cpp:1061
 msgid "Details"
 msgstr "Подробности"
 
-#: ../panel-plugin/settings-dialog.cpp:660
+#: ../panel-plugin/settings-dialog.cpp:696
 msgid "Di_splay:"
 msgstr "Показы_вать:"
 
-#: ../panel-plugin/settings.cpp:146
+#: ../panel-plugin/settings.cpp:149
 msgid "Do you want to suspend to RAM?"
 msgstr "Перейти в режим ожидания используя RAM?"
 
-#: ../panel-plugin/settings.cpp:153
+#: ../panel-plugin/settings.cpp:156
 msgid "Do you want to suspend to disk?"
 msgstr "Перейти в режим ожидания используя диск?"
 
@@ -134,11 +133,11 @@ msgstr "Перейти в режим ожидания используя дис�
 msgid "Edit Application..."
 msgstr "Изменить приложение..."
 
-#: ../panel-plugin/settings.cpp:167
+#: ../panel-plugin/settings.cpp:170
 msgid "Edit _Profile"
 msgstr "Изменить _профиль"
 
-#: ../panel-plugin/settings.cpp:169
+#: ../panel-plugin/settings.cpp:172
 msgid "Failed to edit profile."
 msgstr "Не удалось изменить профиль."
 
@@ -147,53 +146,53 @@ msgstr "Не удалось изменить профиль."
 msgid "Failed to execute command \"%s\"."
 msgstr "Ошибка выполнения команды «%s»."
 
-#: ../panel-plugin/settings.cpp:152
+#: ../panel-plugin/settings.cpp:155
 msgid "Failed to hibernate."
 msgstr "Ошибка перехода в режим сна."
 
-#: ../panel-plugin/settings.cpp:164
+#: ../panel-plugin/settings.cpp:167
 msgid "Failed to launch menu editor."
 msgstr "Не удалось запустить редактор меню."
 
-#: ../panel-plugin/settings.cpp:114
+#: ../panel-plugin/settings.cpp:117
 msgid "Failed to lock screen."
 msgstr "Не удалось заблокировать экран."
 
-#: ../panel-plugin/settings.cpp:124 ../panel-plugin/settings.cpp:159
+#: ../panel-plugin/settings.cpp:127 ../panel-plugin/settings.cpp:162
 msgid "Failed to log out."
 msgstr "Не удалось выйти."
 
-#: ../panel-plugin/settings.cpp:109
+#: ../panel-plugin/settings.cpp:112
 msgid "Failed to open settings manager."
 msgstr "Не удалось открыть диспетчер настроек."
 
-#: ../panel-plugin/settings.cpp:131
+#: ../panel-plugin/settings.cpp:134
 msgid "Failed to restart."
 msgstr "Ошибка при перезагрузке."
 
-#: ../panel-plugin/settings.cpp:138
+#: ../panel-plugin/settings.cpp:141
 msgid "Failed to shut down."
 msgstr "Ошибка при выключении."
 
-#: ../panel-plugin/settings.cpp:145
+#: ../panel-plugin/settings.cpp:148
 msgid "Failed to suspend."
 msgstr "Ошибка при переходе в режим ожидания."
 
-#: ../panel-plugin/settings.cpp:119
+#: ../panel-plugin/settings.cpp:122
 msgid "Failed to switch user."
 msgstr "Не удалось сменить пользователя."
 
 #: ../panel-plugin/favorites-page.cpp:37
-#: ../panel-plugin/settings-dialog.cpp:751
+#: ../panel-plugin/settings-dialog.cpp:787
 msgid "Favorites"
 msgstr "Избранное"
 
-#: ../panel-plugin/settings.cpp:154
+#: ../panel-plugin/settings.cpp:157
 #, c-format
 msgid "Hibernating computer in %d seconds."
 msgstr "Переход в режим сна через %d с."
 
-#: ../panel-plugin/settings-dialog.cpp:636
+#: ../panel-plugin/settings-dialog.cpp:672
 msgid "Hidden"
 msgstr "Скрытый"
 
@@ -201,77 +200,85 @@ msgstr "Скрытый"
 msgid "Hide Application"
 msgstr "Скрыть приложение"
 
-#: ../panel-plugin/settings-dialog.cpp:665
+#: ../panel-plugin/settings-dialog.cpp:701
 msgid "Icon"
 msgstr "Значок"
 
-#: ../panel-plugin/settings-dialog.cpp:667
+#: ../panel-plugin/settings-dialog.cpp:703
 msgid "Icon and title"
 msgstr "Значок и заголовок"
 
-#: ../panel-plugin/settings-dialog.cpp:878
+#: ../panel-plugin/settings-dialog.cpp:914
 msgid "Include _favorites"
 msgstr "Включая _избранное"
 
-#: ../panel-plugin/icon-size.cpp:64
+#: ../panel-plugin/icon-size.cpp:65
 msgid "Large"
 msgstr "Крупный"
 
-#: ../panel-plugin/icon-size.cpp:65
+#: ../panel-plugin/icon-size.cpp:66
 msgid "Larger"
 msgstr "Большой"
 
-#: ../panel-plugin/settings.cpp:157
+#: ../panel-plugin/settings.cpp:160
 msgid "Log Ou_t..."
 msgstr "_Выйти"
 
-#: ../panel-plugin/settings.cpp:122
+#: ../panel-plugin/settings.cpp:125
 msgid "Log _Out"
 msgstr "_Выйти"
 
-#: ../panel-plugin/settings.cpp:126
+#: ../panel-plugin/settings.cpp:129
 #, c-format
 msgid "Logging out in %d seconds."
 msgstr "Выход через %d с."
 
-#: ../panel-plugin/settings.cpp:93
+#: ../panel-plugin/settings.cpp:96
 msgid "Man Pages"
 msgstr "Man-страницы"
 
-#: ../panel-plugin/settings-dialog.cpp:576
-#: ../panel-plugin/settings-dialog.cpp:808
+#: ../panel-plugin/settings-dialog.cpp:612
+#: ../panel-plugin/settings-dialog.cpp:844
 msgid "Menu"
 msgstr "Меню"
 
-#: ../panel-plugin/settings-dialog.cpp:1029
+#: ../panel-plugin/settings-dialog.cpp:551
+msgid "Menu _height:"
+msgstr ""
+
+#: ../panel-plugin/settings-dialog.cpp:533
+msgid "Menu _width:"
+msgstr ""
+
+#: ../panel-plugin/settings-dialog.cpp:1065
 msgid "Nam_e:"
 msgstr "_Название:"
 
-#: ../panel-plugin/settings-dialog.cpp:970
+#: ../panel-plugin/settings-dialog.cpp:1006
 msgid "Name"
 msgstr "Название"
 
-#: ../panel-plugin/icon-size.cpp:59
+#: ../panel-plugin/icon-size.cpp:60
 msgid "None"
 msgstr "Нет"
 
-#: ../panel-plugin/icon-size.cpp:63
+#: ../panel-plugin/icon-size.cpp:64
 msgid "Normal"
 msgstr "Нормальный"
 
-#: ../panel-plugin/settings.cpp:98
+#: ../panel-plugin/settings.cpp:101
 msgid "Open URI"
 msgstr "Открыть URI"
 
-#: ../panel-plugin/settings-dialog.cpp:627
+#: ../panel-plugin/settings-dialog.cpp:663
 msgid "P_rofile:"
 msgstr "П_рофиль:"
 
-#: ../panel-plugin/settings-dialog.cpp:656
+#: ../panel-plugin/settings-dialog.cpp:692
 msgid "Panel Button"
 msgstr "Кнопка на панели"
 
-#: ../panel-plugin/settings-dialog.cpp:975
+#: ../panel-plugin/settings-dialog.cpp:1011
 msgid "Pattern"
 msgstr "Шаблон"
 
@@ -279,19 +286,19 @@ msgstr "Шаблон"
 msgid "Popup menu at current mouse position"
 msgstr "Всплывающее меню при текущей позиции мыши"
 
-#: ../panel-plugin/settings-dialog.cpp:604
+#: ../panel-plugin/settings-dialog.cpp:640
 msgid "Position _search entry next to panel button"
 msgstr "Ст_рока поиска около панели"
 
-#: ../panel-plugin/settings-dialog.cpp:593
+#: ../panel-plugin/settings-dialog.cpp:629
 msgid "Position cate_gories next to panel button"
 msgstr "Ка_тегории после кнопок панели"
 
-#: ../panel-plugin/settings-dialog.cpp:580
+#: ../panel-plugin/settings-dialog.cpp:616
 msgid "Position categories _horizontally"
 msgstr "Расположить категории _горизонтально"
 
-#: ../panel-plugin/settings-dialog.cpp:615
+#: ../panel-plugin/settings-dialog.cpp:651
 msgid "Position commands next to search _entry"
 msgstr "Кнопки _команд рядом со строкой поиска"
 
@@ -303,8 +310,8 @@ msgstr "Показать идентификаторы экземпляров д�
 msgid "Print version information and exit"
 msgstr "Показать информацию о версии и выйти"
 
-#: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
-#: ../panel-plugin/settings-dialog.cpp:851
+#: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:791
+#: ../panel-plugin/settings-dialog.cpp:887
 msgid "Recently Used"
 msgstr "Недавние"
 
@@ -317,16 +324,16 @@ msgstr "Удалить действие «%s»?"
 msgid "Remove from Favorites"
 msgstr "Удалить из «Избранного»"
 
-#: ../panel-plugin/settings-dialog.cpp:1004
+#: ../panel-plugin/settings-dialog.cpp:1040
 msgid "Remove selected action"
 msgstr "Удалить выбранное действие"
 
-#: ../panel-plugin/settings.cpp:133
+#: ../panel-plugin/settings.cpp:136
 #, c-format
 msgid "Restarting computer in %d seconds."
 msgstr "Перезагрузка компьютера через %d с"
 
-#: ../panel-plugin/settings-dialog.cpp:634
+#: ../panel-plugin/settings-dialog.cpp:670
 msgid "Round Picture"
 msgstr "Круглое изображение"
 
@@ -335,7 +342,7 @@ msgstr "Круглое изображение"
 msgid "Run %s"
 msgstr "Выполнить %s"
 
-#: ../panel-plugin/settings.cpp:97
+#: ../panel-plugin/settings.cpp:100
 msgid "Run in Terminal"
 msgstr "Выполнить в терминале"
 
@@ -343,15 +350,15 @@ msgstr "Выполнить в терминале"
 msgid "Search Actio_ns"
 msgstr "Поисковые _действия"
 
-#: ../panel-plugin/search-action.cpp:251
+#: ../panel-plugin/search-action.cpp:260
 msgid "Search Action"
 msgstr "Поисковое действие"
 
-#: ../panel-plugin/settings.cpp:95
+#: ../panel-plugin/settings.cpp:98
 msgid "Search for Files"
 msgstr "Поиск файлов"
 
-#: ../panel-plugin/settings.cpp:94
+#: ../panel-plugin/settings.cpp:97
 msgid "Search the Web"
 msgstr "Поиск в Интернете"
 
@@ -363,7 +370,7 @@ msgstr "Выбор команды"
 msgid "Select an Icon"
 msgstr "Выбрать значок"
 
-#: ../panel-plugin/settings-dialog.cpp:891
+#: ../panel-plugin/settings-dialog.cpp:927
 msgid "Session Commands"
 msgstr "Команды выхода"
 
@@ -391,7 +398,7 @@ msgstr "С_писком"
 msgid "Show as t_ree"
 msgstr "_Деревом"
 
-#: ../panel-plugin/settings-dialog.cpp:895
+#: ../panel-plugin/settings-dialog.cpp:931
 msgid "Show c_onfirmation dialog"
 msgstr "Показывать диалог _подтверждения"
 
@@ -403,15 +410,15 @@ msgstr "Названия _категорий"
 msgid "Show generic application _names"
 msgstr "Общие _названия приложений"
 
-#: ../panel-plugin/settings.cpp:136
+#: ../panel-plugin/settings.cpp:139
 msgid "Shut _Down"
 msgstr "Вы_ключить"
 
-#: ../panel-plugin/icon-size.cpp:62
+#: ../panel-plugin/icon-size.cpp:63
 msgid "Small"
 msgstr "Маленький"
 
-#: ../panel-plugin/icon-size.cpp:61
+#: ../panel-plugin/icon-size.cpp:62
 msgid "Smaller"
 msgstr "Очень маленький"
 
@@ -423,32 +430,32 @@ msgstr "Сортировать по алфавиту от А до Я"
 msgid "Sort Alphabetically Z-A"
 msgstr "Сортировать по алфавиту от Я до А"
 
-#: ../panel-plugin/settings-dialog.cpp:834
+#: ../panel-plugin/settings-dialog.cpp:870
 msgid "Sort ca_tegories"
 msgstr "Сортировать категории"
 
-#: ../panel-plugin/settings-dialog.cpp:635
+#: ../panel-plugin/settings-dialog.cpp:671
 msgid "Square Picture"
 msgstr "Квадратное изображение"
 
-#: ../panel-plugin/settings-dialog.cpp:823
+#: ../panel-plugin/settings-dialog.cpp:859
 msgid "Stay _visible when focus is lost"
 msgstr "Оставлять _видимым при потере фокуса"
 
-#: ../panel-plugin/settings.cpp:143
+#: ../panel-plugin/settings.cpp:146
 msgid "Suspe_nd"
 msgstr "О_жидание"
 
-#: ../panel-plugin/settings.cpp:147
+#: ../panel-plugin/settings.cpp:150
 #, c-format
 msgid "Suspending computer in %d seconds."
 msgstr "Переход в режим ожидания через %d с."
 
-#: ../panel-plugin/settings.cpp:117
+#: ../panel-plugin/settings.cpp:120
 msgid "Switch _User"
 msgstr "Сменить _пользователя"
 
-#: ../panel-plugin/settings-dialog.cpp:812
+#: ../panel-plugin/settings-dialog.cpp:848
 msgid "Switch categories by _hovering"
 msgstr "Переключать категории по наведению _мыши"
 
@@ -456,20 +463,18 @@ msgstr "Переключать категории по наведению _мы�
 msgid "The action will be deleted permanently."
 msgstr "Действие буден навсегда удалено."
 
-#: ../panel-plugin/settings-dialog.cpp:666
+#: ../panel-plugin/settings-dialog.cpp:702
 msgid "Title"
 msgstr "Заголовок"
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
 msgid ""
-"To unhide it you have to manually remove the file \"%s\" or open the file and"
-" remove the line \"%s\"."
-msgstr ""
-"Чтобы снова показать его, вручную удалите файл «%s» или откройте файл и"
-" удалите строчку «%s»."
+"To unhide it you have to manually remove the file \"%s\" or open the file "
+"and remove the line \"%s\"."
+msgstr "Чтобы снова показать его, вручную удалите файл «%s» или откройте файл и удалите строчку «%s»."
 
-#: ../panel-plugin/settings.cpp:140
+#: ../panel-plugin/settings.cpp:143
 #, c-format
 msgid "Turning off computer in %d seconds."
 msgstr "Выключение компьютера через %d с"
@@ -491,15 +496,15 @@ msgstr "Невозможно изменить значок запуска."
 msgid "Unable to open the following url: %s"
 msgstr "Невозможно открыть ссылку: %s"
 
-#: ../panel-plugin/settings-dialog.cpp:721
+#: ../panel-plugin/settings-dialog.cpp:757
 msgid "Use a single _panel row"
 msgstr "Использовать _одну строку панели"
 
-#: ../panel-plugin/icon-size.cpp:66
+#: ../panel-plugin/icon-size.cpp:67
 msgid "Very Large"
 msgstr "Очень большой"
 
-#: ../panel-plugin/icon-size.cpp:60
+#: ../panel-plugin/icon-size.cpp:61
 msgid "Very Small"
 msgstr "Крошечный"
 
@@ -508,7 +513,7 @@ msgstr "Крошечный"
 msgid "Whisker Menu"
 msgstr "Меню Whisker"
 
-#: ../panel-plugin/settings.cpp:96
+#: ../panel-plugin/settings.cpp:99
 msgid "Wikipedia"
 msgstr "Википедия"
 
@@ -536,7 +541,7 @@ msgstr "_Команды"
 msgid "_Delete"
 msgstr "_Удалить"
 
-#: ../panel-plugin/settings.cpp:162
+#: ../panel-plugin/settings.cpp:165
 msgid "_Edit Applications"
 msgstr "Изменить п_риложения"
 
@@ -548,15 +553,15 @@ msgstr "_Общие"
 msgid "_Help"
 msgstr "_Справка"
 
-#: ../panel-plugin/settings.cpp:150
+#: ../panel-plugin/settings.cpp:153
 msgid "_Hibernate"
 msgstr "Со_н"
 
-#: ../panel-plugin/settings-dialog.cpp:703
+#: ../panel-plugin/settings-dialog.cpp:739
 msgid "_Icon:"
 msgstr "Зна_чок:"
 
-#: ../panel-plugin/settings.cpp:112
+#: ../panel-plugin/settings.cpp:115
 msgid "_Lock Screen"
 msgstr "Заб_локировать экран"
 
@@ -564,30 +569,26 @@ msgstr "Заб_локировать экран"
 msgid "_OK"
 msgstr "_ОК"
 
-#: ../panel-plugin/settings-dialog.cpp:1052
+#: ../panel-plugin/settings-dialog.cpp:1088
 msgid "_Pattern:"
 msgstr "_Шаблон:"
 
-#: ../panel-plugin/settings-dialog.cpp:1093
+#: ../panel-plugin/settings-dialog.cpp:1129
 msgid "_Regular expression"
 msgstr "_Регулярное выражение"
 
-#: ../panel-plugin/settings.cpp:129
+#: ../panel-plugin/settings.cpp:132
 msgid "_Restart"
 msgstr "_Перезагрузить"
 
-#: ../panel-plugin/settings.cpp:107
+#: ../panel-plugin/settings.cpp:110
 msgid "_Settings Manager"
 msgstr "Диспетчер _настроек"
 
-#: ../panel-plugin/settings-dialog.cpp:685
+#: ../panel-plugin/settings-dialog.cpp:721
 msgid "_Title:"
 msgstr "За_головок:"
 
-#: ../panel-plugin/plugin.cpp:401
+#: ../panel-plugin/plugin.cpp:418
 msgid "translator-credits"
-msgstr ""
-"Артём Демаков <dearalcher@gmail.com>, 2013\nКирилл Детинов <"
-"lazy.kent@opensuse.org>, 2013—2016\nСергей Алёшин <alyoshin.s@gmail.com>,"
-" 2013, 2014, 2020\nСергей Шляпугин <shlyapugin@gmail.com>, 2013\nВладимир"
-" Пенчиков <vladi105@yandex.ru>, 2018"
+msgstr "Артём Демаков <dearalcher@gmail.com>, 2013\nКирилл Детинов <lazy.kent@opensuse.org>, 2013—2016\nСергей Алёшин <alyoshin.s@gmail.com>, 2013, 2014, 2020\nСергей Шляпугин <shlyapugin@gmail.com>, 2013\nВладимир Пенчиков <vladi105@yandex.ru>, 2018"

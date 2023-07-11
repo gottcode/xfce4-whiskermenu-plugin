@@ -9,17 +9,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-02 18:19-0500\n"
+"POT-Creation-Date: 2023-07-11 07:02-0400\n"
 "PO-Revision-Date: 2020-02-17 13:39+0000\n"
-"Last-Translator: starryprabin <mr.prabin@gmail.com>\n"
-"Language-Team: Nepali (http://www.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/ne/)\n"
+"Last-Translator: starryprabin <mr.prabin@gmail.com>, 2013-2020\n"
+"Language-Team: Nepali (http://app.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/ne/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ne\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/settings-dialog.cpp:992
+#: ../panel-plugin/settings-dialog.cpp:1028
 msgid "Add action"
 msgstr "कार्य थप्नुहोस्"
 
@@ -36,15 +36,15 @@ msgid "Add to Panel"
 msgstr "पट्टीमा थप्नुहोस् "
 
 #: ../panel-plugin/applications-page.cpp:35 ../panel-plugin/category.cpp:51
-#: ../panel-plugin/settings-dialog.cpp:760
+#: ../panel-plugin/settings-dialog.cpp:796
 msgid "All Applications"
 msgstr "सबै अनुप्रयोगहरू"
 
-#: ../panel-plugin/plugin.cpp:396
+#: ../panel-plugin/plugin.cpp:413
 msgid "Alternate application launcher for Xfce"
 msgstr "Xfce को लागि वैकल्पिक अनुप्रयोग सुरुवातकर्ता"
 
-#: ../panel-plugin/settings-dialog.cpp:855
+#: ../panel-plugin/settings-dialog.cpp:891
 msgid "Amount of _items:"
 msgstr "वस्तुको परिमाण:"
 
@@ -52,7 +52,7 @@ msgstr "वस्तुको परिमाण:"
 msgid "Application icon si_ze:"
 msgstr "अनुप्रयोगको मूर्तिको आकार"
 
-#: ../panel-plugin/settings.cpp:39
+#: ../panel-plugin/settings.cpp:42
 msgid "Applications"
 msgstr "अनुप्रयोगहरु"
 
@@ -61,19 +61,19 @@ msgstr "अनुप्रयोगहरु"
 msgid "Are you sure you want to hide \"%s\"?"
 msgstr "के तपाइँ पक्का %sलाई लुकाउन चाहनुहुन्छ?"
 
-#: ../panel-plugin/settings.cpp:125
+#: ../panel-plugin/settings.cpp:128
 msgid "Are you sure you want to log out?"
 msgstr "के तपाईँ पक्का बाहिर निस्कन चाहनुहुन्छ?"
 
-#: ../panel-plugin/settings.cpp:132
+#: ../panel-plugin/settings.cpp:135
 msgid "Are you sure you want to restart?"
 msgstr "के तपाइँ पक्का पुन: शुरू गर्न चाहनुहुन्छ?"
 
-#: ../panel-plugin/settings.cpp:139
+#: ../panel-plugin/settings.cpp:142
 msgid "Are you sure you want to shut down?"
 msgstr "के तपाइँ पक्का बन्द गर्न चाहनुहुन्छ?"
 
-#: ../panel-plugin/settings-dialog.cpp:533
+#: ../panel-plugin/settings-dialog.cpp:569
 msgid "Background opacit_y:"
 msgstr "पृष्ठभूमिको अपारदर्शिता:"
 
@@ -81,7 +81,7 @@ msgstr "पृष्ठभूमिको अपारदर्शिता:"
 msgid "Browse the file system to choose a custom command."
 msgstr "एक व्यक्तिगत आदेशको चयन गर्न फाइल प्रणाली ब्राउज गर्नुहोस्"
 
-#: ../panel-plugin/settings-dialog.cpp:1074
+#: ../panel-plugin/settings-dialog.cpp:1110
 msgid "C_ommand:"
 msgstr "आदेश:"
 
@@ -97,28 +97,28 @@ msgstr ""
 msgid "Clear Recently Used"
 msgstr "हालसालै प्रयोग भएकालाई सफा गर्नुहोस् "
 
-#: ../panel-plugin/plugin.cpp:397
+#: ../panel-plugin/plugin.cpp:414
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "प्रतिलिपि अधिकार © 2013-2023 Graeme Gott"
 
-#: ../panel-plugin/settings-dialog.cpp:747
+#: ../panel-plugin/settings-dialog.cpp:783
 msgid "Default Category"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:1025
+#: ../panel-plugin/settings-dialog.cpp:1061
 msgid "Details"
 msgstr "विवरणहरु"
 
-#: ../panel-plugin/settings-dialog.cpp:660
+#: ../panel-plugin/settings-dialog.cpp:696
 msgid "Di_splay:"
 msgstr "प्रदर्शन:"
 
-#: ../panel-plugin/settings.cpp:146
+#: ../panel-plugin/settings.cpp:149
 msgid "Do you want to suspend to RAM?"
 msgstr "के तपाईँ RAM मा स्थगन गर्न चाहनुहुन्छ?"
 
-#: ../panel-plugin/settings.cpp:153
+#: ../panel-plugin/settings.cpp:156
 msgid "Do you want to suspend to disk?"
 msgstr "के तपाईँ डिस्कमा स्थगन गर्न चाहनुहुन्छ?"
 
@@ -126,11 +126,11 @@ msgstr "के तपाईँ डिस्कमा स्थगन गर्�
 msgid "Edit Application..."
 msgstr "अनुप्रयोगलाई सम्पादन गर्नुहोस् ..."
 
-#: ../panel-plugin/settings.cpp:167
+#: ../panel-plugin/settings.cpp:170
 msgid "Edit _Profile"
 msgstr "पाश्र्वचित्र सम्पादन गर्नुहोस्"
 
-#: ../panel-plugin/settings.cpp:169
+#: ../panel-plugin/settings.cpp:172
 msgid "Failed to edit profile."
 msgstr "पाश्र्वचित्र सम्पादन गर्न बिफल"
 
@@ -139,53 +139,53 @@ msgstr "पाश्र्वचित्र सम्पादन गर्न 
 msgid "Failed to execute command \"%s\"."
 msgstr "\"%s\" आदेशलाई कार्यान्वयन गर्न  बिफल।"
 
-#: ../panel-plugin/settings.cpp:152
+#: ../panel-plugin/settings.cpp:155
 msgid "Failed to hibernate."
 msgstr "सीतनिद्रामा जान बिफल।"
 
-#: ../panel-plugin/settings.cpp:164
+#: ../panel-plugin/settings.cpp:167
 msgid "Failed to launch menu editor."
 msgstr "मेनु सम्पादक शुरू गर्न बिफल।"
 
-#: ../panel-plugin/settings.cpp:114
+#: ../panel-plugin/settings.cpp:117
 msgid "Failed to lock screen."
 msgstr "स्क्रिन लक गर्न  बिफल ।"
 
-#: ../panel-plugin/settings.cpp:124 ../panel-plugin/settings.cpp:159
+#: ../panel-plugin/settings.cpp:127 ../panel-plugin/settings.cpp:162
 msgid "Failed to log out."
 msgstr "बाहिरीन बिफल ।"
 
-#: ../panel-plugin/settings.cpp:109
+#: ../panel-plugin/settings.cpp:112
 msgid "Failed to open settings manager."
 msgstr "प्राथमिकता व्यवस्थापक खोल्न  बिफल।"
 
-#: ../panel-plugin/settings.cpp:131
+#: ../panel-plugin/settings.cpp:134
 msgid "Failed to restart."
 msgstr " पुन: शुरू गर्न बिफल।"
 
-#: ../panel-plugin/settings.cpp:138
+#: ../panel-plugin/settings.cpp:141
 msgid "Failed to shut down."
 msgstr "बन्द गर्न बिफल।"
 
-#: ../panel-plugin/settings.cpp:145
+#: ../panel-plugin/settings.cpp:148
 msgid "Failed to suspend."
 msgstr " स्थगन गर्न बिफल।"
 
-#: ../panel-plugin/settings.cpp:119
+#: ../panel-plugin/settings.cpp:122
 msgid "Failed to switch user."
 msgstr "प्रयोगकर्ता बदल्न गर्न बिफल।"
 
 #: ../panel-plugin/favorites-page.cpp:37
-#: ../panel-plugin/settings-dialog.cpp:751
+#: ../panel-plugin/settings-dialog.cpp:787
 msgid "Favorites"
 msgstr "मन पर्ने"
 
-#: ../panel-plugin/settings.cpp:154
+#: ../panel-plugin/settings.cpp:157
 #, c-format
 msgid "Hibernating computer in %d seconds."
 msgstr "%dसेकेण्डमा सीतनिद्रामा जाँदै।"
 
-#: ../panel-plugin/settings-dialog.cpp:636
+#: ../panel-plugin/settings-dialog.cpp:672
 msgid "Hidden"
 msgstr ""
 
@@ -193,77 +193,85 @@ msgstr ""
 msgid "Hide Application"
 msgstr "अनुप्रयोगहरु लुकाउनुहोस्"
 
-#: ../panel-plugin/settings-dialog.cpp:665
+#: ../panel-plugin/settings-dialog.cpp:701
 msgid "Icon"
 msgstr "मूर्ति"
 
-#: ../panel-plugin/settings-dialog.cpp:667
+#: ../panel-plugin/settings-dialog.cpp:703
 msgid "Icon and title"
 msgstr "मूर्ति र शीर्षक "
 
-#: ../panel-plugin/settings-dialog.cpp:878
+#: ../panel-plugin/settings-dialog.cpp:914
 msgid "Include _favorites"
 msgstr "मनपर्ने समावेश गर्नुहोस्"
 
-#: ../panel-plugin/icon-size.cpp:64
+#: ../panel-plugin/icon-size.cpp:65
 msgid "Large"
 msgstr "ठूलो"
 
-#: ../panel-plugin/icon-size.cpp:65
+#: ../panel-plugin/icon-size.cpp:66
 msgid "Larger"
 msgstr "अझ ठूलो"
 
-#: ../panel-plugin/settings.cpp:157
+#: ../panel-plugin/settings.cpp:160
 msgid "Log Ou_t..."
 msgstr "बाहिर निस्कनुहोस्"
 
-#: ../panel-plugin/settings.cpp:122
+#: ../panel-plugin/settings.cpp:125
 msgid "Log _Out"
 msgstr "बाहिर _निस्कनुहोस्"
 
-#: ../panel-plugin/settings.cpp:126
+#: ../panel-plugin/settings.cpp:129
 #, c-format
 msgid "Logging out in %d seconds."
 msgstr "%dसेकेण्डमा बाहिर निस्कदै।"
 
-#: ../panel-plugin/settings.cpp:93
+#: ../panel-plugin/settings.cpp:96
 msgid "Man Pages"
 msgstr "सहयोग पृष्ठहरु"
 
-#: ../panel-plugin/settings-dialog.cpp:576
-#: ../panel-plugin/settings-dialog.cpp:808
+#: ../panel-plugin/settings-dialog.cpp:612
+#: ../panel-plugin/settings-dialog.cpp:844
 msgid "Menu"
 msgstr "मेन्यू"
 
-#: ../panel-plugin/settings-dialog.cpp:1029
+#: ../panel-plugin/settings-dialog.cpp:551
+msgid "Menu _height:"
+msgstr ""
+
+#: ../panel-plugin/settings-dialog.cpp:533
+msgid "Menu _width:"
+msgstr ""
+
+#: ../panel-plugin/settings-dialog.cpp:1065
 msgid "Nam_e:"
 msgstr "नाम:"
 
-#: ../panel-plugin/settings-dialog.cpp:970
+#: ../panel-plugin/settings-dialog.cpp:1006
 msgid "Name"
 msgstr "नाम"
 
-#: ../panel-plugin/icon-size.cpp:59
+#: ../panel-plugin/icon-size.cpp:60
 msgid "None"
 msgstr "केहि पनि छैन"
 
-#: ../panel-plugin/icon-size.cpp:63
+#: ../panel-plugin/icon-size.cpp:64
 msgid "Normal"
 msgstr "साधारण"
 
-#: ../panel-plugin/settings.cpp:98
+#: ../panel-plugin/settings.cpp:101
 msgid "Open URI"
 msgstr "युआरआइ खोल्नुहोस्"
 
-#: ../panel-plugin/settings-dialog.cpp:627
+#: ../panel-plugin/settings-dialog.cpp:663
 msgid "P_rofile:"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:656
+#: ../panel-plugin/settings-dialog.cpp:692
 msgid "Panel Button"
 msgstr "पट्टीको बटन"
 
-#: ../panel-plugin/settings-dialog.cpp:975
+#: ../panel-plugin/settings-dialog.cpp:1011
 msgid "Pattern"
 msgstr "ढाँचा"
 
@@ -271,19 +279,19 @@ msgstr "ढाँचा"
 msgid "Popup menu at current mouse position"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:604
+#: ../panel-plugin/settings-dialog.cpp:640
 msgid "Position _search entry next to panel button"
 msgstr "पट्टीको बटनको नजिक खोजलाई स्थानाङ्कित गर्नुहोस् "
 
-#: ../panel-plugin/settings-dialog.cpp:593
+#: ../panel-plugin/settings-dialog.cpp:629
 msgid "Position cate_gories next to panel button"
 msgstr "पट्टीको बटनको नजिक श्रेणीहरुलाई स्थानाङ्कित गर्नुहोस्"
 
-#: ../panel-plugin/settings-dialog.cpp:580
+#: ../panel-plugin/settings-dialog.cpp:616
 msgid "Position categories _horizontally"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:615
+#: ../panel-plugin/settings-dialog.cpp:651
 msgid "Position commands next to search _entry"
 msgstr "खोजको नजिक आदेशहरुलाई स्थानाङ्कित गर्नुहोस् "
 
@@ -295,8 +303,8 @@ msgstr ""
 msgid "Print version information and exit"
 msgstr ""
 
-#: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:755
-#: ../panel-plugin/settings-dialog.cpp:851
+#: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:791
+#: ../panel-plugin/settings-dialog.cpp:887
 msgid "Recently Used"
 msgstr "हालसालै प्रयोग भएका "
 
@@ -309,16 +317,16 @@ msgstr "के \"%s\" कार्य हटाउनु हुन्छ?"
 msgid "Remove from Favorites"
 msgstr "मन पर्नेबाट हटाउनुहोस् "
 
-#: ../panel-plugin/settings-dialog.cpp:1004
+#: ../panel-plugin/settings-dialog.cpp:1040
 msgid "Remove selected action"
 msgstr "चयन गरेको कार्य हटाउनुहोस्"
 
-#: ../panel-plugin/settings.cpp:133
+#: ../panel-plugin/settings.cpp:136
 #, c-format
 msgid "Restarting computer in %d seconds."
 msgstr "%dसेकेण्डमा कम्प्युटर पुनःशुरू गर्दै।"
 
-#: ../panel-plugin/settings-dialog.cpp:634
+#: ../panel-plugin/settings-dialog.cpp:670
 msgid "Round Picture"
 msgstr ""
 
@@ -327,7 +335,7 @@ msgstr ""
 msgid "Run %s"
 msgstr "%s चालु गर्नुहोस्"
 
-#: ../panel-plugin/settings.cpp:97
+#: ../panel-plugin/settings.cpp:100
 msgid "Run in Terminal"
 msgstr "टर्मिनलमा चालु गर्नुहोस्"
 
@@ -335,15 +343,15 @@ msgstr "टर्मिनलमा चालु गर्नुहोस्"
 msgid "Search Actio_ns"
 msgstr "कार्यहरु खोज्नुहोस्"
 
-#: ../panel-plugin/search-action.cpp:251
+#: ../panel-plugin/search-action.cpp:260
 msgid "Search Action"
 msgstr "कार्य खोज्नुहोस्"
 
-#: ../panel-plugin/settings.cpp:95
+#: ../panel-plugin/settings.cpp:98
 msgid "Search for Files"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:94
+#: ../panel-plugin/settings.cpp:97
 msgid "Search the Web"
 msgstr ""
 
@@ -355,7 +363,7 @@ msgstr "आदेश चयन गर्नुहोस् "
 msgid "Select an Icon"
 msgstr "मूर्ति चयन गर्नुहोस् "
 
-#: ../panel-plugin/settings-dialog.cpp:891
+#: ../panel-plugin/settings-dialog.cpp:927
 msgid "Session Commands"
 msgstr "सत्र आदेशहरू"
 
@@ -383,7 +391,7 @@ msgstr "सूचीको आकारमा देखाउनुहोस्"
 msgid "Show as t_ree"
 msgstr "रूखको आकारमा देखाउनुहोस्"
 
-#: ../panel-plugin/settings-dialog.cpp:895
+#: ../panel-plugin/settings-dialog.cpp:931
 msgid "Show c_onfirmation dialog"
 msgstr "पुष्टिकरण संवाद देखाउनुहोस्"
 
@@ -395,15 +403,15 @@ msgstr "वर्गका नामहरू देखाउनुहोस्"
 msgid "Show generic application _names"
 msgstr "अनुप्रयोगहरुको समान्य नाम देखाउनुहोस्"
 
-#: ../panel-plugin/settings.cpp:136
+#: ../panel-plugin/settings.cpp:139
 msgid "Shut _Down"
 msgstr "बन्द गर्नुहोस्"
 
-#: ../panel-plugin/icon-size.cpp:62
+#: ../panel-plugin/icon-size.cpp:63
 msgid "Small"
 msgstr "सानो"
 
-#: ../panel-plugin/icon-size.cpp:61
+#: ../panel-plugin/icon-size.cpp:62
 msgid "Smaller"
 msgstr "अझ सानो "
 
@@ -415,32 +423,32 @@ msgstr "A-Z  अनुसार वर्णक्रमीक गर्नु�
 msgid "Sort Alphabetically Z-A"
 msgstr "Z-A अनुसार वर्णक्रमीक गर्नुहोस् "
 
-#: ../panel-plugin/settings-dialog.cpp:834
+#: ../panel-plugin/settings-dialog.cpp:870
 msgid "Sort ca_tegories"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:635
+#: ../panel-plugin/settings-dialog.cpp:671
 msgid "Square Picture"
 msgstr ""
 
-#: ../panel-plugin/settings-dialog.cpp:823
+#: ../panel-plugin/settings-dialog.cpp:859
 msgid "Stay _visible when focus is lost"
 msgstr " ध्यान हराउँदा दृश्यात्मक रहनुहोस् "
 
-#: ../panel-plugin/settings.cpp:143
+#: ../panel-plugin/settings.cpp:146
 msgid "Suspe_nd"
 msgstr "स्थगन गर्नुहोस्"
 
-#: ../panel-plugin/settings.cpp:147
+#: ../panel-plugin/settings.cpp:150
 #, c-format
 msgid "Suspending computer in %d seconds."
 msgstr "%d सेकेणडमा कम्प्युटर स्थगन गर्दै।"
 
-#: ../panel-plugin/settings.cpp:117
+#: ../panel-plugin/settings.cpp:120
 msgid "Switch _User"
 msgstr "प्रयोगकर्ता बदल्नुहोस्"
 
-#: ../panel-plugin/settings-dialog.cpp:812
+#: ../panel-plugin/settings-dialog.cpp:848
 msgid "Switch categories by _hovering"
 msgstr "मण्डराएर वर्गहरुलाई बदल्नुहोस् "
 
@@ -448,16 +456,18 @@ msgstr "मण्डराएर वर्गहरुलाई बदल्न�
 msgid "The action will be deleted permanently."
 msgstr "कार्य स्थायीरुपमा हटाईनेछ।"
 
-#: ../panel-plugin/settings-dialog.cpp:666
+#: ../panel-plugin/settings-dialog.cpp:702
 msgid "Title"
 msgstr "शीर्षक "
 
 #: ../panel-plugin/launcher.cpp:267
 #, c-format
-msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
+msgid ""
+"To unhide it you have to manually remove the file \"%s\" or open the file "
+"and remove the line \"%s\"."
 msgstr "यसलाई नलुकाउन तपाईंले मैन्युअल तरिकाले फाइल \"%s\" हटाउनुपर्दछ वा फाइल खोल्नुपर्दछ र लाइन \"%s\" हटाउनुपर्नेछ।"
 
-#: ../panel-plugin/settings.cpp:140
+#: ../panel-plugin/settings.cpp:143
 #, c-format
 msgid "Turning off computer in %d seconds."
 msgstr "%d सेकेणडमा कम्प्युटर बन्द गर्दै।"
@@ -479,15 +489,15 @@ msgstr "प्रक्षेपकलाई सम्पादन गर्न 
 msgid "Unable to open the following url: %s"
 msgstr "निम्न युआरएललाई खोल्न बिफल: %s "
 
-#: ../panel-plugin/settings-dialog.cpp:721
+#: ../panel-plugin/settings-dialog.cpp:757
 msgid "Use a single _panel row"
 msgstr "एक पङ्क्ति पट्टीको प्रयोग गर्नुहोस्"
 
-#: ../panel-plugin/icon-size.cpp:66
+#: ../panel-plugin/icon-size.cpp:67
 msgid "Very Large"
 msgstr "अत्यन्त ठूलो"
 
-#: ../panel-plugin/icon-size.cpp:60
+#: ../panel-plugin/icon-size.cpp:61
 msgid "Very Small"
 msgstr "अत्यन्त सानो "
 
@@ -496,7 +506,7 @@ msgstr "अत्यन्त सानो "
 msgid "Whisker Menu"
 msgstr "विस्कर मेन्यू"
 
-#: ../panel-plugin/settings.cpp:96
+#: ../panel-plugin/settings.cpp:99
 msgid "Wikipedia"
 msgstr "विकिपीडिया"
 
@@ -524,7 +534,7 @@ msgstr "आदेशहरू"
 msgid "_Delete"
 msgstr "मेटाउनुहोस्"
 
-#: ../panel-plugin/settings.cpp:162
+#: ../panel-plugin/settings.cpp:165
 msgid "_Edit Applications"
 msgstr "अनुप्रयोगहरु सम्पादन गर्नुहोस्"
 
@@ -536,15 +546,15 @@ msgstr ""
 msgid "_Help"
 msgstr "मद्दत"
 
-#: ../panel-plugin/settings.cpp:150
+#: ../panel-plugin/settings.cpp:153
 msgid "_Hibernate"
 msgstr "सीतनिद्रामा पठाउनुहोस्।"
 
-#: ../panel-plugin/settings-dialog.cpp:703
+#: ../panel-plugin/settings-dialog.cpp:739
 msgid "_Icon:"
 msgstr "मूर्ति:"
 
-#: ../panel-plugin/settings.cpp:112
+#: ../panel-plugin/settings.cpp:115
 msgid "_Lock Screen"
 msgstr "स्क्रिन लक गर्नुहोस्"
 
@@ -552,26 +562,26 @@ msgstr "स्क्रिन लक गर्नुहोस्"
 msgid "_OK"
 msgstr "ठीक"
 
-#: ../panel-plugin/settings-dialog.cpp:1052
+#: ../panel-plugin/settings-dialog.cpp:1088
 msgid "_Pattern:"
 msgstr "ढाँचा:"
 
-#: ../panel-plugin/settings-dialog.cpp:1093
+#: ../panel-plugin/settings-dialog.cpp:1129
 msgid "_Regular expression"
 msgstr "रेगुलर एक्सप्रेशन"
 
-#: ../panel-plugin/settings.cpp:129
+#: ../panel-plugin/settings.cpp:132
 msgid "_Restart"
 msgstr "पुन: शुरू गर्नुहोस्"
 
-#: ../panel-plugin/settings.cpp:107
+#: ../panel-plugin/settings.cpp:110
 msgid "_Settings Manager"
 msgstr "प्राथमिकता प्रबन्धक"
 
-#: ../panel-plugin/settings-dialog.cpp:685
+#: ../panel-plugin/settings-dialog.cpp:721
 msgid "_Title:"
 msgstr "शीर्षक:"
 
-#: ../panel-plugin/plugin.cpp:401
+#: ../panel-plugin/plugin.cpp:418
 msgid "translator-credits"
 msgstr "अनुवादक-आभार "
