@@ -245,11 +245,11 @@ msgstr "Meny"
 
 #: ../panel-plugin/settings-dialog.cpp:551
 msgid "Menu _height:"
-msgstr ""
+msgstr "Meny _höjd:"
 
 #: ../panel-plugin/settings-dialog.cpp:533
 msgid "Menu _width:"
-msgstr ""
+msgstr "Meny _bredd:"
 
 #: ../panel-plugin/settings-dialog.cpp:1065
 msgid "Nam_e:"
