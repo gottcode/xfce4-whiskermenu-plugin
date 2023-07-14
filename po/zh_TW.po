@@ -239,11 +239,11 @@ msgstr "選單"
 
 #: ../panel-plugin/settings-dialog.cpp:551
 msgid "Menu _height:"
-msgstr ""
+msgstr "選單高度：(_H)"
 
 #: ../panel-plugin/settings-dialog.cpp:533
 msgid "Menu _width:"
-msgstr ""
+msgstr "選單寬度：(_W)"
 
 #: ../panel-plugin/settings-dialog.cpp:1065
 msgid "Nam_e:"
