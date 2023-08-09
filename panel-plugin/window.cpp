@@ -295,6 +295,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 
 	m_sidebar = GTK_SCROLLED_WINDOW(gtk_scrolled_window_new(nullptr, nullptr));
 	gtk_grid_attach(m_contents_box, GTK_WIDGET(m_sidebar), 1, 1, 1, 1);
+	gtk_scrolled_window_set_propagate_natural_height(m_sidebar, true);
 	gtk_scrolled_window_set_shadow_type(m_sidebar, GTK_SHADOW_NONE);
 	gtk_scrolled_window_set_policy(m_sidebar, GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
 	gtk_container_add(GTK_CONTAINER(m_sidebar), GTK_WIDGET(m_category_buttons));
@@ -812,13 +813,15 @@ gboolean WhiskerMenu::Window::on_draw_event(GtkWidget* widget, cairo_t* cr)
 
 void WhiskerMenu::Window::check_scrollbar_needed()
 {
-	// Find height of sidebar buttons
-	int height = 0;
-	gtk_widget_get_preferred_height(GTK_WIDGET(m_category_buttons), nullptr, &height);
+	// Find height of sidebar and buttons
+	int buttons_height = 0;
+	gtk_widget_get_preferred_height(GTK_WIDGET(m_category_buttons), nullptr, &buttons_height);
+
+	int sidebar_height = 0;
+	gtk_widget_get_preferred_height(GTK_WIDGET(m_sidebar), nullptr, &sidebar_height);
 
 	// Always show scrollbar if sidebar is shorter than buttons
-	int allocated = gtk_widget_get_allocated_height(GTK_WIDGET(m_sidebar));
-	if ((allocated > height) || (allocated == 1))
+	if (sidebar_height >= buttons_height)
 	{
 		gtk_scrolled_window_set_policy(m_sidebar, GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
 	}
