@@ -97,12 +97,14 @@ int main(int argc, char** argv)
 
 	// Parse commandline options
 	gboolean at_pointer = FALSE;
+	gboolean at_center = FALSE;
 	gboolean print_version = FALSE;
 	gboolean list_instances = FALSE;
 	gint instance_number = 0;
 	const GOptionEntry entries[] =
 	{
 		{ "pointer", 'p', 0, G_OPTION_ARG_NONE, &at_pointer, _("Popup menu at current mouse position"), nullptr },
+		{ "center", 'c', 0, G_OPTION_ARG_NONE, &at_center, _("Popup menu at center of screen"), nullptr },
 		{ "list", 'l', 0, G_OPTION_ARG_NONE, &list_instances, _("Print available menu instance IDs"), nullptr },
 		{ "instance", 'i', 0, G_OPTION_ARG_INT, &instance_number, _("Choose which menu to popup by instance ID"), nullptr },
 		{ "version", 'V', 0, G_OPTION_ARG_NONE, &print_version, _("Print version information and exit"), nullptr },
@@ -153,7 +155,7 @@ int main(int argc, char** argv)
 	const std::string instance = !instance_number ? "whiskermenu" : ("whiskermenu-" + std::to_string(instance_number));
 
 	int result = EXIT_SUCCESS;
-	GVariant* variant = g_variant_new_variant(g_variant_new_boolean(at_pointer));
+	GVariant* variant = g_variant_new_variant(g_variant_new_int32(at_pointer + (at_center * 2)));
 	GVariant* ret = g_dbus_proxy_call_sync(proxy,
 			"PluginEvent",
 			g_variant_new("(ss@v)", instance.c_str(), "popup", variant),

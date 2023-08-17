@@ -47,9 +47,9 @@ public:
 
 	enum Position
 	{
-		PositionHorizontal = GTK_ORIENTATION_HORIZONTAL,
-		PositionVertical = GTK_ORIENTATION_VERTICAL,
-		PositionAtCursor
+		PositionAtButton,
+		PositionAtCursor,
+		PositionAtCenter
 	};
 
 	GtkWidget* get_widget() const

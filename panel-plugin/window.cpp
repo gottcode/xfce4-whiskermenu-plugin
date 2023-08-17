@@ -464,7 +464,7 @@ void WhiskerMenu::Window::show(const Position position)
 	m_recent->get_view()->reload_icon_size();
 	m_applications->get_view()->reload_icon_size();
 
-	if (position != PositionAtCursor)
+	if (position == PositionAtButton)
 	{
 		// Wait up to half a second for auto-hidden panels to be shown
 		int parent_x = 0, parent_y = 0;
@@ -511,6 +511,13 @@ void WhiskerMenu::Window::show(const Position position)
 		resized = true;
 	}
 
+	// Center window if requested
+	if (position == PositionAtCenter)
+	{
+		m_geometry.x = (monitor.width - m_geometry.width) / 2;
+		m_geometry.y = (monitor.height - m_geometry.height) / 2;
+	}
+
 	// Move window
 	move_window(monitor);
 
@@ -544,7 +551,7 @@ void WhiskerMenu::Window::show(const Position position)
 	}
 
 	// Fetch position again to make sure window does not overlap panel
-	if (position != PositionAtCursor)
+	if (position == PositionAtButton)
 	{
 		m_plugin->get_menu_position(&m_geometry.x, &m_geometry.y);
 	}

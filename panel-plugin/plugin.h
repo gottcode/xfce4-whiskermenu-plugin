@@ -74,7 +74,7 @@ private:
 	void show_about();
 	gboolean size_changed(gint size);
 	void update_size();
-	void show_menu(bool at_cursor);
+	void show_menu(int position);
 
 private:
 	XfcePanelPlugin* m_plugin;
