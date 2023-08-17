@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-11 07:18-0400\n"
+"POT-Creation-Date: 2023-08-17 11:38-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,7 +87,7 @@ msgstr ""
 msgid "Categ_ory icon size:"
 msgstr ""
 
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:109
 msgid "Choose which menu to popup by instance ID"
 msgstr ""
 
@@ -96,7 +96,7 @@ msgid "Clear Recently Used"
 msgstr ""
 
 #: ../panel-plugin/plugin.cpp:414
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:128
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr ""
 
@@ -273,7 +273,11 @@ msgstr ""
 msgid "Pattern"
 msgstr ""
 
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Popup menu at center of screen"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
 msgid "Popup menu at current mouse position"
 msgstr ""
 
@@ -303,11 +307,11 @@ msgstr ""
 msgid "Position pro_file on bottom"
 msgstr ""
 
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
 msgid "Print available menu instance IDs"
 msgstr ""
 
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:110
 msgid "Print version information and exit"
 msgstr ""
 
