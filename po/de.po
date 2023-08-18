@@ -11,14 +11,14 @@
 # Michał Trzebiatowski <michtrz@gmail.com>, 2017-2018
 # Peter Feichtinger <shippo@gmx.at>, 2018
 # philm <philm@manjaro.org>, 2013
-# Tobias Bannert <tobannert@gmail.com>, 2014-2017
+# Tobias Bannert <tobannert@gmail.com>, 2014-2017,2023
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-11 07:18-0400\n"
+"POT-Creation-Date: 2023-08-17 11:38-0400\n"
 "PO-Revision-Date: 2013-06-20 11:26+0000\n"
-"Last-Translator: Andreas Eitel <github-aneitel@online.de>, 2019,2021-2023\n"
+"Last-Translator: Tobias Bannert <tobannert@gmail.com>, 2014-2017,2023\n"
 "Language-Team: German (http://app.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -66,7 +66,7 @@ msgstr "Anwendungen"
 #: ../panel-plugin/launcher.cpp:272
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
-msgstr "Möchten Sie \"%s\" wirklich ausblenden?"
+msgstr "Möchten Sie »%s« wirklich ausblenden?"
 
 #: ../panel-plugin/settings.cpp:129
 msgid "Are you sure you want to log out?"
@@ -96,7 +96,7 @@ msgstr "B_efehl:"
 msgid "Categ_ory icon size:"
 msgstr "Symbolgröße der _Kategorien:"
 
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:109
 msgid "Choose which menu to popup by instance ID"
 msgstr "Wählen Sie anhand der Instanz-ID, welches Menü eingeblendet werden soll"
 
@@ -105,13 +105,13 @@ msgid "Clear Recently Used"
 msgstr "»Zuletzt verwendet« leeren"
 
 #: ../panel-plugin/plugin.cpp:414
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:128
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Urheberrecht © 2013-2023 Graeme Gott"
 
 #: ../panel-plugin/settings-dialog.cpp:796
 msgid "Default Category"
-msgstr "Standardkategorie"
+msgstr "Vorgabekategorie"
 
 #: ../panel-plugin/settings-dialog.cpp:1074
 msgid "Details"
@@ -180,7 +180,7 @@ msgstr "Fehler beim Energiesparen."
 
 #: ../panel-plugin/settings.cpp:123
 msgid "Failed to switch user."
-msgstr "Konnte Programm zum Benutzerwechsel nicht ausführen."
+msgstr "Benutzerwechsel ist fehlgeschlagen."
 
 #: ../panel-plugin/favorites-page.cpp:37
 #: ../panel-plugin/settings-dialog.cpp:800
@@ -222,7 +222,7 @@ msgstr "Größer"
 
 #: ../panel-plugin/settings.cpp:161
 msgid "Log Ou_t..."
-msgstr "Abmelden..."
+msgstr "Abmelden …"
 
 #: ../panel-plugin/settings.cpp:126
 msgid "Log _Out"
@@ -244,11 +244,11 @@ msgstr "Menü"
 
 #: ../panel-plugin/settings-dialog.cpp:551
 msgid "Menu _height:"
-msgstr "Menü _Höhe:"
+msgstr "Menü_höhe:"
 
 #: ../panel-plugin/settings-dialog.cpp:533
 msgid "Menu _width:"
-msgstr "Menü _Breite:"
+msgstr "Menü_breite:"
 
 #: ../panel-plugin/settings-dialog.cpp:1078
 msgid "Nam_e:"
@@ -282,7 +282,11 @@ msgstr "Leistenknopf"
 msgid "Pattern"
 msgstr "Muster"
 
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Popup menu at center of screen"
+msgstr ""
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
 msgid "Popup menu at current mouse position"
 msgstr "Popup-Menü an der aktuellen Mausposition"
 
@@ -312,11 +316,11 @@ msgstr "Befehle beim Sucheintrag _positionieren"
 msgid "Position pro_file on bottom"
 msgstr "Pro_fil an der Unterseite positionieren"
 
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
 msgid "Print available menu instance IDs"
 msgstr "IDs der verfügbaren Menüinstanzen ausgeben"
 
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:110
 msgid "Print version information and exit"
 msgstr "Versionsinformationen ausgeben und beenden"
 
@@ -378,7 +382,7 @@ msgstr "Einen Befehl wählen"
 
 #: ../panel-plugin/settings-dialog.cpp:135
 msgid "Select an Icon"
-msgstr "Wähle ein Symbol aus"
+msgstr "Bitte Symbol auswählen"
 
 #: ../panel-plugin/settings-dialog.cpp:940
 msgid "Session Commands"
@@ -482,7 +486,7 @@ msgstr "Titel"
 msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
-msgstr "Um sie wieder einzublenden, müssen Sie die Datei \"%s\" manuell entfernen oder diese Datei öffnen und die Zeile \"%s\" entfernen."
+msgstr "Um sie wieder einzublenden, müssen Sie die Datei »%s« manuell entfernen oder diese Datei öffnen und die Zeile »%s« entfernen."
 
 #: ../panel-plugin/settings.cpp:144
 #, c-format
