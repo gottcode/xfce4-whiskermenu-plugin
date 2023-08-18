@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-11 07:18-0400\n"
+"POT-Creation-Date: 2023-08-17 11:38-0400\n"
 "PO-Revision-Date: 2013-06-20 11:26+0000\n"
 "Last-Translator: Moo, 2023\n"
 "Language-Team: Lithuanian (http://app.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/lt/)\n"
@@ -89,7 +89,7 @@ msgstr "K_omanda:"
 msgid "Categ_ory icon size:"
 msgstr "Kategori_jų piktogramų dydis:"
 
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:109
 msgid "Choose which menu to popup by instance ID"
 msgstr "Pasirinkti, kurį meniu iškelti pagal egzemplioriaus ID"
 
@@ -98,7 +98,7 @@ msgid "Clear Recently Used"
 msgstr "Išvalyti neseniai naudotas"
 
 #: ../panel-plugin/plugin.cpp:414
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:128
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Autorių teisės © 2013–2023 Graeme Gott"
 
@@ -275,7 +275,11 @@ msgstr "Skydelio mygtukas"
 msgid "Pattern"
 msgstr "Šablonas"
 
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Popup menu at center of screen"
+msgstr "Rodyti iškylantįjį meniu ekrano viduryje"
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
 msgid "Popup menu at current mouse position"
 msgstr "Iškelti meniu dabartinėje pelės vietoje"
 
@@ -305,11 +309,11 @@ msgstr "Išdės_tyti komandas šalia paieškos lauko"
 msgid "Position pro_file on bottom"
 msgstr "Išdėstyti pro_filį apačioje"
 
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
 msgid "Print available menu instance IDs"
 msgstr "Parodyti prieinamus meniu egzemplioriaus ID"
 
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:110
 msgid "Print version information and exit"
 msgstr "Parodyti informaciją apie versiją ir išeiti"
 
