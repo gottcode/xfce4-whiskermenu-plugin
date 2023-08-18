@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-11 07:18-0400\n"
+"POT-Creation-Date: 2023-08-17 11:38-0400\n"
 "PO-Revision-Date: 2013-06-20 11:26+0000\n"
 "Last-Translator: 黃柏諺 <s8321414@gmail.com>, 2019-2023\n"
 "Language-Team: Chinese (Taiwan) (http://app.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/zh_TW/)\n"
@@ -91,7 +91,7 @@ msgstr "指令(_O)："
 msgid "Categ_ory icon size:"
 msgstr "分類圖示大小(_O)："
 
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:109
 msgid "Choose which menu to popup by instance ID"
 msgstr "透過實體 ID 選擇要彈出的選單"
 
@@ -100,7 +100,7 @@ msgid "Clear Recently Used"
 msgstr "清除最近使用"
 
 #: ../panel-plugin/plugin.cpp:414
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:128
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Copyright © 2013-2023 Graeme Gott"
 
@@ -277,7 +277,11 @@ msgstr "面板按鈕"
 msgid "Pattern"
 msgstr "圖案"
 
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Popup menu at center of screen"
+msgstr "畫面中央的彈出式選單"
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
 msgid "Popup menu at current mouse position"
 msgstr "目前滑鼠位置的彈出式選單"
 
@@ -307,11 +311,11 @@ msgstr "下一個指令的搜尋結果(_E)"
 msgid "Position pro_file on bottom"
 msgstr "將設定檔置於底部(_F)"
 
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
 msgid "Print available menu instance IDs"
 msgstr "印出可用的選單實體 ID"
 
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:110
 msgid "Print version information and exit"
 msgstr "印出版本資訊然後結束"
 
