@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-11 07:18-0400\n"
+"POT-Creation-Date: 2023-08-17 11:38-0400\n"
 "PO-Revision-Date: 2013-06-20 11:26+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>, 2020-2023\n"
 "Language-Team: Portuguese (http://app.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/pt/)\n"
@@ -95,16 +95,16 @@ msgstr "C_omando:"
 msgid "Categ_ory icon size:"
 msgstr "Tamanho do ícone da categ_oria:"
 
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:109
 msgid "Choose which menu to popup by instance ID"
-msgstr "Escolha qual o menu a emergir por ID de instância"
+msgstr "Escolha qual o menu a exibir por ID de instância"
 
 #: ../panel-plugin/recent-page.cpp:170
 msgid "Clear Recently Used"
 msgstr "Limpar itens recentes"
 
 #: ../panel-plugin/plugin.cpp:414
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:128
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Direitos de autor © 2013-2023 Graeme Gott"
 
@@ -281,9 +281,13 @@ msgstr "Botão do painel"
 msgid "Pattern"
 msgstr "Padrão"
 
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Popup menu at center of screen"
+msgstr "Mostrar menu no centro do ecrã"
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
 msgid "Popup menu at current mouse position"
-msgstr "Menu emergente na posição atual do rato"
+msgstr "Mostrar menu na posição atual do rato"
 
 #: ../panel-plugin/settings-dialog.cpp:654
 msgid "Position _search entry on bottom"
@@ -311,11 +315,11 @@ msgstr "Posicionar os comandos junto à _caixa de pesquisa"
 msgid "Position pro_file on bottom"
 msgstr "Posicionar o perfil na parte inferior"
 
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
 msgid "Print available menu instance IDs"
 msgstr "Mostrar IDs de instâncias do menu disponíveis"
 
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:110
 msgid "Print version information and exit"
 msgstr "Mostrar informação da versão e sair"
 
