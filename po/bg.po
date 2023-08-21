@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-11 07:18-0400\n"
+"POT-Creation-Date: 2023-08-17 11:38-0400\n"
 "PO-Revision-Date: 2013-06-20 11:26+0000\n"
 "Last-Translator: Kiril Kirilov <cybercop_montana@abv.bg>, 2013-2023\n"
 "Language-Team: Bulgarian (http://app.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/bg/)\n"
@@ -88,7 +88,7 @@ msgstr "Команда:"
 msgid "Categ_ory icon size:"
 msgstr "Размер на иконите на категориите:"
 
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:109
 msgid "Choose which menu to popup by instance ID"
 msgstr "Изберете кое меню да се появи по ID на екземпляр"
 
@@ -97,7 +97,7 @@ msgid "Clear Recently Used"
 msgstr "Изчисти последно използваните"
 
 #: ../panel-plugin/plugin.cpp:414
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:128
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Авторски права © 2013-2023 Graeme Gott"
 
@@ -274,7 +274,11 @@ msgstr "Бутон в панела"
 msgid "Pattern"
 msgstr "Шаблон"
 
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Popup menu at center of screen"
+msgstr "Изскачащо меню в центъра на екрана"
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
 msgid "Popup menu at current mouse position"
 msgstr "Изскачащо меню в текущата позиция на мишката"
 
@@ -304,11 +308,11 @@ msgstr "Командите да се намират след полето за �
 msgid "Position pro_file on bottom"
 msgstr "Разполагане на профила отдолу"
 
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
 msgid "Print available menu instance IDs"
 msgstr "Отпечатване на налични идентификатори на екземплярите на менюто"
 
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:110
 msgid "Print version information and exit"
 msgstr "Отпечатване на информация за версията и изход"
 
