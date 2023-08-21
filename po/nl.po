@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-11 07:18-0400\n"
+"POT-Creation-Date: 2023-08-17 11:38-0400\n"
 "PO-Revision-Date: 2013-06-20 11:26+0000\n"
 "Last-Translator: Pjotr <pjotrvertaalt@gmail.com>, 2013-2023\n"
 "Language-Team: Dutch (http://app.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/nl/)\n"
@@ -88,7 +88,7 @@ msgstr "_Opdracht:"
 msgid "Categ_ory icon size:"
 msgstr "Grootte van categoriepictogram:"
 
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:109
 msgid "Choose which menu to popup by instance ID"
 msgstr "Kies welk menu er moet opduiken per instantie-ID"
 
@@ -97,7 +97,7 @@ msgid "Clear Recently Used"
 msgstr "Verwijder 'onlangs gebruikt'"
 
 #: ../panel-plugin/plugin.cpp:414
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:128
 msgid "Copyright © 2013-2023 Graeme Gott"
 msgstr "Auteursrecht © 2013-2023 Graeme Gott"
 
@@ -274,7 +274,11 @@ msgstr "Werkbalkknop"
 msgid "Pattern"
 msgstr "Patroon"
 
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:105
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
+msgid "Popup menu at center of screen"
+msgstr "Opduikmenu in het midden van het scherm"
+
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
 msgid "Popup menu at current mouse position"
 msgstr "Opduikmenu bij huidige muispositie"
 
@@ -304,11 +308,11 @@ msgstr "Plaats opdrachten naast zoekvak"
 msgid "Position pro_file on bottom"
 msgstr "Plaats profiel onderaan"
 
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
 msgid "Print available menu instance IDs"
 msgstr "Toon beschikbare instantie-ID's voor het menu"
 
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
+#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:110
 msgid "Print version information and exit"
 msgstr "Toon versie-informatie en sluit af"
 
