@@ -1,3 +1,21 @@
+2.8.0
+=====
+- Fix menu toggling in Wayland.
+- Fix menu position in Wayland.
+- Add support for popping up specific menu instances. (Issue #95)
+- Add showing menu at center of screen. (Issue #109)
+- Replace options for positioning menu layout.
+- Replace resize widgets with options in settings dialog.
+- Replace command for switching users.
+- Replace popup script with executable.
+- Require Xfce 4.14.
+- Make linking against AccountsService explicit.
+- Stop including favorites in recent by default.
+- Store settings in Xfconf.
+- Translation updates: Bulgarian, Chinese (Taiwan), Danish, Dutch, German,
+  Greek, Spanish, Basque, Finnish, French, Italian, Lithuanian, Persian,
+  Portuguese, Russian, Slovak, Swedish, Turkish, Ukrainian.
+
 2.7.3
 =====
 - Fix broken linking with AccountsService.
