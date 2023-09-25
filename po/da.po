@@ -278,7 +278,7 @@ msgstr "Mønster"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
 msgid "Popup menu at center of screen"
-msgstr "Menuen i midten af skærmen"
+msgstr "Vis menuen i midten af skærmen"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
 msgid "Popup menu at current mouse position"
