@@ -50,7 +50,7 @@ Category::Category(GarconMenu* menu) :
 	{
 		text = _("All Applications");
 	}
-	set_icon(!xfce_str_is_empty(icon) ? icon : "applications-other", true);
+	set_icon(!xfce_str_is_empty(icon) ? icon : "applications-other");
 	set_text(text ? text : "");
 	set_tooltip(tooltip ? tooltip : "");
 }
