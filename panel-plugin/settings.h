@@ -175,6 +175,16 @@ public:
 	void resize(int count);
 	void set(int pos, const std::string& value);
 
+	bool is_order_unchanged() const
+	{
+		return m_order_unchanged;
+	}
+
+	void set_order_unchaged()
+	{
+		m_order_unchanged = true;
+	}
+
 	void load(XfceRc* rc, bool is_default);
 	bool load(const gchar* property, const GValue* value, bool& reload_menu);
 	void save();
@@ -188,6 +198,7 @@ private:
 	std::vector<std::string> m_data;
 	bool m_modified;
 	bool m_saved;
+	bool m_order_unchanged;
 };
 
 

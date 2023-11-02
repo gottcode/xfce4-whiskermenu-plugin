@@ -91,6 +91,7 @@ void SearchPage::set_filter(const gchar* filter)
 	// Reset search results if new search does not start with previous search
 	if (m_query.raw_query().empty() || !g_str_has_prefix(filter, m_query.raw_query().c_str()))
 	{
+		update_search_order();
 		m_matches.clear();
 		m_matches.push_back(&m_run_action);
 		for (auto launcher : m_launchers)
@@ -182,6 +183,47 @@ void SearchPage::unset_menu_items()
 	m_launchers.clear();
 	m_matches.clear();
 	get_view()->unset_model();
+}
+
+//-----------------------------------------------------------------------------
+
+unsigned int SearchPage::move_launcher(const std::string& desktop_id, unsigned int pos)
+{
+	for (auto launcher = m_launchers.begin() + pos, end = m_launchers.end(); launcher != end; ++launcher)
+	{
+		if (desktop_id == (*launcher)->get_desktop_id())
+		{
+			std::rotate(launcher, launcher + 1, m_launchers.begin() + ++pos);
+			break;
+		}
+	}
+	return pos;
+}
+
+//-----------------------------------------------------------------------------
+
+void SearchPage::update_search_order()
+{
+	if (wm_settings->recent.is_order_unchanged() && wm_settings->favorites.is_order_unchanged())
+	{
+		return;
+	}
+	wm_settings->recent.set_order_unchaged();
+	wm_settings->favorites.set_order_unchaged();
+
+	// Reset in case a launcher is no longer in favorites or recent
+	std::sort(m_launchers.begin(), m_launchers.end(), &Element::less_than);
+
+	// Move launchers for favorites and recent to front
+	unsigned int pos = 0;
+	for (const std::string& desktop_id : wm_settings->recent)
+	{
+		pos = move_launcher(desktop_id, pos);
+	}
+	for (const std::string& desktop_id : wm_settings->favorites)
+	{
+		pos = move_launcher(desktop_id, pos);
+	}
 }
 
 //-----------------------------------------------------------------------------

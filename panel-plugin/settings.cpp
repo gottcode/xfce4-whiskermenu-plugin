@@ -601,7 +601,8 @@ StringList::StringList(const gchar* property, std::initializer_list<std::string>
 	m_default(data),
 	m_data(m_default),
 	m_modified(false),
-	m_saved(false)
+	m_saved(false),
+	m_order_unchanged(false)
 {
 }
 
@@ -611,6 +612,7 @@ void StringList::clear()
 {
 	m_data.clear();
 	m_modified = true;
+	m_order_unchanged = false;
 }
 
 //-----------------------------------------------------------------------------
@@ -619,6 +621,7 @@ void StringList::erase(int pos)
 {
 	m_data.erase(m_data.begin() + pos);
 	m_modified = true;
+	m_order_unchanged = false;
 }
 
 //-----------------------------------------------------------------------------
@@ -627,6 +630,7 @@ void StringList::insert(int pos, const std::string& value)
 {
 	m_data.insert(m_data.begin() + pos, value);
 	m_modified = true;
+	m_order_unchanged = false;
 }
 
 //-----------------------------------------------------------------------------
@@ -635,6 +639,7 @@ void StringList::push_back(const std::string& value)
 {
 	m_data.push_back(value);
 	m_modified = true;
+	m_order_unchanged = false;
 }
 
 //-----------------------------------------------------------------------------
@@ -643,6 +648,7 @@ void StringList::resize(int count)
 {
 	m_data.resize(count);
 	m_modified = true;
+	m_order_unchanged = false;
 }
 
 //-----------------------------------------------------------------------------
@@ -651,6 +657,7 @@ void StringList::set(int pos, const std::string& value)
 {
 	m_data[pos] = value;
 	m_modified = true;
+	m_order_unchanged = false;
 }
 
 //-----------------------------------------------------------------------------
@@ -704,6 +711,7 @@ bool StringList::load(const gchar* property, const GValue* value, bool& reload_m
 	if (G_VALUE_TYPE(value) == G_TYPE_INVALID)
 	{
 		m_modified = false;
+		m_order_unchanged = false;
 		m_data = m_default;
 		reload_menu = true;
 		return true;
@@ -807,6 +815,7 @@ void StringList::set(std::vector<std::string>& data, bool store)
 	}
 
 	m_modified = store;
+	m_order_unchanged = false;
 }
 
 //-----------------------------------------------------------------------------
