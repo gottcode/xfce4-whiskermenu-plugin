@@ -31,7 +31,6 @@ public:
 
 	void add(Launcher* launcher);
 	void enforce_item_count();
-	void flag_items(bool enabled);
 	void set_menu_items();
 	void unset_menu_items();
 
