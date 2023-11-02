@@ -39,6 +39,8 @@ public:
 	void unset_menu_items();
 
 private:
+	unsigned int move_launcher(const std::string& desktop_id, unsigned int pos);
+	void update_search_order();
 	void view_created() override;
 
 private:
