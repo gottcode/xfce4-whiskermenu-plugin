@@ -94,13 +94,6 @@ public:
 
 	unsigned int search(const Query& query) override;
 
-	enum SearchFlag
-	{
-		RecentFlag = 0x1,
-		FavoriteFlag = 0x2
-	};
-	void set_flag(SearchFlag flag, bool enabled);
-
 private:
 	GarconMenuItem* m_item;
 	const gchar* m_display_name;

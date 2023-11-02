@@ -353,33 +353,30 @@ void Launcher::run(GdkScreen* screen, DesktopAction* action) const
 
 unsigned int Launcher::search(const Query& query)
 {
-	// Prioritize matches in favorites and recent, then favories, and then recent
-	const unsigned int flags = 3 - m_search_flags;
-
 	// Sort matches in names first
 	unsigned int match = query.match(m_search_name);
 	if (match != UINT_MAX)
 	{
-		return match | flags | 0x400;
+		return match | 0x400;
 	}
 
 	match = query.match_as_characters(m_search_name);
 	if (match != UINT_MAX)
 	{
-		return match | flags | 0x400;
+		return match | 0x400;
 	}
 
 	match = query.match(m_search_generic_name);
 	if (match != UINT_MAX)
 	{
-		return match | flags | 0x800;
+		return match | 0x800;
 	}
 
 	// Sort matches in comments next
 	match = query.match(m_search_comment);
 	if (match != UINT_MAX)
 	{
-		return match | flags | 0x1000;
+		return match | 0x1000;
 	}
 
 	// Sort matches in keywords next
@@ -388,7 +385,7 @@ unsigned int Launcher::search(const Query& query)
 		match = query.match(keyword);
 		if (match != UINT_MAX)
 		{
-			return match | flags | 0x2000;
+			return match | 0x2000;
 		}
 	}
 
@@ -396,24 +393,10 @@ unsigned int Launcher::search(const Query& query)
 	match = query.match(m_search_command);
 	if (match != UINT_MAX)
 	{
-		return match | flags | 0x4000;
+		return match | 0x4000;
 	}
 
 	return UINT_MAX;
-}
-
-//-----------------------------------------------------------------------------
-
-void Launcher::set_flag(SearchFlag flag, bool enabled)
-{
-	if (enabled)
-	{
-		m_search_flags |= flag;
-	}
-	else
-	{
-		m_search_flags &= ~flag;
-	}
 }
 
 //-----------------------------------------------------------------------------

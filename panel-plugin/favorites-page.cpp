@@ -68,8 +68,6 @@ void FavoritesPage::add(Launcher* launcher)
 		return;
 	}
 
-	launcher->set_flag(Launcher::FavoriteFlag, true);
-
 	// Append to list of items
 	GtkListStore* store = GTK_LIST_STORE(get_view()->get_model());
 	gtk_list_store_insert_with_values(
@@ -85,11 +83,6 @@ void FavoritesPage::add(Launcher* launcher)
 
 void FavoritesPage::remove(Launcher* launcher)
 {
-	if (launcher)
-	{
-		launcher->set_flag(Launcher::FavoriteFlag, false);
-	}
-
 	GtkTreeModel* model = GTK_TREE_MODEL(get_view()->get_model());
 	GtkListStore* store = GTK_LIST_STORE(model);
 	GtkTreeIter iter;
@@ -134,15 +127,6 @@ void FavoritesPage::set_menu_items()
 		});
 
 	g_object_unref(model);
-
-	for (const auto& favorite : wm_settings->favorites)
-	{
-		Launcher* launcher = get_window()->get_applications()->find(favorite);
-		if (launcher)
-		{
-			launcher->set_flag(Launcher::FavoriteFlag, true);
-		}
-	}
 }
 
 //-----------------------------------------------------------------------------
