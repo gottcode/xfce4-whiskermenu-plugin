@@ -1,3 +1,10 @@
+2.8.1
+=====
+- Fix missing commandline option in man page. (Issue #119)
+- Fix incorrect category icons by disabling fallbacks. (Issue #116)
+- Remember order of recently used when searching.
+- Translation updates: Basque, Danish, German, Greek, Hungarian, Swedish, Ukrainian.
+
 2.8.0
 =====
 - Fix menu toggling in Wayland.
