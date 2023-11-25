@@ -193,7 +193,8 @@ unsigned int SearchPage::move_launcher(const std::string& desktop_id, unsigned i
 	{
 		if (desktop_id == (*launcher)->get_desktop_id())
 		{
-			std::rotate(launcher, launcher + 1, m_launchers.begin() + ++pos);
+			std::rotate(m_launchers.begin() + pos, launcher, launcher + 1);
+			pos++;
 			break;
 		}
 	}
