@@ -556,8 +556,10 @@ void Page::add_selected_to_desktop()
 			&error);
 	if (proxy)
 	{
-		gchar* source_parameters[] = { g_file_get_path(source_file), nullptr };
+		gchar* source_path = g_file_get_path(source_file);
+		gchar* source_parameters[] = { realpath(source_path, nullptr), nullptr };
 		gchar* dest_parameters[] = { g_file_get_path(destination_file), nullptr };
+		g_free(source_path);
 
 		// Copy launcher to desktop folder
 		result = g_dbus_proxy_call_sync(proxy,
