@@ -543,67 +543,24 @@ void Page::add_selected_to_desktop()
 	GFile* destination_file = g_file_get_child(desktop_folder, basename);
 	g_free(basename);
 
-	// Connect to Xfce file manager through D-Bus
-	GVariant* result = nullptr;
+	// Copy launcher to desktop folder
 	GError* error = nullptr;
-	GDBusProxy* proxy = g_dbus_proxy_new_for_bus_sync(G_BUS_TYPE_SESSION,
-			G_DBUS_PROXY_FLAGS_NONE,
-			nullptr,
-			"org.xfce.FileManager",
-			"/org/xfce/FileManager",
-			"org.xfce.FileManager",
-			nullptr,
-			&error);
-	if (proxy)
+	if (g_file_copy(source_file, destination_file, G_FILE_COPY_NONE, nullptr, nullptr, nullptr, &error))
 	{
-		gchar* source_path = g_file_get_path(source_file);
-		gchar* source_parameters[] = { realpath(source_path, nullptr), nullptr };
-		gchar* dest_parameters[] = { g_file_get_path(destination_file), nullptr };
-		g_free(source_path);
+		// Make launcher executable
+		gchar* path = g_file_get_path(destination_file);
+		g_chmod(path, S_IRWXU | S_IRGRP | S_IXGRP | S_IROTH | S_IXOTH);
+		g_free(path);
 
-		// Copy launcher to desktop folder
-		result = g_dbus_proxy_call_sync(proxy,
-				"CopyTo",
-				g_variant_new("(s^as^asss)",
-						desktop_path,
-						source_parameters,
-						dest_parameters,
-						"",
-						""),
-				G_DBUS_CALL_FLAGS_NONE,
-				-1,
-				nullptr,
-				&error);
-
-		g_free(source_parameters[0]);
-		g_free(dest_parameters[0]);
-
-		// Disconnect from D-Bus
-		g_object_unref(proxy);
-	}
-
-	// Copy launcher to desktop folder fallback
-	if (!result)
-	{
-		g_error_free(error);
-		error = nullptr;
-
-		if (g_file_copy(source_file, destination_file, G_FILE_COPY_NONE, nullptr, nullptr, nullptr, &error))
-		{
-			// Make launcher executable
-			gchar* path = g_file_get_path(destination_file);
-			g_chmod(path, S_IRWXU | S_IRGRP | S_IXGRP | S_IROTH | S_IXOTH);
-			g_free(path);
-		}
-		else
-		{
-			xfce_dialog_show_error(nullptr, error, _("Unable to add launcher to desktop."));
-			g_error_free(error);
-		}
+#if LIBXFCE4UTIL_CHECK_VERSION(4,17,0)
+		// Make launcher trusted
+		xfce_g_file_set_trusted(destination_file, true, nullptr, nullptr);
+#endif
 	}
 	else
 	{
-		g_variant_unref(result);
+		xfce_dialog_show_error(nullptr, error, _("Unable to add launcher to desktop."));
+		g_error_free(error);
 	}
 
 	g_object_unref(destination_file);
