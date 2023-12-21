@@ -94,8 +94,12 @@ Profile::Profile(Window* window) :
 Profile::~Profile()
 {
 #ifdef HAVE_ACCOUNTS_SERVICE
+	if (m_act_user)
+	{
+		g_object_unref(m_act_user);
+	}
+
 	g_object_unref(m_act_user_manager);
-	g_object_unref(m_act_user);
 #endif
 
 	if (m_file_monitor)
