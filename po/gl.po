@@ -98,8 +98,8 @@ msgstr "Limpar os elementos recentes"
 
 #: ../panel-plugin/plugin.cpp:414
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
-msgid "Copyright © 2013-2023 Graeme Gott"
-msgstr "Copyright © 2013-2023 Graeme Gott"
+msgid "Copyright © 2013-2024 Graeme Gott"
+msgstr "Copyright © 2013-2024 Graeme Gott"
 
 #: ../panel-plugin/settings-dialog.cpp:783
 msgid "Default Category"

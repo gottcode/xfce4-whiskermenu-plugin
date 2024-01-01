@@ -125,7 +125,7 @@ int main(int argc, char** argv)
 	if (print_version)
 	{
 		std::cout << PACKAGE_NAME << " " << PACKAGE_VERSION << "\n"
-				<< _("Copyright \302\251 2013-2023 Graeme Gott") << std::endl;
+				<< _("Copyright \302\251 2013-2024 Graeme Gott") << std::endl;
 		return EXIT_SUCCESS;
 	}
 

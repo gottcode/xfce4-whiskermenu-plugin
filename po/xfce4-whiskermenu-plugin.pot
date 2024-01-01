@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2023 Graeme Gott
+# Copyright (C) 2024 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-17 11:38-0400\n"
+"POT-Creation-Date: 2024-01-01 13:04-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -91,13 +91,13 @@ msgstr ""
 msgid "Choose which menu to popup by instance ID"
 msgstr ""
 
-#: ../panel-plugin/recent-page.cpp:170
+#: ../panel-plugin/recent-page.cpp:147
 msgid "Clear Recently Used"
 msgstr ""
 
 #: ../panel-plugin/plugin.cpp:414
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:128
-msgid "Copyright © 2013-2023 Graeme Gott"
+msgid "Copyright © 2013-2024 Graeme Gott"
 msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:796
@@ -132,7 +132,7 @@ msgstr ""
 msgid "Failed to edit profile."
 msgstr ""
 
-#: ../panel-plugin/element.cpp:106
+#: ../panel-plugin/element.cpp:104
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr ""
@@ -427,11 +427,11 @@ msgstr ""
 msgid "Smaller"
 msgstr ""
 
-#: ../panel-plugin/favorites-page.cpp:163
+#: ../panel-plugin/favorites-page.cpp:147
 msgid "Sort Alphabetically A-Z"
 msgstr ""
 
-#: ../panel-plugin/favorites-page.cpp:171
+#: ../panel-plugin/favorites-page.cpp:155
 msgid "Sort Alphabetically Z-A"
 msgstr ""
 
@@ -482,15 +482,15 @@ msgstr ""
 msgid "Turning off computer in %d seconds."
 msgstr ""
 
-#: ../panel-plugin/page.cpp:598
+#: ../panel-plugin/page.cpp:562
 msgid "Unable to add launcher to desktop."
 msgstr ""
 
-#: ../panel-plugin/page.cpp:643 ../panel-plugin/page.cpp:656
+#: ../panel-plugin/page.cpp:602 ../panel-plugin/page.cpp:615
 msgid "Unable to add launcher to panel."
 msgstr ""
 
-#: ../panel-plugin/page.cpp:676
+#: ../panel-plugin/page.cpp:635
 msgid "Unable to edit launcher."
 msgstr ""
 
