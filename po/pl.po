@@ -113,8 +113,8 @@ msgstr "Wyczyść ostatnio używane"
 
 #: ../panel-plugin/plugin.cpp:414
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:128
-msgid "Copyright © 2013-2023 Graeme Gott"
-msgstr "Prawa autorskie © 2013-2023 Graeme Gott"
+msgid "Copyright © 2013-2024 Graeme Gott"
+msgstr "Prawa autorskie © 2013-2024 Graeme Gott"
 
 #: ../panel-plugin/settings-dialog.cpp:796
 msgid "Default Category"
