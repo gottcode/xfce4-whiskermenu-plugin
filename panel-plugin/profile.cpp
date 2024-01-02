@@ -238,6 +238,7 @@ void Profile::on_user_info_loaded()
 		});
 
 	m_act_user = act_user_manager_get_user_by_id(m_act_user_manager, getuid());
+	g_object_ref(m_act_user);
 	if (act_user_is_loaded(m_act_user))
 	{
 		on_user_changed(m_act_user);
