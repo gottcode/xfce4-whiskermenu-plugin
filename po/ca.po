@@ -1,10 +1,10 @@
 # Catalan translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2023 Graeme Gott
+# Copyright (C) 2024 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 # 
 # Translators:
 # Adolfo Jayme-Barrientos, 2013-2016,2018,2020
-# Adolfo Jayme-Barrientos, 2016,2018,2020-2021
+# Adolfo Jayme-Barrientos, 2016,2018,2020-2021,2024
 # Adolfo Jayme-Barrientos, 2015
 # Adolfo Jayme-Barrientos, 2013
 # Adolfo Jayme-Barrientos, 2014
@@ -17,9 +17,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-17 11:38-0400\n"
+"POT-Creation-Date: 2024-01-01 13:04-0500\n"
 "PO-Revision-Date: 2013-06-20 11:26+0000\n"
-"Last-Translator: Davidmp <medipas@gmail.com>, 2017-2023\n"
+"Last-Translator: Adolfo Jayme-Barrientos, 2016,2018,2020-2021,2024\n"
 "Language-Team: Catalan (http://app.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -101,14 +101,14 @@ msgstr "Mida de les icones de les categ_ories:"
 msgid "Choose which menu to popup by instance ID"
 msgstr "Trieu el menú emergent per ID d'instància"
 
-#: ../panel-plugin/recent-page.cpp:170
+#: ../panel-plugin/recent-page.cpp:147
 msgid "Clear Recently Used"
 msgstr "Neteja els elements recents"
 
 #: ../panel-plugin/plugin.cpp:414
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:128
 msgid "Copyright © 2013-2024 Graeme Gott"
-msgstr "Copyright © 2013-2024 Graeme Gott"
+msgstr "© 2013-2024 Graeme Gott"
 
 #: ../panel-plugin/settings-dialog.cpp:796
 msgid "Default Category"
@@ -142,7 +142,7 @@ msgstr "Edita el _perfil"
 msgid "Failed to edit profile."
 msgstr "No s'ha pogut editar el perfil."
 
-#: ../panel-plugin/element.cpp:106
+#: ../panel-plugin/element.cpp:104
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "No s'ha pogut executar l'ordre «%s»."
@@ -437,11 +437,11 @@ msgstr "Petita"
 msgid "Smaller"
 msgstr "Més petita"
 
-#: ../panel-plugin/favorites-page.cpp:163
+#: ../panel-plugin/favorites-page.cpp:147
 msgid "Sort Alphabetically A-Z"
 msgstr "Ordena alfabèticament: A–Z"
 
-#: ../panel-plugin/favorites-page.cpp:171
+#: ../panel-plugin/favorites-page.cpp:155
 msgid "Sort Alphabetically Z-A"
 msgstr "Ordena alfabèticament: Z–A"
 
@@ -494,15 +494,15 @@ msgstr "Per amagar-ho, heu de suprimir manualment el fitxer %s o obrir-lo i supr
 msgid "Turning off computer in %d seconds."
 msgstr "S'apagarà l'ordinador d'aquí a %d segons."
 
-#: ../panel-plugin/page.cpp:598
+#: ../panel-plugin/page.cpp:562
 msgid "Unable to add launcher to desktop."
 msgstr "No es pot afegir el llançador a l'escriptori."
 
-#: ../panel-plugin/page.cpp:643 ../panel-plugin/page.cpp:656
+#: ../panel-plugin/page.cpp:602 ../panel-plugin/page.cpp:615
 msgid "Unable to add launcher to panel."
 msgstr "No es pot afegir el llançador al plafó."
 
-#: ../panel-plugin/page.cpp:676
+#: ../panel-plugin/page.cpp:635
 msgid "Unable to edit launcher."
 msgstr "No es pot editar el llançador."
 
