@@ -1,5 +1,5 @@
 # Portuguese translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2023 Graeme Gott
+# Copyright (C) 2024 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 # 
 # Translators:
@@ -7,7 +7,7 @@
 # Fábio Luciano de Góis <fabio@naoimporta.com>, 2013
 # Fábio Luciano de Góis <fabio@naoimporta.com>, 2013
 # Graeme Gott <graeme@gottcode.org>, 2013
-# Hugo Carvalho <hugokarvalho@hotmail.com>, 2020-2023
+# Hugo Carvalho <hugokarvalho@hotmail.com>, 2020-2024
 # José Vieira <jvieira33@sapo.pt>, 2016-2020
 # Rui <xymarior@yandex.com>, 2018-2019
 # Sérgio Marques <smarquespt@gmail.com>, 2013-2015
@@ -15,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-17 11:38-0400\n"
+"POT-Creation-Date: 2024-01-01 13:04-0500\n"
 "PO-Revision-Date: 2013-06-20 11:26+0000\n"
-"Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>, 2020-2023\n"
+"Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>, 2020-2024\n"
 "Language-Team: Portuguese (http://app.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -99,7 +99,7 @@ msgstr "Tamanho do ícone da categ_oria:"
 msgid "Choose which menu to popup by instance ID"
 msgstr "Escolha qual o menu a exibir por ID de instância"
 
-#: ../panel-plugin/recent-page.cpp:170
+#: ../panel-plugin/recent-page.cpp:147
 msgid "Clear Recently Used"
 msgstr "Limpar itens recentes"
 
@@ -140,7 +140,7 @@ msgstr "Editar _perfil"
 msgid "Failed to edit profile."
 msgstr "Falha ao editar o perfil."
 
-#: ../panel-plugin/element.cpp:106
+#: ../panel-plugin/element.cpp:104
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "Falha ao executar o comando \"%s\"."
@@ -435,11 +435,11 @@ msgstr "Pequeno"
 msgid "Smaller"
 msgstr "Muito pequeno"
 
-#: ../panel-plugin/favorites-page.cpp:163
+#: ../panel-plugin/favorites-page.cpp:147
 msgid "Sort Alphabetically A-Z"
 msgstr "Ordem alfabética A-Z"
 
-#: ../panel-plugin/favorites-page.cpp:171
+#: ../panel-plugin/favorites-page.cpp:155
 msgid "Sort Alphabetically Z-A"
 msgstr "Ordem alfabética Z-A"
 
@@ -492,15 +492,15 @@ msgstr "Para mostrar é necessário remover manualmente o ficheiro \"%s\" ou abr
 msgid "Turning off computer in %d seconds."
 msgstr "A desligar o computador em %d segundos."
 
-#: ../panel-plugin/page.cpp:598
+#: ../panel-plugin/page.cpp:562
 msgid "Unable to add launcher to desktop."
 msgstr "Não foi possível adicionar o lançador à área de trabalho."
 
-#: ../panel-plugin/page.cpp:643 ../panel-plugin/page.cpp:656
+#: ../panel-plugin/page.cpp:602 ../panel-plugin/page.cpp:615
 msgid "Unable to add launcher to panel."
 msgstr "Não foi possível adicionar o lançador ao painel."
 
-#: ../panel-plugin/page.cpp:676
+#: ../panel-plugin/page.cpp:635
 msgid "Unable to edit launcher."
 msgstr "Não é possível editar o lançador."
 
