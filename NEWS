@@ -1,3 +1,11 @@
+2.8.3
+=====
+- Fix adding launchers to desktop. (Issue #122)
+- Fix segfault in profile destructor. (Issue #123)
+- Translation updates: Catalan, Chinese (Taiwan), Danish, Dutch, German,
+  Greek, Indonesian, Korean, Lithuanian, Polish, Portuguese, Serbian, Slovak,
+  Spanish, Swedish.
+
 2.8.2
 =====
 - Fix crash when searching. (Issue #120)
