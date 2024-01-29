@@ -105,7 +105,7 @@ msgstr "Bersihkan yang Baru diGunakan"
 #: ../panel-plugin/plugin.cpp:414
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:128
 msgid "Copyright © 2013-2024 Graeme Gott"
-msgstr ""
+msgstr "Hak Cipta © 2013-2024 Graeme Gott"
 
 #: ../panel-plugin/settings-dialog.cpp:796
 msgid "Default Category"
@@ -192,7 +192,7 @@ msgstr "Komputer akan hibernasi dalam %d detik."
 
 #: ../panel-plugin/settings-dialog.cpp:685
 msgid "Hidden"
-msgstr ""
+msgstr "Tersembunyi"
 
 #: ../panel-plugin/launcher.cpp:271 ../panel-plugin/page.cpp:499
 msgid "Hide Application"
@@ -282,11 +282,11 @@ msgstr "Pola"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
 msgid "Popup menu at center of screen"
-msgstr ""
+msgstr "Menu sembulan di tengah layar"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
 msgid "Popup menu at current mouse position"
-msgstr ""
+msgstr "Menu sembulan di posisi tetikus saat ini"
 
 #: ../panel-plugin/settings-dialog.cpp:654
 msgid "Position _search entry on bottom"
@@ -320,7 +320,7 @@ msgstr ""
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:110
 msgid "Print version information and exit"
-msgstr ""
+msgstr "Cetak informasi versi dan keluar"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:804
 #: ../panel-plugin/settings-dialog.cpp:900
@@ -347,7 +347,7 @@ msgstr "Menyalakan ulang komputer dalam %d detik."
 
 #: ../panel-plugin/settings-dialog.cpp:683
 msgid "Round Picture"
-msgstr ""
+msgstr "Gambar Bulat"
 
 #: ../panel-plugin/run-action.cpp:64
 #, c-format
@@ -368,11 +368,11 @@ msgstr "Cari Aksi"
 
 #: ../panel-plugin/settings.cpp:99
 msgid "Search for Files"
-msgstr ""
+msgstr "Cari Berkas"
 
 #: ../panel-plugin/settings.cpp:98
 msgid "Search the Web"
-msgstr ""
+msgstr "Cari di Web"
 
 #: ../panel-plugin/command-edit.cpp:75
 msgid "Select Command"
@@ -448,7 +448,7 @@ msgstr "Urutkan sebagai Kategori"
 
 #: ../panel-plugin/settings-dialog.cpp:684
 msgid "Square Picture"
-msgstr ""
+msgstr "Gambar Persegi"
 
 #: ../panel-plugin/settings-dialog.cpp:872
 msgid "Stay _visible when focus is lost"
