@@ -31,9 +31,14 @@ using namespace WhiskerMenu;
 
 static gboolean is_separator(GtkTreeModel* model, GtkTreeIter* iter, gpointer)
 {
-	const gchar* text;
+	gchar* text;
+	gboolean is_empty;
+
 	gtk_tree_model_get(model, iter, LauncherView::COLUMN_TEXT, &text, -1);
-	return xfce_str_is_empty(text);
+	is_empty = xfce_str_is_empty(text);
+	g_free(text);
+
+	return is_empty;
 }
 
 //-----------------------------------------------------------------------------
