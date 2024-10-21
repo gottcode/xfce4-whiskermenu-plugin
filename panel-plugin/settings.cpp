@@ -333,6 +333,7 @@ void Settings::load(const gchar* base)
 		property_changed(static_cast<const gchar*>(key) + base_len, static_cast<GValue*>(value));
 	}
 
+	g_hash_table_destroy(properties);
 	prevent_invalid();
 }
 
