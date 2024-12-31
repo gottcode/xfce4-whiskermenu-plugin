@@ -89,7 +89,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 		gtk_layer_set_anchor(m_window, GTK_LAYER_SHELL_EDGE_RIGHT, false);
 
 		// Grab keyboard focus when shown
-		gtk_layer_set_keyboard_mode(m_window, GTK_LAYER_SHELL_KEYBOARD_MODE_EXCLUSIVE);
+		gtk_layer_set_keyboard_mode(m_window, GTK_LAYER_SHELL_KEYBOARD_MODE_ON_DEMAND);
 
 		// Position menu above other windows
 		gtk_layer_set_layer(m_window, GTK_LAYER_SHELL_LAYER_OVERLAY);
