@@ -103,8 +103,8 @@ msgstr "Очисти недавно коришћено"
 
 #: ../panel-plugin/plugin.cpp:414
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:128
-msgid "Copyright © 2013-2024 Graeme Gott"
-msgstr "Права умножавања © 2013-2024 Грејем Гот Graeme Gott"
+msgid "Copyright © 2013-2025 Graeme Gott"
+msgstr "Права умножавања © 2013-2025 Грејем Гот Graeme Gott"
 
 #: ../panel-plugin/settings-dialog.cpp:796
 msgid "Default Category"

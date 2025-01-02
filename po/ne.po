@@ -99,8 +99,8 @@ msgstr "हालसालै प्रयोग भएकालाई सफा
 
 #: ../panel-plugin/plugin.cpp:414
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:126
-msgid "Copyright © 2013-2024 Graeme Gott"
-msgstr "प्रतिलिपि अधिकार © 2013-2024 Graeme Gott"
+msgid "Copyright © 2013-2025 Graeme Gott"
+msgstr "प्रतिलिपि अधिकार © 2013-2025 Graeme Gott"
 
 #: ../panel-plugin/settings-dialog.cpp:783
 msgid "Default Category"

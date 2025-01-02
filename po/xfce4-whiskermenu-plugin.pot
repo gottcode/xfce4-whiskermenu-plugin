@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2024 Graeme Gott
+# Copyright (C) 2025 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-01 13:04-0500\n"
+"POT-Creation-Date: 2025-01-02 13:03-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -97,7 +97,7 @@ msgstr ""
 
 #: ../panel-plugin/plugin.cpp:414
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:128
-msgid "Copyright © 2013-2024 Graeme Gott"
+msgid "Copyright © 2013-2025 Graeme Gott"
 msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:796
