@@ -4,7 +4,7 @@
 
 cmake_minimum_required(VERSION 3.16)
 
-project(whiskermenu VERSION 2.8.3)
+project(whiskermenu VERSION 2.8.4)
 
 # options
 string(TOLOWER "${CMAKE_BUILD_TYPE}" CMAKE_BUILD_TYPE_TOLOWER)
