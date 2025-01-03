@@ -1,3 +1,12 @@
+2.8.4
+=====
+- Fix menu not hiding in labwc.
+- Fix GHashTable leak in Settings::load.
+- Fix string leak in is_separator.
+- Translation updates: Basque, Bulgarian, Chinese (China), Czech, Dutch,
+  Estonian, French, Galician, Georgian, Indonesian, Polish, Russian, Slovak,
+  Slovenian, Turkish.
+
 2.8.3
 =====
 - Fix adding launchers to desktop. (Issue #122)
