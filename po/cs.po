@@ -1,5 +1,5 @@
 # Czech translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2024 Graeme Gott
+# Copyright (C) 2025 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 # 
 # Translators:
@@ -7,7 +7,7 @@
 # Laco Lazelod, 2013
 # Martin Šiška <martin-siska@email.cz>, 2024
 # 3d4809c17cb90cd5bd5c98e6eb2d8dc9_66922ff, 2013
-# Michal Várady <miko.vaji@gmail.com>, 2015-2021
+# Michal Várady <miko.vaji@gmail.com>, 2015-2021,2025
 # Pavel Borecki <pavel.borecki@gmail.com>, 2018-2020
 # Dukecz, 2020
 # halfark <vojtechprecechtel@gmail.com>, 2014
@@ -15,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-01 13:04-0500\n"
+"POT-Creation-Date: 2025-01-02 13:03-0500\n"
 "PO-Revision-Date: 2013-06-20 11:26+0000\n"
-"Last-Translator: Martin Šiška <martin-siska@email.cz>, 2024\n"
+"Last-Translator: Michal Várady <miko.vaji@gmail.com>, 2015-2021,2025\n"
 "Language-Team: Czech (http://app.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
