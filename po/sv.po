@@ -1,5 +1,5 @@
 # Swedish translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2024 Graeme Gott
+# Copyright (C) 2025 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 # 
 # Translators:
@@ -7,7 +7,8 @@
 # Patrik Nilsson <asavartzeth@gmail.com>, 2014
 # Carlos Dz <cls567@tuta.io>, 2019
 # Fredrik Nyqvist <fredrik@nyqvist.biz>, 2013
-# Luna Jernberg <bittin@cafe8bitar.se>, 2021-2024
+# Luna Jernberg <droidbittin@gmail.com>, 2021-2024
+# Luna Jernberg <droidbittin@gmail.com>, 2025
 # Patrik Nilsson <asavartzeth@gmail.com>, 2014-2015,2017
 # Påvel Nicklasson <pavel2@frimixse>, 2015,2018
 # Påvel Nicklasson <pavel@frimix.se>, 2015
@@ -17,9 +18,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-01 13:04-0500\n"
+"POT-Creation-Date: 2025-01-02 13:03-0500\n"
 "PO-Revision-Date: 2013-06-20 11:26+0000\n"
-"Last-Translator: Luna Jernberg <bittin@cafe8bitar.se>, 2021-2024\n"
+"Last-Translator: Luna Jernberg <droidbittin@gmail.com>, 2025\n"
 "Language-Team: Swedish (Sweden) (http://app.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/sv_SE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
