@@ -31,6 +31,7 @@ class FavoritesPage;
 class Page;
 class Plugin;
 class Profile;
+class Resizer;
 class RecentPage;
 class SearchPage;
 
@@ -79,6 +80,9 @@ public:
 
 	void hide(bool lost_focus = false);
 	void show(const Position position);
+	void resize(int delta_x, int delta_y, int delta_width, int delta_height);
+	void resize_start();
+	void resize_end();
 	void set_child_has_focus();
 	void set_categories(const std::vector<CategoryButton*>& categories);
 	void set_items();
@@ -96,7 +100,8 @@ private:
 	void favorites_toggled();
 	void recent_toggled();
 	void category_toggled();
-	void move_window(const GdkRectangle& monitor);
+	void move_window();
+	bool set_size(int width, int height);
 	void reset_default_button();
 	void show_favorites();
 	void show_default_page();
@@ -119,6 +124,10 @@ private:
 	GtkGrid* m_contents_box;
 	GtkBox* m_categories_box;
 	GtkStack* m_panels_stack;
+
+	Resizer* m_resize[8];
+	Position m_position;
+	GdkRectangle m_monitor;
 
 	Profile* m_profile;
 
@@ -148,6 +157,7 @@ private:
 	int m_profile_shape;
 	bool m_supports_alpha;
 	bool m_child_has_focus;
+	bool m_resizing;
 };
 
 }
