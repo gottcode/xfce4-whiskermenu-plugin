@@ -45,6 +45,7 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	m_button(nullptr),
 	m_opacity(100),
 	m_file_icon(false),
+	m_autohide_blocked(false),
 	m_hide_time(0)
 {
 	// Create settings
@@ -190,7 +191,11 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 		{
 			m_hide_time = g_get_monotonic_time();
 			gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_button), false);
-			xfce_panel_plugin_block_autohide(m_plugin, false);
+			if (m_autohide_blocked)
+			{
+				xfce_panel_plugin_block_autohide(m_plugin, false);
+			}
+			m_autohide_blocked = false;
 		});
 }
 
@@ -541,7 +546,11 @@ void Plugin::show_menu(int position)
 				{
 					m_hide_time = g_get_monotonic_time();
 					gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_button), false);
-					xfce_panel_plugin_block_autohide(m_plugin, false);
+					if (m_autohide_blocked)
+					{
+						xfce_panel_plugin_block_autohide(m_plugin, false);
+					}
+					m_autohide_blocked = false;
 				});
 		}
 		m_opacity = wm_settings->menu_opacity;
@@ -550,6 +559,7 @@ void Plugin::show_menu(int position)
 	position = CLAMP(position, Window::PositionAtButton, Window::PositionAtCenter);
 	if (position == Window::PositionAtButton)
 	{
+		m_autohide_blocked = true;
 		xfce_panel_plugin_block_autohide(m_plugin, true);
 		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(m_button), true);
 	}
