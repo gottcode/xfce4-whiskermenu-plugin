@@ -533,8 +533,7 @@ void WhiskerMenu::Window::show(const Position position)
 	// Center window if requested
 	if (position == PositionAtCenter)
 	{
-		m_geometry.x = (m_monitor.width - m_geometry.width) / 2;
-		m_geometry.y = (m_monitor.height - m_geometry.height) / 2;
+		center_window();
 	}
 
 	// Move window
@@ -569,10 +568,20 @@ void WhiskerMenu::Window::show(const Position position)
 		check_scrollbar_needed();
 	}
 
+	// Fetch actual window size
+	GtkRequisition size;
+	gtk_widget_get_preferred_size(GTK_WIDGET(m_window), &size, nullptr);
+	m_geometry.width = std::max(size.width, m_geometry.width);
+	m_geometry.height = std::max(size.height, m_geometry.height);
+
 	// Fetch position again to make sure window does not overlap panel
 	if (position == PositionAtButton)
 	{
 		m_plugin->get_menu_position(&m_geometry.x, &m_geometry.y);
+	}
+	else if (position == PositionAtCenter)
+	{
+		center_window();
 	}
 
 	// Move window
@@ -619,8 +628,7 @@ void WhiskerMenu::Window::resize_end()
 	}
 	else if (m_position == PositionAtCenter)
 	{
-		m_geometry.x = (m_monitor.width - m_geometry.width) / 2;
-		m_geometry.y = (m_monitor.height - m_geometry.height) / 2;
+		center_window();
 	}
 	move_window();
 
@@ -942,6 +950,14 @@ void WhiskerMenu::Window::category_toggled()
 	m_applications->reset_selection();
 	gtk_stack_set_visible_child_name(m_panels_stack, "applications");
 	gtk_widget_grab_focus(GTK_WIDGET(m_search_entry));
+}
+
+//-----------------------------------------------------------------------------
+
+void WhiskerMenu::Window::center_window()
+{
+	m_geometry.x = (m_monitor.width - m_geometry.width) / 2;
+	m_geometry.y = (m_monitor.height - m_geometry.height) / 2;
 }
 
 //-----------------------------------------------------------------------------

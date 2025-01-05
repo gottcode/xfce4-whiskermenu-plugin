@@ -100,6 +100,7 @@ private:
 	void favorites_toggled();
 	void recent_toggled();
 	void category_toggled();
+	void center_window();
 	void move_window();
 	bool set_size(int width, int height);
 	void reset_default_button();
