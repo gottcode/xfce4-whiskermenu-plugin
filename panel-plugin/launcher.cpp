@@ -19,7 +19,8 @@
 
 #include "query.h"
 #include "settings.h"
-#include "util.h"
+
+#include <libxfce4ui/libxfce4ui.h>
 
 using namespace WhiskerMenu;
 
@@ -49,98 +50,6 @@ static std::string normalize(const gchar* string)
 
 	return result;
 }
-
-//-----------------------------------------------------------------------------
-
-#if !LIBXFCE4UTIL_CHECK_VERSION(4,15,2)
-static void replace_with_quoted_string(std::string& command, std::string::size_type& index, const gchar* unquoted)
-{
-	if (!xfce_str_is_empty(unquoted))
-	{
-		gchar* quoted = g_shell_quote(unquoted);
-		command.replace(index, 2, quoted);
-		index += strlen(quoted);
-		g_free(quoted);
-	}
-	else
-	{
-		command.erase(index, 2);
-	}
-}
-
-//-----------------------------------------------------------------------------
-
-static void replace_with_quoted_string(std::string& command, std::string::size_type& index, const gchar* prefix, const gchar* unquoted)
-{
-	if (!xfce_str_is_empty(unquoted))
-	{
-		command.replace(index, 2, prefix);
-		index += strlen(prefix);
-
-		gchar* quoted = g_shell_quote(unquoted);
-		command.insert(index, quoted);
-		index += strlen(quoted);
-		g_free(quoted);
-	}
-	else
-	{
-		command.erase(index, 2);
-	}
-}
-
-//-----------------------------------------------------------------------------
-
-static gchar* xfce_expand_desktop_entry_field_codes(const gchar* command, GSList* /*uri_list*/,
-		const gchar* icon, const gchar* name, const gchar* uri, gboolean requires_terminal)
-{
-	std::string expanded(command);
-
-	if (requires_terminal)
-	{
-		expanded.insert(0, "exo-open --launch TerminalEmulator ");
-	}
-
-	std::string::size_type length = expanded.length() - 1;
-	for (std::string::size_type i = 0; i < length; ++i)
-	{
-		if (G_UNLIKELY(expanded[i] == '%'))
-		{
-			switch (expanded[i + 1])
-			{
-			case 'i':
-				replace_with_quoted_string(expanded, i, "--icon ", icon);
-				break;
-
-			case 'c':
-				replace_with_quoted_string(expanded, i, name);
-				break;
-
-			case 'k':
-				replace_with_quoted_string(expanded, i, uri);
-				break;
-
-			case '%':
-				expanded.erase(i, 1);
-				break;
-
-			case 'f':
-				// unsupported, pass in a single file dropped on launcher
-			case 'F':
-				// unsupported, pass in a list of files dropped on launcher
-			case 'u':
-				// unsupported, pass in a single URL dropped on launcher
-			case 'U':
-				// unsupported, pass in a list of URLs dropped on launcher
-			default:
-				expanded.erase(i, 2);
-				break;
-			}
-			length = expanded.length() - 1;
-		}
-	}
-	return g_strdup(expanded.c_str());
-}
-#endif
 
 //-----------------------------------------------------------------------------
 

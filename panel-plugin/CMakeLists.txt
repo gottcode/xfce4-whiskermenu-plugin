@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2013-2022 Graeme Gott <graeme@gottcode.org>
+# SPDX-FileCopyrightText: 2013-2025 Graeme Gott <graeme@gottcode.org>
 #
 # SPDX-License-Identifier: GPL-2.0-or-later
 
@@ -9,12 +9,12 @@ add_version_compile_definition(xfce4-popup-whiskermenu.cpp PACKAGE_VERSION)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(gio REQUIRED IMPORTED_TARGET gio-2.0)
 pkg_check_modules(GTK3 REQUIRED IMPORTED_TARGET gtk+-3.0>=3.22)
-pkg_check_modules(exo REQUIRED IMPORTED_TARGET exo-2>=0.12)
+pkg_check_modules(exo REQUIRED IMPORTED_TARGET exo-2>=4.16)
 pkg_check_modules(garcon REQUIRED IMPORTED_TARGET garcon-1>=0.6.4)
-pkg_check_modules(libxfce4panel REQUIRED IMPORTED_TARGET libxfce4panel-2.0>=4.14)
-pkg_check_modules(libxfce4ui REQUIRED IMPORTED_TARGET libxfce4ui-2>=4.14)
-pkg_check_modules(libxfce4util REQUIRED IMPORTED_TARGET libxfce4util-1.0>=4.14)
-pkg_check_modules(libxfconf REQUIRED IMPORTED_TARGET libxfconf-0>=4.14)
+pkg_check_modules(libxfce4panel REQUIRED IMPORTED_TARGET libxfce4panel-2.0>=4.16)
+pkg_check_modules(libxfce4ui REQUIRED IMPORTED_TARGET libxfce4ui-2>=4.16)
+pkg_check_modules(libxfce4util REQUIRED IMPORTED_TARGET libxfce4util-1.0>=4.16)
+pkg_check_modules(libxfconf REQUIRED IMPORTED_TARGET libxfconf-0>=4.16)
 
 # plugin
 add_library(whiskermenu MODULE

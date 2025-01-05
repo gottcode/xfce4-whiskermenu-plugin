@@ -18,8 +18,7 @@
 #ifndef WHISKERMENU_ELEMENT_H
 #define WHISKERMENU_ELEMENT_H
 
-#include "util.h"
-
+#include <libxfce4ui/libxfce4ui.h>
 #include <gdk/gdk.h>
 
 namespace WhiskerMenu

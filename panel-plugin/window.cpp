@@ -29,10 +29,9 @@
 #include "search-page.h"
 #include "settings.h"
 #include "slot.h"
-#include "util.h"
 
-#include <gdk/gdkkeysyms.h>
 #include <libxfce4ui/libxfce4ui.h>
+#include <gdk/gdkkeysyms.h>
 
 #ifdef HAVE_GTK_LAYER_SHELL
 #include <gtk-layer-shell.h>

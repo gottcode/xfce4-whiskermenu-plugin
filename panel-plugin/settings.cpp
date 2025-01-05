@@ -43,17 +43,10 @@ Settings::Settings(Plugin* plugin) :
 	channel(nullptr),
 
 	favorites("/favorites", {
-#if EXO_CHECK_VERSION(4,15,0)
 		"xfce4-web-browser.desktop",
 		"xfce4-mail-reader.desktop",
 		"xfce4-file-manager.desktop",
 		"xfce4-terminal-emulator.desktop"
-#else
-		"exo-web-browser.desktop",
-		"exo-mail-reader.desktop",
-		"exo-file-manager.desktop",
-		"exo-terminal-emulator.desktop"
-#endif
 	}),
 	recent("/recent", { }),
 
@@ -791,7 +784,6 @@ void StringList::set(std::vector<std::string>& data, bool store)
 
 	for (auto& desktop_id : data)
 	{
-#if EXO_CHECK_VERSION(4,15,0)
 		if (desktop_id == "exo-web-browser.desktop")
 		{
 			desktop_id = "xfce4-web-browser.desktop";
@@ -808,7 +800,6 @@ void StringList::set(std::vector<std::string>& data, bool store)
 		{
 			desktop_id = "xfce4-terminal-emulator.desktop";
 		}
-#endif
 		if (std::find(m_data.begin(), m_data.end(), desktop_id) == m_data.end())
 		{
 			m_data.push_back(std::move(desktop_id));

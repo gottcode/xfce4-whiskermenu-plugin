@@ -21,10 +21,10 @@
 #include "command.h"
 #include "settings.h"
 #include "slot.h"
-#include "util.h"
 #include "window.h"
 
 #include <libxfce4panel/libxfce4panel.h>
+#include <libxfce4ui/libxfce4ui.h>
 
 using namespace WhiskerMenu;
 
