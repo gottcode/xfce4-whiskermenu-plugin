@@ -534,7 +534,7 @@ GtkWidget* SettingsDialog::init_general_tab()
 	gtk_widget_set_halign(label, GTK_ALIGN_START);
 	gtk_grid_attach(page, label, 0, 7, 1, 1);
 
-	m_menu_width = gtk_spin_button_new_with_range(100, 10000, 1);
+	m_menu_width = gtk_spin_button_new_with_range(10, SHRT_MAX, 1);
 	gtk_widget_set_halign(m_menu_width, GTK_ALIGN_START);
 	gtk_widget_set_hexpand(m_menu_width, false);
 	gtk_grid_attach(page, m_menu_width, 1, 7, 1, 1);
@@ -552,7 +552,7 @@ GtkWidget* SettingsDialog::init_general_tab()
 	gtk_widget_set_halign(label, GTK_ALIGN_START);
 	gtk_grid_attach(page, label, 0, 8, 1, 1);
 
-	m_menu_height = gtk_spin_button_new_with_range(100, 10000, 1);
+	m_menu_height = gtk_spin_button_new_with_range(10, SHRT_MAX, 1);
 	gtk_widget_set_halign(m_menu_height, GTK_ALIGN_START);
 	gtk_widget_set_hexpand(m_menu_height, false);
 	gtk_grid_attach(page, m_menu_height, 1, 8, 1, 1);

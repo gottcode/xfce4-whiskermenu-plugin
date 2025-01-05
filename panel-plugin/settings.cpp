@@ -102,8 +102,8 @@ Settings::Settings(Plugin* plugin) :
 		new SearchAction(_("Open URI"), "^(file|http|https):\\/\\/(.*)$", "exo-open \\0", true)
 	},
 
-	menu_width("/menu-width", 450, 10, INT_MAX),
-	menu_height("/menu-height", 500, 10, INT_MAX),
+	menu_width("/menu-width", 450, 10, SHRT_MAX),
+	menu_height("/menu-height", 500, 10, SHRT_MAX),
 	menu_opacity("/menu-opacity", 100, 0, 100)
 {
 	command[CommandSettings] = new Command("/command-settings", "/show-command-settings",
