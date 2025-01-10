@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019-2021 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2019-2025 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -57,30 +57,7 @@ LauncherIconView::LauncherIconView() :
 	gtk_style_context_add_class(gtk_widget_get_style_context(GTK_WIDGET(m_view)), "launchers");
 
 	// Handle hover selection
-	gtk_widget_add_events(GTK_WIDGET(m_view), GDK_SCROLL_MASK);
-
-	connect(m_view, "leave-notify-event",
-		[this](GtkWidget*, GdkEvent*) -> gboolean
-		{
-			clear_selection();
-			return GDK_EVENT_PROPAGATE;
-		});
-
-	connect(m_view, "motion-notify-event",
-		[this](GtkWidget*, GdkEvent* event) -> gboolean
-		{
-			GdkEventMotion* motion_event = reinterpret_cast<GdkEventMotion*>(event);
-			select_path_at_pos(motion_event->x, motion_event->y);
-			return GDK_EVENT_PROPAGATE;
-		});
-
-	connect(m_view, "scroll-event",
-		[this](GtkWidget*, GdkEvent* event) -> gboolean
-		{
-			GdkEventScroll* scroll_event = reinterpret_cast<GdkEventScroll*>(event);
-			select_path_at_pos(scroll_event->x, scroll_event->y);
-			return GDK_EVENT_PROPAGATE;
-		});
+	enable_hover_selection(GTK_WIDGET(m_view));
 }
 
 //-----------------------------------------------------------------------------
@@ -119,6 +96,13 @@ GtkTreePath* LauncherIconView::get_selected_path() const
 	}
 	g_list_free_full(selection, reinterpret_cast<GDestroyNotify>(&gtk_tree_path_free));
 	return path;
+}
+
+//-----------------------------------------------------------------------------
+
+bool LauncherIconView::is_path_selected(GtkTreePath* path) const
+{
+	return gtk_icon_view_path_is_selected(m_view, path);
 }
 
 //-----------------------------------------------------------------------------
@@ -281,22 +265,6 @@ void LauncherIconView::reload_icon_size()
 		break;
 	}
 	gtk_icon_view_set_item_padding(m_view, padding);
-}
-
-//-----------------------------------------------------------------------------
-
-void LauncherIconView::select_path_at_pos(int x, int y)
-{
-	GtkTreePath* path = get_path_at_pos(x, y);
-	if (!path)
-	{
-		clear_selection();
-	}
-	else if (!gtk_icon_view_path_is_selected(m_view, path))
-	{
-		select_path(path);
-	}
-	gtk_tree_path_free(path);
 }
 
 //-----------------------------------------------------------------------------

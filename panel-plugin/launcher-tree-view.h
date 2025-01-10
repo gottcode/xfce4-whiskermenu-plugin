@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2025 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -37,6 +37,7 @@ public:
 	GtkTreePath* get_cursor() const override;
 	GtkTreePath* get_path_at_pos(int x, int y) const override;
 	GtkTreePath* get_selected_path() const override;
+	bool is_path_selected(GtkTreePath* path) const override;
 	void activate_path(GtkTreePath* path) override;
 	void scroll_to_path(GtkTreePath* path) override;
 	void select_path(GtkTreePath* path) override;

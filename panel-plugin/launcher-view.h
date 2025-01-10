@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2025 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,6 +17,8 @@
 
 #ifndef WHISKERMENU_LAUNCHER_VIEW_H
 #define WHISKERMENU_LAUNCHER_VIEW_H
+
+#include "slot.h"
 
 #include <gtk/gtk.h>
 
@@ -38,6 +40,7 @@ public:
 	virtual GtkTreePath* get_cursor() const=0;
 	virtual GtkTreePath* get_path_at_pos(int x, int y) const=0;
 	virtual GtkTreePath* get_selected_path() const=0;
+	virtual bool is_path_selected(GtkTreePath* path) const=0;
 	virtual void activate_path(GtkTreePath* path)=0;
 	virtual void scroll_to_path(GtkTreePath* path)=0;
 	virtual void select_path(GtkTreePath* path)=0;
@@ -79,7 +82,51 @@ public:
 protected:
 	LauncherView() = default;
 
+	void enable_hover_selection(GtkWidget* view)
+	{
+		gtk_widget_add_events(GTK_WIDGET(view), GDK_SCROLL_MASK);
+
+		connect(view, "leave-notify-event",
+			[this](GtkWidget*, GdkEvent*) -> gboolean
+			{
+				clear_selection();
+				return GDK_EVENT_PROPAGATE;
+			});
+
+		connect(view, "motion-notify-event",
+			[this](GtkWidget*, GdkEvent* event) -> gboolean
+			{
+				GdkEventMotion* motion_event = reinterpret_cast<GdkEventMotion*>(event);
+				select_path_at_pos(motion_event->x, motion_event->y);
+				return GDK_EVENT_PROPAGATE;
+			});
+
+		connect(view, "scroll-event",
+			[this](GtkWidget*, GdkEvent* event) -> gboolean
+			{
+				GdkEventScroll* scroll_event = reinterpret_cast<GdkEventScroll*>(event);
+				select_path_at_pos(scroll_event->x, scroll_event->y);
+				return GDK_EVENT_PROPAGATE;
+			});
+	}
+
 	GtkTreeModel* m_model = nullptr;
+
+private:
+	void select_path_at_pos(int x, int y)
+	{
+		GtkTreePath* path = get_path_at_pos(x, y);
+		if (!path)
+		{
+			clear_selection();
+		}
+		else if (!is_path_selected(path))
+		{
+			set_cursor(path);
+			select_path(path);
+		}
+		gtk_tree_path_free(path);
+	}
 };
 
 }

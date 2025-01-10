@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2025 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -49,33 +49,13 @@ LauncherTreeView::LauncherTreeView() :
 	gtk_tree_view_set_activate_on_single_click(m_view, true);
 	gtk_tree_view_set_headers_visible(m_view, false);
 	gtk_tree_view_set_enable_tree_lines(m_view, false);
-	gtk_tree_view_set_hover_selection(m_view, true);
 	gtk_tree_view_set_enable_search(m_view, false);
 	gtk_tree_view_set_fixed_height_mode(m_view, true);
 	gtk_tree_view_set_row_separator_func(m_view, &is_separator, nullptr, nullptr);
 	create_column();
 
-	connect(m_view, "key-press-event",
-		[this](GtkWidget*, GdkEvent* event) -> gboolean
-		{
-			GdkEventKey* key_event = reinterpret_cast<GdkEventKey*>(event);
-			if ((key_event->keyval == GDK_KEY_Up) || (key_event->keyval == GDK_KEY_Down))
-			{
-				gtk_tree_view_set_hover_selection(m_view, false);
-			}
-			return GDK_EVENT_PROPAGATE;
-		});
-
-	connect(m_view, "key-release-event",
-		[this](GtkWidget*, GdkEvent* event) -> gboolean
-		{
-			GdkEventKey* key_event = reinterpret_cast<GdkEventKey*>(event);
-			if ((key_event->keyval == GDK_KEY_Up) || (key_event->keyval == GDK_KEY_Down))
-			{
-				gtk_tree_view_set_hover_selection(m_view, true);
-			}
-			return GDK_EVENT_PROPAGATE;
-		});
+	// Only select launcher when moving mouse, not when menu is shown
+	enable_hover_selection(GTK_WIDGET(m_view));
 
 	// Only allow up to one selected item
 	GtkTreeSelection* selection = gtk_tree_view_get_selection(m_view);
@@ -147,6 +127,14 @@ GtkTreePath* LauncherTreeView::get_selected_path() const
 		path = gtk_tree_model_get_path(m_model, &iter);
 	}
 	return path;
+}
+
+//-----------------------------------------------------------------------------
+
+bool LauncherTreeView::is_path_selected(GtkTreePath* path) const
+{
+	GtkTreeSelection* selection = gtk_tree_view_get_selection(m_view);
+	return gtk_tree_selection_path_is_selected(selection, path);
 }
 
 //-----------------------------------------------------------------------------
