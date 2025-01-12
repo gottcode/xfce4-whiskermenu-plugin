@@ -812,6 +812,15 @@ gboolean WhiskerMenu::Window::on_key_press_event(GtkWidget* widget, GdkEventKey*
 		}
 	}
 
+	// Pass PageUp and PageDown keys to current view
+	if ((key_event->keyval == GDK_KEY_Page_Up) || (key_event->keyval == GDK_KEY_Page_Down))
+	{
+		if ((widget == search) || (gtk_window_get_focus(m_window) == search))
+		{
+			gtk_widget_grab_focus(view);
+		}
+	}
+
 	return GDK_EVENT_PROPAGATE;
 }
 
