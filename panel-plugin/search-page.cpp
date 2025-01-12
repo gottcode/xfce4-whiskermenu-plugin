@@ -40,13 +40,14 @@ SearchPage::SearchPage(Window* window) :
 	view_created();
 
 	connect(window->get_search_entry(), "activate",
-		[this](GtkEntry* entry)
+		[this, window](GtkEntry* entry)
 		{
 			set_filter(gtk_entry_get_text(entry));
-			GtkTreePath* path = get_view()->get_selected_path();
+			LauncherView* view = window->get_active_page()->get_view();
+			GtkTreePath* path = view->get_selected_path();
 			if (path)
 			{
-				get_view()->activate_path(path);
+				view->activate_path(path);
 				gtk_tree_path_free(path);
 			}
 		});

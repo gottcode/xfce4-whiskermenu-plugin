@@ -392,6 +392,30 @@ WhiskerMenu::Window::~Window()
 
 //-----------------------------------------------------------------------------
 
+Page* WhiskerMenu::Window::get_active_page()
+{
+	Page* page = nullptr;
+	if (gtk_stack_get_visible_child(m_contents_stack) == m_search_results->get_widget())
+	{
+		page = m_search_results;
+	}
+	else if (m_favorites->get_button()->get_active())
+	{
+		page = m_favorites;
+	}
+	else if (m_recent->get_button()->get_active())
+	{
+		page = m_recent;
+	}
+	else
+	{
+		page = m_applications;
+	}
+	return page;
+}
+
+//-----------------------------------------------------------------------------
+
 void WhiskerMenu::Window::hide(bool lost_focus)
 {
 	// Save settings
@@ -735,23 +759,7 @@ gboolean WhiskerMenu::Window::on_key_press_event(GtkWidget* widget, GdkEventKey*
 		return GDK_EVENT_STOP;
 	}
 
-	Page* page = nullptr;
-	if (gtk_stack_get_visible_child(m_contents_stack) == m_search_results->get_widget())
-	{
-		page = m_search_results;
-	}
-	else if (m_favorites->get_button()->get_active())
-	{
-		page = m_favorites;
-	}
-	else if (m_recent->get_button()->get_active())
-	{
-		page = m_recent;
-	}
-	else
-	{
-		page = m_applications;
-	}
+	Page* page = get_active_page();
 	GtkWidget* view = page->get_view()->get_widget();
 	GtkWidget* search = GTK_WIDGET(m_search_entry);
 

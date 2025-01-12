@@ -78,6 +78,8 @@ public:
 		return m_recent;
 	}
 
+	Page* get_active_page();
+
 	void hide(bool lost_focus = false);
 	void show(const Position position);
 	void resize(int delta_x, int delta_y, int delta_width, int delta_height);
