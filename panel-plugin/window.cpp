@@ -732,6 +732,27 @@ void WhiskerMenu::Window::unset_items()
 
 //-----------------------------------------------------------------------------
 
+GtkWidget* WhiskerMenu::Window::get_active_category_button()
+{
+	GtkWidget* widget = m_default_button->get_widget();
+
+	GList* children = gtk_container_get_children(GTK_CONTAINER(m_category_buttons));
+	for (GList* li = children; li; li = li->next)
+	{
+		GtkToggleButton* button = GTK_TOGGLE_BUTTON(li->data);
+		if (button && gtk_toggle_button_get_active(button))
+		{
+			widget = GTK_WIDGET(button);
+			break;
+		}
+	}
+	g_list_free(children);
+
+	return widget;
+}
+
+//-----------------------------------------------------------------------------
+
 gboolean WhiskerMenu::Window::on_key_press_event(GtkWidget* widget, GdkEventKey* key_event)
 {
 	if (key_event->keyval == GDK_KEY_Escape)
@@ -768,8 +789,7 @@ gboolean WhiskerMenu::Window::on_key_press_event(GtkWidget* widget, GdkEventKey*
 		// Allow keyboard navigation out of treeview
 		if (GTK_IS_TREE_VIEW(view) && ((widget == view) || (gtk_window_get_focus(m_window) == view)))
 		{
-			gtk_widget_grab_focus(m_default_button->get_widget());
-			page->reset_selection();
+			gtk_widget_grab_focus(get_active_category_button());
 		}
 		// Allow keyboard navigation out of search into iconview
 		else if (GTK_IS_ICON_VIEW(view) && ((widget == search) || (gtk_window_get_focus(m_window) == search)))
