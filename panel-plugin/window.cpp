@@ -250,6 +250,11 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	// Create search results
 	m_search_results = new SearchPage(this);
 
+	GtkBox* search_results = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 0));
+	gtk_box_pack_start(search_results, m_search_results->get_message(), false, false, 0);
+	gtk_box_pack_start(search_results, m_search_results->get_widget(), true, true, 0);
+	gtk_container_set_border_width(GTK_CONTAINER(search_results), 0);
+
 	// Create grid for packing resizers
 	GtkGrid* grid = GTK_GRID(gtk_grid_new());
 	gtk_grid_attach(grid, m_resize[Resizer::TopLeft]->get_widget(), 0, 0, 1, 1);
@@ -294,7 +299,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	gtk_grid_set_column_spacing(m_contents_box, 6);
 	gtk_grid_set_row_spacing(m_contents_box, 0);
 	gtk_stack_add_named(m_contents_stack, GTK_WIDGET(m_contents_box), "contents");
-	gtk_stack_add_named(m_contents_stack, m_search_results->get_widget(), "search");
+	gtk_stack_add_named(m_contents_stack, GTK_WIDGET(search_results), "search");
 	gtk_box_pack_start(m_vbox, GTK_WIDGET(m_contents_stack), true, true, 0);
 
 	// Create box for packing categories horizontally
@@ -395,7 +400,7 @@ WhiskerMenu::Window::~Window()
 Page* WhiskerMenu::Window::get_active_page()
 {
 	Page* page = nullptr;
-	if (gtk_stack_get_visible_child(m_contents_stack) == m_search_results->get_widget())
+	if (g_strcmp0(gtk_stack_get_visible_child_name(m_contents_stack), "search") == 0)
 	{
 		page = m_search_results;
 	}

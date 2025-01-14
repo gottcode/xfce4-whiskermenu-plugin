@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2025 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -61,6 +61,15 @@ SearchPage::SearchPage(Window* window) :
 				gtk_entry_set_text(GTK_ENTRY(entry), "");
 			}
 		});
+
+	// Create message for when no applications are found
+	m_message = gtk_info_bar_new();
+	GtkInfoBar* bar = GTK_INFO_BAR(m_message);
+	gtk_info_bar_set_message_type(bar, GTK_MESSAGE_INFO);
+
+	GtkWidget* content_area = gtk_info_bar_get_content_area(bar);
+	GtkWidget* label = gtk_label_new(_("No applications found"));
+	gtk_container_add(GTK_CONTAINER(content_area), label);
 }
 
 //-----------------------------------------------------------------------------
@@ -74,6 +83,8 @@ SearchPage::~SearchPage()
 
 void SearchPage::set_filter(const gchar* filter)
 {
+	gtk_widget_hide(m_message);
+
 	// Clear search results for empty filter
 	if (!filter)
 	{
@@ -127,6 +138,28 @@ void SearchPage::set_filter(const gchar* filter)
 	}
 	m_matches.erase(std::remove_if(m_matches.begin(), m_matches.end(), &Match::invalid), m_matches.end());
 	std::stable_sort(m_matches.begin(), m_matches.end());
+
+	// Fall back to non-regex search actions if there are no search results
+	if (search_action_matches.empty() && m_matches.empty())
+	{
+		gtk_widget_show(m_message);
+
+		for (auto action : wm_settings->search_actions)
+		{
+			if (action->get_is_regex())
+			{
+				continue;
+			}
+
+			std::string new_filter(action->get_pattern());
+			new_filter += filter;
+			Query query(new_filter);
+
+			Match match(action);
+			match.update(query);
+			search_action_matches.push_back(std::move(match));
+		}
+	}
 
 	// Show search results
 	GtkListStore* store = gtk_list_store_new(

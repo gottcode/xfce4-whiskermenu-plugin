@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2025 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,6 +34,11 @@ public:
 	explicit SearchPage(Window* window);
 	~SearchPage();
 
+	GtkWidget* get_message() const
+	{
+		return m_message;
+	}
+
 	void set_filter(const gchar* filter);
 	void set_menu_items();
 	void unset_menu_items();
@@ -47,6 +52,7 @@ private:
 	Query m_query;
 	std::vector<Launcher*> m_launchers;
 	RunAction m_run_action;
+	GtkWidget* m_message;
 
 	class Match
 	{
