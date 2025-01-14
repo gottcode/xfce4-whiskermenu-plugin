@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2025 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,6 +33,28 @@
 #include <glib/gstdio.h>
 
 using namespace WhiskerMenu;
+
+//-----------------------------------------------------------------------------
+
+static std::string get_autostart_path(Launcher* launcher, bool create)
+{
+	std::string result;
+
+	gchar* filename = g_strconcat("autostart/whiskermenu-", launcher->get_desktop_id(), nullptr);
+	gchar* path = xfce_resource_save_location(XFCE_RESOURCE_CONFIG, filename, create);
+	g_free(filename);
+
+	if (path)
+	{
+		if (create || g_file_test(path, G_FILE_TEST_IS_REGULAR))
+		{
+			result = path;
+		}
+		g_free(path);
+	}
+
+	return result;
+}
 
 //-----------------------------------------------------------------------------
 
@@ -485,6 +507,28 @@ void Page::create_context_menu(GtkTreePath* path, GdkEvent* event)
 		});
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
+	const std::string autostart_path = get_autostart_path(m_selected_launcher, false);
+	if (autostart_path.empty())
+	{
+		menuitem = whiskermenu_image_menu_item_new("list-add", _("Add to Autostart"));
+		connect(menuitem, "activate",
+			[this](GtkMenuItem*)
+			{
+				add_selected_to_autostart();
+			});
+		gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+	}
+	else
+	{
+		menuitem = whiskermenu_image_menu_item_new("list-remove", _("Remove from Autostart"));
+		connect(menuitem, "activate",
+			[autostart_path](GtkMenuItem*)
+			{
+				g_remove(autostart_path.c_str());
+			});
+		gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+	}
+
 	menuitem = gtk_separator_menu_item_new();
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
@@ -615,6 +659,27 @@ void Page::add_selected_to_panel()
 		xfce_dialog_show_error(nullptr, error, _("Unable to add launcher to panel."));
 		g_error_free(error);
 	}
+}
+
+//-----------------------------------------------------------------------------
+
+void Page::add_selected_to_autostart()
+{
+	g_assert(m_selected_launcher);
+
+	// Fetch autostart path for launcher
+	const std::string path = get_autostart_path(m_selected_launcher, true);
+	if (path.empty())
+	{
+		return;
+	}
+
+	// Copy launcher to autostart directory
+	GFile* source = m_selected_launcher->get_file();
+	GFile* dest = g_file_new_for_path(path.c_str());
+	g_file_copy(source, dest, G_FILE_COPY_NONE, nullptr, nullptr, nullptr, nullptr);
+	g_object_unref(source);
+	g_object_unref(dest);
 }
 
 //-----------------------------------------------------------------------------
