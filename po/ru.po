@@ -108,7 +108,7 @@ msgstr "Очистить историю"
 #: ../panel-plugin/plugin.cpp:414
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:128
 msgid "Copyright © 2013-2025 Graeme Gott"
-msgstr "© Graeme Gott, 2013—2024"
+msgstr "© Graeme Gott, 2013—2025"
 
 #: ../panel-plugin/settings-dialog.cpp:796
 msgid "Default Category"

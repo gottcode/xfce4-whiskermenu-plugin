@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-02 13:03-0500\n"
+"POT-Creation-Date: 2025-01-16 14:38-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,15 +21,19 @@ msgstr ""
 msgid "Add action"
 msgstr ""
 
-#: ../panel-plugin/page.cpp:472
+#: ../panel-plugin/page.cpp:513
+msgid "Add to Autostart"
+msgstr ""
+
+#: ../panel-plugin/page.cpp:494
 msgid "Add to Desktop"
 msgstr ""
 
-#: ../panel-plugin/page.cpp:451
+#: ../panel-plugin/page.cpp:473
 msgid "Add to Favorites"
 msgstr ""
 
-#: ../panel-plugin/page.cpp:480
+#: ../panel-plugin/page.cpp:502
 msgid "Add to Panel"
 msgstr ""
 
@@ -38,7 +42,7 @@ msgstr ""
 msgid "All Applications"
 msgstr ""
 
-#: ../panel-plugin/plugin.cpp:413
+#: ../panel-plugin/plugin.cpp:418
 msgid "Alternate application launcher for Xfce"
 msgstr ""
 
@@ -54,20 +58,20 @@ msgstr ""
 msgid "Applications"
 msgstr ""
 
-#: ../panel-plugin/launcher.cpp:272
+#: ../panel-plugin/launcher.cpp:181
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:129
+#: ../panel-plugin/settings.cpp:122
 msgid "Are you sure you want to log out?"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:136
+#: ../panel-plugin/settings.cpp:129
 msgid "Are you sure you want to restart?"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:143
+#: ../panel-plugin/settings.cpp:136
 msgid "Are you sure you want to shut down?"
 msgstr ""
 
@@ -95,7 +99,7 @@ msgstr ""
 msgid "Clear Recently Used"
 msgstr ""
 
-#: ../panel-plugin/plugin.cpp:414
+#: ../panel-plugin/plugin.cpp:419
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:128
 msgid "Copyright © 2013-2025 Graeme Gott"
 msgstr ""
@@ -112,64 +116,64 @@ msgstr ""
 msgid "Di_splay:"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:150
+#: ../panel-plugin/settings.cpp:143
 msgid "Do you want to suspend to RAM?"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:157
+#: ../panel-plugin/settings.cpp:150
 msgid "Do you want to suspend to disk?"
 msgstr ""
 
-#: ../panel-plugin/page.cpp:491
+#: ../panel-plugin/page.cpp:535
 msgid "Edit Application..."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:171
+#: ../panel-plugin/settings.cpp:164
 msgid "Edit _Profile"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:173
+#: ../panel-plugin/settings.cpp:166
 msgid "Failed to edit profile."
 msgstr ""
 
-#: ../panel-plugin/element.cpp:104
+#: ../panel-plugin/element.cpp:98
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:156
+#: ../panel-plugin/settings.cpp:149
 msgid "Failed to hibernate."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:168
+#: ../panel-plugin/settings.cpp:161
 msgid "Failed to launch menu editor."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:118
+#: ../panel-plugin/settings.cpp:111
 msgid "Failed to lock screen."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:128 ../panel-plugin/settings.cpp:163
+#: ../panel-plugin/settings.cpp:121 ../panel-plugin/settings.cpp:156
 msgid "Failed to log out."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:113
+#: ../panel-plugin/settings.cpp:106
 msgid "Failed to open settings manager."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:135
+#: ../panel-plugin/settings.cpp:128
 msgid "Failed to restart."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:142
+#: ../panel-plugin/settings.cpp:135
 msgid "Failed to shut down."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:149
+#: ../panel-plugin/settings.cpp:142
 msgid "Failed to suspend."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:123
+#: ../panel-plugin/settings.cpp:116
 msgid "Failed to switch user."
 msgstr ""
 
@@ -178,7 +182,7 @@ msgstr ""
 msgid "Favorites"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:158
+#: ../panel-plugin/settings.cpp:151
 #, c-format
 msgid "Hibernating computer in %d seconds."
 msgstr ""
@@ -187,7 +191,7 @@ msgstr ""
 msgid "Hidden"
 msgstr ""
 
-#: ../panel-plugin/launcher.cpp:271 ../panel-plugin/page.cpp:499
+#: ../panel-plugin/launcher.cpp:180 ../panel-plugin/page.cpp:543
 msgid "Hide Application"
 msgstr ""
 
@@ -211,20 +215,20 @@ msgstr ""
 msgid "Larger"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:161
+#: ../panel-plugin/settings.cpp:154
 msgid "Log Ou_t..."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:126
+#: ../panel-plugin/settings.cpp:119
 msgid "Log _Out"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:130
+#: ../panel-plugin/settings.cpp:123
 #, c-format
 msgid "Logging out in %d seconds."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:97
+#: ../panel-plugin/settings.cpp:90
 msgid "Man Pages"
 msgstr ""
 
@@ -249,6 +253,10 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
+#: ../panel-plugin/search-page.cpp:71
+msgid "No applications found"
+msgstr ""
+
 #: ../panel-plugin/icon-size.cpp:60
 msgid "None"
 msgstr ""
@@ -257,7 +265,7 @@ msgstr ""
 msgid "Normal"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:102
+#: ../panel-plugin/settings.cpp:95
 msgid "Open URI"
 msgstr ""
 
@@ -325,7 +333,11 @@ msgstr ""
 msgid "Remove action \"%s\"?"
 msgstr ""
 
-#: ../panel-plugin/page.cpp:462
+#: ../panel-plugin/page.cpp:523
+msgid "Remove from Autostart"
+msgstr ""
+
+#: ../panel-plugin/page.cpp:484
 msgid "Remove from Favorites"
 msgstr ""
 
@@ -333,7 +345,7 @@ msgstr ""
 msgid "Remove selected action"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:137
+#: ../panel-plugin/settings.cpp:130
 #, c-format
 msgid "Restarting computer in %d seconds."
 msgstr ""
@@ -347,7 +359,7 @@ msgstr ""
 msgid "Run %s"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:101
+#: ../panel-plugin/settings.cpp:94
 msgid "Run in Terminal"
 msgstr ""
 
@@ -359,11 +371,11 @@ msgstr ""
 msgid "Search Action"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:99
+#: ../panel-plugin/settings.cpp:92
 msgid "Search for Files"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:98
+#: ../panel-plugin/settings.cpp:91
 msgid "Search the Web"
 msgstr ""
 
@@ -379,7 +391,7 @@ msgstr ""
 msgid "Session Commands"
 msgstr ""
 
-#: ../panel-plugin/whiskermenu.desktop.in:6
+#: ../panel-plugin/whiskermenu.desktop.in:5
 msgid "Show a menu to easily access installed applications"
 msgstr ""
 
@@ -415,7 +427,7 @@ msgstr ""
 msgid "Show generic application _names"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:140
+#: ../panel-plugin/settings.cpp:133
 msgid "Shut _Down"
 msgstr ""
 
@@ -447,16 +459,16 @@ msgstr ""
 msgid "Stay _visible when focus is lost"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:147
+#: ../panel-plugin/settings.cpp:140
 msgid "Suspe_nd"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:151
+#: ../panel-plugin/settings.cpp:144
 #, c-format
 msgid "Suspending computer in %d seconds."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:121
+#: ../panel-plugin/settings.cpp:114
 msgid "Switch _User"
 msgstr ""
 
@@ -472,25 +484,25 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: ../panel-plugin/launcher.cpp:267
+#: ../panel-plugin/launcher.cpp:176
 #, c-format
 msgid "To unhide it you have to manually remove the file \"%s\" or open the file and remove the line \"%s\"."
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:144
+#: ../panel-plugin/settings.cpp:137
 #, c-format
 msgid "Turning off computer in %d seconds."
 msgstr ""
 
-#: ../panel-plugin/page.cpp:562
+#: ../panel-plugin/page.cpp:606
 msgid "Unable to add launcher to desktop."
 msgstr ""
 
-#: ../panel-plugin/page.cpp:602 ../panel-plugin/page.cpp:615
+#: ../panel-plugin/page.cpp:646 ../panel-plugin/page.cpp:659
 msgid "Unable to add launcher to panel."
 msgstr ""
 
-#: ../panel-plugin/page.cpp:635
+#: ../panel-plugin/page.cpp:700
 msgid "Unable to edit launcher."
 msgstr ""
 
@@ -512,11 +524,11 @@ msgid "Very Small"
 msgstr ""
 
 #: ../panel-plugin/settings-dialog.cpp:80
-#: ../panel-plugin/whiskermenu.desktop.in:5
+#: ../panel-plugin/whiskermenu.desktop.in:4
 msgid "Whisker Menu"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:100
+#: ../panel-plugin/settings.cpp:93
 msgid "Wikipedia"
 msgstr ""
 
@@ -544,7 +556,7 @@ msgstr ""
 msgid "_Delete"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:166
+#: ../panel-plugin/settings.cpp:159
 msgid "_Edit Applications"
 msgstr ""
 
@@ -556,7 +568,7 @@ msgstr ""
 msgid "_Help"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:154
+#: ../panel-plugin/settings.cpp:147
 msgid "_Hibernate"
 msgstr ""
 
@@ -564,7 +576,7 @@ msgstr ""
 msgid "_Icon:"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:116
+#: ../panel-plugin/settings.cpp:109
 msgid "_Lock Screen"
 msgstr ""
 
@@ -580,11 +592,11 @@ msgstr ""
 msgid "_Regular expression"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:133
+#: ../panel-plugin/settings.cpp:126
 msgid "_Restart"
 msgstr ""
 
-#: ../panel-plugin/settings.cpp:111
+#: ../panel-plugin/settings.cpp:104
 msgid "_Settings Manager"
 msgstr ""
 
@@ -592,6 +604,6 @@ msgstr ""
 msgid "_Title:"
 msgstr ""
 
-#: ../panel-plugin/plugin.cpp:418
+#: ../panel-plugin/plugin.cpp:423
 msgid "translator-credits"
 msgstr ""
