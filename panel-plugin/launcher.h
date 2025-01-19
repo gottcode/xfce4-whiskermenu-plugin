@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2025 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -86,6 +86,8 @@ public:
 		return garcon_menu_item_get_uri(m_item);
 	}
 
+	bool has_auto_start() const;
+
 	void hide();
 
 	void run(GdkScreen* screen) const override;
@@ -93,6 +95,8 @@ public:
 	void run(GdkScreen* screen, DesktopAction* action) const;
 
 	unsigned int search(const Query& query) override;
+
+	void set_auto_start(bool enabled);
 
 private:
 	GarconMenuItem* m_item;

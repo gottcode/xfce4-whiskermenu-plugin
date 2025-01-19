@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2025 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,6 +21,7 @@
 #include "settings.h"
 
 #include <libxfce4ui/libxfce4ui.h>
+#include <glib/gstdio.h>
 
 using namespace WhiskerMenu;
 
@@ -142,6 +143,36 @@ Launcher::~Launcher()
 	{
 		delete action;
 	}
+}
+
+//-----------------------------------------------------------------------------
+
+bool Launcher::has_auto_start() const
+{
+	const std::string filename = std::string("autostart/") + get_desktop_id();
+
+	// Check if autostart launcher exists
+	gchar* path = xfce_resource_lookup(XFCE_RESOURCE_CONFIG, filename.c_str());
+	if (!path)
+	{
+		return false;
+	}
+	g_free(path);
+
+	// Check if launcher is hidden or invalid
+	XfceRc* rc = xfce_rc_config_open(XFCE_RESOURCE_CONFIG, filename.c_str(), true);
+	if (!rc)
+	{
+		return false;
+	}
+
+	xfce_rc_set_group(rc, "Desktop Entry");
+	const bool hidden = xfce_rc_read_bool_entry(rc, "Hidden", false);
+	const bool invalid = xfce_str_is_empty(xfce_rc_read_entry(rc, "Exec", nullptr));
+
+	xfce_rc_close(rc);
+
+	return !hidden && !invalid;
 }
 
 //-----------------------------------------------------------------------------
@@ -306,6 +337,42 @@ unsigned int Launcher::search(const Query& query)
 	}
 
 	return UINT_MAX;
+}
+
+//-----------------------------------------------------------------------------
+
+void Launcher::set_auto_start(bool enabled)
+{
+	// Fetch autostart path for launcher
+	const std::string filename = std::string("autostart/") + get_desktop_id();
+	gchar* path = xfce_resource_save_location(XFCE_RESOURCE_CONFIG, filename.c_str(), true);
+
+	// Always remove launcher from autostart directory
+	g_remove(path);
+
+	if (enabled)
+	{
+		// Copy launcher to autostart directory
+		GFile* source = get_file();
+		GFile* dest = g_file_new_for_path(path);
+		g_file_copy(source, dest, G_FILE_COPY_NONE, nullptr, nullptr, nullptr, nullptr);
+		g_object_unref(source);
+		g_object_unref(dest);
+	}
+	else if (has_auto_start())
+	{
+		// Disable global autostart
+		XfceRc* rc = xfce_rc_config_open(XFCE_RESOURCE_CONFIG, filename.c_str(), false);
+		if (rc)
+		{
+			xfce_rc_set_group(rc, "Desktop Entry");
+			xfce_rc_write_bool_entry(rc, "Hidden", true);
+			xfce_rc_close(rc);
+		}
+	}
+
+	// Clean up
+	g_free(path);
 }
 
 //-----------------------------------------------------------------------------
