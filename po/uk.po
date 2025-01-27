@@ -1,5 +1,5 @@
 # Ukrainian translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2023 Graeme Gott
+# Copyright (C) 2025 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 # 
 # Translators:
@@ -7,14 +7,14 @@
 # GrayWolf82 <mr.graywolf82@gmail.com>, 2018
 # Yarema aka Knedlyk <yupadmin@gmail.com>, 2013-2014,2016,2023
 # zubr139, 2013,2016,2019
-# zubr139, 2013,2016,2019
+# zubr139, 2013,2016,2019,2025
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-17 11:38-0400\n"
+"POT-Creation-Date: 2025-01-16 14:38-0500\n"
 "PO-Revision-Date: 2013-06-20 11:26+0000\n"
-"Last-Translator: Yarema aka Knedlyk <yupadmin@gmail.com>, 2013-2014,2016,2023\n"
+"Last-Translator: zubr139, 2013,2016,2019,2025\n"
 "Language-Team: Ukrainian (http://app.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,15 +26,19 @@ msgstr ""
 msgid "Add action"
 msgstr "Додати дію"
 
-#: ../panel-plugin/page.cpp:472
+#: ../panel-plugin/page.cpp:513
+msgid "Add to Autostart"
+msgstr "Додати в автозапуск"
+
+#: ../panel-plugin/page.cpp:494
 msgid "Add to Desktop"
 msgstr "Додати до стільниці"
 
-#: ../panel-plugin/page.cpp:451
+#: ../panel-plugin/page.cpp:473
 msgid "Add to Favorites"
 msgstr "Додати до обраного"
 
-#: ../panel-plugin/page.cpp:480
+#: ../panel-plugin/page.cpp:502
 msgid "Add to Panel"
 msgstr "Додати на панель"
 
@@ -43,7 +47,7 @@ msgstr "Додати на панель"
 msgid "All Applications"
 msgstr "Усі програми"
 
-#: ../panel-plugin/plugin.cpp:413
+#: ../panel-plugin/plugin.cpp:418
 msgid "Alternate application launcher for Xfce"
 msgstr "Альтернативний пускач програм для Xfce"
 
@@ -59,20 +63,20 @@ msgstr "Розмір піктограми програ_ми:"
 msgid "Applications"
 msgstr "Програми"
 
-#: ../panel-plugin/launcher.cpp:272
+#: ../panel-plugin/launcher.cpp:181
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
 msgstr "Ви впевнені, що хочете приховати \"%s\"? "
 
-#: ../panel-plugin/settings.cpp:129
+#: ../panel-plugin/settings.cpp:122
 msgid "Are you sure you want to log out?"
 msgstr "Ви впевнені, що хочете вийти?"
 
-#: ../panel-plugin/settings.cpp:136
+#: ../panel-plugin/settings.cpp:129
 msgid "Are you sure you want to restart?"
 msgstr "Ви впевнені, що хочете перезапустити систему?"
 
-#: ../panel-plugin/settings.cpp:143
+#: ../panel-plugin/settings.cpp:136
 msgid "Are you sure you want to shut down?"
 msgstr "Ви впевнені, що хочете завершити роботу?"
 
@@ -96,11 +100,11 @@ msgstr "Розмір піктограм _категорії:"
 msgid "Choose which menu to popup by instance ID"
 msgstr "Виберіть, яке меню відобразити за ID."
 
-#: ../panel-plugin/recent-page.cpp:170
+#: ../panel-plugin/recent-page.cpp:147
 msgid "Clear Recently Used"
 msgstr "Очистити історію"
 
-#: ../panel-plugin/plugin.cpp:414
+#: ../panel-plugin/plugin.cpp:419
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:128
 msgid "Copyright © 2013-2025 Graeme Gott"
 msgstr "Авторське право © 2013-2025 Ґрем Ґотт"
@@ -117,64 +121,64 @@ msgstr "Більше"
 msgid "Di_splay:"
 msgstr "По_казувати:"
 
-#: ../panel-plugin/settings.cpp:150
+#: ../panel-plugin/settings.cpp:143
 msgid "Do you want to suspend to RAM?"
 msgstr "Хочете призупинити дію ОЗП?"
 
-#: ../panel-plugin/settings.cpp:157
+#: ../panel-plugin/settings.cpp:150
 msgid "Do you want to suspend to disk?"
 msgstr "Хочете призупинити роботу на диску?"
 
-#: ../panel-plugin/page.cpp:491
+#: ../panel-plugin/page.cpp:535
 msgid "Edit Application..."
 msgstr "Редагувати програми..."
 
-#: ../panel-plugin/settings.cpp:171
+#: ../panel-plugin/settings.cpp:164
 msgid "Edit _Profile"
 msgstr "Редагувати_Профіль"
 
-#: ../panel-plugin/settings.cpp:173
+#: ../panel-plugin/settings.cpp:166
 msgid "Failed to edit profile."
 msgstr "Не вдалося змінити профіль."
 
-#: ../panel-plugin/element.cpp:106
+#: ../panel-plugin/element.cpp:98
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "Не вдалося виконати команду \"%s\"."
 
-#: ../panel-plugin/settings.cpp:156
+#: ../panel-plugin/settings.cpp:149
 msgid "Failed to hibernate."
 msgstr "Не вдалося перейти в сплячий режим."
 
-#: ../panel-plugin/settings.cpp:168
+#: ../panel-plugin/settings.cpp:161
 msgid "Failed to launch menu editor."
 msgstr "Неможливо запустити редактор меню"
 
-#: ../panel-plugin/settings.cpp:118
+#: ../panel-plugin/settings.cpp:111
 msgid "Failed to lock screen."
 msgstr "Не вдалося заблокувати екран."
 
-#: ../panel-plugin/settings.cpp:128 ../panel-plugin/settings.cpp:163
+#: ../panel-plugin/settings.cpp:121 ../panel-plugin/settings.cpp:156
 msgid "Failed to log out."
 msgstr "Не вдалося вийти з системи."
 
-#: ../panel-plugin/settings.cpp:113
+#: ../panel-plugin/settings.cpp:106
 msgid "Failed to open settings manager."
 msgstr "Не вдалося відкрити менеджер налаштувань."
 
-#: ../panel-plugin/settings.cpp:135
+#: ../panel-plugin/settings.cpp:128
 msgid "Failed to restart."
 msgstr "Не вдалося перезавантажити."
 
-#: ../panel-plugin/settings.cpp:142
+#: ../panel-plugin/settings.cpp:135
 msgid "Failed to shut down."
 msgstr "Не вдалося завершити роботу."
 
-#: ../panel-plugin/settings.cpp:149
+#: ../panel-plugin/settings.cpp:142
 msgid "Failed to suspend."
 msgstr "Не вдалося призупинити."
 
-#: ../panel-plugin/settings.cpp:123
+#: ../panel-plugin/settings.cpp:116
 msgid "Failed to switch user."
 msgstr "Не вдалося змінити користувача."
 
@@ -183,7 +187,7 @@ msgstr "Не вдалося змінити користувача."
 msgid "Favorites"
 msgstr "Обране"
 
-#: ../panel-plugin/settings.cpp:158
+#: ../panel-plugin/settings.cpp:151
 #, c-format
 msgid "Hibernating computer in %d seconds."
 msgstr "Глибокий сон через %d секунд."
@@ -192,7 +196,7 @@ msgstr "Глибокий сон через %d секунд."
 msgid "Hidden"
 msgstr "Прихований"
 
-#: ../panel-plugin/launcher.cpp:271 ../panel-plugin/page.cpp:499
+#: ../panel-plugin/launcher.cpp:180 ../panel-plugin/page.cpp:543
 msgid "Hide Application"
 msgstr "Приховати програму"
 
@@ -216,20 +220,20 @@ msgstr "Великий"
 msgid "Larger"
 msgstr "Дуже великий"
 
-#: ../panel-plugin/settings.cpp:161
+#: ../panel-plugin/settings.cpp:154
 msgid "Log Ou_t..."
 msgstr "_Вийти..."
 
-#: ../panel-plugin/settings.cpp:126
+#: ../panel-plugin/settings.cpp:119
 msgid "Log _Out"
 msgstr "Вий_ти"
 
-#: ../panel-plugin/settings.cpp:130
+#: ../panel-plugin/settings.cpp:123
 #, c-format
 msgid "Logging out in %d seconds."
 msgstr "Вихід через %d секунд."
 
-#: ../panel-plugin/settings.cpp:97
+#: ../panel-plugin/settings.cpp:90
 msgid "Man Pages"
 msgstr "Сторінки допомоги"
 
@@ -254,6 +258,10 @@ msgstr "Наз_ва:"
 msgid "Name"
 msgstr "Назва"
 
+#: ../panel-plugin/search-page.cpp:71
+msgid "No applications found"
+msgstr "Застосунків не знайдено"
+
 #: ../panel-plugin/icon-size.cpp:60
 msgid "None"
 msgstr "Нічого"
@@ -262,7 +270,7 @@ msgstr "Нічого"
 msgid "Normal"
 msgstr "Нормальний"
 
-#: ../panel-plugin/settings.cpp:102
+#: ../panel-plugin/settings.cpp:95
 msgid "Open URI"
 msgstr "Відкрити посилання"
 
@@ -330,7 +338,11 @@ msgstr "Нещодавно використані"
 msgid "Remove action \"%s\"?"
 msgstr "Вилучити дію \"%s\"?"
 
-#: ../panel-plugin/page.cpp:462
+#: ../panel-plugin/page.cpp:523
+msgid "Remove from Autostart"
+msgstr "Видалити з автозапуску"
+
+#: ../panel-plugin/page.cpp:484
 msgid "Remove from Favorites"
 msgstr "Вилучити з обраного"
 
@@ -338,7 +350,7 @@ msgstr "Вилучити з обраного"
 msgid "Remove selected action"
 msgstr "Вилучити вибрану дію"
 
-#: ../panel-plugin/settings.cpp:137
+#: ../panel-plugin/settings.cpp:130
 #, c-format
 msgid "Restarting computer in %d seconds."
 msgstr "Перезавантаження комп'ютера через %d секунд."
@@ -352,7 +364,7 @@ msgstr "Кругле зображення"
 msgid "Run %s"
 msgstr "Запустити %s"
 
-#: ../panel-plugin/settings.cpp:101
+#: ../panel-plugin/settings.cpp:94
 msgid "Run in Terminal"
 msgstr "Запустити в терміналі"
 
@@ -364,11 +376,11 @@ msgstr "Шукати ді_ї"
 msgid "Search Action"
 msgstr "Шукати дію"
 
-#: ../panel-plugin/settings.cpp:99
+#: ../panel-plugin/settings.cpp:92
 msgid "Search for Files"
 msgstr "Пошук файлів"
 
-#: ../panel-plugin/settings.cpp:98
+#: ../panel-plugin/settings.cpp:91
 msgid "Search the Web"
 msgstr "Шукати в Інтернеті"
 
@@ -384,7 +396,7 @@ msgstr "Виберіть піктограму"
 msgid "Session Commands"
 msgstr "Команди сеансу"
 
-#: ../panel-plugin/whiskermenu.desktop.in:6
+#: ../panel-plugin/whiskermenu.desktop.in:5
 msgid "Show a menu to easily access installed applications"
 msgstr "Показ меню для легкого доступу до програм"
 
@@ -420,7 +432,7 @@ msgstr "Показати назви категор_ій"
 msgid "Show generic application _names"
 msgstr "Показати загальні _назви програм"
 
-#: ../panel-plugin/settings.cpp:140
+#: ../panel-plugin/settings.cpp:133
 msgid "Shut _Down"
 msgstr "Завершити _роботу"
 
@@ -432,11 +444,11 @@ msgstr "Малий"
 msgid "Smaller"
 msgstr "Менший"
 
-#: ../panel-plugin/favorites-page.cpp:163
+#: ../panel-plugin/favorites-page.cpp:147
 msgid "Sort Alphabetically A-Z"
 msgstr "Сортувати за алфавітом А-Я"
 
-#: ../panel-plugin/favorites-page.cpp:171
+#: ../panel-plugin/favorites-page.cpp:155
 msgid "Sort Alphabetically Z-A"
 msgstr "Сортувати за алфавітом: Я-А"
 
@@ -452,16 +464,16 @@ msgstr "Квадратне зображення"
 msgid "Stay _visible when focus is lost"
 msgstr "_Залишайтеся видимими, коли фокус втрачено"
 
-#: ../panel-plugin/settings.cpp:147
+#: ../panel-plugin/settings.cpp:140
 msgid "Suspe_nd"
 msgstr "П_ризупинити"
 
-#: ../panel-plugin/settings.cpp:151
+#: ../panel-plugin/settings.cpp:144
 #, c-format
 msgid "Suspending computer in %d seconds."
 msgstr "Призупинення роботи комп'ютера за %d секунд."
 
-#: ../panel-plugin/settings.cpp:121
+#: ../panel-plugin/settings.cpp:114
 msgid "Switch _User"
 msgstr "Змінити _користувача"
 
@@ -477,27 +489,27 @@ msgstr "Дію буде вилучено назавжди."
 msgid "Title"
 msgstr "Назва"
 
-#: ../panel-plugin/launcher.cpp:267
+#: ../panel-plugin/launcher.cpp:176
 #, c-format
 msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
 msgstr "Щоб показати його, вам потрібно вручну видалити файл \"%s\" або відкрити файл і видалити рядок \"%s\"."
 
-#: ../panel-plugin/settings.cpp:144
+#: ../panel-plugin/settings.cpp:137
 #, c-format
 msgid "Turning off computer in %d seconds."
 msgstr "Вимикання комп'ютера за %d секунд."
 
-#: ../panel-plugin/page.cpp:598
+#: ../panel-plugin/page.cpp:606
 msgid "Unable to add launcher to desktop."
 msgstr "Неможливо додати запускач до стільниці."
 
-#: ../panel-plugin/page.cpp:643 ../panel-plugin/page.cpp:656
+#: ../panel-plugin/page.cpp:646 ../panel-plugin/page.cpp:659
 msgid "Unable to add launcher to panel."
 msgstr "Неможливо додати запускач на панель."
 
-#: ../panel-plugin/page.cpp:676
+#: ../panel-plugin/page.cpp:700
 msgid "Unable to edit launcher."
 msgstr "Неможливо змінити лауечер."
 
@@ -519,11 +531,11 @@ msgid "Very Small"
 msgstr "Крихітний"
 
 #: ../panel-plugin/settings-dialog.cpp:80
-#: ../panel-plugin/whiskermenu.desktop.in:5
+#: ../panel-plugin/whiskermenu.desktop.in:4
 msgid "Whisker Menu"
 msgstr "Whisker Меню"
 
-#: ../panel-plugin/settings.cpp:100
+#: ../panel-plugin/settings.cpp:93
 msgid "Wikipedia"
 msgstr "Вікіпедія"
 
@@ -551,7 +563,7 @@ msgstr "Ко_манди"
 msgid "_Delete"
 msgstr "Вида_лити"
 
-#: ../panel-plugin/settings.cpp:166
+#: ../panel-plugin/settings.cpp:159
 msgid "_Edit Applications"
 msgstr "_Редагувати програми"
 
@@ -563,7 +575,7 @@ msgstr "_Загальний"
 msgid "_Help"
 msgstr "_Довідка"
 
-#: ../panel-plugin/settings.cpp:154
+#: ../panel-plugin/settings.cpp:147
 msgid "_Hibernate"
 msgstr "_Сплячий режим"
 
@@ -571,7 +583,7 @@ msgstr "_Сплячий режим"
 msgid "_Icon:"
 msgstr "_Піктограма:"
 
-#: ../panel-plugin/settings.cpp:116
+#: ../panel-plugin/settings.cpp:109
 msgid "_Lock Screen"
 msgstr "_Замкнути екран"
 
@@ -587,11 +599,11 @@ msgstr "_Шаблон:"
 msgid "_Regular expression"
 msgstr "_Регулярний вираз"
 
-#: ../panel-plugin/settings.cpp:133
+#: ../panel-plugin/settings.cpp:126
 msgid "_Restart"
 msgstr "_Перезапустити"
 
-#: ../panel-plugin/settings.cpp:111
+#: ../panel-plugin/settings.cpp:104
 msgid "_Settings Manager"
 msgstr "Менед_жер налаштувань"
 
@@ -599,6 +611,6 @@ msgstr "Менед_жер налаштувань"
 msgid "_Title:"
 msgstr "На_зва:"
 
-#: ../panel-plugin/plugin.cpp:418
+#: ../panel-plugin/plugin.cpp:423
 msgid "translator-credits"
 msgstr "Yarema aka Knedlyk <yupadmin at gmail.com>,\nZubr139"
