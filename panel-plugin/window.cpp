@@ -875,7 +875,7 @@ gboolean WhiskerMenu::Window::on_key_press_event_after(GtkWidget* widget, GdkEve
 		{
 			return GDK_EVENT_PROPAGATE;
 		}
-		gtk_widget_grab_focus(search_entry);
+		gtk_entry_grab_focus_without_selecting(m_search_entry);
 		gtk_window_propagate_key_event(m_window, key_event);
 		return GDK_EVENT_STOP;
 	}
