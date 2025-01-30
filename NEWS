@@ -1,3 +1,21 @@
+2.9.0
+=====
+- Add dragging from any side to resize menu. (Issue #112)
+- Add support for autostarting launchers. (Issue #35)
+- Add support for keypad navigation.
+- Always send Page Up and Page Down keys to view. (Issue #145)
+- Always run selected launcher when pressing enter.
+- Fall back to non-regex search actions. (Issue #128)
+- Only select launcher when mouse moves. (Issue #106)
+- Remember current category with arrow keys. (Issue #132)
+- Require Xfce 4.16.
+- Fix menu not centering with horizontal categories. (Issue #131)
+- Fix warning about unblocking panel autohide.
+- Fix search text replaced after pressing arrow keys.
+- Translation updates: Catalan, Chinese (Taiwan), Czech, Danish, Dutch,
+  French, Lithuanian, Polish, Portuguese, Serbian, Slovak, Swedish,
+  Ukrainian.
+
 2.8.4
 =====
 - Fix menu not hiding in labwc.
