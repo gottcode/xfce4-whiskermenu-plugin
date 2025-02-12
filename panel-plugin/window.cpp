@@ -555,6 +555,12 @@ void WhiskerMenu::Window::show(const Position position)
 
 	// Resize window if necessary, and also prevent it from being larger than screen
 	GdkMonitor* monitor_gdk = gdk_display_get_monitor_at_point(gdk_display_get_default(), m_geometry.x, m_geometry.y);
+#ifdef HAVE_GTK_LAYER_SHELL
+	if (gtk_layer_is_supported())
+	{
+		gtk_layer_set_monitor(m_window, monitor_gdk);
+	}
+#endif
 	gdk_monitor_get_geometry(monitor_gdk, &m_monitor);
 	const bool resized = set_size(wm_settings->menu_width, wm_settings->menu_height);
 
@@ -1027,8 +1033,8 @@ void WhiskerMenu::Window::move_window()
 #ifdef HAVE_GTK_LAYER_SHELL
 	if (gtk_layer_is_supported())
 	{
-		gtk_layer_set_margin(m_window, GTK_LAYER_SHELL_EDGE_LEFT, m_geometry.x);
-		gtk_layer_set_margin(m_window, GTK_LAYER_SHELL_EDGE_TOP, m_geometry.y);
+		gtk_layer_set_margin(m_window, GTK_LAYER_SHELL_EDGE_LEFT, m_geometry.x - m_monitor.x);
+		gtk_layer_set_margin(m_window, GTK_LAYER_SHELL_EDGE_TOP, m_geometry.y - m_monitor.y);
 	}
 	else
 #endif
