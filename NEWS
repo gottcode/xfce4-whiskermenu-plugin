@@ -1,3 +1,8 @@
+2.9.1
+=====
+- Fix menu position in Wayland with multiple monitors. (Issue #153)
+- Translation updates: Bulgarian, Estonian, Greek.
+
 2.9.0
 =====
 - Add dragging from any side to resize menu. (Issue #112)
