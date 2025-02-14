@@ -524,6 +524,7 @@ void WhiskerMenu::Window::show(const Position position)
 	m_recent->get_view()->reload_icon_size();
 	m_applications->get_view()->reload_icon_size();
 
+	GdkMonitor* monitor_gdk = nullptr;
 	if (position == PositionAtButton)
 	{
 		// Wait up to half a second for auto-hidden panels to be shown
@@ -543,6 +544,9 @@ void WhiskerMenu::Window::show(const Position position)
 
 		// Fetch position
 		m_plugin->get_menu_position(&m_geometry.x, &m_geometry.y);
+
+		GtkWidget* widget = m_plugin->get_button();
+		monitor_gdk = gdk_display_get_monitor_at_window(gtk_widget_get_display(widget), gtk_widget_get_window(widget));
 	}
 	else
 	{
@@ -551,10 +555,10 @@ void WhiskerMenu::Window::show(const Position position)
 		GdkSeat* seat = gdk_display_get_default_seat(display);
 		GdkDevice* device = gdk_seat_get_pointer(seat);
 		gdk_device_get_position(device, nullptr, &m_geometry.x, &m_geometry.y);
+		monitor_gdk = gdk_display_get_monitor_at_point(display, m_geometry.x, m_geometry.y);
 	}
 
 	// Resize window if necessary, and also prevent it from being larger than screen
-	GdkMonitor* monitor_gdk = gdk_display_get_monitor_at_point(gdk_display_get_default(), m_geometry.x, m_geometry.y);
 #ifdef HAVE_GTK_LAYER_SHELL
 	if (gtk_layer_is_supported())
 	{
