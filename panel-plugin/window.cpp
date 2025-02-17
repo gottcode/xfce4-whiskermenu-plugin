@@ -544,9 +544,7 @@ void WhiskerMenu::Window::show(const Position position)
 
 		// Fetch position
 		m_plugin->get_menu_position(&m_geometry.x, &m_geometry.y);
-
-		GtkWidget* widget = m_plugin->get_button();
-		monitor_gdk = gdk_display_get_monitor_at_window(gtk_widget_get_display(widget), gtk_widget_get_window(widget));
+		monitor_gdk = gdk_display_get_monitor_at_window(gtk_widget_get_display(parent), gtk_widget_get_window(parent));
 	}
 	else
 	{

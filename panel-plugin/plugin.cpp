@@ -230,7 +230,7 @@ std::string Plugin::get_button_title_default()
 
 void Plugin::get_menu_position(int* x, int* y) const
 {
-	xfce_panel_plugin_position_widget(m_plugin, m_window->get_widget(), get_button(), x, y);
+	xfce_panel_plugin_position_widget(m_plugin, m_window->get_widget(), m_button, x, y);
 }
 
 //-----------------------------------------------------------------------------
