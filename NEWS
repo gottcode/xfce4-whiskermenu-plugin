@@ -1,3 +1,7 @@
+2.9.2
+=====
+- Fix menu not shown on correct monitor. (Issue #154)
+
 2.9.1
 =====
 - Fix menu position in Wayland with multiple monitors. (Issue #153)
