@@ -27,9 +27,12 @@
 
 #include <algorithm>
 
-#include <exo/exo.h>
 #include <libxfce4panel/libxfce4panel.h>
 #include <libxfce4ui/libxfce4ui.h>
+
+#if !LIBXFCE4UI_CHECK_VERSION(4, 21, 0)
+#include <exo/exo.h>
+#endif
 
 using namespace WhiskerMenu;
 
@@ -132,18 +135,30 @@ SettingsDialog::~SettingsDialog()
 
 void SettingsDialog::choose_icon()
 {
+#if LIBXFCE4UI_CHECK_VERSION(4, 21, 0)
+	GtkWidget* chooser = xfce_icon_chooser_dialog_new(_("Select an Icon"),
+#else
 	GtkWidget* chooser = exo_icon_chooser_dialog_new(_("Select an Icon"),
+#endif
 			GTK_WINDOW(m_window),
 			_("_Cancel"), GTK_RESPONSE_CANCEL,
 			_("_OK"), GTK_RESPONSE_ACCEPT,
 			nullptr);
 
 	gtk_dialog_set_default_response(GTK_DIALOG(chooser), GTK_RESPONSE_ACCEPT);
+#if LIBXFCE4UI_CHECK_VERSION(4, 21, 0)
+	xfce_icon_chooser_dialog_set_icon(XFCE_ICON_CHOOSER_DIALOG(chooser), wm_settings->button_icon_name);
+#else
 	exo_icon_chooser_dialog_set_icon(EXO_ICON_CHOOSER_DIALOG(chooser), wm_settings->button_icon_name);
+#endif
 
 	if (gtk_dialog_run(GTK_DIALOG (chooser)) == GTK_RESPONSE_ACCEPT)
 	{
+#if LIBXFCE4UI_CHECK_VERSION(4, 21, 0)
+		gchar* icon = xfce_icon_chooser_dialog_get_icon(XFCE_ICON_CHOOSER_DIALOG(chooser));
+#else
 		gchar* icon = exo_icon_chooser_dialog_get_icon(EXO_ICON_CHOOSER_DIALOG(chooser));
+#endif
 		gtk_image_set_from_icon_name(GTK_IMAGE(m_icon), icon, GTK_ICON_SIZE_DIALOG);
 		m_plugin->set_button_icon_name(icon);
 		g_free(icon);
@@ -270,7 +285,11 @@ void SettingsDialog::response(int response_id)
 {
 	if (response_id == GTK_RESPONSE_HELP)
 	{
+#if LIBXFCE4UI_CHECK_VERSION(4, 21, 0)
+		bool result = g_spawn_command_line_async("xfce-open --launch WebBrowser " PLUGIN_WEBSITE, nullptr);
+#else
 		bool result = g_spawn_command_line_async("exo-open --launch WebBrowser " PLUGIN_WEBSITE, nullptr);
+#endif
 
 		if (G_UNLIKELY(!result))
 		{

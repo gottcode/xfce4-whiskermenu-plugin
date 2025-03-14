@@ -264,7 +264,7 @@ void LauncherTreeView::unset_drag_dest()
 
 void LauncherTreeView::reload_icon_size()
 {
-	// Force exo to reload SVG icons
+	// Force libxfce4ui to reload SVG icons
 	if (m_icon_size != wm_settings->launcher_icon_size.get_size())
 	{
 		gtk_tree_view_remove_column(m_view, m_column);

@@ -649,7 +649,11 @@ void Page::edit_selected()
 	m_window->hide();
 
 	gchar* uri = m_selected_launcher->get_uri();
+#if LIBXFCE4UI_CHECK_VERSION(4, 21, 0)
+	gchar* command = g_strdup_printf("xfce-desktop-item-edit '%s'", uri);
+#else
 	gchar* command = g_strdup_printf("exo-desktop-item-edit '%s'", uri);
+#endif
 	g_free(uri);
 
 	GError* error = nullptr;

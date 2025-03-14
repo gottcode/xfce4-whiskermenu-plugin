@@ -24,8 +24,6 @@
 
 #include <algorithm>
 
-#include <exo/exo.h>
-
 #include <cstdio>
 
 using namespace WhiskerMenu;
@@ -87,12 +85,21 @@ Settings::Settings(Plugin* plugin) :
 	confirm_session_command("/confirm-session-command", true),
 
 	search_actions {
+#if LIBXFCE4UI_CHECK_VERSION(4, 21, 0)
+		new SearchAction(_("Man Pages"), "#", "xfce-open --launch TerminalEmulator man %s", false),
+		new SearchAction(_("Search the Web"), "?", "xfce-open --launch WebBrowser https://duckduckgo.com/?q=%u", false),
+		new SearchAction(_("Search for Files"), "-", "catfish --path=~ --start %s", false),
+		new SearchAction(_("Wikipedia"), "!w", "xfce-open --launch WebBrowser https://en.wikipedia.org/wiki/%u", false),
+		new SearchAction(_("Run in Terminal"), "!", "xfce-open --launch TerminalEmulator %s", false),
+		new SearchAction(_("Open URI"), "^(file|http|https):\\/\\/(.*)$", "xfce-open \\0", true)
+#else
 		new SearchAction(_("Man Pages"), "#", "exo-open --launch TerminalEmulator man %s", false),
 		new SearchAction(_("Search the Web"), "?", "exo-open --launch WebBrowser https://duckduckgo.com/?q=%u", false),
 		new SearchAction(_("Search for Files"), "-", "catfish --path=~ --start %s", false),
 		new SearchAction(_("Wikipedia"), "!w", "exo-open --launch WebBrowser https://en.wikipedia.org/wiki/%u", false),
 		new SearchAction(_("Run in Terminal"), "!", "exo-open --launch TerminalEmulator %s", false),
 		new SearchAction(_("Open URI"), "^(file|http|https):\\/\\/(.*)$", "exo-open \\0", true)
+#endif
 	},
 
 	menu_width("/menu-width", 450, 10, SHRT_MAX),
