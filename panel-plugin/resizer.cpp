@@ -101,7 +101,7 @@ Resizer::Resizer(Edge edge, Window* window) :
 		});
 
 	connect(m_drawing, "leave-notify-event",
-		[this](GtkWidget* widget, GdkEvent*) -> gboolean
+		[](GtkWidget* widget, GdkEvent*) -> gboolean
 		{
 			gdk_window_set_cursor(gtk_widget_get_window(widget), nullptr);
 			return GDK_EVENT_PROPAGATE;
