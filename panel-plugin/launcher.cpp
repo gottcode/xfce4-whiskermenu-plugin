@@ -55,8 +55,7 @@ static std::string normalize(const gchar* string)
 //-----------------------------------------------------------------------------
 
 Launcher::Launcher(GarconMenuItem* item) :
-	m_item(item),
-	m_search_flags(0)
+	m_item(item)
 {
 	// Fetch icon
 	const gchar* icon = garcon_menu_item_get_icon_name(m_item);

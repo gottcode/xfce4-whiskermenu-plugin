@@ -106,7 +106,6 @@ private:
 	std::string m_search_comment;
 	std::string m_search_command;
 	std::vector<std::string> m_search_keywords;
-	unsigned int m_search_flags;
 	std::vector<DesktopAction*> m_actions;
 };
 
