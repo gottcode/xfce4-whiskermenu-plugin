@@ -1,0 +1,13 @@
+option(
+  'accountsservice',
+  type: 'feature',
+  value: 'auto',
+  description: 'Enable building with AccountsService',
+)
+
+option(
+  'gtk-layer-shell',
+  type: 'feature',
+  value: 'auto',
+  description: 'Enable support for positioning in Wayland',
+)

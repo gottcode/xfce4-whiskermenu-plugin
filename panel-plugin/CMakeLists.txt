@@ -3,8 +3,8 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 
 include(../cmake/AddVersionCompileDefinition.cmake)
-add_version_compile_definition(plugin.cpp PACKAGE_VERSION)
-add_version_compile_definition(xfce4-popup-whiskermenu.cpp PACKAGE_VERSION)
+add_version_compile_definition(plugin.cpp VERSION_FULL)
+add_version_compile_definition(xfce4-popup-whiskermenu.cpp VERSION_FULL)
 
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(gio REQUIRED IMPORTED_TARGET gio-2.0)
