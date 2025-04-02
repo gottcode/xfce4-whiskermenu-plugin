@@ -420,7 +420,7 @@ void Plugin::show_about()
 		(nullptr,
 		"authors", authors,
 		"comments", _("Alternate application launcher for Xfce"),
-		"copyright", _("Copyright \302\251 2013-2025 Graeme Gott"),
+		"copyright", "Copyright \302\251 2013-" COPYRIGHT_YEAR " Graeme Gott",
 		"license", XFCE_LICENSE_GPL,
 		"logo-icon-name", "org.xfce.panel.whiskermenu",
 		"program-name", PACKAGE_NAME,
