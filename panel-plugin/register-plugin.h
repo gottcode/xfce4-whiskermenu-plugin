@@ -15,6 +15,6 @@
  * along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "register-plugin.h"
+#include <libxfce4panel/libxfce4panel.h>
 
-XFCE_PANEL_PLUGIN_REGISTER(whiskermenu_construct)
+extern void whiskermenu_construct(XfcePanelPlugin* plugin);

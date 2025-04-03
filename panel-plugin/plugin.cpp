@@ -35,10 +35,17 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-extern "C" void whiskermenu_construct(XfcePanelPlugin* plugin)
+extern "C"
+{
+
+#include "register-plugin.h"
+
+void whiskermenu_construct(XfcePanelPlugin* plugin)
 {
 	xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 	new Plugin(plugin);
+}
+
 }
 
 //-----------------------------------------------------------------------------
