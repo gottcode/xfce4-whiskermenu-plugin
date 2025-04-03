@@ -177,10 +177,10 @@ bool ApplicationsPage::load()
 		this);
 	g_task_set_task_data(task, this, nullptr);
 	g_task_run_in_thread(task,
-		+[](GTask* task, gpointer, gpointer task_data, GCancellable*)
+		+[](GTask* thread_task, gpointer, gpointer task_data, GCancellable*)
 		{
 			static_cast<ApplicationsPage*>(task_data)->load_garcon_menu();
-			g_task_return_boolean(task, true);
+			g_task_return_boolean(thread_task, true);
 		});
 	g_object_unref(task);
 
