@@ -414,10 +414,10 @@ void Page::create_context_menu(GtkTreePath* path, GdkEvent* event)
 	// Create context menu
 	GtkWidget* menu = gtk_menu_new();
 	connect(menu, "selection-done",
-		[this](GtkMenuShell* menu)
+		[this](GtkMenuShell* menushell)
 		{
 			m_selected_launcher = nullptr;
-			gtk_widget_destroy(GTK_WIDGET(menu));
+			gtk_widget_destroy(GTK_WIDGET(menushell));
 		});
 
 	// Add menu items
@@ -435,9 +435,9 @@ void Page::create_context_menu(GtkTreePath* path, GdkEvent* event)
 		{
 			menuitem = whiskermenu_image_menu_item_new(action->get_icon(), action->get_name());
 			connect(menuitem, "activate",
-				[this, action](GtkMenuItem* menuitem)
+				[this, action](GtkMenuItem* action_menuitem)
 				{
-					launcher_action_activated(menuitem, action);
+					launcher_action_activated(action_menuitem, action);
 				});
 			gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 		}
