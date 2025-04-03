@@ -94,8 +94,8 @@ void SearchPage::set_filter(const gchar* filter)
 	}
 
 	// Make sure this is a new search
-	std::string query(filter);
-	if (m_query.raw_query() == query)
+	const std::string raw_query(filter);
+	if (m_query.raw_query() == raw_query)
 	{
 		return;
 	}
@@ -115,7 +115,7 @@ void SearchPage::set_filter(const gchar* filter)
 	{
 		m_matches.insert(m_matches.begin(), &m_run_action);
 	}
-	m_query.set(query);
+	m_query.set(raw_query);
 
 	// Create search results
 	std::vector<Match> search_action_matches;
