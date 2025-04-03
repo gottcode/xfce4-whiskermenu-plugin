@@ -109,15 +109,15 @@ void FavoritesPage::set_menu_items()
 	get_view()->set_model(model);
 
 	connect(model, "row-changed",
-		[this](GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter)
+		[this](GtkTreeModel* tree_model, GtkTreePath* path, GtkTreeIter* iter)
 		{
-			on_row_changed(model, path, iter);
+			on_row_changed(tree_model, path, iter);
 		});
 
 	connect(model, "row-inserted",
-		[this](GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter)
+		[this](GtkTreeModel* tree_model, GtkTreePath* path, GtkTreeIter* iter)
 		{
-			on_row_inserted(model, path, iter);
+			on_row_inserted(tree_model, path, iter);
 		});
 
 	connect(model, "row-deleted",
