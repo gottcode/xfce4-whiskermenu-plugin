@@ -2,7 +2,7 @@ project(
   'xfce4-whiskermenu-plugin',
   'c',
   'cpp',
-version : '2.10.0',
+version : '2.10.0-dev',
   license : 'GPL-2.0-or-later',
   meson_version : '>= 0.54.0',
   default_options : ['c_std=gnu11', 'cpp_std=gnu++11', 'buildtype=debugoptimized', 'warning_level=2']
