@@ -1,3 +1,18 @@
+2.10.0 (2025-05-21)
+======
+- meson-build: Automate copyright year management
+- Add basic GitLab pipeline
+- Add meson build
+- po: Add LINGUAS and POTFILES
+- Remove outdated install instructions
+- Remove unused search flags variable
+- Replace deprecated exo with libxfce4ui 4.21.0
+- Fix missing declaration warning
+- Fix shadowed variables
+- Fix unused lambda capture warning
+- Translation Updates:
+  Bulgarian, Chinese (China), Turkish
+
 2.9.2
 =====
 - Fix menu not shown on correct monitor. (Issue #154)
