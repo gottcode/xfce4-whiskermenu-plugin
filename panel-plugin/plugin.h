@@ -28,6 +28,7 @@
 namespace WhiskerMenu
 {
 
+class SettingsDialog;
 class Window;
 
 class Plugin
@@ -63,7 +64,6 @@ public:
 	void set_button_style(ButtonStyle style);
 	void set_button_title(const std::string& title);
 	void set_button_icon_name(const std::string& icon);
-	void set_configure_enabled(bool enabled);
 	void set_loaded(bool loaded);
 
 private:
@@ -79,6 +79,7 @@ private:
 private:
 	XfcePanelPlugin* m_plugin;
 	Window* m_window;
+	SettingsDialog* m_settings_dialog;
 
 	GtkWidget* m_button;
 	GtkBox* m_button_box;
