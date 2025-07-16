@@ -53,6 +53,7 @@ void whiskermenu_construct(XfcePanelPlugin* plugin)
 Plugin::Plugin(XfcePanelPlugin* plugin) :
 	m_plugin(plugin),
 	m_window(nullptr),
+	m_settings_dialog(nullptr),
 	m_button(nullptr),
 	m_opacity(100),
 	m_file_icon(false),
@@ -325,20 +326,6 @@ void Plugin::set_button_icon_name(const std::string& icon)
 
 //-----------------------------------------------------------------------------
 
-void Plugin::set_configure_enabled(bool enabled)
-{
-	if (enabled)
-	{
-		xfce_panel_plugin_unblock_menu(m_plugin);
-	}
-	else
-	{
-		xfce_panel_plugin_block_menu(m_plugin);
-	}
-}
-
-//-----------------------------------------------------------------------------
-
 void Plugin::set_loaded(bool loaded)
 {
 	gtk_widget_set_sensitive(GTK_WIDGET(m_button_icon), loaded);
@@ -349,12 +336,19 @@ void Plugin::set_loaded(bool loaded)
 
 void Plugin::configure()
 {
-	SettingsDialog* dialog = new SettingsDialog(this);
-	connect(dialog->get_widget(), "destroy",
-		[dialog](GtkWidget*)
+	if (m_settings_dialog)
+	{
+		gtk_window_present(GTK_WINDOW(m_settings_dialog->get_widget()));
+		return;
+	}
+
+	m_settings_dialog = new SettingsDialog(this);
+	connect(m_settings_dialog->get_widget(), "destroy",
+		[this](GtkWidget*)
 		{
 			wm_settings->search_actions.save();
-			delete dialog;
+			delete m_settings_dialog;
+			m_settings_dialog = nullptr;
 		});
 }
 

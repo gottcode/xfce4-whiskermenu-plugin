@@ -113,8 +113,6 @@ SettingsDialog::SettingsDialog(Plugin* plugin) :
 
 	// Show GTK window
 	gtk_widget_show_all(m_window);
-
-	m_plugin->set_configure_enabled(false);
 }
 
 //-----------------------------------------------------------------------------
@@ -127,8 +125,6 @@ SettingsDialog::~SettingsDialog()
 	}
 
 	g_object_unref(m_actions_model);
-
-	m_plugin->set_configure_enabled(true);
 }
 
 //-----------------------------------------------------------------------------
