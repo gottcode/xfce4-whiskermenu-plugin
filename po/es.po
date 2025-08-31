@@ -1,31 +1,32 @@
 # Spanish translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2024 Graeme Gott
+# Copyright (C) 2025 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 # 
 # Translators:
 # Adolfo Jayme-Barrientos, 2013-2016,2018-2020
-# Adolfo Jayme-Barrientos, 2019
-# Adolfo Jayme-Barrientos, 2016,2018,2020-2021,2023-2024
-# Adolfo Jayme-Barrientos, 2015
-# Adolfo Jayme-Barrientos, 2013
-# Adolfo Jayme-Barrientos, 2014
+# Adolfo Jayme Barrientos, 2019
+# Adolfo Jayme Barrientos, 2016,2018,2020-2021,2023-2024
+# Adolfo Jayme Barrientos, 2015
+# Adolfo Jayme Barrientos, 2013
+# Adolfo Jayme Barrientos, 2014
 # Graeme Gott <graeme@gottcode.org>, 2013
 # Inti Alonso <intialonso@gmail.com>, 2013
 # Jason Collins <JasonPCollins@protonmail.com>, 2018
 # John Teixido <jtdevnet0@gmail.com>, 2021
 # a1a9b52a3f40dff112eca965c254c602_089360e <d1597d94e208cfb976efe0f2ce18d2e5_734602>, 2019
 # Noe Moreno <NOE.MORENO@gmail.com>, 2016
-# Pablo Lezaeta Reyes <prflr88@gmail.com>, 2013-2015
-# Pablo Lezaeta Reyes <prflr88@gmail.com>, 2017
-# Pablo Lezaeta Reyes <prflr88@gmail.com>, 2017
+# Pablo (Jota) Lezaeta Reyes <prflr88@gmail.com>, 2025
+# Pablo (Jota) Lezaeta Reyes <prflr88@gmail.com>, 2013-2015
+# Pablo (Jota) Lezaeta Reyes <prflr88@gmail.com>, 2017
+# Pablo (Jota) Lezaeta Reyes <prflr88@gmail.com>, 2017
 # Toni Estévez <toni.estevez@gmail.com>, 2021-2023
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-01 13:04-0500\n"
+"POT-Creation-Date: 2025-01-16 14:38-0500\n"
 "PO-Revision-Date: 2013-06-20 11:26+0000\n"
-"Last-Translator: Adolfo Jayme-Barrientos, 2016,2018,2020-2021,2023-2024\n"
+"Last-Translator: Pablo (Jota) Lezaeta Reyes <prflr88@gmail.com>, 2025\n"
 "Language-Team: Spanish (http://app.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -37,15 +38,19 @@ msgstr ""
 msgid "Add action"
 msgstr "Añadir una acción"
 
-#: ../panel-plugin/page.cpp:472
+#: ../panel-plugin/page.cpp:513
+msgid "Add to Autostart"
+msgstr "Añadir al inicio automático"
+
+#: ../panel-plugin/page.cpp:494
 msgid "Add to Desktop"
 msgstr "Añadir al escritorio"
 
-#: ../panel-plugin/page.cpp:451
+#: ../panel-plugin/page.cpp:473
 msgid "Add to Favorites"
 msgstr "Añadir a las aplicaciones favoritas"
 
-#: ../panel-plugin/page.cpp:480
+#: ../panel-plugin/page.cpp:502
 msgid "Add to Panel"
 msgstr "Añadir al panel"
 
@@ -54,7 +59,7 @@ msgstr "Añadir al panel"
 msgid "All Applications"
 msgstr "Todas las aplicaciones"
 
-#: ../panel-plugin/plugin.cpp:413
+#: ../panel-plugin/plugin.cpp:418
 msgid "Alternate application launcher for Xfce"
 msgstr "Iniciador de aplicaciones alternativo para Xfce"
 
@@ -70,20 +75,20 @@ msgstr "_Tamaño del icono de las aplicaciones:"
 msgid "Applications"
 msgstr "Aplicaciones"
 
-#: ../panel-plugin/launcher.cpp:272
+#: ../panel-plugin/launcher.cpp:181
 #, c-format
 msgid "Are you sure you want to hide \"%s\"?"
 msgstr "¿Confirma que quiere ocultar «%s»?"
 
-#: ../panel-plugin/settings.cpp:129
+#: ../panel-plugin/settings.cpp:122
 msgid "Are you sure you want to log out?"
 msgstr "¿Confirma que quiere finalizar la sesión?"
 
-#: ../panel-plugin/settings.cpp:136
+#: ../panel-plugin/settings.cpp:129
 msgid "Are you sure you want to restart?"
 msgstr "¿Confirma que quiere reiniciar el equipo?"
 
-#: ../panel-plugin/settings.cpp:143
+#: ../panel-plugin/settings.cpp:136
 msgid "Are you sure you want to shut down?"
 msgstr "¿Confirma que quiere apagar el equipo?"
 
@@ -111,10 +116,10 @@ msgstr "Elija qué menú desplegar por el identificador de instancia"
 msgid "Clear Recently Used"
 msgstr "Borrar las aplicaciones recientes"
 
-#: ../panel-plugin/plugin.cpp:414
+#: ../panel-plugin/plugin.cpp:419
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:128
 msgid "Copyright © 2013-2025 Graeme Gott"
-msgstr "© 2013-2025 Graeme Gott"
+msgstr "Derechos de autor © 2013-2025 Graeme Gott"
 
 #: ../panel-plugin/settings-dialog.cpp:796
 msgid "Default Category"
@@ -128,64 +133,64 @@ msgstr "Detalles"
 msgid "Di_splay:"
 msgstr "Mo_strar:"
 
-#: ../panel-plugin/settings.cpp:150
+#: ../panel-plugin/settings.cpp:143
 msgid "Do you want to suspend to RAM?"
 msgstr "¿Quiere suspender el sistema en la RAM?"
 
-#: ../panel-plugin/settings.cpp:157
+#: ../panel-plugin/settings.cpp:150
 msgid "Do you want to suspend to disk?"
 msgstr "¿Quiere suspender el sistema en el disco?"
 
-#: ../panel-plugin/page.cpp:491
+#: ../panel-plugin/page.cpp:535
 msgid "Edit Application..."
 msgstr "Editar la aplicación..."
 
-#: ../panel-plugin/settings.cpp:171
+#: ../panel-plugin/settings.cpp:164
 msgid "Edit _Profile"
 msgstr "Editar el _perfil"
 
-#: ../panel-plugin/settings.cpp:173
+#: ../panel-plugin/settings.cpp:166
 msgid "Failed to edit profile."
 msgstr "No se ha podido editar el perfil."
 
-#: ../panel-plugin/element.cpp:104
+#: ../panel-plugin/element.cpp:98
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "No se ha podido ejecutar la orden «%s»."
 
-#: ../panel-plugin/settings.cpp:156
+#: ../panel-plugin/settings.cpp:149
 msgid "Failed to hibernate."
 msgstr "No se ha podido hibernar el equipo."
 
-#: ../panel-plugin/settings.cpp:168
+#: ../panel-plugin/settings.cpp:161
 msgid "Failed to launch menu editor."
 msgstr "No se ha podido abrir el editor del menú."
 
-#: ../panel-plugin/settings.cpp:118
+#: ../panel-plugin/settings.cpp:111
 msgid "Failed to lock screen."
 msgstr "No se ha podido bloquear la pantalla."
 
-#: ../panel-plugin/settings.cpp:128 ../panel-plugin/settings.cpp:163
+#: ../panel-plugin/settings.cpp:121 ../panel-plugin/settings.cpp:156
 msgid "Failed to log out."
 msgstr "No se ha podido cerrar la sesión."
 
-#: ../panel-plugin/settings.cpp:113
+#: ../panel-plugin/settings.cpp:106
 msgid "Failed to open settings manager."
 msgstr "No se ha podido ejecutar el gestor de configuración."
 
-#: ../panel-plugin/settings.cpp:135
+#: ../panel-plugin/settings.cpp:128
 msgid "Failed to restart."
 msgstr "No se ha podido reiniciar el equipo."
 
-#: ../panel-plugin/settings.cpp:142
+#: ../panel-plugin/settings.cpp:135
 msgid "Failed to shut down."
 msgstr "No se ha podido apagar el equipo."
 
-#: ../panel-plugin/settings.cpp:149
+#: ../panel-plugin/settings.cpp:142
 msgid "Failed to suspend."
 msgstr "No se ha podido suspender el equipo."
 
-#: ../panel-plugin/settings.cpp:123
+#: ../panel-plugin/settings.cpp:116
 msgid "Failed to switch user."
 msgstr "No se ha podido cambiar de usuario."
 
@@ -194,7 +199,7 @@ msgstr "No se ha podido cambiar de usuario."
 msgid "Favorites"
 msgstr "Aplicaciones favoritas"
 
-#: ../panel-plugin/settings.cpp:158
+#: ../panel-plugin/settings.cpp:151
 #, c-format
 msgid "Hibernating computer in %d seconds."
 msgstr "El equipo se hibernará en %d segundos."
@@ -203,7 +208,7 @@ msgstr "El equipo se hibernará en %d segundos."
 msgid "Hidden"
 msgstr "Oculta"
 
-#: ../panel-plugin/launcher.cpp:271 ../panel-plugin/page.cpp:499
+#: ../panel-plugin/launcher.cpp:180 ../panel-plugin/page.cpp:543
 msgid "Hide Application"
 msgstr "Ocultar la aplicación"
 
@@ -227,20 +232,20 @@ msgstr "Grande"
 msgid "Larger"
 msgstr "Muy grande"
 
-#: ../panel-plugin/settings.cpp:161
+#: ../panel-plugin/settings.cpp:154
 msgid "Log Ou_t..."
 msgstr "Cerrar ses_ión..."
 
-#: ../panel-plugin/settings.cpp:126
+#: ../panel-plugin/settings.cpp:119
 msgid "Log _Out"
 msgstr "Cerrar _sesión"
 
-#: ../panel-plugin/settings.cpp:130
+#: ../panel-plugin/settings.cpp:123
 #, c-format
 msgid "Logging out in %d seconds."
 msgstr "La sesión se cerrará en %d segundos."
 
-#: ../panel-plugin/settings.cpp:97
+#: ../panel-plugin/settings.cpp:90
 msgid "Man Pages"
 msgstr "Páginas del manual"
 
@@ -265,6 +270,10 @@ msgstr "_Nombre:"
 msgid "Name"
 msgstr "Nombre"
 
+#: ../panel-plugin/search-page.cpp:71
+msgid "No applications found"
+msgstr "No se encontraron aplicaciones"
+
 #: ../panel-plugin/icon-size.cpp:60
 msgid "None"
 msgstr "Desactivar"
@@ -273,7 +282,7 @@ msgstr "Desactivar"
 msgid "Normal"
 msgstr "Normal"
 
-#: ../panel-plugin/settings.cpp:102
+#: ../panel-plugin/settings.cpp:95
 msgid "Open URI"
 msgstr "Abrir un URI"
 
@@ -299,17 +308,17 @@ msgstr "Menú emergente en la posición actual del ratón"
 
 #: ../panel-plugin/settings-dialog.cpp:654
 msgid "Position _search entry on bottom"
-msgstr ""
+msgstr "Posición del cuadro de bú_squeda al fondo"
 
 #: ../panel-plugin/settings-dialog.cpp:627
 #: ../panel-plugin/settings-dialog.cpp:632
 msgid "Position cate_gories on bottom"
-msgstr ""
+msgstr "Posición de las cate_gorías al fondo"
 
 #: ../panel-plugin/settings-dialog.cpp:627
 #: ../panel-plugin/settings-dialog.cpp:632
 msgid "Position cate_gories on left"
-msgstr ""
+msgstr "Posición de las cate_gorías a la izquierda"
 
 #: ../panel-plugin/settings-dialog.cpp:616
 msgid "Position categories _horizontally"
@@ -321,7 +330,7 @@ msgstr "Órdenes _junto al cuadro de búsqueda"
 
 #: ../panel-plugin/settings-dialog.cpp:643
 msgid "Position pro_file on bottom"
-msgstr ""
+msgstr "Posición del per_fil al fondo"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
 msgid "Print available menu instance IDs"
@@ -341,7 +350,11 @@ msgstr "Aplicaciones recientes"
 msgid "Remove action \"%s\"?"
 msgstr "¿Quiere eliminar la acción «%s»?"
 
-#: ../panel-plugin/page.cpp:462
+#: ../panel-plugin/page.cpp:523
+msgid "Remove from Autostart"
+msgstr "Remover del inicio automático"
+
+#: ../panel-plugin/page.cpp:484
 msgid "Remove from Favorites"
 msgstr "Eliminar de las aplicaciones favoritas"
 
@@ -349,7 +362,7 @@ msgstr "Eliminar de las aplicaciones favoritas"
 msgid "Remove selected action"
 msgstr "Eliminar la acción seleccionada"
 
-#: ../panel-plugin/settings.cpp:137
+#: ../panel-plugin/settings.cpp:130
 #, c-format
 msgid "Restarting computer in %d seconds."
 msgstr "El equipo se reiniciará en %d segundos."
@@ -363,7 +376,7 @@ msgstr "Imagen redonda"
 msgid "Run %s"
 msgstr "Abrir %s"
 
-#: ../panel-plugin/settings.cpp:101
+#: ../panel-plugin/settings.cpp:94
 msgid "Run in Terminal"
 msgstr "Abrir en un terminal"
 
@@ -375,11 +388,11 @@ msgstr "Acciones de _búsqueda"
 msgid "Search Action"
 msgstr "Acción de búsqueda"
 
-#: ../panel-plugin/settings.cpp:99
+#: ../panel-plugin/settings.cpp:92
 msgid "Search for Files"
 msgstr "Buscar archivos"
 
-#: ../panel-plugin/settings.cpp:98
+#: ../panel-plugin/settings.cpp:91
 msgid "Search the Web"
 msgstr "Buscar en la web"
 
@@ -395,7 +408,7 @@ msgstr "Seleccione un icono"
 msgid "Session Commands"
 msgstr "Órdenes de la sesión"
 
-#: ../panel-plugin/whiskermenu.desktop.in:6
+#: ../panel-plugin/whiskermenu.desktop.in:5
 msgid "Show a menu to easily access installed applications"
 msgstr "Mostrar un menú para acceder fácilmente a las aplicaciones instaladas"
 
@@ -431,7 +444,7 @@ msgstr "Mostrar el _nombre de las categorías"
 msgid "Show generic application _names"
 msgstr "Mostrar el nombre _genérico de las aplicaciones"
 
-#: ../panel-plugin/settings.cpp:140
+#: ../panel-plugin/settings.cpp:133
 msgid "Shut _Down"
 msgstr "Apa_gar"
 
@@ -463,16 +476,16 @@ msgstr "Imagen cuadrada"
 msgid "Stay _visible when focus is lost"
 msgstr "Mantener _visible al perder el foco"
 
-#: ../panel-plugin/settings.cpp:147
+#: ../panel-plugin/settings.cpp:140
 msgid "Suspe_nd"
 msgstr "Susp_ender"
 
-#: ../panel-plugin/settings.cpp:151
+#: ../panel-plugin/settings.cpp:144
 #, c-format
 msgid "Suspending computer in %d seconds."
 msgstr "El equipo se suspenderá en %d segundos."
 
-#: ../panel-plugin/settings.cpp:121
+#: ../panel-plugin/settings.cpp:114
 msgid "Switch _User"
 msgstr "C_ambiar de usuario"
 
@@ -488,27 +501,27 @@ msgstr "La acción se eliminará permanentemente."
 msgid "Title"
 msgstr "Título"
 
-#: ../panel-plugin/launcher.cpp:267
+#: ../panel-plugin/launcher.cpp:176
 #, c-format
 msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
 msgstr "Para hacerla visible, elimine el archivo «%s» o abra el archivo y elimine la línea «%s»."
 
-#: ../panel-plugin/settings.cpp:144
+#: ../panel-plugin/settings.cpp:137
 #, c-format
 msgid "Turning off computer in %d seconds."
 msgstr "El equipo se apagará en %d segundos."
 
-#: ../panel-plugin/page.cpp:562
+#: ../panel-plugin/page.cpp:606
 msgid "Unable to add launcher to desktop."
 msgstr "No se puede añadir el lanzador al escritorio."
 
-#: ../panel-plugin/page.cpp:602 ../panel-plugin/page.cpp:615
+#: ../panel-plugin/page.cpp:646 ../panel-plugin/page.cpp:659
 msgid "Unable to add launcher to panel."
 msgstr "No se puede añadir el lanzador al panel."
 
-#: ../panel-plugin/page.cpp:635
+#: ../panel-plugin/page.cpp:700
 msgid "Unable to edit launcher."
 msgstr "No se puede editar el lanzador."
 
@@ -530,11 +543,11 @@ msgid "Very Small"
 msgstr "Minúsculo"
 
 #: ../panel-plugin/settings-dialog.cpp:80
-#: ../panel-plugin/whiskermenu.desktop.in:5
+#: ../panel-plugin/whiskermenu.desktop.in:4
 msgid "Whisker Menu"
 msgstr "Menú Whisker"
 
-#: ../panel-plugin/settings.cpp:100
+#: ../panel-plugin/settings.cpp:93
 msgid "Wikipedia"
 msgstr "Wikipedia"
 
@@ -562,7 +575,7 @@ msgstr "Ó_rdenes"
 msgid "_Delete"
 msgstr "_Eliminar"
 
-#: ../panel-plugin/settings.cpp:166
+#: ../panel-plugin/settings.cpp:159
 msgid "_Edit Applications"
 msgstr "Editar las _aplicaciones"
 
@@ -574,7 +587,7 @@ msgstr "_General"
 msgid "_Help"
 msgstr "Ay_uda"
 
-#: ../panel-plugin/settings.cpp:154
+#: ../panel-plugin/settings.cpp:147
 msgid "_Hibernate"
 msgstr "_Hibernar"
 
@@ -582,7 +595,7 @@ msgstr "_Hibernar"
 msgid "_Icon:"
 msgstr "_Icono:"
 
-#: ../panel-plugin/settings.cpp:116
+#: ../panel-plugin/settings.cpp:109
 msgid "_Lock Screen"
 msgstr "Blo_quear la pantalla"
 
@@ -598,11 +611,11 @@ msgstr "_Patrón:"
 msgid "_Regular expression"
 msgstr "_Expresión regular"
 
-#: ../panel-plugin/settings.cpp:133
+#: ../panel-plugin/settings.cpp:126
 msgid "_Restart"
 msgstr "Rei_niciar"
 
-#: ../panel-plugin/settings.cpp:111
+#: ../panel-plugin/settings.cpp:104
 msgid "_Settings Manager"
 msgstr "_Gestor de configuración"
 
@@ -610,6 +623,6 @@ msgstr "_Gestor de configuración"
 msgid "_Title:"
 msgstr "_Título:"
 
-#: ../panel-plugin/plugin.cpp:418
+#: ../panel-plugin/plugin.cpp:423
 msgid "translator-credits"
-msgstr "Toni Estevez <toni.estevez@gmail.com>, 2021\nAdolfo Jayme Barrientos <fitojb@ubuntu.com>, 2013-2023\nPablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>, 2014, 2017"
+msgstr "Toni Estevez <toni.estevez@gmail.com>, 2021\nAdolfo Jayme Barrientos <fitojb@ubuntu.com>, 2013-2023\nPablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>, 2014, 2025"
