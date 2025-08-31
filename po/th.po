@@ -323,7 +323,7 @@ msgstr "แสดงเมนูอินสแตนซ์ ID ที่มี"
 
 #: ../panel-plugin/xfce4-popup-whiskermenu.cpp:110
 msgid "Print version information and exit"
-msgstr ""
+msgstr "แสดงข้อมูลเวอร์ชันและออกจากโปรแกรม"
 
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:804
 #: ../panel-plugin/settings-dialog.cpp:900
