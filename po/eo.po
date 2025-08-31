@@ -306,7 +306,7 @@ msgstr "Pozicio de kate_gorioj ĉe la malsupro"
 #: ../panel-plugin/settings-dialog.cpp:627
 #: ../panel-plugin/settings-dialog.cpp:632
 msgid "Position cate_gories on left"
-msgstr " Pozicio de kate_gorioj ĉe la maldekstro"
+msgstr "Pozicio de kate_gorioj ĉe la maldekstro"
 
 #: ../panel-plugin/settings-dialog.cpp:616
 msgid "Position categories _horizontally"
@@ -331,7 +331,7 @@ msgstr "Montri la versi-informojn kaj eliri"
 #: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:804
 #: ../panel-plugin/settings-dialog.cpp:900
 msgid "Recently Used"
-msgstr "Lastaj programoj"
+msgstr "Lastaj aplikaĵoj"
 
 #: ../panel-plugin/settings-dialog.cpp:218
 #, c-format
@@ -613,4 +613,4 @@ msgstr "_Titolo:"
 
 #: ../panel-plugin/plugin.cpp:423
 msgid "translator-credits"
-msgstr "Kurt Ankh Phoenix \nWarut BUNPRASERT <warut92@gmail.com>"
+msgstr "Kurt Ankh Phoenix \nWarut BUNPRASERT <warut.b@disroot.org>"
