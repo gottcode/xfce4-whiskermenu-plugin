@@ -333,281 +333,281 @@ msgstr "ใช้งานล่าสุด"
 #: ../panel-plugin/settings-dialog.cpp:218
 #, c-format
 msgid "Remove action \"%s\"?"
-msgstr ""
+msgstr "ลบการกระทำ \"%s\" หรือไม่"
 
 #: ../panel-plugin/page.cpp:523
 msgid "Remove from Autostart"
-msgstr ""
+msgstr "ลบจากการเริ่มต้นอัตโนมัติ"
 
 #: ../panel-plugin/page.cpp:484
 msgid "Remove from Favorites"
-msgstr ""
+msgstr "ลบจากรายการโปรด"
 
 #: ../panel-plugin/settings-dialog.cpp:1053
 msgid "Remove selected action"
-msgstr ""
+msgstr "ลบการกระทำที่เลือก"
 
 #: ../panel-plugin/settings.cpp:130
 #, c-format
 msgid "Restarting computer in %d seconds."
-msgstr ""
+msgstr "เริ่มการทำงานใหม่ใน %d วินาที"
 
 #: ../panel-plugin/settings-dialog.cpp:683
 msgid "Round Picture"
-msgstr ""
+msgstr "รูปภาพกลม"
 
 #: ../panel-plugin/run-action.cpp:64
 #, c-format
 msgid "Run %s"
-msgstr ""
+msgstr "เรียก %s ทำงาน"
 
 #: ../panel-plugin/settings.cpp:94
 msgid "Run in Terminal"
-msgstr ""
+msgstr "เรียกทำงานในเทอร์มินัล"
 
 #: ../panel-plugin/settings-dialog.cpp:102
 msgid "Search Actio_ns"
-msgstr ""
+msgstr "ค้นหาการ_กระทำ"
 
 #: ../panel-plugin/search-action.cpp:260
 msgid "Search Action"
-msgstr ""
+msgstr "ค้นหาการกระทำ"
 
 #: ../panel-plugin/settings.cpp:92
 msgid "Search for Files"
-msgstr ""
+msgstr "ค้นหาไฟล์"
 
 #: ../panel-plugin/settings.cpp:91
 msgid "Search the Web"
-msgstr ""
+msgstr "ค้นหาเว็บ"
 
 #: ../panel-plugin/command-edit.cpp:75
 msgid "Select Command"
-msgstr ""
+msgstr "เลือกคำสั่ง"
 
 #: ../panel-plugin/settings-dialog.cpp:135
 msgid "Select an Icon"
-msgstr ""
+msgstr "เลือกไอคอน"
 
 #: ../panel-plugin/settings-dialog.cpp:940
 msgid "Session Commands"
-msgstr ""
+msgstr "คำสั่งวาระ"
 
 #: ../panel-plugin/whiskermenu.desktop.in:5
 msgid "Show a menu to easily access installed applications"
-msgstr ""
+msgstr "แสดงเมนูสำหรับการติดตั้งโปรแกรมแบบที่เข้าถึงง่าย"
 
 #: ../panel-plugin/settings-dialog.cpp:459
 msgid "Show application _descriptions"
-msgstr ""
+msgstr "แสดง_คำอธิบายโปรแกรม"
 
 #: ../panel-plugin/settings-dialog.cpp:448
 msgid "Show application too_ltips"
-msgstr ""
+msgstr "แสดงคำแนะนำโปรแกรม"
 
 #: ../panel-plugin/settings-dialog.cpp:318
 msgid "Show as _icons"
-msgstr ""
+msgstr "แสดงเป็นไอคอน"
 
 #: ../panel-plugin/settings-dialog.cpp:335
 msgid "Show as lis_t"
-msgstr ""
+msgstr "แสดงเป็นรายการ"
 
 #: ../panel-plugin/settings-dialog.cpp:353
 msgid "Show as t_ree"
-msgstr ""
+msgstr "แสดงเป็นแผนผัง"
 
 #: ../panel-plugin/settings-dialog.cpp:944
 msgid "Show c_onfirmation dialog"
-msgstr ""
+msgstr "แสดงข้อความ_ยืนยัน"
 
 #: ../panel-plugin/settings-dialog.cpp:436
 msgid "Show cate_gory names"
-msgstr ""
+msgstr "แสดงชื่อ_หมวดหมู่"
 
 #: ../panel-plugin/settings-dialog.cpp:424
 msgid "Show generic application _names"
-msgstr ""
+msgstr "แสดงชื่อโปรแกรมอย่างสามัญ"
 
 #: ../panel-plugin/settings.cpp:133
 msgid "Shut _Down"
-msgstr ""
+msgstr "ปิด_เครื่อง"
 
 #: ../panel-plugin/icon-size.cpp:63
 msgid "Small"
-msgstr ""
+msgstr "เล็ก"
 
 #: ../panel-plugin/icon-size.cpp:62
 msgid "Smaller"
-msgstr ""
+msgstr "เล็กมาก"
 
 #: ../panel-plugin/favorites-page.cpp:147
 msgid "Sort Alphabetically A-Z"
-msgstr ""
+msgstr "เรียงตามตัวอักษรจาก A-Z"
 
 #: ../panel-plugin/favorites-page.cpp:155
 msgid "Sort Alphabetically Z-A"
-msgstr ""
+msgstr "เรียงตามตัวอักษรจาก Z-A"
 
 #: ../panel-plugin/settings-dialog.cpp:883
 msgid "Sort ca_tegories"
-msgstr ""
+msgstr "เรียงเป็น_หมวดหมู่"
 
 #: ../panel-plugin/settings-dialog.cpp:684
 msgid "Square Picture"
-msgstr ""
+msgstr "รูปเหลี่ยม"
 
 #: ../panel-plugin/settings-dialog.cpp:872
 msgid "Stay _visible when focus is lost"
-msgstr ""
+msgstr "คงแสดงอยู่แม้ไม่ได้โฟกัส"
 
 #: ../panel-plugin/settings.cpp:140
 msgid "Suspe_nd"
-msgstr ""
+msgstr "หยุดทำงาน_ชั่วคราว"
 
 #: ../panel-plugin/settings.cpp:144
 #, c-format
 msgid "Suspending computer in %d seconds."
-msgstr ""
+msgstr "หยุดทำงานชั่วคราวภายใน %d วินาที"
 
 #: ../panel-plugin/settings.cpp:114
 msgid "Switch _User"
-msgstr ""
+msgstr "สลับ_ผู้ใช้"
 
 #: ../panel-plugin/settings-dialog.cpp:861
 msgid "Switch categories by _hovering"
-msgstr ""
+msgstr "สลับหมวดหมู่โดยการ_ลากเมาส์"
 
 #: ../panel-plugin/settings-dialog.cpp:217
 msgid "The action will be deleted permanently."
-msgstr ""
+msgstr "สิ่งนี้จะทำการลบอย่างถาวร"
 
 #: ../panel-plugin/settings-dialog.cpp:715
 msgid "Title"
-msgstr ""
+msgstr "หัวข้อ"
 
 #: ../panel-plugin/launcher.cpp:176
 #, c-format
 msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
-msgstr ""
+msgstr "ยกเลิกด้วยการลบไฟล์ \"%s\" ด้วยตัวเองหรือเปิดไฟล์และลบบรรทัด \"%s\"."
 
 #: ../panel-plugin/settings.cpp:137
 #, c-format
 msgid "Turning off computer in %d seconds."
-msgstr ""
+msgstr "กำลังปิดเครื่องภายใน %d วินาที"
 
 #: ../panel-plugin/page.cpp:606
 msgid "Unable to add launcher to desktop."
-msgstr ""
+msgstr "ไม่สามารถเพิ่มปุ่มเรียกไปยังเดสก์ท็อป"
 
 #: ../panel-plugin/page.cpp:646 ../panel-plugin/page.cpp:659
 msgid "Unable to add launcher to panel."
-msgstr ""
+msgstr "ไม่สามารถเพิ่มปุ่มเรียกไปยังพาเนล"
 
 #: ../panel-plugin/page.cpp:700
 msgid "Unable to edit launcher."
-msgstr ""
+msgstr "ไม่สามารถแก้ไขปุ่มเรียกได้"
 
 #: ../panel-plugin/settings-dialog.cpp:277
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "ไม่สามารถเปิดตามที่อยู่ url นี้ได้: %s"
 
 #: ../panel-plugin/settings-dialog.cpp:770
 msgid "Use a single _panel row"
-msgstr ""
+msgstr "ใช้_พาเนลแถวเดียว"
 
 #: ../panel-plugin/icon-size.cpp:67
 msgid "Very Large"
-msgstr ""
+msgstr "ใหญ่มาก"
 
 #: ../panel-plugin/icon-size.cpp:61
 msgid "Very Small"
-msgstr ""
+msgstr "เล็กมาก"
 
 #: ../panel-plugin/settings-dialog.cpp:80
 #: ../panel-plugin/whiskermenu.desktop.in:4
 msgid "Whisker Menu"
-msgstr ""
+msgstr "เมนู Whisker"
 
 #: ../panel-plugin/settings.cpp:93
 msgid "Wikipedia"
-msgstr ""
+msgstr "สารานุกรมเสรี"
 
 #: ../panel-plugin/settings-dialog.cpp:99
 msgid "_Appearance"
-msgstr ""
+msgstr "_รูปลักษณ์"
 
 #: ../panel-plugin/settings-dialog.cpp:100
 msgid "_Behavior"
-msgstr ""
+msgstr "ลักษณะการทำงาน"
 
 #: ../panel-plugin/command-edit.cpp:78 ../panel-plugin/settings-dialog.cpp:137
 msgid "_Cancel"
-msgstr ""
+msgstr "_ยกเลิก"
 
 #: ../panel-plugin/settings-dialog.cpp:84
 msgid "_Close"
-msgstr ""
+msgstr "_ปิด"
 
 #: ../panel-plugin/settings-dialog.cpp:101
 msgid "_Commands"
-msgstr ""
+msgstr "_คำสั่ง"
 
 #: ../panel-plugin/settings-dialog.cpp:216
 msgid "_Delete"
-msgstr ""
+msgstr "_ลบ"
 
 #: ../panel-plugin/settings.cpp:159
 msgid "_Edit Applications"
-msgstr ""
+msgstr "_แก้ไขโปรแกรม"
 
 #: ../panel-plugin/settings-dialog.cpp:98
 msgid "_General"
-msgstr ""
+msgstr "_ทั่วไป"
 
 #: ../panel-plugin/settings-dialog.cpp:83
 msgid "_Help"
-msgstr ""
+msgstr "_ช่วยเหลือ"
 
 #: ../panel-plugin/settings.cpp:147
 msgid "_Hibernate"
-msgstr ""
+msgstr "_จำศีล"
 
 #: ../panel-plugin/settings-dialog.cpp:752
 msgid "_Icon:"
-msgstr ""
+msgstr "_ไอคอน:"
 
 #: ../panel-plugin/settings.cpp:109
 msgid "_Lock Screen"
-msgstr ""
+msgstr "_ล็อคหน้าจอ"
 
 #: ../panel-plugin/command-edit.cpp:79 ../panel-plugin/settings-dialog.cpp:138
 msgid "_OK"
-msgstr ""
+msgstr "_ตกลง"
 
 #: ../panel-plugin/settings-dialog.cpp:1101
 msgid "_Pattern:"
-msgstr ""
+msgstr "_รูปแบบ:"
 
 #: ../panel-plugin/settings-dialog.cpp:1142
 msgid "_Regular expression"
-msgstr ""
+msgstr "_Regular expression"
 
 #: ../panel-plugin/settings.cpp:126
 msgid "_Restart"
-msgstr ""
+msgstr "_เริ่มทำงานใหม่"
 
 #: ../panel-plugin/settings.cpp:104
 msgid "_Settings Manager"
-msgstr ""
+msgstr "_ตัวจัดการการตั้งค่า"
 
 #: ../panel-plugin/settings-dialog.cpp:734
 msgid "_Title:"
-msgstr ""
+msgstr "_หัวข้อ:"
 
 #: ../panel-plugin/plugin.cpp:423
 msgid "translator-credits"
-msgstr ""
+msgstr "ผู้แปล"
