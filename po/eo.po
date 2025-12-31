@@ -28,19 +28,19 @@ msgstr "Aldoni agon"
 
 #: ../panel-plugin/page.cpp:513
 msgid "Add to Autostart"
-msgstr "Aldoni al aŭtomata lanĉo"
+msgstr "Aldoni al Aŭtolanĉo"
 
 #: ../panel-plugin/page.cpp:494
 msgid "Add to Desktop"
-msgstr "Aldoni al labortablo"
+msgstr "Aldoni al Labortablo"
 
 #: ../panel-plugin/page.cpp:473
 msgid "Add to Favorites"
-msgstr "Aldoni al legosignoj"
+msgstr "Aldoni al Plej Ŝatataj"
 
 #: ../panel-plugin/page.cpp:502
 msgid "Add to Panel"
-msgstr "Aldoni al panelo"
+msgstr "Aldoni al Panelo"
 
 #: ../panel-plugin/applications-page.cpp:35 ../panel-plugin/category.cpp:51
 #: ../panel-plugin/settings-dialog.cpp:809
@@ -119,7 +119,7 @@ msgstr "Detaloj"
 
 #: ../panel-plugin/settings-dialog.cpp:709
 msgid "Di_splay:"
-msgstr "Ek_rano:"
+msgstr "M_ontro:"
 
 #: ../panel-plugin/settings.cpp:143
 msgid "Do you want to suspend to RAM?"
@@ -164,7 +164,7 @@ msgstr "Malsukcesis elsaluti."
 
 #: ../panel-plugin/settings.cpp:106
 msgid "Failed to open settings manager."
-msgstr "Malsukcesis malfermi agordo-administranton."
+msgstr "Malsukcesis malfermi agordo-administrilon."
 
 #: ../panel-plugin/settings.cpp:128
 msgid "Failed to restart."
@@ -340,11 +340,11 @@ msgstr "Forigado: \"%s\"?"
 
 #: ../panel-plugin/page.cpp:523
 msgid "Remove from Autostart"
-msgstr "Forigi de aŭtomata lanĉo"
+msgstr "Forigi de aŭtolanĉo"
 
 #: ../panel-plugin/page.cpp:484
 msgid "Remove from Favorites"
-msgstr "Forigi el legosignoj"
+msgstr "Forigi el plej ŝatataj"
 
 #: ../panel-plugin/settings-dialog.cpp:1053
 msgid "Remove selected action"
@@ -541,7 +541,7 @@ msgstr "Vikipedio"
 
 #: ../panel-plugin/settings-dialog.cpp:99
 msgid "_Appearance"
-msgstr "_Apero"
+msgstr "_Aspekto"
 
 #: ../panel-plugin/settings-dialog.cpp:100
 msgid "_Behavior"
@@ -573,7 +573,7 @@ msgstr "_Ĝenerala"
 
 #: ../panel-plugin/settings-dialog.cpp:83
 msgid "_Help"
-msgstr "_Helpi"
+msgstr "_Helpo"
 
 #: ../panel-plugin/settings.cpp:147
 msgid "_Hibernate"
@@ -605,7 +605,7 @@ msgstr "_Restarigi"
 
 #: ../panel-plugin/settings.cpp:104
 msgid "_Settings Manager"
-msgstr "_Agordo-administranto"
+msgstr "_Agordo-administrilo"
 
 #: ../panel-plugin/settings-dialog.cpp:734
 msgid "_Title:"
@@ -613,4 +613,4 @@ msgstr "_Titolo:"
 
 #: ../panel-plugin/plugin.cpp:423
 msgid "translator-credits"
-msgstr "Kurt Ankh Phoenix \nWarut BUNPRASERT <warut.b@disroot.org>"
+msgstr "Warut BUNPRASERT <warut.b@disroot.org>"
