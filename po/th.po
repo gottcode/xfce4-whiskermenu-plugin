@@ -29,7 +29,7 @@ msgstr "เพิ่มไปยังการเริ่มต้นอัต
 
 #: ../panel-plugin/page.cpp:494
 msgid "Add to Desktop"
-msgstr "เพิ่มไปยังเดสก์ท็อป"
+msgstr "เพิ่มไปยังพื้นโต๊ะ"
 
 #: ../panel-plugin/page.cpp:473
 msgid "Add to Favorites"
@@ -46,7 +46,7 @@ msgstr "โปรแกรมทั้งหมด"
 
 #: ../panel-plugin/plugin.cpp:418
 msgid "Alternate application launcher for Xfce"
-msgstr "โปรแกรมทางเลือกสำหรับเรียกใช้งานโปรแกรมของ Xfce"
+msgstr "โปรแกรมเรียกใช้งานทางเลือกสำหรับ Xfce"
 
 #: ../panel-plugin/settings-dialog.cpp:904
 msgid "Amount of _items:"
@@ -116,7 +116,7 @@ msgstr "รายละเอียด"
 
 #: ../panel-plugin/settings-dialog.cpp:709
 msgid "Di_splay:"
-msgstr "จอภาพ:"
+msgstr "แ_สดงผล:"
 
 #: ../panel-plugin/settings.cpp:143
 msgid "Do you want to suspend to RAM?"
@@ -173,7 +173,7 @@ msgstr "ปิดเครื่องไม่สำเร็จ"
 
 #: ../panel-plugin/settings.cpp:142
 msgid "Failed to suspend."
-msgstr " หยุดทำงานชั่วคราวไม่สำเร็จ"
+msgstr "หยุดทำงานชั่วคราวไม่สำเร็จ"
 
 #: ../panel-plugin/settings.cpp:116
 msgid "Failed to switch user."
@@ -562,7 +562,7 @@ msgstr "_ลบ"
 
 #: ../panel-plugin/settings.cpp:159
 msgid "_Edit Applications"
-msgstr "_แก้ไขโปรแกรม"
+msgstr "แ_ก้ไขโปรแกรม"
 
 #: ../panel-plugin/settings-dialog.cpp:98
 msgid "_General"
@@ -594,11 +594,11 @@ msgstr "_รูปแบบ:"
 
 #: ../panel-plugin/settings-dialog.cpp:1142
 msgid "_Regular expression"
-msgstr "_Regular expression"
+msgstr "_นิพจน์เลกิวลาร์"
 
 #: ../panel-plugin/settings.cpp:126
 msgid "_Restart"
-msgstr "_เริ่มทำงานใหม่"
+msgstr "เ_ริ่มทำงานใหม่"
 
 #: ../panel-plugin/settings.cpp:104
 msgid "_Settings Manager"
@@ -610,4 +610,4 @@ msgstr "_หัวข้อ:"
 
 #: ../panel-plugin/plugin.cpp:423
 msgid "translator-credits"
-msgstr "ผู้แปล"
+msgstr "Warut Bunprasert <warut.b@disroot.org>"
