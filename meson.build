@@ -10,7 +10,7 @@ version : '2.10.0-dev',
 
 project_namespace = 'panel-plugins'
 pkgdatadir = get_option('prefix') / get_option('datadir') / meson.project_name()
-copyright_year = '2025'
+copyright_year = '2026'
 
 cc = meson.get_compiler('c')
 cxx = meson.get_compiler('cpp')
