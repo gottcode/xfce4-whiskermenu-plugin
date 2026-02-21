@@ -1,3 +1,11 @@
+2.10.1 (2026-02-21)
+======
+- Fix meson to make minsize an optimized build
+- Bring settings dialog to front if already shown
+- Translation Updates:
+  Asturian, Esperanto, Georgian, Kazakh, Korean, Occitan (post 1500),
+  Slovenian, Spanish, Thai
+
 2.10.0 (2025-05-21)
 ======
 - meson-build: Automate copyright year management
