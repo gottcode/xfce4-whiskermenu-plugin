@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,7 +29,8 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-Category::Category(GarconMenu* menu) :
+Category::Category(Settings* settings, GarconMenu* menu) :
+	m_settings(settings),
 	m_button(nullptr),
 	m_model(nullptr),
 	m_has_separators(false),
@@ -81,7 +82,7 @@ CategoryButton* Category::get_button()
 {
 	if (!m_button)
 	{
-		m_button = new CategoryButton(get_icon(), get_text());
+		m_button = new CategoryButton(m_settings, get_icon(), get_text());
 	}
 
 	return m_button;

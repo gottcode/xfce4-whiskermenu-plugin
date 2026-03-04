@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,7 +25,8 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-IconSize::IconSize(const gchar* property, const int size) :
+IconSize::IconSize(Settings* settings, const gchar* property, const int size) :
+	m_settings(settings),
 	m_property(property),
 	m_default(CLAMP(size, NONE, Largest)),
 	m_size(m_default)
@@ -106,11 +107,11 @@ void IconSize::set(int size, bool store)
 
 	m_size = size;
 
-	if (store && wm_settings->channel)
+	if (store && m_settings->channel)
 	{
-		wm_settings->begin_property_update();
-		xfconf_channel_set_int(wm_settings->channel, m_property, m_size);
-		wm_settings->end_property_update();
+		m_settings->begin_property_update();
+		xfconf_channel_set_int(m_settings->channel, m_property, m_size);
+		m_settings->end_property_update();
 	}
 }
 

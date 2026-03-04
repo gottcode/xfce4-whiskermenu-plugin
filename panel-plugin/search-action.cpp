@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,7 +24,8 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-SearchAction::SearchAction() :
+SearchAction::SearchAction(Settings* settings) :
+	m_settings(settings),
 	m_is_regex(false),
 	m_show_description(true),
 	m_regex(nullptr)
@@ -35,7 +36,8 @@ SearchAction::SearchAction() :
 
 //-----------------------------------------------------------------------------
 
-SearchAction::SearchAction(const gchar* name, const gchar* pattern, const gchar* command, bool is_regex) :
+SearchAction::SearchAction(Settings* settings, const gchar* name, const gchar* pattern, const gchar* command, bool is_regex) :
+	m_settings(settings),
 	m_name(name ? name : ""),
 	m_pattern(pattern ? pattern : ""),
 	m_command(command ? command : ""),
@@ -71,7 +73,7 @@ unsigned int SearchAction::search(const Query& query)
 	const gchar* haystack = query.raw_query().c_str();
 	unsigned int found = !m_is_regex ? match_prefix(haystack) : match_regex(haystack);
 
-	const bool show_description = wm_settings->launcher_show_description && (wm_settings->view_mode != Settings::ViewAsIcons);
+	const bool show_description = m_settings->launcher_show_description && (m_settings->view_mode != Settings::ViewAsIcons);
 	if ((found != UINT_MAX) && (m_show_description != show_description))
 	{
 		m_show_description = show_description;
@@ -192,9 +194,9 @@ void SearchAction::set_name(const gchar* name)
 	}
 
 	m_name = name;
-	wm_settings->search_actions.set_modified();
+	m_settings->search_actions.set_modified();
 
-	m_show_description = wm_settings->launcher_show_description && (wm_settings->view_mode != Settings::ViewAsIcons);
+	m_show_description = m_settings->launcher_show_description && (m_settings->view_mode != Settings::ViewAsIcons);
 	update_text();
 }
 
@@ -208,7 +210,7 @@ void SearchAction::set_pattern(const gchar* pattern)
 	}
 
 	m_pattern = pattern;
-	wm_settings->search_actions.set_modified();
+	m_settings->search_actions.set_modified();
 
 	if (m_regex)
 	{
@@ -227,7 +229,7 @@ void SearchAction::set_command(const gchar* command)
 	}
 
 	m_command = command;
-	wm_settings->search_actions.set_modified();
+	m_settings->search_actions.set_modified();
 }
 
 //-----------------------------------------------------------------------------
@@ -240,7 +242,7 @@ void SearchAction::set_is_regex(bool is_regex)
 	}
 
 	m_is_regex = is_regex;
-	wm_settings->search_actions.set_modified();
+	m_settings->search_actions.set_modified();
 }
 
 //-----------------------------------------------------------------------------

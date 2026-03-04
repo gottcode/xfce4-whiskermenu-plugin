@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2023 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@ namespace WhiskerMenu
 class Command
 {
 public:
-	explicit Command(const gchar* property, const gchar* show_property,
+	Command(Settings* settings, const gchar* property, const gchar* show_property,
 			const gchar* icon, const gchar* fallback_icon,
 			const gchar* text,
 			const gchar* command, bool shown,
@@ -80,6 +80,7 @@ private:
 	static gboolean confirm_countdown(gpointer data);
 
 private:
+	Settings* const m_settings;
 	GtkWidget* m_button;
 	GtkWidget* m_menuitem;
 	gchar* m_icon;

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@ class CategoryButton;
 class Category : public Element
 {
 public:
-	explicit Category(GarconMenu* menu);
+	Category(Settings* settings, GarconMenu* menu);
 	~Category();
 
 	CategoryButton* get_button();
@@ -77,6 +77,7 @@ private:
 	void unset_model();
 
 private:
+	Settings* const m_settings;
 	CategoryButton* m_button;
 	std::vector<Element*> m_items;
 	GtkTreeModel* m_model;

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2025 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,10 +23,12 @@
 namespace WhiskerMenu
 {
 
+class Settings;
+
 class LauncherTreeView : public LauncherView
 {
 public:
-	LauncherTreeView();
+	explicit LauncherTreeView(Settings* settings);
 	~LauncherTreeView();
 
 	GtkWidget* get_widget() const override
@@ -66,6 +68,7 @@ private:
 	void create_column();
 
 private:
+	Settings* const m_settings;
 	GtkTreeView* m_view;
 	GtkTreeViewColumn* m_column;
 	int m_icon_size;

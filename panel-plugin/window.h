@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2025 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,11 +34,12 @@ class Profile;
 class Resizer;
 class RecentPage;
 class SearchPage;
+class Settings;
 
 class Window
 {
 public:
-	explicit Window(Plugin* plugin);
+	Window(Settings* settings, Plugin* plugin);
 	~Window();
 
 	Window(const Window&) = delete;
@@ -113,6 +114,7 @@ private:
 	void update_layout();
 
 private:
+	Settings* const m_settings;
 	Plugin* m_plugin;
 
 	GtkWindow* m_window;

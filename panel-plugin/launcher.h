@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2025 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,6 +27,8 @@
 
 namespace WhiskerMenu
 {
+
+class Settings;
 
 class DesktopAction
 {
@@ -58,7 +60,7 @@ private:
 class Launcher : public Element
 {
 public:
-	explicit Launcher(GarconMenuItem* item);
+	Launcher(Settings* settings, GarconMenuItem* item);
 	~Launcher();
 
 	std::vector<DesktopAction*> get_actions() const

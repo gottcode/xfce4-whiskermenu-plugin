@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2025 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,143 +30,139 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-Settings* WhiskerMenu::wm_settings = nullptr;
-
-//-----------------------------------------------------------------------------
-
 Settings::Settings(Plugin* plugin) :
 	m_plugin(plugin),
 	m_change_slot(0),
 	m_button_title_default(_("Applications")),
 	channel(nullptr),
 
-	favorites("/favorites", {
+	favorites(this, "/favorites", {
 		"xfce4-web-browser.desktop",
 		"xfce4-mail-reader.desktop",
 		"xfce4-file-manager.desktop",
 		"xfce4-terminal-emulator.desktop"
 	}),
-	recent("/recent", { }),
+	recent(this, "/recent", { }),
 
-	custom_menu_file("/custom-menu-file"),
+	custom_menu_file(this, "/custom-menu-file"),
 
-	button_title("/button-title", m_button_title_default),
-	button_icon_name("/button-icon", "org.xfce.panel.whiskermenu"),
-	button_title_visible("/show-button-title", false),
-	button_icon_visible("/show-button-icon", true),
-	button_single_row("/button-single-row", false),
+	button_title(this, "/button-title", m_button_title_default),
+	button_icon_name(this, "/button-icon", "org.xfce.panel.whiskermenu"),
+	button_title_visible(this, "/show-button-title", false),
+	button_icon_visible(this, "/show-button-icon", true),
+	button_single_row(this, "/button-single-row", false),
 
-	launcher_show_name("/launcher-show-name", true),
-	launcher_show_description("/launcher-show-description", true),
-	launcher_show_tooltip("/launcher-show-tooltip", true),
-	launcher_icon_size("/launcher-icon-size", IconSize::Small),
+	launcher_show_name(this, "/launcher-show-name", true),
+	launcher_show_description(this, "/launcher-show-description", true),
+	launcher_show_tooltip(this, "/launcher-show-tooltip", true),
+	launcher_icon_size(this, "/launcher-icon-size", IconSize::Small),
 
-	category_hover_activate("/hover-switch-category", false),
-	category_show_name("/category-show-name", true),
-	sort_categories("/sort-categories", true),
-	category_icon_size("/category-icon-size", IconSize::Smaller),
+	category_hover_activate(this, "/hover-switch-category", false),
+	category_show_name(this, "/category-show-name", true),
+	sort_categories(this, "/sort-categories", true),
+	category_icon_size(this, "/category-icon-size", IconSize::Smaller),
 
-	view_mode("/view-mode", ViewAsList, ViewAsIcons, ViewAsTree),
+	view_mode(this, "/view-mode", ViewAsList, ViewAsIcons, ViewAsTree),
 
-	default_category("/default-category", CategoryFavorites, CategoryFavorites, CategoryAll),
+	default_category(this, "/default-category", CategoryFavorites, CategoryFavorites, CategoryAll),
 
-	recent_items_max("/recent-items-max", 10, 0, 100),
-	favorites_in_recent("/favorites-in-recent", false),
+	recent_items_max(this, "/recent-items-max", 10, 0, 100),
+	favorites_in_recent(this, "/favorites-in-recent", false),
 
-	position_profile_alternate("/position-profile-alternate", false),
-	position_search_alternate("/position-search-alternate", false),
-	position_commands_alternate("/position-commands-alternate", false),
-	position_categories_alternate("/position-categories-alternate", false),
-	position_categories_horizontal("/position-categories-horizontal", false),
-	stay_on_focus_out("/stay-on-focus-out", false),
+	position_profile_alternate(this, "/position-profile-alternate", false),
+	position_search_alternate(this, "/position-search-alternate", false),
+	position_commands_alternate(this, "/position-commands-alternate", false),
+	position_categories_alternate(this, "/position-categories-alternate", false),
+	position_categories_horizontal(this, "/position-categories-horizontal", false),
+	stay_on_focus_out(this, "/stay-on-focus-out", false),
 
-	profile_shape("/profile-shape", ProfileRound, ProfileRound, ProfileHidden),
+	profile_shape(this, "/profile-shape", ProfileRound, ProfileRound, ProfileHidden),
 
-	confirm_session_command("/confirm-session-command", true),
+	confirm_session_command(this, "/confirm-session-command", true),
 
-	search_actions {
+	search_actions(this, {
 #if LIBXFCE4UI_CHECK_VERSION(4, 21, 0)
-		new SearchAction(_("Man Pages"), "#", "xfce-open --launch TerminalEmulator man %s", false),
-		new SearchAction(_("Search the Web"), "?", "xfce-open --launch WebBrowser https://duckduckgo.com/?q=%u", false),
-		new SearchAction(_("Search for Files"), "-", "catfish --path=~ --start %s", false),
-		new SearchAction(_("Wikipedia"), "!w", "xfce-open --launch WebBrowser https://en.wikipedia.org/wiki/%u", false),
-		new SearchAction(_("Run in Terminal"), "!", "xfce-open --launch TerminalEmulator %s", false),
-		new SearchAction(_("Open URI"), "^(file|http|https):\\/\\/(.*)$", "xfce-open \\0", true)
+		new SearchAction(this, _("Man Pages"), "#", "xfce-open --launch TerminalEmulator man %s"),
+		new SearchAction(this, _("Search the Web"), "?", "xfce-open --launch WebBrowser https://duckduckgo.com/?q=%u", false),
+		new SearchAction(this, _("Search for Files"), "-", "catfish --path=~ --start %s", false),
+		new SearchAction(this, _("Wikipedia"), "!w", "xfce-open --launch WebBrowser https://en.wikipedia.org/wiki/%u", false),
+		new SearchAction(this, _("Run in Terminal"), "!", "xfce-open --launch TerminalEmulator %s", false),
+		new SearchAction(this, _("Open URI"), "^(file|http|https):\\/\\/(.*)$", "xfce-open \\0", true)
 #else
-		new SearchAction(_("Man Pages"), "#", "exo-open --launch TerminalEmulator man %s", false),
-		new SearchAction(_("Search the Web"), "?", "exo-open --launch WebBrowser https://duckduckgo.com/?q=%u", false),
-		new SearchAction(_("Search for Files"), "-", "catfish --path=~ --start %s", false),
-		new SearchAction(_("Wikipedia"), "!w", "exo-open --launch WebBrowser https://en.wikipedia.org/wiki/%u", false),
-		new SearchAction(_("Run in Terminal"), "!", "exo-open --launch TerminalEmulator %s", false),
-		new SearchAction(_("Open URI"), "^(file|http|https):\\/\\/(.*)$", "exo-open \\0", true)
+		new SearchAction(this, _("Man Pages"), "#", "exo-open --launch TerminalEmulator man %s", false),
+		new SearchAction(this, _("Search the Web"), "?", "exo-open --launch WebBrowser https://duckduckgo.com/?q=%u", false),
+		new SearchAction(this, _("Search for Files"), "-", "catfish --path=~ --start %s", false),
+		new SearchAction(this, _("Wikipedia"), "!w", "exo-open --launch WebBrowser https://en.wikipedia.org/wiki/%u", false),
+		new SearchAction(this, _("Run in Terminal"), "!", "exo-open --launch TerminalEmulator %s", false),
+		new SearchAction(this, _("Open URI"), "^(file|http|https):\\/\\/(.*)$", "exo-open \\0", true)
 #endif
-	},
+	}),
 
-	menu_width("/menu-width", 450, 10, SHRT_MAX),
-	menu_height("/menu-height", 500, 10, SHRT_MAX),
-	menu_opacity("/menu-opacity", 100, 0, 100)
+	menu_width(this, "/menu-width", 450, 10, SHRT_MAX),
+	menu_height(this, "/menu-height", 500, 10, SHRT_MAX),
+	menu_opacity(this, "/menu-opacity", 100, 0, 100)
 {
-	command[CommandSettings] = new Command("/command-settings", "/show-command-settings",
+	command[CommandSettings] = new Command(this, "/command-settings", "/show-command-settings",
 			"org.xfce.settings.manager", "preferences-desktop",
 			_("_Settings Manager"),
 			"xfce4-settings-manager", true,
 			_("Failed to open settings manager."));
-	command[CommandLockScreen] = new Command("/command-lockscreen", "/show-command-lockscreen",
+	command[CommandLockScreen] = new Command(this, "/command-lockscreen", "/show-command-lockscreen",
 			"xfsm-lock", "system-lock-screen",
 			_("_Lock Screen"),
 			"xflock4", true,
 			_("Failed to lock screen."));
-	command[CommandSwitchUser] = new Command("/command-switchuser", "/show-command-switchuser",
+	command[CommandSwitchUser] = new Command(this, "/command-switchuser", "/show-command-switchuser",
 			"xfsm-switch-user", "system-users",
 			_("Switch _User"),
 			"xfce4-session-logout --switch-user", false,
 			_("Failed to switch user."));
-	command[CommandLogOutUser] = new Command("/command-logoutuser", "/show-command-logoutuser",
+	command[CommandLogOutUser] = new Command(this, "/command-logoutuser", "/show-command-logoutuser",
 			"xfsm-logout", "system-log-out",
 			_("Log _Out"),
 			"xfce4-session-logout --logout --fast", false,
 			_("Failed to log out."),
 			_("Are you sure you want to log out?"),
 			_("Logging out in %d seconds."));
-	command[CommandRestart] = new Command("/command-restart", "/show-command-restart",
+	command[CommandRestart] = new Command(this, "/command-restart", "/show-command-restart",
 			"xfsm-reboot", "system-reboot",
 			_("_Restart"),
 			"xfce4-session-logout --reboot --fast", false,
 			_("Failed to restart."),
 			_("Are you sure you want to restart?"),
 			_("Restarting computer in %d seconds."));
-	command[CommandShutDown] = new Command("/command-shutdown", "/show-command-shutdown",
+	command[CommandShutDown] = new Command(this, "/command-shutdown", "/show-command-shutdown",
 			"xfsm-shutdown", "system-shutdown",
 			_("Shut _Down"),
 			"xfce4-session-logout --halt --fast", false,
 			_("Failed to shut down."),
 			_("Are you sure you want to shut down?"),
 			_("Turning off computer in %d seconds."));
-	command[CommandSuspend] = new Command("/command-suspend", "/show-command-suspend",
+	command[CommandSuspend] = new Command(this, "/command-suspend", "/show-command-suspend",
 			"xfsm-suspend", "system-suspend",
 			_("Suspe_nd"),
 			"xfce4-session-logout --suspend", false,
 			_("Failed to suspend."),
 			_("Do you want to suspend to RAM?"),
 			_("Suspending computer in %d seconds."));
-	command[CommandHibernate] = new Command("/command-hibernate", "/show-command-hibernate",
+	command[CommandHibernate] = new Command(this, "/command-hibernate", "/show-command-hibernate",
 			"xfsm-hibernate", "system-hibernate",
 			_("_Hibernate"),
 			"xfce4-session-logout --hibernate", false,
 			_("Failed to hibernate."),
 			_("Do you want to suspend to disk?"),
 			_("Hibernating computer in %d seconds."));
-	command[CommandLogOut] = new Command("/command-logout", "/show-command-logout",
+	command[CommandLogOut] = new Command(this, "/command-logout", "/show-command-logout",
 			"xfsm-logout", "system-log-out",
 			_("Log Ou_t..."),
 			"xfce4-session-logout", true,
 			_("Failed to log out."));
-	command[CommandMenuEditor] = new Command("/command-menueditor", "/show-command-menueditor",
+	command[CommandMenuEditor] = new Command(this, "/command-menueditor", "/show-command-menueditor",
 			"menu-editor", "xfce4-menueditor",
 			_("_Edit Applications"),
 			"menulibre", true,
 			_("Failed to launch menu editor."));
-	command[CommandProfile] = new Command("/command-profile", "/show-command-profile",
+	command[CommandProfile] = new Command(this, "/command-profile", "/show-command-profile",
 			"avatar-default", "preferences-desktop-user",
 			_("Edit _Profile"),
 			"mugshot", true,
@@ -432,7 +428,8 @@ void Settings::property_changed(const gchar* property, const GValue* value)
 
 //-----------------------------------------------------------------------------
 
-Boolean::Boolean(const gchar* property, bool data) :
+Boolean::Boolean(WhiskerMenu::Settings* settings, const gchar* property, bool data) :
+	m_settings(settings),
 	m_property(property),
 	m_default(data),
 	m_data(m_default)
@@ -476,17 +473,18 @@ void Boolean::set(bool data, bool store)
 
 	m_data = data;
 
-	if (store && wm_settings->channel)
+	if (store && m_settings->channel)
 	{
-		wm_settings->begin_property_update();
-		xfconf_channel_set_bool(wm_settings->channel, m_property, m_data);
-		wm_settings->end_property_update();
+		m_settings->begin_property_update();
+		xfconf_channel_set_bool(m_settings->channel, m_property, m_data);
+		m_settings->end_property_update();
 	}
 }
 
 //-----------------------------------------------------------------------------
 
-Integer::Integer(const gchar* property, int data, int min, int max) :
+Integer::Integer(WhiskerMenu::Settings* settings, const gchar* property, int data, int min, int max) :
+	m_settings(settings),
 	m_property(property),
 	m_min(min),
 	m_max(max),
@@ -533,17 +531,18 @@ void Integer::set(int data, bool store)
 
 	m_data = data;
 
-	if (store && wm_settings->channel)
+	if (store && m_settings->channel)
 	{
-		wm_settings->begin_property_update();
-		xfconf_channel_set_int(wm_settings->channel, m_property, m_data);
-		wm_settings->end_property_update();
+		m_settings->begin_property_update();
+		xfconf_channel_set_int(m_settings->channel, m_property, m_data);
+		m_settings->end_property_update();
 	}
 }
 
 //-----------------------------------------------------------------------------
 
-String::String(const gchar* property, const std::string& data) :
+String::String(WhiskerMenu::Settings* settings, const gchar* property, const std::string& data) :
+	m_settings(settings),
 	m_property(property),
 	m_default(data),
 	m_data(m_default)
@@ -587,17 +586,18 @@ void String::set(const std::string& data, bool store)
 
 	m_data = data;
 
-	if (store && wm_settings->channel)
+	if (store && m_settings->channel)
 	{
-		wm_settings->begin_property_update();
-		xfconf_channel_set_string(wm_settings->channel, m_property, m_data.c_str());
-		wm_settings->end_property_update();
+		m_settings->begin_property_update();
+		xfconf_channel_set_string(m_settings->channel, m_property, m_data.c_str());
+		m_settings->end_property_update();
 	}
 }
 
 //-----------------------------------------------------------------------------
 
-StringList::StringList(const gchar* property, std::initializer_list<std::string> data) :
+StringList::StringList(WhiskerMenu::Settings* settings, const gchar* property, std::initializer_list<std::string> data) :
+	m_settings(settings),
 	m_property(property),
 	m_default(data),
 	m_data(m_default),
@@ -756,12 +756,12 @@ bool StringList::load(const gchar* property, const GValue* value, bool& reload_m
 
 void StringList::save()
 {
-	if (!m_modified || !wm_settings->channel)
+	if (!m_modified || !m_settings->channel)
 	{
 		return;
 	}
 
-	wm_settings->begin_property_update();
+	m_settings->begin_property_update();
 
 	const int size = m_data.size();
 	GPtrArray* array = g_ptr_array_sized_new(size);
@@ -774,13 +774,13 @@ void StringList::save()
 		g_ptr_array_add(array, value);
 	}
 
-	xfconf_channel_set_arrayv(wm_settings->channel, m_property, array);
+	xfconf_channel_set_arrayv(m_settings->channel, m_property, array);
 	xfconf_array_free(array);
 
 	m_saved = true;
 	m_modified = false;
 
-	wm_settings->end_property_update();
+	m_settings->end_property_update();
 }
 
 //-----------------------------------------------------------------------------
@@ -819,7 +819,8 @@ void StringList::set(std::vector<std::string>& data, bool store)
 
 //-----------------------------------------------------------------------------
 
-SearchActionList::SearchActionList(std::initializer_list<SearchAction*> data) :
+SearchActionList::SearchActionList(WhiskerMenu::Settings* settings, std::initializer_list<SearchAction*> data) :
+	m_settings(settings),
 	m_data(data),
 	m_modified(false)
 {
@@ -878,7 +879,7 @@ void SearchActionList::load(XfceRc* rc, bool is_default)
 		xfce_rc_set_group(rc, key);
 		g_free(key);
 
-		SearchAction* action = new SearchAction(
+		SearchAction* action = new SearchAction(m_settings,
 				xfce_rc_read_entry(rc, "name", ""),
 				xfce_rc_read_entry(rc, "pattern", ""),
 				xfce_rc_read_entry(rc, "command", ""),
@@ -916,7 +917,7 @@ void SearchActionList::load(XfceRc* rc, bool is_default)
 
 void SearchActionList::load()
 {
-	const int size = xfconf_channel_get_int(wm_settings->channel, "/search-actions", -1);
+	const int size = xfconf_channel_get_int(m_settings->channel, "/search-actions", -1);
 	if (size < 0)
 	{
 		return;
@@ -937,22 +938,22 @@ void SearchActionList::load()
 	for (int i = 0; i < size; ++i)
 	{
 		property = g_strdup_printf("/search-actions/action-%d/name", i);
-		name = xfconf_channel_get_string(wm_settings->channel, property, nullptr);
+		name = xfconf_channel_get_string(m_settings->channel, property, nullptr);
 		g_free(property);
 
 		property = g_strdup_printf("/search-actions/action-%d/pattern", i);
-		pattern = xfconf_channel_get_string(wm_settings->channel, property, nullptr);
+		pattern = xfconf_channel_get_string(m_settings->channel, property, nullptr);
 		g_free(property);
 
 		property = g_strdup_printf("/search-actions/action-%d/command", i);
-		command = xfconf_channel_get_string(wm_settings->channel, property, nullptr);
+		command = xfconf_channel_get_string(m_settings->channel, property, nullptr);
 		g_free(property);
 
 		property = g_strdup_printf("/search-actions/action-%d/regex", i);
-		regex = xfconf_channel_get_bool(wm_settings->channel, property, false);
+		regex = xfconf_channel_get_bool(m_settings->channel, property, false);
 		g_free(property);
 
-		m_data.push_back(new SearchAction(name, pattern, command, regex));
+		m_data.push_back(new SearchAction(m_settings, name, pattern, command, regex));
 
 		g_free(name);
 		g_free(pattern);
@@ -1016,17 +1017,17 @@ bool SearchActionList::load(const gchar* property, const GValue* value)
 
 void SearchActionList::save()
 {
-	if (!m_modified || !wm_settings->channel)
+	if (!m_modified || !m_settings->channel)
 	{
 		return;
 	}
 
-	wm_settings->begin_property_update();
+	m_settings->begin_property_update();
 
-	xfconf_channel_reset_property(wm_settings->channel, "/search-actions", true);
+	xfconf_channel_reset_property(m_settings->channel, "/search-actions", true);
 
 	const int size = m_data.size();
-	xfconf_channel_set_int(wm_settings->channel, "/search-actions", size);
+	xfconf_channel_set_int(m_settings->channel, "/search-actions", size);
 
 	gchar* property = nullptr;
 	const SearchAction* action = nullptr;
@@ -1036,25 +1037,25 @@ void SearchActionList::save()
 		action = m_data[i];
 
 		property = g_strdup_printf("/search-actions/action-%d/name", i);
-		xfconf_channel_set_string(wm_settings->channel, property, action->get_name());
+		xfconf_channel_set_string(m_settings->channel, property, action->get_name());
 		g_free(property);
 
 		property = g_strdup_printf("/search-actions/action-%d/pattern", i);
-		xfconf_channel_set_string(wm_settings->channel, property, action->get_pattern());
+		xfconf_channel_set_string(m_settings->channel, property, action->get_pattern());
 		g_free(property);
 
 		property = g_strdup_printf("/search-actions/action-%d/command", i);
-		xfconf_channel_set_string(wm_settings->channel, property, action->get_command());
+		xfconf_channel_set_string(m_settings->channel, property, action->get_command());
 		g_free(property);
 
 		property = g_strdup_printf("/search-actions/action-%d/regex", i);
-		xfconf_channel_set_bool(wm_settings->channel, property, action->get_is_regex());
+		xfconf_channel_set_bool(m_settings->channel, property, action->get_is_regex());
 		g_free(property);
 	}
 
 	m_modified = false;
 
-	wm_settings->end_property_update();
+	m_settings->end_property_update();
 }
 
 //-----------------------------------------------------------------------------
@@ -1072,7 +1073,7 @@ void SearchActionList::clone(const std::vector<SearchAction*>& in, std::vector<S
 	out.reserve(in.size());
 	for (auto action : in)
 	{
-		out.push_back(new SearchAction(
+		out.push_back(new SearchAction(m_settings,
 				action->get_name(),
 				action->get_pattern(),
 				action->get_command(),

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2023 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,18 +26,19 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-Command::Command(const gchar* property, const gchar* show_property,
+Command::Command(Settings* settings, const gchar* property, const gchar* show_property,
 		const gchar* icon, const gchar* fallback_icon,
 		const gchar* text,
 		const gchar* command, bool shown,
 		const gchar* error_text,
 		const gchar* confirm_question, const gchar* confirm_status) :
+	m_settings(settings),
 	m_button(nullptr),
 	m_menuitem(nullptr),
 	m_mnemonic(g_strdup(text)),
-	m_command(property, command),
+	m_command(settings, property, command),
 	m_error_text(g_strdup(error_text)),
-	m_shown(show_property, shown),
+	m_shown(settings, show_property, shown),
 	m_status(CommandStatus::Unchecked),
 	m_timeout_details({nullptr, g_strdup(confirm_question), g_strdup(confirm_status), 0})
 {
@@ -214,7 +215,7 @@ void Command::check()
 
 void Command::activate()
 {
-	if (wm_settings->confirm_session_command
+	if (m_settings->confirm_session_command
 			&& m_timeout_details.question
 			&& m_timeout_details.status
 			&& !confirm())

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2025 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,7 +36,8 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-Page::Page(Window* window, const gchar* icon, const gchar* text) :
+Page::Page(Settings* settings, Window* window, const gchar* icon, const gchar* text) :
+	m_settings(settings),
 	m_window(window),
 	m_button(nullptr),
 	m_selected_launcher(nullptr),
@@ -48,7 +49,7 @@ Page::Page(Window* window, const gchar* icon, const gchar* text) :
 	if (icon && text)
 	{
 		GIcon* gicon = g_themed_icon_new(icon);
-		m_button = new CategoryButton(gicon, text);
+		m_button = new CategoryButton(m_settings, gicon, text);
 		g_object_unref(gicon);
 	}
 
@@ -113,8 +114,8 @@ void Page::select_first()
 
 void Page::update_view()
 {
-	if ( ((wm_settings->view_mode == Settings::ViewAsIcons) && dynamic_cast<LauncherIconView*>(m_view))
-			|| ((wm_settings->view_mode != Settings::ViewAsIcons) && dynamic_cast<LauncherTreeView*>(m_view)) )
+	if ( ((m_settings->view_mode == Settings::ViewAsIcons) && dynamic_cast<LauncherIconView*>(m_view))
+			|| ((m_settings->view_mode != Settings::ViewAsIcons) && dynamic_cast<LauncherTreeView*>(m_view)) )
 	{
 		return;
 	}
@@ -173,9 +174,9 @@ void Page::set_reorderable(bool reorderable)
 
 void Page::create_view()
 {
-	if (wm_settings->view_mode == Settings::ViewAsIcons)
+	if (m_settings->view_mode == Settings::ViewAsIcons)
 	{
-		m_view = new LauncherIconView();
+		m_view = new LauncherIconView(m_settings);
 		connect(m_view->get_widget(), "item-activated",
 			[this](GtkIconView*, GtkTreePath* path)
 			{
@@ -184,7 +185,7 @@ void Page::create_view()
 	}
 	else
 	{
-		m_view = new LauncherTreeView();
+		m_view = new LauncherTreeView(m_settings);
 		connect(m_view->get_widget(), "row-activated",
 			[this](GtkTreeView*, GtkTreePath* path, GtkTreeViewColumn*)
 			{

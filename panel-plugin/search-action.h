@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,11 +25,13 @@
 namespace WhiskerMenu
 {
 
+class Settings;
+
 class SearchAction : public Element
 {
 public:
-	SearchAction();
-	SearchAction(const gchar* name, const gchar* pattern, const gchar* command, bool is_regex);
+	explicit SearchAction(Settings* settings);
+	SearchAction(Settings* settings, const gchar* name, const gchar* pattern, const gchar* command, bool is_regex);
 	~SearchAction();
 
 	const gchar* get_name() const
@@ -68,6 +70,8 @@ private:
 	void update_text();
 
 private:
+	Settings* const m_settings;
+
 	std::string m_name;
 	std::string m_pattern;
 	std::string m_command;

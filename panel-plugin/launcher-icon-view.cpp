@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019-2025 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2019 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,7 +25,8 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-LauncherIconView::LauncherIconView() :
+LauncherIconView::LauncherIconView(Settings* settings) :
+	m_settings(settings),
 	m_icon_renderer(nullptr),
 	m_icon_size(-1)
 {
@@ -222,11 +223,11 @@ void LauncherIconView::unset_drag_dest()
 void LauncherIconView::reload_icon_size()
 {
 	// Fetch icon size
-	if (m_icon_size == wm_settings->launcher_icon_size.get_size())
+	if (m_icon_size == m_settings->launcher_icon_size.get_size())
 	{
 		return;
 	}
-	m_icon_size = wm_settings->launcher_icon_size.get_size();
+	m_icon_size = m_settings->launcher_icon_size.get_size();
 
 	// Configure icon renderer
 	if (m_icon_size > 1)
@@ -243,7 +244,7 @@ void LauncherIconView::reload_icon_size()
 
 	// Adjust item size
 	int padding = 2;
-	switch (wm_settings->launcher_icon_size)
+	switch (m_settings->launcher_icon_size)
 	{
 	case IconSize::Smallest:
 	case IconSize::Smaller:

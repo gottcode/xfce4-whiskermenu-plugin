@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -38,7 +38,8 @@ static gboolean hover_timeout(gpointer user_data)
 
 //-----------------------------------------------------------------------------
 
-CategoryButton::CategoryButton(GIcon* icon, const gchar* text)
+CategoryButton::CategoryButton(Settings* settings, GIcon* icon, const gchar* text) :
+	m_settings(settings)
 {
 	m_button = GTK_RADIO_BUTTON(gtk_radio_button_new(nullptr));
 	gtk_toggle_button_set_mode(GTK_TOGGLE_BUTTON(m_button), false);
@@ -47,10 +48,10 @@ CategoryButton::CategoryButton(GIcon* icon, const gchar* text)
 	gtk_widget_set_focus_on_click(GTK_WIDGET(m_button), false);
 
 	connect(m_button, "enter-notify-event",
-		[](GtkWidget* widget, GdkEvent*) -> gboolean
+		[this](GtkWidget* widget, GdkEvent*) -> gboolean
 		{
 			GtkToggleButton* button = GTK_TOGGLE_BUTTON(widget);
-			if (wm_settings->category_hover_activate && !gtk_toggle_button_get_active(button))
+			if (m_settings->category_hover_activate && !gtk_toggle_button_get_active(button))
 			{
 				g_timeout_add(150, &hover_timeout, button);
 			}
@@ -58,10 +59,10 @@ CategoryButton::CategoryButton(GIcon* icon, const gchar* text)
 		});
 
 	connect(m_button, "focus-in-event",
-		[](GtkWidget* widget, GdkEvent*) -> gboolean
+		[this](GtkWidget* widget, GdkEvent*) -> gboolean
 		{
 			GtkToggleButton* button = GTK_TOGGLE_BUTTON(widget);
-			if (wm_settings->category_hover_activate && !gtk_toggle_button_get_active(button))
+			if (m_settings->category_hover_activate && !gtk_toggle_button_get_active(button))
 			{
 				gtk_toggle_button_set_active(button, true);
 				gtk_widget_grab_focus(widget);
@@ -96,11 +97,11 @@ CategoryButton::~CategoryButton()
 
 void CategoryButton::reload_icon_size()
 {
-	int size = wm_settings->category_icon_size.get_size();
+	int size = m_settings->category_icon_size.get_size();
 	gtk_image_set_pixel_size(GTK_IMAGE(m_icon), size);
 	gtk_widget_set_visible(m_icon, size > 1);
 
-	if (wm_settings->category_show_name && !wm_settings->position_categories_horizontal)
+	if (m_settings->category_show_name && !m_settings->position_categories_horizontal)
 	{
 		gtk_widget_set_has_tooltip(GTK_WIDGET(m_button), false);
 		gtk_box_set_child_packing(m_box, m_icon, false, false, 0, GTK_PACK_START);

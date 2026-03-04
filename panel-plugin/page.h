@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,12 +27,13 @@ class CategoryButton;
 class DesktopAction;
 class Launcher;
 class LauncherView;
+class Settings;
 class Window;
 
 class Page
 {
 public:
-	explicit Page(Window* window, const gchar* icon = nullptr, const gchar* text = nullptr);
+	Page(Settings* settings, Window* window, const gchar* icon, const gchar* text);
 	virtual ~Page();
 
 	Page(const Page&) = delete;
@@ -70,6 +71,9 @@ protected:
 	}
 
 	void set_reorderable(bool reorderable);
+
+protected:
+	Settings* const m_settings;
 
 private:
 	void create_view();

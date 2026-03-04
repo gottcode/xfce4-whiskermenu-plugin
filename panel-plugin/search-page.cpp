@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2025 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,8 +34,9 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-SearchPage::SearchPage(Window* window) :
-	Page(window)
+SearchPage::SearchPage(Settings* settings, Window* window) :
+	Page(settings, window, nullptr, nullptr),
+	m_run_action(settings)
 {
 	view_created();
 
@@ -119,8 +120,8 @@ void SearchPage::set_filter(const gchar* filter)
 
 	// Create search results
 	std::vector<Match> search_action_matches;
-	search_action_matches.reserve(wm_settings->search_actions.size());
-	for (auto action : wm_settings->search_actions)
+	search_action_matches.reserve(m_settings->search_actions.size());
+	for (auto action : m_settings->search_actions)
 	{
 		Match match(action);
 		match.update(m_query);
@@ -144,7 +145,7 @@ void SearchPage::set_filter(const gchar* filter)
 	{
 		gtk_widget_show(m_message);
 
-		for (auto action : wm_settings->search_actions)
+		for (auto action : m_settings->search_actions)
 		{
 			if (action->get_is_regex())
 			{
@@ -239,23 +240,23 @@ unsigned int SearchPage::move_launcher(const std::string& desktop_id, unsigned i
 
 void SearchPage::update_search_order()
 {
-	if (wm_settings->recent.is_order_unchanged() && wm_settings->favorites.is_order_unchanged())
+	if (m_settings->recent.is_order_unchanged() && m_settings->favorites.is_order_unchanged())
 	{
 		return;
 	}
-	wm_settings->recent.set_order_unchaged();
-	wm_settings->favorites.set_order_unchaged();
+	m_settings->recent.set_order_unchaged();
+	m_settings->favorites.set_order_unchaged();
 
 	// Reset in case a launcher is no longer in favorites or recent
 	std::sort(m_launchers.begin(), m_launchers.end(), &Element::less_than);
 
 	// Move launchers for favorites and recent to front
 	unsigned int pos = 0;
-	for (const std::string& desktop_id : wm_settings->recent)
+	for (const std::string& desktop_id : m_settings->recent)
 	{
 		pos = move_launcher(desktop_id, pos);
 	}
-	for (const std::string& desktop_id : wm_settings->favorites)
+	for (const std::string& desktop_id : m_settings->favorites)
 	{
 		pos = move_launcher(desktop_id, pos);
 	}

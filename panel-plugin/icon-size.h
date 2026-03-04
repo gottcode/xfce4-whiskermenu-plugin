@@ -31,6 +31,8 @@ extern "C"
 namespace WhiskerMenu
 {
 
+class Settings;
+
 class IconSize
 {
 public:
@@ -46,7 +48,7 @@ public:
 		Largest
 	};
 
-	explicit IconSize(const gchar* property, const int size);
+	IconSize(Settings* settings, const gchar* property, const int size);
 
 	int get_size() const;
 
@@ -70,6 +72,7 @@ private:
 	void set(int size, bool store);
 
 private:
+	Settings* const m_settings;
 	const gchar* const m_property;
 	int m_default;
 	int m_size;

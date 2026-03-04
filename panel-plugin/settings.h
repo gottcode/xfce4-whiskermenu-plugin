@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2023 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,7 +34,7 @@ class SearchAction;
 class Boolean
 {
 public:
-	explicit Boolean(const gchar* property, bool data);
+	Boolean(Settings* settings, const gchar* property, bool data);
 
 	operator bool() const
 	{
@@ -54,6 +54,7 @@ private:
 	void set(bool data, bool store);
 
 private:
+	Settings* m_settings;
 	const gchar* const m_property;
 	bool m_default;
 	bool m_data;
@@ -64,7 +65,7 @@ private:
 class Integer
 {
 public:
-	explicit Integer(const gchar* property, int data, int min, int max);
+	Integer(Settings* settings, const gchar* property, int data, int min, int max);
 
 	operator int() const
 	{
@@ -84,6 +85,7 @@ private:
 	void set(int data, bool store);
 
 private:
+	Settings* m_settings;
 	const gchar* const m_property;
 	const int m_min;
 	const int m_max;
@@ -96,7 +98,7 @@ private:
 class String
 {
 public:
-	explicit String(const gchar* property, const std::string& data = std::string());
+	String(Settings* settings, const gchar* property, const std::string& data = std::string());
 
 	bool empty() const
 	{
@@ -131,6 +133,7 @@ private:
 	void set(const std::string& data, bool store);
 
 private:
+	Settings* m_settings;
 	const gchar* const m_property;
 	std::string m_default;
 	std::string m_data;
@@ -141,7 +144,7 @@ private:
 class StringList
 {
 public:
-	explicit StringList(const gchar* property, std::initializer_list<std::string> data);
+	StringList(Settings* settings, const gchar* property, std::initializer_list<std::string> data);
 
 	bool empty() const
 	{
@@ -193,6 +196,7 @@ private:
 	void set(std::vector<std::string>& data, bool store);
 
 private:
+	Settings* m_settings;
 	const gchar* const m_property;
 	std::vector<std::string> m_default;
 	std::vector<std::string> m_data;
@@ -206,7 +210,7 @@ private:
 class SearchActionList
 {
 public:
-	explicit SearchActionList(std::initializer_list<SearchAction*> data);
+	SearchActionList(Settings* settings, std::initializer_list<SearchAction*> data);
 	~SearchActionList();
 
 	bool empty() const
@@ -251,6 +255,7 @@ private:
 	void clone(const std::vector<SearchAction*>& in, std::vector<SearchAction*>& out) const;
 
 private:
+	Settings* m_settings;
 	std::vector<SearchAction*> m_default;
 	std::vector<SearchAction*> m_data;
 	bool m_modified;
@@ -260,7 +265,7 @@ private:
 // Settings class
 class Settings
 {
-	Settings(Plugin* plugin);
+	explicit Settings(Plugin* plugin);
 	~Settings();
 
 	Settings(const Settings&) = delete;
@@ -373,8 +378,6 @@ public:
 
 	friend class Plugin;
 };
-
-extern Settings* wm_settings;
 
 }
 

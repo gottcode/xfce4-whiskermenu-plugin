@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014-2021 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2014 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,12 +30,13 @@ extern "C"
 namespace WhiskerMenu
 {
 
+class Settings;
 class Window;
 
 class Profile
 {
 public:
-	explicit Profile(Window* window);
+	Profile(Settings* settings, Window* window);
 	~Profile();
 
 	Profile(const Profile&) = delete;
@@ -66,6 +67,7 @@ private:
 #endif
 
 private:
+	Settings* const m_settings;
 	GtkWidget* m_container;
 	GtkWidget* m_image;
 	GtkWidget* m_username;

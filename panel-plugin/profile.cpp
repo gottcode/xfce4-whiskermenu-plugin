@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014-2021 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2014 Graeme Gott <graeme@gottcode.org>
  * Copyright (C) 2021 Matias De lellis <mati86dl@gmail.com>
  *
  * This library is free software; you can redistribute it and/or modify
@@ -30,7 +30,8 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-Profile::Profile(Window* window) :
+Profile::Profile(Settings* settings, Window* window) :
+	m_settings(settings),
 	m_file_monitor(nullptr),
 	m_file_path(nullptr)
 {
@@ -46,9 +47,9 @@ Profile::Profile(Window* window) :
 	gtk_widget_add_events(m_container, GDK_BUTTON_PRESS_MASK);
 
 	connect(m_container, "button-press-event",
-		[window](GtkWidget*, GdkEvent*) -> gboolean
+		[settings, window](GtkWidget*, GdkEvent*) -> gboolean
 		{
-			Command* command = wm_settings->command[Settings::CommandProfile];
+			Command* command = settings->command[Settings::CommandProfile];
 			if (command->get_shown())
 			{
 				window->hide();
@@ -59,7 +60,7 @@ Profile::Profile(Window* window) :
 
 	gtk_container_add(GTK_CONTAINER(m_container), m_image);
 
-	Command* command = wm_settings->command[Settings::CommandProfile];
+	Command* command = m_settings->command[Settings::CommandProfile];
 	gtk_widget_set_tooltip_text(m_container, command->get_tooltip());
 
 	m_username = gtk_label_new(nullptr);
@@ -115,7 +116,7 @@ Profile::~Profile()
 
 void Profile::reset_tooltip()
 {
-	Command* command = wm_settings->command[Settings::CommandProfile];
+	Command* command = m_settings->command[Settings::CommandProfile];
 	gtk_widget_set_has_tooltip(m_container, command->get_shown());
 }
 
@@ -144,7 +145,7 @@ void Profile::update_picture()
 	cairo_surface_set_device_scale(surface, scale, scale);
 	cairo_t* cr = cairo_create(surface);
 
-	if (wm_settings->profile_shape == Settings::ProfileRound)
+	if (m_settings->profile_shape == Settings::ProfileRound)
 	{
 		cairo_arc(cr, half_size, half_size, half_size, 0, 2 * G_PI);
 		cairo_clip(cr);

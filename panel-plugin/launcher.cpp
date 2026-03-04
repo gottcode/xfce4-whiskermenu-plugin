@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2025 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -54,7 +54,7 @@ static std::string normalize(const gchar* string)
 
 //-----------------------------------------------------------------------------
 
-Launcher::Launcher(GarconMenuItem* item) :
+Launcher::Launcher(Settings* settings, GarconMenuItem* item) :
 	m_item(item)
 {
 	// Fetch icon
@@ -74,7 +74,7 @@ Launcher::Launcher(GarconMenuItem* item) :
 		generic_name = "";
 	}
 
-	if (!wm_settings->launcher_show_name && !xfce_str_is_empty(generic_name))
+	if (!settings->launcher_show_name && !xfce_str_is_empty(generic_name))
 	{
 		std::swap(name, generic_name);
 	}
@@ -88,7 +88,7 @@ Launcher::Launcher(GarconMenuItem* item) :
 
 	// Create display text
 	const gchar* direction = (gtk_widget_get_default_direction() != GTK_TEXT_DIR_RTL) ? "\342\200\216" : "\342\200\217";
-	if (wm_settings->launcher_show_description && (wm_settings->view_mode != Settings::ViewAsIcons))
+	if (settings->launcher_show_description && (settings->view_mode != Settings::ViewAsIcons))
 	{
 		set_text(g_markup_printf_escaped("%s<b>%s</b>\n%s%s", direction, m_display_name, direction, details));
 	}

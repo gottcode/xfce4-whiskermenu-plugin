@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2025 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,6 +28,7 @@
 namespace WhiskerMenu
 {
 
+class Settings;
 class SettingsDialog;
 class Window;
 
@@ -55,7 +56,7 @@ public:
 	};
 
 	ButtonStyle get_button_style() const;
-	static std::string get_button_title_default();
+	std::string get_button_title_default() const;
 	void get_menu_position(int* x, int* y) const;
 
 	void menu_hidden();
@@ -79,6 +80,7 @@ private:
 private:
 	XfcePanelPlugin* m_plugin;
 	Window* m_window;
+	Settings* m_settings;
 	SettingsDialog* m_settings_dialog;
 
 	GtkWidget* m_button;

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,8 +31,8 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-ApplicationsPage::ApplicationsPage(Window* window) :
-	Page(window, "applications-other", _("All Applications")),
+ApplicationsPage::ApplicationsPage(Settings* settings, Window* window) :
+	Page(settings, window, "applications-other", _("All Applications")),
 	m_garcon_menu(nullptr),
 	m_garcon_settings_menu(nullptr),
 	m_status(LoadStatus::Invalid)
@@ -238,13 +238,13 @@ void ApplicationsPage::clear()
 void ApplicationsPage::load_garcon_menu()
 {
 	// Create menu
-	if (wm_settings->custom_menu_file.empty())
+	if (m_settings->custom_menu_file.empty())
 	{
 		m_garcon_menu = garcon_menu_new_applications();
 	}
 	else
 	{
-		m_garcon_menu = garcon_menu_new_for_path(wm_settings->custom_menu_file);
+		m_garcon_menu = garcon_menu_new_for_path(m_settings->custom_menu_file);
 	}
 
 	// Load menu
@@ -265,7 +265,7 @@ void ApplicationsPage::load_garcon_menu()
 			invalidate();
 		});
 
-	load_menu(m_garcon_menu, nullptr, wm_settings->view_mode == Settings::ViewAsTree);
+	load_menu(m_garcon_menu, nullptr, m_settings->view_mode == Settings::ViewAsTree);
 
 	// Create settings menu
 	gchar* path = xfce_resource_lookup(XFCE_RESOURCE_CONFIG, "menus/xfce-settings-manager.menu");
@@ -284,26 +284,26 @@ void ApplicationsPage::load_garcon_menu()
 	// Load settings menu
 	if (m_garcon_settings_menu && garcon_menu_load(m_garcon_settings_menu, nullptr, nullptr))
 	{
-		Category* category = new Category(nullptr);
+		Category* category = new Category(m_settings, nullptr);
 		load_menu(m_garcon_settings_menu, category, false);
 		delete category;
 	}
 
 	// Sort items and categories
-	if (wm_settings->view_mode != Settings::ViewAsTree)
+	if (m_settings->view_mode != Settings::ViewAsTree)
 	{
 		for (auto category : m_categories)
 		{
 			category->sort();
 		}
 	}
-	if (wm_settings->sort_categories)
+	if (m_settings->sort_categories)
 	{
 		std::sort(m_categories.begin(), m_categories.end(), &Element::less_than);
 	}
 
 	// Create all items category
-	Category* category = new Category(nullptr);
+	Category* category = new Category(m_settings, nullptr);
 	category->set_button(get_button());
 	category->append_items(find_all());
 	m_categories.insert(m_categories.begin(), category);
@@ -383,7 +383,7 @@ bool ApplicationsPage::load_menu(GarconMenu* menu, Category* parent_category, bo
 			auto iter = m_items.find(desktop_id);
 			if (iter == m_items.end())
 			{
-				iter = m_items.emplace(std::move(desktop_id), new Launcher(menuitem)).first;
+				iter = m_items.emplace(std::move(desktop_id), new Launcher(m_settings, menuitem)).first;
 			}
 
 			// Add launcher to current category
@@ -419,7 +419,7 @@ bool ApplicationsPage::load_menu(GarconMenu* menu, Category* parent_category, bo
 			}
 			else
 			{
-				category = new Category(submenu);
+				category = new Category(m_settings, submenu);
 			}
 
 			// Populate category

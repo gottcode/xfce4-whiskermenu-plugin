@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,15 +25,18 @@
 namespace WhiskerMenu
 {
 
+class Settings;
+
 class RunAction : public Element
 {
 public:
-	RunAction();
+	explicit RunAction(Settings* settings);
 
 	void run(GdkScreen* screen) const override;
 	unsigned int search(const Query& query) override;
 
 private:
+	Settings* const m_settings;
 	std::string m_command_line;
 };
 

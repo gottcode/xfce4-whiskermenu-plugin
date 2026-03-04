@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,10 +23,12 @@
 namespace WhiskerMenu
 {
 
+class Settings;
+
 class CategoryButton
 {
 public:
-	CategoryButton(GIcon* icon, const gchar* text);
+	CategoryButton(Settings* settings, GIcon* icon, const gchar* text);
 	~CategoryButton();
 
 	CategoryButton(const CategoryButton&) = delete;
@@ -57,6 +59,7 @@ public:
 	void reload_icon_size();
 
 private:
+	Settings* const m_settings;
 	GtkRadioButton* m_button;
 	GtkBox* m_box;
 	GtkWidget* m_icon;

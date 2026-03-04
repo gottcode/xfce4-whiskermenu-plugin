@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2025 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -61,39 +61,39 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	m_hide_time(0)
 {
 	// Create settings
-	wm_settings = new Settings(this);
+	m_settings = new Settings(this);
 
 	// Load default settings
 	gchar* defaults_file = xfce_resource_lookup(XFCE_RESOURCE_CONFIG, "xfce4/whiskermenu/defaults.rc");
-	wm_settings->load(defaults_file, true);
+	m_settings->load(defaults_file, true);
 	g_free(defaults_file);
 
 	gchar* rc_file = xfce_panel_plugin_lookup_rc_file(m_plugin);
 	gchar* save_file = xfce_panel_plugin_save_location(m_plugin, false);
 	if (g_strcmp0(rc_file, save_file) != 0)
 	{
-		wm_settings->load(rc_file, true);
+		m_settings->load(rc_file, true);
 	}
 	g_free(rc_file);
 
 	// Load user settings
-	wm_settings->load(xfce_panel_plugin_get_property_base(m_plugin));
+	m_settings->load(xfce_panel_plugin_get_property_base(m_plugin));
 
 	// Migrate old user settings if they exist
-	if (wm_settings->channel)
+	if (m_settings->channel)
 	{
-		wm_settings->load(save_file, false);
+		m_settings->load(save_file, false);
 		g_remove(save_file);
 	}
 	g_free(save_file);
 
-	m_opacity = wm_settings->menu_opacity;
+	m_opacity = m_settings->menu_opacity;
 
 	// Switch to new icon only if theme is missing old icon
-	if ((wm_settings->button_icon_name == "xfce4-whiskermenu")
+	if ((m_settings->button_icon_name == "xfce4-whiskermenu")
 			&& !gtk_icon_theme_has_icon(gtk_icon_theme_get_default(), "xfce4-whiskermenu"))
 	{
-		wm_settings->button_icon_name = "org.xfce.panel.whiskermenu";
+		m_settings->button_icon_name = "org.xfce.panel.whiskermenu";
 	}
 
 	// Create toggle button
@@ -127,23 +127,23 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 	gtk_widget_show(GTK_WIDGET(m_button_box));
 
 	m_button_icon = GTK_IMAGE(gtk_image_new());
-	icon_changed(wm_settings->button_icon_name);
-	gtk_widget_set_tooltip_markup(m_button, wm_settings->button_title);
+	icon_changed(m_settings->button_icon_name);
+	gtk_widget_set_tooltip_markup(m_button, m_settings->button_title);
 	gtk_box_pack_start(m_button_box, GTK_WIDGET(m_button_icon), true, false, 0);
-	if (wm_settings->button_icon_visible)
+	if (m_settings->button_icon_visible)
 	{
 		gtk_widget_show(GTK_WIDGET(m_button_icon));
 	}
-	if (wm_settings->button_title_visible)
+	if (m_settings->button_title_visible)
 	{
 		gtk_widget_set_has_tooltip(m_button, false);
 	}
 	gtk_widget_set_sensitive(GTK_WIDGET(m_button_icon), false);
 
 	m_button_label = GTK_LABEL(gtk_label_new(nullptr));
-	gtk_label_set_markup(m_button_label, wm_settings->button_title);
+	gtk_label_set_markup(m_button_label, m_settings->button_title);
 	gtk_box_pack_start(m_button_box, GTK_WIDGET(m_button_label), true, true, 0);
-	if (wm_settings->button_title_visible)
+	if (m_settings->button_title_visible)
 	{
 		gtk_widget_show(GTK_WIDGET(m_button_label));
 	}
@@ -192,12 +192,12 @@ Plugin::Plugin(XfcePanelPlugin* plugin) :
 
 	xfce_panel_plugin_menu_show_about(plugin);
 	xfce_panel_plugin_menu_show_configure(plugin);
-	xfce_panel_plugin_menu_insert_item(plugin, GTK_MENU_ITEM(wm_settings->command[Settings::CommandMenuEditor]->get_menuitem()));
+	xfce_panel_plugin_menu_insert_item(plugin, GTK_MENU_ITEM(m_settings->command[Settings::CommandMenuEditor]->get_menuitem()));
 
 	mode_changed(xfce_panel_plugin_get_mode(m_plugin));
 
 	// Create menu window
-	m_window = new Window(this);
+	m_window = new Window(m_settings, this);
 	connect(m_window->get_widget(), "hide",
 		[this](GtkWidget*)
 		{
@@ -220,22 +220,22 @@ Plugin::~Plugin()
 
 	gtk_widget_destroy(m_button);
 
-	delete wm_settings;
-	wm_settings = nullptr;
+	delete m_settings;
+	m_settings = nullptr;
 }
 
 //-----------------------------------------------------------------------------
 
 Plugin::ButtonStyle Plugin::get_button_style() const
 {
-	return ButtonStyle(wm_settings->button_icon_visible | (wm_settings->button_title_visible << 1));
+	return ButtonStyle(m_settings->button_icon_visible | (m_settings->button_title_visible << 1));
 }
 
 //-----------------------------------------------------------------------------
 
-std::string Plugin::get_button_title_default()
+std::string Plugin::get_button_title_default() const
 {
-	return wm_settings->m_button_title_default;
+	return m_settings->m_button_title_default;
 }
 
 //-----------------------------------------------------------------------------
@@ -258,8 +258,8 @@ void Plugin::reload_button()
 {
 	if (m_button)
 	{
-		wm_settings->prevent_invalid();
-		icon_changed(wm_settings->button_icon_name);
+		m_settings->prevent_invalid();
+		icon_changed(m_settings->button_icon_name);
 		set_button_style(get_button_style());
 	}
 }
@@ -279,8 +279,8 @@ void Plugin::reload_menu()
 
 void Plugin::set_button_style(ButtonStyle style)
 {
-	wm_settings->button_icon_visible = style & ShowIcon;
-	if (wm_settings->button_icon_visible)
+	m_settings->button_icon_visible = style & ShowIcon;
+	if (m_settings->button_icon_visible)
 	{
 		gtk_widget_show(GTK_WIDGET(m_button_icon));
 	}
@@ -289,8 +289,8 @@ void Plugin::set_button_style(ButtonStyle style)
 		gtk_widget_hide(GTK_WIDGET(m_button_icon));
 	}
 
-	wm_settings->button_title_visible = style & ShowText;
-	if (wm_settings->button_title_visible)
+	m_settings->button_title_visible = style & ShowText;
+	if (m_settings->button_title_visible)
 	{
 		gtk_widget_show(GTK_WIDGET(m_button_label));
 		gtk_widget_set_has_tooltip(m_button, false);
@@ -308,10 +308,10 @@ void Plugin::set_button_style(ButtonStyle style)
 
 void Plugin::set_button_title(const std::string& title)
 {
-	wm_settings->button_title = title;
-	gtk_label_set_markup(m_button_label, wm_settings->button_title);
-	gtk_widget_set_tooltip_markup(m_button, wm_settings->button_title);
-	gtk_widget_set_has_tooltip(m_button, !wm_settings->button_title_visible);
+	m_settings->button_title = title;
+	gtk_label_set_markup(m_button_label, m_settings->button_title);
+	gtk_widget_set_tooltip_markup(m_button, m_settings->button_title);
+	gtk_widget_set_has_tooltip(m_button, !m_settings->button_title_visible);
 	update_size();
 }
 
@@ -319,7 +319,7 @@ void Plugin::set_button_title(const std::string& title)
 
 void Plugin::set_button_icon_name(const std::string& icon)
 {
-	wm_settings->button_icon_name = icon;
+	m_settings->button_icon_name = icon;
 	icon_changed(icon.c_str());
 	update_size();
 }
@@ -342,11 +342,11 @@ void Plugin::configure()
 		return;
 	}
 
-	m_settings_dialog = new SettingsDialog(this);
+	m_settings_dialog = new SettingsDialog(m_settings, this);
 	connect(m_settings_dialog->get_widget(), "destroy",
 		[this](GtkWidget*)
 		{
-			wm_settings->search_actions.save();
+			m_settings->search_actions.save();
 			delete m_settings_dialog;
 			m_settings_dialog = nullptr;
 		});
@@ -441,17 +441,17 @@ gboolean Plugin::size_changed(gint size)
 
 	// Make icon expand to fill button if title is not visible
 	gtk_box_set_child_packing(GTK_BOX(m_button_box), GTK_WIDGET(m_button_icon),
-			!wm_settings->button_title_visible,
-			!wm_settings->button_title_visible,
+			!m_settings->button_title_visible,
+			!m_settings->button_title_visible,
 			0, GTK_PACK_START);
 
 	// Resize icon
-	if (wm_settings->button_single_row)
+	if (m_settings->button_single_row)
 	{
 		size /= xfce_panel_plugin_get_nrows(m_plugin);
 	}
 	gint icon_size = xfce_panel_plugin_get_icon_size(m_plugin);
-	if (!wm_settings->button_single_row)
+	if (!m_settings->button_single_row)
 	{
 		icon_size *= xfce_panel_plugin_get_nrows(m_plugin);
 	}
@@ -472,7 +472,7 @@ gboolean Plugin::size_changed(gint size)
 			max_height *= 6;
 		}
 
-		GdkPixbuf* pixbuf = gdk_pixbuf_new_from_file_at_size(wm_settings->button_icon_name, max_width, max_height, nullptr);
+		GdkPixbuf* pixbuf = gdk_pixbuf_new_from_file_at_size(m_settings->button_icon_name, max_width, max_height, nullptr);
 		if (pixbuf)
 		{
 			// Handle high dpi
@@ -484,7 +484,7 @@ gboolean Plugin::size_changed(gint size)
 	}
 
 	// Make panel button square only if single row and title hidden
-	if (!wm_settings->button_title_visible && (wm_settings->button_single_row || (xfce_panel_plugin_get_nrows(m_plugin) == 1)))
+	if (!m_settings->button_title_visible && (m_settings->button_single_row || (xfce_panel_plugin_get_nrows(m_plugin) == 1)))
 	{
 		gtk_widget_set_size_request(m_button, size, size);
 	}
@@ -494,7 +494,7 @@ gboolean Plugin::size_changed(gint size)
 	}
 
 	// Use single panel row if requested and title hidden
-	if (wm_settings->button_title_visible || !wm_settings->button_single_row)
+	if (m_settings->button_title_visible || !m_settings->button_single_row)
 	{
 		xfce_panel_plugin_set_small(m_plugin, false);
 
@@ -502,8 +502,8 @@ gboolean Plugin::size_changed(gint size)
 		GtkRequisition label_size;
 		gtk_widget_get_preferred_size(GTK_WIDGET(m_button_label), nullptr, &label_size);
 		if (mode == XFCE_PANEL_PLUGIN_MODE_DESKBAR &&
-				wm_settings->button_title_visible &&
-				wm_settings->button_icon_visible &&
+				m_settings->button_title_visible &&
+				m_settings->button_icon_visible &&
 				label_size.width <= (size - icon_size - 4))
 		{
 			orientation = GTK_ORIENTATION_HORIZONTAL;
@@ -540,12 +540,12 @@ void Plugin::update_size()
 
 void Plugin::show_menu(int position)
 {
-	if (wm_settings->menu_opacity != m_opacity)
+	if (m_settings->menu_opacity != m_opacity)
 	{
-		if ((m_opacity == 100) || (wm_settings->menu_opacity == 100))
+		if ((m_opacity == 100) || (m_settings->menu_opacity == 100))
 		{
 			delete m_window;
-			m_window = new Window(this);
+			m_window = new Window(m_settings, this);
 			connect(m_window->get_widget(), "hide",
 				[this](GtkWidget*)
 				{
@@ -558,7 +558,7 @@ void Plugin::show_menu(int position)
 					m_autohide_blocked = false;
 				});
 		}
-		m_opacity = wm_settings->menu_opacity;
+		m_opacity = m_settings->menu_opacity;
 	}
 
 	position = CLAMP(position, Window::PositionAtButton, Window::PositionAtCenter);

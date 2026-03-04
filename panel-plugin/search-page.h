@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2025 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@ namespace WhiskerMenu
 class SearchPage : public Page
 {
 public:
-	explicit SearchPage(Window* window);
+	SearchPage(Settings* settings, Window* window);
 	~SearchPage();
 
 	GtkWidget* get_message() const

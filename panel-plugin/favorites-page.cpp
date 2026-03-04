@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2021 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,8 +33,8 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-FavoritesPage::FavoritesPage(Window* window) :
-	Page(window, "user-bookmarks", _("Favorites"))
+FavoritesPage::FavoritesPage(Settings* settings, Window* window) :
+	Page(settings, window, "user-bookmarks", _("Favorites"))
 {
 	view_created();
 }
@@ -56,7 +56,7 @@ bool FavoritesPage::contains(Launcher* launcher) const
 	}
 
 	std::string desktop_id(launcher->get_desktop_id());
-	return std::find(wm_settings->favorites.begin(), wm_settings->favorites.end(), desktop_id) != wm_settings->favorites.end();
+	return std::find(m_settings->favorites.begin(), m_settings->favorites.end(), desktop_id) != m_settings->favorites.end();
 }
 
 //-----------------------------------------------------------------------------
@@ -105,7 +105,7 @@ void FavoritesPage::remove(Launcher* launcher)
 
 void FavoritesPage::set_menu_items()
 {
-	GtkTreeModel* model = get_window()->get_applications()->create_launcher_model(wm_settings->favorites);
+	GtkTreeModel* model = get_window()->get_applications()->create_launcher_model(m_settings->favorites);
 	get_view()->set_model(model);
 
 	connect(model, "row-changed",
@@ -165,7 +165,7 @@ void FavoritesPage::extend_context_menu(GtkWidget* menu)
 
 bool FavoritesPage::remember_launcher(Launcher* launcher)
 {
-	return wm_settings->favorites_in_recent ? true : !contains(launcher);
+	return m_settings->favorites_in_recent ? true : !contains(launcher);
 }
 
 //-----------------------------------------------------------------------------
@@ -173,7 +173,7 @@ bool FavoritesPage::remember_launcher(Launcher* launcher)
 void FavoritesPage::on_row_changed(GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter)
 {
 	const int pos = gtk_tree_path_get_indices(path)[0];
-	if (pos >= wm_settings->favorites.size())
+	if (pos >= m_settings->favorites.size())
 	{
 		return;
 	}
@@ -182,7 +182,7 @@ void FavoritesPage::on_row_changed(GtkTreeModel* model, GtkTreePath* path, GtkTr
 	gtk_tree_model_get(model, iter, LauncherView::COLUMN_LAUNCHER, &element, -1);
 	if (Launcher* launcher = dynamic_cast<Launcher*>(element))
 	{
-		wm_settings->favorites.set(pos, launcher->get_desktop_id());
+		m_settings->favorites.set(pos, launcher->get_desktop_id());
 	}
 }
 
@@ -200,13 +200,13 @@ void FavoritesPage::on_row_inserted(GtkTreeModel* model, GtkTreePath* path, GtkT
 		desktop_id = launcher->get_desktop_id();
 	}
 
-	if (pos >= wm_settings->favorites.size())
+	if (pos >= m_settings->favorites.size())
 	{
-		wm_settings->favorites.push_back(desktop_id);
+		m_settings->favorites.push_back(desktop_id);
 	}
-	else if (wm_settings->favorites[pos] != desktop_id)
+	else if (m_settings->favorites[pos] != desktop_id)
 	{
-		wm_settings->favorites.insert(pos, desktop_id);
+		m_settings->favorites.insert(pos, desktop_id);
 	}
 }
 
@@ -215,9 +215,9 @@ void FavoritesPage::on_row_inserted(GtkTreeModel* model, GtkTreePath* path, GtkT
 void FavoritesPage::on_row_deleted(GtkTreePath* path)
 {
 	const int pos = gtk_tree_path_get_indices(path)[0];
-	if (pos < wm_settings->favorites.size())
+	if (pos < m_settings->favorites.size())
 	{
-		wm_settings->favorites.erase(pos);
+		m_settings->favorites.erase(pos);
 	}
 }
 
@@ -226,8 +226,8 @@ void FavoritesPage::on_row_deleted(GtkTreePath* path)
 std::vector<Launcher*> FavoritesPage::sort() const
 {
 	std::vector<Launcher*> items;
-	items.reserve(wm_settings->favorites.size());
-	for (const auto& favorite : wm_settings->favorites)
+	items.reserve(m_settings->favorites.size());
+	for (const auto& favorite : m_settings->favorites)
 	{
 		Launcher* launcher = get_window()->get_applications()->find(favorite);
 		if (!launcher)
@@ -246,10 +246,10 @@ void FavoritesPage::sort_ascending()
 {
 	const auto items = sort();
 
-	wm_settings->favorites.clear();
+	m_settings->favorites.clear();
 	for (auto launcher : items)
 	{
-		wm_settings->favorites.push_back(launcher->get_desktop_id());
+		m_settings->favorites.push_back(launcher->get_desktop_id());
 	}
 	set_menu_items();
 }
@@ -260,10 +260,10 @@ void FavoritesPage::sort_descending()
 {
 	const auto items = sort();
 
-	wm_settings->favorites.clear();
+	m_settings->favorites.clear();
 	for (auto i = items.rbegin(), end = items.rend(); i != end; ++i)
 	{
-		wm_settings->favorites.push_back((*i)->get_desktop_id());
+		m_settings->favorites.push_back((*i)->get_desktop_id());
 	}
 	set_menu_items();
 }

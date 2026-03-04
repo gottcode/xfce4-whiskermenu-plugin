@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2025 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -43,7 +43,8 @@ using namespace WhiskerMenu;
 
 //-----------------------------------------------------------------------------
 
-WhiskerMenu::Window::Window(Plugin* plugin) :
+WhiskerMenu::Window::Window(Settings* settings, Plugin* plugin) :
+	m_settings(settings),
 	m_plugin(plugin),
 	m_window(nullptr),
 	m_position(PositionAtButton),
@@ -115,7 +116,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	connect(m_window, "focus-out-event",
 		[this](GtkWidget* widget, GdkEvent*) -> gboolean
 		{
-			if (wm_settings->stay_on_focus_out || m_child_has_focus || !gtk_widget_get_visible(widget))
+			if (m_settings->stay_on_focus_out || m_child_has_focus || !gtk_widget_get_visible(widget))
 			{
 				return GDK_EVENT_PROPAGATE;
 			}
@@ -186,12 +187,12 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 	m_resize[Resizer::BottomRight] = new Resizer(Resizer::BottomRight, this);
 
 	// Create the profile picture and username label
-	m_profile = new Profile(this);
+	m_profile = new Profile(m_settings, this);
 
 	// Create action buttons
 	for (int i = 0; i < 9; ++i)
 	{
-		m_commands_button[i] = wm_settings->command[i]->get_button();
+		m_commands_button[i] = m_settings->command[i]->get_button();
 		m_command_slots[i] = connect(m_commands_button[i], "clicked",
 			[this](GtkButton*)
 			{
@@ -216,7 +217,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 		});
 
 	// Create favorites
-	m_favorites = new FavoritesPage(this);
+	m_favorites = new FavoritesPage(m_settings, this);
 
 	CategoryButton* favorites_button = m_favorites->get_button();
 	connect(favorites_button->get_widget(), "toggled",
@@ -226,7 +227,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 		});
 
 	// Create recent
-	m_recent = new RecentPage(this);
+	m_recent = new RecentPage(m_settings, this);
 
 	CategoryButton* recent_button = m_recent->get_button();
 	recent_button->join_group(favorites_button);
@@ -237,7 +238,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 		});
 
 	// Create applications
-	m_applications = new ApplicationsPage(this);
+	m_applications = new ApplicationsPage(m_settings, this);
 
 	CategoryButton* applications_button = m_applications->get_button();
 	applications_button->join_group(recent_button);
@@ -248,7 +249,7 @@ WhiskerMenu::Window::Window(Plugin* plugin) :
 		});
 
 	// Create search results
-	m_search_results = new SearchPage(this);
+	m_search_results = new SearchPage(m_settings, this);
 
 	GtkBox* search_results = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 0));
 	gtk_box_pack_start(search_results, m_search_results->get_message(), false, false, 0);
@@ -424,8 +425,8 @@ Page* WhiskerMenu::Window::get_active_page()
 void WhiskerMenu::Window::hide(bool lost_focus)
 {
 	// Save settings
-	wm_settings->favorites.save();
-	wm_settings->recent.save();
+	m_settings->favorites.save();
+	m_settings->recent.save();
 
 	// Scroll categories to top
 	GtkAdjustment* adjustment = gtk_scrolled_window_get_vadjustment(m_sidebar);
@@ -463,7 +464,7 @@ void WhiskerMenu::Window::show(const Position position)
 	m_applications->update_view();
 
 	// Handle showing tooltips
-	if (wm_settings->launcher_show_tooltip)
+	if (m_settings->launcher_show_tooltip)
 	{
 		m_search_results->get_view()->show_tooltips();
 		m_favorites->get_view()->show_tooltips();
@@ -480,7 +481,7 @@ void WhiskerMenu::Window::show(const Position position)
 	m_profile->reset_tooltip();
 
 	// Make sure commands are valid and visible
-	for (auto command : wm_settings->command)
+	for (auto command : m_settings->command)
 	{
 		command->check();
 	}
@@ -489,7 +490,7 @@ void WhiskerMenu::Window::show(const Position position)
 	m_recent->enforce_item_count();
 
 	// Make sure recent button is only visible when tracked
-	gtk_widget_set_visible(m_recent->get_button()->get_widget(), wm_settings->recent_items_max);
+	gtk_widget_set_visible(m_recent->get_button()->get_widget(), m_settings->recent_items_max);
 
 	// Make sure applications list is current; does nothing unless list has changed
 	if (m_applications->load())
@@ -564,7 +565,7 @@ void WhiskerMenu::Window::show(const Position position)
 	}
 #endif
 	gdk_monitor_get_geometry(monitor_gdk, &m_monitor);
-	const bool resized = set_size(wm_settings->menu_width, wm_settings->menu_height);
+	const bool resized = set_size(m_settings->menu_width, m_settings->menu_height);
 
 	// Center window if requested
 	if (position == PositionAtCenter)
@@ -578,21 +579,21 @@ void WhiskerMenu::Window::show(const Position position)
 	// Relayout window if necessary
 	const bool layout_ltr = gtk_widget_get_default_direction() != GTK_TEXT_DIR_RTL;
 	if ((m_layout_ltr != layout_ltr)
-			|| (m_layout_categories_horizontal != wm_settings->position_categories_horizontal)
-			|| (m_layout_categories_alternate != wm_settings->position_categories_alternate)
-			|| (m_layout_search_alternate != wm_settings->position_search_alternate)
-			|| (m_layout_commands_alternate != wm_settings->position_commands_alternate)
-			|| (m_layout_profile_alternate != wm_settings->position_profile_alternate)
-			|| (m_profile_shape != wm_settings->profile_shape))
+			|| (m_layout_categories_horizontal != m_settings->position_categories_horizontal)
+			|| (m_layout_categories_alternate != m_settings->position_categories_alternate)
+			|| (m_layout_search_alternate != m_settings->position_search_alternate)
+			|| (m_layout_commands_alternate != m_settings->position_commands_alternate)
+			|| (m_layout_profile_alternate != m_settings->position_profile_alternate)
+			|| (m_profile_shape != m_settings->profile_shape))
 	{
 		m_layout_ltr = layout_ltr;
-		m_layout_categories_horizontal = wm_settings->position_categories_horizontal;
-		m_layout_categories_alternate = wm_settings->position_categories_alternate;
-		m_layout_search_alternate = wm_settings->position_search_alternate;
-		m_layout_commands_alternate = wm_settings->position_commands_alternate;
-		m_layout_profile_alternate = wm_settings->position_profile_alternate;
+		m_layout_categories_horizontal = m_settings->position_categories_horizontal;
+		m_layout_categories_alternate = m_settings->position_categories_alternate;
+		m_layout_search_alternate = m_settings->position_search_alternate;
+		m_layout_commands_alternate = m_settings->position_commands_alternate;
+		m_layout_profile_alternate = m_settings->position_profile_alternate;
 		m_profile->update_picture();
-		m_profile_shape = wm_settings->profile_shape;
+		m_profile_shape = m_settings->profile_shape;
 		update_layout();
 	}
 
@@ -654,8 +655,8 @@ void WhiskerMenu::Window::resize_start()
 void WhiskerMenu::Window::resize_end()
 {
 	// Store new size
-	wm_settings->menu_width = m_geometry.width;
-	wm_settings->menu_height = m_geometry.height;
+	m_settings->menu_width = m_geometry.width;
+	m_settings->menu_height = m_geometry.height;
 
 	// Move window back to panel button or center of screen
 	if (m_position == PositionAtButton)
@@ -777,7 +778,7 @@ gboolean WhiskerMenu::Window::on_key_press_event(GtkWidget* widget, GdkEventKey*
 			{
 				resizer->cancel();
 			}
-			set_size(wm_settings->menu_width, wm_settings->menu_height);
+			set_size(m_settings->menu_width, m_settings->menu_height);
 			resize_end();
 		}
 		// Hide if escape is pressed and there is no text in search entry
@@ -916,7 +917,7 @@ void WhiskerMenu::Window::on_screen_changed(GtkWidget* widget)
 {
 	GdkScreen* screen = gtk_widget_get_screen(widget);
 	GdkVisual* visual = gdk_screen_get_rgba_visual(screen);
-	if (!visual || (wm_settings->menu_opacity == 100))
+	if (!visual || (m_settings->menu_opacity == 100))
 	{
 		visual = gdk_screen_get_system_visual(screen);
 		m_supports_alpha = false;
@@ -954,7 +955,7 @@ gboolean WhiskerMenu::Window::on_draw_event(GtkWidget* widget, cairo_t* cr)
 
 		cairo_set_source_surface(cr, background, 0.0, 0.0);
 		cairo_set_operator(cr, CAIRO_OPERATOR_SOURCE);
-		cairo_paint_with_alpha(cr, wm_settings->menu_opacity / 100.0);
+		cairo_paint_with_alpha(cr, m_settings->menu_opacity / 100.0);
 
 		cairo_surface_destroy(background);
 	}
@@ -1067,7 +1068,7 @@ bool WhiskerMenu::Window::set_size(int width, int height)
 
 void WhiskerMenu::Window::reset_default_button()
 {
-	switch (wm_settings->default_category)
+	switch (m_settings->default_category)
 	{
 	case Settings::CategoryRecent:
 		m_default_button = m_recent->get_button();
@@ -1364,7 +1365,7 @@ void WhiskerMenu::Window::update_layout()
 	}
 
 	// Handle size group to category buttons
-	const bool category_show_name = wm_settings->category_show_name && !wm_settings->position_categories_horizontal;
+	const bool category_show_name = m_settings->category_show_name && !m_settings->position_categories_horizontal;
 	if (!m_sidebar_size_group && m_layout_commands_alternate && category_show_name)
 	{
 		m_sidebar_size_group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);

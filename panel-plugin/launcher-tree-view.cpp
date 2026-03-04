@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2025 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -41,7 +41,8 @@ static gboolean is_separator(GtkTreeModel* model, GtkTreeIter* iter, gpointer)
 
 //-----------------------------------------------------------------------------
 
-LauncherTreeView::LauncherTreeView() :
+LauncherTreeView::LauncherTreeView(Settings* settings) :
+	m_settings(settings),
 	m_icon_size(0)
 {
 	// Create the view
@@ -265,7 +266,7 @@ void LauncherTreeView::unset_drag_dest()
 void LauncherTreeView::reload_icon_size()
 {
 	// Force libxfce4ui to reload SVG icons
-	if (m_icon_size != wm_settings->launcher_icon_size.get_size())
+	if (m_icon_size != m_settings->launcher_icon_size.get_size())
 	{
 		gtk_tree_view_remove_column(m_view, m_column);
 		create_column();
@@ -276,7 +277,7 @@ void LauncherTreeView::reload_icon_size()
 
 void LauncherTreeView::create_column()
 {
-	m_icon_size = wm_settings->launcher_icon_size.get_size();
+	m_icon_size = m_settings->launcher_icon_size.get_size();
 
 	m_column = gtk_tree_view_column_new();
 	gtk_tree_view_column_set_expand(m_column, true);
