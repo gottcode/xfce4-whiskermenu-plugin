@@ -663,6 +663,20 @@ void StringList::set(int pos, const std::string& value)
 
 //-----------------------------------------------------------------------------
 
+void StringList::swap(std::size_t i, std::size_t j)
+{
+	if (i >= m_data.size() || j >= m_data.size())
+	{
+		return;
+	}
+
+	std::swap(m_data[i], m_data[j]);
+	m_modified = true;
+	m_order_unchanged = false;
+}
+
+//-----------------------------------------------------------------------------
+
 void StringList::load(XfceRc* rc, bool is_default)
 {
 	if (!xfce_rc_has_entry(rc, m_property + 1))

@@ -177,6 +177,7 @@ public:
 	void push_back(const std::string& value);
 	void resize(int count);
 	void set(int pos, const std::string& value);
+	void swap(std::size_t i, std::size_t j);
 
 	bool is_order_unchanged() const
 	{
