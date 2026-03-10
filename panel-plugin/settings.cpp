@@ -82,7 +82,7 @@ Settings::Settings(Plugin* plugin) :
 
 	search_actions(this, {
 #if LIBXFCE4UI_CHECK_VERSION(4, 21, 0)
-		new SearchAction(this, _("Man Pages"), "#", "xfce-open --launch TerminalEmulator man %s"),
+		new SearchAction(this, _("Man Pages"), "#", "xfce-open --launch TerminalEmulator man %s", false),
 		new SearchAction(this, _("Search the Web"), "?", "xfce-open --launch WebBrowser https://duckduckgo.com/?q=%u", false),
 		new SearchAction(this, _("Search for Files"), "-", "catfish --path=~ --start %s", false),
 		new SearchAction(this, _("Wikipedia"), "!w", "xfce-open --launch WebBrowser https://en.wikipedia.org/wiki/%u", false),
