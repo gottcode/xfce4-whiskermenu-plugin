@@ -276,3 +276,53 @@ void FavoritesPage::view_created()
 }
 
 //-----------------------------------------------------------------------------
+
+void FavoritesPage::move_up(Launcher* launcher)
+{
+	if (!launcher)
+	{
+		return;
+	}
+
+	std::string desktop_id(launcher->get_desktop_id());
+	auto selected_id_iter = std::find(wm_settings->favorites.begin(), wm_settings->favorites.end(), desktop_id);
+	if (selected_id_iter != wm_settings->favorites.end())
+	{
+		std::ptrdiff_t dist = std::distance(wm_settings->favorites.begin(), selected_id_iter);
+		if (dist <= 0 || dist >= wm_settings->favorites.size())
+		{
+			return;
+		}
+
+		std::size_t index = static_cast<std::size_t>(dist);
+		wm_settings->favorites.swap(index, index - 1);
+
+		set_menu_items();
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void FavoritesPage::move_down(Launcher* launcher)
+{
+	if (!launcher)
+	{
+		return;
+	}
+
+	std::string desktop_id(launcher->get_desktop_id());
+	auto selected_id_iter = std::find(wm_settings->favorites.begin(), wm_settings->favorites.end(), desktop_id);
+	if (selected_id_iter != wm_settings->favorites.end())
+	{
+		std::ptrdiff_t dist = std::distance(wm_settings->favorites.begin(), selected_id_iter);
+		if (dist < 0 || dist >= wm_settings->favorites.size() - 1)
+		{
+			return;
+		}
+
+		std::size_t index = static_cast<std::size_t>(dist);
+		wm_settings->favorites.swap(index, index + 1);
+
+		set_menu_items();
+	}
+}

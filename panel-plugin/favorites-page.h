@@ -37,6 +37,8 @@ public:
 	void remove(Launcher* launcher);
 	void set_menu_items();
 	void unset_menu_items();
+	void move_up(Launcher* launcher);
+	void move_down(Launcher* launcher);
 
 private:
 	void extend_context_menu(GtkWidget* menu) override;
