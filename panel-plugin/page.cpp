@@ -40,10 +40,10 @@ Page::Page(Settings* settings, Window* window, const gchar* icon, const gchar* t
 	m_settings(settings),
 	m_window(window),
 	m_button(nullptr),
-	m_selected_launcher(nullptr),
 	m_drag_enabled(true),
 	m_launcher_dragged(false),
-	m_reorderable(false)
+	m_reorderable(false),
+	m_selected_launcher(nullptr)
 {
 	// Create button
 	if (icon && text)

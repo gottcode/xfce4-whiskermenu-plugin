@@ -96,10 +96,12 @@ private:
 	CategoryButton* m_button;
 	GtkWidget* m_widget;
 	LauncherView* m_view;
-	Launcher* m_selected_launcher;
 	bool m_drag_enabled;
 	bool m_launcher_dragged;
 	bool m_reorderable;
+
+protected:
+	Launcher* m_selected_launcher;
 };
 
 }
