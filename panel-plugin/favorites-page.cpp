@@ -141,43 +141,41 @@ void FavoritesPage::unset_menu_items()
 
 void FavoritesPage::extend_context_menu(GtkWidget* menu)
 {
-	Launcher* selected_launcher = get_selected_launcher();
-	if (!selected_launcher)
-	{
-		return;
-	}
-
-	int selected_index = m_settings->favorites.find(selected_launcher->get_desktop_id());
-
 	GtkWidget* menuitem = gtk_separator_menu_item_new();
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
-	menuitem = whiskermenu_image_menu_item_new("go-up", _("Move Up"));
-	connect(menuitem, "activate",
-		[this, selected_launcher](GtkMenuItem*)
-		{
-			move_up(selected_launcher);
-		});
-	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
-	if (selected_index == 0)
+	Launcher* selected_launcher = get_selected_launcher();
+	if (selected_launcher)
 	{
-		gtk_widget_set_sensitive(menuitem, false);
-	}
+		const int selected_index = m_settings->favorites.find(selected_launcher->get_desktop_id());
 
-	menuitem = whiskermenu_image_menu_item_new("go-down", _("Move Down"));
-	connect(menuitem, "activate",
-		[this, selected_launcher](GtkMenuItem*)
+		menuitem = whiskermenu_image_menu_item_new("go-up", _("Move Up"));
+		connect(menuitem, "activate",
+			[this, selected_launcher](GtkMenuItem*)
+			{
+				move_up(selected_launcher);
+			});
+		gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+		if (selected_index == 0)
 		{
-			move_down(selected_launcher);
-		});
-	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
-	if (selected_index == m_settings->favorites.size() - 1)
-	{
-		gtk_widget_set_sensitive(menuitem, false);
-	}
+			gtk_widget_set_sensitive(menuitem, false);
+		}
 
-	menuitem = gtk_separator_menu_item_new();
-	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+		menuitem = whiskermenu_image_menu_item_new("go-down", _("Move Down"));
+		connect(menuitem, "activate",
+			[this, selected_launcher](GtkMenuItem*)
+			{
+				move_down(selected_launcher);
+			});
+		gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+		if (selected_index == m_settings->favorites.size() - 1)
+		{
+			gtk_widget_set_sensitive(menuitem, false);
+		}
+
+		menuitem = gtk_separator_menu_item_new();
+		gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+	}
 
 	menuitem = whiskermenu_image_menu_item_new("view-sort-ascending", _("Sort Alphabetically A-Z"));
 	connect(menuitem, "activate",
