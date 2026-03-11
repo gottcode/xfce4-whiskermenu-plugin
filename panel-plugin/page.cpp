@@ -479,6 +479,9 @@ void Page::create_context_menu(GtkTreePath* path, GdkEvent* event)
 					m_window->get_favorites()->move_down(m_selected_launcher);
 				});
 			gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+
+			menuitem = gtk_separator_menu_item_new();
+			gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 		}
 
 		menuitem = whiskermenu_image_menu_item_new("list-remove", _("Remove from Favorites"));
