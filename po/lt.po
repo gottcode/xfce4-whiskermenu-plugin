@@ -1,17 +1,17 @@
 # Lithuanian translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2025 Graeme Gott
+# Copyright (C) 2026 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 # 
 # Translators:
 # Moo, 2014-2023
-# Moo, 2023-2025
+# Moo, 2023-2026
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 14:38-0500\n"
+"POT-Creation-Date: 2026-03-11 07:30-0400\n"
 "PO-Revision-Date: 2013-06-20 11:26+0000\n"
-"Last-Translator: Moo, 2023-2025\n"
+"Last-Translator: Moo, 2023-2026\n"
 "Language-Team: Lithuanian (http://app.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/lt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,595 +19,629 @@ msgstr ""
 "Language: lt\n"
 "Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);\n"
 
-#: ../panel-plugin/settings-dialog.cpp:1041
-msgid "Add action"
-msgstr "Pridėti veiksmą"
-
-#: ../panel-plugin/page.cpp:513
-msgid "Add to Autostart"
-msgstr "Pridėti į automatinį paleidimą"
-
-#: ../panel-plugin/page.cpp:494
-msgid "Add to Desktop"
-msgstr "Pridėti į darbalaukį"
-
-#: ../panel-plugin/page.cpp:473
-msgid "Add to Favorites"
-msgstr "Pridėti į mėgstamas"
-
-#: ../panel-plugin/page.cpp:502
-msgid "Add to Panel"
-msgstr "Pridėti į skydelį"
-
-#: ../panel-plugin/applications-page.cpp:35 ../panel-plugin/category.cpp:51
-#: ../panel-plugin/settings-dialog.cpp:809
+#. Add option to display all applications
+#: panel-plugin/applications-page.cpp:35 panel-plugin/category.cpp:52
+#: panel-plugin/settings-dialog.cpp:825
 msgid "All Applications"
 msgstr "Visos programos"
 
-#: ../panel-plugin/plugin.cpp:418
-msgid "Alternate application launcher for Xfce"
-msgstr "Alternatyvus programų leistukas Xfce darbalaukio aplinkai"
-
-#: ../panel-plugin/settings-dialog.cpp:904
-msgid "Amount of _items:"
-msgstr "Elementų ska_ičius:"
-
-#: ../panel-plugin/settings-dialog.cpp:476
-msgid "Application icon si_ze:"
-msgstr "Programų piktogramų d_ydis:"
-
-#: ../panel-plugin/settings.cpp:42
-msgid "Applications"
-msgstr "Programos"
-
-#: ../panel-plugin/launcher.cpp:181
-#, c-format
-msgid "Are you sure you want to hide \"%s\"?"
-msgstr "Ar tikrai norite paslėpti „%s“?"
-
-#: ../panel-plugin/settings.cpp:122
-msgid "Are you sure you want to log out?"
-msgstr "Ar tikrai norite atsijungti?"
-
-#: ../panel-plugin/settings.cpp:129
-msgid "Are you sure you want to restart?"
-msgstr "Ar tikrai norite paleisti iš naujo?"
-
-#: ../panel-plugin/settings.cpp:136
-msgid "Are you sure you want to shut down?"
-msgstr "Ar tikrai norite išjungti?"
-
-#: ../panel-plugin/settings-dialog.cpp:569
-msgid "Background opacit_y:"
-msgstr "Fono nepermatom_umas:"
-
-#: ../panel-plugin/command-edit.cpp:65
+#: panel-plugin/command-edit.cpp:65
 msgid "Browse the file system to choose a custom command."
 msgstr "Naršyti failų sistemą ir pasirinkti komandą."
 
-#: ../panel-plugin/settings-dialog.cpp:1123
-msgid "C_ommand:"
-msgstr "K_omanda:"
+#: panel-plugin/command-edit.cpp:75
+msgid "Select Command"
+msgstr "Pasirinkti komandą"
 
-#: ../panel-plugin/settings-dialog.cpp:499
-msgid "Categ_ory icon size:"
-msgstr "Kategori_jų piktogramų dydis:"
+#: panel-plugin/command-edit.cpp:78 panel-plugin/settings-dialog.cpp:141
+msgid "_Cancel"
+msgstr "_Atsisakyti"
 
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:109
-msgid "Choose which menu to popup by instance ID"
-msgstr "Pasirinkti, kurį meniu iškelti pagal egzemplioriaus ID"
+#: panel-plugin/command-edit.cpp:79 panel-plugin/settings-dialog.cpp:142
+msgid "_OK"
+msgstr "_Gerai"
 
-#: ../panel-plugin/recent-page.cpp:147
-msgid "Clear Recently Used"
-msgstr "Išvalyti neseniai naudotas"
-
-#: ../panel-plugin/plugin.cpp:419
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:128
-msgid "Copyright © 2013-2025 Graeme Gott"
-msgstr "Autorių teisės © 2013–2025 Graeme Gott"
-
-#: ../panel-plugin/settings-dialog.cpp:796
-msgid "Default Category"
-msgstr "Numatytoji kategorija"
-
-#: ../panel-plugin/settings-dialog.cpp:1074
-msgid "Details"
-msgstr "Išsamiau"
-
-#: ../panel-plugin/settings-dialog.cpp:709
-msgid "Di_splay:"
-msgstr "Ro_dyti:"
-
-#: ../panel-plugin/settings.cpp:143
-msgid "Do you want to suspend to RAM?"
-msgstr "Ar norite pristabdyti į RAM?"
-
-#: ../panel-plugin/settings.cpp:150
-msgid "Do you want to suspend to disk?"
-msgstr "Ar norite pristabdyti į diską?"
-
-#: ../panel-plugin/page.cpp:535
-msgid "Edit Application..."
-msgstr "Taisyti programą..."
-
-#: ../panel-plugin/settings.cpp:164
-msgid "Edit _Profile"
-msgstr "Redaguoti pr_ofilį"
-
-#: ../panel-plugin/settings.cpp:166
-msgid "Failed to edit profile."
-msgstr "Nepavyko redaguoti profilį."
-
-#: ../panel-plugin/element.cpp:98
+#: panel-plugin/element.cpp:98
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "Nepavyko įvykdyti komandos „%s“."
 
-#: ../panel-plugin/settings.cpp:149
-msgid "Failed to hibernate."
-msgstr "Nepavyko užmigdyti."
-
-#: ../panel-plugin/settings.cpp:161
-msgid "Failed to launch menu editor."
-msgstr "Nepavyko paleisti meniu redaktoriaus."
-
-#: ../panel-plugin/settings.cpp:111
-msgid "Failed to lock screen."
-msgstr "Nepavyko užrakinti ekrano."
-
-#: ../panel-plugin/settings.cpp:121 ../panel-plugin/settings.cpp:156
-msgid "Failed to log out."
-msgstr "Nepavyko atsijungti."
-
-#: ../panel-plugin/settings.cpp:106
-msgid "Failed to open settings manager."
-msgstr "Nepavyko atverti nustatymų tvarkytuvės."
-
-#: ../panel-plugin/settings.cpp:128
-msgid "Failed to restart."
-msgstr "Nepavyko paleisti iš naujo."
-
-#: ../panel-plugin/settings.cpp:135
-msgid "Failed to shut down."
-msgstr "Nepavyko išjungti."
-
-#: ../panel-plugin/settings.cpp:142
-msgid "Failed to suspend."
-msgstr "Nepavyko pristabdyti."
-
-#: ../panel-plugin/settings.cpp:116
-msgid "Failed to switch user."
-msgstr "Nepavyko perjungti naudotojo."
-
-#: ../panel-plugin/favorites-page.cpp:37
-#: ../panel-plugin/settings-dialog.cpp:800
+#. Add option to display favorites
+#: panel-plugin/favorites-page.cpp:37 panel-plugin/settings-dialog.cpp:816
 msgid "Favorites"
 msgstr "Mėgstamos"
 
-#: ../panel-plugin/settings.cpp:151
-#, c-format
-msgid "Hibernating computer in %d seconds."
-msgstr "Kompiuteris užmigdomas po %d sekundžių."
-
-#: ../panel-plugin/settings-dialog.cpp:685
-msgid "Hidden"
-msgstr "Paslėptas"
-
-#: ../panel-plugin/launcher.cpp:180 ../panel-plugin/page.cpp:543
-msgid "Hide Application"
-msgstr "Slėpti programą"
-
-#: ../panel-plugin/settings-dialog.cpp:714
-msgid "Icon"
-msgstr "Piktogramą"
-
-#: ../panel-plugin/settings-dialog.cpp:716
-msgid "Icon and title"
-msgstr "Piktogramą ir užrašą"
-
-#: ../panel-plugin/settings-dialog.cpp:927
-msgid "Include _favorites"
-msgstr "Įtraukti _mėgstamas"
-
-#: ../panel-plugin/icon-size.cpp:65
-msgid "Large"
-msgstr "Didelis"
-
-#: ../panel-plugin/icon-size.cpp:66
-msgid "Larger"
-msgstr "Didesnis"
-
-#: ../panel-plugin/settings.cpp:154
-msgid "Log Ou_t..."
-msgstr "A_tsijungti..."
-
-#: ../panel-plugin/settings.cpp:119
-msgid "Log _Out"
-msgstr "Atsi_jungti"
-
-#: ../panel-plugin/settings.cpp:123
-#, c-format
-msgid "Logging out in %d seconds."
-msgstr "Atsijungiama po %d sekundžių."
-
-#: ../panel-plugin/settings.cpp:90
-msgid "Man Pages"
-msgstr "Vadovo puslapiai"
-
-#: ../panel-plugin/settings-dialog.cpp:612
-#: ../panel-plugin/settings-dialog.cpp:857
-msgid "Menu"
-msgstr "Meniu"
-
-#: ../panel-plugin/settings-dialog.cpp:551
-msgid "Menu _height:"
-msgstr "Meniu _aukštis:"
-
-#: ../panel-plugin/settings-dialog.cpp:533
-msgid "Menu _width:"
-msgstr "Meniu _plotis:"
-
-#: ../panel-plugin/settings-dialog.cpp:1078
-msgid "Nam_e:"
-msgstr "_Pavadinimas:"
-
-#: ../panel-plugin/settings-dialog.cpp:1019
-msgid "Name"
-msgstr "Pavadinimas"
-
-#: ../panel-plugin/search-page.cpp:71
-msgid "No applications found"
-msgstr "Nerasta jokių programų"
-
-#: ../panel-plugin/icon-size.cpp:60
-msgid "None"
-msgstr "Joks"
-
-#: ../panel-plugin/icon-size.cpp:64
-msgid "Normal"
-msgstr "Normalus"
-
-#: ../panel-plugin/settings.cpp:95
-msgid "Open URI"
-msgstr "Atverti URI"
-
-#: ../panel-plugin/settings-dialog.cpp:676
-msgid "P_rofile:"
-msgstr "P_rofilis:"
-
-#: ../panel-plugin/settings-dialog.cpp:705
-msgid "Panel Button"
-msgstr "Skydelio mygtukas"
-
-#: ../panel-plugin/settings-dialog.cpp:1024
-msgid "Pattern"
-msgstr "Šablonas"
-
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
-msgid "Popup menu at center of screen"
-msgstr "Rodyti iškylantįjį meniu ekrano viduryje"
-
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
-msgid "Popup menu at current mouse position"
-msgstr "Iškelti meniu dabartinėje pelės vietoje"
-
-#: ../panel-plugin/settings-dialog.cpp:654
-msgid "Position _search entry on bottom"
-msgstr "Išdėstyti _paieškos lauką apačioje"
-
-#: ../panel-plugin/settings-dialog.cpp:627
-#: ../panel-plugin/settings-dialog.cpp:632
-msgid "Position cate_gories on bottom"
-msgstr "Išdėstyti kate_gorijas apačioje"
-
-#: ../panel-plugin/settings-dialog.cpp:627
-#: ../panel-plugin/settings-dialog.cpp:632
-msgid "Position cate_gories on left"
-msgstr "Išdėstyti kate_gorijas kairėje"
-
-#: ../panel-plugin/settings-dialog.cpp:616
-msgid "Position categories _horizontally"
-msgstr "Išdėstyti kategorijas _horizontaliai"
-
-#: ../panel-plugin/settings-dialog.cpp:665
-msgid "Position commands next to search _entry"
-msgstr "Išdės_tyti komandas šalia paieškos lauko"
-
-#: ../panel-plugin/settings-dialog.cpp:643
-msgid "Position pro_file on bottom"
-msgstr "Išdėstyti pro_filį apačioje"
-
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
-msgid "Print available menu instance IDs"
-msgstr "Parodyti prieinamus meniu egzemplioriaus ID"
-
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:110
-msgid "Print version information and exit"
-msgstr "Parodyti informaciją apie versiją ir išeiti"
-
-#: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:804
-#: ../panel-plugin/settings-dialog.cpp:900
-msgid "Recently Used"
-msgstr "Neseniai naudotos"
-
-#: ../panel-plugin/settings-dialog.cpp:218
-#, c-format
-msgid "Remove action \"%s\"?"
-msgstr "Šalinti veiksmą „%s“?"
-
-#: ../panel-plugin/page.cpp:523
-msgid "Remove from Autostart"
-msgstr "Šalinti iš automatinio paleidimo"
-
-#: ../panel-plugin/page.cpp:484
-msgid "Remove from Favorites"
-msgstr "Šalinti iš mėgstamų"
-
-#: ../panel-plugin/settings-dialog.cpp:1053
-msgid "Remove selected action"
-msgstr "Šalinti pasirinktą veiksmą"
-
-#: ../panel-plugin/settings.cpp:130
-#, c-format
-msgid "Restarting computer in %d seconds."
-msgstr "Kompiuteris paleidžiamas iš naujo po %d sekundžių."
-
-#: ../panel-plugin/settings-dialog.cpp:683
-msgid "Round Picture"
-msgstr "Apvalus paveikslas"
-
-#: ../panel-plugin/run-action.cpp:64
-#, c-format
-msgid "Run %s"
-msgstr "Vykdyti %s"
-
-#: ../panel-plugin/settings.cpp:94
-msgid "Run in Terminal"
-msgstr "Vykdyti terminale"
-
-#: ../panel-plugin/settings-dialog.cpp:102
-msgid "Search Actio_ns"
-msgstr "Paieškos veiksm_ai"
-
-#: ../panel-plugin/search-action.cpp:260
-msgid "Search Action"
-msgstr "Paieškos veiksmas"
-
-#: ../panel-plugin/settings.cpp:92
-msgid "Search for Files"
-msgstr "Ieškoti failų"
-
-#: ../panel-plugin/settings.cpp:91
-msgid "Search the Web"
-msgstr "Ieškoti internete"
-
-#: ../panel-plugin/command-edit.cpp:75
-msgid "Select Command"
-msgstr "Pasirinkti komandą"
-
-#: ../panel-plugin/settings-dialog.cpp:135
-msgid "Select an Icon"
-msgstr "Pasirinkti piktogramą"
-
-#: ../panel-plugin/settings-dialog.cpp:940
-msgid "Session Commands"
-msgstr "Seanso komandos"
-
-#: ../panel-plugin/whiskermenu.desktop.in:5
-msgid "Show a menu to easily access installed applications"
-msgstr "Rodyti meniu, siekiant lengvai pasiekti įdiegtas programas"
-
-#: ../panel-plugin/settings-dialog.cpp:459
-msgid "Show application _descriptions"
-msgstr "Rodyti programų aprašy_mus"
-
-#: ../panel-plugin/settings-dialog.cpp:448
-msgid "Show application too_ltips"
-msgstr "Rodyti programų paaiškinimus"
-
-#: ../panel-plugin/settings-dialog.cpp:318
-msgid "Show as _icons"
-msgstr "Rodyti kaip p_iktogramas"
-
-#: ../panel-plugin/settings-dialog.cpp:335
-msgid "Show as lis_t"
-msgstr "Rodyti kaip są_rašą"
-
-#: ../panel-plugin/settings-dialog.cpp:353
-msgid "Show as t_ree"
-msgstr "Rodyti kaip _medį"
-
-#: ../panel-plugin/settings-dialog.cpp:944
-msgid "Show c_onfirmation dialog"
-msgstr "Rodyti patvir_tinimo dialogą"
-
-#: ../panel-plugin/settings-dialog.cpp:436
-msgid "Show cate_gory names"
-msgstr "Rodyti kate_gorijų pavadinimus"
-
-#: ../panel-plugin/settings-dialog.cpp:424
-msgid "Show generic application _names"
-msgstr "Rodyti _bendrinius programų pavadinimus"
-
-#: ../panel-plugin/settings.cpp:133
-msgid "Shut _Down"
-msgstr "_Išjungti"
-
-#: ../panel-plugin/icon-size.cpp:63
-msgid "Small"
-msgstr "Mažas"
-
-#: ../panel-plugin/icon-size.cpp:62
-msgid "Smaller"
-msgstr "Mažesnis"
-
-#: ../panel-plugin/favorites-page.cpp:147
+#: panel-plugin/favorites-page.cpp:147
 msgid "Sort Alphabetically A-Z"
 msgstr "Surikiuoti pagal abėcėlę A-Ž"
 
-#: ../panel-plugin/favorites-page.cpp:155
+#: panel-plugin/favorites-page.cpp:155
 msgid "Sort Alphabetically Z-A"
 msgstr "Surikiuoti pagal abėcėlę Ž-A"
 
-#: ../panel-plugin/settings-dialog.cpp:883
-msgid "Sort ca_tegories"
-msgstr "Rikiuoti ka_tegorijas"
+#: panel-plugin/icon-size.cpp:61
+msgid "None"
+msgstr "Joks"
 
-#: ../panel-plugin/settings-dialog.cpp:684
-msgid "Square Picture"
-msgstr "Kvadratinis paveikslas"
+#: panel-plugin/icon-size.cpp:62
+msgid "Very Small"
+msgstr "Labai mažas"
 
-#: ../panel-plugin/settings-dialog.cpp:872
-msgid "Stay _visible when focus is lost"
-msgstr "Išlikti matomu, kai prarandamas fokusavimas"
+#: panel-plugin/icon-size.cpp:63
+msgid "Smaller"
+msgstr "Mažesnis"
 
-#: ../panel-plugin/settings.cpp:140
-msgid "Suspe_nd"
-msgstr "_Pristabdyti"
+#: panel-plugin/icon-size.cpp:64
+msgid "Small"
+msgstr "Mažas"
 
-#: ../panel-plugin/settings.cpp:144
-#, c-format
-msgid "Suspending computer in %d seconds."
-msgstr "Kompiuteris pristabdomas po %d sekundžių."
+#: panel-plugin/icon-size.cpp:65
+msgid "Normal"
+msgstr "Normalus"
 
-#: ../panel-plugin/settings.cpp:114
-msgid "Switch _User"
-msgstr "Perj_ungti naudotoją"
+#: panel-plugin/icon-size.cpp:66
+msgid "Large"
+msgstr "Didelis"
 
-#: ../panel-plugin/settings-dialog.cpp:861
-msgid "Switch categories by _hovering"
-msgstr "_Perjungti kategorijas, užvedant pelės rodyklę"
+#: panel-plugin/icon-size.cpp:67
+msgid "Larger"
+msgstr "Didesnis"
 
-#: ../panel-plugin/settings-dialog.cpp:217
-msgid "The action will be deleted permanently."
-msgstr "Šis veiksmas bus pašalintas negrįžtamai."
+#: panel-plugin/icon-size.cpp:68
+msgid "Very Large"
+msgstr "Labai didelis"
 
-#: ../panel-plugin/settings-dialog.cpp:715
-msgid "Title"
-msgstr "Užrašą"
-
-#: ../panel-plugin/launcher.cpp:176
+#. I18N: the first %s will be replaced with desktop file path, the second with
+#. Hidden=true
+#: panel-plugin/launcher.cpp:206
 #, c-format
 msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
 msgstr "Norėdami nustoti slėpti, turite rankiniu būdu pašalinti failą „%s“ arba atverti failą ir pašalinti eilutę „%s“."
 
-#: ../panel-plugin/settings.cpp:137
-#, c-format
-msgid "Turning off computer in %d seconds."
-msgstr "Kompiuteris išjungiamas po %d sekundžių."
+#: panel-plugin/launcher.cpp:210 panel-plugin/page.cpp:555
+msgid "Hide Application"
+msgstr "Slėpti programą"
 
-#: ../panel-plugin/page.cpp:606
+#: panel-plugin/launcher.cpp:211
+#, c-format
+msgid "Are you sure you want to hide \"%s\"?"
+msgstr "Ar tikrai norite paslėpti „%s“?"
+
+#: panel-plugin/page.cpp:452
+msgid "Add to Favorites"
+msgstr "Pridėti į mėgstamas"
+
+#: panel-plugin/page.cpp:465
+msgid "Move Up"
+msgstr "Pakelti"
+
+#: panel-plugin/page.cpp:478
+msgid "Move Down"
+msgstr "Nuleisti"
+
+#: panel-plugin/page.cpp:495
+msgid "Remove from Favorites"
+msgstr "Šalinti iš mėgstamų"
+
+#: panel-plugin/page.cpp:505
+msgid "Add to Desktop"
+msgstr "Pridėti į darbalaukį"
+
+#: panel-plugin/page.cpp:513
+msgid "Add to Panel"
+msgstr "Pridėti į skydelį"
+
+#: panel-plugin/page.cpp:523
+msgid "Add to Autostart"
+msgstr "Pridėti į automatinį paleidimą"
+
+#: panel-plugin/page.cpp:534
+msgid "Remove from Autostart"
+msgstr "Šalinti iš automatinio paleidimo"
+
+#: panel-plugin/page.cpp:547
+msgid "Edit Application..."
+msgstr "Taisyti programą..."
+
+#: panel-plugin/page.cpp:618
 msgid "Unable to add launcher to desktop."
 msgstr "Nepavyko pridėti leistuko į darbalaukį."
 
-#: ../panel-plugin/page.cpp:646 ../panel-plugin/page.cpp:659
+#: panel-plugin/page.cpp:658 panel-plugin/page.cpp:671
 msgid "Unable to add launcher to panel."
 msgstr "Nepavyko pridėti leistuko į skydelį."
 
-#: ../panel-plugin/page.cpp:700
+#: panel-plugin/page.cpp:695
 msgid "Unable to edit launcher."
 msgstr "Nepavyko redaguoti leistuko."
 
-#: ../panel-plugin/settings-dialog.cpp:277
+#: panel-plugin/plugin.cpp:423
+msgid "Alternate application launcher for Xfce"
+msgstr "Alternatyvus programų leistukas Xfce darbalaukio aplinkai"
+
+#: panel-plugin/plugin.cpp:428
+msgid "translator-credits"
+msgstr "Moo"
+
+#. Add option to display recently used
+#: panel-plugin/recent-page.cpp:37 panel-plugin/settings-dialog.cpp:820
+#: panel-plugin/settings-dialog.cpp:916
+msgid "Recently Used"
+msgstr "Neseniai naudotos"
+
+#: panel-plugin/recent-page.cpp:147
+msgid "Clear Recently Used"
+msgstr "Išvalyti neseniai naudotas"
+
+#: panel-plugin/run-action.cpp:65
+#, c-format
+msgid "Run %s"
+msgstr "Vykdyti %s"
+
+#: panel-plugin/search-action.cpp:262
+msgid "Search Action"
+msgstr "Paieškos veiksmas"
+
+#: panel-plugin/search-page.cpp:72
+msgid "No applications found"
+msgstr "Nerasta jokių programų"
+
+#. Create dialog window
+#: panel-plugin/settings-dialog.cpp:84 panel-plugin/whiskermenu.desktop.in:4
+msgid "Whisker Menu"
+msgstr "Whisker meniu"
+
+#: panel-plugin/settings-dialog.cpp:87
+msgid "_Help"
+msgstr "Ži_nynas"
+
+#: panel-plugin/settings-dialog.cpp:88
+msgid "_Close"
+msgstr "_Užverti"
+
+#: panel-plugin/settings-dialog.cpp:102
+msgid "_General"
+msgstr "_Bendra"
+
+#: panel-plugin/settings-dialog.cpp:103
+msgid "_Appearance"
+msgstr "_Išvaizda"
+
+#: panel-plugin/settings-dialog.cpp:104
+msgid "_Behavior"
+msgstr "_Elgsena"
+
+#: panel-plugin/settings-dialog.cpp:105
+msgid "_Commands"
+msgstr "_Komandos"
+
+#: panel-plugin/settings-dialog.cpp:106
+msgid "Search Actio_ns"
+msgstr "Paieškos veiksm_ai"
+
+#: panel-plugin/settings-dialog.cpp:136 panel-plugin/settings-dialog.cpp:138
+msgid "Select an Icon"
+msgstr "Pasirinkti piktogramą"
+
+#: panel-plugin/settings-dialog.cpp:228
+msgid "_Delete"
+msgstr "_Ištrinti"
+
+#: panel-plugin/settings-dialog.cpp:229
+msgid "The action will be deleted permanently."
+msgstr "Šis veiksmas bus pašalintas negrįžtamai."
+
+#: panel-plugin/settings-dialog.cpp:230
+#, c-format
+msgid "Remove action \"%s\"?"
+msgstr "Šalinti veiksmą „%s“?"
+
+#: panel-plugin/settings-dialog.cpp:293
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Nepavyko atverti sekančio url: %s"
 
-#: ../panel-plugin/settings-dialog.cpp:770
-msgid "Use a single _panel row"
-msgstr "Naudoti vieną _skydelio eilutę"
+#. Add option to show as icons
+#: panel-plugin/settings-dialog.cpp:334
+msgid "Show as _icons"
+msgstr "Rodyti kaip p_iktogramas"
 
-#: ../panel-plugin/icon-size.cpp:67
-msgid "Very Large"
-msgstr "Labai didelis"
+#. Add option to show as list
+#: panel-plugin/settings-dialog.cpp:351
+msgid "Show as lis_t"
+msgstr "Rodyti kaip są_rašą"
 
-#: ../panel-plugin/icon-size.cpp:61
-msgid "Very Small"
-msgstr "Labai mažas"
+#. Add option to show as tree
+#: panel-plugin/settings-dialog.cpp:369
+msgid "Show as t_ree"
+msgstr "Rodyti kaip _medį"
 
-#: ../panel-plugin/settings-dialog.cpp:80
-#: ../panel-plugin/whiskermenu.desktop.in:4
-msgid "Whisker Menu"
-msgstr "Whisker meniu"
+#. Add option to use generic names
+#: panel-plugin/settings-dialog.cpp:440
+msgid "Show generic application _names"
+msgstr "Rodyti _bendrinius programų pavadinimus"
 
-#: ../panel-plugin/settings.cpp:93
-msgid "Wikipedia"
-msgstr "Vikipedija"
+#. Add option to hide category names
+#: panel-plugin/settings-dialog.cpp:452
+msgid "Show cate_gory names"
+msgstr "Rodyti kate_gorijų pavadinimus"
 
-#: ../panel-plugin/settings-dialog.cpp:99
-msgid "_Appearance"
-msgstr "_Išvaizda"
+#. Add option to hide tooltips
+#: panel-plugin/settings-dialog.cpp:464
+msgid "Show application too_ltips"
+msgstr "Rodyti programų paaiškinimus"
 
-#: ../panel-plugin/settings-dialog.cpp:100
-msgid "_Behavior"
-msgstr "_Elgsena"
+#. Add option to hide descriptions
+#: panel-plugin/settings-dialog.cpp:475
+msgid "Show application _descriptions"
+msgstr "Rodyti programų aprašy_mus"
 
-#: ../panel-plugin/command-edit.cpp:78 ../panel-plugin/settings-dialog.cpp:137
-msgid "_Cancel"
-msgstr "_Atsisakyti"
+#. Add item icon size selector
+#: panel-plugin/settings-dialog.cpp:492
+msgid "Application icon si_ze:"
+msgstr "Programų piktogramų d_ydis:"
 
-#: ../panel-plugin/settings-dialog.cpp:84
-msgid "_Close"
-msgstr "_Užverti"
+#. Add category icon size selector
+#: panel-plugin/settings-dialog.cpp:515
+msgid "Categ_ory icon size:"
+msgstr "Kategori_jų piktogramų dydis:"
 
-#: ../panel-plugin/settings-dialog.cpp:101
-msgid "_Commands"
-msgstr "_Komandos"
+#. Add option to change menu width
+#: panel-plugin/settings-dialog.cpp:549
+msgid "Menu _width:"
+msgstr "Meniu _plotis:"
 
-#: ../panel-plugin/settings-dialog.cpp:216
-msgid "_Delete"
-msgstr "_Ištrinti"
+#. Add option to change menu height
+#: panel-plugin/settings-dialog.cpp:567
+msgid "Menu _height:"
+msgstr "Meniu _aukštis:"
 
-#: ../panel-plugin/settings.cpp:159
-msgid "_Edit Applications"
-msgstr "Taisyti p_rogramas"
+#. Add option to control background opacity
+#: panel-plugin/settings-dialog.cpp:585
+msgid "Background opacit_y:"
+msgstr "Fono nepermatom_umas:"
 
-#: ../panel-plugin/settings-dialog.cpp:98
-msgid "_General"
-msgstr "_Bendra"
+#: panel-plugin/settings-dialog.cpp:628 panel-plugin/settings-dialog.cpp:873
+msgid "Menu"
+msgstr "Meniu"
 
-#: ../panel-plugin/settings-dialog.cpp:83
-msgid "_Help"
-msgstr "Ži_nynas"
+#. Add option to use horizontal categories
+#: panel-plugin/settings-dialog.cpp:632
+msgid "Position categories _horizontally"
+msgstr "Išdėstyti kategorijas _horizontaliai"
 
-#: ../panel-plugin/settings.cpp:147
-msgid "_Hibernate"
-msgstr "_Užmigdyti"
+#: panel-plugin/settings-dialog.cpp:643 panel-plugin/settings-dialog.cpp:648
+msgid "Position cate_gories on bottom"
+msgstr "Išdėstyti kate_gorijas apačioje"
 
-#: ../panel-plugin/settings-dialog.cpp:752
-msgid "_Icon:"
-msgstr "_Piktograma:"
+#: panel-plugin/settings-dialog.cpp:643 panel-plugin/settings-dialog.cpp:648
+msgid "Position cate_gories on left"
+msgstr "Išdėstyti kate_gorijas kairėje"
 
-#: ../panel-plugin/settings.cpp:109
-msgid "_Lock Screen"
-msgstr "_Užrakinti ekraną"
+#. Add option to use alternate profile position
+#: panel-plugin/settings-dialog.cpp:659
+msgid "Position pro_file on bottom"
+msgstr "Išdėstyti pro_filį apačioje"
 
-#: ../panel-plugin/command-edit.cpp:79 ../panel-plugin/settings-dialog.cpp:138
-msgid "_OK"
-msgstr "_Gerai"
+#. Add option to use alternate search entry position
+#: panel-plugin/settings-dialog.cpp:670
+msgid "Position _search entry on bottom"
+msgstr "Išdėstyti _paieškos lauką apačioje"
 
-#: ../panel-plugin/settings-dialog.cpp:1101
-msgid "_Pattern:"
-msgstr "Ša_blonas:"
+#. Add option to use alternate commands position
+#: panel-plugin/settings-dialog.cpp:681
+msgid "Position commands next to search _entry"
+msgstr "Išdės_tyti komandas šalia paieškos lauko"
 
-#: ../panel-plugin/settings-dialog.cpp:1142
-msgid "_Regular expression"
-msgstr "_Reguliarusis reiškinys"
+#. Add profile shape selector
+#: panel-plugin/settings-dialog.cpp:692
+msgid "P_rofile:"
+msgstr "P_rofilis:"
 
-#: ../panel-plugin/settings.cpp:126
-msgid "_Restart"
-msgstr "Pa_leisti iš naujo"
+#: panel-plugin/settings-dialog.cpp:699
+msgid "Round Picture"
+msgstr "Apvalus paveikslas"
 
-#: ../panel-plugin/settings.cpp:104
-msgid "_Settings Manager"
-msgstr "Nu_statymų tvarkytuvė"
+#: panel-plugin/settings-dialog.cpp:700
+msgid "Square Picture"
+msgstr "Kvadratinis paveikslas"
 
-#: ../panel-plugin/settings-dialog.cpp:734
+#: panel-plugin/settings-dialog.cpp:701
+msgid "Hidden"
+msgstr "Paslėptas"
+
+#: panel-plugin/settings-dialog.cpp:721
+msgid "Panel Button"
+msgstr "Skydelio mygtukas"
+
+#. Add button style selector
+#: panel-plugin/settings-dialog.cpp:725
+msgid "Di_splay:"
+msgstr "Ro_dyti:"
+
+#: panel-plugin/settings-dialog.cpp:730
+msgid "Icon"
+msgstr "Piktogramą"
+
+#: panel-plugin/settings-dialog.cpp:731
+msgid "Title"
+msgstr "Užrašą"
+
+#: panel-plugin/settings-dialog.cpp:732
+msgid "Icon and title"
+msgstr "Piktogramą ir užrašą"
+
+#. Add title selector
+#: panel-plugin/settings-dialog.cpp:750
 msgid "_Title:"
 msgstr "Už_rašas:"
 
-#: ../panel-plugin/plugin.cpp:423
-msgid "translator-credits"
-msgstr "Moo"
+#. Add icon selector
+#: panel-plugin/settings-dialog.cpp:768
+msgid "_Icon:"
+msgstr "_Piktograma:"
+
+#: panel-plugin/settings-dialog.cpp:786
+msgid "Use a single _panel row"
+msgstr "Naudoti vieną _skydelio eilutę"
+
+#: panel-plugin/settings-dialog.cpp:812
+msgid "Default Category"
+msgstr "Numatytoji kategorija"
+
+#. Add option to switch categories by hovering
+#: panel-plugin/settings-dialog.cpp:877
+msgid "Switch categories by _hovering"
+msgstr "_Perjungti kategorijas, užvedant pelės rodyklę"
+
+#. Add option to stay when menu loses focus
+#: panel-plugin/settings-dialog.cpp:888
+msgid "Stay _visible when focus is lost"
+msgstr "Išlikti matomu, kai prarandamas fokusavimas"
+
+#. Add option to sort categories
+#: panel-plugin/settings-dialog.cpp:899
+msgid "Sort ca_tegories"
+msgstr "Rikiuoti ka_tegorijas"
+
+#. Add value to change maximum number of recently used entries
+#: panel-plugin/settings-dialog.cpp:920
+msgid "Amount of _items:"
+msgstr "Elementų ska_ičius:"
+
+#. Add option to remember favorites
+#: panel-plugin/settings-dialog.cpp:943
+msgid "Include _favorites"
+msgstr "Įtraukti _mėgstamas"
+
+#: panel-plugin/settings-dialog.cpp:956
+msgid "Session Commands"
+msgstr "Seanso komandos"
+
+#. Add option to show confirmation dialogs
+#: panel-plugin/settings-dialog.cpp:960
+msgid "Show c_onfirmation dialog"
+msgstr "Rodyti patvir_tinimo dialogą"
+
+#: panel-plugin/settings-dialog.cpp:1035
+msgid "Name"
+msgstr "Pavadinimas"
+
+#: panel-plugin/settings-dialog.cpp:1040
+msgid "Pattern"
+msgstr "Šablonas"
+
+#: panel-plugin/settings-dialog.cpp:1057
+msgid "Add action"
+msgstr "Pridėti veiksmą"
+
+#: panel-plugin/settings-dialog.cpp:1069
+msgid "Remove selected action"
+msgstr "Šalinti pasirinktą veiksmą"
+
+#: panel-plugin/settings-dialog.cpp:1090
+msgid "Details"
+msgstr "Išsamiau"
+
+#. Create entry for name
+#: panel-plugin/settings-dialog.cpp:1094
+msgid "Nam_e:"
+msgstr "_Pavadinimas:"
+
+#. Create entry for keyword
+#: panel-plugin/settings-dialog.cpp:1117
+msgid "_Pattern:"
+msgstr "Ša_blonas:"
+
+#. Create entry for command
+#: panel-plugin/settings-dialog.cpp:1139
+msgid "C_ommand:"
+msgstr "K_omanda:"
+
+#. Create toggle button for regular expressions
+#: panel-plugin/settings-dialog.cpp:1158
+msgid "_Regular expression"
+msgstr "_Reguliarusis reiškinys"
+
+#: panel-plugin/settings.cpp:36
+msgid "Applications"
+msgstr "Programos"
+
+#: panel-plugin/settings.cpp:85 panel-plugin/settings.cpp:92
+msgid "Man Pages"
+msgstr "Vadovo puslapiai"
+
+#: panel-plugin/settings.cpp:86 panel-plugin/settings.cpp:93
+msgid "Search the Web"
+msgstr "Ieškoti internete"
+
+#: panel-plugin/settings.cpp:87 panel-plugin/settings.cpp:94
+msgid "Search for Files"
+msgstr "Ieškoti failų"
+
+#: panel-plugin/settings.cpp:88 panel-plugin/settings.cpp:95
+msgid "Wikipedia"
+msgstr "Vikipedija"
+
+#: panel-plugin/settings.cpp:89 panel-plugin/settings.cpp:96
+msgid "Run in Terminal"
+msgstr "Vykdyti terminale"
+
+#: panel-plugin/settings.cpp:90 panel-plugin/settings.cpp:97
+msgid "Open URI"
+msgstr "Atverti URI"
+
+#: panel-plugin/settings.cpp:107
+msgid "_Settings Manager"
+msgstr "Nu_statymų tvarkytuvė"
+
+#: panel-plugin/settings.cpp:109
+msgid "Failed to open settings manager."
+msgstr "Nepavyko atverti nustatymų tvarkytuvės."
+
+#: panel-plugin/settings.cpp:112
+msgid "_Lock Screen"
+msgstr "_Užrakinti ekraną"
+
+#: panel-plugin/settings.cpp:114
+msgid "Failed to lock screen."
+msgstr "Nepavyko užrakinti ekrano."
+
+#: panel-plugin/settings.cpp:117
+msgid "Switch _User"
+msgstr "Perj_ungti naudotoją"
+
+#: panel-plugin/settings.cpp:119
+msgid "Failed to switch user."
+msgstr "Nepavyko perjungti naudotojo."
+
+#: panel-plugin/settings.cpp:122
+msgid "Log _Out"
+msgstr "Atsi_jungti"
+
+#: panel-plugin/settings.cpp:124 panel-plugin/settings.cpp:159
+msgid "Failed to log out."
+msgstr "Nepavyko atsijungti."
+
+#: panel-plugin/settings.cpp:125
+msgid "Are you sure you want to log out?"
+msgstr "Ar tikrai norite atsijungti?"
+
+#: panel-plugin/settings.cpp:126
+#, c-format
+msgid "Logging out in %d seconds."
+msgstr "Atsijungiama po %d sekundžių."
+
+#: panel-plugin/settings.cpp:129
+msgid "_Restart"
+msgstr "Pa_leisti iš naujo"
+
+#: panel-plugin/settings.cpp:131
+msgid "Failed to restart."
+msgstr "Nepavyko paleisti iš naujo."
+
+#: panel-plugin/settings.cpp:132
+msgid "Are you sure you want to restart?"
+msgstr "Ar tikrai norite paleisti iš naujo?"
+
+#: panel-plugin/settings.cpp:133
+#, c-format
+msgid "Restarting computer in %d seconds."
+msgstr "Kompiuteris paleidžiamas iš naujo po %d sekundžių."
+
+#: panel-plugin/settings.cpp:136
+msgid "Shut _Down"
+msgstr "_Išjungti"
+
+#: panel-plugin/settings.cpp:138
+msgid "Failed to shut down."
+msgstr "Nepavyko išjungti."
+
+#: panel-plugin/settings.cpp:139
+msgid "Are you sure you want to shut down?"
+msgstr "Ar tikrai norite išjungti?"
+
+#: panel-plugin/settings.cpp:140
+#, c-format
+msgid "Turning off computer in %d seconds."
+msgstr "Kompiuteris išjungiamas po %d sekundžių."
+
+#: panel-plugin/settings.cpp:143
+msgid "Suspe_nd"
+msgstr "_Pristabdyti"
+
+#: panel-plugin/settings.cpp:145
+msgid "Failed to suspend."
+msgstr "Nepavyko pristabdyti."
+
+#: panel-plugin/settings.cpp:146
+msgid "Do you want to suspend to RAM?"
+msgstr "Ar norite pristabdyti į RAM?"
+
+#: panel-plugin/settings.cpp:147
+#, c-format
+msgid "Suspending computer in %d seconds."
+msgstr "Kompiuteris pristabdomas po %d sekundžių."
+
+#: panel-plugin/settings.cpp:150
+msgid "_Hibernate"
+msgstr "_Užmigdyti"
+
+#: panel-plugin/settings.cpp:152
+msgid "Failed to hibernate."
+msgstr "Nepavyko užmigdyti."
+
+#: panel-plugin/settings.cpp:153
+msgid "Do you want to suspend to disk?"
+msgstr "Ar norite pristabdyti į diską?"
+
+#: panel-plugin/settings.cpp:154
+#, c-format
+msgid "Hibernating computer in %d seconds."
+msgstr "Kompiuteris užmigdomas po %d sekundžių."
+
+#: panel-plugin/settings.cpp:157
+msgid "Log Ou_t..."
+msgstr "A_tsijungti..."
+
+#: panel-plugin/settings.cpp:162
+msgid "_Edit Applications"
+msgstr "Taisyti p_rogramas"
+
+#: panel-plugin/settings.cpp:164
+msgid "Failed to launch menu editor."
+msgstr "Nepavyko paleisti meniu redaktoriaus."
+
+#: panel-plugin/settings.cpp:167
+msgid "Edit _Profile"
+msgstr "Redaguoti pr_ofilį"
+
+#: panel-plugin/settings.cpp:169
+msgid "Failed to edit profile."
+msgstr "Nepavyko redaguoti profilį."
+
+#: panel-plugin/xfce4-popup-whiskermenu.cpp:110
+msgid "Popup menu at current mouse position"
+msgstr "Iškelti meniu dabartinėje pelės vietoje"
+
+#: panel-plugin/xfce4-popup-whiskermenu.cpp:111
+msgid "Popup menu at center of screen"
+msgstr "Rodyti iškylantįjį meniu ekrano viduryje"
+
+#: panel-plugin/xfce4-popup-whiskermenu.cpp:112
+msgid "Print available menu instance IDs"
+msgstr "Parodyti prieinamus meniu egzemplioriaus ID"
+
+#: panel-plugin/xfce4-popup-whiskermenu.cpp:113
+msgid "Choose which menu to popup by instance ID"
+msgstr "Pasirinkti, kurį meniu iškelti pagal egzemplioriaus ID"
+
+#: panel-plugin/xfce4-popup-whiskermenu.cpp:114
+msgid "Print version information and exit"
+msgstr "Parodyti informaciją apie versiją ir išeiti"
+
+#: panel-plugin/whiskermenu.desktop.in:5
+msgid "Show a menu to easily access installed applications"
+msgstr "Rodyti meniu, siekiant lengvai pasiekti įdiegtas programas"
