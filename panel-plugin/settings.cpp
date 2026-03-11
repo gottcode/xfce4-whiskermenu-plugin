@@ -609,6 +609,21 @@ StringList::StringList(WhiskerMenu::Settings* settings, const gchar* property, s
 
 //-----------------------------------------------------------------------------
 
+int StringList::find(const std::string& value) const
+{
+	const auto iter = std::find(m_data.begin(), m_data.end(), value);
+	if (iter != m_data.end())
+	{
+		return std::distance(m_data.begin(), iter);
+	}
+	else
+	{
+		return -1;
+	}
+}
+
+//-----------------------------------------------------------------------------
+
 void StringList::clear()
 {
 	m_data.clear();
@@ -663,9 +678,9 @@ void StringList::set(int pos, const std::string& value)
 
 //-----------------------------------------------------------------------------
 
-void StringList::swap(std::size_t i, std::size_t j)
+void StringList::swap(int i, int j)
 {
-	if (i >= m_data.size() || j >= m_data.size())
+	if (i < 0 || i >= size() || j < 0 || j >= size())
 	{
 		return;
 	}

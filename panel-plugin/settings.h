@@ -161,6 +161,8 @@ public:
 		return m_data.cend();
 	}
 
+	int find(const std::string& value) const;
+
 	const std::string& operator[](int pos) const
 	{
 		return m_data[pos];
@@ -177,7 +179,7 @@ public:
 	void push_back(const std::string& value);
 	void resize(int count);
 	void set(int pos, const std::string& value);
-	void swap(std::size_t i, std::size_t j);
+	void swap(int i, int j);
 
 	bool is_order_unchanged() const
 	{

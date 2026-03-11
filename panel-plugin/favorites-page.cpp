@@ -284,21 +284,15 @@ void FavoritesPage::move_up(Launcher* launcher)
 		return;
 	}
 
-	std::string desktop_id(launcher->get_desktop_id());
-	auto selected_id_iter = std::find(m_settings->favorites.begin(), m_settings->favorites.end(), desktop_id);
-	if (selected_id_iter != m_settings->favorites.end())
+	const int index = m_settings->favorites.find(launcher->get_desktop_id());
+	if (index <= 0 || index >= m_settings->favorites.size())
 	{
-		std::ptrdiff_t dist = std::distance(m_settings->favorites.begin(), selected_id_iter);
-		if (dist <= 0 || dist >= m_settings->favorites.size())
-		{
-			return;
-		}
-
-		std::size_t index = static_cast<std::size_t>(dist);
-		m_settings->favorites.swap(index, index - 1);
-
-		set_menu_items();
+		return;
 	}
+
+	m_settings->favorites.swap(index, index - 1);
+
+	set_menu_items();
 }
 
 //-----------------------------------------------------------------------------
@@ -310,19 +304,13 @@ void FavoritesPage::move_down(Launcher* launcher)
 		return;
 	}
 
-	std::string desktop_id(launcher->get_desktop_id());
-	auto selected_id_iter = std::find(m_settings->favorites.begin(), m_settings->favorites.end(), desktop_id);
-	if (selected_id_iter != m_settings->favorites.end())
+	const int index = m_settings->favorites.find(launcher->get_desktop_id());
+	if (index < 0 || index >= m_settings->favorites.size() - 1)
 	{
-		std::ptrdiff_t dist = std::distance(m_settings->favorites.begin(), selected_id_iter);
-		if (dist < 0 || dist >= m_settings->favorites.size() - 1)
-		{
-			return;
-		}
-
-		std::size_t index = static_cast<std::size_t>(dist);
-		m_settings->favorites.swap(index, index + 1);
-
-		set_menu_items();
+		return;
 	}
+
+	m_settings->favorites.swap(index, index + 1);
+
+	set_menu_items();
 }
