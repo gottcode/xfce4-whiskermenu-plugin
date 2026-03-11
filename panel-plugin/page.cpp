@@ -460,23 +460,26 @@ void Page::create_context_menu(GtkTreePath* path, GdkEvent* event)
 	}
 	else
 	{
-		menuitem = whiskermenu_image_menu_item_new("go-up", _("Move Up"));
-		connect(menuitem, "activate",
-			[this](GtkMenuItem*)
-			{
-				g_assert(m_selected_launcher);
-				m_window->get_favorites()->move_up(m_selected_launcher);
-			});
-		gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+		if (dynamic_cast<FavoritesPage*>(this))
+		{
+			menuitem = whiskermenu_image_menu_item_new("go-up", _("Move Up"));
+			connect(menuitem, "activate",
+				[this](GtkMenuItem*)
+				{
+					g_assert(m_selected_launcher);
+					m_window->get_favorites()->move_up(m_selected_launcher);
+				});
+			gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
-		menuitem = whiskermenu_image_menu_item_new("go-down", _("Move Down"));
-		connect(menuitem, "activate",
-			[this](GtkMenuItem*)
-			{
-				g_assert(m_selected_launcher);
-				m_window->get_favorites()->move_down(m_selected_launcher);
-			});
-		gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+			menuitem = whiskermenu_image_menu_item_new("go-down", _("Move Down"));
+			connect(menuitem, "activate",
+				[this](GtkMenuItem*)
+				{
+					g_assert(m_selected_launcher);
+					m_window->get_favorites()->move_down(m_selected_launcher);
+				});
+			gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+		}
 
 		menuitem = whiskermenu_image_menu_item_new("list-remove", _("Remove from Favorites"));
 		connect(menuitem, "activate",
