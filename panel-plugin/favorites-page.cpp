@@ -147,6 +147,8 @@ void FavoritesPage::extend_context_menu(GtkWidget* menu)
 		return;
 	}
 
+	int selected_index = m_settings->favorites.find(selected_launcher->get_desktop_id());
+
 	GtkWidget* menuitem = gtk_separator_menu_item_new();
 	gtk_menu_shell_insert(GTK_MENU_SHELL(menu), menuitem, 1);
 
@@ -157,7 +159,7 @@ void FavoritesPage::extend_context_menu(GtkWidget* menu)
 			move_up(selected_launcher);
 		});
 	gtk_menu_shell_insert(GTK_MENU_SHELL(menu), menuitem, 2);
-	if (m_settings->favorites.find(selected_launcher->get_desktop_id()) == 0)
+	if (selected_index == 0)
 	{
 		gtk_widget_set_sensitive(menuitem, false);
 	}
@@ -169,7 +171,7 @@ void FavoritesPage::extend_context_menu(GtkWidget* menu)
 			move_down(selected_launcher);
 		});
 	gtk_menu_shell_insert(GTK_MENU_SHELL(menu), menuitem, 3);
-	if (m_settings->favorites.find(selected_launcher->get_desktop_id()) == m_settings->favorites.size() - 1)
+	if (selected_index == m_settings->favorites.size() - 1)
 	{
 		gtk_widget_set_sensitive(menuitem, false);
 	}
