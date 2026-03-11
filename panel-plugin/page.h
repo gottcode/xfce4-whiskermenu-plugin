@@ -72,6 +72,11 @@ protected:
 
 	void set_reorderable(bool reorderable);
 
+	Launcher* get_selected_launcher() const
+	{
+		return m_selected_launcher;
+	}
+
 protected:
 	Settings* const m_settings;
 
@@ -96,12 +101,10 @@ private:
 	CategoryButton* m_button;
 	GtkWidget* m_widget;
 	LauncherView* m_view;
+	Launcher* m_selected_launcher;
 	bool m_drag_enabled;
 	bool m_launcher_dragged;
 	bool m_reorderable;
-
-protected:
-	Launcher* m_selected_launcher;
 };
 
 }
