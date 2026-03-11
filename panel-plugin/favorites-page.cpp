@@ -314,3 +314,5 @@ void FavoritesPage::move_down(Launcher* launcher)
 
 	set_menu_items();
 }
+
+//-----------------------------------------------------------------------------
