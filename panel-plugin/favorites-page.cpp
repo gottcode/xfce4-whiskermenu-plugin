@@ -142,6 +142,35 @@ void FavoritesPage::unset_menu_items()
 void FavoritesPage::extend_context_menu(GtkWidget* menu)
 {
 	GtkWidget* menuitem = gtk_separator_menu_item_new();
+	gtk_menu_shell_insert(GTK_MENU_SHELL(menu), menuitem, 1);
+
+	menuitem = whiskermenu_image_menu_item_new("go-up", _("Move Up"));
+	connect(menuitem, "activate",
+		[this](GtkMenuItem*)
+		{
+			g_assert(m_selected_launcher);
+			move_up(m_selected_launcher);
+		});
+	gtk_menu_shell_insert(GTK_MENU_SHELL(menu), menuitem, 2);
+	if (m_settings->favorites.find(m_selected_launcher->get_desktop_id()) == 0)
+	{
+		gtk_widget_set_sensitive(menuitem, false);
+	}
+
+	menuitem = whiskermenu_image_menu_item_new("go-down", _("Move Down"));
+	connect(menuitem, "activate",
+		[this](GtkMenuItem*)
+		{
+			g_assert(m_selected_launcher);
+			move_down(m_selected_launcher);
+		});
+	gtk_menu_shell_insert(GTK_MENU_SHELL(menu), menuitem, 3);
+	if (m_settings->favorites.find(m_selected_launcher->get_desktop_id()) == m_settings->favorites.size() - 1)
+	{
+		gtk_widget_set_sensitive(menuitem, false);
+	}
+
+	menuitem = gtk_separator_menu_item_new();
 	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
 	menuitem = whiskermenu_image_menu_item_new("view-sort-ascending", _("Sort Alphabetically A-Z"));
