@@ -1,16 +1,16 @@
 # Dutch translation of xfce4-whiskermenu-plugin.
-# Copyright (C) 2025 Graeme Gott
+# Copyright (C) 2026 Graeme Gott
 # This file is distributed under the same license as the xfce4-whiskermenu-plugin package.
 # 
 # Translators:
-# Pjotr <pjotrvertaalt@gmail.com>, 2013-2025
+# Pjotr <pjotrvertaalt@gmail.com>, 2013-2026
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 14:38-0500\n"
+"POT-Creation-Date: 2026-03-11 07:30-0400\n"
 "PO-Revision-Date: 2013-06-20 11:26+0000\n"
-"Last-Translator: Pjotr <pjotrvertaalt@gmail.com>, 2013-2025\n"
+"Last-Translator: Pjotr <pjotrvertaalt@gmail.com>, 2013-2026\n"
 "Language-Team: Dutch (http://app.transifex.com/gottcode/xfce4-whiskermenu-plugin/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,595 +18,629 @@ msgstr ""
 "Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/settings-dialog.cpp:1041
-msgid "Add action"
-msgstr "Voeg actie toe"
-
-#: ../panel-plugin/page.cpp:513
-msgid "Add to Autostart"
-msgstr "Toevoegen aan Autostart"
-
-#: ../panel-plugin/page.cpp:494
-msgid "Add to Desktop"
-msgstr "Voeg toe aan bureaublad"
-
-#: ../panel-plugin/page.cpp:473
-msgid "Add to Favorites"
-msgstr "Voeg toe aan favorieten"
-
-#: ../panel-plugin/page.cpp:502
-msgid "Add to Panel"
-msgstr "Voeg toe aan werkbalk"
-
-#: ../panel-plugin/applications-page.cpp:35 ../panel-plugin/category.cpp:51
-#: ../panel-plugin/settings-dialog.cpp:809
+#. Add option to display all applications
+#: panel-plugin/applications-page.cpp:35 panel-plugin/category.cpp:52
+#: panel-plugin/settings-dialog.cpp:825
 msgid "All Applications"
 msgstr "Alle toepassingen"
 
-#: ../panel-plugin/plugin.cpp:418
-msgid "Alternate application launcher for Xfce"
-msgstr "Alternatieve toepassingenstarter voor Xfce"
-
-#: ../panel-plugin/settings-dialog.cpp:904
-msgid "Amount of _items:"
-msgstr "Hoeveelheid _elementen:"
-
-#: ../panel-plugin/settings-dialog.cpp:476
-msgid "Application icon si_ze:"
-msgstr "Grootte van toepassingspictogram:"
-
-#: ../panel-plugin/settings.cpp:42
-msgid "Applications"
-msgstr "Menu"
-
-#: ../panel-plugin/launcher.cpp:181
-#, c-format
-msgid "Are you sure you want to hide \"%s\"?"
-msgstr "Weet u zeker dat u '%s' wilt verbergen?"
-
-#: ../panel-plugin/settings.cpp:122
-msgid "Are you sure you want to log out?"
-msgstr "Weet u zeker dat u zich wilt afmelden?"
-
-#: ../panel-plugin/settings.cpp:129
-msgid "Are you sure you want to restart?"
-msgstr "Weet u zeker dat u wilt herstarten?"
-
-#: ../panel-plugin/settings.cpp:136
-msgid "Are you sure you want to shut down?"
-msgstr "Weet u zeker dat u wilt afsluiten?"
-
-#: ../panel-plugin/settings-dialog.cpp:569
-msgid "Background opacit_y:"
-msgstr "Ondoorzichtigheid van achtergrond:"
-
-#: ../panel-plugin/command-edit.cpp:65
+#: panel-plugin/command-edit.cpp:65
 msgid "Browse the file system to choose a custom command."
 msgstr "Verken het bestandssysteem om een aangepaste opdracht te kiezen."
 
-#: ../panel-plugin/settings-dialog.cpp:1123
-msgid "C_ommand:"
-msgstr "_Opdracht:"
+#: panel-plugin/command-edit.cpp:75
+msgid "Select Command"
+msgstr "Opdracht kiezen"
 
-#: ../panel-plugin/settings-dialog.cpp:499
-msgid "Categ_ory icon size:"
-msgstr "Grootte van categoriepictogram:"
+#: panel-plugin/command-edit.cpp:78 panel-plugin/settings-dialog.cpp:141
+msgid "_Cancel"
+msgstr "_Afbreken"
 
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:109
-msgid "Choose which menu to popup by instance ID"
-msgstr "Kies welk menu er moet opduiken per instantie-ID"
+#: panel-plugin/command-edit.cpp:79 panel-plugin/settings-dialog.cpp:142
+msgid "_OK"
+msgstr "_Oké"
 
-#: ../panel-plugin/recent-page.cpp:147
-msgid "Clear Recently Used"
-msgstr "Verwijder 'onlangs gebruikt'"
-
-#: ../panel-plugin/plugin.cpp:419
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:128
-msgid "Copyright © 2013-2025 Graeme Gott"
-msgstr "Auteursrecht © 2013-2025 Graeme Gott"
-
-#: ../panel-plugin/settings-dialog.cpp:796
-msgid "Default Category"
-msgstr "Standaardcategorie"
-
-#: ../panel-plugin/settings-dialog.cpp:1074
-msgid "Details"
-msgstr "Bijzonderheden"
-
-#: ../panel-plugin/settings-dialog.cpp:709
-msgid "Di_splay:"
-msgstr "_Tonen:"
-
-#: ../panel-plugin/settings.cpp:143
-msgid "Do you want to suspend to RAM?"
-msgstr "Wilt u de pauzestand inschakelen?"
-
-#: ../panel-plugin/settings.cpp:150
-msgid "Do you want to suspend to disk?"
-msgstr "Wilt u de slaapstand inschakelen?"
-
-#: ../panel-plugin/page.cpp:535
-msgid "Edit Application..."
-msgstr "Toepassing bewerken..."
-
-#: ../panel-plugin/settings.cpp:164
-msgid "Edit _Profile"
-msgstr "_Profiel bewerken"
-
-#: ../panel-plugin/settings.cpp:166
-msgid "Failed to edit profile."
-msgstr "Kon profiel niet bewerken."
-
-#: ../panel-plugin/element.cpp:98
+#: panel-plugin/element.cpp:98
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "Kon opdracht '%s' niet uitvoeren."
 
-#: ../panel-plugin/settings.cpp:149
-msgid "Failed to hibernate."
-msgstr "Kon slaapstand niet inschakelen."
-
-#: ../panel-plugin/settings.cpp:161
-msgid "Failed to launch menu editor."
-msgstr "Kon menubewerker niet starten."
-
-#: ../panel-plugin/settings.cpp:111
-msgid "Failed to lock screen."
-msgstr "Kon scherm niet vergrendelen."
-
-#: ../panel-plugin/settings.cpp:121 ../panel-plugin/settings.cpp:156
-msgid "Failed to log out."
-msgstr "Kon niet afmelden."
-
-#: ../panel-plugin/settings.cpp:106
-msgid "Failed to open settings manager."
-msgstr "Kon instellingenbeheerder niet openen."
-
-#: ../panel-plugin/settings.cpp:128
-msgid "Failed to restart."
-msgstr "Kon niet herstarten."
-
-#: ../panel-plugin/settings.cpp:135
-msgid "Failed to shut down."
-msgstr "Kon niet afsluiten."
-
-#: ../panel-plugin/settings.cpp:142
-msgid "Failed to suspend."
-msgstr "Kon pauzestand niet inschakelen."
-
-#: ../panel-plugin/settings.cpp:116
-msgid "Failed to switch user."
-msgstr "Kon gebruiker niet wisselen."
-
-#: ../panel-plugin/favorites-page.cpp:37
-#: ../panel-plugin/settings-dialog.cpp:800
+#. Add option to display favorites
+#: panel-plugin/favorites-page.cpp:37 panel-plugin/settings-dialog.cpp:816
 msgid "Favorites"
 msgstr "Favorieten"
 
-#: ../panel-plugin/settings.cpp:151
-#, c-format
-msgid "Hibernating computer in %d seconds."
-msgstr "Computer wordt over %d seconden in slaapstand gebracht."
-
-#: ../panel-plugin/settings-dialog.cpp:685
-msgid "Hidden"
-msgstr "Verborgen"
-
-#: ../panel-plugin/launcher.cpp:180 ../panel-plugin/page.cpp:543
-msgid "Hide Application"
-msgstr "Toepassing verbergen"
-
-#: ../panel-plugin/settings-dialog.cpp:714
-msgid "Icon"
-msgstr "Pictogram"
-
-#: ../panel-plugin/settings-dialog.cpp:716
-msgid "Icon and title"
-msgstr "Pictogram en titel"
-
-#: ../panel-plugin/settings-dialog.cpp:927
-msgid "Include _favorites"
-msgstr "_Favorieten opnemen"
-
-#: ../panel-plugin/icon-size.cpp:65
-msgid "Large"
-msgstr "Groot"
-
-#: ../panel-plugin/icon-size.cpp:66
-msgid "Larger"
-msgstr "Groter"
-
-#: ../panel-plugin/settings.cpp:154
-msgid "Log Ou_t..."
-msgstr "A_fmelden..."
-
-#: ../panel-plugin/settings.cpp:119
-msgid "Log _Out"
-msgstr "Af_melden"
-
-#: ../panel-plugin/settings.cpp:123
-#, c-format
-msgid "Logging out in %d seconds."
-msgstr "U wordt over %d seconden afgemeld."
-
-#: ../panel-plugin/settings.cpp:90
-msgid "Man Pages"
-msgstr "Handleiding"
-
-#: ../panel-plugin/settings-dialog.cpp:612
-#: ../panel-plugin/settings-dialog.cpp:857
-msgid "Menu"
-msgstr "Menu"
-
-#: ../panel-plugin/settings-dialog.cpp:551
-msgid "Menu _height:"
-msgstr "Menu_hoogte:"
-
-#: ../panel-plugin/settings-dialog.cpp:533
-msgid "Menu _width:"
-msgstr "Menu_breedte:"
-
-#: ../panel-plugin/settings-dialog.cpp:1078
-msgid "Nam_e:"
-msgstr "_Naam:"
-
-#: ../panel-plugin/settings-dialog.cpp:1019
-msgid "Name"
-msgstr "Naam"
-
-#: ../panel-plugin/search-page.cpp:71
-msgid "No applications found"
-msgstr "Geen toepassingen gevonden"
-
-#: ../panel-plugin/icon-size.cpp:60
-msgid "None"
-msgstr "Geen"
-
-#: ../panel-plugin/icon-size.cpp:64
-msgid "Normal"
-msgstr "Normaal"
-
-#: ../panel-plugin/settings.cpp:95
-msgid "Open URI"
-msgstr "Open URI"
-
-#: ../panel-plugin/settings-dialog.cpp:676
-msgid "P_rofile:"
-msgstr "P_rofiel:"
-
-#: ../panel-plugin/settings-dialog.cpp:705
-msgid "Panel Button"
-msgstr "Werkbalkknop"
-
-#: ../panel-plugin/settings-dialog.cpp:1024
-msgid "Pattern"
-msgstr "Patroon"
-
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:107
-msgid "Popup menu at center of screen"
-msgstr "Opduikmenu in het midden van het scherm"
-
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:106
-msgid "Popup menu at current mouse position"
-msgstr "Opduikmenu bij huidige muispositie"
-
-#: ../panel-plugin/settings-dialog.cpp:654
-msgid "Position _search entry on bottom"
-msgstr "Plaats _zoekveld onderaan"
-
-#: ../panel-plugin/settings-dialog.cpp:627
-#: ../panel-plugin/settings-dialog.cpp:632
-msgid "Position cate_gories on bottom"
-msgstr "Plaats categorieën onderaan"
-
-#: ../panel-plugin/settings-dialog.cpp:627
-#: ../panel-plugin/settings-dialog.cpp:632
-msgid "Position cate_gories on left"
-msgstr "Plaats categorieën aan de linkerkant"
-
-#: ../panel-plugin/settings-dialog.cpp:616
-msgid "Position categories _horizontally"
-msgstr "Plaats categorieën _horizontaal"
-
-#: ../panel-plugin/settings-dialog.cpp:665
-msgid "Position commands next to search _entry"
-msgstr "Plaats opdrachten naast zoekvak"
-
-#: ../panel-plugin/settings-dialog.cpp:643
-msgid "Position pro_file on bottom"
-msgstr "Plaats profiel onderaan"
-
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:108
-msgid "Print available menu instance IDs"
-msgstr "Toon beschikbare instantie-ID's voor het menu"
-
-#: ../panel-plugin/xfce4-popup-whiskermenu.cpp:110
-msgid "Print version information and exit"
-msgstr "Toon versie-informatie en sluit af"
-
-#: ../panel-plugin/recent-page.cpp:37 ../panel-plugin/settings-dialog.cpp:804
-#: ../panel-plugin/settings-dialog.cpp:900
-msgid "Recently Used"
-msgstr "Onlangs gebruikt"
-
-#: ../panel-plugin/settings-dialog.cpp:218
-#, c-format
-msgid "Remove action \"%s\"?"
-msgstr "Actie '%s' verwijderen?"
-
-#: ../panel-plugin/page.cpp:523
-msgid "Remove from Autostart"
-msgstr "Verwijderen uit Autostart"
-
-#: ../panel-plugin/page.cpp:484
-msgid "Remove from Favorites"
-msgstr "Verwijder uit favorieten"
-
-#: ../panel-plugin/settings-dialog.cpp:1053
-msgid "Remove selected action"
-msgstr "Verwijder gekozen actie"
-
-#: ../panel-plugin/settings.cpp:130
-#, c-format
-msgid "Restarting computer in %d seconds."
-msgstr "De computer wordt over %d seconden herstart."
-
-#: ../panel-plugin/settings-dialog.cpp:683
-msgid "Round Picture"
-msgstr "Ronde foto"
-
-#: ../panel-plugin/run-action.cpp:64
-#, c-format
-msgid "Run %s"
-msgstr "Draai %s"
-
-#: ../panel-plugin/settings.cpp:94
-msgid "Run in Terminal"
-msgstr "Draai in terminal"
-
-#: ../panel-plugin/settings-dialog.cpp:102
-msgid "Search Actio_ns"
-msgstr "_Zoekacties"
-
-#: ../panel-plugin/search-action.cpp:260
-msgid "Search Action"
-msgstr "Zoekactie"
-
-#: ../panel-plugin/settings.cpp:92
-msgid "Search for Files"
-msgstr "Zoeken naar bestanden"
-
-#: ../panel-plugin/settings.cpp:91
-msgid "Search the Web"
-msgstr "Doorzoek het web"
-
-#: ../panel-plugin/command-edit.cpp:75
-msgid "Select Command"
-msgstr "Opdracht kiezen"
-
-#: ../panel-plugin/settings-dialog.cpp:135
-msgid "Select an Icon"
-msgstr "Kies een pictogram"
-
-#: ../panel-plugin/settings-dialog.cpp:940
-msgid "Session Commands"
-msgstr "Sessie-opdrachten"
-
-#: ../panel-plugin/whiskermenu.desktop.in:5
-msgid "Show a menu to easily access installed applications"
-msgstr "Toon een menu om geïnstalleerde toepassingen eenvoudig op te starten"
-
-#: ../panel-plugin/settings-dialog.cpp:459
-msgid "Show application _descriptions"
-msgstr "Toon _beschrijvingen van toepassingen"
-
-#: ../panel-plugin/settings-dialog.cpp:448
-msgid "Show application too_ltips"
-msgstr "Toon _zweeftips voor toepassingen"
-
-#: ../panel-plugin/settings-dialog.cpp:318
-msgid "Show as _icons"
-msgstr "Toon als _pictogrammen"
-
-#: ../panel-plugin/settings-dialog.cpp:335
-msgid "Show as lis_t"
-msgstr "Toon als _lijst"
-
-#: ../panel-plugin/settings-dialog.cpp:353
-msgid "Show as t_ree"
-msgstr "Toon als _boomstructuur"
-
-#: ../panel-plugin/settings-dialog.cpp:944
-msgid "Show c_onfirmation dialog"
-msgstr "Toon bevestigings_dialoog"
-
-#: ../panel-plugin/settings-dialog.cpp:436
-msgid "Show cate_gory names"
-msgstr "Toon namen van _categorieën"
-
-#: ../panel-plugin/settings-dialog.cpp:424
-msgid "Show generic application _names"
-msgstr "Toon _generieke toepassingsnamen"
-
-#: ../panel-plugin/settings.cpp:133
-msgid "Shut _Down"
-msgstr "Af_sluiten"
-
-#: ../panel-plugin/icon-size.cpp:63
-msgid "Small"
-msgstr "Klein"
-
-#: ../panel-plugin/icon-size.cpp:62
-msgid "Smaller"
-msgstr "Kleiner"
-
-#: ../panel-plugin/favorites-page.cpp:147
+#: panel-plugin/favorites-page.cpp:147
 msgid "Sort Alphabetically A-Z"
 msgstr "Rangschik alfabetisch van A-Z"
 
-#: ../panel-plugin/favorites-page.cpp:155
+#: panel-plugin/favorites-page.cpp:155
 msgid "Sort Alphabetically Z-A"
 msgstr "Rangschik alfabetisch van Z-A"
 
-#: ../panel-plugin/settings-dialog.cpp:883
-msgid "Sort ca_tegories"
-msgstr "Rangschik categorieën"
+#: panel-plugin/icon-size.cpp:61
+msgid "None"
+msgstr "Geen"
 
-#: ../panel-plugin/settings-dialog.cpp:684
-msgid "Square Picture"
-msgstr "Vierkante foto"
+#: panel-plugin/icon-size.cpp:62
+msgid "Very Small"
+msgstr "Heel klein"
 
-#: ../panel-plugin/settings-dialog.cpp:872
-msgid "Stay _visible when focus is lost"
-msgstr "Blijf _zichtbaar wanneer scherpstelling weg is"
+#: panel-plugin/icon-size.cpp:63
+msgid "Smaller"
+msgstr "Kleiner"
 
-#: ../panel-plugin/settings.cpp:140
-msgid "Suspe_nd"
-msgstr "_Pauzestand"
+#: panel-plugin/icon-size.cpp:64
+msgid "Small"
+msgstr "Klein"
 
-#: ../panel-plugin/settings.cpp:144
-#, c-format
-msgid "Suspending computer in %d seconds."
-msgstr "De computer wordt over %d seconden in pauzestand gebracht."
+#: panel-plugin/icon-size.cpp:65
+msgid "Normal"
+msgstr "Normaal"
 
-#: ../panel-plugin/settings.cpp:114
-msgid "Switch _User"
-msgstr "Gebruiker _wisselen"
+#: panel-plugin/icon-size.cpp:66
+msgid "Large"
+msgstr "Groot"
 
-#: ../panel-plugin/settings-dialog.cpp:861
-msgid "Switch categories by _hovering"
-msgstr "Verwissel van categorie door muispijl erop te laten rusten"
+#: panel-plugin/icon-size.cpp:67
+msgid "Larger"
+msgstr "Groter"
 
-#: ../panel-plugin/settings-dialog.cpp:217
-msgid "The action will be deleted permanently."
-msgstr "De actie zal blijvend worden verwijderd."
+#: panel-plugin/icon-size.cpp:68
+msgid "Very Large"
+msgstr "Heel groot"
 
-#: ../panel-plugin/settings-dialog.cpp:715
-msgid "Title"
-msgstr "Titel"
-
-#: ../panel-plugin/launcher.cpp:176
+#. I18N: the first %s will be replaced with desktop file path, the second with
+#. Hidden=true
+#: panel-plugin/launcher.cpp:206
 #, c-format
 msgid ""
 "To unhide it you have to manually remove the file \"%s\" or open the file "
 "and remove the line \"%s\"."
 msgstr "Om het weer zichtbaar te maken moet u handmatig het bestand '%s' verwijderen of dat bestand openen en de regel '%s' verwijderen."
 
-#: ../panel-plugin/settings.cpp:137
-#, c-format
-msgid "Turning off computer in %d seconds."
-msgstr "De computer wordt over %d seconden uitgeschakeld."
+#: panel-plugin/launcher.cpp:210 panel-plugin/page.cpp:555
+msgid "Hide Application"
+msgstr "Toepassing verbergen"
 
-#: ../panel-plugin/page.cpp:606
+#: panel-plugin/launcher.cpp:211
+#, c-format
+msgid "Are you sure you want to hide \"%s\"?"
+msgstr "Weet u zeker dat u '%s' wilt verbergen?"
+
+#: panel-plugin/page.cpp:452
+msgid "Add to Favorites"
+msgstr "Voeg toe aan favorieten"
+
+#: panel-plugin/page.cpp:465
+msgid "Move Up"
+msgstr "Naar boven verplaatsen"
+
+#: panel-plugin/page.cpp:478
+msgid "Move Down"
+msgstr "Naar beneden verplaatsen"
+
+#: panel-plugin/page.cpp:495
+msgid "Remove from Favorites"
+msgstr "Verwijder uit favorieten"
+
+#: panel-plugin/page.cpp:505
+msgid "Add to Desktop"
+msgstr "Voeg toe aan bureaublad"
+
+#: panel-plugin/page.cpp:513
+msgid "Add to Panel"
+msgstr "Voeg toe aan werkbalk"
+
+#: panel-plugin/page.cpp:523
+msgid "Add to Autostart"
+msgstr "Toevoegen aan Autostart"
+
+#: panel-plugin/page.cpp:534
+msgid "Remove from Autostart"
+msgstr "Verwijderen uit Autostart"
+
+#: panel-plugin/page.cpp:547
+msgid "Edit Application..."
+msgstr "Toepassing bewerken..."
+
+#: panel-plugin/page.cpp:618
 msgid "Unable to add launcher to desktop."
 msgstr "Kon starter niet toevoegen aan bureaublad."
 
-#: ../panel-plugin/page.cpp:646 ../panel-plugin/page.cpp:659
+#: panel-plugin/page.cpp:658 panel-plugin/page.cpp:671
 msgid "Unable to add launcher to panel."
 msgstr "Kon starter niet toevoegen aan werkbalk."
 
-#: ../panel-plugin/page.cpp:700
+#: panel-plugin/page.cpp:695
 msgid "Unable to edit launcher."
 msgstr "Kon starter niet bewerken."
 
-#: ../panel-plugin/settings-dialog.cpp:277
+#: panel-plugin/plugin.cpp:423
+msgid "Alternate application launcher for Xfce"
+msgstr "Alternatieve toepassingenstarter voor Xfce"
+
+#: panel-plugin/plugin.cpp:428
+msgid "translator-credits"
+msgstr "Pjotr <pjotrvertaalt@gmail.com>"
+
+#. Add option to display recently used
+#: panel-plugin/recent-page.cpp:37 panel-plugin/settings-dialog.cpp:820
+#: panel-plugin/settings-dialog.cpp:916
+msgid "Recently Used"
+msgstr "Onlangs gebruikt"
+
+#: panel-plugin/recent-page.cpp:147
+msgid "Clear Recently Used"
+msgstr "Verwijder 'onlangs gebruikt'"
+
+#: panel-plugin/run-action.cpp:65
+#, c-format
+msgid "Run %s"
+msgstr "Draai %s"
+
+#: panel-plugin/search-action.cpp:262
+msgid "Search Action"
+msgstr "Zoekactie"
+
+#: panel-plugin/search-page.cpp:72
+msgid "No applications found"
+msgstr "Geen toepassingen gevonden"
+
+#. Create dialog window
+#: panel-plugin/settings-dialog.cpp:84 panel-plugin/whiskermenu.desktop.in:4
+msgid "Whisker Menu"
+msgstr "Whiskermenu"
+
+#: panel-plugin/settings-dialog.cpp:87
+msgid "_Help"
+msgstr "_Hulp"
+
+#: panel-plugin/settings-dialog.cpp:88
+msgid "_Close"
+msgstr "_Sluiten"
+
+#: panel-plugin/settings-dialog.cpp:102
+msgid "_General"
+msgstr "_Algemeen"
+
+#: panel-plugin/settings-dialog.cpp:103
+msgid "_Appearance"
+msgstr "_Uiterlijk"
+
+#: panel-plugin/settings-dialog.cpp:104
+msgid "_Behavior"
+msgstr "_Gedrag"
+
+#: panel-plugin/settings-dialog.cpp:105
+msgid "_Commands"
+msgstr "Op_drachten"
+
+#: panel-plugin/settings-dialog.cpp:106
+msgid "Search Actio_ns"
+msgstr "_Zoekacties"
+
+#: panel-plugin/settings-dialog.cpp:136 panel-plugin/settings-dialog.cpp:138
+msgid "Select an Icon"
+msgstr "Kies een pictogram"
+
+#: panel-plugin/settings-dialog.cpp:228
+msgid "_Delete"
+msgstr "_Wissen"
+
+#: panel-plugin/settings-dialog.cpp:229
+msgid "The action will be deleted permanently."
+msgstr "De actie zal blijvend worden verwijderd."
+
+#: panel-plugin/settings-dialog.cpp:230
+#, c-format
+msgid "Remove action \"%s\"?"
+msgstr "Actie '%s' verwijderen?"
+
+#: panel-plugin/settings-dialog.cpp:293
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Kon het volgende webadres niet openen: %s"
 
-#: ../panel-plugin/settings-dialog.cpp:770
-msgid "Use a single _panel row"
-msgstr "Gebruik een enkele werkbalkrij"
+#. Add option to show as icons
+#: panel-plugin/settings-dialog.cpp:334
+msgid "Show as _icons"
+msgstr "Toon als _pictogrammen"
 
-#: ../panel-plugin/icon-size.cpp:67
-msgid "Very Large"
-msgstr "Heel groot"
+#. Add option to show as list
+#: panel-plugin/settings-dialog.cpp:351
+msgid "Show as lis_t"
+msgstr "Toon als _lijst"
 
-#: ../panel-plugin/icon-size.cpp:61
-msgid "Very Small"
-msgstr "Heel klein"
+#. Add option to show as tree
+#: panel-plugin/settings-dialog.cpp:369
+msgid "Show as t_ree"
+msgstr "Toon als _boomstructuur"
 
-#: ../panel-plugin/settings-dialog.cpp:80
-#: ../panel-plugin/whiskermenu.desktop.in:4
-msgid "Whisker Menu"
-msgstr "Whiskermenu"
+#. Add option to use generic names
+#: panel-plugin/settings-dialog.cpp:440
+msgid "Show generic application _names"
+msgstr "Toon _generieke toepassingsnamen"
 
-#: ../panel-plugin/settings.cpp:93
-msgid "Wikipedia"
-msgstr "Wikipedia"
+#. Add option to hide category names
+#: panel-plugin/settings-dialog.cpp:452
+msgid "Show cate_gory names"
+msgstr "Toon namen van _categorieën"
 
-#: ../panel-plugin/settings-dialog.cpp:99
-msgid "_Appearance"
-msgstr "_Uiterlijk"
+#. Add option to hide tooltips
+#: panel-plugin/settings-dialog.cpp:464
+msgid "Show application too_ltips"
+msgstr "Toon _zweeftips voor toepassingen"
 
-#: ../panel-plugin/settings-dialog.cpp:100
-msgid "_Behavior"
-msgstr "_Gedrag"
+#. Add option to hide descriptions
+#: panel-plugin/settings-dialog.cpp:475
+msgid "Show application _descriptions"
+msgstr "Toon _beschrijvingen van toepassingen"
 
-#: ../panel-plugin/command-edit.cpp:78 ../panel-plugin/settings-dialog.cpp:137
-msgid "_Cancel"
-msgstr "_Afbreken"
+#. Add item icon size selector
+#: panel-plugin/settings-dialog.cpp:492
+msgid "Application icon si_ze:"
+msgstr "Grootte van toepassingspictogram:"
 
-#: ../panel-plugin/settings-dialog.cpp:84
-msgid "_Close"
-msgstr "_Sluiten"
+#. Add category icon size selector
+#: panel-plugin/settings-dialog.cpp:515
+msgid "Categ_ory icon size:"
+msgstr "Grootte van categoriepictogram:"
 
-#: ../panel-plugin/settings-dialog.cpp:101
-msgid "_Commands"
-msgstr "Op_drachten"
+#. Add option to change menu width
+#: panel-plugin/settings-dialog.cpp:549
+msgid "Menu _width:"
+msgstr "Menu_breedte:"
 
-#: ../panel-plugin/settings-dialog.cpp:216
-msgid "_Delete"
-msgstr "_Wissen"
+#. Add option to change menu height
+#: panel-plugin/settings-dialog.cpp:567
+msgid "Menu _height:"
+msgstr "Menu_hoogte:"
 
-#: ../panel-plugin/settings.cpp:159
-msgid "_Edit Applications"
-msgstr "Toepassingen _bewerken"
+#. Add option to control background opacity
+#: panel-plugin/settings-dialog.cpp:585
+msgid "Background opacit_y:"
+msgstr "Ondoorzichtigheid van achtergrond:"
 
-#: ../panel-plugin/settings-dialog.cpp:98
-msgid "_General"
-msgstr "_Algemeen"
+#: panel-plugin/settings-dialog.cpp:628 panel-plugin/settings-dialog.cpp:873
+msgid "Menu"
+msgstr "Menu"
 
-#: ../panel-plugin/settings-dialog.cpp:83
-msgid "_Help"
-msgstr "_Hulp"
+#. Add option to use horizontal categories
+#: panel-plugin/settings-dialog.cpp:632
+msgid "Position categories _horizontally"
+msgstr "Plaats categorieën _horizontaal"
 
-#: ../panel-plugin/settings.cpp:147
-msgid "_Hibernate"
-msgstr "Slaapstand"
+#: panel-plugin/settings-dialog.cpp:643 panel-plugin/settings-dialog.cpp:648
+msgid "Position cate_gories on bottom"
+msgstr "Plaats categorieën onderaan"
 
-#: ../panel-plugin/settings-dialog.cpp:752
-msgid "_Icon:"
-msgstr "P_ictogram:"
+#: panel-plugin/settings-dialog.cpp:643 panel-plugin/settings-dialog.cpp:648
+msgid "Position cate_gories on left"
+msgstr "Plaats categorieën aan de linkerkant"
 
-#: ../panel-plugin/settings.cpp:109
-msgid "_Lock Screen"
-msgstr "Scherm _vergrendelen"
+#. Add option to use alternate profile position
+#: panel-plugin/settings-dialog.cpp:659
+msgid "Position pro_file on bottom"
+msgstr "Plaats profiel onderaan"
 
-#: ../panel-plugin/command-edit.cpp:79 ../panel-plugin/settings-dialog.cpp:138
-msgid "_OK"
-msgstr "_Oké"
+#. Add option to use alternate search entry position
+#: panel-plugin/settings-dialog.cpp:670
+msgid "Position _search entry on bottom"
+msgstr "Plaats _zoekveld onderaan"
 
-#: ../panel-plugin/settings-dialog.cpp:1101
-msgid "_Pattern:"
-msgstr "_Patroon:"
+#. Add option to use alternate commands position
+#: panel-plugin/settings-dialog.cpp:681
+msgid "Position commands next to search _entry"
+msgstr "Plaats opdrachten naast zoekvak"
 
-#: ../panel-plugin/settings-dialog.cpp:1142
-msgid "_Regular expression"
-msgstr "_Reguliere uitdrukking"
+#. Add profile shape selector
+#: panel-plugin/settings-dialog.cpp:692
+msgid "P_rofile:"
+msgstr "P_rofiel:"
 
-#: ../panel-plugin/settings.cpp:126
-msgid "_Restart"
-msgstr "_Herstarten"
+#: panel-plugin/settings-dialog.cpp:699
+msgid "Round Picture"
+msgstr "Ronde foto"
 
-#: ../panel-plugin/settings.cpp:104
-msgid "_Settings Manager"
-msgstr "Instellingenbeheer"
+#: panel-plugin/settings-dialog.cpp:700
+msgid "Square Picture"
+msgstr "Vierkante foto"
 
-#: ../panel-plugin/settings-dialog.cpp:734
+#: panel-plugin/settings-dialog.cpp:701
+msgid "Hidden"
+msgstr "Verborgen"
+
+#: panel-plugin/settings-dialog.cpp:721
+msgid "Panel Button"
+msgstr "Werkbalkknop"
+
+#. Add button style selector
+#: panel-plugin/settings-dialog.cpp:725
+msgid "Di_splay:"
+msgstr "_Tonen:"
+
+#: panel-plugin/settings-dialog.cpp:730
+msgid "Icon"
+msgstr "Pictogram"
+
+#: panel-plugin/settings-dialog.cpp:731
+msgid "Title"
+msgstr "Titel"
+
+#: panel-plugin/settings-dialog.cpp:732
+msgid "Icon and title"
+msgstr "Pictogram en titel"
+
+#. Add title selector
+#: panel-plugin/settings-dialog.cpp:750
 msgid "_Title:"
 msgstr "_Titel:"
 
-#: ../panel-plugin/plugin.cpp:423
-msgid "translator-credits"
-msgstr "Pjotr <pjotrvertaalt@gmail.com>"
+#. Add icon selector
+#: panel-plugin/settings-dialog.cpp:768
+msgid "_Icon:"
+msgstr "P_ictogram:"
+
+#: panel-plugin/settings-dialog.cpp:786
+msgid "Use a single _panel row"
+msgstr "Gebruik een enkele werkbalkrij"
+
+#: panel-plugin/settings-dialog.cpp:812
+msgid "Default Category"
+msgstr "Standaardcategorie"
+
+#. Add option to switch categories by hovering
+#: panel-plugin/settings-dialog.cpp:877
+msgid "Switch categories by _hovering"
+msgstr "Verwissel van categorie door muispijl erop te laten rusten"
+
+#. Add option to stay when menu loses focus
+#: panel-plugin/settings-dialog.cpp:888
+msgid "Stay _visible when focus is lost"
+msgstr "Blijf _zichtbaar wanneer scherpstelling weg is"
+
+#. Add option to sort categories
+#: panel-plugin/settings-dialog.cpp:899
+msgid "Sort ca_tegories"
+msgstr "Rangschik categorieën"
+
+#. Add value to change maximum number of recently used entries
+#: panel-plugin/settings-dialog.cpp:920
+msgid "Amount of _items:"
+msgstr "Hoeveelheid _elementen:"
+
+#. Add option to remember favorites
+#: panel-plugin/settings-dialog.cpp:943
+msgid "Include _favorites"
+msgstr "_Favorieten opnemen"
+
+#: panel-plugin/settings-dialog.cpp:956
+msgid "Session Commands"
+msgstr "Sessie-opdrachten"
+
+#. Add option to show confirmation dialogs
+#: panel-plugin/settings-dialog.cpp:960
+msgid "Show c_onfirmation dialog"
+msgstr "Toon bevestigings_dialoog"
+
+#: panel-plugin/settings-dialog.cpp:1035
+msgid "Name"
+msgstr "Naam"
+
+#: panel-plugin/settings-dialog.cpp:1040
+msgid "Pattern"
+msgstr "Patroon"
+
+#: panel-plugin/settings-dialog.cpp:1057
+msgid "Add action"
+msgstr "Voeg actie toe"
+
+#: panel-plugin/settings-dialog.cpp:1069
+msgid "Remove selected action"
+msgstr "Verwijder gekozen actie"
+
+#: panel-plugin/settings-dialog.cpp:1090
+msgid "Details"
+msgstr "Bijzonderheden"
+
+#. Create entry for name
+#: panel-plugin/settings-dialog.cpp:1094
+msgid "Nam_e:"
+msgstr "_Naam:"
+
+#. Create entry for keyword
+#: panel-plugin/settings-dialog.cpp:1117
+msgid "_Pattern:"
+msgstr "_Patroon:"
+
+#. Create entry for command
+#: panel-plugin/settings-dialog.cpp:1139
+msgid "C_ommand:"
+msgstr "_Opdracht:"
+
+#. Create toggle button for regular expressions
+#: panel-plugin/settings-dialog.cpp:1158
+msgid "_Regular expression"
+msgstr "_Reguliere uitdrukking"
+
+#: panel-plugin/settings.cpp:36
+msgid "Applications"
+msgstr "Menu"
+
+#: panel-plugin/settings.cpp:85 panel-plugin/settings.cpp:92
+msgid "Man Pages"
+msgstr "Handleiding"
+
+#: panel-plugin/settings.cpp:86 panel-plugin/settings.cpp:93
+msgid "Search the Web"
+msgstr "Doorzoek het web"
+
+#: panel-plugin/settings.cpp:87 panel-plugin/settings.cpp:94
+msgid "Search for Files"
+msgstr "Zoeken naar bestanden"
+
+#: panel-plugin/settings.cpp:88 panel-plugin/settings.cpp:95
+msgid "Wikipedia"
+msgstr "Wikipedia"
+
+#: panel-plugin/settings.cpp:89 panel-plugin/settings.cpp:96
+msgid "Run in Terminal"
+msgstr "Draai in terminal"
+
+#: panel-plugin/settings.cpp:90 panel-plugin/settings.cpp:97
+msgid "Open URI"
+msgstr "Open URI"
+
+#: panel-plugin/settings.cpp:107
+msgid "_Settings Manager"
+msgstr "Instellingenbeheer"
+
+#: panel-plugin/settings.cpp:109
+msgid "Failed to open settings manager."
+msgstr "Kon instellingenbeheerder niet openen."
+
+#: panel-plugin/settings.cpp:112
+msgid "_Lock Screen"
+msgstr "Scherm _vergrendelen"
+
+#: panel-plugin/settings.cpp:114
+msgid "Failed to lock screen."
+msgstr "Kon scherm niet vergrendelen."
+
+#: panel-plugin/settings.cpp:117
+msgid "Switch _User"
+msgstr "Gebruiker _wisselen"
+
+#: panel-plugin/settings.cpp:119
+msgid "Failed to switch user."
+msgstr "Kon gebruiker niet wisselen."
+
+#: panel-plugin/settings.cpp:122
+msgid "Log _Out"
+msgstr "Af_melden"
+
+#: panel-plugin/settings.cpp:124 panel-plugin/settings.cpp:159
+msgid "Failed to log out."
+msgstr "Kon niet afmelden."
+
+#: panel-plugin/settings.cpp:125
+msgid "Are you sure you want to log out?"
+msgstr "Weet u zeker dat u zich wilt afmelden?"
+
+#: panel-plugin/settings.cpp:126
+#, c-format
+msgid "Logging out in %d seconds."
+msgstr "U wordt over %d seconden afgemeld."
+
+#: panel-plugin/settings.cpp:129
+msgid "_Restart"
+msgstr "_Herstarten"
+
+#: panel-plugin/settings.cpp:131
+msgid "Failed to restart."
+msgstr "Kon niet herstarten."
+
+#: panel-plugin/settings.cpp:132
+msgid "Are you sure you want to restart?"
+msgstr "Weet u zeker dat u wilt herstarten?"
+
+#: panel-plugin/settings.cpp:133
+#, c-format
+msgid "Restarting computer in %d seconds."
+msgstr "De computer wordt over %d seconden herstart."
+
+#: panel-plugin/settings.cpp:136
+msgid "Shut _Down"
+msgstr "Af_sluiten"
+
+#: panel-plugin/settings.cpp:138
+msgid "Failed to shut down."
+msgstr "Kon niet afsluiten."
+
+#: panel-plugin/settings.cpp:139
+msgid "Are you sure you want to shut down?"
+msgstr "Weet u zeker dat u wilt afsluiten?"
+
+#: panel-plugin/settings.cpp:140
+#, c-format
+msgid "Turning off computer in %d seconds."
+msgstr "De computer wordt over %d seconden uitgeschakeld."
+
+#: panel-plugin/settings.cpp:143
+msgid "Suspe_nd"
+msgstr "_Pauzestand"
+
+#: panel-plugin/settings.cpp:145
+msgid "Failed to suspend."
+msgstr "Kon pauzestand niet inschakelen."
+
+#: panel-plugin/settings.cpp:146
+msgid "Do you want to suspend to RAM?"
+msgstr "Wilt u de pauzestand inschakelen?"
+
+#: panel-plugin/settings.cpp:147
+#, c-format
+msgid "Suspending computer in %d seconds."
+msgstr "De computer wordt over %d seconden in pauzestand gebracht."
+
+#: panel-plugin/settings.cpp:150
+msgid "_Hibernate"
+msgstr "Slaapstand"
+
+#: panel-plugin/settings.cpp:152
+msgid "Failed to hibernate."
+msgstr "Kon slaapstand niet inschakelen."
+
+#: panel-plugin/settings.cpp:153
+msgid "Do you want to suspend to disk?"
+msgstr "Wilt u de slaapstand inschakelen?"
+
+#: panel-plugin/settings.cpp:154
+#, c-format
+msgid "Hibernating computer in %d seconds."
+msgstr "Computer wordt over %d seconden in slaapstand gebracht."
+
+#: panel-plugin/settings.cpp:157
+msgid "Log Ou_t..."
+msgstr "A_fmelden..."
+
+#: panel-plugin/settings.cpp:162
+msgid "_Edit Applications"
+msgstr "Toepassingen _bewerken"
+
+#: panel-plugin/settings.cpp:164
+msgid "Failed to launch menu editor."
+msgstr "Kon menubewerker niet starten."
+
+#: panel-plugin/settings.cpp:167
+msgid "Edit _Profile"
+msgstr "_Profiel bewerken"
+
+#: panel-plugin/settings.cpp:169
+msgid "Failed to edit profile."
+msgstr "Kon profiel niet bewerken."
+
+#: panel-plugin/xfce4-popup-whiskermenu.cpp:110
+msgid "Popup menu at current mouse position"
+msgstr "Opduikmenu bij huidige muispositie"
+
+#: panel-plugin/xfce4-popup-whiskermenu.cpp:111
+msgid "Popup menu at center of screen"
+msgstr "Opduikmenu in het midden van het scherm"
+
+#: panel-plugin/xfce4-popup-whiskermenu.cpp:112
+msgid "Print available menu instance IDs"
+msgstr "Toon beschikbare instantie-ID's voor het menu"
+
+#: panel-plugin/xfce4-popup-whiskermenu.cpp:113
+msgid "Choose which menu to popup by instance ID"
+msgstr "Kies welk menu er moet opduiken per instantie-ID"
+
+#: panel-plugin/xfce4-popup-whiskermenu.cpp:114
+msgid "Print version information and exit"
+msgstr "Toon versie-informatie en sluit af"
+
+#: panel-plugin/whiskermenu.desktop.in:5
+msgid "Show a menu to easily access installed applications"
+msgstr "Toon een menu om geïnstalleerde toepassingen eenvoudig op te starten"
