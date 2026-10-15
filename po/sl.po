@@ -5,10 +5,10 @@
 # Translators:
 # Dejweed, 2022,2024-2026
 # Kernc, 2017-2018
-# Kernc, 2014-2015
-# Kernc, 2016,2018-2020
-# Kernc, 2018
-# Kernc, 2017
+# K, 2014-2015
+# K, 2016,2018-2020
+# K, 2018
+# K, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Whisker Menu\n"
@@ -147,7 +147,7 @@ msgstr "Odstrani iz seznama Samodejni zagon"
 
 #: panel-plugin/page.cpp:547
 msgid "Edit Application..."
-msgstr "Uredi program..."
+msgstr "Uredi program ..."
 
 #: panel-plugin/page.cpp:618
 msgid "Unable to add launcher to desktop."
@@ -280,7 +280,7 @@ msgstr "Pokaži orodni n_amig programov"
 #. Add option to hide descriptions
 #: panel-plugin/settings-dialog.cpp:475
 msgid "Show application _descriptions"
-msgstr "Pokaži opise progra_mov"
+msgstr "Pokaži opis_e programov"
 
 #. Add item icon size selector
 #: panel-plugin/settings-dialog.cpp:492
@@ -337,7 +337,7 @@ msgstr "Postavi iska_lno polje na dno"
 #. Add option to use alternate commands position
 #: panel-plugin/settings-dialog.cpp:681
 msgid "Position commands next to search _entry"
-msgstr "Postavi d_ejanja ob iskalno polje"
+msgstr "Postavi _dejanja ob iskalno polje"
 
 #. Add profile shape selector
 #: panel-plugin/settings-dialog.cpp:692
@@ -363,7 +363,7 @@ msgstr "Gumb pulta"
 #. Add button style selector
 #: panel-plugin/settings-dialog.cpp:725
 msgid "Di_splay:"
-msgstr "Pok_aži:"
+msgstr "P_okaži:"
 
 #: panel-plugin/settings-dialog.cpp:730
 msgid "Icon"
@@ -380,16 +380,16 @@ msgstr "Ikono in naziv"
 #. Add title selector
 #: panel-plugin/settings-dialog.cpp:750
 msgid "_Title:"
-msgstr "_Naziv:"
+msgstr "N_aziv:"
 
 #. Add icon selector
 #: panel-plugin/settings-dialog.cpp:768
 msgid "_Icon:"
-msgstr "_Ikona:"
+msgstr "I_kona:"
 
 #: panel-plugin/settings-dialog.cpp:786
 msgid "Use a single _panel row"
-msgstr "Zasedi eno samo vrstico pulta"
+msgstr "Zas_edi eno samo vrstico pulta"
 
 #: panel-plugin/settings-dialog.cpp:812
 msgid "Default Category"
@@ -413,12 +413,12 @@ msgstr "Razvrsti ka_tegorije"
 #. Add value to change maximum number of recently used entries
 #: panel-plugin/settings-dialog.cpp:920
 msgid "Amount of _items:"
-msgstr "Štev_ilo predmetov:"
+msgstr "Št_evilo predmetov:"
 
 #. Add option to remember favorites
 #: panel-plugin/settings-dialog.cpp:943
 msgid "Include _favorites"
-msgstr "Vključi _priljubljene"
+msgstr "Vključi p_riljubljene"
 
 #: panel-plugin/settings-dialog.cpp:956
 msgid "Session Commands"
@@ -452,7 +452,7 @@ msgstr "Podrobnosti"
 #. Create entry for name
 #: panel-plugin/settings-dialog.cpp:1094
 msgid "Nam_e:"
-msgstr "Naz_iv:"
+msgstr "N_aziv:"
 
 #. Create entry for keyword
 #: panel-plugin/settings-dialog.cpp:1117
@@ -462,7 +462,7 @@ msgstr "_Vzorec:"
 #. Create entry for command
 #: panel-plugin/settings-dialog.cpp:1139
 msgid "C_ommand:"
-msgstr "_Ukaz:"
+msgstr "U_kaz:"
 
 #. Create toggle button for regular expressions
 #: panel-plugin/settings-dialog.cpp:1158
@@ -515,7 +515,7 @@ msgstr "Ni mogoče zakleniti zaslona."
 
 #: panel-plugin/settings.cpp:117
 msgid "Switch _User"
-msgstr "Zamenjaj _uporabnika"
+msgstr "Zamenja_j uporabnika"
 
 #: panel-plugin/settings.cpp:119
 msgid "Failed to switch user."
@@ -540,7 +540,7 @@ msgstr "Odjavljanje v %d sekundah."
 
 #: panel-plugin/settings.cpp:129
 msgid "_Restart"
-msgstr "_Ponovni zagon"
+msgstr "Ponovni za_gon"
 
 #: panel-plugin/settings.cpp:131
 msgid "Failed to restart."
@@ -557,7 +557,7 @@ msgstr "Ponoven zagon sistema v %d sekundah."
 
 #: panel-plugin/settings.cpp:136
 msgid "Shut _Down"
-msgstr "_Zaustavitev sistema"
+msgstr "Zaustavitev siste_ma"
 
 #: panel-plugin/settings.cpp:138
 msgid "Failed to shut down."
@@ -574,7 +574,7 @@ msgstr "Zaustavljanje sistema v %d sekundah."
 
 #: panel-plugin/settings.cpp:143
 msgid "Suspe_nd"
-msgstr "V sta_nje pripravljenosti"
+msgstr "V stanje prip_ravljenosti"
 
 #: panel-plugin/settings.cpp:145
 msgid "Failed to suspend."
@@ -608,11 +608,11 @@ msgstr "Preklapljanje v mirovanje v %d sekundah."
 
 #: panel-plugin/settings.cpp:157
 msgid "Log Ou_t..."
-msgstr "_Odjava..."
+msgstr "O_djava ..."
 
 #: panel-plugin/settings.cpp:162
 msgid "_Edit Applications"
-msgstr "Uredi programe"
+msgstr "Ur_edi programe"
 
 #: panel-plugin/settings.cpp:164
 msgid "Failed to launch menu editor."
@@ -620,7 +620,7 @@ msgstr "Ni mogoče zagnati urejevalnika menija."
 
 #: panel-plugin/settings.cpp:167
 msgid "Edit _Profile"
-msgstr "Uredi _profil"
+msgstr "Uredi pro_fil"
 
 #: panel-plugin/settings.cpp:169
 msgid "Failed to edit profile."
