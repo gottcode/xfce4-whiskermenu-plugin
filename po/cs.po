@@ -5,7 +5,7 @@
 # Translators:
 # halfark <vojtechprecechtel@gmail.com>, 2014
 # Laco Lazelod, 2013
-# Martin Šiška <martin-siska@email.cz>, 2024
+# 4908965f7bd646b1f7e0f158cc60fc29_498b746 <d0bb5b78339b5b4c9f040037645516d3_1144692>, 2024
 # 3d4809c17cb90cd5bd5c98e6eb2d8dc9_66922ff, 2013
 # Michal Várady <miko.vaji@gmail.com>, 2015-2021,2025-2026
 # Pavel Borecki <pavel.borecki@gmail.com>, 2018-2020
@@ -41,7 +41,7 @@ msgstr "Vyberte příkaz"
 
 #: panel-plugin/command-edit.cpp:78 panel-plugin/settings-dialog.cpp:141
 msgid "_Cancel"
-msgstr "_Storno"
+msgstr "_Zrušit"
 
 #: panel-plugin/command-edit.cpp:79 panel-plugin/settings-dialog.cpp:142
 msgid "_OK"
@@ -209,7 +209,7 @@ msgstr "_Zavřít"
 
 #: panel-plugin/settings-dialog.cpp:102
 msgid "_General"
-msgstr "Obecné"
+msgstr "_Obecné"
 
 #: panel-plugin/settings-dialog.cpp:103
 msgid "_Appearance"
@@ -247,7 +247,7 @@ msgstr "Odebrat akci „%s“?"
 #: panel-plugin/settings-dialog.cpp:293
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "Nedaří se otevřít umístění URL adresy: %s"
+msgstr "Nelze otevřít následující adresu URL: %s"
 
 #. Add option to show as icons
 #: panel-plugin/settings-dialog.cpp:334
@@ -297,12 +297,12 @@ msgstr "Velikost ikon kateg_orií:"
 #. Add option to change menu width
 #: panel-plugin/settings-dialog.cpp:549
 msgid "Menu _width:"
-msgstr "Šířka nabídky:"
+msgstr "Šíř_ka nabídky:"
 
 #. Add option to change menu height
 #: panel-plugin/settings-dialog.cpp:567
 msgid "Menu _height:"
-msgstr "Výška nabídky:"
+msgstr "_Výška nabídky:"
 
 #. Add option to control background opacity
 #: panel-plugin/settings-dialog.cpp:585
@@ -316,25 +316,25 @@ msgstr "Nabídka"
 #. Add option to use horizontal categories
 #: panel-plugin/settings-dialog.cpp:632
 msgid "Position categories _horizontally"
-msgstr "Umístit kategorie horizontálně"
+msgstr "Umístit kategorie _horizontálně"
 
 #: panel-plugin/settings-dialog.cpp:643 panel-plugin/settings-dialog.cpp:648
 msgid "Position cate_gories on bottom"
-msgstr "Umístit kategorie dolů"
+msgstr "Umístit k_ategorie dolů"
 
 #: panel-plugin/settings-dialog.cpp:643 panel-plugin/settings-dialog.cpp:648
 msgid "Position cate_gories on left"
-msgstr "Umístit kategorie nalevo"
+msgstr "Umístit kat_egorie nalevo"
 
 #. Add option to use alternate profile position
 #: panel-plugin/settings-dialog.cpp:659
 msgid "Position pro_file on bottom"
-msgstr "Umístit profil dolů"
+msgstr "Umístit pro_fil dolů"
 
 #. Add option to use alternate search entry position
 #: panel-plugin/settings-dialog.cpp:670
 msgid "Position _search entry on bottom"
-msgstr "Umístit vyhledávání dolů"
+msgstr "Umístit vyhle_dávání dolů"
 
 #. Add option to use alternate commands position
 #: panel-plugin/settings-dialog.cpp:681
@@ -344,7 +344,7 @@ msgstr "Umístit příkazy v_edle kolonky vyhledávání"
 #. Add profile shape selector
 #: panel-plugin/settings-dialog.cpp:692
 msgid "P_rofile:"
-msgstr "Profil:"
+msgstr "P_rofil:"
 
 #: panel-plugin/settings-dialog.cpp:699
 msgid "Round Picture"
@@ -410,7 +410,7 @@ msgstr "Po ztrátě zaměření ukazatele myši zůstat _viditelný"
 #. Add option to sort categories
 #: panel-plugin/settings-dialog.cpp:899
 msgid "Sort ca_tegories"
-msgstr "Třídit kategorie"
+msgstr "_Třídit kategorie"
 
 #. Add value to change maximum number of recently used entries
 #: panel-plugin/settings-dialog.cpp:920
@@ -464,7 +464,7 @@ msgstr "_Vzorec:"
 #. Create entry for command
 #: panel-plugin/settings-dialog.cpp:1139
 msgid "C_ommand:"
-msgstr "P_říkaz"
+msgstr "_Příkaz:"
 
 #. Create toggle button for regular expressions
 #: panel-plugin/settings-dialog.cpp:1158
@@ -497,7 +497,7 @@ msgstr "Spustit v terminálu"
 
 #: panel-plugin/settings.cpp:90 panel-plugin/settings.cpp:97
 msgid "Open URI"
-msgstr "Otevřít URl"
+msgstr "Otevřít URI"
 
 #: panel-plugin/settings.cpp:107
 msgid "_Settings Manager"
@@ -646,7 +646,7 @@ msgstr "Zvolte vyskakovací okno nabídky podle ID sezení"
 
 #: panel-plugin/xfce4-popup-whiskermenu.cpp:114
 msgid "Print version information and exit"
-msgstr "Vypsat informaci o verzi a odejít"
+msgstr "Vypsat informace o verzi a skončit"
 
 #: panel-plugin/whiskermenu.desktop.in:5
 msgid "Show a menu to easily access installed applications"
