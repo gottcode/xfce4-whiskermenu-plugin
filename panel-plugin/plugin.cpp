@@ -417,8 +417,11 @@ void Plugin::show_about()
 		"Graeme Gott <graeme@gottcode.org>",
 		nullptr };
 
-	gtk_show_about_dialog
-		(nullptr,
+#if LIBXFCE4PANEL_CHECK_VERSION(4, 21, 4)
+	xfce_panel_gtk_show_about_dialog(
+#else
+	gtk_show_about_dialog(nullptr,
+#endif
 		"authors", authors,
 		"comments", _("Alternate application launcher for Xfce"),
 		"copyright", "Copyright \302\251 2013-" COPYRIGHT_YEAR " Graeme Gott",
